@@ -6,37 +6,69 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct MemoryAllocateFlagsInfo
+    [NativeName("Name", "VkMemoryAllocateFlagsInfo")]
+    public unsafe partial struct MemoryAllocateFlagsInfo
     {
         public MemoryAllocateFlagsInfo
         (
-            StructureType sType = StructureType.MemoryAllocateFlagsInfo,
-            void* pNext = default,
-            MemoryAllocateFlags flags = default,
-            uint deviceMask = default
-        )
+            StructureType? sType = StructureType.MemoryAllocateFlagsInfo,
+            void* pNext = null,
+            MemoryAllocateFlags? flags = null,
+            uint? deviceMask = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           DeviceMask = deviceMask;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (deviceMask is not null)
+            {
+                DeviceMask = deviceMask.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkMemoryAllocateFlags")]
+        [NativeName("Type.Name", "VkMemoryAllocateFlags")]
+        [NativeName("Name", "flags")]
         public MemoryAllocateFlags Flags;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "deviceMask")]
         public uint DeviceMask;
     }
 }

@@ -5,9 +5,9 @@
 
 using System;
 using System.Drawing;
-using Silk.NET.Windowing.Common.Structs;
+using Silk.NET.Core;
 
-namespace Silk.NET.Windowing.Common
+namespace Silk.NET.Windowing
 {
     /// <summary>
     /// Extensions for IWindow
@@ -62,6 +62,10 @@ namespace Silk.NET.Windowing.Common
             view.Reset();
         }
 
+        public static void SwapBuffers(this IView view) => view.GLContext?.SwapBuffers();
+        public static void MakeCurrent(this IView view) => view.GLContext?.MakeCurrent();
+        public static void ClearContext(this IView view) => view.GLContext?.Clear();
+
         /// <summary>
         /// Gets the full size of the given window including its borders.
         /// </summary>
@@ -101,7 +105,11 @@ namespace Silk.NET.Windowing.Common
         /// </summary>
         /// <param name="window">The window.</param>
         /// <param name="icon">The icon to set.</param>
-        public static void SetWindowIcon(this IWindow window, ref WindowIcon icon) => window.SetWindowIcon
-            (new[] { icon });
+        public static void SetWindowIcon(this IWindow window, ref RawImage icon) => window.SetWindowIcon
+#if NETSTANDARD2_1
+            (System.Runtime.InteropServices.MemoryMarshal.CreateReadOnlySpan(ref icon, 1));
+#else
+            (new[] {icon});
+#endif
     }
 }

@@ -4,328 +4,92 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL.Legacy;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [Extension("ARB_vertex_blend")]
-    public abstract unsafe partial class ArbVertexBlend : NativeExtension<GL>
+    public unsafe partial class ArbVertexBlend : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_vertex_blend";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glVertexBlendARB")]
-        public abstract void VertexBlend([Flow(FlowDirection.In)] int count);
+        public partial void VertexBlend([Flow(FlowDirection.In)] int count);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="weights">
-        /// To be added.
-        /// This parameter's element count is taken from size.
-        /// </param>
         [NativeApi(EntryPoint = "glWeightbvARB")]
-        public abstract unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] sbyte* weights);
+        public unsafe partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] sbyte* weights);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="weights">
-        /// To be added.
-        /// This parameter's element count is taken from size.
-        /// </param>
         [NativeApi(EntryPoint = "glWeightbvARB")]
-        public abstract void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<sbyte> weights);
+        public partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in sbyte weights);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="weights">
-        /// To be added.
-        /// This parameter's element count is taken from size.
-        /// </param>
         [NativeApi(EntryPoint = "glWeightsvARB")]
-        public abstract unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] short* weights);
+        public unsafe partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] short* weights);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="weights">
-        /// To be added.
-        /// This parameter's element count is taken from size.
-        /// </param>
         [NativeApi(EntryPoint = "glWeightsvARB")]
-        public abstract void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<short> weights);
+        public partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in short weights);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="weights">
-        /// To be added.
-        /// This parameter's element count is taken from size.
-        /// </param>
         [NativeApi(EntryPoint = "glWeightivARB")]
-        public abstract unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] int* weights);
+        public unsafe partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] int* weights);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="weights">
-        /// To be added.
-        /// This parameter's element count is taken from size.
-        /// </param>
         [NativeApi(EntryPoint = "glWeightivARB")]
-        public abstract void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<int> weights);
+        public partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in int weights);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="weights">
-        /// To be added.
-        /// This parameter's element count is taken from size.
-        /// </param>
         [NativeApi(EntryPoint = "glWeightfvARB")]
-        public abstract unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] float* weights);
+        public unsafe partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] float* weights);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="weights">
-        /// To be added.
-        /// This parameter's element count is taken from size.
-        /// </param>
         [NativeApi(EntryPoint = "glWeightfvARB")]
-        public abstract void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<float> weights);
+        public partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in float weights);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="weights">
-        /// To be added.
-        /// This parameter's element count is taken from size.
-        /// </param>
         [NativeApi(EntryPoint = "glWeightdvARB")]
-        public abstract unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] double* weights);
+        public unsafe partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] double* weights);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="weights">
-        /// To be added.
-        /// This parameter's element count is taken from size.
-        /// </param>
         [NativeApi(EntryPoint = "glWeightdvARB")]
-        public abstract void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<double> weights);
+        public partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in double weights);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="weights">
-        /// To be added.
-        /// This parameter's element count is taken from size.
-        /// </param>
         [NativeApi(EntryPoint = "glWeightubvARB")]
-        public abstract unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] byte* weights);
+        public unsafe partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] byte* weights);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="weights">
-        /// To be added.
-        /// This parameter's element count is taken from size.
-        /// </param>
         [NativeApi(EntryPoint = "glWeightubvARB")]
-        public abstract void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<byte> weights);
+        public partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in byte weights);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="weights">
-        /// To be added.
-        /// This parameter's element count is taken from size.
-        /// </param>
+        [NativeApi(EntryPoint = "glWeightubvARB")]
+        public partial void Weight([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] string weights);
+
         [NativeApi(EntryPoint = "glWeightusvARB")]
-        public abstract unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ushort* weights);
+        public unsafe partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ushort* weights);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="weights">
-        /// To be added.
-        /// This parameter's element count is taken from size.
-        /// </param>
         [NativeApi(EntryPoint = "glWeightusvARB")]
-        public abstract void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<ushort> weights);
+        public partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in ushort weights);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="weights">
-        /// To be added.
-        /// This parameter's element count is taken from size.
-        /// </param>
         [NativeApi(EntryPoint = "glWeightuivARB")]
-        public abstract unsafe void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] uint* weights);
+        public unsafe partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] uint* weights);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="weights">
-        /// To be added.
-        /// This parameter's element count is taken from size.
-        /// </param>
         [NativeApi(EntryPoint = "glWeightuivARB")]
-        public abstract void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] Span<uint> weights);
+        public partial void Weight([Flow(FlowDirection.In)] int size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in uint weights);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="stride">
-        /// To be added.
-        /// </param>
-        /// <param name="pointer">
-        /// To be added.
-        /// This parameter's element count is computed from type and stride.
-        /// </param>
         [NativeApi(EntryPoint = "glWeightPointerARB")]
-        public abstract unsafe void WeightPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void WeightPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="stride">
-        /// To be added.
-        /// </param>
-        /// <param name="pointer">
-        /// To be added.
-        /// This parameter's element count is computed from type and stride.
-        /// </param>
         [NativeApi(EntryPoint = "glWeightPointerARB")]
-        public abstract void WeightPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        public partial void WeightPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="weights">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glWeightubvARB")]
-        public abstract void Weight([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] string weights);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="stride">
-        /// To be added.
-        /// </param>
-        /// <param name="pointer">
-        /// To be added.
-        /// This parameter's element count is computed from type and stride.
-        /// </param>
         [NativeApi(EntryPoint = "glWeightPointerARB")]
-        public abstract unsafe void WeightPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] WeightPointerTypeARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
+        public unsafe partial void WeightPointer([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] WeightPointerTypeARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] void* pointer);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="stride">
-        /// To be added.
-        /// </param>
-        /// <param name="pointer">
-        /// To be added.
-        /// This parameter's element count is computed from type and stride.
-        /// </param>
         [NativeApi(EntryPoint = "glWeightPointerARB")]
-        public abstract void WeightPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] WeightPointerTypeARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] ref T0 pointer) where T0 : unmanaged;
+        public partial void WeightPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] WeightPointerTypeARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
 
-        public ArbVertexBlend(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbVertexBlend(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

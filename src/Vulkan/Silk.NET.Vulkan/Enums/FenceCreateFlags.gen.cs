@@ -5,14 +5,17 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
     [Flags()]
+    [NativeName("Name", "VkFenceCreateFlags")]
     public enum FenceCreateFlags
     {
+        [NativeName("Name", "VK_FENCE_CREATE_SIGNALED_BIT")]
         FenceCreateSignaledBit = 1,
     }
 }

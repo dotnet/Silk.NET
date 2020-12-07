@@ -6,33 +6,58 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct QueryPoolCreateInfoINTEL
+    [NativeName("Name", "VkQueryPoolCreateInfoINTEL")]
+    public unsafe partial struct QueryPoolCreateInfoINTEL
     {
         public QueryPoolCreateInfoINTEL
         (
-            StructureType sType = StructureType.QueryPoolPerformanceQueryCreateInfoIntel,
-            void* pNext = default,
-            QueryPoolSamplingModeINTEL performanceCountersSampling = default
-        )
+            StructureType? sType = StructureType.QueryPoolPerformanceQueryCreateInfoIntel,
+            void* pNext = null,
+            QueryPoolSamplingModeINTEL? performanceCountersSampling = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           PerformanceCountersSampling = performanceCountersSampling;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (performanceCountersSampling is not null)
+            {
+                PerformanceCountersSampling = performanceCountersSampling.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkQueryPoolSamplingModeINTEL")]
+        [NativeName("Type.Name", "VkQueryPoolSamplingModeINTEL")]
+        [NativeName("Name", "performanceCountersSampling")]
         public QueryPoolSamplingModeINTEL PerformanceCountersSampling;
     }
 }

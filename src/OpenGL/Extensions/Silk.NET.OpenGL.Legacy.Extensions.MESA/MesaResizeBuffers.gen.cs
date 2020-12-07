@@ -4,29 +4,29 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL.Legacy;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
 {
     [Extension("MESA_resize_buffers")]
-    public abstract unsafe partial class MesaResizeBuffers : NativeExtension<GL>
+    public unsafe partial class MesaResizeBuffers : NativeExtension<GL>
     {
         public const string ExtensionName = "MESA_resize_buffers";
-        /// <summary>
-        /// To be added.
-        /// </summary>
         [NativeApi(EntryPoint = "glResizeBuffersMESA")]
-        public abstract void ResizeBuffers();
+        public partial void ResizeBuffers();
 
-        public MesaResizeBuffers(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public MesaResizeBuffers(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

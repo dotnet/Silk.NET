@@ -6,37 +6,69 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct ViewportSwizzleNV
+    [NativeName("Name", "VkViewportSwizzleNV")]
+    public unsafe partial struct ViewportSwizzleNV
     {
         public ViewportSwizzleNV
         (
-            ViewportCoordinateSwizzleNV x = default,
-            ViewportCoordinateSwizzleNV y = default,
-            ViewportCoordinateSwizzleNV z = default,
-            ViewportCoordinateSwizzleNV w = default
-        )
+            ViewportCoordinateSwizzleNV? x = null,
+            ViewportCoordinateSwizzleNV? y = null,
+            ViewportCoordinateSwizzleNV? z = null,
+            ViewportCoordinateSwizzleNV? w = null
+        ) : this()
         {
-           X = x;
-           Y = y;
-           Z = z;
-           W = w;
+            if (x is not null)
+            {
+                X = x.Value;
+            }
+
+            if (y is not null)
+            {
+                Y = y.Value;
+            }
+
+            if (z is not null)
+            {
+                Z = z.Value;
+            }
+
+            if (w is not null)
+            {
+                W = w.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkViewportCoordinateSwizzleNV")]
+        [NativeName("Type.Name", "VkViewportCoordinateSwizzleNV")]
+        [NativeName("Name", "x")]
         public ViewportCoordinateSwizzleNV X;
 /// <summary></summary>
+        [NativeName("Type", "VkViewportCoordinateSwizzleNV")]
+        [NativeName("Type.Name", "VkViewportCoordinateSwizzleNV")]
+        [NativeName("Name", "y")]
         public ViewportCoordinateSwizzleNV Y;
 /// <summary></summary>
+        [NativeName("Type", "VkViewportCoordinateSwizzleNV")]
+        [NativeName("Type.Name", "VkViewportCoordinateSwizzleNV")]
+        [NativeName("Name", "z")]
         public ViewportCoordinateSwizzleNV Z;
 /// <summary></summary>
+        [NativeName("Type", "VkViewportCoordinateSwizzleNV")]
+        [NativeName("Type.Name", "VkViewportCoordinateSwizzleNV")]
+        [NativeName("Name", "w")]
         public ViewportCoordinateSwizzleNV W;
     }
 }

@@ -6,77 +6,178 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDeviceMeshShaderPropertiesNV
+    [NativeName("Name", "VkPhysicalDeviceMeshShaderPropertiesNV")]
+    public unsafe partial struct PhysicalDeviceMeshShaderPropertiesNV
     {
         public PhysicalDeviceMeshShaderPropertiesNV
         (
-            StructureType sType = StructureType.PhysicalDeviceMeshShaderPropertiesNV,
-            void* pNext = default,
-            uint maxDrawMeshTasksCount = default,
-            uint maxTaskWorkGroupInvocations = default,
-            uint maxTaskTotalMemorySize = default,
-            uint maxTaskOutputCount = default,
-            uint maxMeshWorkGroupInvocations = default,
-            uint maxMeshTotalMemorySize = default,
-            uint maxMeshOutputVertices = default,
-            uint maxMeshOutputPrimitives = default,
-            uint maxMeshMultiviewViewCount = default,
-            uint meshOutputPerVertexGranularity = default,
-            uint meshOutputPerPrimitiveGranularity = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceMeshShaderPropertiesNV,
+            void* pNext = null,
+            uint? maxDrawMeshTasksCount = null,
+            uint? maxTaskWorkGroupInvocations = null,
+            uint? maxTaskTotalMemorySize = null,
+            uint? maxTaskOutputCount = null,
+            uint? maxMeshWorkGroupInvocations = null,
+            uint? maxMeshTotalMemorySize = null,
+            uint? maxMeshOutputVertices = null,
+            uint? maxMeshOutputPrimitives = null,
+            uint? maxMeshMultiviewViewCount = null,
+            uint? meshOutputPerVertexGranularity = null,
+            uint? meshOutputPerPrimitiveGranularity = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           MaxDrawMeshTasksCount = maxDrawMeshTasksCount;
-           MaxTaskWorkGroupInvocations = maxTaskWorkGroupInvocations;
-           MaxTaskTotalMemorySize = maxTaskTotalMemorySize;
-           MaxTaskOutputCount = maxTaskOutputCount;
-           MaxMeshWorkGroupInvocations = maxMeshWorkGroupInvocations;
-           MaxMeshTotalMemorySize = maxMeshTotalMemorySize;
-           MaxMeshOutputVertices = maxMeshOutputVertices;
-           MaxMeshOutputPrimitives = maxMeshOutputPrimitives;
-           MaxMeshMultiviewViewCount = maxMeshMultiviewViewCount;
-           MeshOutputPerVertexGranularity = meshOutputPerVertexGranularity;
-           MeshOutputPerPrimitiveGranularity = meshOutputPerPrimitiveGranularity;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (maxDrawMeshTasksCount is not null)
+            {
+                MaxDrawMeshTasksCount = maxDrawMeshTasksCount.Value;
+            }
+
+            if (maxTaskWorkGroupInvocations is not null)
+            {
+                MaxTaskWorkGroupInvocations = maxTaskWorkGroupInvocations.Value;
+            }
+
+            if (maxTaskTotalMemorySize is not null)
+            {
+                MaxTaskTotalMemorySize = maxTaskTotalMemorySize.Value;
+            }
+
+            if (maxTaskOutputCount is not null)
+            {
+                MaxTaskOutputCount = maxTaskOutputCount.Value;
+            }
+
+            if (maxMeshWorkGroupInvocations is not null)
+            {
+                MaxMeshWorkGroupInvocations = maxMeshWorkGroupInvocations.Value;
+            }
+
+            if (maxMeshTotalMemorySize is not null)
+            {
+                MaxMeshTotalMemorySize = maxMeshTotalMemorySize.Value;
+            }
+
+            if (maxMeshOutputVertices is not null)
+            {
+                MaxMeshOutputVertices = maxMeshOutputVertices.Value;
+            }
+
+            if (maxMeshOutputPrimitives is not null)
+            {
+                MaxMeshOutputPrimitives = maxMeshOutputPrimitives.Value;
+            }
+
+            if (maxMeshMultiviewViewCount is not null)
+            {
+                MaxMeshMultiviewViewCount = maxMeshMultiviewViewCount.Value;
+            }
+
+            if (meshOutputPerVertexGranularity is not null)
+            {
+                MeshOutputPerVertexGranularity = meshOutputPerVertexGranularity.Value;
+            }
+
+            if (meshOutputPerPrimitiveGranularity is not null)
+            {
+                MeshOutputPerPrimitiveGranularity = meshOutputPerPrimitiveGranularity.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxDrawMeshTasksCount")]
         public uint MaxDrawMeshTasksCount;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxTaskWorkGroupInvocations")]
         public uint MaxTaskWorkGroupInvocations;
         /// <summary></summary>
-       public fixed uint MaxTaskWorkGroupSize[3];
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxTaskWorkGroupSize")]
+        public fixed uint MaxTaskWorkGroupSize[3];
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxTaskTotalMemorySize")]
         public uint MaxTaskTotalMemorySize;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxTaskOutputCount")]
         public uint MaxTaskOutputCount;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxMeshWorkGroupInvocations")]
         public uint MaxMeshWorkGroupInvocations;
         /// <summary></summary>
-       public fixed uint MaxMeshWorkGroupSize[3];
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxMeshWorkGroupSize")]
+        public fixed uint MaxMeshWorkGroupSize[3];
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxMeshTotalMemorySize")]
         public uint MaxMeshTotalMemorySize;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxMeshOutputVertices")]
         public uint MaxMeshOutputVertices;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxMeshOutputPrimitives")]
         public uint MaxMeshOutputPrimitives;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxMeshMultiviewViewCount")]
         public uint MaxMeshMultiviewViewCount;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "meshOutputPerVertexGranularity")]
         public uint MeshOutputPerVertexGranularity;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "meshOutputPerPrimitiveGranularity")]
         public uint MeshOutputPerPrimitiveGranularity;
     }
 }

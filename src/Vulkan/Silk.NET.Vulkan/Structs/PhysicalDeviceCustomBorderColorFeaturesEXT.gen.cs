@@ -6,37 +6,69 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDeviceCustomBorderColorFeaturesEXT
+    [NativeName("Name", "VkPhysicalDeviceCustomBorderColorFeaturesEXT")]
+    public unsafe partial struct PhysicalDeviceCustomBorderColorFeaturesEXT
     {
         public PhysicalDeviceCustomBorderColorFeaturesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceCustomBorderColorFeaturesExt,
-            void* pNext = default,
-            Bool32 customBorderColors = default,
-            Bool32 customBorderColorWithoutFormat = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceCustomBorderColorFeaturesExt,
+            void* pNext = null,
+            Bool32? customBorderColors = null,
+            Bool32? customBorderColorWithoutFormat = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           CustomBorderColors = customBorderColors;
-           CustomBorderColorWithoutFormat = customBorderColorWithoutFormat;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (customBorderColors is not null)
+            {
+                CustomBorderColors = customBorderColors.Value;
+            }
+
+            if (customBorderColorWithoutFormat is not null)
+            {
+                CustomBorderColorWithoutFormat = customBorderColorWithoutFormat.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "customBorderColors")]
         public Bool32 CustomBorderColors;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "customBorderColorWithoutFormat")]
         public Bool32 CustomBorderColorWithoutFormat;
     }
 }

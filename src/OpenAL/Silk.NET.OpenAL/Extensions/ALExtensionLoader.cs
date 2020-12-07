@@ -3,7 +3,9 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using Silk.NET.Core.Loader;
+using System;
+using Microsoft.Extensions.DependencyModel;
+using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Native;
 
 namespace Silk.NET.OpenAL.Extensions
@@ -24,7 +26,9 @@ namespace Silk.NET.OpenAL.Extensions
         internal static TContextExtension LoadContextExtension<TContextExtension>(ALContext baseApi)
             where TContextExtension : NativeExtension<ALContext>
         {
-            return LibraryLoader.Load<TContextExtension, ALContext>(baseApi);
+            return baseApi.IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(TContextExtension)).Name)
+                ? (TContextExtension)Activator.CreateInstance(typeof(TContextExtension), baseApi.Context)
+                : null;
         }
     }
 }

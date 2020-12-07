@@ -6,33 +6,58 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct ImageViewASTCDecodeModeEXT
+    [NativeName("Name", "VkImageViewASTCDecodeModeEXT")]
+    public unsafe partial struct ImageViewASTCDecodeModeEXT
     {
         public ImageViewASTCDecodeModeEXT
         (
-            StructureType sType = StructureType.ImageViewAstcDecodeModeExt,
-            void* pNext = default,
-            Format decodeMode = default
-        )
+            StructureType? sType = StructureType.ImageViewAstcDecodeModeExt,
+            void* pNext = null,
+            Format? decodeMode = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           DecodeMode = decodeMode;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (decodeMode is not null)
+            {
+                DecodeMode = decodeMode.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkFormat")]
+        [NativeName("Type.Name", "VkFormat")]
+        [NativeName("Name", "decodeMode")]
         public Format DecodeMode;
     }
 }

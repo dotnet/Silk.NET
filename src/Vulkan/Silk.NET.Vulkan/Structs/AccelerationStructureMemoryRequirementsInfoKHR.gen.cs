@@ -6,41 +6,80 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct AccelerationStructureMemoryRequirementsInfoKHR
+    [NativeName("Name", "VkAccelerationStructureMemoryRequirementsInfoKHR")]
+    public unsafe partial struct AccelerationStructureMemoryRequirementsInfoKHR
     {
         public AccelerationStructureMemoryRequirementsInfoKHR
         (
-            StructureType sType = StructureType.AccelerationStructureMemoryRequirementsInfoKhr,
-            void* pNext = default,
-            AccelerationStructureMemoryRequirementsTypeKHR type = default,
-            AccelerationStructureBuildTypeKHR buildType = default,
-            AccelerationStructureKHR accelerationStructure = default
-        )
+            StructureType? sType = StructureType.AccelerationStructureMemoryRequirementsInfoKhr,
+            void* pNext = null,
+            AccelerationStructureMemoryRequirementsTypeKHR? type = null,
+            AccelerationStructureBuildTypeKHR? buildType = null,
+            AccelerationStructureKHR? accelerationStructure = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           Type = type;
-           BuildType = buildType;
-           AccelerationStructure = accelerationStructure;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (type is not null)
+            {
+                Type = type.Value;
+            }
+
+            if (buildType is not null)
+            {
+                BuildType = buildType.Value;
+            }
+
+            if (accelerationStructure is not null)
+            {
+                AccelerationStructure = accelerationStructure.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkAccelerationStructureMemoryRequirementsTypeKHR")]
+        [NativeName("Type.Name", "VkAccelerationStructureMemoryRequirementsTypeKHR")]
+        [NativeName("Name", "type")]
         public AccelerationStructureMemoryRequirementsTypeKHR Type;
 /// <summary></summary>
+        [NativeName("Type", "VkAccelerationStructureBuildTypeKHR")]
+        [NativeName("Type.Name", "VkAccelerationStructureBuildTypeKHR")]
+        [NativeName("Name", "buildType")]
         public AccelerationStructureBuildTypeKHR BuildType;
 /// <summary></summary>
+        [NativeName("Type", "VkAccelerationStructureKHR")]
+        [NativeName("Type.Name", "VkAccelerationStructureKHR")]
+        [NativeName("Name", "accelerationStructure")]
         public AccelerationStructureKHR AccelerationStructure;
     }
 }

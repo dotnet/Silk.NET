@@ -6,37 +6,69 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct AccelerationStructureBuildOffsetInfoKHR
+    [NativeName("Name", "VkAccelerationStructureBuildOffsetInfoKHR")]
+    public unsafe partial struct AccelerationStructureBuildOffsetInfoKHR
     {
         public AccelerationStructureBuildOffsetInfoKHR
         (
-            uint primitiveCount = default,
-            uint primitiveOffset = default,
-            uint firstVertex = default,
-            uint transformOffset = default
-        )
+            uint? primitiveCount = null,
+            uint? primitiveOffset = null,
+            uint? firstVertex = null,
+            uint? transformOffset = null
+        ) : this()
         {
-           PrimitiveCount = primitiveCount;
-           PrimitiveOffset = primitiveOffset;
-           FirstVertex = firstVertex;
-           TransformOffset = transformOffset;
+            if (primitiveCount is not null)
+            {
+                PrimitiveCount = primitiveCount.Value;
+            }
+
+            if (primitiveOffset is not null)
+            {
+                PrimitiveOffset = primitiveOffset.Value;
+            }
+
+            if (firstVertex is not null)
+            {
+                FirstVertex = firstVertex.Value;
+            }
+
+            if (transformOffset is not null)
+            {
+                TransformOffset = transformOffset.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "primitiveCount")]
         public uint PrimitiveCount;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "primitiveOffset")]
         public uint PrimitiveOffset;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "firstVertex")]
         public uint FirstVertex;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "transformOffset")]
         public uint TransformOffset;
     }
 }

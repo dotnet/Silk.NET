@@ -5,13 +5,16 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy
 {
+    [NativeName("Name", "VertexWeightPointerTypeEXT")]
     public enum VertexWeightPointerTypeEXT
     {
+        [NativeName("Name", "GL_FLOAT")]
         Float = 0x1406,
     }
 }

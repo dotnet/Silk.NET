@@ -5,13 +5,16 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.FJ
 {
+    [NativeName("Name", "GLenum")]
     public enum FJ
     {
+        [NativeName("Name", "GL_GCCSO_SHADER_BINARY_FJ")]
         GccsoShaderBinaryFJ = 0x9260,
     }
 }

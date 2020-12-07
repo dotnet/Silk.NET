@@ -4,351 +4,128 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_multi_bind")]
-    public abstract unsafe partial class ArbMultiBind : NativeExtension<GL>
+    public unsafe partial class ArbMultiBind : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_multi_bind";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="buffers">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
         [NativeApi(EntryPoint = "glBindBuffersBase")]
-        public abstract unsafe void BindBuffersBase([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers);
+        public unsafe partial void BindBuffersBase([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="buffers">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
         [NativeApi(EntryPoint = "glBindBuffersBase")]
-        public abstract void BindBuffersBase([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> buffers);
+        public partial void BindBuffersBase([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="buffers">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        /// <param name="offsets">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        /// <param name="sizes">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
+        [NativeApi(EntryPoint = "glBindBuffersBase")]
+        public unsafe partial void BindBuffersBase([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers);
+
+        [NativeApi(EntryPoint = "glBindBuffersBase")]
+        public partial void BindBuffersBase([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers);
+
         [NativeApi(EntryPoint = "glBindBuffersRange")]
-        public abstract unsafe void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes);
+        public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="buffers">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        /// <param name="offsets">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        /// <param name="sizes">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
         [NativeApi(EntryPoint = "glBindBuffersRange")]
-        public abstract void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<UIntPtr> sizes);
+        public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in UIntPtr sizes);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="textures">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
+        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in IntPtr offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes);
+
+        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in IntPtr offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in UIntPtr sizes);
+
+        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes);
+
+        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in UIntPtr sizes);
+
+        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in IntPtr offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes);
+
+        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        public partial void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in IntPtr offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in UIntPtr sizes);
+
+        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes);
+
+        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in UIntPtr sizes);
+
+        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in IntPtr offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes);
+
+        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in IntPtr offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in UIntPtr sizes);
+
+        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes);
+
+        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in UIntPtr sizes);
+
+        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        public unsafe partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in IntPtr offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes);
+
+        [NativeApi(EntryPoint = "glBindBuffersRange")]
+        public partial void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in IntPtr offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in UIntPtr sizes);
+
         [NativeApi(EntryPoint = "glBindImageTextures")]
-        public abstract unsafe void BindImageTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* textures);
+        public unsafe partial void BindImageTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* textures);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="textures">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
         [NativeApi(EntryPoint = "glBindImageTextures")]
-        public abstract void BindImageTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> textures);
+        public partial void BindImageTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint textures);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="samplers">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
         [NativeApi(EntryPoint = "glBindSamplers")]
-        public abstract unsafe void BindSamplers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* samplers);
+        public unsafe partial void BindSamplers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* samplers);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="samplers">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
         [NativeApi(EntryPoint = "glBindSamplers")]
-        public abstract void BindSamplers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> samplers);
+        public partial void BindSamplers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint samplers);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="textures">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
         [NativeApi(EntryPoint = "glBindTextures")]
-        public abstract unsafe void BindTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* textures);
+        public unsafe partial void BindTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* textures);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="textures">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
         [NativeApi(EntryPoint = "glBindTextures")]
-        public abstract void BindTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> textures);
+        public partial void BindTextures([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint textures);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="buffers">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        /// <param name="offsets">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        /// <param name="strides">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
         [NativeApi(EntryPoint = "glBindVertexBuffers")]
-        public abstract unsafe void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides);
+        public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="buffers">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        /// <param name="offsets">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        /// <param name="strides">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
         [NativeApi(EntryPoint = "glBindVertexBuffers")]
-        public abstract void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> strides);
+        public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint strides);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="buffers">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        [NativeApi(EntryPoint = "glBindBuffersBase")]
-        public abstract unsafe void BindBuffersBase([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers);
+        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in IntPtr offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="buffers">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        [NativeApi(EntryPoint = "glBindBuffersBase")]
-        public abstract void BindBuffersBase([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> buffers);
+        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in IntPtr offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint strides);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="buffers">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        /// <param name="offsets">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        /// <param name="sizes">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
-        public abstract unsafe void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes);
+        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="target">
-        /// To be added.
-        /// </param>
-        /// <param name="first">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="buffers">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        /// <param name="offsets">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        /// <param name="sizes">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        [NativeApi(EntryPoint = "glBindBuffersRange")]
-        public abstract void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<UIntPtr> sizes);
+        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint strides);
 
-        public ArbMultiBind(ref NativeApiContext ctx)
-            : base(ref ctx)
+        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        public unsafe partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in IntPtr offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides);
+
+        [NativeApi(EntryPoint = "glBindVertexBuffers")]
+        public partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in IntPtr offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint strides);
+
+        public ArbMultiBind(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

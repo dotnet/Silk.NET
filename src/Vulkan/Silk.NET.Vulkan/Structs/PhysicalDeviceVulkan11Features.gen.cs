@@ -6,77 +6,179 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDeviceVulkan11Features
+    [NativeName("Name", "VkPhysicalDeviceVulkan11Features")]
+    public unsafe partial struct PhysicalDeviceVulkan11Features
     {
         public PhysicalDeviceVulkan11Features
         (
-            StructureType sType = StructureType.PhysicalDeviceVulkan11Features,
-            void* pNext = default,
-            Bool32 storageBuffer16BitAccess = default,
-            Bool32 uniformAndStorageBuffer16BitAccess = default,
-            Bool32 storagePushConstant16 = default,
-            Bool32 storageInputOutput16 = default,
-            Bool32 multiview = default,
-            Bool32 multiviewGeometryShader = default,
-            Bool32 multiviewTessellationShader = default,
-            Bool32 variablePointersStorageBuffer = default,
-            Bool32 variablePointers = default,
-            Bool32 protectedMemory = default,
-            Bool32 samplerYcbcrConversion = default,
-            Bool32 shaderDrawParameters = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceVulkan11Features,
+            void* pNext = null,
+            Bool32? storageBuffer16BitAccess = null,
+            Bool32? uniformAndStorageBuffer16BitAccess = null,
+            Bool32? storagePushConstant16 = null,
+            Bool32? storageInputOutput16 = null,
+            Bool32? multiview = null,
+            Bool32? multiviewGeometryShader = null,
+            Bool32? multiviewTessellationShader = null,
+            Bool32? variablePointersStorageBuffer = null,
+            Bool32? variablePointers = null,
+            Bool32? protectedMemory = null,
+            Bool32? samplerYcbcrConversion = null,
+            Bool32? shaderDrawParameters = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           StorageBuffer16BitAccess = storageBuffer16BitAccess;
-           UniformAndStorageBuffer16BitAccess = uniformAndStorageBuffer16BitAccess;
-           StoragePushConstant16 = storagePushConstant16;
-           StorageInputOutput16 = storageInputOutput16;
-           Multiview = multiview;
-           MultiviewGeometryShader = multiviewGeometryShader;
-           MultiviewTessellationShader = multiviewTessellationShader;
-           VariablePointersStorageBuffer = variablePointersStorageBuffer;
-           VariablePointers = variablePointers;
-           ProtectedMemory = protectedMemory;
-           SamplerYcbcrConversion = samplerYcbcrConversion;
-           ShaderDrawParameters = shaderDrawParameters;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (storageBuffer16BitAccess is not null)
+            {
+                StorageBuffer16BitAccess = storageBuffer16BitAccess.Value;
+            }
+
+            if (uniformAndStorageBuffer16BitAccess is not null)
+            {
+                UniformAndStorageBuffer16BitAccess = uniformAndStorageBuffer16BitAccess.Value;
+            }
+
+            if (storagePushConstant16 is not null)
+            {
+                StoragePushConstant16 = storagePushConstant16.Value;
+            }
+
+            if (storageInputOutput16 is not null)
+            {
+                StorageInputOutput16 = storageInputOutput16.Value;
+            }
+
+            if (multiview is not null)
+            {
+                Multiview = multiview.Value;
+            }
+
+            if (multiviewGeometryShader is not null)
+            {
+                MultiviewGeometryShader = multiviewGeometryShader.Value;
+            }
+
+            if (multiviewTessellationShader is not null)
+            {
+                MultiviewTessellationShader = multiviewTessellationShader.Value;
+            }
+
+            if (variablePointersStorageBuffer is not null)
+            {
+                VariablePointersStorageBuffer = variablePointersStorageBuffer.Value;
+            }
+
+            if (variablePointers is not null)
+            {
+                VariablePointers = variablePointers.Value;
+            }
+
+            if (protectedMemory is not null)
+            {
+                ProtectedMemory = protectedMemory.Value;
+            }
+
+            if (samplerYcbcrConversion is not null)
+            {
+                SamplerYcbcrConversion = samplerYcbcrConversion.Value;
+            }
+
+            if (shaderDrawParameters is not null)
+            {
+                ShaderDrawParameters = shaderDrawParameters.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "storageBuffer16BitAccess")]
         public Bool32 StorageBuffer16BitAccess;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "uniformAndStorageBuffer16BitAccess")]
         public Bool32 UniformAndStorageBuffer16BitAccess;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "storagePushConstant16")]
         public Bool32 StoragePushConstant16;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "storageInputOutput16")]
         public Bool32 StorageInputOutput16;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "multiview")]
         public Bool32 Multiview;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "multiviewGeometryShader")]
         public Bool32 MultiviewGeometryShader;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "multiviewTessellationShader")]
         public Bool32 MultiviewTessellationShader;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "variablePointersStorageBuffer")]
         public Bool32 VariablePointersStorageBuffer;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "variablePointers")]
         public Bool32 VariablePointers;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "protectedMemory")]
         public Bool32 ProtectedMemory;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "samplerYcbcrConversion")]
         public Bool32 SamplerYcbcrConversion;
 /// <summary></summary>
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "shaderDrawParameters")]
         public Bool32 ShaderDrawParameters;
     }
 }

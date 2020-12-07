@@ -4,29 +4,29 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGLES;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.QCOM
 {
     [Extension("QCOM_shader_framebuffer_fetch_noncoherent")]
-    public abstract unsafe partial class QComShaderFramebufferFetchNoncoherent : NativeExtension<GL>
+    public unsafe partial class QComShaderFramebufferFetchNoncoherent : NativeExtension<GL>
     {
         public const string ExtensionName = "QCOM_shader_framebuffer_fetch_noncoherent";
-        /// <summary>
-        /// To be added.
-        /// </summary>
         [NativeApi(EntryPoint = "glFramebufferFetchBarrierQCOM")]
-        public abstract void FramebufferFetchBarrier();
+        public partial void FramebufferFetchBarrier();
 
-        public QComShaderFramebufferFetchNoncoherent(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public QComShaderFramebufferFetchNoncoherent(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

@@ -6,41 +6,80 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDeviceExternalBufferInfoKHR
+    [NativeName("Name", "VkPhysicalDeviceExternalBufferInfoKHR")]
+    public unsafe partial struct PhysicalDeviceExternalBufferInfoKHR
     {
         public PhysicalDeviceExternalBufferInfoKHR
         (
-            StructureType sType = StructureType.PhysicalDeviceExternalBufferInfo,
-            void* pNext = default,
-            BufferCreateFlags flags = default,
-            BufferUsageFlags usage = default,
-            ExternalMemoryHandleTypeFlags handleType = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceExternalBufferInfo,
+            void* pNext = null,
+            BufferCreateFlags? flags = null,
+            BufferUsageFlags? usage = null,
+            ExternalMemoryHandleTypeFlags? handleType = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           Usage = usage;
-           HandleType = handleType;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (usage is not null)
+            {
+                Usage = usage.Value;
+            }
+
+            if (handleType is not null)
+            {
+                HandleType = handleType.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkBufferCreateFlags")]
+        [NativeName("Type.Name", "VkBufferCreateFlags")]
+        [NativeName("Name", "flags")]
         public BufferCreateFlags Flags;
 /// <summary></summary>
+        [NativeName("Type", "VkBufferUsageFlags")]
+        [NativeName("Type.Name", "VkBufferUsageFlags")]
+        [NativeName("Name", "usage")]
         public BufferUsageFlags Usage;
 /// <summary></summary>
+        [NativeName("Type", "VkExternalMemoryHandleTypeFlagBits")]
+        [NativeName("Type.Name", "VkExternalMemoryHandleTypeFlagBits")]
+        [NativeName("Name", "handleType")]
         public ExternalMemoryHandleTypeFlags HandleType;
     }
 }

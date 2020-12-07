@@ -6,33 +6,58 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct MemoryPriorityAllocateInfoEXT
+    [NativeName("Name", "VkMemoryPriorityAllocateInfoEXT")]
+    public unsafe partial struct MemoryPriorityAllocateInfoEXT
     {
         public MemoryPriorityAllocateInfoEXT
         (
-            StructureType sType = StructureType.MemoryPriorityAllocateInfoExt,
-            void* pNext = default,
-            float priority = default
-        )
+            StructureType? sType = StructureType.MemoryPriorityAllocateInfoExt,
+            void* pNext = null,
+            float? priority = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           Priority = priority;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (priority is not null)
+            {
+                Priority = priority.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "float")]
+        [NativeName("Type.Name", "float")]
+        [NativeName("Name", "priority")]
         public float Priority;
     }
 }

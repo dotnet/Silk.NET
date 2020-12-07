@@ -4,1573 +4,506 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL.Legacy;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_vertex_shader")]
-    public abstract unsafe partial class ExtVertexShader : NativeExtension<GL>
+    public unsafe partial class ExtVertexShader : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_vertex_shader";
-        /// <summary>
-        /// To be added.
-        /// </summary>
         [NativeApi(EntryPoint = "glBeginVertexShaderEXT")]
-        public abstract void BeginVertexShader();
+        public partial void BeginVertexShader();
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glBindLightParameterEXT")]
-        public abstract uint BindLightParameter([Flow(FlowDirection.In)] EXT light, [Flow(FlowDirection.In)] EXT value);
+        public partial uint BindLightParameter([Flow(FlowDirection.In)] EXT light, [Flow(FlowDirection.In)] EXT value);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
+        [NativeApi(EntryPoint = "glBindLightParameterEXT")]
+        public partial uint BindLightParameter([Flow(FlowDirection.In)] EXT light, [Flow(FlowDirection.In)] LightParameter value);
+
+        [NativeApi(EntryPoint = "glBindLightParameterEXT")]
+        public partial uint BindLightParameter([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] EXT value);
+
+        [NativeApi(EntryPoint = "glBindLightParameterEXT")]
+        public partial uint BindLightParameter([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] LightParameter value);
+
         [NativeApi(EntryPoint = "glBindMaterialParameterEXT")]
-        public abstract uint BindMaterialParameter([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] EXT value);
+        public partial uint BindMaterialParameter([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] EXT value);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
+        [NativeApi(EntryPoint = "glBindMaterialParameterEXT")]
+        public partial uint BindMaterialParameter([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] MaterialParameter value);
+
+        [NativeApi(EntryPoint = "glBindMaterialParameterEXT")]
+        public partial uint BindMaterialParameter([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] EXT value);
+
+        [NativeApi(EntryPoint = "glBindMaterialParameterEXT")]
+        public partial uint BindMaterialParameter([Flow(FlowDirection.In)] MaterialFace face, [Flow(FlowDirection.In)] MaterialParameter value);
+
         [NativeApi(EntryPoint = "glBindParameterEXT")]
-        public abstract uint BindParameter([Flow(FlowDirection.In)] EXT value);
+        public partial uint BindParameter([Flow(FlowDirection.In)] EXT value);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="unit">
-        /// To be added.
-        /// </param>
-        /// <param name="coord">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
+        [NativeApi(EntryPoint = "glBindParameterEXT")]
+        public partial uint BindParameter([Flow(FlowDirection.In)] VertexShaderParameterEXT value);
+
         [NativeApi(EntryPoint = "glBindTexGenParameterEXT")]
-        public abstract uint BindTexGenParameter([Flow(FlowDirection.In)] EXT unit, [Flow(FlowDirection.In)] EXT coord, [Flow(FlowDirection.In)] EXT value);
+        public partial uint BindTexGenParameter([Flow(FlowDirection.In)] EXT unit, [Flow(FlowDirection.In)] EXT coord, [Flow(FlowDirection.In)] EXT value);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="unit">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
+        [NativeApi(EntryPoint = "glBindTexGenParameterEXT")]
+        public partial uint BindTexGenParameter([Flow(FlowDirection.In)] EXT unit, [Flow(FlowDirection.In)] EXT coord, [Flow(FlowDirection.In)] TextureGenParameter value);
+
+        [NativeApi(EntryPoint = "glBindTexGenParameterEXT")]
+        public partial uint BindTexGenParameter([Flow(FlowDirection.In)] EXT unit, [Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] EXT value);
+
+        [NativeApi(EntryPoint = "glBindTexGenParameterEXT")]
+        public partial uint BindTexGenParameter([Flow(FlowDirection.In)] EXT unit, [Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter value);
+
+        [NativeApi(EntryPoint = "glBindTexGenParameterEXT")]
+        public partial uint BindTexGenParameter([Flow(FlowDirection.In)] TextureUnit unit, [Flow(FlowDirection.In)] EXT coord, [Flow(FlowDirection.In)] EXT value);
+
+        [NativeApi(EntryPoint = "glBindTexGenParameterEXT")]
+        public partial uint BindTexGenParameter([Flow(FlowDirection.In)] TextureUnit unit, [Flow(FlowDirection.In)] EXT coord, [Flow(FlowDirection.In)] TextureGenParameter value);
+
+        [NativeApi(EntryPoint = "glBindTexGenParameterEXT")]
+        public partial uint BindTexGenParameter([Flow(FlowDirection.In)] TextureUnit unit, [Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] EXT value);
+
+        [NativeApi(EntryPoint = "glBindTexGenParameterEXT")]
+        public partial uint BindTexGenParameter([Flow(FlowDirection.In)] TextureUnit unit, [Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter value);
+
         [NativeApi(EntryPoint = "glBindTextureUnitParameterEXT")]
-        public abstract uint BindTextureUnitParameter([Flow(FlowDirection.In)] EXT unit, [Flow(FlowDirection.In)] EXT value);
+        public partial uint BindTextureUnitParameter([Flow(FlowDirection.In)] EXT unit, [Flow(FlowDirection.In)] EXT value);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glBindTextureUnitParameterEXT")]
+        public partial uint BindTextureUnitParameter([Flow(FlowDirection.In)] EXT unit, [Flow(FlowDirection.In)] VertexShaderTextureUnitParameter value);
+
+        [NativeApi(EntryPoint = "glBindTextureUnitParameterEXT")]
+        public partial uint BindTextureUnitParameter([Flow(FlowDirection.In)] TextureUnit unit, [Flow(FlowDirection.In)] EXT value);
+
+        [NativeApi(EntryPoint = "glBindTextureUnitParameterEXT")]
+        public partial uint BindTextureUnitParameter([Flow(FlowDirection.In)] TextureUnit unit, [Flow(FlowDirection.In)] VertexShaderTextureUnitParameter value);
+
         [NativeApi(EntryPoint = "glBindVertexShaderEXT")]
-        public abstract void BindVertexShader([Flow(FlowDirection.In)] uint id);
+        public partial void BindVertexShader([Flow(FlowDirection.In)] uint id);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glDeleteVertexShaderEXT")]
-        public abstract void DeleteVertexShader([Flow(FlowDirection.In)] uint id);
+        public partial void DeleteVertexShader([Flow(FlowDirection.In)] uint id);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glDisableVariantClientStateEXT")]
-        public abstract void DisableVariantClientState([Flow(FlowDirection.In)] uint id);
+        public partial void DisableVariantClientState([Flow(FlowDirection.In)] uint id);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glEnableVariantClientStateEXT")]
-        public abstract void EnableVariantClientState([Flow(FlowDirection.In)] uint id);
+        public partial void EnableVariantClientState([Flow(FlowDirection.In)] uint id);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
         [NativeApi(EntryPoint = "glEndVertexShaderEXT")]
-        public abstract void EndVertexShader();
+        public partial void EndVertexShader();
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="res">
-        /// To be added.
-        /// </param>
-        /// <param name="src">
-        /// To be added.
-        /// </param>
-        /// <param name="num">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glExtractComponentEXT")]
-        public abstract void ExtractComponent([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint src, [Flow(FlowDirection.In)] uint num);
+        public partial void ExtractComponent([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint src, [Flow(FlowDirection.In)] uint num);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="datatype">
-        /// To be added.
-        /// </param>
-        /// <param name="storagetype">
-        /// To be added.
-        /// </param>
-        /// <param name="range">
-        /// To be added.
-        /// </param>
-        /// <param name="components">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGenSymbolsEXT")]
-        public abstract uint GenSymbol([Flow(FlowDirection.In)] EXT datatype, [Flow(FlowDirection.In)] EXT storagetype, [Flow(FlowDirection.In)] EXT range, [Flow(FlowDirection.In)] uint components);
+        public partial uint GenSymbol([Flow(FlowDirection.In)] EXT datatype, [Flow(FlowDirection.In)] EXT storagetype, [Flow(FlowDirection.In)] EXT range, [Flow(FlowDirection.In)] uint components);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="range">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
+        [NativeApi(EntryPoint = "glGenSymbolsEXT")]
+        public partial uint GenSymbol([Flow(FlowDirection.In)] EXT datatype, [Flow(FlowDirection.In)] EXT storagetype, [Flow(FlowDirection.In)] ParameterRangeEXT range, [Flow(FlowDirection.In)] uint components);
+
+        [NativeApi(EntryPoint = "glGenSymbolsEXT")]
+        public partial uint GenSymbol([Flow(FlowDirection.In)] EXT datatype, [Flow(FlowDirection.In)] VertexShaderStorageTypeEXT storagetype, [Flow(FlowDirection.In)] EXT range, [Flow(FlowDirection.In)] uint components);
+
+        [NativeApi(EntryPoint = "glGenSymbolsEXT")]
+        public partial uint GenSymbol([Flow(FlowDirection.In)] EXT datatype, [Flow(FlowDirection.In)] VertexShaderStorageTypeEXT storagetype, [Flow(FlowDirection.In)] ParameterRangeEXT range, [Flow(FlowDirection.In)] uint components);
+
+        [NativeApi(EntryPoint = "glGenSymbolsEXT")]
+        public partial uint GenSymbol([Flow(FlowDirection.In)] DataTypeEXT datatype, [Flow(FlowDirection.In)] EXT storagetype, [Flow(FlowDirection.In)] EXT range, [Flow(FlowDirection.In)] uint components);
+
+        [NativeApi(EntryPoint = "glGenSymbolsEXT")]
+        public partial uint GenSymbol([Flow(FlowDirection.In)] DataTypeEXT datatype, [Flow(FlowDirection.In)] EXT storagetype, [Flow(FlowDirection.In)] ParameterRangeEXT range, [Flow(FlowDirection.In)] uint components);
+
+        [NativeApi(EntryPoint = "glGenSymbolsEXT")]
+        public partial uint GenSymbol([Flow(FlowDirection.In)] DataTypeEXT datatype, [Flow(FlowDirection.In)] VertexShaderStorageTypeEXT storagetype, [Flow(FlowDirection.In)] EXT range, [Flow(FlowDirection.In)] uint components);
+
+        [NativeApi(EntryPoint = "glGenSymbolsEXT")]
+        public partial uint GenSymbol([Flow(FlowDirection.In)] DataTypeEXT datatype, [Flow(FlowDirection.In)] VertexShaderStorageTypeEXT storagetype, [Flow(FlowDirection.In)] ParameterRangeEXT range, [Flow(FlowDirection.In)] uint components);
+
         [NativeApi(EntryPoint = "glGenVertexShadersEXT")]
-        public abstract uint GenVertexShaders([Flow(FlowDirection.In)] uint range);
+        public partial uint GenVertexShaders([Flow(FlowDirection.In)] uint range);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
         [NativeApi(EntryPoint = "glGetInvariantBooleanvEXT")]
-        public abstract unsafe void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
+        public unsafe partial void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
         [NativeApi(EntryPoint = "glGetInvariantBooleanvEXT")]
-        public abstract void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
+        public partial void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetInvariantBooleanvEXT")]
+        public unsafe partial void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] Boolean* data);
+
+        [NativeApi(EntryPoint = "glGetInvariantBooleanvEXT")]
+        public partial void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out Boolean data);
+
+        [NativeApi(EntryPoint = "glGetInvariantBooleanvEXT")]
+        public unsafe partial void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
+
+        [NativeApi(EntryPoint = "glGetInvariantBooleanvEXT")]
+        public partial void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
+
+        [NativeApi(EntryPoint = "glGetInvariantBooleanvEXT")]
+        public unsafe partial void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] Boolean* data);
+
+        [NativeApi(EntryPoint = "glGetInvariantBooleanvEXT")]
+        public partial void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out Boolean data);
+
         [NativeApi(EntryPoint = "glGetInvariantFloatvEXT")]
-        public abstract unsafe void GetInvariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
+        public unsafe partial void GetInvariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
         [NativeApi(EntryPoint = "glGetInvariantFloatvEXT")]
-        public abstract void GetInvariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out float data);
+        public partial void GetInvariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out float data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetInvariantFloatvEXT")]
+        public unsafe partial void GetInvariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
+
+        [NativeApi(EntryPoint = "glGetInvariantFloatvEXT")]
+        public partial void GetInvariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out float data);
+
         [NativeApi(EntryPoint = "glGetInvariantIntegervEXT")]
-        public abstract unsafe void GetInvariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
+        public unsafe partial void GetInvariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
         [NativeApi(EntryPoint = "glGetInvariantIntegervEXT")]
-        public abstract void GetInvariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out int data);
+        public partial void GetInvariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out int data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetInvariantIntegervEXT")]
+        public unsafe partial void GetInvariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
+
+        [NativeApi(EntryPoint = "glGetInvariantIntegervEXT")]
+        public partial void GetInvariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out int data);
+
         [NativeApi(EntryPoint = "glGetLocalConstantBooleanvEXT")]
-        public abstract unsafe void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
+        public unsafe partial void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
         [NativeApi(EntryPoint = "glGetLocalConstantBooleanvEXT")]
-        public abstract void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
+        public partial void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetLocalConstantBooleanvEXT")]
+        public unsafe partial void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] Boolean* data);
+
+        [NativeApi(EntryPoint = "glGetLocalConstantBooleanvEXT")]
+        public partial void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out Boolean data);
+
+        [NativeApi(EntryPoint = "glGetLocalConstantBooleanvEXT")]
+        public unsafe partial void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
+
+        [NativeApi(EntryPoint = "glGetLocalConstantBooleanvEXT")]
+        public partial void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
+
+        [NativeApi(EntryPoint = "glGetLocalConstantBooleanvEXT")]
+        public unsafe partial void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] Boolean* data);
+
+        [NativeApi(EntryPoint = "glGetLocalConstantBooleanvEXT")]
+        public partial void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out Boolean data);
+
         [NativeApi(EntryPoint = "glGetLocalConstantFloatvEXT")]
-        public abstract unsafe void GetLocalConstantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
+        public unsafe partial void GetLocalConstantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
         [NativeApi(EntryPoint = "glGetLocalConstantFloatvEXT")]
-        public abstract void GetLocalConstantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out float data);
+        public partial void GetLocalConstantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out float data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetLocalConstantFloatvEXT")]
+        public unsafe partial void GetLocalConstantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
+
+        [NativeApi(EntryPoint = "glGetLocalConstantFloatvEXT")]
+        public partial void GetLocalConstantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out float data);
+
         [NativeApi(EntryPoint = "glGetLocalConstantIntegervEXT")]
-        public abstract unsafe void GetLocalConstantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
+        public unsafe partial void GetLocalConstantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
         [NativeApi(EntryPoint = "glGetLocalConstantIntegervEXT")]
-        public abstract void GetLocalConstantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out int data);
+        public partial void GetLocalConstantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out int data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetLocalConstantIntegervEXT")]
+        public unsafe partial void GetLocalConstantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
+
+        [NativeApi(EntryPoint = "glGetLocalConstantIntegervEXT")]
+        public partial void GetLocalConstantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out int data);
+
         [NativeApi(EntryPoint = "glGetVariantBooleanvEXT")]
-        public abstract unsafe void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
+        public unsafe partial void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
         [NativeApi(EntryPoint = "glGetVariantBooleanvEXT")]
-        public abstract void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
+        public partial void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetVariantBooleanvEXT")]
+        public unsafe partial void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] Boolean* data);
+
+        [NativeApi(EntryPoint = "glGetVariantBooleanvEXT")]
+        public partial void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out Boolean data);
+
+        [NativeApi(EntryPoint = "glGetVariantBooleanvEXT")]
+        public unsafe partial void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
+
+        [NativeApi(EntryPoint = "glGetVariantBooleanvEXT")]
+        public partial void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
+
+        [NativeApi(EntryPoint = "glGetVariantBooleanvEXT")]
+        public unsafe partial void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] Boolean* data);
+
+        [NativeApi(EntryPoint = "glGetVariantBooleanvEXT")]
+        public partial void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out Boolean data);
+
         [NativeApi(EntryPoint = "glGetVariantFloatvEXT")]
-        public abstract unsafe void GetVariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
+        public unsafe partial void GetVariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
         [NativeApi(EntryPoint = "glGetVariantFloatvEXT")]
-        public abstract void GetVariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out float data);
+        public partial void GetVariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out float data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetVariantFloatvEXT")]
+        public unsafe partial void GetVariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
+
+        [NativeApi(EntryPoint = "glGetVariantFloatvEXT")]
+        public partial void GetVariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out float data);
+
         [NativeApi(EntryPoint = "glGetVariantIntegervEXT")]
-        public abstract unsafe void GetVariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
+        public unsafe partial void GetVariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
         [NativeApi(EntryPoint = "glGetVariantIntegervEXT")]
-        public abstract void GetVariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out int data);
+        public partial void GetVariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out int data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetVariantIntegervEXT")]
+        public unsafe partial void GetVariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
+
+        [NativeApi(EntryPoint = "glGetVariantIntegervEXT")]
+        public partial void GetVariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out int data);
+
         [NativeApi(EntryPoint = "glGetVariantPointervEXT")]
-        public abstract unsafe void GetVariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] void** data);
+        public unsafe partial void GetVariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] void** data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
         [NativeApi(EntryPoint = "glGetVariantPointervEXT")]
-        public abstract unsafe void GetVariantPointer<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out T0* data) where T0 : unmanaged;
+        public unsafe partial void GetVariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out void* data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="res">
-        /// To be added.
-        /// </param>
-        /// <param name="src">
-        /// To be added.
-        /// </param>
-        /// <param name="num">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetVariantPointervEXT")]
+        public unsafe partial void GetVariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] void** data);
+
+        [NativeApi(EntryPoint = "glGetVariantPointervEXT")]
+        public unsafe partial void GetVariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out void* data);
+
         [NativeApi(EntryPoint = "glInsertComponentEXT")]
-        public abstract void InsertComponent([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint src, [Flow(FlowDirection.In)] uint num);
+        public partial void InsertComponent([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint src, [Flow(FlowDirection.In)] uint num);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="cap">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsVariantEnabledEXT")]
-        public abstract bool IsVariantEnabled([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT cap);
+        public partial bool IsVariantEnabled([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT cap);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id and type.
-        /// </param>
-        [NativeApi(EntryPoint = "glSetInvariantEXT")]
-        public abstract unsafe void SetInvariant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id and type.
-        /// </param>
-        [NativeApi(EntryPoint = "glSetInvariantEXT")]
-        public abstract void SetInvariant<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] ref T0 addr) where T0 : unmanaged;
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id and type.
-        /// </param>
-        [NativeApi(EntryPoint = "glSetLocalConstantEXT")]
-        public abstract unsafe void SetLocalConstant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id and type.
-        /// </param>
-        [NativeApi(EntryPoint = "glSetLocalConstantEXT")]
-        public abstract void SetLocalConstant<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] ref T0 addr) where T0 : unmanaged;
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="op">
-        /// To be added.
-        /// </param>
-        /// <param name="res">
-        /// To be added.
-        /// </param>
-        /// <param name="arg1">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glShaderOp1EXT")]
-        public abstract void ShaderOp1([Flow(FlowDirection.In)] EXT op, [Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint arg1);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="op">
-        /// To be added.
-        /// </param>
-        /// <param name="res">
-        /// To be added.
-        /// </param>
-        /// <param name="arg1">
-        /// To be added.
-        /// </param>
-        /// <param name="arg2">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glShaderOp2EXT")]
-        public abstract void ShaderOp2([Flow(FlowDirection.In)] EXT op, [Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint arg1, [Flow(FlowDirection.In)] uint arg2);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="op">
-        /// To be added.
-        /// </param>
-        /// <param name="res">
-        /// To be added.
-        /// </param>
-        /// <param name="arg1">
-        /// To be added.
-        /// </param>
-        /// <param name="arg2">
-        /// To be added.
-        /// </param>
-        /// <param name="arg3">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glShaderOp3EXT")]
-        public abstract void ShaderOp3([Flow(FlowDirection.In)] EXT op, [Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint arg1, [Flow(FlowDirection.In)] uint arg2, [Flow(FlowDirection.In)] uint arg3);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="res">
-        /// To be added.
-        /// </param>
-        /// <param name="@in">
-        /// To be added.
-        /// </param>
-        /// <param name="outX">
-        /// To be added.
-        /// </param>
-        /// <param name="outY">
-        /// To be added.
-        /// </param>
-        /// <param name="outZ">
-        /// To be added.
-        /// </param>
-        /// <param name="outW">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glSwizzleEXT")]
-        public abstract void Swizzle([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] EXT outX, [Flow(FlowDirection.In)] EXT outY, [Flow(FlowDirection.In)] EXT outZ, [Flow(FlowDirection.In)] EXT outW);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glVariantbvEXT")]
-        public abstract unsafe void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] sbyte* addr);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glVariantbvEXT")]
-        public abstract void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] ref sbyte addr);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glVariantsvEXT")]
-        public abstract unsafe void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] short* addr);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glVariantsvEXT")]
-        public abstract void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] ref short addr);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glVariantivEXT")]
-        public abstract unsafe void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] int* addr);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glVariantivEXT")]
-        public abstract void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] ref int addr);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glVariantfvEXT")]
-        public abstract unsafe void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] float* addr);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glVariantfvEXT")]
-        public abstract void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] ref float addr);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glVariantdvEXT")]
-        public abstract unsafe void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] double* addr);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glVariantdvEXT")]
-        public abstract void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] ref double addr);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glVariantubvEXT")]
-        public abstract unsafe void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] byte* addr);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glVariantubvEXT")]
-        public abstract void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] ref byte addr);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glVariantusvEXT")]
-        public abstract unsafe void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] ushort* addr);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glVariantusvEXT")]
-        public abstract void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] ref ushort addr);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glVariantuivEXT")]
-        public abstract unsafe void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] uint* addr);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glVariantuivEXT")]
-        public abstract void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] ref uint addr);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="stride">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id, type, and stride.
-        /// </param>
-        [NativeApi(EntryPoint = "glVariantPointerEXT")]
-        public abstract unsafe void VariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] void* addr);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="stride">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id, type, and stride.
-        /// </param>
-        [NativeApi(EntryPoint = "glVariantPointerEXT")]
-        public abstract void VariantPointer<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] ref T0 addr) where T0 : unmanaged;
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="res">
-        /// To be added.
-        /// </param>
-        /// <param name="@in">
-        /// To be added.
-        /// </param>
-        /// <param name="outX">
-        /// To be added.
-        /// </param>
-        /// <param name="outY">
-        /// To be added.
-        /// </param>
-        /// <param name="outZ">
-        /// To be added.
-        /// </param>
-        /// <param name="outW">
-        /// To be added.
-        /// </param>
-        [NativeApi(EntryPoint = "glWriteMaskEXT")]
-        public abstract void WriteMask([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] EXT outX, [Flow(FlowDirection.In)] EXT outY, [Flow(FlowDirection.In)] EXT outZ, [Flow(FlowDirection.In)] EXT outW);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="light">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
-        [NativeApi(EntryPoint = "glBindLightParameterEXT")]
-        public abstract uint BindLightParameter([Flow(FlowDirection.In)] LightName light, [Flow(FlowDirection.In)] LightParameter value);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="face">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
-        [NativeApi(EntryPoint = "glBindMaterialParameterEXT")]
-        public abstract uint BindMaterialParameter([Flow(FlowDirection.In)] EXT face, [Flow(FlowDirection.In)] MaterialParameter value);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
-        [NativeApi(EntryPoint = "glBindParameterEXT")]
-        public abstract uint BindParameter([Flow(FlowDirection.In)] VertexShaderParameterEXT value);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="unit">
-        /// To be added.
-        /// </param>
-        /// <param name="coord">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
-        [NativeApi(EntryPoint = "glBindTexGenParameterEXT")]
-        public abstract uint BindTexGenParameter([Flow(FlowDirection.In)] TextureUnit unit, [Flow(FlowDirection.In)] TextureCoordName coord, [Flow(FlowDirection.In)] TextureGenParameter value);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="unit">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
-        [NativeApi(EntryPoint = "glBindTextureUnitParameterEXT")]
-        public abstract uint BindTextureUnitParameter([Flow(FlowDirection.In)] TextureUnit unit, [Flow(FlowDirection.In)] VertexShaderTextureUnitParameter value);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="datatype">
-        /// To be added.
-        /// </param>
-        /// <param name="storagetype">
-        /// To be added.
-        /// </param>
-        /// <param name="range">
-        /// To be added.
-        /// </param>
-        /// <param name="components">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
-        [NativeApi(EntryPoint = "glGenSymbolsEXT")]
-        public abstract uint GenSymbol([Flow(FlowDirection.In)] DataTypeEXT datatype, [Flow(FlowDirection.In)] VertexShaderStorageTypeEXT storagetype, [Flow(FlowDirection.In)] ParameterRangeEXT range, [Flow(FlowDirection.In)] uint components);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetInvariantBooleanvEXT")]
-        public abstract unsafe void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetInvariantBooleanvEXT")]
-        public abstract void GetInvariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetInvariantFloatvEXT")]
-        public abstract unsafe void GetInvariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetInvariantFloatvEXT")]
-        public abstract void GetInvariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out float data);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetInvariantIntegervEXT")]
-        public abstract unsafe void GetInvariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetInvariantIntegervEXT")]
-        public abstract void GetInvariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out int data);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetLocalConstantBooleanvEXT")]
-        public abstract unsafe void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetLocalConstantBooleanvEXT")]
-        public abstract void GetLocalConstantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetLocalConstantFloatvEXT")]
-        public abstract unsafe void GetLocalConstantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetLocalConstantFloatvEXT")]
-        public abstract void GetLocalConstantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out float data);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetLocalConstantIntegervEXT")]
-        public abstract unsafe void GetLocalConstantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetLocalConstantIntegervEXT")]
-        public abstract void GetLocalConstantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out int data);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetVariantBooleanvEXT")]
-        public abstract unsafe void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] bool* data);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetVariantBooleanvEXT")]
-        public abstract void GetVariantBoolean([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out bool data);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetVariantFloatvEXT")]
-        public abstract unsafe void GetVariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] float* data);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetVariantFloatvEXT")]
-        public abstract void GetVariantFloat([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out float data);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetVariantIntegervEXT")]
-        public abstract unsafe void GetVariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] int* data);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetVariantIntegervEXT")]
-        public abstract void GetVariantInteger([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out int data);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetVariantPointervEXT")]
-        public abstract unsafe void GetVariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] void** data);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is computed from id.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetVariantPointervEXT")]
-        public abstract unsafe void GetVariantPointer<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] GetVariantValueEXT value, [Count(Computed = "id"), Flow(FlowDirection.Out)] out T0* data) where T0 : unmanaged;
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="cap">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glIsVariantEnabledEXT")]
-        public abstract bool IsVariantEnabled([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] VariantCapEXT cap);
+        public partial bool IsVariantEnabled([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] VariantCapEXT cap);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id and type.
-        /// </param>
         [NativeApi(EntryPoint = "glSetInvariantEXT")]
-        public abstract unsafe void SetInvariant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
+        public unsafe partial void SetInvariant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id and type.
-        /// </param>
         [NativeApi(EntryPoint = "glSetInvariantEXT")]
-        public abstract void SetInvariant<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] ref T0 addr) where T0 : unmanaged;
+        public partial void SetInvariant<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] in T0 addr) where T0 : unmanaged;
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id and type.
-        /// </param>
+        [NativeApi(EntryPoint = "glSetInvariantEXT")]
+        public unsafe partial void SetInvariant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
+
+        [NativeApi(EntryPoint = "glSetInvariantEXT")]
+        public partial void SetInvariant<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] in T0 addr) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "glSetLocalConstantEXT")]
-        public abstract unsafe void SetLocalConstant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
+        public unsafe partial void SetLocalConstant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id and type.
-        /// </param>
         [NativeApi(EntryPoint = "glSetLocalConstantEXT")]
-        public abstract void SetLocalConstant<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] ref T0 addr) where T0 : unmanaged;
+        public partial void SetLocalConstant<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] in T0 addr) where T0 : unmanaged;
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="op">
-        /// To be added.
-        /// </param>
-        /// <param name="res">
-        /// To be added.
-        /// </param>
-        /// <param name="arg1">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glSetLocalConstantEXT")]
+        public unsafe partial void SetLocalConstant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] void* addr);
+
+        [NativeApi(EntryPoint = "glSetLocalConstantEXT")]
+        public partial void SetLocalConstant<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Count(Computed = "id, type"), Flow(FlowDirection.In)] in T0 addr) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "glShaderOp1EXT")]
-        public abstract void ShaderOp1([Flow(FlowDirection.In)] VertexShaderOpEXT op, [Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint arg1);
+        public partial void ShaderOp1([Flow(FlowDirection.In)] EXT op, [Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint arg1);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="op">
-        /// To be added.
-        /// </param>
-        /// <param name="res">
-        /// To be added.
-        /// </param>
-        /// <param name="arg1">
-        /// To be added.
-        /// </param>
-        /// <param name="arg2">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glShaderOp1EXT")]
+        public partial void ShaderOp1([Flow(FlowDirection.In)] VertexShaderOpEXT op, [Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint arg1);
+
         [NativeApi(EntryPoint = "glShaderOp2EXT")]
-        public abstract void ShaderOp2([Flow(FlowDirection.In)] VertexShaderOpEXT op, [Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint arg1, [Flow(FlowDirection.In)] uint arg2);
+        public partial void ShaderOp2([Flow(FlowDirection.In)] EXT op, [Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint arg1, [Flow(FlowDirection.In)] uint arg2);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="op">
-        /// To be added.
-        /// </param>
-        /// <param name="res">
-        /// To be added.
-        /// </param>
-        /// <param name="arg1">
-        /// To be added.
-        /// </param>
-        /// <param name="arg2">
-        /// To be added.
-        /// </param>
-        /// <param name="arg3">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glShaderOp2EXT")]
+        public partial void ShaderOp2([Flow(FlowDirection.In)] VertexShaderOpEXT op, [Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint arg1, [Flow(FlowDirection.In)] uint arg2);
+
         [NativeApi(EntryPoint = "glShaderOp3EXT")]
-        public abstract void ShaderOp3([Flow(FlowDirection.In)] VertexShaderOpEXT op, [Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint arg1, [Flow(FlowDirection.In)] uint arg2, [Flow(FlowDirection.In)] uint arg3);
+        public partial void ShaderOp3([Flow(FlowDirection.In)] EXT op, [Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint arg1, [Flow(FlowDirection.In)] uint arg2, [Flow(FlowDirection.In)] uint arg3);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="res">
-        /// To be added.
-        /// </param>
-        /// <param name="@in">
-        /// To be added.
-        /// </param>
-        /// <param name="outX">
-        /// To be added.
-        /// </param>
-        /// <param name="outY">
-        /// To be added.
-        /// </param>
-        /// <param name="outZ">
-        /// To be added.
-        /// </param>
-        /// <param name="outW">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glShaderOp3EXT")]
+        public partial void ShaderOp3([Flow(FlowDirection.In)] VertexShaderOpEXT op, [Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint arg1, [Flow(FlowDirection.In)] uint arg2, [Flow(FlowDirection.In)] uint arg3);
+
         [NativeApi(EntryPoint = "glSwizzleEXT")]
-        public abstract void Swizzle([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outX, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outY, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outZ, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outW);
+        public partial void Swizzle([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] EXT outX, [Flow(FlowDirection.In)] EXT outY, [Flow(FlowDirection.In)] EXT outZ, [Flow(FlowDirection.In)] EXT outW);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glSwizzleEXT")]
+        public partial void Swizzle([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] EXT outX, [Flow(FlowDirection.In)] EXT outY, [Flow(FlowDirection.In)] EXT outZ, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outW);
+
+        [NativeApi(EntryPoint = "glSwizzleEXT")]
+        public partial void Swizzle([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] EXT outX, [Flow(FlowDirection.In)] EXT outY, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outZ, [Flow(FlowDirection.In)] EXT outW);
+
+        [NativeApi(EntryPoint = "glSwizzleEXT")]
+        public partial void Swizzle([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] EXT outX, [Flow(FlowDirection.In)] EXT outY, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outZ, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outW);
+
+        [NativeApi(EntryPoint = "glSwizzleEXT")]
+        public partial void Swizzle([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] EXT outX, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outY, [Flow(FlowDirection.In)] EXT outZ, [Flow(FlowDirection.In)] EXT outW);
+
+        [NativeApi(EntryPoint = "glSwizzleEXT")]
+        public partial void Swizzle([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] EXT outX, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outY, [Flow(FlowDirection.In)] EXT outZ, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outW);
+
+        [NativeApi(EntryPoint = "glSwizzleEXT")]
+        public partial void Swizzle([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] EXT outX, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outY, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outZ, [Flow(FlowDirection.In)] EXT outW);
+
+        [NativeApi(EntryPoint = "glSwizzleEXT")]
+        public partial void Swizzle([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] EXT outX, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outY, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outZ, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outW);
+
+        [NativeApi(EntryPoint = "glSwizzleEXT")]
+        public partial void Swizzle([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outX, [Flow(FlowDirection.In)] EXT outY, [Flow(FlowDirection.In)] EXT outZ, [Flow(FlowDirection.In)] EXT outW);
+
+        [NativeApi(EntryPoint = "glSwizzleEXT")]
+        public partial void Swizzle([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outX, [Flow(FlowDirection.In)] EXT outY, [Flow(FlowDirection.In)] EXT outZ, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outW);
+
+        [NativeApi(EntryPoint = "glSwizzleEXT")]
+        public partial void Swizzle([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outX, [Flow(FlowDirection.In)] EXT outY, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outZ, [Flow(FlowDirection.In)] EXT outW);
+
+        [NativeApi(EntryPoint = "glSwizzleEXT")]
+        public partial void Swizzle([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outX, [Flow(FlowDirection.In)] EXT outY, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outZ, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outW);
+
+        [NativeApi(EntryPoint = "glSwizzleEXT")]
+        public partial void Swizzle([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outX, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outY, [Flow(FlowDirection.In)] EXT outZ, [Flow(FlowDirection.In)] EXT outW);
+
+        [NativeApi(EntryPoint = "glSwizzleEXT")]
+        public partial void Swizzle([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outX, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outY, [Flow(FlowDirection.In)] EXT outZ, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outW);
+
+        [NativeApi(EntryPoint = "glSwizzleEXT")]
+        public partial void Swizzle([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outX, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outY, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outZ, [Flow(FlowDirection.In)] EXT outW);
+
+        [NativeApi(EntryPoint = "glSwizzleEXT")]
+        public partial void Swizzle([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outX, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outY, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outZ, [Flow(FlowDirection.In)] VertexShaderCoordOutEXT outW);
+
+        [NativeApi(EntryPoint = "glVariantbvEXT")]
+        public unsafe partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] sbyte* addr);
+
+        [NativeApi(EntryPoint = "glVariantbvEXT")]
+        public partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] in sbyte addr);
+
+        [NativeApi(EntryPoint = "glVariantsvEXT")]
+        public unsafe partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] short* addr);
+
+        [NativeApi(EntryPoint = "glVariantsvEXT")]
+        public partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] in short addr);
+
+        [NativeApi(EntryPoint = "glVariantivEXT")]
+        public unsafe partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] int* addr);
+
+        [NativeApi(EntryPoint = "glVariantivEXT")]
+        public partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] in int addr);
+
+        [NativeApi(EntryPoint = "glVariantfvEXT")]
+        public unsafe partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] float* addr);
+
+        [NativeApi(EntryPoint = "glVariantfvEXT")]
+        public partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] in float addr);
+
+        [NativeApi(EntryPoint = "glVariantdvEXT")]
+        public unsafe partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] double* addr);
+
+        [NativeApi(EntryPoint = "glVariantdvEXT")]
+        public partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] in double addr);
+
         [NativeApi(EntryPoint = "glVariantubvEXT")]
-        public abstract void Variant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] string addr);
+        public unsafe partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] byte* addr);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="stride">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id, type, and stride.
-        /// </param>
+        [NativeApi(EntryPoint = "glVariantubvEXT")]
+        public partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] in byte addr);
+
+        [NativeApi(EntryPoint = "glVariantubvEXT")]
+        public partial void Variant([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] string addr);
+
+        [NativeApi(EntryPoint = "glVariantusvEXT")]
+        public unsafe partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] ushort* addr);
+
+        [NativeApi(EntryPoint = "glVariantusvEXT")]
+        public partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] in ushort addr);
+
+        [NativeApi(EntryPoint = "glVariantuivEXT")]
+        public unsafe partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] uint* addr);
+
+        [NativeApi(EntryPoint = "glVariantuivEXT")]
+        public partial void Variant([Flow(FlowDirection.In)] uint id, [Count(Computed = "id"), Flow(FlowDirection.In)] in uint addr);
+
         [NativeApi(EntryPoint = "glVariantPointerEXT")]
-        public abstract unsafe void VariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] void* addr);
+        public unsafe partial void VariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] void* addr);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="id">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="stride">
-        /// To be added.
-        /// </param>
-        /// <param name="addr">
-        /// To be added.
-        /// This parameter's element count is computed from id, type, and stride.
-        /// </param>
         [NativeApi(EntryPoint = "glVariantPointerEXT")]
-        public abstract void VariantPointer<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] ref T0 addr) where T0 : unmanaged;
+        public partial void VariantPointer<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] in T0 addr) where T0 : unmanaged;
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="res">
-        /// To be added.
-        /// </param>
-        /// <param name="@in">
-        /// To be added.
-        /// </param>
-        /// <param name="outX">
-        /// To be added.
-        /// </param>
-        /// <param name="outY">
-        /// To be added.
-        /// </param>
-        /// <param name="outZ">
-        /// To be added.
-        /// </param>
-        /// <param name="outW">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glVariantPointerEXT")]
+        public unsafe partial void VariantPointer([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] void* addr);
+
+        [NativeApi(EntryPoint = "glVariantPointerEXT")]
+        public partial void VariantPointer<T0>([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "id, type, stride"), Flow(FlowDirection.In)] in T0 addr) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "glWriteMaskEXT")]
-        public abstract void WriteMask([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outX, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outY, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outZ, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outW);
+        public partial void WriteMask([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] EXT outX, [Flow(FlowDirection.In)] EXT outY, [Flow(FlowDirection.In)] EXT outZ, [Flow(FlowDirection.In)] EXT outW);
 
-        public ExtVertexShader(ref NativeApiContext ctx)
-            : base(ref ctx)
+        [NativeApi(EntryPoint = "glWriteMaskEXT")]
+        public partial void WriteMask([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] EXT outX, [Flow(FlowDirection.In)] EXT outY, [Flow(FlowDirection.In)] EXT outZ, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outW);
+
+        [NativeApi(EntryPoint = "glWriteMaskEXT")]
+        public partial void WriteMask([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] EXT outX, [Flow(FlowDirection.In)] EXT outY, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outZ, [Flow(FlowDirection.In)] EXT outW);
+
+        [NativeApi(EntryPoint = "glWriteMaskEXT")]
+        public partial void WriteMask([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] EXT outX, [Flow(FlowDirection.In)] EXT outY, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outZ, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outW);
+
+        [NativeApi(EntryPoint = "glWriteMaskEXT")]
+        public partial void WriteMask([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] EXT outX, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outY, [Flow(FlowDirection.In)] EXT outZ, [Flow(FlowDirection.In)] EXT outW);
+
+        [NativeApi(EntryPoint = "glWriteMaskEXT")]
+        public partial void WriteMask([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] EXT outX, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outY, [Flow(FlowDirection.In)] EXT outZ, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outW);
+
+        [NativeApi(EntryPoint = "glWriteMaskEXT")]
+        public partial void WriteMask([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] EXT outX, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outY, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outZ, [Flow(FlowDirection.In)] EXT outW);
+
+        [NativeApi(EntryPoint = "glWriteMaskEXT")]
+        public partial void WriteMask([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] EXT outX, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outY, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outZ, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outW);
+
+        [NativeApi(EntryPoint = "glWriteMaskEXT")]
+        public partial void WriteMask([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outX, [Flow(FlowDirection.In)] EXT outY, [Flow(FlowDirection.In)] EXT outZ, [Flow(FlowDirection.In)] EXT outW);
+
+        [NativeApi(EntryPoint = "glWriteMaskEXT")]
+        public partial void WriteMask([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outX, [Flow(FlowDirection.In)] EXT outY, [Flow(FlowDirection.In)] EXT outZ, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outW);
+
+        [NativeApi(EntryPoint = "glWriteMaskEXT")]
+        public partial void WriteMask([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outX, [Flow(FlowDirection.In)] EXT outY, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outZ, [Flow(FlowDirection.In)] EXT outW);
+
+        [NativeApi(EntryPoint = "glWriteMaskEXT")]
+        public partial void WriteMask([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outX, [Flow(FlowDirection.In)] EXT outY, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outZ, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outW);
+
+        [NativeApi(EntryPoint = "glWriteMaskEXT")]
+        public partial void WriteMask([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outX, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outY, [Flow(FlowDirection.In)] EXT outZ, [Flow(FlowDirection.In)] EXT outW);
+
+        [NativeApi(EntryPoint = "glWriteMaskEXT")]
+        public partial void WriteMask([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outX, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outY, [Flow(FlowDirection.In)] EXT outZ, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outW);
+
+        [NativeApi(EntryPoint = "glWriteMaskEXT")]
+        public partial void WriteMask([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outX, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outY, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outZ, [Flow(FlowDirection.In)] EXT outW);
+
+        [NativeApi(EntryPoint = "glWriteMaskEXT")]
+        public partial void WriteMask([Flow(FlowDirection.In)] uint res, [Flow(FlowDirection.In)] uint @in, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outX, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outY, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outZ, [Flow(FlowDirection.In)] VertexShaderWriteMaskEXT outW);
+
+        public ExtVertexShader(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

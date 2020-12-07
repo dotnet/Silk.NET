@@ -5,15 +5,20 @@
 
 
 using System;
+using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy
 {
+    [NativeName("Name", "Buffer")]
     public enum Buffer
     {
+        [NativeName("Name", "GL_COLOR")]
         Color = 0x1800,
+        [NativeName("Name", "GL_DEPTH")]
         Depth = 0x1801,
+        [NativeName("Name", "GL_STENCIL")]
         Stencil = 0x1802,
     }
 }

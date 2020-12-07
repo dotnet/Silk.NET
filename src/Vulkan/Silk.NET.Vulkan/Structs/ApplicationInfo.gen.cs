@@ -6,49 +6,102 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct ApplicationInfo
+    [NativeName("Name", "VkApplicationInfo")]
+    public unsafe partial struct ApplicationInfo
     {
         public ApplicationInfo
         (
-            StructureType sType = StructureType.ApplicationInfo,
-            void* pNext = default,
-            byte* pApplicationName = default,
-            uint applicationVersion = default,
-            byte* pEngineName = default,
-            uint engineVersion = default,
-            uint apiVersion = default
-        )
+            StructureType? sType = StructureType.ApplicationInfo,
+            void* pNext = null,
+            byte* pApplicationName = null,
+            uint? applicationVersion = null,
+            byte* pEngineName = null,
+            uint? engineVersion = null,
+            uint? apiVersion = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           PApplicationName = pApplicationName;
-           ApplicationVersion = applicationVersion;
-           PEngineName = pEngineName;
-           EngineVersion = engineVersion;
-           ApiVersion = apiVersion;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (pApplicationName is not null)
+            {
+                PApplicationName = pApplicationName;
+            }
+
+            if (applicationVersion is not null)
+            {
+                ApplicationVersion = applicationVersion.Value;
+            }
+
+            if (pEngineName is not null)
+            {
+                PEngineName = pEngineName;
+            }
+
+            if (engineVersion is not null)
+            {
+                EngineVersion = engineVersion.Value;
+            }
+
+            if (apiVersion is not null)
+            {
+                ApiVersion = apiVersion.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "char*")]
+        [NativeName("Type.Name", "char")]
+        [NativeName("Name", "pApplicationName")]
         public byte* PApplicationName;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "applicationVersion")]
         public uint ApplicationVersion;
 /// <summary></summary>
+        [NativeName("Type", "char*")]
+        [NativeName("Type.Name", "char")]
+        [NativeName("Name", "pEngineName")]
         public byte* PEngineName;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "engineVersion")]
         public uint EngineVersion;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "apiVersion")]
         public uint ApiVersion;
     }
 }

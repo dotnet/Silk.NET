@@ -4,27 +4,30 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.Vulkan;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.Vulkan;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan.Extensions.EXT
 {
     [Extension("VK_EXT_line_rasterization")]
-    public abstract unsafe partial class ExtLineRasterization : NativeExtension<Vk>
+    public unsafe partial class ExtLineRasterization : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_EXT_line_rasterization";
         /// <summary>To be added.</summary>
         [NativeApi(EntryPoint = "vkCmdSetLineStippleEXT")]
-        public abstract void CmdSetLineStipple([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint lineStippleFactor, [Count(Count = 0)] ushort lineStipplePattern);
+        public partial void CmdSetLineStipple([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint lineStippleFactor, [Count(Count = 0)] ushort lineStipplePattern);
 
-        public ExtLineRasterization(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtLineRasterization(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

@@ -6,33 +6,58 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct DeviceQueueGlobalPriorityCreateInfoEXT
+    [NativeName("Name", "VkDeviceQueueGlobalPriorityCreateInfoEXT")]
+    public unsafe partial struct DeviceQueueGlobalPriorityCreateInfoEXT
     {
         public DeviceQueueGlobalPriorityCreateInfoEXT
         (
-            StructureType sType = StructureType.DeviceQueueGlobalPriorityCreateInfoExt,
-            void* pNext = default,
-            QueueGlobalPriorityEXT globalPriority = default
-        )
+            StructureType? sType = StructureType.DeviceQueueGlobalPriorityCreateInfoExt,
+            void* pNext = null,
+            QueueGlobalPriorityEXT? globalPriority = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           GlobalPriority = globalPriority;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (globalPriority is not null)
+            {
+                GlobalPriority = globalPriority.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkQueueGlobalPriorityEXT")]
+        [NativeName("Type.Name", "VkQueueGlobalPriorityEXT")]
+        [NativeName("Name", "globalPriority")]
         public QueueGlobalPriorityEXT GlobalPriority;
     }
 }

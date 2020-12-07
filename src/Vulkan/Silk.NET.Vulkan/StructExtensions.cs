@@ -3,15 +3,15 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using Silk.NET.GLFW;
+using Silk.NET.Core.Native;
 
 namespace Silk.NET.Vulkan
 {
     public static class StructExtensions
     {
-        public static SurfaceKHR ToSurface(this VkHandle handle)
+        public static SurfaceKHR ToSurface(this VkNonDispatchableHandle handle)
         {
-            return new SurfaceKHR { Handle = (ulong) handle.Handle.ToInt64() };
+            return new SurfaceKHR {Handle = handle.Handle};
         }
 
         public static VkHandle ToHandle(this Instance instance)

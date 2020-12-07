@@ -4,35 +4,29 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL.Legacy;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_depth_bounds_test")]
-    public abstract unsafe partial class ExtDepthBoundsTest : NativeExtension<GL>
+    public unsafe partial class ExtDepthBoundsTest : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_depth_bounds_test";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="zmin">
-        /// To be added.
-        /// </param>
-        /// <param name="zmax">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glDepthBoundsEXT")]
-        public abstract void DepthBounds([Flow(FlowDirection.In)] double zmin, [Flow(FlowDirection.In)] double zmax);
+        public partial void DepthBounds([Flow(FlowDirection.In)] double zmin, [Flow(FlowDirection.In)] double zmax);
 
-        public ExtDepthBoundsTest(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtDepthBoundsTest(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

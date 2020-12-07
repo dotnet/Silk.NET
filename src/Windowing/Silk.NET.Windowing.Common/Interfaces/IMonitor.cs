@@ -6,7 +6,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace Silk.NET.Windowing.Common
+namespace Silk.NET.Windowing
 {
     /// <summary>
     /// An interface representing a monitor.
@@ -36,6 +36,9 @@ namespace Silk.NET.Windowing.Common
         /// <summary>
         /// This monitor's gamma correction.
         /// </summary>
+        /// <remarks>
+        /// Only supported by GLFW, has no effect on SDL.
+        /// </remarks>
         float Gamma { get; set; }
 
         /// <summary>

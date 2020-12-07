@@ -4,53 +4,35 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL.Legacy;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [Extension("EXT_multisample")]
-    public abstract unsafe partial class ExtMultisample : NativeExtension<GL>
+    public unsafe partial class ExtMultisample : NativeExtension<GL>
     {
         public const string ExtensionName = "EXT_multisample";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="value">
-        /// To be added.
-        /// </param>
-        /// <param name="invert">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glSampleMaskEXT")]
-        public abstract void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
+        public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pattern">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glSamplePatternEXT")]
-        public abstract void SamplePattern([Flow(FlowDirection.In)] EXT pattern);
+        public partial void SamplePattern([Flow(FlowDirection.In)] EXT pattern);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="pattern">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glSamplePatternEXT")]
-        public abstract void SamplePattern([Flow(FlowDirection.In)] SamplePatternEXT pattern);
+        public partial void SamplePattern([Flow(FlowDirection.In)] SamplePatternEXT pattern);
 
-        public ExtMultisample(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ExtMultisample(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

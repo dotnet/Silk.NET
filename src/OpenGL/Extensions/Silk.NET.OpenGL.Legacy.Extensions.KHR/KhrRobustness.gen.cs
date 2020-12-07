@@ -4,268 +4,71 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL.Legacy;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL.Legacy;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
 {
     [Extension("KHR_robustness")]
-    public abstract unsafe partial class KhrRobustness : NativeExtension<GL>
+    public unsafe partial class KhrRobustness : NativeExtension<GL>
     {
         public const string ExtensionName = "KHR_robustness";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <returns>See summary.</returns>
         [NativeApi(EntryPoint = "glGetGraphicsResetStatus")]
-        public abstract KHR GetGraphicsResetStatus();
+        public partial KHR GetGraphicsResetStatus();
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="location">
-        /// To be added.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is taken from bufSize.
-        /// </param>
         [NativeApi(EntryPoint = "glGetnUniformfv")]
-        public abstract unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] float* @params);
+        public unsafe partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] float* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="location">
-        /// To be added.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is taken from bufSize.
-        /// </param>
         [NativeApi(EntryPoint = "glGetnUniformfv")]
-        public abstract void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> @params);
+        public partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out float @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="location">
-        /// To be added.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is taken from bufSize.
-        /// </param>
         [NativeApi(EntryPoint = "glGetnUniformiv")]
-        public abstract unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] int* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="location">
-        /// To be added.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is taken from bufSize.
-        /// </param>
         [NativeApi(EntryPoint = "glGetnUniformiv")]
-        public abstract void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<int> @params);
+        public partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out int @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="location">
-        /// To be added.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is taken from bufSize.
-        /// </param>
         [NativeApi(EntryPoint = "glGetnUniformuiv")]
-        public abstract unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] uint* @params);
+        public unsafe partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] uint* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="program">
-        /// To be added.
-        /// </param>
-        /// <param name="location">
-        /// To be added.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is taken from bufSize.
-        /// </param>
         [NativeApi(EntryPoint = "glGetnUniformuiv")]
-        public abstract void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<uint> @params);
+        public partial void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out uint @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="x">
-        /// To be added.
-        /// </param>
-        /// <param name="y">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
-        /// <param name="height">
-        /// To be added.
-        /// </param>
-        /// <param name="format">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is taken from bufSize.
-        /// </param>
         [NativeApi(EntryPoint = "glReadnPixels")]
-        public abstract unsafe void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] KHR format, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
+        public unsafe partial void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] KHR format, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="x">
-        /// To be added.
-        /// </param>
-        /// <param name="y">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
-        /// <param name="height">
-        /// To be added.
-        /// </param>
-        /// <param name="format">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is taken from bufSize.
-        /// </param>
         [NativeApi(EntryPoint = "glReadnPixels")]
-        public abstract void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] KHR format, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged;
+        public partial void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] KHR format, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="x">
-        /// To be added.
-        /// </param>
-        /// <param name="y">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
-        /// <param name="height">
-        /// To be added.
-        /// </param>
-        /// <param name="format">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is taken from bufSize.
-        /// </param>
         [NativeApi(EntryPoint = "glReadnPixels")]
-        public abstract unsafe void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
+        public unsafe partial void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] KHR format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="x">
-        /// To be added.
-        /// </param>
-        /// <param name="y">
-        /// To be added.
-        /// </param>
-        /// <param name="width">
-        /// To be added.
-        /// </param>
-        /// <param name="height">
-        /// To be added.
-        /// </param>
-        /// <param name="format">
-        /// To be added.
-        /// </param>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="data">
-        /// To be added.
-        /// This parameter's element count is taken from bufSize.
-        /// </param>
         [NativeApi(EntryPoint = "glReadnPixels")]
-        public abstract void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged;
+        public partial void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] KHR format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
-        public KhrRobustness(ref NativeApiContext ctx)
-            : base(ref ctx)
+        [NativeApi(EntryPoint = "glReadnPixels")]
+        public unsafe partial void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
+
+        [NativeApi(EntryPoint = "glReadnPixels")]
+        public partial void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glReadnPixels")]
+        public unsafe partial void ReadnPixels([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* data);
+
+        [NativeApi(EntryPoint = "glReadnPixels")]
+        public partial void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
+
+        public KhrRobustness(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

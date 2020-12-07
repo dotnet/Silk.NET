@@ -7,5 +7,5 @@ using System;
 
 namespace Silk.NET.OpenCL
 {
-    public unsafe delegate void NotifyCallback(char* errinfo, void* privateInfo, UIntPtr cb, void* userData);
+    public unsafe delegate void NotifyCallback(byte* errinfo, void* privateInfo, UIntPtr cb, void* userData);
 }

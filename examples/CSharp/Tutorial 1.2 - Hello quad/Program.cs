@@ -1,8 +1,6 @@
 using Silk.NET.Input;
-using Silk.NET.Input.Common;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
-using Silk.NET.Windowing.Common;
 using System;
 using System.Drawing;
 
@@ -94,7 +92,7 @@ namespace Tutorial
             Gl.BindBuffer(BufferTargetARB.ArrayBuffer, Vbo); //Binding the buffer.
             fixed (void* v = &Vertices[0])
             {
-                Gl.BufferData(BufferTargetARB.ArrayBuffer, (uint) (Vertices.Length * sizeof(uint)), v, BufferUsageARB.StaticDraw); //Setting buffer data.
+                Gl.BufferData(BufferTargetARB.ArrayBuffer, (UIntPtr) (Vertices.Length * sizeof(uint)), v, BufferUsageARB.StaticDraw); //Setting buffer data.
             }
 
             //Initializing a element buffer that holds the index data.
@@ -102,7 +100,7 @@ namespace Tutorial
             Gl.BindBuffer(BufferTargetARB.ElementArrayBuffer, Ebo); //Binding the buffer.
             fixed (void* i = &Indices[0])
             {
-                Gl.BufferData(BufferTargetARB.ElementArrayBuffer, (uint) (Indices.Length * sizeof(uint)), i, BufferUsageARB.StaticDraw); //Setting buffer data.
+                Gl.BufferData(BufferTargetARB.ElementArrayBuffer, (UIntPtr) (Indices.Length * sizeof(uint)), i, BufferUsageARB.StaticDraw); //Setting buffer data.
             }
 
             //Creating a vertex shader.

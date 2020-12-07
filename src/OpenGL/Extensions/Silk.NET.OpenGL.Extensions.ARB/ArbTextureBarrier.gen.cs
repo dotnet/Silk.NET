@@ -4,29 +4,29 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_texture_barrier")]
-    public abstract unsafe partial class ArbTextureBarrier : NativeExtension<GL>
+    public unsafe partial class ArbTextureBarrier : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_texture_barrier";
-        /// <summary>
-        /// To be added.
-        /// </summary>
         [NativeApi(EntryPoint = "glTextureBarrier")]
-        public abstract void TextureBarrier();
+        public partial void TextureBarrier();
 
-        public ArbTextureBarrier(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbTextureBarrier(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

@@ -6,7 +6,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Silk.NET.Input.Common
+namespace Silk.NET.Input
 {
     /// <summary>
     /// An interface representing the input context.
@@ -58,6 +58,6 @@ namespace Silk.NET.Input.Common
         /// <summary>
         /// Called when the connection status of a device changes.
         /// </summary>
-        event Action<IInputDevice, bool> ConnectionChanged;
+        event Action<IInputDevice, bool>? ConnectionChanged;
     }
 }

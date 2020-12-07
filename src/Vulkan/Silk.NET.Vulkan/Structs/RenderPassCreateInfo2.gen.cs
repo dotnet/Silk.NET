@@ -6,65 +6,146 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct RenderPassCreateInfo2
+    [NativeName("Name", "VkRenderPassCreateInfo2")]
+    public unsafe partial struct RenderPassCreateInfo2
     {
         public RenderPassCreateInfo2
         (
-            StructureType sType = StructureType.RenderPassCreateInfo2,
-            void* pNext = default,
-            RenderPassCreateFlags flags = default,
-            uint attachmentCount = default,
-            AttachmentDescription2* pAttachments = default,
-            uint subpassCount = default,
-            SubpassDescription2* pSubpasses = default,
-            uint dependencyCount = default,
-            SubpassDependency2* pDependencies = default,
-            uint correlatedViewMaskCount = default,
-            uint* pCorrelatedViewMasks = default
-        )
+            StructureType? sType = StructureType.RenderPassCreateInfo2,
+            void* pNext = null,
+            RenderPassCreateFlags? flags = null,
+            uint? attachmentCount = null,
+            AttachmentDescription2* pAttachments = null,
+            uint? subpassCount = null,
+            SubpassDescription2* pSubpasses = null,
+            uint? dependencyCount = null,
+            SubpassDependency2* pDependencies = null,
+            uint? correlatedViewMaskCount = null,
+            uint* pCorrelatedViewMasks = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           AttachmentCount = attachmentCount;
-           PAttachments = pAttachments;
-           SubpassCount = subpassCount;
-           PSubpasses = pSubpasses;
-           DependencyCount = dependencyCount;
-           PDependencies = pDependencies;
-           CorrelatedViewMaskCount = correlatedViewMaskCount;
-           PCorrelatedViewMasks = pCorrelatedViewMasks;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (attachmentCount is not null)
+            {
+                AttachmentCount = attachmentCount.Value;
+            }
+
+            if (pAttachments is not null)
+            {
+                PAttachments = pAttachments;
+            }
+
+            if (subpassCount is not null)
+            {
+                SubpassCount = subpassCount.Value;
+            }
+
+            if (pSubpasses is not null)
+            {
+                PSubpasses = pSubpasses;
+            }
+
+            if (dependencyCount is not null)
+            {
+                DependencyCount = dependencyCount.Value;
+            }
+
+            if (pDependencies is not null)
+            {
+                PDependencies = pDependencies;
+            }
+
+            if (correlatedViewMaskCount is not null)
+            {
+                CorrelatedViewMaskCount = correlatedViewMaskCount.Value;
+            }
+
+            if (pCorrelatedViewMasks is not null)
+            {
+                PCorrelatedViewMasks = pCorrelatedViewMasks;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkRenderPassCreateFlags")]
+        [NativeName("Type.Name", "VkRenderPassCreateFlags")]
+        [NativeName("Name", "flags")]
         public RenderPassCreateFlags Flags;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "attachmentCount")]
         public uint AttachmentCount;
 /// <summary></summary>
+        [NativeName("Type", "VkAttachmentDescription2*")]
+        [NativeName("Type.Name", "VkAttachmentDescription2")]
+        [NativeName("Name", "pAttachments")]
         public AttachmentDescription2* PAttachments;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "subpassCount")]
         public uint SubpassCount;
 /// <summary></summary>
+        [NativeName("Type", "VkSubpassDescription2*")]
+        [NativeName("Type.Name", "VkSubpassDescription2")]
+        [NativeName("Name", "pSubpasses")]
         public SubpassDescription2* PSubpasses;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "dependencyCount")]
         public uint DependencyCount;
 /// <summary></summary>
+        [NativeName("Type", "VkSubpassDependency2*")]
+        [NativeName("Type.Name", "VkSubpassDependency2")]
+        [NativeName("Name", "pDependencies")]
         public SubpassDependency2* PDependencies;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "correlatedViewMaskCount")]
         public uint CorrelatedViewMaskCount;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t*")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "pCorrelatedViewMasks")]
         public uint* PCorrelatedViewMasks;
     }
 }

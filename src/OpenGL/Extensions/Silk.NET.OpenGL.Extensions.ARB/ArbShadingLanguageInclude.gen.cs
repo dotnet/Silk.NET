@@ -4,445 +4,179 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGL;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGL;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGL.Extensions.ARB
 {
     [Extension("ARB_shading_language_include")]
-    public abstract unsafe partial class ArbShadingLanguageInclude : NativeExtension<GL>
+    public unsafe partial class ArbShadingLanguageInclude : NativeExtension<GL>
     {
         public const string ExtensionName = "ARB_shading_language_include";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="shader">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="path">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        /// <param name="length">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
         [NativeApi(EntryPoint = "glCompileShaderIncludeARB")]
-        public abstract unsafe void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** path, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* length);
+        public unsafe partial void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** path, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* length);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="shader">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="path">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        /// <param name="length">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
         [NativeApi(EntryPoint = "glCompileShaderIncludeARB")]
-        public abstract unsafe void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] char** path, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> length);
+        public unsafe partial void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** path, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int length);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="namelen">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// This parameter's element count is taken from namelen.
-        /// </param>
+        [NativeApi(EntryPoint = "glCompileShaderIncludeARB")]
+        public unsafe partial void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in byte* path, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* length);
+
+        [NativeApi(EntryPoint = "glCompileShaderIncludeARB")]
+        public unsafe partial void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in byte* path, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int length);
+
         [NativeApi(EntryPoint = "glDeleteNamedStringARB")]
-        public abstract unsafe void DeleteNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] char* name);
+        public unsafe partial void DeleteNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="namelen">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// This parameter's element count is taken from namelen.
-        /// </param>
         [NativeApi(EntryPoint = "glDeleteNamedStringARB")]
-        public abstract void DeleteNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] Span<char> name);
+        public partial void DeleteNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="namelen">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// This parameter's element count is taken from namelen.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="stringlen">
-        /// To be added.
-        /// This parameter contains 1 elements.
-        /// </param>
-        /// <param name="@string">
-        /// To be added.
-        /// This parameter's element count is taken from bufSize.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetNamedStringARB")]
-        public abstract unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] char* name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* @string);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="namelen">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// This parameter's element count is taken from namelen.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="stringlen">
-        /// To be added.
-        /// This parameter contains 1 elements.
-        /// </param>
-        /// <param name="@string">
-        /// To be added.
-        /// This parameter's element count is taken from bufSize.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetNamedStringARB")]
-        public abstract void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] Span<char> name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> @string);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="namelen">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// This parameter's element count is taken from namelen.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetNamedStringivARB")]
-        public abstract unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] char* name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="namelen">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// This parameter's element count is taken from namelen.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
-        [NativeApi(EntryPoint = "glGetNamedStringivARB")]
-        public abstract void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] Span<char> name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="namelen">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// This parameter's element count is taken from namelen.
-        /// </param>
-        /// <returns>See summary.</returns>
-        [NativeApi(EntryPoint = "glIsNamedStringARB")]
-        public abstract unsafe bool IsNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] char* name);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="namelen">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// This parameter's element count is taken from namelen.
-        /// </param>
-        /// <returns>See summary.</returns>
-        [NativeApi(EntryPoint = "glIsNamedStringARB")]
-        public abstract bool IsNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] Span<char> name);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="namelen">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// This parameter's element count is taken from namelen.
-        /// </param>
-        /// <param name="stringlen">
-        /// To be added.
-        /// </param>
-        /// <param name="@string">
-        /// To be added.
-        /// This parameter's element count is taken from stringlen.
-        /// </param>
-        [NativeApi(EntryPoint = "glNamedStringARB")]
-        public abstract unsafe void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] char* name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] char* @string);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="namelen">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// This parameter's element count is taken from namelen.
-        /// </param>
-        /// <param name="stringlen">
-        /// To be added.
-        /// </param>
-        /// <param name="@string">
-        /// To be added.
-        /// This parameter's element count is taken from stringlen.
-        /// </param>
-        [NativeApi(EntryPoint = "glNamedStringARB")]
-        public abstract void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] Span<char> name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] Span<char> @string);
-
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="namelen">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glDeleteNamedStringARB")]
-        public abstract void DeleteNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name);
+        public partial void DeleteNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="namelen">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="stringlen">
-        /// To be added.
-        /// This parameter contains 1 elements.
-        /// </param>
-        /// <param name="@string">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGetNamedStringARB")]
-        public abstract unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, 1)] out string @string);
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* @string);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="namelen">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="stringlen">
-        /// To be added.
-        /// This parameter contains 1 elements.
-        /// </param>
-        /// <param name="@string">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGetNamedStringARB")]
-        public abstract void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, 1)] out string @string);
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte @string);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="namelen">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string @string);
+
+        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* @string);
+
+        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte @string);
+
+        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string @string);
+
+        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* @string);
+
+        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte @string);
+
+        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string @string);
+
+        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* @string);
+
+        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        public partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte @string);
+
+        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        public partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string @string);
+
+        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* @string);
+
+        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte @string);
+
+        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string @string);
+
+        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* @string);
+
+        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        public partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte @string);
+
+        [NativeApi(EntryPoint = "glGetNamedStringARB")]
+        public partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string @string);
+
         [NativeApi(EntryPoint = "glGetNamedStringivARB")]
-        public abstract unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="namelen">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// </param>
-        /// <param name="pname">
-        /// To be added.
-        /// </param>
-        /// <param name="@params">
-        /// To be added.
-        /// This parameter's element count is computed from pname.
-        /// </param>
         [NativeApi(EntryPoint = "glGetNamedStringivARB")]
-        public abstract void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="namelen">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// </param>
-        /// <returns>See summary.</returns>
+        [NativeApi(EntryPoint = "glGetNamedStringivARB")]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetNamedStringivARB")]
+        public partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+
+        [NativeApi(EntryPoint = "glGetNamedStringivARB")]
+        public unsafe partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+
+        [NativeApi(EntryPoint = "glGetNamedStringivARB")]
+        public partial void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+
         [NativeApi(EntryPoint = "glIsNamedStringARB")]
-        public abstract bool IsNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name);
+        public unsafe partial bool IsNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="type">
-        /// To be added.
-        /// </param>
-        /// <param name="namelen">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// </param>
-        /// <param name="stringlen">
-        /// To be added.
-        /// </param>
-        /// <param name="@string">
-        /// To be added.
-        /// </param>
+        [NativeApi(EntryPoint = "glIsNamedStringARB")]
+        public partial bool IsNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name);
+
+        [NativeApi(EntryPoint = "glIsNamedStringARB")]
+        public partial bool IsNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name);
+
         [NativeApi(EntryPoint = "glNamedStringARB")]
-        public abstract void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] int stringlen, [Flow(FlowDirection.In)] string @string);
+        public unsafe partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] byte* @string);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="shader">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="path">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        /// <param name="length">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
+        [NativeApi(EntryPoint = "glNamedStringARB")]
+        public unsafe partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] in byte @string);
+
+        [NativeApi(EntryPoint = "glNamedStringARB")]
+        public unsafe partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Flow(FlowDirection.In)] int stringlen, [Flow(FlowDirection.In)] string @string);
+
+        [NativeApi(EntryPoint = "glNamedStringARB")]
+        public unsafe partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] byte* @string);
+
+        [NativeApi(EntryPoint = "glNamedStringARB")]
+        public partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] in byte @string);
+
+        [NativeApi(EntryPoint = "glNamedStringARB")]
+        public partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] in byte name, [Flow(FlowDirection.In)] int stringlen, [Flow(FlowDirection.In)] string @string);
+
+        [NativeApi(EntryPoint = "glNamedStringARB")]
+        public unsafe partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] byte* @string);
+
+        [NativeApi(EntryPoint = "glNamedStringARB")]
+        public partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] in byte @string);
+
+        [NativeApi(EntryPoint = "glNamedStringARB")]
+        public partial void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Flow(FlowDirection.In)] int stringlen, [Flow(FlowDirection.In)] string @string);
+
         public unsafe void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] pathSa, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* length)
         {
             // StringArrayOverloader
-            var path = (char**) SilkMarshal.MarshalStringArrayToPtr(pathSa);
+            var path = (byte**) SilkMarshal.StringArrayToPtr(pathSa);
             CompileShaderInclude(shader, count, path, length);
             SilkMarshal.CopyPtrToStringArray((IntPtr) path, pathSa);
+            SilkMarshal.Free((IntPtr) path);
         }
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="shader">
-        /// To be added.
-        /// </param>
-        /// <param name="count">
-        /// To be added.
-        /// </param>
-        /// <param name="path">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        /// <param name="length">
-        /// To be added.
-        /// This parameter's element count is taken from count.
-        /// </param>
-        public unsafe void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] pathSa, [Count(Parameter = "count"), Flow(FlowDirection.In)] Span<int> length)
+        public unsafe void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] pathSa, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int length)
         {
             // StringArrayOverloader
-            var path = (char**) SilkMarshal.MarshalStringArrayToPtr(pathSa);
-            CompileShaderInclude(shader, count, path, length);
+            var path = (byte**) SilkMarshal.StringArrayToPtr(pathSa);
+            CompileShaderInclude(shader, count, path, in length);
             SilkMarshal.CopyPtrToStringArray((IntPtr) path, pathSa);
+            SilkMarshal.Free((IntPtr) path);
         }
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="namelen">
-        /// To be added.
-        /// </param>
-        /// <param name="name">
-        /// To be added.
-        /// This parameter's element count is taken from namelen.
-        /// </param>
-        public unsafe void DeleteNamedString([Count(Parameter = "namelen"), Flow(FlowDirection.In)] char name)
+        public unsafe void DeleteNamedString([Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte name)
         {
             // ArrayParameterOverloader
             DeleteNamedString(1, &name);
         }
 
-        public ArbShadingLanguageInclude(ref NativeApiContext ctx)
-            : base(ref ctx)
+        public ArbShadingLanguageInclude(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

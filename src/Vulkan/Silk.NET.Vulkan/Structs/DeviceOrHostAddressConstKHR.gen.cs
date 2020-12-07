@@ -6,32 +6,50 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
     [StructLayout(LayoutKind.Explicit)]
-    public unsafe struct DeviceOrHostAddressConstKHR
+    [NativeName("Name", "VkDeviceOrHostAddressConstKHR")]
+    public unsafe partial struct DeviceOrHostAddressConstKHR
     {
         public DeviceOrHostAddressConstKHR
         (
-            ulong deviceAddress = default,
-            void* hostAddress = default
-        )
+            ulong? deviceAddress = null,
+            void* hostAddress = null
+        ) : this()
         {
-           DeviceAddress = deviceAddress;
-           HostAddress = hostAddress;
+            if (deviceAddress is not null)
+            {
+                DeviceAddress = deviceAddress.Value;
+            }
+
+            if (hostAddress is not null)
+            {
+                HostAddress = hostAddress;
+            }
         }
 
 /// <summary></summary>
         [FieldOffset(0)]
+        [NativeName("Type", "VkDeviceAddress")]
+        [NativeName("Type.Name", "VkDeviceAddress")]
+        [NativeName("Name", "deviceAddress")]
         public ulong DeviceAddress;
 /// <summary></summary>
         [FieldOffset(0)]
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "hostAddress")]
         public void* HostAddress;
     }
 }

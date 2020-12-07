@@ -4,147 +4,62 @@
 // of the MIT license. See the LICENSE file for details.
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
-using Silk.NET.OpenGLES;
-using Silk.NET.Core.Loader;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
 using Silk.NET.Core.Attributes;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
+using Silk.NET.OpenGLES;
+using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.OpenGLES.Extensions.QCOM
 {
     [Extension("QCOM_driver_control")]
-    public abstract unsafe partial class QComDriverControl : NativeExtension<GL>
+    public unsafe partial class QComDriverControl : NativeExtension<GL>
     {
         public const string ExtensionName = "QCOM_driver_control";
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="driverControl">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glDisableDriverControlQCOM")]
-        public abstract void DisableDriverControl([Flow(FlowDirection.In)] uint driverControl);
+        public partial void DisableDriverControl([Flow(FlowDirection.In)] uint driverControl);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="driverControl">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glEnableDriverControlQCOM")]
-        public abstract void EnableDriverControl([Flow(FlowDirection.In)] uint driverControl);
+        public partial void EnableDriverControl([Flow(FlowDirection.In)] uint driverControl);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="num">
-        /// To be added.
-        /// </param>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="driverControls">
-        /// To be added.
-        /// This parameter's element count is taken from size.
-        /// </param>
         [NativeApi(EntryPoint = "glGetDriverControlsQCOM")]
-        public abstract unsafe void GetDriverControl([Flow(FlowDirection.Out)] int* num, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] uint* driverControls);
+        public unsafe partial void GetDriverControl([Flow(FlowDirection.Out)] int* num, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] uint* driverControls);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="num">
-        /// To be added.
-        /// </param>
-        /// <param name="size">
-        /// To be added.
-        /// </param>
-        /// <param name="driverControls">
-        /// To be added.
-        /// This parameter's element count is taken from size.
-        /// </param>
         [NativeApi(EntryPoint = "glGetDriverControlsQCOM")]
-        public abstract void GetDriverControl([Flow(FlowDirection.Out)] Span<int> num, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<uint> driverControls);
+        public unsafe partial void GetDriverControl([Flow(FlowDirection.Out)] int* num, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] out uint driverControls);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="driverControl">
-        /// To be added.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="length">
-        /// To be added.
-        /// </param>
-        /// <param name="driverControlString">
-        /// To be added.
-        /// This parameter's element count is taken from bufSize.
-        /// </param>
+        [NativeApi(EntryPoint = "glGetDriverControlsQCOM")]
+        public unsafe partial void GetDriverControl([Flow(FlowDirection.Out)] out int num, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] uint* driverControls);
+
+        [NativeApi(EntryPoint = "glGetDriverControlsQCOM")]
+        public partial void GetDriverControl([Flow(FlowDirection.Out)] out int num, [Flow(FlowDirection.In)] uint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] out uint driverControls);
+
         [NativeApi(EntryPoint = "glGetDriverControlStringQCOM")]
-        public abstract unsafe void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] char* driverControlString);
+        public unsafe partial void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* driverControlString);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="driverControl">
-        /// To be added.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="length">
-        /// To be added.
-        /// </param>
-        /// <param name="driverControlString">
-        /// To be added.
-        /// This parameter's element count is taken from bufSize.
-        /// </param>
         [NativeApi(EntryPoint = "glGetDriverControlStringQCOM")]
-        public abstract void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<char> driverControlString);
+        public unsafe partial void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte driverControlString);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="driverControl">
-        /// To be added.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="length">
-        /// To be added.
-        /// </param>
-        /// <param name="driverControlString">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGetDriverControlStringQCOM")]
-        public abstract unsafe void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string driverControlString);
+        public unsafe partial void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string driverControlString);
 
-        /// <summary>
-        /// To be added.
-        /// </summary>
-        /// <param name="driverControl">
-        /// To be added.
-        /// </param>
-        /// <param name="bufSize">
-        /// To be added.
-        /// </param>
-        /// <param name="length">
-        /// To be added.
-        /// </param>
-        /// <param name="driverControlString">
-        /// To be added.
-        /// </param>
         [NativeApi(EntryPoint = "glGetDriverControlStringQCOM")]
-        public abstract void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] Span<uint> length, [Flow(FlowDirection.Out), Ultz.SuperInvoke.InteropServices.CountAttribute(Ultz.SuperInvoke.InteropServices.CountType.ParameterReference, -2)] out string driverControlString);
+        public unsafe partial void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* driverControlString);
 
-        public QComDriverControl(ref NativeApiContext ctx)
-            : base(ref ctx)
+        [NativeApi(EntryPoint = "glGetDriverControlStringQCOM")]
+        public partial void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte driverControlString);
+
+        [NativeApi(EntryPoint = "glGetDriverControlStringQCOM")]
+        public partial void GetDriverControlString([Flow(FlowDirection.In)] uint driverControl, [Flow(FlowDirection.In)] uint bufSize, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string driverControlString);
+
+        public QComDriverControl(INativeContext ctx)
+            : base(ctx)
         {
         }
     }

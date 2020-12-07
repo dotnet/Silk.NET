@@ -6,33 +6,57 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct PhysicalDeviceMemoryBudgetPropertiesEXT
+    [NativeName("Name", "VkPhysicalDeviceMemoryBudgetPropertiesEXT")]
+    public unsafe partial struct PhysicalDeviceMemoryBudgetPropertiesEXT
     {
         public PhysicalDeviceMemoryBudgetPropertiesEXT
         (
-            StructureType sType = StructureType.PhysicalDeviceMemoryBudgetPropertiesExt,
-            void* pNext = default
-        )
+            StructureType? sType = StructureType.PhysicalDeviceMemoryBudgetPropertiesExt,
+            void* pNext = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
         /// <summary></summary>
-       public fixed ulong HeapBudget[16];
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "heapBudget")]
+        public fixed ulong HeapBudget[16];
         /// <summary></summary>
-       public fixed ulong HeapUsage[16];
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "heapUsage")]
+        public fixed ulong HeapUsage[16];
     }
 }

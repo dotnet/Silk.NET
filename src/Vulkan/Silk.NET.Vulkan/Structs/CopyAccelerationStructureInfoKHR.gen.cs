@@ -6,41 +6,80 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct CopyAccelerationStructureInfoKHR
+    [NativeName("Name", "VkCopyAccelerationStructureInfoKHR")]
+    public unsafe partial struct CopyAccelerationStructureInfoKHR
     {
         public CopyAccelerationStructureInfoKHR
         (
-            StructureType sType = StructureType.CopyAccelerationStructureInfoKhr,
-            void* pNext = default,
-            AccelerationStructureKHR src = default,
-            AccelerationStructureKHR dst = default,
-            CopyAccelerationStructureModeKHR mode = default
-        )
+            StructureType? sType = StructureType.CopyAccelerationStructureInfoKhr,
+            void* pNext = null,
+            AccelerationStructureKHR? src = null,
+            AccelerationStructureKHR? dst = null,
+            CopyAccelerationStructureModeKHR? mode = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           Src = src;
-           Dst = dst;
-           Mode = mode;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (src is not null)
+            {
+                Src = src.Value;
+            }
+
+            if (dst is not null)
+            {
+                Dst = dst.Value;
+            }
+
+            if (mode is not null)
+            {
+                Mode = mode.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkAccelerationStructureKHR")]
+        [NativeName("Type.Name", "VkAccelerationStructureKHR")]
+        [NativeName("Name", "src")]
         public AccelerationStructureKHR Src;
 /// <summary></summary>
+        [NativeName("Type", "VkAccelerationStructureKHR")]
+        [NativeName("Type.Name", "VkAccelerationStructureKHR")]
+        [NativeName("Name", "dst")]
         public AccelerationStructureKHR Dst;
 /// <summary></summary>
+        [NativeName("Type", "VkCopyAccelerationStructureModeKHR")]
+        [NativeName("Type.Name", "VkCopyAccelerationStructureModeKHR")]
+        [NativeName("Name", "mode")]
         public CopyAccelerationStructureModeKHR Mode;
     }
 }

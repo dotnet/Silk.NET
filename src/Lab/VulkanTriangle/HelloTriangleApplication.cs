@@ -8,13 +8,12 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Runtime.InteropServices;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Silk.NET.GLFW;
 using Silk.NET.Vulkan;
 using Silk.NET.Vulkan.Extensions.EXT;
 using Silk.NET.Vulkan.Extensions.KHR;
 using Silk.NET.Windowing;
-using Silk.NET.Windowing.Common;
 using Image = Silk.NET.Vulkan.Image;
 
 namespace VulkanTriangle
@@ -32,7 +31,7 @@ namespace VulkanTriangle
             Cleanup();
         }
 
-        private IVulkanWindow _window;
+        private IWindow _window;
 
         private Instance _instance;
         private DebugUtilsMessengerEXT _debugMessenger;
@@ -75,8 +74,8 @@ namespace VulkanTriangle
         private void InitWindow()
         {
             var opts = WindowOptions.DefaultVulkan;
-            _window = Window.Create(opts) as IVulkanWindow;
-            if (_window is null || !_window.IsVulkanSupported)
+            _window = Window.Create(opts);
+            if (_window?.VkSurface is null)
             {
                 throw new NotSupportedException("Windowing platform doesn't support Vulkan.");
             }
@@ -111,7 +110,7 @@ namespace VulkanTriangle
         private unsafe void DrawFrame(double obj)
         {
             var fence = _inFlightFences[_currentFrame];
-            _vk.WaitForFences(_device, 1, ref fence, Vk.True, ulong.MaxValue);
+            _vk.WaitForFences(_device, 1, in fence, Vk.True, ulong.MaxValue);
 
             uint imageIndex;
             _vkSwapchain.AcquireNextImage
@@ -119,7 +118,7 @@ namespace VulkanTriangle
 
             if (_imagesInFlight[imageIndex].Handle != 0)
             {
-                _vk.WaitForFences(_device, 1, ref _imagesInFlight[imageIndex], Vk.True, ulong.MaxValue);
+                _vk.WaitForFences(_device, 1, in _imagesInFlight[imageIndex], Vk.True, ulong.MaxValue);
             }
 
             _imagesInFlight[imageIndex] = _inFlightFences[_currentFrame];
@@ -234,8 +233,8 @@ namespace VulkanTriangle
                 PApplicationInfo = &appInfo
             };
 
-            var extensions = (byte**) _window.GetRequiredExtensions(out var extCount);
-            var newExtensions = stackalloc byte*[(int) (extCount + _instanceExtensions.Length)];
+            var extensions = (byte**) _window.VkSurface!.GetRequiredExtensions(out var extCount);
+            var newExtensions = stackalloc byte*[(int)(extCount + _instanceExtensions.Length)];
             for (var i = 0; i < extCount; i++)
             {
                 newExtensions[i] = extensions[i];
@@ -243,7 +242,7 @@ namespace VulkanTriangle
 
             for (var i = 0; i < _instanceExtensions.Length; i++)
             {
-                newExtensions[extCount + i] = (byte*) SilkMarshal.MarshalStringToPtr(_instanceExtensions[i]);
+                newExtensions[extCount + i] = (byte*) SilkMarshal.StringToPtr(_instanceExtensions[i]);
             }
 
             extCount += (uint) _instanceExtensions.Length;
@@ -253,7 +252,7 @@ namespace VulkanTriangle
             if (EnableValidationLayers)
             {
                 createInfo.EnabledLayerCount = (uint) _validationLayers.Length;
-                createInfo.PpEnabledLayerNames = (byte**) SilkMarshal.MarshalStringArrayToPtr(_validationLayers);
+                createInfo.PpEnabledLayerNames = (byte**) SilkMarshal.StringArrayToPtr(_validationLayers);
             }
             else
             {
@@ -270,7 +269,7 @@ namespace VulkanTriangle
             }
 
             _vk.CurrentInstance = _instance;
-
+            
             if (!_vk.TryGetInstanceExtension(_instance, out _vkSurface))
             {
                 throw new NotSupportedException("KHR_surface extension not found.");
@@ -281,14 +280,14 @@ namespace VulkanTriangle
 
             if (EnableValidationLayers)
             {
-                SilkMarshal.FreeStringArrayPtr((IntPtr) createInfo.PpEnabledLayerNames, _validationLayers.Length);
+                SilkMarshal.Free((IntPtr) createInfo.PpEnabledLayerNames);
             }
         }
 
         private unsafe void SetupDebugMessenger()
         {
             if (!EnableValidationLayers) return;
-            if (!_vk.TryGetExtension(out _debugUtils)) return;
+            if (!_vk.TryGetInstanceExtension(_instance, out _debugUtils)) return;
 
             var createInfo = new DebugUtilsMessengerCreateInfoEXT();
             PopulateDebugMessengerCreateInfo(ref createInfo);
@@ -312,7 +311,7 @@ namespace VulkanTriangle
             createInfo.MessageType = DebugUtilsMessageTypeFlagsEXT.DebugUtilsMessageTypeGeneralBitExt |
                                      DebugUtilsMessageTypeFlagsEXT.DebugUtilsMessageTypePerformanceBitExt |
                                      DebugUtilsMessageTypeFlagsEXT.DebugUtilsMessageTypeValidationBitExt;
-            createInfo.PfnUserCallback = FuncPtr.Of<DebugUtilsMessengerCallbackFunctionEXT>(DebugCallback);
+            createInfo.PfnUserCallback = (DebugUtilsMessengerCallbackFunctionEXT) DebugCallback;
         }
 
         private unsafe uint DebugCallback
@@ -330,7 +329,7 @@ namespace VulkanTriangle
 
         private unsafe void CreateSurface()
         {
-            _surface = _window.CreateSurface<AllocationCallbacks>(_instance.ToHandle(), null).ToSurface();
+            _surface = _window.VkSurface!.Create<AllocationCallbacks>(_instance.ToHandle(), null).ToSurface();
         }
 
         private unsafe void PickPhysicalDevice()
@@ -515,13 +514,13 @@ namespace VulkanTriangle
             createInfo.PEnabledFeatures = &deviceFeatures;
             createInfo.EnabledExtensionCount = (uint) _deviceExtensions.Length;
 
-            var enabledExtensionNames = SilkMarshal.MarshalStringArrayToPtr(_deviceExtensions);
+            var enabledExtensionNames = SilkMarshal.StringArrayToPtr(_deviceExtensions);
             createInfo.PpEnabledExtensionNames = (byte**) enabledExtensionNames;
 
             if (EnableValidationLayers)
             {
                 createInfo.EnabledLayerCount = (uint) _validationLayers.Length;
-                createInfo.PpEnabledLayerNames = (byte**) SilkMarshal.MarshalStringArrayToPtr(_validationLayers);
+                createInfo.PpEnabledLayerNames = (byte**) SilkMarshal.StringArrayToPtr(_validationLayers);
             }
             else
             {
@@ -547,6 +546,11 @@ namespace VulkanTriangle
             }
 
             _vk.CurrentDevice = _device;
+
+            if (!_vk.TryGetDeviceExtension(_instance, _device, out _vkSwapchain))
+            {
+                throw new NotSupportedException("KHR_swapchain extension not found.");
+            }
         }
 
         private unsafe void CreateSwapChain()
@@ -782,7 +786,7 @@ namespace VulkanTriangle
                 SType = StructureType.PipelineShaderStageCreateInfo,
                 Stage = ShaderStageFlags.ShaderStageVertexBit,
                 Module = vertShaderModule,
-                PName = (byte*) SilkMarshal.MarshalStringToPtr("main")
+                PName = (byte*) SilkMarshal.StringToPtr("main")
             };
 
             var fragShaderStageInfo = new PipelineShaderStageCreateInfo
@@ -790,7 +794,7 @@ namespace VulkanTriangle
                 SType = StructureType.PipelineShaderStageCreateInfo,
                 Stage = ShaderStageFlags.ShaderStageFragmentBit,
                 Module = fragShaderModule,
-                PName = (byte*) SilkMarshal.MarshalStringToPtr("main")
+                PName = (byte*) SilkMarshal.StringToPtr("main")
             };
 
             var shaderStages = stackalloc PipelineShaderStageCreateInfo[2];

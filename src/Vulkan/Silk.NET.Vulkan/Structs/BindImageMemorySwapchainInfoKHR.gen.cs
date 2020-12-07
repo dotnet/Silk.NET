@@ -6,37 +6,69 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct BindImageMemorySwapchainInfoKHR
+    [NativeName("Name", "VkBindImageMemorySwapchainInfoKHR")]
+    public unsafe partial struct BindImageMemorySwapchainInfoKHR
     {
         public BindImageMemorySwapchainInfoKHR
         (
-            StructureType sType = StructureType.BindImageMemorySwapchainInfoKhr,
-            void* pNext = default,
-            SwapchainKHR swapchain = default,
-            uint imageIndex = default
-        )
+            StructureType? sType = StructureType.BindImageMemorySwapchainInfoKhr,
+            void* pNext = null,
+            SwapchainKHR? swapchain = null,
+            uint? imageIndex = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           Swapchain = swapchain;
-           ImageIndex = imageIndex;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (swapchain is not null)
+            {
+                Swapchain = swapchain.Value;
+            }
+
+            if (imageIndex is not null)
+            {
+                ImageIndex = imageIndex.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkSwapchainKHR")]
+        [NativeName("Type.Name", "VkSwapchainKHR")]
+        [NativeName("Name", "swapchain")]
         public SwapchainKHR Swapchain;
 /// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "imageIndex")]
         public uint ImageIndex;
     }
 }

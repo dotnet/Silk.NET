@@ -6,33 +6,58 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct DeviceGroupSwapchainCreateInfoKHR
+    [NativeName("Name", "VkDeviceGroupSwapchainCreateInfoKHR")]
+    public unsafe partial struct DeviceGroupSwapchainCreateInfoKHR
     {
         public DeviceGroupSwapchainCreateInfoKHR
         (
-            StructureType sType = StructureType.DeviceGroupSwapchainCreateInfoKhr,
-            void* pNext = default,
-            DeviceGroupPresentModeFlagsKHR modes = default
-        )
+            StructureType? sType = StructureType.DeviceGroupSwapchainCreateInfoKhr,
+            void* pNext = null,
+            DeviceGroupPresentModeFlagsKHR? modes = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           Modes = modes;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (modes is not null)
+            {
+                Modes = modes.Value;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkDeviceGroupPresentModeFlagsKHR")]
+        [NativeName("Type.Name", "VkDeviceGroupPresentModeFlagsKHR")]
+        [NativeName("Name", "modes")]
         public DeviceGroupPresentModeFlagsKHR Modes;
     }
 }

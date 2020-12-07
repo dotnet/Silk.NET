@@ -6,37 +6,69 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Runtime.CompilerServices;
 using System.Text;
+using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
+using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
 namespace Silk.NET.Vulkan
 {
-    public unsafe struct MetalSurfaceCreateInfoEXT
+    [NativeName("Name", "VkMetalSurfaceCreateInfoEXT")]
+    public unsafe partial struct MetalSurfaceCreateInfoEXT
     {
         public MetalSurfaceCreateInfoEXT
         (
-            StructureType sType = StructureType.MetalSurfaceCreateInfoExt,
-            void* pNext = default,
-            uint flags = default,
-            IntPtr* pLayer = default
-        )
+            StructureType? sType = StructureType.MetalSurfaceCreateInfoExt,
+            void* pNext = null,
+            uint? flags = null,
+            IntPtr* pLayer = null
+        ) : this()
         {
-           SType = sType;
-           PNext = pNext;
-           Flags = flags;
-           PLayer = pLayer;
+            if (sType is not null)
+            {
+                SType = sType.Value;
+            }
+
+            if (pNext is not null)
+            {
+                PNext = pNext;
+            }
+
+            if (flags is not null)
+            {
+                Flags = flags.Value;
+            }
+
+            if (pLayer is not null)
+            {
+                PLayer = pLayer;
+            }
         }
 
 /// <summary></summary>
+        [NativeName("Type", "VkStructureType")]
+        [NativeName("Type.Name", "VkStructureType")]
+        [NativeName("Name", "sType")]
         public StructureType SType;
 /// <summary></summary>
+        [NativeName("Type", "void*")]
+        [NativeName("Type.Name", "void")]
+        [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkMetalSurfaceCreateFlagsEXT")]
+        [NativeName("Type.Name", "VkMetalSurfaceCreateFlagsEXT")]
+        [NativeName("Name", "flags")]
         public uint Flags;
 /// <summary></summary>
+        [NativeName("Type", "CAMetalLayer*")]
+        [NativeName("Type.Name", "CAMetalLayer")]
+        [NativeName("Name", "pLayer")]
         public IntPtr* PLayer;
     }
 }

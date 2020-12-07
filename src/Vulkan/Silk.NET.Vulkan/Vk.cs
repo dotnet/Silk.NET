@@ -2,17 +2,17 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using Silk.NET.Core;
 using Silk.NET.Core.Attributes;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Ultz.SuperInvoke;
-using LibraryLoader = Ultz.SuperInvoke.Loader.LibraryLoader;
+using LibraryLoader = Silk.NET.Core.Loader.LibraryLoader;
 
 namespace Silk.NET.Vulkan
 {
     public partial class Vk
     {
-        private VkExtensionLoaderSource _extensionLoaders;
         private readonly Dictionary<IntPtr, List<string>> _extensions = new Dictionary<IntPtr, List<string>>();
         public Instance? CurrentInstance { get; set; }
         public Device? CurrentDevice { get; set; }
@@ -25,40 +25,60 @@ namespace Silk.NET.Vulkan
 
         public static Vk GetApi()
         {
-            var sym = new VkLoader(LibraryLoader.GetPlatformDefaultLoader());
-            var ret = LibraryLoader<Vk>.Load(new VulkanLibraryNameContainer(), sym);
-            sym.Vulkan = ret;
-            ret._extensionLoaders = new VkExtensionLoaderSource(ret);
+            var ctx = new MultiNativeContext
+                (CreateDefaultContext(new VulkanLibraryNameContainer().GetLibraryName()), null);
+            var ret = new Vk(ctx);
+            ctx.Contexts[1] = new LamdaNativeContext
+            (
+                x =>
+                {
+                    if (x.EndsWith("ProcAddr"))
+                    {
+                        return default;
+                    }
+
+                    IntPtr ptr = default;
+                    ptr = ret.GetInstanceProcAddr(ret.CurrentInstance.GetValueOrDefault(), x);
+                    if (ptr != default)
+                    {
+                        return ptr;
+                    }
+
+                    ptr = ret.GetDeviceProcAddr(ret.CurrentDevice.GetValueOrDefault(), x);
+                    return ptr;
+                }
+            );
             return ret;
         }
 
-        [Obsolete
-        (
-            "This method depends on the CurrentInstance property. " +
-            "You should defer usage of these APIs where possible. " +
-            "They will be removed in Silk.NET 2.0."
-        )]
-        public static Vk GetApi(InstanceCreateInfo info) => GetApi(ref info);
         public static Vk GetApi(InstanceCreateInfo info, out Instance instance) => GetApi(ref info, out instance);
-
-        [Obsolete
-        (
-            "This method depends on the CurrentInstance property. " +
-            "You should defer usage of these APIs where possible. " +
-            "They will be removed in Silk.NET 2.0."
-        )]
-        public static unsafe Vk GetApi(ref InstanceCreateInfo info)
-        {
-            var api = GetApi(ref info, out var instance);
-            api.CurrentInstance = instance;
-            return api;
-        }
 
         public static unsafe Vk GetApi(ref InstanceCreateInfo info, out Instance instance)
         {
-            var sym = new VkLoader(LibraryLoader.GetPlatformDefaultLoader());
-            var ret = LibraryLoader<Vk>.Load(new VulkanLibraryNameContainer(), sym);
-            sym.Vulkan = ret;
+            var ctx = new MultiNativeContext
+                (CreateDefaultContext(new VulkanLibraryNameContainer().GetLibraryName()), null);
+            var ret = new Vk(ctx);
+            ctx.Contexts[1] = new LamdaNativeContext
+            (
+                x =>
+                {
+                    if (x.EndsWith("ProcAddr"))
+                    {
+                        return default;
+                    }
+
+                    IntPtr ptr = default;
+                    ptr = ret.GetInstanceProcAddr(ret.CurrentInstance.GetValueOrDefault(), x);
+                    if (ptr != default)
+                    {
+                        return ptr;
+                    }
+
+                    ptr = ret.GetDeviceProcAddr(ret.CurrentDevice.GetValueOrDefault(), x);
+                    return ptr;
+                }
+            );
+
             fixed (InstanceCreateInfo* infoPtr = &info)
             {
                 fixed (Instance* instancePtr = &instance)
@@ -70,39 +90,35 @@ namespace Silk.NET.Vulkan
             return ret;
         }
 
-        [Obsolete
-        (
-            "This method depends on the CurrentInstance property. " +
-            "You should defer usage of these APIs where possible. " +
-            "They will be removed in Silk.NET 2.0."
-        )]
-        public static Vk GetApi(ref InstanceCreateInfo info, ref AllocationCallbacks callbacks)
-        {
-            var api = GetApi(ref info, ref callbacks, out var instance);
-            api.CurrentInstance = instance;
-            return api;
-        }
-
         public static Vk GetApi(ref InstanceCreateInfo info, ref AllocationCallbacks callbacks, out Instance instance)
         {
-            var sym = new VkLoader(LibraryLoader.GetPlatformDefaultLoader());
-            var ret = LibraryLoader<Vk>.Load(new VulkanLibraryNameContainer(), sym);
-            sym.Vulkan = ret;
-            ret.CreateInstance(ref info, ref callbacks, out instance);
-            return ret;
-        }
+            var ctx = new MultiNativeContext
+                (CreateDefaultContext(new VulkanLibraryNameContainer().GetLibraryName()), null);
+            var ret = new Vk(ctx);
+            ctx.Contexts[1] = new LamdaNativeContext
+            (
+                x =>
+                {
+                    if (x.EndsWith("ProcAddr"))
+                    {
+                        return default;
+                    }
 
-        [Obsolete
-        (
-            "This method has been deprecated in favour of the more explicit TryGetInstanceExtension and " +
-            "TryGetDeviceExtension methods. This is because this method currently depends on the CurrentInstance " +
-            "and CurrentDevice property, which are now both obsolete and pending removal along with this method."
-        )]
-        public bool TryGetExtension<T>(out T ext)
-            where T : NativeExtension<Vk>
-        {
-            ext = LibraryLoader<Vk>.Load<T>(this);
-            return ext != null;
+                    IntPtr ptr = default;
+                    ptr = ret.GetInstanceProcAddr(ret.CurrentInstance.GetValueOrDefault(), x);
+                    if (ptr != default)
+                    {
+                        return ptr;
+                    }
+
+                    ptr = ret.GetDeviceProcAddr(ret.CurrentDevice.GetValueOrDefault(), x);
+                    return ptr;
+                }
+            );
+
+            instance = default;
+            ret.CreateInstance(in info, in callbacks, out instance);
+            return ret;
         }
 
         /// <summary>
@@ -118,8 +134,8 @@ namespace Silk.NET.Vulkan
         /// <returns>Whether the extension is available and loaded.</returns>
         public bool TryGetInstanceExtension<T>(Instance instance, out T ext) where T : NativeExtension<Vk> =>
             !((ext = IsInstanceExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
-                ? LibraryActivator.CreateInstance<T>
-                    (SearchPaths.GetLibraryName(), _extensionLoaders.Get(instance, null))
+                ? (T)Activator.CreateInstance
+                (typeof(T), new LamdaNativeContext(x => GetInstanceProcAddr(instance, x)))
                 : null) is null);
 
         /// <summary>
@@ -137,23 +153,13 @@ namespace Silk.NET.Vulkan
         public bool TryGetDeviceExtension<T>
             (Instance instance, Device device, out T ext) where T : NativeExtension<Vk> =>
             !((ext = IsDeviceExtensionPresent(instance, ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
-                ? LibraryActivator.CreateInstance<T>
-                    (SearchPaths.GetLibraryName(), _extensionLoaders.Get(instance, device))
+                ? (T)Activator.CreateInstance
+                    (typeof(T), new LamdaNativeContext(x => GetDeviceProcAddr(device, x)))
                 : null) is null);
 
         /// <inheritdoc />
-        [Obsolete
-        (
-            "This method has been deprecated in favour of the more explicit IsInstanceExtensionPresent and " +
-            "IsDeviceExtensionPresent methods. This is because this method currently depends on the CurrentInstance " +
-            "and CurrentDevice property, which are now both obsolete and pending removal along with this method."
-        )]
-        public override bool IsExtensionPresent(string extension)
-        {
-            return (!_extensions.ContainsKey(CurrentDevice?.Handle ?? IntPtr.Zero)
-                ? _extensions[CurrentDevice?.Handle ?? IntPtr.Zero] = GetExtensions(CurrentInstance, null)
-                : _extensions[CurrentDevice?.Handle ?? IntPtr.Zero]).Contains(extension);
-        }
+        [Obsolete("Use IsInstanceExtensionPresent instead.", true)]
+        public override bool IsExtensionPresent(string extension) => IsInstanceExtensionPresent(extension);
 
         private List<string> _cachedInstanceExtensions = new List<string>();
         private Dictionary<IntPtr, List<string>> _cachedDeviceExtensions = new Dictionary<IntPtr, List<string>>();
@@ -276,12 +282,12 @@ namespace Silk.NET.Vulkan
 
         private unsafe void Add(ICollection<string> l, ExtensionProperties* props)
         {
-            var result = Result.Incomplete;
-            while (result == Result.Incomplete)
+            var result = Vulkan.Result.Incomplete;
+            while (result == Vulkan.Result.Incomplete)
             {
                 var instanceExtPropertiesCount = 128u;
                 result = EnumerateInstanceExtensionProperties((byte*) 0, &instanceExtPropertiesCount, props);
-                if (result == Result.Success || result == Result.Incomplete)
+                if (result == Vulkan.Result.Success || result == Vulkan.Result.Incomplete)
                 {
                     for (var i = 0; i < instanceExtPropertiesCount; i++)
                     {
@@ -293,13 +299,13 @@ namespace Silk.NET.Vulkan
 
         private unsafe List<string> Add(PhysicalDevice physicalDevice, List<string> l, ExtensionProperties* props)
         {
-            var result = Result.Incomplete;
-            while (result == Result.Incomplete)
+            var result = Vulkan.Result.Incomplete;
+            while (result == Vulkan.Result.Incomplete)
             {
                 var deviceExtPropertiesCount = 128u;
                 result = EnumerateDeviceExtensionProperties
                     (physicalDevice, (byte*) 0, &deviceExtPropertiesCount, props);
-                if (result == Result.Success || result == Result.Incomplete)
+                if (result == Vulkan.Result.Success || result == Vulkan.Result.Incomplete)
                 {
                     for (var j = 0; j < deviceExtPropertiesCount; j++)
                     {

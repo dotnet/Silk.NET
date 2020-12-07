@@ -8,24 +8,17 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
+using Microsoft.Extensions.DependencyModel;
+using Silk.NET.Core;
+using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using Silk.NET.Core.Platform;
-using Ultz.SuperInvoke;
 
 namespace Silk.NET.OpenGL
 {
     public partial class GL
     {
-        [Obsolete
-        (
-            "Parameterless GetApi calls are deprecated and will be removed in a future release. Please create" +
-            "your GL instances using a context"
-        )]  
-        public static GL GetApi()
-            => LibraryLoader<GL>.Load(new GLCoreLibraryNameContainer(), SilkManager.Get<GLSymbolLoader>());
-
         /// <summary>
         ///     Creates a <see cref="GL" /> instance from an <see cref="IGLContextSource" />.
         /// </summary>
@@ -78,11 +71,7 @@ namespace Silk.NET.OpenGL
         /// <returns>
         ///     A <see cref="GL" /> instance.
         /// </returns>
-        public static GL GetApi(INativeContext ctx) => LibraryActivator.CreateInstance<GL>
-        (
-            new GLCoreLibraryNameContainer().GetLibraryName(),
-            SilkManager.Get(ctx)
-        );
+        public static GL GetApi(INativeContext ctx) => new GL(ctx);
 
         /// <summary>
         ///     Attempts to load a native OpenGL extension of type <typeparamref name="T" />.
@@ -99,7 +88,9 @@ namespace Silk.NET.OpenGL
         public bool TryGetExtension<T>(out T ext)
             where T : NativeExtension<GL>
         {
-            ext = LibraryLoader<GL>.Load<T>(this);
+            ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
+                ? (T)Activator.CreateInstance(typeof(T), Context)
+                : null;
             return ext != null;
         }
 
@@ -117,7 +108,7 @@ namespace Silk.NET.OpenGL
         public override bool IsExtensionPresent(string extension)
         {
             _extensions ??= Enumerable.Range(0, GetInteger(GLEnum.NumExtensions))
-                .Select(x => GetString(StringName.Extensions, (uint) x))
+                .Select(x => GetStringS(StringName.Extensions, (uint) x))
                 .ToList();
 
             return _extensions.Contains("GL_" + (extension.StartsWith("GL_") ? extension.Substring(3) : extension));
@@ -435,7 +426,7 @@ namespace Silk.NET.OpenGL
             length = (uint) lengthTmp;
 
             GetActiveUniform
-                (program, uniformIndex, length == 0 ? 1 : length, out length, out size, out type, out var str);
+                (program, uniformIndex, length == 0 ? 1 : length, out length, out size, out type, out string str);
 
             return str.Substring(0, (int) length);
         }
@@ -494,6 +485,12 @@ namespace Silk.NET.OpenGL
         public void GetShaderInfoLog(uint shader, out string info)
         {
             GetShader(shader, GLEnum.InfoLogLength, out var length2);
+            if (length2 <= 0)
+            {
+                info = string.Empty;
+                return;
+            }
+            
             var length = (uint) length2;
             GetShaderInfoLog(shader, length * 2, out length, out info);
             info = info.Substring(0, (int) length);
