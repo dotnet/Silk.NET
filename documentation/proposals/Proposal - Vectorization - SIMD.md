@@ -21,81 +21,82 @@ This both exposes more High Performance SIMD API for those that want it, and lay
     - We should consider exposing a helper to check all elements / each element to be all 1s (true) or not (false)
     - another proposal will enhance `Scalar[T]` with bitwise operations, and, if this proposal is accepted, will enhance this proposal too.
     - there will be more helpers required, but they are not part of this initial plan (ie Store, Load) and it can be discussed whether they are ammended, or kept internal as required.
+    - SIMD may be renamed to SIMD128 later.
 
 # Proposed API
 To make this simpler for both me, and any poor soul that reads through all this, I've provided the API in the form it would appear in a PublicAPI.txt
 
 ```cs
-Silk.NET.Maths.Vector128
-Silk.NET.Maths.Vector128<T>
+Silk.NET.Maths.SIMD
+Silk.NET.Maths.SIMD<T>
 
-static readonly Silk.NET.Maths.Vector128<T>.E -> Vector128<T>
-static readonly Silk.NET.Maths.Vector128<T>.Epsilon -> Vector128<T>
-static readonly Silk.NET.Maths.Vector128<T>.MaxValue -> Vector128<T>
-static readonly Silk.NET.Maths.Vector128<T>.MinusOne -> Vector128<T>
-static readonly Silk.NET.Maths.Vector128<T>.MinusTwo -> Vector128<T>
-static readonly Silk.NET.Maths.Vector128<T>.MinValue -> Vector128<T>
-static readonly Silk.NET.Maths.Vector128<T>.NaN -> Vector128<T>
-static readonly Silk.NET.Maths.Vector128<T>.NegativeInfinity -> Vector128<T>
-static readonly Silk.NET.Maths.Vector128<T>.One -> Vector128<T>
-static readonly Silk.NET.Maths.Vector128<T>.Pi -> Vector128<T>
-static readonly Silk.NET.Maths.Vector128<T>.PiOver2 -> Vector128<T>
-static readonly Silk.NET.Maths.Vector128<T>.PositiveInfinity -> Vector128<T>
-static readonly Silk.NET.Maths.Vector128<T>.Tau -> Vector128<T>
-static readonly Silk.NET.Maths.Vector128<T>.Two -> Vector128<T>
-static readonly Silk.NET.Maths.Vector128<T>.Zero -> Vector128<T>
+static readonly Silk.NET.Maths.SIMD<T>.E -> Vector128<T>
+static readonly Silk.NET.Maths.SIMD<T>.Epsilon -> Vector128<T>
+static readonly Silk.NET.Maths.SIMD<T>.MaxValue -> Vector128<T>
+static readonly Silk.NET.Maths.SIMD<T>.MinusOne -> Vector128<T>
+static readonly Silk.NET.Maths.SIMD<T>.MinusTwo -> Vector128<T>
+static readonly Silk.NET.Maths.SIMD<T>.MinValue -> Vector128<T>
+static readonly Silk.NET.Maths.SIMD<T>.NaN -> Vector128<T>
+static readonly Silk.NET.Maths.SIMD<T>.NegativeInfinity -> Vector128<T>
+static readonly Silk.NET.Maths.SIMD<T>.One -> Vector128<T>
+static readonly Silk.NET.Maths.SIMD<T>.Pi -> Vector128<T>
+static readonly Silk.NET.Maths.SIMD<T>.PiOver2 -> Vector128<T>
+static readonly Silk.NET.Maths.SIMD<T>.PositiveInfinity -> Vector128<T>
+static readonly Silk.NET.Maths.SIMD<T>.Tau -> Vector128<T>
+static readonly Silk.NET.Maths.SIMD<T>.Two -> Vector128<T>
+static readonly Silk.NET.Maths.SIMD<T>.Zero -> Vector128<T>
 
-static Silk.NET.Maths.Vector128.Abs<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Acos<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Acosh<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Add<T>(Vector128<T> left, T right) -> Vector128<T>
-static Silk.NET.Maths.Vector128.As<TFrom, Vector128<T>To>(TFrom val) -> Vector128<T>To
-static Silk.NET.Maths.Vector128.Asin<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Asinh<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Atan2<T>(Vector128<T> y, T x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Atan<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Atanh<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Cbrt<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Ceiling<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Cos<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Cosh<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Divide<T>(Vector128<T> left, T right) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Equal<T>(Vector128<T> left, T right) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Exp<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Floor<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.GreaterThan<T>(Vector128<T> left, T right) -> Vector128<T>
-static Silk.NET.Maths.Vector128.GreaterThanOrEqual<T>(Vector128<T> left, T right) -> Vector128<T>
-static Silk.NET.Maths.Vector128.IEEERemainder<T>(Vector128<T> x, T y) -> Vector128<T>
-static Silk.NET.Maths.Vector128.IsFinite<T>(Vector128<T> f) -> Vector128<T>
-static Silk.NET.Maths.Vector128.IsHardwareAccelerated.get -Vector128<T> bool
-static Silk.NET.Maths.Vector128.IsInfinity<T>(Vector128<T> f) -> Vector128<T>
-static Silk.NET.Maths.Vector128.IsNaN<T>(Vector128<T> f) -> Vector128<T>
-static Silk.NET.Maths.Vector128.IsNegative<T>(Vector128<T> f) -> Vector128<T>
-static Silk.NET.Maths.Vector128.IsNegativeInfinity<T>(Vector128<T> f) -> Vector128<T>
-static Silk.NET.Maths.Vector128.IsNormal<T>(Vector128<T> f) -> Vector128<T>
-static Silk.NET.Maths.Vector128.IsPositiveInfinity<T>(Vector128<T> f) -> Vector128<T>
-static Silk.NET.Maths.Vector128.IsSubnormal<T>(Vector128<T> f) -> Vector128<T>
-static Silk.NET.Maths.Vector128.LessThan<T>(Vector128<T> left, T right) -> Vector128<T>
-static Silk.NET.Maths.Vector128.LessThanOrEqual<T>(Vector128<T> left, T right) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Log10<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Log<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Log<T>(Vector128<T> x, T y) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Max<T>(Vector128<T> x, T y) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Min<T>(Vector128<T> x, T y) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Multiply<T>(Vector128<T> left, T right) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Negate<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.NotEqual<T>(Vector128<T> left, T right) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Pow<T>(Vector128<T> x, T y) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Reciprocal<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Round<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Round<T>(Vector128<T> x, System.MidpointRounding mode) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Sign<T>(Vector128<T> x) -> Vector128<int>
-static Silk.NET.Maths.Vector128.Sin<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Sinh<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Sqrt<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Subtract<T>(Vector128<T> left, T right) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Tan<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Tanh<T>(Vector128<T> x) -> Vector128<T>
-static Silk.NET.Maths.Vector128.Truncate<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Abs<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Acos<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Acosh<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Add<T>(Vector128<T> left, T right) -> Vector128<T>
+static Silk.NET.Maths.SIMD.As<TFrom, Vector128<T>To>(TFrom val) -> Vector128<T>To
+static Silk.NET.Maths.SIMD.Asin<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Asinh<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Atan2<T>(Vector128<T> y, T x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Atan<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Atanh<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Cbrt<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Ceiling<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Cos<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Cosh<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Divide<T>(Vector128<T> left, T right) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Equal<T>(Vector128<T> left, T right) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Exp<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Floor<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.GreaterThan<T>(Vector128<T> left, T right) -> Vector128<T>
+static Silk.NET.Maths.SIMD.GreaterThanOrEqual<T>(Vector128<T> left, T right) -> Vector128<T>
+static Silk.NET.Maths.SIMD.IEEERemainder<T>(Vector128<T> x, T y) -> Vector128<T>
+static Silk.NET.Maths.SIMD.IsFinite<T>(Vector128<T> f) -> Vector128<T>
+static Silk.NET.Maths.SIMD.IsHardwareAccelerated.get -Vector128<T> bool
+static Silk.NET.Maths.SIMD.IsInfinity<T>(Vector128<T> f) -> Vector128<T>
+static Silk.NET.Maths.SIMD.IsNaN<T>(Vector128<T> f) -> Vector128<T>
+static Silk.NET.Maths.SIMD.IsNegative<T>(Vector128<T> f) -> Vector128<T>
+static Silk.NET.Maths.SIMD.IsNegativeInfinity<T>(Vector128<T> f) -> Vector128<T>
+static Silk.NET.Maths.SIMD.IsNormal<T>(Vector128<T> f) -> Vector128<T>
+static Silk.NET.Maths.SIMD.IsPositiveInfinity<T>(Vector128<T> f) -> Vector128<T>
+static Silk.NET.Maths.SIMD.IsSubnormal<T>(Vector128<T> f) -> Vector128<T>
+static Silk.NET.Maths.SIMD.LessThan<T>(Vector128<T> left, T right) -> Vector128<T>
+static Silk.NET.Maths.SIMD.LessThanOrEqual<T>(Vector128<T> left, T right) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Log10<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Log<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Log<T>(Vector128<T> x, T y) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Max<T>(Vector128<T> x, T y) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Min<T>(Vector128<T> x, T y) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Multiply<T>(Vector128<T> left, T right) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Negate<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.NotEqual<T>(Vector128<T> left, T right) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Pow<T>(Vector128<T> x, T y) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Reciprocal<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Round<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Round<T>(Vector128<T> x, System.MidpointRounding mode) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Sign<T>(Vector128<T> x) -> Vector128<int>
+static Silk.NET.Maths.SIMD.Sin<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Sinh<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Sqrt<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Subtract<T>(Vector128<T> left, T right) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Tan<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Tanh<T>(Vector128<T> x) -> Vector128<T>
+static Silk.NET.Maths.SIMD.Truncate<T>(Vector128<T> x) -> Vector128<T>
 
 ```
