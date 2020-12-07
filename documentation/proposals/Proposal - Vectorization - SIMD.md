@@ -20,6 +20,7 @@ This both exposes more High Performance SIMD API for those that want it, and lay
     - For bool APIs, I felt it was better to return `Vector128<T>` with all elements set to be either all 1s (for `true`) or all 0s (for `false`) this is better for branchless code, which is generally desirable when working with SIMD.
     - We should consider exposing a helper to check all elements / each element to be all 1s (true) or not (false)
     - another proposal will enhance `Scalar[T]` with bitwise operations, and, if this proposal is accepted, will enhance this proposal too.
+    - there will be more helpers required, but they are not part of this initial plan (ie Store, Load) and it can be discussed whether they are ammended, or kept internal as required.
 
 # Proposed API
 To make this simpler for both me, and any poor soul that reads through all this, I've provided the API in the form it would appear in a PublicAPI.txt
