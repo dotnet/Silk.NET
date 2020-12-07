@@ -393,6 +393,18 @@ namespace Silk.NET.Maths
             );
         
         /// <summary>
+        /// Converts a <see cref="Matrix3x2{T}"/> into a <see cref="System.Numerics.3x2"/> one.
+        /// </summary>
+        /// <param name="from">The source matrix</param>
+        /// <returns>The <see cref="System.Numerics"/> matrix</returns>
+        public static explicit operator System.Numerics.Matrix3x2(Matrix3x2<T> from)
+            => new(
+                Scalar.As<T, float>(from.M11), Scalar.As<T, float>(from.M12),
+                Scalar.As<T, float>(from.M21), Scalar.As<T, float>(from.M22),
+                Scalar.As<T, float>(from.M31), Scalar.As<T, float>(from.M32)
+            );
+        
+        /// <summary>
         /// Converts a <see cref="Matrix3x2{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
         /// </summary>
         /// <param name="from">The source matrix</param>

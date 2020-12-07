@@ -280,6 +280,14 @@ namespace Silk.NET.Maths
             => new(Scalar.As<T, float>(from.X), Scalar.As<T, float>(from.Y), Scalar.As<T, float>(from.Z));
         
         /// <summary>
+        /// Converts a <see cref="Vector3{T}"/> into <see cref="System.Numerics.Vector3"/>
+        /// </summary>
+        /// <param name="from">The source vector</param>
+        /// <returns>The <see cref="System.Numerics"/> vector</returns>
+        public static explicit operator System.Numerics.Vector3(Vector3<T> from)
+            => new(Scalar.As<T, float>(from.X), Scalar.As<T, float>(from.Y), Scalar.As<T, float>(from.Z));
+        
+        /// <summary>
         /// Converts a <see cref="Vector3{T}"/> into one with a <typeparamref name="T"/> of <see cref="double"/>
         /// </summary>
         /// <param name="from">The source matrix</param>
