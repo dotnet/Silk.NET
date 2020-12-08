@@ -81,6 +81,9 @@ namespace Silk.NET.Core.Contexts
         {
         }
 
+        /// <summary>
+        /// The Library to used.
+        /// </summary>
         public UnmanagedLibrary Library { get; }
 
         /// <inheritdoc />

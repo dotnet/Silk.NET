@@ -4,16 +4,26 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.Core.Native
 {
     // this type is compatible with System.Runtime.InteropServices.UnmanagedType where possible.
+    /// <summary>
+    /// Represents an UnmanagedType.
+    /// </summary>
+    /// <remarks>Compatible with <see cref="System.Runtime.InteropServices.UnmanagedType"/> wherever possible.</remarks>
+    /// <seealso cref="System.Runtime.InteropServices.UnmanagedType"/>
+    /// <seealso cref="NativeStringEncoding"/>
+    /// <seealso cref="UnmanagedTypeAttribute"/>
     public enum UnmanagedType
     {
+        /// <summary>
+        /// The default value <c>0</c>
+        /// </summary>
         Default = 0,
         
         /// <summary>A 4-byte Boolean value (true != 0, false = 0).</summary>
-        /// <returns></returns>
         Bool = 2,
 
         /// <summary>A 1-byte signed integer.</summary>

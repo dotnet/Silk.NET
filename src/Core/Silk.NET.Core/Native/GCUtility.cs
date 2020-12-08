@@ -10,15 +10,33 @@ using System.Runtime.InteropServices;
 
 namespace Silk.NET.Core.Native
 {
+    /// <summary>
+    /// Garbage Collector (GC) Utilities
+    /// </summary>
+    /// <seealso cref="NativeApiContainer"/>
     public class GcUtility
     {
+        /// <summary>
+        /// A collection of all pins currently maintained by this GcUtility, indexed by slot.
+        /// </summary>
         public ConcurrentDictionary<int, List<GCHandle>> Pins { get; }
 
+        /// <summary>
+        /// Creates a new instance of <see cref="GcUtility"/> with the given concurrency level, and the given maximum slot count.
+        /// </summary>
+        /// <param name="concurrencyLevel">The concurrency level.</param>
+        /// <param name="slotCount">The maximum slot count.</param>
         public GcUtility(int concurrencyLevel, int slotCount)
         {
             Pins = new ConcurrentDictionary<int, List<GCHandle>>(concurrencyLevel, slotCount);
         }
         
+        /// <summary>
+        /// Pin the given object until the next call.
+        /// </summary>
+        /// <param name="obj">The object to pin.</param>
+        /// <param name="slot">The slot to associate this with.</param>
+        /// <remarks>DO NOT USE TOGETHER WITH <see cref="Pin"/>.</remarks>
         public void PinUntilNextCall(object obj, int slot)
         {
             Pins.AddOrUpdate
@@ -37,6 +55,11 @@ namespace Silk.NET.Core.Native
             );
         }
 
+        /// <summary>
+        /// Pin the given object.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <param name="slot">The slot to associate this with.</param>
         public void Pin(object obj, int slot = -1)
         {
             Pins.AddOrUpdate
@@ -54,6 +77,11 @@ namespace Silk.NET.Core.Native
             );
         }
 
+        /// <summary>
+        /// Unpin the given object.
+        /// </summary>
+        /// <param name="obj">The object.</param>
+        /// <param name="slot">Optionally, the slot this was associated with initially.</param>
         public void Unpin(object obj, int? slot = null)
         {
             if (slot == null)

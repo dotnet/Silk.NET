@@ -10,6 +10,10 @@ using Silk.NET.Core.Contexts;
 
 namespace Silk.NET.Core.Native
 {
+    /// <summary>
+    /// A simple implementation of a <see cref="IVTable" /> using a concurrent dictionary.
+    /// See https://ultz.co.uk/blog/silktouch-slots-vtables/ for an in-depth explanation.
+    /// </summary>
     public class ConcurrentDictionaryVTable : IVTable
     {
         private const int ConcurrencyLevel = 1;
@@ -19,11 +23,13 @@ namespace Silk.NET.Core.Native
         private bool _initialized = false;
 #endif
 
+        /// <inheritdoc />
         public void Dispose()
         {
             _entryPoints = null;
         }
 
+        /// <inheritdoc />
         public void Initialize(INativeContext ctx, int maxSlots)
         {
 #if DEBUG
@@ -34,6 +40,7 @@ namespace Silk.NET.Core.Native
             _ctx = ctx;
         }
 
+        /// <inheritdoc />
         public IntPtr Load(int slot, string entryPoint)
         {
 #if DEBUG
@@ -50,6 +57,7 @@ namespace Silk.NET.Core.Native
             });
         }
 
+        /// <inheritdoc />
         public void Purge()
         {
             _entryPoints.Clear();

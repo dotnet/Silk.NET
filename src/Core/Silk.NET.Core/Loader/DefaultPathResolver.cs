@@ -126,7 +126,7 @@ namespace Silk.NET.Core.Loader
                 depsResolvedPath = null;
                 return false;
             }
-            catch (Exception ex)
+            catch
             {
                 appLocalNativePath = null;
                 depsResolvedPath = null;

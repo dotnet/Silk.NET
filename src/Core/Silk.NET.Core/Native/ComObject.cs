@@ -6,6 +6,8 @@
 using System;
 using System.Runtime.InteropServices;
 
+#nullable enable
+
 namespace Silk.NET.Core.Native
 {
     public unsafe class ComObject : IDisposable

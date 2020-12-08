@@ -3,7 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using Silk.NET.Core.Native;
+using Silk.NET.Maths;
 
 namespace Silk.NET.Direct3D9
 {
@@ -17,7 +17,7 @@ namespace Silk.NET.Direct3D9
             public long IType;
             public long NCount;
             public long NRgnSize;
-            public TagRect rcBound;
+            public Rectangle<long> rcBound;
         }
     }
 }

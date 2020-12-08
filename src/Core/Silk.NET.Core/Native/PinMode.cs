@@ -5,9 +5,19 @@
 
 namespace Silk.NET.Core.Native
 {
+    /// <summary>
+    /// Indicates the way a pin is made.
+    /// </summary>
+    /// <seealso cref="PinObjectAttribute" />
     public enum PinMode
     {
+        /// <summary>
+        ///  Pin until specifically released.
+        /// </summary>
         Persist,
+        /// <summary>
+        /// Pin until the next call.
+        /// </summary>
         UntilNextCall
     }
 }

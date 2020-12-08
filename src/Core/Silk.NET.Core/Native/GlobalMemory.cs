@@ -126,6 +126,9 @@ namespace Silk.NET.Core.Native
             GC.SuppressFinalize(this);
         }
 
+        /// <summary>
+        /// The destructor.
+        /// </summary>
         ~GlobalMemory()
         {
             Free();
