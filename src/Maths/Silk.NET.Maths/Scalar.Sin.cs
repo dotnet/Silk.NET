@@ -29,7 +29,7 @@ namespace Silk.NET.Maths
         // LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
         // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
         // THE SOFTWARE.
-        
+
         private static readonly long[] _piBits =
         {
             0,
@@ -106,7 +106,7 @@ namespace Silk.NET.Maths
             const double S3 = -1.0 / 5040.0; // 1 / 7!
             const double S4 = +1.0 / 362880.0; // 1 / 9!
 
-            
+
             if (CoreIsFinite(x))
             {
                 double ax = Math.Abs(x);
@@ -441,7 +441,7 @@ namespace Silk.NET.Maths
         // in fact, everything below is ripped from methods on NetStandard2.1, but which aren't available on NetStandard2.0
         private static unsafe int SingleToInt(float f)
         {
-            return *((int*)&f);
+            return *((int*) &f);
         }
         [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512)]
         private static bool CoreIsNegative(float f)

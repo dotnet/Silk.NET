@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
@@ -9,28 +9,28 @@ namespace Silk.NET.Maths
     /// <typeparam name="T">The type used to store numeric values.</typeparam>
     [Serializable]
     [DataContract]
-    public struct Ray3<T>
-        : IEquatable<Ray3<T>> 
+    public struct Ray2D<T>
+        : IEquatable<Ray2D<T>>
         where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
     {
         /// <summary>
         /// The origin of this Ray.
         /// </summary>
         [DataMember]
-        public Vector3<T> Origin;
-        
+        public Vector2D<T> Origin;
+
         /// <summary>
         /// The direction of this Ray.
         /// </summary>
         [DataMember]
-        public Vector3<T> Direction;
+        public Vector2D<T> Direction;
 
         /// <summary>
         /// Constructs a Ray using an origin and a direction.
         /// </summary>
         /// <param name="origin">The origin of the ray.</param>
         /// <param name="direction">The direction of the ray.</param>
-        public Ray3(Vector3<T> origin, Vector3<T> direction)
+        public Ray2D(Vector2D<T> origin, Vector2D<T> direction)
         {
             Origin = origin;
             Direction = direction;
@@ -41,25 +41,25 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="distance">The distance along the ray.</param>
         /// <returns>A point at a distance along the ray.</returns>
-        public readonly Vector3<T> GetPoint(T distance)
+        public readonly Vector2D<T> GetPoint(T distance)
         {
             return Origin + (Direction * distance);
         }
-        
-        /// <summary>Returns a boolean indicating whether the given Ray3 is equal to this Ray3 instance.</summary>
-        /// <param name="other">The Ray3 to compare this instance to.</param>
-        /// <returns>True if the other Ray3 is equal to this instance; False otherwise.</returns>
-        public bool Equals(Ray3<T> other)
+
+        /// <summary>Returns a boolean indicating whether the given Ray2D is equal to this Ray2D instance.</summary>
+        /// <param name="other">The Ray2D to compare this instance to.</param>
+        /// <returns>True if the other Ray2D is equal to this instance; False otherwise.</returns>
+        public bool Equals(Ray2D<T> other)
         {
             return Origin.Equals(other.Origin) && Direction.Equals(other.Direction);
         }
 
-        /// <summary>Returns a boolean indicating whether the given Object is equal to this Ray3 instance.</summary>
+        /// <summary>Returns a boolean indicating whether the given Object is equal to this Ray2D instance.</summary>
         /// <param name="obj">The Object to compare against.</param>
-        /// <returns>True if the Object is equal to this Ray3; False otherwise.</returns>
+        /// <returns>True if the Object is equal to this Ray2D; False otherwise.</returns>
         public override bool Equals(object? obj)
         {
-            return obj is Ray3<T> other && Equals(other);
+            return obj is Ray2D<T> other && Equals(other);
         }
 
         /// <summary>Returns the hash code for this instance.</summary>
@@ -73,7 +73,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first Ray to compare.</param>
         /// <param name="value2">The second Ray to compare.</param>
         /// <returns>True if the Rays are equal; False otherwise.</returns>
-        public static bool operator ==(Ray3<T> value1, Ray3<T> value2)
+        public static bool operator ==(Ray2D<T> value1, Ray2D<T> value2)
         {
             return value1.Equals(value2);
         }
@@ -82,7 +82,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first Ray to compare.</param>
         /// <param name="value2">The second Ray to compare.</param>
         /// <returns>True if the Rays are not equal; False if they are equal.</returns>
-        public static bool operator !=(Ray3<T> value1, Ray3<T> value2)
+        public static bool operator !=(Ray2D<T> value1, Ray2D<T> value2)
         {
             return !value1.Equals(value2);
         }

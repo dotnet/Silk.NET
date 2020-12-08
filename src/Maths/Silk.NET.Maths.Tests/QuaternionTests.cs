@@ -28,7 +28,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void QuaternionLengthTest()
         {
-            Vector3<float> v = new Vector3<float>(1.0f, 2.0f, 3.0f);
+            Vector3D<float> v = new Vector3D<float>(1.0f, 2.0f, 3.0f);
 
             float w = 4.0f;
 
@@ -46,7 +46,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void QuaternionLengthSquaredTest()
         {
-            Vector3<float> v = new Vector3<float>(1.0f, 2.0f, 3.0f);
+            Vector3D<float> v = new Vector3D<float>(1.0f, 2.0f, 3.0f);
             float w = 4.0f;
 
             Quaternion<float> target = new Quaternion<float>(v, w);
@@ -63,7 +63,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void QuaternionLerpTest()
         {
-            Vector3<float> axis = Vector3.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
+            Vector3D<float> axis = Vector3D.Normalize(new Vector3D<float>(1.0f, 2.0f, 3.0f));
             Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
             Quaternion<float> b = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
@@ -86,7 +86,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void QuaternionLerpTest1()
         {
-            Vector3<float> axis = Vector3.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
+            Vector3D<float> axis = Vector3D.Normalize(new Vector3D<float>(1.0f, 2.0f, 3.0f));
             Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
             Quaternion<float> b = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
@@ -102,7 +102,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void QuaternionLerpTest2()
         {
-            Vector3<float> axis = Vector3.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
+            Vector3D<float> axis = Vector3D.Normalize(new Vector3D<float>(1.0f, 2.0f, 3.0f));
             Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
             Quaternion<float> b = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
@@ -118,7 +118,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void QuaternionLerpTest3()
         {
-            Vector3<float> axis = Vector3.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
+            Vector3D<float> axis = Vector3D.Normalize(new Vector3D<float>(1.0f, 2.0f, 3.0f));
             Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
             Quaternion<float> b = Quaternion<float>.Negate(a);
 
@@ -273,23 +273,23 @@ namespace Silk.NET.Maths.Tests
                 "Quaternion<float>.constructor (x,y,z,w) did not return the expected value.");
         }
 
-        // A test for Quaternion<float> (Vector3<float>f, float)
+        // A test for Quaternion<float> (Vector3D<float>f, float)
         [Fact]
         public void QuaternionConstructorTest1()
         {
-            Vector3<float> v = new Vector3<float>(1.0f, 2.0f, 3.0f);
+            Vector3D<float> v = new Vector3D<float>(1.0f, 2.0f, 3.0f);
             float w = 4.0f;
 
             Quaternion<float> target = new Quaternion<float>(v, w);
             Assert.True(MathHelper.Equal(target.X, v.X) && MathHelper.Equal(target.Y, v.Y) && MathHelper.Equal(target.Z, v.Z) && MathHelper.Equal(target.W, w),
-                "Quaternion<float>.constructor (Vector3<float>f,w) did not return the expected value.");
+                "Quaternion<float>.constructor (Vector3D<float>f,w) did not return the expected value.");
         }
 
-        // A test for CreateFromAxisAngle (Vector3<float>f, float)
+        // A test for CreateFromAxisAngle (Vector3D<float>f, float)
         [Fact]
         public void QuaternionCreateFromAxisAngleTest()
         {
-            Vector3<float> axis = Vector3.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
+            Vector3D<float> axis = Vector3D.Normalize(new Vector3D<float>(1.0f, 2.0f, 3.0f));
             float angle = MathHelper.ToRadians(30.0f);
 
             Quaternion<float> expected = new Quaternion<float>(0.0691723f, 0.1383446f, 0.207516879f, 0.9659258f);
@@ -299,12 +299,12 @@ namespace Silk.NET.Maths.Tests
             Assert.True(MathHelper.Equal(expected, actual), $"Quaternion<float>.CreateFromAxisAngle did not return the expected value: expected {expected} actual {actual}");
         }
 
-        // A test for CreateFromAxisAngle (Vector3<float>f, float)
+        // A test for CreateFromAxisAngle (Vector3D<float>f, float)
         // CreateFromAxisAngle of zero vector
         [Fact]
         public void QuaternionCreateFromAxisAngleTest1()
         {
-            Vector3<float> axis = new Vector3<float>();
+            Vector3D<float> axis = new Vector3D<float>();
             float angle = MathHelper.ToRadians(-30.0f);
 
             float cos = (float)System.Math.Cos(angle / 2.0f);
@@ -314,12 +314,12 @@ namespace Silk.NET.Maths.Tests
                 , "Quaternion<float>.CreateFromAxisAngle did not return the expected value.");
         }
 
-        // A test for CreateFromAxisAngle (Vector3<float>f, float)
+        // A test for CreateFromAxisAngle (Vector3D<float>f, float)
         // CreateFromAxisAngle of angle = 30 && 750
         [Fact]
         public void QuaternionCreateFromAxisAngleTest2()
         {
-            Vector3<float> axis = new Vector3<float>(1, 0, 0);
+            Vector3D<float> axis = new Vector3D<float>(1, 0, 0);
             float angle1 = MathHelper.ToRadians(30.0f);
             float angle2 = MathHelper.ToRadians(750.0f);
 
@@ -328,12 +328,12 @@ namespace Silk.NET.Maths.Tests
             Assert.True(MathHelper.Equal(actual1, actual2), $"Quaternion<float>.CreateFromAxisAngle did not return the expected value: actual1 {actual1} actual2 {actual2}");
         }
 
-        // A test for CreateFromAxisAngle (Vector3<float>f, float)
+        // A test for CreateFromAxisAngle (Vector3D<float>f, float)
         // CreateFromAxisAngle of angle = 30 && 390
         [Fact]
         public void QuaternionCreateFromAxisAngleTest3()
         {
-            Vector3<float> axis = new Vector3<float>(1, 0, 0);
+            Vector3D<float> axis = new Vector3D<float>(1, 0, 0);
             float angle1 = MathHelper.ToRadians(30.0f);
             float angle2 = MathHelper.ToRadians(390.0f);
 
@@ -352,9 +352,9 @@ namespace Silk.NET.Maths.Tests
             float pitchAngle = MathHelper.ToRadians(40.0f);
             float rollAngle = MathHelper.ToRadians(50.0f);
 
-            Quaternion<float> yaw = Quaternion<float>.CreateFromAxisAngle(Vector3<float>.UnitY, yawAngle);
-            Quaternion<float> pitch = Quaternion<float>.CreateFromAxisAngle(Vector3<float>.UnitX, pitchAngle);
-            Quaternion<float> roll = Quaternion<float>.CreateFromAxisAngle(Vector3<float>.UnitZ, rollAngle);
+            Quaternion<float> yaw = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitY, yawAngle);
+            Quaternion<float> pitch = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitX, pitchAngle);
+            Quaternion<float> roll = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitZ, rollAngle);
 
             Quaternion<float> expected = yaw * pitch * roll;
             Quaternion<float> actual = Quaternion<float>.CreateFromYawPitchRoll(yawAngle, pitchAngle, rollAngle);
@@ -377,9 +377,9 @@ namespace Silk.NET.Maths.Tests
                         float pitchRad = MathHelper.ToRadians(pitchAngle);
                         float rollRad = MathHelper.ToRadians(rollAngle);
 
-                        Quaternion<float> yaw = Quaternion<float>.CreateFromAxisAngle(Vector3<float>.UnitY, yawRad);
-                        Quaternion<float> pitch = Quaternion<float>.CreateFromAxisAngle(Vector3<float>.UnitX, pitchRad);
-                        Quaternion<float> roll = Quaternion<float>.CreateFromAxisAngle(Vector3<float>.UnitZ, rollRad);
+                        Quaternion<float> yaw = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitY, yawRad);
+                        Quaternion<float> pitch = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitX, pitchRad);
+                        Quaternion<float> roll = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitZ, rollRad);
 
                         Quaternion<float> expected = yaw * pitch * roll;
                         Quaternion<float> actual = Quaternion<float>.CreateFromYawPitchRoll(yawRad, pitchRad, rollRad);
@@ -393,7 +393,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void QuaternionSlerpTest()
         {
-            Vector3<float> axis = Vector3.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
+            Vector3D<float> axis = Vector3D.Normalize(new Vector3D<float>(1.0f, 2.0f, 3.0f));
             Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
             Quaternion<float> b = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
@@ -416,7 +416,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void QuaternionSlerpTest1()
         {
-            Vector3<float> axis = Vector3.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
+            Vector3D<float> axis = Vector3D.Normalize(new Vector3D<float>(1.0f, 2.0f, 3.0f));
             Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
             Quaternion<float> b = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
@@ -432,7 +432,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void QuaternionSlerpTest2()
         {
-            Vector3<float> axis = Vector3.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
+            Vector3D<float> axis = Vector3D.Normalize(new Vector3D<float>(1.0f, 2.0f, 3.0f));
             Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
             Quaternion<float> b = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
@@ -448,7 +448,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void QuaternionSlerpTest3()
         {
-            Vector3<float> axis = Vector3.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
+            Vector3D<float> axis = Vector3D.Normalize(new Vector3D<float>(1.0f, 2.0f, 3.0f));
             Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
             Quaternion<float> b = -a;
 
@@ -467,7 +467,7 @@ namespace Silk.NET.Maths.Tests
         [Fact]
         public void QuaternionSlerpTest4()
         {
-            Vector3<float> axis = Vector3.Normalize(new Vector3<float>(1.0f, 2.0f, 3.0f));
+            Vector3D<float> axis = Vector3D.Normalize(new Vector3D<float>(1.0f, 2.0f, 3.0f));
             Quaternion<float> a = Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(10.0f));
             Quaternion<float> b = -Quaternion<float>.CreateFromAxisAngle(axis, MathHelper.ToRadians(30.0f));
 
@@ -581,7 +581,7 @@ namespace Silk.NET.Maths.Tests
             Assert.Equal(expected, actual);
 
             // case 3: compare between different types.
-            obj = new Vector4<float>();
+            obj = new Vector4D<float>();
             expected = false;
             actual = a.Equals(obj);
             Assert.Equal(expected, actual);
@@ -697,12 +697,12 @@ namespace Silk.NET.Maths.Tests
             Assert.Equal(expected, actual);
         }
 
-        // A test for CreateFromRotationMatrix (Matrix4x4<float>)
+        // A test for CreateFromRotationMatrix (Matrix4X4<float>)
         // Convert Identity matrix test
         [Fact]
         public void QuaternionFromRotationMatrixTest1()
         {
-            Matrix4x4<float> matrix = Matrix4x4<float>.Identity;
+            Matrix4X4<float> matrix = Matrix4X4<float>.Identity;
 
             Quaternion<float> expected = new Quaternion<float>(0.0f, 0.0f, 0.0f, 1.0f);
             Quaternion<float> actual = Quaternion<float>.CreateFromRotationMatrix(matrix);
@@ -710,152 +710,152 @@ namespace Silk.NET.Maths.Tests
                 $"Quaternion<float>.CreateFromRotationMatrix did not return the expected value: expected {expected} actual {actual}");
 
             // make sure convert back to matrix is same as we passed matrix.
-            Matrix4x4<float> m2 = Matrix4x4.CreateFromQuaternion<float>(actual);
+            Matrix4X4<float> m2 = Matrix4X4.CreateFromQuaternion<float>(actual);
             Assert.True(MathHelper.Equal(matrix, m2),
                 $"Quaternion<float>.CreateFromQuaternion did not return the expected value: matrix {matrix} m2 {m2}");
         }
 
-        // A test for CreateFromRotationMatrix (Matrix4x4<float>)
+        // A test for CreateFromRotationMatrix (Matrix4X4<float>)
         // Convert X axis rotation matrix
         [Fact]
         public void QuaternionFromRotationMatrixTest2()
         {
             for (float angle = 0.0f; angle < 720.0f; angle += 10.0f)
             {
-                Matrix4x4<float> matrix = Matrix4x4.CreateRotationX<float>(angle);
+                Matrix4X4<float> matrix = Matrix4X4.CreateRotationX<float>(angle);
 
-                Quaternion<float> expected = Quaternion<float>.CreateFromAxisAngle(Vector3<float>.UnitX, angle);
+                Quaternion<float> expected = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitX, angle);
                 Quaternion<float> actual = Quaternion<float>.CreateFromRotationMatrix(matrix);
                 Assert.True(MathHelper.EqualRotation(expected, actual),
                     $"Quaternion<float>.CreateFromRotationMatrix angle:{angle} did not return the expected value: expected {expected} actual {actual}");
 
                 // make sure convert back to matrix is same as we passed matrix.
-                Matrix4x4<float> m2 = Matrix4x4.CreateFromQuaternion<float>(actual);
+                Matrix4X4<float> m2 = Matrix4X4.CreateFromQuaternion<float>(actual);
                 Assert.True(MathHelper.Equal(matrix, m2),
                     $"Quaternion<float>.CreateFromQuaternion angle:{angle} did not return the expected value: matrix {matrix} m2 {m2}");
             }
         }
 
-        // A test for CreateFromRotationMatrix (Matrix4x4<float>)
+        // A test for CreateFromRotationMatrix (Matrix4X4<float>)
         // Convert Y axis rotation matrix
         [Fact]
         public void QuaternionFromRotationMatrixTest3()
         {
             for (float angle = 0.0f; angle < 720.0f; angle += 10.0f)
             {
-                Matrix4x4<float> matrix = Matrix4x4.CreateRotationY<float>(angle);
+                Matrix4X4<float> matrix = Matrix4X4.CreateRotationY<float>(angle);
 
-                Quaternion<float> expected = Quaternion<float>.CreateFromAxisAngle(Vector3<float>.UnitY, angle);
+                Quaternion<float> expected = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitY, angle);
                 Quaternion<float> actual = Quaternion<float>.CreateFromRotationMatrix(matrix);
                 Assert.True(MathHelper.EqualRotation(expected, actual),
                     $"Quaternion<float>.CreateFromRotationMatrix angle:{angle} did not return the expected value: expected {expected} actual {actual}");
 
                 // make sure convert back to matrix is same as we passed matrix.
-                Matrix4x4<float> m2 = Matrix4x4.CreateFromQuaternion<float>(actual);
+                Matrix4X4<float> m2 = Matrix4X4.CreateFromQuaternion<float>(actual);
                 Assert.True(MathHelper.Equal(matrix, m2),
                     $"Quaternion<float>.CreateFromQuaternion angle:{angle} did not return the expected value: matrix {matrix} m2 {m2}");
             }
         }
 
-        // A test for CreateFromRotationMatrix (Matrix4x4<float>)
+        // A test for CreateFromRotationMatrix (Matrix4X4<float>)
         // Convert Z axis rotation matrix
         [Fact]
         public void QuaternionFromRotationMatrixTest4()
         {
             for (float angle = 0.0f; angle < 720.0f; angle += 10.0f)
             {
-                Matrix4x4<float> matrix = Matrix4x4.CreateRotationZ<float>(angle);
+                Matrix4X4<float> matrix = Matrix4X4.CreateRotationZ<float>(angle);
 
-                Quaternion<float> expected = Quaternion<float>.CreateFromAxisAngle(Vector3<float>.UnitZ, angle);
+                Quaternion<float> expected = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitZ, angle);
                 Quaternion<float> actual = Quaternion<float>.CreateFromRotationMatrix(matrix);
                 Assert.True(MathHelper.EqualRotation(expected, actual),
                     $"Quaternion<float>.CreateFromRotationMatrix angle:{angle} did not return the expected value: expected {expected} actual {actual}");
 
                 // make sure convert back to matrix is same as we passed matrix.
-                Matrix4x4<float> m2 = Matrix4x4.CreateFromQuaternion<float>(actual);
+                Matrix4X4<float> m2 = Matrix4X4.CreateFromQuaternion<float>(actual);
                 Assert.True(MathHelper.Equal(matrix, m2),
                     $"Quaternion<float>.CreateFromQuaternion angle:{angle} did not return the expected value: matrix {matrix} m2 {m2}");
             }
         }
 
-        // A test for CreateFromRotationMatrix (Matrix4x4<float>)
+        // A test for CreateFromRotationMatrix (Matrix4X4<float>)
         // Convert XYZ axis rotation matrix
         [Fact]
         public void QuaternionFromRotationMatrixTest5()
         {
             for (float angle = 0.0f; angle < 720.0f; angle += 10.0f)
             {
-                Matrix4x4<float> matrix = Matrix4x4.CreateRotationX<float>(angle) * Matrix4x4.CreateRotationY<float>(angle) * Matrix4x4.CreateRotationZ<float>(angle);
+                Matrix4X4<float> matrix = Matrix4X4.CreateRotationX<float>(angle) * Matrix4X4.CreateRotationY<float>(angle) * Matrix4X4.CreateRotationZ<float>(angle);
 
                 Quaternion<float> expected =
-                    Quaternion<float>.CreateFromAxisAngle(Vector3<float>.UnitZ, angle) *
-                    Quaternion<float>.CreateFromAxisAngle(Vector3<float>.UnitY, angle) *
-                    Quaternion<float>.CreateFromAxisAngle(Vector3<float>.UnitX, angle);
+                    Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitZ, angle) *
+                    Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitY, angle) *
+                    Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitX, angle);
 
                 Quaternion<float> actual = Quaternion<float>.CreateFromRotationMatrix(matrix);
                 Assert.True(MathHelper.EqualRotation(expected, actual),
                     $"Quaternion<float>.CreateFromRotationMatrix angle:{angle} did not return the expected value: expected {expected} actual {actual}");
 
                 // make sure convert back to matrix is same as we passed matrix.
-                Matrix4x4<float> m2 = Matrix4x4.CreateFromQuaternion<float>(actual);
+                Matrix4X4<float> m2 = Matrix4X4.CreateFromQuaternion<float>(actual);
                 Assert.True(MathHelper.Equal(matrix, m2),
                     $"Quaternion<float>.CreateFromQuaternion angle:{angle} did not return the expected value: matrix {matrix} m2 {m2}");
             }
         }
 
-        // A test for CreateFromRotationMatrix (Matrix4x4<float>)
+        // A test for CreateFromRotationMatrix (Matrix4X4<float>)
         // X axis is most large axis case
         [Fact]
         public void QuaternionFromRotationMatrixWithScaledMatrixTest1()
         {
             float angle = MathHelper.ToRadians(180.0f);
-            Matrix4x4<float> matrix = Matrix4x4.CreateRotationY<float>(angle) * Matrix4x4.CreateRotationZ<float>(angle);
+            Matrix4X4<float> matrix = Matrix4X4.CreateRotationY<float>(angle) * Matrix4X4.CreateRotationZ<float>(angle);
 
-            Quaternion<float> expected = Quaternion<float>.CreateFromAxisAngle(Vector3<float>.UnitZ, angle) * Quaternion<float>.CreateFromAxisAngle(Vector3<float>.UnitY, angle);
+            Quaternion<float> expected = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitZ, angle) * Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitY, angle);
             Quaternion<float> actual = Quaternion<float>.CreateFromRotationMatrix(matrix);
             Assert.True(MathHelper.EqualRotation(expected, actual),
                 $"Quaternion<float>.CreateFromRotationMatrix did not return the expected value: expected {expected} actual {actual}");
 
             // make sure convert back to matrix is same as we passed matrix.
-            Matrix4x4<float> m2 = Matrix4x4.CreateFromQuaternion<float>(actual);
+            Matrix4X4<float> m2 = Matrix4X4.CreateFromQuaternion<float>(actual);
             Assert.True(MathHelper.Equal(matrix, m2),
                 $"Quaternion<float>.CreateFromQuaternion did not return the expected value: matrix {matrix} m2 {m2}");
         }
 
-        // A test for CreateFromRotationMatrix (Matrix4x4<float>)
+        // A test for CreateFromRotationMatrix (Matrix4X4<float>)
         // Y axis is most large axis case
         [Fact]
         public void QuaternionFromRotationMatrixWithScaledMatrixTest2()
         {
             float angle = MathHelper.ToRadians(180.0f);
-            Matrix4x4<float> matrix = Matrix4x4.CreateRotationX<float>(angle) * Matrix4x4.CreateRotationZ<float>(angle);
+            Matrix4X4<float> matrix = Matrix4X4.CreateRotationX<float>(angle) * Matrix4X4.CreateRotationZ<float>(angle);
 
-            Quaternion<float> expected = Quaternion<float>.CreateFromAxisAngle(Vector3<float>.UnitZ, angle) * Quaternion<float>.CreateFromAxisAngle(Vector3<float>.UnitX, angle);
+            Quaternion<float> expected = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitZ, angle) * Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitX, angle);
             Quaternion<float> actual = Quaternion<float>.CreateFromRotationMatrix(matrix);
             Assert.True(MathHelper.EqualRotation(expected, actual),
                 $"Quaternion<float>.CreateFromRotationMatrix did not return the expected value: expected {expected} actual {actual}");
 
             // make sure convert back to matrix is same as we passed matrix.
-            Matrix4x4<float> m2 = Matrix4x4.CreateFromQuaternion<float>(actual);
+            Matrix4X4<float> m2 = Matrix4X4.CreateFromQuaternion<float>(actual);
             Assert.True(MathHelper.Equal(matrix, m2),
                 $"Quaternion<float>.CreateFromQuaternion did not return the expected value: matrix {matrix} m2 {m2}");
         }
 
-        // A test for CreateFromRotationMatrix (Matrix4x4<float>)
+        // A test for CreateFromRotationMatrix (Matrix4X4<float>)
         // Z axis is most large axis case
         [Fact]
         public void QuaternionFromRotationMatrixWithScaledMatrixTest3()
         {
             float angle = MathHelper.ToRadians(180.0f);
-            Matrix4x4<float> matrix = Matrix4x4.CreateRotationX<float>(angle) * Matrix4x4.CreateRotationY<float>(angle);
+            Matrix4X4<float> matrix = Matrix4X4.CreateRotationX<float>(angle) * Matrix4X4.CreateRotationY<float>(angle);
 
-            Quaternion<float> expected = Quaternion<float>.CreateFromAxisAngle(Vector3<float>.UnitY, angle) * Quaternion<float>.CreateFromAxisAngle(Vector3<float>.UnitX, angle);
+            Quaternion<float> expected = Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitY, angle) * Quaternion<float>.CreateFromAxisAngle(Vector3D<float>.UnitX, angle);
             Quaternion<float> actual = Quaternion<float>.CreateFromRotationMatrix(matrix);
             Assert.True(MathHelper.EqualRotation(expected, actual),
                 $"Quaternion<float>.CreateFromRotationMatrix did not return the expected value: expected {expected} actual {actual}");
 
             // make sure convert back to matrix is same as we passed matrix.
-            Matrix4x4<float> m2 = Matrix4x4.CreateFromQuaternion<float>(actual);
+            Matrix4X4<float> m2 = Matrix4X4.CreateFromQuaternion<float>(actual);
             Assert.True(MathHelper.Equal(matrix, m2),
                 $"Quaternion<float>.CreateFromQuaternion did not return the expected value: matrix {matrix} m2 {m2}");
         }

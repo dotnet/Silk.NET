@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
@@ -15,7 +15,7 @@ namespace Silk.NET.Maths
         /// The center.
         /// </summary>
         [DataMember]
-        public Vector2<T> Center;
+        public Vector2D<T> Center;
         /// <summary>
         /// The radius.
         /// </summary>
@@ -27,13 +27,13 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="center">The center.</param>
         /// <param name="radius">The radius.</param>
-        public Circle(Vector2<T> center, T radius)
+        public Circle(Vector2D<T> center, T radius)
         {
             Center = center;
             Radius = radius;
         }
-        
-                /// <summary>
+
+        /// <summary>
         /// The diameter.
         /// </summary>
         [IgnoreDataMember]
@@ -44,22 +44,22 @@ namespace Silk.NET.Maths
         /// </summary>
         [IgnoreDataMember]
         public T SquaredRadius => Scalar.Multiply(Radius, Radius);
-        
+
         /// <summary>
         /// The circumference.
         /// </summary>
         [IgnoreDataMember]
         public T Circumference => Scalar.Multiply(Scalar<T>.Tau, Radius);
-        
+
         /// <summary>
         /// Calculates whether this circle contains a point.
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns>True if this circle contains the point; False otherwise.</returns>
         /// <remarks>This does consider a point on the edge contained.</remarks>
-        public bool Contains(Vector2<T> point)
+        public bool Contains(Vector2D<T> point)
         {
-            return Scalar.LessThanOrEqual(Vector2.DistanceSquared(point, Center), Radius);
+            return Scalar.LessThanOrEqual(Vector2D.DistanceSquared(point, Center), Radius);
         }
 
         /// <summary>
@@ -70,7 +70,7 @@ namespace Silk.NET.Maths
         /// <remarks>This does consider a circle that touches the edge contained.</remarks>
         public bool Contains(Circle<T> other)
         {
-            var distanceSquared = Vector2.DistanceSquared(Center, other.Center);
+            var distanceSquared = Vector2D.DistanceSquared(Center, other.Center);
             var radiusDiff = Scalar.Subtract(Radius, other.Radius);
             return Scalar.LessThanOrEqual(distanceSquared, Scalar.Multiply(radiusDiff, radiusDiff));
         }
@@ -80,9 +80,9 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns>The distance squared.</returns>
-        public T GetDistanceToNearestEdgeSquared(Vector2<T> point)
+        public T GetDistanceToNearestEdgeSquared(Vector2D<T> point)
         {
-            return Scalar.Subtract(Vector2.DistanceSquared(Center, point), SquaredRadius);
+            return Scalar.Subtract(Vector2D.DistanceSquared(Center, point), SquaredRadius);
         }
 
         /// <summary>
@@ -90,14 +90,14 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns>The distance.</returns>
-        public T GetDistanceToNearestEdge(Vector2<T> point) => Scalar.Sqrt(GetDistanceToNearestEdgeSquared(point));
+        public T GetDistanceToNearestEdge(Vector2D<T> point) => Scalar.Sqrt(GetDistanceToNearestEdgeSquared(point));
 
         /// <summary>
         /// Calculates a new circle translated by a given distance.
         /// </summary>
         /// <param name="distance">The distance.</param>
         /// <returns>The calculated cube.</returns>
-        public Circle<T> GetTranslated(Vector2<T> distance)
+        public Circle<T> GetTranslated(Vector2D<T> distance)
         {
             return new(Center + distance, Radius);
         }
@@ -107,9 +107,9 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns>The circle.</returns>
-        public Circle<T> GetInflated(Vector2<T> point)
+        public Circle<T> GetInflated(Vector2D<T> point)
         {
-            return new(Center, Scalar.Max(Radius, Vector2.Distance(Center, point)));
+            return new(Center, Scalar.Max(Radius, Vector2D.Distance(Center, point)));
         }
 
         /// <summary>Returns a boolean indicating whether the given Circle is equal to this Circle instance.</summary>

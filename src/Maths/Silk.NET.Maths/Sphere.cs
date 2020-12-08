@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
@@ -15,7 +15,7 @@ namespace Silk.NET.Maths
         /// The center.
         /// </summary>
         [DataMember]
-        public Vector3<T> Center;
+        public Vector3D<T> Center;
         /// <summary>
         /// The radius.
         /// </summary>
@@ -27,7 +27,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="center">The center.</param>
         /// <param name="radius">The radius.</param>
-        public Sphere(Vector3<T> center, T radius)
+        public Sphere(Vector3D<T> center, T radius)
         {
             Center = center;
             Radius = radius;
@@ -44,17 +44,17 @@ namespace Silk.NET.Maths
         /// </summary>
         [IgnoreDataMember]
         public T SquaredRadius => Scalar.Multiply(Radius, Radius);
-        
-        
+
+
         /// <summary>
         /// Calculates whether this sphere contains a point.
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns>True if this sphere contains the point; False otherwise.</returns>
         /// <remarks>This does consider a point on the edge contained.</remarks>
-        public bool Contains(Vector3<T> point)
+        public bool Contains(Vector3D<T> point)
         {
-            return Scalar.LessThanOrEqual(Vector3.DistanceSquared(point, Center), Radius);
+            return Scalar.LessThanOrEqual(Vector3D.DistanceSquared(point, Center), Radius);
         }
 
         /// <summary>
@@ -65,7 +65,7 @@ namespace Silk.NET.Maths
         /// <remarks>This does consider a sphere that touches the edge contained.</remarks>
         public bool Contains(Sphere<T> other)
         {
-            var distanceSquared = Vector3.DistanceSquared(Center, other.Center);
+            var distanceSquared = Vector3D.DistanceSquared(Center, other.Center);
             var radiusDiff = Scalar.Subtract(Radius, other.Radius);
             return Scalar.LessThanOrEqual(distanceSquared, Scalar.Multiply(radiusDiff, radiusDiff));
         }
@@ -75,9 +75,9 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns>The distance squared.</returns>
-        public T GetDistanceToNearestEdgeSquared(Vector3<T> point)
+        public T GetDistanceToNearestEdgeSquared(Vector3D<T> point)
         {
-            return Scalar.Subtract(Vector3.DistanceSquared(Center, point), SquaredRadius);
+            return Scalar.Subtract(Vector3D.DistanceSquared(Center, point), SquaredRadius);
         }
 
         /// <summary>
@@ -85,14 +85,14 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns>The distance.</returns>
-        public T GetDistanceToNearestEdge(Vector3<T> point) => Scalar.Sqrt(GetDistanceToNearestEdgeSquared(point));
+        public T GetDistanceToNearestEdge(Vector3D<T> point) => Scalar.Sqrt(GetDistanceToNearestEdgeSquared(point));
 
         /// <summary>
         /// Calculates a new sphere translated by a given distance.
         /// </summary>
         /// <param name="distance">The distance.</param>
         /// <returns>The calculated sphere.</returns>
-        public Sphere<T> GetTranslated(Vector3<T> distance)
+        public Sphere<T> GetTranslated(Vector3D<T> distance)
         {
             return new(Center + distance, Radius);
         }
@@ -102,11 +102,11 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns>The sphere.</returns>
-        public Sphere<T> GetInflated(Vector3<T> point)
+        public Sphere<T> GetInflated(Vector3D<T> point)
         {
-            return new(Center, Scalar.Max(Radius, Vector3.Distance(Center, point)));
+            return new(Center, Scalar.Max(Radius, Vector3D.Distance(Center, point)));
         }
-        
+
         /// <summary>Returns a boolean indicating whether the given Sphere is equal to this Sphere instance.</summary>
         /// <param name="other">The Sphere to compare this instance to.</param>
         /// <returns>True if the other Sphere is equal to this instance; False otherwise.</returns>

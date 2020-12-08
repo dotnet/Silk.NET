@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -9,29 +9,29 @@ using System.Runtime.CompilerServices;
 namespace Silk.NET.Maths
 {
     /// <summary>
-    /// Methods for working with <see cref="Matrix3x2{T}"/>
+    /// Methods for working with <see cref="Matrix3X2{T}"/>
     /// </summary>
-    public static class Matrix3x2
+    public static class Matrix3X2
     {
 #if MATHF
         private const float RotationEpsilon = 0.001f * MathF.PI / 180f;     // 0.1% of a degree
 #else
-        private const float RotationEpsilon = 0.001f * ((float)Math.PI) / 180f;     // 0.1% of a degree
+        private const float RotationEpsilon = 0.001f * ((float) Math.PI) / 180f;     // 0.1% of a degree
 #endif
-        
+
         /// <summary>Adds each matrix element in value1 with its corresponding element in value2.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The matrix containing the summed values.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Matrix3x2<T> Add<T>(Matrix3x2<T> value1, Matrix3x2<T> value2)
+        [MethodImpl((MethodImplOptions) 768)]
+        public static Matrix3X2<T> Add<T>(Matrix3X2<T> value1, Matrix3X2<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 + value2;
 
         /// <summary>Creates a rotation matrix using the given rotation in radians.</summary>
         /// <param name="radians">The amount of rotation, in radians.</param>
         /// <returns>A rotation matrix.</returns>
-        public static Matrix3x2<T> CreateRotation<T>(T radians)
+        public static Matrix3X2<T> CreateRotation<T>(T radians)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             radians = Scalar.IEEERemainder(radians, Scalar<T>.Tau);
@@ -48,13 +48,13 @@ namespace Silk.NET.Maths
 #if MATHF
                 MathF.PI
 #else
-                ((float)Math.PI)
+                ((float) Math.PI)
 #endif
                 / 2 - RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(
 #if MATHF
                 MathF.PI
 #else
-                ((float)Math.PI)
+                ((float) Math.PI)
 #endif
                 / 2 + RotationEpsilon)))
             {
@@ -66,13 +66,13 @@ namespace Silk.NET.Maths
 #if MATHF
                 MathF.PI
 #else
-                                                                                 ((float)Math.PI)
+                                                                                 ((float) Math.PI)
 #endif
                                                                              + RotationEpsilon)) || Scalar.GreaterThan(radians, Scalar.As<float, T>(
 #if MATHF
                 MathF.PI
 #else
-                ((float)Math.PI)
+                ((float) Math.PI)
 #endif
                 - RotationEpsilon)))
             {
@@ -84,13 +84,13 @@ namespace Silk.NET.Maths
 #if MATHF
                 MathF.PI
 #else
-                    ((float)Math.PI)
+                    ((float) Math.PI)
 #endif
                 / 2 - RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(-
 #if MATHF
                 MathF.PI
 #else
-                    ((float)Math.PI)
+                    ((float) Math.PI)
 #endif
                 / 2 + RotationEpsilon)))
             {
@@ -108,7 +108,7 @@ namespace Silk.NET.Maths
             // [  c  s ]
             // [ -s  c ]
             // [  0  0 ]
-            Matrix3x2<T> result = Matrix3x2<T>.Identity;
+            Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
             result.M11 = c;
             result.M12 = s;
@@ -122,7 +122,7 @@ namespace Silk.NET.Maths
         /// <param name="radians">The amount of rotation, in radians.</param>
         /// <param name="centerPoint">The center point.</param>
         /// <returns>A rotation matrix.</returns>
-        public static Matrix3x2<T> CreateRotation<T>(T radians, Vector2<T> centerPoint)
+        public static Matrix3X2<T> CreateRotation<T>(T radians, Vector2D<T> centerPoint)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             radians = Scalar.IEEERemainder(radians, Scalar<T>.Tau);
@@ -139,13 +139,13 @@ namespace Silk.NET.Maths
 #if MATHF
                 MathF.PI
 #else
-                ((float)Math.PI)
+                ((float) Math.PI)
 #endif
                 / 2 - RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(
 #if MATHF
                 MathF.PI
 #else
-                ((float)Math.PI)
+                ((float) Math.PI)
 #endif
                 / 2 + RotationEpsilon)))
             {
@@ -157,13 +157,13 @@ namespace Silk.NET.Maths
 #if MATHF
                 MathF.PI
 #else
-                                                                                 ((float)Math.PI)
+                                                                                 ((float) Math.PI)
 #endif
                                                                              + RotationEpsilon)) || Scalar.GreaterThan(radians, Scalar.As<float, T>(
 #if MATHF
                 MathF.PI
 #else
-                ((float)Math.PI)
+                ((float) Math.PI)
 #endif    
                 - RotationEpsilon)))
             {
@@ -175,13 +175,13 @@ namespace Silk.NET.Maths
 #if MATHF
                 MathF.PI
 #else
-                    ((float)Math.PI)
+                    ((float) Math.PI)
 #endif
                 / 2 - RotationEpsilon)) && !Scalar.GreaterThanOrEqual(radians, Scalar.As<float, T>(-
 #if MATHF
                 MathF.PI
 #else
-                    ((float)Math.PI)
+                    ((float) Math.PI)
 #endif
                 / 2 + RotationEpsilon)))
             {
@@ -211,10 +211,10 @@ namespace Silk.NET.Maths
         /// <summary>Creates a scale matrix from the given vector scale.</summary>
         /// <param name="scales">The scale to use.</param>
         /// <returns>A scaling matrix.</returns>
-        public static Matrix3x2<T> CreateScale<T>(Vector2<T> scales)
+        public static Matrix3X2<T> CreateScale<T>(Vector2D<T> scales)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix3x2<T> result = Matrix3x2<T>.Identity;
+            Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
             result.M11 = scales.X;
             result.M22 = scales.Y;
@@ -226,10 +226,10 @@ namespace Silk.NET.Maths
         /// <param name="xScale">Value to scale by on the X-axis.</param>
         /// <param name="yScale">Value to scale by on the Y-axis.</param>
         /// <returns>A scaling matrix.</returns>
-        public static Matrix3x2<T> CreateScale<T>(T xScale, T yScale)
+        public static Matrix3X2<T> CreateScale<T>(T xScale, T yScale)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix3x2<T> result = Matrix3x2<T>.Identity;
+            Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
             result.M11 = xScale;
             result.M22 = yScale;
@@ -242,10 +242,10 @@ namespace Silk.NET.Maths
         /// <param name="yScale">Value to scale by on the Y-axis.</param>
         /// <param name="centerPoint">The center point.</param>
         /// <returns>A scaling matrix.</returns>
-        public static Matrix3x2<T> CreateScale<T>(T xScale, T yScale, Vector2<T> centerPoint)
+        public static Matrix3X2<T> CreateScale<T>(T xScale, T yScale, Vector2D<T> centerPoint)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix3x2<T> result = Matrix3x2<T>.Identity;
+            Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
             T tx = Scalar.Multiply(centerPoint.X, Scalar.Subtract(Scalar<T>.One, xScale));
             T ty = Scalar.Multiply(centerPoint.Y, Scalar.Subtract(Scalar<T>.One, yScale));
@@ -262,10 +262,10 @@ namespace Silk.NET.Maths
         /// <param name="scales">The scale to use.</param>
         /// <param name="centerPoint">The center offset.</param>
         /// <returns>A scaling matrix.</returns>
-        public static Matrix3x2<T> CreateScale<T>(Vector2<T> scales, Vector2<T> centerPoint)
+        public static Matrix3X2<T> CreateScale<T>(Vector2D<T> scales, Vector2D<T> centerPoint)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix3x2<T> result = Matrix3x2<T>.Identity;
+            Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
             T tx = Scalar.Multiply(centerPoint.X, Scalar.Subtract(Scalar<T>.One, scales.X));
             T ty = Scalar.Multiply(centerPoint.Y, Scalar.Subtract(Scalar<T>.One, scales.Y));
@@ -281,10 +281,10 @@ namespace Silk.NET.Maths
         /// <summary>Creates a scale matrix that scales uniformly with the given scale.</summary>
         /// <param name="scale">The uniform scale to use.</param>
         /// <returns>A scaling matrix.</returns>
-        public static Matrix3x2<T> CreateScale<T>(T scale)
+        public static Matrix3X2<T> CreateScale<T>(T scale)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix3x2<T> result = Matrix3x2<T>.Identity;
+            Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
             result.M11 = scale;
             result.M22 = scale;
@@ -296,10 +296,10 @@ namespace Silk.NET.Maths
         /// <param name="scale">The uniform scale to use.</param>
         /// <param name="centerPoint">The center offset.</param>
         /// <returns>A scaling matrix.</returns>
-        public static Matrix3x2<T> CreateScale<T>(T scale, Vector2<T> centerPoint)
+        public static Matrix3X2<T> CreateScale<T>(T scale, Vector2D<T> centerPoint)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix3x2<T> result = Matrix3x2<T>.Identity;
+            Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
             T tx = Scalar.Multiply(centerPoint.X, Scalar.Subtract(Scalar<T>.One, scale));
             T ty = Scalar.Multiply(centerPoint.Y, Scalar.Subtract(Scalar<T>.One, scale));
@@ -316,10 +316,10 @@ namespace Silk.NET.Maths
         /// <param name="radiansX">The X angle, in radians.</param>
         /// <param name="radiansY">The Y angle, in radians.</param>
         /// <returns>A skew matrix.</returns>
-        public static Matrix3x2<T> CreateSkew<T>(T radiansX, T radiansY)
+        public static Matrix3X2<T> CreateSkew<T>(T radiansX, T radiansY)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix3x2<T> result = Matrix3x2<T>.Identity;
+            Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
             T xTan = Scalar.Tan(radiansX);
             T yTan = Scalar.Tan(radiansY);
@@ -335,10 +335,10 @@ namespace Silk.NET.Maths
         /// <param name="radiansY">The Y angle, in radians.</param>
         /// <param name="centerPoint">The center point.</param>
         /// <returns>A skew matrix.</returns>
-        public static Matrix3x2<T> CreateSkew<T>(T radiansX, T radiansY, Vector2<T> centerPoint)
+        public static Matrix3X2<T> CreateSkew<T>(T radiansX, T radiansY, Vector2D<T> centerPoint)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix3x2<T> result = Matrix3x2<T>.Identity;
+            Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
             T xTan = Scalar.Tan(radiansX);
             T yTan = Scalar.Tan(radiansY);
@@ -358,10 +358,10 @@ namespace Silk.NET.Maths
         /// <summary>Creates a translation matrix from the given vector.</summary>
         /// <param name="position">The translation position.</param>                        `
         /// <returns>A translation matrix.</returns>
-        public static Matrix3x2<T> CreateTranslation<T>(Vector2<T> position)
+        public static Matrix3X2<T> CreateTranslation<T>(Vector2D<T> position)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix3x2<T> result = Matrix3x2<T>.Identity;
+            Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
             result.M31 = position.X;
             result.M32 = position.Y;
@@ -373,10 +373,10 @@ namespace Silk.NET.Maths
         /// <param name="xPosition">The X position.</param>
         /// <param name="yPosition">The Y position.</param>
         /// <returns>A translation matrix.</returns>
-        public static Matrix3x2<T> CreateTranslation<T>(T xPosition, T yPosition)
+        public static Matrix3X2<T> CreateTranslation<T>(T xPosition, T yPosition)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            Matrix3x2<T> result = Matrix3x2<T>.Identity;
+            Matrix3X2<T> result = Matrix3X2<T>.Identity;
 
             result.M31 = xPosition;
             result.M32 = yPosition;
@@ -388,7 +388,7 @@ namespace Silk.NET.Maths
         /// <param name="matrix">The source matrix.</param>
         /// <param name="result">The output matrix.</param>
         /// <returns>True if the operation succeeded, False otherwise.</returns>
-        public static bool Invert<T>(Matrix3x2<T> matrix, out Matrix3x2<T> result)
+        public static bool Invert<T>(Matrix3X2<T> matrix, out Matrix3X2<T> result)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             T det = Scalar.Subtract(Scalar.Multiply(matrix.M11, matrix.M22), Scalar.Multiply(matrix.M21, matrix.M12));
@@ -402,7 +402,7 @@ namespace Silk.NET.Maths
             T invDet = Scalar.Reciprocal(det);
 
             result = default;
-            
+
             result.M11 = Scalar.Multiply(matrix.M22, invDet);
             result.M12 = Scalar.Negate(Scalar.Multiply(matrix.M12, invDet));
 
@@ -420,56 +420,56 @@ namespace Silk.NET.Maths
         /// <param name="matrix2">The second source matrix.</param>
         /// <param name="amount">The relative weighting of matrix2.</param>
         /// <returns>The interpolated matrix.</returns>
-        public static Matrix3x2<T> Lerp<T>(Matrix3x2<T> matrix1, Matrix3x2<T> matrix2, T amount)
+        public static Matrix3X2<T> Lerp<T>(Matrix3X2<T> matrix1, Matrix3X2<T> matrix2, T amount)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
-            return new(Vector2.Lerp(matrix1.Row1, matrix2.Row1, amount), 
-                Vector2.Lerp(matrix1.Row2, matrix2.Row2, amount),
-                Vector2.Lerp(matrix1.Row3, matrix2.Row3, amount));
+            return new(Vector2D.Lerp(matrix1.Row1, matrix2.Row1, amount),
+                Vector2D.Lerp(matrix1.Row2, matrix2.Row2, amount),
+                Vector2D.Lerp(matrix1.Row3, matrix2.Row3, amount));
         }
 
         /// <summary>Multiplies two matrices together and returns the resulting matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The product matrix.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Matrix3x2<T> Multiply<T>(Matrix3x2<T> value1, Matrix2x2<T> value2)
+        [MethodImpl((MethodImplOptions) 768)]
+        public static Matrix3X2<T> Multiply<T>(Matrix3X2<T> value1, Matrix2X2<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
-        
+
         /// <summary>Multiplies a vector by a matrix.</summary>
         /// <param name="value1">The vector.</param>
         /// <param name="value2">The matrix.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Vector2<T> Multiply<T>(Vector3<T> value1, Matrix3x2<T> value2)
+        [MethodImpl((MethodImplOptions) 768)]
+        public static Vector2D<T> Multiply<T>(Vector3D<T> value1, Matrix3X2<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
-        
+
         /// <summary>Multiplies two matrices together and returns the resulting matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The product matrix.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Matrix3x3<T> Multiply<T>(Matrix3x2<T> value1, Matrix2x3<T> value2)
+        [MethodImpl((MethodImplOptions) 768)]
+        public static Matrix3X3<T> Multiply<T>(Matrix3X2<T> value1, Matrix2X3<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
-        
+
         /// <summary>Multiplies two matrices together and returns the resulting matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The product matrix.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Matrix2x2<T> Multiply<T>(Matrix2x3<T> value1, Matrix3x2<T> value2)
+        [MethodImpl((MethodImplOptions) 768)]
+        public static Matrix2X2<T> Multiply<T>(Matrix2X3<T> value1, Matrix3X2<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
-        
+
         /// <summary>Multiplies two matrices together and returns the resulting matrix.</summary>
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The product matrix.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Matrix2x3<T> Multiply<T>(Matrix2x3<T> value1, Matrix3x3<T> value2)
+        [MethodImpl((MethodImplOptions) 768)]
+        public static Matrix2X3<T> Multiply<T>(Matrix2X3<T> value1, Matrix3X3<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
 
@@ -477,16 +477,16 @@ namespace Silk.NET.Maths
         /// <param name="value1">The source matrix.</param>
         /// <param name="value2">The scaling value to use.</param>
         /// <returns>The resulting matrix.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Matrix3x2<T> Multiply<T>(Matrix3x2<T> value1, T value2)
+        [MethodImpl((MethodImplOptions) 768)]
+        public static Matrix3X2<T> Multiply<T>(Matrix3X2<T> value1, T value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 * value2;
 
         /// <summary>Negates the given matrix by multiplying all values by -1.</summary>
         /// <param name="value">The source matrix.</param>
         /// <returns>The negated matrix.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Matrix3x2<T> Negate<T>(Matrix3x2<T> value)
+        [MethodImpl((MethodImplOptions) 768)]
+        public static Matrix3X2<T> Negate<T>(Matrix3X2<T> value)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => -value;
 
@@ -494,8 +494,8 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first source matrix.</param>
         /// <param name="value2">The second source matrix.</param>
         /// <returns>The matrix containing the resulting values.</returns>
-        [MethodImpl((MethodImplOptions)768)]
-        public static Matrix3x2<T> Subtract<T>(Matrix3x2<T> value1, Matrix3x2<T> value2)
+        [MethodImpl((MethodImplOptions) 768)]
+        public static Matrix3X2<T> Subtract<T>(Matrix3X2<T> value1, Matrix3X2<T> value2)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
             => value1 - value2;
     }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Globalization;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
@@ -48,7 +48,7 @@ namespace Silk.NET.Maths
         /// <summary>Constructs a Quaternion from the given vector and rotation parts.</summary>
         /// <param name="vectorPart">The vector part of the Quaternion.</param>
         /// <param name="scalarPart">The rotation part of the Quaternion.</param>
-        public Quaternion(Vector3<T> vectorPart, T scalarPart)
+        public Quaternion(Vector3D<T> vectorPart, T scalarPart)
         {
             X = vectorPart.X;
             Y = vectorPart.Y;
@@ -226,7 +226,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first source Quaternion.</param>
         /// <param name="value2">The second source Quaternion.</param>
         /// <returns>The result of adding the Quaternions.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Quaternion<T> Add(Quaternion<T> value1, Quaternion<T> value2)
             => value1 + value2;
 
@@ -262,7 +262,7 @@ namespace Silk.NET.Maths
             ans.Y = Scalar.Add(Scalar.Add(Scalar.Multiply(q1y, q2w), Scalar.Multiply(q2y, q1w)), cy);
             ans.Z = Scalar.Add(Scalar.Add(Scalar.Multiply(q1z, q2w), Scalar.Multiply(q2z, q1w)), cz);
             ans.W = Scalar.Subtract(Scalar.Multiply(q1w, q2w), dot);
-            
+
             return ans;
         }
 
@@ -286,7 +286,7 @@ namespace Silk.NET.Maths
         /// This vector must be normalized before calling this function or the resulting Quaternion will be incorrect.</param>
         /// <param name="angle">The angle, in radians, to rotate around the vector.</param>
         /// <returns>The created Quaternion.</returns>
-        public static Quaternion<T> CreateFromAxisAngle(Vector3<T> axis, T angle)
+        public static Quaternion<T> CreateFromAxisAngle(Vector3D<T> axis, T angle)
         {
             Quaternion<T> ans;
 
@@ -305,7 +305,7 @@ namespace Silk.NET.Maths
         /// <summary>Creates a Quaternion from the given rotation matrix.</summary>
         /// <param name="matrix">The rotation matrix.</param>
         /// <returns>The created Quaternion.</returns>
-        public static Quaternion<T> CreateFromRotationMatrix(Matrix4x4<T> matrix)
+        public static Quaternion<T> CreateFromRotationMatrix(Matrix4X4<T> matrix)
         {
             T trace = Scalar.Add(Scalar.Add(matrix.M11, matrix.M22), matrix.M33);
 
@@ -353,11 +353,11 @@ namespace Silk.NET.Maths
 
             return q;
         }
-        
+
         /// <summary>Creates a Quaternion from the given rotation matrix.</summary>
         /// <param name="matrix">The rotation matrix.</param>
         /// <returns>The created Quaternion.</returns>
-        public static Quaternion<T> CreateFromRotationMatrix(Matrix3x3<T> matrix)
+        public static Quaternion<T> CreateFromRotationMatrix(Matrix3X3<T> matrix)
         {
             T trace = Scalar.Add(Scalar.Add(matrix.M11, matrix.M22), matrix.M33);
 
@@ -443,7 +443,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The source Quaternion.</param>
         /// <param name="value2">The divisor.</param>
         /// <returns>The result of the division.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Quaternion<T> Divide(Quaternion<T> value1, Quaternion<T> value2)
             => value1 / value2;
 
@@ -454,7 +454,7 @@ namespace Silk.NET.Maths
         public static T Dot(Quaternion<T> quaternion1, Quaternion<T> quaternion2)
         {
             return Scalar.Add(Scalar.Add(Scalar.Add(Scalar.Multiply(quaternion1.X, quaternion2.X),
-                   Scalar.Multiply(quaternion1.Y,quaternion2.Y)),
+                   Scalar.Multiply(quaternion1.Y, quaternion2.Y)),
                    Scalar.Multiply(quaternion1.Z, quaternion2.Z)),
                    Scalar.Multiply(quaternion1.W, quaternion2.W));
         }
@@ -531,7 +531,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The Quaternion on the left side of the multiplication.</param>
         /// <param name="value2">The Quaternion on the right side of the multiplication.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Quaternion<T> Multiply(Quaternion<T> value1, Quaternion<T> value2)
             => value1 * value2;
 
@@ -539,14 +539,14 @@ namespace Silk.NET.Maths
         /// <param name="value1">The source Quaternion.</param>
         /// <param name="value2">The scalar value.</param>
         /// <returns>The result of the multiplication.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Quaternion<T> Multiply(Quaternion<T> value1, T value2)
             => value1 * value2;
 
         /// <summary>Flips the sign of each component of the quaternion.</summary>
         /// <param name="value">The source Quaternion.</param>
         /// <returns>The negated Quaternion.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Quaternion<T> Negate(Quaternion<T> value)
             => -value;
 
@@ -620,7 +620,7 @@ namespace Silk.NET.Maths
         /// <param name="value1">The first source Quaternion.</param>
         /// <param name="value2">The second Quaternion, to be subtracted from the first.</param>
         /// <returns>The result of the subtraction.</returns>
-        [MethodImpl((MethodImplOptions)768)]
+        [MethodImpl((MethodImplOptions) 768)]
         public static Quaternion<T> Subtract(Quaternion<T> value1, Quaternion<T> value2)
             => value1 - value2;
 
@@ -651,7 +651,7 @@ namespace Silk.NET.Maths
         /// <summary>Calculates the length squared of the Quaternion. This operation is cheaper than Length().</summary>
         /// <returns>The length squared of the Quaternion.</returns>
         public readonly T LengthSquared()
-            => Scalar.Add(Scalar.Add(Scalar.Add(Scalar.Multiply(X, X), Scalar.Multiply(Y, Y)),Scalar.Multiply(Z , Z)), Scalar.Multiply(W, W));
+            => Scalar.Add(Scalar.Add(Scalar.Add(Scalar.Multiply(X, X), Scalar.Multiply(Y, Y)), Scalar.Multiply(Z, Z)), Scalar.Multiply(W, W));
 
         /// <summary>Returns a String representing this Quaternion instance.</summary>
         /// <returns>The string representation.</returns>
@@ -668,7 +668,7 @@ namespace Silk.NET.Maths
         public static explicit operator Quaternion<Half>(Quaternion<T> from)
             => new(Scalar.As<T, Half>(from.X), Scalar.As<T, Half>(from.Y), Scalar.As<T, Half>(from.Z),
                 Scalar.As<T, Half>(from.W));
-        
+
         /// <summary>
         /// Converts a <see cref="Quaternion{T}"/> into one with a <typeparamref name="T"/> of <see cref="float"/>
         /// </summary>
@@ -677,7 +677,7 @@ namespace Silk.NET.Maths
         public static explicit operator Quaternion<float>(Quaternion<T> from)
             => new(Scalar.As<T, float>(from.X), Scalar.As<T, float>(from.Y), Scalar.As<T, float>(from.Z),
                 Scalar.As<T, float>(from.W));
-        
+
         /// <summary>
         /// Converts a <see cref="Quaternion{T}"/> into <see cref="System.Numerics.Quaternion"/>
         /// </summary>
@@ -695,7 +695,7 @@ namespace Silk.NET.Maths
         public static explicit operator Quaternion<double>(Quaternion<T> from)
             => new(Scalar.As<T, double>(from.X), Scalar.As<T, double>(from.Y), Scalar.As<T, double>(from.Z),
                 Scalar.As<T, double>(from.W));
-        
+
         /// <summary>
         /// Converts a <see cref="Quaternion{T}"/> into one with a <typeparamref name="T"/> of <see cref="decimal"/>
         /// </summary>
@@ -704,7 +704,7 @@ namespace Silk.NET.Maths
         public static explicit operator Quaternion<decimal>(Quaternion<T> from)
             => new(Scalar.As<T, decimal>(from.X), Scalar.As<T, decimal>(from.Y), Scalar.As<T, decimal>(from.Z),
                 Scalar.As<T, decimal>(from.W));
-        
+
         /// <summary>
         /// Converts a <see cref="Quaternion{T}"/> into one with a <typeparamref name="T"/> of <see cref="sbyte"/>
         /// </summary>
@@ -713,7 +713,7 @@ namespace Silk.NET.Maths
         public static explicit operator Quaternion<sbyte>(Quaternion<T> from)
             => new(Scalar.As<T, sbyte>(from.X), Scalar.As<T, sbyte>(from.Y), Scalar.As<T, sbyte>(from.Z),
                 Scalar.As<T, sbyte>(from.W));
-        
+
         /// <summary>
         /// Converts a <see cref="Quaternion{T}"/> into one with a <typeparamref name="T"/> of <see cref="byte"/>
         /// </summary>
@@ -722,7 +722,7 @@ namespace Silk.NET.Maths
         public static explicit operator Quaternion<byte>(Quaternion<T> from)
             => new(Scalar.As<T, byte>(from.X), Scalar.As<T, byte>(from.Y), Scalar.As<T, byte>(from.Z),
                 Scalar.As<T, byte>(from.W));
-        
+
         /// <summary>
         /// Converts a <see cref="Quaternion{T}"/> into one with a <typeparamref name="T"/> of <see cref="ushort"/>
         /// </summary>
@@ -731,7 +731,7 @@ namespace Silk.NET.Maths
         public static explicit operator Quaternion<ushort>(Quaternion<T> from)
             => new(Scalar.As<T, ushort>(from.X), Scalar.As<T, ushort>(from.Y), Scalar.As<T, ushort>(from.Z),
                 Scalar.As<T, ushort>(from.W));
-        
+
         /// <summary>
         /// Converts a <see cref="Quaternion{T}"/> into one with a <typeparamref name="T"/> of <see cref="short"/>
         /// </summary>
@@ -740,7 +740,7 @@ namespace Silk.NET.Maths
         public static explicit operator Quaternion<short>(Quaternion<T> from)
             => new(Scalar.As<T, short>(from.X), Scalar.As<T, short>(from.Y), Scalar.As<T, short>(from.Z),
                 Scalar.As<T, short>(from.W));
-        
+
         /// <summary>
         /// Converts a <see cref="Quaternion{T}"/> into one with a <typeparamref name="T"/> of <see cref="uint"/>
         /// </summary>
@@ -749,7 +749,7 @@ namespace Silk.NET.Maths
         public static explicit operator Quaternion<uint>(Quaternion<T> from)
             => new(Scalar.As<T, uint>(from.X), Scalar.As<T, uint>(from.Y), Scalar.As<T, uint>(from.Z),
                 Scalar.As<T, uint>(from.W));
-        
+
         /// <summary>
         /// Converts a <see cref="Quaternion{T}"/> into one with a <typeparamref name="T"/> of <see cref="int"/>
         /// </summary>
@@ -758,7 +758,7 @@ namespace Silk.NET.Maths
         public static explicit operator Quaternion<int>(Quaternion<T> from)
             => new(Scalar.As<T, int>(from.X), Scalar.As<T, int>(from.Y), Scalar.As<T, int>(from.Z),
                 Scalar.As<T, int>(from.W));
-        
+
         /// <summary>
         /// Converts a <see cref="Quaternion{T}"/> into one with a <typeparamref name="T"/> of <see cref="ulong"/>
         /// </summary>
@@ -767,7 +767,7 @@ namespace Silk.NET.Maths
         public static explicit operator Quaternion<ulong>(Quaternion<T> from)
             => new(Scalar.As<T, ulong>(from.X), Scalar.As<T, ulong>(from.Y), Scalar.As<T, ulong>(from.Z),
                 Scalar.As<T, ulong>(from.W));
-        
+
         /// <summary>
         /// Converts a <see cref="Quaternion{T}"/> into one with a <typeparamref name="T"/> of <see cref="long"/>
         /// </summary>

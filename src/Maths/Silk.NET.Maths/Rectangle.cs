@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
@@ -16,41 +16,41 @@ namespace Silk.NET.Maths
         /// The origin.
         /// </summary>
         [DataMember]
-        public Vector2<T> Origin;
+        public Vector2D<T> Origin;
         /// <summary>
         /// The size.
         /// </summary>
         [DataMember]
-        public Vector2<T> Size;
-        
+        public Vector2D<T> Size;
+
         /// <summary>
         /// Constructs a Rectangle from an origin and an size
         /// </summary>
         /// <param name="origin">The origin of the rect.</param>
         /// <param name="size">The size of the rect.</param>
-        public Rectangle(Vector2<T> origin, Vector2<T> size)
+        public Rectangle(Vector2D<T> origin, Vector2D<T> size)
         {
             Origin = origin;
             Size = size;
         }
-        
+
         /// <summary>
         /// The center of this rectangle.
         /// </summary>
         [IgnoreDataMember]
-        public Vector2<T> Center => Origin + HalfSize;
+        public Vector2D<T> Center => Origin + HalfSize;
 
         /// <summary>
         /// The Maximum point of this Rectangle.
         /// </summary>
         [IgnoreDataMember]
-        public Vector2<T> Max => Origin + Size;
+        public Vector2D<T> Max => Origin + Size;
 
         /// <summary>
         /// Half the size of this rectangle.
         /// </summary>
         [IgnoreDataMember]
-        public Vector2<T> HalfSize => Size / Scalar<T>.Two;
+        public Vector2D<T> HalfSize => Size / Scalar<T>.Two;
 
         /// <summary>
         /// Calculates whether this rectangle contains a point.
@@ -58,7 +58,7 @@ namespace Silk.NET.Maths
         /// <param name="point">The point.</param>
         /// <returns>True if this rectangle contains the point; False otherwise.</returns>
         /// <remarks>This does consider a point on the edge contained.</remarks>
-        public bool Contains(Vector2<T> point)
+        public bool Contains(Vector2D<T> point)
         {
             var max = Max;
             return Scalar.GreaterThanOrEqual(point.X, Origin.X) && Scalar.GreaterThanOrEqual
@@ -85,7 +85,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns>The distance.</returns>
-        public T GetDistanceToNearestEdge(Vector2<T> point)
+        public T GetDistanceToNearestEdge(Vector2D<T> point)
         {
             var max = Max;
             var dx = Scalar.Max(Scalar.Max(Scalar.Subtract(Origin.X, point.X), Scalar<T>.Zero), Scalar.Subtract(point.X, max.X));
@@ -98,7 +98,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="distance">The distance.</param>
         /// <returns>The calculated rectangle.</returns>
-        public Rectangle<T> GetTranslated(Vector2<T> distance)
+        public Rectangle<T> GetTranslated(Vector2D<T> distance)
         {
             return new(Origin + distance, Size);
         }
@@ -109,7 +109,7 @@ namespace Silk.NET.Maths
         /// <param name="scale">The scale.</param>
         /// <param name="anchor">The anchor.</param>
         /// <returns>The calculated rectangle.</returns>
-        public Rectangle<T> GetScaled(Vector2<T> scale, Vector2<T> anchor)
+        public Rectangle<T> GetScaled(Vector2D<T> scale, Vector2D<T> anchor)
         {
             var origMax = Max;
             var min = (scale * (Origin - anchor)) + Origin;
@@ -122,10 +122,10 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns>The calculated rectangle.</returns>
-        public Rectangle<T> GetInflated(Vector2<T> point)
+        public Rectangle<T> GetInflated(Vector2D<T> point)
         {
-            var min = Vector2.Min(Origin, point);
-            var max = Vector2.Max(Max, point);
+            var min = Vector2D.Min(Origin, point);
+            var max = Vector2D.Max(Max, point);
             return new(min, max - min);
         }
 

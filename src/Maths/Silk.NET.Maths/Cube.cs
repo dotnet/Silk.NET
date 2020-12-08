@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.Serialization;
 
@@ -17,19 +17,19 @@ namespace Silk.NET.Maths
         /// The origin.
         /// </summary>
         [DataMember]
-        public Vector3<T> Origin;
+        public Vector3D<T> Origin;
         /// <summary>
         /// The size.
         /// </summary>
         [DataMember]
-        public Vector3<T> Size;
+        public Vector3D<T> Size;
 
         /// <summary>
         /// Constructs a Cube from an origin and it's size
         /// </summary>
         /// <param name="origin">The origin of the cube.</param>
         /// <param name="size">The size of the cube.</param>
-        public Cube(Vector3<T> origin, Vector3<T> size)
+        public Cube(Vector3D<T> origin, Vector3D<T> size)
         {
             Origin = origin;
             Size = size;
@@ -39,19 +39,19 @@ namespace Silk.NET.Maths
         /// The center of this cube.
         /// </summary>
         [IgnoreDataMember]
-        public Vector3<T> Center => Origin + HalfSize;
+        public Vector3D<T> Center => Origin + HalfSize;
 
         /// <summary>
         /// The Maximum point of this cube.
         /// </summary>
         [IgnoreDataMember]
-        public Vector3<T> Max => Origin + Size;
+        public Vector3D<T> Max => Origin + Size;
 
         /// <summary>
         /// Half the size of this cube.
         /// </summary>
         [IgnoreDataMember]
-        public Vector3<T> HalfSize => Size / Scalar<T>.Two;
+        public Vector3D<T> HalfSize => Size / Scalar<T>.Two;
 
         /// <summary>
         /// Calculates whether this cube contains a point.
@@ -59,7 +59,7 @@ namespace Silk.NET.Maths
         /// <param name="point">The point.</param>
         /// <returns>True if this cube contains the point; False otherwise.</returns>
         /// <remarks>This does consider a point on the edge contained.</remarks>
-        public bool Contains(Vector3<T> point)
+        public bool Contains(Vector3D<T> point)
         {
             var max = Max;
             return Scalar.GreaterThanOrEqual(point.X, Origin.X) && Scalar.GreaterThanOrEqual
@@ -88,7 +88,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns>The distance.</returns>
-        public T GetDistanceToNearestEdge(Vector3<T> point)
+        public T GetDistanceToNearestEdge(Vector3D<T> point)
         {
             var max = Max;
             var dx = Scalar.Max(Scalar.Max(Scalar.Subtract(Origin.X, point.X), Scalar<T>.Zero), Scalar.Subtract(point.X, max.X));
@@ -102,7 +102,7 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="distance">The distance.</param>
         /// <returns>The calculated cube.</returns>
-        public Cube<T> GetTranslated(Vector3<T> distance)
+        public Cube<T> GetTranslated(Vector3D<T> distance)
         {
             return new(Origin + distance, Size);
         }
@@ -113,7 +113,7 @@ namespace Silk.NET.Maths
         /// <param name="scale">The scale.</param>
         /// <param name="anchor">The anchor.</param>
         /// <returns>The calculated cube.</returns>
-        public Cube<T> GetScaled(Vector3<T> scale, Vector3<T> anchor)
+        public Cube<T> GetScaled(Vector3D<T> scale, Vector3D<T> anchor)
         {
             var origMax = Max;
             var min = (scale * (Origin - anchor)) + Origin;
@@ -126,10 +126,10 @@ namespace Silk.NET.Maths
         /// </summary>
         /// <param name="point">The point.</param>
         /// <returns>The cube.</returns>
-        public Cube<T> GetInflated(Vector3<T> point)
+        public Cube<T> GetInflated(Vector3D<T> point)
         {
-            var min = Vector3.Min(Origin, point);
-            var max = Vector3.Max(Max, point);
+            var min = Vector3D.Min(Origin, point);
+            var max = Vector3D.Max(Max, point);
             return new(min, max - min);
         }
 
