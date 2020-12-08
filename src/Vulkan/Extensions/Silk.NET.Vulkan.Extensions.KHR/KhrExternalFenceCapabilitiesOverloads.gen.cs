@@ -18,21 +18,21 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 {
     public static class KhrExternalFenceCapabilitiesOverloads
     {
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe void GetPhysicalDeviceExternalFenceProperties(this KhrExternalFenceCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalFenceInfo* pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalFenceProperties> pExternalFenceProperties)
         {
             // SpanOverloader
             thisApi.GetPhysicalDeviceExternalFenceProperties(physicalDevice, pExternalFenceInfo, out pExternalFenceProperties.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe void GetPhysicalDeviceExternalFenceProperties(this KhrExternalFenceCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalFenceInfo> pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalFenceProperties* pExternalFenceProperties)
         {
             // SpanOverloader
             thisApi.GetPhysicalDeviceExternalFenceProperties(physicalDevice, in pExternalFenceInfo.GetPinnableReference(), pExternalFenceProperties);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe void GetPhysicalDeviceExternalFenceProperties(this KhrExternalFenceCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalFenceInfo> pExternalFenceInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalFenceProperties> pExternalFenceProperties)
         {
             // SpanOverloader

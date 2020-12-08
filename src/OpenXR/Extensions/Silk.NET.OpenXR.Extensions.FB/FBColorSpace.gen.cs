@@ -22,23 +22,23 @@ namespace Silk.NET.OpenXR.Extensions.FB
     public unsafe partial class FBColorSpace : NativeExtension<XR>
     {
         public const string ExtensionName = "XR_FB_color_space";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateColorSpacesFB")]
         public unsafe partial Result EnumerateColorSpacesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint colorSpaceCapacityInput, [Count(Count = 0)] uint* colorSpaceCountOutput, [Count(Computed = "colorSpaceCapacityInput")] ColorSpaceFB* colorSpaces);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateColorSpacesFB")]
         public unsafe partial Result EnumerateColorSpacesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint colorSpaceCapacityInput, [Count(Count = 0)] uint* colorSpaceCountOutput, [Count(Computed = "colorSpaceCapacityInput")] ref ColorSpaceFB colorSpaces);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateColorSpacesFB")]
         public unsafe partial Result EnumerateColorSpacesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint colorSpaceCapacityInput, [Count(Count = 0)] ref uint colorSpaceCountOutput, [Count(Computed = "colorSpaceCapacityInput")] ColorSpaceFB* colorSpaces);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateColorSpacesFB")]
         public partial Result EnumerateColorSpacesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint colorSpaceCapacityInput, [Count(Count = 0)] ref uint colorSpaceCountOutput, [Count(Computed = "colorSpaceCapacityInput")] ref ColorSpaceFB colorSpaces);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSetColorSpaceFB")]
         public partial Result SetColorSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0)] ColorSpaceFB colorspace);
 

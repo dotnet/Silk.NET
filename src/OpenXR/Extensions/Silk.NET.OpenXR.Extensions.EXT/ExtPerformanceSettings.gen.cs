@@ -22,7 +22,7 @@ namespace Silk.NET.OpenXR.Extensions.EXT
     public unsafe partial class ExtPerformanceSettings : NativeExtension<XR>
     {
         public const string ExtensionName = "XR_EXT_performance_settings";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrPerfSettingsSetPerformanceLevelEXT")]
         public partial Result PerfSettingsSetPerformanceLevel([Count(Count = 0)] Session session, [Count(Count = 0)] PerfSettingsDomainEXT domain, [Count(Count = 0)] PerfSettingsLevelEXT level);
 

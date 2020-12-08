@@ -47,7 +47,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type.Name", "")]
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -56,7 +56,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -68,7 +68,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -80,7 +80,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -95,7 +95,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -104,7 +104,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint Release()
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -113,14 +113,14 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GetDevice(ID3D11Device** ppDevice)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevice);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GetDevice(ref ID3D11Device* ppDevice)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -130,7 +130,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(Guid* guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -139,7 +139,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData<T0>(Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -151,7 +151,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(Guid* guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -163,7 +163,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData<T0>(Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -178,7 +178,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(ref Guid guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -190,7 +190,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData<T0>(ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -205,7 +205,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(ref Guid guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -220,7 +220,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetPrivateData<T0>(ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -238,7 +238,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, void* pData)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -247,7 +247,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -259,7 +259,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, void* pData)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -271,7 +271,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -286,7 +286,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -295,7 +295,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -307,7 +307,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -319,7 +319,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -334,7 +334,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetVideoProcessorContentDesc(VideoProcessorContentDesc* pContentDesc)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -343,7 +343,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetVideoProcessorContentDesc(ref VideoProcessorContentDesc pContentDesc)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -355,7 +355,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CheckVideoProcessorFormat(Silk.NET.DXGI.Format Format, uint* pFlags)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -364,7 +364,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int CheckVideoProcessorFormat(Silk.NET.DXGI.Format Format, ref uint pFlags)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -376,7 +376,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetVideoProcessorCaps(VideoProcessorCaps* pCaps)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -385,7 +385,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetVideoProcessorCaps(ref VideoProcessorCaps pCaps)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -397,7 +397,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetVideoProcessorRateConversionCaps(uint TypeIndex, VideoProcessorRateConversionCaps* pCaps)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -406,7 +406,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetVideoProcessorRateConversionCaps(uint TypeIndex, ref VideoProcessorRateConversionCaps pCaps)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -418,7 +418,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetVideoProcessorCustomRate(uint TypeIndex, uint CustomRateIndex, VideoProcessorCustomRate* pRate)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -427,7 +427,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetVideoProcessorCustomRate(uint TypeIndex, uint CustomRateIndex, ref VideoProcessorCustomRate pRate)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -439,7 +439,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetVideoProcessorFilterRange(VideoProcessorFilter Filter, VideoProcessorFilterRange* pRange)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -448,7 +448,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetVideoProcessorFilterRange(VideoProcessorFilter Filter, ref VideoProcessorFilterRange pRange)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -460,7 +460,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CheckVideoProcessorFormatConversion(Silk.NET.DXGI.Format InputFormat, Silk.NET.DXGI.ColorSpaceType InputColorSpace, Silk.NET.DXGI.Format OutputFormat, Silk.NET.DXGI.ColorSpaceType OutputColorSpace, int* pSupported)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -469,7 +469,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int CheckVideoProcessorFormatConversion(Silk.NET.DXGI.Format InputFormat, Silk.NET.DXGI.ColorSpaceType InputColorSpace, Silk.NET.DXGI.Format OutputFormat, Silk.NET.DXGI.ColorSpaceType OutputColorSpace, ref int pSupported)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

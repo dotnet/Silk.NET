@@ -47,7 +47,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type.Name", "")]
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -56,7 +56,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -68,7 +68,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -80,7 +80,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -95,7 +95,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -104,7 +104,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint Release()
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -113,14 +113,14 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GetDevice(ID3D11Device** ppDevice)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Device**, void>)LpVtbl[3])(@this, ppDevice);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GetDevice(ref ID3D11Device* ppDevice)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -130,7 +130,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(Guid* guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -139,7 +139,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData<T0>(Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -151,7 +151,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(Guid* guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -163,7 +163,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData<T0>(Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -178,7 +178,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(ref Guid guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -190,7 +190,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData<T0>(ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -205,7 +205,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(ref Guid guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -220,7 +220,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetPrivateData<T0>(ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -238,7 +238,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, void* pData)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -247,7 +247,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -259,7 +259,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, void* pData)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -271,7 +271,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -286,7 +286,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -295,7 +295,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -307,7 +307,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -319,7 +319,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -334,14 +334,14 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSSetConstantBuffers(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, void>)LpVtbl[7])(@this, StartSlot, NumBuffers, ppConstantBuffers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSSetConstantBuffers(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -351,14 +351,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSSetShaderResources(uint StartSlot, uint NumViews, ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11ShaderResourceView**, void>)LpVtbl[8])(@this, StartSlot, NumViews, ppShaderResourceViews);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSSetShaderResources(uint StartSlot, uint NumViews, ref ID3D11ShaderResourceView* ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -368,14 +368,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSSetShader(ID3D11PixelShader* pPixelShader, ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11PixelShader*, ID3D11ClassInstance**, uint, void>)LpVtbl[9])(@this, pPixelShader, ppClassInstances, NumClassInstances);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSSetShader(ID3D11PixelShader* pPixelShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -385,7 +385,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSSetShader(ref ID3D11PixelShader pPixelShader, ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -395,7 +395,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSSetShader(ref ID3D11PixelShader pPixelShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -408,14 +408,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSSetSamplers(uint StartSlot, uint NumSamplers, ID3D11SamplerState** ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11SamplerState**, void>)LpVtbl[10])(@this, StartSlot, NumSamplers, ppSamplers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSSetSamplers(uint StartSlot, uint NumSamplers, ref ID3D11SamplerState* ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -425,14 +425,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSSetShader(ID3D11VertexShader* pVertexShader, ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11VertexShader*, ID3D11ClassInstance**, uint, void>)LpVtbl[11])(@this, pVertexShader, ppClassInstances, NumClassInstances);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSSetShader(ID3D11VertexShader* pVertexShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -442,7 +442,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSSetShader(ref ID3D11VertexShader pVertexShader, ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -452,7 +452,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSSetShader(ref ID3D11VertexShader pVertexShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -465,21 +465,21 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void DrawIndexed(uint IndexCount, uint StartIndexLocation, int BaseVertexLocation)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, int, void>)LpVtbl[12])(@this, IndexCount, StartIndexLocation, BaseVertexLocation);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void Draw(uint VertexCount, uint StartVertexLocation)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, void>)LpVtbl[13])(@this, VertexCount, StartVertexLocation);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Map(ID3D11Resource* pResource, uint Subresource, Map MapType, uint MapFlags, MappedSubresource* pMappedResource)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -488,7 +488,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Map(ID3D11Resource* pResource, uint Subresource, Map MapType, uint MapFlags, ref MappedSubresource pMappedResource)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -500,7 +500,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Map(ref ID3D11Resource pResource, uint Subresource, Map MapType, uint MapFlags, MappedSubresource* pMappedResource)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -512,7 +512,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int Map(ref ID3D11Resource pResource, uint Subresource, Map MapType, uint MapFlags, ref MappedSubresource pMappedResource)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -527,14 +527,14 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void Unmap(ID3D11Resource* pResource, uint Subresource)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, void>)LpVtbl[15])(@this, pResource, Subresource);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void Unmap(ref ID3D11Resource pResource, uint Subresource)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -544,14 +544,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSSetConstantBuffers(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, void>)LpVtbl[16])(@this, StartSlot, NumBuffers, ppConstantBuffers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSSetConstantBuffers(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -561,14 +561,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IASetInputLayout(ID3D11InputLayout* pInputLayout)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11InputLayout*, void>)LpVtbl[17])(@this, pInputLayout);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void IASetInputLayout(ref ID3D11InputLayout pInputLayout)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -578,14 +578,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppVertexBuffers, uint* pStrides, uint* pOffsets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[18])(@this, StartSlot, NumBuffers, ppVertexBuffers, pStrides, pOffsets);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppVertexBuffers, uint* pStrides, ref uint pOffsets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -595,7 +595,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppVertexBuffers, ref uint pStrides, uint* pOffsets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -605,7 +605,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppVertexBuffers, ref uint pStrides, ref uint pOffsets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -618,7 +618,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppVertexBuffers, uint* pStrides, uint* pOffsets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -628,7 +628,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppVertexBuffers, uint* pStrides, ref uint pOffsets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -641,7 +641,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppVertexBuffers, ref uint pStrides, uint* pOffsets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -654,7 +654,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IASetVertexBuffers(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppVertexBuffers, ref uint pStrides, ref uint pOffsets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -670,14 +670,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IASetIndexBuffer(ID3D11Buffer* pIndexBuffer, Silk.NET.DXGI.Format Format, uint Offset)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Buffer*, Silk.NET.DXGI.Format, uint, void>)LpVtbl[19])(@this, pIndexBuffer, Format, Offset);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void IASetIndexBuffer(ref ID3D11Buffer pIndexBuffer, Silk.NET.DXGI.Format Format, uint Offset)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -687,28 +687,28 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void DrawIndexedInstanced(uint IndexCountPerInstance, uint InstanceCount, uint StartIndexLocation, int BaseVertexLocation, uint StartInstanceLocation)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, uint, int, uint, void>)LpVtbl[20])(@this, IndexCountPerInstance, InstanceCount, StartIndexLocation, BaseVertexLocation, StartInstanceLocation);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void DrawInstanced(uint VertexCountPerInstance, uint InstanceCount, uint StartVertexLocation, uint StartInstanceLocation)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, uint, uint, void>)LpVtbl[21])(@this, VertexCountPerInstance, InstanceCount, StartVertexLocation, StartInstanceLocation);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSSetConstantBuffers(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, void>)LpVtbl[22])(@this, StartSlot, NumBuffers, ppConstantBuffers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSSetConstantBuffers(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -718,14 +718,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSSetShader(ID3D11GeometryShader* pShader, ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11GeometryShader*, ID3D11ClassInstance**, uint, void>)LpVtbl[23])(@this, pShader, ppClassInstances, NumClassInstances);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSSetShader(ID3D11GeometryShader* pShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -735,7 +735,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSSetShader(ref ID3D11GeometryShader pShader, ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -745,7 +745,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSSetShader(ref ID3D11GeometryShader pShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -758,21 +758,21 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void IASetPrimitiveTopology(Silk.NET.Core.Native.D3DPrimitiveTopology Topology)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, Silk.NET.Core.Native.D3DPrimitiveTopology, void>)LpVtbl[24])(@this, Topology);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSSetShaderResources(uint StartSlot, uint NumViews, ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11ShaderResourceView**, void>)LpVtbl[25])(@this, StartSlot, NumViews, ppShaderResourceViews);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSSetShaderResources(uint StartSlot, uint NumViews, ref ID3D11ShaderResourceView* ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -782,14 +782,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSSetSamplers(uint StartSlot, uint NumSamplers, ID3D11SamplerState** ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11SamplerState**, void>)LpVtbl[26])(@this, StartSlot, NumSamplers, ppSamplers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSSetSamplers(uint StartSlot, uint NumSamplers, ref ID3D11SamplerState* ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -799,14 +799,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void Begin(ID3D11Asynchronous* pAsync)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Asynchronous*, void>)LpVtbl[27])(@this, pAsync);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void Begin(ref ID3D11Asynchronous pAsync)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -816,14 +816,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void End(ID3D11Asynchronous* pAsync)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Asynchronous*, void>)LpVtbl[28])(@this, pAsync);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void End(ref ID3D11Asynchronous pAsync)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -833,7 +833,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetData(ID3D11Asynchronous* pAsync, void* pData, uint DataSize, uint GetDataFlags)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -842,7 +842,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetData<T0>(ID3D11Asynchronous* pAsync, ref T0 pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -854,7 +854,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetData(ref ID3D11Asynchronous pAsync, void* pData, uint DataSize, uint GetDataFlags)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -866,7 +866,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetData<T0>(ref ID3D11Asynchronous pAsync, ref T0 pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -881,14 +881,14 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void SetPredication(ID3D11Predicate* pPredicate, int PredicateValue)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Predicate*, int, void>)LpVtbl[30])(@this, pPredicate, PredicateValue);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void SetPredication(ref ID3D11Predicate pPredicate, int PredicateValue)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -898,14 +898,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSSetShaderResources(uint StartSlot, uint NumViews, ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11ShaderResourceView**, void>)LpVtbl[31])(@this, StartSlot, NumViews, ppShaderResourceViews);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSSetShaderResources(uint StartSlot, uint NumViews, ref ID3D11ShaderResourceView* ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -915,14 +915,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSSetSamplers(uint StartSlot, uint NumSamplers, ID3D11SamplerState** ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11SamplerState**, void>)LpVtbl[32])(@this, StartSlot, NumSamplers, ppSamplers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSSetSamplers(uint StartSlot, uint NumSamplers, ref ID3D11SamplerState* ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -932,14 +932,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetRenderTargets(uint NumViews, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, ID3D11RenderTargetView**, ID3D11DepthStencilView*, void>)LpVtbl[33])(@this, NumViews, ppRenderTargetViews, pDepthStencilView);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetRenderTargets(uint NumViews, ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -949,7 +949,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetRenderTargets(uint NumViews, ref ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -959,7 +959,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetRenderTargets(uint NumViews, ref ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -972,14 +972,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, uint* pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, ID3D11RenderTargetView**, ID3D11DepthStencilView*, uint, uint, ID3D11UnorderedAccessView**, uint*, void>)LpVtbl[34])(@this, NumRTVs, ppRenderTargetViews, pDepthStencilView, UAVStartSlot, NumUAVs, ppUnorderedAccessViews, pUAVInitialCounts);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, ref uint pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -989,7 +989,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, uint* pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -999,7 +999,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, ref uint pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1012,7 +1012,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, uint* pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1022,7 +1022,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, ref uint pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1035,7 +1035,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, uint* pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1048,7 +1048,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, ref uint pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1064,7 +1064,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, uint* pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1074,7 +1074,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, ref uint pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1087,7 +1087,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, uint* pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1100,7 +1100,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView* pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, ref uint pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1116,7 +1116,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, uint* pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1129,7 +1129,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, ref uint pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1145,7 +1145,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, uint* pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1161,7 +1161,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView pDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, ref uint pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1180,14 +1180,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetBlendState(ID3D11BlendState* pBlendState, [Count(Count = 4)] float* BlendFactor, uint SampleMask)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11BlendState*, float*, uint, void>)LpVtbl[35])(@this, pBlendState, BlendFactor, SampleMask);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetBlendState(ID3D11BlendState* pBlendState, [Count(Count = 4)] ref float BlendFactor, uint SampleMask)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1197,7 +1197,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetBlendState(ref ID3D11BlendState pBlendState, [Count(Count = 4)] float* BlendFactor, uint SampleMask)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1207,7 +1207,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void OMSetBlendState(ref ID3D11BlendState pBlendState, [Count(Count = 4)] ref float BlendFactor, uint SampleMask)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1220,14 +1220,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMSetDepthStencilState(ID3D11DepthStencilState* pDepthStencilState, uint StencilRef)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11DepthStencilState*, uint, void>)LpVtbl[36])(@this, pDepthStencilState, StencilRef);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void OMSetDepthStencilState(ref ID3D11DepthStencilState pDepthStencilState, uint StencilRef)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1237,14 +1237,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void SOSetTargets(uint NumBuffers, ID3D11Buffer** ppSOTargets, uint* pOffsets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, ID3D11Buffer**, uint*, void>)LpVtbl[37])(@this, NumBuffers, ppSOTargets, pOffsets);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void SOSetTargets(uint NumBuffers, ID3D11Buffer** ppSOTargets, ref uint pOffsets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1254,7 +1254,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void SOSetTargets(uint NumBuffers, ref ID3D11Buffer* ppSOTargets, uint* pOffsets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1264,7 +1264,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void SOSetTargets(uint NumBuffers, ref ID3D11Buffer* ppSOTargets, ref uint pOffsets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1277,21 +1277,21 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void DrawAuto()
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, void>)LpVtbl[38])(@this);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DrawIndexedInstancedIndirect(ID3D11Buffer* pBufferForArgs, uint AlignedByteOffsetForArgs)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Buffer*, uint, void>)LpVtbl[39])(@this, pBufferForArgs, AlignedByteOffsetForArgs);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void DrawIndexedInstancedIndirect(ref ID3D11Buffer pBufferForArgs, uint AlignedByteOffsetForArgs)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1301,14 +1301,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DrawInstancedIndirect(ID3D11Buffer* pBufferForArgs, uint AlignedByteOffsetForArgs)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Buffer*, uint, void>)LpVtbl[40])(@this, pBufferForArgs, AlignedByteOffsetForArgs);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void DrawInstancedIndirect(ref ID3D11Buffer pBufferForArgs, uint AlignedByteOffsetForArgs)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1318,21 +1318,21 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void Dispatch(uint ThreadGroupCountX, uint ThreadGroupCountY, uint ThreadGroupCountZ)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, uint, void>)LpVtbl[41])(@this, ThreadGroupCountX, ThreadGroupCountY, ThreadGroupCountZ);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DispatchIndirect(ID3D11Buffer* pBufferForArgs, uint AlignedByteOffsetForArgs)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Buffer*, uint, void>)LpVtbl[42])(@this, pBufferForArgs, AlignedByteOffsetForArgs);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void DispatchIndirect(ref ID3D11Buffer pBufferForArgs, uint AlignedByteOffsetForArgs)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1342,14 +1342,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void RSSetState(ID3D11RasterizerState* pRasterizerState)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11RasterizerState*, void>)LpVtbl[43])(@this, pRasterizerState);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void RSSetState(ref ID3D11RasterizerState pRasterizerState)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1359,14 +1359,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void RSSetViewports(uint NumViewports, Viewport* pViewports)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, Viewport*, void>)LpVtbl[44])(@this, NumViewports, pViewports);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void RSSetViewports(uint NumViewports, ref Viewport pViewports)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1376,14 +1376,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void RSSetScissorRects(uint NumRects, Silk.NET.Maths.Rectangle<long>* pRects)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, Silk.NET.Maths.Rectangle<long>*, void>)LpVtbl[45])(@this, NumRects, pRects);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void RSSetScissorRects(uint NumRects, ref Silk.NET.Maths.Rectangle<long> pRects)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1393,14 +1393,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CopySubresourceRegion(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, Box* pSrcBox)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, uint, uint, uint, ID3D11Resource*, uint, Box*, void>)LpVtbl[46])(@this, pDstResource, DstSubresource, DstX, DstY, DstZ, pSrcResource, SrcSubresource, pSrcBox);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CopySubresourceRegion(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, ref Box pSrcBox)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1410,7 +1410,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CopySubresourceRegion(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, Box* pSrcBox)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1420,7 +1420,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CopySubresourceRegion(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, ref Box pSrcBox)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1433,7 +1433,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CopySubresourceRegion(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, Box* pSrcBox)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1443,7 +1443,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CopySubresourceRegion(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, ref Box pSrcBox)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1456,7 +1456,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CopySubresourceRegion(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, Box* pSrcBox)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1469,7 +1469,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void CopySubresourceRegion(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, ref Box pSrcBox)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1485,14 +1485,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CopyResource(ID3D11Resource* pDstResource, ID3D11Resource* pSrcResource)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, ID3D11Resource*, void>)LpVtbl[47])(@this, pDstResource, pSrcResource);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CopyResource(ID3D11Resource* pDstResource, ref ID3D11Resource pSrcResource)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1502,7 +1502,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CopyResource(ref ID3D11Resource pDstResource, ID3D11Resource* pSrcResource)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1512,7 +1512,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void CopyResource(ref ID3D11Resource pDstResource, ref ID3D11Resource pSrcResource)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1525,14 +1525,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void UpdateSubresource(ID3D11Resource* pDstResource, uint DstSubresource, Box* pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, Box*, void*, uint, uint, void>)LpVtbl[48])(@this, pDstResource, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void UpdateSubresource<T0>(ID3D11Resource* pDstResource, uint DstSubresource, Box* pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1542,7 +1542,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void UpdateSubresource(ID3D11Resource* pDstResource, uint DstSubresource, ref Box pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1552,7 +1552,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void UpdateSubresource<T0>(ID3D11Resource* pDstResource, uint DstSubresource, ref Box pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1565,7 +1565,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void UpdateSubresource(ref ID3D11Resource pDstResource, uint DstSubresource, Box* pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1575,7 +1575,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void UpdateSubresource<T0>(ref ID3D11Resource pDstResource, uint DstSubresource, Box* pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1588,7 +1588,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void UpdateSubresource(ref ID3D11Resource pDstResource, uint DstSubresource, ref Box pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1601,7 +1601,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void UpdateSubresource<T0>(ref ID3D11Resource pDstResource, uint DstSubresource, ref Box pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1617,14 +1617,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CopyStructureCount(ID3D11Buffer* pDstBuffer, uint DstAlignedByteOffset, ID3D11UnorderedAccessView* pSrcView)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Buffer*, uint, ID3D11UnorderedAccessView*, void>)LpVtbl[49])(@this, pDstBuffer, DstAlignedByteOffset, pSrcView);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CopyStructureCount(ID3D11Buffer* pDstBuffer, uint DstAlignedByteOffset, ref ID3D11UnorderedAccessView pSrcView)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1634,7 +1634,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CopyStructureCount(ref ID3D11Buffer pDstBuffer, uint DstAlignedByteOffset, ID3D11UnorderedAccessView* pSrcView)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1644,7 +1644,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void CopyStructureCount(ref ID3D11Buffer pDstBuffer, uint DstAlignedByteOffset, ref ID3D11UnorderedAccessView pSrcView)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1657,14 +1657,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void ClearRenderTargetView(ID3D11RenderTargetView* pRenderTargetView, [Count(Count = 4)] float* ColorRGBA)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11RenderTargetView*, float*, void>)LpVtbl[50])(@this, pRenderTargetView, ColorRGBA);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void ClearRenderTargetView(ID3D11RenderTargetView* pRenderTargetView, [Count(Count = 4)] ref float ColorRGBA)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1674,7 +1674,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void ClearRenderTargetView(ref ID3D11RenderTargetView pRenderTargetView, [Count(Count = 4)] float* ColorRGBA)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1684,7 +1684,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void ClearRenderTargetView(ref ID3D11RenderTargetView pRenderTargetView, [Count(Count = 4)] ref float ColorRGBA)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1697,14 +1697,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void ClearUnorderedAccessViewUint(ID3D11UnorderedAccessView* pUnorderedAccessView, [Count(Count = 4)] uint* Values)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11UnorderedAccessView*, uint*, void>)LpVtbl[51])(@this, pUnorderedAccessView, Values);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void ClearUnorderedAccessViewUint(ID3D11UnorderedAccessView* pUnorderedAccessView, [Count(Count = 4)] ref uint Values)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1714,7 +1714,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void ClearUnorderedAccessViewUint(ref ID3D11UnorderedAccessView pUnorderedAccessView, [Count(Count = 4)] uint* Values)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1724,7 +1724,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void ClearUnorderedAccessViewUint(ref ID3D11UnorderedAccessView pUnorderedAccessView, [Count(Count = 4)] ref uint Values)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1737,14 +1737,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void ClearUnorderedAccessViewFloat(ID3D11UnorderedAccessView* pUnorderedAccessView, [Count(Count = 4)] float* Values)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11UnorderedAccessView*, float*, void>)LpVtbl[52])(@this, pUnorderedAccessView, Values);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void ClearUnorderedAccessViewFloat(ID3D11UnorderedAccessView* pUnorderedAccessView, [Count(Count = 4)] ref float Values)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1754,7 +1754,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void ClearUnorderedAccessViewFloat(ref ID3D11UnorderedAccessView pUnorderedAccessView, [Count(Count = 4)] float* Values)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1764,7 +1764,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void ClearUnorderedAccessViewFloat(ref ID3D11UnorderedAccessView pUnorderedAccessView, [Count(Count = 4)] ref float Values)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1777,14 +1777,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void ClearDepthStencilView(ID3D11DepthStencilView* pDepthStencilView, uint ClearFlags, float Depth, byte Stencil)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11DepthStencilView*, uint, float, byte, void>)LpVtbl[53])(@this, pDepthStencilView, ClearFlags, Depth, Stencil);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void ClearDepthStencilView(ref ID3D11DepthStencilView pDepthStencilView, uint ClearFlags, float Depth, byte Stencil)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1794,14 +1794,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GenerateMips(ID3D11ShaderResourceView* pShaderResourceView)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11ShaderResourceView*, void>)LpVtbl[54])(@this, pShaderResourceView);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void GenerateMips(ref ID3D11ShaderResourceView pShaderResourceView)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1811,14 +1811,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void SetResourceMinLOD(ID3D11Resource* pResource, float MinLOD)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, float, void>)LpVtbl[55])(@this, pResource, MinLOD);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void SetResourceMinLOD(ref ID3D11Resource pResource, float MinLOD)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1828,7 +1828,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe float GetResourceMinLOD(ID3D11Resource* pResource)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1837,7 +1837,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly float GetResourceMinLOD(ref ID3D11Resource pResource)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1849,14 +1849,14 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void ResolveSubresource(ID3D11Resource* pDstResource, uint DstSubresource, ID3D11Resource* pSrcResource, uint SrcSubresource, Silk.NET.DXGI.Format Format)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, ID3D11Resource*, uint, Silk.NET.DXGI.Format, void>)LpVtbl[57])(@this, pDstResource, DstSubresource, pSrcResource, SrcSubresource, Format);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void ResolveSubresource(ID3D11Resource* pDstResource, uint DstSubresource, ref ID3D11Resource pSrcResource, uint SrcSubresource, Silk.NET.DXGI.Format Format)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1866,7 +1866,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void ResolveSubresource(ref ID3D11Resource pDstResource, uint DstSubresource, ID3D11Resource* pSrcResource, uint SrcSubresource, Silk.NET.DXGI.Format Format)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1876,7 +1876,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void ResolveSubresource(ref ID3D11Resource pDstResource, uint DstSubresource, ref ID3D11Resource pSrcResource, uint SrcSubresource, Silk.NET.DXGI.Format Format)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1889,14 +1889,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void ExecuteCommandList(ID3D11CommandList* pCommandList, int RestoreContextState)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11CommandList*, int, void>)LpVtbl[58])(@this, pCommandList, RestoreContextState);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void ExecuteCommandList(ref ID3D11CommandList pCommandList, int RestoreContextState)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1906,14 +1906,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSSetShaderResources(uint StartSlot, uint NumViews, ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11ShaderResourceView**, void>)LpVtbl[59])(@this, StartSlot, NumViews, ppShaderResourceViews);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSSetShaderResources(uint StartSlot, uint NumViews, ref ID3D11ShaderResourceView* ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1923,14 +1923,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSSetShader(ID3D11HullShader* pHullShader, ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11HullShader*, ID3D11ClassInstance**, uint, void>)LpVtbl[60])(@this, pHullShader, ppClassInstances, NumClassInstances);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSSetShader(ID3D11HullShader* pHullShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1940,7 +1940,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSSetShader(ref ID3D11HullShader pHullShader, ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1950,7 +1950,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSSetShader(ref ID3D11HullShader pHullShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1963,14 +1963,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSSetSamplers(uint StartSlot, uint NumSamplers, ID3D11SamplerState** ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11SamplerState**, void>)LpVtbl[61])(@this, StartSlot, NumSamplers, ppSamplers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSSetSamplers(uint StartSlot, uint NumSamplers, ref ID3D11SamplerState* ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1980,14 +1980,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSSetConstantBuffers(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, void>)LpVtbl[62])(@this, StartSlot, NumBuffers, ppConstantBuffers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSSetConstantBuffers(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -1997,14 +1997,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSSetShaderResources(uint StartSlot, uint NumViews, ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11ShaderResourceView**, void>)LpVtbl[63])(@this, StartSlot, NumViews, ppShaderResourceViews);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSSetShaderResources(uint StartSlot, uint NumViews, ref ID3D11ShaderResourceView* ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2014,14 +2014,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSSetShader(ID3D11DomainShader* pDomainShader, ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11DomainShader*, ID3D11ClassInstance**, uint, void>)LpVtbl[64])(@this, pDomainShader, ppClassInstances, NumClassInstances);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSSetShader(ID3D11DomainShader* pDomainShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2031,7 +2031,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSSetShader(ref ID3D11DomainShader pDomainShader, ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2041,7 +2041,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSSetShader(ref ID3D11DomainShader pDomainShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2054,14 +2054,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSSetSamplers(uint StartSlot, uint NumSamplers, ID3D11SamplerState** ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11SamplerState**, void>)LpVtbl[65])(@this, StartSlot, NumSamplers, ppSamplers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSSetSamplers(uint StartSlot, uint NumSamplers, ref ID3D11SamplerState* ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2071,14 +2071,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSSetConstantBuffers(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, void>)LpVtbl[66])(@this, StartSlot, NumBuffers, ppConstantBuffers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSSetConstantBuffers(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2088,14 +2088,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetShaderResources(uint StartSlot, uint NumViews, ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11ShaderResourceView**, void>)LpVtbl[67])(@this, StartSlot, NumViews, ppShaderResourceViews);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetShaderResources(uint StartSlot, uint NumViews, ref ID3D11ShaderResourceView* ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2105,14 +2105,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetUnorderedAccessViews(uint StartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, uint* pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11UnorderedAccessView**, uint*, void>)LpVtbl[68])(@this, StartSlot, NumUAVs, ppUnorderedAccessViews, pUAVInitialCounts);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetUnorderedAccessViews(uint StartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews, ref uint pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2122,7 +2122,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetUnorderedAccessViews(uint StartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, uint* pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2132,7 +2132,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetUnorderedAccessViews(uint StartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews, ref uint pUAVInitialCounts)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2145,14 +2145,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetShader(ID3D11ComputeShader* pComputeShader, ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11ComputeShader*, ID3D11ClassInstance**, uint, void>)LpVtbl[69])(@this, pComputeShader, ppClassInstances, NumClassInstances);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetShader(ID3D11ComputeShader* pComputeShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2162,7 +2162,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetShader(ref ID3D11ComputeShader pComputeShader, ID3D11ClassInstance** ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2172,7 +2172,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetShader(ref ID3D11ComputeShader pComputeShader, ref ID3D11ClassInstance* ppClassInstances, uint NumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2185,14 +2185,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetSamplers(uint StartSlot, uint NumSamplers, ID3D11SamplerState** ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11SamplerState**, void>)LpVtbl[70])(@this, StartSlot, NumSamplers, ppSamplers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetSamplers(uint StartSlot, uint NumSamplers, ref ID3D11SamplerState* ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2202,14 +2202,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetConstantBuffers(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, void>)LpVtbl[71])(@this, StartSlot, NumBuffers, ppConstantBuffers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetConstantBuffers(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2219,14 +2219,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetConstantBuffers(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, void>)LpVtbl[72])(@this, StartSlot, NumBuffers, ppConstantBuffers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetConstantBuffers(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2236,14 +2236,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetShaderResources(uint StartSlot, uint NumViews, ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11ShaderResourceView**, void>)LpVtbl[73])(@this, StartSlot, NumViews, ppShaderResourceViews);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetShaderResources(uint StartSlot, uint NumViews, ref ID3D11ShaderResourceView* ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2253,14 +2253,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetShader(ID3D11PixelShader** ppPixelShader, ID3D11ClassInstance** ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11PixelShader**, ID3D11ClassInstance**, uint*, void>)LpVtbl[74])(@this, ppPixelShader, ppClassInstances, pNumClassInstances);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetShader(ID3D11PixelShader** ppPixelShader, ID3D11ClassInstance** ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2270,7 +2270,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetShader(ID3D11PixelShader** ppPixelShader, ref ID3D11ClassInstance* ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2280,7 +2280,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetShader(ID3D11PixelShader** ppPixelShader, ref ID3D11ClassInstance* ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2293,7 +2293,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetShader(ref ID3D11PixelShader* ppPixelShader, ID3D11ClassInstance** ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2303,7 +2303,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetShader(ref ID3D11PixelShader* ppPixelShader, ID3D11ClassInstance** ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2316,7 +2316,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetShader(ref ID3D11PixelShader* ppPixelShader, ref ID3D11ClassInstance* ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2329,7 +2329,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetShader(ref ID3D11PixelShader* ppPixelShader, ref ID3D11ClassInstance* ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2345,14 +2345,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetSamplers(uint StartSlot, uint NumSamplers, ID3D11SamplerState** ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11SamplerState**, void>)LpVtbl[75])(@this, StartSlot, NumSamplers, ppSamplers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetSamplers(uint StartSlot, uint NumSamplers, ref ID3D11SamplerState* ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2362,14 +2362,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetShader(ID3D11VertexShader** ppVertexShader, ID3D11ClassInstance** ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11VertexShader**, ID3D11ClassInstance**, uint*, void>)LpVtbl[76])(@this, ppVertexShader, ppClassInstances, pNumClassInstances);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetShader(ID3D11VertexShader** ppVertexShader, ID3D11ClassInstance** ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2379,7 +2379,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetShader(ID3D11VertexShader** ppVertexShader, ref ID3D11ClassInstance* ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2389,7 +2389,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetShader(ID3D11VertexShader** ppVertexShader, ref ID3D11ClassInstance* ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2402,7 +2402,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetShader(ref ID3D11VertexShader* ppVertexShader, ID3D11ClassInstance** ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2412,7 +2412,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetShader(ref ID3D11VertexShader* ppVertexShader, ID3D11ClassInstance** ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2425,7 +2425,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetShader(ref ID3D11VertexShader* ppVertexShader, ref ID3D11ClassInstance* ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2438,7 +2438,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetShader(ref ID3D11VertexShader* ppVertexShader, ref ID3D11ClassInstance* ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2454,14 +2454,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetConstantBuffers(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, void>)LpVtbl[77])(@this, StartSlot, NumBuffers, ppConstantBuffers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetConstantBuffers(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2471,14 +2471,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IAGetInputLayout(ID3D11InputLayout** ppInputLayout)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11InputLayout**, void>)LpVtbl[78])(@this, ppInputLayout);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IAGetInputLayout(ref ID3D11InputLayout* ppInputLayout)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2488,14 +2488,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IAGetVertexBuffers(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppVertexBuffers, uint* pStrides, uint* pOffsets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[79])(@this, StartSlot, NumBuffers, ppVertexBuffers, pStrides, pOffsets);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IAGetVertexBuffers(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppVertexBuffers, uint* pStrides, ref uint pOffsets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2505,7 +2505,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IAGetVertexBuffers(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppVertexBuffers, ref uint pStrides, uint* pOffsets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2515,7 +2515,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IAGetVertexBuffers(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppVertexBuffers, ref uint pStrides, ref uint pOffsets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2528,7 +2528,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IAGetVertexBuffers(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppVertexBuffers, uint* pStrides, uint* pOffsets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2538,7 +2538,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IAGetVertexBuffers(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppVertexBuffers, uint* pStrides, ref uint pOffsets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2551,7 +2551,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IAGetVertexBuffers(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppVertexBuffers, ref uint pStrides, uint* pOffsets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2564,7 +2564,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IAGetVertexBuffers(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppVertexBuffers, ref uint pStrides, ref uint pOffsets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2580,14 +2580,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IAGetIndexBuffer(ID3D11Buffer** pIndexBuffer, Silk.NET.DXGI.Format* Format, uint* Offset)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Buffer**, Silk.NET.DXGI.Format*, uint*, void>)LpVtbl[80])(@this, pIndexBuffer, Format, Offset);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IAGetIndexBuffer(ID3D11Buffer** pIndexBuffer, Silk.NET.DXGI.Format* Format, ref uint Offset)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2597,7 +2597,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IAGetIndexBuffer(ID3D11Buffer** pIndexBuffer, ref Silk.NET.DXGI.Format Format, uint* Offset)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2607,7 +2607,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IAGetIndexBuffer(ID3D11Buffer** pIndexBuffer, ref Silk.NET.DXGI.Format Format, ref uint Offset)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2620,7 +2620,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IAGetIndexBuffer(ref ID3D11Buffer* pIndexBuffer, Silk.NET.DXGI.Format* Format, uint* Offset)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2630,7 +2630,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IAGetIndexBuffer(ref ID3D11Buffer* pIndexBuffer, Silk.NET.DXGI.Format* Format, ref uint Offset)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2643,7 +2643,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IAGetIndexBuffer(ref ID3D11Buffer* pIndexBuffer, ref Silk.NET.DXGI.Format Format, uint* Offset)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2656,7 +2656,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IAGetIndexBuffer(ref ID3D11Buffer* pIndexBuffer, ref Silk.NET.DXGI.Format Format, ref uint Offset)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2672,14 +2672,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetConstantBuffers(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, void>)LpVtbl[81])(@this, StartSlot, NumBuffers, ppConstantBuffers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetConstantBuffers(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2689,14 +2689,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetShader(ID3D11GeometryShader** ppGeometryShader, ID3D11ClassInstance** ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11GeometryShader**, ID3D11ClassInstance**, uint*, void>)LpVtbl[82])(@this, ppGeometryShader, ppClassInstances, pNumClassInstances);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetShader(ID3D11GeometryShader** ppGeometryShader, ID3D11ClassInstance** ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2706,7 +2706,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetShader(ID3D11GeometryShader** ppGeometryShader, ref ID3D11ClassInstance* ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2716,7 +2716,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetShader(ID3D11GeometryShader** ppGeometryShader, ref ID3D11ClassInstance* ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2729,7 +2729,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetShader(ref ID3D11GeometryShader* ppGeometryShader, ID3D11ClassInstance** ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2739,7 +2739,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetShader(ref ID3D11GeometryShader* ppGeometryShader, ID3D11ClassInstance** ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2752,7 +2752,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetShader(ref ID3D11GeometryShader* ppGeometryShader, ref ID3D11ClassInstance* ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2765,7 +2765,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetShader(ref ID3D11GeometryShader* ppGeometryShader, ref ID3D11ClassInstance* ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2781,14 +2781,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void IAGetPrimitiveTopology(Silk.NET.Core.Native.D3DPrimitiveTopology* pTopology)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, Silk.NET.Core.Native.D3DPrimitiveTopology*, void>)LpVtbl[83])(@this, pTopology);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void IAGetPrimitiveTopology(ref Silk.NET.Core.Native.D3DPrimitiveTopology pTopology)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2798,14 +2798,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetShaderResources(uint StartSlot, uint NumViews, ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11ShaderResourceView**, void>)LpVtbl[84])(@this, StartSlot, NumViews, ppShaderResourceViews);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetShaderResources(uint StartSlot, uint NumViews, ref ID3D11ShaderResourceView* ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2815,14 +2815,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetSamplers(uint StartSlot, uint NumSamplers, ID3D11SamplerState** ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11SamplerState**, void>)LpVtbl[85])(@this, StartSlot, NumSamplers, ppSamplers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetSamplers(uint StartSlot, uint NumSamplers, ref ID3D11SamplerState* ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2832,14 +2832,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GetPredication(ID3D11Predicate** ppPredicate, int* pPredicateValue)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Predicate**, int*, void>)LpVtbl[86])(@this, ppPredicate, pPredicateValue);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GetPredication(ID3D11Predicate** ppPredicate, ref int pPredicateValue)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2849,7 +2849,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GetPredication(ref ID3D11Predicate* ppPredicate, int* pPredicateValue)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2859,7 +2859,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GetPredication(ref ID3D11Predicate* ppPredicate, ref int pPredicateValue)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2872,14 +2872,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetShaderResources(uint StartSlot, uint NumViews, ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11ShaderResourceView**, void>)LpVtbl[87])(@this, StartSlot, NumViews, ppShaderResourceViews);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetShaderResources(uint StartSlot, uint NumViews, ref ID3D11ShaderResourceView* ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2889,14 +2889,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetSamplers(uint StartSlot, uint NumSamplers, ID3D11SamplerState** ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11SamplerState**, void>)LpVtbl[88])(@this, StartSlot, NumSamplers, ppSamplers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetSamplers(uint StartSlot, uint NumSamplers, ref ID3D11SamplerState* ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2906,14 +2906,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetRenderTargets(uint NumViews, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView** ppDepthStencilView)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, ID3D11RenderTargetView**, ID3D11DepthStencilView**, void>)LpVtbl[89])(@this, NumViews, ppRenderTargetViews, ppDepthStencilView);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetRenderTargets(uint NumViews, ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView* ppDepthStencilView)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2923,7 +2923,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetRenderTargets(uint NumViews, ref ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView** ppDepthStencilView)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2933,7 +2933,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetRenderTargets(uint NumViews, ref ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView* ppDepthStencilView)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2946,14 +2946,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView** ppDepthStencilView, uint UAVStartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, ID3D11RenderTargetView**, ID3D11DepthStencilView**, uint, uint, ID3D11UnorderedAccessView**, void>)LpVtbl[90])(@this, NumRTVs, ppRenderTargetViews, ppDepthStencilView, UAVStartSlot, NumUAVs, ppUnorderedAccessViews);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ID3D11DepthStencilView** ppDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2963,7 +2963,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView* ppDepthStencilView, uint UAVStartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2973,7 +2973,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ID3D11RenderTargetView** ppRenderTargetViews, ref ID3D11DepthStencilView* ppDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2986,7 +2986,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView** ppDepthStencilView, uint UAVStartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -2996,7 +2996,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, ID3D11DepthStencilView** ppDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3009,7 +3009,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView* ppDepthStencilView, uint UAVStartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3022,7 +3022,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetRenderTargetsAndUnorderedAccessViews(uint NumRTVs, ref ID3D11RenderTargetView* ppRenderTargetViews, ref ID3D11DepthStencilView* ppDepthStencilView, uint UAVStartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3038,14 +3038,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetBlendState(ID3D11BlendState** ppBlendState, [Count(Count = 4)] float* BlendFactor, uint* pSampleMask)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11BlendState**, float*, uint*, void>)LpVtbl[91])(@this, ppBlendState, BlendFactor, pSampleMask);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetBlendState(ID3D11BlendState** ppBlendState, [Count(Count = 4)] float* BlendFactor, ref uint pSampleMask)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3055,7 +3055,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetBlendState(ID3D11BlendState** ppBlendState, [Count(Count = 4)] ref float BlendFactor, uint* pSampleMask)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3065,7 +3065,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetBlendState(ID3D11BlendState** ppBlendState, [Count(Count = 4)] ref float BlendFactor, ref uint pSampleMask)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3078,7 +3078,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetBlendState(ref ID3D11BlendState* ppBlendState, [Count(Count = 4)] float* BlendFactor, uint* pSampleMask)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3088,7 +3088,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetBlendState(ref ID3D11BlendState* ppBlendState, [Count(Count = 4)] float* BlendFactor, ref uint pSampleMask)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3101,7 +3101,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetBlendState(ref ID3D11BlendState* ppBlendState, [Count(Count = 4)] ref float BlendFactor, uint* pSampleMask)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3114,7 +3114,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetBlendState(ref ID3D11BlendState* ppBlendState, [Count(Count = 4)] ref float BlendFactor, ref uint pSampleMask)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3130,14 +3130,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetDepthStencilState(ID3D11DepthStencilState** ppDepthStencilState, uint* pStencilRef)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11DepthStencilState**, uint*, void>)LpVtbl[92])(@this, ppDepthStencilState, pStencilRef);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetDepthStencilState(ID3D11DepthStencilState** ppDepthStencilState, ref uint pStencilRef)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3147,7 +3147,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetDepthStencilState(ref ID3D11DepthStencilState* ppDepthStencilState, uint* pStencilRef)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3157,7 +3157,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OMGetDepthStencilState(ref ID3D11DepthStencilState* ppDepthStencilState, ref uint pStencilRef)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3170,14 +3170,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void SOGetTargets(uint NumBuffers, ID3D11Buffer** ppSOTargets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, ID3D11Buffer**, void>)LpVtbl[93])(@this, NumBuffers, ppSOTargets);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void SOGetTargets(uint NumBuffers, ref ID3D11Buffer* ppSOTargets)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3187,14 +3187,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void RSGetState(ID3D11RasterizerState** ppRasterizerState)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11RasterizerState**, void>)LpVtbl[94])(@this, ppRasterizerState);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void RSGetState(ref ID3D11RasterizerState* ppRasterizerState)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3204,14 +3204,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void RSGetViewports(uint* pNumViewports, Viewport* pViewports)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint*, Viewport*, void>)LpVtbl[95])(@this, pNumViewports, pViewports);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void RSGetViewports(uint* pNumViewports, ref Viewport pViewports)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3221,7 +3221,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void RSGetViewports(ref uint pNumViewports, Viewport* pViewports)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3231,7 +3231,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void RSGetViewports(ref uint pNumViewports, ref Viewport pViewports)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3244,14 +3244,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void RSGetScissorRects(uint* pNumRects, Silk.NET.Maths.Rectangle<long>* pRects)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint*, Silk.NET.Maths.Rectangle<long>*, void>)LpVtbl[96])(@this, pNumRects, pRects);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void RSGetScissorRects(uint* pNumRects, ref Silk.NET.Maths.Rectangle<long> pRects)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3261,7 +3261,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void RSGetScissorRects(ref uint pNumRects, Silk.NET.Maths.Rectangle<long>* pRects)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3271,7 +3271,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void RSGetScissorRects(ref uint pNumRects, ref Silk.NET.Maths.Rectangle<long> pRects)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3284,14 +3284,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetShaderResources(uint StartSlot, uint NumViews, ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11ShaderResourceView**, void>)LpVtbl[97])(@this, StartSlot, NumViews, ppShaderResourceViews);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetShaderResources(uint StartSlot, uint NumViews, ref ID3D11ShaderResourceView* ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3301,14 +3301,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetShader(ID3D11HullShader** ppHullShader, ID3D11ClassInstance** ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11HullShader**, ID3D11ClassInstance**, uint*, void>)LpVtbl[98])(@this, ppHullShader, ppClassInstances, pNumClassInstances);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetShader(ID3D11HullShader** ppHullShader, ID3D11ClassInstance** ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3318,7 +3318,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetShader(ID3D11HullShader** ppHullShader, ref ID3D11ClassInstance* ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3328,7 +3328,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetShader(ID3D11HullShader** ppHullShader, ref ID3D11ClassInstance* ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3341,7 +3341,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetShader(ref ID3D11HullShader* ppHullShader, ID3D11ClassInstance** ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3351,7 +3351,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetShader(ref ID3D11HullShader* ppHullShader, ID3D11ClassInstance** ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3364,7 +3364,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetShader(ref ID3D11HullShader* ppHullShader, ref ID3D11ClassInstance* ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3377,7 +3377,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetShader(ref ID3D11HullShader* ppHullShader, ref ID3D11ClassInstance* ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3393,14 +3393,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetSamplers(uint StartSlot, uint NumSamplers, ID3D11SamplerState** ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11SamplerState**, void>)LpVtbl[99])(@this, StartSlot, NumSamplers, ppSamplers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetSamplers(uint StartSlot, uint NumSamplers, ref ID3D11SamplerState* ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3410,14 +3410,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetConstantBuffers(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, void>)LpVtbl[100])(@this, StartSlot, NumBuffers, ppConstantBuffers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetConstantBuffers(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3427,14 +3427,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetShaderResources(uint StartSlot, uint NumViews, ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11ShaderResourceView**, void>)LpVtbl[101])(@this, StartSlot, NumViews, ppShaderResourceViews);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetShaderResources(uint StartSlot, uint NumViews, ref ID3D11ShaderResourceView* ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3444,14 +3444,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetShader(ID3D11DomainShader** ppDomainShader, ID3D11ClassInstance** ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11DomainShader**, ID3D11ClassInstance**, uint*, void>)LpVtbl[102])(@this, ppDomainShader, ppClassInstances, pNumClassInstances);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetShader(ID3D11DomainShader** ppDomainShader, ID3D11ClassInstance** ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3461,7 +3461,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetShader(ID3D11DomainShader** ppDomainShader, ref ID3D11ClassInstance* ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3471,7 +3471,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetShader(ID3D11DomainShader** ppDomainShader, ref ID3D11ClassInstance* ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3484,7 +3484,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetShader(ref ID3D11DomainShader* ppDomainShader, ID3D11ClassInstance** ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3494,7 +3494,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetShader(ref ID3D11DomainShader* ppDomainShader, ID3D11ClassInstance** ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3507,7 +3507,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetShader(ref ID3D11DomainShader* ppDomainShader, ref ID3D11ClassInstance* ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3520,7 +3520,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetShader(ref ID3D11DomainShader* ppDomainShader, ref ID3D11ClassInstance* ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3536,14 +3536,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetSamplers(uint StartSlot, uint NumSamplers, ID3D11SamplerState** ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11SamplerState**, void>)LpVtbl[103])(@this, StartSlot, NumSamplers, ppSamplers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetSamplers(uint StartSlot, uint NumSamplers, ref ID3D11SamplerState* ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3553,14 +3553,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetConstantBuffers(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, void>)LpVtbl[104])(@this, StartSlot, NumBuffers, ppConstantBuffers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetConstantBuffers(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3570,14 +3570,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetShaderResources(uint StartSlot, uint NumViews, ID3D11ShaderResourceView** ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11ShaderResourceView**, void>)LpVtbl[105])(@this, StartSlot, NumViews, ppShaderResourceViews);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetShaderResources(uint StartSlot, uint NumViews, ref ID3D11ShaderResourceView* ppShaderResourceViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3587,14 +3587,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetUnorderedAccessViews(uint StartSlot, uint NumUAVs, ID3D11UnorderedAccessView** ppUnorderedAccessViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11UnorderedAccessView**, void>)LpVtbl[106])(@this, StartSlot, NumUAVs, ppUnorderedAccessViews);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetUnorderedAccessViews(uint StartSlot, uint NumUAVs, ref ID3D11UnorderedAccessView* ppUnorderedAccessViews)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3604,14 +3604,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetShader(ID3D11ComputeShader** ppComputeShader, ID3D11ClassInstance** ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11ComputeShader**, ID3D11ClassInstance**, uint*, void>)LpVtbl[107])(@this, ppComputeShader, ppClassInstances, pNumClassInstances);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetShader(ID3D11ComputeShader** ppComputeShader, ID3D11ClassInstance** ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3621,7 +3621,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetShader(ID3D11ComputeShader** ppComputeShader, ref ID3D11ClassInstance* ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3631,7 +3631,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetShader(ID3D11ComputeShader** ppComputeShader, ref ID3D11ClassInstance* ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3644,7 +3644,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetShader(ref ID3D11ComputeShader* ppComputeShader, ID3D11ClassInstance** ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3654,7 +3654,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetShader(ref ID3D11ComputeShader* ppComputeShader, ID3D11ClassInstance** ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3667,7 +3667,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetShader(ref ID3D11ComputeShader* ppComputeShader, ref ID3D11ClassInstance* ppClassInstances, uint* pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3680,7 +3680,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetShader(ref ID3D11ComputeShader* ppComputeShader, ref ID3D11ClassInstance* ppClassInstances, ref uint pNumClassInstances)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3696,14 +3696,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetSamplers(uint StartSlot, uint NumSamplers, ID3D11SamplerState** ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11SamplerState**, void>)LpVtbl[108])(@this, StartSlot, NumSamplers, ppSamplers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetSamplers(uint StartSlot, uint NumSamplers, ref ID3D11SamplerState* ppSamplers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3713,14 +3713,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetConstantBuffers(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, void>)LpVtbl[109])(@this, StartSlot, NumBuffers, ppConstantBuffers);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetConstantBuffers(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3730,21 +3730,21 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void ClearState()
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, void>)LpVtbl[110])(@this);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void Flush()
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, void>)LpVtbl[111])(@this);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly DeviceContextType GetType()
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3753,7 +3753,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint GetContextFlags()
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3762,7 +3762,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int FinishCommandList(int RestoreDeferredContextState, ID3D11CommandList** ppCommandList)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3771,7 +3771,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int FinishCommandList(int RestoreDeferredContextState, ref ID3D11CommandList* ppCommandList)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3783,14 +3783,14 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CopySubresourceRegion1(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, Box* pSrcBox, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, uint, uint, uint, ID3D11Resource*, uint, Box*, uint, void>)LpVtbl[115])(@this, pDstResource, DstSubresource, DstX, DstY, DstZ, pSrcResource, SrcSubresource, pSrcBox, CopyFlags);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CopySubresourceRegion1(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, ref Box pSrcBox, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3800,7 +3800,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CopySubresourceRegion1(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, Box* pSrcBox, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3810,7 +3810,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CopySubresourceRegion1(ID3D11Resource* pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, ref Box pSrcBox, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3823,7 +3823,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CopySubresourceRegion1(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, Box* pSrcBox, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3833,7 +3833,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CopySubresourceRegion1(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ID3D11Resource* pSrcResource, uint SrcSubresource, ref Box pSrcBox, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3846,7 +3846,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CopySubresourceRegion1(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, Box* pSrcBox, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3859,7 +3859,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void CopySubresourceRegion1(ref ID3D11Resource pDstResource, uint DstSubresource, uint DstX, uint DstY, uint DstZ, ref ID3D11Resource pSrcResource, uint SrcSubresource, ref Box pSrcBox, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3875,14 +3875,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void UpdateSubresource1(ID3D11Resource* pDstResource, uint DstSubresource, Box* pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, uint, Box*, void*, uint, uint, uint, void>)LpVtbl[116])(@this, pDstResource, DstSubresource, pDstBox, pSrcData, SrcRowPitch, SrcDepthPitch, CopyFlags);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void UpdateSubresource1<T0>(ID3D11Resource* pDstResource, uint DstSubresource, Box* pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3892,7 +3892,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void UpdateSubresource1(ID3D11Resource* pDstResource, uint DstSubresource, ref Box pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3902,7 +3902,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void UpdateSubresource1<T0>(ID3D11Resource* pDstResource, uint DstSubresource, ref Box pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3915,7 +3915,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void UpdateSubresource1(ref ID3D11Resource pDstResource, uint DstSubresource, Box* pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3925,7 +3925,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void UpdateSubresource1<T0>(ref ID3D11Resource pDstResource, uint DstSubresource, Box* pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3938,7 +3938,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void UpdateSubresource1(ref ID3D11Resource pDstResource, uint DstSubresource, ref Box pDstBox, void* pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3951,7 +3951,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void UpdateSubresource1<T0>(ref ID3D11Resource pDstResource, uint DstSubresource, ref Box pDstBox, ref T0 pSrcData, uint SrcRowPitch, uint SrcDepthPitch, uint CopyFlags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3967,14 +3967,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DiscardResource(ID3D11Resource* pResource)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11Resource*, void>)LpVtbl[117])(@this, pResource);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void DiscardResource(ref ID3D11Resource pResource)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -3984,14 +3984,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DiscardView(ID3D11View* pResourceView)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11View*, void>)LpVtbl[118])(@this, pResourceView);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void DiscardView(ref ID3D11View pResourceView)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4001,14 +4001,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[119])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4018,7 +4018,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4028,7 +4028,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4041,7 +4041,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4051,7 +4051,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4064,7 +4064,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4077,7 +4077,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4093,14 +4093,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[120])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4110,7 +4110,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4120,7 +4120,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4133,7 +4133,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4143,7 +4143,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4156,7 +4156,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4169,7 +4169,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4185,14 +4185,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[121])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4202,7 +4202,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4212,7 +4212,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4225,7 +4225,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4235,7 +4235,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4248,7 +4248,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4261,7 +4261,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4277,14 +4277,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[122])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4294,7 +4294,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4304,7 +4304,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4317,7 +4317,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4327,7 +4327,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4340,7 +4340,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4353,7 +4353,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4369,14 +4369,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[123])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4386,7 +4386,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4396,7 +4396,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4409,7 +4409,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4419,7 +4419,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4432,7 +4432,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4445,7 +4445,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4461,14 +4461,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[124])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4478,7 +4478,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4488,7 +4488,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4501,7 +4501,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4511,7 +4511,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4524,7 +4524,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4537,7 +4537,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSSetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4553,14 +4553,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[125])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4570,7 +4570,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4580,7 +4580,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4593,7 +4593,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4603,7 +4603,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4616,7 +4616,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4629,7 +4629,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void VSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4645,14 +4645,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[126])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4662,7 +4662,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4672,7 +4672,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4685,7 +4685,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4695,7 +4695,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4708,7 +4708,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4721,7 +4721,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void HSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4737,14 +4737,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[127])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4754,7 +4754,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4764,7 +4764,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4777,7 +4777,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4787,7 +4787,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4800,7 +4800,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4813,7 +4813,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4829,14 +4829,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[128])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4846,7 +4846,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4856,7 +4856,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4869,7 +4869,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4879,7 +4879,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4892,7 +4892,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4905,7 +4905,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4921,14 +4921,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[129])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4938,7 +4938,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4948,7 +4948,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4961,7 +4961,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4971,7 +4971,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4984,7 +4984,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -4997,7 +4997,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void PSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5013,14 +5013,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, uint, uint, ID3D11Buffer**, uint*, uint*, void>)LpVtbl[130])(@this, StartSlot, NumBuffers, ppConstantBuffers, pFirstConstant, pNumConstants);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5030,7 +5030,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5040,7 +5040,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ID3D11Buffer** ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5053,7 +5053,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5063,7 +5063,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, uint* pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5076,7 +5076,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, uint* pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5089,7 +5089,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void CSGetConstantBuffers1(uint StartSlot, uint NumBuffers, ref ID3D11Buffer* ppConstantBuffers, ref uint pFirstConstant, ref uint pNumConstants)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5105,14 +5105,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void SwapDeviceContextState(ID3DDeviceContextState* pState, ID3DDeviceContextState** ppPreviousState)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3DDeviceContextState*, ID3DDeviceContextState**, void>)LpVtbl[131])(@this, pState, ppPreviousState);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void SwapDeviceContextState(ID3DDeviceContextState* pState, ref ID3DDeviceContextState* ppPreviousState)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5122,7 +5122,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void SwapDeviceContextState(ref ID3DDeviceContextState pState, ID3DDeviceContextState** ppPreviousState)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5132,7 +5132,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void SwapDeviceContextState(ref ID3DDeviceContextState pState, ref ID3DDeviceContextState* ppPreviousState)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5145,14 +5145,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] float* Color, Silk.NET.Maths.Rectangle<long>* pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[132])(@this, pView, Color, pRect, NumRects);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] float* Color, ref Silk.NET.Maths.Rectangle<long> pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5162,7 +5162,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] ref float Color, Silk.NET.Maths.Rectangle<long>* pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5172,7 +5172,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Maths.Rectangle<long> pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5185,7 +5185,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] float* Color, Silk.NET.Maths.Rectangle<long>* pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5195,7 +5195,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] float* Color, ref Silk.NET.Maths.Rectangle<long> pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5208,7 +5208,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] ref float Color, Silk.NET.Maths.Rectangle<long>* pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5221,7 +5221,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void ClearView(ref ID3D11View pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Maths.Rectangle<long> pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5237,14 +5237,14 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DiscardView1(ID3D11View* pResourceView, Silk.NET.Maths.Rectangle<long>* pRects, uint NumRects)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext1*, ID3D11View*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[133])(@this, pResourceView, pRects, NumRects);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DiscardView1(ID3D11View* pResourceView, ref Silk.NET.Maths.Rectangle<long> pRects, uint NumRects)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5254,7 +5254,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void DiscardView1(ref ID3D11View pResourceView, Silk.NET.Maths.Rectangle<long>* pRects, uint NumRects)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -5264,7 +5264,7 @@ namespace Silk.NET.Direct3D11
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void DiscardView1(ref ID3D11View pResourceView, ref Silk.NET.Maths.Rectangle<long> pRects, uint NumRects)
         {
             var @this = (ID3D11DeviceContext1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

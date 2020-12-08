@@ -44,7 +44,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "")]
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (ID3D12DeviceRemovedExtendedDataSettings1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -53,7 +53,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (ID3D12DeviceRemovedExtendedDataSettings1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -65,7 +65,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (ID3D12DeviceRemovedExtendedDataSettings1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -77,7 +77,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (ID3D12DeviceRemovedExtendedDataSettings1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -92,7 +92,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (ID3D12DeviceRemovedExtendedDataSettings1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -101,7 +101,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint Release()
         {
             var @this = (ID3D12DeviceRemovedExtendedDataSettings1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -110,28 +110,28 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void SetAutoBreadcrumbsEnablement(DredEnablement Enablement)
         {
             var @this = (ID3D12DeviceRemovedExtendedDataSettings1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings1*, DredEnablement, void>)LpVtbl[3])(@this, Enablement);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void SetPageFaultEnablement(DredEnablement Enablement)
         {
             var @this = (ID3D12DeviceRemovedExtendedDataSettings1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings1*, DredEnablement, void>)LpVtbl[4])(@this, Enablement);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void SetWatsonDumpEnablement(DredEnablement Enablement)
         {
             var @this = (ID3D12DeviceRemovedExtendedDataSettings1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<ID3D12DeviceRemovedExtendedDataSettings1*, DredEnablement, void>)LpVtbl[5])(@this, Enablement);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void SetBreadcrumbContextEnablement(DredEnablement Enablement)
         {
             var @this = (ID3D12DeviceRemovedExtendedDataSettings1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

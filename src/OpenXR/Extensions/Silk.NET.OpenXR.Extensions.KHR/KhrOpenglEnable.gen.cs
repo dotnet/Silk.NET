@@ -22,11 +22,11 @@ namespace Silk.NET.OpenXR.Extensions.KHR
     public unsafe partial class KhrOpenglEnable : NativeExtension<XR>
     {
         public const string ExtensionName = "XR_KHR_opengl_enable";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetOpenGLGraphicsRequirementsKHR")]
         public unsafe partial Result GetOpenGlgraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] GraphicsRequirementsOpenGLKHR* graphicsRequirements);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetOpenGLGraphicsRequirementsKHR")]
         public partial Result GetOpenGlgraphicsRequirements([Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ref GraphicsRequirementsOpenGLKHR graphicsRequirements);
 

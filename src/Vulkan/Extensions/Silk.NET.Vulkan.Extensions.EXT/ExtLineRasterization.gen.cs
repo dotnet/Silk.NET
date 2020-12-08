@@ -22,7 +22,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     public unsafe partial class ExtLineRasterization : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_EXT_line_rasterization";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetLineStippleEXT")]
         public partial void CmdSetLineStipple([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint lineStippleFactor, [Count(Count = 0)] ushort lineStipplePattern);
 

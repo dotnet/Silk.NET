@@ -18,21 +18,21 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 {
     public static class KhrExternalMemoryCapabilitiesOverloads
     {
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe void GetPhysicalDeviceExternalBufferProperties(this KhrExternalMemoryCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalBufferInfo* pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalBufferProperties> pExternalBufferProperties)
         {
             // SpanOverloader
             thisApi.GetPhysicalDeviceExternalBufferProperties(physicalDevice, pExternalBufferInfo, out pExternalBufferProperties.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe void GetPhysicalDeviceExternalBufferProperties(this KhrExternalMemoryCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalBufferInfo> pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalBufferProperties* pExternalBufferProperties)
         {
             // SpanOverloader
             thisApi.GetPhysicalDeviceExternalBufferProperties(physicalDevice, in pExternalBufferInfo.GetPinnableReference(), pExternalBufferProperties);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe void GetPhysicalDeviceExternalBufferProperties(this KhrExternalMemoryCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalBufferInfo> pExternalBufferInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalBufferProperties> pExternalBufferProperties)
         {
             // SpanOverloader

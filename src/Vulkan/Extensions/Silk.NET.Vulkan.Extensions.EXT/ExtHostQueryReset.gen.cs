@@ -22,7 +22,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     public unsafe partial class ExtHostQueryReset : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_EXT_host_query_reset";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkResetQueryPoolEXT")]
         public partial void ResetQueryPool([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount);
 

@@ -18,21 +18,21 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 {
     public static class ExtHdrMetadataOverloads
     {
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe void SetHdrMetadata(this ExtHdrMetadata thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] SwapchainKHR* pSwapchains, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] ReadOnlySpan<HdrMetadataEXT> pMetadata)
         {
             // SpanOverloader
             thisApi.SetHdrMetadata(device, swapchainCount, pSwapchains, in pMetadata.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe void SetHdrMetadata(this ExtHdrMetadata thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainKHR> pSwapchains, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] HdrMetadataEXT* pMetadata)
         {
             // SpanOverloader
             thisApi.SetHdrMetadata(device, swapchainCount, in pSwapchains.GetPinnableReference(), pMetadata);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe void SetHdrMetadata(this ExtHdrMetadata thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainKHR> pSwapchains, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] ReadOnlySpan<HdrMetadataEXT> pMetadata)
         {
             // SpanOverloader

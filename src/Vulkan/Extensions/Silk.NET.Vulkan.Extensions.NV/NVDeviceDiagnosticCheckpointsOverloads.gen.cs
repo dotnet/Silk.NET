@@ -18,28 +18,28 @@ namespace Silk.NET.Vulkan.Extensions.NV
 {
     public static class NVDeviceDiagnosticCheckpointsOverloads
     {
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe void CmdSetCheckpoint<T0>(this NVDeviceDiagnosticCheckpoints thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Span<T0> pCheckpointMarker) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.CmdSetCheckpoint(commandBuffer, ref pCheckpointMarker.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe void GetQueueCheckpointData(this NVDeviceDiagnosticCheckpoints thisApi, [Count(Count = 0)] Queue queue, [Count(Count = 0)] uint* pCheckpointDataCount, [Count(Computed = "pCheckpointDataCount"), Flow(FlowDirection.Out)] Span<CheckpointDataNV> pCheckpointData)
         {
             // SpanOverloader
             thisApi.GetQueueCheckpointData(queue, pCheckpointDataCount, out pCheckpointData.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe void GetQueueCheckpointData(this NVDeviceDiagnosticCheckpoints thisApi, [Count(Count = 0)] Queue queue, [Count(Count = 0)] Span<uint> pCheckpointDataCount, [Count(Computed = "pCheckpointDataCount"), Flow(FlowDirection.Out)] CheckpointDataNV* pCheckpointData)
         {
             // SpanOverloader
             thisApi.GetQueueCheckpointData(queue, ref pCheckpointDataCount.GetPinnableReference(), pCheckpointData);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe void GetQueueCheckpointData(this NVDeviceDiagnosticCheckpoints thisApi, [Count(Count = 0)] Queue queue, [Count(Count = 0)] Span<uint> pCheckpointDataCount, [Count(Computed = "pCheckpointDataCount"), Flow(FlowDirection.Out)] Span<CheckpointDataNV> pCheckpointData)
         {
             // SpanOverloader

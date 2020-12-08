@@ -18,28 +18,28 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 {
     public static class ExtDebugMarkerOverloads
     {
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe void CmdDebugMarkerBegin(this ExtDebugMarker thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DebugMarkerMarkerInfoEXT> pMarkerInfo)
         {
             // SpanOverloader
             thisApi.CmdDebugMarkerBegin(commandBuffer, in pMarkerInfo.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe void CmdDebugMarkerInsert(this ExtDebugMarker thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DebugMarkerMarkerInfoEXT> pMarkerInfo)
         {
             // SpanOverloader
             thisApi.CmdDebugMarkerInsert(commandBuffer, in pMarkerInfo.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result DebugMarkerSetObjectName(this ExtDebugMarker thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DebugMarkerObjectNameInfoEXT> pNameInfo)
         {
             // SpanOverloader
             return thisApi.DebugMarkerSetObjectName(device, in pNameInfo.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result DebugMarkerSetObjectTag(this ExtDebugMarker thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DebugMarkerObjectTagInfoEXT> pTagInfo)
         {
             // SpanOverloader

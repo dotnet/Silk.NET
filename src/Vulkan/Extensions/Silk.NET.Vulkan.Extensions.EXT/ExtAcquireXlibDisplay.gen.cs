@@ -22,27 +22,27 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     public unsafe partial class ExtAcquireXlibDisplay : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_EXT_acquire_xlib_display";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkAcquireXlibDisplayEXT")]
         public unsafe partial Result AcquireXlibDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] IntPtr* dpy, [Count(Count = 0)] DisplayKHR display);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkAcquireXlibDisplayEXT")]
         public partial Result AcquireXlibDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref IntPtr dpy, [Count(Count = 0)] DisplayKHR display);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetRandROutputDisplayEXT")]
         public unsafe partial Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] IntPtr* dpy, [Count(Count = 0)] IntPtr rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayKHR* pDisplay);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetRandROutputDisplayEXT")]
         public unsafe partial Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] IntPtr* dpy, [Count(Count = 0)] IntPtr rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] out DisplayKHR pDisplay);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetRandROutputDisplayEXT")]
         public unsafe partial Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref IntPtr dpy, [Count(Count = 0)] IntPtr rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayKHR* pDisplay);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetRandROutputDisplayEXT")]
         public partial Result GetRandROutputDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref IntPtr dpy, [Count(Count = 0)] IntPtr rrOutput, [Count(Count = 0), Flow(FlowDirection.Out)] out DisplayKHR pDisplay);
 

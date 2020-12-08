@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 {
     public static class ExtConditionalRenderingOverloads
     {
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe void CmdBeginConditionalRendering(this ExtConditionalRendering thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ConditionalRenderingBeginInfoEXT> pConditionalRenderingBegin)
         {
             // SpanOverloader

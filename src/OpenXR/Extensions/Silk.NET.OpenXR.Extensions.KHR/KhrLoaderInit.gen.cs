@@ -22,11 +22,11 @@ namespace Silk.NET.OpenXR.Extensions.KHR
     public unsafe partial class KhrLoaderInit : NativeExtension<XR>
     {
         public const string ExtensionName = "XR_KHR_loader_init";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrInitializeLoaderKHR")]
         public unsafe partial Result InitializeLoader([Count(Count = 0), Flow(FlowDirection.In)] LoaderInitInfoBaseHeaderKHR* loaderInitInfo);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrInitializeLoaderKHR")]
         public partial Result InitializeLoader([Count(Count = 0), Flow(FlowDirection.In)] in LoaderInitInfoBaseHeaderKHR loaderInitInfo);
 

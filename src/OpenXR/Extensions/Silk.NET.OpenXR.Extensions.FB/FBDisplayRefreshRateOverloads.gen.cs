@@ -18,28 +18,28 @@ namespace Silk.NET.OpenXR.Extensions.FB
 {
     public static class FBDisplayRefreshRateOverloads
     {
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result EnumerateDisplayRefreshRatesFB(this FBDisplayRefreshRate thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint displayRefreshRateCapacityInput, [Count(Count = 0)] uint* displayRefreshRateCountOutput, [Count(Computed = "displayRefreshRateCapacityInput")] Span<float> displayRefreshRates)
         {
             // SpanOverloader
             return thisApi.EnumerateDisplayRefreshRatesFB(session, displayRefreshRateCapacityInput, displayRefreshRateCountOutput, ref displayRefreshRates.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result EnumerateDisplayRefreshRatesFB(this FBDisplayRefreshRate thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint displayRefreshRateCapacityInput, [Count(Count = 0)] Span<uint> displayRefreshRateCountOutput, [Count(Computed = "displayRefreshRateCapacityInput")] float* displayRefreshRates)
         {
             // SpanOverloader
             return thisApi.EnumerateDisplayRefreshRatesFB(session, displayRefreshRateCapacityInput, ref displayRefreshRateCountOutput.GetPinnableReference(), displayRefreshRates);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result EnumerateDisplayRefreshRatesFB(this FBDisplayRefreshRate thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint displayRefreshRateCapacityInput, [Count(Count = 0)] Span<uint> displayRefreshRateCountOutput, [Count(Computed = "displayRefreshRateCapacityInput")] Span<float> displayRefreshRates)
         {
             // SpanOverloader
             return thisApi.EnumerateDisplayRefreshRatesFB(session, displayRefreshRateCapacityInput, ref displayRefreshRateCountOutput.GetPinnableReference(), ref displayRefreshRates.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result GetDisplayRefreshRateFB(this FBDisplayRefreshRate thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] Span<float> displayRefreshRate)
         {
             // SpanOverloader

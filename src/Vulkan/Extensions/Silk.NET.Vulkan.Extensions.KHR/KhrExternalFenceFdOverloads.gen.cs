@@ -18,28 +18,28 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 {
     public static class KhrExternalFenceFdOverloads
     {
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result GetFenceF(this KhrExternalFenceFd thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] FenceGetFdInfoKHR* pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<int> pFd)
         {
             // SpanOverloader
             return thisApi.GetFenceF(device, pGetFdInfo, out pFd.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result GetFenceF(this KhrExternalFenceFd thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<FenceGetFdInfoKHR> pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] int* pFd)
         {
             // SpanOverloader
             return thisApi.GetFenceF(device, in pGetFdInfo.GetPinnableReference(), pFd);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result GetFenceF(this KhrExternalFenceFd thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<FenceGetFdInfoKHR> pGetFdInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<int> pFd)
         {
             // SpanOverloader
             return thisApi.GetFenceF(device, in pGetFdInfo.GetPinnableReference(), out pFd.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result ImportFenceF(this KhrExternalFenceFd thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ImportFenceFdInfoKHR> pImportFenceFdInfo)
         {
             // SpanOverloader

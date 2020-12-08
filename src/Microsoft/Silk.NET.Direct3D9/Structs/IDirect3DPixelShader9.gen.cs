@@ -52,7 +52,7 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type.Name", "")]
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -61,7 +61,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -73,7 +73,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -85,7 +85,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -100,7 +100,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -109,7 +109,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint Release()
         {
             var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -118,7 +118,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetDevice(IDirect3DDevice9** ppDevice)
         {
             var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -127,7 +127,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetDevice(ref IDirect3DDevice9* ppDevice)
         {
             var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -139,7 +139,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetFunction(void* arg0, uint* pSizeOfData)
         {
             var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -148,7 +148,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetFunction(void* arg0, ref uint pSizeOfData)
         {
             var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -160,7 +160,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetFunction<T0>(ref T0 arg0, uint* pSizeOfData) where T0 : unmanaged
         {
             var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -172,7 +172,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetFunction<T0>(ref T0 arg0, ref uint pSizeOfData) where T0 : unmanaged
         {
             var @this = (IDirect3DPixelShader9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

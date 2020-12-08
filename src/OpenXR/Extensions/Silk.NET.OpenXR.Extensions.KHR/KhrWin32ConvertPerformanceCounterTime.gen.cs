@@ -22,27 +22,27 @@ namespace Silk.NET.OpenXR.Extensions.KHR
     public unsafe partial class KhrWin32ConvertPerformanceCounterTime : NativeExtension<XR>
     {
         public const string ExtensionName = "XR_KHR_win32_convert_performance_counter_time";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrConvertTimeToWin32PerformanceCounterKHR")]
         public unsafe partial Result ConvertTimeToWin32PerformanceCounter([Count(Count = 0)] Instance instance, [Count(Count = 0)] long time, [Count(Count = 0)] long* performanceCounter);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrConvertTimeToWin32PerformanceCounterKHR")]
         public partial Result ConvertTimeToWin32PerformanceCounter([Count(Count = 0)] Instance instance, [Count(Count = 0)] long time, [Count(Count = 0)] ref long performanceCounter);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrConvertWin32PerformanceCounterToTimeKHR")]
         public unsafe partial Result ConvertWin32PerformanceCounterToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] long* performanceCounter, [Count(Count = 0)] long* time);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrConvertWin32PerformanceCounterToTimeKHR")]
         public unsafe partial Result ConvertWin32PerformanceCounterToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] long* performanceCounter, [Count(Count = 0)] ref long time);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrConvertWin32PerformanceCounterToTimeKHR")]
         public unsafe partial Result ConvertWin32PerformanceCounterToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in long performanceCounter, [Count(Count = 0)] long* time);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrConvertWin32PerformanceCounterToTimeKHR")]
         public partial Result ConvertWin32PerformanceCounterToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in long performanceCounter, [Count(Count = 0)] ref long time);
 

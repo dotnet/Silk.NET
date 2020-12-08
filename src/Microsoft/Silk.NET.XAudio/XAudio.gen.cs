@@ -19,12 +19,12 @@ namespace Silk.NET.XAudio
     public unsafe partial class XAudio : NativeAPI
     {
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1271, Column 16 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um\\xaudio2.h")]
         [NativeApi(EntryPoint = "XAudio2CreateWithVersionInfo")]
         public unsafe partial int CreateWithVersionInfo(IXAudio2** ppXAudio2, uint Flags, uint XAudio2Processor, uint ntddiVersion);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1271, Column 16 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um\\xaudio2.h")]
         [NativeApi(EntryPoint = "XAudio2CreateWithVersionInfo")]
         public unsafe partial int CreateWithVersionInfo(ref IXAudio2* ppXAudio2, uint Flags, uint XAudio2Processor, uint ntddiVersion);

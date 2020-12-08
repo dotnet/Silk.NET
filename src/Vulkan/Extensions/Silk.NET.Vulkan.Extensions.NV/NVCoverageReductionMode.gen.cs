@@ -22,19 +22,19 @@ namespace Silk.NET.Vulkan.Extensions.NV
     public unsafe partial class NVCoverageReductionMode : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_NV_coverage_reduction_mode";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV")]
         public unsafe partial Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pCombinationCount, [Count(Computed = "pCombinationCount"), Flow(FlowDirection.Out)] FramebufferMixedSamplesCombinationNV* pCombinations);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV")]
         public unsafe partial Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pCombinationCount, [Count(Computed = "pCombinationCount"), Flow(FlowDirection.Out)] out FramebufferMixedSamplesCombinationNV pCombinations);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV")]
         public unsafe partial Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pCombinationCount, [Count(Computed = "pCombinationCount"), Flow(FlowDirection.Out)] FramebufferMixedSamplesCombinationNV* pCombinations);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceSupportedFramebufferMixedSamplesCombinationsNV")]
         public partial Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pCombinationCount, [Count(Computed = "pCombinationCount"), Flow(FlowDirection.Out)] out FramebufferMixedSamplesCombinationNV pCombinations);
 

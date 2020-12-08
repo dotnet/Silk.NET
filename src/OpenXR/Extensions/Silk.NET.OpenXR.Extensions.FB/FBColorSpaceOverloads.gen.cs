@@ -18,21 +18,21 @@ namespace Silk.NET.OpenXR.Extensions.FB
 {
     public static class FBColorSpaceOverloads
     {
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result EnumerateColorSpacesFB(this FBColorSpace thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint colorSpaceCapacityInput, [Count(Count = 0)] uint* colorSpaceCountOutput, [Count(Computed = "colorSpaceCapacityInput")] Span<ColorSpaceFB> colorSpaces)
         {
             // SpanOverloader
             return thisApi.EnumerateColorSpacesFB(session, colorSpaceCapacityInput, colorSpaceCountOutput, ref colorSpaces.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result EnumerateColorSpacesFB(this FBColorSpace thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint colorSpaceCapacityInput, [Count(Count = 0)] Span<uint> colorSpaceCountOutput, [Count(Computed = "colorSpaceCapacityInput")] ColorSpaceFB* colorSpaces)
         {
             // SpanOverloader
             return thisApi.EnumerateColorSpacesFB(session, colorSpaceCapacityInput, ref colorSpaceCountOutput.GetPinnableReference(), colorSpaces);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result EnumerateColorSpacesFB(this FBColorSpace thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint colorSpaceCapacityInput, [Count(Count = 0)] Span<uint> colorSpaceCountOutput, [Count(Computed = "colorSpaceCapacityInput")] Span<ColorSpaceFB> colorSpaces)
         {
             // SpanOverloader

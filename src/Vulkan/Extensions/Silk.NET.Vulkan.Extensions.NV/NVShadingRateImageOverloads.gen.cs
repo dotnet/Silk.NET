@@ -18,14 +18,14 @@ namespace Silk.NET.Vulkan.Extensions.NV
 {
     public static class NVShadingRateImageOverloads
     {
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe void CmdSetCoarseSampleOrder(this NVShadingRateImage thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] CoarseSampleOrderTypeNV sampleOrderType, [Count(Count = 0)] uint customSampleOrderCount, [Count(Computed = "customSampleOrderCount"), Flow(FlowDirection.In)] ReadOnlySpan<CoarseSampleOrderCustomNV> pCustomSampleOrders)
         {
             // SpanOverloader
             thisApi.CmdSetCoarseSampleOrder(commandBuffer, sampleOrderType, customSampleOrderCount, in pCustomSampleOrders.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe void CmdSetViewportShadingRatePalette(this NVShadingRateImage thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Computed = "viewportCount"), Flow(FlowDirection.In)] ReadOnlySpan<ShadingRatePaletteNV> pShadingRatePalettes)
         {
             // SpanOverloader

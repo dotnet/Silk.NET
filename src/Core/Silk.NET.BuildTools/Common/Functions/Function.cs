@@ -76,7 +76,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Gets or sets the formatted XML documentation for this function.
         /// </summary>
-        public string Doc { get; set; } = "/// <summary>To be added.</summary>";
+        public string Doc { get; set; } = "/// <summary>To be documented.</summary>";
 
         /// <summary>
         /// Gets or sets the name (vendor) of the given extension.

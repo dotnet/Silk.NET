@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 {
     public static class NVExternalMemoryCapabilitiesOverloads
     {
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result GetPhysicalDeviceExternalImageFormatProperties(this NVExternalMemoryCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0)] ImageType type, [Count(Count = 0)] ImageTiling tiling, [Count(Count = 0)] ImageUsageFlags usage, [Count(Count = 0)] ImageCreateFlags flags, [Count(Count = 0)] ExternalMemoryHandleTypeFlagsNV externalHandleType, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalImageFormatPropertiesNV> pExternalImageFormatProperties)
         {
             // SpanOverloader

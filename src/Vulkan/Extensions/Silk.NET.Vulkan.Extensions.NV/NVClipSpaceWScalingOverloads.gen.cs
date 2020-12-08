@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 {
     public static class NVClipSpaceWScalingOverloads
     {
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe void CmdSetViewportWScaling(this NVClipSpaceWScaling thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstViewport, [Count(Count = 0)] uint viewportCount, [Count(Computed = "viewportCount"), Flow(FlowDirection.In)] ReadOnlySpan<ViewportWScalingNV> pViewportWScalings)
         {
             // SpanOverloader

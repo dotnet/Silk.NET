@@ -18,14 +18,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 {
     public static class KhrBindMemory2Overloads
     {
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result BindBufferMemory2(this KhrBindMemory2 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] ReadOnlySpan<BindBufferMemoryInfo> pBindInfos)
         {
             // SpanOverloader
             return thisApi.BindBufferMemory2(device, bindInfoCount, in pBindInfos.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result BindImageMemory2(this KhrBindMemory2 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] ReadOnlySpan<BindImageMemoryInfo> pBindInfos)
         {
             // SpanOverloader

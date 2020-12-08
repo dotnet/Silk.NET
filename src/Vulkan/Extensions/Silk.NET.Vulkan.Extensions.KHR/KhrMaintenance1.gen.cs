@@ -22,7 +22,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public unsafe partial class KhrMaintenance1 : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_KHR_maintenance1";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkTrimCommandPoolKHR")]
         public partial void TrimCommandPool([Count(Count = 0)] Device device, [Count(Count = 0)] CommandPool commandPool, [Count(Count = 0)] uint flags);
 
