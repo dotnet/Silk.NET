@@ -3,7 +3,7 @@ I was turned away from OpenGL Because of the Complexity of the API. It takes 100
 I want to Propose a Optional Libary to Abstract OpenGL into Classes Like [OpenGL4Sharp](https://github.com/giawa/opengl4csharp/tree/dotnetcore/OpenGL/Constructs) or [ObjectTK](https://github.com/opentk/ObjectTK)
 The goal of this is to create a easier way to learn OpenGL and to make repetative suff easier.
 # Contributors
-- wholesomeisland/Silk.NET Contributors
+- wholesomeisland, unaffiliated/Silk.NET Contributors
 - Dylan P, Ultz Limited
 # Current Status
 - [x] Proposed
