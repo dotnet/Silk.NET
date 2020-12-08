@@ -41,7 +41,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type.Name", "")]
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -50,7 +50,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -62,7 +62,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -74,7 +74,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -89,7 +89,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -98,7 +98,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint Release()
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -107,7 +107,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetFeatureMask(uint Mask)
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -116,7 +116,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint GetFeatureMask()
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -125,7 +125,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetPresentPerRenderOpDelay(uint Milliseconds)
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -134,7 +134,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint GetPresentPerRenderOpDelay()
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -143,7 +143,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetSwapChain(Silk.NET.DXGI.IDXGISwapChain* pSwapChain)
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -152,7 +152,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetSwapChain(ref Silk.NET.DXGI.IDXGISwapChain pSwapChain)
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -164,7 +164,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetSwapChain(Silk.NET.DXGI.IDXGISwapChain** ppSwapChain)
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -173,7 +173,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetSwapChain(ref Silk.NET.DXGI.IDXGISwapChain* ppSwapChain)
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -185,7 +185,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int ValidateContext(ID3D11DeviceContext* pContext)
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -194,7 +194,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int ValidateContext(ref ID3D11DeviceContext pContext)
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -206,7 +206,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int ReportLiveDeviceObjects(RldoFlags Flags)
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -215,7 +215,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int ValidateContextForDispatch(ID3D11DeviceContext* pContext)
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -224,7 +224,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int ValidateContextForDispatch(ref ID3D11DeviceContext pContext)
         {
             var @this = (ID3D11Debug*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

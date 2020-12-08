@@ -18,21 +18,21 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
 {
     public static class MsftPerceptionAnchorInteropOverloads
     {
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result CreateSpatialAnchorFromPerceptionAnchorMsft(this MsftPerceptionAnchorInterop thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] Silk.NET.Core.Native.IUnknown* perceptionAnchor, [Count(Count = 0)] Span<SpatialAnchorMSFT> anchor)
         {
             // SpanOverloader
             return thisApi.CreateSpatialAnchorFromPerceptionAnchorMsft(session, perceptionAnchor, ref anchor.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result CreateSpatialAnchorFromPerceptionAnchorMsft(this MsftPerceptionAnchorInterop thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] Span<Silk.NET.Core.Native.IUnknown> perceptionAnchor, [Count(Count = 0)] SpatialAnchorMSFT* anchor)
         {
             // SpanOverloader
             return thisApi.CreateSpatialAnchorFromPerceptionAnchorMsft(session, ref perceptionAnchor.GetPinnableReference(), anchor);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result CreateSpatialAnchorFromPerceptionAnchorMsft(this MsftPerceptionAnchorInterop thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] Span<Silk.NET.Core.Native.IUnknown> perceptionAnchor, [Count(Count = 0)] Span<SpatialAnchorMSFT> anchor)
         {
             // SpanOverloader

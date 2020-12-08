@@ -22,35 +22,35 @@ namespace Silk.NET.Vulkan.Extensions.FUCHSIA
     public unsafe partial class FuchsiaImagepipeSurface : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_FUCHSIA_imagepipe_surface";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateImagePipeSurfaceFUCHSIA")]
         public unsafe partial Result CreateImagePipeSurfaceFuchsia([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ImagePipeSurfaceCreateInfoFUCHSIA* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateImagePipeSurfaceFUCHSIA")]
         public unsafe partial Result CreateImagePipeSurfaceFuchsia([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ImagePipeSurfaceCreateInfoFUCHSIA* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateImagePipeSurfaceFUCHSIA")]
         public unsafe partial Result CreateImagePipeSurfaceFuchsia([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ImagePipeSurfaceCreateInfoFUCHSIA* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateImagePipeSurfaceFUCHSIA")]
         public unsafe partial Result CreateImagePipeSurfaceFuchsia([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ImagePipeSurfaceCreateInfoFUCHSIA* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateImagePipeSurfaceFUCHSIA")]
         public unsafe partial Result CreateImagePipeSurfaceFuchsia([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in ImagePipeSurfaceCreateInfoFUCHSIA pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateImagePipeSurfaceFUCHSIA")]
         public unsafe partial Result CreateImagePipeSurfaceFuchsia([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in ImagePipeSurfaceCreateInfoFUCHSIA pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateImagePipeSurfaceFUCHSIA")]
         public unsafe partial Result CreateImagePipeSurfaceFuchsia([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in ImagePipeSurfaceCreateInfoFUCHSIA pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateImagePipeSurfaceFUCHSIA")]
         public partial Result CreateImagePipeSurfaceFuchsia([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in ImagePipeSurfaceCreateInfoFUCHSIA pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out SurfaceKHR pSurface);
 

@@ -41,7 +41,7 @@ namespace Silk.NET.Direct3D.Compilers
         [NativeName("Type.Name", "")]
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -50,7 +50,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -62,7 +62,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -74,7 +74,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -89,7 +89,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -98,7 +98,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint Release()
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -107,7 +107,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int LoadSource(char* pFilename, IDxcBlob** ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -116,7 +116,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int LoadSource(char* pFilename, ref IDxcBlob* ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -128,7 +128,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int LoadSource(ref char pFilename, IDxcBlob** ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -140,7 +140,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int LoadSource(ref char pFilename, ref IDxcBlob* ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -155,7 +155,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int LoadSource(string pFilename, IDxcBlob** ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -166,7 +166,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int LoadSource(string pFilename, ref IDxcBlob* ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

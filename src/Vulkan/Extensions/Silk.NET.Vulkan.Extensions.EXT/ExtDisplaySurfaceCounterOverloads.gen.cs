@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 {
     public static class ExtDisplaySurfaceCounterOverloads
     {
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result GetPhysicalDeviceSurfaceCapabilities2(this ExtDisplaySurfaceCounter thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0), Flow(FlowDirection.Out)] Span<SurfaceCapabilities2EXT> pSurfaceCapabilities)
         {
             // SpanOverloader

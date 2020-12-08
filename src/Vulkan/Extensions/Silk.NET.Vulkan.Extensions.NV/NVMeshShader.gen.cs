@@ -22,15 +22,15 @@ namespace Silk.NET.Vulkan.Extensions.NV
     public unsafe partial class NVMeshShader : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_NV_mesh_shader";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDrawMeshTasksNV")]
         public partial void CmdDrawMeshTask([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint taskCount, [Count(Count = 0)] uint firstTask);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDrawMeshTasksIndirectNV")]
         public partial void CmdDrawMeshTasksIndirect([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] uint drawCount, [Count(Count = 0)] uint stride);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdDrawMeshTasksIndirectCountNV")]
         public partial void CmdDrawMeshTasksIndirectCount([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] Buffer buffer, [Count(Count = 0)] ulong offset, [Count(Count = 0)] Buffer countBuffer, [Count(Count = 0)] ulong countBufferOffset, [Count(Count = 0)] uint maxDrawCount, [Count(Count = 0)] uint stride);
 

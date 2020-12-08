@@ -41,7 +41,7 @@ namespace Silk.NET.Direct3D.Compilers
         [NativeName("Type.Name", "")]
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -50,7 +50,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -62,7 +62,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -74,7 +74,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -89,7 +89,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -98,7 +98,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint Release()
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -107,7 +107,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetMalloc(IMalloc* pMalloc)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -116,7 +116,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetMalloc(ref IMalloc pMalloc)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -128,7 +128,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobFromBlob(IDxcBlob* pBlob, uint offset, uint length, IDxcBlob** ppResult)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -137,7 +137,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobFromBlob(IDxcBlob* pBlob, uint offset, uint length, ref IDxcBlob* ppResult)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -149,7 +149,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobFromBlob(ref IDxcBlob pBlob, uint offset, uint length, IDxcBlob** ppResult)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -161,7 +161,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobFromBlob(ref IDxcBlob pBlob, uint offset, uint length, ref IDxcBlob* ppResult)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -176,7 +176,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobFromFile(char* pFileName, uint* codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -185,7 +185,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobFromFile(char* pFileName, uint* codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -197,7 +197,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobFromFile(char* pFileName, ref uint codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -209,7 +209,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobFromFile(char* pFileName, ref uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -224,7 +224,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobFromFile(ref char pFileName, uint* codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -236,7 +236,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobFromFile(ref char pFileName, uint* codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -251,7 +251,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobFromFile(ref char pFileName, ref uint codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -266,7 +266,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobFromFile(ref char pFileName, ref uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -284,7 +284,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobFromFile(string pFileName, uint* codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -295,7 +295,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobFromFile(string pFileName, uint* codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -309,7 +309,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobFromFile(string pFileName, ref uint codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -323,7 +323,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobFromFile(string pFileName, ref uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -340,7 +340,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobWithEncodingFromPinned(void* pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -349,7 +349,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobWithEncodingFromPinned(void* pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -361,7 +361,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobWithEncodingFromPinned<T0>(ref T0 pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -373,7 +373,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobWithEncodingFromPinned<T0>(ref T0 pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -388,7 +388,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobWithEncodingOnHeapCopy(void* pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -397,7 +397,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobWithEncodingOnHeapCopy(void* pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -409,7 +409,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobWithEncodingOnHeapCopy<T0>(ref T0 pText, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -421,7 +421,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobWithEncodingOnHeapCopy<T0>(ref T0 pText, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -436,7 +436,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobWithEncodingOnMalloc(void* pText, IMalloc* pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -445,7 +445,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobWithEncodingOnMalloc(void* pText, IMalloc* pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -457,7 +457,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobWithEncodingOnMalloc(void* pText, ref IMalloc pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -469,7 +469,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobWithEncodingOnMalloc(void* pText, ref IMalloc pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -484,7 +484,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0>(ref T0 pText, IMalloc* pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -496,7 +496,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0>(ref T0 pText, IMalloc* pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -511,7 +511,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0>(ref T0 pText, ref IMalloc pIMalloc, uint size, uint codePage, IDxcBlobEncoding** pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -526,7 +526,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateBlobWithEncodingOnMalloc<T0>(ref T0 pText, ref IMalloc pIMalloc, uint size, uint codePage, ref IDxcBlobEncoding* pBlobEncoding) where T0 : unmanaged
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -544,7 +544,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateIncludeHandler(IDxcIncludeHandler** ppResult)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -553,7 +553,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateIncludeHandler(ref IDxcIncludeHandler* ppResult)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -565,7 +565,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateStreamFromBlobReadOnly(IDxcBlob* pBlob, void** ppStream)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -574,7 +574,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateStreamFromBlobReadOnly(IDxcBlob* pBlob, ref void* ppStream)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -586,7 +586,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateStreamFromBlobReadOnly(ref IDxcBlob pBlob, void** ppStream)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -598,7 +598,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CreateStreamFromBlobReadOnly(ref IDxcBlob pBlob, ref void* ppStream)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -613,7 +613,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetBlobAsUtf8(IDxcBlob* pBlob, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -622,7 +622,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetBlobAsUtf8(IDxcBlob* pBlob, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -634,7 +634,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetBlobAsUtf8(ref IDxcBlob pBlob, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -646,7 +646,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetBlobAsUtf8(ref IDxcBlob pBlob, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -661,7 +661,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetBlobAsUtf16(IDxcBlob* pBlob, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -670,7 +670,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetBlobAsUtf16(IDxcBlob* pBlob, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -682,7 +682,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetBlobAsUtf16(ref IDxcBlob pBlob, IDxcBlobEncoding** pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -694,7 +694,7 @@ namespace Silk.NET.Direct3D.Compilers
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetBlobAsUtf16(ref IDxcBlob pBlob, ref IDxcBlobEncoding* pBlobEncoding)
         {
             var @this = (IDxcLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

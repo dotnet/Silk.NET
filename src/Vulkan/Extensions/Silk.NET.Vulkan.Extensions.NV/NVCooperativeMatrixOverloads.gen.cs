@@ -18,21 +18,21 @@ namespace Silk.NET.Vulkan.Extensions.NV
 {
     public static class NVCooperativeMatrixOverloads
     {
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result GetPhysicalDeviceCooperativeMatrixProperties(this NVCooperativeMatrix thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] Span<CooperativeMatrixPropertiesNV> pProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceCooperativeMatrixProperties(physicalDevice, pPropertyCount, out pProperties.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result GetPhysicalDeviceCooperativeMatrixProperties(this NVCooperativeMatrix thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] CooperativeMatrixPropertiesNV* pProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceCooperativeMatrixProperties(physicalDevice, ref pPropertyCount.GetPinnableReference(), pProperties);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result GetPhysicalDeviceCooperativeMatrixProperties(this NVCooperativeMatrix thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] Span<CooperativeMatrixPropertiesNV> pProperties)
         {
             // SpanOverloader

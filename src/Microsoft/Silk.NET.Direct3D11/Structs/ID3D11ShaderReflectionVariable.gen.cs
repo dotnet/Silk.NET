@@ -38,7 +38,7 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type.Name", "")]
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetDesc(ShaderVariableDesc* pDesc)
         {
             var @this = (ID3D11ShaderReflectionVariable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -47,7 +47,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetDesc(ref ShaderVariableDesc pDesc)
         {
             var @this = (ID3D11ShaderReflectionVariable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -59,7 +59,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe ID3D11ShaderReflectionType* GetType()
         {
             var @this = (ID3D11ShaderReflectionVariable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -68,7 +68,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe ID3D11ShaderReflectionConstantBuffer* GetBuffer()
         {
             var @this = (ID3D11ShaderReflectionVariable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -77,7 +77,7 @@ namespace Silk.NET.Direct3D11
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint GetInterfaceSlot(uint uArrayIndex)
         {
             var @this = (ID3D11ShaderReflectionVariable*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

@@ -22,99 +22,99 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public unsafe partial class KhrPipelineExecutableProperties : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_KHR_pipeline_executable_properties";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
         public unsafe partial Result GetPipelineExecutableInternalRepresentation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] uint* pInternalRepresentationCount, [Count(Computed = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] PipelineExecutableInternalRepresentationKHR* pInternalRepresentations);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
         public unsafe partial Result GetPipelineExecutableInternalRepresentation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] uint* pInternalRepresentationCount, [Count(Computed = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] out PipelineExecutableInternalRepresentationKHR pInternalRepresentations);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
         public unsafe partial Result GetPipelineExecutableInternalRepresentation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] ref uint pInternalRepresentationCount, [Count(Computed = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] PipelineExecutableInternalRepresentationKHR* pInternalRepresentations);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
         public unsafe partial Result GetPipelineExecutableInternalRepresentation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] ref uint pInternalRepresentationCount, [Count(Computed = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] out PipelineExecutableInternalRepresentationKHR pInternalRepresentations);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
         public unsafe partial Result GetPipelineExecutableInternalRepresentation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineExecutableInfoKHR pExecutableInfo, [Count(Count = 0)] uint* pInternalRepresentationCount, [Count(Computed = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] PipelineExecutableInternalRepresentationKHR* pInternalRepresentations);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
         public unsafe partial Result GetPipelineExecutableInternalRepresentation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineExecutableInfoKHR pExecutableInfo, [Count(Count = 0)] uint* pInternalRepresentationCount, [Count(Computed = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] out PipelineExecutableInternalRepresentationKHR pInternalRepresentations);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
         public unsafe partial Result GetPipelineExecutableInternalRepresentation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineExecutableInfoKHR pExecutableInfo, [Count(Count = 0)] ref uint pInternalRepresentationCount, [Count(Computed = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] PipelineExecutableInternalRepresentationKHR* pInternalRepresentations);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutableInternalRepresentationsKHR")]
         public partial Result GetPipelineExecutableInternalRepresentation([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineExecutableInfoKHR pExecutableInfo, [Count(Count = 0)] ref uint pInternalRepresentationCount, [Count(Computed = "pInternalRepresentationCount"), Flow(FlowDirection.Out)] out PipelineExecutableInternalRepresentationKHR pInternalRepresentations);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
         public unsafe partial Result GetPipelineExecutableProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineInfoKHR* pPipelineInfo, [Count(Count = 0)] uint* pExecutableCount, [Count(Computed = "pExecutableCount"), Flow(FlowDirection.Out)] PipelineExecutablePropertiesKHR* pProperties);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
         public unsafe partial Result GetPipelineExecutableProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineInfoKHR* pPipelineInfo, [Count(Count = 0)] uint* pExecutableCount, [Count(Computed = "pExecutableCount"), Flow(FlowDirection.Out)] out PipelineExecutablePropertiesKHR pProperties);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
         public unsafe partial Result GetPipelineExecutableProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineInfoKHR* pPipelineInfo, [Count(Count = 0)] ref uint pExecutableCount, [Count(Computed = "pExecutableCount"), Flow(FlowDirection.Out)] PipelineExecutablePropertiesKHR* pProperties);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
         public unsafe partial Result GetPipelineExecutableProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineInfoKHR* pPipelineInfo, [Count(Count = 0)] ref uint pExecutableCount, [Count(Computed = "pExecutableCount"), Flow(FlowDirection.Out)] out PipelineExecutablePropertiesKHR pProperties);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
         public unsafe partial Result GetPipelineExecutableProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineInfoKHR pPipelineInfo, [Count(Count = 0)] uint* pExecutableCount, [Count(Computed = "pExecutableCount"), Flow(FlowDirection.Out)] PipelineExecutablePropertiesKHR* pProperties);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
         public unsafe partial Result GetPipelineExecutableProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineInfoKHR pPipelineInfo, [Count(Count = 0)] uint* pExecutableCount, [Count(Computed = "pExecutableCount"), Flow(FlowDirection.Out)] out PipelineExecutablePropertiesKHR pProperties);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
         public unsafe partial Result GetPipelineExecutableProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineInfoKHR pPipelineInfo, [Count(Count = 0)] ref uint pExecutableCount, [Count(Computed = "pExecutableCount"), Flow(FlowDirection.Out)] PipelineExecutablePropertiesKHR* pProperties);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutablePropertiesKHR")]
         public partial Result GetPipelineExecutableProperties([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineInfoKHR pPipelineInfo, [Count(Count = 0)] ref uint pExecutableCount, [Count(Computed = "pExecutableCount"), Flow(FlowDirection.Out)] out PipelineExecutablePropertiesKHR pProperties);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
         public unsafe partial Result GetPipelineExecutableStatistic([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] uint* pStatisticCount, [Count(Computed = "pStatisticCount"), Flow(FlowDirection.Out)] PipelineExecutableStatisticKHR* pStatistics);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
         public unsafe partial Result GetPipelineExecutableStatistic([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] uint* pStatisticCount, [Count(Computed = "pStatisticCount"), Flow(FlowDirection.Out)] out PipelineExecutableStatisticKHR pStatistics);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
         public unsafe partial Result GetPipelineExecutableStatistic([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] ref uint pStatisticCount, [Count(Computed = "pStatisticCount"), Flow(FlowDirection.Out)] PipelineExecutableStatisticKHR* pStatistics);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
         public unsafe partial Result GetPipelineExecutableStatistic([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] PipelineExecutableInfoKHR* pExecutableInfo, [Count(Count = 0)] ref uint pStatisticCount, [Count(Computed = "pStatisticCount"), Flow(FlowDirection.Out)] out PipelineExecutableStatisticKHR pStatistics);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
         public unsafe partial Result GetPipelineExecutableStatistic([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineExecutableInfoKHR pExecutableInfo, [Count(Count = 0)] uint* pStatisticCount, [Count(Computed = "pStatisticCount"), Flow(FlowDirection.Out)] PipelineExecutableStatisticKHR* pStatistics);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
         public unsafe partial Result GetPipelineExecutableStatistic([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineExecutableInfoKHR pExecutableInfo, [Count(Count = 0)] uint* pStatisticCount, [Count(Computed = "pStatisticCount"), Flow(FlowDirection.Out)] out PipelineExecutableStatisticKHR pStatistics);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
         public unsafe partial Result GetPipelineExecutableStatistic([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineExecutableInfoKHR pExecutableInfo, [Count(Count = 0)] ref uint pStatisticCount, [Count(Computed = "pStatisticCount"), Flow(FlowDirection.Out)] PipelineExecutableStatisticKHR* pStatistics);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineExecutableStatisticsKHR")]
         public partial Result GetPipelineExecutableStatistic([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in PipelineExecutableInfoKHR pExecutableInfo, [Count(Count = 0)] ref uint pStatisticCount, [Count(Computed = "pStatisticCount"), Flow(FlowDirection.Out)] out PipelineExecutableStatisticKHR pStatistics);
 

@@ -38,7 +38,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "")]
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetDesc(ShaderBufferDesc* pDesc)
         {
             var @this = (ID3D12ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -47,7 +47,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetDesc(ref ShaderBufferDesc pDesc)
         {
             var @this = (ID3D12ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -59,7 +59,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe ID3D12ShaderReflectionVariable* GetVariableByIndex(uint Index)
         {
             var @this = (ID3D12ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -68,7 +68,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe ID3D12ShaderReflectionVariable* GetVariableByName(byte* Name)
         {
             var @this = (ID3D12ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -77,7 +77,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe ID3D12ShaderReflectionVariable* GetVariableByName(ref byte Name)
         {
             var @this = (ID3D12ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -89,7 +89,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe ID3D12ShaderReflectionVariable* GetVariableByName(string Name)
         {
             var @this = (ID3D12ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

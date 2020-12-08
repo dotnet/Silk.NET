@@ -26,14 +26,14 @@ namespace Silk.NET.Core.Native
     public unsafe partial struct IUnknown
     {
         public void** LpVtbl;
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (IUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             return ((delegate* unmanaged[Cdecl]<IUnknown*, Guid*, void**, int>) LpVtbl[0])(@this, riid, ppvObject);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (IUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -44,7 +44,7 @@ namespace Silk.NET.Core.Native
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (IUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -55,7 +55,7 @@ namespace Silk.NET.Core.Native
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (IUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -69,14 +69,14 @@ namespace Silk.NET.Core.Native
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (IUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             return ((delegate* unmanaged[Cdecl]<IUnknown*, uint>) LpVtbl[1])(@this);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint Release()
         {
             var @this = (IUnknown*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

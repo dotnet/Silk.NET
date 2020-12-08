@@ -22,7 +22,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     public unsafe partial class ExtDirectModeDisplay : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_EXT_direct_mode_display";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkReleaseDisplayEXT")]
         public partial Result ReleaseDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display);
 

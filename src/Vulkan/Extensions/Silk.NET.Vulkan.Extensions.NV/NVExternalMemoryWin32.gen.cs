@@ -22,11 +22,11 @@ namespace Silk.NET.Vulkan.Extensions.NV
     public unsafe partial class NVExternalMemoryWin32 : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_NV_external_memory_win32";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryWin32HandleNV")]
         public unsafe partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ExternalMemoryHandleTypeFlagsNV handleType, [Count(Count = 0), Flow(FlowDirection.Out)] IntPtr* pHandle);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryWin32HandleNV")]
         public partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ExternalMemoryHandleTypeFlagsNV handleType, [Count(Count = 0), Flow(FlowDirection.Out)] out IntPtr pHandle);
 

@@ -18,7 +18,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
 {
     public static class NVExternalMemoryWin32Overloads
     {
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result GetMemoryWin32Handle(this NVExternalMemoryWin32 thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ExternalMemoryHandleTypeFlagsNV handleType, [Count(Count = 0), Flow(FlowDirection.Out)] Span<IntPtr> pHandle)
         {
             // SpanOverloader

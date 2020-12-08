@@ -22,31 +22,31 @@ namespace Silk.NET.OpenXR.Extensions.FB
     public unsafe partial class FBDisplayRefreshRate : NativeExtension<XR>
     {
         public const string ExtensionName = "XR_FB_display_refresh_rate";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateDisplayRefreshRatesFB")]
         public unsafe partial Result EnumerateDisplayRefreshRatesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint displayRefreshRateCapacityInput, [Count(Count = 0)] uint* displayRefreshRateCountOutput, [Count(Computed = "displayRefreshRateCapacityInput")] float* displayRefreshRates);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateDisplayRefreshRatesFB")]
         public unsafe partial Result EnumerateDisplayRefreshRatesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint displayRefreshRateCapacityInput, [Count(Count = 0)] uint* displayRefreshRateCountOutput, [Count(Computed = "displayRefreshRateCapacityInput")] ref float displayRefreshRates);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateDisplayRefreshRatesFB")]
         public unsafe partial Result EnumerateDisplayRefreshRatesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint displayRefreshRateCapacityInput, [Count(Count = 0)] ref uint displayRefreshRateCountOutput, [Count(Computed = "displayRefreshRateCapacityInput")] float* displayRefreshRates);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateDisplayRefreshRatesFB")]
         public partial Result EnumerateDisplayRefreshRatesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint displayRefreshRateCapacityInput, [Count(Count = 0)] ref uint displayRefreshRateCountOutput, [Count(Computed = "displayRefreshRateCapacityInput")] ref float displayRefreshRates);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetDisplayRefreshRateFB")]
         public unsafe partial Result GetDisplayRefreshRateFB([Count(Count = 0)] Session session, [Count(Count = 0)] float* displayRefreshRate);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetDisplayRefreshRateFB")]
         public partial Result GetDisplayRefreshRateFB([Count(Count = 0)] Session session, [Count(Count = 0)] ref float displayRefreshRate);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrRequestDisplayRefreshRateFB")]
         public partial Result RequestDisplayRefreshRateFB([Count(Count = 0)] Session session, [Count(Count = 0)] float displayRefreshRate);
 

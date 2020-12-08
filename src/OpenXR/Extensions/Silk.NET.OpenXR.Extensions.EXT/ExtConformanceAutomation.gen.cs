@@ -22,23 +22,23 @@ namespace Silk.NET.OpenXR.Extensions.EXT
     public unsafe partial class ExtConformanceAutomation : NativeExtension<XR>
     {
         public const string ExtensionName = "XR_EXT_conformance_automation";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSetInputDeviceActiveEXT")]
         public partial Result SetInputDeviceActive([Count(Count = 0)] Session session, [Count(Count = 0)] ulong interactionProfile, [Count(Count = 0)] ulong topLevelPath, [Count(Count = 0)] uint isActive);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSetInputDeviceLocationEXT")]
         public partial Result SetInputDeviceLocation([Count(Count = 0)] Session session, [Count(Count = 0)] ulong topLevelPath, [Count(Count = 0)] ulong inputSourcePath, [Count(Count = 0)] Space space, [Count(Count = 0)] Posef pose);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSetInputDeviceStateBoolEXT")]
         public partial Result SetInputDeviceStateBool([Count(Count = 0)] Session session, [Count(Count = 0)] ulong topLevelPath, [Count(Count = 0)] ulong inputSourcePath, [Count(Count = 0)] uint state);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSetInputDeviceStateFloatEXT")]
         public partial Result SetInputDeviceStateFloat([Count(Count = 0)] Session session, [Count(Count = 0)] ulong topLevelPath, [Count(Count = 0)] ulong inputSourcePath, [Count(Count = 0)] float state);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSetInputDeviceStateVector2fEXT")]
         public partial Result SetInputDeviceStateVector2([Count(Count = 0)] Session session, [Count(Count = 0)] ulong topLevelPath, [Count(Count = 0)] ulong inputSourcePath, [Count(Count = 0)] Vector2f state);
 

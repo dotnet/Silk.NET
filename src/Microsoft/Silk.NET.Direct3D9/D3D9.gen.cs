@@ -19,7 +19,7 @@ namespace Silk.NET.Direct3D9
     public unsafe partial class D3D9 : NativeAPI
     {
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 220, Column 21 in C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um\\d3d9helper.h")]
         [NativeApi(EntryPoint = "Direct3DCreate9")]
         public unsafe partial IDirect3D9* Direct3DCreate9(uint SDKVersion);

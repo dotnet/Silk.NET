@@ -18,49 +18,49 @@ namespace Silk.NET.Vulkan.Extensions.NN
 {
     public static class NNViSurfaceOverloads
     {
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result CreateViSurface(this NNViSurface thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ViSurfaceCreateInfoNN* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<SurfaceKHR> pSurface)
         {
             // SpanOverloader
             return thisApi.CreateViSurface(instance, pCreateInfo, pAllocator, out pSurface.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result CreateViSurface(this NNViSurface thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ViSurfaceCreateInfoNN* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface)
         {
             // SpanOverloader
             return thisApi.CreateViSurface(instance, pCreateInfo, in pAllocator.GetPinnableReference(), pSurface);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result CreateViSurface(this NNViSurface thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ViSurfaceCreateInfoNN* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<SurfaceKHR> pSurface)
         {
             // SpanOverloader
             return thisApi.CreateViSurface(instance, pCreateInfo, in pAllocator.GetPinnableReference(), out pSurface.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result CreateViSurface(this NNViSurface thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViSurfaceCreateInfoNN> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface)
         {
             // SpanOverloader
             return thisApi.CreateViSurface(instance, in pCreateInfo.GetPinnableReference(), pAllocator, pSurface);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result CreateViSurface(this NNViSurface thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViSurfaceCreateInfoNN> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<SurfaceKHR> pSurface)
         {
             // SpanOverloader
             return thisApi.CreateViSurface(instance, in pCreateInfo.GetPinnableReference(), pAllocator, out pSurface.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result CreateViSurface(this NNViSurface thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViSurfaceCreateInfoNN> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface)
         {
             // SpanOverloader
             return thisApi.CreateViSurface(instance, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pSurface);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result CreateViSurface(this NNViSurface thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViSurfaceCreateInfoNN> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<SurfaceKHR> pSurface)
         {
             // SpanOverloader

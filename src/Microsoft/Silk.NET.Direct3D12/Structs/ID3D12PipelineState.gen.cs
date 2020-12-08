@@ -50,7 +50,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "")]
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -59,7 +59,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -71,7 +71,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -83,7 +83,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -98,7 +98,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -107,7 +107,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint Release()
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -116,7 +116,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(Guid* guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -125,7 +125,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData<T0>(Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -137,7 +137,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(Guid* guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -149,7 +149,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData<T0>(Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -164,7 +164,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(ref Guid guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -176,7 +176,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData<T0>(ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -191,7 +191,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(ref Guid guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -206,7 +206,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetPrivateData<T0>(ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -224,7 +224,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, void* pData)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -233,7 +233,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -245,7 +245,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, void* pData)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -257,7 +257,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -272,7 +272,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -281,7 +281,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -293,7 +293,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -305,7 +305,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -320,7 +320,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetName(char* Name)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -329,7 +329,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetName(ref char Name)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -341,7 +341,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetName(string Name)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -352,7 +352,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetDevice(Guid* riid, void** ppvDevice)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -361,7 +361,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetDevice(Guid* riid, ref void* ppvDevice)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -373,7 +373,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetDevice(ref Guid riid, void** ppvDevice)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -385,7 +385,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetDevice(ref Guid riid, ref void* ppvDevice)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -400,7 +400,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetCachedBlob(Silk.NET.Core.Native.ID3D10Blob** ppBlob)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -409,7 +409,7 @@ namespace Silk.NET.Direct3D12
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetCachedBlob(ref Silk.NET.Core.Native.ID3D10Blob* ppBlob)
         {
             var @this = (ID3D12PipelineState*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

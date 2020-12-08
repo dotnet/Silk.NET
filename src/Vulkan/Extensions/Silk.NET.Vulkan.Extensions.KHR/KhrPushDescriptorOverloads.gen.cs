@@ -18,14 +18,14 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 {
     public static class KhrPushDescriptorOverloads
     {
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe void CmdPushDescriptorSet(this KhrPushDescriptor thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] PipelineBindPoint pipelineBindPoint, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] uint descriptorWriteCount, [Count(Computed = "descriptorWriteCount"), Flow(FlowDirection.In)] ReadOnlySpan<WriteDescriptorSet> pDescriptorWrites)
         {
             // SpanOverloader
             thisApi.CmdPushDescriptorSet(commandBuffer, pipelineBindPoint, layout, set, descriptorWriteCount, in pDescriptorWrites.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe void CmdPushDescriptorSetWithTemplate<T0>(this KhrPushDescriptor thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] DescriptorUpdateTemplate descriptorUpdateTemplate, [Count(Count = 0)] PipelineLayout layout, [Count(Count = 0)] uint set, [Count(Count = 0)] Span<T0> pData) where T0 : unmanaged
         {
             // SpanOverloader

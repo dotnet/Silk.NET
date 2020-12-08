@@ -18,21 +18,21 @@ namespace Silk.NET.Vulkan.Extensions.NV
 {
     public static class NVCoverageReductionModeOverloads
     {
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination(this NVCoverageReductionMode thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pCombinationCount, [Count(Computed = "pCombinationCount"), Flow(FlowDirection.Out)] Span<FramebufferMixedSamplesCombinationNV> pCombinations)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination(physicalDevice, pCombinationCount, out pCombinations.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination(this NVCoverageReductionMode thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pCombinationCount, [Count(Computed = "pCombinationCount"), Flow(FlowDirection.Out)] FramebufferMixedSamplesCombinationNV* pCombinations)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination(physicalDevice, ref pCombinationCount.GetPinnableReference(), pCombinations);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination(this NVCoverageReductionMode thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pCombinationCount, [Count(Computed = "pCombinationCount"), Flow(FlowDirection.Out)] Span<FramebufferMixedSamplesCombinationNV> pCombinations)
         {
             // SpanOverloader

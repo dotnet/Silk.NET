@@ -22,27 +22,27 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
     public unsafe partial class MsftPerceptionAnchorInterop : NativeExtension<XR>
     {
         public const string ExtensionName = "XR_MSFT_perception_anchor_interop";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorFromPerceptionAnchorMSFT")]
         public unsafe partial Result CreateSpatialAnchorFromPerceptionAnchorMsft([Count(Count = 0)] Session session, [Count(Count = 0)] Silk.NET.Core.Native.IUnknown* perceptionAnchor, [Count(Count = 0)] SpatialAnchorMSFT* anchor);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorFromPerceptionAnchorMSFT")]
         public unsafe partial Result CreateSpatialAnchorFromPerceptionAnchorMsft([Count(Count = 0)] Session session, [Count(Count = 0)] Silk.NET.Core.Native.IUnknown* perceptionAnchor, [Count(Count = 0)] ref SpatialAnchorMSFT anchor);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorFromPerceptionAnchorMSFT")]
         public unsafe partial Result CreateSpatialAnchorFromPerceptionAnchorMsft([Count(Count = 0)] Session session, [Count(Count = 0)] ref Silk.NET.Core.Native.IUnknown perceptionAnchor, [Count(Count = 0)] SpatialAnchorMSFT* anchor);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrCreateSpatialAnchorFromPerceptionAnchorMSFT")]
         public partial Result CreateSpatialAnchorFromPerceptionAnchorMsft([Count(Count = 0)] Session session, [Count(Count = 0)] ref Silk.NET.Core.Native.IUnknown perceptionAnchor, [Count(Count = 0)] ref SpatialAnchorMSFT anchor);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrTryGetPerceptionAnchorFromSpatialAnchorMSFT")]
         public unsafe partial Result TryGetPerceptionAnchorFromSpatialAnchorMsft([Count(Count = 0)] Session session, [Count(Count = 0)] SpatialAnchorMSFT anchor, [Count(Count = 0)] Silk.NET.Core.Native.IUnknown** perceptionAnchor);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrTryGetPerceptionAnchorFromSpatialAnchorMSFT")]
         public unsafe partial Result TryGetPerceptionAnchorFromSpatialAnchorMsft([Count(Count = 0)] Session session, [Count(Count = 0)] SpatialAnchorMSFT anchor, [Count(Count = 0)] ref Silk.NET.Core.Native.IUnknown* perceptionAnchor);
 

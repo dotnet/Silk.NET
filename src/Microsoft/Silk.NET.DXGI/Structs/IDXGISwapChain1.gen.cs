@@ -50,7 +50,7 @@ namespace Silk.NET.DXGI
         [NativeName("Type.Name", "")]
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -59,7 +59,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -71,7 +71,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -83,7 +83,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -98,7 +98,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -107,7 +107,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint Release()
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -116,7 +116,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData(Guid* Name, uint DataSize, void* pData)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -125,7 +125,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -137,7 +137,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData(ref Guid Name, uint DataSize, void* pData)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -149,7 +149,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -164,7 +164,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -173,7 +173,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -185,7 +185,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -197,7 +197,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -212,7 +212,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(Guid* Name, uint* pDataSize, void* pData)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -221,7 +221,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData<T0>(Guid* Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -233,7 +233,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(Guid* Name, ref uint pDataSize, void* pData)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -245,7 +245,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData<T0>(Guid* Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -260,7 +260,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(ref Guid Name, uint* pDataSize, void* pData)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -272,7 +272,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData<T0>(ref Guid Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -287,7 +287,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(ref Guid Name, ref uint pDataSize, void* pData)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -302,7 +302,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetPrivateData<T0>(ref Guid Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -320,7 +320,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetParent(Guid* riid, void** ppParent)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -329,7 +329,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetParent(Guid* riid, ref void* ppParent)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -341,7 +341,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetParent(ref Guid riid, void** ppParent)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -353,7 +353,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetParent(ref Guid riid, ref void* ppParent)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -368,7 +368,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetDevice(Guid* riid, void** ppDevice)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -377,7 +377,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetDevice(Guid* riid, ref void* ppDevice)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -389,7 +389,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetDevice(ref Guid riid, void** ppDevice)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -401,7 +401,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetDevice(ref Guid riid, ref void* ppDevice)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -416,7 +416,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int Present(uint SyncInterval, uint Flags)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -425,7 +425,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetBuffer(uint Buffer, Guid* riid, void** ppSurface)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -434,7 +434,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetBuffer(uint Buffer, Guid* riid, ref void* ppSurface)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -446,7 +446,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetBuffer(uint Buffer, ref Guid riid, void** ppSurface)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -458,7 +458,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetBuffer(uint Buffer, ref Guid riid, ref void* ppSurface)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -473,7 +473,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetFullscreenState(int Fullscreen, IDXGIOutput* pTarget)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -482,7 +482,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetFullscreenState(int Fullscreen, ref IDXGIOutput pTarget)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -494,7 +494,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetFullscreenState(int* pFullscreen, IDXGIOutput** ppTarget)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -503,7 +503,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetFullscreenState(int* pFullscreen, ref IDXGIOutput* ppTarget)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -515,7 +515,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetFullscreenState(ref int pFullscreen, IDXGIOutput** ppTarget)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -527,7 +527,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetFullscreenState(ref int pFullscreen, ref IDXGIOutput* ppTarget)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -542,7 +542,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetDesc(SwapChainDesc* pDesc)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -551,7 +551,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetDesc(ref SwapChainDesc pDesc)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -563,7 +563,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int ResizeBuffers(uint BufferCount, uint Width, uint Height, Silk.NET.DXGI.Format NewFormat, uint SwapChainFlags)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -572,7 +572,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int ResizeTarget(ModeDesc* pNewTargetParameters)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -581,7 +581,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int ResizeTarget(ref ModeDesc pNewTargetParameters)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -593,7 +593,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetContainingOutput(IDXGIOutput** ppOutput)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -602,7 +602,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetContainingOutput(ref IDXGIOutput* ppOutput)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -614,7 +614,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetFrameStatistics(FrameStatistics* pStats)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -623,7 +623,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetFrameStatistics(ref FrameStatistics pStats)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -635,7 +635,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetLastPresentCount(uint* pLastPresentCount)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -644,7 +644,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetLastPresentCount(ref uint pLastPresentCount)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -656,7 +656,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetDesc1(SwapChainDesc1* pDesc)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -665,7 +665,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetDesc1(ref SwapChainDesc1 pDesc)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -677,7 +677,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetFullscreenDesc(SwapChainFullscreenDesc* pDesc)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -686,7 +686,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetFullscreenDesc(ref SwapChainFullscreenDesc pDesc)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -698,7 +698,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetHwnd(IntPtr* pHwnd)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -707,7 +707,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetHwnd(ref IntPtr pHwnd)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -719,7 +719,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetCoreWindow(Guid* refiid, void** ppUnk)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -728,7 +728,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetCoreWindow(Guid* refiid, ref void* ppUnk)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -740,7 +740,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetCoreWindow(ref Guid refiid, void** ppUnk)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -752,7 +752,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetCoreWindow(ref Guid refiid, ref void* ppUnk)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -767,7 +767,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Present1(uint SyncInterval, uint PresentFlags, PresentParameters* pPresentParameters)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -776,7 +776,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int Present1(uint SyncInterval, uint PresentFlags, ref PresentParameters pPresentParameters)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -788,7 +788,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int IsTemporaryMonoSupported()
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -797,7 +797,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetRestrictToOutput(IDXGIOutput** ppRestrictToOutput)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -806,7 +806,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetRestrictToOutput(ref IDXGIOutput* ppRestrictToOutput)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -818,7 +818,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetBackgroundColor(D3Dcolorvalue* pColor)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -827,7 +827,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetBackgroundColor(ref D3Dcolorvalue pColor)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -839,7 +839,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetBackgroundColor(D3Dcolorvalue* pColor)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -848,7 +848,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetBackgroundColor(ref D3Dcolorvalue pColor)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -860,7 +860,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetRotation(ModeRotation Rotation)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -869,7 +869,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetRotation(ModeRotation* pRotation)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -878,7 +878,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetRotation(ref ModeRotation pRotation)
         {
             var @this = (IDXGISwapChain1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

@@ -37,35 +37,35 @@ namespace Silk.NET.XAudio
         [NativeName("Type.Name", "")]
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void OnVoiceProcessingPassStart(uint BytesRequired)
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, uint, void>)LpVtbl[0])(@this, BytesRequired);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void OnVoiceProcessingPassEnd()
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void>)LpVtbl[1])(@this);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void OnStreamEnd()
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void>)LpVtbl[2])(@this);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OnBufferStart(void* pBufferContext)
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void*, void>)LpVtbl[3])(@this, pBufferContext);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void OnBufferStart<T0>(ref T0 pBufferContext) where T0 : unmanaged
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -75,14 +75,14 @@ namespace Silk.NET.XAudio
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OnBufferEnd(void* pBufferContext)
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void*, void>)LpVtbl[4])(@this, pBufferContext);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void OnBufferEnd<T0>(ref T0 pBufferContext) where T0 : unmanaged
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -92,14 +92,14 @@ namespace Silk.NET.XAudio
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OnLoopEnd(void* pBufferContext)
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void*, void>)LpVtbl[5])(@this, pBufferContext);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void OnLoopEnd<T0>(ref T0 pBufferContext) where T0 : unmanaged
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -109,14 +109,14 @@ namespace Silk.NET.XAudio
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void OnVoiceError(void* pBufferContext, int Error)
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void*, int, void>)LpVtbl[6])(@this, pBufferContext, Error);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void OnVoiceError<T0>(ref T0 pBufferContext, int Error) where T0 : unmanaged
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

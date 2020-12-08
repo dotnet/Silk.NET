@@ -53,7 +53,7 @@ namespace Silk.NET.DXGI
         [NativeName("Type.Name", "")]
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -62,7 +62,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -74,7 +74,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -86,7 +86,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -101,7 +101,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -110,7 +110,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint Release()
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -119,7 +119,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData(Guid* Name, uint DataSize, void* pData)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -128,7 +128,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -140,7 +140,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData(ref Guid Name, uint DataSize, void* pData)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -152,7 +152,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -167,7 +167,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -176,7 +176,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -188,7 +188,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -200,7 +200,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -215,7 +215,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(Guid* Name, uint* pDataSize, void* pData)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -224,7 +224,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData<T0>(Guid* Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -236,7 +236,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(Guid* Name, ref uint pDataSize, void* pData)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -248,7 +248,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData<T0>(Guid* Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -263,7 +263,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(ref Guid Name, uint* pDataSize, void* pData)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -275,7 +275,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData<T0>(ref Guid Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -290,7 +290,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(ref Guid Name, ref uint pDataSize, void* pData)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -305,7 +305,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetPrivateData<T0>(ref Guid Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -323,7 +323,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetParent(Guid* riid, void** ppParent)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -332,7 +332,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetParent(Guid* riid, ref void* ppParent)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -344,7 +344,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetParent(ref Guid riid, void** ppParent)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -356,7 +356,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetParent(ref Guid riid, ref void* ppParent)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -371,7 +371,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int EnumOutputs(uint Output, IDXGIOutput** ppOutput)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -380,7 +380,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int EnumOutputs(uint Output, ref IDXGIOutput* ppOutput)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -392,7 +392,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetDesc(AdapterDesc* pDesc)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -401,7 +401,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetDesc(ref AdapterDesc pDesc)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -413,7 +413,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CheckInterfaceSupport(Guid* InterfaceName, long* pUMDVersion)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -422,7 +422,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CheckInterfaceSupport(Guid* InterfaceName, ref long pUMDVersion)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -434,7 +434,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int CheckInterfaceSupport(ref Guid InterfaceName, long* pUMDVersion)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -446,7 +446,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int CheckInterfaceSupport(ref Guid InterfaceName, ref long pUMDVersion)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -461,7 +461,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetDesc1(AdapterDesc1* pDesc)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -470,7 +470,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetDesc1(ref AdapterDesc1 pDesc)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -482,7 +482,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetDesc2(AdapterDesc2* pDesc)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -491,7 +491,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetDesc2(ref AdapterDesc2 pDesc)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -503,7 +503,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int RegisterHardwareContentProtectionTeardownStatusEvent(void* hEvent, uint* pdwCookie)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -512,7 +512,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int RegisterHardwareContentProtectionTeardownStatusEvent(void* hEvent, ref uint pdwCookie)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -524,7 +524,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int RegisterHardwareContentProtectionTeardownStatusEvent<T0>(ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -536,7 +536,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int RegisterHardwareContentProtectionTeardownStatusEvent<T0>(ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -551,14 +551,14 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void UnregisterHardwareContentProtectionTeardownStatus(uint dwCookie)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<IDXGIAdapter3*, uint, void>)LpVtbl[13])(@this, dwCookie);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryVideoMemoryInfo(uint NodeIndex, MemorySegmentGroup MemorySegmentGroup, QueryVideoMemoryInfo* pVideoMemoryInfo)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -567,7 +567,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int QueryVideoMemoryInfo(uint NodeIndex, MemorySegmentGroup MemorySegmentGroup, ref QueryVideoMemoryInfo pVideoMemoryInfo)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -579,7 +579,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetVideoMemoryReservation(uint NodeIndex, MemorySegmentGroup MemorySegmentGroup, ulong Reservation)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -588,7 +588,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent(void* hEvent, uint* pdwCookie)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -597,7 +597,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent(void* hEvent, ref uint pdwCookie)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -609,7 +609,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int RegisterVideoMemoryBudgetChangeNotificationEvent<T0>(ref T0 hEvent, uint* pdwCookie) where T0 : unmanaged
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -621,7 +621,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int RegisterVideoMemoryBudgetChangeNotificationEvent<T0>(ref T0 hEvent, ref uint pdwCookie) where T0 : unmanaged
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -636,7 +636,7 @@ namespace Silk.NET.DXGI
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void UnregisterVideoMemoryBudgetChangeNotification(uint dwCookie)
         {
             var @this = (IDXGIAdapter3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

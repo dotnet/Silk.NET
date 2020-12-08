@@ -44,7 +44,7 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type.Name", "")]
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -53,7 +53,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -65,7 +65,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -77,7 +77,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -92,7 +92,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint AddRef()
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -101,7 +101,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint Release()
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -110,7 +110,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetDevice(IDirect3DDevice9** ppDevice)
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -119,7 +119,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetDevice(ref IDirect3DDevice9* ppDevice)
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -131,7 +131,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData(Guid* refguid, void* pData, uint SizeOfData, uint Flags)
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -140,7 +140,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData<T0>(Guid* refguid, ref T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -152,7 +152,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetPrivateData(ref Guid refguid, void* pData, uint SizeOfData, uint Flags)
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -164,7 +164,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetPrivateData<T0>(ref Guid refguid, ref T0 pData, uint SizeOfData, uint Flags) where T0 : unmanaged
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -179,7 +179,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(Guid* refguid, void* pData, uint* pSizeOfData)
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -188,7 +188,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(Guid* refguid, void* pData, ref uint pSizeOfData)
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -200,7 +200,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData<T0>(Guid* refguid, ref T0 pData, uint* pSizeOfData) where T0 : unmanaged
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -212,7 +212,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData<T0>(Guid* refguid, ref T0 pData, ref uint pSizeOfData) where T0 : unmanaged
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -227,7 +227,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(ref Guid refguid, void* pData, uint* pSizeOfData)
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -239,7 +239,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData(ref Guid refguid, void* pData, ref uint pSizeOfData)
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -254,7 +254,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetPrivateData<T0>(ref Guid refguid, ref T0 pData, uint* pSizeOfData) where T0 : unmanaged
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -269,7 +269,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetPrivateData<T0>(ref Guid refguid, ref T0 pData, ref uint pSizeOfData) where T0 : unmanaged
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -287,7 +287,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int FreePrivateData(Guid* refguid)
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -296,7 +296,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int FreePrivateData(ref Guid refguid)
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -308,7 +308,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint SetPriority(uint PriorityNew)
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -317,7 +317,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint GetPriority()
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -326,14 +326,14 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void PreLoad()
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<IDirect3DBaseTexture9*, void>)LpVtbl[9])(@this);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly Resourcetype GetType()
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -342,7 +342,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint SetLOD(uint LODNew)
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -351,7 +351,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint GetLOD()
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -360,7 +360,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly uint GetLevelCount()
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -369,7 +369,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetAutoGenFilterType(Texturefiltertype FilterType)
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -378,7 +378,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly Texturefiltertype GetAutoGenFilterType()
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -387,7 +387,7 @@ namespace Silk.NET.Direct3D9
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void GenerateMipSubLevels()
         {
             var @this = (IDirect3DBaseTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

@@ -22,7 +22,7 @@ namespace Silk.NET.OpenXR.Extensions.KHR
     public unsafe partial class KhrAndroidThreadSettings : NativeExtension<XR>
     {
         public const string ExtensionName = "XR_KHR_android_thread_settings";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSetAndroidApplicationThreadKHR")]
         public partial Result SetAndroidApplicationThread([Count(Count = 0)] Session session, [Count(Count = 0)] AndroidThreadTypeKHR threadType, [Count(Count = 0)] uint threadId);
 

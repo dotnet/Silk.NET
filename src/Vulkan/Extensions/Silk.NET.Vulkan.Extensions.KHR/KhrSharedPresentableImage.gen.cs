@@ -22,7 +22,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public unsafe partial class KhrSharedPresentableImage : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_KHR_shared_presentable_image";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetSwapchainStatusKHR")]
         public partial Result GetSwapchainStatus([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain);
 

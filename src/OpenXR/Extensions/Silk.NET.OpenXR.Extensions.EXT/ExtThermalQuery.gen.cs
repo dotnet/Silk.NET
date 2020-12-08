@@ -22,35 +22,35 @@ namespace Silk.NET.OpenXR.Extensions.EXT
     public unsafe partial class ExtThermalQuery : NativeExtension<XR>
     {
         public const string ExtensionName = "XR_EXT_thermal_query";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT")]
         public unsafe partial Result ThermalGetTemperatureTrend([Count(Count = 0)] Session session, [Count(Count = 0)] PerfSettingsDomainEXT domain, [Count(Count = 0)] PerfSettingsNotificationLevelEXT* notificationLevel, [Count(Count = 0)] float* tempHeadroom, [Count(Count = 0)] float* tempSlope);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT")]
         public unsafe partial Result ThermalGetTemperatureTrend([Count(Count = 0)] Session session, [Count(Count = 0)] PerfSettingsDomainEXT domain, [Count(Count = 0)] PerfSettingsNotificationLevelEXT* notificationLevel, [Count(Count = 0)] float* tempHeadroom, [Count(Count = 0)] ref float tempSlope);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT")]
         public unsafe partial Result ThermalGetTemperatureTrend([Count(Count = 0)] Session session, [Count(Count = 0)] PerfSettingsDomainEXT domain, [Count(Count = 0)] PerfSettingsNotificationLevelEXT* notificationLevel, [Count(Count = 0)] ref float tempHeadroom, [Count(Count = 0)] float* tempSlope);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT")]
         public unsafe partial Result ThermalGetTemperatureTrend([Count(Count = 0)] Session session, [Count(Count = 0)] PerfSettingsDomainEXT domain, [Count(Count = 0)] PerfSettingsNotificationLevelEXT* notificationLevel, [Count(Count = 0)] ref float tempHeadroom, [Count(Count = 0)] ref float tempSlope);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT")]
         public unsafe partial Result ThermalGetTemperatureTrend([Count(Count = 0)] Session session, [Count(Count = 0)] PerfSettingsDomainEXT domain, [Count(Count = 0)] ref PerfSettingsNotificationLevelEXT notificationLevel, [Count(Count = 0)] float* tempHeadroom, [Count(Count = 0)] float* tempSlope);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT")]
         public unsafe partial Result ThermalGetTemperatureTrend([Count(Count = 0)] Session session, [Count(Count = 0)] PerfSettingsDomainEXT domain, [Count(Count = 0)] ref PerfSettingsNotificationLevelEXT notificationLevel, [Count(Count = 0)] float* tempHeadroom, [Count(Count = 0)] ref float tempSlope);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT")]
         public unsafe partial Result ThermalGetTemperatureTrend([Count(Count = 0)] Session session, [Count(Count = 0)] PerfSettingsDomainEXT domain, [Count(Count = 0)] ref PerfSettingsNotificationLevelEXT notificationLevel, [Count(Count = 0)] ref float tempHeadroom, [Count(Count = 0)] float* tempSlope);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrThermalGetTemperatureTrendEXT")]
         public partial Result ThermalGetTemperatureTrend([Count(Count = 0)] Session session, [Count(Count = 0)] PerfSettingsDomainEXT domain, [Count(Count = 0)] ref PerfSettingsNotificationLevelEXT notificationLevel, [Count(Count = 0)] ref float tempHeadroom, [Count(Count = 0)] ref float tempSlope);
 

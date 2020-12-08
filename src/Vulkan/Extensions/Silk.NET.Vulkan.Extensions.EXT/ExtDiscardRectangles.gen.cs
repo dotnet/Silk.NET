@@ -22,11 +22,11 @@ namespace Silk.NET.Vulkan.Extensions.EXT
     public unsafe partial class ExtDiscardRectangles : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_EXT_discard_rectangles";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetDiscardRectangleEXT")]
         public unsafe partial void CmdSetDiscardRectangle([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstDiscardRectangle, [Count(Count = 0)] uint discardRectangleCount, [Count(Computed = "discardRectangleCount"), Flow(FlowDirection.In)] Rect2D* pDiscardRectangles);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetDiscardRectangleEXT")]
         public partial void CmdSetDiscardRectangle([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstDiscardRectangle, [Count(Count = 0)] uint discardRectangleCount, [Count(Computed = "discardRectangleCount"), Flow(FlowDirection.In)] in Rect2D pDiscardRectangles);
 

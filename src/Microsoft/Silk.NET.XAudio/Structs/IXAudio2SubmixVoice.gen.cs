@@ -40,14 +40,14 @@ namespace Silk.NET.XAudio
         [NativeName("Type.Name", "")]
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GetVoiceDetails(VoiceDetails* pVoiceDetails)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<IXAudio2SubmixVoice*, VoiceDetails*, void>)LpVtbl[0])(@this, pVoiceDetails);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void GetVoiceDetails(ref VoiceDetails pVoiceDetails)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -57,7 +57,7 @@ namespace Silk.NET.XAudio
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetOutputVoices(VoiceSends* pSendList)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -66,7 +66,7 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetOutputVoices(ref VoiceSends pSendList)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -78,7 +78,7 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetEffectChain(EffectChain* pEffectChain)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -87,7 +87,7 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetEffectChain(ref EffectChain pEffectChain)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -99,7 +99,7 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int EnableEffect(uint EffectIndex, uint OperationSet)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -108,7 +108,7 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int DisableEffect(uint EffectIndex, uint OperationSet)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -117,14 +117,14 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GetEffectState(uint EffectIndex, int* pEnabled)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<IXAudio2SubmixVoice*, uint, int*, void>)LpVtbl[5])(@this, EffectIndex, pEnabled);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void GetEffectState(uint EffectIndex, ref int pEnabled)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -134,7 +134,7 @@ namespace Silk.NET.XAudio
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetEffectParameters(uint EffectIndex, void* pParameters, uint ParametersByteSize, uint OperationSet)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -143,7 +143,7 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetEffectParameters<T0>(uint EffectIndex, ref T0 pParameters, uint ParametersByteSize, uint OperationSet) where T0 : unmanaged
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -155,7 +155,7 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int GetEffectParameters(uint EffectIndex, void* pParameters, uint ParametersByteSize)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -164,7 +164,7 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int GetEffectParameters<T0>(uint EffectIndex, ref T0 pParameters, uint ParametersByteSize) where T0 : unmanaged
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -176,7 +176,7 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetFilterParameters(FilterParameters* pParameters, uint OperationSet)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -185,7 +185,7 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetFilterParameters(ref FilterParameters pParameters, uint OperationSet)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -197,14 +197,14 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GetFilterParameters(FilterParameters* pParameters)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<IXAudio2SubmixVoice*, FilterParameters*, void>)LpVtbl[9])(@this, pParameters);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void GetFilterParameters(ref FilterParameters pParameters)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -214,7 +214,7 @@ namespace Silk.NET.XAudio
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetOutputFilterParameters(IXAudio2Voice* pDestinationVoice, FilterParameters* pParameters, uint OperationSet)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -223,7 +223,7 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetOutputFilterParameters(IXAudio2Voice* pDestinationVoice, ref FilterParameters pParameters, uint OperationSet)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -235,7 +235,7 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetOutputFilterParameters(ref IXAudio2Voice pDestinationVoice, FilterParameters* pParameters, uint OperationSet)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -247,7 +247,7 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetOutputFilterParameters(ref IXAudio2Voice pDestinationVoice, ref FilterParameters pParameters, uint OperationSet)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -262,14 +262,14 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GetOutputFilterParameters(IXAudio2Voice* pDestinationVoice, FilterParameters* pParameters)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<IXAudio2SubmixVoice*, IXAudio2Voice*, FilterParameters*, void>)LpVtbl[11])(@this, pDestinationVoice, pParameters);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GetOutputFilterParameters(IXAudio2Voice* pDestinationVoice, ref FilterParameters pParameters)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -279,7 +279,7 @@ namespace Silk.NET.XAudio
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GetOutputFilterParameters(ref IXAudio2Voice pDestinationVoice, FilterParameters* pParameters)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -289,7 +289,7 @@ namespace Silk.NET.XAudio
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void GetOutputFilterParameters(ref IXAudio2Voice pDestinationVoice, ref FilterParameters pParameters)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -302,7 +302,7 @@ namespace Silk.NET.XAudio
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetVolume(float Volume, uint OperationSet)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -311,14 +311,14 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GetVolume(float* pVolume)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<IXAudio2SubmixVoice*, float*, void>)LpVtbl[13])(@this, pVolume);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void GetVolume(ref float pVolume)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -328,7 +328,7 @@ namespace Silk.NET.XAudio
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetChannelVolumes(uint Channels, float* pVolumes, uint OperationSet)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -337,7 +337,7 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetChannelVolumes(uint Channels, ref float pVolumes, uint OperationSet)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -349,14 +349,14 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GetChannelVolumes(uint Channels, float* pVolumes)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<IXAudio2SubmixVoice*, uint, float*, void>)LpVtbl[15])(@this, Channels, pVolumes);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void GetChannelVolumes(uint Channels, ref float pVolumes)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -366,7 +366,7 @@ namespace Silk.NET.XAudio
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetOutputMatrix(IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, float* pLevelMatrix, uint OperationSet)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -375,7 +375,7 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetOutputMatrix(IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, ref float pLevelMatrix, uint OperationSet)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -387,7 +387,7 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int SetOutputMatrix(ref IXAudio2Voice pDestinationVoice, uint SourceChannels, uint DestinationChannels, float* pLevelMatrix, uint OperationSet)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -399,7 +399,7 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int SetOutputMatrix(ref IXAudio2Voice pDestinationVoice, uint SourceChannels, uint DestinationChannels, ref float pLevelMatrix, uint OperationSet)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -414,14 +414,14 @@ namespace Silk.NET.XAudio
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GetOutputMatrix(IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, float* pLevelMatrix)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ((delegate* unmanaged[Cdecl]<IXAudio2SubmixVoice*, IXAudio2Voice*, uint, uint, float*, void>)LpVtbl[17])(@this, pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrix);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GetOutputMatrix(IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, ref float pLevelMatrix)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -431,7 +431,7 @@ namespace Silk.NET.XAudio
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe void GetOutputMatrix(ref IXAudio2Voice pDestinationVoice, uint SourceChannels, uint DestinationChannels, float* pLevelMatrix)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -441,7 +441,7 @@ namespace Silk.NET.XAudio
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void GetOutputMatrix(ref IXAudio2Voice pDestinationVoice, uint SourceChannels, uint DestinationChannels, ref float pLevelMatrix)
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -454,7 +454,7 @@ namespace Silk.NET.XAudio
             }
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly void DestroyVoice()
         {
             var @this = (IXAudio2SubmixVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

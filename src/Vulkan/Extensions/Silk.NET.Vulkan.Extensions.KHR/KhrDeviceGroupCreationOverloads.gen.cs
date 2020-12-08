@@ -18,21 +18,21 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 {
     public static class KhrDeviceGroupCreationOverloads
     {
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result EnumeratePhysicalDeviceGroups(this KhrDeviceGroupCreation thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] uint* pPhysicalDeviceGroupCount, [Count(Computed = "pPhysicalDeviceGroupCount")] Span<PhysicalDeviceGroupProperties> pPhysicalDeviceGroupProperties)
         {
             // SpanOverloader
             return thisApi.EnumeratePhysicalDeviceGroups(instance, pPhysicalDeviceGroupCount, ref pPhysicalDeviceGroupProperties.GetPinnableReference());
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result EnumeratePhysicalDeviceGroups(this KhrDeviceGroupCreation thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] Span<uint> pPhysicalDeviceGroupCount, [Count(Computed = "pPhysicalDeviceGroupCount")] PhysicalDeviceGroupProperties* pPhysicalDeviceGroupProperties)
         {
             // SpanOverloader
             return thisApi.EnumeratePhysicalDeviceGroups(instance, ref pPhysicalDeviceGroupCount.GetPinnableReference(), pPhysicalDeviceGroupProperties);
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public static unsafe Result EnumeratePhysicalDeviceGroups(this KhrDeviceGroupCreation thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] Span<uint> pPhysicalDeviceGroupCount, [Count(Computed = "pPhysicalDeviceGroupCount")] Span<PhysicalDeviceGroupProperties> pPhysicalDeviceGroupProperties)
         {
             // SpanOverloader

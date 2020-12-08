@@ -37,7 +37,7 @@ namespace Silk.NET.Core.Native
         [NativeName("Type.Name", "")]
         [NativeName("Name", "lpVtbl")]
         public void** LpVtbl;
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open(D3DIncludeType IncludeType, byte* pFileName, void* pParentData, void** ppData, uint* pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -46,7 +46,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open(D3DIncludeType IncludeType, byte* pFileName, void* pParentData, void** ppData, ref uint pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -58,7 +58,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open(D3DIncludeType IncludeType, byte* pFileName, void* pParentData, ref void* ppData, uint* pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -70,7 +70,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open(D3DIncludeType IncludeType, byte* pFileName, void* pParentData, ref void* ppData, ref uint pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -85,7 +85,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, byte* pFileName, ref T0 pParentData, void** ppData, uint* pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -97,7 +97,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, byte* pFileName, ref T0 pParentData, void** ppData, ref uint pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -112,7 +112,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, byte* pFileName, ref T0 pParentData, ref void* ppData, uint* pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -127,7 +127,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, byte* pFileName, ref T0 pParentData, ref void* ppData, ref uint pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -145,7 +145,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open(D3DIncludeType IncludeType, ref byte pFileName, void* pParentData, void** ppData, uint* pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -157,7 +157,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open(D3DIncludeType IncludeType, ref byte pFileName, void* pParentData, void** ppData, ref uint pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -172,7 +172,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open(D3DIncludeType IncludeType, ref byte pFileName, void* pParentData, ref void* ppData, uint* pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -187,7 +187,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open(D3DIncludeType IncludeType, ref byte pFileName, void* pParentData, ref void* ppData, ref uint pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -205,7 +205,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, ref byte pFileName, ref T0 pParentData, void** ppData, uint* pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -220,7 +220,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, ref byte pFileName, ref T0 pParentData, void** ppData, ref uint pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -238,7 +238,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, ref byte pFileName, ref T0 pParentData, ref void* ppData, uint* pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -256,7 +256,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, ref byte pFileName, ref T0 pParentData, ref void* ppData, ref uint pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -277,7 +277,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open(D3DIncludeType IncludeType, string pFileName, void* pParentData, void** ppData, uint* pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -288,7 +288,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open(D3DIncludeType IncludeType, string pFileName, void* pParentData, void** ppData, ref uint pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -302,7 +302,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open(D3DIncludeType IncludeType, string pFileName, void* pParentData, ref void* ppData, uint* pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -316,7 +316,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open(D3DIncludeType IncludeType, string pFileName, void* pParentData, ref void* ppData, ref uint pBytes)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -333,7 +333,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, string pFileName, ref T0 pParentData, void** ppData, uint* pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -347,7 +347,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, string pFileName, ref T0 pParentData, void** ppData, ref uint pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -364,7 +364,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, string pFileName, ref T0 pParentData, ref void* ppData, uint* pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -381,7 +381,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Open<T0>(D3DIncludeType IncludeType, string pFileName, ref T0 pParentData, ref void* ppData, ref uint pBytes) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -401,7 +401,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly unsafe int Close(void* pData)
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
@@ -410,7 +410,7 @@ namespace Silk.NET.Core.Native
             return ret;
         }
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         public readonly int Close<T0>(ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3DInclude*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));

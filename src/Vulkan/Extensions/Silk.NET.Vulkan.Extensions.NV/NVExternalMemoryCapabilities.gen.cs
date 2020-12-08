@@ -22,11 +22,11 @@ namespace Silk.NET.Vulkan.Extensions.NV
     public unsafe partial class NVExternalMemoryCapabilities : NativeExtension<Vk>
     {
         public const string ExtensionName = "VK_NV_external_memory_capabilities";
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalImageFormatPropertiesNV")]
         public unsafe partial Result GetPhysicalDeviceExternalImageFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0)] ImageType type, [Count(Count = 0)] ImageTiling tiling, [Count(Count = 0)] ImageUsageFlags usage, [Count(Count = 0)] ImageCreateFlags flags, [Count(Count = 0)] ExternalMemoryHandleTypeFlagsNV externalHandleType, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalImageFormatPropertiesNV* pExternalImageFormatProperties);
 
-        /// <summary>To be added.</summary>
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceExternalImageFormatPropertiesNV")]
         public partial Result GetPhysicalDeviceExternalImageFormatProperties([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Format format, [Count(Count = 0)] ImageType type, [Count(Count = 0)] ImageTiling tiling, [Count(Count = 0)] ImageUsageFlags usage, [Count(Count = 0)] ImageCreateFlags flags, [Count(Count = 0)] ExternalMemoryHandleTypeFlagsNV externalHandleType, [Count(Count = 0), Flow(FlowDirection.Out)] out ExternalImageFormatPropertiesNV pExternalImageFormatProperties);
 
