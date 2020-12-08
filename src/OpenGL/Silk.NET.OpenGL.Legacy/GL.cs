@@ -406,7 +406,7 @@ namespace Silk.NET.OpenGL.Legacy
         ///     </see>
         ///  </para>
         /// </remarks>
-        public void Viewport(Rectangle rectangle)
+        public void Viewport(System.Drawing.Rectangle rectangle)
             => Viewport(rectangle.X, rectangle.Y, (uint) rectangle.Width, (uint) rectangle.Height);
 
         /// <summary>

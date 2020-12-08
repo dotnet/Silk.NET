@@ -3,6 +3,7 @@ using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using Silk.NET.Maths;
 
 namespace Tutorial
@@ -25,7 +26,7 @@ namespace Tutorial
         private static Camera Camera;
 
         //Used to track change in mouse movement to allow for moving of the Camera
-        private static PointF LastMousePosition;
+        private static Vector2 LastMousePosition;
 
         private static readonly float[] Vertices =
         {
