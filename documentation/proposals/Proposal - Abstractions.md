@@ -1,6 +1,6 @@
 #Summary
 I was turned away from OpenGL Because of the Complexity of the API. It takes 100+ lines of code to draw a triangle on screen, and I want to try to bring that down to under 50. 
-I want to Propose a Optional Libary to Abstract OpenGL into Classes Like [OpenGL4Sharp](https://github.com/giawa/opengl4csharp) or [ObjectTK](https://github.com/opentk/ObjectTK)
+I want to Propose a Optional Libary to Abstract OpenGL into Classes Like [OpenGL4Sharp](https://github.com/giawa/opengl4csharp/tree/dotnetcore/OpenGL/Constructs) or [ObjectTK](https://github.com/opentk/ObjectTK)
 The goal of this is to create a easier way to learn OpenGL and to make repetative suff easier.
 # Contributors
 - wholesomeisland/Silk.NET Contributors
