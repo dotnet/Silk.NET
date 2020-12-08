@@ -32,7 +32,7 @@ namespace Silk.NET.SDL
             void* userdata = null,
             int? locked = null,
             void* lockData = null,
-            Rect? clipRect = null,
+            Silk.NET.Maths.Rectangle<int>? clipRect = null,
             BlitMap* map = null,
             int? refcount = null
         ) : this()
@@ -147,7 +147,7 @@ namespace Silk.NET.SDL
         [NativeName("Type", "SDL_Rect")]
         [NativeName("Type.Name", "SDL_Rect")]
         [NativeName("Name", "clip_rect")]
-        public Rect ClipRect;
+        public Silk.NET.Maths.Rectangle<int> ClipRect;
 
         [NativeName("Type", "struct SDL_BlitMap *")]
         [NativeName("Type.Name", "struct SDL_BlitMap *")]

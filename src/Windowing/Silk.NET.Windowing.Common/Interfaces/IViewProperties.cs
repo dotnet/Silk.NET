@@ -3,7 +3,8 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using System.Drawing;
+
+using Silk.NET.Maths;
 
 namespace Silk.NET.Windowing
 {
@@ -33,7 +34,7 @@ namespace Silk.NET.Windowing
         /// This will be replaced with an integer vector once System.Numerics supports them.
         /// </para>
         /// </remarks>
-        Size Size { get; }
+        Vector2D<int> Size { get; }
 
         /// <summary>
         /// The number of rendering operations to run every second.

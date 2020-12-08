@@ -4,7 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
-using System.Drawing;
+using Silk.NET.Maths;
 
 namespace Silk.NET.Windowing
 {
@@ -26,7 +26,7 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// The bounds of this monitor.
         /// </summary>
-        Rectangle Bounds { get; }
+        Rectangle<int> Bounds { get; }
 
         /// <summary>
         /// The current video mode of this monitor.

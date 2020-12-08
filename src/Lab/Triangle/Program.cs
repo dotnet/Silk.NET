@@ -4,6 +4,7 @@ using System;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using SampleBase;
+using Silk.NET.Maths;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using SdlProvider = Silk.NET.SDL.SdlProvider;
@@ -124,7 +125,7 @@ namespace Triangle
         {
         }
 
-        private static void Resize(Size size)
+        private static void Resize(Vector2D<int> size)
         {
             _gl.Viewport(size);
         }

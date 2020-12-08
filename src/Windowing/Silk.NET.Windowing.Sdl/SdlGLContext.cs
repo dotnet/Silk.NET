@@ -4,8 +4,8 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Drawing;
 using Silk.NET.Core.Contexts;
+using Silk.NET.Maths;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Windowing.Sdl
@@ -20,14 +20,14 @@ namespace Silk.NET.Windowing.Sdl
             _view = view;
         }
 
-        public Size FramebufferSize
+        public Vector2D<int> FramebufferSize
         {
             get
             {
                 var ret = stackalloc int[2];
                 _view.Sdl.GLGetDrawableSize(_view.SdlWindow, ret, &ret[1]);
                 _view.Sdl.ThrowError();
-                return *(Size*) ret;
+                return *(Vector2D<int>*) ret;
             }
         }
 

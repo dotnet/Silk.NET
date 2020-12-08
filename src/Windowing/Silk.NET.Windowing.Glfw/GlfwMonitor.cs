@@ -4,8 +4,8 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System.Collections.Generic;
-using System.Drawing;
 using Silk.NET.GLFW;
+using Silk.NET.Maths;
 using VideoMode = Silk.NET.Windowing.VideoMode;
 using NativeMonitor = Silk.NET.GLFW.Monitor;
 
@@ -30,19 +30,19 @@ namespace Silk.NET.Windowing.Glfw
                 return new GlfwWindow(opts, null, this);
             }
 
-            opts.Position = new Point(opts.Position.X + Bounds.X, opts.Position.Y + Bounds.Y);
+            opts.Position = new Vector2D<int>(opts.Position.X + Bounds.Origin.X, opts.Position.Y + Bounds.Origin.Y);
             return new GlfwWindow(opts, null, null);
         }
 
         public string Name => GlfwProvider.GLFW.Value.GetMonitorName(Handle);
         public int Index { get; }
 
-        public Rectangle Bounds
+        public Rectangle<int> Bounds
         {
             get
             {
                 GlfwProvider.GLFW.Value.GetMonitorWorkarea(Handle, out var x, out var y, out var w, out var h);
-                return new Rectangle(x, y, w, h);
+                return new Rectangle<int>(new(x, y), new(w, h));
             }
         }
 
@@ -53,7 +53,7 @@ namespace Silk.NET.Windowing.Glfw
                 var videoMode = GlfwProvider.GLFW.Value.GetVideoMode(Handle);
                 return new VideoMode
                 (
-                    new Size(videoMode->Width, videoMode->Height),
+                    new Vector2D<int>(videoMode->Width, videoMode->Height),
                     videoMode->RefreshRate
                 );
             }
@@ -80,7 +80,7 @@ namespace Silk.NET.Windowing.Glfw
                 videoModes.Add
                 (
                     new VideoMode
-                        (new Size(rawVideoModes[i].Width, rawVideoModes[i].Height), rawVideoModes[i].RefreshRate)
+                        (new Vector2D<int>(rawVideoModes[i].Width, rawVideoModes[i].Height), rawVideoModes[i].RefreshRate)
                 );
             }
 

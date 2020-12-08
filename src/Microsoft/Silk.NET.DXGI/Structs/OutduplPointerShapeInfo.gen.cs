@@ -27,7 +27,7 @@ namespace Silk.NET.DXGI
             uint? width = null,
             uint? height = null,
             uint? pitch = null,
-            Silk.NET.Core.Native.TagPoint? hotSpot = null
+            Silk.NET.Maths.Vector2D<long>? hotSpot = null
         ) : this()
         {
             if (type is not null)
@@ -80,6 +80,6 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "POINT")]
         [NativeName("Type.Name", "POINT")]
         [NativeName("Name", "HotSpot")]
-        public Silk.NET.Core.Native.TagPoint HotSpot;
+        public Silk.NET.Maths.Vector2D<long> HotSpot;
     }
 }

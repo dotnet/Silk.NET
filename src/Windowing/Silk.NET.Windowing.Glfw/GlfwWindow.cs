@@ -4,13 +4,13 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Drawing;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Silk.NET.Core;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Native;
 using Silk.NET.GLFW;
+using Silk.NET.Maths;
 using Silk.NET.Windowing.Internals;
 
 namespace Silk.NET.Windowing.Glfw
@@ -32,8 +32,8 @@ namespace Silk.NET.Windowing.Glfw
         private GlfwCallbacks.WindowFocusCallback? _onFocusChanged;
         private GlfwCallbacks.WindowIconifyCallback? _onMinimized;
         private GlfwCallbacks.WindowMaximizeCallback? _onMaximized;
-        private Point _nonFullscreenPosition;
-        private Size _nonFullscreenSize;
+        private Vector2D<int> _nonFullscreenPosition;
+        private Vector2D<int> _nonFullscreenSize;
 
         public GlfwWindow(WindowOptions optionsCache, GlfwWindow? parent, GlfwMonitor? monitor) : base(optionsCache)
         {
@@ -43,21 +43,21 @@ namespace Silk.NET.Windowing.Glfw
             _localTitleCache = optionsCache.Title;
         }
 
-        protected override Size CoreSize
+        protected override Vector2D<int> CoreSize
         {
             get
             {
                 _glfw.GetWindowSize(_glfwWindow, out var width, out var height);
-                return new Size(width, height);
+                return new Vector2D<int>(width, height);
             }
         }
         
-        protected override unsafe Rectangle CoreBorderSize
+        protected override unsafe Rectangle<int> CoreBorderSize
         {
             get
             {
                 _glfw.GetWindowFrameSize(_glfwWindow, out var l, out var t, out var r, out var b);
-                return Rectangle.FromLTRB(l, t, r, b);
+                return new(new(l, t), new(r - l, b - t));
             }
         }
 
@@ -104,12 +104,12 @@ namespace Silk.NET.Windowing.Glfw
             }
         }
 
-        protected override Point CorePosition
+        protected override Vector2D<int> CorePosition
         {
             get
             {
                 _glfw.GetWindowPos(_glfwWindow, out var x, out var y);
-                return new Point(x, y);
+                return new Vector2D<int>(x, y);
             }
             set => _glfw.SetWindowPos(_glfwWindow, value.X, value.Y);
         }
@@ -156,8 +156,8 @@ namespace Silk.NET.Windowing.Glfw
                         _glfwWindow, null,
                         _nonFullscreenPosition.X,
                         _nonFullscreenPosition.Y,
-                        _nonFullscreenSize.Width,
-                        _nonFullscreenSize.Height,
+                        _nonFullscreenSize.X,
+                        _nonFullscreenSize.Y,
                         0
                     );
                 }
@@ -181,8 +181,8 @@ namespace Silk.NET.Windowing.Glfw
                         _glfw.SetWindowMonitor
                         (
                             _glfwWindow, monitor, 0, 0,
-                            resolution?.Width ?? mode->Width,
-                            resolution?.Height ?? mode->Height,
+                            resolution?.X ?? mode->Width,
+                            resolution?.Y ?? mode->Height,
                             videoMode.RefreshRate ?? mode->RefreshRate
                         );
                         break;
@@ -230,9 +230,9 @@ namespace Silk.NET.Windowing.Glfw
             set => _glfw.SetWindowShouldClose(_glfwWindow, value);
         }
 
-        protected override Size SizeSettable
+        protected override Vector2D<int> SizeSettable
         {
-            set => _glfw.SetWindowSize(_glfwWindow, value.Width, value.Height);
+            set => _glfw.SetWindowSize(_glfwWindow, value.X, value.Y);
         }
 
         protected override void CoreInitialize(WindowOptions opts)
@@ -313,7 +313,7 @@ namespace Silk.NET.Windowing.Glfw
             // Create window
             _glfwWindow = _glfw.CreateWindow
             (
-                opts.Size.Width, opts.Size.Height, opts.Title,
+                opts.Size.X, opts.Size.Y, opts.Title,
                 !(_initialMonitor is null) ? _initialMonitor.Handle : null,
                 null
             );
@@ -337,7 +337,7 @@ namespace Silk.NET.Windowing.Glfw
             GLFW.Glfw.ThrowExceptions();
         }
 
-        public override event Action<Point>? Move;
+        public override event Action<Vector2D<int>>? Move;
         public override event Action<WindowState>? StateChanged;
         public override event Action<string[]>? FileDrop;
 
@@ -398,7 +398,7 @@ namespace Silk.NET.Windowing.Glfw
                         {
                             var pos = Position;
                             var size = Size;
-                            if (m.Bounds.Contains(new Point(pos.X + size.Width / 2, pos.Y + size.Height / 2)))
+                            if (m.Bounds.Contains(new Vector2D<int>(pos.X + size.X / 2, pos.Y + size.Y / 2)))
                             {
                                 return m;
                             }
@@ -445,13 +445,13 @@ namespace Silk.NET.Windowing.Glfw
 
                     _glfw.SetWindowMonitor
                     (
-                        _glfwWindow, h, 0, 0, resolution.Value.Width, resolution.Value.Height, vidMode.RefreshRate.Value
+                        _glfwWindow, h, 0, 0, resolution.Value.X, resolution.Value.Y, vidMode.RefreshRate.Value
                     );
                     GLFW.Glfw.ThrowExceptions();
                 }
                 else
                 {
-                    Position = value.Bounds.Location;
+                    Position = value.Bounds.Origin;
                 }
             }
         }
@@ -477,12 +477,12 @@ namespace Silk.NET.Windowing.Glfw
 
         public override bool IsEventDriven { get; set; }
 
-        public override Size FramebufferSize
+        public override Vector2D<int> FramebufferSize
         {
             get
             {
                 _glfw.GetFramebufferSize(_glfwWindow, out var width, out var height);
-                return new Size(width, height);
+                return new Vector2D<int>(width, height);
             }
         }
 
@@ -518,19 +518,22 @@ namespace Silk.NET.Windowing.Glfw
         {
             _onMove = (window, x, y) =>
             {
-                var point = new Point(x, y);
+                var point = new Vector2D<int>(x, y);
                 UpdatePosition(point);
                 Move?.Invoke(point);
             };
 
             _onResize = (window, width, height) =>
             {
-                var size = new Size(width, height);
+                var size = new Vector2D<int>(width, height);
                 UpdateSize(size);
                 Resize?.Invoke(size);
             };
 
-            _onFramebufferResize = (window, width, height) => { FramebufferResize?.Invoke(new Size(width, height)); };
+            _onFramebufferResize = (window, width, height) =>
+            {
+                FramebufferResize?.Invoke(new Vector2D<int>(width, height));
+            };
 
             _onClosing = window => Closing?.Invoke();
 
@@ -640,8 +643,8 @@ namespace Silk.NET.Windowing.Glfw
             }
         }
 
-        public override event Action<Size>? Resize;
-        public override event Action<Size>? FramebufferResize;
+        public override event Action<Vector2D<int>>? Resize;
+        public override event Action<Vector2D<int>>? FramebufferResize;
         public override event Action? Closing;
         public override event Action<bool>? FocusChanged;
 

@@ -4,7 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Drawing;
+using Silk.NET.Maths;
 
 namespace Silk.NET.Windowing
 {
@@ -20,7 +20,8 @@ namespace Silk.NET.Windowing
         public bool IsEventDriven { get; set; }
 
         /// <inheritdoc />
-        Size IViewProperties.Size => throw new InvalidOperationException("Can't get the size of a non-existent view.");
+        Vector2D<int> IViewProperties.Size
+            => throw new InvalidOperationException("Can't get the size of a non-existent view.");
 
         /// <inheritdoc />
         public double FramesPerSecond { get; set; }

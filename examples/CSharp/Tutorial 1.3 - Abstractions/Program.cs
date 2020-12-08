@@ -3,6 +3,7 @@ using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using System;
 using System.Drawing;
+using Silk.NET.Maths;
 
 namespace Tutorial
 {
@@ -36,7 +37,7 @@ namespace Tutorial
         private static void Main(string[] args)
         {
             var options = WindowOptions.Default;
-            options.Size = new Size(800, 600);
+            options.Size = new Vector2D<int>(800, 600);
             options.Title = "LearnOpenGL with Silk.NET";
             window = Window.Create(options);
 

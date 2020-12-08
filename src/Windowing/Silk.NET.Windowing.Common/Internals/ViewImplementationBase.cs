@@ -7,11 +7,11 @@ using System;
 using System.Buffers;
 using System.ComponentModel;
 using System.Diagnostics;
-using System.Drawing;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using Silk.NET.Core.Contexts;
+using Silk.NET.Maths;
 
 
 namespace Silk.NET.Windowing.Internals
@@ -54,7 +54,7 @@ namespace Silk.NET.Windowing.Internals
         }
 
         // Property bases - these have extra functionality baked into their getters and setters
-        protected abstract Size CoreSize { get; }
+        protected abstract Vector2D<int> CoreSize { get; }
         protected abstract IntPtr CoreHandle { get; }
 
         // Function bases - again extra functionality on top
@@ -67,19 +67,19 @@ namespace Silk.NET.Windowing.Internals
         public abstract bool IsClosing { get; }
         public abstract VideoMode VideoMode { get; }
         public abstract bool IsEventDriven { get; set; }
-        public abstract Size FramebufferSize { get; }
+        public abstract Vector2D<int> FramebufferSize { get; }
         public abstract void DoEvents();
         public abstract void ContinueEvents();
         public abstract void Dispose();
-        public abstract Point PointToClient(Point point);
-        public abstract Point PointToScreen(Point point);
+        public abstract Vector2D<int> PointToClient(Vector2D<int> point);
+        public abstract Vector2D<int> PointToScreen(Vector2D<int> point);
         public abstract void Close();
         protected abstract void RegisterCallbacks();
         protected abstract void UnregisterCallbacks();
 
         // Events
-        public abstract event Action<Size>? Resize;
-        public abstract event Action<Size>? FramebufferResize;
+        public abstract event Action<Vector2D<int>>? Resize;
+        public abstract event Action<Vector2D<int>>? FramebufferResize;
         public abstract event Action? Closing;
         public abstract event Action<bool>? FocusChanged;
         public event Action? Load;
@@ -187,7 +187,7 @@ namespace Silk.NET.Windowing.Internals
 
         // Misc properties
         protected bool IsInitialized { get; set; }
-        public Size Size => IsInitialized ? CoreSize : default;
+        public Vector2D<int> Size => IsInitialized ? CoreSize : default;
         public IntPtr Handle => IsInitialized ? CoreHandle : IntPtr.Zero;
         public GraphicsAPI API => _optionsCache.API;
         public double Time => _lifetimeStopwatch.Elapsed.TotalSeconds;
@@ -205,43 +205,43 @@ namespace Silk.NET.Windowing.Internals
 
         // Misc implementations
         [MethodImpl(MethodImplOptions.AggressiveInlining | (MethodImplOptions) 512)]
-        public Point PointToFramebuffer(Point point)
+        public Vector2D<int> PointToFramebuffer(Vector2D<int> point)
         {
-            // TODO this monstrosity will be gone once Silk.NET.Maths is in
+            // TODO this monstrosity will be gone once Silk.NET.Maths has intrinsics
             if (Vector.IsHardwareAccelerated && Vector<int>.Count >= 2)
             {
 #if NETSTANDARD2_1
                 // ReSharper disable SuggestVarOrType_Elsewhere
                 Span<int> framebufferSizeElements = stackalloc int[Vector<int>.Count];
-                Unsafe.As<int, Size>(ref framebufferSizeElements[0]) = FramebufferSize;
+                Unsafe.As<int, Vector2D<int>>(ref framebufferSizeElements[0]) = FramebufferSize;
                 var framebufferSize = new Vector<int>(framebufferSizeElements);
                 Span<int> sizeElements = stackalloc int[Vector<int>.Count];
-                Unsafe.As<int, Size>(ref sizeElements[0]) = Size;
+                Unsafe.As<int, Vector2D<int>>(ref sizeElements[0]) = Size;
                 var size = new Vector<int>(sizeElements);
                 Span<int> pointElements = stackalloc int[Vector<int>.Count];
-                Unsafe.As<int, Point>(ref pointElements[0]) = point;
+                Unsafe.As<int, Vector2D<int>>(ref pointElements[0]) = point;
                 var thePoint = new Vector<int>(pointElements);
                 // ReSharper restore SuggestVarOrType_Elsewhere
 #else
                 var c = Vector<int>.Count;
                 var a = new int[c * 3];
-                Unsafe.As<int, Size>(ref a[0]) = FramebufferSize;
-                Unsafe.As<int, Size>(ref a[c]) = Size;
-                Unsafe.As<int, Point>(ref a[c * 2]) = point;
+                Unsafe.As<int, Vector2D<int>>(ref a[0]) = FramebufferSize;
+                Unsafe.As<int, Vector2D<int>>(ref a[c]) = Size;
+                Unsafe.As<int, Vector2D<int>>(ref a[c * 2]) = point;
                 var framebufferSize = new Vector<int>(a, 0);
                 var size = new Vector<int>(a, c);
                 var thePoint = new Vector<int>(a, c * 2);
 #endif
                 thePoint = Vector.Multiply(thePoint, Vector.Divide(framebufferSize, size));
-                return new Point(thePoint[0], thePoint[1]);
+                return new Vector2D<int>(thePoint[0], thePoint[1]);
             }
 
             var fSize = FramebufferSize;
             var aSize = Size;
-            return new Point
+            return new Vector2D<int>
             {
-                X = point.X * (fSize.Width / aSize.Width),
-                Y = point.Y * (fSize.Height / aSize.Height)
+                X = point.X * (fSize.X / aSize.X),
+                Y = point.Y * (fSize.Y / aSize.Y)
             };
         }
 

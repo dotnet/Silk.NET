@@ -636,7 +636,7 @@ namespace VulkanTriangle
             }
 
             var actualExtent = new Extent2D
-            { Height = (uint) _window.Size.Height, Width = (uint) _window.Size.Width };
+            { Height = (uint) _window.Size.Y, Width = (uint) _window.Size.X };
             actualExtent.Width = new[]
             {
                 capabilities.MinImageExtent.Width,

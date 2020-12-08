@@ -23,7 +23,7 @@ namespace Silk.NET.DXGI
     {
         public OutputDesc
         (
-            Silk.NET.Core.Native.TagRect? desktopCoordinates = null,
+            Silk.NET.Maths.Rectangle<long>? desktopCoordinates = null,
             int? attachedToDesktop = null,
             ModeRotation? rotation = null,
             IntPtr? monitor = null
@@ -58,7 +58,7 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "RECT")]
         [NativeName("Type.Name", "RECT")]
         [NativeName("Name", "DesktopCoordinates")]
-        public Silk.NET.Core.Native.TagRect DesktopCoordinates;
+        public Silk.NET.Maths.Rectangle<long> DesktopCoordinates;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]

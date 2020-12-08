@@ -6,10 +6,10 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
-using System.Drawing;
 using System.Runtime.CompilerServices;
 using Silk.NET.Core;
 using Silk.NET.Core.Contexts;
+using Silk.NET.Maths;
 using Silk.NET.SDL;
 using Point = System.Drawing.Point;
 using RawImage = Silk.NET.Core.RawImage;
@@ -57,7 +57,7 @@ namespace Silk.NET.Windowing.Sdl
             }
         }
 
-        public Point Position
+        public Vector2D<int> Position
         {
             get
             {
@@ -65,7 +65,7 @@ namespace Silk.NET.Windowing.Sdl
                 {
                     var ret = stackalloc int[2];
                     Sdl.GetWindowPosition(SdlWindow, ret, &ret[1]);
-                    return _extendedOptionsCache.Position = *(Point*) ret;
+                    return _extendedOptionsCache.Position = *(Vector2D<int>*) ret;
                 }
 
                 return _extendedOptionsCache.Position;
@@ -82,7 +82,7 @@ namespace Silk.NET.Windowing.Sdl
             }
         }
 
-        public new Size Size
+        public new Vector2D<int> Size
         {
             get => IsInitialized ? _extendedOptionsCache.Size = base.Size : _extendedOptionsCache.Size;
             set
@@ -93,7 +93,7 @@ namespace Silk.NET.Windowing.Sdl
                     return;
                 }
 
-                Sdl.SetWindowSize(SdlWindow, value.Width, value.Height);
+                Sdl.SetWindowSize(SdlWindow, value.X, value.Y);
             }
         }
 
@@ -198,13 +198,13 @@ namespace Silk.NET.Windowing.Sdl
             }
         }
 
-        public unsafe Rectangle BorderSize
+        public unsafe Rectangle<int> BorderSize
         {
             get
             {
                 int l = 0, t = 0, r = 0, b = 0;
                 Sdl.GetWindowBordersSize(SdlWindow, ref t, ref l, ref b, ref r);
-                return Rectangle.FromLTRB(l, t, r, b);
+                return new Rectangle<int>(new(l, t), new(r - l, b - t));
             }
         }
 
@@ -238,9 +238,9 @@ namespace Silk.NET.Windowing.Sdl
                         {
                             var pos = Position;
                             var size = Size;
-                            Rectangle bounds;
-                            Sdl.GetDisplayUsableBounds(i, (Rect*) &bounds);
-                            if (bounds.Contains(new Point(pos.X + size.Width / 2, pos.Y + size.Height / 2)))
+                            Rectangle<int> bounds;
+                            Sdl.GetDisplayUsableBounds(i, &bounds);
+                            if (bounds.Contains(new Vector2D<int>(pos.X + size.X / 2, pos.Y + size.Y / 2)))
                             {
                                 return new SdlMonitor(i);
                             }
@@ -264,7 +264,7 @@ namespace Silk.NET.Windowing.Sdl
                     throw new ArgumentNullException(nameof(value));
                 }
 
-                Position = value.Bounds.Location;
+                Position = value.Bounds.Origin;
             }
         }
 
@@ -274,7 +274,7 @@ namespace Silk.NET.Windowing.Sdl
             set => IsClosingVal = value;
         }
 
-        public event Action<Point>? Move;
+        public event Action<Vector2D<int>>? Move;
         public event Action<WindowState>? StateChanged;
         public event Action<string[]>? FileDrop;
 
@@ -348,7 +348,7 @@ namespace Silk.NET.Windowing.Sdl
                             //    break;
                             case WindowEventID.WindoweventMoved:
                             {
-                                Move?.Invoke(new Point(@event.Window.Data1, @event.Window.Data2));
+                                Move?.Invoke(new Vector2D<int>(@event.Window.Data1, @event.Window.Data2));
                                 break;
                             }
                             case WindowEventID.WindoweventResized:
@@ -433,8 +433,8 @@ namespace Silk.NET.Windowing.Sdl
             };
             CoreInitialize
             (
-                opts, flags, InitialMonitor?.Bounds.Location.X + Position.X,
-                InitialMonitor?.Bounds.Location.Y + Position.Y, Size.Width, Size.Height, Title
+                opts, flags, InitialMonitor?.Bounds.Origin.X + Position.X,
+                InitialMonitor?.Bounds.Origin.Y + Position.Y, Size.X, Size.Y, Title
             );
         }
     }

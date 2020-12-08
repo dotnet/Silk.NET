@@ -38,7 +38,7 @@ namespace Silk.NET.Assimp
             uint? mNumAnimMeshes = null,
             AnimMesh** mAnimMeshes = null,
             uint? mMethod = null,
-            Aabb? mAABB = null
+            Silk.NET.Maths.Box3D<float>? mAABB = null
         ) : this()
         {
             if (mPrimitiveTypes is not null)
@@ -271,6 +271,6 @@ namespace Silk.NET.Assimp
         [NativeName("Type", "aiAABB")]
         [NativeName("Type.Name", "aiAABB")]
         [NativeName("Name", "mAABB")]
-        public Aabb MAABB;
+        public Silk.NET.Maths.Box3D<float> MAABB;
     }
 }

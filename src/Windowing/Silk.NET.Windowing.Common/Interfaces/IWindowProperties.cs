@@ -3,7 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using System.Drawing;
+using Silk.NET.Maths;
 
 namespace Silk.NET.Windowing
 {
@@ -25,7 +25,7 @@ namespace Silk.NET.Windowing
         /// This will be replaced with an integer vector once System.Numerics supports them.
         /// </para>
         /// </remarks>
-        Point Position { get; set; }
+        Vector2D<int> Position { get; set; }
 
         /// <summary>
         /// The size of the window in pixels.
@@ -35,7 +35,7 @@ namespace Silk.NET.Windowing
         /// This will be replaced with an integer vector once System.Numerics supports them.
         /// </para>
         /// </remarks>
-        new Size Size { get; set; }
+        new Vector2D<int> Size { get; set; }
 
         /// <summary>
         /// The window title.

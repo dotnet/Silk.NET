@@ -32,5 +32,6 @@
     "DXGI_RATIONAL": "Silk.NET.DXGI.Rational",
     "DXGI_HDR_METADATA_TYPE": "Silk.NET.DXGI.HdrMetadataType",
     "IDXGIAdapter": "Silk.NET.DXGI.IDXGIAdapter",
-    "IDXGISwapChain": "Silk.NET.DXGI.IDXGISwapChain"
+    "IDXGISwapChain": "Silk.NET.DXGI.IDXGISwapChain",
+    "D3D12_RAYTRACING_AABB": "Silk.NET.Maths.Box3D<float>"
 }

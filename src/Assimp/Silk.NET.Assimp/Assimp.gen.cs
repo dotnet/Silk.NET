@@ -952,22 +952,22 @@ namespace Silk.NET.Assimp
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 463, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiCreateQuaternionFromMatrix")]
-        public unsafe partial void CreateQuaternionFromMatrix(System.Numerics.Quaternion* quat, AssimpMatrix3x3* mat);
+        public unsafe partial void CreateQuaternionFromMatrix(System.Numerics.Quaternion* quat, Silk.NET.Maths.Matrix3X3<float>* mat);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 463, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiCreateQuaternionFromMatrix")]
-        public unsafe partial void CreateQuaternionFromMatrix(System.Numerics.Quaternion* quat, ref AssimpMatrix3x3 mat);
+        public unsafe partial void CreateQuaternionFromMatrix(System.Numerics.Quaternion* quat, ref Silk.NET.Maths.Matrix3X3<float> mat);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 463, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiCreateQuaternionFromMatrix")]
-        public unsafe partial void CreateQuaternionFromMatrix(ref System.Numerics.Quaternion quat, AssimpMatrix3x3* mat);
+        public unsafe partial void CreateQuaternionFromMatrix(ref System.Numerics.Quaternion quat, Silk.NET.Maths.Matrix3X3<float>* mat);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 463, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiCreateQuaternionFromMatrix")]
-        public partial void CreateQuaternionFromMatrix(ref System.Numerics.Quaternion quat, ref AssimpMatrix3x3 mat);
+        public partial void CreateQuaternionFromMatrix(ref System.Numerics.Quaternion quat, ref Silk.NET.Maths.Matrix3X3<float> mat);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 477, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
@@ -1062,32 +1062,32 @@ namespace Silk.NET.Assimp
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 494, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiTransposeMatrix3")]
-        public unsafe partial void TransposeMatrix3(AssimpMatrix3x3* mat);
+        public unsafe partial void TransposeMatrix3(Silk.NET.Maths.Matrix3X3<float>* mat);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 494, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiTransposeMatrix3")]
-        public partial void TransposeMatrix3(ref AssimpMatrix3x3 mat);
+        public partial void TransposeMatrix3(ref Silk.NET.Maths.Matrix3X3<float> mat);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 502, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiTransformVecByMatrix3")]
-        public unsafe partial void TransformVecByMatrix3(System.Numerics.Vector3* vec, AssimpMatrix3x3* mat);
+        public unsafe partial void TransformVecByMatrix3(System.Numerics.Vector3* vec, Silk.NET.Maths.Matrix3X3<float>* mat);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 502, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiTransformVecByMatrix3")]
-        public unsafe partial void TransformVecByMatrix3(System.Numerics.Vector3* vec, ref AssimpMatrix3x3 mat);
+        public unsafe partial void TransformVecByMatrix3(System.Numerics.Vector3* vec, ref Silk.NET.Maths.Matrix3X3<float> mat);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 502, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiTransformVecByMatrix3")]
-        public unsafe partial void TransformVecByMatrix3(ref System.Numerics.Vector3 vec, AssimpMatrix3x3* mat);
+        public unsafe partial void TransformVecByMatrix3(ref System.Numerics.Vector3 vec, Silk.NET.Maths.Matrix3X3<float>* mat);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 502, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiTransformVecByMatrix3")]
-        public partial void TransformVecByMatrix3(ref System.Numerics.Vector3 vec, ref AssimpMatrix3x3 mat);
+        public partial void TransformVecByMatrix3(ref System.Numerics.Vector3 vec, ref Silk.NET.Maths.Matrix3X3<float> mat);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 511, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
@@ -1132,32 +1132,32 @@ namespace Silk.NET.Assimp
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 529, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMultiplyMatrix3")]
-        public unsafe partial void MultiplyMatrix3(AssimpMatrix3x3* dst, AssimpMatrix3x3* src);
+        public unsafe partial void MultiplyMatrix3(Silk.NET.Maths.Matrix3X3<float>* dst, Silk.NET.Maths.Matrix3X3<float>* src);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 529, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMultiplyMatrix3")]
-        public unsafe partial void MultiplyMatrix3(AssimpMatrix3x3* dst, ref AssimpMatrix3x3 src);
+        public unsafe partial void MultiplyMatrix3(Silk.NET.Maths.Matrix3X3<float>* dst, ref Silk.NET.Maths.Matrix3X3<float> src);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 529, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMultiplyMatrix3")]
-        public unsafe partial void MultiplyMatrix3(ref AssimpMatrix3x3 dst, AssimpMatrix3x3* src);
+        public unsafe partial void MultiplyMatrix3(ref Silk.NET.Maths.Matrix3X3<float> dst, Silk.NET.Maths.Matrix3X3<float>* src);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 529, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiMultiplyMatrix3")]
-        public partial void MultiplyMatrix3(ref AssimpMatrix3x3 dst, ref AssimpMatrix3x3 src);
+        public partial void MultiplyMatrix3(ref Silk.NET.Maths.Matrix3X3<float> dst, ref Silk.NET.Maths.Matrix3X3<float> src);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 537, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiIdentityMatrix3")]
-        public unsafe partial void IdentityMatrix3(AssimpMatrix3x3* mat);
+        public unsafe partial void IdentityMatrix3(Silk.NET.Maths.Matrix3X3<float>* mat);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 537, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiIdentityMatrix3")]
-        public partial void IdentityMatrix3(ref AssimpMatrix3x3 mat);
+        public partial void IdentityMatrix3(ref Silk.NET.Maths.Matrix3X3<float> mat);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 544, Column 17 in src/Assimp/Include\\assimp/cimport.h")]

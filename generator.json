@@ -270,7 +270,8 @@
                     "cl_mem_migration_flags_intel": "CLenum",
                     "cl_mem_advice_intel": "cl_uint",
                     "cl_version": "cl_uint",
-                    "cl_mem_properties": "CLenum"
+                    "cl_mem_properties": "CLenum",
+                    "cl_mipmap_filter_mode_img": "CLenum"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -298,6 +299,10 @@
                     "vulkan"
                 ]
             },
+            "exclude": [
+                "VkAabbPositionsKHR",
+                "VkAabbPositionsNV"
+            ],
             "output": {
                 "mode": "Default",
                 "path": "src/Vulkan",
@@ -326,7 +331,9 @@
                     "PFN_vkDebugReportCallbackEXT": "PfnDebugReportCallbackEXT",
                     "PFN_vkDebugUtilsMessengerCallbackEXT": "PfnDebugUtilsMessengerCallbackEXT",
                     "char": "byte",
-                    "Window": "IntPtr"
+                    "Window": "IntPtr",
+                    "VkAabbPositionsKHR": "Silk.NET.Maths.Box3D<float>",
+                    "VkAabbPositionsNV": "Silk.NET.Maths.Box3D<float>"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -406,7 +413,9 @@
                 "_aiTextureMapMode_Force32Bit",
                 "_aiTextureMapping_Force32Bit",
                 "_aiTextureOp_Force32Bit",
-                "_aiTextureType_Force32Bit"
+                "_aiTextureType_Force32Bit",
+                "aiAABB",
+                "aiMatrix3x3"
             ],
             "rename": {
                 "aiString": "AssimpString"
@@ -441,7 +450,8 @@
                     "aiVector2D": "System.Numerics.Vector2",
                     "aiQuaternion": "System.Numerics.Quaternion",
                     "aiMatrix4x4": "System.Numerics.Matrix4x4",
-                    "aiMatrix3x3": "AssimpMatrix3x3",
+                    "aiMatrix3x3": "Silk.NET.Maths.Matrix3X3<float>",
+                    "aiAABB": "Silk.NET.Maths.Box3D<float>",
                     "ai_real": "float"
                 },
                 {
@@ -575,7 +585,8 @@
                 "VkSurfaceKHR",
                 "VkInstance",
                 "SDL_main",
-                "SDL_SysWMmsg"
+                "SDL_SysWMmsg",
+                "SDL_Rect"
             ],
             "rename": {
                 "__AnonymousEnum_SDL_shape_L80_C9": "WindowShapeModeVal",
@@ -637,7 +648,8 @@
                     "SDL_RWops": "RWops",
                     "VkInstance": "Silk.NET.Core.Native.VkHandle",
                     "VkSurfaceKHR": "Silk.NET.Core.Native.VkNonDispatchableHandle",
-                    "SDL_SysWMmsg": "SysWMMsg"
+                    "SDL_SysWMmsg": "SysWMMsg",
+                    "SDL_Rect": "Silk.NET.Maths.Rectangle<int>"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -937,6 +949,7 @@
                 }
             },
             "exclude": [
+                "D3D12_RAYTRACING_AABB"
             ],
             "rename": {
                 "D3D12_NODE_MASK": "D3D12NodeMask"

@@ -18,27 +18,27 @@ namespace Silk.NET.Maths
         /// Represents the smallest positive value that is greater than zero. Zero for non-floating point numbers.
         /// </summary>
         public static readonly T Epsilon;
-        
+
         /// <summary>
         /// Represents the largest possible value.
         /// </summary>
         public static readonly T MaxValue;
-        
+
         /// <summary>
         /// Represents the smallest possible value.
         /// </summary>
         public static readonly T MinValue;
-        
+
         /// <summary>
         /// Represents not a number (NaN). Zero for non-floating point numbers.
         /// </summary>
         public static readonly T NaN;
-        
+
         /// <summary>
         /// Represents negative infinity. Zero for non-floating point numbers.
         /// </summary>
         public static readonly T NegativeInfinity;
-        
+
         /// <summary>
         /// Represents positive infinity. Zero for non-floating point numbers.
         /// </summary>
@@ -48,47 +48,47 @@ namespace Silk.NET.Maths
         /// Represents zero.
         /// </summary>
         public static readonly T Zero = default;
-            
+
         /// <summary>
         /// Represents one.
         /// </summary>
         public static readonly T One;
-        
+
         /// <summary>
         /// Represents two.
         /// </summary>
         public static readonly T Two;
-        
+
         /// <summary>
         /// Represents negative one.
         /// </summary>
         public static readonly T MinusOne;
-        
+
         /// <summary>
         /// Represents negative two.
         /// </summary>
         public static readonly T MinusTwo;
-        
+
         /// <summary>
         /// Represents the natural logarithmic base, specified by the constant, <code>e</code>.
         /// </summary>
         public static readonly T E;
-        
+
         /// <summary>
         /// Represents the ratio of the circumference of a circle to its diameter, specified by the constant, <code>π</code>.
         /// </summary>
         public static readonly T Pi;
-        
+
         /// <summary>
         /// Represents Pi divided by two.
         /// </summary>
         public static readonly T PiOver2;
-        
+
         /// <summary>
         /// Represents the number of radians in one turn, specified by the constant, <code>τ</code>.
         /// </summary>
         public static readonly T Tau;
-        
+
         internal static readonly bool IntrinsicsApplicable = typeof(T) == typeof(byte)
                                                             || typeof(T) == typeof(sbyte)
                                                             || typeof(T) == typeof(ushort)

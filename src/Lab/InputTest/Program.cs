@@ -2,6 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using Silk.NET.GLFW;
 using Silk.NET.Input;
 using Silk.NET.Windowing;
@@ -209,7 +210,7 @@ namespace InputTest
             Console.WriteLine($"K{arg1.Index}> {arg2} received.");
         }
 
-        private static void MouseOnMouseMove(IMouse arg1, PointF arg2)
+        private static void MouseOnMouseMove(IMouse arg1, Vector2 arg2)
         {
             Console.WriteLine($"M{arg1.Index}> Moved: {arg2}");
         }
@@ -229,12 +230,12 @@ namespace InputTest
             Console.WriteLine($"M{arg1.Index}> {arg2} up.");
         }
 
-        private static void MouseOnClick(IMouse arg1, MouseButton arg2, PointF pos)
+        private static void MouseOnClick(IMouse arg1, MouseButton arg2, Vector2 pos)
         {
             Console.WriteLine($"M{arg1.Index}> {arg2} single click.");
         }
 
-        private static void MouseOnDoubleClick(IMouse arg1, MouseButton arg2, PointF pos)
+        private static void MouseOnDoubleClick(IMouse arg1, MouseButton arg2, Vector2 pos)
         {
             Console.WriteLine($"M{arg1.Index}> {arg2} double click.");
         }

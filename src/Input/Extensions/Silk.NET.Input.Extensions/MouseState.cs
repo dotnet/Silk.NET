@@ -4,7 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Drawing;
+using System.Numerics;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Input.Extensions
@@ -53,7 +53,7 @@ namespace Silk.NET.Input.Extensions
         public string Name { get; }
         public int Index { get; }
         public bool IsConnected { get; }
-        public PointF Position { get; }
+        public Vector2 Position { get; }
 
         public void Dispose()
         {

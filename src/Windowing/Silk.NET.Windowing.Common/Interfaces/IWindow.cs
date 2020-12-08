@@ -4,8 +4,8 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Drawing;
 using Silk.NET.Core;
+using Silk.NET.Maths;
 
 namespace Silk.NET.Windowing
 {
@@ -42,12 +42,12 @@ namespace Silk.NET.Windowing
         /// </remarks>
         /// <seealso cref="WindowExtensions.GetFullSize"/>
         // This is in IWindow because it can't be configured.
-        Rectangle BorderSize { get; }
+        Rectangle<int> BorderSize { get; }
 
         /// <summary>
         /// Raised when the window is moved.
         /// </summary>
-        event Action<Point>? Move;
+        event Action<Vector2D<int>>? Move;
 
         /// <summary>
         /// Raised when the window state is changed.

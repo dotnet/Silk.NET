@@ -4,8 +4,8 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Drawing;
 using Silk.NET.Core.Contexts;
+using Silk.NET.Maths;
 
 namespace Silk.NET.Windowing
 {
@@ -32,17 +32,17 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// The size of the framebuffer. May differ from the window size.
         /// </summary>
-        Size FramebufferSize { get; }
+        Vector2D<int> FramebufferSize { get; }
 
         /// <summary>
         /// Raised when the window is resized.
         /// </summary>
-        event Action<Size>? Resize;
+        event Action<Vector2D<int>>? Resize;
 
         /// <summary>
         /// Raised when the window's framebuffer is resized.
         /// </summary>
-        event Action<Size>? FramebufferResize;
+        event Action<Vector2D<int>>? FramebufferResize;
 
         /// <summary>
         /// Raised when the window is about to close.
@@ -111,7 +111,7 @@ namespace Silk.NET.Windowing
         /// <param name="point">The point to transform.</param>
         /// <returns>The transformed point.</returns>
         /// <remarks>Expects screen coordinates as input.</remarks>
-        Point PointToClient(Point point);
+        Vector2D<int> PointToClient(Vector2D<int> point);
 
         /// <summary>
         /// Converts this point to screen coordinates.
@@ -119,7 +119,7 @@ namespace Silk.NET.Windowing
         /// <param name="point">The point to transform.</param>
         /// <returns>The transformed point.</returns>
         /// <remarks>Expects client coordinates as input.</remarks>
-        Point PointToScreen(Point point);
+        Vector2D<int> PointToScreen(Vector2D<int> point);
 
         /// <summary>
         /// Converts this point to framebuffer coordinates.
@@ -127,7 +127,7 @@ namespace Silk.NET.Windowing
         /// <param name="point">The point to transform.</param>
         /// <returns>The transformed point.</returns>
         /// <remarks>Expects client coordinates as input.</remarks>
-        Point PointToFramebuffer(Point point);
+        Vector2D<int> PointToFramebuffer(Vector2D<int> point);
 
         /// <summary>
         /// Invokes this delegate on the window's main thread, with the provided arguments.

@@ -22,22 +22,22 @@ namespace Silk.NET.Maths.Tests
             return (Math.Abs(a - b) < 1e-5);
         }
 
-        public static bool Equal(Vector2<float> a, Vector2<float> b)
+        public static bool Equal(Vector2D<float> a, Vector2D<float> b)
         {
             return Equal(a.X, b.X) && Equal(a.Y, b.Y);
         }
         
-        public static bool Equal(Vector3<float> a, Vector3<float> b)
+        public static bool Equal(Vector3D<float> a, Vector3D<float> b)
         {
             return Equal(a.X, b.X) && Equal(a.Y, b.Y) && Equal(a.Z, b.Z);
         }
 
-        public static bool Equal(Vector4<float> a, Vector4<float> b)
+        public static bool Equal(Vector4D<float> a, Vector4D<float> b)
         {
             return Equal(a.X, b.X) && Equal(a.Y, b.Y) && Equal(a.Z, b.Z) && Equal(a.W, b.W);
         }
 
-        public static bool Equal(Matrix4x4<float> a, Matrix4x4<float> b)
+        public static bool Equal(Matrix4X4<float> a, Matrix4X4<float> b)
         {
             return
                 Equal(a.M11, b.M11) && Equal(a.M12, b.M12) && Equal(a.M13, b.M13) && Equal(a.M14, b.M14) &&
@@ -46,7 +46,7 @@ namespace Silk.NET.Maths.Tests
                 Equal(a.M41, b.M41) && Equal(a.M42, b.M42) && Equal(a.M43, b.M43) && Equal(a.M44, b.M44);
         }
 
-        public static bool Equal(Matrix3x2<float> a, Matrix3x2<float> b)
+        public static bool Equal(Matrix3X2<float> a, Matrix3X2<float> b)
         {
             return
                 Equal(a.M11, b.M11) && Equal(a.M12, b.M12) &&

@@ -9,6 +9,7 @@ using System;
 using System.Drawing;
 using System.Threading;
 using Silk.NET.Core;
+using Silk.NET.Maths;
 using Image = SixLabors.ImageSharp.Image;
 
 namespace BlankWindow
@@ -60,12 +61,12 @@ namespace BlankWindow
             }
         }
 
-        public static void Move(Point position)
+        public static void Move(Vector2D<int> position)
         {
             Console.WriteLine(position);
         }
 
-        public static void Resize(Size size)
+        public static void Resize(Vector2D<int> size)
         {
             Console.WriteLine(size);
             //_rsz = true;

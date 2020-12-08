@@ -1,10 +1,11 @@
-using System.Drawing;
+
+using Silk.NET.Maths;
 
 namespace Silk.NET.Windowing
 {
     public struct VideoMode
     {
-        public VideoMode(Size? resolution = null, int? refreshRate = null)
+        public VideoMode(Vector2D<int>? resolution = null, int? refreshRate = null)
         {
             Resolution = resolution;
             RefreshRate = refreshRate;
@@ -18,7 +19,7 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// Resolution of the full screen window.
         /// </summary>
-        public Size? Resolution { get; }
+        public Vector2D<int>? Resolution { get; }
 
         /// <summary>
         /// Refresh rate of the full screen window in Hz.

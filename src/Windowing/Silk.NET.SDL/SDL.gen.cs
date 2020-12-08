@@ -4312,302 +4312,302 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 127, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_HasIntersection")]
-        public unsafe partial SdlBool HasIntersection(Rect* A, Rect* B);
+        public unsafe partial SdlBool HasIntersection(Silk.NET.Maths.Rectangle<int>* A, Silk.NET.Maths.Rectangle<int>* B);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 127, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_HasIntersection")]
-        public unsafe partial SdlBool HasIntersection(Rect* A, ref Rect B);
+        public unsafe partial SdlBool HasIntersection(Silk.NET.Maths.Rectangle<int>* A, ref Silk.NET.Maths.Rectangle<int> B);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 127, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_HasIntersection")]
-        public unsafe partial SdlBool HasIntersection(ref Rect A, Rect* B);
+        public unsafe partial SdlBool HasIntersection(ref Silk.NET.Maths.Rectangle<int> A, Silk.NET.Maths.Rectangle<int>* B);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 127, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_HasIntersection")]
-        public partial SdlBool HasIntersection(ref Rect A, ref Rect B);
+        public partial SdlBool HasIntersection(ref Silk.NET.Maths.Rectangle<int> A, ref Silk.NET.Maths.Rectangle<int> B);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public unsafe partial SdlBool IntersectRect(Rect* A, Rect* B, Rect* result);
+        public unsafe partial SdlBool IntersectRect(Silk.NET.Maths.Rectangle<int>* A, Silk.NET.Maths.Rectangle<int>* B, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public unsafe partial SdlBool IntersectRect(Rect* A, Rect* B, ref Rect result);
+        public unsafe partial SdlBool IntersectRect(Silk.NET.Maths.Rectangle<int>* A, Silk.NET.Maths.Rectangle<int>* B, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public unsafe partial SdlBool IntersectRect(Rect* A, ref Rect B, Rect* result);
+        public unsafe partial SdlBool IntersectRect(Silk.NET.Maths.Rectangle<int>* A, ref Silk.NET.Maths.Rectangle<int> B, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public unsafe partial SdlBool IntersectRect(Rect* A, ref Rect B, ref Rect result);
+        public unsafe partial SdlBool IntersectRect(Silk.NET.Maths.Rectangle<int>* A, ref Silk.NET.Maths.Rectangle<int> B, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public unsafe partial SdlBool IntersectRect(ref Rect A, Rect* B, Rect* result);
+        public unsafe partial SdlBool IntersectRect(ref Silk.NET.Maths.Rectangle<int> A, Silk.NET.Maths.Rectangle<int>* B, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public unsafe partial SdlBool IntersectRect(ref Rect A, Rect* B, ref Rect result);
+        public unsafe partial SdlBool IntersectRect(ref Silk.NET.Maths.Rectangle<int> A, Silk.NET.Maths.Rectangle<int>* B, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public unsafe partial SdlBool IntersectRect(ref Rect A, ref Rect B, Rect* result);
+        public unsafe partial SdlBool IntersectRect(ref Silk.NET.Maths.Rectangle<int> A, ref Silk.NET.Maths.Rectangle<int> B, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public partial SdlBool IntersectRect(ref Rect A, ref Rect B, ref Rect result);
+        public partial SdlBool IntersectRect(ref Silk.NET.Maths.Rectangle<int> A, ref Silk.NET.Maths.Rectangle<int> B, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 142, Column 30 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_UnionRect")]
-        public unsafe partial void UnionRect(Rect* A, Rect* B, Rect* result);
+        public unsafe partial void UnionRect(Silk.NET.Maths.Rectangle<int>* A, Silk.NET.Maths.Rectangle<int>* B, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 142, Column 30 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_UnionRect")]
-        public unsafe partial void UnionRect(Rect* A, Rect* B, ref Rect result);
+        public unsafe partial void UnionRect(Silk.NET.Maths.Rectangle<int>* A, Silk.NET.Maths.Rectangle<int>* B, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 142, Column 30 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_UnionRect")]
-        public unsafe partial void UnionRect(Rect* A, ref Rect B, Rect* result);
+        public unsafe partial void UnionRect(Silk.NET.Maths.Rectangle<int>* A, ref Silk.NET.Maths.Rectangle<int> B, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 142, Column 30 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_UnionRect")]
-        public unsafe partial void UnionRect(Rect* A, ref Rect B, ref Rect result);
+        public unsafe partial void UnionRect(Silk.NET.Maths.Rectangle<int>* A, ref Silk.NET.Maths.Rectangle<int> B, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 142, Column 30 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_UnionRect")]
-        public unsafe partial void UnionRect(ref Rect A, Rect* B, Rect* result);
+        public unsafe partial void UnionRect(ref Silk.NET.Maths.Rectangle<int> A, Silk.NET.Maths.Rectangle<int>* B, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 142, Column 30 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_UnionRect")]
-        public unsafe partial void UnionRect(ref Rect A, Rect* B, ref Rect result);
+        public unsafe partial void UnionRect(ref Silk.NET.Maths.Rectangle<int> A, Silk.NET.Maths.Rectangle<int>* B, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 142, Column 30 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_UnionRect")]
-        public unsafe partial void UnionRect(ref Rect A, ref Rect B, Rect* result);
+        public unsafe partial void UnionRect(ref Silk.NET.Maths.Rectangle<int> A, ref Silk.NET.Maths.Rectangle<int> B, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 142, Column 30 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_UnionRect")]
-        public partial void UnionRect(ref Rect A, ref Rect B, ref Rect result);
+        public partial void UnionRect(ref Silk.NET.Maths.Rectangle<int> A, ref Silk.NET.Maths.Rectangle<int> B, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 151, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public unsafe partial SdlBool EnclosePoints(Point* points, int count, Rect* clip, Rect* result);
+        public unsafe partial SdlBool EnclosePoints(Point* points, int count, Silk.NET.Maths.Rectangle<int>* clip, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 151, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public unsafe partial SdlBool EnclosePoints(Point* points, int count, Rect* clip, ref Rect result);
+        public unsafe partial SdlBool EnclosePoints(Point* points, int count, Silk.NET.Maths.Rectangle<int>* clip, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 151, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public unsafe partial SdlBool EnclosePoints(Point* points, int count, ref Rect clip, Rect* result);
+        public unsafe partial SdlBool EnclosePoints(Point* points, int count, ref Silk.NET.Maths.Rectangle<int> clip, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 151, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public unsafe partial SdlBool EnclosePoints(Point* points, int count, ref Rect clip, ref Rect result);
+        public unsafe partial SdlBool EnclosePoints(Point* points, int count, ref Silk.NET.Maths.Rectangle<int> clip, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 151, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public unsafe partial SdlBool EnclosePoints(ref Point points, int count, Rect* clip, Rect* result);
+        public unsafe partial SdlBool EnclosePoints(ref Point points, int count, Silk.NET.Maths.Rectangle<int>* clip, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 151, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public unsafe partial SdlBool EnclosePoints(ref Point points, int count, Rect* clip, ref Rect result);
+        public unsafe partial SdlBool EnclosePoints(ref Point points, int count, Silk.NET.Maths.Rectangle<int>* clip, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 151, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public unsafe partial SdlBool EnclosePoints(ref Point points, int count, ref Rect clip, Rect* result);
+        public unsafe partial SdlBool EnclosePoints(ref Point points, int count, ref Silk.NET.Maths.Rectangle<int> clip, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 151, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public partial SdlBool EnclosePoints(ref Point points, int count, ref Rect clip, ref Rect result);
+        public partial SdlBool EnclosePoints(ref Point points, int count, ref Silk.NET.Maths.Rectangle<int> clip, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(Rect* rect, int* X1, int* Y1, int* X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, int* Y1, int* X2, int* Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(Rect* rect, int* X1, int* Y1, int* X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, int* Y1, int* X2, ref int Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(Rect* rect, int* X1, int* Y1, ref int X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, int* Y1, ref int X2, int* Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(Rect* rect, int* X1, int* Y1, ref int X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, int* Y1, ref int X2, ref int Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(Rect* rect, int* X1, ref int Y1, int* X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, ref int Y1, int* X2, int* Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(Rect* rect, int* X1, ref int Y1, int* X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, ref int Y1, int* X2, ref int Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(Rect* rect, int* X1, ref int Y1, ref int X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, ref int Y1, ref int X2, int* Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(Rect* rect, int* X1, ref int Y1, ref int X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, ref int Y1, ref int X2, ref int Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(Rect* rect, ref int X1, int* Y1, int* X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, int* Y1, int* X2, int* Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(Rect* rect, ref int X1, int* Y1, int* X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, int* Y1, int* X2, ref int Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(Rect* rect, ref int X1, int* Y1, ref int X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, int* Y1, ref int X2, int* Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(Rect* rect, ref int X1, int* Y1, ref int X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, int* Y1, ref int X2, ref int Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(Rect* rect, ref int X1, ref int Y1, int* X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, ref int Y1, int* X2, int* Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(Rect* rect, ref int X1, ref int Y1, int* X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, ref int Y1, int* X2, ref int Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(Rect* rect, ref int X1, ref int Y1, ref int X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, ref int Y1, ref int X2, int* Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(Rect* rect, ref int X1, ref int Y1, ref int X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, ref int Y1, ref int X2, ref int Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(ref Rect rect, int* X1, int* Y1, int* X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, int* Y1, int* X2, int* Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(ref Rect rect, int* X1, int* Y1, int* X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, int* Y1, int* X2, ref int Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(ref Rect rect, int* X1, int* Y1, ref int X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, int* Y1, ref int X2, int* Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(ref Rect rect, int* X1, int* Y1, ref int X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, int* Y1, ref int X2, ref int Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(ref Rect rect, int* X1, ref int Y1, int* X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, ref int Y1, int* X2, int* Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(ref Rect rect, int* X1, ref int Y1, int* X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, ref int Y1, int* X2, ref int Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(ref Rect rect, int* X1, ref int Y1, ref int X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, ref int Y1, ref int X2, int* Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(ref Rect rect, int* X1, ref int Y1, ref int X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, ref int Y1, ref int X2, ref int Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(ref Rect rect, ref int X1, int* Y1, int* X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, int* Y1, int* X2, int* Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(ref Rect rect, ref int X1, int* Y1, int* X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, int* Y1, int* X2, ref int Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(ref Rect rect, ref int X1, int* Y1, ref int X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, int* Y1, ref int X2, int* Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(ref Rect rect, ref int X1, int* Y1, ref int X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, int* Y1, ref int X2, ref int Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(ref Rect rect, ref int X1, ref int Y1, int* X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, ref int Y1, int* X2, int* Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(ref Rect rect, ref int X1, ref int Y1, int* X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, ref int Y1, int* X2, ref int Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial SdlBool IntersectRectAndLine(ref Rect rect, ref int X1, ref int Y1, ref int X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, ref int Y1, ref int X2, int* Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public partial SdlBool IntersectRectAndLine(ref Rect rect, ref int X1, ref int Y1, ref int X2, ref int Y2);
+        public partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, ref int Y1, ref int X2, ref int Y2);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 108, Column 39 in build/submodules/SDL-mirror/include/SDL_blendmode.h")]
@@ -5127,42 +5127,42 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 369, Column 34 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SetClipRect")]
-        public unsafe partial SdlBool SetClipRect(Surface* surface, Rect* rect);
+        public unsafe partial SdlBool SetClipRect(Surface* surface, Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 369, Column 34 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SetClipRect")]
-        public unsafe partial SdlBool SetClipRect(Surface* surface, ref Rect rect);
+        public unsafe partial SdlBool SetClipRect(Surface* surface, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 369, Column 34 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SetClipRect")]
-        public unsafe partial SdlBool SetClipRect(ref Surface surface, Rect* rect);
+        public unsafe partial SdlBool SetClipRect(ref Surface surface, Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 369, Column 34 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SetClipRect")]
-        public partial SdlBool SetClipRect(ref Surface surface, ref Rect rect);
+        public partial SdlBool SetClipRect(ref Surface surface, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 378, Column 30 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetClipRect")]
-        public unsafe partial void GetClipRect(Surface* surface, Rect* rect);
+        public unsafe partial void GetClipRect(Surface* surface, Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 378, Column 30 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetClipRect")]
-        public unsafe partial void GetClipRect(Surface* surface, ref Rect rect);
+        public unsafe partial void GetClipRect(Surface* surface, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 378, Column 30 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetClipRect")]
-        public unsafe partial void GetClipRect(ref Surface surface, Rect* rect);
+        public unsafe partial void GetClipRect(ref Surface surface, Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 378, Column 30 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_GetClipRect")]
-        public partial void GetClipRect(ref Surface surface, ref Rect rect);
+        public partial void GetClipRect(ref Surface surface, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 384, Column 38 in build/submodules/SDL-mirror/include/SDL_surface.h")]
@@ -5227,442 +5227,442 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 422, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_FillRect")]
-        public unsafe partial int FillRect(Surface* dst, Rect* rect, uint color);
+        public unsafe partial int FillRect(Surface* dst, Silk.NET.Maths.Rectangle<int>* rect, uint color);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 422, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_FillRect")]
-        public unsafe partial int FillRect(Surface* dst, ref Rect rect, uint color);
+        public unsafe partial int FillRect(Surface* dst, ref Silk.NET.Maths.Rectangle<int> rect, uint color);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 422, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_FillRect")]
-        public unsafe partial int FillRect(ref Surface dst, Rect* rect, uint color);
+        public unsafe partial int FillRect(ref Surface dst, Silk.NET.Maths.Rectangle<int>* rect, uint color);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 422, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_FillRect")]
-        public partial int FillRect(ref Surface dst, ref Rect rect, uint color);
+        public partial int FillRect(ref Surface dst, ref Silk.NET.Maths.Rectangle<int> rect, uint color);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_FillRects")]
-        public unsafe partial int FillRects(Surface* dst, Rect* rects, int count, uint color);
+        public unsafe partial int FillRects(Surface* dst, Silk.NET.Maths.Rectangle<int>* rects, int count, uint color);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_FillRects")]
-        public unsafe partial int FillRects(Surface* dst, ref Rect rects, int count, uint color);
+        public unsafe partial int FillRects(Surface* dst, ref Silk.NET.Maths.Rectangle<int> rects, int count, uint color);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_FillRects")]
-        public unsafe partial int FillRects(ref Surface dst, Rect* rects, int count, uint color);
+        public unsafe partial int FillRects(ref Surface dst, Silk.NET.Maths.Rectangle<int>* rects, int count, uint color);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_FillRects")]
-        public partial int FillRects(ref Surface dst, ref Rect rects, int count, uint color);
+        public partial int FillRects(ref Surface dst, ref Silk.NET.Maths.Rectangle<int> rects, int count, uint color);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(Surface* src, Rect* srcrect, Surface* dst, Rect* dstrect);
+        public unsafe partial int UpperBlit(Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(Surface* src, Rect* srcrect, Surface* dst, ref Rect dstrect);
+        public unsafe partial int UpperBlit(Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(Surface* src, Rect* srcrect, ref Surface dst, Rect* dstrect);
+        public unsafe partial int UpperBlit(Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(Surface* src, Rect* srcrect, ref Surface dst, ref Rect dstrect);
+        public unsafe partial int UpperBlit(Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(Surface* src, ref Rect srcrect, Surface* dst, Rect* dstrect);
+        public unsafe partial int UpperBlit(Surface* src, ref Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(Surface* src, ref Rect srcrect, Surface* dst, ref Rect dstrect);
+        public unsafe partial int UpperBlit(Surface* src, ref Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(Surface* src, ref Rect srcrect, ref Surface dst, Rect* dstrect);
+        public unsafe partial int UpperBlit(Surface* src, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(Surface* src, ref Rect srcrect, ref Surface dst, ref Rect dstrect);
+        public unsafe partial int UpperBlit(Surface* src, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(ref Surface src, Rect* srcrect, Surface* dst, Rect* dstrect);
+        public unsafe partial int UpperBlit(ref Surface src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(ref Surface src, Rect* srcrect, Surface* dst, ref Rect dstrect);
+        public unsafe partial int UpperBlit(ref Surface src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(ref Surface src, Rect* srcrect, ref Surface dst, Rect* dstrect);
+        public unsafe partial int UpperBlit(ref Surface src, Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(ref Surface src, Rect* srcrect, ref Surface dst, ref Rect dstrect);
+        public unsafe partial int UpperBlit(ref Surface src, Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(ref Surface src, ref Rect srcrect, Surface* dst, Rect* dstrect);
+        public unsafe partial int UpperBlit(ref Surface src, ref Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(ref Surface src, ref Rect srcrect, Surface* dst, ref Rect dstrect);
+        public unsafe partial int UpperBlit(ref Surface src, ref Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public unsafe partial int UpperBlit(ref Surface src, ref Rect srcrect, ref Surface dst, Rect* dstrect);
+        public unsafe partial int UpperBlit(ref Surface src, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlit")]
-        public partial int UpperBlit(ref Surface src, ref Rect srcrect, ref Surface dst, ref Rect dstrect);
+        public partial int UpperBlit(ref Surface src, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlit")]
-        public unsafe partial int LowerBlit(Surface* src, Rect* srcrect, Surface* dst, Rect* dstrect);
+        public unsafe partial int LowerBlit(Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlit")]
-        public unsafe partial int LowerBlit(Surface* src, Rect* srcrect, Surface* dst, ref Rect dstrect);
+        public unsafe partial int LowerBlit(Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlit")]
-        public unsafe partial int LowerBlit(Surface* src, Rect* srcrect, ref Surface dst, Rect* dstrect);
+        public unsafe partial int LowerBlit(Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlit")]
-        public unsafe partial int LowerBlit(Surface* src, Rect* srcrect, ref Surface dst, ref Rect dstrect);
+        public unsafe partial int LowerBlit(Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlit")]
-        public unsafe partial int LowerBlit(Surface* src, ref Rect srcrect, Surface* dst, Rect* dstrect);
+        public unsafe partial int LowerBlit(Surface* src, ref Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlit")]
-        public unsafe partial int LowerBlit(Surface* src, ref Rect srcrect, Surface* dst, ref Rect dstrect);
+        public unsafe partial int LowerBlit(Surface* src, ref Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlit")]
-        public unsafe partial int LowerBlit(Surface* src, ref Rect srcrect, ref Surface dst, Rect* dstrect);
+        public unsafe partial int LowerBlit(Surface* src, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlit")]
-        public unsafe partial int LowerBlit(Surface* src, ref Rect srcrect, ref Surface dst, ref Rect dstrect);
+        public unsafe partial int LowerBlit(Surface* src, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlit")]
-        public unsafe partial int LowerBlit(ref Surface src, Rect* srcrect, Surface* dst, Rect* dstrect);
+        public unsafe partial int LowerBlit(ref Surface src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlit")]
-        public unsafe partial int LowerBlit(ref Surface src, Rect* srcrect, Surface* dst, ref Rect dstrect);
+        public unsafe partial int LowerBlit(ref Surface src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlit")]
-        public unsafe partial int LowerBlit(ref Surface src, Rect* srcrect, ref Surface dst, Rect* dstrect);
+        public unsafe partial int LowerBlit(ref Surface src, Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlit")]
-        public unsafe partial int LowerBlit(ref Surface src, Rect* srcrect, ref Surface dst, ref Rect dstrect);
+        public unsafe partial int LowerBlit(ref Surface src, Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlit")]
-        public unsafe partial int LowerBlit(ref Surface src, ref Rect srcrect, Surface* dst, Rect* dstrect);
+        public unsafe partial int LowerBlit(ref Surface src, ref Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlit")]
-        public unsafe partial int LowerBlit(ref Surface src, ref Rect srcrect, Surface* dst, ref Rect dstrect);
+        public unsafe partial int LowerBlit(ref Surface src, ref Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlit")]
-        public unsafe partial int LowerBlit(ref Surface src, ref Rect srcrect, ref Surface dst, Rect* dstrect);
+        public unsafe partial int LowerBlit(ref Surface src, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlit")]
-        public partial int LowerBlit(ref Surface src, ref Rect srcrect, ref Surface dst, ref Rect dstrect);
+        public partial int LowerBlit(ref Surface src, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(Surface* src, Rect* srcrect, Surface* dst, Rect* dstrect);
+        public unsafe partial int SoftStretch(Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(Surface* src, Rect* srcrect, Surface* dst, ref Rect dstrect);
+        public unsafe partial int SoftStretch(Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(Surface* src, Rect* srcrect, ref Surface dst, Rect* dstrect);
+        public unsafe partial int SoftStretch(Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(Surface* src, Rect* srcrect, ref Surface dst, ref Rect dstrect);
+        public unsafe partial int SoftStretch(Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(Surface* src, ref Rect srcrect, Surface* dst, Rect* dstrect);
+        public unsafe partial int SoftStretch(Surface* src, ref Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(Surface* src, ref Rect srcrect, Surface* dst, ref Rect dstrect);
+        public unsafe partial int SoftStretch(Surface* src, ref Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(Surface* src, ref Rect srcrect, ref Surface dst, Rect* dstrect);
+        public unsafe partial int SoftStretch(Surface* src, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(Surface* src, ref Rect srcrect, ref Surface dst, ref Rect dstrect);
+        public unsafe partial int SoftStretch(Surface* src, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(ref Surface src, Rect* srcrect, Surface* dst, Rect* dstrect);
+        public unsafe partial int SoftStretch(ref Surface src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(ref Surface src, Rect* srcrect, Surface* dst, ref Rect dstrect);
+        public unsafe partial int SoftStretch(ref Surface src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(ref Surface src, Rect* srcrect, ref Surface dst, Rect* dstrect);
+        public unsafe partial int SoftStretch(ref Surface src, Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(ref Surface src, Rect* srcrect, ref Surface dst, ref Rect dstrect);
+        public unsafe partial int SoftStretch(ref Surface src, Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(ref Surface src, ref Rect srcrect, Surface* dst, Rect* dstrect);
+        public unsafe partial int SoftStretch(ref Surface src, ref Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(ref Surface src, ref Rect srcrect, Surface* dst, ref Rect dstrect);
+        public unsafe partial int SoftStretch(ref Surface src, ref Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public unsafe partial int SoftStretch(ref Surface src, ref Rect srcrect, ref Surface dst, Rect* dstrect);
+        public unsafe partial int SoftStretch(ref Surface src, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SoftStretch")]
-        public partial int SoftStretch(ref Surface src, ref Rect srcrect, ref Surface dst, ref Rect dstrect);
+        public partial int SoftStretch(ref Surface src, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(Surface* src, Rect* srcrect, Surface* dst, Rect* dstrect);
+        public unsafe partial int UpperBlitScaled(Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(Surface* src, Rect* srcrect, Surface* dst, ref Rect dstrect);
+        public unsafe partial int UpperBlitScaled(Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(Surface* src, Rect* srcrect, ref Surface dst, Rect* dstrect);
+        public unsafe partial int UpperBlitScaled(Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(Surface* src, Rect* srcrect, ref Surface dst, ref Rect dstrect);
+        public unsafe partial int UpperBlitScaled(Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(Surface* src, ref Rect srcrect, Surface* dst, Rect* dstrect);
+        public unsafe partial int UpperBlitScaled(Surface* src, ref Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(Surface* src, ref Rect srcrect, Surface* dst, ref Rect dstrect);
+        public unsafe partial int UpperBlitScaled(Surface* src, ref Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(Surface* src, ref Rect srcrect, ref Surface dst, Rect* dstrect);
+        public unsafe partial int UpperBlitScaled(Surface* src, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(Surface* src, ref Rect srcrect, ref Surface dst, ref Rect dstrect);
+        public unsafe partial int UpperBlitScaled(Surface* src, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(ref Surface src, Rect* srcrect, Surface* dst, Rect* dstrect);
+        public unsafe partial int UpperBlitScaled(ref Surface src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(ref Surface src, Rect* srcrect, Surface* dst, ref Rect dstrect);
+        public unsafe partial int UpperBlitScaled(ref Surface src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(ref Surface src, Rect* srcrect, ref Surface dst, Rect* dstrect);
+        public unsafe partial int UpperBlitScaled(ref Surface src, Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(ref Surface src, Rect* srcrect, ref Surface dst, ref Rect dstrect);
+        public unsafe partial int UpperBlitScaled(ref Surface src, Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(ref Surface src, ref Rect srcrect, Surface* dst, Rect* dstrect);
+        public unsafe partial int UpperBlitScaled(ref Surface src, ref Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(ref Surface src, ref Rect srcrect, Surface* dst, ref Rect dstrect);
+        public unsafe partial int UpperBlitScaled(ref Surface src, ref Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public unsafe partial int UpperBlitScaled(ref Surface src, ref Rect srcrect, ref Surface dst, Rect* dstrect);
+        public unsafe partial int UpperBlitScaled(ref Surface src, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_UpperBlitScaled")]
-        public partial int UpperBlitScaled(ref Surface src, ref Rect srcrect, ref Surface dst, ref Rect dstrect);
+        public partial int UpperBlitScaled(ref Surface src, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlitScaled")]
-        public unsafe partial int LowerBlitScaled(Surface* src, Rect* srcrect, Surface* dst, Rect* dstrect);
+        public unsafe partial int LowerBlitScaled(Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlitScaled")]
-        public unsafe partial int LowerBlitScaled(Surface* src, Rect* srcrect, Surface* dst, ref Rect dstrect);
+        public unsafe partial int LowerBlitScaled(Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlitScaled")]
-        public unsafe partial int LowerBlitScaled(Surface* src, Rect* srcrect, ref Surface dst, Rect* dstrect);
+        public unsafe partial int LowerBlitScaled(Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlitScaled")]
-        public unsafe partial int LowerBlitScaled(Surface* src, Rect* srcrect, ref Surface dst, ref Rect dstrect);
+        public unsafe partial int LowerBlitScaled(Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlitScaled")]
-        public unsafe partial int LowerBlitScaled(Surface* src, ref Rect srcrect, Surface* dst, Rect* dstrect);
+        public unsafe partial int LowerBlitScaled(Surface* src, ref Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlitScaled")]
-        public unsafe partial int LowerBlitScaled(Surface* src, ref Rect srcrect, Surface* dst, ref Rect dstrect);
+        public unsafe partial int LowerBlitScaled(Surface* src, ref Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlitScaled")]
-        public unsafe partial int LowerBlitScaled(Surface* src, ref Rect srcrect, ref Surface dst, Rect* dstrect);
+        public unsafe partial int LowerBlitScaled(Surface* src, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlitScaled")]
-        public unsafe partial int LowerBlitScaled(Surface* src, ref Rect srcrect, ref Surface dst, ref Rect dstrect);
+        public unsafe partial int LowerBlitScaled(Surface* src, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlitScaled")]
-        public unsafe partial int LowerBlitScaled(ref Surface src, Rect* srcrect, Surface* dst, Rect* dstrect);
+        public unsafe partial int LowerBlitScaled(ref Surface src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlitScaled")]
-        public unsafe partial int LowerBlitScaled(ref Surface src, Rect* srcrect, Surface* dst, ref Rect dstrect);
+        public unsafe partial int LowerBlitScaled(ref Surface src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlitScaled")]
-        public unsafe partial int LowerBlitScaled(ref Surface src, Rect* srcrect, ref Surface dst, Rect* dstrect);
+        public unsafe partial int LowerBlitScaled(ref Surface src, Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlitScaled")]
-        public unsafe partial int LowerBlitScaled(ref Surface src, Rect* srcrect, ref Surface dst, ref Rect dstrect);
+        public unsafe partial int LowerBlitScaled(ref Surface src, Silk.NET.Maths.Rectangle<int>* srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlitScaled")]
-        public unsafe partial int LowerBlitScaled(ref Surface src, ref Rect srcrect, Surface* dst, Rect* dstrect);
+        public unsafe partial int LowerBlitScaled(ref Surface src, ref Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlitScaled")]
-        public unsafe partial int LowerBlitScaled(ref Surface src, ref Rect srcrect, Surface* dst, ref Rect dstrect);
+        public unsafe partial int LowerBlitScaled(ref Surface src, ref Silk.NET.Maths.Rectangle<int> srcrect, Surface* dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlitScaled")]
-        public unsafe partial int LowerBlitScaled(ref Surface src, ref Rect srcrect, ref Surface dst, Rect* dstrect);
+        public unsafe partial int LowerBlitScaled(ref Surface src, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_LowerBlitScaled")]
-        public partial int LowerBlitScaled(ref Surface src, ref Rect srcrect, ref Surface dst, ref Rect dstrect);
+        public partial int LowerBlitScaled(ref Surface src, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Surface dst, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 534, Column 30 in build/submodules/SDL-mirror/include/SDL_surface.h")]
@@ -5742,22 +5742,22 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 334, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetDisplayBounds")]
-        public unsafe partial int GetDisplayBounds(int displayIndex, Rect* rect);
+        public unsafe partial int GetDisplayBounds(int displayIndex, Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 334, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetDisplayBounds")]
-        public partial int GetDisplayBounds(int displayIndex, ref Rect rect);
+        public partial int GetDisplayBounds(int displayIndex, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 353, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetDisplayUsableBounds")]
-        public unsafe partial int GetDisplayUsableBounds(int displayIndex, Rect* rect);
+        public unsafe partial int GetDisplayUsableBounds(int displayIndex, Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 353, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetDisplayUsableBounds")]
-        public partial int GetDisplayUsableBounds(int displayIndex, ref Rect rect);
+        public partial int GetDisplayUsableBounds(int displayIndex, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 365, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
@@ -6602,22 +6602,22 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 864, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_UpdateWindowSurfaceRects")]
-        public unsafe partial int UpdateWindowSurfaceRects(Window* window, Rect* rects, int numrects);
+        public unsafe partial int UpdateWindowSurfaceRects(Window* window, Silk.NET.Maths.Rectangle<int>* rects, int numrects);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 864, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_UpdateWindowSurfaceRects")]
-        public unsafe partial int UpdateWindowSurfaceRects(Window* window, ref Rect rects, int numrects);
+        public unsafe partial int UpdateWindowSurfaceRects(Window* window, ref Silk.NET.Maths.Rectangle<int> rects, int numrects);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 864, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_UpdateWindowSurfaceRects")]
-        public unsafe partial int UpdateWindowSurfaceRects(ref Window window, Rect* rects, int numrects);
+        public unsafe partial int UpdateWindowSurfaceRects(ref Window window, Silk.NET.Maths.Rectangle<int>* rects, int numrects);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 864, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_UpdateWindowSurfaceRects")]
-        public partial int UpdateWindowSurfaceRects(ref Window window, ref Rect rects, int numrects);
+        public partial int UpdateWindowSurfaceRects(ref Window window, ref Silk.NET.Maths.Rectangle<int> rects, int numrects);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 879, Column 30 in build/submodules/SDL-mirror/include\\SDL_video.h")]
@@ -9180,12 +9180,12 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 185, Column 30 in build/submodules/SDL-mirror/include/SDL_keyboard.h")]
         [NativeApi(EntryPoint = "SDL_SetTextInputRect")]
-        public unsafe partial void SetTextInputRect(Rect* rect);
+        public unsafe partial void SetTextInputRect(Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 185, Column 30 in build/submodules/SDL-mirror/include/SDL_keyboard.h")]
         [NativeApi(EntryPoint = "SDL_SetTextInputRect")]
-        public partial void SetTextInputRect(ref Rect rect);
+        public partial void SetTextInputRect(ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 196, Column 34 in build/submodules/SDL-mirror/include/SDL_keyboard.h")]
@@ -12150,702 +12150,702 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateTexture")]
-        public unsafe partial int UpdateTexture(Texture* texture, Rect* rect, void* pixels, int pitch);
+        public unsafe partial int UpdateTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, void* pixels, int pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateTexture")]
-        public unsafe partial int UpdateTexture<T0>(Texture* texture, Rect* rect, ref T0 pixels, int pitch) where T0 : unmanaged;
+        public unsafe partial int UpdateTexture<T0>(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref T0 pixels, int pitch) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateTexture")]
-        public unsafe partial int UpdateTexture(Texture* texture, ref Rect rect, void* pixels, int pitch);
+        public unsafe partial int UpdateTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, void* pixels, int pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateTexture")]
-        public unsafe partial int UpdateTexture<T0>(Texture* texture, ref Rect rect, ref T0 pixels, int pitch) where T0 : unmanaged;
+        public unsafe partial int UpdateTexture<T0>(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref T0 pixels, int pitch) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateTexture")]
-        public unsafe partial int UpdateTexture(ref Texture texture, Rect* rect, void* pixels, int pitch);
+        public unsafe partial int UpdateTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, void* pixels, int pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateTexture")]
-        public unsafe partial int UpdateTexture<T0>(ref Texture texture, Rect* rect, ref T0 pixels, int pitch) where T0 : unmanaged;
+        public unsafe partial int UpdateTexture<T0>(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref T0 pixels, int pitch) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateTexture")]
-        public unsafe partial int UpdateTexture(ref Texture texture, ref Rect rect, void* pixels, int pitch);
+        public unsafe partial int UpdateTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, void* pixels, int pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateTexture")]
-        public partial int UpdateTexture<T0>(ref Texture texture, ref Rect rect, ref T0 pixels, int pitch) where T0 : unmanaged;
+        public partial int UpdateTexture<T0>(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref T0 pixels, int pitch) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, string Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, string Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, Rect* rect, string Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, string Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, string Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Rect rect, string Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, string Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, string Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, Rect* rect, string Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref byte Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
+        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, ref byte Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, string Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
+        public unsafe partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, string Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
+        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, string Uplane, int Upitch, ref byte Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_UpdateYUVTexture")]
-        public partial int UpdateYUVTexture(ref Texture texture, ref Rect rect, string Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
+        public partial int UpdateYUVTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, string Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTexture")]
-        public unsafe partial int LockTexture(Texture* texture, Rect* rect, void** pixels, int* pitch);
+        public unsafe partial int LockTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, void** pixels, int* pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTexture")]
-        public unsafe partial int LockTexture(Texture* texture, Rect* rect, void** pixels, ref int pitch);
+        public unsafe partial int LockTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, void** pixels, ref int pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTexture")]
-        public unsafe partial int LockTexture(Texture* texture, Rect* rect, ref void* pixels, int* pitch);
+        public unsafe partial int LockTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref void* pixels, int* pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTexture")]
-        public unsafe partial int LockTexture(Texture* texture, Rect* rect, ref void* pixels, ref int pitch);
+        public unsafe partial int LockTexture(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref void* pixels, ref int pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTexture")]
-        public unsafe partial int LockTexture(Texture* texture, ref Rect rect, void** pixels, int* pitch);
+        public unsafe partial int LockTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, void** pixels, int* pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTexture")]
-        public unsafe partial int LockTexture(Texture* texture, ref Rect rect, void** pixels, ref int pitch);
+        public unsafe partial int LockTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, void** pixels, ref int pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTexture")]
-        public unsafe partial int LockTexture(Texture* texture, ref Rect rect, ref void* pixels, int* pitch);
+        public unsafe partial int LockTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref void* pixels, int* pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTexture")]
-        public unsafe partial int LockTexture(Texture* texture, ref Rect rect, ref void* pixels, ref int pitch);
+        public unsafe partial int LockTexture(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref void* pixels, ref int pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTexture")]
-        public unsafe partial int LockTexture(ref Texture texture, Rect* rect, void** pixels, int* pitch);
+        public unsafe partial int LockTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, void** pixels, int* pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTexture")]
-        public unsafe partial int LockTexture(ref Texture texture, Rect* rect, void** pixels, ref int pitch);
+        public unsafe partial int LockTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, void** pixels, ref int pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTexture")]
-        public unsafe partial int LockTexture(ref Texture texture, Rect* rect, ref void* pixels, int* pitch);
+        public unsafe partial int LockTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref void* pixels, int* pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTexture")]
-        public unsafe partial int LockTexture(ref Texture texture, Rect* rect, ref void* pixels, ref int pitch);
+        public unsafe partial int LockTexture(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref void* pixels, ref int pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTexture")]
-        public unsafe partial int LockTexture(ref Texture texture, ref Rect rect, void** pixels, int* pitch);
+        public unsafe partial int LockTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, void** pixels, int* pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTexture")]
-        public unsafe partial int LockTexture(ref Texture texture, ref Rect rect, void** pixels, ref int pitch);
+        public unsafe partial int LockTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, void** pixels, ref int pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTexture")]
-        public unsafe partial int LockTexture(ref Texture texture, ref Rect rect, ref void* pixels, int* pitch);
+        public unsafe partial int LockTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref void* pixels, int* pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTexture")]
-        public unsafe partial int LockTexture(ref Texture texture, ref Rect rect, ref void* pixels, ref int pitch);
+        public unsafe partial int LockTexture(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref void* pixels, ref int pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 487, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTextureToSurface")]
-        public unsafe partial int LockTextureToSurface(Texture* texture, Rect* rect, Surface** surface);
+        public unsafe partial int LockTextureToSurface(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Surface** surface);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 487, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTextureToSurface")]
-        public unsafe partial int LockTextureToSurface(Texture* texture, Rect* rect, ref Surface* surface);
+        public unsafe partial int LockTextureToSurface(Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref Surface* surface);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 487, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTextureToSurface")]
-        public unsafe partial int LockTextureToSurface(Texture* texture, ref Rect rect, Surface** surface);
+        public unsafe partial int LockTextureToSurface(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, Surface** surface);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 487, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTextureToSurface")]
-        public unsafe partial int LockTextureToSurface(Texture* texture, ref Rect rect, ref Surface* surface);
+        public unsafe partial int LockTextureToSurface(Texture* texture, ref Silk.NET.Maths.Rectangle<int> rect, ref Surface* surface);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 487, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTextureToSurface")]
-        public unsafe partial int LockTextureToSurface(ref Texture texture, Rect* rect, Surface** surface);
+        public unsafe partial int LockTextureToSurface(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, Surface** surface);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 487, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTextureToSurface")]
-        public unsafe partial int LockTextureToSurface(ref Texture texture, Rect* rect, ref Surface* surface);
+        public unsafe partial int LockTextureToSurface(ref Texture texture, Silk.NET.Maths.Rectangle<int>* rect, ref Surface* surface);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 487, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTextureToSurface")]
-        public unsafe partial int LockTextureToSurface(ref Texture texture, ref Rect rect, Surface** surface);
+        public unsafe partial int LockTextureToSurface(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, Surface** surface);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 487, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_LockTextureToSurface")]
-        public unsafe partial int LockTextureToSurface(ref Texture texture, ref Rect rect, ref Surface* surface);
+        public unsafe partial int LockTextureToSurface(ref Texture texture, ref Silk.NET.Maths.Rectangle<int> rect, ref Surface* surface);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 30 in build/submodules/SDL-mirror/include/SDL_render.h")]
@@ -12970,82 +12970,82 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 606, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderSetViewport")]
-        public unsafe partial int RenderSetViewport(Renderer* renderer, Rect* rect);
+        public unsafe partial int RenderSetViewport(Renderer* renderer, Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 606, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderSetViewport")]
-        public unsafe partial int RenderSetViewport(Renderer* renderer, ref Rect rect);
+        public unsafe partial int RenderSetViewport(Renderer* renderer, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 606, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderSetViewport")]
-        public unsafe partial int RenderSetViewport(ref Renderer renderer, Rect* rect);
+        public unsafe partial int RenderSetViewport(ref Renderer renderer, Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 606, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderSetViewport")]
-        public partial int RenderSetViewport(ref Renderer renderer, ref Rect rect);
+        public partial int RenderSetViewport(ref Renderer renderer, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 614, Column 30 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGetViewport")]
-        public unsafe partial void RenderGetViewport(Renderer* renderer, Rect* rect);
+        public unsafe partial void RenderGetViewport(Renderer* renderer, Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 614, Column 30 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGetViewport")]
-        public unsafe partial void RenderGetViewport(Renderer* renderer, ref Rect rect);
+        public unsafe partial void RenderGetViewport(Renderer* renderer, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 614, Column 30 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGetViewport")]
-        public unsafe partial void RenderGetViewport(ref Renderer renderer, Rect* rect);
+        public unsafe partial void RenderGetViewport(ref Renderer renderer, Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 614, Column 30 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGetViewport")]
-        public partial void RenderGetViewport(ref Renderer renderer, ref Rect rect);
+        public partial void RenderGetViewport(ref Renderer renderer, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 628, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderSetClipRect")]
-        public unsafe partial int RenderSetClipRect(Renderer* renderer, Rect* rect);
+        public unsafe partial int RenderSetClipRect(Renderer* renderer, Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 628, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderSetClipRect")]
-        public unsafe partial int RenderSetClipRect(Renderer* renderer, ref Rect rect);
+        public unsafe partial int RenderSetClipRect(Renderer* renderer, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 628, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderSetClipRect")]
-        public unsafe partial int RenderSetClipRect(ref Renderer renderer, Rect* rect);
+        public unsafe partial int RenderSetClipRect(ref Renderer renderer, Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 628, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderSetClipRect")]
-        public partial int RenderSetClipRect(ref Renderer renderer, ref Rect rect);
+        public partial int RenderSetClipRect(ref Renderer renderer, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 640, Column 30 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGetClipRect")]
-        public unsafe partial void RenderGetClipRect(Renderer* renderer, Rect* rect);
+        public unsafe partial void RenderGetClipRect(Renderer* renderer, Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 640, Column 30 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGetClipRect")]
-        public unsafe partial void RenderGetClipRect(Renderer* renderer, ref Rect rect);
+        public unsafe partial void RenderGetClipRect(Renderer* renderer, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 640, Column 30 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGetClipRect")]
-        public unsafe partial void RenderGetClipRect(ref Renderer renderer, Rect* rect);
+        public unsafe partial void RenderGetClipRect(ref Renderer renderer, Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 640, Column 30 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGetClipRect")]
-        public partial void RenderGetClipRect(ref Renderer renderer, ref Rect rect);
+        public partial void RenderGetClipRect(ref Renderer renderer, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 650, Column 34 in build/submodules/SDL-mirror/include/SDL_render.h")]
@@ -14030,322 +14030,322 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 817, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderDrawRect")]
-        public unsafe partial int RenderDrawRect(Renderer* renderer, Rect* rect);
+        public unsafe partial int RenderDrawRect(Renderer* renderer, Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 817, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderDrawRect")]
-        public unsafe partial int RenderDrawRect(Renderer* renderer, ref Rect rect);
+        public unsafe partial int RenderDrawRect(Renderer* renderer, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 817, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderDrawRect")]
-        public unsafe partial int RenderDrawRect(ref Renderer renderer, Rect* rect);
+        public unsafe partial int RenderDrawRect(ref Renderer renderer, Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 817, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderDrawRect")]
-        public partial int RenderDrawRect(ref Renderer renderer, ref Rect rect);
+        public partial int RenderDrawRect(ref Renderer renderer, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 829, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderDrawRects")]
-        public unsafe partial int RenderDrawRects(Renderer* renderer, Rect* rects, int count);
+        public unsafe partial int RenderDrawRects(Renderer* renderer, Silk.NET.Maths.Rectangle<int>* rects, int count);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 829, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderDrawRects")]
-        public unsafe partial int RenderDrawRects(Renderer* renderer, ref Rect rects, int count);
+        public unsafe partial int RenderDrawRects(Renderer* renderer, ref Silk.NET.Maths.Rectangle<int> rects, int count);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 829, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderDrawRects")]
-        public unsafe partial int RenderDrawRects(ref Renderer renderer, Rect* rects, int count);
+        public unsafe partial int RenderDrawRects(ref Renderer renderer, Silk.NET.Maths.Rectangle<int>* rects, int count);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 829, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderDrawRects")]
-        public partial int RenderDrawRects(ref Renderer renderer, ref Rect rects, int count);
+        public partial int RenderDrawRects(ref Renderer renderer, ref Silk.NET.Maths.Rectangle<int> rects, int count);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 842, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderFillRect")]
-        public unsafe partial int RenderFillRect(Renderer* renderer, Rect* rect);
+        public unsafe partial int RenderFillRect(Renderer* renderer, Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 842, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderFillRect")]
-        public unsafe partial int RenderFillRect(Renderer* renderer, ref Rect rect);
+        public unsafe partial int RenderFillRect(Renderer* renderer, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 842, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderFillRect")]
-        public unsafe partial int RenderFillRect(ref Renderer renderer, Rect* rect);
+        public unsafe partial int RenderFillRect(ref Renderer renderer, Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 842, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderFillRect")]
-        public partial int RenderFillRect(ref Renderer renderer, ref Rect rect);
+        public partial int RenderFillRect(ref Renderer renderer, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 854, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderFillRects")]
-        public unsafe partial int RenderFillRects(Renderer* renderer, Rect* rects, int count);
+        public unsafe partial int RenderFillRects(Renderer* renderer, Silk.NET.Maths.Rectangle<int>* rects, int count);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 854, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderFillRects")]
-        public unsafe partial int RenderFillRects(Renderer* renderer, ref Rect rects, int count);
+        public unsafe partial int RenderFillRects(Renderer* renderer, ref Silk.NET.Maths.Rectangle<int> rects, int count);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 854, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderFillRects")]
-        public unsafe partial int RenderFillRects(ref Renderer renderer, Rect* rects, int count);
+        public unsafe partial int RenderFillRects(ref Renderer renderer, Silk.NET.Maths.Rectangle<int>* rects, int count);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 854, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderFillRects")]
-        public partial int RenderFillRects(ref Renderer renderer, ref Rect rects, int count);
+        public partial int RenderFillRects(ref Renderer renderer, ref Silk.NET.Maths.Rectangle<int> rects, int count);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopy")]
-        public unsafe partial int RenderCopy(Renderer* renderer, Texture* texture, Rect* srcrect, Rect* dstrect);
+        public unsafe partial int RenderCopy(Renderer* renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopy")]
-        public unsafe partial int RenderCopy(Renderer* renderer, Texture* texture, Rect* srcrect, ref Rect dstrect);
+        public unsafe partial int RenderCopy(Renderer* renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopy")]
-        public unsafe partial int RenderCopy(Renderer* renderer, Texture* texture, ref Rect srcrect, Rect* dstrect);
+        public unsafe partial int RenderCopy(Renderer* renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopy")]
-        public unsafe partial int RenderCopy(Renderer* renderer, Texture* texture, ref Rect srcrect, ref Rect dstrect);
+        public unsafe partial int RenderCopy(Renderer* renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopy")]
-        public unsafe partial int RenderCopy(Renderer* renderer, ref Texture texture, Rect* srcrect, Rect* dstrect);
+        public unsafe partial int RenderCopy(Renderer* renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopy")]
-        public unsafe partial int RenderCopy(Renderer* renderer, ref Texture texture, Rect* srcrect, ref Rect dstrect);
+        public unsafe partial int RenderCopy(Renderer* renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopy")]
-        public unsafe partial int RenderCopy(Renderer* renderer, ref Texture texture, ref Rect srcrect, Rect* dstrect);
+        public unsafe partial int RenderCopy(Renderer* renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopy")]
-        public unsafe partial int RenderCopy(Renderer* renderer, ref Texture texture, ref Rect srcrect, ref Rect dstrect);
+        public unsafe partial int RenderCopy(Renderer* renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopy")]
-        public unsafe partial int RenderCopy(ref Renderer renderer, Texture* texture, Rect* srcrect, Rect* dstrect);
+        public unsafe partial int RenderCopy(ref Renderer renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopy")]
-        public unsafe partial int RenderCopy(ref Renderer renderer, Texture* texture, Rect* srcrect, ref Rect dstrect);
+        public unsafe partial int RenderCopy(ref Renderer renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopy")]
-        public unsafe partial int RenderCopy(ref Renderer renderer, Texture* texture, ref Rect srcrect, Rect* dstrect);
+        public unsafe partial int RenderCopy(ref Renderer renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopy")]
-        public unsafe partial int RenderCopy(ref Renderer renderer, Texture* texture, ref Rect srcrect, ref Rect dstrect);
+        public unsafe partial int RenderCopy(ref Renderer renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopy")]
-        public unsafe partial int RenderCopy(ref Renderer renderer, ref Texture texture, Rect* srcrect, Rect* dstrect);
+        public unsafe partial int RenderCopy(ref Renderer renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopy")]
-        public unsafe partial int RenderCopy(ref Renderer renderer, ref Texture texture, Rect* srcrect, ref Rect dstrect);
+        public unsafe partial int RenderCopy(ref Renderer renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopy")]
-        public unsafe partial int RenderCopy(ref Renderer renderer, ref Texture texture, ref Rect srcrect, Rect* dstrect);
+        public unsafe partial int RenderCopy(ref Renderer renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopy")]
-        public partial int RenderCopy(ref Renderer renderer, ref Texture texture, ref Rect srcrect, ref Rect dstrect);
+        public partial int RenderCopy(ref Renderer renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, Rect* srcrect, Rect* dstrect, double angle, Point* center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Point* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, Rect* srcrect, Rect* dstrect, double angle, ref Point center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, ref Point center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, Rect* srcrect, ref Rect dstrect, double angle, Point* center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect, double angle, Point* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, Rect* srcrect, ref Rect dstrect, double angle, ref Point center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect, double angle, ref Point center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, ref Rect srcrect, Rect* dstrect, double angle, Point* center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Point* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, ref Rect srcrect, Rect* dstrect, double angle, ref Point center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, ref Point center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, ref Rect srcrect, ref Rect dstrect, double angle, Point* center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect, double angle, Point* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, ref Rect srcrect, ref Rect dstrect, double angle, ref Point center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect, double angle, ref Point center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, ref Texture texture, Rect* srcrect, Rect* dstrect, double angle, Point* center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Point* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, ref Texture texture, Rect* srcrect, Rect* dstrect, double angle, ref Point center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, ref Point center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, ref Texture texture, Rect* srcrect, ref Rect dstrect, double angle, Point* center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect, double angle, Point* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, ref Texture texture, Rect* srcrect, ref Rect dstrect, double angle, ref Point center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect, double angle, ref Point center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, ref Texture texture, ref Rect srcrect, Rect* dstrect, double angle, Point* center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Point* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, ref Texture texture, ref Rect srcrect, Rect* dstrect, double angle, ref Point center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, ref Point center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, ref Texture texture, ref Rect srcrect, ref Rect dstrect, double angle, Point* center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect, double angle, Point* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(Renderer* renderer, ref Texture texture, ref Rect srcrect, ref Rect dstrect, double angle, ref Point center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(Renderer* renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect, double angle, ref Point center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(ref Renderer renderer, Texture* texture, Rect* srcrect, Rect* dstrect, double angle, Point* center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(ref Renderer renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Point* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(ref Renderer renderer, Texture* texture, Rect* srcrect, Rect* dstrect, double angle, ref Point center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(ref Renderer renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, ref Point center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(ref Renderer renderer, Texture* texture, Rect* srcrect, ref Rect dstrect, double angle, Point* center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(ref Renderer renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect, double angle, Point* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(ref Renderer renderer, Texture* texture, Rect* srcrect, ref Rect dstrect, double angle, ref Point center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(ref Renderer renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect, double angle, ref Point center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(ref Renderer renderer, Texture* texture, ref Rect srcrect, Rect* dstrect, double angle, Point* center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(ref Renderer renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Point* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(ref Renderer renderer, Texture* texture, ref Rect srcrect, Rect* dstrect, double angle, ref Point center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(ref Renderer renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, ref Point center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(ref Renderer renderer, Texture* texture, ref Rect srcrect, ref Rect dstrect, double angle, Point* center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(ref Renderer renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect, double angle, Point* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(ref Renderer renderer, Texture* texture, ref Rect srcrect, ref Rect dstrect, double angle, ref Point center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(ref Renderer renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect, double angle, ref Point center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(ref Renderer renderer, ref Texture texture, Rect* srcrect, Rect* dstrect, double angle, Point* center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(ref Renderer renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Point* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(ref Renderer renderer, ref Texture texture, Rect* srcrect, Rect* dstrect, double angle, ref Point center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(ref Renderer renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, ref Point center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(ref Renderer renderer, ref Texture texture, Rect* srcrect, ref Rect dstrect, double angle, Point* center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(ref Renderer renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect, double angle, Point* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(ref Renderer renderer, ref Texture texture, Rect* srcrect, ref Rect dstrect, double angle, ref Point center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(ref Renderer renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect, double angle, ref Point center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(ref Renderer renderer, ref Texture texture, ref Rect srcrect, Rect* dstrect, double angle, Point* center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(ref Renderer renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Point* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(ref Renderer renderer, ref Texture texture, ref Rect srcrect, Rect* dstrect, double angle, ref Point center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(ref Renderer renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, ref Point center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public unsafe partial int RenderCopyEx(ref Renderer renderer, ref Texture texture, ref Rect srcrect, ref Rect dstrect, double angle, Point* center, RendererFlip flip);
+        public unsafe partial int RenderCopyEx(ref Renderer renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect, double angle, Point* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyEx")]
-        public partial int RenderCopyEx(ref Renderer renderer, ref Texture texture, ref Rect srcrect, ref Rect dstrect, double angle, ref Point center, RendererFlip flip);
+        public partial int RenderCopyEx(ref Renderer renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref Silk.NET.Maths.Rectangle<int> dstrect, double angle, ref Point center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 908, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
@@ -14490,282 +14490,282 @@ namespace Silk.NET.SDL
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyF")]
-        public unsafe partial int RenderCopyF(Renderer* renderer, Texture* texture, Rect* srcrect, FRect* dstrect);
+        public unsafe partial int RenderCopyF(Renderer* renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyF")]
-        public unsafe partial int RenderCopyF(Renderer* renderer, Texture* texture, Rect* srcrect, ref FRect dstrect);
+        public unsafe partial int RenderCopyF(Renderer* renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref FRect dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyF")]
-        public unsafe partial int RenderCopyF(Renderer* renderer, Texture* texture, ref Rect srcrect, FRect* dstrect);
+        public unsafe partial int RenderCopyF(Renderer* renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, FRect* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyF")]
-        public unsafe partial int RenderCopyF(Renderer* renderer, Texture* texture, ref Rect srcrect, ref FRect dstrect);
+        public unsafe partial int RenderCopyF(Renderer* renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref FRect dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyF")]
-        public unsafe partial int RenderCopyF(Renderer* renderer, ref Texture texture, Rect* srcrect, FRect* dstrect);
+        public unsafe partial int RenderCopyF(Renderer* renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyF")]
-        public unsafe partial int RenderCopyF(Renderer* renderer, ref Texture texture, Rect* srcrect, ref FRect dstrect);
+        public unsafe partial int RenderCopyF(Renderer* renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref FRect dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyF")]
-        public unsafe partial int RenderCopyF(Renderer* renderer, ref Texture texture, ref Rect srcrect, FRect* dstrect);
+        public unsafe partial int RenderCopyF(Renderer* renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, FRect* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyF")]
-        public unsafe partial int RenderCopyF(Renderer* renderer, ref Texture texture, ref Rect srcrect, ref FRect dstrect);
+        public unsafe partial int RenderCopyF(Renderer* renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref FRect dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyF")]
-        public unsafe partial int RenderCopyF(ref Renderer renderer, Texture* texture, Rect* srcrect, FRect* dstrect);
+        public unsafe partial int RenderCopyF(ref Renderer renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyF")]
-        public unsafe partial int RenderCopyF(ref Renderer renderer, Texture* texture, Rect* srcrect, ref FRect dstrect);
+        public unsafe partial int RenderCopyF(ref Renderer renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref FRect dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyF")]
-        public unsafe partial int RenderCopyF(ref Renderer renderer, Texture* texture, ref Rect srcrect, FRect* dstrect);
+        public unsafe partial int RenderCopyF(ref Renderer renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, FRect* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyF")]
-        public unsafe partial int RenderCopyF(ref Renderer renderer, Texture* texture, ref Rect srcrect, ref FRect dstrect);
+        public unsafe partial int RenderCopyF(ref Renderer renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref FRect dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyF")]
-        public unsafe partial int RenderCopyF(ref Renderer renderer, ref Texture texture, Rect* srcrect, FRect* dstrect);
+        public unsafe partial int RenderCopyF(ref Renderer renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyF")]
-        public unsafe partial int RenderCopyF(ref Renderer renderer, ref Texture texture, Rect* srcrect, ref FRect dstrect);
+        public unsafe partial int RenderCopyF(ref Renderer renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref FRect dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyF")]
-        public unsafe partial int RenderCopyF(ref Renderer renderer, ref Texture texture, ref Rect srcrect, FRect* dstrect);
+        public unsafe partial int RenderCopyF(ref Renderer renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, FRect* dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyF")]
-        public partial int RenderCopyF(ref Renderer renderer, ref Texture texture, ref Rect srcrect, ref FRect dstrect);
+        public partial int RenderCopyF(ref Renderer renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref FRect dstrect);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, Rect* srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, Rect* srcrect, FRect* dstrect, double angle, ref FPoint center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect, double angle, ref FPoint center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, Rect* srcrect, ref FRect dstrect, double angle, FPoint* center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref FRect dstrect, double angle, FPoint* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, Rect* srcrect, ref FRect dstrect, double angle, ref FPoint center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref FRect dstrect, double angle, ref FPoint center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, ref Rect srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, ref Rect srcrect, FRect* dstrect, double angle, ref FPoint center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, FRect* dstrect, double angle, ref FPoint center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, ref Rect srcrect, ref FRect dstrect, double angle, FPoint* center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref FRect dstrect, double angle, FPoint* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, ref Rect srcrect, ref FRect dstrect, double angle, ref FPoint center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref FRect dstrect, double angle, ref FPoint center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, ref Texture texture, Rect* srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, ref Texture texture, Rect* srcrect, FRect* dstrect, double angle, ref FPoint center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect, double angle, ref FPoint center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, ref Texture texture, Rect* srcrect, ref FRect dstrect, double angle, FPoint* center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref FRect dstrect, double angle, FPoint* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, ref Texture texture, Rect* srcrect, ref FRect dstrect, double angle, ref FPoint center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref FRect dstrect, double angle, ref FPoint center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, ref Texture texture, ref Rect srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, ref Texture texture, ref Rect srcrect, FRect* dstrect, double angle, ref FPoint center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, FRect* dstrect, double angle, ref FPoint center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, ref Texture texture, ref Rect srcrect, ref FRect dstrect, double angle, FPoint* center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref FRect dstrect, double angle, FPoint* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(Renderer* renderer, ref Texture texture, ref Rect srcrect, ref FRect dstrect, double angle, ref FPoint center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(Renderer* renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref FRect dstrect, double angle, ref FPoint center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(ref Renderer renderer, Texture* texture, Rect* srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(ref Renderer renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(ref Renderer renderer, Texture* texture, Rect* srcrect, FRect* dstrect, double angle, ref FPoint center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(ref Renderer renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect, double angle, ref FPoint center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(ref Renderer renderer, Texture* texture, Rect* srcrect, ref FRect dstrect, double angle, FPoint* center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(ref Renderer renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref FRect dstrect, double angle, FPoint* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(ref Renderer renderer, Texture* texture, Rect* srcrect, ref FRect dstrect, double angle, ref FPoint center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(ref Renderer renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref FRect dstrect, double angle, ref FPoint center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(ref Renderer renderer, Texture* texture, ref Rect srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(ref Renderer renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(ref Renderer renderer, Texture* texture, ref Rect srcrect, FRect* dstrect, double angle, ref FPoint center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(ref Renderer renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, FRect* dstrect, double angle, ref FPoint center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(ref Renderer renderer, Texture* texture, ref Rect srcrect, ref FRect dstrect, double angle, FPoint* center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(ref Renderer renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref FRect dstrect, double angle, FPoint* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(ref Renderer renderer, Texture* texture, ref Rect srcrect, ref FRect dstrect, double angle, ref FPoint center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(ref Renderer renderer, Texture* texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref FRect dstrect, double angle, ref FPoint center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(ref Renderer renderer, ref Texture texture, Rect* srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(ref Renderer renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(ref Renderer renderer, ref Texture texture, Rect* srcrect, FRect* dstrect, double angle, ref FPoint center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(ref Renderer renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect, double angle, ref FPoint center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(ref Renderer renderer, ref Texture texture, Rect* srcrect, ref FRect dstrect, double angle, FPoint* center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(ref Renderer renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref FRect dstrect, double angle, FPoint* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(ref Renderer renderer, ref Texture texture, Rect* srcrect, ref FRect dstrect, double angle, ref FPoint center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(ref Renderer renderer, ref Texture texture, Silk.NET.Maths.Rectangle<int>* srcrect, ref FRect dstrect, double angle, ref FPoint center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(ref Renderer renderer, ref Texture texture, ref Rect srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(ref Renderer renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(ref Renderer renderer, ref Texture texture, ref Rect srcrect, FRect* dstrect, double angle, ref FPoint center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(ref Renderer renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, FRect* dstrect, double angle, ref FPoint center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public unsafe partial int RenderCopyExF(ref Renderer renderer, ref Texture texture, ref Rect srcrect, ref FRect dstrect, double angle, FPoint* center, RendererFlip flip);
+        public unsafe partial int RenderCopyExF(ref Renderer renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref FRect dstrect, double angle, FPoint* center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderCopyExF")]
-        public partial int RenderCopyExF(ref Renderer renderer, ref Texture texture, ref Rect srcrect, ref FRect dstrect, double angle, ref FPoint center, RendererFlip flip);
+        public partial int RenderCopyExF(ref Renderer renderer, ref Texture texture, ref Silk.NET.Maths.Rectangle<int> srcrect, ref FRect dstrect, double angle, ref FPoint center, RendererFlip flip);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1055, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderReadPixels")]
-        public unsafe partial int RenderReadPixels(Renderer* renderer, Rect* rect, uint format, void* pixels, int pitch);
+        public unsafe partial int RenderReadPixels(Renderer* renderer, Silk.NET.Maths.Rectangle<int>* rect, uint format, void* pixels, int pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1055, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderReadPixels")]
-        public unsafe partial int RenderReadPixels<T0>(Renderer* renderer, Rect* rect, uint format, ref T0 pixels, int pitch) where T0 : unmanaged;
+        public unsafe partial int RenderReadPixels<T0>(Renderer* renderer, Silk.NET.Maths.Rectangle<int>* rect, uint format, ref T0 pixels, int pitch) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1055, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderReadPixels")]
-        public unsafe partial int RenderReadPixels(Renderer* renderer, ref Rect rect, uint format, void* pixels, int pitch);
+        public unsafe partial int RenderReadPixels(Renderer* renderer, ref Silk.NET.Maths.Rectangle<int> rect, uint format, void* pixels, int pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1055, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderReadPixels")]
-        public unsafe partial int RenderReadPixels<T0>(Renderer* renderer, ref Rect rect, uint format, ref T0 pixels, int pitch) where T0 : unmanaged;
+        public unsafe partial int RenderReadPixels<T0>(Renderer* renderer, ref Silk.NET.Maths.Rectangle<int> rect, uint format, ref T0 pixels, int pitch) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1055, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderReadPixels")]
-        public unsafe partial int RenderReadPixels(ref Renderer renderer, Rect* rect, uint format, void* pixels, int pitch);
+        public unsafe partial int RenderReadPixels(ref Renderer renderer, Silk.NET.Maths.Rectangle<int>* rect, uint format, void* pixels, int pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1055, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderReadPixels")]
-        public unsafe partial int RenderReadPixels<T0>(ref Renderer renderer, Rect* rect, uint format, ref T0 pixels, int pitch) where T0 : unmanaged;
+        public unsafe partial int RenderReadPixels<T0>(ref Renderer renderer, Silk.NET.Maths.Rectangle<int>* rect, uint format, ref T0 pixels, int pitch) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1055, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderReadPixels")]
-        public unsafe partial int RenderReadPixels(ref Renderer renderer, ref Rect rect, uint format, void* pixels, int pitch);
+        public unsafe partial int RenderReadPixels(ref Renderer renderer, ref Silk.NET.Maths.Rectangle<int> rect, uint format, void* pixels, int pitch);
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1055, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderReadPixels")]
-        public partial int RenderReadPixels<T0>(ref Renderer renderer, ref Rect rect, uint format, ref T0 pixels, int pitch) where T0 : unmanaged;
+        public partial int RenderReadPixels<T0>(ref Renderer renderer, ref Silk.NET.Maths.Rectangle<int> rect, uint format, ref T0 pixels, int pitch) where T0 : unmanaged;
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1063, Column 30 in build/submodules/SDL-mirror/include/SDL_render.h")]

@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -63,9 +63,9 @@ namespace Silk.NET.Maths
                     else
 #endif
                 {
-                    var v = *(ushort*)&x;
+                    var v = *(ushort*) &x;
                     v &= 0x7FFF;
-                    return *(T*)&v;
+                    return *(T*) &v;
                 }
             }
 
@@ -94,9 +94,9 @@ namespace Silk.NET.Maths
                     else
 #endif
                     {
-                        var v = *(uint*)&x;
+                        var v = *(uint*) &x;
                         v &= 0x7FFF_FFFF;
-                        return *(T*)&v;
+                        return *(T*) &v;
                     }
                 }
 
@@ -126,9 +126,9 @@ namespace Silk.NET.Maths
                     else
 #endif
                     {
-                        var v = *(uint*)&x;
+                        var v = *(uint*) &x;
                         v &= 0x7FFF_FFFF;
-                        return *(T*)&v;
+                        return *(T*) &v;
                     }
                 }
 
@@ -154,7 +154,7 @@ namespace Silk.NET.Maths
 #endif
                     var px = (sbyte) (object) x;
                     sbyte mask = (sbyte) (px >> (sizeof(sbyte) - 1));
-                    return (T)(object)(sbyte)((px + mask) ^ mask); 
+                    return (T) (object) (sbyte) ((px + mask) ^ mask);
                 }
 
                 return Byte(x);
@@ -190,7 +190,7 @@ namespace Silk.NET.Maths
 #endif
                     var px = (int) (object) x;
                     int mask = (int) (px >> (sizeof(int) - 1));
-                    return (T)(object)(int)((px + mask) ^ mask); 
+                    return (T) (object) (int) ((px + mask) ^ mask);
                 }
 
                 return UInt(x);
@@ -214,7 +214,7 @@ namespace Silk.NET.Maths
                 {
                     var px = (long) (object) x;
                     long mask = (long) (px >> (sizeof(long) - 1));
-                    return (T)(object)(long)((px + mask) ^ mask); 
+                    return (T) (object) (long) ((px + mask) ^ mask);
                 }
 
                 return ULong(x);
@@ -250,7 +250,7 @@ namespace Silk.NET.Maths
 #endif
                     var px = (short) (object) x;
                     short mask = (short) (px >> (sizeof(short) - 1));
-                    return (T)(object)(short)((px + mask) ^ mask); 
+                    return (T) (object) (short) ((px + mask) ^ mask);
                 }
 
                 return UShort(x);
@@ -2194,7 +2194,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(byte))
                 {
-                    return ((byte)(object)x) > 0 ? 1 : 0;
+                    return ((byte) (object) x) > 0 ? 1 : 0;
                 }
 
                 return Short(x);
@@ -2216,7 +2216,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(ushort))
                 {
-                    return ((ushort)(object)x) > 0 ? 1 : 0;
+                    return ((ushort) (object) x) > 0 ? 1 : 0;
                 }
 
                 return Int(x);
@@ -2238,7 +2238,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(uint))
                 {
-                    return ((uint)(object)x) > 0 ? 1 : 0;
+                    return ((uint) (object) x) > 0 ? 1 : 0;
                 }
 
                 return Long(x);
@@ -2260,7 +2260,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(ulong))
                 {
-                    return ((ulong)(object)x) > 0 ? 1 : 0;
+                    return ((ulong) (object) x) > 0 ? 1 : 0;
                 }
 
                 ThrowUnsupportedType();
@@ -2692,7 +2692,7 @@ namespace Silk.NET.Maths
                     }
 #endif      
 #if !MATHF
-                    return (T) (object) (sbyte)(float) Math.Sqrt((float) (sbyte)(object) x);
+                    return (T) (object) (sbyte) (float) Math.Sqrt((float) (sbyte) (object) x);
 #else
                     return (T) (object) (sbyte)(float)MathF.Sqrt((float) (sbyte)(object) x);
 #endif
@@ -2719,7 +2719,7 @@ namespace Silk.NET.Maths
                     }
 #endif      
 #if !MATHF
-                    return (T) (object) (byte)(float) Math.Sqrt((float) (byte)(object) x);
+                    return (T) (object) (byte) (float) Math.Sqrt((float) (byte) (object) x);
 #else
                     return (T) (object) (byte)(float)MathF.Sqrt((float) (byte)(object) x);
 #endif
@@ -2746,7 +2746,7 @@ namespace Silk.NET.Maths
                     }
 #endif      
 #if !MATHF
-                    return (T) (object) (short)(float) Math.Sqrt((float) (short)(object) x);
+                    return (T) (object) (short) (float) Math.Sqrt((float) (short) (object) x);
 #else
                     return (T) (object) (short)(float)MathF.Sqrt((float) (short)(object) x);
 #endif
@@ -2773,7 +2773,7 @@ namespace Silk.NET.Maths
                     }
 #endif      
 #if !MATHF
-                    return (T) (object) (ushort)(float) Math.Sqrt((float) (ushort)(object) x);
+                    return (T) (object) (ushort) (float) Math.Sqrt((float) (ushort) (object) x);
 #else
                     return (T) (object) (ushort)(float)MathF.Sqrt((float) (ushort)(object) x);
 #endif
@@ -2800,7 +2800,7 @@ namespace Silk.NET.Maths
                     }
 #endif      
 #if !MATHF
-                    return (T) (object) (int)(float) Math.Sqrt((float) (int)(object) x);
+                    return (T) (object) (int) (float) Math.Sqrt((float) (int) (object) x);
 #else
                     return (T) (object) (int)(float)MathF.Sqrt((float) (int)(object) x);
 #endif
@@ -2827,7 +2827,7 @@ namespace Silk.NET.Maths
                     }
 #endif      
 #if !MATHF
-                    return (T) (object) (uint)(float) Math.Sqrt((float) (uint)(object) x);
+                    return (T) (object) (uint) (float) Math.Sqrt((float) (uint) (object) x);
 #else
                     return (T) (object) (uint)(float)MathF.Sqrt((float) (uint)(object) x);
 #endif
@@ -2854,7 +2854,7 @@ namespace Silk.NET.Maths
                     }
 #endif      
 #if !MATHF
-                    return (T) (object) (long)(float) Math.Sqrt((float) (long)(object) x);
+                    return (T) (object) (long) (float) Math.Sqrt((float) (long) (object) x);
 #else
                     return (T) (object) (long)(float)MathF.Sqrt((float) (long)(object) x);
 #endif
@@ -2881,7 +2881,7 @@ namespace Silk.NET.Maths
                     }
 #endif      
 #if !MATHF
-                    return (T) (object) (ulong)(float) Math.Sqrt((float) (ulong)(object) x);
+                    return (T) (object) (ulong) (float) Math.Sqrt((float) (ulong) (object) x);
 #else
                     return (T) (object) (ulong)(float)MathF.Sqrt((float) (ulong)(object) x);
 #endif
@@ -4406,7 +4406,7 @@ namespace Silk.NET.Maths
                 return default;
             }
         }
-        
+
         /// <summary>
         /// Returns the smaller of two numbers.
         /// </summary>
@@ -4554,7 +4554,7 @@ namespace Silk.NET.Maths
                 return default;
             }
         }
-        
+
         /// <summary>
         /// Returns a specified number raised to the specified power.
         /// </summary>
@@ -4562,33 +4562,33 @@ namespace Silk.NET.Maths
         /// <param name="y">A number that specifies a power.</param>
         /// <typeparam name="T">The type of <paramref name="x"/> and <paramref name="y"/>.</typeparam>
         /// <returns>The number <paramref name="x"/> raised to the power <paramref name="y"/>.</returns>
-///         <remarks>
-///         <format type="text/markdown"><![CDATA[  
-///   
-/// ## Remarks  
-///             The following table indicates the return value when various values or ranges of values are specified for the `x` and `y` parameters. For more information, see <xref:System.Single.PositiveInfinity?displayProperty=nameWithType>, <xref:System.Single.NegativeInfinity?displayProperty=nameWithType>, and <xref:System.Single.NaN?displayProperty=nameWithType>.  
-///   
-///             |Parameters|Return value|  
-///         |----------------|------------------|  
-///         |`x` or `y` = `NaN`.|`NaN`|  
-///         |`x` = Any value except `NaN`; `y` = 0.|1|  
-///         |`x` = `NegativeInfinity`; `y` < 0.|0|  
-///         |`x` = `NegativeInfinity`; `y` is a positive odd integer.|`NegativeInfinity`|  
-///         |`x` = `NegativeInfinity`; `y` is positive but not an odd integer.|`PositiveInfinity`|  
-///         |`x` < 0 but not `NegativeInfinity`; `y` is not an integer, `NegativeInfinity`, or `PositiveInfinity`.|`NaN`|  
-///         |`x` = -1; `y` = `NegativeInfinity` or `PositiveInfinity`.|`NaN`|  
-///         |-1 < `x` < 1; `y` = `NegativeInfinity`.|`PositiveInfinity`|  
-///         |-1 < `x` < 1; `y` = `PositiveInfinity`.|0|  
-///         |`x` < -1 or `x` > 1; `y` = `NegativeInfinity`.|0|  
-///         |`x` < -1 or `x` > 1; `y` = `PositiveInfinity`.|`PositiveInfinity`|  
-///         |`x` = 0; `y` < 0.|`PositiveInfinity`|  
-///         |`x` = 0; `y` > 0.|0|  
-///         |`x` = 1; `y` is any value except `NaN`.|1|  
-///         |`x` = `PositiveInfinity`; `y` < 0.|0|  
-///         |`x` = `PositiveInfinity`; `y` > 0.|`PositiveInfinity`|  
-///   
-///         ]]></format>
-///         </remarks>
+        ///         <remarks>
+        ///         <format type="text/markdown"><![CDATA[  
+        ///   
+        /// ## Remarks  
+        ///             The following table indicates the return value when various values or ranges of values are specified for the `x` and `y` parameters. For more information, see <xref:System.Single.PositiveInfinity?displayProperty=nameWithType>, <xref:System.Single.NegativeInfinity?displayProperty=nameWithType>, and <xref:System.Single.NaN?displayProperty=nameWithType>.  
+        ///   
+        ///             |Parameters|Return value|  
+        ///         |----------------|------------------|  
+        ///         |`x` or `y` = `NaN`.|`NaN`|  
+        ///         |`x` = Any value except `NaN`; `y` = 0.|1|  
+        ///         |`x` = `NegativeInfinity`; `y` < 0.|0|  
+        ///         |`x` = `NegativeInfinity`; `y` is a positive odd integer.|`NegativeInfinity`|  
+        ///         |`x` = `NegativeInfinity`; `y` is positive but not an odd integer.|`PositiveInfinity`|  
+        ///         |`x` < 0 but not `NegativeInfinity`; `y` is not an integer, `NegativeInfinity`, or `PositiveInfinity`.|`NaN`|  
+        ///         |`x` = -1; `y` = `NegativeInfinity` or `PositiveInfinity`.|`NaN`|  
+        ///         |-1 < `x` < 1; `y` = `NegativeInfinity`.|`PositiveInfinity`|  
+        ///         |-1 < `x` < 1; `y` = `PositiveInfinity`.|0|  
+        ///         |`x` < -1 or `x` > 1; `y` = `NegativeInfinity`.|0|  
+        ///         |`x` < -1 or `x` > 1; `y` = `PositiveInfinity`.|`PositiveInfinity`|  
+        ///         |`x` = 0; `y` < 0.|`PositiveInfinity`|  
+        ///         |`x` = 0; `y` > 0.|0|  
+        ///         |`x` = 1; `y` is any value except `NaN`.|1|  
+        ///         |`x` = `PositiveInfinity`; `y` < 0.|0|  
+        ///         |`x` = `PositiveInfinity`; `y` > 0.|`PositiveInfinity`|  
+        ///   
+        ///         ]]></format>
+        ///         </remarks>
         [MethodImpl(MaxOpt)]
         public static T Pow<T>(T x, T y) where T : unmanaged
         {
@@ -4645,7 +4645,7 @@ namespace Silk.NET.Maths
                         var oabsy = Abs(py);
                         var absy = oabsy;
                         sbyte result = 1;
-                        while(true)
+                        while (true)
                         {
                             if ((absy & 1) != 0)
                                 result *= px;
@@ -4656,13 +4656,13 @@ namespace Silk.NET.Maths
                         }
 
                         if (oabsy == py)
-                            return (T)(object)result;
-                        return (T)(object)(sbyte)(1f / result);
+                            return (T) (object) result;
+                        return (T) (object) (sbyte) (1f / result);
                     }
                     else
                     {
-                        if (px != 0) return (T)(object)(sbyte)1;
-                        else return (T)(object)(sbyte)0;
+                        if (px != 0) return (T) (object) (sbyte) 1;
+                        else return (T) (object) (sbyte) 0;
                     }
                 }
 
@@ -4681,7 +4681,7 @@ namespace Silk.NET.Maths
                         var oabsy = py;
                         var absy = oabsy;
                         byte result = 1;
-                        while(true)
+                        while (true)
                         {
                             if ((absy & 1) != 0)
                                 result *= px;
@@ -4691,12 +4691,12 @@ namespace Silk.NET.Maths
                             px *= px;
                         }
 
-                        return (T)(object)result;
+                        return (T) (object) result;
                     }
                     else
                     {
-                        if (px != 0) return (T)(object)(byte)1;
-                        else return (T)(object)(byte)0;
+                        if (px != 0) return (T) (object) (byte) 1;
+                        else return (T) (object) (byte) 0;
                     }
                 }
 
@@ -4715,7 +4715,7 @@ namespace Silk.NET.Maths
                         var oabsy = Abs(py);
                         var absy = oabsy;
                         short result = 1;
-                        while(true)
+                        while (true)
                         {
                             if ((absy & 1) != 0)
                                 result *= px;
@@ -4726,13 +4726,13 @@ namespace Silk.NET.Maths
                         }
 
                         if (oabsy == py)
-                            return (T)(object)result;
-                        return (T)(object)(short)(1f / result);
+                            return (T) (object) result;
+                        return (T) (object) (short) (1f / result);
                     }
                     else
                     {
-                        if (px != 0) return (T)(object)(short)1;
-                        else return (T)(object)(short)0;
+                        if (px != 0) return (T) (object) (short) 1;
+                        else return (T) (object) (short) 0;
                     }
                 }
 
@@ -4751,7 +4751,7 @@ namespace Silk.NET.Maths
                         var oabsy = py;
                         var absy = oabsy;
                         ushort result = 1;
-                        while(true)
+                        while (true)
                         {
                             if ((absy & 1) != 0)
                                 result *= px;
@@ -4761,12 +4761,12 @@ namespace Silk.NET.Maths
                             px *= px;
                         }
 
-                        return (T)(object)result;
+                        return (T) (object) result;
                     }
                     else
                     {
-                        if (px != 0) return (T)(object)(ushort)1;
-                        else return (T)(object)(ushort)0;
+                        if (px != 0) return (T) (object) (ushort) 1;
+                        else return (T) (object) (ushort) 0;
                     }
                 }
 
@@ -4785,7 +4785,7 @@ namespace Silk.NET.Maths
                         var oabsy = Abs(py);
                         var absy = oabsy;
                         int result = 1;
-                        while(true)
+                        while (true)
                         {
                             if ((absy & 1) != 0)
                                 result *= px;
@@ -4796,13 +4796,13 @@ namespace Silk.NET.Maths
                         }
 
                         if (oabsy == py)
-                            return (T)(object)result;
-                        return (T)(object)(int)(1f / result);
+                            return (T) (object) result;
+                        return (T) (object) (int) (1f / result);
                     }
                     else
                     {
-                        if (px != 0) return (T)(object)(int)1;
-                        else return (T)(object)(int)0;
+                        if (px != 0) return (T) (object) (int) 1;
+                        else return (T) (object) (int) 0;
                     }
                 }
 
@@ -4821,7 +4821,7 @@ namespace Silk.NET.Maths
                         var oabsy = py;
                         var absy = oabsy;
                         uint result = 1;
-                        while(true)
+                        while (true)
                         {
                             if ((absy & 1) != 0)
                                 result *= px;
@@ -4831,12 +4831,12 @@ namespace Silk.NET.Maths
                             px *= px;
                         }
 
-                        return (T)(object)result;
+                        return (T) (object) result;
                     }
                     else
                     {
-                        if (px != 0) return (T)(object)(uint)1;
-                        else return (T)(object)(uint)0;
+                        if (px != 0) return (T) (object) (uint) 1;
+                        else return (T) (object) (uint) 0;
                     }
                 }
 
@@ -4855,7 +4855,7 @@ namespace Silk.NET.Maths
                         var oabsy = Abs(py);
                         var absy = oabsy;
                         long result = 1;
-                        while(true)
+                        while (true)
                         {
                             if ((absy & 1) != 0)
                                 result *= px;
@@ -4866,13 +4866,13 @@ namespace Silk.NET.Maths
                         }
 
                         if (oabsy == py)
-                            return (T)(object)result;
-                        return (T)(object)(long)(1f / result);
+                            return (T) (object) result;
+                        return (T) (object) (long) (1f / result);
                     }
                     else
                     {
-                        if (px != 0) return (T)(object)(long)1;
-                        else return (T)(object)(long)0;
+                        if (px != 0) return (T) (object) (long) 1;
+                        else return (T) (object) (long) 0;
                     }
                 }
 
@@ -4891,7 +4891,7 @@ namespace Silk.NET.Maths
                         var oabsy = py;
                         var absy = oabsy;
                         ulong result = 1;
-                        while(true)
+                        while (true)
                         {
                             if ((absy & 1) != 0)
                                 result *= px;
@@ -4901,12 +4901,12 @@ namespace Silk.NET.Maths
                             px *= px;
                         }
 
-                        return (T)(object)result;
+                        return (T) (object) result;
                     }
                     else
                     {
-                        if (px != 0) return (T)(object)(ulong)1;
-                        else return (T)(object)(ulong)0;
+                        if (px != 0) return (T) (object) (ulong) 1;
+                        else return (T) (object) (ulong) 0;
                     }
                 }
 
@@ -5103,7 +5103,7 @@ namespace Silk.NET.Maths
 #if MATHF
                 return (T) (object) (Half) (float) MathF.Round((float)(Half) (object) x, digits);
 #else
-                return (T) (object) (Half) (float) Math.Round((float)(Half) (object) x, digits);
+                return (T) (object) (Half) (float) Math.Round((float) (Half) (object) x, digits);
 #endif
             }
 
@@ -5117,19 +5117,19 @@ namespace Silk.NET.Maths
 #if MATHF
                     return (T) (object) (float) MathF.Round((float)(object) x, digits);
 #else
-                    return (T) (object) (float) Math.Round((float)(object) x, digits);
+                    return (T) (object) (float) Math.Round((float) (object) x, digits);
 #endif
                 }
 
                 return Double(x, digits);
             }
-            
+
             [MethodImpl(MaxOpt)]
             static T Double(T x, int digits)
             {
                 if (typeof(T) == typeof(double))
                 {
-                    return (T) (object) (double) Math.Round((double)(object) x, digits);
+                    return (T) (object) (double) Math.Round((double) (object) x, digits);
                 }
 
                 return Decimal(x, digits);
@@ -5148,16 +5148,16 @@ namespace Silk.NET.Maths
             static T Other(T x, int digits)
             {
                 if (typeof(T) == typeof(sbyte)
-                ||  typeof(T) == typeof(byte)
-                ||  typeof(T) == typeof(ushort)
-                ||  typeof(T) == typeof(short)
-                ||  typeof(T) == typeof(uint)
-                ||  typeof(T) == typeof(int)
-                ||  typeof(T) == typeof(ulong)
-                ||  typeof(T) == typeof(long)
+                || typeof(T) == typeof(byte)
+                || typeof(T) == typeof(ushort)
+                || typeof(T) == typeof(short)
+                || typeof(T) == typeof(uint)
+                || typeof(T) == typeof(int)
+                || typeof(T) == typeof(ulong)
+                || typeof(T) == typeof(long)
                 )
                     return x;
-                    
+
                 ThrowUnsupportedType();
                 return default;
             }
@@ -5184,7 +5184,7 @@ namespace Silk.NET.Maths
 #if MATHF
                 return (T) (object) (Half) (float) MathF.Round((float)(Half) (object) x, digits, mode);
 #else
-                return (T) (object) (Half) (float) Math.Round((float)(Half) (object) x, digits, mode);
+                return (T) (object) (Half) (float) Math.Round((float) (Half) (object) x, digits, mode);
 #endif
             }
 
@@ -5198,19 +5198,19 @@ namespace Silk.NET.Maths
 #if MATHF
                     return (T) (object) (float) MathF.Round((float)(object) x, digits, mode);
 #else
-                    return (T) (object) (float) Math.Round((float)(object) x, digits, mode);
+                    return (T) (object) (float) Math.Round((float) (object) x, digits, mode);
 #endif
                 }
 
                 return Double(x, digits, mode);
             }
-            
+
             [MethodImpl(MaxOpt)]
             static T Double(T x, int digits, MidpointRounding mode)
             {
                 if (typeof(T) == typeof(double))
                 {
-                    return (T) (object) (double) Math.Round((double)(object) x, digits, mode);
+                    return (T) (object) (double) Math.Round((double) (object) x, digits, mode);
                 }
 
                 return Decimal(x, digits, mode);
@@ -5229,17 +5229,17 @@ namespace Silk.NET.Maths
             static T Other(T x, int digits, MidpointRounding mode)
             {
                 if (typeof(T) == typeof(sbyte)
-                ||  typeof(T) == typeof(byte)
-                ||  typeof(T) == typeof(ushort)
-                ||  typeof(T) == typeof(short)
-                ||  typeof(T) == typeof(uint)
-                ||  typeof(T) == typeof(int)
-                ||  typeof(T) == typeof(ulong)
-                ||  typeof(T) == typeof(long)
-                
+                || typeof(T) == typeof(byte)
+                || typeof(T) == typeof(ushort)
+                || typeof(T) == typeof(short)
+                || typeof(T) == typeof(uint)
+                || typeof(T) == typeof(int)
+                || typeof(T) == typeof(ulong)
+                || typeof(T) == typeof(long)
+
                 )
                     return x;
-                    
+
                 ThrowUnsupportedType();
                 return default;
             }

@@ -4,8 +4,8 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
-using System.Drawing;
 using Silk.NET.Core;
+using Silk.NET.Maths;
 
 namespace Silk.NET.Windowing
 {
@@ -71,7 +71,7 @@ namespace Silk.NET.Windowing
         /// </summary>
         /// <param name="window">The window to get size information from.</param>
         /// <returns>The full size of the window (including both content area and borders)</returns>
-        public static Size GetFullSize(this IWindow window) => Size.Add(window.Size, window.BorderSize.Size);
+        public static Vector2D<int> GetFullSize(this IWindow window) => Vector2D.Add(window.Size, window.BorderSize.Size);
 
         /// <summary>
         /// Centers this window to the given monitor or, if null, the current monitor the window's on.
@@ -83,13 +83,13 @@ namespace Silk.NET.Windowing
             monitor ??= window.Monitor;
             var monitorBounds = monitor.Bounds;
             var windowFullSize = window.GetFullSize();
-            window.Position = Point.Add
+            window.Position = Vector2D.Add
             (
-                monitorBounds.Location,
-                new Size
+                monitorBounds.Origin,
+                new Vector2D<int>
                 (
-                    monitorBounds.Size.Width / 2 - windowFullSize.Width / 2,
-                    monitorBounds.Size.Height / 2 - windowFullSize.Height / 2
+                    monitorBounds.Size.X / 2 - windowFullSize.X / 2,
+                    monitorBounds.Size.Y / 2 - windowFullSize.Y / 2
                 )
             );
         }

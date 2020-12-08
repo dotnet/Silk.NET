@@ -1052,7 +1052,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 463, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe void CreateQuaternionFromMatrix(this Assimp thisApi, System.Numerics.Quaternion* quat, Span<AssimpMatrix3x3> mat)
+        public static unsafe void CreateQuaternionFromMatrix(this Assimp thisApi, System.Numerics.Quaternion* quat, Span<Silk.NET.Maths.Matrix3X3<float>> mat)
         {
             // SpanOverloader
             thisApi.CreateQuaternionFromMatrix(quat, ref mat.GetPinnableReference());
@@ -1060,7 +1060,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 463, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe void CreateQuaternionFromMatrix(this Assimp thisApi, Span<System.Numerics.Quaternion> quat, AssimpMatrix3x3* mat)
+        public static unsafe void CreateQuaternionFromMatrix(this Assimp thisApi, Span<System.Numerics.Quaternion> quat, Silk.NET.Maths.Matrix3X3<float>* mat)
         {
             // SpanOverloader
             thisApi.CreateQuaternionFromMatrix(ref quat.GetPinnableReference(), mat);
@@ -1068,7 +1068,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 463, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe void CreateQuaternionFromMatrix(this Assimp thisApi, Span<System.Numerics.Quaternion> quat, Span<AssimpMatrix3x3> mat)
+        public static unsafe void CreateQuaternionFromMatrix(this Assimp thisApi, Span<System.Numerics.Quaternion> quat, Span<Silk.NET.Maths.Matrix3X3<float>> mat)
         {
             // SpanOverloader
             thisApi.CreateQuaternionFromMatrix(ref quat.GetPinnableReference(), ref mat.GetPinnableReference());
@@ -1204,7 +1204,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 494, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe void TransposeMatrix3(this Assimp thisApi, Span<AssimpMatrix3x3> mat)
+        public static unsafe void TransposeMatrix3(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> mat)
         {
             // SpanOverloader
             thisApi.TransposeMatrix3(ref mat.GetPinnableReference());
@@ -1212,7 +1212,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 502, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe void TransformVecByMatrix3(this Assimp thisApi, System.Numerics.Vector3* vec, Span<AssimpMatrix3x3> mat)
+        public static unsafe void TransformVecByMatrix3(this Assimp thisApi, System.Numerics.Vector3* vec, Span<Silk.NET.Maths.Matrix3X3<float>> mat)
         {
             // SpanOverloader
             thisApi.TransformVecByMatrix3(vec, ref mat.GetPinnableReference());
@@ -1220,7 +1220,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 502, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe void TransformVecByMatrix3(this Assimp thisApi, Span<System.Numerics.Vector3> vec, AssimpMatrix3x3* mat)
+        public static unsafe void TransformVecByMatrix3(this Assimp thisApi, Span<System.Numerics.Vector3> vec, Silk.NET.Maths.Matrix3X3<float>* mat)
         {
             // SpanOverloader
             thisApi.TransformVecByMatrix3(ref vec.GetPinnableReference(), mat);
@@ -1228,7 +1228,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 502, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe void TransformVecByMatrix3(this Assimp thisApi, Span<System.Numerics.Vector3> vec, Span<AssimpMatrix3x3> mat)
+        public static unsafe void TransformVecByMatrix3(this Assimp thisApi, Span<System.Numerics.Vector3> vec, Span<Silk.NET.Maths.Matrix3X3<float>> mat)
         {
             // SpanOverloader
             thisApi.TransformVecByMatrix3(ref vec.GetPinnableReference(), ref mat.GetPinnableReference());
@@ -1284,7 +1284,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 529, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe void MultiplyMatrix3(this Assimp thisApi, AssimpMatrix3x3* dst, Span<AssimpMatrix3x3> src)
+        public static unsafe void MultiplyMatrix3(this Assimp thisApi, Silk.NET.Maths.Matrix3X3<float>* dst, Span<Silk.NET.Maths.Matrix3X3<float>> src)
         {
             // SpanOverloader
             thisApi.MultiplyMatrix3(dst, ref src.GetPinnableReference());
@@ -1292,7 +1292,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 529, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe void MultiplyMatrix3(this Assimp thisApi, Span<AssimpMatrix3x3> dst, AssimpMatrix3x3* src)
+        public static unsafe void MultiplyMatrix3(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> dst, Silk.NET.Maths.Matrix3X3<float>* src)
         {
             // SpanOverloader
             thisApi.MultiplyMatrix3(ref dst.GetPinnableReference(), src);
@@ -1300,7 +1300,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 529, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe void MultiplyMatrix3(this Assimp thisApi, Span<AssimpMatrix3x3> dst, Span<AssimpMatrix3x3> src)
+        public static unsafe void MultiplyMatrix3(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> dst, Span<Silk.NET.Maths.Matrix3X3<float>> src)
         {
             // SpanOverloader
             thisApi.MultiplyMatrix3(ref dst.GetPinnableReference(), ref src.GetPinnableReference());
@@ -1308,7 +1308,7 @@ namespace Silk.NET.Assimp
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 537, Column 17 in src/Assimp/Include\\assimp/cimport.h")]
-        public static unsafe void IdentityMatrix3(this Assimp thisApi, Span<AssimpMatrix3x3> mat)
+        public static unsafe void IdentityMatrix3(this Assimp thisApi, Span<Silk.NET.Maths.Matrix3X3<float>> mat)
         {
             // SpanOverloader
             thisApi.IdentityMatrix3(ref mat.GetPinnableReference());

@@ -9,6 +9,7 @@ using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using Silk.NET.Maths;
 
 namespace Silk.NET.OpenGL.Legacy
 {
@@ -43,15 +44,47 @@ namespace Silk.NET.OpenGL.Legacy
             return _extensions.Contains("GL_" + (extension.StartsWith("GL_") ? extension.Substring(3) : extension));
         }
 
+        /// <summary>
+        ///     Invokes a call to <c>glClearColor()</c>, setting the clear color of the OpenGL context.
+        /// </summary>
+        /// <param name="color">
+        ///     New clear color for the OpenGL context.
+        /// </param>
         public void ClearColor(Color color)
-        {
-            ClearColor(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f, color.A / 255.0f);
-        }
+            => ClearColor(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f, color.A / 255.0f);
 
+        /// <summary>
+        ///     Invokes a call to <c>glClearColor()</c>, setting the clear color of the OpenGL context.
+        /// </summary>
+        /// <param name="color">
+        ///     New clear color for the OpenGL context.
+        /// </param>
+        public void ClearColor<T>(Vector4D<T> color) where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+            => ClearColor(Scalar.As<T, float>(color.X) / 255.0f,
+                          Scalar.As<T, float>(color.Y) / 255.0f,
+                          Scalar.As<T, float>(color.Z) / 255.0f,
+                          Scalar.As<T, float>(color.W) / 255.0f);
+
+        /// <summary>
+        ///     Invokes a call to <c>glBlendColor()</c>, setting the blend color of the OpenGL context.
+        /// </summary>
+        /// <param name="color">
+        ///     New blend color for the OpenGL context.
+        /// </param>
         public void BlendColor(Color color)
-        {
-            BlendColor(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f, color.A / 255.0f);
-        }
+            => BlendColor(color.R / 255.0f, color.G / 255.0f, color.B / 255.0f, color.A / 255.0f);
+
+        /// <summary>
+        ///     Invokes a call to <c>glBlendColor()</c>, setting the blend color of the OpenGL context.
+        /// </summary>
+        /// <param name="color">
+        ///     New blend color for the OpenGL context.
+        /// </param>
+        public void BlendColor<T>(Vector4D<T> color) where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
+            => BlendColor(Scalar.As<T, float>(color.X) / 255.0f,
+                          Scalar.As<T, float>(color.Y) / 255.0f,
+                          Scalar.As<T, float>(color.Z) / 255.0f,
+                          Scalar.As<T, float>(color.W) / 255.0f);
 
         public void Uniform2(int location, ref Vector2 vector)
         {
@@ -266,19 +299,134 @@ namespace Silk.NET.OpenGL.Legacy
             }
         }
 
-        public void Viewport(Size size)
-        {
-            Viewport(0, 0, (uint)size.Width, (uint)size.Height);
-        }
+        /// <summary>
+        ///     Set the viewport for the OpenGL context.
+        /// </summary>
+        /// <param name="size">
+        ///     Specifies the width and height of the viewport.
+        /// </param>
+        /// <remarks>
+        ///  <para>
+        ///     The location of the viewport will default to 0,0.
+        ///  </para>
+        ///  <para>
+        ///     When an OpenGL context is first attached to a window, width and height are set to the dimensions of
+        ///     that window.
+        ///  </para>
+        ///  <para>
+        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glViewport.xhtml">
+        ///       OpenGL Documentation
+        ///     </see>
+        ///  </para>
+        /// </remarks>
+        public void Viewport(Size size) => Viewport(0, 0, (uint) size.Width, (uint) size.Height);
 
+        /// <summary>
+        ///     Set the viewport for the OpenGL context.
+        /// </summary>
+        /// <param name="size">
+        ///     Specifies the width and height of the viewport.
+        /// </param>
+        /// <remarks>
+        ///  <para>
+        ///     The location of the viewport will default to 0,0.
+        ///  </para>
+        ///  <para>
+        ///     When an OpenGL context is first attached to a window, width and height are set to the dimensions of
+        ///     that window.
+        ///  </para>
+        ///  <para>
+        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glViewport.xhtml">
+        ///       OpenGL Documentation
+        ///     </see>
+        ///  </para>
+        /// </remarks>
+        public void Viewport(Vector2D<int> size) => Viewport(0, 0, (uint) size.X, (uint) size.Y);
+
+        /// <summary>
+        ///      Set the viewport for the OpenGL context.
+        /// </summary>
+        /// <param name="location">
+        ///      Specifies the lower left corner of the viewport rectangle, in pixels.
+        /// </param>
+        /// <param name="size">
+        /// Specifies the width and height of the viewport.
+        /// </param>
+        /// <remarks>
+        ///  <para>
+        ///     When an OpenGL context is first attached to a window, width and height are set to the dimensions of
+        ///     that window.
+        ///  </para>
+        ///  <para>
+        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glViewport.xhtml">
+        ///       OpenGL Documentation
+        ///     </see>
+        ///  </para>
+        /// </remarks>
         public void Viewport(Point location, Size size)
-        {
-            Viewport(location.X, location.Y, (uint) size.Width, (uint) size.Height);
-        }
+            => Viewport(location.X, location.Y, (uint) size.Width, (uint) size.Height);
 
-        public void Viewport(Rectangle rectangle)
-        {
-            Viewport(rectangle.X, rectangle.Y, (uint) rectangle.Width, (uint) rectangle.Height);
-        }
+        /// <summary>
+        ///      Set the viewport for the OpenGL context.
+        /// </summary>
+        /// <param name="location">
+        ///      Specifies the lower left corner of the viewport rectangle, in pixels.
+        /// </param>
+        /// <param name="size">
+        /// Specifies the width and height of the viewport.
+        /// </param>
+        /// <remarks>
+        ///  <para>
+        ///     When an OpenGL context is first attached to a window, width and height are set to the dimensions of
+        ///     that window.
+        ///  </para>
+        ///  <para>
+        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glViewport.xhtml">
+        ///       OpenGL Documentation
+        ///     </see>
+        ///  </para>
+        /// </remarks>
+        public void Viewport(Vector2D<int> location, Vector2D<int> size)
+            => Viewport(location.X, location.Y, (uint) size.X, (uint) size.Y);
+
+        /// <summary>
+        ///     Set the viewport for the OpenGL context.
+        /// </summary>
+        /// <param name="rectangle">
+        ///     Specifies the viewport rectangle explicitly.
+        /// </param>
+        /// <remarks>
+        ///  <para>
+        ///     When an OpenGL context is first attached to a window, width and height are set to the dimensions of
+        ///     that window.
+        ///  </para>
+        ///  <para>
+        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glViewport.xhtml">
+        ///       OpenGL Documentation
+        ///     </see>
+        ///  </para>
+        /// </remarks>
+        public void Viewport(System.Drawing.Rectangle rectangle)
+            => Viewport(rectangle.X, rectangle.Y, (uint) rectangle.Width, (uint) rectangle.Height);
+
+        /// <summary>
+        ///     Set the viewport for the OpenGL context.
+        /// </summary>
+        /// <param name="rectangle">
+        ///     Specifies the viewport rectangle explicitly.
+        /// </param>
+        /// <remarks>
+        ///  <para>
+        ///     When an OpenGL context is first attached to a window, width and height are set to the dimensions of
+        ///     that window.
+        ///  </para>
+        ///  <para>
+        ///     <see href="https://www.khronos.org/registry/OpenGL-Refpages/gl4/html/glViewport.xhtml">
+        ///       OpenGL Documentation
+        ///     </see>
+        ///  </para>
+        /// </remarks>
+        public void Viewport(Rectangle<int> rectangle)
+            => Viewport(rectangle.Origin.X, rectangle.Origin.Y, (uint) rectangle.Size.X, (uint) rectangle.Size.Y);
     }
 }

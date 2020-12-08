@@ -5,7 +5,7 @@
 
 using System;
 using System.Collections.Generic;
-using System.Drawing;
+using Silk.NET.Maths;
 using Silk.NET.SDL;
 
 namespace Silk.NET.Windowing.Sdl
@@ -18,12 +18,12 @@ namespace Silk.NET.Windowing.Sdl
         public string Name => SdlProvider.SDL.Value.GetDisplayNameS(Index);
         public int Index { get; }
 
-        public unsafe Rectangle Bounds
+        public unsafe Rectangle<int> Bounds
         {
             get
             {
-                Rectangle ret;
-                SdlProvider.SDL.Value.GetDisplayUsableBounds(Index, (Rect*) &ret);
+                Rectangle<int> ret;
+                SdlProvider.SDL.Value.GetDisplayUsableBounds(Index, &ret);
                 return ret;
             }
         }
@@ -34,7 +34,7 @@ namespace Silk.NET.Windowing.Sdl
             {
                 DisplayMode mode;
                 SdlProvider.SDL.Value.GetCurrentDisplayMode(Index, &mode);
-                return new VideoMode(new Size(mode.W, mode.H), mode.RefreshRate);
+                return new VideoMode(new Vector2D<int>(mode.W, mode.H), mode.RefreshRate);
             }
         }
 
@@ -52,7 +52,7 @@ namespace Silk.NET.Windowing.Sdl
             {
                 DisplayMode mode;
                 sdl.GetDisplayMode(Index, i, &mode);
-                ret[i] = new VideoMode(new Size(mode.W, mode.H), mode.RefreshRate);
+                ret[i] = new VideoMode(new Vector2D<int>(mode.W, mode.H), mode.RefreshRate);
             }
 
             return ret;

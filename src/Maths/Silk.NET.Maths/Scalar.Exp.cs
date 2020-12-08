@@ -1,4 +1,4 @@
-﻿// This file is part of Silk.NET.
+// This file is part of Silk.NET.
 // 
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
@@ -120,7 +120,7 @@ namespace Silk.NET.Maths
         }
 
         private static ulong[] __two_to_jby64 = InitExp();
-        
+
         [MethodImpl(MaxOpt)]
         private static float CoreFastExp(float x)
         {
@@ -135,7 +135,7 @@ namespace Silk.NET.Maths
                     return Vector128.CreateScalarUnsafe(x).AsUInt32().ToScalar(); // ToScalar "relies" on Sse (the fallback is garbage)
                 else
 #endif
-                    return *(uint*)&x; // this produces bad codegen on < net5
+                return *(uint*) &x; // this produces bad codegen on < net5
             }
 
             [MethodImpl(MaxOpt)]
@@ -146,9 +146,9 @@ namespace Silk.NET.Maths
                     return Vector128.CreateScalarUnsafe(x).AsSingle().ToScalar(); // ToScalar "relies" on Sse (the fallback is garbage)
                 else
 #endif
-                    return *(float*)&x; // this produces bad codegen on < net5
+                return *(float*) &x; // this produces bad codegen on < net5
             }
-            
+
             [MethodImpl(MaxOpt)]
             static unsafe ulong asuint64(double x)
             {
@@ -157,7 +157,7 @@ namespace Silk.NET.Maths
                     return Vector128.CreateScalarUnsafe(x).AsUInt64().ToScalar(); // ToScalar "relies" on Sse (the fallback is garbage)
                 else
 #endif
-                    return *(ulong*)&x; // this produces bad codegen on < net5
+                return *(ulong*) &x; // this produces bad codegen on < net5
             }
 
             [MethodImpl(MaxOpt)]
@@ -168,10 +168,10 @@ namespace Silk.NET.Maths
                     return Vector128.CreateScalarUnsafe(x).AsDouble().ToScalar(); // ToScalar "relies" on Sse (the fallback is garbage)
                 else
 #endif
-                    return *(double*)&x; // this produces bad codegen on < net5
+                return *(double*) &x; // this produces bad codegen on < net5
             }
 
-            double  q, dn, r, z;
+            double q, dn, r, z;
             ulong n, j;
 
             uint top = top12f(x);
@@ -182,7 +182,7 @@ namespace Silk.NET.Maths
             }
             else
             {
-                if(float.IsNaN(x))
+                if (float.IsNaN(x))
                     return x;
 
                 if (float.IsNegativeInfinity(x))
@@ -193,9 +193,10 @@ namespace Silk.NET.Maths
                 // const int EXP_Y_ZERO = 2;
                 const float EXPF_FARG_MIN = -103.972076416f;
                 const uint PINFBITPATT_SP32 = 0x7f800000;
-                
-                if (x > EXPF_FARG_MAX){
-                    if(asuint32(x) == PINFBITPATT_SP32)
+
+                if (x > EXPF_FARG_MAX)
+                {
+                    if (asuint32(x) == PINFBITPATT_SP32)
                         return asfloat(PINFBITPATT_SP32);
 
                     return float.PositiveInfinity;
@@ -206,8 +207,8 @@ namespace Silk.NET.Maths
                     return 1f;
                 }
             }
-            
-            ENDCHECK:
+
+        ENDCHECK:
             const float EXPF_TBLSZ_BY_LN2 = 92.3324826169f;
             const float EXPF_HUGE = 6.7553994e+15f;
             const float EXPF_LN2_BY_TBLSZ = 0.01083042469f;
@@ -221,25 +222,25 @@ namespace Silk.NET.Maths
              */
             dn = z + EXPF_HUGE;
 
-            n    = asuint64(dn);
+            n = asuint64(dn);
 
-            dn  -=  EXPF_HUGE;
+            dn -= EXPF_HUGE;
 
-            r  = x - dn * EXPF_LN2_BY_TBLSZ;
+            r = x - dn * EXPF_LN2_BY_TBLSZ;
 
-            j  = n % EXPF_TABLE_SIZE;
+            j = n % EXPF_TABLE_SIZE;
 
-            double qtmp  = 0.5f + (0.26567055393f * r);
+            double qtmp = 0.5f + (0.26567055393f * r);
 
             double r2 = r * r;
 
             double tbl = asdouble(__two_to_jby64[j] + (n << (52 - EXPF_N)));
 
-            q  = r  + (r2 * qtmp);
+            q = r + (r2 * qtmp);
 
-            double result = tbl + tbl* q;
+            double result = tbl + tbl * q;
 
-            return (float)(result);
+            return (float) (result);
         }
     }
 }

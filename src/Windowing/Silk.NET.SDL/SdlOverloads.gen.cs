@@ -3820,7 +3820,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 127, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool HasIntersection(this Sdl thisApi, Rect* A, Span<Rect> B)
+        public static unsafe SdlBool HasIntersection(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* A, Span<Silk.NET.Maths.Rectangle<int>> B)
         {
             // SpanOverloader
             return thisApi.HasIntersection(A, ref B.GetPinnableReference());
@@ -3828,7 +3828,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 127, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool HasIntersection(this Sdl thisApi, Span<Rect> A, Rect* B)
+        public static unsafe SdlBool HasIntersection(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Silk.NET.Maths.Rectangle<int>* B)
         {
             // SpanOverloader
             return thisApi.HasIntersection(ref A.GetPinnableReference(), B);
@@ -3836,7 +3836,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 127, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool HasIntersection(this Sdl thisApi, Span<Rect> A, Span<Rect> B)
+        public static unsafe SdlBool HasIntersection(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Span<Silk.NET.Maths.Rectangle<int>> B)
         {
             // SpanOverloader
             return thisApi.HasIntersection(ref A.GetPinnableReference(), ref B.GetPinnableReference());
@@ -3844,7 +3844,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRect(this Sdl thisApi, Rect* A, Rect* B, Span<Rect> result)
+        public static unsafe SdlBool IntersectRect(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* A, Silk.NET.Maths.Rectangle<int>* B, Span<Silk.NET.Maths.Rectangle<int>> result)
         {
             // SpanOverloader
             return thisApi.IntersectRect(A, B, ref result.GetPinnableReference());
@@ -3852,7 +3852,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRect(this Sdl thisApi, Rect* A, Span<Rect> B, Rect* result)
+        public static unsafe SdlBool IntersectRect(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* A, Span<Silk.NET.Maths.Rectangle<int>> B, Silk.NET.Maths.Rectangle<int>* result)
         {
             // SpanOverloader
             return thisApi.IntersectRect(A, ref B.GetPinnableReference(), result);
@@ -3860,7 +3860,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRect(this Sdl thisApi, Rect* A, Span<Rect> B, Span<Rect> result)
+        public static unsafe SdlBool IntersectRect(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* A, Span<Silk.NET.Maths.Rectangle<int>> B, Span<Silk.NET.Maths.Rectangle<int>> result)
         {
             // SpanOverloader
             return thisApi.IntersectRect(A, ref B.GetPinnableReference(), ref result.GetPinnableReference());
@@ -3868,7 +3868,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRect(this Sdl thisApi, Span<Rect> A, Rect* B, Rect* result)
+        public static unsafe SdlBool IntersectRect(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Silk.NET.Maths.Rectangle<int>* B, Silk.NET.Maths.Rectangle<int>* result)
         {
             // SpanOverloader
             return thisApi.IntersectRect(ref A.GetPinnableReference(), B, result);
@@ -3876,7 +3876,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRect(this Sdl thisApi, Span<Rect> A, Rect* B, Span<Rect> result)
+        public static unsafe SdlBool IntersectRect(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Silk.NET.Maths.Rectangle<int>* B, Span<Silk.NET.Maths.Rectangle<int>> result)
         {
             // SpanOverloader
             return thisApi.IntersectRect(ref A.GetPinnableReference(), B, ref result.GetPinnableReference());
@@ -3884,7 +3884,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRect(this Sdl thisApi, Span<Rect> A, Span<Rect> B, Rect* result)
+        public static unsafe SdlBool IntersectRect(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Span<Silk.NET.Maths.Rectangle<int>> B, Silk.NET.Maths.Rectangle<int>* result)
         {
             // SpanOverloader
             return thisApi.IntersectRect(ref A.GetPinnableReference(), ref B.GetPinnableReference(), result);
@@ -3892,7 +3892,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRect(this Sdl thisApi, Span<Rect> A, Span<Rect> B, Span<Rect> result)
+        public static unsafe SdlBool IntersectRect(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Span<Silk.NET.Maths.Rectangle<int>> B, Span<Silk.NET.Maths.Rectangle<int>> result)
         {
             // SpanOverloader
             return thisApi.IntersectRect(ref A.GetPinnableReference(), ref B.GetPinnableReference(), ref result.GetPinnableReference());
@@ -3900,7 +3900,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 142, Column 30 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe void UnionRect(this Sdl thisApi, Rect* A, Rect* B, Span<Rect> result)
+        public static unsafe void UnionRect(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* A, Silk.NET.Maths.Rectangle<int>* B, Span<Silk.NET.Maths.Rectangle<int>> result)
         {
             // SpanOverloader
             thisApi.UnionRect(A, B, ref result.GetPinnableReference());
@@ -3908,7 +3908,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 142, Column 30 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe void UnionRect(this Sdl thisApi, Rect* A, Span<Rect> B, Rect* result)
+        public static unsafe void UnionRect(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* A, Span<Silk.NET.Maths.Rectangle<int>> B, Silk.NET.Maths.Rectangle<int>* result)
         {
             // SpanOverloader
             thisApi.UnionRect(A, ref B.GetPinnableReference(), result);
@@ -3916,7 +3916,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 142, Column 30 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe void UnionRect(this Sdl thisApi, Rect* A, Span<Rect> B, Span<Rect> result)
+        public static unsafe void UnionRect(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* A, Span<Silk.NET.Maths.Rectangle<int>> B, Span<Silk.NET.Maths.Rectangle<int>> result)
         {
             // SpanOverloader
             thisApi.UnionRect(A, ref B.GetPinnableReference(), ref result.GetPinnableReference());
@@ -3924,7 +3924,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 142, Column 30 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe void UnionRect(this Sdl thisApi, Span<Rect> A, Rect* B, Rect* result)
+        public static unsafe void UnionRect(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Silk.NET.Maths.Rectangle<int>* B, Silk.NET.Maths.Rectangle<int>* result)
         {
             // SpanOverloader
             thisApi.UnionRect(ref A.GetPinnableReference(), B, result);
@@ -3932,7 +3932,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 142, Column 30 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe void UnionRect(this Sdl thisApi, Span<Rect> A, Rect* B, Span<Rect> result)
+        public static unsafe void UnionRect(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Silk.NET.Maths.Rectangle<int>* B, Span<Silk.NET.Maths.Rectangle<int>> result)
         {
             // SpanOverloader
             thisApi.UnionRect(ref A.GetPinnableReference(), B, ref result.GetPinnableReference());
@@ -3940,7 +3940,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 142, Column 30 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe void UnionRect(this Sdl thisApi, Span<Rect> A, Span<Rect> B, Rect* result)
+        public static unsafe void UnionRect(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Span<Silk.NET.Maths.Rectangle<int>> B, Silk.NET.Maths.Rectangle<int>* result)
         {
             // SpanOverloader
             thisApi.UnionRect(ref A.GetPinnableReference(), ref B.GetPinnableReference(), result);
@@ -3948,7 +3948,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 142, Column 30 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe void UnionRect(this Sdl thisApi, Span<Rect> A, Span<Rect> B, Span<Rect> result)
+        public static unsafe void UnionRect(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Span<Silk.NET.Maths.Rectangle<int>> B, Span<Silk.NET.Maths.Rectangle<int>> result)
         {
             // SpanOverloader
             thisApi.UnionRect(ref A.GetPinnableReference(), ref B.GetPinnableReference(), ref result.GetPinnableReference());
@@ -3956,7 +3956,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 151, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool EnclosePoints(this Sdl thisApi, Point* points, int count, Rect* clip, Span<Rect> result)
+        public static unsafe SdlBool EnclosePoints(this Sdl thisApi, Point* points, int count, Silk.NET.Maths.Rectangle<int>* clip, Span<Silk.NET.Maths.Rectangle<int>> result)
         {
             // SpanOverloader
             return thisApi.EnclosePoints(points, count, clip, ref result.GetPinnableReference());
@@ -3964,7 +3964,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 151, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool EnclosePoints(this Sdl thisApi, Point* points, int count, Span<Rect> clip, Rect* result)
+        public static unsafe SdlBool EnclosePoints(this Sdl thisApi, Point* points, int count, Span<Silk.NET.Maths.Rectangle<int>> clip, Silk.NET.Maths.Rectangle<int>* result)
         {
             // SpanOverloader
             return thisApi.EnclosePoints(points, count, ref clip.GetPinnableReference(), result);
@@ -3972,7 +3972,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 151, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool EnclosePoints(this Sdl thisApi, Point* points, int count, Span<Rect> clip, Span<Rect> result)
+        public static unsafe SdlBool EnclosePoints(this Sdl thisApi, Point* points, int count, Span<Silk.NET.Maths.Rectangle<int>> clip, Span<Silk.NET.Maths.Rectangle<int>> result)
         {
             // SpanOverloader
             return thisApi.EnclosePoints(points, count, ref clip.GetPinnableReference(), ref result.GetPinnableReference());
@@ -3980,7 +3980,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 151, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool EnclosePoints(this Sdl thisApi, Span<Point> points, int count, Rect* clip, Rect* result)
+        public static unsafe SdlBool EnclosePoints(this Sdl thisApi, Span<Point> points, int count, Silk.NET.Maths.Rectangle<int>* clip, Silk.NET.Maths.Rectangle<int>* result)
         {
             // SpanOverloader
             return thisApi.EnclosePoints(ref points.GetPinnableReference(), count, clip, result);
@@ -3988,7 +3988,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 151, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool EnclosePoints(this Sdl thisApi, Span<Point> points, int count, Rect* clip, Span<Rect> result)
+        public static unsafe SdlBool EnclosePoints(this Sdl thisApi, Span<Point> points, int count, Silk.NET.Maths.Rectangle<int>* clip, Span<Silk.NET.Maths.Rectangle<int>> result)
         {
             // SpanOverloader
             return thisApi.EnclosePoints(ref points.GetPinnableReference(), count, clip, ref result.GetPinnableReference());
@@ -3996,7 +3996,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 151, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool EnclosePoints(this Sdl thisApi, Span<Point> points, int count, Span<Rect> clip, Rect* result)
+        public static unsafe SdlBool EnclosePoints(this Sdl thisApi, Span<Point> points, int count, Span<Silk.NET.Maths.Rectangle<int>> clip, Silk.NET.Maths.Rectangle<int>* result)
         {
             // SpanOverloader
             return thisApi.EnclosePoints(ref points.GetPinnableReference(), count, ref clip.GetPinnableReference(), result);
@@ -4004,7 +4004,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 151, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool EnclosePoints(this Sdl thisApi, Span<Point> points, int count, Span<Rect> clip, Span<Rect> result)
+        public static unsafe SdlBool EnclosePoints(this Sdl thisApi, Span<Point> points, int count, Span<Silk.NET.Maths.Rectangle<int>> clip, Span<Silk.NET.Maths.Rectangle<int>> result)
         {
             // SpanOverloader
             return thisApi.EnclosePoints(ref points.GetPinnableReference(), count, ref clip.GetPinnableReference(), ref result.GetPinnableReference());
@@ -4012,7 +4012,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Rect* rect, int* X1, int* Y1, int* X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, int* X1, int* Y1, int* X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, X1, Y1, X2, ref Y2.GetPinnableReference());
@@ -4020,7 +4020,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Rect* rect, int* X1, int* Y1, Span<int> X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, int* X1, int* Y1, Span<int> X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, X1, Y1, ref X2.GetPinnableReference(), Y2);
@@ -4028,7 +4028,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Rect* rect, int* X1, int* Y1, Span<int> X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, int* X1, int* Y1, Span<int> X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, X1, Y1, ref X2.GetPinnableReference(), ref Y2.GetPinnableReference());
@@ -4036,7 +4036,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Rect* rect, int* X1, Span<int> Y1, int* X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, int* X1, Span<int> Y1, int* X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, X1, ref Y1.GetPinnableReference(), X2, Y2);
@@ -4044,7 +4044,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Rect* rect, int* X1, Span<int> Y1, int* X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, int* X1, Span<int> Y1, int* X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, X1, ref Y1.GetPinnableReference(), X2, ref Y2.GetPinnableReference());
@@ -4052,7 +4052,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Rect* rect, int* X1, Span<int> Y1, Span<int> X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, int* X1, Span<int> Y1, Span<int> X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, X1, ref Y1.GetPinnableReference(), ref X2.GetPinnableReference(), Y2);
@@ -4060,7 +4060,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Rect* rect, int* X1, Span<int> Y1, Span<int> X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, int* X1, Span<int> Y1, Span<int> X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, X1, ref Y1.GetPinnableReference(), ref X2.GetPinnableReference(), ref Y2.GetPinnableReference());
@@ -4068,7 +4068,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Rect* rect, Span<int> X1, int* Y1, int* X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, int* Y1, int* X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, ref X1.GetPinnableReference(), Y1, X2, Y2);
@@ -4076,7 +4076,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Rect* rect, Span<int> X1, int* Y1, int* X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, int* Y1, int* X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, ref X1.GetPinnableReference(), Y1, X2, ref Y2.GetPinnableReference());
@@ -4084,7 +4084,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Rect* rect, Span<int> X1, int* Y1, Span<int> X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, int* Y1, Span<int> X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, ref X1.GetPinnableReference(), Y1, ref X2.GetPinnableReference(), Y2);
@@ -4092,7 +4092,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Rect* rect, Span<int> X1, int* Y1, Span<int> X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, int* Y1, Span<int> X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, ref X1.GetPinnableReference(), Y1, ref X2.GetPinnableReference(), ref Y2.GetPinnableReference());
@@ -4100,7 +4100,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Rect* rect, Span<int> X1, Span<int> Y1, int* X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, Span<int> Y1, int* X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, ref X1.GetPinnableReference(), ref Y1.GetPinnableReference(), X2, Y2);
@@ -4108,7 +4108,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Rect* rect, Span<int> X1, Span<int> Y1, int* X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, Span<int> Y1, int* X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, ref X1.GetPinnableReference(), ref Y1.GetPinnableReference(), X2, ref Y2.GetPinnableReference());
@@ -4116,7 +4116,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Rect* rect, Span<int> X1, Span<int> Y1, Span<int> X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, Span<int> Y1, Span<int> X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, ref X1.GetPinnableReference(), ref Y1.GetPinnableReference(), ref X2.GetPinnableReference(), Y2);
@@ -4124,7 +4124,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Rect* rect, Span<int> X1, Span<int> Y1, Span<int> X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, Span<int> Y1, Span<int> X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, ref X1.GetPinnableReference(), ref Y1.GetPinnableReference(), ref X2.GetPinnableReference(), ref Y2.GetPinnableReference());
@@ -4132,7 +4132,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Rect> rect, int* X1, int* Y1, int* X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, int* Y1, int* X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), X1, Y1, X2, Y2);
@@ -4140,7 +4140,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Rect> rect, int* X1, int* Y1, int* X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, int* Y1, int* X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), X1, Y1, X2, ref Y2.GetPinnableReference());
@@ -4148,7 +4148,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Rect> rect, int* X1, int* Y1, Span<int> X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, int* Y1, Span<int> X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), X1, Y1, ref X2.GetPinnableReference(), Y2);
@@ -4156,7 +4156,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Rect> rect, int* X1, int* Y1, Span<int> X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, int* Y1, Span<int> X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), X1, Y1, ref X2.GetPinnableReference(), ref Y2.GetPinnableReference());
@@ -4164,7 +4164,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Rect> rect, int* X1, Span<int> Y1, int* X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, Span<int> Y1, int* X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), X1, ref Y1.GetPinnableReference(), X2, Y2);
@@ -4172,7 +4172,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Rect> rect, int* X1, Span<int> Y1, int* X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, Span<int> Y1, int* X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), X1, ref Y1.GetPinnableReference(), X2, ref Y2.GetPinnableReference());
@@ -4180,7 +4180,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Rect> rect, int* X1, Span<int> Y1, Span<int> X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, Span<int> Y1, Span<int> X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), X1, ref Y1.GetPinnableReference(), ref X2.GetPinnableReference(), Y2);
@@ -4188,7 +4188,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Rect> rect, int* X1, Span<int> Y1, Span<int> X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, Span<int> Y1, Span<int> X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), X1, ref Y1.GetPinnableReference(), ref X2.GetPinnableReference(), ref Y2.GetPinnableReference());
@@ -4196,7 +4196,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Rect> rect, Span<int> X1, int* Y1, int* X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, int* Y1, int* X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), ref X1.GetPinnableReference(), Y1, X2, Y2);
@@ -4204,7 +4204,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Rect> rect, Span<int> X1, int* Y1, int* X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, int* Y1, int* X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), ref X1.GetPinnableReference(), Y1, X2, ref Y2.GetPinnableReference());
@@ -4212,7 +4212,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Rect> rect, Span<int> X1, int* Y1, Span<int> X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, int* Y1, Span<int> X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), ref X1.GetPinnableReference(), Y1, ref X2.GetPinnableReference(), Y2);
@@ -4220,7 +4220,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Rect> rect, Span<int> X1, int* Y1, Span<int> X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, int* Y1, Span<int> X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), ref X1.GetPinnableReference(), Y1, ref X2.GetPinnableReference(), ref Y2.GetPinnableReference());
@@ -4228,7 +4228,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Rect> rect, Span<int> X1, Span<int> Y1, int* X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, Span<int> Y1, int* X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), ref X1.GetPinnableReference(), ref Y1.GetPinnableReference(), X2, Y2);
@@ -4236,7 +4236,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Rect> rect, Span<int> X1, Span<int> Y1, int* X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, Span<int> Y1, int* X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), ref X1.GetPinnableReference(), ref Y1.GetPinnableReference(), X2, ref Y2.GetPinnableReference());
@@ -4244,7 +4244,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Rect> rect, Span<int> X1, Span<int> Y1, Span<int> X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, Span<int> Y1, Span<int> X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), ref X1.GetPinnableReference(), ref Y1.GetPinnableReference(), ref X2.GetPinnableReference(), Y2);
@@ -4252,7 +4252,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL-mirror/include/SDL_rect.h")]
-        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Rect> rect, Span<int> X1, Span<int> Y1, Span<int> X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, Span<int> Y1, Span<int> X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), ref X1.GetPinnableReference(), ref Y1.GetPinnableReference(), ref X2.GetPinnableReference(), ref Y2.GetPinnableReference());
@@ -4852,7 +4852,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 369, Column 34 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe SdlBool SetClipRect(this Sdl thisApi, Surface* surface, Span<Rect> rect)
+        public static unsafe SdlBool SetClipRect(this Sdl thisApi, Surface* surface, Span<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             return thisApi.SetClipRect(surface, ref rect.GetPinnableReference());
@@ -4860,7 +4860,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 369, Column 34 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe SdlBool SetClipRect(this Sdl thisApi, Span<Surface> surface, Rect* rect)
+        public static unsafe SdlBool SetClipRect(this Sdl thisApi, Span<Surface> surface, Silk.NET.Maths.Rectangle<int>* rect)
         {
             // SpanOverloader
             return thisApi.SetClipRect(ref surface.GetPinnableReference(), rect);
@@ -4868,7 +4868,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 369, Column 34 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe SdlBool SetClipRect(this Sdl thisApi, Span<Surface> surface, Span<Rect> rect)
+        public static unsafe SdlBool SetClipRect(this Sdl thisApi, Span<Surface> surface, Span<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             return thisApi.SetClipRect(ref surface.GetPinnableReference(), ref rect.GetPinnableReference());
@@ -4876,7 +4876,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 378, Column 30 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe void GetClipRect(this Sdl thisApi, Surface* surface, Span<Rect> rect)
+        public static unsafe void GetClipRect(this Sdl thisApi, Surface* surface, Span<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             thisApi.GetClipRect(surface, ref rect.GetPinnableReference());
@@ -4884,7 +4884,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 378, Column 30 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe void GetClipRect(this Sdl thisApi, Span<Surface> surface, Rect* rect)
+        public static unsafe void GetClipRect(this Sdl thisApi, Span<Surface> surface, Silk.NET.Maths.Rectangle<int>* rect)
         {
             // SpanOverloader
             thisApi.GetClipRect(ref surface.GetPinnableReference(), rect);
@@ -4892,7 +4892,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 378, Column 30 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe void GetClipRect(this Sdl thisApi, Span<Surface> surface, Span<Rect> rect)
+        public static unsafe void GetClipRect(this Sdl thisApi, Span<Surface> surface, Span<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             thisApi.GetClipRect(ref surface.GetPinnableReference(), ref rect.GetPinnableReference());
@@ -4964,7 +4964,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 422, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int FillRect(this Sdl thisApi, Surface* dst, Span<Rect> rect, uint color)
+        public static unsafe int FillRect(this Sdl thisApi, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> rect, uint color)
         {
             // SpanOverloader
             return thisApi.FillRect(dst, ref rect.GetPinnableReference(), color);
@@ -4972,7 +4972,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 422, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int FillRect(this Sdl thisApi, Span<Surface> dst, Rect* rect, uint color)
+        public static unsafe int FillRect(this Sdl thisApi, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* rect, uint color)
         {
             // SpanOverloader
             return thisApi.FillRect(ref dst.GetPinnableReference(), rect, color);
@@ -4980,7 +4980,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 422, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int FillRect(this Sdl thisApi, Span<Surface> dst, Span<Rect> rect, uint color)
+        public static unsafe int FillRect(this Sdl thisApi, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> rect, uint color)
         {
             // SpanOverloader
             return thisApi.FillRect(ref dst.GetPinnableReference(), ref rect.GetPinnableReference(), color);
@@ -4988,7 +4988,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int FillRects(this Sdl thisApi, Surface* dst, Span<Rect> rects, int count, uint color)
+        public static unsafe int FillRects(this Sdl thisApi, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> rects, int count, uint color)
         {
             // SpanOverloader
             return thisApi.FillRects(dst, ref rects.GetPinnableReference(), count, color);
@@ -4996,7 +4996,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int FillRects(this Sdl thisApi, Span<Surface> dst, Rect* rects, int count, uint color)
+        public static unsafe int FillRects(this Sdl thisApi, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* rects, int count, uint color)
         {
             // SpanOverloader
             return thisApi.FillRects(ref dst.GetPinnableReference(), rects, count, color);
@@ -5004,7 +5004,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int FillRects(this Sdl thisApi, Span<Surface> dst, Span<Rect> rects, int count, uint color)
+        public static unsafe int FillRects(this Sdl thisApi, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> rects, int count, uint color)
         {
             // SpanOverloader
             return thisApi.FillRects(ref dst.GetPinnableReference(), ref rects.GetPinnableReference(), count, color);
@@ -5012,7 +5012,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlit(this Sdl thisApi, Surface* src, Rect* srcrect, Surface* dst, Span<Rect> dstrect)
+        public static unsafe int UpperBlit(this Sdl thisApi, Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlit(src, srcrect, dst, ref dstrect.GetPinnableReference());
@@ -5020,7 +5020,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlit(this Sdl thisApi, Surface* src, Rect* srcrect, Span<Surface> dst, Rect* dstrect)
+        public static unsafe int UpperBlit(this Sdl thisApi, Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlit(src, srcrect, ref dst.GetPinnableReference(), dstrect);
@@ -5028,7 +5028,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlit(this Sdl thisApi, Surface* src, Rect* srcrect, Span<Surface> dst, Span<Rect> dstrect)
+        public static unsafe int UpperBlit(this Sdl thisApi, Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlit(src, srcrect, ref dst.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -5036,7 +5036,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlit(this Sdl thisApi, Surface* src, Span<Rect> srcrect, Surface* dst, Rect* dstrect)
+        public static unsafe int UpperBlit(this Sdl thisApi, Surface* src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlit(src, ref srcrect.GetPinnableReference(), dst, dstrect);
@@ -5044,7 +5044,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlit(this Sdl thisApi, Surface* src, Span<Rect> srcrect, Surface* dst, Span<Rect> dstrect)
+        public static unsafe int UpperBlit(this Sdl thisApi, Surface* src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlit(src, ref srcrect.GetPinnableReference(), dst, ref dstrect.GetPinnableReference());
@@ -5052,7 +5052,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlit(this Sdl thisApi, Surface* src, Span<Rect> srcrect, Span<Surface> dst, Rect* dstrect)
+        public static unsafe int UpperBlit(this Sdl thisApi, Surface* src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlit(src, ref srcrect.GetPinnableReference(), ref dst.GetPinnableReference(), dstrect);
@@ -5060,7 +5060,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlit(this Sdl thisApi, Surface* src, Span<Rect> srcrect, Span<Surface> dst, Span<Rect> dstrect)
+        public static unsafe int UpperBlit(this Sdl thisApi, Surface* src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlit(src, ref srcrect.GetPinnableReference(), ref dst.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -5068,7 +5068,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlit(this Sdl thisApi, Span<Surface> src, Rect* srcrect, Surface* dst, Rect* dstrect)
+        public static unsafe int UpperBlit(this Sdl thisApi, Span<Surface> src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlit(ref src.GetPinnableReference(), srcrect, dst, dstrect);
@@ -5076,7 +5076,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlit(this Sdl thisApi, Span<Surface> src, Rect* srcrect, Surface* dst, Span<Rect> dstrect)
+        public static unsafe int UpperBlit(this Sdl thisApi, Span<Surface> src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlit(ref src.GetPinnableReference(), srcrect, dst, ref dstrect.GetPinnableReference());
@@ -5084,7 +5084,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlit(this Sdl thisApi, Span<Surface> src, Rect* srcrect, Span<Surface> dst, Rect* dstrect)
+        public static unsafe int UpperBlit(this Sdl thisApi, Span<Surface> src, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlit(ref src.GetPinnableReference(), srcrect, ref dst.GetPinnableReference(), dstrect);
@@ -5092,7 +5092,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlit(this Sdl thisApi, Span<Surface> src, Rect* srcrect, Span<Surface> dst, Span<Rect> dstrect)
+        public static unsafe int UpperBlit(this Sdl thisApi, Span<Surface> src, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlit(ref src.GetPinnableReference(), srcrect, ref dst.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -5100,7 +5100,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlit(this Sdl thisApi, Span<Surface> src, Span<Rect> srcrect, Surface* dst, Rect* dstrect)
+        public static unsafe int UpperBlit(this Sdl thisApi, Span<Surface> src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlit(ref src.GetPinnableReference(), ref srcrect.GetPinnableReference(), dst, dstrect);
@@ -5108,7 +5108,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlit(this Sdl thisApi, Span<Surface> src, Span<Rect> srcrect, Surface* dst, Span<Rect> dstrect)
+        public static unsafe int UpperBlit(this Sdl thisApi, Span<Surface> src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlit(ref src.GetPinnableReference(), ref srcrect.GetPinnableReference(), dst, ref dstrect.GetPinnableReference());
@@ -5116,7 +5116,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlit(this Sdl thisApi, Span<Surface> src, Span<Rect> srcrect, Span<Surface> dst, Rect* dstrect)
+        public static unsafe int UpperBlit(this Sdl thisApi, Span<Surface> src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlit(ref src.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dst.GetPinnableReference(), dstrect);
@@ -5124,7 +5124,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 490, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlit(this Sdl thisApi, Span<Surface> src, Span<Rect> srcrect, Span<Surface> dst, Span<Rect> dstrect)
+        public static unsafe int UpperBlit(this Sdl thisApi, Span<Surface> src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlit(ref src.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dst.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -5132,7 +5132,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlit(this Sdl thisApi, Surface* src, Rect* srcrect, Surface* dst, Span<Rect> dstrect)
+        public static unsafe int LowerBlit(this Sdl thisApi, Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlit(src, srcrect, dst, ref dstrect.GetPinnableReference());
@@ -5140,7 +5140,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlit(this Sdl thisApi, Surface* src, Rect* srcrect, Span<Surface> dst, Rect* dstrect)
+        public static unsafe int LowerBlit(this Sdl thisApi, Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlit(src, srcrect, ref dst.GetPinnableReference(), dstrect);
@@ -5148,7 +5148,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlit(this Sdl thisApi, Surface* src, Rect* srcrect, Span<Surface> dst, Span<Rect> dstrect)
+        public static unsafe int LowerBlit(this Sdl thisApi, Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlit(src, srcrect, ref dst.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -5156,7 +5156,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlit(this Sdl thisApi, Surface* src, Span<Rect> srcrect, Surface* dst, Rect* dstrect)
+        public static unsafe int LowerBlit(this Sdl thisApi, Surface* src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlit(src, ref srcrect.GetPinnableReference(), dst, dstrect);
@@ -5164,7 +5164,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlit(this Sdl thisApi, Surface* src, Span<Rect> srcrect, Surface* dst, Span<Rect> dstrect)
+        public static unsafe int LowerBlit(this Sdl thisApi, Surface* src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlit(src, ref srcrect.GetPinnableReference(), dst, ref dstrect.GetPinnableReference());
@@ -5172,7 +5172,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlit(this Sdl thisApi, Surface* src, Span<Rect> srcrect, Span<Surface> dst, Rect* dstrect)
+        public static unsafe int LowerBlit(this Sdl thisApi, Surface* src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlit(src, ref srcrect.GetPinnableReference(), ref dst.GetPinnableReference(), dstrect);
@@ -5180,7 +5180,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlit(this Sdl thisApi, Surface* src, Span<Rect> srcrect, Span<Surface> dst, Span<Rect> dstrect)
+        public static unsafe int LowerBlit(this Sdl thisApi, Surface* src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlit(src, ref srcrect.GetPinnableReference(), ref dst.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -5188,7 +5188,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlit(this Sdl thisApi, Span<Surface> src, Rect* srcrect, Surface* dst, Rect* dstrect)
+        public static unsafe int LowerBlit(this Sdl thisApi, Span<Surface> src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlit(ref src.GetPinnableReference(), srcrect, dst, dstrect);
@@ -5196,7 +5196,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlit(this Sdl thisApi, Span<Surface> src, Rect* srcrect, Surface* dst, Span<Rect> dstrect)
+        public static unsafe int LowerBlit(this Sdl thisApi, Span<Surface> src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlit(ref src.GetPinnableReference(), srcrect, dst, ref dstrect.GetPinnableReference());
@@ -5204,7 +5204,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlit(this Sdl thisApi, Span<Surface> src, Rect* srcrect, Span<Surface> dst, Rect* dstrect)
+        public static unsafe int LowerBlit(this Sdl thisApi, Span<Surface> src, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlit(ref src.GetPinnableReference(), srcrect, ref dst.GetPinnableReference(), dstrect);
@@ -5212,7 +5212,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlit(this Sdl thisApi, Span<Surface> src, Rect* srcrect, Span<Surface> dst, Span<Rect> dstrect)
+        public static unsafe int LowerBlit(this Sdl thisApi, Span<Surface> src, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlit(ref src.GetPinnableReference(), srcrect, ref dst.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -5220,7 +5220,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlit(this Sdl thisApi, Span<Surface> src, Span<Rect> srcrect, Surface* dst, Rect* dstrect)
+        public static unsafe int LowerBlit(this Sdl thisApi, Span<Surface> src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlit(ref src.GetPinnableReference(), ref srcrect.GetPinnableReference(), dst, dstrect);
@@ -5228,7 +5228,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlit(this Sdl thisApi, Span<Surface> src, Span<Rect> srcrect, Surface* dst, Span<Rect> dstrect)
+        public static unsafe int LowerBlit(this Sdl thisApi, Span<Surface> src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlit(ref src.GetPinnableReference(), ref srcrect.GetPinnableReference(), dst, ref dstrect.GetPinnableReference());
@@ -5236,7 +5236,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlit(this Sdl thisApi, Span<Surface> src, Span<Rect> srcrect, Span<Surface> dst, Rect* dstrect)
+        public static unsafe int LowerBlit(this Sdl thisApi, Span<Surface> src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlit(ref src.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dst.GetPinnableReference(), dstrect);
@@ -5244,7 +5244,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 498, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlit(this Sdl thisApi, Span<Surface> src, Span<Rect> srcrect, Span<Surface> dst, Span<Rect> dstrect)
+        public static unsafe int LowerBlit(this Sdl thisApi, Span<Surface> src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlit(ref src.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dst.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -5252,7 +5252,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int SoftStretch(this Sdl thisApi, Surface* src, Rect* srcrect, Surface* dst, Span<Rect> dstrect)
+        public static unsafe int SoftStretch(this Sdl thisApi, Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.SoftStretch(src, srcrect, dst, ref dstrect.GetPinnableReference());
@@ -5260,7 +5260,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int SoftStretch(this Sdl thisApi, Surface* src, Rect* srcrect, Span<Surface> dst, Rect* dstrect)
+        public static unsafe int SoftStretch(this Sdl thisApi, Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.SoftStretch(src, srcrect, ref dst.GetPinnableReference(), dstrect);
@@ -5268,7 +5268,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int SoftStretch(this Sdl thisApi, Surface* src, Rect* srcrect, Span<Surface> dst, Span<Rect> dstrect)
+        public static unsafe int SoftStretch(this Sdl thisApi, Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.SoftStretch(src, srcrect, ref dst.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -5276,7 +5276,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int SoftStretch(this Sdl thisApi, Surface* src, Span<Rect> srcrect, Surface* dst, Rect* dstrect)
+        public static unsafe int SoftStretch(this Sdl thisApi, Surface* src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.SoftStretch(src, ref srcrect.GetPinnableReference(), dst, dstrect);
@@ -5284,7 +5284,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int SoftStretch(this Sdl thisApi, Surface* src, Span<Rect> srcrect, Surface* dst, Span<Rect> dstrect)
+        public static unsafe int SoftStretch(this Sdl thisApi, Surface* src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.SoftStretch(src, ref srcrect.GetPinnableReference(), dst, ref dstrect.GetPinnableReference());
@@ -5292,7 +5292,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int SoftStretch(this Sdl thisApi, Surface* src, Span<Rect> srcrect, Span<Surface> dst, Rect* dstrect)
+        public static unsafe int SoftStretch(this Sdl thisApi, Surface* src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.SoftStretch(src, ref srcrect.GetPinnableReference(), ref dst.GetPinnableReference(), dstrect);
@@ -5300,7 +5300,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int SoftStretch(this Sdl thisApi, Surface* src, Span<Rect> srcrect, Span<Surface> dst, Span<Rect> dstrect)
+        public static unsafe int SoftStretch(this Sdl thisApi, Surface* src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.SoftStretch(src, ref srcrect.GetPinnableReference(), ref dst.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -5308,7 +5308,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int SoftStretch(this Sdl thisApi, Span<Surface> src, Rect* srcrect, Surface* dst, Rect* dstrect)
+        public static unsafe int SoftStretch(this Sdl thisApi, Span<Surface> src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.SoftStretch(ref src.GetPinnableReference(), srcrect, dst, dstrect);
@@ -5316,7 +5316,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int SoftStretch(this Sdl thisApi, Span<Surface> src, Rect* srcrect, Surface* dst, Span<Rect> dstrect)
+        public static unsafe int SoftStretch(this Sdl thisApi, Span<Surface> src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.SoftStretch(ref src.GetPinnableReference(), srcrect, dst, ref dstrect.GetPinnableReference());
@@ -5324,7 +5324,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int SoftStretch(this Sdl thisApi, Span<Surface> src, Rect* srcrect, Span<Surface> dst, Rect* dstrect)
+        public static unsafe int SoftStretch(this Sdl thisApi, Span<Surface> src, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.SoftStretch(ref src.GetPinnableReference(), srcrect, ref dst.GetPinnableReference(), dstrect);
@@ -5332,7 +5332,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int SoftStretch(this Sdl thisApi, Span<Surface> src, Rect* srcrect, Span<Surface> dst, Span<Rect> dstrect)
+        public static unsafe int SoftStretch(this Sdl thisApi, Span<Surface> src, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.SoftStretch(ref src.GetPinnableReference(), srcrect, ref dst.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -5340,7 +5340,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int SoftStretch(this Sdl thisApi, Span<Surface> src, Span<Rect> srcrect, Surface* dst, Rect* dstrect)
+        public static unsafe int SoftStretch(this Sdl thisApi, Span<Surface> src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.SoftStretch(ref src.GetPinnableReference(), ref srcrect.GetPinnableReference(), dst, dstrect);
@@ -5348,7 +5348,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int SoftStretch(this Sdl thisApi, Span<Surface> src, Span<Rect> srcrect, Surface* dst, Span<Rect> dstrect)
+        public static unsafe int SoftStretch(this Sdl thisApi, Span<Surface> src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.SoftStretch(ref src.GetPinnableReference(), ref srcrect.GetPinnableReference(), dst, ref dstrect.GetPinnableReference());
@@ -5356,7 +5356,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int SoftStretch(this Sdl thisApi, Span<Surface> src, Span<Rect> srcrect, Span<Surface> dst, Rect* dstrect)
+        public static unsafe int SoftStretch(this Sdl thisApi, Span<Surface> src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.SoftStretch(ref src.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dst.GetPinnableReference(), dstrect);
@@ -5364,7 +5364,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 508, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int SoftStretch(this Sdl thisApi, Span<Surface> src, Span<Rect> srcrect, Span<Surface> dst, Span<Rect> dstrect)
+        public static unsafe int SoftStretch(this Sdl thisApi, Span<Surface> src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.SoftStretch(ref src.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dst.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -5372,7 +5372,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlitScaled(this Sdl thisApi, Surface* src, Rect* srcrect, Surface* dst, Span<Rect> dstrect)
+        public static unsafe int UpperBlitScaled(this Sdl thisApi, Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlitScaled(src, srcrect, dst, ref dstrect.GetPinnableReference());
@@ -5380,7 +5380,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlitScaled(this Sdl thisApi, Surface* src, Rect* srcrect, Span<Surface> dst, Rect* dstrect)
+        public static unsafe int UpperBlitScaled(this Sdl thisApi, Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlitScaled(src, srcrect, ref dst.GetPinnableReference(), dstrect);
@@ -5388,7 +5388,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlitScaled(this Sdl thisApi, Surface* src, Rect* srcrect, Span<Surface> dst, Span<Rect> dstrect)
+        public static unsafe int UpperBlitScaled(this Sdl thisApi, Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlitScaled(src, srcrect, ref dst.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -5396,7 +5396,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlitScaled(this Sdl thisApi, Surface* src, Span<Rect> srcrect, Surface* dst, Rect* dstrect)
+        public static unsafe int UpperBlitScaled(this Sdl thisApi, Surface* src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlitScaled(src, ref srcrect.GetPinnableReference(), dst, dstrect);
@@ -5404,7 +5404,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlitScaled(this Sdl thisApi, Surface* src, Span<Rect> srcrect, Surface* dst, Span<Rect> dstrect)
+        public static unsafe int UpperBlitScaled(this Sdl thisApi, Surface* src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlitScaled(src, ref srcrect.GetPinnableReference(), dst, ref dstrect.GetPinnableReference());
@@ -5412,7 +5412,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlitScaled(this Sdl thisApi, Surface* src, Span<Rect> srcrect, Span<Surface> dst, Rect* dstrect)
+        public static unsafe int UpperBlitScaled(this Sdl thisApi, Surface* src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlitScaled(src, ref srcrect.GetPinnableReference(), ref dst.GetPinnableReference(), dstrect);
@@ -5420,7 +5420,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlitScaled(this Sdl thisApi, Surface* src, Span<Rect> srcrect, Span<Surface> dst, Span<Rect> dstrect)
+        public static unsafe int UpperBlitScaled(this Sdl thisApi, Surface* src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlitScaled(src, ref srcrect.GetPinnableReference(), ref dst.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -5428,7 +5428,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlitScaled(this Sdl thisApi, Span<Surface> src, Rect* srcrect, Surface* dst, Rect* dstrect)
+        public static unsafe int UpperBlitScaled(this Sdl thisApi, Span<Surface> src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlitScaled(ref src.GetPinnableReference(), srcrect, dst, dstrect);
@@ -5436,7 +5436,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlitScaled(this Sdl thisApi, Span<Surface> src, Rect* srcrect, Surface* dst, Span<Rect> dstrect)
+        public static unsafe int UpperBlitScaled(this Sdl thisApi, Span<Surface> src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlitScaled(ref src.GetPinnableReference(), srcrect, dst, ref dstrect.GetPinnableReference());
@@ -5444,7 +5444,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlitScaled(this Sdl thisApi, Span<Surface> src, Rect* srcrect, Span<Surface> dst, Rect* dstrect)
+        public static unsafe int UpperBlitScaled(this Sdl thisApi, Span<Surface> src, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlitScaled(ref src.GetPinnableReference(), srcrect, ref dst.GetPinnableReference(), dstrect);
@@ -5452,7 +5452,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlitScaled(this Sdl thisApi, Span<Surface> src, Rect* srcrect, Span<Surface> dst, Span<Rect> dstrect)
+        public static unsafe int UpperBlitScaled(this Sdl thisApi, Span<Surface> src, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlitScaled(ref src.GetPinnableReference(), srcrect, ref dst.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -5460,7 +5460,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlitScaled(this Sdl thisApi, Span<Surface> src, Span<Rect> srcrect, Surface* dst, Rect* dstrect)
+        public static unsafe int UpperBlitScaled(this Sdl thisApi, Span<Surface> src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlitScaled(ref src.GetPinnableReference(), ref srcrect.GetPinnableReference(), dst, dstrect);
@@ -5468,7 +5468,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlitScaled(this Sdl thisApi, Span<Surface> src, Span<Rect> srcrect, Surface* dst, Span<Rect> dstrect)
+        public static unsafe int UpperBlitScaled(this Sdl thisApi, Span<Surface> src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlitScaled(ref src.GetPinnableReference(), ref srcrect.GetPinnableReference(), dst, ref dstrect.GetPinnableReference());
@@ -5476,7 +5476,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlitScaled(this Sdl thisApi, Span<Surface> src, Span<Rect> srcrect, Span<Surface> dst, Rect* dstrect)
+        public static unsafe int UpperBlitScaled(this Sdl thisApi, Span<Surface> src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlitScaled(ref src.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dst.GetPinnableReference(), dstrect);
@@ -5484,7 +5484,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 519, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int UpperBlitScaled(this Sdl thisApi, Span<Surface> src, Span<Rect> srcrect, Span<Surface> dst, Span<Rect> dstrect)
+        public static unsafe int UpperBlitScaled(this Sdl thisApi, Span<Surface> src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.UpperBlitScaled(ref src.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dst.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -5492,7 +5492,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlitScaled(this Sdl thisApi, Surface* src, Rect* srcrect, Surface* dst, Span<Rect> dstrect)
+        public static unsafe int LowerBlitScaled(this Sdl thisApi, Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlitScaled(src, srcrect, dst, ref dstrect.GetPinnableReference());
@@ -5500,7 +5500,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlitScaled(this Sdl thisApi, Surface* src, Rect* srcrect, Span<Surface> dst, Rect* dstrect)
+        public static unsafe int LowerBlitScaled(this Sdl thisApi, Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlitScaled(src, srcrect, ref dst.GetPinnableReference(), dstrect);
@@ -5508,7 +5508,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlitScaled(this Sdl thisApi, Surface* src, Rect* srcrect, Span<Surface> dst, Span<Rect> dstrect)
+        public static unsafe int LowerBlitScaled(this Sdl thisApi, Surface* src, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlitScaled(src, srcrect, ref dst.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -5516,7 +5516,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlitScaled(this Sdl thisApi, Surface* src, Span<Rect> srcrect, Surface* dst, Rect* dstrect)
+        public static unsafe int LowerBlitScaled(this Sdl thisApi, Surface* src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlitScaled(src, ref srcrect.GetPinnableReference(), dst, dstrect);
@@ -5524,7 +5524,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlitScaled(this Sdl thisApi, Surface* src, Span<Rect> srcrect, Surface* dst, Span<Rect> dstrect)
+        public static unsafe int LowerBlitScaled(this Sdl thisApi, Surface* src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlitScaled(src, ref srcrect.GetPinnableReference(), dst, ref dstrect.GetPinnableReference());
@@ -5532,7 +5532,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlitScaled(this Sdl thisApi, Surface* src, Span<Rect> srcrect, Span<Surface> dst, Rect* dstrect)
+        public static unsafe int LowerBlitScaled(this Sdl thisApi, Surface* src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlitScaled(src, ref srcrect.GetPinnableReference(), ref dst.GetPinnableReference(), dstrect);
@@ -5540,7 +5540,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlitScaled(this Sdl thisApi, Surface* src, Span<Rect> srcrect, Span<Surface> dst, Span<Rect> dstrect)
+        public static unsafe int LowerBlitScaled(this Sdl thisApi, Surface* src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlitScaled(src, ref srcrect.GetPinnableReference(), ref dst.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -5548,7 +5548,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlitScaled(this Sdl thisApi, Span<Surface> src, Rect* srcrect, Surface* dst, Rect* dstrect)
+        public static unsafe int LowerBlitScaled(this Sdl thisApi, Span<Surface> src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlitScaled(ref src.GetPinnableReference(), srcrect, dst, dstrect);
@@ -5556,7 +5556,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlitScaled(this Sdl thisApi, Span<Surface> src, Rect* srcrect, Surface* dst, Span<Rect> dstrect)
+        public static unsafe int LowerBlitScaled(this Sdl thisApi, Span<Surface> src, Silk.NET.Maths.Rectangle<int>* srcrect, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlitScaled(ref src.GetPinnableReference(), srcrect, dst, ref dstrect.GetPinnableReference());
@@ -5564,7 +5564,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlitScaled(this Sdl thisApi, Span<Surface> src, Rect* srcrect, Span<Surface> dst, Rect* dstrect)
+        public static unsafe int LowerBlitScaled(this Sdl thisApi, Span<Surface> src, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlitScaled(ref src.GetPinnableReference(), srcrect, ref dst.GetPinnableReference(), dstrect);
@@ -5572,7 +5572,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlitScaled(this Sdl thisApi, Span<Surface> src, Rect* srcrect, Span<Surface> dst, Span<Rect> dstrect)
+        public static unsafe int LowerBlitScaled(this Sdl thisApi, Span<Surface> src, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlitScaled(ref src.GetPinnableReference(), srcrect, ref dst.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -5580,7 +5580,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlitScaled(this Sdl thisApi, Span<Surface> src, Span<Rect> srcrect, Surface* dst, Rect* dstrect)
+        public static unsafe int LowerBlitScaled(this Sdl thisApi, Span<Surface> src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Surface* dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlitScaled(ref src.GetPinnableReference(), ref srcrect.GetPinnableReference(), dst, dstrect);
@@ -5588,7 +5588,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlitScaled(this Sdl thisApi, Span<Surface> src, Span<Rect> srcrect, Surface* dst, Span<Rect> dstrect)
+        public static unsafe int LowerBlitScaled(this Sdl thisApi, Span<Surface> src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Surface* dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlitScaled(ref src.GetPinnableReference(), ref srcrect.GetPinnableReference(), dst, ref dstrect.GetPinnableReference());
@@ -5596,7 +5596,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlitScaled(this Sdl thisApi, Span<Surface> src, Span<Rect> srcrect, Span<Surface> dst, Rect* dstrect)
+        public static unsafe int LowerBlitScaled(this Sdl thisApi, Span<Surface> src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Surface> dst, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlitScaled(ref src.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dst.GetPinnableReference(), dstrect);
@@ -5604,7 +5604,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 527, Column 29 in build/submodules/SDL-mirror/include/SDL_surface.h")]
-        public static unsafe int LowerBlitScaled(this Sdl thisApi, Span<Surface> src, Span<Rect> srcrect, Span<Surface> dst, Span<Rect> dstrect)
+        public static unsafe int LowerBlitScaled(this Sdl thisApi, Span<Surface> src, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Surface> dst, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.LowerBlitScaled(ref src.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dst.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -5620,7 +5620,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 334, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        public static unsafe int GetDisplayBounds(this Sdl thisApi, int displayIndex, Span<Rect> rect)
+        public static unsafe int GetDisplayBounds(this Sdl thisApi, int displayIndex, Span<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             return thisApi.GetDisplayBounds(displayIndex, ref rect.GetPinnableReference());
@@ -5628,7 +5628,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 353, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        public static unsafe int GetDisplayUsableBounds(this Sdl thisApi, int displayIndex, Span<Rect> rect)
+        public static unsafe int GetDisplayUsableBounds(this Sdl thisApi, int displayIndex, Span<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             return thisApi.GetDisplayUsableBounds(displayIndex, ref rect.GetPinnableReference());
@@ -6604,7 +6604,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 864, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        public static unsafe int UpdateWindowSurfaceRects(this Sdl thisApi, Window* window, Span<Rect> rects, int numrects)
+        public static unsafe int UpdateWindowSurfaceRects(this Sdl thisApi, Window* window, Span<Silk.NET.Maths.Rectangle<int>> rects, int numrects)
         {
             // SpanOverloader
             return thisApi.UpdateWindowSurfaceRects(window, ref rects.GetPinnableReference(), numrects);
@@ -6612,7 +6612,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 864, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        public static unsafe int UpdateWindowSurfaceRects(this Sdl thisApi, Span<Window> window, Rect* rects, int numrects)
+        public static unsafe int UpdateWindowSurfaceRects(this Sdl thisApi, Span<Window> window, Silk.NET.Maths.Rectangle<int>* rects, int numrects)
         {
             // SpanOverloader
             return thisApi.UpdateWindowSurfaceRects(ref window.GetPinnableReference(), rects, numrects);
@@ -6620,7 +6620,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 864, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        public static unsafe int UpdateWindowSurfaceRects(this Sdl thisApi, Span<Window> window, Span<Rect> rects, int numrects)
+        public static unsafe int UpdateWindowSurfaceRects(this Sdl thisApi, Span<Window> window, Span<Silk.NET.Maths.Rectangle<int>> rects, int numrects)
         {
             // SpanOverloader
             return thisApi.UpdateWindowSurfaceRects(ref window.GetPinnableReference(), ref rects.GetPinnableReference(), numrects);
@@ -9059,7 +9059,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 185, Column 30 in build/submodules/SDL-mirror/include/SDL_keyboard.h")]
-        public static unsafe void SetTextInputRect(this Sdl thisApi, Span<Rect> rect)
+        public static unsafe void SetTextInputRect(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             thisApi.SetTextInputRect(ref rect.GetPinnableReference());
@@ -11555,7 +11555,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateTexture<T0>(this Sdl thisApi, Texture* texture, Rect* rect, Span<T0> pixels, int pitch) where T0 : unmanaged
+        public static unsafe int UpdateTexture<T0>(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<T0> pixels, int pitch) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.UpdateTexture(texture, rect, ref pixels.GetPinnableReference(), pitch);
@@ -11563,7 +11563,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, void* pixels, int pitch)
+        public static unsafe int UpdateTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, void* pixels, int pitch)
         {
             // SpanOverloader
             return thisApi.UpdateTexture(texture, ref rect.GetPinnableReference(), pixels, pitch);
@@ -11571,7 +11571,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateTexture<T0>(this Sdl thisApi, Texture* texture, Span<Rect> rect, Span<T0> pixels, int pitch) where T0 : unmanaged
+        public static unsafe int UpdateTexture<T0>(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<T0> pixels, int pitch) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.UpdateTexture(texture, ref rect.GetPinnableReference(), ref pixels.GetPinnableReference(), pitch);
@@ -11579,7 +11579,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, void* pixels, int pitch)
+        public static unsafe int UpdateTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, void* pixels, int pitch)
         {
             // SpanOverloader
             return thisApi.UpdateTexture(ref texture.GetPinnableReference(), rect, pixels, pitch);
@@ -11587,7 +11587,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateTexture<T0>(this Sdl thisApi, Span<Texture> texture, Rect* rect, Span<T0> pixels, int pitch) where T0 : unmanaged
+        public static unsafe int UpdateTexture<T0>(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<T0> pixels, int pitch) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.UpdateTexture(ref texture.GetPinnableReference(), rect, ref pixels.GetPinnableReference(), pitch);
@@ -11595,7 +11595,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, void* pixels, int pitch)
+        public static unsafe int UpdateTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, void* pixels, int pitch)
         {
             // SpanOverloader
             return thisApi.UpdateTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), pixels, pitch);
@@ -11603,7 +11603,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 424, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateTexture<T0>(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, Span<T0> pixels, int pitch) where T0 : unmanaged
+        public static unsafe int UpdateTexture<T0>(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<T0> pixels, int pitch) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.UpdateTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), ref pixels.GetPinnableReference(), pitch);
@@ -11611,7 +11611,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Rect* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11619,7 +11619,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Rect* rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -11627,7 +11627,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Rect* rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11635,7 +11635,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Rect* rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -11643,7 +11643,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Rect* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11651,7 +11651,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Rect* rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11659,7 +11659,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Rect* rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11667,7 +11667,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Rect* rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11675,7 +11675,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Rect* rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, ref Yplane.GetPinnableReference(), Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -11683,7 +11683,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Rect* rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, ref Yplane.GetPinnableReference(), Ypitch, ref Uplane.GetPinnableReference(), Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11691,7 +11691,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Rect* rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, ref Yplane.GetPinnableReference(), Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -11699,7 +11699,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Rect* rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11707,7 +11707,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Rect* rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11715,7 +11715,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Rect* rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11723,7 +11723,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Rect* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11731,7 +11731,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Rect* rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -11739,7 +11739,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Rect* rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11747,7 +11747,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Rect* rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -11755,7 +11755,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Rect* rect, string Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, rect, Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11763,7 +11763,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11771,7 +11771,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11779,7 +11779,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11787,7 +11787,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -11795,7 +11795,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11803,7 +11803,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -11811,7 +11811,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11819,7 +11819,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11827,7 +11827,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11835,7 +11835,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11843,7 +11843,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11851,7 +11851,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11859,7 +11859,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -11867,7 +11867,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, ref Uplane.GetPinnableReference(), Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11875,7 +11875,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -11883,7 +11883,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11891,7 +11891,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11899,7 +11899,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11907,7 +11907,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11915,7 +11915,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11923,7 +11923,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11931,7 +11931,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -11939,7 +11939,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11947,7 +11947,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -11955,7 +11955,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, string Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11963,7 +11963,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, string Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11971,7 +11971,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, string Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(texture, ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11979,7 +11979,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -11987,7 +11987,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -11995,7 +11995,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12003,7 +12003,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -12011,7 +12011,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12019,7 +12019,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -12027,7 +12027,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12035,7 +12035,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12043,7 +12043,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12051,7 +12051,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12059,7 +12059,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12067,7 +12067,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12075,7 +12075,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, ref Yplane.GetPinnableReference(), Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -12083,7 +12083,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, ref Yplane.GetPinnableReference(), Ypitch, ref Uplane.GetPinnableReference(), Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12091,7 +12091,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, ref Yplane.GetPinnableReference(), Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -12099,7 +12099,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12107,7 +12107,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12115,7 +12115,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12123,7 +12123,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12131,7 +12131,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12139,7 +12139,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12147,7 +12147,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -12155,7 +12155,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12163,7 +12163,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -12171,7 +12171,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, string Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12179,7 +12179,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, string Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12187,7 +12187,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, string Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, string Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), rect, Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12195,7 +12195,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12203,7 +12203,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12211,7 +12211,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12219,7 +12219,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -12227,7 +12227,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12235,7 +12235,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -12243,7 +12243,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12251,7 +12251,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12259,7 +12259,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, byte* Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12267,7 +12267,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12275,7 +12275,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12283,7 +12283,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12291,7 +12291,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -12299,7 +12299,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, ref Uplane.GetPinnableReference(), Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12307,7 +12307,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -12315,7 +12315,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12323,7 +12323,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12331,7 +12331,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<byte> Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), ref Yplane.GetPinnableReference(), Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12339,7 +12339,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12347,7 +12347,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12355,7 +12355,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, byte* Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12363,7 +12363,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -12371,7 +12371,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12379,7 +12379,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, Span<byte> Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, ref Uplane.GetPinnableReference(), Upitch, Vplane, Vpitch);
@@ -12387,7 +12387,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, string Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, string Uplane, int Upitch, byte* Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12395,7 +12395,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, string Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, string Uplane, int Upitch, Span<byte> Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, ref Vplane.GetPinnableReference(), Vpitch);
@@ -12403,7 +12403,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 447, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, string Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
+        public static unsafe int UpdateYUVTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, string Yplane, int Ypitch, string Uplane, int Upitch, string Vplane, int Vpitch)
         {
             // SpanOverloader
             return thisApi.UpdateYUVTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), Yplane, Ypitch, Uplane, Upitch, Vplane, Vpitch);
@@ -12411,7 +12411,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int LockTexture(this Sdl thisApi, Texture* texture, Rect* rect, void** pixels, Span<int> pitch)
+        public static unsafe int LockTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, void** pixels, Span<int> pitch)
         {
             // SpanOverloader
             return thisApi.LockTexture(texture, rect, pixels, ref pitch.GetPinnableReference());
@@ -12419,7 +12419,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int LockTexture(this Sdl thisApi, Texture* texture, Rect* rect, ref void* pixels, Span<int> pitch)
+        public static unsafe int LockTexture(this Sdl thisApi, Texture* texture, Silk.NET.Maths.Rectangle<int>* rect, ref void* pixels, Span<int> pitch)
         {
             // SpanOverloader
             return thisApi.LockTexture(texture, rect, ref pixels, ref pitch.GetPinnableReference());
@@ -12427,7 +12427,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int LockTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, void** pixels, int* pitch)
+        public static unsafe int LockTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, void** pixels, int* pitch)
         {
             // SpanOverloader
             return thisApi.LockTexture(texture, ref rect.GetPinnableReference(), pixels, pitch);
@@ -12435,7 +12435,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int LockTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, void** pixels, Span<int> pitch)
+        public static unsafe int LockTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, void** pixels, Span<int> pitch)
         {
             // SpanOverloader
             return thisApi.LockTexture(texture, ref rect.GetPinnableReference(), pixels, ref pitch.GetPinnableReference());
@@ -12443,7 +12443,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int LockTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, ref void* pixels, int* pitch)
+        public static unsafe int LockTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, ref void* pixels, int* pitch)
         {
             // SpanOverloader
             return thisApi.LockTexture(texture, ref rect.GetPinnableReference(), ref pixels, pitch);
@@ -12451,7 +12451,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int LockTexture(this Sdl thisApi, Texture* texture, Span<Rect> rect, ref void* pixels, Span<int> pitch)
+        public static unsafe int LockTexture(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, ref void* pixels, Span<int> pitch)
         {
             // SpanOverloader
             return thisApi.LockTexture(texture, ref rect.GetPinnableReference(), ref pixels, ref pitch.GetPinnableReference());
@@ -12459,7 +12459,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int LockTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, void** pixels, int* pitch)
+        public static unsafe int LockTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, void** pixels, int* pitch)
         {
             // SpanOverloader
             return thisApi.LockTexture(ref texture.GetPinnableReference(), rect, pixels, pitch);
@@ -12467,7 +12467,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int LockTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, void** pixels, Span<int> pitch)
+        public static unsafe int LockTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, void** pixels, Span<int> pitch)
         {
             // SpanOverloader
             return thisApi.LockTexture(ref texture.GetPinnableReference(), rect, pixels, ref pitch.GetPinnableReference());
@@ -12475,7 +12475,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int LockTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, ref void* pixels, int* pitch)
+        public static unsafe int LockTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, ref void* pixels, int* pitch)
         {
             // SpanOverloader
             return thisApi.LockTexture(ref texture.GetPinnableReference(), rect, ref pixels, pitch);
@@ -12483,7 +12483,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int LockTexture(this Sdl thisApi, Span<Texture> texture, Rect* rect, ref void* pixels, Span<int> pitch)
+        public static unsafe int LockTexture(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, ref void* pixels, Span<int> pitch)
         {
             // SpanOverloader
             return thisApi.LockTexture(ref texture.GetPinnableReference(), rect, ref pixels, ref pitch.GetPinnableReference());
@@ -12491,7 +12491,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int LockTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, void** pixels, int* pitch)
+        public static unsafe int LockTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, void** pixels, int* pitch)
         {
             // SpanOverloader
             return thisApi.LockTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), pixels, pitch);
@@ -12499,7 +12499,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int LockTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, void** pixels, Span<int> pitch)
+        public static unsafe int LockTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, void** pixels, Span<int> pitch)
         {
             // SpanOverloader
             return thisApi.LockTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), pixels, ref pitch.GetPinnableReference());
@@ -12507,7 +12507,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int LockTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, ref void* pixels, int* pitch)
+        public static unsafe int LockTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, ref void* pixels, int* pitch)
         {
             // SpanOverloader
             return thisApi.LockTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), ref pixels, pitch);
@@ -12515,7 +12515,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 468, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int LockTexture(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, ref void* pixels, Span<int> pitch)
+        public static unsafe int LockTexture(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, ref void* pixels, Span<int> pitch)
         {
             // SpanOverloader
             return thisApi.LockTexture(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), ref pixels, ref pitch.GetPinnableReference());
@@ -12523,7 +12523,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 487, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int LockTextureToSurface(this Sdl thisApi, Texture* texture, Span<Rect> rect, Surface** surface)
+        public static unsafe int LockTextureToSurface(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Surface** surface)
         {
             // SpanOverloader
             return thisApi.LockTextureToSurface(texture, ref rect.GetPinnableReference(), surface);
@@ -12531,7 +12531,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 487, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int LockTextureToSurface(this Sdl thisApi, Texture* texture, Span<Rect> rect, ref Surface* surface)
+        public static unsafe int LockTextureToSurface(this Sdl thisApi, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> rect, ref Surface* surface)
         {
             // SpanOverloader
             return thisApi.LockTextureToSurface(texture, ref rect.GetPinnableReference(), ref surface);
@@ -12539,7 +12539,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 487, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int LockTextureToSurface(this Sdl thisApi, Span<Texture> texture, Rect* rect, Surface** surface)
+        public static unsafe int LockTextureToSurface(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, Surface** surface)
         {
             // SpanOverloader
             return thisApi.LockTextureToSurface(ref texture.GetPinnableReference(), rect, surface);
@@ -12547,7 +12547,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 487, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int LockTextureToSurface(this Sdl thisApi, Span<Texture> texture, Rect* rect, ref Surface* surface)
+        public static unsafe int LockTextureToSurface(this Sdl thisApi, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* rect, ref Surface* surface)
         {
             // SpanOverloader
             return thisApi.LockTextureToSurface(ref texture.GetPinnableReference(), rect, ref surface);
@@ -12555,7 +12555,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 487, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int LockTextureToSurface(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, Surface** surface)
+        public static unsafe int LockTextureToSurface(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, Surface** surface)
         {
             // SpanOverloader
             return thisApi.LockTextureToSurface(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), surface);
@@ -12563,7 +12563,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 487, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int LockTextureToSurface(this Sdl thisApi, Span<Texture> texture, Span<Rect> rect, ref Surface* surface)
+        public static unsafe int LockTextureToSurface(this Sdl thisApi, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> rect, ref Surface* surface)
         {
             // SpanOverloader
             return thisApi.LockTextureToSurface(ref texture.GetPinnableReference(), ref rect.GetPinnableReference(), ref surface);
@@ -12699,7 +12699,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 606, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderSetViewport(this Sdl thisApi, Renderer* renderer, Span<Rect> rect)
+        public static unsafe int RenderSetViewport(this Sdl thisApi, Renderer* renderer, Span<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             return thisApi.RenderSetViewport(renderer, ref rect.GetPinnableReference());
@@ -12707,7 +12707,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 606, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderSetViewport(this Sdl thisApi, Span<Renderer> renderer, Rect* rect)
+        public static unsafe int RenderSetViewport(this Sdl thisApi, Span<Renderer> renderer, Silk.NET.Maths.Rectangle<int>* rect)
         {
             // SpanOverloader
             return thisApi.RenderSetViewport(ref renderer.GetPinnableReference(), rect);
@@ -12715,7 +12715,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 606, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderSetViewport(this Sdl thisApi, Span<Renderer> renderer, Span<Rect> rect)
+        public static unsafe int RenderSetViewport(this Sdl thisApi, Span<Renderer> renderer, Span<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             return thisApi.RenderSetViewport(ref renderer.GetPinnableReference(), ref rect.GetPinnableReference());
@@ -12723,7 +12723,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 614, Column 30 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe void RenderGetViewport(this Sdl thisApi, Renderer* renderer, Span<Rect> rect)
+        public static unsafe void RenderGetViewport(this Sdl thisApi, Renderer* renderer, Span<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             thisApi.RenderGetViewport(renderer, ref rect.GetPinnableReference());
@@ -12731,7 +12731,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 614, Column 30 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe void RenderGetViewport(this Sdl thisApi, Span<Renderer> renderer, Rect* rect)
+        public static unsafe void RenderGetViewport(this Sdl thisApi, Span<Renderer> renderer, Silk.NET.Maths.Rectangle<int>* rect)
         {
             // SpanOverloader
             thisApi.RenderGetViewport(ref renderer.GetPinnableReference(), rect);
@@ -12739,7 +12739,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 614, Column 30 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe void RenderGetViewport(this Sdl thisApi, Span<Renderer> renderer, Span<Rect> rect)
+        public static unsafe void RenderGetViewport(this Sdl thisApi, Span<Renderer> renderer, Span<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             thisApi.RenderGetViewport(ref renderer.GetPinnableReference(), ref rect.GetPinnableReference());
@@ -12747,7 +12747,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 628, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderSetClipRect(this Sdl thisApi, Renderer* renderer, Span<Rect> rect)
+        public static unsafe int RenderSetClipRect(this Sdl thisApi, Renderer* renderer, Span<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             return thisApi.RenderSetClipRect(renderer, ref rect.GetPinnableReference());
@@ -12755,7 +12755,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 628, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderSetClipRect(this Sdl thisApi, Span<Renderer> renderer, Rect* rect)
+        public static unsafe int RenderSetClipRect(this Sdl thisApi, Span<Renderer> renderer, Silk.NET.Maths.Rectangle<int>* rect)
         {
             // SpanOverloader
             return thisApi.RenderSetClipRect(ref renderer.GetPinnableReference(), rect);
@@ -12763,7 +12763,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 628, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderSetClipRect(this Sdl thisApi, Span<Renderer> renderer, Span<Rect> rect)
+        public static unsafe int RenderSetClipRect(this Sdl thisApi, Span<Renderer> renderer, Span<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             return thisApi.RenderSetClipRect(ref renderer.GetPinnableReference(), ref rect.GetPinnableReference());
@@ -12771,7 +12771,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 640, Column 30 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe void RenderGetClipRect(this Sdl thisApi, Renderer* renderer, Span<Rect> rect)
+        public static unsafe void RenderGetClipRect(this Sdl thisApi, Renderer* renderer, Span<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             thisApi.RenderGetClipRect(renderer, ref rect.GetPinnableReference());
@@ -12779,7 +12779,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 640, Column 30 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe void RenderGetClipRect(this Sdl thisApi, Span<Renderer> renderer, Rect* rect)
+        public static unsafe void RenderGetClipRect(this Sdl thisApi, Span<Renderer> renderer, Silk.NET.Maths.Rectangle<int>* rect)
         {
             // SpanOverloader
             thisApi.RenderGetClipRect(ref renderer.GetPinnableReference(), rect);
@@ -12787,7 +12787,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 640, Column 30 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe void RenderGetClipRect(this Sdl thisApi, Span<Renderer> renderer, Span<Rect> rect)
+        public static unsafe void RenderGetClipRect(this Sdl thisApi, Span<Renderer> renderer, Span<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             thisApi.RenderGetClipRect(ref renderer.GetPinnableReference(), ref rect.GetPinnableReference());
@@ -14147,7 +14147,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 817, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderDrawRect(this Sdl thisApi, Renderer* renderer, Span<Rect> rect)
+        public static unsafe int RenderDrawRect(this Sdl thisApi, Renderer* renderer, Span<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             return thisApi.RenderDrawRect(renderer, ref rect.GetPinnableReference());
@@ -14155,7 +14155,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 817, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderDrawRect(this Sdl thisApi, Span<Renderer> renderer, Rect* rect)
+        public static unsafe int RenderDrawRect(this Sdl thisApi, Span<Renderer> renderer, Silk.NET.Maths.Rectangle<int>* rect)
         {
             // SpanOverloader
             return thisApi.RenderDrawRect(ref renderer.GetPinnableReference(), rect);
@@ -14163,7 +14163,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 817, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderDrawRect(this Sdl thisApi, Span<Renderer> renderer, Span<Rect> rect)
+        public static unsafe int RenderDrawRect(this Sdl thisApi, Span<Renderer> renderer, Span<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             return thisApi.RenderDrawRect(ref renderer.GetPinnableReference(), ref rect.GetPinnableReference());
@@ -14171,7 +14171,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 829, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderDrawRects(this Sdl thisApi, Renderer* renderer, Span<Rect> rects, int count)
+        public static unsafe int RenderDrawRects(this Sdl thisApi, Renderer* renderer, Span<Silk.NET.Maths.Rectangle<int>> rects, int count)
         {
             // SpanOverloader
             return thisApi.RenderDrawRects(renderer, ref rects.GetPinnableReference(), count);
@@ -14179,7 +14179,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 829, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderDrawRects(this Sdl thisApi, Span<Renderer> renderer, Rect* rects, int count)
+        public static unsafe int RenderDrawRects(this Sdl thisApi, Span<Renderer> renderer, Silk.NET.Maths.Rectangle<int>* rects, int count)
         {
             // SpanOverloader
             return thisApi.RenderDrawRects(ref renderer.GetPinnableReference(), rects, count);
@@ -14187,7 +14187,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 829, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderDrawRects(this Sdl thisApi, Span<Renderer> renderer, Span<Rect> rects, int count)
+        public static unsafe int RenderDrawRects(this Sdl thisApi, Span<Renderer> renderer, Span<Silk.NET.Maths.Rectangle<int>> rects, int count)
         {
             // SpanOverloader
             return thisApi.RenderDrawRects(ref renderer.GetPinnableReference(), ref rects.GetPinnableReference(), count);
@@ -14195,7 +14195,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 842, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderFillRect(this Sdl thisApi, Renderer* renderer, Span<Rect> rect)
+        public static unsafe int RenderFillRect(this Sdl thisApi, Renderer* renderer, Span<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             return thisApi.RenderFillRect(renderer, ref rect.GetPinnableReference());
@@ -14203,7 +14203,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 842, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderFillRect(this Sdl thisApi, Span<Renderer> renderer, Rect* rect)
+        public static unsafe int RenderFillRect(this Sdl thisApi, Span<Renderer> renderer, Silk.NET.Maths.Rectangle<int>* rect)
         {
             // SpanOverloader
             return thisApi.RenderFillRect(ref renderer.GetPinnableReference(), rect);
@@ -14211,7 +14211,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 842, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderFillRect(this Sdl thisApi, Span<Renderer> renderer, Span<Rect> rect)
+        public static unsafe int RenderFillRect(this Sdl thisApi, Span<Renderer> renderer, Span<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             return thisApi.RenderFillRect(ref renderer.GetPinnableReference(), ref rect.GetPinnableReference());
@@ -14219,7 +14219,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 854, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderFillRects(this Sdl thisApi, Renderer* renderer, Span<Rect> rects, int count)
+        public static unsafe int RenderFillRects(this Sdl thisApi, Renderer* renderer, Span<Silk.NET.Maths.Rectangle<int>> rects, int count)
         {
             // SpanOverloader
             return thisApi.RenderFillRects(renderer, ref rects.GetPinnableReference(), count);
@@ -14227,7 +14227,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 854, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderFillRects(this Sdl thisApi, Span<Renderer> renderer, Rect* rects, int count)
+        public static unsafe int RenderFillRects(this Sdl thisApi, Span<Renderer> renderer, Silk.NET.Maths.Rectangle<int>* rects, int count)
         {
             // SpanOverloader
             return thisApi.RenderFillRects(ref renderer.GetPinnableReference(), rects, count);
@@ -14235,7 +14235,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 854, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderFillRects(this Sdl thisApi, Span<Renderer> renderer, Span<Rect> rects, int count)
+        public static unsafe int RenderFillRects(this Sdl thisApi, Span<Renderer> renderer, Span<Silk.NET.Maths.Rectangle<int>> rects, int count)
         {
             // SpanOverloader
             return thisApi.RenderFillRects(ref renderer.GetPinnableReference(), ref rects.GetPinnableReference(), count);
@@ -14243,7 +14243,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopy(this Sdl thisApi, Renderer* renderer, Texture* texture, Rect* srcrect, Span<Rect> dstrect)
+        public static unsafe int RenderCopy(this Sdl thisApi, Renderer* renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopy(renderer, texture, srcrect, ref dstrect.GetPinnableReference());
@@ -14251,7 +14251,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopy(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Rect> srcrect, Rect* dstrect)
+        public static unsafe int RenderCopy(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopy(renderer, texture, ref srcrect.GetPinnableReference(), dstrect);
@@ -14259,7 +14259,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopy(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Rect> srcrect, Span<Rect> dstrect)
+        public static unsafe int RenderCopy(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopy(renderer, texture, ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -14267,7 +14267,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopy(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Rect* srcrect, Rect* dstrect)
+        public static unsafe int RenderCopy(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopy(renderer, ref texture.GetPinnableReference(), srcrect, dstrect);
@@ -14275,7 +14275,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopy(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Rect* srcrect, Span<Rect> dstrect)
+        public static unsafe int RenderCopy(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopy(renderer, ref texture.GetPinnableReference(), srcrect, ref dstrect.GetPinnableReference());
@@ -14283,7 +14283,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopy(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Rect> srcrect, Rect* dstrect)
+        public static unsafe int RenderCopy(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopy(renderer, ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), dstrect);
@@ -14291,7 +14291,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopy(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Rect> srcrect, Span<Rect> dstrect)
+        public static unsafe int RenderCopy(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopy(renderer, ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -14299,7 +14299,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopy(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Rect* srcrect, Rect* dstrect)
+        public static unsafe int RenderCopy(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopy(ref renderer.GetPinnableReference(), texture, srcrect, dstrect);
@@ -14307,7 +14307,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopy(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Rect* srcrect, Span<Rect> dstrect)
+        public static unsafe int RenderCopy(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopy(ref renderer.GetPinnableReference(), texture, srcrect, ref dstrect.GetPinnableReference());
@@ -14315,7 +14315,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopy(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Rect> srcrect, Rect* dstrect)
+        public static unsafe int RenderCopy(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopy(ref renderer.GetPinnableReference(), texture, ref srcrect.GetPinnableReference(), dstrect);
@@ -14323,7 +14323,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopy(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Rect> srcrect, Span<Rect> dstrect)
+        public static unsafe int RenderCopy(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopy(ref renderer.GetPinnableReference(), texture, ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -14331,7 +14331,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopy(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Rect* srcrect, Rect* dstrect)
+        public static unsafe int RenderCopy(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopy(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), srcrect, dstrect);
@@ -14339,7 +14339,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopy(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Rect* srcrect, Span<Rect> dstrect)
+        public static unsafe int RenderCopy(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopy(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), srcrect, ref dstrect.GetPinnableReference());
@@ -14347,7 +14347,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopy(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Rect> srcrect, Rect* dstrect)
+        public static unsafe int RenderCopy(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopy(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), dstrect);
@@ -14355,7 +14355,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 870, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopy(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Rect> srcrect, Span<Rect> dstrect)
+        public static unsafe int RenderCopy(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopy(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -14363,7 +14363,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Texture* texture, Rect* srcrect, Rect* dstrect, double angle, Span<Point> center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Span<Point> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(renderer, texture, srcrect, dstrect, angle, ref center.GetPinnableReference(), flip);
@@ -14371,7 +14371,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Texture* texture, Rect* srcrect, Span<Rect> dstrect, double angle, Point* center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect, double angle, Point* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(renderer, texture, srcrect, ref dstrect.GetPinnableReference(), angle, center, flip);
@@ -14379,7 +14379,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Texture* texture, Rect* srcrect, Span<Rect> dstrect, double angle, Span<Point> center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect, double angle, Span<Point> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(renderer, texture, srcrect, ref dstrect.GetPinnableReference(), angle, ref center.GetPinnableReference(), flip);
@@ -14387,7 +14387,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Rect> srcrect, Rect* dstrect, double angle, Point* center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Point* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(renderer, texture, ref srcrect.GetPinnableReference(), dstrect, angle, center, flip);
@@ -14395,7 +14395,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Rect> srcrect, Rect* dstrect, double angle, Span<Point> center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Span<Point> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(renderer, texture, ref srcrect.GetPinnableReference(), dstrect, angle, ref center.GetPinnableReference(), flip);
@@ -14403,7 +14403,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Rect> srcrect, Span<Rect> dstrect, double angle, Point* center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect, double angle, Point* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(renderer, texture, ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference(), angle, center, flip);
@@ -14411,7 +14411,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Rect> srcrect, Span<Rect> dstrect, double angle, Span<Point> center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect, double angle, Span<Point> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(renderer, texture, ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference(), angle, ref center.GetPinnableReference(), flip);
@@ -14419,7 +14419,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Rect* srcrect, Rect* dstrect, double angle, Point* center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Point* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(renderer, ref texture.GetPinnableReference(), srcrect, dstrect, angle, center, flip);
@@ -14427,7 +14427,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Rect* srcrect, Rect* dstrect, double angle, Span<Point> center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Span<Point> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(renderer, ref texture.GetPinnableReference(), srcrect, dstrect, angle, ref center.GetPinnableReference(), flip);
@@ -14435,7 +14435,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Rect* srcrect, Span<Rect> dstrect, double angle, Point* center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect, double angle, Point* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(renderer, ref texture.GetPinnableReference(), srcrect, ref dstrect.GetPinnableReference(), angle, center, flip);
@@ -14443,7 +14443,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Rect* srcrect, Span<Rect> dstrect, double angle, Span<Point> center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect, double angle, Span<Point> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(renderer, ref texture.GetPinnableReference(), srcrect, ref dstrect.GetPinnableReference(), angle, ref center.GetPinnableReference(), flip);
@@ -14451,7 +14451,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Rect> srcrect, Rect* dstrect, double angle, Point* center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Point* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(renderer, ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), dstrect, angle, center, flip);
@@ -14459,7 +14459,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Rect> srcrect, Rect* dstrect, double angle, Span<Point> center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Span<Point> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(renderer, ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), dstrect, angle, ref center.GetPinnableReference(), flip);
@@ -14467,7 +14467,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Rect> srcrect, Span<Rect> dstrect, double angle, Point* center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect, double angle, Point* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(renderer, ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference(), angle, center, flip);
@@ -14475,7 +14475,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Rect> srcrect, Span<Rect> dstrect, double angle, Span<Point> center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect, double angle, Span<Point> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(renderer, ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference(), angle, ref center.GetPinnableReference(), flip);
@@ -14483,7 +14483,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Rect* srcrect, Rect* dstrect, double angle, Point* center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Point* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(ref renderer.GetPinnableReference(), texture, srcrect, dstrect, angle, center, flip);
@@ -14491,7 +14491,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Rect* srcrect, Rect* dstrect, double angle, Span<Point> center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Span<Point> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(ref renderer.GetPinnableReference(), texture, srcrect, dstrect, angle, ref center.GetPinnableReference(), flip);
@@ -14499,7 +14499,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Rect* srcrect, Span<Rect> dstrect, double angle, Point* center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect, double angle, Point* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(ref renderer.GetPinnableReference(), texture, srcrect, ref dstrect.GetPinnableReference(), angle, center, flip);
@@ -14507,7 +14507,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Rect* srcrect, Span<Rect> dstrect, double angle, Span<Point> center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect, double angle, Span<Point> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(ref renderer.GetPinnableReference(), texture, srcrect, ref dstrect.GetPinnableReference(), angle, ref center.GetPinnableReference(), flip);
@@ -14515,7 +14515,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Rect> srcrect, Rect* dstrect, double angle, Point* center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Point* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(ref renderer.GetPinnableReference(), texture, ref srcrect.GetPinnableReference(), dstrect, angle, center, flip);
@@ -14523,7 +14523,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Rect> srcrect, Rect* dstrect, double angle, Span<Point> center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Span<Point> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(ref renderer.GetPinnableReference(), texture, ref srcrect.GetPinnableReference(), dstrect, angle, ref center.GetPinnableReference(), flip);
@@ -14531,7 +14531,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Rect> srcrect, Span<Rect> dstrect, double angle, Point* center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect, double angle, Point* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(ref renderer.GetPinnableReference(), texture, ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference(), angle, center, flip);
@@ -14539,7 +14539,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Rect> srcrect, Span<Rect> dstrect, double angle, Span<Point> center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect, double angle, Span<Point> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(ref renderer.GetPinnableReference(), texture, ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference(), angle, ref center.GetPinnableReference(), flip);
@@ -14547,7 +14547,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Rect* srcrect, Rect* dstrect, double angle, Point* center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Point* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), srcrect, dstrect, angle, center, flip);
@@ -14555,7 +14555,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Rect* srcrect, Rect* dstrect, double angle, Span<Point> center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Span<Point> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), srcrect, dstrect, angle, ref center.GetPinnableReference(), flip);
@@ -14563,7 +14563,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Rect* srcrect, Span<Rect> dstrect, double angle, Point* center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect, double angle, Point* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), srcrect, ref dstrect.GetPinnableReference(), angle, center, flip);
@@ -14571,7 +14571,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Rect* srcrect, Span<Rect> dstrect, double angle, Span<Point> center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect, double angle, Span<Point> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), srcrect, ref dstrect.GetPinnableReference(), angle, ref center.GetPinnableReference(), flip);
@@ -14579,7 +14579,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Rect> srcrect, Rect* dstrect, double angle, Point* center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Point* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), dstrect, angle, center, flip);
@@ -14587,7 +14587,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Rect> srcrect, Rect* dstrect, double angle, Span<Point> center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Silk.NET.Maths.Rectangle<int>* dstrect, double angle, Span<Point> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), dstrect, angle, ref center.GetPinnableReference(), flip);
@@ -14595,7 +14595,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Rect> srcrect, Span<Rect> dstrect, double angle, Point* center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect, double angle, Point* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference(), angle, center, flip);
@@ -14603,7 +14603,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 890, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Rect> srcrect, Span<Rect> dstrect, double angle, Span<Point> center, RendererFlip flip)
+        public static unsafe int RenderCopyEx(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<Silk.NET.Maths.Rectangle<int>> dstrect, double angle, Span<Point> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyEx(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference(), angle, ref center.GetPinnableReference(), flip);
@@ -14771,7 +14771,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyF(this Sdl thisApi, Renderer* renderer, Texture* texture, Rect* srcrect, Span<FRect> dstrect)
+        public static unsafe int RenderCopyF(this Sdl thisApi, Renderer* renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<FRect> dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopyF(renderer, texture, srcrect, ref dstrect.GetPinnableReference());
@@ -14779,7 +14779,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyF(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Rect> srcrect, FRect* dstrect)
+        public static unsafe int RenderCopyF(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, FRect* dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopyF(renderer, texture, ref srcrect.GetPinnableReference(), dstrect);
@@ -14787,7 +14787,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyF(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Rect> srcrect, Span<FRect> dstrect)
+        public static unsafe int RenderCopyF(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<FRect> dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopyF(renderer, texture, ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -14795,7 +14795,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Rect* srcrect, FRect* dstrect)
+        public static unsafe int RenderCopyF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopyF(renderer, ref texture.GetPinnableReference(), srcrect, dstrect);
@@ -14803,7 +14803,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Rect* srcrect, Span<FRect> dstrect)
+        public static unsafe int RenderCopyF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<FRect> dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopyF(renderer, ref texture.GetPinnableReference(), srcrect, ref dstrect.GetPinnableReference());
@@ -14811,7 +14811,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Rect> srcrect, FRect* dstrect)
+        public static unsafe int RenderCopyF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, FRect* dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopyF(renderer, ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), dstrect);
@@ -14819,7 +14819,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Rect> srcrect, Span<FRect> dstrect)
+        public static unsafe int RenderCopyF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<FRect> dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopyF(renderer, ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -14827,7 +14827,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Rect* srcrect, FRect* dstrect)
+        public static unsafe int RenderCopyF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopyF(ref renderer.GetPinnableReference(), texture, srcrect, dstrect);
@@ -14835,7 +14835,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Rect* srcrect, Span<FRect> dstrect)
+        public static unsafe int RenderCopyF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<FRect> dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopyF(ref renderer.GetPinnableReference(), texture, srcrect, ref dstrect.GetPinnableReference());
@@ -14843,7 +14843,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Rect> srcrect, FRect* dstrect)
+        public static unsafe int RenderCopyF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, FRect* dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopyF(ref renderer.GetPinnableReference(), texture, ref srcrect.GetPinnableReference(), dstrect);
@@ -14851,7 +14851,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Rect> srcrect, Span<FRect> dstrect)
+        public static unsafe int RenderCopyF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<FRect> dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopyF(ref renderer.GetPinnableReference(), texture, ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -14859,7 +14859,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Rect* srcrect, FRect* dstrect)
+        public static unsafe int RenderCopyF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopyF(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), srcrect, dstrect);
@@ -14867,7 +14867,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Rect* srcrect, Span<FRect> dstrect)
+        public static unsafe int RenderCopyF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<FRect> dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopyF(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), srcrect, ref dstrect.GetPinnableReference());
@@ -14875,7 +14875,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Rect> srcrect, FRect* dstrect)
+        public static unsafe int RenderCopyF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, FRect* dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopyF(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), dstrect);
@@ -14883,7 +14883,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1012, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Rect> srcrect, Span<FRect> dstrect)
+        public static unsafe int RenderCopyF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<FRect> dstrect)
         {
             // SpanOverloader
             return thisApi.RenderCopyF(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference());
@@ -14891,7 +14891,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Texture* texture, Rect* srcrect, FRect* dstrect, double angle, Span<FPoint> center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect, double angle, Span<FPoint> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(renderer, texture, srcrect, dstrect, angle, ref center.GetPinnableReference(), flip);
@@ -14899,7 +14899,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Texture* texture, Rect* srcrect, Span<FRect> dstrect, double angle, FPoint* center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<FRect> dstrect, double angle, FPoint* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(renderer, texture, srcrect, ref dstrect.GetPinnableReference(), angle, center, flip);
@@ -14907,7 +14907,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Texture* texture, Rect* srcrect, Span<FRect> dstrect, double angle, Span<FPoint> center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<FRect> dstrect, double angle, Span<FPoint> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(renderer, texture, srcrect, ref dstrect.GetPinnableReference(), angle, ref center.GetPinnableReference(), flip);
@@ -14915,7 +14915,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Rect> srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(renderer, texture, ref srcrect.GetPinnableReference(), dstrect, angle, center, flip);
@@ -14923,7 +14923,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Rect> srcrect, FRect* dstrect, double angle, Span<FPoint> center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, FRect* dstrect, double angle, Span<FPoint> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(renderer, texture, ref srcrect.GetPinnableReference(), dstrect, angle, ref center.GetPinnableReference(), flip);
@@ -14931,7 +14931,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Rect> srcrect, Span<FRect> dstrect, double angle, FPoint* center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<FRect> dstrect, double angle, FPoint* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(renderer, texture, ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference(), angle, center, flip);
@@ -14939,7 +14939,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Rect> srcrect, Span<FRect> dstrect, double angle, Span<FPoint> center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<FRect> dstrect, double angle, Span<FPoint> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(renderer, texture, ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference(), angle, ref center.GetPinnableReference(), flip);
@@ -14947,7 +14947,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Rect* srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(renderer, ref texture.GetPinnableReference(), srcrect, dstrect, angle, center, flip);
@@ -14955,7 +14955,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Rect* srcrect, FRect* dstrect, double angle, Span<FPoint> center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect, double angle, Span<FPoint> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(renderer, ref texture.GetPinnableReference(), srcrect, dstrect, angle, ref center.GetPinnableReference(), flip);
@@ -14963,7 +14963,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Rect* srcrect, Span<FRect> dstrect, double angle, FPoint* center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<FRect> dstrect, double angle, FPoint* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(renderer, ref texture.GetPinnableReference(), srcrect, ref dstrect.GetPinnableReference(), angle, center, flip);
@@ -14971,7 +14971,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Rect* srcrect, Span<FRect> dstrect, double angle, Span<FPoint> center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<FRect> dstrect, double angle, Span<FPoint> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(renderer, ref texture.GetPinnableReference(), srcrect, ref dstrect.GetPinnableReference(), angle, ref center.GetPinnableReference(), flip);
@@ -14979,7 +14979,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Rect> srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(renderer, ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), dstrect, angle, center, flip);
@@ -14987,7 +14987,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Rect> srcrect, FRect* dstrect, double angle, Span<FPoint> center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, FRect* dstrect, double angle, Span<FPoint> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(renderer, ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), dstrect, angle, ref center.GetPinnableReference(), flip);
@@ -14995,7 +14995,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Rect> srcrect, Span<FRect> dstrect, double angle, FPoint* center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<FRect> dstrect, double angle, FPoint* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(renderer, ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference(), angle, center, flip);
@@ -15003,7 +15003,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Rect> srcrect, Span<FRect> dstrect, double angle, Span<FPoint> center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Renderer* renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<FRect> dstrect, double angle, Span<FPoint> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(renderer, ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference(), angle, ref center.GetPinnableReference(), flip);
@@ -15011,7 +15011,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Rect* srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(ref renderer.GetPinnableReference(), texture, srcrect, dstrect, angle, center, flip);
@@ -15019,7 +15019,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Rect* srcrect, FRect* dstrect, double angle, Span<FPoint> center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect, double angle, Span<FPoint> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(ref renderer.GetPinnableReference(), texture, srcrect, dstrect, angle, ref center.GetPinnableReference(), flip);
@@ -15027,7 +15027,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Rect* srcrect, Span<FRect> dstrect, double angle, FPoint* center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<FRect> dstrect, double angle, FPoint* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(ref renderer.GetPinnableReference(), texture, srcrect, ref dstrect.GetPinnableReference(), angle, center, flip);
@@ -15035,7 +15035,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Rect* srcrect, Span<FRect> dstrect, double angle, Span<FPoint> center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<FRect> dstrect, double angle, Span<FPoint> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(ref renderer.GetPinnableReference(), texture, srcrect, ref dstrect.GetPinnableReference(), angle, ref center.GetPinnableReference(), flip);
@@ -15043,7 +15043,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Rect> srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(ref renderer.GetPinnableReference(), texture, ref srcrect.GetPinnableReference(), dstrect, angle, center, flip);
@@ -15051,7 +15051,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Rect> srcrect, FRect* dstrect, double angle, Span<FPoint> center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, FRect* dstrect, double angle, Span<FPoint> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(ref renderer.GetPinnableReference(), texture, ref srcrect.GetPinnableReference(), dstrect, angle, ref center.GetPinnableReference(), flip);
@@ -15059,7 +15059,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Rect> srcrect, Span<FRect> dstrect, double angle, FPoint* center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<FRect> dstrect, double angle, FPoint* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(ref renderer.GetPinnableReference(), texture, ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference(), angle, center, flip);
@@ -15067,7 +15067,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Rect> srcrect, Span<FRect> dstrect, double angle, Span<FPoint> center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Texture* texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<FRect> dstrect, double angle, Span<FPoint> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(ref renderer.GetPinnableReference(), texture, ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference(), angle, ref center.GetPinnableReference(), flip);
@@ -15075,7 +15075,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Rect* srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), srcrect, dstrect, angle, center, flip);
@@ -15083,7 +15083,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Rect* srcrect, FRect* dstrect, double angle, Span<FPoint> center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, FRect* dstrect, double angle, Span<FPoint> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), srcrect, dstrect, angle, ref center.GetPinnableReference(), flip);
@@ -15091,7 +15091,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Rect* srcrect, Span<FRect> dstrect, double angle, FPoint* center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<FRect> dstrect, double angle, FPoint* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), srcrect, ref dstrect.GetPinnableReference(), angle, center, flip);
@@ -15099,7 +15099,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Rect* srcrect, Span<FRect> dstrect, double angle, Span<FPoint> center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Silk.NET.Maths.Rectangle<int>* srcrect, Span<FRect> dstrect, double angle, Span<FPoint> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), srcrect, ref dstrect.GetPinnableReference(), angle, ref center.GetPinnableReference(), flip);
@@ -15107,7 +15107,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Rect> srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, FRect* dstrect, double angle, FPoint* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), dstrect, angle, center, flip);
@@ -15115,7 +15115,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Rect> srcrect, FRect* dstrect, double angle, Span<FPoint> center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, FRect* dstrect, double angle, Span<FPoint> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), dstrect, angle, ref center.GetPinnableReference(), flip);
@@ -15123,7 +15123,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Rect> srcrect, Span<FRect> dstrect, double angle, FPoint* center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<FRect> dstrect, double angle, FPoint* center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference(), angle, center, flip);
@@ -15131,7 +15131,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1032, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Rect> srcrect, Span<FRect> dstrect, double angle, Span<FPoint> center, RendererFlip flip)
+        public static unsafe int RenderCopyExF(this Sdl thisApi, Span<Renderer> renderer, Span<Texture> texture, Span<Silk.NET.Maths.Rectangle<int>> srcrect, Span<FRect> dstrect, double angle, Span<FPoint> center, RendererFlip flip)
         {
             // SpanOverloader
             return thisApi.RenderCopyExF(ref renderer.GetPinnableReference(), ref texture.GetPinnableReference(), ref srcrect.GetPinnableReference(), ref dstrect.GetPinnableReference(), angle, ref center.GetPinnableReference(), flip);
@@ -15139,7 +15139,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1055, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderReadPixels<T0>(this Sdl thisApi, Renderer* renderer, Rect* rect, uint format, Span<T0> pixels, int pitch) where T0 : unmanaged
+        public static unsafe int RenderReadPixels<T0>(this Sdl thisApi, Renderer* renderer, Silk.NET.Maths.Rectangle<int>* rect, uint format, Span<T0> pixels, int pitch) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RenderReadPixels(renderer, rect, format, ref pixels.GetPinnableReference(), pitch);
@@ -15147,7 +15147,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1055, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderReadPixels(this Sdl thisApi, Renderer* renderer, Span<Rect> rect, uint format, void* pixels, int pitch)
+        public static unsafe int RenderReadPixels(this Sdl thisApi, Renderer* renderer, Span<Silk.NET.Maths.Rectangle<int>> rect, uint format, void* pixels, int pitch)
         {
             // SpanOverloader
             return thisApi.RenderReadPixels(renderer, ref rect.GetPinnableReference(), format, pixels, pitch);
@@ -15155,7 +15155,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1055, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderReadPixels<T0>(this Sdl thisApi, Renderer* renderer, Span<Rect> rect, uint format, Span<T0> pixels, int pitch) where T0 : unmanaged
+        public static unsafe int RenderReadPixels<T0>(this Sdl thisApi, Renderer* renderer, Span<Silk.NET.Maths.Rectangle<int>> rect, uint format, Span<T0> pixels, int pitch) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RenderReadPixels(renderer, ref rect.GetPinnableReference(), format, ref pixels.GetPinnableReference(), pitch);
@@ -15163,7 +15163,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1055, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderReadPixels(this Sdl thisApi, Span<Renderer> renderer, Rect* rect, uint format, void* pixels, int pitch)
+        public static unsafe int RenderReadPixels(this Sdl thisApi, Span<Renderer> renderer, Silk.NET.Maths.Rectangle<int>* rect, uint format, void* pixels, int pitch)
         {
             // SpanOverloader
             return thisApi.RenderReadPixels(ref renderer.GetPinnableReference(), rect, format, pixels, pitch);
@@ -15171,7 +15171,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1055, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderReadPixels<T0>(this Sdl thisApi, Span<Renderer> renderer, Rect* rect, uint format, Span<T0> pixels, int pitch) where T0 : unmanaged
+        public static unsafe int RenderReadPixels<T0>(this Sdl thisApi, Span<Renderer> renderer, Silk.NET.Maths.Rectangle<int>* rect, uint format, Span<T0> pixels, int pitch) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RenderReadPixels(ref renderer.GetPinnableReference(), rect, format, ref pixels.GetPinnableReference(), pitch);
@@ -15179,7 +15179,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1055, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderReadPixels(this Sdl thisApi, Span<Renderer> renderer, Span<Rect> rect, uint format, void* pixels, int pitch)
+        public static unsafe int RenderReadPixels(this Sdl thisApi, Span<Renderer> renderer, Span<Silk.NET.Maths.Rectangle<int>> rect, uint format, void* pixels, int pitch)
         {
             // SpanOverloader
             return thisApi.RenderReadPixels(ref renderer.GetPinnableReference(), ref rect.GetPinnableReference(), format, pixels, pitch);
@@ -15187,7 +15187,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be added.</summary>
         [NativeName("Src", "Line 1055, Column 29 in build/submodules/SDL-mirror/include/SDL_render.h")]
-        public static unsafe int RenderReadPixels<T0>(this Sdl thisApi, Span<Renderer> renderer, Span<Rect> rect, uint format, Span<T0> pixels, int pitch) where T0 : unmanaged
+        public static unsafe int RenderReadPixels<T0>(this Sdl thisApi, Span<Renderer> renderer, Span<Silk.NET.Maths.Rectangle<int>> rect, uint format, Span<T0> pixels, int pitch) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.RenderReadPixels(ref renderer.GetPinnableReference(), ref rect.GetPinnableReference(), format, ref pixels.GetPinnableReference(), pitch);

@@ -145,9 +145,9 @@
     "_LUID": "ValueTuple<ulong, long>",
     "_LARGE_INTEGER": "long",
     "IUnknown": "Silk.NET.Core.Native.IUnknown",
-    "tagRECT": "Silk.NET.Core.Native.TagRect",
-    "tagPOINT": "Silk.NET.Core.Native.TagPoint",
-    "tagSIZE": "Silk.NET.Core.Native.TagSize",
-    "tagPALETTEENTRY": "Silk.NET.Core.Native.TagPaletteEntry",
+    "tagRECT": "Silk.NET.Maths.Rectangle<long>",
+    "tagPOINT": "Silk.NET.Maths.Vector2D<long>",
+    "tagSIZE": "Silk.NET.Maths.Vector2D<long>",
+    "tagPALETTEENTRY": "Silk.NET.Maths.Vector4D<byte>",
     "_SECURITY_ATTRIBUTES": "Silk.NET.Core.Native.SecurityAttributes"
 }
