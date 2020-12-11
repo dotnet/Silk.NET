@@ -8,8 +8,8 @@ This both exposes more High Performance Simd128 API for those that want it, and 
 
 # Current Status
 - [x] Proposed
-- [ ] Discussed with API Review Board (ARB)
-- [ ] Approved
+- [x] Discussed with API Review Board (ARB)
+- [x] Approved
 - [ ] Implemented
 
 # Design Decisions
