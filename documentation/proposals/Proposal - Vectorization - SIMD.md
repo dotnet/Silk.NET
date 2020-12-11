@@ -48,6 +48,7 @@ static readonly Silk.NET.Maths.Simd128<T>.Zero -> Vector128<T>
 static Silk.NET.Maths.Simd128.Load<T>(T* ptr) -> Vector128<T>
 static Silk.NET.Maths.Simd128.Store<T>(Vector128<T> source, T* destination)
 static Silk.NET.Maths.Simd128.Create<T>(T value) -> Vector128<T>
+static Silk.NET.Maths.Simd128.AllBitsSet(Vector128<T> vector) -> bool
 
 static Silk.NET.Maths.Simd128.Abs<T>(Vector128<T> x) -> Vector128<T>
 static Silk.NET.Maths.Simd128.Acos<T>(Vector128<T> x) -> Vector128<T>
@@ -124,6 +125,7 @@ static readonly Silk.NET.Maths.Simd64<T>.Zero -> Vector64<T>
 static Silk.NET.Maths.Simd64.Load<T>(T* ptr) -> Vector64<T>
 static Silk.NET.Maths.Simd64.Store<T>(Vector64<T> source, T* destination)
 static Silk.NET.Maths.Simd64.Create<T>(T value) -> Vector64<T>
+static Silk.NET.Maths.Simd64.AllBitsSet(Vector64<T> vector) -> bool
 
 static Silk.NET.Maths.Simd64.Abs<T>(Vector64<T> x) -> Vector64<T>
 static Silk.NET.Maths.Simd64.Acos<T>(Vector64<T> x) -> Vector64<T>
@@ -200,6 +202,7 @@ static readonly Silk.NET.Maths.Simd256<T>.Zero -> Vector256<T>
 static Silk.NET.Maths.Simd256.Load<T>(T* ptr) -> Vector256<T>
 static Silk.NET.Maths.Simd256.Store<T>(Vector256<T> source, T* destination)
 static Silk.NET.Maths.Simd256.Create<T>(T value) -> Vector256<T>
+static Silk.NET.Maths.Simd256.AllBitsSet(Vector256<T> vector) -> bool
 
 static Silk.NET.Maths.Simd256.Abs<T>(Vector256<T> x) -> Vector256<T>
 static Silk.NET.Maths.Simd256.Acos<T>(Vector256<T> x) -> Vector256<T>
