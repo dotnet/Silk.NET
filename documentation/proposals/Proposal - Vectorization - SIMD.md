@@ -26,6 +26,11 @@ This both exposes more High Performance Simd128 API for those that want it, and 
 To make this simpler for both me, and any poor soul that reads through all this, I've provided the API in the form it would appear in a PublicAPI.txt
 
 ```cs
+Silk.NET.Maths.Scalar<T>.IsSupported.get -> bool
+Silk.NET.Maths.Simd128<T>.IsSupported.get -> bool
+Silk.NET.Maths.Simd64<T>.IsSupported.get -> bool
+Silk.NET.Maths.Simd256<T>.IsSupported.get -> bool
+
 Silk.NET.Maths.Simd128
 Silk.NET.Maths.Simd128<T>
 
