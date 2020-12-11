@@ -7,8 +7,8 @@ Bitwise operations in `Scalar[<T>]`
 
 # Current Status
 - [x] Proposed
-- [ ] Discussed with API Review Board (ARB)
-- [ ] Approved
+- [x] Discussed with API Review Board (ARB)
+- [x] Approved
 - [ ] Implemented
 
 # Design Decisions
