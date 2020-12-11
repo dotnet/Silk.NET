@@ -24,8 +24,8 @@ static Silk.NET.Maths.Scalar.And<T>(T left, T right) -> T
 static Silk.NET.Maths.Scalar.Or<T>(T left, T right) -> T
 static Silk.NET.Maths.Scalar.Xor<T>(T left, T right) -> T
 static Silk.NET.Maths.Scalar.Not<T>(T x) -> T
-static Silk.NET.Maths.Scalar.ShiftLeft<T>(T x, int amount) -> T
-static Silk.NET.Maths.Scalar.ShiftRight<T>(T x, int amount) -> T
-static Silk.NET.Maths.Scalar.RotateLeft<T>(T x, int amount) -> T
-static Silk.NET.Maths.Scalar.RotateRight<T>(T x, int amount) -> T
+static Silk.NET.Maths.Scalar.ShiftLeft<T>(T x, byte amount) -> T
+static Silk.NET.Maths.Scalar.ShiftRight<T>(T x, byte amount) -> T
+static Silk.NET.Maths.Scalar.RotateLeft<T>(T x, byte amount) -> T
+static Silk.NET.Maths.Scalar.RotateRight<T>(T x, byte amount) -> T
 ```
