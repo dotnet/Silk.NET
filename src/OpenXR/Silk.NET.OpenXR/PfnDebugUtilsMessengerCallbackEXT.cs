@@ -6,14 +6,18 @@ namespace Silk.NET.OpenXR
 {
     public readonly unsafe struct PfnDebugUtilsMessengerCallbackEXT
     {
-        public readonly delegate* unmanaged[Cdecl]<DebugUtilsMessageSeverityFlagsEXT, DebugUtilsMessageTypeFlagsEXT,
-            DebugUtilsMessengerCallbackDataEXT*, void*, Bool32> Handle;
+        private readonly void* _handle;
+
+        public delegate* unmanaged[Cdecl]<DebugUtilsMessageSeverityFlagsEXT, DebugUtilsMessageTypeFlagsEXT,
+            DebugUtilsMessengerCallbackDataEXT*, void*, Bool32> Handle =>
+            (delegate* unmanaged[Cdecl]<DebugUtilsMessageSeverityFlagsEXT, DebugUtilsMessageTypeFlagsEXT,
+                DebugUtilsMessengerCallbackDataEXT*, void*, Bool32>) _handle;
 
         public PfnDebugUtilsMessengerCallbackEXT
         (
             delegate* unmanaged[Cdecl]<DebugUtilsMessageSeverityFlagsEXT, DebugUtilsMessageTypeFlagsEXT,
                 DebugUtilsMessengerCallbackDataEXT*, void*, Bool32> ptr
-        ) => Handle = ptr;
+        ) => _handle = ptr;
 
         public static implicit operator IntPtr(PfnDebugUtilsMessengerCallbackEXT pfn) => (IntPtr) pfn.Handle;
 

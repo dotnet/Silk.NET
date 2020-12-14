@@ -5,15 +5,18 @@ namespace Silk.NET.Vulkan
 {
     public readonly unsafe struct PfnReallocationFunction
     {
-        public readonly delegate* unmanaged[Cdecl]<void*, void*, nuint, nuint, SystemAllocationScope, void*> Handle;
+        private readonly void* _handle;
+
+        public delegate* unmanaged[Cdecl]<void*, void*, nuint, nuint, SystemAllocationScope, void*> Handle =>
+            (delegate* unmanaged[Cdecl]<void*, void*, nuint, nuint, SystemAllocationScope, void*>) _handle;
 
         public PfnReallocationFunction
-            (delegate* unmanaged[Cdecl]<void*, void*, nuint, nuint, SystemAllocationScope, void*> ptr) => Handle = ptr;
+            (delegate* unmanaged[Cdecl]<void*, void*, nuint, nuint, SystemAllocationScope, void*> ptr) => _handle = ptr;
 
         public static implicit operator IntPtr(PfnReallocationFunction pfn) => (IntPtr) pfn.Handle;
 
         public PfnReallocationFunction
-            (ReallocationFunction func) => Handle =
+            (ReallocationFunction func) => _handle =
             (delegate* unmanaged[Cdecl]<void*, void*, nuint, nuint, SystemAllocationScope, void*>) SilkMarshal
                 .DelegateToPtr(func);
 

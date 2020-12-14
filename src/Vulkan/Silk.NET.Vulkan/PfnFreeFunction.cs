@@ -5,13 +5,17 @@ namespace Silk.NET.Vulkan
 {
     public readonly unsafe struct PfnFreeFunction
     {
-        public readonly delegate* unmanaged[Cdecl]<void*, void*, void> Handle;
-        public PfnFreeFunction(delegate* unmanaged[Cdecl]<void*, void*, void> ptr) => Handle = ptr;
+        private readonly void* _handle;
+
+        public delegate* unmanaged[Cdecl]<void*, void*, void> Handle =>
+            (delegate* unmanaged[Cdecl]<void*, void*, void>) _handle;
+
+        public PfnFreeFunction(delegate* unmanaged[Cdecl]<void*, void*, void> ptr) => _handle = ptr;
 
         public static implicit operator IntPtr(PfnFreeFunction pfn) => (IntPtr) pfn.Handle;
 
         public PfnFreeFunction
-            (FreeFunction func) => Handle = (delegate* unmanaged[Cdecl]<void*, void*, void>) SilkMarshal.DelegateToPtr
+            (FreeFunction func) => _handle = (delegate* unmanaged[Cdecl]<void*, void*, void>) SilkMarshal.DelegateToPtr
             (func);
 
         public static implicit operator delegate* unmanaged[Cdecl]<void*, void*, void>

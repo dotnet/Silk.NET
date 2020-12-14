@@ -5,13 +5,15 @@ namespace Silk.NET.Core
 {
     public readonly unsafe struct PfnVoidFunction
     {
-        public readonly delegate* unmanaged[Cdecl]<void> Handle;
-        public PfnVoidFunction(delegate* unmanaged[Cdecl]<void> ptr) => Handle = ptr;
+        private readonly void* _handle;
+
+        public delegate* unmanaged[Cdecl]<void> Handle => (delegate* unmanaged[Cdecl]<void>) _handle;
+        public PfnVoidFunction(delegate* unmanaged[Cdecl]<void> ptr) => _handle = ptr;
 
         public static implicit operator IntPtr(PfnVoidFunction pfn) => (IntPtr) pfn.Handle;
 
         public PfnVoidFunction
-            (Delegate func) => Handle = (delegate* unmanaged[Cdecl]<void>) SilkMarshal.DelegateToPtr
+            (Delegate func) => _handle = (delegate* unmanaged[Cdecl]<void>) SilkMarshal.DelegateToPtr
             (func);
 
         public static implicit operator delegate* unmanaged[Cdecl]<void>
