@@ -15,7 +15,7 @@ namespace Silk.NET.SilkTouch
     public partial class NativeApiGenerator
     {
         private TypeDeclarationSyntax GenerateVTable
-            (bool preloadVTable, Dictionary<int, string> entryPoints, bool emitAssert, bool vNext)
+            (bool preloadVTable, Dictionary<int, string> entryPoints, bool emitAssert, bool vNext, string generatedVTableName)
         {
             var vTableMembers = new List<MemberDeclarationSyntax>();
 
@@ -126,12 +126,13 @@ namespace Silk.NET.SilkTouch
                 slotVars.Add(VariableDeclarator(name));
             }
 
+            var generatedThrowHelperInvalidSlot = "GeneratedThrowHelperInvalidSlot";
             vTableMembers.Add
             (
                 MethodDeclaration
                     (
                         PredefinedType(Token(SyntaxKind.VoidKeyword)),
-                        "GeneratedThrowHelperInvalidSlot"
+                        generatedThrowHelperInvalidSlot
                     )
                     .WithParameterList(ParameterList())
                     .WithModifiers
@@ -239,7 +240,7 @@ namespace Silk.NET.SilkTouch
                             )
                         )
                     )
-                    .WithBody(Block(BuildLoad(ref vTableMembers, entryPoints, emitAssert, preloadVTable, vNext)))
+                    .WithBody(Block(BuildLoad(ref vTableMembers, entryPoints, emitAssert, preloadVTable, vNext, generatedThrowHelperInvalidSlot)))
                     .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
             );
 
@@ -285,7 +286,7 @@ namespace Silk.NET.SilkTouch
                 List<AttributeListSyntax>(),
                 TokenList
                     (Token(SyntaxKind.PrivateKeyword), Token(SyntaxKind.SealedKeyword)),
-                Identifier("GeneratedVTable"), null,
+                Identifier(generatedVTableName), null,
                 BaseList
                 (
                     SingletonSeparatedList
@@ -298,13 +299,13 @@ namespace Silk.NET.SilkTouch
         }
         
                 private IEnumerable<StatementSyntax> BuildLoad
-            (ref List<MemberDeclarationSyntax> vTableMembers, Dictionary<int, string> entryPoints, bool emitAssert, bool preloadVTable, bool vNext)
+            (ref List<MemberDeclarationSyntax> vTableMembers, Dictionary<int, string> entryPoints, bool emitAssert, bool preloadVTable, bool vNext, string generatedThrowHelperInvalidSlot)
         {
             const string keyName = "slot";
             
             Span<int> orderedKeys = entryPoints.Keys.OrderBy(x => x).ToArray();
 
-            var exp = BuildSubLoad(ref vTableMembers, orderedKeys, entryPoints, emitAssert, preloadVTable, vNext);
+            var exp = BuildSubLoad(ref vTableMembers, orderedKeys, entryPoints, emitAssert, preloadVTable, vNext, generatedThrowHelperInvalidSlot);
 
             return new[] {ReturnStatement(InvocationExpression(exp, ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) }))))};
 
@@ -315,11 +316,12 @@ namespace Silk.NET.SilkTouch
                 IReadOnlyDictionary<int, string> entryPoints,
                 bool emitAssert, 
                 bool preloadVTable,
-                bool vNext
+                bool vNext,
+                string generatedThrowHelperInvalidSlot
             )
             {
                 var body = new List<StatementSyntax>();
-                var name = $"Load_{keys[0]}_{keys[keys.Length - 1]}";
+                var name = NameGenerator.Name($"Load_{keys[0]}_{keys[keys.Length - 1]}");
                 if (keys.Length % 2 != 0)
                 {
                     // uneven, load lowest
@@ -335,13 +337,13 @@ namespace Silk.NET.SilkTouch
                     if (keys.Length > 1)
                     {
                         body.Add
-                            (ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, keys.Slice(1), entryPoints, emitAssert, preloadVTable, vNext), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))));
+                            (ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, keys.Slice(1), entryPoints, emitAssert, preloadVTable, vNext, generatedThrowHelperInvalidSlot), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))));
                     }
                     else
                     {
                         // throw & return default
                         body.Add
-                            (ExpressionStatement(InvocationExpression(IdentifierName("GeneratedThrowHelperInvalidSlot"))));
+                            (ExpressionStatement(InvocationExpression(IdentifierName(generatedThrowHelperInvalidSlot))));
                         body.Add(ReturnStatement(DefaultExpression(IdentifierName("System.IntPtr"))));
                     }
                 }
@@ -358,9 +360,9 @@ namespace Silk.NET.SilkTouch
                         IfStatement
                         (
                             BinaryExpression(SyntaxKind.LessThanExpression, IdentifierName(keyName), Num(midKey)),
-                            ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, lower, entryPoints, emitAssert, preloadVTable, vNext), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))),
+                            ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, lower, entryPoints, emitAssert, preloadVTable, vNext, generatedThrowHelperInvalidSlot), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))),
                             ElseClause
-                                (ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, upper, entryPoints, emitAssert, preloadVTable, vNext), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))))
+                                (ReturnStatement(InvocationExpression(BuildSubLoad(ref methods, upper, entryPoints, emitAssert, preloadVTable, vNext, generatedThrowHelperInvalidSlot), ArgumentList(SeparatedList(new [] { Argument(IdentifierName(keyName)), Argument(IdentifierName("entryPoint")) })))))
                         )
                     );
                 }
@@ -488,7 +490,7 @@ namespace Silk.NET.SilkTouch
 
             static IdentifierNameSyntax BuildFinalSubLoad(ref List<MemberDeclarationSyntax> methods, int key, string entryPoint, bool emitAssert, bool preloadVTable, bool vNext)
             {
-                var name = $"Load_Final_{key}_{entryPoint}";
+                var name = NameGenerator.Name($"Load_Final_{key}_{entryPoint}");
                 var body = new List<StatementSyntax>();
                 if (emitAssert)
                     body.Add(ExpressionStatement(
