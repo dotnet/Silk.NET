@@ -20,7 +20,7 @@ namespace Silk.NET.Windowing.Sdl
     internal unsafe class SdlWindow : SdlView, IWindow
     {
         private WindowOptions _extendedOptionsCache;
-        private List<string> _droppedFiles = new List<string>();
+        private List<string> _droppedFiles = new();
 
         public SdlWindow(WindowOptions opts, SdlView? parent, SdlMonitor? monitor)
             : base(new ViewOptions(opts), parent, monitor)
@@ -209,6 +209,9 @@ namespace Silk.NET.Windowing.Sdl
         }
 
         public bool TransparentFramebuffer => false; // doesn't look like SDL doesn't support this
+
+        public IGLContext? SharedContext => _extendedOptionsCache.SharedContext;
+
         public IWindow CreateWindow(WindowOptions opts) => new SdlWindow(opts, this, null);
 
         public IWindowHost? Parent => (IWindowHost?) ParentView ?? Monitor;
@@ -434,7 +437,7 @@ namespace Silk.NET.Windowing.Sdl
             CoreInitialize
             (
                 opts, flags, InitialMonitor?.Bounds.Origin.X + Position.X,
-                InitialMonitor?.Bounds.Origin.Y + Position.Y, Size.X, Size.Y, Title
+                InitialMonitor?.Bounds.Origin.Y + Position.Y, Size.X, Size.Y, Title, SharedContext
             );
         }
     }

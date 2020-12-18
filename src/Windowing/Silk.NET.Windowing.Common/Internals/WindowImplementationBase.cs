@@ -5,6 +5,7 @@
 
 using System;
 using Silk.NET.Core;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Maths;
 
 
@@ -47,6 +48,7 @@ namespace Silk.NET.Windowing.Internals
         // Other APIs implemented abstractly
         public abstract IWindow CreateWindow(WindowOptions opts);
         public abstract IWindowHost? Parent { get; }
+        public abstract IGLContext? SharedContext { get; }
         public abstract IMonitor? Monitor { get; set; }
         public abstract void SetWindowIcon(ReadOnlySpan<RawImage> icons);
 

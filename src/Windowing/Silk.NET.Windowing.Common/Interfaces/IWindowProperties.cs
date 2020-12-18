@@ -3,6 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using Silk.NET.Core.Contexts;
 using Silk.NET.Maths;
 
 namespace Silk.NET.Windowing
@@ -56,5 +57,10 @@ namespace Silk.NET.Windowing
         /// Whether or not the window's framebuffer should be transparent.
         /// </summary>
         bool TransparentFramebuffer { get; }
+        
+        /// <summary>
+        /// The context with which this window's context's resources are shared.
+        /// </summary>
+        IGLContext? SharedContext { get; }
     }
 }

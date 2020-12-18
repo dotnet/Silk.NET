@@ -21,7 +21,7 @@ namespace Silk.NET.OpenXR
 
         public static implicit operator IntPtr(PfnDebugUtilsMessengerCallbackEXT pfn) => (IntPtr) pfn.Handle;
 
-        public PfnDebugUtilsMessengerCallbackEXT(DebugUtilsMessengerCallbackFunctionEXT func) => Handle =
+        public PfnDebugUtilsMessengerCallbackEXT(DebugUtilsMessengerCallbackFunctionEXT func) => _handle =
             (delegate* unmanaged[Cdecl]<DebugUtilsMessageSeverityFlagsEXT, DebugUtilsMessageTypeFlagsEXT,
                 DebugUtilsMessengerCallbackDataEXT*, void*, Bool32>) SilkMarshal.DelegateToPtr(func);
 

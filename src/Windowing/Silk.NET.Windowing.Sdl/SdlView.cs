@@ -51,7 +51,7 @@ namespace Silk.NET.Windowing.Sdl
 
         // Properties
         public override IGLContext? GLContext => _ctx ??= API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES
-            ? new SdlGLContext(this)
+            ? new SdlContext(Sdl, SdlWindow, this)
             : null;
 
         public override IVkSurface? VkSurface => _vk ??= API.API == ContextAPI.Vulkan ? new SdlVkSurface(this) : null;
@@ -65,7 +65,7 @@ namespace Silk.NET.Windowing.Sdl
         protected SdlView? ParentView { get; }
         protected SdlMonitor? InitialMonitor { get; set; }
 
-        public override Vector2D<int> FramebufferSize => (_ctx as SdlGLContext)?.FramebufferSize ?? CoreSize;
+        public override Vector2D<int> FramebufferSize => (_ctx as SdlContext)?.FramebufferSize ?? CoreSize;
 
         public override VideoMode VideoMode
         {
@@ -93,10 +93,18 @@ namespace Silk.NET.Windowing.Sdl
         public override void ContinueEvents() => Interlocked.Exchange(ref _continue, 1);
 
         protected override void CoreInitialize(ViewOptions opts) => CoreInitialize
-            (opts, null, null, null, null, null, null);
+            (opts, null, null, null, null, null, null, null);
 
         protected void CoreInitialize
-            (ViewOptions opts, WindowFlags? additionalFlags, int? x, int? y, int? w, int? h, string? title)
+        (
+            ViewOptions opts,
+            WindowFlags? additionalFlags,
+            int? x,
+            int? y,
+            int? w,
+            int? h,
+            string? title,
+            IGLContext? sharedContext)
         {
             var flags = WindowFlags.WindowAllowHighdpi |
                         WindowFlags.WindowShown;
@@ -143,7 +151,9 @@ namespace Silk.NET.Windowing.Sdl
                 (uint) flags
             );
             Sdl.ThrowError();
-            (GLContext as SdlGLContext)?.Create
+            
+            sharedContext?.MakeCurrent();
+            (GLContext as SdlContext)?.Create
             (
                 (GLattr.GLContextMajorVersion, opts.API.Version.MajorVersion),
                 (GLattr.GLContextMinorVersion, opts.API.Version.MinorVersion),
@@ -159,7 +169,8 @@ namespace Silk.NET.Windowing.Sdl
                         })
                 ),
                 (GLattr.GLContextFlags, (int) opts.API.Flags),
-                (GLattr.GLDepthSize, opts.PreferredDepthBufferBits ?? 16)
+                (GLattr.GLDepthSize, opts.PreferredDepthBufferBits ?? 16),
+                (GLattr.GLShareWithCurrentContext, sharedContext is null ? 0 : 1)
             );
             if (SdlWindow == null)
             {
