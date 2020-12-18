@@ -308,7 +308,7 @@ namespace Silk.NET.SilkTouch
                                                         LiteralExpression
                                                         (
                                                             SyntaxKind.NumericLiteralExpression,
-                                                            Literal((int) returnMarshalAs)
+                                                            Literal((int) marshalAs)
                                                         )
                                                     )
                                                 )
@@ -354,7 +354,7 @@ namespace Silk.NET.SilkTouch
                                                 _nativeStringEncoding,
                                                 LiteralExpression
                                                 (
-                                                    SyntaxKind.NumericLiteralExpression, Literal((int) returnMarshalAs)
+                                                    SyntaxKind.NumericLiteralExpression, Literal((int) marshalAs)
                                                 )
                                             )
                                         )
