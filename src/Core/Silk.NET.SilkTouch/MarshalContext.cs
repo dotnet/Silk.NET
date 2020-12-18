@@ -11,6 +11,7 @@ using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
+using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Native;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
@@ -79,6 +80,11 @@ namespace Silk.NET.SilkTouch
         int[] ParameterVariables { get; }
 
         /// <summary>
+        /// The stage currently at.
+        /// </summary>
+        SilkTouchStage CurrentStage { get; }
+
+        /// <summary>
         /// Declare a variable
         /// </summary>
         /// <param name="type">the type of this variable</param>
@@ -128,6 +134,13 @@ namespace Silk.NET.SilkTouch
 
         void AddSideEffect(Func<IMarshalContext, StatementSyntax> expression);
 
+        /// <summary>
+        /// Adds a side effect at a specific stage.
+        /// </summary>
+        /// <param name="silkTouchStage">The stage to add to.</param>
+        /// <param name="expression">The expression that is called when transitioning. The given context will be the context pre-transition.</param>
+        void AddSideEffectToStage(SilkTouchStage silkTouchStage, Func<IMarshalContext, StatementSyntax> expression);
+        
         void DeclareExtraRef(int id, int amount = 1);
         
         bool TryGetAttribute(int index, string typeFullName, out AttributeData? attributeData);
@@ -135,6 +148,8 @@ namespace Silk.NET.SilkTouch
         bool TryGetAttribute(int index, Type type, out AttributeData? attributeData);
 
         bool TryGetAttribute<T>(int index, out AttributeData? attributeData) where T : Attribute;
+
+        void TransitionTo(SilkTouchStage stage);
     }
 
     public class MarshalOptions
@@ -182,14 +197,19 @@ namespace Silk.NET.SilkTouch
         /// <inheritdoc />
         public MarshalOptions? ReturnMarshalOptions { get; }
 
+        /// <inheritdoc />
         public int[] ParameterVariables { get; }
 
         public int GCCount { get; private set; } = 0;
 
-        private readonly List<Variable> _variables = new List<Variable>();
-        private readonly List<StatementSyntax> _statements = new List<StatementSyntax>();
-        private readonly Stack<(int Count, Func<StatementSyntax, IMarshalContext, StatementSyntax> applyBlock)> _blocks = new Stack<(int Count, Func<StatementSyntax, IMarshalContext, StatementSyntax> applyBlock)>(); // _blocks contains the start of current blocks + how to apply the block
+        /// <inheritdoc />
+        public SilkTouchStage CurrentStage { get; private set; }
 
+        private readonly List<Variable> _variables = new();
+        private readonly List<StatementSyntax> _statements = new();
+        private readonly Stack<(int Count, Func<StatementSyntax, IMarshalContext, StatementSyntax> applyBlock)> _blocks = new(); // _blocks contains the start of current blocks + how to apply the block
+        private readonly Dictionary<SilkTouchStage, List<Func<IMarshalContext, StatementSyntax>>> _toInject = new();
+        
         private class Variable
         {
             public ITypeSymbol Type { get; }
@@ -392,6 +412,20 @@ namespace Silk.NET.SilkTouch
             _statements.Add(expression(this));
         }
 
+        /// <inheritdoc />
+        public void AddSideEffectToStage(SilkTouchStage silkTouchStage, Func<IMarshalContext, StatementSyntax> expression)
+        {
+            if (_toInject.TryGetValue(silkTouchStage, out var list))
+                list.Add(expression);
+            else
+            {
+                list = new List<Func<IMarshalContext, StatementSyntax>>();
+                list.Add(expression);
+                _toInject[silkTouchStage] = list;
+            }
+        }
+
+        /// <inheritdoc />
         public void DeclareExtraRef(int id, int amount = 1)
         {
             _variables[id].ReadCount += amount;
@@ -420,6 +454,7 @@ namespace Silk.NET.SilkTouch
             return Block(_statements);
         }
 
+        /// <inheritdoc />
         public bool TryGetAttribute(int index, string typeFullName, out AttributeData? attributeData)
         {
             var attributes = 
@@ -436,13 +471,34 @@ namespace Silk.NET.SilkTouch
             return !(attributeData is null);
         }
 
+        /// <inheritdoc />
         public bool TryGetAttribute
             (int index, Type type, out AttributeData? attributeData)
             => TryGetAttribute(index, type.FullName, out attributeData);
 
+        /// <inheritdoc />
         public bool TryGetAttribute<T>
             (int index, out AttributeData? attributeData) where T : Attribute
             => TryGetAttribute(index, typeof(T), out attributeData);
+
+        /// <inheritdoc />
+        public void TransitionTo(SilkTouchStage stage)
+        {
+            if (stage < CurrentStage)
+            {
+                throw new ArgumentException("Cannot transition backwards");
+            }
+
+            if (_toInject.TryGetValue(stage, out var toInject))
+            {
+                foreach (var x in toInject)
+                {
+                    AddSideEffect(x);
+                }
+            }
+            
+            CurrentStage = stage;
+        }
 
         public MarshalContext(Compilation compilation, IMethodSymbol methodSymbol, int slot)
         {

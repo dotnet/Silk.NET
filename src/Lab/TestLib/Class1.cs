@@ -17,6 +17,11 @@ namespace TestLib
     {
 
         [NativeApi(EntryPoint = "MessageBoxA")]
+        [Inject(SilkTouchStage.Begin, "System.Console.WriteLine(\"Stage: Begin\");")]
+        [Inject(SilkTouchStage.PostInit, "System.Console.WriteLine(\"Stage: PostInit\");")]
+        [Inject(SilkTouchStage.PreLoad, "System.Console.WriteLine(\"Stage: PreLoad\");")]
+        [Inject(SilkTouchStage.PostLoad, "System.Console.WriteLine(\"Stage: PostLoad\");")]
+        [Inject(SilkTouchStage.End, "System.Console.WriteLine(\"Stage: End\");")]
         public unsafe partial int MessageBox(IntPtr hwnd, char* text, char* caption, uint buttons);
         
         [NativeApi(EntryPoint = "MessageBoxA")]

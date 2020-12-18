@@ -5,6 +5,7 @@
 
 using System;
 using System.Linq;
+using Silk.NET.Core.Attributes;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch
@@ -21,6 +22,8 @@ namespace Silk.NET.SilkTouch
                 ctx.SetParameterToVariable(index, id);
             }
 
+            ctx.TransitionTo(SilkTouchStage.PostInit);
+            
             next();
         }
         
