@@ -14,6 +14,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
+using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Native;
 using Silk.NET.SilkTouch.NativeContextOverrides;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -64,15 +65,20 @@ namespace Silk.NET.SilkTouch
 
 
             marshalBuilder = new MarshalBuilder();
-
+            
+            // begin            |           end
+            marshalBuilder.Use(Middlewares.InjectMiddleware);
             marshalBuilder.Use(Middlewares.ParameterInitMiddleware);
             marshalBuilder.Use(Middlewares.StringMarshaller);
             marshalBuilder.Use(Middlewares.PinMiddleware);
+            // post init        |           -
             marshalBuilder.Use(Middlewares.SpanMarshaller);
             marshalBuilder.Use(Middlewares.BoolMarshaller);
             marshalBuilder.Use(Middlewares.PinObjectMarshaller);
+            // post pin
             marshalBuilder.Use(Middlewares.DelegateMarshaller);
             marshalBuilder.Use(Middlewares.GenericPointerMarshaller);
+            // pre load         |           post load
 
             List<ITypeSymbol> processedSymbols = new List<ITypeSymbol>();
             
@@ -380,6 +386,8 @@ namespace Silk.NET.SilkTouch
         {
             void BuildLoadInvoke(ref IMarshalContext ctx, Action next)
             {
+                ctx.TransitionTo(SilkTouchStage.PreLoad);
+
                 // this is terminal, we never call next
 
                 var parameters = ctx.ResolveAllLoadParameters();
@@ -489,6 +497,7 @@ namespace Silk.NET.SilkTouch
                 }
 
                 ctx.CurrentResultType = ctx.ReturnLoadType;
+                ctx.TransitionTo(SilkTouchStage.PostLoad);
             }
 
             try
