@@ -192,6 +192,8 @@ namespace Silk.NET.Windowing.Internals
         public GraphicsAPI API => _optionsCache.API;
         public double Time => _lifetimeStopwatch.Elapsed.TotalSeconds;
         public int? PreferredDepthBufferBits => _optionsCache.PreferredDepthBufferBits;
+        public int? PreferredStencilBufferBits => _optionsCache.PreferredStencilBufferBits;
+        public Vector4D<int>? PreferredBitDepth => _optionsCache.PreferredBitDepth;
 
         public bool VSync
         {

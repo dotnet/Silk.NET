@@ -38,6 +38,8 @@ namespace Silk.NET.Windowing
             IsEventDriven = opts.IsEventDriven;
             VSync = opts.VSync;
             SharedContext = null;
+            PreferredStencilBufferBits = opts.PreferredStencilBufferBits;
+            PreferredBitDepth = opts.PreferredBitDepth;
         }
 
         /// <inheritdoc />
@@ -54,6 +56,12 @@ namespace Silk.NET.Windowing
 
         /// <inheritdoc />
         public int? PreferredDepthBufferBits { get; set; }
+
+        /// <inheritdoc />
+        public int? PreferredStencilBufferBits { get; set; }
+
+        /// <inheritdoc />
+        public Vector4D<int>? PreferredBitDepth { get; }
 
         /// <inheritdoc />
         public Vector2D<int> Position { get; set; }
@@ -106,6 +114,8 @@ namespace Silk.NET.Windowing
             bool shouldSwapAutomatically,
             VideoMode videoMode,
             int? preferredDepthBufferBits = null,
+            int? preferredStencilBufferBits = null,
+            Vector4D<int>? preferredBitDepth = null,
             bool transparentFramebuffer = false,
             bool isEventDriven = false,
             IGLContext? sharedContext = null
@@ -127,6 +137,9 @@ namespace Silk.NET.Windowing
             IsEventDriven = isEventDriven;
             VSync = isVSync;
             SharedContext = sharedContext;
+            PreferredDepthBufferBits = preferredDepthBufferBits;
+            PreferredStencilBufferBits = preferredStencilBufferBits;
+            PreferredBitDepth = preferredBitDepth;
         }
 
         static WindowOptions()
