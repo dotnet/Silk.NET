@@ -12,8 +12,15 @@ namespace Silk.NET.Windowing.Sdl
 {
     internal struct SdlMonitor : IMonitor
     {
-        public SdlMonitor(int i) => Index = i;
-        public IWindow CreateWindow(WindowOptions opts) => new SdlWindow(opts, null, this);
+        private readonly SdlPlatform _platform;
+
+        public SdlMonitor(SdlPlatform platform, int i)
+        {
+            _platform = platform;
+            Index = i;
+        }
+
+        public IWindow CreateWindow(WindowOptions opts) => new SdlWindow(opts, null, this, _platform);
 
         public string Name => SdlProvider.SDL.Value.GetDisplayNameS(Index);
         public int Index { get; }
