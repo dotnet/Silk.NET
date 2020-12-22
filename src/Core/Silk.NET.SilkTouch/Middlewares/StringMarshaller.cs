@@ -71,6 +71,7 @@ namespace Silk.NET.SilkTouch
                     UnmanagedType.LPWStr => ctx.Compilation.GetSpecialType(SpecialType.System_Char),
                     UnmanagedType.LPStr => ctx.Compilation.GetSpecialType(SpecialType.System_Byte),
                     UnmanagedType.LPTStr => ctx.Compilation.GetSpecialType(SpecialType.System_Byte),
+                    UnmanagedType.LPUTF8Str => ctx.Compilation.GetSpecialType(SpecialType.System_Byte),
                 });
                 
                 var id = ctx.DeclareVariable(charType);
@@ -205,6 +206,7 @@ namespace Silk.NET.SilkTouch
                         UnmanagedType.LPWStr => ctx.Compilation.GetSpecialType(SpecialType.System_Char),
                         UnmanagedType.LPStr => ctx.Compilation.GetSpecialType(SpecialType.System_Byte),
                         UnmanagedType.LPTStr => ctx.Compilation.GetSpecialType(SpecialType.System_Byte),
+                        UnmanagedType.LPUTF8Str => ctx.Compilation.GetSpecialType(SpecialType.System_Byte),
                     }
                 );
             }
@@ -306,7 +308,7 @@ namespace Silk.NET.SilkTouch
                                                         LiteralExpression
                                                         (
                                                             SyntaxKind.NumericLiteralExpression,
-                                                            Literal((int) returnMarshalAs)
+                                                            Literal((int) marshalAs)
                                                         )
                                                     )
                                                 )
@@ -352,7 +354,7 @@ namespace Silk.NET.SilkTouch
                                                 _nativeStringEncoding,
                                                 LiteralExpression
                                                 (
-                                                    SyntaxKind.NumericLiteralExpression, Literal((int) returnMarshalAs)
+                                                    SyntaxKind.NumericLiteralExpression, Literal((int) marshalAs)
                                                 )
                                             )
                                         )

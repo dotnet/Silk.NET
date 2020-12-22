@@ -6,9 +6,11 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
+using UnmanagedType = Silk.NET.Core.Native.UnmanagedType;
 
 namespace Silk.NET.GLFW
 {
@@ -1925,7 +1927,7 @@ namespace Silk.NET.GLFW
         (
             int width,
             int height,
-            string title,
+            [UnmanagedType(UnmanagedType.LPUTF8Str)] string title,
             Monitor* monitor,
             WindowHandle* share
         );
@@ -3163,7 +3165,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" /> and <see cref="ErrorCode.PlatformError" />.
         /// </para>
         /// </remarks>
-        public unsafe partial void SetWindowTitle(WindowHandle* window, string title);
+        public unsafe partial void SetWindowTitle(WindowHandle* window, [UnmanagedType(UnmanagedType.LPUTF8Str)] string title);
 
         /// <summary>
         /// <para>
