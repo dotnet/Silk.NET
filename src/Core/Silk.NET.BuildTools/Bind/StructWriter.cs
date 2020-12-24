@@ -3,12 +3,17 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
+using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Humanizer;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
+using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
 using Silk.NET.BuildTools.Cpp;
+using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
 namespace Silk.NET.BuildTools.Bind
 {
@@ -21,7 +26,7 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="file">The file to write to.</param>
         /// <param name="profile">The subsystem containing this enum.</param>
         /// <param name="project">The project containing this enum.</param>
-        public static void WriteStruct(this Struct @struct, string file, Profile profile, Project project, BindTask task)
+        public static void WriteStruct(this Struct @struct, string file, Profile profile, Project project, BindState task)
         {
             var sw = new StreamWriter(file);
             sw.WriteLine(task.LicenseText());
@@ -30,7 +35,7 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine();
             sw.WriteLine("#pragma warning disable 1591");
             sw.WriteLine();
-            var ns = project.IsRoot ? task.Namespace : task.ExtensionsNamespace;
+            var ns = project.IsRoot ? task.Task.Namespace : task.Task.ExtensionsNamespace;
             sw.WriteLine($"namespace {ns}{project.Namespace}");
             sw.WriteLine("{");
             foreach (var attr in @struct.Attributes)
@@ -45,13 +50,13 @@ namespace Silk.NET.BuildTools.Bind
             {
                 var asSuffix = comBase.Split('.').Last();
                 asSuffix = (asSuffix.StartsWith('I') ? asSuffix.Substring(1) : comBase);
-                asSuffix = asSuffix.StartsWith(task.FunctionPrefix)
-                    ? asSuffix.Substring(task.FunctionPrefix.Length)
+                asSuffix = asSuffix.StartsWith(task.Task.FunctionPrefix)
+                    ? asSuffix.Substring(task.Task.FunctionPrefix.Length)
                     : asSuffix;
                 var fromSuffix = @struct.Name.Split('.').Last();
                 fromSuffix = (fromSuffix.StartsWith('I') ? fromSuffix.Substring(1) : comBase);
-                fromSuffix = fromSuffix.StartsWith(task.FunctionPrefix)
-                    ? fromSuffix.Substring(task.FunctionPrefix.Length)
+                fromSuffix = fromSuffix.StartsWith(task.Task.FunctionPrefix)
+                    ? fromSuffix.Substring(task.Task.FunctionPrefix.Length)
                     : fromSuffix;
                 sw.WriteLine($"        public static implicit operator {comBase}({@struct.Name} val)");
                 sw.WriteLine($"            => Unsafe.As<{@struct.Name}, {comBase}>(ref val);");
@@ -271,7 +276,21 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine($"        [NativeName(\"Type\", \"{structField.NativeType}\")]");
                     sw.WriteLine($"        [NativeName(\"Type.Name\", \"{structField.Type.OriginalName}\")]");
                     sw.WriteLine($"        [NativeName(\"Name\", \"{structField.NativeName}\")]");
-                    sw.WriteLine($"        public {structField.Type} {structField.Name};");
+                    if (structField.Type.IsFunctionPointer)
+                    {
+                        var camel = structField.Name.Camelize();
+                        sw.WriteLine($"        public {structField.Type} {structField.Name}");
+                        sw.WriteLine($"        {{");
+                        sw.WriteLine($"            get => ({structField.Type}) _{camel};");
+                        sw.WriteLine($"            set => _{camel} = value;");
+                        sw.WriteLine($"        }}");
+                        sw.WriteLine();
+                        sw.WriteLine($"        private void* _{camel};");
+                    }
+                    else
+                    {
+                        sw.WriteLine($"        public {structField.Type} {structField.Name};");
+                    }
                 }
             }
 
@@ -315,6 +334,92 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine("}");
             sw.Flush();
             sw.Dispose();
+        }
+
+        public static void WriteBuildToolsIntrinsic(Struct @struct, string file, Profile profile, Project project, BindState task, List<string> args)
+        {
+            if (args[0] == "$PFN")
+            {
+                WriteFunctionPointerWrapper(@struct, file, profile, project, task, args[1], args[2], args[3]);
+            }
+            else
+            {
+                throw new InvalidOperationException("Struct is not a valid intrinsic");
+            }
+        }
+
+        public static void WriteFunctionPointerWrapper
+            (Struct @struct, string file, Profile profile, Project project, BindState state, string delegateName, string pfnName, string fnPtrSig)
+        {
+            var coreProject = profile.Projects["Core"];
+            var type = new Type
+            {
+                FunctionPointerSignature = new Function
+                {
+                    Name = delegateName, NativeName = pfnName.Substring(3),
+                    Parameters = @struct.Fields.SkipLast(1).Select
+                            ((x, i) => new Parameter {Name = $"arg{i}", Type = x.Type})
+                        .ToList(),
+                    ReturnType = @struct.Fields.LastOrDefault()?.Type ?? new Type{Name = "void"}
+                }
+            };
+
+            var sw = new StreamWriter(file);
+            sw.WriteLine(state.LicenseText());
+            sw.WriteLine();
+            sw.WriteCoreUsings();
+            sw.WriteLine();
+            sw.WriteLine("#pragma warning disable 1591");
+            sw.WriteLine();
+            sw.WriteLine($"namespace {state.Task.Namespace}{coreProject.Namespace}");
+            sw.WriteLine("{");
+            sw.WriteLine($"    public readonly struct {pfnName} : IDisposable");
+            sw.WriteLine("    {");
+            sw.WriteLine("        private readonly void* _handle;");
+            sw.WriteLine($"        public {fnPtrSig} Handle => ({fnPtrSig}) _handle;");
+            sw.WriteLine($"        public {pfnName}");
+            sw.WriteLine($"        (");
+            sw.WriteLine($"            {fnPtrSig} ptr");
+            sw.WriteLine($"        ) => _handle = ptr;");
+            sw.WriteLine();
+            sw.WriteLine($"        public {pfnName}");
+            sw.WriteLine($"        (");
+            sw.WriteLine($"             {delegateName} proc");
+            sw.WriteLine($"        ) => _handle = (void*) SilkMarshal.DelegateToPtr<{delegateName}>(proc);");
+            sw.WriteLine();
+            sw.WriteLine($"        public static {pfnName} From({delegateName} proc) => new {pfnName}(proc);");
+            sw.WriteLine($"        public void Dispose() => SilkMarshal.Free((IntPtr) _handle);");
+            sw.WriteLine();
+            sw.WriteLine($"        public static implicit operator IntPtr({pfnName} pfn) => (IntPtr) pfn.Handle;");
+            sw.WriteLine($"        public static explicit operator {pfnName}(IntPtr pfn)");
+            sw.WriteLine($"            => new {pfnName}(({fnPtrSig}) pfn);");
+            sw.WriteLine();
+            sw.WriteLine($"        public static implicit operator {pfnName}({delegateName} proc)");
+            sw.WriteLine($"            => new {pfnName}(({fnPtrSig}) SilkMarshal.DelegateToPtr(proc));");
+            sw.WriteLine();
+            sw.WriteLine($"        public static explicit operator {delegateName}({pfnName} pfn)");
+            sw.WriteLine($"            => SilkMarshal.PtrToDelegate<{delegateName}>(pfn);");
+            sw.WriteLine();
+            sw.WriteLine($"        public static implicit operator {fnPtrSig}({pfnName} pfn) => pfn.Handle;");
+            sw.WriteLine($"        public static implicit operator {pfnName}({fnPtrSig} ptr) => new {pfnName}(ptr);");
+            sw.WriteLine("    }");
+            sw.WriteLine();
+            type.FunctionPointerSignature.Name = delegateName;
+            type.FunctionPointerSignature.NativeName = $"{pfnName}";
+            type.Name = type.FunctionPointerSignature.NativeName;
+            type.IndirectionLevels--;
+            using (var sr = new StringReader
+                (type.FunctionPointerSignature.ToString(null, @delegate: true, semicolon: true, accessibility: true)))
+            {
+                string line;
+                while ((line = sr.ReadLine()) != null)
+                {
+                    sw.WriteLine($"    {line}");
+                }
+            }
+
+            sw.WriteLine("}");
+            sw.WriteLine();
         }
     }
 }

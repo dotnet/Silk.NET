@@ -18,12 +18,12 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="file">The file to write to.</param>
         /// <param name="profile">The subsystem containing this enum.</param>
         /// <param name="project">The project containing this enum.</param>
-        public static void WriteEnum(this Enum @enum, string file, Profile profile, Project project, BindTask task)
+        public static void WriteEnum(this Enum @enum, string file, Profile profile, Project project, BindState task)
         {
             var sw = new StreamWriter(file);
             sw.WriteLine(task.LicenseText());
             sw.WriteLine();
-            var ns = project.IsRoot ? task.Namespace : task.ExtensionsNamespace;
+            var ns = project.IsRoot ? task.Task.Namespace : task.Task.ExtensionsNamespace;
             sw.WriteLine("using System;");
             sw.WriteLine("using Silk.NET.Core.Attributes;");
             sw.WriteLine();

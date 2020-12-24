@@ -52,18 +52,19 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine("using Silk.NET.Core.Loader;");
         }
 
-        public static string LicenseText(this BindTask task) => CachedLicenseTexts.TryGetValue
-            (task.OutputOpts.License, out var val)
+        public static string LicenseText(this BindState task) => CachedLicenseTexts.TryGetValue
+            (task.Task.OutputOpts.License, out var val)
             ? val
-            : CachedLicenseTexts[task.OutputOpts.License] = File.ReadAllText(task.OutputOpts.License);
+            : CachedLicenseTexts[task.Task.OutputOpts.License] = File.ReadAllText(task.Task.OutputOpts.License);
 
         /// <summary>
         /// Writes all of the projects, interfaces, and enums to disk.
         /// </summary>
         /// <param name="profile">The profile containing the profiles, interfaces, and enums.</param>
-        public static void Flush(this Profile profile, BindTask task)
+        public static void Flush(this Profile profile, BindTask originalTask)
         {
-            var rootFolder = task.OutputOpts.Folder;
+            var task = new BindState(originalTask);
+            var rootFolder = task.Task.OutputOpts.Folder;
             if (!Directory.Exists(rootFolder))
             {
                 Directory.CreateDirectory(rootFolder);
@@ -80,10 +81,10 @@ namespace Silk.NET.BuildTools.Bind
                 x =>
                     x.Value.Write
                     (
-                        !task.Controls.Contains("no-extra-dir") ?
+                        !task.Task.Controls.Contains("no-extra-dir") ?
                         x.Key == "Core"
-                            ? Path.Combine(rootFolder, x.Value.GetProjectName(task))
-                            : Path.Combine(rootFolder, "Extensions", x.Value.GetProjectName(task)) :
+                            ? Path.Combine(rootFolder, x.Value.GetProjectName(task.Task))
+                            : Path.Combine(rootFolder, "Extensions", x.Value.GetProjectName(task.Task)) :
                         x.Key == "Core"
                             ? Path.Combine(rootFolder)
                             : Path.Combine(rootFolder, "Extensions"),

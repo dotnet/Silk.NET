@@ -31,6 +31,8 @@ namespace Silk.NET.BuildTools.Common.Builders
         private readonly string _newOriginalName;
 
         [NotNull] private string _newName;
+        
+        private Function _newFunctionPointerSignature;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="TypeSignatureBuilder" /> class.
@@ -46,6 +48,7 @@ namespace Silk.NET.BuildTools.Common.Builders
             _newIsOut = typeSignature.IsOut;
             _newOriginalName = typeSignature.OriginalName;
             _newIsGenericType = typeSignature.IsGenericTypeParameterReference;
+            _newFunctionPointerSignature = typeSignature.FunctionPointerSignature;
         }
 
         /// <summary>
@@ -148,6 +151,17 @@ namespace Silk.NET.BuildTools.Common.Builders
         public TypeSignatureBuilder WithIsIn(bool isIn)
         {
             _newIsIn = isIn;
+            return this;
+        }
+        
+        /// <summary>
+        /// Sets a new function pointer signature for the type.
+        /// </summary>
+        /// <param name="function">The new function pointer signature.</param>
+        /// <returns>The current instance for chaining purposes.</returns>
+        public TypeSignatureBuilder WithFunctionPointerSignature(Function function)
+        {
+            _newFunctionPointerSignature = function;
             return this;
         }
 

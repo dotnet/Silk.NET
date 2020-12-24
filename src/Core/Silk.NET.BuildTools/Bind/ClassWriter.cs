@@ -20,9 +20,9 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="project">The current project.</param>
         /// <param name="profile">The profile to write the object for.</param>
         /// <param name="file">The file to write the class to.</param>
-        public static void WriteNameContainer(this Project project, Profile profile, string file, BindTask task)
+        public static void WriteNameContainer(this Project project, Profile profile, string file, BindState task)
         {
-            if (File.Exists(file) || task.Controls.Contains("no-name-container"))
+            if (File.Exists(file) || task.Task.Controls.Contains("no-name-container"))
             {
                 return;
             }
@@ -32,30 +32,30 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine(task.LicenseText());
             sw.WriteLine("using Silk.NET.Core.Loader;");
             sw.WriteLine();
-            sw.WriteLine($"namespace {task.Namespace}{project.Namespace}");
+            sw.WriteLine($"namespace {task.Task.Namespace}{project.Namespace}");
             sw.WriteLine("{");
             sw.WriteLine("    /// <summary>");
             sw.WriteLine($"    /// Contains the library name of {profile.Name}.");
             sw.WriteLine("    /// </summary>");
-            sw.WriteLine($"    internal class {task.NameContainer.ClassName} : SearchPathContainer");
+            sw.WriteLine($"    internal class {task.Task.NameContainer.ClassName} : SearchPathContainer");
             sw.WriteLine("    {");
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string Linux => \"{task.NameContainer.Linux}\";");
+            sw.WriteLine($"        public override string Linux => \"{task.Task.NameContainer.Linux}\";");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string MacOS => \"{task.NameContainer.MacOS}\";");
+            sw.WriteLine($"        public override string MacOS => \"{task.Task.NameContainer.MacOS}\";");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string Android => \"{task.NameContainer.Android}\";");
+            sw.WriteLine($"        public override string Android => \"{task.Task.NameContainer.Android}\";");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string IOS => \"{task.NameContainer.IOS}\";");
+            sw.WriteLine($"        public override string IOS => \"{task.Task.NameContainer.IOS}\";");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string Windows64 => \"{task.NameContainer.Windows64}\";");
+            sw.WriteLine($"        public override string Windows64 => \"{task.Task.NameContainer.Windows64}\";");
             sw.WriteLine();
             sw.WriteLine("        /// <inheritdoc />");
-            sw.WriteLine($"        public override string Windows86 => \"{task.NameContainer.Windows86}\";");
+            sw.WriteLine($"        public override string Windows86 => \"{task.Task.NameContainer.Windows86}\";");
             sw.WriteLine("    }");
             sw.WriteLine("}");
         }
@@ -66,7 +66,7 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="project">The current project.</param>
         /// <param name="profile">The profile to write mixed-mode classes for.</param>
         /// <param name="folder">The folder to store the generated classes in.</param>
-        public static void WriteMixedModeClasses(this Project project, Profile profile, string folder, BindTask task)
+        public static void WriteMixedModeClasses(this Project project, Profile profile, string folder, BindState task)
         {
             // public abstract class MixedModeClass : IMixedModeClass
             // {
@@ -88,7 +88,7 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine();
                     sw.WriteLine("#pragma warning disable 1591");
                     sw.WriteLine();
-                    sw.WriteLine($"namespace {task.Namespace}{project.Namespace}");
+                    sw.WriteLine($"namespace {task.Task.Namespace}{project.Namespace}");
                     sw.WriteLine("{");
                     sw.WriteLine
                         ($"    public unsafe partial class {@class.ClassName} : NativeAPI");
@@ -217,18 +217,18 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine();
                         sw.WriteLine("#pragma warning disable 1591");
                         sw.WriteLine();
-                        sw.WriteLine($"namespace {task.Namespace}{project.Namespace}");
+                        sw.WriteLine($"namespace {task.Task.Namespace}{project.Namespace}");
                         sw.WriteLine("{");
                         sw.WriteLine($"    public partial class {@class.ClassName}");
                         sw.WriteLine("    {");
                         sw.WriteLine($"        public static {@class.ClassName} GetApi()");
                         sw.WriteLine("        {");
-                        if (!(task.NameContainer is null))
+                        if (!(task.Task.NameContainer is null))
                         {
                             sw.WriteLine
                             (
                                 $"             return new {@class.ClassName}(CreateDefaultContext" +
-                                $"(new {task.NameContainer.ClassName}().GetLibraryName()));"
+                                $"(new {task.Task.NameContainer.ClassName}().GetLibraryName()));"
                             );
                         }
                         else
@@ -258,10 +258,10 @@ namespace Silk.NET.BuildTools.Bind
                         sw.Dispose();
                     }
 
-                    if (!(task.NameContainer is null))
+                    if (!(task.Task.NameContainer is null))
                     {
                         project.WriteNameContainer
-                            (profile, Path.Combine(folder, $"{task.NameContainer.ClassName}.cs"), task);
+                            (profile, Path.Combine(folder, $"{task.Task.NameContainer.ClassName}.cs"), task);
                     }
                 }
                 else
@@ -273,12 +273,12 @@ namespace Silk.NET.BuildTools.Bind
                         StreamWriter? swOverloads = null;
                         sw.Write(task.LicenseText());
                         sw.WriteCoreUsings();
-                        sw.WriteLine($"using {profile.Projects["Core"].GetNamespace(task)};");
+                        sw.WriteLine($"using {profile.Projects["Core"].GetNamespace(task.Task)};");
                         sw.WriteLine("using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;");
                         sw.WriteLine();
                         sw.WriteLine("#pragma warning disable 1591");
                         sw.WriteLine();
-                        sw.WriteLine($"namespace {task.ExtensionsNamespace}{project.Namespace}");
+                        sw.WriteLine($"namespace {task.Task.ExtensionsNamespace}{project.Namespace}");
                         sw.WriteLine("{");
                         sw.WriteLine($"    [Extension(\"{key}\")]");
                         sw.WriteLine
@@ -395,7 +395,7 @@ namespace Silk.NET.BuildTools.Bind
 
             StreamWriter CreateOverloadsFile(string folder, string @class, bool isExtension)
             {
-                var ns = isExtension ? task.ExtensionsNamespace : task.Namespace;
+                var ns = isExtension ? task.Task.ExtensionsNamespace : task.Task.Namespace;
                 var swOverloads = new StreamWriter(Path.Combine(folder, $"{@class}Overloads.gen.cs"));
                 swOverloads.Write(task.LicenseText());
                 swOverloads.WriteCoreUsings();

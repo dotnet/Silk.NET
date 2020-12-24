@@ -17,7 +17,7 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="project">The project to write.</param>
         /// <param name="folder">The folder to write this project to.</param>
         /// <param name="profile">The parent subsystem.</param>
-        public static void Write(this Project project, string folder, Profile profile, BindTask task)
+        public static void Write(this Project project, string folder, Profile profile, BindState task)
         {
             if (!Directory.Exists(folder))
             {
@@ -59,15 +59,15 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="project">The project to write.</param>
         /// <param name="folder">The folder that should contain the project file.</param>
         /// <param name="prof">The parent profile.</param>
-        private static void WriteProjectFile(this Project project, string folder, Profile prof, BindTask task)
+        private static void WriteProjectFile(this Project project, string folder, Profile prof, BindState task)
         {
-            if (File.Exists(Path.Combine(folder, $"{project.GetProjectName(task)}.csproj")) ||
-                task.Controls.Contains("no-csproj"))
+            if (File.Exists(Path.Combine(folder, $"{project.GetProjectName(task.Task)}.csproj")) ||
+                task.Task.Controls.Contains("no-csproj"))
             {
                 return;
             }
 
-            var csproj = new StreamWriter(Path.Combine(folder, $"{project.GetProjectName(task)}.csproj"));
+            var csproj = new StreamWriter(Path.Combine(folder, $"{project.GetProjectName(task.Task)}.csproj"));
             csproj.WriteLine("<Project Sdk=\"Microsoft.NET.Sdk\">");
             csproj.WriteLine();
             csproj.WriteLine("  <PropertyGroup>");
@@ -85,9 +85,9 @@ namespace Silk.NET.BuildTools.Bind
                     folder,
                     Path.Combine
                     (
-                        task.OutputOpts.Folder,
-                        prof.Projects["Core"].GetProjectName(task),
-                        $"{prof.Projects["Core"].GetProjectName(task)}.csproj"
+                        task.Task.OutputOpts.Folder,
+                        prof.Projects["Core"].GetProjectName(task.Task),
+                        $"{prof.Projects["Core"].GetProjectName(task.Task)}.csproj"
                     )
                 );
                 csproj.WriteLine($"    <ProjectReference Include=\"{core}\" />");
@@ -95,7 +95,7 @@ namespace Silk.NET.BuildTools.Bind
 
             csproj.WriteLine("  </ItemGroup>");
             csproj.WriteLine();
-            csproj.WriteLine($"  <Import Project=\"{Path.GetRelativePath(folder, task.OutputOpts.Props)}\" />");
+            csproj.WriteLine($"  <Import Project=\"{Path.GetRelativePath(folder, task.Task.OutputOpts.Props)}\" />");
             csproj.WriteLine("</Project>");
             csproj.Flush();
             csproj.Dispose();
