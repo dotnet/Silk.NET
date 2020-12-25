@@ -18,35 +18,35 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Assimp
 {
-    public readonly struct PfnFileTellProc : IDisposable
+    public unsafe readonly struct PfnFileTellProc : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<aiFile*, uint> Handle => (delegate* unmanaged[Cdecl]<aiFile*, uint>) _handle;
+        public delegate* unmanaged[Cdecl]<File*, uint> Handle => (delegate* unmanaged[Cdecl]<File*, uint>) _handle;
         public PfnFileTellProc
         (
-            delegate* unmanaged[Cdecl]<aiFile*, uint> ptr
+            delegate* unmanaged[Cdecl]<File*, uint> ptr
         ) => _handle = ptr;
 
         public PfnFileTellProc
         (
              FileTellProc proc
-        ) => _handle = (void*) SilkMarshal.DelegateToPtr<FileTellProc>(proc);
+        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnFileTellProc From(FileTellProc proc) => new PfnFileTellProc(proc);
         public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
 
         public static implicit operator IntPtr(PfnFileTellProc pfn) => (IntPtr) pfn.Handle;
         public static explicit operator PfnFileTellProc(IntPtr pfn)
-            => new PfnFileTellProc((delegate* unmanaged[Cdecl]<aiFile*, uint>) pfn);
+            => new PfnFileTellProc((delegate* unmanaged[Cdecl]<File*, uint>) pfn);
 
         public static implicit operator PfnFileTellProc(FileTellProc proc)
-            => new PfnFileTellProc((delegate* unmanaged[Cdecl]<aiFile*, uint>) SilkMarshal.DelegateToPtr(proc));
+            => new PfnFileTellProc(proc);
 
         public static explicit operator FileTellProc(PfnFileTellProc pfn)
             => SilkMarshal.PtrToDelegate<FileTellProc>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<aiFile*, uint>(PfnFileTellProc pfn) => pfn.Handle;
-        public static implicit operator PfnFileTellProc(delegate* unmanaged[Cdecl]<aiFile*, uint> ptr) => new PfnFileTellProc(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<File*, uint>(PfnFileTellProc pfn) => pfn.Handle;
+        public static implicit operator PfnFileTellProc(delegate* unmanaged[Cdecl]<File*, uint> ptr) => new PfnFileTellProc(ptr);
     }
 
     public unsafe delegate uint FileTellProc(File* arg0);

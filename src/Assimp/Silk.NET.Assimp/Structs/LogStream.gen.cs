@@ -23,7 +23,7 @@ namespace Silk.NET.Assimp
     {
         public LogStream
         (
-            PfnBvBvV? callback = null,
+            PfnLogStreamCallback? callback = null,
             byte* user = null
         ) : this()
         {
@@ -42,7 +42,7 @@ namespace Silk.NET.Assimp
         [NativeName("Type", "aiLogStreamCallback")]
         [NativeName("Type.Name", "aiLogStreamCallback")]
         [NativeName("Name", "callback")]
-        public PfnBvBvV Callback;
+        public PfnLogStreamCallback Callback;
 
         [NativeName("Type", "char *")]
         [NativeName("Type.Name", "char *")]

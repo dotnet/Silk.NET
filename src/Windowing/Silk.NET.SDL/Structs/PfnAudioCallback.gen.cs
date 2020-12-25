@@ -18,7 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
-    public readonly struct PfnAudioCallback : IDisposable
+    public unsafe readonly struct PfnAudioCallback : IDisposable
     {
         private readonly void* _handle;
         public delegate* unmanaged[Cdecl]<void*, byte*, int, void> Handle => (delegate* unmanaged[Cdecl]<void*, byte*, int, void>) _handle;
@@ -30,7 +30,7 @@ namespace Silk.NET.SDL
         public PfnAudioCallback
         (
              AudioCallback proc
-        ) => _handle = (void*) SilkMarshal.DelegateToPtr<AudioCallback>(proc);
+        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnAudioCallback From(AudioCallback proc) => new PfnAudioCallback(proc);
         public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
@@ -40,7 +40,7 @@ namespace Silk.NET.SDL
             => new PfnAudioCallback((delegate* unmanaged[Cdecl]<void*, byte*, int, void>) pfn);
 
         public static implicit operator PfnAudioCallback(AudioCallback proc)
-            => new PfnAudioCallback((delegate* unmanaged[Cdecl]<void*, byte*, int, void>) SilkMarshal.DelegateToPtr(proc));
+            => new PfnAudioCallback(proc);
 
         public static explicit operator AudioCallback(PfnAudioCallback pfn)
             => SilkMarshal.PtrToDelegate<AudioCallback>(pfn);

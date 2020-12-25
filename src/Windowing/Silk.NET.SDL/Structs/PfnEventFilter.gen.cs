@@ -18,35 +18,35 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
-    public readonly struct PfnEventFilter : IDisposable
+    public unsafe readonly struct PfnEventFilter : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<void*, SDL_Event*, int> Handle => (delegate* unmanaged[Cdecl]<void*, SDL_Event*, int>) _handle;
+        public delegate* unmanaged[Cdecl]<void*, Event*, int> Handle => (delegate* unmanaged[Cdecl]<void*, Event*, int>) _handle;
         public PfnEventFilter
         (
-            delegate* unmanaged[Cdecl]<void*, SDL_Event*, int> ptr
+            delegate* unmanaged[Cdecl]<void*, Event*, int> ptr
         ) => _handle = ptr;
 
         public PfnEventFilter
         (
              EventFilter proc
-        ) => _handle = (void*) SilkMarshal.DelegateToPtr<EventFilter>(proc);
+        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnEventFilter From(EventFilter proc) => new PfnEventFilter(proc);
         public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
 
         public static implicit operator IntPtr(PfnEventFilter pfn) => (IntPtr) pfn.Handle;
         public static explicit operator PfnEventFilter(IntPtr pfn)
-            => new PfnEventFilter((delegate* unmanaged[Cdecl]<void*, SDL_Event*, int>) pfn);
+            => new PfnEventFilter((delegate* unmanaged[Cdecl]<void*, Event*, int>) pfn);
 
         public static implicit operator PfnEventFilter(EventFilter proc)
-            => new PfnEventFilter((delegate* unmanaged[Cdecl]<void*, SDL_Event*, int>) SilkMarshal.DelegateToPtr(proc));
+            => new PfnEventFilter(proc);
 
         public static explicit operator EventFilter(PfnEventFilter pfn)
             => SilkMarshal.PtrToDelegate<EventFilter>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<void*, SDL_Event*, int>(PfnEventFilter pfn) => pfn.Handle;
-        public static implicit operator PfnEventFilter(delegate* unmanaged[Cdecl]<void*, SDL_Event*, int> ptr) => new PfnEventFilter(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<void*, Event*, int>(PfnEventFilter pfn) => pfn.Handle;
+        public static implicit operator PfnEventFilter(delegate* unmanaged[Cdecl]<void*, Event*, int> ptr) => new PfnEventFilter(ptr);
     }
 
     public unsafe delegate int EventFilter(void* arg0, Event* arg1);

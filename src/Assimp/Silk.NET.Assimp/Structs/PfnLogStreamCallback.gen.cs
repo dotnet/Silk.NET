@@ -18,7 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Assimp
 {
-    public readonly struct PfnLogStreamCallback : IDisposable
+    public unsafe readonly struct PfnLogStreamCallback : IDisposable
     {
         private readonly void* _handle;
         public delegate* unmanaged[Cdecl]<byte*, byte*, void> Handle => (delegate* unmanaged[Cdecl]<byte*, byte*, void>) _handle;
@@ -30,7 +30,7 @@ namespace Silk.NET.Assimp
         public PfnLogStreamCallback
         (
              LogStreamCallback proc
-        ) => _handle = (void*) SilkMarshal.DelegateToPtr<LogStreamCallback>(proc);
+        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnLogStreamCallback From(LogStreamCallback proc) => new PfnLogStreamCallback(proc);
         public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
@@ -40,7 +40,7 @@ namespace Silk.NET.Assimp
             => new PfnLogStreamCallback((delegate* unmanaged[Cdecl]<byte*, byte*, void>) pfn);
 
         public static implicit operator PfnLogStreamCallback(LogStreamCallback proc)
-            => new PfnLogStreamCallback((delegate* unmanaged[Cdecl]<byte*, byte*, void>) SilkMarshal.DelegateToPtr(proc));
+            => new PfnLogStreamCallback(proc);
 
         public static explicit operator LogStreamCallback(PfnLogStreamCallback pfn)
             => SilkMarshal.PtrToDelegate<LogStreamCallback>(pfn);

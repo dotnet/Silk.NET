@@ -18,7 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
-    public readonly struct PfnSDLCurrentEndThread : IDisposable
+    public unsafe readonly struct PfnSDLCurrentEndThread : IDisposable
     {
         private readonly void* _handle;
         public delegate* unmanaged[Cdecl]<uint, void> Handle => (delegate* unmanaged[Cdecl]<uint, void>) _handle;
@@ -30,7 +30,7 @@ namespace Silk.NET.SDL
         public PfnSDLCurrentEndThread
         (
              SDLCurrentEndThread proc
-        ) => _handle = (void*) SilkMarshal.DelegateToPtr<SDLCurrentEndThread>(proc);
+        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnSDLCurrentEndThread From(SDLCurrentEndThread proc) => new PfnSDLCurrentEndThread(proc);
         public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
@@ -40,7 +40,7 @@ namespace Silk.NET.SDL
             => new PfnSDLCurrentEndThread((delegate* unmanaged[Cdecl]<uint, void>) pfn);
 
         public static implicit operator PfnSDLCurrentEndThread(SDLCurrentEndThread proc)
-            => new PfnSDLCurrentEndThread((delegate* unmanaged[Cdecl]<uint, void>) SilkMarshal.DelegateToPtr(proc));
+            => new PfnSDLCurrentEndThread(proc);
 
         public static explicit operator SDLCurrentEndThread(PfnSDLCurrentEndThread pfn)
             => SilkMarshal.PtrToDelegate<SDLCurrentEndThread>(pfn);

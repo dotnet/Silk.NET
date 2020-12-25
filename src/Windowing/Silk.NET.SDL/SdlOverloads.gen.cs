@@ -36,7 +36,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe void GetMemoryFunctions(this Sdl thisApi, delegate* unmanaged[Cdecl]<uint, void*>* malloc_func, delegate* unmanaged[Cdecl]<uint, uint, void*>* calloc_func, delegate* unmanaged[Cdecl]<void*, uint, void*>* realloc_func, Span<PfnVvV> free_func)
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
             thisApi.GetMemoryFunctions(malloc_func, calloc_func, realloc_func, ref free_func.GetPinnableReference());
@@ -44,7 +44,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe void GetMemoryFunctions(this Sdl thisApi, delegate* unmanaged[Cdecl]<uint, void*>* malloc_func, delegate* unmanaged[Cdecl]<uint, uint, void*>* calloc_func, Span<PfnVvUiVv> realloc_func, delegate* unmanaged[Cdecl]<void*, void>* free_func)
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, Span<PfnReallocFunc> realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
             thisApi.GetMemoryFunctions(malloc_func, calloc_func, ref realloc_func.GetPinnableReference(), free_func);
@@ -52,7 +52,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe void GetMemoryFunctions(this Sdl thisApi, delegate* unmanaged[Cdecl]<uint, void*>* malloc_func, delegate* unmanaged[Cdecl]<uint, uint, void*>* calloc_func, Span<PfnVvUiVv> realloc_func, Span<PfnVvV> free_func)
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, Span<PfnReallocFunc> realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
             thisApi.GetMemoryFunctions(malloc_func, calloc_func, ref realloc_func.GetPinnableReference(), ref free_func.GetPinnableReference());
@@ -60,7 +60,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe void GetMemoryFunctions(this Sdl thisApi, delegate* unmanaged[Cdecl]<uint, void*>* malloc_func, Span<PfnUiUiVv> calloc_func, delegate* unmanaged[Cdecl]<void*, uint, void*>* realloc_func, delegate* unmanaged[Cdecl]<void*, void>* free_func)
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, Span<PfnCallocFunc> calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
             thisApi.GetMemoryFunctions(malloc_func, ref calloc_func.GetPinnableReference(), realloc_func, free_func);
@@ -68,7 +68,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe void GetMemoryFunctions(this Sdl thisApi, delegate* unmanaged[Cdecl]<uint, void*>* malloc_func, Span<PfnUiUiVv> calloc_func, delegate* unmanaged[Cdecl]<void*, uint, void*>* realloc_func, Span<PfnVvV> free_func)
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, Span<PfnCallocFunc> calloc_func, PfnReallocFunc* realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
             thisApi.GetMemoryFunctions(malloc_func, ref calloc_func.GetPinnableReference(), realloc_func, ref free_func.GetPinnableReference());
@@ -76,7 +76,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe void GetMemoryFunctions(this Sdl thisApi, delegate* unmanaged[Cdecl]<uint, void*>* malloc_func, Span<PfnUiUiVv> calloc_func, Span<PfnVvUiVv> realloc_func, delegate* unmanaged[Cdecl]<void*, void>* free_func)
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, Span<PfnCallocFunc> calloc_func, Span<PfnReallocFunc> realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
             thisApi.GetMemoryFunctions(malloc_func, ref calloc_func.GetPinnableReference(), ref realloc_func.GetPinnableReference(), free_func);
@@ -84,7 +84,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe void GetMemoryFunctions(this Sdl thisApi, delegate* unmanaged[Cdecl]<uint, void*>* malloc_func, Span<PfnUiUiVv> calloc_func, Span<PfnVvUiVv> realloc_func, Span<PfnVvV> free_func)
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, Span<PfnCallocFunc> calloc_func, Span<PfnReallocFunc> realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
             thisApi.GetMemoryFunctions(malloc_func, ref calloc_func.GetPinnableReference(), ref realloc_func.GetPinnableReference(), ref free_func.GetPinnableReference());
@@ -92,7 +92,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnUiVv> malloc_func, delegate* unmanaged[Cdecl]<uint, uint, void*>* calloc_func, delegate* unmanaged[Cdecl]<void*, uint, void*>* realloc_func, delegate* unmanaged[Cdecl]<void*, void>* free_func)
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
             thisApi.GetMemoryFunctions(ref malloc_func.GetPinnableReference(), calloc_func, realloc_func, free_func);
@@ -100,7 +100,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnUiVv> malloc_func, delegate* unmanaged[Cdecl]<uint, uint, void*>* calloc_func, delegate* unmanaged[Cdecl]<void*, uint, void*>* realloc_func, Span<PfnVvV> free_func)
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
             thisApi.GetMemoryFunctions(ref malloc_func.GetPinnableReference(), calloc_func, realloc_func, ref free_func.GetPinnableReference());
@@ -108,7 +108,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnUiVv> malloc_func, delegate* unmanaged[Cdecl]<uint, uint, void*>* calloc_func, Span<PfnVvUiVv> realloc_func, delegate* unmanaged[Cdecl]<void*, void>* free_func)
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, PfnCallocFunc* calloc_func, Span<PfnReallocFunc> realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
             thisApi.GetMemoryFunctions(ref malloc_func.GetPinnableReference(), calloc_func, ref realloc_func.GetPinnableReference(), free_func);
@@ -116,7 +116,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnUiVv> malloc_func, delegate* unmanaged[Cdecl]<uint, uint, void*>* calloc_func, Span<PfnVvUiVv> realloc_func, Span<PfnVvV> free_func)
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, PfnCallocFunc* calloc_func, Span<PfnReallocFunc> realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
             thisApi.GetMemoryFunctions(ref malloc_func.GetPinnableReference(), calloc_func, ref realloc_func.GetPinnableReference(), ref free_func.GetPinnableReference());
@@ -124,7 +124,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnUiVv> malloc_func, Span<PfnUiUiVv> calloc_func, delegate* unmanaged[Cdecl]<void*, uint, void*>* realloc_func, delegate* unmanaged[Cdecl]<void*, void>* free_func)
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, Span<PfnCallocFunc> calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
             thisApi.GetMemoryFunctions(ref malloc_func.GetPinnableReference(), ref calloc_func.GetPinnableReference(), realloc_func, free_func);
@@ -132,7 +132,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnUiVv> malloc_func, Span<PfnUiUiVv> calloc_func, delegate* unmanaged[Cdecl]<void*, uint, void*>* realloc_func, Span<PfnVvV> free_func)
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, Span<PfnCallocFunc> calloc_func, PfnReallocFunc* realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
             thisApi.GetMemoryFunctions(ref malloc_func.GetPinnableReference(), ref calloc_func.GetPinnableReference(), realloc_func, ref free_func.GetPinnableReference());
@@ -140,7 +140,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnUiVv> malloc_func, Span<PfnUiUiVv> calloc_func, Span<PfnVvUiVv> realloc_func, delegate* unmanaged[Cdecl]<void*, void>* free_func)
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, Span<PfnCallocFunc> calloc_func, Span<PfnReallocFunc> realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
             thisApi.GetMemoryFunctions(ref malloc_func.GetPinnableReference(), ref calloc_func.GetPinnableReference(), ref realloc_func.GetPinnableReference(), free_func);
@@ -148,7 +148,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnUiVv> malloc_func, Span<PfnUiUiVv> calloc_func, Span<PfnVvUiVv> realloc_func, Span<PfnVvV> free_func)
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, Span<PfnCallocFunc> calloc_func, Span<PfnReallocFunc> realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
             thisApi.GetMemoryFunctions(ref malloc_func.GetPinnableReference(), ref calloc_func.GetPinnableReference(), ref realloc_func.GetPinnableReference(), ref free_func.GetPinnableReference());
@@ -6948,7 +6948,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        public static unsafe int SetWindowHitTest<T0>(this Sdl thisApi, Window* window, PfnSDLWindowvSDLPointvVvSDLHitTestResult callback, Span<T0> callback_data) where T0 : unmanaged
+        public static unsafe int SetWindowHitTest<T0>(this Sdl thisApi, Window* window, PfnHitTest callback, Span<T0> callback_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.SetWindowHitTest(window, callback, ref callback_data.GetPinnableReference());
@@ -6956,7 +6956,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        public static unsafe int SetWindowHitTest(this Sdl thisApi, Span<Window> window, PfnSDLWindowvSDLPointvVvSDLHitTestResult callback, void* callback_data)
+        public static unsafe int SetWindowHitTest(this Sdl thisApi, Span<Window> window, PfnHitTest callback, void* callback_data)
         {
             // SpanOverloader
             return thisApi.SetWindowHitTest(ref window.GetPinnableReference(), callback, callback_data);
@@ -6964,7 +6964,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        public static unsafe int SetWindowHitTest<T0>(this Sdl thisApi, Span<Window> window, PfnSDLWindowvSDLPointvVvSDLHitTestResult callback, Span<T0> callback_data) where T0 : unmanaged
+        public static unsafe int SetWindowHitTest<T0>(this Sdl thisApi, Span<Window> window, PfnHitTest callback, Span<T0> callback_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.SetWindowHitTest(ref window.GetPinnableReference(), callback, ref callback_data.GetPinnableReference());
@@ -7289,7 +7289,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 154, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
         [ExcludeFromOverride(0)]
-        public static unsafe int WinRTRunApp<T0>(this Sdl thisApi, PfnIBvvI mainFunction, Span<T0> reserved) where T0 : unmanaged
+        public static unsafe int WinRTRunApp<T0>(this Sdl thisApi, PfnMainFunc mainFunction, Span<T0> reserved) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.WinRTRunApp(mainFunction, ref reserved.GetPinnableReference());
@@ -7409,7 +7409,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 211, Column 30 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
-        public static unsafe void SetAssertionHandler<T0>(this Sdl thisApi, PfnSDLAssertDatavVvSDLAssertState handler, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void SetAssertionHandler<T0>(this Sdl thisApi, PfnAssertionHandler handler, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.SetAssertionHandler(handler, ref userdata.GetPinnableReference());
@@ -7689,7 +7689,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, PfnVvI fn, byte* name, Span<T0> data, PfnVvUiPfnVvUiVvUiUivUi pfnBeginThread, PfnUiV pfnEndThread) where T0 : unmanaged
+        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, PfnThreadFunction fn, byte* name, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateThread(fn, name, ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
@@ -7697,7 +7697,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread(this Sdl thisApi, PfnVvI fn, Span<byte> name, void* data, PfnVvUiPfnVvUiVvUiUivUi pfnBeginThread, PfnUiV pfnEndThread)
+        public static unsafe Thread* CreateThread(this Sdl thisApi, PfnThreadFunction fn, Span<byte> name, void* data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread)
         {
             // SpanOverloader
             return thisApi.CreateThread(fn, ref name.GetPinnableReference(), data, pfnBeginThread, pfnEndThread);
@@ -7705,7 +7705,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, PfnVvI fn, Span<byte> name, Span<T0> data, PfnVvUiPfnVvUiVvUiUivUi pfnBeginThread, PfnUiV pfnEndThread) where T0 : unmanaged
+        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, PfnThreadFunction fn, Span<byte> name, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateThread(fn, ref name.GetPinnableReference(), ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
@@ -7713,7 +7713,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, PfnVvI fn, string name, Span<T0> data, PfnVvUiPfnVvUiVvUiUivUi pfnBeginThread, PfnUiV pfnEndThread) where T0 : unmanaged
+        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, PfnThreadFunction fn, string name, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateThread(fn, name, ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
@@ -8913,7 +8913,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 727, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
-        public static unsafe void SetEventFilter<T0>(this Sdl thisApi, PfnVvSDLEventvI filter, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void SetEventFilter<T0>(this Sdl thisApi, PfnEventFilter filter, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.SetEventFilter(filter, ref userdata.GetPinnableReference());
@@ -9337,7 +9337,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, byte* name, PfnVvBvBvBvV callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, byte* name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.AddHintCallback(name, callback, ref userdata.GetPinnableReference());
@@ -9345,7 +9345,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void AddHintCallback(this Sdl thisApi, Span<byte> name, PfnVvBvBvBvV callback, void* userdata)
+        public static unsafe void AddHintCallback(this Sdl thisApi, Span<byte> name, PfnHintCallback callback, void* userdata)
         {
             // SpanOverloader
             thisApi.AddHintCallback(ref name.GetPinnableReference(), callback, userdata);
@@ -9353,7 +9353,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, Span<byte> name, PfnVvBvBvBvV callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, Span<byte> name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.AddHintCallback(ref name.GetPinnableReference(), callback, ref userdata.GetPinnableReference());
@@ -9361,7 +9361,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, string name, PfnVvBvBvBvV callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, string name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.AddHintCallback(name, callback, ref userdata.GetPinnableReference());
@@ -9553,7 +9553,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 194, Column 30 in build/submodules/SDL-mirror/include\\SDL_log.h")]
-        public static unsafe void LogGetOutputFunction(this Sdl thisApi, Span<PfnVvISDLLogPriorityBvV> callback, void** userdata)
+        public static unsafe void LogGetOutputFunction(this Sdl thisApi, Span<PfnLogOutputFunction> callback, void** userdata)
         {
             // SpanOverloader
             thisApi.LogGetOutputFunction(ref callback.GetPinnableReference(), userdata);
@@ -9561,7 +9561,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 194, Column 30 in build/submodules/SDL-mirror/include\\SDL_log.h")]
-        public static unsafe void LogGetOutputFunction(this Sdl thisApi, Span<PfnVvISDLLogPriorityBvV> callback, ref void* userdata)
+        public static unsafe void LogGetOutputFunction(this Sdl thisApi, Span<PfnLogOutputFunction> callback, ref void* userdata)
         {
             // SpanOverloader
             thisApi.LogGetOutputFunction(ref callback.GetPinnableReference(), ref userdata);
@@ -14538,7 +14538,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 50, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
-        public static unsafe void SetWindowsMessageHook<T0>(this Sdl thisApi, PfnVvVvUiUi64I64V callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void SetWindowsMessageHook<T0>(this Sdl thisApi, PfnWindowsMessageHook callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.SetWindowsMessageHook(callback, ref userdata.GetPinnableReference());
@@ -14606,7 +14606,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 93, Column 37 in build/submodules/SDL-mirror/include\\SDL_timer.h")]
-        public static unsafe int AddTimer<T0>(this Sdl thisApi, uint interval, PfnUiVvUi callback, Span<T0> param) where T0 : unmanaged
+        public static unsafe int AddTimer<T0>(this Sdl thisApi, uint interval, PfnTimerCallback callback, Span<T0> param) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.AddTimer(interval, callback, ref param.GetPinnableReference());

@@ -18,7 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Core.Native
 {
-    public readonly struct PfnDestructionCallback : IDisposable
+    public unsafe readonly struct PfnDestructionCallback : IDisposable
     {
         private readonly void* _handle;
         public delegate* unmanaged[Cdecl]<void*, void> Handle => (delegate* unmanaged[Cdecl]<void*, void>) _handle;
@@ -30,7 +30,7 @@ namespace Silk.NET.Core.Native
         public PfnDestructionCallback
         (
              DestructionCallback proc
-        ) => _handle = (void*) SilkMarshal.DelegateToPtr<DestructionCallback>(proc);
+        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnDestructionCallback From(DestructionCallback proc) => new PfnDestructionCallback(proc);
         public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
@@ -40,7 +40,7 @@ namespace Silk.NET.Core.Native
             => new PfnDestructionCallback((delegate* unmanaged[Cdecl]<void*, void>) pfn);
 
         public static implicit operator PfnDestructionCallback(DestructionCallback proc)
-            => new PfnDestructionCallback((delegate* unmanaged[Cdecl]<void*, void>) SilkMarshal.DelegateToPtr(proc));
+            => new PfnDestructionCallback(proc);
 
         public static explicit operator DestructionCallback(PfnDestructionCallback pfn)
             => SilkMarshal.PtrToDelegate<DestructionCallback>(pfn);

@@ -198,7 +198,7 @@ namespace Silk.NET.BuildTools.Cpp
                                     "$PFN",
                                     delegateName,
                                     "Pfn" + name,
-                                    type.FunctionPointerSignature.GetFunctionPointerSignature()
+                                    type.FunctionPointerSignature.Convention.ToString()
                                 }}
                             }
                         }
@@ -789,7 +789,8 @@ namespace Silk.NET.BuildTools.Cpp
                                 }
                                 
                                 var intrinsic = pfns[wrapper].Attributes.First(x => x.Name == "BuildToolsIntrinsic");
-                                pfns[wrapper].Name = intrinsic.Arguments[2] = "Pfn" + (intrinsic.Arguments[1] = name);
+                                ret.Name = pfns[wrapper].Name =
+                                    intrinsic.Arguments[2] = "Pfn" + (intrinsic.Arguments[1] = name);
                             }
                         }
                     }

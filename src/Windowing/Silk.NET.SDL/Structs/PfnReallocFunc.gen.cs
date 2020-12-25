@@ -18,7 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
-    public readonly struct PfnReallocFunc : IDisposable
+    public unsafe readonly struct PfnReallocFunc : IDisposable
     {
         private readonly void* _handle;
         public delegate* unmanaged[Cdecl]<void*, uint, void*> Handle => (delegate* unmanaged[Cdecl]<void*, uint, void*>) _handle;
@@ -30,7 +30,7 @@ namespace Silk.NET.SDL
         public PfnReallocFunc
         (
              ReallocFunc proc
-        ) => _handle = (void*) SilkMarshal.DelegateToPtr<ReallocFunc>(proc);
+        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnReallocFunc From(ReallocFunc proc) => new PfnReallocFunc(proc);
         public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
@@ -40,7 +40,7 @@ namespace Silk.NET.SDL
             => new PfnReallocFunc((delegate* unmanaged[Cdecl]<void*, uint, void*>) pfn);
 
         public static implicit operator PfnReallocFunc(ReallocFunc proc)
-            => new PfnReallocFunc((delegate* unmanaged[Cdecl]<void*, uint, void*>) SilkMarshal.DelegateToPtr(proc));
+            => new PfnReallocFunc(proc);
 
         public static explicit operator ReallocFunc(PfnReallocFunc pfn)
             => SilkMarshal.PtrToDelegate<ReallocFunc>(pfn);

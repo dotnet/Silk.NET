@@ -352,8 +352,7 @@
                 "convert-windows-only",
                 "BUG: The descriptor below is because MSVC is currently invalid.",
                 "     The combination of convert-windows-only and convert-macos-only means that it will never convert",
-                "     Remove this once 16.9 Preview 2 has released.",
-                "no-convert"
+                "     Remove this once 16.9 Preview 2 has released."
             ],
             "converter": {},
             "prefix": "ai",

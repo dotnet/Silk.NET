@@ -139,17 +139,17 @@ namespace Silk.NET.SDL
 
         public struct FiltersBuffer
         {
-            public PfnSDLAudioCVTvUsV Element0;
-            public PfnSDLAudioCVTvUsV Element1;
-            public PfnSDLAudioCVTvUsV Element2;
-            public PfnSDLAudioCVTvUsV Element3;
-            public PfnSDLAudioCVTvUsV Element4;
-            public PfnSDLAudioCVTvUsV Element5;
-            public PfnSDLAudioCVTvUsV Element6;
-            public PfnSDLAudioCVTvUsV Element7;
-            public PfnSDLAudioCVTvUsV Element8;
-            public PfnSDLAudioCVTvUsV Element9;
-            public ref PfnSDLAudioCVTvUsV this[int index]
+            public PfnAudioFilter Element0;
+            public PfnAudioFilter Element1;
+            public PfnAudioFilter Element2;
+            public PfnAudioFilter Element3;
+            public PfnAudioFilter Element4;
+            public PfnAudioFilter Element5;
+            public PfnAudioFilter Element6;
+            public PfnAudioFilter Element7;
+            public PfnAudioFilter Element8;
+            public PfnAudioFilter Element9;
+            public ref PfnAudioFilter this[int index]
             {
                 get
                 {
@@ -158,7 +158,7 @@ namespace Silk.NET.SDL
                         throw new ArgumentOutOfRangeException(nameof(index));
                     }
 
-                    fixed (PfnSDLAudioCVTvUsV* ptr = &Element0)
+                    fixed (PfnAudioFilter* ptr = &Element0)
                     {
                         return ref ptr[index];
                     }
@@ -166,7 +166,7 @@ namespace Silk.NET.SDL
             }
 
 #if NETSTANDARD2_1
-            public Span<PfnSDLAudioCVTvUsV> AsSpan()
+            public Span<PfnAudioFilter> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 10);
 #endif
         }

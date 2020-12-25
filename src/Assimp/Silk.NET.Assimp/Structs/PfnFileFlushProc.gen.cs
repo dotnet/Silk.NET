@@ -18,35 +18,35 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Assimp
 {
-    public readonly struct PfnFileFlushProc : IDisposable
+    public unsafe readonly struct PfnFileFlushProc : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<aiFile*, void> Handle => (delegate* unmanaged[Cdecl]<aiFile*, void>) _handle;
+        public delegate* unmanaged[Cdecl]<File*, void> Handle => (delegate* unmanaged[Cdecl]<File*, void>) _handle;
         public PfnFileFlushProc
         (
-            delegate* unmanaged[Cdecl]<aiFile*, void> ptr
+            delegate* unmanaged[Cdecl]<File*, void> ptr
         ) => _handle = ptr;
 
         public PfnFileFlushProc
         (
              FileFlushProc proc
-        ) => _handle = (void*) SilkMarshal.DelegateToPtr<FileFlushProc>(proc);
+        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnFileFlushProc From(FileFlushProc proc) => new PfnFileFlushProc(proc);
         public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
 
         public static implicit operator IntPtr(PfnFileFlushProc pfn) => (IntPtr) pfn.Handle;
         public static explicit operator PfnFileFlushProc(IntPtr pfn)
-            => new PfnFileFlushProc((delegate* unmanaged[Cdecl]<aiFile*, void>) pfn);
+            => new PfnFileFlushProc((delegate* unmanaged[Cdecl]<File*, void>) pfn);
 
         public static implicit operator PfnFileFlushProc(FileFlushProc proc)
-            => new PfnFileFlushProc((delegate* unmanaged[Cdecl]<aiFile*, void>) SilkMarshal.DelegateToPtr(proc));
+            => new PfnFileFlushProc(proc);
 
         public static explicit operator FileFlushProc(PfnFileFlushProc pfn)
             => SilkMarshal.PtrToDelegate<FileFlushProc>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<aiFile*, void>(PfnFileFlushProc pfn) => pfn.Handle;
-        public static implicit operator PfnFileFlushProc(delegate* unmanaged[Cdecl]<aiFile*, void> ptr) => new PfnFileFlushProc(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<File*, void>(PfnFileFlushProc pfn) => pfn.Handle;
+        public static implicit operator PfnFileFlushProc(delegate* unmanaged[Cdecl]<File*, void> ptr) => new PfnFileFlushProc(ptr);
     }
 
     public unsafe delegate void FileFlushProc(File* arg0);

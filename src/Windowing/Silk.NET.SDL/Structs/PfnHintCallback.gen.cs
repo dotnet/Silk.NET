@@ -18,7 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
-    public readonly struct PfnHintCallback : IDisposable
+    public unsafe readonly struct PfnHintCallback : IDisposable
     {
         private readonly void* _handle;
         public delegate* unmanaged[Cdecl]<void*, byte*, byte*, byte*, void> Handle => (delegate* unmanaged[Cdecl]<void*, byte*, byte*, byte*, void>) _handle;
@@ -30,7 +30,7 @@ namespace Silk.NET.SDL
         public PfnHintCallback
         (
              HintCallback proc
-        ) => _handle = (void*) SilkMarshal.DelegateToPtr<HintCallback>(proc);
+        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnHintCallback From(HintCallback proc) => new PfnHintCallback(proc);
         public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
@@ -40,7 +40,7 @@ namespace Silk.NET.SDL
             => new PfnHintCallback((delegate* unmanaged[Cdecl]<void*, byte*, byte*, byte*, void>) pfn);
 
         public static implicit operator PfnHintCallback(HintCallback proc)
-            => new PfnHintCallback((delegate* unmanaged[Cdecl]<void*, byte*, byte*, byte*, void>) SilkMarshal.DelegateToPtr(proc));
+            => new PfnHintCallback(proc);
 
         public static explicit operator HintCallback(PfnHintCallback pfn)
             => SilkMarshal.PtrToDelegate<HintCallback>(pfn);

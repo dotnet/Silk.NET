@@ -18,35 +18,35 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
-    public readonly struct PfnAssertionHandler : IDisposable
+    public unsafe readonly struct PfnAssertionHandler : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<SDL_AssertData*, void*, SDL_AssertState> Handle => (delegate* unmanaged[Cdecl]<SDL_AssertData*, void*, SDL_AssertState>) _handle;
+        public delegate* unmanaged[Cdecl]<AssertData*, void*, AssertState> Handle => (delegate* unmanaged[Cdecl]<AssertData*, void*, AssertState>) _handle;
         public PfnAssertionHandler
         (
-            delegate* unmanaged[Cdecl]<SDL_AssertData*, void*, SDL_AssertState> ptr
+            delegate* unmanaged[Cdecl]<AssertData*, void*, AssertState> ptr
         ) => _handle = ptr;
 
         public PfnAssertionHandler
         (
              AssertionHandler proc
-        ) => _handle = (void*) SilkMarshal.DelegateToPtr<AssertionHandler>(proc);
+        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnAssertionHandler From(AssertionHandler proc) => new PfnAssertionHandler(proc);
         public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
 
         public static implicit operator IntPtr(PfnAssertionHandler pfn) => (IntPtr) pfn.Handle;
         public static explicit operator PfnAssertionHandler(IntPtr pfn)
-            => new PfnAssertionHandler((delegate* unmanaged[Cdecl]<SDL_AssertData*, void*, SDL_AssertState>) pfn);
+            => new PfnAssertionHandler((delegate* unmanaged[Cdecl]<AssertData*, void*, AssertState>) pfn);
 
         public static implicit operator PfnAssertionHandler(AssertionHandler proc)
-            => new PfnAssertionHandler((delegate* unmanaged[Cdecl]<SDL_AssertData*, void*, SDL_AssertState>) SilkMarshal.DelegateToPtr(proc));
+            => new PfnAssertionHandler(proc);
 
         public static explicit operator AssertionHandler(PfnAssertionHandler pfn)
             => SilkMarshal.PtrToDelegate<AssertionHandler>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<SDL_AssertData*, void*, SDL_AssertState>(PfnAssertionHandler pfn) => pfn.Handle;
-        public static implicit operator PfnAssertionHandler(delegate* unmanaged[Cdecl]<SDL_AssertData*, void*, SDL_AssertState> ptr) => new PfnAssertionHandler(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<AssertData*, void*, AssertState>(PfnAssertionHandler pfn) => pfn.Handle;
+        public static implicit operator PfnAssertionHandler(delegate* unmanaged[Cdecl]<AssertData*, void*, AssertState> ptr) => new PfnAssertionHandler(ptr);
     }
 
     public unsafe delegate AssertState AssertionHandler(AssertData* arg0, void* arg1);

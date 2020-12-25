@@ -18,7 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
-    public readonly struct PfnVvUi : IDisposable
+    public unsafe readonly struct PfnVvUi : IDisposable
     {
         private readonly void* _handle;
         public delegate* unmanaged[Cdecl]<void*, uint> Handle => (delegate* unmanaged[Cdecl]<void*, uint>) _handle;
@@ -30,7 +30,7 @@ namespace Silk.NET.SDL
         public PfnVvUi
         (
              VvUiProc proc
-        ) => _handle = (void*) SilkMarshal.DelegateToPtr<VvUiProc>(proc);
+        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnVvUi From(VvUiProc proc) => new PfnVvUi(proc);
         public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
@@ -40,7 +40,7 @@ namespace Silk.NET.SDL
             => new PfnVvUi((delegate* unmanaged[Cdecl]<void*, uint>) pfn);
 
         public static implicit operator PfnVvUi(VvUiProc proc)
-            => new PfnVvUi((delegate* unmanaged[Cdecl]<void*, uint>) SilkMarshal.DelegateToPtr(proc));
+            => new PfnVvUi(proc);
 
         public static explicit operator VvUiProc(PfnVvUi pfn)
             => SilkMarshal.PtrToDelegate<VvUiProc>(pfn);

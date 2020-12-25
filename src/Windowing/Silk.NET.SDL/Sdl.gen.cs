@@ -18,6 +18,26 @@ namespace Silk.NET.SDL
 {
     public unsafe partial class Sdl : NativeAPI
     {
+        /* Function prototypes */
+        /**
+         *  \brief This function allows access to driver-dependent window information.
+         *
+         *  \param window The window about which information is being requested
+         *  \param info This structure must be initialized with the SDL version, and is
+         *              then filled in with information about the given window.
+         *
+         *  \return SDL_TRUE if the function is implemented and the version member of
+         *          the \c info struct is valid, SDL_FALSE otherwise.
+         *
+         *  You typically use this function like this:
+         *  \code
+         *  SDL_SysWMinfo info;
+         *  SDL_VERSION(&info.version);
+         *  if ( SDL_GetWindowWMInfo(window, &info) ) { ... }
+         *  \endcode
+         */
+        [NativeApi(EntryPoint = "SDL_GetWindowWMInfo")]
+        public unsafe partial bool GetWindowWMInfo(Window* window, SysWMInfo* info);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 188, Column 38 in build/submodules/SDL-mirror/include/SDL_platform.h")]
@@ -62,82 +82,82 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(delegate* unmanaged[Cdecl]<uint, void*>* malloc_func, delegate* unmanaged[Cdecl]<uint, uint, void*>* calloc_func, delegate* unmanaged[Cdecl]<void*, uint, void*>* realloc_func, delegate* unmanaged[Cdecl]<void*, void>* free_func);
+        public unsafe partial void GetMemoryFunctions(PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(delegate* unmanaged[Cdecl]<uint, void*>* malloc_func, delegate* unmanaged[Cdecl]<uint, uint, void*>* calloc_func, delegate* unmanaged[Cdecl]<void*, uint, void*>* realloc_func, ref PfnVvV free_func);
+        public unsafe partial void GetMemoryFunctions(PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(delegate* unmanaged[Cdecl]<uint, void*>* malloc_func, delegate* unmanaged[Cdecl]<uint, uint, void*>* calloc_func, ref PfnVvUiVv realloc_func, delegate* unmanaged[Cdecl]<void*, void>* free_func);
+        public unsafe partial void GetMemoryFunctions(PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, ref PfnReallocFunc realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(delegate* unmanaged[Cdecl]<uint, void*>* malloc_func, delegate* unmanaged[Cdecl]<uint, uint, void*>* calloc_func, ref PfnVvUiVv realloc_func, ref PfnVvV free_func);
+        public unsafe partial void GetMemoryFunctions(PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, ref PfnReallocFunc realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(delegate* unmanaged[Cdecl]<uint, void*>* malloc_func, ref PfnUiUiVv calloc_func, delegate* unmanaged[Cdecl]<void*, uint, void*>* realloc_func, delegate* unmanaged[Cdecl]<void*, void>* free_func);
+        public unsafe partial void GetMemoryFunctions(PfnMallocFunc* malloc_func, ref PfnCallocFunc calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(delegate* unmanaged[Cdecl]<uint, void*>* malloc_func, ref PfnUiUiVv calloc_func, delegate* unmanaged[Cdecl]<void*, uint, void*>* realloc_func, ref PfnVvV free_func);
+        public unsafe partial void GetMemoryFunctions(PfnMallocFunc* malloc_func, ref PfnCallocFunc calloc_func, PfnReallocFunc* realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(delegate* unmanaged[Cdecl]<uint, void*>* malloc_func, ref PfnUiUiVv calloc_func, ref PfnVvUiVv realloc_func, delegate* unmanaged[Cdecl]<void*, void>* free_func);
+        public unsafe partial void GetMemoryFunctions(PfnMallocFunc* malloc_func, ref PfnCallocFunc calloc_func, ref PfnReallocFunc realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(delegate* unmanaged[Cdecl]<uint, void*>* malloc_func, ref PfnUiUiVv calloc_func, ref PfnVvUiVv realloc_func, ref PfnVvV free_func);
+        public unsafe partial void GetMemoryFunctions(PfnMallocFunc* malloc_func, ref PfnCallocFunc calloc_func, ref PfnReallocFunc realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(ref PfnUiVv malloc_func, delegate* unmanaged[Cdecl]<uint, uint, void*>* calloc_func, delegate* unmanaged[Cdecl]<void*, uint, void*>* realloc_func, delegate* unmanaged[Cdecl]<void*, void>* free_func);
+        public unsafe partial void GetMemoryFunctions(ref PfnMallocFunc malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(ref PfnUiVv malloc_func, delegate* unmanaged[Cdecl]<uint, uint, void*>* calloc_func, delegate* unmanaged[Cdecl]<void*, uint, void*>* realloc_func, ref PfnVvV free_func);
+        public unsafe partial void GetMemoryFunctions(ref PfnMallocFunc malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(ref PfnUiVv malloc_func, delegate* unmanaged[Cdecl]<uint, uint, void*>* calloc_func, ref PfnVvUiVv realloc_func, delegate* unmanaged[Cdecl]<void*, void>* free_func);
+        public unsafe partial void GetMemoryFunctions(ref PfnMallocFunc malloc_func, PfnCallocFunc* calloc_func, ref PfnReallocFunc realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(ref PfnUiVv malloc_func, delegate* unmanaged[Cdecl]<uint, uint, void*>* calloc_func, ref PfnVvUiVv realloc_func, ref PfnVvV free_func);
+        public unsafe partial void GetMemoryFunctions(ref PfnMallocFunc malloc_func, PfnCallocFunc* calloc_func, ref PfnReallocFunc realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(ref PfnUiVv malloc_func, ref PfnUiUiVv calloc_func, delegate* unmanaged[Cdecl]<void*, uint, void*>* realloc_func, delegate* unmanaged[Cdecl]<void*, void>* free_func);
+        public unsafe partial void GetMemoryFunctions(ref PfnMallocFunc malloc_func, ref PfnCallocFunc calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(ref PfnUiVv malloc_func, ref PfnUiUiVv calloc_func, delegate* unmanaged[Cdecl]<void*, uint, void*>* realloc_func, ref PfnVvV free_func);
+        public unsafe partial void GetMemoryFunctions(ref PfnMallocFunc malloc_func, ref PfnCallocFunc calloc_func, PfnReallocFunc* realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(ref PfnUiVv malloc_func, ref PfnUiUiVv calloc_func, ref PfnVvUiVv realloc_func, delegate* unmanaged[Cdecl]<void*, void>* free_func);
+        public unsafe partial void GetMemoryFunctions(ref PfnMallocFunc malloc_func, ref PfnCallocFunc calloc_func, ref PfnReallocFunc realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public partial void GetMemoryFunctions(ref PfnUiVv malloc_func, ref PfnUiUiVv calloc_func, ref PfnVvUiVv realloc_func, ref PfnVvV free_func);
+        public partial void GetMemoryFunctions(ref PfnMallocFunc malloc_func, ref PfnCallocFunc calloc_func, ref PfnReallocFunc realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
@@ -6802,22 +6822,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowHitTest")]
-        public unsafe partial int SetWindowHitTest(Window* window, PfnSDLWindowvSDLPointvVvSDLHitTestResult callback, void* callback_data);
+        public unsafe partial int SetWindowHitTest(Window* window, PfnHitTest callback, void* callback_data);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowHitTest")]
-        public unsafe partial int SetWindowHitTest<T0>(Window* window, PfnSDLWindowvSDLPointvVvSDLHitTestResult callback, ref T0 callback_data) where T0 : unmanaged;
+        public unsafe partial int SetWindowHitTest<T0>(Window* window, PfnHitTest callback, ref T0 callback_data) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowHitTest")]
-        public unsafe partial int SetWindowHitTest(ref Window window, PfnSDLWindowvSDLPointvVvSDLHitTestResult callback, void* callback_data);
+        public unsafe partial int SetWindowHitTest(ref Window window, PfnHitTest callback, void* callback_data);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowHitTest")]
-        public partial int SetWindowHitTest<T0>(ref Window window, PfnSDLWindowvSDLPointvVvSDLHitTestResult callback, ref T0 callback_data) where T0 : unmanaged;
+        public partial int SetWindowHitTest<T0>(ref Window window, PfnHitTest callback, ref T0 callback_data) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1086, Column 30 in build/submodules/SDL-mirror/include\\SDL_video.h")]
@@ -7200,13 +7220,13 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 154, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_WinRTRunApp")]
-        public unsafe partial int WinRTRunApp(PfnIBvvI mainFunction, void* reserved);
+        public unsafe partial int WinRTRunApp(PfnMainFunc mainFunction, void* reserved);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 154, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_WinRTRunApp")]
-        public partial int WinRTRunApp<T0>(PfnIBvvI mainFunction, ref T0 reserved) where T0 : unmanaged;
+        public partial int WinRTRunApp<T0>(PfnMainFunc mainFunction, ref T0 reserved) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 168, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
@@ -7317,12 +7337,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 211, Column 30 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_SetAssertionHandler")]
-        public unsafe partial void SetAssertionHandler(PfnSDLAssertDatavVvSDLAssertState handler, void* userdata);
+        public unsafe partial void SetAssertionHandler(PfnAssertionHandler handler, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 211, Column 30 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_SetAssertionHandler")]
-        public partial void SetAssertionHandler<T0>(PfnSDLAssertDatavVvSDLAssertState handler, ref T0 userdata) where T0 : unmanaged;
+        public partial void SetAssertionHandler<T0>(PfnAssertionHandler handler, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 225, Column 46 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
@@ -7687,32 +7707,32 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread(PfnVvI fn, byte* name, void* data, PfnVvUiPfnVvUiVvUiUivUi pfnBeginThread, PfnUiV pfnEndThread);
+        public unsafe partial Thread* CreateThread(PfnThreadFunction fn, byte* name, void* data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0>(PfnVvI fn, byte* name, ref T0 data, PfnVvUiPfnVvUiVvUiUivUi pfnBeginThread, PfnUiV pfnEndThread) where T0 : unmanaged;
+        public unsafe partial Thread* CreateThread<T0>(PfnThreadFunction fn, byte* name, ref T0 data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread(PfnVvI fn, ref byte name, void* data, PfnVvUiPfnVvUiVvUiUivUi pfnBeginThread, PfnUiV pfnEndThread);
+        public unsafe partial Thread* CreateThread(PfnThreadFunction fn, ref byte name, void* data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0>(PfnVvI fn, ref byte name, ref T0 data, PfnVvUiPfnVvUiVvUiUivUi pfnBeginThread, PfnUiV pfnEndThread) where T0 : unmanaged;
+        public unsafe partial Thread* CreateThread<T0>(PfnThreadFunction fn, ref byte name, ref T0 data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread(PfnVvI fn, string name, void* data, PfnVvUiPfnVvUiVvUiUivUi pfnBeginThread, PfnUiV pfnEndThread);
+        public unsafe partial Thread* CreateThread(PfnThreadFunction fn, string name, void* data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0>(PfnVvI fn, string name, ref T0 data, PfnVvUiPfnVvUiVvUiUivUi pfnBeginThread, PfnUiV pfnEndThread) where T0 : unmanaged;
+        public unsafe partial Thread* CreateThread<T0>(PfnThreadFunction fn, string name, ref T0 data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
@@ -9662,22 +9682,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 727, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_SetEventFilter")]
-        public unsafe partial void SetEventFilter(PfnVvSDLEventvI filter, void* userdata);
+        public unsafe partial void SetEventFilter(PfnEventFilter filter, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 727, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_SetEventFilter")]
-        public partial void SetEventFilter<T0>(PfnVvSDLEventvI filter, ref T0 userdata) where T0 : unmanaged;
+        public partial void SetEventFilter<T0>(PfnEventFilter filter, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 734, Column 34 in build/submodules/SDL-mirror/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_GetEventFilter")]
-        public unsafe partial SdlBool GetEventFilter(delegate* unmanaged[Cdecl]<void*, SDL_Event*, int>* filter, void** userdata);
+        public unsafe partial SdlBool GetEventFilter(PfnEventFilter* filter, void** userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 734, Column 34 in build/submodules/SDL-mirror/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_GetEventFilter")]
-        public unsafe partial SdlBool GetEventFilter(delegate* unmanaged[Cdecl]<void*, SDL_Event*, int>* filter, ref void* userdata);
+        public unsafe partial SdlBool GetEventFilter(PfnEventFilter* filter, ref void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 734, Column 34 in build/submodules/SDL-mirror/include\\SDL_events.h")]
@@ -10272,32 +10292,32 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public unsafe partial void AddHintCallback(byte* name, PfnVvBvBvBvV callback, void* userdata);
+        public unsafe partial void AddHintCallback(byte* name, PfnHintCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public unsafe partial void AddHintCallback<T0>(byte* name, PfnVvBvBvBvV callback, ref T0 userdata) where T0 : unmanaged;
+        public unsafe partial void AddHintCallback<T0>(byte* name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public unsafe partial void AddHintCallback(ref byte name, PfnVvBvBvBvV callback, void* userdata);
+        public unsafe partial void AddHintCallback(ref byte name, PfnHintCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public partial void AddHintCallback<T0>(ref byte name, PfnVvBvBvBvV callback, ref T0 userdata) where T0 : unmanaged;
+        public partial void AddHintCallback<T0>(ref byte name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public unsafe partial void AddHintCallback(string name, PfnVvBvBvBvV callback, void* userdata);
+        public unsafe partial void AddHintCallback(string name, PfnHintCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public partial void AddHintCallback<T0>(string name, PfnVvBvBvBvV callback, ref T0 userdata) where T0 : unmanaged;
+        public partial void AddHintCallback<T0>(string name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
@@ -10577,22 +10597,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 194, Column 30 in build/submodules/SDL-mirror/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogGetOutputFunction")]
-        public unsafe partial void LogGetOutputFunction(delegate* unmanaged[Cdecl]<void*, int, SDL_LogPriority, byte*, void>* callback, void** userdata);
+        public unsafe partial void LogGetOutputFunction(PfnLogOutputFunction* callback, void** userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 194, Column 30 in build/submodules/SDL-mirror/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogGetOutputFunction")]
-        public unsafe partial void LogGetOutputFunction(delegate* unmanaged[Cdecl]<void*, int, SDL_LogPriority, byte*, void>* callback, ref void* userdata);
+        public unsafe partial void LogGetOutputFunction(PfnLogOutputFunction* callback, ref void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 194, Column 30 in build/submodules/SDL-mirror/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogGetOutputFunction")]
-        public unsafe partial void LogGetOutputFunction(ref PfnVvISDLLogPriorityBvV callback, void** userdata);
+        public unsafe partial void LogGetOutputFunction(ref PfnLogOutputFunction callback, void** userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 194, Column 30 in build/submodules/SDL-mirror/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogGetOutputFunction")]
-        public unsafe partial void LogGetOutputFunction(ref PfnVvISDLLogPriorityBvV callback, ref void* userdata);
+        public unsafe partial void LogGetOutputFunction(ref PfnLogOutputFunction callback, ref void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 30 in build/submodules/SDL-mirror/include\\SDL_log.h")]
@@ -14393,13 +14413,13 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 50, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_SetWindowsMessageHook")]
-        public unsafe partial void SetWindowsMessageHook(PfnVvVvUiUi64I64V callback, void* userdata);
+        public unsafe partial void SetWindowsMessageHook(PfnWindowsMessageHook callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 50, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_SetWindowsMessageHook")]
-        public partial void SetWindowsMessageHook<T0>(PfnVvVvUiUi64I64V callback, ref T0 userdata) where T0 : unmanaged;
+        public partial void SetWindowsMessageHook<T0>(PfnWindowsMessageHook callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 58, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
@@ -14633,12 +14653,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 93, Column 37 in build/submodules/SDL-mirror/include\\SDL_timer.h")]
         [NativeApi(EntryPoint = "SDL_AddTimer")]
-        public unsafe partial int AddTimer(uint interval, PfnUiVvUi callback, void* param);
+        public unsafe partial int AddTimer(uint interval, PfnTimerCallback callback, void* param);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 93, Column 37 in build/submodules/SDL-mirror/include\\SDL_timer.h")]
         [NativeApi(EntryPoint = "SDL_AddTimer")]
-        public partial int AddTimer<T0>(uint interval, PfnUiVvUi callback, ref T0 param) where T0 : unmanaged;
+        public partial int AddTimer<T0>(uint interval, PfnTimerCallback callback, ref T0 param) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 104, Column 34 in build/submodules/SDL-mirror/include\\SDL_timer.h")]

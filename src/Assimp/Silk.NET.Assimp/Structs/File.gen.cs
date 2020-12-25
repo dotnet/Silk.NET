@@ -23,12 +23,12 @@ namespace Silk.NET.Assimp
     {
         public File
         (
-            PfnAiFilevBvUiUiUi? readProc = null,
+            PfnFileReadProc? readProc = null,
             PfnFileReadProc? writeProc = null,
-            PfnAiFilevUi? tellProc = null,
+            PfnFileTellProc? tellProc = null,
             PfnFileTellProc? fileSizeProc = null,
-            PfnAiFilevUiAiOriginAiReturn? seekProc = null,
-            PfnAiFilevV? flushProc = null,
+            PfnFileSeek? seekProc = null,
+            PfnFileFlushProc? flushProc = null,
             byte* userData = null
         ) : this()
         {
@@ -72,7 +72,7 @@ namespace Silk.NET.Assimp
         [NativeName("Type", "aiFileReadProc")]
         [NativeName("Type.Name", "aiFileReadProc")]
         [NativeName("Name", "ReadProc")]
-        public PfnAiFilevBvUiUiUi ReadProc;
+        public PfnFileReadProc ReadProc;
 
         [NativeName("Type", "aiFileWriteProc")]
         [NativeName("Type.Name", "aiFileWriteProc")]
@@ -82,7 +82,7 @@ namespace Silk.NET.Assimp
         [NativeName("Type", "aiFileTellProc")]
         [NativeName("Type.Name", "aiFileTellProc")]
         [NativeName("Name", "TellProc")]
-        public PfnAiFilevUi TellProc;
+        public PfnFileTellProc TellProc;
 
         [NativeName("Type", "aiFileTellProc")]
         [NativeName("Type.Name", "aiFileTellProc")]
@@ -92,12 +92,12 @@ namespace Silk.NET.Assimp
         [NativeName("Type", "aiFileSeek")]
         [NativeName("Type.Name", "aiFileSeek")]
         [NativeName("Name", "SeekProc")]
-        public PfnAiFilevUiAiOriginAiReturn SeekProc;
+        public PfnFileSeek SeekProc;
 
         [NativeName("Type", "aiFileFlushProc")]
         [NativeName("Type.Name", "aiFileFlushProc")]
         [NativeName("Name", "FlushProc")]
-        public PfnAiFilevV FlushProc;
+        public PfnFileFlushProc FlushProc;
 
         [NativeName("Type", "aiUserData")]
         [NativeName("Type.Name", "aiUserData")]

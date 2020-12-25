@@ -18,35 +18,35 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Assimp
 {
-    public readonly struct PfnFileCloseProc : IDisposable
+    public unsafe readonly struct PfnFileCloseProc : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<aiFileIO*, aiFile*, void> Handle => (delegate* unmanaged[Cdecl]<aiFileIO*, aiFile*, void>) _handle;
+        public delegate* unmanaged[Cdecl]<FileIO*, File*, void> Handle => (delegate* unmanaged[Cdecl]<FileIO*, File*, void>) _handle;
         public PfnFileCloseProc
         (
-            delegate* unmanaged[Cdecl]<aiFileIO*, aiFile*, void> ptr
+            delegate* unmanaged[Cdecl]<FileIO*, File*, void> ptr
         ) => _handle = ptr;
 
         public PfnFileCloseProc
         (
              FileCloseProc proc
-        ) => _handle = (void*) SilkMarshal.DelegateToPtr<FileCloseProc>(proc);
+        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnFileCloseProc From(FileCloseProc proc) => new PfnFileCloseProc(proc);
         public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
 
         public static implicit operator IntPtr(PfnFileCloseProc pfn) => (IntPtr) pfn.Handle;
         public static explicit operator PfnFileCloseProc(IntPtr pfn)
-            => new PfnFileCloseProc((delegate* unmanaged[Cdecl]<aiFileIO*, aiFile*, void>) pfn);
+            => new PfnFileCloseProc((delegate* unmanaged[Cdecl]<FileIO*, File*, void>) pfn);
 
         public static implicit operator PfnFileCloseProc(FileCloseProc proc)
-            => new PfnFileCloseProc((delegate* unmanaged[Cdecl]<aiFileIO*, aiFile*, void>) SilkMarshal.DelegateToPtr(proc));
+            => new PfnFileCloseProc(proc);
 
         public static explicit operator FileCloseProc(PfnFileCloseProc pfn)
             => SilkMarshal.PtrToDelegate<FileCloseProc>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<aiFileIO*, aiFile*, void>(PfnFileCloseProc pfn) => pfn.Handle;
-        public static implicit operator PfnFileCloseProc(delegate* unmanaged[Cdecl]<aiFileIO*, aiFile*, void> ptr) => new PfnFileCloseProc(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<FileIO*, File*, void>(PfnFileCloseProc pfn) => pfn.Handle;
+        public static implicit operator PfnFileCloseProc(delegate* unmanaged[Cdecl]<FileIO*, File*, void> ptr) => new PfnFileCloseProc(ptr);
     }
 
     public unsafe delegate void FileCloseProc(FileIO* arg0, File* arg1);

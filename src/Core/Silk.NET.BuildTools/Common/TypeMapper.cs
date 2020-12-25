@@ -43,17 +43,37 @@ namespace Silk.NET.BuildTools.Common
             var type = og;
             foreach (var map in maps)
             {
-                if (map.ContainsKey(type.ToString()))
-                {
-                    type = ParseTypeSignature
-                    (
-                        map[type.ToString()], type.OriginalName
-                    );
-                }
-                else if (map.ContainsKey(type.Name))
-                {
-                    type.Name = map[type.Name];
-                }
+                type = MapOne(map, type);
+            }
+
+            return type;
+        }
+
+        /// <summary>
+        /// Retrieve a type from a typemap.
+        /// </summary>
+        /// <param name="map">The map to use.</param>
+        /// <param name="og">The type to map.</param>
+        /// <returns>The mapped type.</returns>
+        public static Type MapOne(Dictionary<string, string> map, Type og)
+        {
+            var type = og;
+            if (map.ContainsKey(type.ToString()))
+            {
+                type = ParseTypeSignature
+                (
+                    map[type.ToString()], type.OriginalName
+                );
+            }
+            else if (map.ContainsKey(type.Name))
+            {
+                type.Name = map[type.Name];
+            }
+
+            if (og.FunctionPointerSignature is not null)
+            {
+                type.FunctionPointerSignature = og.FunctionPointerSignature;
+                Map(map, type.FunctionPointerSignature);
             }
 
             return type;
@@ -70,17 +90,7 @@ namespace Silk.NET.BuildTools.Common
             {
                 foreach (var field in @struct.Fields)
                 {
-                    if (map.ContainsKey(field.Type.ToString()))
-                    {
-                        field.Type = ParseTypeSignature
-                        (
-                            map[field.Type.ToString()], field.Type.OriginalName
-                        );
-                    }
-                    else if (map.ContainsKey(field.Type.Name))
-                    {
-                        field.Type.Name = map[field.Type.Name];
-                    }
+                    field.Type = MapOne(map, field.Type);
                 }
 
                 for (var i = 0; i < @struct.ComBases.Count; i++)
@@ -105,31 +115,11 @@ namespace Silk.NET.BuildTools.Common
         
         public static void Map(Dictionary<string, string> map, Function function)
         {
-            if (map.ContainsKey(function.ReturnType.ToString()))
-            {
-                function.ReturnType = ParseTypeSignature
-                (
-                    map[function.ReturnType.ToString()], function.ReturnType.OriginalName
-                );
-            }
-            else if (map.ContainsKey(function.ReturnType.Name))
-            {
-                function.ReturnType.Name = map[function.ReturnType.Name];
-            }
+            function.ReturnType = MapOne(map, function.ReturnType);
 
             foreach (var parameter in function.Parameters)
             {
-                if (map.ContainsKey(parameter.Type.ToString()))
-                {
-                    parameter.Type = ParseTypeSignature
-                    (
-                        map[parameter.Type.ToString()], parameter.Type.OriginalName
-                    );
-                }
-                else if (map.ContainsKey(parameter.Type.Name))
-                {
-                    parameter.Type.Name = map[parameter.Type.Name];
-                }
+                parameter.Type = MapOne(map, parameter.Type);
             }
         }
 

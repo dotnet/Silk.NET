@@ -18,7 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
-    public readonly struct PfnThreadFunction : IDisposable
+    public unsafe readonly struct PfnThreadFunction : IDisposable
     {
         private readonly void* _handle;
         public delegate* unmanaged[Cdecl]<void*, int> Handle => (delegate* unmanaged[Cdecl]<void*, int>) _handle;
@@ -30,7 +30,7 @@ namespace Silk.NET.SDL
         public PfnThreadFunction
         (
              ThreadFunction proc
-        ) => _handle = (void*) SilkMarshal.DelegateToPtr<ThreadFunction>(proc);
+        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnThreadFunction From(ThreadFunction proc) => new PfnThreadFunction(proc);
         public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
@@ -40,7 +40,7 @@ namespace Silk.NET.SDL
             => new PfnThreadFunction((delegate* unmanaged[Cdecl]<void*, int>) pfn);
 
         public static implicit operator PfnThreadFunction(ThreadFunction proc)
-            => new PfnThreadFunction((delegate* unmanaged[Cdecl]<void*, int>) SilkMarshal.DelegateToPtr(proc));
+            => new PfnThreadFunction(proc);
 
         public static explicit operator ThreadFunction(PfnThreadFunction pfn)
             => SilkMarshal.PtrToDelegate<ThreadFunction>(pfn);

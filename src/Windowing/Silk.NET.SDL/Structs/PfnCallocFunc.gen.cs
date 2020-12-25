@@ -18,7 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
-    public readonly struct PfnCallocFunc : IDisposable
+    public unsafe readonly struct PfnCallocFunc : IDisposable
     {
         private readonly void* _handle;
         public delegate* unmanaged[Cdecl]<uint, uint, void*> Handle => (delegate* unmanaged[Cdecl]<uint, uint, void*>) _handle;
@@ -30,7 +30,7 @@ namespace Silk.NET.SDL
         public PfnCallocFunc
         (
              CallocFunc proc
-        ) => _handle = (void*) SilkMarshal.DelegateToPtr<CallocFunc>(proc);
+        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnCallocFunc From(CallocFunc proc) => new PfnCallocFunc(proc);
         public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
@@ -40,7 +40,7 @@ namespace Silk.NET.SDL
             => new PfnCallocFunc((delegate* unmanaged[Cdecl]<uint, uint, void*>) pfn);
 
         public static implicit operator PfnCallocFunc(CallocFunc proc)
-            => new PfnCallocFunc((delegate* unmanaged[Cdecl]<uint, uint, void*>) SilkMarshal.DelegateToPtr(proc));
+            => new PfnCallocFunc(proc);
 
         public static explicit operator CallocFunc(PfnCallocFunc pfn)
             => SilkMarshal.PtrToDelegate<CallocFunc>(pfn);

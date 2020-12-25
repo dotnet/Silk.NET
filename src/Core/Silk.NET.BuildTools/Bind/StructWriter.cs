@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using Humanizer;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
@@ -351,7 +352,8 @@ namespace Silk.NET.BuildTools.Bind
         {
             if (args[0] == "$PFN")
             {
-                WriteFunctionPointerWrapper(@struct, file, profile, project, task, args[1], args[2], args[3]);
+                WriteFunctionPointerWrapper
+                    (@struct, file, profile, project, task, args[1], args[2], Enum.Parse<CallingConvention>(args[3]));
             }
             else
             {
@@ -360,7 +362,16 @@ namespace Silk.NET.BuildTools.Bind
         }
 
         public static void WriteFunctionPointerWrapper
-            (Struct @struct, string file, Profile profile, Project project, BindState state, string delegateName, string pfnName, string fnPtrSig)
+        (
+            Struct @struct,
+            string file,
+            Profile profile,
+            Project project,
+            BindState state,
+            string delegateName,
+            string pfnName,
+            CallingConvention conv
+        )
         {
             var coreProject = profile.Projects["Core"];
             var type = new Type
@@ -371,10 +382,12 @@ namespace Silk.NET.BuildTools.Bind
                     Parameters = @struct.Fields.SkipLast(1).Select
                             ((x, i) => new Parameter {Name = $"arg{i}", Type = x.Type})
                         .ToList(),
-                    ReturnType = @struct.Fields.LastOrDefault()?.Type ?? new Type{Name = "void"}
+                    ReturnType = @struct.Fields.LastOrDefault()?.Type ?? new Type{Name = "void"},
+                    Convention = conv
                 }
             };
 
+            var fnPtrSig = type.FunctionPointerSignature.GetFunctionPointerSignature();
             using var sw = new StreamWriter(file);
             sw.WriteLine(state.LicenseText());
             sw.WriteLine();
@@ -384,7 +397,7 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine();
             sw.WriteLine($"namespace {state.Task.Namespace}{coreProject.Namespace}");
             sw.WriteLine("{");
-            sw.WriteLine($"    public readonly struct {pfnName} : IDisposable");
+            sw.WriteLine($"    public unsafe readonly struct {pfnName} : IDisposable");
             sw.WriteLine("    {");
             sw.WriteLine("        private readonly void* _handle;");
             sw.WriteLine($"        public {fnPtrSig} Handle => ({fnPtrSig}) _handle;");
@@ -396,7 +409,7 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine($"        public {pfnName}");
             sw.WriteLine($"        (");
             sw.WriteLine($"             {delegateName} proc");
-            sw.WriteLine($"        ) => _handle = (void*) SilkMarshal.DelegateToPtr<{delegateName}>(proc);");
+            sw.WriteLine($"        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);");
             sw.WriteLine();
             sw.WriteLine($"        public static {pfnName} From({delegateName} proc) => new {pfnName}(proc);");
             sw.WriteLine($"        public void Dispose() => SilkMarshal.Free((IntPtr) _handle);");
@@ -406,7 +419,7 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine($"            => new {pfnName}(({fnPtrSig}) pfn);");
             sw.WriteLine();
             sw.WriteLine($"        public static implicit operator {pfnName}({delegateName} proc)");
-            sw.WriteLine($"            => new {pfnName}(({fnPtrSig}) SilkMarshal.DelegateToPtr(proc));");
+            sw.WriteLine($"            => new {pfnName}(proc);");
             sw.WriteLine();
             sw.WriteLine($"        public static explicit operator {delegateName}({pfnName} pfn)");
             sw.WriteLine($"            => SilkMarshal.PtrToDelegate<{delegateName}>(pfn);");

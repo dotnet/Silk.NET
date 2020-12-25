@@ -118,7 +118,9 @@ namespace Silk.NET.BuildTools.Common.Functions
                    (IsIn ? "in " : string.Empty) +
                    (IsOut ? "out " : string.Empty) +
                    (IsByRef ? "ref " : string.Empty) +
-                   (IsFunctionPointer ? FunctionPointerSignature.GetFunctionPointerSignature() : Name) +
+                   (IsFunctionPointer && allowFunctionPointers && Name == "void"
+                       ? FunctionPointerSignature.GetFunctionPointerSignature()
+                       : Name) +
                    (IsPointer ? new string('*', IndirectionLevels) : string.Empty) +
                    (IsArray ? Utilities.GetArrayDimensionString(ArrayDimensions) : string.Empty) +
                    (GenericTypes.Any() ? $"<{string.Join(", ", GenericTypes.Select(x => x.Name))}>" : string.Empty);

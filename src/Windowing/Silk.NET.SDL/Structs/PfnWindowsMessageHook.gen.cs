@@ -18,7 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
-    public readonly struct PfnWindowsMessageHook : IDisposable
+    public unsafe readonly struct PfnWindowsMessageHook : IDisposable
     {
         private readonly void* _handle;
         public delegate* unmanaged[Cdecl]<void*, void*, uint, ulong, long, void> Handle => (delegate* unmanaged[Cdecl]<void*, void*, uint, ulong, long, void>) _handle;
@@ -30,7 +30,7 @@ namespace Silk.NET.SDL
         public PfnWindowsMessageHook
         (
              WindowsMessageHook proc
-        ) => _handle = (void*) SilkMarshal.DelegateToPtr<WindowsMessageHook>(proc);
+        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnWindowsMessageHook From(WindowsMessageHook proc) => new PfnWindowsMessageHook(proc);
         public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
@@ -40,7 +40,7 @@ namespace Silk.NET.SDL
             => new PfnWindowsMessageHook((delegate* unmanaged[Cdecl]<void*, void*, uint, ulong, long, void>) pfn);
 
         public static implicit operator PfnWindowsMessageHook(WindowsMessageHook proc)
-            => new PfnWindowsMessageHook((delegate* unmanaged[Cdecl]<void*, void*, uint, ulong, long, void>) SilkMarshal.DelegateToPtr(proc));
+            => new PfnWindowsMessageHook(proc);
 
         public static explicit operator WindowsMessageHook(PfnWindowsMessageHook pfn)
             => SilkMarshal.PtrToDelegate<WindowsMessageHook>(pfn);

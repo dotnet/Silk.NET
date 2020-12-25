@@ -18,7 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
-    public readonly struct PfnTimerCallback : IDisposable
+    public unsafe readonly struct PfnTimerCallback : IDisposable
     {
         private readonly void* _handle;
         public delegate* unmanaged[Cdecl]<uint, void*, uint> Handle => (delegate* unmanaged[Cdecl]<uint, void*, uint>) _handle;
@@ -30,7 +30,7 @@ namespace Silk.NET.SDL
         public PfnTimerCallback
         (
              TimerCallback proc
-        ) => _handle = (void*) SilkMarshal.DelegateToPtr<TimerCallback>(proc);
+        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnTimerCallback From(TimerCallback proc) => new PfnTimerCallback(proc);
         public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
@@ -40,7 +40,7 @@ namespace Silk.NET.SDL
             => new PfnTimerCallback((delegate* unmanaged[Cdecl]<uint, void*, uint>) pfn);
 
         public static implicit operator PfnTimerCallback(TimerCallback proc)
-            => new PfnTimerCallback((delegate* unmanaged[Cdecl]<uint, void*, uint>) SilkMarshal.DelegateToPtr(proc));
+            => new PfnTimerCallback(proc);
 
         public static explicit operator TimerCallback(PfnTimerCallback pfn)
             => SilkMarshal.PtrToDelegate<TimerCallback>(pfn);
