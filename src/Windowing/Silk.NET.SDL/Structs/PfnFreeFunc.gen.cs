@@ -49,6 +49,6 @@ namespace Silk.NET.SDL
         public static implicit operator PfnFreeFunc(delegate* unmanaged[Cdecl]<void*, void> ptr) => new PfnFreeFunc(ptr);
     }
 
-    public delegate unsafe void FreeFunc(void* arg0);
+    public unsafe delegate void FreeFunc(void* arg0);
 }
 

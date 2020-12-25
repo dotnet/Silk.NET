@@ -49,6 +49,6 @@ namespace Silk.NET.Assimp
         public static implicit operator PfnFileReadProc(delegate* unmanaged[Cdecl]<aiFile*, byte*, uint, uint, uint> ptr) => new PfnFileReadProc(ptr);
     }
 
-    public delegate unsafe uint FileReadProc(File* arg0, byte* arg1, uint arg2, uint arg3);
+    public unsafe delegate uint FileReadProc(File* arg0, byte* arg1, uint arg2, uint arg3);
 }
 

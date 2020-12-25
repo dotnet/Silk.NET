@@ -49,6 +49,6 @@ namespace Silk.NET.Assimp
         public static implicit operator PfnFileCloseProc(delegate* unmanaged[Cdecl]<aiFileIO*, aiFile*, void> ptr) => new PfnFileCloseProc(ptr);
     }
 
-    public delegate unsafe void FileCloseProc(FileIO* arg0, File* arg1);
+    public unsafe delegate void FileCloseProc(FileIO* arg0, File* arg1);
 }
 

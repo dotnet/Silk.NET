@@ -49,6 +49,6 @@ namespace Silk.NET.Assimp
         public static implicit operator PfnFileSeek(delegate* unmanaged[Cdecl]<aiFile*, uint, aiOrigin, aiReturn> ptr) => new PfnFileSeek(ptr);
     }
 
-    public delegate unsafe Return FileSeek(File* arg0, uint arg1, Origin arg2);
+    public unsafe delegate Return FileSeek(File* arg0, uint arg1, Origin arg2);
 }
 

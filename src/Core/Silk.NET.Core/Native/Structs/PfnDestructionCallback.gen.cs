@@ -49,6 +49,6 @@ namespace Silk.NET.Core.Native
         public static implicit operator PfnDestructionCallback(delegate* unmanaged[Cdecl]<void*, void> ptr) => new PfnDestructionCallback(ptr);
     }
 
-    public delegate unsafe void DestructionCallback(void* arg0);
+    public unsafe delegate void DestructionCallback(void* arg0);
 }
 

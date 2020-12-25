@@ -49,6 +49,6 @@ namespace Silk.NET.SDL
         public static implicit operator PfnTimerCallback(delegate* unmanaged[Cdecl]<uint, void*, uint> ptr) => new PfnTimerCallback(ptr);
     }
 
-    public delegate unsafe uint TimerCallback(uint arg0, void* arg1);
+    public unsafe delegate uint TimerCallback(uint arg0, void* arg1);
 }
 

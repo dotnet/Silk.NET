@@ -49,6 +49,6 @@ namespace Silk.NET.SDL
         public static implicit operator PfnAudioFilter(delegate* unmanaged[Cdecl]<SDL_AudioCVT*, ushort, void> ptr) => new PfnAudioFilter(ptr);
     }
 
-    public delegate unsafe void AudioFilter(AudioCVT* arg0, ushort arg1);
+    public unsafe delegate void AudioFilter(AudioCVT* arg0, ushort arg1);
 }
 

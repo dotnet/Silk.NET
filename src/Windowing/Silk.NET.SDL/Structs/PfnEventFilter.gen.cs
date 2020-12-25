@@ -49,6 +49,6 @@ namespace Silk.NET.SDL
         public static implicit operator PfnEventFilter(delegate* unmanaged[Cdecl]<void*, SDL_Event*, int> ptr) => new PfnEventFilter(ptr);
     }
 
-    public delegate unsafe int EventFilter(void* arg0, Event* arg1);
+    public unsafe delegate int EventFilter(void* arg0, Event* arg1);
 }
 

@@ -49,6 +49,6 @@ namespace Silk.NET.SDL
         public static implicit operator PfnHitTest(delegate* unmanaged[Cdecl]<SDL_Window*, SDL_Point*, void*, SDL_HitTestResult> ptr) => new PfnHitTest(ptr);
     }
 
-    public delegate unsafe HitTestResult HitTest(Window* arg0, Point* arg1, void* arg2);
+    public unsafe delegate HitTestResult HitTest(Window* arg0, Point* arg1, void* arg2);
 }
 

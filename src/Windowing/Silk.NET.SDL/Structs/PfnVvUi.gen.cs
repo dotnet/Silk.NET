@@ -49,6 +49,6 @@ namespace Silk.NET.SDL
         public static implicit operator PfnVvUi(delegate* unmanaged[Cdecl]<void*, uint> ptr) => new PfnVvUi(ptr);
     }
 
-    public delegate unsafe uint VvUiProc(void* arg0);
+    public unsafe delegate uint VvUiProc(void* arg0);
 }
 

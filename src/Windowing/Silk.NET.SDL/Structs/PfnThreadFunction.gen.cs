@@ -49,6 +49,6 @@ namespace Silk.NET.SDL
         public static implicit operator PfnThreadFunction(delegate* unmanaged[Cdecl]<void*, int> ptr) => new PfnThreadFunction(ptr);
     }
 
-    public delegate unsafe int ThreadFunction(void* arg0);
+    public unsafe delegate int ThreadFunction(void* arg0);
 }
 

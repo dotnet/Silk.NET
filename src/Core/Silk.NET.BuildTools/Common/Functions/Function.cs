@@ -196,11 +196,6 @@ namespace Silk.NET.BuildTools.Common.Functions
                 sb.Append("static ");
             }
 
-            if (@delegate)
-            {
-                sb.Append("delegate ");
-            }
-
             if (IsReadOnly)
             {
                 sb.Append("readonly ");
@@ -214,6 +209,11 @@ namespace Silk.NET.BuildTools.Common.Functions
             if (partial)
             {
                 sb.Append("partial ");
+            }
+
+            if (@delegate)
+            {
+                sb.Append("delegate ");
             }
 
             sb.Append(ReturnType);
