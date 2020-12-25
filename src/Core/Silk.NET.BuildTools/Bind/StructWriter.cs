@@ -28,6 +28,12 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="project">The project containing this enum.</param>
         public static void WriteStruct(this Struct @struct, string file, Profile profile, Project project, BindState task)
         {
+            if (@struct.Attributes.IsBuildToolsIntrinsic(out var args))
+            {
+                WriteBuildToolsIntrinsic(@struct, file, profile, project, task, args);
+                return;
+            }
+        
             var sw = new StreamWriter(file);
             sw.WriteLine(task.LicenseText());
             sw.WriteLine();
@@ -40,6 +46,11 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine("{");
             foreach (var attr in @struct.Attributes)
             {
+                if (attr.Name == "BuildToolsIntrinsic")
+                {
+                    continue;
+                }
+                
                 sw.WriteLine($"    {attr}");
             }
 
@@ -364,7 +375,7 @@ namespace Silk.NET.BuildTools.Bind
                 }
             };
 
-            var sw = new StreamWriter(file);
+            using var sw = new StreamWriter(file);
             sw.WriteLine(state.LicenseText());
             sw.WriteLine();
             sw.WriteCoreUsings();
@@ -404,10 +415,10 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine($"        public static implicit operator {pfnName}({fnPtrSig} ptr) => new {pfnName}(ptr);");
             sw.WriteLine("    }");
             sw.WriteLine();
-            type.FunctionPointerSignature.Name = delegateName;
-            type.FunctionPointerSignature.NativeName = $"{pfnName}";
-            type.Name = type.FunctionPointerSignature.NativeName;
-            type.IndirectionLevels--;
+            // type.FunctionPointerSignature.Name = delegateName;
+            // type.FunctionPointerSignature.NativeName = $"{pfnName}";
+            // type.Name = type.FunctionPointerSignature.NativeName;
+            // type.IndirectionLevels--;
             using (var sr = new StringReader
                 (type.FunctionPointerSignature.ToString(null, @delegate: true, semicolon: true, accessibility: true)))
             {
@@ -420,6 +431,7 @@ namespace Silk.NET.BuildTools.Bind
 
             sw.WriteLine("}");
             sw.WriteLine();
+            sw.Flush();
         }
     }
 }

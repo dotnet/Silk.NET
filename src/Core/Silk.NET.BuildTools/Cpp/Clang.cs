@@ -152,12 +152,23 @@ namespace Silk.NET.BuildTools.Cpp
                 var name = GetFunctionPointerWrapperName(type);
                 if (pfns.TryGetValue(name, out var val))
                 {
-                    return new Type {Name = val.Name, OriginalName = "Pfn" + name};
+                    var ret = new Type
+                    {
+                        Name = val.Name, OriginalName = "Pfn" + name,
+                        FunctionPointerSignature = type.FunctionPointerSignature
+                    };
+                    ret.ForceNegativeIndirection(-1);
+                    return ret;
                 }
                 else
                 {
                     name = GetFunctionPointerWrapperName(type);
-                    var nameChanged = task.RenamedNativeNames.TryGetValue(name, out name);
+                    var nameChanged = task.RenamedNativeNames.TryGetValue(name, out var renamed);
+                    if (nameChanged)
+                    {
+                        name = renamed;
+                    }
+
                     var delegateName = nameChanged ? name : $"{name}Proc";
                     Struct s;
                     pfns.Add
@@ -186,14 +197,23 @@ namespace Silk.NET.BuildTools.Cpp
                                 {
                                     "$PFN",
                                     delegateName,
-                                    name,
+                                    "Pfn" + name,
                                     type.FunctionPointerSignature.GetFunctionPointerSignature()
                                 }}
                             }
                         }
                     );
                     
-                    return new Type {Name = s.Name, OriginalName = s.NativeName};
+                    structs.Add(s);
+
+                    var ret = new Type
+                    {
+                        Name = s.Name, OriginalName = s.NativeName,
+                        FunctionPointerSignature = type.FunctionPointerSignature
+                    };
+
+                    ret.ForceNegativeIndirection(-1);
+                    return ret;
                 }
             }
 
@@ -203,15 +223,9 @@ namespace Silk.NET.BuildTools.Cpp
                     (string.Empty, (current, parameter) => current + (WriteType(parameter.Type) + " ")) + WriteType
                     (type.FunctionPointerSignature.ReturnType)).Pascalize();
 
-                static string WriteType(Type type) => type.FunctionPointerSignature.Convention switch
-                {
-                    CallingConvention.Winapi => "U",
-                    CallingConvention.Cdecl => "C",
-                    CallingConvention.StdCall => "S",
-                    CallingConvention.ThisCall => "T",
-                    CallingConvention.FastCall => "F",
-                    _ => type.FunctionPointerSignature.Convention.ToString()
-                } + type.Name switch
+                static string WriteType(Type type) => type.IsFunctionPointer
+                    ? $"Fv{GetFunctionPointerWrapperName(type)}"
+                    : type.Name switch
                 {
                     "void" => "V",
                     "int" => "i",
@@ -758,6 +772,25 @@ namespace Silk.NET.BuildTools.Cpp
                         if (!getTypeSuccess)
                         {
                             ret = new Type {Name = typedefType.Decl.Name};
+                        }
+                        else if (ret.FunctionPointerSignature is not null)
+                        {
+                            var wrapper = GetFunctionPointerWrapperName(ret);
+                            if (ret.Name == "Pfn" + wrapper)
+                            {
+                                // rename the struct as we've found a typedef for it, and we haven't found a better name
+                                // already.
+                                pfns[wrapper].NativeName = typedefType.Decl.Name;
+                                var name = Naming.TranslateVariable
+                                    (Naming.TrimName(pfns[wrapper].NativeName, task), task.FunctionPrefix);
+                                if (name.ToLower().StartsWith("pfn"))
+                                {
+                                    name = name.Substring(3);
+                                }
+                                
+                                var intrinsic = pfns[wrapper].Attributes.First(x => x.Name == "BuildToolsIntrinsic");
+                                pfns[wrapper].Name = intrinsic.Arguments[2] = "Pfn" + (intrinsic.Arguments[1] = name);
+                            }
                         }
                     }
                 }

@@ -190,5 +190,7 @@ namespace Silk.NET.BuildTools.Common.Functions
                    IsOut == other.IsOut &&
                    IsIn == other.IsIn;
         }
+
+        internal void ForceNegativeIndirection(int val) => _indirectionLevels = val;
     }
 }

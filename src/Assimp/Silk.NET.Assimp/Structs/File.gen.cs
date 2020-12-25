@@ -23,43 +23,43 @@ namespace Silk.NET.Assimp
     {
         public File
         (
-            void* readProc = null,
-            void* writeProc = null,
-            void* tellProc = null,
-            void* fileSizeProc = null,
-            void* seekProc = null,
-            void* flushProc = null,
+            PfnAiFilevBvUiUiUi? readProc = null,
+            PfnFileReadProc? writeProc = null,
+            PfnAiFilevUi? tellProc = null,
+            PfnFileTellProc? fileSizeProc = null,
+            PfnAiFilevUiAiOriginAiReturn? seekProc = null,
+            PfnAiFilevV? flushProc = null,
             byte* userData = null
         ) : this()
         {
             if (readProc is not null)
             {
-                ReadProc = readProc;
+                ReadProc = readProc.Value;
             }
 
             if (writeProc is not null)
             {
-                WriteProc = writeProc;
+                WriteProc = writeProc.Value;
             }
 
             if (tellProc is not null)
             {
-                TellProc = tellProc;
+                TellProc = tellProc.Value;
             }
 
             if (fileSizeProc is not null)
             {
-                FileSizeProc = fileSizeProc;
+                FileSizeProc = fileSizeProc.Value;
             }
 
             if (seekProc is not null)
             {
-                SeekProc = seekProc;
+                SeekProc = seekProc.Value;
             }
 
             if (flushProc is not null)
             {
-                FlushProc = flushProc;
+                FlushProc = flushProc.Value;
             }
 
             if (userData is not null)
@@ -72,32 +72,32 @@ namespace Silk.NET.Assimp
         [NativeName("Type", "aiFileReadProc")]
         [NativeName("Type.Name", "aiFileReadProc")]
         [NativeName("Name", "ReadProc")]
-        public void* ReadProc;
+        public PfnAiFilevBvUiUiUi ReadProc;
 
         [NativeName("Type", "aiFileWriteProc")]
         [NativeName("Type.Name", "aiFileWriteProc")]
         [NativeName("Name", "WriteProc")]
-        public void* WriteProc;
+        public PfnFileReadProc WriteProc;
 
         [NativeName("Type", "aiFileTellProc")]
         [NativeName("Type.Name", "aiFileTellProc")]
         [NativeName("Name", "TellProc")]
-        public void* TellProc;
+        public PfnAiFilevUi TellProc;
 
         [NativeName("Type", "aiFileTellProc")]
         [NativeName("Type.Name", "aiFileTellProc")]
         [NativeName("Name", "FileSizeProc")]
-        public void* FileSizeProc;
+        public PfnFileTellProc FileSizeProc;
 
         [NativeName("Type", "aiFileSeek")]
         [NativeName("Type.Name", "aiFileSeek")]
         [NativeName("Name", "SeekProc")]
-        public void* SeekProc;
+        public PfnAiFilevUiAiOriginAiReturn SeekProc;
 
         [NativeName("Type", "aiFileFlushProc")]
         [NativeName("Type.Name", "aiFileFlushProc")]
         [NativeName("Name", "FlushProc")]
-        public void* FlushProc;
+        public PfnAiFilevV FlushProc;
 
         [NativeName("Type", "aiUserData")]
         [NativeName("Type.Name", "aiUserData")]
