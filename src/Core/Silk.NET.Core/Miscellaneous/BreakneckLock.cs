@@ -3,7 +3,7 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-// Sourced from https://github.com/john-h-k/BreakneckLock under the MIT license
+// Sourced from https://github.com/john-h-k/SpinLockSlim under the MIT license
 
 // MIT License
 // 
