@@ -41,6 +41,7 @@ namespace Silk.NET.Windowing.Glfw
             _parent = parent;
             _initialMonitor = monitor;
             _localTitleCache = optionsCache.Title;
+            SharedContext = optionsCache.SharedContext;
         }
 
         protected override Vector2D<int> CoreSize
@@ -306,16 +307,29 @@ namespace Silk.NET.Windowing.Glfw
             // Set video mode (-1 = don't care)
             _glfw.WindowHint(WindowHintInt.RefreshRate, opts.VideoMode.RefreshRate ?? -1);
             _glfw.WindowHint(WindowHintInt.DepthBits, opts.PreferredDepthBufferBits ?? -1);
+            _glfw.WindowHint(WindowHintInt.StencilBits, opts.PreferredStencilBufferBits ?? -1);
+            _glfw.WindowHint(WindowHintInt.RedBits, opts.PreferredBitDepth?.X ?? -1);
+            _glfw.WindowHint(WindowHintInt.GreenBits, opts.PreferredBitDepth?.Y ?? -1);
+            _glfw.WindowHint(WindowHintInt.BlueBits, opts.PreferredBitDepth?.Z ?? -1);
+            _glfw.WindowHint(WindowHintInt.AlphaBits, opts.PreferredBitDepth?.W ?? -1);
 
             // Set transparent framebuffer
             _glfw.WindowHint(WindowHintBool.TransparentFramebuffer, opts.TransparentFramebuffer);
+
+            var share = SharedContext;
 
             // Create window
             _glfwWindow = _glfw.CreateWindow
             (
                 opts.Size.X, opts.Size.Y, opts.Title,
                 !(_initialMonitor is null) ? _initialMonitor.Handle : null,
-                null
+                share switch
+                {
+                    null => null,
+                    _ when share is GlfwContext glfwContext => (WindowHandle*) glfwContext.Handle,
+                    _ when share is GlfwWindow glfwWindow => glfwWindow._glfwWindow,
+                    _ => throw new ArgumentException("The given shared context should be a GlfwContext or GlfwWindow")
+                }
             );
 
             if (opts.IsVisible)
@@ -377,6 +391,9 @@ namespace Silk.NET.Windowing.Glfw
         public override IWindow CreateWindow(WindowOptions opts) => new GlfwWindow(opts, this, null);
 
         public override IWindowHost? Parent => (IWindowHost?) _parent ?? Monitor;
+        public IGLContextSource? Source => (IGLContextSource?) GLContext;
+        public override IGLContext? SharedContext { get; }
+
 
         public override IMonitor? Monitor
         {

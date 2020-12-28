@@ -30,7 +30,7 @@ namespace Silk.NET.SDL
             ushort? samples = null,
             ushort? padding = null,
             uint? size = null,
-            void* callback = null,
+            PfnAudioCallback? callback = null,
             void* userdata = null
         ) : this()
         {
@@ -71,7 +71,7 @@ namespace Silk.NET.SDL
 
             if (callback is not null)
             {
-                Callback = callback;
+                Callback = callback.Value;
             }
 
             if (userdata is not null)
@@ -119,7 +119,7 @@ namespace Silk.NET.SDL
         [NativeName("Type", "SDL_AudioCallback")]
         [NativeName("Type.Name", "SDL_AudioCallback")]
         [NativeName("Name", "callback")]
-        public void* Callback;
+        public PfnAudioCallback Callback;
 
         [NativeName("Type", "void *")]
         [NativeName("Type.Name", "void *")]

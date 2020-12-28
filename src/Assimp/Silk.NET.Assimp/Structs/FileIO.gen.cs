@@ -23,19 +23,19 @@ namespace Silk.NET.Assimp
     {
         public FileIO
         (
-            void* openProc = null,
-            void* closeProc = null,
+            PfnFileOpenProc? openProc = null,
+            PfnFileCloseProc? closeProc = null,
             byte* userData = null
         ) : this()
         {
             if (openProc is not null)
             {
-                OpenProc = openProc;
+                OpenProc = openProc.Value;
             }
 
             if (closeProc is not null)
             {
-                CloseProc = closeProc;
+                CloseProc = closeProc.Value;
             }
 
             if (userData is not null)
@@ -48,12 +48,12 @@ namespace Silk.NET.Assimp
         [NativeName("Type", "aiFileOpenProc")]
         [NativeName("Type.Name", "aiFileOpenProc")]
         [NativeName("Name", "OpenProc")]
-        public void* OpenProc;
+        public PfnFileOpenProc OpenProc;
 
         [NativeName("Type", "aiFileCloseProc")]
         [NativeName("Type.Name", "aiFileCloseProc")]
         [NativeName("Name", "CloseProc")]
-        public void* CloseProc;
+        public PfnFileCloseProc CloseProc;
 
         [NativeName("Type", "aiUserData")]
         [NativeName("Type.Name", "aiUserData")]

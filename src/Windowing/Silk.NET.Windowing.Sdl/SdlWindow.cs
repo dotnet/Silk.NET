@@ -20,15 +20,15 @@ namespace Silk.NET.Windowing.Sdl
     internal unsafe class SdlWindow : SdlView, IWindow
     {
         private WindowOptions _extendedOptionsCache;
-        private List<string> _droppedFiles = new List<string>();
+        private List<string> _droppedFiles = new();
 
-        public SdlWindow(WindowOptions opts, SdlView? parent, SdlMonitor? monitor)
-            : base(new ViewOptions(opts), parent, monitor)
+        public SdlWindow(WindowOptions opts, SdlView? parent, SdlMonitor? monitor, SdlPlatform platform)
+            : base(new ViewOptions(opts), parent, monitor, platform)
         {
             _extendedOptionsCache = opts;
         }
 
-        public SdlWindow(void* nativeHandle, IGLContext? ctx) : base(nativeHandle, ctx)
+        public SdlWindow(void* nativeHandle, IGLContext? ctx, SdlPlatform platform) : base(nativeHandle, ctx, platform)
         {
         }
 
@@ -209,7 +209,10 @@ namespace Silk.NET.Windowing.Sdl
         }
 
         public bool TransparentFramebuffer => false; // doesn't look like SDL doesn't support this
-        public IWindow CreateWindow(WindowOptions opts) => new SdlWindow(opts, this, null);
+
+        public IGLContext? SharedContext => _extendedOptionsCache.SharedContext;
+
+        public IWindow CreateWindow(WindowOptions opts) => new SdlWindow(opts, this, null, _platform);
 
         public IWindowHost? Parent => (IWindowHost?) ParentView ?? Monitor;
 
@@ -242,7 +245,7 @@ namespace Silk.NET.Windowing.Sdl
                             Sdl.GetDisplayUsableBounds(i, &bounds);
                             if (bounds.Contains(new Vector2D<int>(pos.X + size.X / 2, pos.Y + size.Y / 2)))
                             {
-                                return new SdlMonitor(i);
+                                return new SdlMonitor(_platform, i);
                             }
                         }
                     }
@@ -250,7 +253,7 @@ namespace Silk.NET.Windowing.Sdl
 
                 return monitor < 0
                     ? (IMonitor?) null
-                    : new SdlMonitor(monitor);
+                    : new SdlMonitor(_platform, monitor);
             }
             set
             {
@@ -434,7 +437,7 @@ namespace Silk.NET.Windowing.Sdl
             CoreInitialize
             (
                 opts, flags, InitialMonitor?.Bounds.Origin.X + Position.X,
-                InitialMonitor?.Bounds.Origin.Y + Position.Y, Size.X, Size.Y, Title
+                InitialMonitor?.Bounds.Origin.Y + Position.Y, Size.X, Size.Y, Title, SharedContext
             );
         }
     }

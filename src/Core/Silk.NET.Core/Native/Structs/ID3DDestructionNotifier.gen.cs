@@ -108,40 +108,40 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterDestructionCallback(void* callbackFn, void* pData, uint* pCallbackID)
+        public readonly unsafe int RegisterDestructionCallback(PfnDestructionCallback callbackFn, void* pData, uint* pCallbackID)
         {
             var @this = (ID3DDestructionNotifier*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, void*, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pData, pCallbackID);
+            ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pData, pCallbackID);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterDestructionCallback(void* callbackFn, void* pData, ref uint pCallbackID)
+        public readonly unsafe int RegisterDestructionCallback(PfnDestructionCallback callbackFn, void* pData, ref uint pCallbackID)
         {
             var @this = (ID3DDestructionNotifier*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (uint* pCallbackIDPtr = &pCallbackID)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, void*, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pData, pCallbackIDPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, PfnDestructionCallback, void*, uint*, int>)LpVtbl[3])(@this, callbackFn, pData, pCallbackIDPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterDestructionCallback<T0>(void* callbackFn, ref T0 pData, uint* pCallbackID) where T0 : unmanaged
+        public readonly unsafe int RegisterDestructionCallback<T0>(PfnDestructionCallback callbackFn, ref T0 pData, uint* pCallbackID) where T0 : unmanaged
         {
             var @this = (ID3DDestructionNotifier*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, void*, T0*, uint*, int>)LpVtbl[3])(@this, callbackFn, pDataPtr, pCallbackID);
+                ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, PfnDestructionCallback, T0*, uint*, int>)LpVtbl[3])(@this, callbackFn, pDataPtr, pCallbackID);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterDestructionCallback<T0>(void* callbackFn, ref T0 pData, ref uint pCallbackID) where T0 : unmanaged
+        public readonly int RegisterDestructionCallback<T0>(PfnDestructionCallback callbackFn, ref T0 pData, ref uint pCallbackID) where T0 : unmanaged
         {
             var @this = (ID3DDestructionNotifier*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -149,67 +149,7 @@ namespace Silk.NET.Core.Native
             {
                 fixed (uint* pCallbackIDPtr = &pCallbackID)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, void*, T0*, uint*, int>)LpVtbl[3])(@this, callbackFn, pDataPtr, pCallbackIDPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterDestructionCallback<T0>(ref T0 callbackFn, void* pData, uint* pCallbackID) where T0 : unmanaged
-        {
-            var @this = (ID3DDestructionNotifier*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
-            fixed (T0* callbackFnPtr = &callbackFn)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, T0*, void*, uint*, int>)LpVtbl[3])(@this, callbackFnPtr, pData, pCallbackID);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterDestructionCallback<T0>(ref T0 callbackFn, void* pData, ref uint pCallbackID) where T0 : unmanaged
-        {
-            var @this = (ID3DDestructionNotifier*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
-            fixed (T0* callbackFnPtr = &callbackFn)
-            {
-                fixed (uint* pCallbackIDPtr = &pCallbackID)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, T0*, void*, uint*, int>)LpVtbl[3])(@this, callbackFnPtr, pData, pCallbackIDPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int RegisterDestructionCallback<T0, T1>(ref T0 callbackFn, ref T1 pData, uint* pCallbackID) where T0 : unmanaged where T1 : unmanaged
-        {
-            var @this = (ID3DDestructionNotifier*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
-            fixed (T0* callbackFnPtr = &callbackFn)
-            {
-                fixed (T1* pDataPtr = &pData)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, T0*, T1*, uint*, int>)LpVtbl[3])(@this, callbackFnPtr, pDataPtr, pCallbackID);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int RegisterDestructionCallback<T0, T1>(ref T0 callbackFn, ref T1 pData, ref uint pCallbackID) where T0 : unmanaged where T1 : unmanaged
-        {
-            var @this = (ID3DDestructionNotifier*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
-            fixed (T0* callbackFnPtr = &callbackFn)
-            {
-                fixed (T1* pDataPtr = &pData)
-                {
-                    fixed (uint* pCallbackIDPtr = &pCallbackID)
-                    {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, T0*, T1*, uint*, int>)LpVtbl[3])(@this, callbackFnPtr, pDataPtr, pCallbackIDPtr);
-                    }
+                    ret = ((delegate* unmanaged[Cdecl]<ID3DDestructionNotifier*, PfnDestructionCallback, T0*, uint*, int>)LpVtbl[3])(@this, callbackFn, pDataPtr, pCallbackIDPtr);
                 }
             }
             return ret;

@@ -13,6 +13,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using ClangSharp;
 using ClangSharp.Interop;
+using Humanizer;
 using Microsoft.Extensions.FileSystemGlobbing;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
@@ -105,6 +106,7 @@ namespace Silk.NET.BuildTools.Cpp
             var constants = new List<Constant>();
             var structs = new List<Struct>();
             var enums = new List<Enum>();
+            var pfns = new Dictionary<string, Struct>();
 
             Console.WriteLine("Visting declarations...");
             VisitDecls(translationUnitDecl.Decls);
@@ -139,6 +141,106 @@ namespace Silk.NET.BuildTools.Cpp
             }
 
             return profile;
+
+            Type GetOrAddPfnWrapper(Type type)
+            {
+                if (type.IsFunctionPointer)
+                {
+                    throw new ArgumentException("Not a function pointer.", nameof(type));
+                }
+                
+                var name = GetFunctionPointerWrapperName(type);
+                if (pfns.TryGetValue(name, out var val))
+                {
+                    var ret = new Type
+                    {
+                        Name = val.Name, OriginalName = "Pfn" + name,
+                        FunctionPointerSignature = type.FunctionPointerSignature
+                    };
+                    ret.ForceNegativeIndirection(-1);
+                    return ret;
+                }
+                else
+                {
+                    name = GetFunctionPointerWrapperName(type);
+                    var nameChanged = task.RenamedNativeNames.TryGetValue(name, out var renamed);
+                    if (nameChanged)
+                    {
+                        name = renamed;
+                    }
+
+                    var delegateName = nameChanged ? name : $"{name}Proc";
+                    Struct s;
+                    pfns.Add
+                    (
+                        GetFunctionPointerWrapperName(type), s = new Struct
+                        {
+                            Name = "Pfn" + name,
+                            NativeName = "Pfn" + GetFunctionPointerWrapperName(type),
+                            Fields = type.FunctionPointerSignature.Parameters.Select
+                                    ((x, i) => new Field {Name = $"Arg{i}", NativeName = $"arg{i}", Type = x.Type})
+                                .Concat
+                                (
+                                    new[]
+                                    {
+                                        new Field
+                                        {
+                                            Name = "Return", NativeName = "return",
+                                            Type = type.FunctionPointerSignature.ReturnType
+                                        }
+                                    }
+                                )
+                                .ToList(),
+                            Attributes = new List<Attribute>
+                            {
+                                new Attribute{Name = "BuildToolsIntrinsic", Arguments = new List<string>
+                                {
+                                    "$PFN",
+                                    delegateName,
+                                    "Pfn" + name,
+                                    type.FunctionPointerSignature.Convention.ToString()
+                                }}
+                            }
+                        }
+                    );
+                    
+                    structs.Add(s);
+
+                    var ret = new Type
+                    {
+                        Name = s.Name, OriginalName = s.NativeName,
+                        FunctionPointerSignature = type.FunctionPointerSignature
+                    };
+
+                    ret.ForceNegativeIndirection(-1);
+                    return ret;
+                }
+            }
+
+            static string GetFunctionPointerWrapperName(Type type)
+            {
+                return (type.FunctionPointerSignature.Parameters.Aggregate
+                    (string.Empty, (current, parameter) => current + (WriteType(parameter.Type) + " ")) + WriteType
+                    (type.FunctionPointerSignature.ReturnType)).Pascalize();
+
+                static string WriteType(Type type) => type.IsFunctionPointer
+                    ? $"Fv{GetFunctionPointerWrapperName(type)}"
+                    : type.Name switch
+                {
+                    "void" => "V",
+                    "int" => "i",
+                    "uint" => "ui",
+                    "long" => "i64",
+                    "ulong" => "ui64",
+                    "short" => "s",
+                    "ushort" => "us",
+                    "Half" => "h",
+                    "float" => "f",
+                    "double" => "d",
+                    "byte" => "b",
+                    _ => type.Name
+                } + new string('v', type.IndirectionLevels);
+            }
 
             void VisitDecls(IEnumerable<Decl> decls)
             {
@@ -597,24 +699,28 @@ namespace Silk.NET.BuildTools.Cpp
                 {
                     if ((functionType is FunctionProtoType functionProtoType))
                     {
-                        ret = new Type
-                        {
-                            Name = "void",
-                            FunctionPointerSignature = new Function
+                        ret = GetOrAddPfnWrapper
+                        (
+                            new Type
                             {
-                                Convention = GetCallingConvention(functionProtoType.CallConv),
-                                Parameters = functionProtoType.ParamTypes.Select
-                                    (
-                                        (x, i) => new Parameter
-                                        {
-                                            Name = $"arg{i}", Type = GetType(x, out var count2, ref ignoreFlow, out _),
-                                            Count = count2
-                                        }
-                                    )
-                                    .ToList(),
-                                ReturnType = GetType(functionProtoType.ReturnType, out _, ref ignoreFlow, out _)
+                                Name = "void",
+                                FunctionPointerSignature = new Function
+                                {
+                                    Convention = GetCallingConvention(functionProtoType.CallConv),
+                                    Parameters = functionProtoType.ParamTypes.Select
+                                        (
+                                            (x, i) => new Parameter
+                                            {
+                                                Name = $"arg{i}",
+                                                Type = GetType(x, out var count2, ref ignoreFlow, out _),
+                                                Count = count2
+                                            }
+                                        )
+                                        .ToList(),
+                                    ReturnType = GetType(functionProtoType.ReturnType, out _, ref ignoreFlow, out _)
+                                }
                             }
-                        };
+                        );
                     }
                     else
                     {
@@ -666,6 +772,26 @@ namespace Silk.NET.BuildTools.Cpp
                         if (!getTypeSuccess)
                         {
                             ret = new Type {Name = typedefType.Decl.Name};
+                        }
+                        else if (ret.FunctionPointerSignature is not null)
+                        {
+                            var wrapper = GetFunctionPointerWrapperName(ret);
+                            if (ret.Name == "Pfn" + wrapper)
+                            {
+                                // rename the struct as we've found a typedef for it, and we haven't found a better name
+                                // already.
+                                pfns[wrapper].NativeName = typedefType.Decl.Name;
+                                var name = Naming.TranslateVariable
+                                    (Naming.TrimName(pfns[wrapper].NativeName, task), task.FunctionPrefix);
+                                if (name.ToLower().StartsWith("pfn"))
+                                {
+                                    name = name.Substring(3);
+                                }
+                                
+                                var intrinsic = pfns[wrapper].Attributes.First(x => x.Name == "BuildToolsIntrinsic");
+                                ret.Name = pfns[wrapper].Name =
+                                    intrinsic.Arguments[2] = "Pfn" + (intrinsic.Arguments[1] = name);
+                            }
                         }
                     }
                 }

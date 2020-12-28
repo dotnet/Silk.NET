@@ -352,8 +352,7 @@
                 "convert-windows-only",
                 "BUG: The descriptor below is because MSVC is currently invalid.",
                 "     The combination of convert-windows-only and convert-macos-only means that it will never convert",
-                "     Remove this once 16.9 Preview 2 has released.",
-                "convert-macos-only"
+                "     Remove this once 16.9 Preview 2 has released."
             ],
             "converter": {},
             "prefix": "ai",
@@ -370,8 +369,7 @@
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
-                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Preview/VC/Tools/MSVC/14.28.29617/include",
                     "-Isrc/Assimp/Include"
                 ],
                 "traverse": [
@@ -1216,11 +1214,11 @@
             "_commented_out_sources": [
                 "X3DAudio currently can't be parsed due to the same bug that Assimp has.",
                 "(intrin.h is invalid for clang, will be fixed in VS 16.9)",
-                "build/include/x3daudio.h"
+                "build/include/silk.net.xaudio.x3daudio.h"
             ],
             "sources": [
-                "build/include/xaudio2.h",
-                "build/include/xaudio2fx.h"
+                "build/include/silk.net.xaudio.xaudio2.h",
+                "build/include/silk.net.xaudio.xaudio2fx.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -1255,9 +1253,9 @@
                     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/AudioSessionTypes.h"
                 ],
                 "classes": {
-                    "xaudio2.h": "[Core]XAudio",
-                    "xaudio2fx.h": "[Core]XAudioFX",
-                    "x3daudio.h": "[Core]X3DAudio"
+                    "silk.net.xaudio.xaudio2.h": "[Core]XAudio",
+                    "silk.net.xaudio.xaudio2fx.h": "[Core]XAudioFX",
+                    "silk.net.xaudio.x3daudio.h": "[Core]X3DAudio"
                 }
             },
             "exclude": [
@@ -1266,9 +1264,9 @@
             },
             "bakery": {
                 "profileNames": [
-                    "xaudio2",
-                    "xaudio2fx",
-                    "x3daudio"
+                    "silk.net.xaudio.xaudio2",
+                    "silk.net.xaudio.xaudio2fx",
+                    "silk.net.xaudio.x3daudio"
                 ]
             },
             "output": {
@@ -1292,7 +1290,7 @@
         {
             "profileName": "XInput",
             "sources": [
-                "build/include/xinput.h"
+                "build/include/silk.net.xinput.xinput.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -1322,7 +1320,7 @@
                     "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/Xinput.h"
                 ],
                 "classes": {
-                    "xinput.h": "[Core]XInput"
+                    "silk.net.xinput.xinput.h": "[Core]XInput"
                 }
             },
             "exclude": [
@@ -1331,7 +1329,7 @@
             },
             "bakery": {
                 "profileNames": [
-                    "xinput"
+                    "silk.net.xinput.xinput"
                 ]
             },
             "output": {

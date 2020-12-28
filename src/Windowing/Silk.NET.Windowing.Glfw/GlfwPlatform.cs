@@ -19,6 +19,8 @@ namespace Silk.NET.Windowing.Glfw
     /// </summary>
     internal class GlfwPlatform : IWindowPlatform
     {
+        private IWindow? _lastCreatedWindow;
+        
         /// <inheritdoc />
         public bool IsViewOnly { get; } = false;
 
@@ -44,10 +46,22 @@ namespace Silk.NET.Windowing.Glfw
         }
 
         /// <inheritdoc />
-        public IWindow CreateWindow(WindowOptions options) => new GlfwWindow(options, null, null);
+        public IWindow CreateWindow(WindowOptions options) => _lastCreatedWindow = new GlfwWindow(options, null, null);
 
         /// <inheritdoc />
-        public IView GetView(ViewOptions? opts = null) => CreateWindow(new WindowOptions(opts ?? ViewOptions.Default));
+        public IView GetView(ViewOptions? opts = null)
+        {
+            return opts switch
+            {
+                null when _lastCreatedWindow is null => throw new InvalidOperationException
+                (
+                    "No view has been created prior to this call, and couldn't " +
+                    "create one due to no view options being provided."
+                ),
+                null => _lastCreatedWindow!,
+                _ => _lastCreatedWindow = CreateWindow(new WindowOptions(opts.Value))
+            };
+        }
 
         /// <inheritdoc />
         public unsafe void ClearContexts() => GlfwProvider.GLFW.Value.MakeContextCurrent(null);

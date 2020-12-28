@@ -21,19 +21,23 @@ namespace Silk.NET.Windowing.Sdl
 {
     internal unsafe class SdlView : ViewImplementationBase
     {
+        protected readonly SdlPlatform _platform;
         private const int WaitTimeout = 10;
         private IGLContext? _ctx;
         private SdlVkSurface? _vk;
         private int _continue;
+        private uint? _id;
+        private BreakneckLock _eventSync = BreakneckLock.Create();
 
-        public SdlView(ViewOptions opts, SdlView? parent, SdlMonitor? monitor) : base(opts)
+        public SdlView(ViewOptions opts, SdlView? parent, SdlMonitor? monitor, SdlPlatform platform): base(opts)
         {
+            _platform = platform;
             Sdl = SdlProvider.SDL.Value;
             ParentView = parent;
             InitialMonitor = monitor;
         }
 
-        public SdlView(void* nativeHandle, IGLContext? ctx) : base(default)
+        public SdlView(void* nativeHandle, IGLContext? ctx, SdlPlatform platform) : base(default)
         {
             Sdl = SdlProvider.SDL.Value;
             ParentView = null;
@@ -41,6 +45,7 @@ namespace Silk.NET.Windowing.Sdl
             IsInitialized = true;
             SdlWindow = Sdl.CreateWindowFrom(nativeHandle);
             _ctx = ctx;
+            _platform = platform;
         }
 
         // Events
@@ -51,7 +56,7 @@ namespace Silk.NET.Windowing.Sdl
 
         // Properties
         public override IGLContext? GLContext => _ctx ??= API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES
-            ? new SdlGLContext(this)
+            ? new SdlContext(Sdl, SdlWindow, this)
             : null;
 
         public override IVkSurface? VkSurface => _vk ??= API.API == ContextAPI.Vulkan ? new SdlVkSurface(this) : null;
@@ -65,7 +70,7 @@ namespace Silk.NET.Windowing.Sdl
         protected SdlView? ParentView { get; }
         protected SdlMonitor? InitialMonitor { get; set; }
 
-        public override Vector2D<int> FramebufferSize => (_ctx as SdlGLContext)?.FramebufferSize ?? CoreSize;
+        public override Vector2D<int> FramebufferSize => (_ctx as SdlContext)?.FramebufferSize ?? CoreSize;
 
         public override VideoMode VideoMode
         {
@@ -93,10 +98,18 @@ namespace Silk.NET.Windowing.Sdl
         public override void ContinueEvents() => Interlocked.Exchange(ref _continue, 1);
 
         protected override void CoreInitialize(ViewOptions opts) => CoreInitialize
-            (opts, null, null, null, null, null, null);
+            (opts, null, null, null, null, null, null, null);
 
         protected void CoreInitialize
-            (ViewOptions opts, WindowFlags? additionalFlags, int? x, int? y, int? w, int? h, string? title)
+        (
+            ViewOptions opts,
+            WindowFlags? additionalFlags,
+            int? x,
+            int? y,
+            int? w,
+            int? h,
+            string? title,
+            IGLContext? sharedContext)
         {
             var flags = WindowFlags.WindowAllowHighdpi |
                         WindowFlags.WindowShown;
@@ -143,7 +156,9 @@ namespace Silk.NET.Windowing.Sdl
                 (uint) flags
             );
             Sdl.ThrowError();
-            (GLContext as SdlGLContext)?.Create
+            
+            sharedContext?.MakeCurrent();
+            (GLContext as SdlContext)?.Create
             (
                 (GLattr.GLContextMajorVersion, opts.API.Version.MajorVersion),
                 (GLattr.GLContextMinorVersion, opts.API.Version.MinorVersion),
@@ -159,7 +174,43 @@ namespace Silk.NET.Windowing.Sdl
                         })
                 ),
                 (GLattr.GLContextFlags, (int) opts.API.Flags),
-                (GLattr.GLDepthSize, opts.PreferredDepthBufferBits ?? 16)
+                (
+                    GLattr.GLDepthSize,
+                    opts.PreferredDepthBufferBits is null || opts.PreferredDepthBufferBits == -1 
+                        ? 16
+                        : opts.PreferredDepthBufferBits.Value
+                ),
+                (
+                    GLattr.GLStencilSize,
+                    opts.PreferredStencilBufferBits is null || opts.PreferredStencilBufferBits == -1 
+                        ? 0
+                        : opts.PreferredStencilBufferBits.Value
+                ),
+                (
+                    GLattr.GLRedSize,
+                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.X == -1 
+                        ? 8
+                        : opts.PreferredBitDepth.Value.X
+                ),
+                (
+                    GLattr.GLGreenSize,
+                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.Y == -1 
+                        ? 8
+                        : opts.PreferredBitDepth.Value.Y
+                ),
+                (
+                    GLattr.GLBlueSize,
+                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.Z == -1 
+                        ? 8
+                        : opts.PreferredBitDepth.Value.Z
+                ),
+                (
+                    GLattr.GLAlphaSize,
+                    opts.PreferredBitDepth is null || opts.PreferredBitDepth.Value.W == -1 
+                        ? 8
+                        : opts.PreferredBitDepth.Value.W
+                ),
+                (GLattr.GLShareWithCurrentContext, sharedContext is null ? 0 : 1)
             );
             if (SdlWindow == null)
             {
@@ -198,27 +249,10 @@ namespace Silk.NET.Windowing.Sdl
         public override void DoEvents()
         {
             ClearEvents();
-            Event @event = default;
-            if (IsEventDriven)
+            do
             {
-                var gotEvent = 0;
-                while (Interlocked.CompareExchange(ref _continue, 0, 1) == 0 &&
-                       (gotEvent = Sdl.WaitEventTimeout(&@event, WaitTimeout)) == 0)
-                {
-                    System.Diagnostics.Debug.WriteLine((EventType) @event.Common.Type);
-                    // do nothing
-                }
-
-                if (gotEvent == 1)
-                {
-                    Events.Add(@event);
-                }
-            }
-
-            while (Sdl.PollEvent(&@event) == 1)
-            {
-                Events.Add(@event);
-            }
+                _platform.DoEvents();
+            } while (IsEventDriven && Events.Count == 0 && Interlocked.CompareExchange(ref _continue, 0, 1) == 0);
 
             ProcessEvents();
         }
@@ -257,12 +291,14 @@ namespace Silk.NET.Windowing.Sdl
 
         protected override void RegisterCallbacks()
         {
-            // do nothing, SDL uses event pumps like all windowing frameworks should do.
+            _id = Sdl.GetWindowID(SdlWindow);
+            _platform.EventReceived += OnEventReceived;
         }
 
         protected override void UnregisterCallbacks()
         {
-            // do nothing, SDL uses event pumps like all windowing frameworks should do.
+            _id = null;
+            _platform.EventReceived -= OnEventReceived;
         }
 
 
@@ -280,9 +316,20 @@ namespace Silk.NET.Windowing.Sdl
             return new Vector2D<int>(point.X + x, point.Y + y);
         }
 
+        public void BeginEventProcessing(ref bool taken) => _eventSync.Enter(ref taken);
+        public void EndEventProcessing(bool taken)
+        {
+            if (taken)
+            {
+                _eventSync.Exit();
+            }
+        }
+
         [SuppressMessage("ReSharper", "SwitchStatementHandlesSomeKnownEnumValuesWithDefault")]
         public virtual void ProcessEvents()
         {
+            var taken = false;
+            BeginEventProcessing(ref taken);
             var count = Events.Count;
             var i = 0;
             for (var j = 0; j < count; j++)
@@ -352,6 +399,77 @@ namespace Silk.NET.Windowing.Sdl
                     Events.RemoveAt(i);
                 }
             }
+            
+            EndEventProcessing(taken);
+        }
+
+        private void OnEventReceived(IEnumerable<Event> events)
+        {
+            var taken = false;
+            BeginEventProcessing(ref taken);
+            foreach (var @event in events)
+            {
+                if ((EventType) @event.Type switch
+                {
+                    EventType.Firstevent => true,
+                    EventType.Quit => true,
+                    EventType.AppTerminating => true,
+                    EventType.AppLowmemory => true,
+                    EventType.AppWillenterbackground => true,
+                    EventType.AppDidenterbackground => true,
+                    EventType.AppWillenterforeground => true,
+                    EventType.AppDidenterforeground => true,
+                    EventType.Displayevent => true,
+                    EventType.Windowevent when @event.Window.WindowID == _id => true,
+                    EventType.Syswmevent => true,
+                    EventType.Keydown when @event.Key.WindowID == _id => true,
+                    EventType.Keyup when @event.Key.WindowID == _id => true,
+                    EventType.Textediting when @event.Text.WindowID == _id => true,
+                    EventType.Textinput when @event.Text.WindowID == _id => true,
+                    EventType.Keymapchanged => true,
+                    EventType.Mousemotion when @event.Motion.WindowID == _id => true,
+                    EventType.Mousebuttondown when @event.Button.WindowID == _id => true,
+                    EventType.Mousebuttonup when @event.Button.WindowID == _id => true,
+                    EventType.Mousewheel when @event.Motion.WindowID == _id => true,
+                    EventType.Joyaxismotion => true,
+                    EventType.Joyballmotion => true,
+                    EventType.Joyhatmotion => true,
+                    EventType.Joybuttondown => true,
+                    EventType.Joybuttonup => true,
+                    EventType.Joydeviceadded => true,
+                    EventType.Joydeviceremoved => true,
+                    EventType.Controlleraxismotion => true,
+                    EventType.Controllerbuttondown => true,
+                    EventType.Controllerbuttonup => true,
+                    EventType.Controllerdeviceadded => true,
+                    EventType.Controllerdeviceremoved => true,
+                    EventType.Controllerdeviceremapped => true,
+                    EventType.Fingerdown when @event.Tfinger.WindowID == _id => true,
+                    EventType.Fingerup when @event.Tfinger.WindowID == _id => true,
+                    EventType.Fingermotion when @event.Tfinger.WindowID == _id => true,
+                    EventType.Dollargesture => true,
+                    EventType.Dollarrecord => true,
+                    EventType.Multigesture => true,
+                    EventType.Clipboardupdate => true,
+                    EventType.Dropfile when @event.Drop.WindowID == _id => true,
+                    EventType.Droptext when @event.Drop.WindowID == _id => true,
+                    EventType.Dropbegin when @event.Drop.WindowID == _id => true,
+                    EventType.Dropcomplete when @event.Drop.WindowID == _id => true,
+                    EventType.Audiodeviceadded => true,
+                    EventType.Audiodeviceremoved => true,
+                    EventType.Sensorupdate => true,
+                    EventType.RenderTargetsReset => true,
+                    EventType.RenderDeviceReset => true,
+                    EventType.Userevent when @event.User.WindowID == _id => true,
+                    EventType.Lastevent => true,
+                    _ => false
+                })
+                {
+                    Events.Add(@event);
+                }
+            }
+            
+            EndEventProcessing(taken);
         }
     }
 }

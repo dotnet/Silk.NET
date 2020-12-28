@@ -224,5 +224,18 @@ namespace Silk.NET.BuildTools.Common
 
             return ret;
         }
+
+        public static bool IsBuildToolsIntrinsic(this IEnumerable<Attribute> attributes, out List<string> args)
+        {
+            var ret = attributes.FirstOrDefault(x => x.Name == "BuildToolsIntrinsic");
+            if (ret is null)
+            {
+                args = null;
+                return false;
+            }
+
+            args = ret.Arguments;
+            return true;
+        }
     }
 }

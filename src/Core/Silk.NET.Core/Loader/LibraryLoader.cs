@@ -251,8 +251,6 @@ namespace Silk.NET.Core.Loader
                 ThrowSymbolLoading(functionName);
                 return default;
             }
-            
-            Debug.WriteLine("Silk.NET loaded: " + functionName);
 
             return ret;
         }

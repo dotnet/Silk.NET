@@ -26,7 +26,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Gets a value indicating whether this type is a function pointer.
         /// </summary>
         [JsonIgnore]
-        public bool IsFunctionPointer => !(FunctionPointerSignature is null);
+        public bool IsFunctionPointer => !(FunctionPointerSignature is null) && IsPointer;
 
         /// <summary>
         /// Gets a value indicating whether this type is an array.
@@ -34,9 +34,8 @@ namespace Silk.NET.BuildTools.Common.Functions
         [JsonIgnore]
         public bool IsArray => ArrayDimensions != 0;
 
-        [JsonProperty("IndirectionLevels")]
-        private int _indirectionLevels;
-        
+        [JsonProperty("IndirectionLevels")] private int _indirectionLevels;
+
         /// <summary>
         /// Gets or sets the amount of indirection levels (asterisks as represented in C#).
         /// </summary>
@@ -53,7 +52,6 @@ namespace Silk.NET.BuildTools.Common.Functions
 
                 _indirectionLevels = value;
             }
-            
         }
 
         /// <summary>
@@ -70,7 +68,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// Gets or sets the original name of this type, before mapping.
         /// </summary>
         public string OriginalName { get; set; }
-        
+
         /// <summary>
         /// Gets or sets the original group of this type.
         /// </summary>
@@ -112,13 +110,17 @@ namespace Silk.NET.BuildTools.Common.Functions
         public bool IsGenericTypeParameterReference { get; set; }
 
         /// <inheritdoc />
-        public override string ToString()
+        public override string ToString() => ToString(false);
+
+        public string ToString(bool allowFunctionPointers)
         {
             return (IsThis ? "this " : string.Empty) +
                    (IsIn ? "in " : string.Empty) +
                    (IsOut ? "out " : string.Empty) +
                    (IsByRef ? "ref " : string.Empty) +
-                   Name +
+                   (IsFunctionPointer && allowFunctionPointers && Name == "void"
+                       ? FunctionPointerSignature.GetFunctionPointerSignature()
+                       : Name) +
                    (IsPointer ? new string('*', IndirectionLevels) : string.Empty) +
                    (IsArray ? Utilities.GetArrayDimensionString(ArrayDimensions) : string.Empty) +
                    (GenericTypes.Any() ? $"<{string.Join(", ", GenericTypes.Select(x => x.Name))}>" : string.Empty);
@@ -190,5 +192,7 @@ namespace Silk.NET.BuildTools.Common.Functions
                    IsOut == other.IsOut &&
                    IsIn == other.IsIn;
         }
+
+        internal void ForceNegativeIndirection(int val) => _indirectionLevels = val;
     }
 }

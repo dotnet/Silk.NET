@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
+using Silk.NET.Core;
 using Silk.NET.Core.Contexts;
 using Silk.NET.SDL;
 using Silk.NET.Windowing;
@@ -18,6 +19,9 @@ namespace Silk.NET.Windowing.Sdl
     internal class SdlPlatform : IWindowPlatform
     {
         private SdlView? _view;
+        private SDL.Sdl _sdl = SdlProvider.SDL.Value;
+        private List<Event> _eventBuffer = new();
+        private BreakneckLock _lock = BreakneckLock.Create();
 
         public static SdlPlatform GetOrRegister()
         {
@@ -52,12 +56,17 @@ namespace Silk.NET.Windowing.Sdl
 
         public unsafe IWindow CreateWindow(WindowOptions opts)
         {
+            if (!IsApplicable)
+            {
+                throw new PlatformNotSupportedException();
+            }
+
             if (IsViewOnly)
             {
                 throw new PlatformNotSupportedException("Platform is view-only.");
             }
 
-            return new SdlWindow(opts, null, null);
+            return (SdlWindow)(_view = new SdlWindow(opts, null, null, this));
         }
 
         public bool IsViewOnly => IsApplicable && SdlProvider.SDL.Value.GetPlatformS() switch
@@ -69,6 +78,7 @@ namespace Silk.NET.Windowing.Sdl
         };
 
         public bool IsApplicable => _isApplicable.Value;
+        public event Action<IEnumerable<Event>>? EventReceived;
 
         public IView GetView(ViewOptions? opts = null)
         {
@@ -77,18 +87,18 @@ namespace Silk.NET.Windowing.Sdl
                 throw new PlatformNotSupportedException();
             }
 
-            if (opts is null && _view is null)
+            return opts switch
             {
-                throw new InvalidOperationException
+                null when _view is null => throw new InvalidOperationException
                 (
                     "No view has been created prior to this call, and couldn't " +
                     "create one due to no view options being provided."
-                );
-            }
-
-            return IsViewOnly
-                ? _view ??= new SdlView(opts!.Value, null, null)
-                : _view ??= (SdlView) CreateWindow(new WindowOptions(opts!.Value));
+                ),
+                null => _view!,
+                _ => IsViewOnly
+                    ? _view ??= new SdlView(opts!.Value, null, null, this)
+                    : _view = (SdlView) CreateWindow(new WindowOptions(opts!.Value))
+            };
         }
 
         public unsafe void ClearContexts()
@@ -101,14 +111,37 @@ namespace Silk.NET.Windowing.Sdl
         {
             for (var i = 0; i < SdlProvider.SDL.Value.GetNumVideoDisplays(); i++)
             {
-                yield return new SdlMonitor(i);
+                yield return new SdlMonitor(this, i);
             }
         }
 
-        public IMonitor GetMainMonitor() => new SdlMonitor(0);
+        public IMonitor GetMainMonitor() => new SdlMonitor(this, 0);
         public bool IsSourceOfView(IView view) => view is SdlView;
 
         public unsafe SdlView From(void* handle, IGLContext? ctx)
-            => IsViewOnly ? new SdlView(handle, ctx) : new SdlWindow(handle, ctx);
+            => IsViewOnly ? new SdlView(handle, ctx, this) : new SdlWindow(handle, ctx, this);
+
+        public unsafe void DoEvents()
+        {
+            var taken = false;
+            _lock.TryEnter(ref taken);
+            if (!taken)
+            {
+                return;
+            }
+            
+            Event @event;
+            while (_sdl.PollEvent(&@event) == 1)
+            {
+                _eventBuffer.Add(@event);
+            }
+            
+            EventReceived?.Invoke(_eventBuffer);
+            _eventBuffer.Clear();
+            if (taken)
+            {
+                _lock.Exit();
+            }
+        }
     }
 }

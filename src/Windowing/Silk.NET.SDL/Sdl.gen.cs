@@ -18,6 +18,26 @@ namespace Silk.NET.SDL
 {
     public unsafe partial class Sdl : NativeAPI
     {
+        /* Function prototypes */
+        /**
+         *  \brief This function allows access to driver-dependent window information.
+         *
+         *  \param window The window about which information is being requested
+         *  \param info This structure must be initialized with the SDL version, and is
+         *              then filled in with information about the given window.
+         *
+         *  \return SDL_TRUE if the function is implemented and the version member of
+         *          the \c info struct is valid, SDL_FALSE otherwise.
+         *
+         *  You typically use this function like this:
+         *  \code
+         *  SDL_SysWMinfo info;
+         *  SDL_VERSION(&info.version);
+         *  if ( SDL_GetWindowWMInfo(window, &info) ) { ... }
+         *  \endcode
+         */
+        [NativeApi(EntryPoint = "SDL_GetWindowWMInfo")]
+        public unsafe partial bool GetWindowWMInfo(Window* window, SysWMInfo* info);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 188, Column 38 in build/submodules/SDL-mirror/include/SDL_platform.h")]
@@ -62,162 +82,87 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(void** malloc_func, void** calloc_func, void** realloc_func, void** free_func);
+        public unsafe partial void GetMemoryFunctions(PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(void** malloc_func, void** calloc_func, void** realloc_func, ref void* free_func);
+        public unsafe partial void GetMemoryFunctions(PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(void** malloc_func, void** calloc_func, ref void* realloc_func, void** free_func);
+        public unsafe partial void GetMemoryFunctions(PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, ref PfnReallocFunc realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(void** malloc_func, void** calloc_func, ref void* realloc_func, ref void* free_func);
+        public unsafe partial void GetMemoryFunctions(PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, ref PfnReallocFunc realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(void** malloc_func, ref void* calloc_func, void** realloc_func, void** free_func);
+        public unsafe partial void GetMemoryFunctions(PfnMallocFunc* malloc_func, ref PfnCallocFunc calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(void** malloc_func, ref void* calloc_func, void** realloc_func, ref void* free_func);
+        public unsafe partial void GetMemoryFunctions(PfnMallocFunc* malloc_func, ref PfnCallocFunc calloc_func, PfnReallocFunc* realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(void** malloc_func, ref void* calloc_func, ref void* realloc_func, void** free_func);
+        public unsafe partial void GetMemoryFunctions(PfnMallocFunc* malloc_func, ref PfnCallocFunc calloc_func, ref PfnReallocFunc realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(void** malloc_func, ref void* calloc_func, ref void* realloc_func, ref void* free_func);
+        public unsafe partial void GetMemoryFunctions(PfnMallocFunc* malloc_func, ref PfnCallocFunc calloc_func, ref PfnReallocFunc realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(ref void* malloc_func, void** calloc_func, void** realloc_func, void** free_func);
+        public unsafe partial void GetMemoryFunctions(ref PfnMallocFunc malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(ref void* malloc_func, void** calloc_func, void** realloc_func, ref void* free_func);
+        public unsafe partial void GetMemoryFunctions(ref PfnMallocFunc malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(ref void* malloc_func, void** calloc_func, ref void* realloc_func, void** free_func);
+        public unsafe partial void GetMemoryFunctions(ref PfnMallocFunc malloc_func, PfnCallocFunc* calloc_func, ref PfnReallocFunc realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(ref void* malloc_func, void** calloc_func, ref void* realloc_func, ref void* free_func);
+        public unsafe partial void GetMemoryFunctions(ref PfnMallocFunc malloc_func, PfnCallocFunc* calloc_func, ref PfnReallocFunc realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(ref void* malloc_func, ref void* calloc_func, void** realloc_func, void** free_func);
+        public unsafe partial void GetMemoryFunctions(ref PfnMallocFunc malloc_func, ref PfnCallocFunc calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(ref void* malloc_func, ref void* calloc_func, void** realloc_func, ref void* free_func);
+        public unsafe partial void GetMemoryFunctions(ref PfnMallocFunc malloc_func, ref PfnCallocFunc calloc_func, PfnReallocFunc* realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(ref void* malloc_func, ref void* calloc_func, ref void* realloc_func, void** free_func);
+        public unsafe partial void GetMemoryFunctions(ref PfnMallocFunc malloc_func, ref PfnCallocFunc calloc_func, ref PfnReallocFunc realloc_func, PfnFreeFunc* free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_GetMemoryFunctions")]
-        public unsafe partial void GetMemoryFunctions(ref void* malloc_func, ref void* calloc_func, ref void* realloc_func, ref void* free_func);
+        public partial void GetMemoryFunctions(ref PfnMallocFunc malloc_func, ref PfnCallocFunc calloc_func, ref PfnReallocFunc realloc_func, ref PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_SetMemoryFunctions")]
-        public unsafe partial int SetMemoryFunctions(void* malloc_func, void* calloc_func, void* realloc_func, void* free_func);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_SetMemoryFunctions")]
-        public unsafe partial int SetMemoryFunctions<T0>(void* malloc_func, void* calloc_func, void* realloc_func, ref T0 free_func) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_SetMemoryFunctions")]
-        public unsafe partial int SetMemoryFunctions<T0>(void* malloc_func, void* calloc_func, ref T0 realloc_func, void* free_func) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_SetMemoryFunctions")]
-        public unsafe partial int SetMemoryFunctions<T0, T1>(void* malloc_func, void* calloc_func, ref T0 realloc_func, ref T1 free_func) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_SetMemoryFunctions")]
-        public unsafe partial int SetMemoryFunctions<T0>(void* malloc_func, ref T0 calloc_func, void* realloc_func, void* free_func) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_SetMemoryFunctions")]
-        public unsafe partial int SetMemoryFunctions<T0, T1>(void* malloc_func, ref T0 calloc_func, void* realloc_func, ref T1 free_func) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_SetMemoryFunctions")]
-        public unsafe partial int SetMemoryFunctions<T0, T1>(void* malloc_func, ref T0 calloc_func, ref T1 realloc_func, void* free_func) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_SetMemoryFunctions")]
-        public unsafe partial int SetMemoryFunctions<T0, T1, T2>(void* malloc_func, ref T0 calloc_func, ref T1 realloc_func, ref T2 free_func) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_SetMemoryFunctions")]
-        public unsafe partial int SetMemoryFunctions<T0>(ref T0 malloc_func, void* calloc_func, void* realloc_func, void* free_func) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_SetMemoryFunctions")]
-        public unsafe partial int SetMemoryFunctions<T0, T1>(ref T0 malloc_func, void* calloc_func, void* realloc_func, ref T1 free_func) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_SetMemoryFunctions")]
-        public unsafe partial int SetMemoryFunctions<T0, T1>(ref T0 malloc_func, void* calloc_func, ref T1 realloc_func, void* free_func) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_SetMemoryFunctions")]
-        public unsafe partial int SetMemoryFunctions<T0, T1, T2>(ref T0 malloc_func, void* calloc_func, ref T1 realloc_func, ref T2 free_func) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_SetMemoryFunctions")]
-        public unsafe partial int SetMemoryFunctions<T0, T1>(ref T0 malloc_func, ref T1 calloc_func, void* realloc_func, void* free_func) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_SetMemoryFunctions")]
-        public unsafe partial int SetMemoryFunctions<T0, T1, T2>(ref T0 malloc_func, ref T1 calloc_func, void* realloc_func, ref T2 free_func) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_SetMemoryFunctions")]
-        public unsafe partial int SetMemoryFunctions<T0, T1, T2>(ref T0 malloc_func, ref T1 calloc_func, ref T2 realloc_func, void* free_func) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_SetMemoryFunctions")]
-        public partial int SetMemoryFunctions<T0, T1, T2, T3>(ref T0 malloc_func, ref T1 calloc_func, ref T2 realloc_func, ref T3 free_func) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged where T3 : unmanaged;
+        public partial int SetMemoryFunctions(PfnMallocFunc malloc_func, PfnCallocFunc calloc_func, PfnReallocFunc realloc_func, PfnFreeFunc free_func);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 395, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
@@ -302,22 +247,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 400, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_qsort")]
-        public unsafe partial void Qsort(void* @base, uint nmemb, uint size, void* compare);
+        public unsafe partial void Qsort(void* @base, uint nmemb, uint size, PfnVvVvI compare);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 400, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
         [NativeApi(EntryPoint = "SDL_qsort")]
-        public unsafe partial void Qsort<T0>(void* @base, uint nmemb, uint size, ref T0 compare) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 400, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_qsort")]
-        public unsafe partial void Qsort<T0>(ref T0 @base, uint nmemb, uint size, void* compare) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 400, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        [NativeApi(EntryPoint = "SDL_qsort")]
-        public partial void Qsort<T0, T1>(ref T0 @base, uint nmemb, uint size, ref T1 compare) where T0 : unmanaged where T1 : unmanaged;
+        public partial void Qsort<T0>(ref T0 @base, uint nmemb, uint size, PfnVvVvI compare) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 402, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
@@ -6887,42 +6822,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowHitTest")]
-        public unsafe partial int SetWindowHitTest(Window* window, void* callback, void* callback_data);
+        public unsafe partial int SetWindowHitTest(Window* window, PfnHitTest callback, void* callback_data);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowHitTest")]
-        public unsafe partial int SetWindowHitTest<T0>(Window* window, void* callback, ref T0 callback_data) where T0 : unmanaged;
+        public unsafe partial int SetWindowHitTest<T0>(Window* window, PfnHitTest callback, ref T0 callback_data) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowHitTest")]
-        public unsafe partial int SetWindowHitTest<T0>(Window* window, ref T0 callback, void* callback_data) where T0 : unmanaged;
+        public unsafe partial int SetWindowHitTest(ref Window window, PfnHitTest callback, void* callback_data);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowHitTest")]
-        public unsafe partial int SetWindowHitTest<T0, T1>(Window* window, ref T0 callback, ref T1 callback_data) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowHitTest")]
-        public unsafe partial int SetWindowHitTest(ref Window window, void* callback, void* callback_data);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowHitTest")]
-        public unsafe partial int SetWindowHitTest<T0>(ref Window window, void* callback, ref T0 callback_data) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowHitTest")]
-        public unsafe partial int SetWindowHitTest<T0>(ref Window window, ref T0 callback, void* callback_data) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        [NativeApi(EntryPoint = "SDL_SetWindowHitTest")]
-        public partial int SetWindowHitTest<T0, T1>(ref Window window, ref T0 callback, ref T1 callback_data) where T0 : unmanaged where T1 : unmanaged;
+        public partial int SetWindowHitTest<T0>(ref Window window, PfnHitTest callback, ref T0 callback_data) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1086, Column 30 in build/submodules/SDL-mirror/include\\SDL_video.h")]
@@ -7203,27 +7118,6 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 241, Column 34 in SDL_vulkan.h")]
         [NativeApi(EntryPoint = "SDL_Vulkan_CreateSurface")]
         public unsafe partial SdlBool VulkanCreateSurface(Window* window, Silk.NET.Core.Native.VkHandle instance, ref Silk.NET.Core.Native.VkNonDispatchableHandle surface);
-        
-        /* Function prototypes */
-        /**
-         *  \brief This function allows access to driver-dependent window information.
-         *
-         *  \param window The window about which information is being requested
-         *  \param info This structure must be initialized with the SDL version, and is
-         *              then filled in with information about the given window.
-         *
-         *  \return SDL_TRUE if the function is implemented and the version member of
-         *          the \c info struct is valid, SDL_FALSE otherwise.
-         *
-         *  You typically use this function like this:
-         *  \code
-         *  SDL_SysWMinfo info;
-         *  SDL_VERSION(&info.version);
-         *  if ( SDL_GetWindowWMInfo(window, &info) ) { ... }
-         *  \endcode
-         */
-        [NativeApi(EntryPoint = "SDL_GetWindowWMInfo")]
-        public unsafe partial bool GetWindowWMInfo(Window* window, SysWMInfo* info);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 241, Column 34 in SDL_vulkan.h")]
@@ -7326,45 +7220,23 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 154, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_WinRTRunApp")]
-        public unsafe partial int WinRTRunApp(void* mainFunction, void* reserved);
+        public unsafe partial int WinRTRunApp(PfnMainFunc mainFunction, void* reserved);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 154, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_WinRTRunApp")]
-        public unsafe partial int WinRTRunApp<T0>(void* mainFunction, ref T0 reserved) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 154, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        [ExcludeFromOverride(0)]
-        [NativeApi(EntryPoint = "SDL_WinRTRunApp")]
-        public unsafe partial int WinRTRunApp<T0>(ref T0 mainFunction, void* reserved) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 154, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        [ExcludeFromOverride(0)]
-        [NativeApi(EntryPoint = "SDL_WinRTRunApp")]
-        public partial int WinRTRunApp<T0, T1>(ref T0 mainFunction, ref T1 reserved) where T0 : unmanaged where T1 : unmanaged;
+        public partial int WinRTRunApp<T0>(PfnMainFunc mainFunction, ref T0 reserved) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 168, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
         [NativeApi(EntryPoint = "SDL_UIKitRunApp")]
-        public unsafe partial int UIKitRunApp(int argc, byte** argv, void* mainFunction);
+        public unsafe partial int UIKitRunApp(int argc, byte** argv, PfnMainFunc mainFunction);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 168, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
         [NativeApi(EntryPoint = "SDL_UIKitRunApp")]
-        public unsafe partial int UIKitRunApp<T0>(int argc, byte** argv, ref T0 mainFunction) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 168, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        [NativeApi(EntryPoint = "SDL_UIKitRunApp")]
-        public unsafe partial int UIKitRunApp(int argc, ref byte* argv, void* mainFunction);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 168, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        [NativeApi(EntryPoint = "SDL_UIKitRunApp")]
-        public unsafe partial int UIKitRunApp<T0>(int argc, ref byte* argv, ref T0 mainFunction) where T0 : unmanaged;
+        public unsafe partial int UIKitRunApp(int argc, ref byte* argv, PfnMainFunc mainFunction);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 52, Column 25 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
@@ -7465,37 +7337,27 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 211, Column 30 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_SetAssertionHandler")]
-        public unsafe partial void SetAssertionHandler(void* handler, void* userdata);
+        public unsafe partial void SetAssertionHandler(PfnAssertionHandler handler, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 211, Column 30 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_SetAssertionHandler")]
-        public unsafe partial void SetAssertionHandler<T0>(void* handler, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 211, Column 30 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
-        [NativeApi(EntryPoint = "SDL_SetAssertionHandler")]
-        public unsafe partial void SetAssertionHandler<T0>(ref T0 handler, void* userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 211, Column 30 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
-        [NativeApi(EntryPoint = "SDL_SetAssertionHandler")]
-        public partial void SetAssertionHandler<T0, T1>(ref T0 handler, ref T1 userdata) where T0 : unmanaged where T1 : unmanaged;
+        public partial void SetAssertionHandler<T0>(PfnAssertionHandler handler, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 225, Column 46 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_GetDefaultAssertionHandler")]
-        public unsafe partial void* GetDefaultAssertionHandler();
+        public partial PfnAssertionHandler GetDefaultAssertionHandler();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 242, Column 46 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_GetAssertionHandler")]
-        public unsafe partial void* GetAssertionHandler(void** puserdata);
+        public unsafe partial PfnAssertionHandler GetAssertionHandler(void** puserdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 242, Column 46 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
         [NativeApi(EntryPoint = "SDL_GetAssertionHandler")]
-        public unsafe partial void* GetAssertionHandler(ref void* puserdata);
+        public unsafe partial PfnAssertionHandler GetAssertionHandler(ref void* puserdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 266, Column 48 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
@@ -7845,482 +7707,62 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread(void* fn, byte* name, void* data, void* pfnBeginThread, void* pfnEndThread);
+        public unsafe partial Thread* CreateThread(PfnThreadFunction fn, byte* name, void* data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0>(void* fn, byte* name, void* data, void* pfnBeginThread, ref T0 pfnEndThread) where T0 : unmanaged;
+        public unsafe partial Thread* CreateThread<T0>(PfnThreadFunction fn, byte* name, ref T0 data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0>(void* fn, byte* name, void* data, ref T0 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged;
+        public unsafe partial Thread* CreateThread(PfnThreadFunction fn, ref byte name, void* data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1>(void* fn, byte* name, void* data, ref T0 pfnBeginThread, ref T1 pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial Thread* CreateThread<T0>(PfnThreadFunction fn, ref byte name, ref T0 data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0>(void* fn, byte* name, ref T0 data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged;
+        public unsafe partial Thread* CreateThread(PfnThreadFunction fn, string name, void* data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1>(void* fn, byte* name, ref T0 data, void* pfnBeginThread, ref T1 pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1>(void* fn, byte* name, ref T0 data, ref T1 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1, T2>(void* fn, byte* name, ref T0 data, ref T1 pfnBeginThread, ref T2 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread(void* fn, ref byte name, void* data, void* pfnBeginThread, void* pfnEndThread);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0>(void* fn, ref byte name, void* data, void* pfnBeginThread, ref T0 pfnEndThread) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0>(void* fn, ref byte name, void* data, ref T0 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1>(void* fn, ref byte name, void* data, ref T0 pfnBeginThread, ref T1 pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0>(void* fn, ref byte name, ref T0 data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1>(void* fn, ref byte name, ref T0 data, void* pfnBeginThread, ref T1 pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1>(void* fn, ref byte name, ref T0 data, ref T1 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1, T2>(void* fn, ref byte name, ref T0 data, ref T1 pfnBeginThread, ref T2 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread(void* fn, string name, void* data, void* pfnBeginThread, void* pfnEndThread);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0>(void* fn, string name, void* data, void* pfnBeginThread, ref T0 pfnEndThread) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0>(void* fn, string name, void* data, ref T0 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1>(void* fn, string name, void* data, ref T0 pfnBeginThread, ref T1 pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0>(void* fn, string name, ref T0 data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1>(void* fn, string name, ref T0 data, void* pfnBeginThread, ref T1 pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1>(void* fn, string name, ref T0 data, ref T1 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1, T2>(void* fn, string name, ref T0 data, ref T1 pfnBeginThread, ref T2 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0>(ref T0 fn, byte* name, void* data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1>(ref T0 fn, byte* name, void* data, void* pfnBeginThread, ref T1 pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1>(ref T0 fn, byte* name, void* data, ref T1 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1, T2>(ref T0 fn, byte* name, void* data, ref T1 pfnBeginThread, ref T2 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1>(ref T0 fn, byte* name, ref T1 data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1, T2>(ref T0 fn, byte* name, ref T1 data, void* pfnBeginThread, ref T2 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1, T2>(ref T0 fn, byte* name, ref T1 data, ref T2 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1, T2, T3>(ref T0 fn, byte* name, ref T1 data, ref T2 pfnBeginThread, ref T3 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged where T3 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0>(ref T0 fn, ref byte name, void* data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1>(ref T0 fn, ref byte name, void* data, void* pfnBeginThread, ref T1 pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1>(ref T0 fn, ref byte name, void* data, ref T1 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1, T2>(ref T0 fn, ref byte name, void* data, ref T1 pfnBeginThread, ref T2 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1>(ref T0 fn, ref byte name, ref T1 data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1, T2>(ref T0 fn, ref byte name, ref T1 data, void* pfnBeginThread, ref T2 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1, T2>(ref T0 fn, ref byte name, ref T1 data, ref T2 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1, T2, T3>(ref T0 fn, ref byte name, ref T1 data, ref T2 pfnBeginThread, ref T3 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged where T3 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0>(ref T0 fn, string name, void* data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1>(ref T0 fn, string name, void* data, void* pfnBeginThread, ref T1 pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1>(ref T0 fn, string name, void* data, ref T1 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1, T2>(ref T0 fn, string name, void* data, ref T1 pfnBeginThread, ref T2 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1>(ref T0 fn, string name, ref T1 data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1, T2>(ref T0 fn, string name, ref T1 data, void* pfnBeginThread, ref T2 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1, T2>(ref T0 fn, string name, ref T1 data, ref T2 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThread")]
-        public unsafe partial Thread* CreateThread<T0, T1, T2, T3>(ref T0 fn, string name, ref T1 data, ref T2 pfnBeginThread, ref T3 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged where T3 : unmanaged;
+        public unsafe partial Thread* CreateThread<T0>(PfnThreadFunction fn, string name, ref T0 data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize(void* fn, byte* name, uint stacksize, void* data, void* pfnBeginThread, void* pfnEndThread);
+        public unsafe partial Thread* CreateThreadWithStackSize(PfnThreadFunction fn, byte* name, uint stacksize, void* data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0>(void* fn, byte* name, uint stacksize, void* data, void* pfnBeginThread, ref T0 pfnEndThread) where T0 : unmanaged;
+        public unsafe partial Thread* CreateThreadWithStackSize<T0>(PfnThreadFunction fn, byte* name, uint stacksize, ref T0 data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0>(void* fn, byte* name, uint stacksize, void* data, ref T0 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged;
+        public unsafe partial Thread* CreateThreadWithStackSize(PfnThreadFunction fn, ref byte name, uint stacksize, void* data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1>(void* fn, byte* name, uint stacksize, void* data, ref T0 pfnBeginThread, ref T1 pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial Thread* CreateThreadWithStackSize<T0>(PfnThreadFunction fn, ref byte name, uint stacksize, ref T0 data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0>(void* fn, byte* name, uint stacksize, ref T0 data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged;
+        public unsafe partial Thread* CreateThreadWithStackSize(PfnThreadFunction fn, string name, uint stacksize, void* data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1>(void* fn, byte* name, uint stacksize, ref T0 data, void* pfnBeginThread, ref T1 pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1>(void* fn, byte* name, uint stacksize, ref T0 data, ref T1 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1, T2>(void* fn, byte* name, uint stacksize, ref T0 data, ref T1 pfnBeginThread, ref T2 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize(void* fn, ref byte name, uint stacksize, void* data, void* pfnBeginThread, void* pfnEndThread);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0>(void* fn, ref byte name, uint stacksize, void* data, void* pfnBeginThread, ref T0 pfnEndThread) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0>(void* fn, ref byte name, uint stacksize, void* data, ref T0 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1>(void* fn, ref byte name, uint stacksize, void* data, ref T0 pfnBeginThread, ref T1 pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0>(void* fn, ref byte name, uint stacksize, ref T0 data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1>(void* fn, ref byte name, uint stacksize, ref T0 data, void* pfnBeginThread, ref T1 pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1>(void* fn, ref byte name, uint stacksize, ref T0 data, ref T1 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1, T2>(void* fn, ref byte name, uint stacksize, ref T0 data, ref T1 pfnBeginThread, ref T2 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize(void* fn, string name, uint stacksize, void* data, void* pfnBeginThread, void* pfnEndThread);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0>(void* fn, string name, uint stacksize, void* data, void* pfnBeginThread, ref T0 pfnEndThread) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0>(void* fn, string name, uint stacksize, void* data, ref T0 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1>(void* fn, string name, uint stacksize, void* data, ref T0 pfnBeginThread, ref T1 pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0>(void* fn, string name, uint stacksize, ref T0 data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1>(void* fn, string name, uint stacksize, ref T0 data, void* pfnBeginThread, ref T1 pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1>(void* fn, string name, uint stacksize, ref T0 data, ref T1 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1, T2>(void* fn, string name, uint stacksize, ref T0 data, ref T1 pfnBeginThread, ref T2 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0>(ref T0 fn, byte* name, uint stacksize, void* data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1>(ref T0 fn, byte* name, uint stacksize, void* data, void* pfnBeginThread, ref T1 pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1>(ref T0 fn, byte* name, uint stacksize, void* data, ref T1 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1, T2>(ref T0 fn, byte* name, uint stacksize, void* data, ref T1 pfnBeginThread, ref T2 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1>(ref T0 fn, byte* name, uint stacksize, ref T1 data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1, T2>(ref T0 fn, byte* name, uint stacksize, ref T1 data, void* pfnBeginThread, ref T2 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1, T2>(ref T0 fn, byte* name, uint stacksize, ref T1 data, ref T2 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1, T2, T3>(ref T0 fn, byte* name, uint stacksize, ref T1 data, ref T2 pfnBeginThread, ref T3 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged where T3 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0>(ref T0 fn, ref byte name, uint stacksize, void* data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1>(ref T0 fn, ref byte name, uint stacksize, void* data, void* pfnBeginThread, ref T1 pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1>(ref T0 fn, ref byte name, uint stacksize, void* data, ref T1 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1, T2>(ref T0 fn, ref byte name, uint stacksize, void* data, ref T1 pfnBeginThread, ref T2 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1>(ref T0 fn, ref byte name, uint stacksize, ref T1 data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1, T2>(ref T0 fn, ref byte name, uint stacksize, ref T1 data, void* pfnBeginThread, ref T2 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1, T2>(ref T0 fn, ref byte name, uint stacksize, ref T1 data, ref T2 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1, T2, T3>(ref T0 fn, ref byte name, uint stacksize, ref T1 data, ref T2 pfnBeginThread, ref T3 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged where T3 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0>(ref T0 fn, string name, uint stacksize, void* data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1>(ref T0 fn, string name, uint stacksize, void* data, void* pfnBeginThread, ref T1 pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1>(ref T0 fn, string name, uint stacksize, void* data, ref T1 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1, T2>(ref T0 fn, string name, uint stacksize, void* data, ref T1 pfnBeginThread, ref T2 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1>(ref T0 fn, string name, uint stacksize, ref T1 data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1, T2>(ref T0 fn, string name, uint stacksize, ref T1 data, void* pfnBeginThread, ref T2 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1, T2>(ref T0 fn, string name, uint stacksize, ref T1 data, ref T2 pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_CreateThreadWithStackSize")]
-        public unsafe partial Thread* CreateThreadWithStackSize<T0, T1, T2, T3>(ref T0 fn, string name, uint stacksize, ref T1 data, ref T2 pfnBeginThread, ref T3 pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged where T3 : unmanaged;
+        public unsafe partial Thread* CreateThreadWithStackSize<T0>(PfnThreadFunction fn, string name, uint stacksize, ref T0 data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 227, Column 37 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
@@ -8405,22 +7847,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 350, Column 29 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_TLSSet")]
-        public unsafe partial int TLSSet(uint id, void* value, void* destructor);
+        public unsafe partial int TLSSet(uint id, void* value, PfnFreeFunc destructor);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 350, Column 29 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
         [NativeApi(EntryPoint = "SDL_TLSSet")]
-        public unsafe partial int TLSSet<T0>(uint id, void* value, ref T0 destructor) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 350, Column 29 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_TLSSet")]
-        public unsafe partial int TLSSet<T0>(uint id, ref T0 value, void* destructor) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 350, Column 29 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        [NativeApi(EntryPoint = "SDL_TLSSet")]
-        public partial int TLSSet<T0, T1>(uint id, ref T0 value, ref T1 destructor) where T0 : unmanaged where T1 : unmanaged;
+        public partial int TLSSet<T0>(uint id, ref T0 value, PfnFreeFunc destructor) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 251, Column 29 in build/submodules/SDL-mirror/include\\SDL_audio.h")]
@@ -10250,102 +9682,62 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 727, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_SetEventFilter")]
-        public unsafe partial void SetEventFilter(void* filter, void* userdata);
+        public unsafe partial void SetEventFilter(PfnEventFilter filter, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 727, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_SetEventFilter")]
-        public unsafe partial void SetEventFilter<T0>(void* filter, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 727, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
-        [NativeApi(EntryPoint = "SDL_SetEventFilter")]
-        public unsafe partial void SetEventFilter<T0>(ref T0 filter, void* userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 727, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
-        [NativeApi(EntryPoint = "SDL_SetEventFilter")]
-        public partial void SetEventFilter<T0, T1>(ref T0 filter, ref T1 userdata) where T0 : unmanaged where T1 : unmanaged;
+        public partial void SetEventFilter<T0>(PfnEventFilter filter, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 734, Column 34 in build/submodules/SDL-mirror/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_GetEventFilter")]
-        public unsafe partial SdlBool GetEventFilter(void** filter, void** userdata);
+        public unsafe partial SdlBool GetEventFilter(PfnEventFilter* filter, void** userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 734, Column 34 in build/submodules/SDL-mirror/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_GetEventFilter")]
-        public unsafe partial SdlBool GetEventFilter(void** filter, ref void* userdata);
+        public unsafe partial SdlBool GetEventFilter(PfnEventFilter* filter, ref void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 734, Column 34 in build/submodules/SDL-mirror/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_GetEventFilter")]
-        public unsafe partial SdlBool GetEventFilter(ref void* filter, void** userdata);
+        public unsafe partial SdlBool GetEventFilter(ref PfnEventFilter filter, void** userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 734, Column 34 in build/submodules/SDL-mirror/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_GetEventFilter")]
-        public unsafe partial SdlBool GetEventFilter(ref void* filter, ref void* userdata);
+        public unsafe partial SdlBool GetEventFilter(ref PfnEventFilter filter, ref void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 740, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_AddEventWatch")]
-        public unsafe partial void AddEventWatch(void* filter, void* userdata);
+        public unsafe partial void AddEventWatch(PfnEventFilter filter, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 740, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_AddEventWatch")]
-        public unsafe partial void AddEventWatch<T0>(void* filter, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 740, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
-        [NativeApi(EntryPoint = "SDL_AddEventWatch")]
-        public unsafe partial void AddEventWatch<T0>(ref T0 filter, void* userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 740, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
-        [NativeApi(EntryPoint = "SDL_AddEventWatch")]
-        public partial void AddEventWatch<T0, T1>(ref T0 filter, ref T1 userdata) where T0 : unmanaged where T1 : unmanaged;
+        public partial void AddEventWatch<T0>(PfnEventFilter filter, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 746, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_DelEventWatch")]
-        public unsafe partial void DelEventWatch(void* filter, void* userdata);
+        public unsafe partial void DelEventWatch(PfnEventFilter filter, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 746, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_DelEventWatch")]
-        public unsafe partial void DelEventWatch<T0>(void* filter, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 746, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
-        [NativeApi(EntryPoint = "SDL_DelEventWatch")]
-        public unsafe partial void DelEventWatch<T0>(ref T0 filter, void* userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 746, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
-        [NativeApi(EntryPoint = "SDL_DelEventWatch")]
-        public partial void DelEventWatch<T0, T1>(ref T0 filter, ref T1 userdata) where T0 : unmanaged where T1 : unmanaged;
+        public partial void DelEventWatch<T0>(PfnEventFilter filter, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 753, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_FilterEvents")]
-        public unsafe partial void FilterEvents(void* filter, void* userdata);
+        public unsafe partial void FilterEvents(PfnEventFilter filter, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 753, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_FilterEvents")]
-        public unsafe partial void FilterEvents<T0>(void* filter, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 753, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
-        [NativeApi(EntryPoint = "SDL_FilterEvents")]
-        public unsafe partial void FilterEvents<T0>(ref T0 filter, void* userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 753, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
-        [NativeApi(EntryPoint = "SDL_FilterEvents")]
-        public partial void FilterEvents<T0, T1>(ref T0 filter, ref T1 userdata) where T0 : unmanaged where T1 : unmanaged;
+        public partial void FilterEvents<T0>(PfnEventFilter filter, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 771, Column 31 in build/submodules/SDL-mirror/include\\SDL_events.h")]
@@ -10900,122 +10292,62 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public unsafe partial void AddHintCallback(byte* name, void* callback, void* userdata);
+        public unsafe partial void AddHintCallback(byte* name, PfnHintCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public unsafe partial void AddHintCallback<T0>(byte* name, void* callback, ref T0 userdata) where T0 : unmanaged;
+        public unsafe partial void AddHintCallback<T0>(byte* name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public unsafe partial void AddHintCallback<T0>(byte* name, ref T0 callback, void* userdata) where T0 : unmanaged;
+        public unsafe partial void AddHintCallback(ref byte name, PfnHintCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public unsafe partial void AddHintCallback<T0, T1>(byte* name, ref T0 callback, ref T1 userdata) where T0 : unmanaged where T1 : unmanaged;
+        public partial void AddHintCallback<T0>(ref byte name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public unsafe partial void AddHintCallback(ref byte name, void* callback, void* userdata);
+        public unsafe partial void AddHintCallback(string name, PfnHintCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public unsafe partial void AddHintCallback<T0>(ref byte name, void* callback, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public unsafe partial void AddHintCallback<T0>(ref byte name, ref T0 callback, void* userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public partial void AddHintCallback<T0, T1>(ref byte name, ref T0 callback, ref T1 userdata) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public unsafe partial void AddHintCallback(string name, void* callback, void* userdata);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public unsafe partial void AddHintCallback<T0>(string name, void* callback, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public unsafe partial void AddHintCallback<T0>(string name, ref T0 callback, void* userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        [NativeApi(EntryPoint = "SDL_AddHintCallback")]
-        public partial void AddHintCallback<T0, T1>(string name, ref T0 callback, ref T1 userdata) where T0 : unmanaged where T1 : unmanaged;
+        public partial void AddHintCallback<T0>(string name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_DelHintCallback")]
-        public unsafe partial void DelHintCallback(byte* name, void* callback, void* userdata);
+        public unsafe partial void DelHintCallback(byte* name, PfnHintCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_DelHintCallback")]
-        public unsafe partial void DelHintCallback<T0>(byte* name, void* callback, ref T0 userdata) where T0 : unmanaged;
+        public unsafe partial void DelHintCallback<T0>(byte* name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_DelHintCallback")]
-        public unsafe partial void DelHintCallback<T0>(byte* name, ref T0 callback, void* userdata) where T0 : unmanaged;
+        public unsafe partial void DelHintCallback(ref byte name, PfnHintCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_DelHintCallback")]
-        public unsafe partial void DelHintCallback<T0, T1>(byte* name, ref T0 callback, ref T1 userdata) where T0 : unmanaged where T1 : unmanaged;
+        public partial void DelHintCallback<T0>(ref byte name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_DelHintCallback")]
-        public unsafe partial void DelHintCallback(ref byte name, void* callback, void* userdata);
+        public unsafe partial void DelHintCallback(string name, PfnHintCallback callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_DelHintCallback")]
-        public unsafe partial void DelHintCallback<T0>(ref byte name, void* callback, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        [NativeApi(EntryPoint = "SDL_DelHintCallback")]
-        public unsafe partial void DelHintCallback<T0>(ref byte name, ref T0 callback, void* userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        [NativeApi(EntryPoint = "SDL_DelHintCallback")]
-        public partial void DelHintCallback<T0, T1>(ref byte name, ref T0 callback, ref T1 userdata) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        [NativeApi(EntryPoint = "SDL_DelHintCallback")]
-        public unsafe partial void DelHintCallback(string name, void* callback, void* userdata);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        [NativeApi(EntryPoint = "SDL_DelHintCallback")]
-        public unsafe partial void DelHintCallback<T0>(string name, void* callback, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        [NativeApi(EntryPoint = "SDL_DelHintCallback")]
-        public unsafe partial void DelHintCallback<T0>(string name, ref T0 callback, void* userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        [NativeApi(EntryPoint = "SDL_DelHintCallback")]
-        public partial void DelHintCallback<T0, T1>(string name, ref T0 callback, ref T1 userdata) where T0 : unmanaged where T1 : unmanaged;
+        public partial void DelHintCallback<T0>(string name, PfnHintCallback callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1353, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
@@ -11265,42 +10597,32 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 194, Column 30 in build/submodules/SDL-mirror/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogGetOutputFunction")]
-        public unsafe partial void LogGetOutputFunction(void** callback, void** userdata);
+        public unsafe partial void LogGetOutputFunction(PfnLogOutputFunction* callback, void** userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 194, Column 30 in build/submodules/SDL-mirror/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogGetOutputFunction")]
-        public unsafe partial void LogGetOutputFunction(void** callback, ref void* userdata);
+        public unsafe partial void LogGetOutputFunction(PfnLogOutputFunction* callback, ref void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 194, Column 30 in build/submodules/SDL-mirror/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogGetOutputFunction")]
-        public unsafe partial void LogGetOutputFunction(ref void* callback, void** userdata);
+        public unsafe partial void LogGetOutputFunction(ref PfnLogOutputFunction callback, void** userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 194, Column 30 in build/submodules/SDL-mirror/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogGetOutputFunction")]
-        public unsafe partial void LogGetOutputFunction(ref void* callback, ref void* userdata);
+        public unsafe partial void LogGetOutputFunction(ref PfnLogOutputFunction callback, ref void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 30 in build/submodules/SDL-mirror/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogSetOutputFunction")]
-        public unsafe partial void LogSetOutputFunction(void* callback, void* userdata);
+        public unsafe partial void LogSetOutputFunction(PfnLogOutputFunction callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 30 in build/submodules/SDL-mirror/include\\SDL_log.h")]
         [NativeApi(EntryPoint = "SDL_LogSetOutputFunction")]
-        public unsafe partial void LogSetOutputFunction<T0>(void* callback, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 200, Column 30 in build/submodules/SDL-mirror/include\\SDL_log.h")]
-        [NativeApi(EntryPoint = "SDL_LogSetOutputFunction")]
-        public unsafe partial void LogSetOutputFunction<T0>(ref T0 callback, void* userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 200, Column 30 in build/submodules/SDL-mirror/include\\SDL_log.h")]
-        [NativeApi(EntryPoint = "SDL_LogSetOutputFunction")]
-        public partial void LogSetOutputFunction<T0, T1>(ref T0 callback, ref T1 userdata) where T0 : unmanaged where T1 : unmanaged;
+        public partial void LogSetOutputFunction<T0>(PfnLogOutputFunction callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 121, Column 29 in build/submodules/SDL-mirror/include\\SDL_messagebox.h")]
@@ -15091,25 +14413,13 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 50, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_SetWindowsMessageHook")]
-        public unsafe partial void SetWindowsMessageHook(void* callback, void* userdata);
+        public unsafe partial void SetWindowsMessageHook(PfnWindowsMessageHook callback, void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 50, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_SetWindowsMessageHook")]
-        public unsafe partial void SetWindowsMessageHook<T0>(void* callback, ref T0 userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 50, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        [ExcludeFromOverride(0)]
-        [NativeApi(EntryPoint = "SDL_SetWindowsMessageHook")]
-        public unsafe partial void SetWindowsMessageHook<T0>(ref T0 callback, void* userdata) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 50, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        [ExcludeFromOverride(0)]
-        [NativeApi(EntryPoint = "SDL_SetWindowsMessageHook")]
-        public partial void SetWindowsMessageHook<T0, T1>(ref T0 callback, ref T1 userdata) where T0 : unmanaged where T1 : unmanaged;
+        public partial void SetWindowsMessageHook<T0>(PfnWindowsMessageHook callback, ref T0 userdata) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 58, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
@@ -15156,42 +14466,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 95, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
         [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
-        public unsafe partial int IPhoneSetAnimationCallback(Window* window, int interval, void* callback, void* callbackParam);
+        public unsafe partial int IPhoneSetAnimationCallback(Window* window, int interval, PfnFreeFunc callback, void* callbackParam);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 95, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
         [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
-        public unsafe partial int IPhoneSetAnimationCallback<T0>(Window* window, int interval, void* callback, ref T0 callbackParam) where T0 : unmanaged;
+        public unsafe partial int IPhoneSetAnimationCallback<T0>(Window* window, int interval, PfnFreeFunc callback, ref T0 callbackParam) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 95, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
         [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
-        public unsafe partial int IPhoneSetAnimationCallback<T0>(Window* window, int interval, ref T0 callback, void* callbackParam) where T0 : unmanaged;
+        public unsafe partial int IPhoneSetAnimationCallback(ref Window window, int interval, PfnFreeFunc callback, void* callbackParam);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 95, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
         [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
-        public unsafe partial int IPhoneSetAnimationCallback<T0, T1>(Window* window, int interval, ref T0 callback, ref T1 callbackParam) where T0 : unmanaged where T1 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 95, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
-        public unsafe partial int IPhoneSetAnimationCallback(ref Window window, int interval, void* callback, void* callbackParam);
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 95, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
-        public unsafe partial int IPhoneSetAnimationCallback<T0>(ref Window window, int interval, void* callback, ref T0 callbackParam) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 95, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
-        public unsafe partial int IPhoneSetAnimationCallback<T0>(ref Window window, int interval, ref T0 callback, void* callbackParam) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 95, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        [NativeApi(EntryPoint = "SDL_iPhoneSetAnimationCallback")]
-        public partial int IPhoneSetAnimationCallback<T0, T1>(ref Window window, int interval, ref T0 callback, ref T1 callbackParam) where T0 : unmanaged where T1 : unmanaged;
+        public partial int IPhoneSetAnimationCallback<T0>(ref Window window, int interval, PfnFreeFunc callback, ref T0 callbackParam) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 98, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
@@ -15363,22 +14653,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 93, Column 37 in build/submodules/SDL-mirror/include\\SDL_timer.h")]
         [NativeApi(EntryPoint = "SDL_AddTimer")]
-        public unsafe partial int AddTimer(uint interval, void* callback, void* param);
+        public unsafe partial int AddTimer(uint interval, PfnTimerCallback callback, void* param);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 93, Column 37 in build/submodules/SDL-mirror/include\\SDL_timer.h")]
         [NativeApi(EntryPoint = "SDL_AddTimer")]
-        public unsafe partial int AddTimer<T0>(uint interval, void* callback, ref T0 param) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 93, Column 37 in build/submodules/SDL-mirror/include\\SDL_timer.h")]
-        [NativeApi(EntryPoint = "SDL_AddTimer")]
-        public unsafe partial int AddTimer<T0>(uint interval, ref T0 callback, void* param) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 93, Column 37 in build/submodules/SDL-mirror/include\\SDL_timer.h")]
-        [NativeApi(EntryPoint = "SDL_AddTimer")]
-        public partial int AddTimer<T0, T1>(uint interval, ref T0 callback, ref T1 param) where T0 : unmanaged where T1 : unmanaged;
+        public partial int AddTimer<T0>(uint interval, PfnTimerCallback callback, ref T0 param) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 104, Column 34 in build/submodules/SDL-mirror/include\\SDL_timer.h")]
@@ -16193,23 +15473,11 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 168, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        public unsafe int UIKitRunApp(int argc, string[] argvSa, void* mainFunction)
+        public unsafe int UIKitRunApp(int argc, string[] argvSa, PfnMainFunc mainFunction)
         {
             // StringArrayOverloader
             var argv = (byte**) SilkMarshal.StringArrayToPtr(argvSa);
             var ret = UIKitRunApp(argc, argv, mainFunction);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) argv, argvSa);
-            SilkMarshal.Free((IntPtr) argv);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 168, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        public unsafe int UIKitRunApp<T0>(int argc, string[] argvSa, ref T0 mainFunction) where T0 : unmanaged
-        {
-            // StringArrayOverloader
-            var argv = (byte**) SilkMarshal.StringArrayToPtr(argvSa);
-            var ret = UIKitRunApp(argc, argv, ref mainFunction);
             SilkMarshal.CopyPtrToStringArray((IntPtr) argv, argvSa);
             SilkMarshal.Free((IntPtr) argv);
             return ret;

@@ -116,11 +116,16 @@ namespace Silk.NET.BuildTools.Common.Functions
         }
 
         /// <inheritdoc cref="ToString()" />
-        public string ToString(bool? @unsafe, bool partial = false, bool accessibility = false, bool @static = false, bool semicolon = true)
+        public string ToString(bool? @unsafe,
+            bool partial = false,
+            bool accessibility = false,
+            bool @static = false,
+            bool semicolon = true,
+            bool @delegate = false)
         {
             var sb = new StringBuilder();
 
-            GetDeclarationString(sb, @unsafe, partial, accessibility, @static);
+            GetDeclarationString(sb, @unsafe, partial, accessibility, @static, @delegate);
 
             sb.Append("(");
             if (Parameters.Count > 0)
@@ -170,7 +175,8 @@ namespace Silk.NET.BuildTools.Common.Functions
             bool? @unsafe,
             bool partial = false,
             bool accessibility = false,
-            bool @static = false)
+            bool @static = false,
+            bool @delegate = false)
         {
             if (accessibility)
             {
@@ -203,6 +209,11 @@ namespace Silk.NET.BuildTools.Common.Functions
             if (partial)
             {
                 sb.Append("partial ");
+            }
+
+            if (@delegate)
+            {
+                sb.Append("delegate ");
             }
 
             sb.Append(ReturnType);
@@ -324,6 +335,22 @@ namespace Silk.NET.BuildTools.Common.Functions
                 // ReSharper restore NonReadonlyMemberInGetHashCode
                 return hashCode;
             }
+        }
+
+        public string GetFunctionPointerSignature()
+        {
+            var convention = Convention switch
+            {
+                CallingConvention.Winapi => null,
+                CallingConvention.Cdecl => "[Cdecl]",
+                CallingConvention.StdCall => "[Stdcall]",
+                CallingConvention.ThisCall => "[Thiscall]",
+                CallingConvention.FastCall => "[Fastcall]",
+                _ => throw new ArgumentOutOfRangeException()
+            };
+
+            var paramTypes = string.Join(", ", Parameters.Select(x => x.Type).Concat(new[] {ReturnType}));
+            return $"delegate* unmanaged{convention}<{paramTypes}>";
         }
     }
 }

@@ -6,6 +6,7 @@
 using System;
 using System.IO;
 using System.Reflection;
+using Silk.NET.Core.Contexts;
 using Silk.NET.Maths;
 
 namespace Silk.NET.Windowing
@@ -36,6 +37,9 @@ namespace Silk.NET.Windowing
             TransparentFramebuffer = false;
             IsEventDriven = opts.IsEventDriven;
             VSync = opts.VSync;
+            SharedContext = null;
+            PreferredStencilBufferBits = opts.PreferredStencilBufferBits;
+            PreferredBitDepth = opts.PreferredBitDepth;
         }
 
         /// <inheritdoc />
@@ -52,6 +56,12 @@ namespace Silk.NET.Windowing
 
         /// <inheritdoc />
         public int? PreferredDepthBufferBits { get; set; }
+
+        /// <inheritdoc />
+        public int? PreferredStencilBufferBits { get; set; }
+
+        /// <inheritdoc />
+        public Vector4D<int>? PreferredBitDepth { get; }
 
         /// <inheritdoc />
         public Vector2D<int> Position { get; set; }
@@ -83,6 +93,9 @@ namespace Silk.NET.Windowing
         /// <inheritdoc />
         public bool TransparentFramebuffer { get; set; }
 
+        /// <inheritdoc cref="IWindowProperties" />
+        public IGLContext? SharedContext { get; }
+
         /// <summary>
         /// Creates a new WindowOptions struct.
         /// </summary>
@@ -101,8 +114,11 @@ namespace Silk.NET.Windowing
             bool shouldSwapAutomatically,
             VideoMode videoMode,
             int? preferredDepthBufferBits = null,
+            int? preferredStencilBufferBits = null,
+            Vector4D<int>? preferredBitDepth = null,
             bool transparentFramebuffer = false,
-            bool isEventDriven = false
+            bool isEventDriven = false,
+            IGLContext? sharedContext = null
         )
         {
             IsVisible = isVisible;
@@ -120,6 +136,10 @@ namespace Silk.NET.Windowing
             TransparentFramebuffer = transparentFramebuffer;
             IsEventDriven = isEventDriven;
             VSync = isVSync;
+            SharedContext = sharedContext;
+            PreferredDepthBufferBits = preferredDepthBufferBits;
+            PreferredStencilBufferBits = preferredStencilBufferBits;
+            PreferredBitDepth = preferredBitDepth;
         }
 
         static WindowOptions()
