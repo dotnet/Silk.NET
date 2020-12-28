@@ -196,6 +196,7 @@ namespace Silk.NET.SilkTouch
             int slotCount = 0;
             int gcCount = 0;
             
+            var generatedVTableName = NameGenerator.Name("GeneratedVTable");
             Dictionary<int, string> entryPoints = new Dictionary<int, string>();
             var processedEntrypoints = new List<EntryPoint>();
             foreach (var (declaration, symbol, entryPoint, callingConvention) in from declaration in
@@ -222,7 +223,7 @@ namespace Silk.NET.SilkTouch
                 (
                     sourceContext, rootMarshalBuilder, callingConvention, entryPoints, entryPoint, classIsSealed,
                     generateSeal, generateVTable, slot, compilation, symbol, declaration, newMembers,
-                    ref gcCount, processedEntrypoints
+                    ref gcCount, processedEntrypoints, generatedVTableName
                 );
             }
 
@@ -298,7 +299,8 @@ namespace Silk.NET.SilkTouch
                     (
                         preloadVTable, entryPoints, emitAssert,
                         sourceContext.ParseOptions.PreprocessorSymbolNames.Any
-                            (x => x == "NETCOREAPP" || x == "NET5" /* SEE INativeContext.cs in Core */)
+                            (x => x == "NETCOREAPP" || x == "NET5" /* SEE INativeContext.cs in Core */),
+                        generatedVTableName
                     )
                 );
                 newMembers.Add
@@ -322,7 +324,7 @@ namespace Silk.NET.SilkTouch
                             ArrowExpressionClause
                             (
                                 ObjectCreationExpression
-                                    (IdentifierName("GeneratedVTable"))
+                                    (IdentifierName(generatedVTableName))
                                 .WithArgumentList(ArgumentList())
                             )
                         )
@@ -381,7 +383,8 @@ namespace Silk.NET.SilkTouch
             MethodDeclarationSyntax declaration,
             List<MemberDeclarationSyntax> newMembers,
             ref int gcCount,
-            List<EntryPoint> processedEntrypoints
+            List<EntryPoint> processedEntrypoints,
+            string generatedVTableName
         )
         {
             void BuildLoadInvoke(ref IMarshalContext ctx, Action next)
@@ -445,7 +448,7 @@ namespace Silk.NET.SilkTouch
                         (
                             BinaryExpression
                             (
-                                SyntaxKind.AsExpression, IdentifierName("CurrentVTable"), IdentifierName("GeneratedVTable")
+                                SyntaxKind.AsExpression, IdentifierName("CurrentVTable"), IdentifierName(generatedVTableName)
                             )
                         ), IdentifierName("Load")
                     );
