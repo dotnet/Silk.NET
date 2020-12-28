@@ -40,7 +40,7 @@ namespace Silk.NET.Windowing.Internals
         private int _rented;
 
         // Ensure we keep SwapInterval up-to-date
-        private bool _swapIntervalChanged;
+        private bool _swapIntervalChanged = true;
 
         /// <summary>
         /// Creates a base view with the given options.
@@ -103,7 +103,7 @@ namespace Silk.NET.Windowing.Internals
             IsInitialized = true;
             IsEventDriven = _optionsCache.IsEventDriven;
             GLContext?.MakeCurrent();
-            _swapIntervalChanged = VSync; // if vsync is requested, ensure we enable it.
+            _swapIntervalChanged = true;
             Load?.Invoke();
         }
 
