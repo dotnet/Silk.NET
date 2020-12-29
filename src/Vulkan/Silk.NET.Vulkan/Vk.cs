@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using Unsafe = System.Runtime.CompilerServices.Unsafe;
 using Silk.NET.Core;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
@@ -200,8 +201,7 @@ namespace Silk.NET.Vulkan
             List<string> list;
             if (!_cachedDeviceExtensions.ContainsKey(device.Handle))
             {
-                var extProperties = stackalloc ExtensionProperties[128];
-                _cachedDeviceExtensions.Add(device.Handle, list = Add(device, new List<string>(), extProperties));
+                _cachedDeviceExtensions.Add(device.Handle, list = Add(device, new List<string>()));
             }
             else
             {
@@ -254,7 +254,6 @@ namespace Silk.NET.Vulkan
         private unsafe List<string> GetExtensions(Instance? instance, PhysicalDevice? device)
         {
             var l = new List<string>();
-            var props = stackalloc ExtensionProperties[128];
 
             if (instance.HasValue)
             {
@@ -268,12 +267,12 @@ namespace Silk.NET.Vulkan
                     for (var i = 0; i < physicalDeviceCount; i++)
                     {
                         var physicalDevice = physicalDevices[i];
-                        Add(physicalDevice, l, props);
+                        Add(physicalDevice, l);
                     }
                 }
                 else
                 {
-                    Add(device.Value, l, props);
+                    Add(device.Value, l);
                 }
             }
 
@@ -297,21 +296,22 @@ namespace Silk.NET.Vulkan
             }
         }
 
-        private unsafe List<string> Add(PhysicalDevice physicalDevice, List<string> l, ExtensionProperties* props)
+        private unsafe List<string> Add(PhysicalDevice physicalDevice, List<string> l)
         {
-            var result = Vulkan.Result.Incomplete;
-            while (result == Vulkan.Result.Incomplete)
+            var deviceExtPropertiesCount = 0u;
+
+            // Get number of properties
+            EnumerateDeviceExtensionProperties(physicalDevice, (byte*) 0, &deviceExtPropertiesCount, null);
+
+            // Initialise return structure
+            using var mem = GlobalMemory.Allocate((int)deviceExtPropertiesCount * sizeof(ExtensionProperties));
+            var props = (ExtensionProperties*) Unsafe.AsPointer(ref mem.GetPinnableReference());
+            
+            // Get properties
+            EnumerateDeviceExtensionProperties(physicalDevice, (byte*) 0, &deviceExtPropertiesCount, props);
+            for (int j = 0; j < deviceExtPropertiesCount; j++)
             {
-                var deviceExtPropertiesCount = 128u;
-                result = EnumerateDeviceExtensionProperties
-                    (physicalDevice, (byte*) 0, &deviceExtPropertiesCount, props);
-                if (result == Vulkan.Result.Success || result == Vulkan.Result.Incomplete)
-                {
-                    for (var j = 0; j < deviceExtPropertiesCount; j++)
-                    {
-                        l.Add(Marshal.PtrToStringAnsi((IntPtr) props[j].ExtensionName));
-                    }
-                }
+                l.Add(Marshal.PtrToStringAnsi((IntPtr) props[j].ExtensionName));
             }
 
             return l;
