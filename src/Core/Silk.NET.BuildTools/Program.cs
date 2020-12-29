@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -11,6 +12,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using JetBrains.Annotations;
 using Newtonsoft.Json;
 using Silk.NET.BuildTools.Common;
 
@@ -51,6 +53,7 @@ namespace Silk.NET.BuildTools
             var sw = Stopwatch.StartNew();
             var extraCtrls = new List<string>();
             var failedJobs = 0;
+            Console.SetOut(ConsoleWriter.GetOrCreate(Console.Out));
             foreach (var arg in args)
             {
                 if (arg.StartsWith("--"))
@@ -60,7 +63,6 @@ namespace Silk.NET.BuildTools
                     continue;
                 }
                 
-                Console.SetOut(ConsoleWriter.GetOrCreate(Console.Out));
                 var jobSw = Stopwatch.StartNew();
                 var abs = Path.GetFullPath(arg);
                 Environment.CurrentDirectory = Path.GetDirectoryName
@@ -68,7 +70,8 @@ namespace Silk.NET.BuildTools
                 Generator.Run(AddDescriptors(JsonConvert.DeserializeObject<Config>(File.ReadAllText(abs)), extraCtrls));
             
                 jobSw.Stop();
-                Console.SetOut(ConsoleWriter.Instance.Base);
+                Thread.Sleep(3000); // cooldown to ensure all the threads have reported their results.
+                ConsoleWriter.Instance.BeginPlainRegion();
                 Console.WriteLine();
                 Console.WriteLine("Job Summary");
                 Console.WriteLine("===========");
@@ -90,10 +93,12 @@ namespace Silk.NET.BuildTools
                 Console.WriteLine();
                 Console.WriteLine($"In total, this particular job took {jobSw.Elapsed.TotalSeconds} second(s) to complete.");
                 Console.WriteLine();
+                ConsoleWriter.Instance.EndPlainRegion();
                 ConsoleWriter.Instance.Reset();
             }
 
             sw.Stop();
+            Console.SetOut(ConsoleWriter.Instance.Base);
             Console.WriteLine($"Complete bind took {sw.Elapsed.TotalSeconds} second(s).");
 
             static Config AddDescriptors(Config config, IReadOnlyList<string> descriptors)
@@ -112,6 +117,7 @@ namespace Silk.NET.BuildTools
                 return -2000000000 - failedJobs;
             }
 
+            ConsoleWriter.Instance.Wait();
             return 0;
         }
 
@@ -122,13 +128,19 @@ namespace Silk.NET.BuildTools
             public ThreadLocal<KeyValuePair<string, (TimeSpan Time, bool Success)>> Timings { get; private set; } =
                 new ThreadLocal<KeyValuePair<string, (TimeSpan Time, bool Success)>>(true);
 
+            private readonly ConcurrentQueue<string> _logs = new();
+            private int _exitOnEmpty = 0; // int32 writes are atomic
+            private int _plain = 0;
+            private Task _logLoop;
+
             public readonly TextWriter Base;
 
-            public ConsoleWriter(TextWriter @base)
+            private ConsoleWriter(TextWriter @base)
             {
                 Base = @base;
                 Encoding = Base.Encoding;
                 Instance = this;
+                _logLoop = Task.Run(LogLoop);
             }
             
             public override Encoding Encoding { get; }
@@ -141,7 +153,39 @@ namespace Silk.NET.BuildTools
             }
             public override void WriteLine(string? value)
             {
-                Base.WriteLine($"[{DateTime.Now:T}] [{CurrentName.Value}] {Task.CurrentId}> " + value);
+                _logs.Enqueue(_plain switch
+                {
+                    1 => value,
+                    _ => $"[{DateTime.Now:T}] [{CurrentName.Value}] {Task.CurrentId}> " + value
+                });
+            }
+            
+            public override void WriteLine() => _logs.Enqueue("");
+
+            public void BeginPlainRegion() => _plain = 1;
+            public void EndPlainRegion() => _plain = 0;
+
+            public void Wait()
+            {
+                _exitOnEmpty = 1;
+                SpinWait.SpinUntil(() => _exitOnEmpty == 0);
+            }
+
+            private void LogLoop()
+            {
+                while (true)
+                {
+                    if (_logs.IsEmpty && _exitOnEmpty == 1)
+                    {
+                        _exitOnEmpty = 0;
+                        break;
+                    }
+
+                    if (_logs.TryDequeue(out var line))
+                    {
+                        Base.WriteLine(line);
+                    }
+                }
             }
         }
         

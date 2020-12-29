@@ -12,7 +12,9 @@ using System.Linq;
 using System.Net.Http;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
+using Humanizer;
 using JetBrains.Annotations;
 using Newtonsoft.Json;
 using Silk.NET.BuildTools.Baking;
@@ -31,12 +33,35 @@ namespace Silk.NET.BuildTools
         public static void Run(Config config)
         {
             var tasks = new Task[config.Tasks.Length];
-            var dirsToCheckThrough = config.Tasks.Select(x => x.OutputOpts.Folder).Distinct();
-            foreach (var s in dirsToCheckThrough)
+
+            for (var i = 0; i < 10; i++)
             {
-                foreach (var file in Directory.GetFiles(s, "*.gen.cs", SearchOption.AllDirectories))
+                try
                 {
-                    File.Delete(file);
+                    var dirsToCheckThrough = config.Tasks
+                        .Where(x => ShouldBind(x.Controls))
+                        .Select(x => x.OutputOpts.Folder)
+                        .Distinct();
+                    foreach (var s in dirsToCheckThrough)
+                    {
+                        foreach (var file in Directory.GetFiles(s, "*.gen.cs", SearchOption.AllDirectories))
+                        {
+                            File.Delete(file);
+                        }
+                    }
+
+                    break;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine
+                    (
+                        i.Ordinalize() +
+                        $" attempt to remove generated files failed with " +
+                        $"{ex.GetType().Name}: {ex.Message}"
+                    );
+
+                    Thread.Sleep(1000);
                 }
             }
 
@@ -195,7 +220,7 @@ namespace Silk.NET.BuildTools
                     Console.WriteLine("Written to cache for future use.");
                 }
             }
-            else if (task.Controls.Any(x => x.Equals("no-bind", StringComparison.InvariantCultureIgnoreCase)))
+            else if (!ShouldBind(task.Controls))
             {
                 // skip
                 profile = null;
@@ -231,7 +256,7 @@ namespace Silk.NET.BuildTools
                 );
             }
 
-            if (task.Controls.All(x => x.ToLower() != "no-bind"))
+            if (ShouldBind(task.Controls))
             {
                 profile.Flush(task);
             }
@@ -239,33 +264,36 @@ namespace Silk.NET.BuildTools
             sw?.Stop();
             var af = sw is null ? null : $" after {sw.Elapsed.TotalSeconds} second(s)";
             Console.WriteLine($"Task complete{af}.");
-            
-            static bool ShouldConvert(string[] controls)
-            {
-                if (controls.Any
-                    (y => y.ToLower() == "convert-windows-only") && !RuntimeInformation.IsOSPlatform
-                    (OSPlatform.Windows))
-                {
-                    return false;
-                }
-                
-                if (controls.Any
-                    (y => y.ToLower() == "convert-macos-only") && !RuntimeInformation.IsOSPlatform
-                    (OSPlatform.OSX))
-                {
-                    return false;
-                }
-                
-                if (controls.Any
-                    (y => y.ToLower() == "convert-linux-only") && !RuntimeInformation.IsOSPlatform
-                    (OSPlatform.Linux))
-                {
-                    return false;
-                }
-
-                return controls.All(y => y.ToLower() != "no-convert");
-            }
         }
+
+        private static bool ShouldConvert(string[] controls)
+        {
+            if (controls.Any
+                (y => y.ToLower() == "convert-windows-only") && !RuntimeInformation.IsOSPlatform
+                (OSPlatform.Windows))
+            {
+                return false;
+            }
+                
+            if (controls.Any
+                (y => y.ToLower() == "convert-macos-only") && !RuntimeInformation.IsOSPlatform
+                (OSPlatform.OSX))
+            {
+                return false;
+            }
+                
+            if (controls.Any
+                (y => y.ToLower() == "convert-linux-only") && !RuntimeInformation.IsOSPlatform
+                (OSPlatform.Linux))
+            {
+                return false;
+            }
+
+            return controls.All(y => y.ToLower() != "no-convert");
+        }
+
+        private static bool ShouldBind(IEnumerable<string> controls) => controls.All
+            (x => !string.Equals(x.ToLower(), "no-bind", StringComparison.InvariantCultureIgnoreCase));
 
         private static Stream OpenPath(string path)
         {
