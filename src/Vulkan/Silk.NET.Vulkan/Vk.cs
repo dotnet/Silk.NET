@@ -300,7 +300,18 @@ namespace Silk.NET.Vulkan
         /// <returns>Whether the device extension is available.</returns>
         public unsafe bool IsDeviceExtensionPresent(Instance instance, string extension, out PhysicalDevice device)
         {
-            device = _cachedPhyscialDevices.GetOrAdd(instance, i =>
+            device = GetPhysicalDevices(instance).FirstOrDefault(pd => IsDeviceExtensionPresent(pd, extension));
+            return device.Handle != IntPtr.Zero;
+        }
+
+        /// <summary>
+        /// Gets all the physical devices for the instance.
+        /// </summary>
+        /// <param name="instance">The Vulkan instance to use.</param>
+        /// <returns>Whether the device extension is available.</returns>
+        public unsafe IReadOnlyCollection<PhysicalDevice> GetPhysicalDevices(Instance instance)
+        {
+            return _cachedPhyscialDevices.GetOrAdd(instance, i =>
             {
                 var physicalDeviceCount = 0u;
                 EnumeratePhysicalDevices(i, &physicalDeviceCount, null);
@@ -315,10 +326,7 @@ namespace Silk.NET.Vulkan
                     EnumeratePhysicalDevices(instance, &physicalDeviceCount, pdp);
                 }
                 return physicalDevices;
-
-            }).FirstOrDefault(pd => IsDeviceExtensionPresent(pd, extension));
-
-            return device.Handle != IntPtr.Zero;
+            });
         }
 
         /// <summary>
