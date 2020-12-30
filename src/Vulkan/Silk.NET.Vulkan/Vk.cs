@@ -1,16 +1,14 @@
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
-using Unsafe = System.Runtime.CompilerServices.Unsafe;
 using Silk.NET.Core;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using LibraryLoader = Silk.NET.Core.Loader.LibraryLoader;
-using System.Collections.Concurrent;
+using Unsafe = System.Runtime.CompilerServices.Unsafe;
 
 namespace Silk.NET.Vulkan
 {
