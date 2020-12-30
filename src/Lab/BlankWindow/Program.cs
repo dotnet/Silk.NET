@@ -3,21 +3,22 @@
 // You may modify and distribute Silk.NET under the terms
 // of the MIT license. See the LICENSE file for details.
 
-using Silk.NET.Windowing;
-using SixLabors.ImageSharp.PixelFormats;
 using System;
-using System.Drawing;
+using System.Runtime.InteropServices;
 using System.Threading;
 using Silk.NET.Core;
 using Silk.NET.Maths;
-using Image = SixLabors.ImageSharp.Image;
+using Silk.NET.Windowing;
+using SixLabors.ImageSharp;
+using SixLabors.ImageSharp.Advanced;
+using SixLabors.ImageSharp.PixelFormats;
 
 namespace BlankWindow
 {
     internal class Program
     {
         public const bool Quieter = false;
-        
+
         public static IWindow window;
 
         private static void Main()
@@ -81,16 +82,16 @@ namespace BlankWindow
         public static unsafe void Load()
         {
             using var image = Image.Load<Rgba32>("favicon.png");
-            Span<byte> span;
-            byte[] arr;
-            var ogspan = image.GetPixelRowSpan(0);
-            fixed (Rgba32* pixels = ogspan)
+            var memoryGroup = image.GetPixelMemoryGroup();
+            Memory<byte> array = new byte[memoryGroup.TotalLength * sizeof(Rgba32)];
+            var block = MemoryMarshal.Cast<byte, Rgba32>(array.Span);
+            foreach (var memory in memoryGroup)
             {
-                span = new Span<byte>(pixels, ogspan.Length * 4);
-                arr = span.ToArray();
+                memory.Span.CopyTo(block);
+                block = block.Slice(memory.Length);
             }
 
-            var icon = new RawImage(image.Width, image.Height, arr);
+            var icon = new RawImage(image.Width, image.Height, array);
             window.SetWindowIcon(ref icon);
             Console.WriteLine("Finished loading");
         }
