@@ -1,19 +1,19 @@
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
+using System.Threading;
 using Silk.NET.Core;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
-using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
-using LibraryLoader = Silk.NET.Core.Loader.LibraryLoader;
+using Unsafe = System.Runtime.CompilerServices.Unsafe;
 
 namespace Silk.NET.Vulkan
 {
     public partial class Vk
     {
-        private readonly Dictionary<IntPtr, List<string>> _extensions = new Dictionary<IntPtr, List<string>>();
         public Instance? CurrentInstance { get; set; }
         public Device? CurrentDevice { get; set; }
         public static Version32 Version10 => new Version32(1, 0, 0);
@@ -134,7 +134,7 @@ namespace Silk.NET.Vulkan
         /// <returns>Whether the extension is available and loaded.</returns>
         public bool TryGetInstanceExtension<T>(Instance instance, out T ext) where T : NativeExtension<Vk> =>
             !((ext = IsInstanceExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
-                ? (T)Activator.CreateInstance
+                ? (T) Activator.CreateInstance
                 (typeof(T), new LamdaNativeContext(x => GetInstanceProcAddr(instance, x)))
                 : null) is null);
 
@@ -153,7 +153,7 @@ namespace Silk.NET.Vulkan
         public bool TryGetDeviceExtension<T>
             (Instance instance, Device device, out T ext) where T : NativeExtension<Vk> =>
             !((ext = IsDeviceExtensionPresent(instance, ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
-                ? (T)Activator.CreateInstance
+                ? (T) Activator.CreateInstance
                     (typeof(T), new LamdaNativeContext(x => GetDeviceProcAddr(device, x)))
                 : null) is null);
 
@@ -161,8 +161,13 @@ namespace Silk.NET.Vulkan
         [Obsolete("Use IsInstanceExtensionPresent instead.", true)]
         public override bool IsExtensionPresent(string extension) => IsInstanceExtensionPresent(extension);
 
-        private List<string> _cachedInstanceExtensions = new List<string>();
-        private Dictionary<IntPtr, List<string>> _cachedDeviceExtensions = new Dictionary<IntPtr, List<string>>();
+        private HashSet<string> _cachedInstanceExtensions;
+
+        // Contains strings in form of '<IntPtr>|<Extension name>' for each extension and '<IntPtr>' to indicate an extension has been loaded.
+        private readonly HashSet<string> _cachedDeviceExtensions = new HashSet<string>();
+        private readonly ReaderWriterLockSlim _cachedDeviceExtensionsLock = new ReaderWriterLockSlim();
+
+        private readonly ConcurrentDictionary<Instance, PhysicalDevice[]> _cachedPhyscialDevices = new ConcurrentDictionary<Instance, PhysicalDevice[]>();
 
         /// <summary>
         /// Checks whether the given instance extension is available.
@@ -171,13 +176,34 @@ namespace Silk.NET.Vulkan
         /// <returns>Whether the instance extension is available.</returns>
         public unsafe bool IsInstanceExtensionPresent(string extension)
         {
-            if (_cachedInstanceExtensions.Count == 0)
+            // Note we use optimistic code to avoid locks, if this is called on multiple threads
+            // then multiple initialisations can happen, only one thread will succeed in initialising the cache though.
+            var cachedInstanceExtensions = _cachedInstanceExtensions;
+            if (cachedInstanceExtensions is null)
             {
-                var extProperties = stackalloc ExtensionProperties[128];
-                Add(_cachedInstanceExtensions, extProperties);
+                // Get count of properties
+                var instanceExtPropertiesCount = 0u;
+                EnumerateInstanceExtensionProperties((byte*) 0, &instanceExtPropertiesCount, null);
+
+                // Initialise return structure
+                using var mem = GlobalMemory.Allocate((int) instanceExtPropertiesCount * sizeof(ExtensionProperties));
+                var props = (ExtensionProperties*) Unsafe.AsPointer(ref mem.GetPinnableReference());
+
+                // Get properties
+                EnumerateInstanceExtensionProperties((byte*) 0, &instanceExtPropertiesCount, props);
+
+                cachedInstanceExtensions = new HashSet<string>();
+                for (var p = 0; p < instanceExtPropertiesCount; p++)
+                {
+                    cachedInstanceExtensions.Add(Marshal.PtrToStringAnsi((IntPtr) props[p].ExtensionName));
+                }
+
+                // Thread-safe, only one initialisation will actually succeed.
+                cachedInstanceExtensions = Interlocked.CompareExchange(ref _cachedInstanceExtensions, cachedInstanceExtensions, null) ??
+                                           cachedInstanceExtensions;
             }
 
-            return _cachedInstanceExtensions.Contains(extension);
+            return cachedInstanceExtensions.Contains(extension);
         }
 
         /// <summary>
@@ -197,18 +223,69 @@ namespace Silk.NET.Vulkan
         /// <returns>Whether the device extension is available.</returns>
         public unsafe bool IsDeviceExtensionPresent(PhysicalDevice device, string extension)
         {
-            List<string> list;
-            if (!_cachedDeviceExtensions.ContainsKey(device.Handle))
-            {
-                var extProperties = stackalloc ExtensionProperties[128];
-                _cachedDeviceExtensions.Add(device.Handle, list = Add(device, new List<string>(), extProperties));
-            }
-            else
-            {
-                list = _cachedDeviceExtensions[device.Handle];
-            }
+            var prefix = device.Handle.ToString();
+            var prefix_sep = prefix + '|';
+            var fullKey = prefix_sep + extension;
+            var result = false;
 
-            return list.Contains(extension);
+            // We place a devices handle into the hashset to indicate it has been previously loaded.
+            // We then prefix entries with '<Handle>|' which will never collide with '<Handle>' (which is an
+            // integer and so doesn't contain the pipe char '|').  This prevents doing two lookups, on cache hit and so
+            // is twice as fast as using a Dictionary<string, HashSet<string>> in best case (and significantly faster than
+            // Dictionary<string, List<string>>))
+            // 
+            // Note we use an upgradeable read lock, which is very fast.  We avoid a try...finally block on read
+            // as the operations are inheritently safe, the additional try...finally on write is mitigated
+            // as we also use it to dispose the memory allocation safely.  This gives us thread-safety at
+            // no real additional cost.
+            _cachedDeviceExtensionsLock.EnterUpgradeableReadLock();
+
+            // We check for the extension first to avoid 2 lookups
+            if (_cachedDeviceExtensions.Contains(fullKey))
+            {
+                // We found the extension
+                result = true;
+            }
+            else if (!_cachedDeviceExtensions.Contains(prefix))
+            {
+                // The lack of the device handle indicates we've not been previously initialised.  We now need a write lock.
+                _cachedDeviceExtensionsLock.EnterWriteLock();
+                GlobalMemory mem = null;
+                try
+                {
+                    var deviceExtPropertiesCount = 0u;
+
+                    // Get number of properties
+                    EnumerateDeviceExtensionProperties(device, (byte*) 0, &deviceExtPropertiesCount, null);
+
+                    // Initialise return structure
+                    mem = GlobalMemory.Allocate((int) deviceExtPropertiesCount * sizeof(ExtensionProperties));
+                    var props = (ExtensionProperties*) Unsafe.AsPointer(ref mem.GetPinnableReference());
+
+                    // Get properties
+                    EnumerateDeviceExtensionProperties(device, (byte*) 0, &deviceExtPropertiesCount, props);
+                    for (int j = 0; j < deviceExtPropertiesCount; j++)
+                    {
+                        // Prefix the extension name
+                        var newKey = prefix_sep + Marshal.PtrToStringAnsi((IntPtr) props[j].ExtensionName);
+                        _cachedDeviceExtensions.Add(newKey);
+                        if (!result && string.Equals(newKey, fullKey))
+                        {
+                            // We found the extension (no need to do another lookup as we're scanning anyway)
+                            // As such this has taken 2 lookups + initialisation scan.
+                            result = true;
+                        }
+                    }
+                }
+                finally
+                {
+                    _cachedDeviceExtensionsLock.ExitWriteLock();
+                    mem?.Dispose();
+                }
+            } // else result = false - takes 2 lookups, one to check for extension, and one to check initialisation.
+
+            _cachedDeviceExtensionsLock.ExitUpgradeableReadLock();
+            return result;
         }
 
         /// <summary>
@@ -221,23 +298,33 @@ namespace Silk.NET.Vulkan
         /// <returns>Whether the device extension is available.</returns>
         public unsafe bool IsDeviceExtensionPresent(Instance instance, string extension, out PhysicalDevice device)
         {
-            var physicalDeviceCount = 0u;
-            EnumeratePhysicalDevices(instance, &physicalDeviceCount, null);
-            var physicalDevices = stackalloc PhysicalDevice[(int) physicalDeviceCount];
-            EnumeratePhysicalDevices(instance, &physicalDeviceCount, physicalDevices);
+            device = GetPhysicalDevices(instance).FirstOrDefault(pd => IsDeviceExtensionPresent(pd, extension));
+            return device.Handle != IntPtr.Zero;
+        }
 
-            for (var i = 0; i < physicalDeviceCount; i++)
+        /// <summary>
+        /// Gets all the physical devices for the instance.
+        /// </summary>
+        /// <param name="instance">The Vulkan instance to use.</param>
+        /// <returns>Whether the device extension is available.</returns>
+        public unsafe IReadOnlyCollection<PhysicalDevice> GetPhysicalDevices(Instance instance)
+        {
+            return _cachedPhyscialDevices.GetOrAdd(instance, i =>
             {
-                var physicalDevice = physicalDevices[i];
-                if (IsDeviceExtensionPresent(physicalDevice, extension))
-                {
-                    device = physicalDevice;
-                    return true;
-                }
-            }
+                var physicalDeviceCount = 0u;
+                EnumeratePhysicalDevices(i, &physicalDeviceCount, null);
 
-            device = default;
-            return false;
+                // Initialise return structure
+                if (physicalDeviceCount < 1)
+                    return Array.Empty<PhysicalDevice>();
+
+                var physicalDevices = new PhysicalDevice[physicalDeviceCount];
+                fixed (PhysicalDevice* pdp = physicalDevices)
+                {
+                    EnumeratePhysicalDevices(instance, &physicalDeviceCount, pdp);
+                }
+                return physicalDevices;
+            });
         }
 
         /// <summary>
@@ -246,75 +333,17 @@ namespace Silk.NET.Vulkan
         /// </summary>
         public void PurgeExtensionCache()
         {
-            _extensions.Clear();
             _cachedInstanceExtensions.Clear();
-            _cachedDeviceExtensions.Clear();
-        }
-
-        private unsafe List<string> GetExtensions(Instance? instance, PhysicalDevice? device)
-        {
-            var l = new List<string>();
-            var props = stackalloc ExtensionProperties[128];
-
-            if (instance.HasValue)
+            _cachedPhyscialDevices.Clear();
+            _cachedDeviceExtensionsLock.EnterWriteLock();
+            try
             {
-                if (!device.HasValue)
-                {
-                    var physicalDeviceCount = 0u;
-                    EnumeratePhysicalDevices(instance.Value, &physicalDeviceCount, null);
-                    var physicalDevices = stackalloc PhysicalDevice[(int) physicalDeviceCount];
-                    EnumeratePhysicalDevices(instance.Value, &physicalDeviceCount, physicalDevices);
-
-                    for (var i = 0; i < physicalDeviceCount; i++)
-                    {
-                        var physicalDevice = physicalDevices[i];
-                        Add(physicalDevice, l, props);
-                    }
-                }
-                else
-                {
-                    Add(device.Value, l, props);
-                }
+                _cachedDeviceExtensions.Clear();
             }
-
-            return l.Distinct().ToList();
-        }
-
-        private unsafe void Add(ICollection<string> l, ExtensionProperties* props)
-        {
-            var result = Vulkan.Result.Incomplete;
-            while (result == Vulkan.Result.Incomplete)
+            finally
             {
-                var instanceExtPropertiesCount = 128u;
-                result = EnumerateInstanceExtensionProperties((byte*) 0, &instanceExtPropertiesCount, props);
-                if (result == Vulkan.Result.Success || result == Vulkan.Result.Incomplete)
-                {
-                    for (var i = 0; i < instanceExtPropertiesCount; i++)
-                    {
-                        l.Add(Marshal.PtrToStringAnsi((IntPtr) props[i].ExtensionName));
-                    }
-                }
+                _cachedDeviceExtensionsLock.ExitWriteLock();
             }
-        }
-
-        private unsafe List<string> Add(PhysicalDevice physicalDevice, List<string> l, ExtensionProperties* props)
-        {
-            var result = Vulkan.Result.Incomplete;
-            while (result == Vulkan.Result.Incomplete)
-            {
-                var deviceExtPropertiesCount = 128u;
-                result = EnumerateDeviceExtensionProperties
-                    (physicalDevice, (byte*) 0, &deviceExtPropertiesCount, props);
-                if (result == Vulkan.Result.Success || result == Vulkan.Result.Incomplete)
-                {
-                    for (var j = 0; j < deviceExtPropertiesCount; j++)
-                    {
-                        l.Add(Marshal.PtrToStringAnsi((IntPtr) props[j].ExtensionName));
-                    }
-                }
-            }
-
-            return l;
         }
     }
 }

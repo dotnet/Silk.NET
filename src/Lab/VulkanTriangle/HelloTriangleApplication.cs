@@ -4,9 +4,11 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Silk.NET.Core;
 using Silk.NET.Core.Native;
@@ -175,37 +177,37 @@ namespace VulkanTriangle
         {
             for (var i = 0; i < MaxFramesInFlight; i++)
             {
-                _vk.DestroySemaphore(_device, _renderFinishedSemaphores[i], (AllocationCallbacks*) null);
-                _vk.DestroySemaphore(_device, _imageAvailableSemaphores[i], (AllocationCallbacks*) null);
-                _vk.DestroyFence(_device, _inFlightFences[i], (AllocationCallbacks*) null);
+                _vk.DestroySemaphore(_device, _renderFinishedSemaphores[i], null);
+                _vk.DestroySemaphore(_device, _imageAvailableSemaphores[i], null);
+                _vk.DestroyFence(_device, _inFlightFences[i], null);
             }
 
-            _vk.DestroyCommandPool(_device, _commandPool, (AllocationCallbacks*) null);
+            _vk.DestroyCommandPool(_device, _commandPool, null);
 
             foreach (var framebuffer in _swapchainFramebuffers)
             {
-                _vk.DestroyFramebuffer(_device, framebuffer, (AllocationCallbacks*) null);
+                _vk.DestroyFramebuffer(_device, framebuffer, null);
             }
 
-            _vk.DestroyPipeline(_device, _graphicsPipeline, (AllocationCallbacks*) null);
-            _vk.DestroyPipelineLayout(_device, _pipelineLayout, (AllocationCallbacks*) null);
-            _vk.DestroyRenderPass(_device, _renderPass, (AllocationCallbacks*) null);
+            _vk.DestroyPipeline(_device, _graphicsPipeline, null);
+            _vk.DestroyPipelineLayout(_device, _pipelineLayout, null);
+            _vk.DestroyRenderPass(_device, _renderPass, null);
 
             foreach (var imageView in _swapchainImageViews)
             {
-                _vk.DestroyImageView(_device, imageView, (AllocationCallbacks*) null);
+                _vk.DestroyImageView(_device, imageView, null);
             }
 
-            _vkSwapchain.DestroySwapchain(_device, _swapchain, (AllocationCallbacks*) null);
-            _vk.DestroyDevice(_device, (AllocationCallbacks*) null);
+            _vkSwapchain.DestroySwapchain(_device, _swapchain, null);
+            _vk.DestroyDevice(_device, null);
 
             if (EnableValidationLayers)
             {
-                _debugUtils.DestroyDebugUtilsMessenger(_instance, _debugMessenger, (AllocationCallbacks*) null);
+                _debugUtils.DestroyDebugUtilsMessenger(_instance, _debugMessenger, null);
             }
 
-            _vkSurface.DestroySurface(_instance, _surface, (AllocationCallbacks*) null);
-            _vk.DestroyInstance(_instance, (AllocationCallbacks*) null);
+            _vkSurface.DestroySurface(_instance, _surface, null);
+            _vk.DestroyInstance(_instance, null);
         }
 
         private unsafe void CreateInstance()
@@ -233,8 +235,10 @@ namespace VulkanTriangle
                 PApplicationInfo = &appInfo
             };
 
-            var extensions = (byte**) _window.VkSurface!.GetRequiredExtensions(out var extCount);
-            var newExtensions = stackalloc byte*[(int)(extCount + _instanceExtensions.Length)];
+            var extensions = _window.VkSurface!.GetRequiredExtensions(out var extCount);
+            // TODO Review that this count doesn't realistically exceed 1k (recommended max for stackalloc)
+            // Should probably be allocated on heap anyway as this isn't super performance critical.
+            var newExtensions = stackalloc byte*[(int) (extCount + _instanceExtensions.Length)];
             for (var i = 0; i < extCount; i++)
             {
                 newExtensions[i] = extensions[i];
@@ -269,12 +273,12 @@ namespace VulkanTriangle
             }
 
             _vk.CurrentInstance = _instance;
-            
+
             if (!_vk.TryGetInstanceExtension(_instance, out _vkSurface))
             {
                 throw new NotSupportedException("KHR_surface extension not found.");
             }
-            
+
             Marshal.FreeHGlobal((IntPtr) appInfo.PApplicationName);
             Marshal.FreeHGlobal((IntPtr) appInfo.PEngineName);
 
@@ -334,138 +338,128 @@ namespace VulkanTriangle
 
         private unsafe void PickPhysicalDevice()
         {
-            var deviceCount = 0u;
-            _vk.EnumeratePhysicalDevices(_instance, &deviceCount, (PhysicalDevice*) null);
+            var devices = _vk.GetPhysicalDevices(_instance);
 
-            if (deviceCount == 0)
+            if (!devices.Any())
             {
                 throw new NotSupportedException("Failed to find GPUs with Vulkan support.");
             }
 
-            var devices = stackalloc PhysicalDevice[(int) deviceCount];
-            _vk.EnumeratePhysicalDevices(_instance, &deviceCount, devices);
-
-            for (var i = 0; i < deviceCount; i++)
+            _physicalDevice = devices.FirstOrDefault(device =>
             {
-                var device = devices[i];
-                if (IsDeviceSuitable(device))
+                var indices = FindQueueFamilies(device);
+
+                var extensionsSupported = CheckDeviceExtensionSupport(device);
+
+                var swapChainAdequate = false;
+                if (extensionsSupported)
                 {
-                    _physicalDevice = device;
-                    return;
+                    var swapChainSupport = QuerySwapChainSupport(device);
+                    swapChainAdequate = swapChainSupport.Formats.Length != 0 && swapChainSupport.PresentModes.Length != 0;
                 }
-            }
 
-            throw new Exception("No suitable device.");
+                return indices.IsComplete() && extensionsSupported && swapChainAdequate;
+            });
+
+            if (_physicalDevice.Handle == IntPtr.Zero)
+                throw new Exception("No suitable device.");
         }
 
-        private bool IsDeviceSuitable(PhysicalDevice device)
-        {
-            var indices = FindQueueFamilies(device);
-
-            var extensionsSupported = CheckDeviceExtensionSupport(device);
-
-            var swapChainAdequate = false;
-            if (extensionsSupported)
-            {
-                var swapChainSupport = QuerySwapChainSupport(device);
-                swapChainAdequate = swapChainSupport.Formats.Length != 0 && swapChainSupport.PresentModes.Length != 0;
-            }
-
-            return indices.IsComplete() && extensionsSupported && swapChainAdequate;
-        }
-
+        private static readonly ConcurrentDictionary<PhysicalDevice, SwapChainSupportDetails> _swapChainSupportDetailsCache
+            = new ConcurrentDictionary<PhysicalDevice, SwapChainSupportDetails>();
         private unsafe SwapChainSupportDetails QuerySwapChainSupport(PhysicalDevice device)
         {
-            var details = new SwapChainSupportDetails();
-            _vkSurface.GetPhysicalDeviceSurfaceCapabilities(device, _surface, out var surfaceCapabilities);
-            details.Capabilities = surfaceCapabilities;
-
-            var formatCount = 0u;
-            _vkSurface.GetPhysicalDeviceSurfaceFormats(device, _surface, &formatCount, (SurfaceFormatKHR*) null);
-
-            if (formatCount != 0)
+            return _swapChainSupportDetailsCache.GetOrAdd(device, d =>
             {
-                details.Formats = new SurfaceFormatKHR[formatCount];
-                var formats = stackalloc SurfaceFormatKHR[(int) formatCount];
-                _vkSurface.GetPhysicalDeviceSurfaceFormats(device, _surface, &formatCount, formats);
+                var details = new SwapChainSupportDetails();
+                _vkSurface.GetPhysicalDeviceSurfaceCapabilities(d, _surface, out var surfaceCapabilities);
+                details.Capabilities = surfaceCapabilities;
 
-                for (var i = 0; i < formatCount; i++)
+                var formatCount = 0u;
+                _vkSurface.GetPhysicalDeviceSurfaceFormats(d, _surface, &formatCount, null);
+
+                if (formatCount != 0)
                 {
-                    details.Formats[i] = formats[i];
+                    details.Formats = new SurfaceFormatKHR[formatCount];
+
+                    using var mem = GlobalMemory.Allocate((int) formatCount * sizeof(SurfaceFormatKHR));
+                    var formats = (SurfaceFormatKHR*) Unsafe.AsPointer(ref mem.GetPinnableReference());
+
+                    _vkSurface.GetPhysicalDeviceSurfaceFormats(d, _surface, &formatCount, formats);
+
+                    for (var i = 0; i < formatCount; i++)
+                    {
+                        details.Formats[i] = formats[i];
+                    }
                 }
-            }
 
-            var presentModeCount = 0u;
-            _vkSurface.GetPhysicalDeviceSurfacePresentModes(device, _surface, &presentModeCount, (PresentModeKHR*) null);
+                var presentModeCount = 0u;
+                _vkSurface.GetPhysicalDeviceSurfacePresentModes(d, _surface, &presentModeCount, null);
 
-            if (presentModeCount != 0)
-            {
-                details.PresentModes = new PresentModeKHR[presentModeCount];
-                var modes = stackalloc PresentModeKHR[(int) presentModeCount];
-                _vkSurface.GetPhysicalDeviceSurfacePresentModes(device, _surface, &presentModeCount, modes);
-
-                for (var i = 0; i < presentModeCount; i++)
+                if (presentModeCount != 0)
                 {
-                    details.PresentModes[i] = modes[i];
-                }
-            }
+                    details.PresentModes = new PresentModeKHR[presentModeCount];
 
-            return details;
+                    using var mem = GlobalMemory.Allocate((int) presentModeCount * sizeof(PresentModeKHR));
+                    var modes = (PresentModeKHR*) Unsafe.AsPointer(ref mem.GetPinnableReference());
+
+                    _vkSurface.GetPhysicalDeviceSurfacePresentModes(d, _surface, &presentModeCount, modes);
+
+                    for (var i = 0; i < presentModeCount; i++)
+                    {
+                        details.PresentModes[i] = modes[i];
+                    }
+                }
+
+                return details;
+            });
         }
 
         private unsafe bool CheckDeviceExtensionSupport(PhysicalDevice device)
         {
-            uint extensionCount;
-            _vk.EnumerateDeviceExtensionProperties(device, (byte*) null, &extensionCount, (ExtensionProperties*) null);
-
-            var availableExtensions = stackalloc ExtensionProperties[(int) extensionCount];
-            _vk.EnumerateDeviceExtensionProperties(device, (byte*) null, &extensionCount, availableExtensions);
-
-            var requiredExtensions = new List<string>();
-            requiredExtensions.AddRange(_deviceExtensions);
-
-            for (var i = 0u; i < extensionCount; i++)
-            {
-                requiredExtensions.Remove(Marshal.PtrToStringAnsi((IntPtr) availableExtensions[i].ExtensionName));
-            }
-
-            return requiredExtensions.Count == 0;
+            return _deviceExtensions.All(ext => _vk.IsDeviceExtensionPresent(device, ext));
         }
 
+        private static readonly ConcurrentDictionary<PhysicalDevice, QueueFamilyIndices> _queueFamilyIndicesCache
+            = new ConcurrentDictionary<PhysicalDevice, QueueFamilyIndices>();
         private unsafe QueueFamilyIndices FindQueueFamilies(PhysicalDevice device)
         {
-            var indices = new QueueFamilyIndices();
-
-            uint queryFamilyCount = 0;
-            _vk.GetPhysicalDeviceQueueFamilyProperties(device, &queryFamilyCount, (QueueFamilyProperties*) null);
-
-            var queueFamilies = stackalloc QueueFamilyProperties[(int) queryFamilyCount];
-
-            _vk.GetPhysicalDeviceQueueFamilyProperties(device, &queryFamilyCount, queueFamilies);
-            for (var i = 0u; i < queryFamilyCount; i++)
+            return _queueFamilyIndicesCache.GetOrAdd(device, d =>
             {
-                var queueFamily = queueFamilies[i];
-                // note: HasFlag is slow on .NET Core 2.1 and below.
-                // if you're targeting these versions, use ((queueFamily.QueueFlags & QueueFlags.QueueGraphicsBit) != 0)
-                if (queueFamily.QueueFlags.HasFlag(QueueFlags.QueueGraphicsBit))
+                var indices = new QueueFamilyIndices();
+
+                uint queryFamilyCount = 0;
+                _vk.GetPhysicalDeviceQueueFamilyProperties(d, &queryFamilyCount, null);
+
+                using var mem = GlobalMemory.Allocate((int) queryFamilyCount * sizeof(QueueFamilyProperties));
+                var queueFamilies = (QueueFamilyProperties*) Unsafe.AsPointer(ref mem.GetPinnableReference());
+
+                _vk.GetPhysicalDeviceQueueFamilyProperties(d, &queryFamilyCount, queueFamilies);
+                for (var i = 0u; i < queryFamilyCount; i++)
                 {
-                    indices.GraphicsFamily = i;
+                    var queueFamily = queueFamilies[i];
+                    // note: HasFlag is slow on .NET Core 2.1 and below.
+                    // if you're targeting these versions, use ((queueFamily.QueueFlags & QueueFlags.QueueGraphicsBit) != 0)
+                    if (queueFamily.QueueFlags.HasFlag(QueueFlags.QueueGraphicsBit))
+                    {
+                        indices.GraphicsFamily = i;
+                    }
+
+                    _vkSurface.GetPhysicalDeviceSurfaceSupport(d, i, _surface, out var presentSupport);
+
+                    if (presentSupport == Vk.True)
+                    {
+                        indices.PresentFamily = i;
+                    }
+
+                    if (indices.IsComplete())
+                    {
+                        break;
+                    }
                 }
 
-                _vkSurface.GetPhysicalDeviceSurfaceSupport(device, i, _surface, out var presentSupport);
-
-                if (presentSupport == Vk.True)
-                {
-                    indices.PresentFamily = i;
-                }
-
-                if (indices.IsComplete())
-                {
-                    break;
-                }
-            }
-
-            return indices;
+                return indices;
+            });
         }
 
         public struct QueueFamilyIndices
@@ -490,7 +484,9 @@ namespace VulkanTriangle
         {
             var indices = FindQueueFamilies(_physicalDevice);
             var uniqueQueueFamilies = new[] { indices.GraphicsFamily.Value, indices.PresentFamily.Value };
-            var queueCreateInfos = stackalloc DeviceQueueCreateInfo[uniqueQueueFamilies.Length];
+
+            using var mem = GlobalMemory.Allocate((int) uniqueQueueFamilies.Length * sizeof(DeviceQueueCreateInfo));
+            var queueCreateInfos = (DeviceQueueCreateInfo*) Unsafe.AsPointer(ref mem.GetPinnableReference());
 
             var queuePriority = 1f;
             for (var i = 0; i < uniqueQueueFamilies.Length; i++)
@@ -607,7 +603,7 @@ namespace VulkanTriangle
                 {
                     throw new NotSupportedException("KHR_swapchain extension not found.");
                 }
-                
+
                 fixed (SwapchainKHR* swapchain = &_swapchain)
                 {
                     if (_vkSwapchain.CreateSwapchain(_device, &createInfo, null, swapchain) != Result.Success)
@@ -617,7 +613,7 @@ namespace VulkanTriangle
                 }
             }
 
-            _vkSwapchain.GetSwapchainImages(_device, _swapchain, &imageCount, (Image*) null);
+            _vkSwapchain.GetSwapchainImages(_device, _swapchain, &imageCount, null);
             _swapchainImages = new Image[imageCount];
             fixed (Image* swapchainImage = _swapchainImages)
             {
@@ -917,8 +913,8 @@ namespace VulkanTriangle
                 }
             }
 
-            _vk.DestroyShaderModule(_device, fragShaderModule, (AllocationCallbacks*) null);
-            _vk.DestroyShaderModule(_device, vertShaderModule, (AllocationCallbacks*) null);
+            _vk.DestroyShaderModule(_device, fragShaderModule, null);
+            _vk.DestroyShaderModule(_device, vertShaderModule, null);
         }
 
         private unsafe ShaderModule CreateShaderModule(byte[] code)
