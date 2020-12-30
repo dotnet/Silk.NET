@@ -236,6 +236,8 @@ namespace VulkanTriangle
             };
 
             var extensions = _window.VkSurface!.GetRequiredExtensions(out var extCount);
+            // TODO Review that this count doesn't realistically exceed 1k (recommended max for stackalloc)
+            // Should probably be allocated on heap anyway as this isn't super performance critical.
             var newExtensions = stackalloc byte*[(int) (extCount + _instanceExtensions.Length)];
             for (var i = 0; i < extCount; i++)
             {
@@ -482,7 +484,9 @@ namespace VulkanTriangle
         {
             var indices = FindQueueFamilies(_physicalDevice);
             var uniqueQueueFamilies = new[] { indices.GraphicsFamily.Value, indices.PresentFamily.Value };
-            var queueCreateInfos = stackalloc DeviceQueueCreateInfo[uniqueQueueFamilies.Length];
+
+            using var mem = GlobalMemory.Allocate((int) uniqueQueueFamilies.Length * sizeof(DeviceQueueCreateInfo));
+            var queueCreateInfos = (DeviceQueueCreateInfo*) Unsafe.AsPointer(ref mem.GetPinnableReference());
 
             var queuePriority = 1f;
             for (var i = 0; i < uniqueQueueFamilies.Length; i++)

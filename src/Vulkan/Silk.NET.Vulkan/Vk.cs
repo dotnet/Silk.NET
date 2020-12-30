@@ -228,6 +228,7 @@ namespace Silk.NET.Vulkan
             var prefix = device.Handle.ToString();
             var prefix_sep = prefix + '|';
             var fullKey = prefix_sep + extension;
+            var result = false;
 
             // We place a devices handle into the hashset to indicate it has been previously loaded.
             // We then prefix entries with '<Handle>|' which will never collide with '<Handle>' (which is an
@@ -242,7 +243,6 @@ namespace Silk.NET.Vulkan
             _cachedDeviceExtensionsLock.EnterUpgradeableReadLock();
 
             // We check for the extension first to avoid 2 lookups
-            var result = false;
             if (_cachedDeviceExtensions.Contains(fullKey))
             {
                 // We found the extension
