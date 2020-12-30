@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "Buffer")]
-    public enum Buffer
+    public enum BufferKind
     {
         [NativeName("Name", "GL_COLOR")]
         Color = 0x1800,

@@ -216,7 +216,7 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.ClearNamedFramebuffer(framebuffer, buffer, drawbuffer, in value.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedFramebuffer(this GL thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] ReadOnlySpan<int> value)
+        public static unsafe void ClearNamedFramebuffer(this GL thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] BufferKind buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] ReadOnlySpan<int> value)
         {
             // SpanOverloader
             thisApi.ClearNamedFramebuffer(framebuffer, buffer, drawbuffer, in value.GetPinnableReference());
@@ -228,7 +228,7 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.ClearNamedFramebuffer(framebuffer, buffer, drawbuffer, in value.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedFramebuffer(this GL thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
+        public static unsafe void ClearNamedFramebuffer(this GL thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] BufferKind buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // SpanOverloader
             thisApi.ClearNamedFramebuffer(framebuffer, buffer, drawbuffer, in value.GetPinnableReference());
@@ -240,7 +240,7 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.ClearNamedFramebuffer(framebuffer, buffer, drawbuffer, in value.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedFramebuffer(this GL thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        public static unsafe void ClearNamedFramebuffer(this GL thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] BufferKind buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.ClearNamedFramebuffer(framebuffer, buffer, drawbuffer, in value.GetPinnableReference());
@@ -288,7 +288,19 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.CreateBuffers(n, out buffers.GetPinnableReference());
         }
 
+        public static unsafe void CreateBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Buffer> buffers)
+        {
+            // SpanOverloader
+            thisApi.CreateBuffers(n, out buffers.GetPinnableReference());
+        }
+
         public static unsafe void CreateFramebuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> framebuffers)
+        {
+            // SpanOverloader
+            thisApi.CreateFramebuffers(n, out framebuffers.GetPinnableReference());
+        }
+
+        public static unsafe void CreateFramebuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Framebuffer> framebuffers)
         {
             // SpanOverloader
             thisApi.CreateFramebuffers(n, out framebuffers.GetPinnableReference());
@@ -300,7 +312,19 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.CreateProgramPipelines(n, out pipelines.GetPinnableReference());
         }
 
+        public static unsafe void CreateProgramPipelines(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<ProgramPipeline> pipelines)
+        {
+            // SpanOverloader
+            thisApi.CreateProgramPipelines(n, out pipelines.GetPinnableReference());
+        }
+
         public static unsafe void CreateQueries(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+        {
+            // SpanOverloader
+            thisApi.CreateQueries(target, n, out ids.GetPinnableReference());
+        }
+
+        public static unsafe void CreateQueries(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Query> ids)
         {
             // SpanOverloader
             thisApi.CreateQueries(target, n, out ids.GetPinnableReference());
@@ -312,7 +336,19 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.CreateQueries(target, n, out ids.GetPinnableReference());
         }
 
+        public static unsafe void CreateQueries(this GL thisApi, [Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Query> ids)
+        {
+            // SpanOverloader
+            thisApi.CreateQueries(target, n, out ids.GetPinnableReference());
+        }
+
         public static unsafe void CreateRenderbuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> renderbuffers)
+        {
+            // SpanOverloader
+            thisApi.CreateRenderbuffers(n, out renderbuffers.GetPinnableReference());
+        }
+
+        public static unsafe void CreateRenderbuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Renderbuffer> renderbuffers)
         {
             // SpanOverloader
             thisApi.CreateRenderbuffers(n, out renderbuffers.GetPinnableReference());
@@ -324,7 +360,19 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.CreateSamplers(n, out samplers.GetPinnableReference());
         }
 
+        public static unsafe void CreateSamplers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Sampler> samplers)
+        {
+            // SpanOverloader
+            thisApi.CreateSamplers(n, out samplers.GetPinnableReference());
+        }
+
         public static unsafe void CreateTextures(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures)
+        {
+            // SpanOverloader
+            thisApi.CreateTextures(target, n, out textures.GetPinnableReference());
+        }
+
+        public static unsafe void CreateTextures(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Texture> textures)
         {
             // SpanOverloader
             thisApi.CreateTextures(target, n, out textures.GetPinnableReference());
@@ -336,13 +384,31 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.CreateTextures(target, n, out textures.GetPinnableReference());
         }
 
+        public static unsafe void CreateTextures(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Texture> textures)
+        {
+            // SpanOverloader
+            thisApi.CreateTextures(target, n, out textures.GetPinnableReference());
+        }
+
         public static unsafe void CreateTransformFeedbacks(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
         {
             // SpanOverloader
             thisApi.CreateTransformFeedbacks(n, out ids.GetPinnableReference());
         }
 
+        public static unsafe void CreateTransformFeedbacks(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<TransformFeedback> ids)
+        {
+            // SpanOverloader
+            thisApi.CreateTransformFeedbacks(n, out ids.GetPinnableReference());
+        }
+
         public static unsafe void CreateVertexArrays(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays)
+        {
+            // SpanOverloader
+            thisApi.CreateVertexArrays(n, out arrays.GetPinnableReference());
+        }
+
+        public static unsafe void CreateVertexArrays(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<VertexArray> arrays)
         {
             // SpanOverloader
             thisApi.CreateVertexArrays(n, out arrays.GetPinnableReference());
@@ -1608,13 +1674,67 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.VertexArrayVertexBuffers(vaobj, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in strides.GetPinnableReference());
         }
 
+        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] IntPtr* offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // SpanOverloader
+            thisApi.VertexArrayVertexBuffers(vaobj, first, count, buffers, offsets, in strides.GetPinnableReference());
+        }
+
+        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Flow(FlowDirection.In)] uint* strides)
+        {
+            // SpanOverloader
+            thisApi.VertexArrayVertexBuffers(vaobj, first, count, buffers, in offsets.GetPinnableReference(), strides);
+        }
+
+        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // SpanOverloader
+            thisApi.VertexArrayVertexBuffers(vaobj, first, count, buffers, in offsets.GetPinnableReference(), in strides.GetPinnableReference());
+        }
+
+        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] IntPtr* offsets, [Flow(FlowDirection.In)] uint* strides)
+        {
+            // SpanOverloader
+            thisApi.VertexArrayVertexBuffers(vaobj, first, count, in buffers.GetPinnableReference(), offsets, strides);
+        }
+
+        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] IntPtr* offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // SpanOverloader
+            thisApi.VertexArrayVertexBuffers(vaobj, first, count, in buffers.GetPinnableReference(), offsets, in strides.GetPinnableReference());
+        }
+
+        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Flow(FlowDirection.In)] uint* strides)
+        {
+            // SpanOverloader
+            thisApi.VertexArrayVertexBuffers(vaobj, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), strides);
+        }
+
+        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // SpanOverloader
+            thisApi.VertexArrayVertexBuffers(vaobj, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in strides.GetPinnableReference());
+        }
+
         public static unsafe void BindBuffersBase(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers)
         {
             // SpanOverloader
             thisApi.BindBuffersBase(target, first, count, in buffers.GetPinnableReference());
         }
 
+        public static unsafe void BindBuffersBase(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersBase(target, first, count, in buffers.GetPinnableReference());
+        }
+
         public static unsafe void BindBuffersBase(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersBase(target, first, count, in buffers.GetPinnableReference());
+        }
+
+        public static unsafe void BindBuffersBase(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers)
         {
             // SpanOverloader
             thisApi.BindBuffersBase(target, first, count, in buffers.GetPinnableReference());
@@ -1662,6 +1782,48 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
         }
 
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, buffers, offsets, in sizes.GetPinnableReference());
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, buffers, in offsets.GetPinnableReference(), sizes);
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, buffers, in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), offsets, sizes);
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), offsets, in sizes.GetPinnableReference());
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), sizes);
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
+        }
+
         public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> sizes)
         {
             // SpanOverloader
@@ -1704,7 +1866,55 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
         }
 
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, buffers, offsets, in sizes.GetPinnableReference());
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, buffers, in offsets.GetPinnableReference(), sizes);
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, buffers, in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), offsets, sizes);
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), offsets, in sizes.GetPinnableReference());
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), sizes);
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
+        }
+
         public static unsafe void BindImageTextures(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures)
+        {
+            // SpanOverloader
+            thisApi.BindImageTextures(first, count, in textures.GetPinnableReference());
+        }
+
+        public static unsafe void BindImageTextures(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures)
         {
             // SpanOverloader
             thisApi.BindImageTextures(first, count, in textures.GetPinnableReference());
@@ -1716,7 +1926,19 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.BindSamplers(first, count, in samplers.GetPinnableReference());
         }
 
+        public static unsafe void BindSamplers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Sampler> samplers)
+        {
+            // SpanOverloader
+            thisApi.BindSamplers(first, count, in samplers.GetPinnableReference());
+        }
+
         public static unsafe void BindTextures(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures)
+        {
+            // SpanOverloader
+            thisApi.BindTextures(first, count, in textures.GetPinnableReference());
+        }
+
+        public static unsafe void BindTextures(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures)
         {
             // SpanOverloader
             thisApi.BindTextures(first, count, in textures.GetPinnableReference());
@@ -1759,6 +1981,48 @@ namespace Silk.NET.OpenGL.Legacy
         }
 
         public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // SpanOverloader
+            thisApi.BindVertexBuffers(first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in strides.GetPinnableReference());
+        }
+
+        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // SpanOverloader
+            thisApi.BindVertexBuffers(first, count, buffers, offsets, in strides.GetPinnableReference());
+        }
+
+        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides)
+        {
+            // SpanOverloader
+            thisApi.BindVertexBuffers(first, count, buffers, in offsets.GetPinnableReference(), strides);
+        }
+
+        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // SpanOverloader
+            thisApi.BindVertexBuffers(first, count, buffers, in offsets.GetPinnableReference(), in strides.GetPinnableReference());
+        }
+
+        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides)
+        {
+            // SpanOverloader
+            thisApi.BindVertexBuffers(first, count, in buffers.GetPinnableReference(), offsets, strides);
+        }
+
+        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // SpanOverloader
+            thisApi.BindVertexBuffers(first, count, in buffers.GetPinnableReference(), offsets, in strides.GetPinnableReference());
+        }
+
+        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides)
+        {
+            // SpanOverloader
+            thisApi.BindVertexBuffers(first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), strides);
+        }
+
+        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
         {
             // SpanOverloader
             thisApi.BindVertexBuffers(first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in strides.GetPinnableReference());
@@ -7410,6 +7674,12 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.DeleteProgramPipelines(n, in pipelines.GetPinnableReference());
         }
 
+        public static unsafe void DeleteProgramPipelines(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<ProgramPipeline> pipelines)
+        {
+            // SpanOverloader
+            thisApi.DeleteProgramPipelines(n, in pipelines.GetPinnableReference());
+        }
+
         public static unsafe void DepthRangeArray(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // SpanOverloader
@@ -7417,6 +7687,12 @@ namespace Silk.NET.OpenGL.Legacy
         }
 
         public static unsafe void GenProgramPipelines(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> pipelines)
+        {
+            // SpanOverloader
+            thisApi.GenProgramPipelines(n, out pipelines.GetPinnableReference());
+        }
+
+        public static unsafe void GenProgramPipelines(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<ProgramPipeline> pipelines)
         {
             // SpanOverloader
             thisApi.GenProgramPipelines(n, out pipelines.GetPinnableReference());
@@ -7872,6 +8148,42 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), length);
         }
 
+        public static unsafe void ShaderBinary<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), length);
+        }
+
+        public static unsafe void ShaderBinary(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
+        {
+            // SpanOverloader
+            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, binary, length);
+        }
+
+        public static unsafe void ShaderBinary<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), length);
+        }
+
+        public static unsafe void ShaderBinary<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), length);
+        }
+
+        public static unsafe void ShaderBinary(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
+        {
+            // SpanOverloader
+            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, binary, length);
+        }
+
+        public static unsafe void ShaderBinary<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), length);
+        }
+
         public static unsafe void VertexAttribL1(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // SpanOverloader
@@ -7926,6 +8238,12 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.DeleteTransformFeedbacks(n, in ids.GetPinnableReference());
         }
 
+        public static unsafe void DeleteTransformFeedbacks(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<TransformFeedback> ids)
+        {
+            // SpanOverloader
+            thisApi.DeleteTransformFeedbacks(n, in ids.GetPinnableReference());
+        }
+
         public static unsafe void DrawArraysIndirect<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect) where T0 : unmanaged
         {
             // SpanOverloader
@@ -7963,6 +8281,12 @@ namespace Silk.NET.OpenGL.Legacy
         }
 
         public static unsafe void GenTransformFeedbacks(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+        {
+            // SpanOverloader
+            thisApi.GenTransformFeedbacks(n, out ids.GetPinnableReference());
+        }
+
+        public static unsafe void GenTransformFeedbacks(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<TransformFeedback> ids)
         {
             // SpanOverloader
             thisApi.GenTransformFeedbacks(n, out ids.GetPinnableReference());
@@ -8340,7 +8664,19 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.DeleteSamplers(count, in samplers.GetPinnableReference());
         }
 
+        public static unsafe void DeleteSamplers(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Sampler> samplers)
+        {
+            // SpanOverloader
+            thisApi.DeleteSamplers(count, in samplers.GetPinnableReference());
+        }
+
         public static unsafe void GenSamplers(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> samplers)
+        {
+            // SpanOverloader
+            thisApi.GenSamplers(count, out samplers.GetPinnableReference());
+        }
+
+        public static unsafe void GenSamplers(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<Sampler> samplers)
         {
             // SpanOverloader
             thisApi.GenSamplers(count, out samplers.GetPinnableReference());
@@ -9210,7 +9546,7 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.ClearBuffer(buffer, drawbuffer, in value.GetPinnableReference());
         }
 
-        public static unsafe void ClearBuffer(this GL thisApi, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
+        public static unsafe void ClearBuffer(this GL thisApi, [Flow(FlowDirection.In)] BufferKind buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
         {
             // SpanOverloader
             thisApi.ClearBuffer(buffer, drawbuffer, in value.GetPinnableReference());
@@ -9222,7 +9558,7 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.ClearBuffer(buffer, drawbuffer, in value.GetPinnableReference());
         }
 
-        public static unsafe void ClearBuffer(this GL thisApi, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
+        public static unsafe void ClearBuffer(this GL thisApi, [Flow(FlowDirection.In)] BufferKind buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // SpanOverloader
             thisApi.ClearBuffer(buffer, drawbuffer, in value.GetPinnableReference());
@@ -9234,7 +9570,7 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.ClearBuffer(buffer, drawbuffer, in value.GetPinnableReference());
         }
 
-        public static unsafe void ClearBuffer(this GL thisApi, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        public static unsafe void ClearBuffer(this GL thisApi, [Flow(FlowDirection.In)] BufferKind buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.ClearBuffer(buffer, drawbuffer, in value.GetPinnableReference());
@@ -9246,7 +9582,19 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.DeleteFramebuffers(n, in framebuffers.GetPinnableReference());
         }
 
+        public static unsafe void DeleteFramebuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Framebuffer> framebuffers)
+        {
+            // SpanOverloader
+            thisApi.DeleteFramebuffers(n, in framebuffers.GetPinnableReference());
+        }
+
         public static unsafe void DeleteRenderbuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> renderbuffers)
+        {
+            // SpanOverloader
+            thisApi.DeleteRenderbuffers(n, in renderbuffers.GetPinnableReference());
+        }
+
+        public static unsafe void DeleteRenderbuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Renderbuffer> renderbuffers)
         {
             // SpanOverloader
             thisApi.DeleteRenderbuffers(n, in renderbuffers.GetPinnableReference());
@@ -9258,7 +9606,19 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.DeleteVertexArrays(n, in arrays.GetPinnableReference());
         }
 
+        public static unsafe void DeleteVertexArrays(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<VertexArray> arrays)
+        {
+            // SpanOverloader
+            thisApi.DeleteVertexArrays(n, in arrays.GetPinnableReference());
+        }
+
         public static unsafe void GenFramebuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> framebuffers)
+        {
+            // SpanOverloader
+            thisApi.GenFramebuffers(n, out framebuffers.GetPinnableReference());
+        }
+
+        public static unsafe void GenFramebuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Framebuffer> framebuffers)
         {
             // SpanOverloader
             thisApi.GenFramebuffers(n, out framebuffers.GetPinnableReference());
@@ -9270,7 +9630,19 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.GenRenderbuffers(n, out renderbuffers.GetPinnableReference());
         }
 
+        public static unsafe void GenRenderbuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Renderbuffer> renderbuffers)
+        {
+            // SpanOverloader
+            thisApi.GenRenderbuffers(n, out renderbuffers.GetPinnableReference());
+        }
+
         public static unsafe void GenVertexArrays(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays)
+        {
+            // SpanOverloader
+            thisApi.GenVertexArrays(n, out arrays.GetPinnableReference());
+        }
+
+        public static unsafe void GenVertexArrays(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<VertexArray> arrays)
         {
             // SpanOverloader
             thisApi.GenVertexArrays(n, out arrays.GetPinnableReference());
@@ -10512,6 +10884,24 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.GetAttachedShaders(program, maxCount, out count.GetPinnableReference(), out shaders.GetPinnableReference());
         }
 
+        public static unsafe void GetAttachedShaders(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] uint* count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] Span<Shader> shaders)
+        {
+            // SpanOverloader
+            thisApi.GetAttachedShaders(program, maxCount, count, out shaders.GetPinnableReference());
+        }
+
+        public static unsafe void GetAttachedShaders(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] Shader* shaders)
+        {
+            // SpanOverloader
+            thisApi.GetAttachedShaders(program, maxCount, out count.GetPinnableReference(), shaders);
+        }
+
+        public static unsafe void GetAttachedShaders(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] Span<Shader> shaders)
+        {
+            // SpanOverloader
+            thisApi.GetAttachedShaders(program, maxCount, out count.GetPinnableReference(), out shaders.GetPinnableReference());
+        }
+
         public static unsafe int GetAttribLocation(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name)
         {
             // SpanOverloader
@@ -10956,7 +11346,19 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.DeleteBuffers(n, in buffers.GetPinnableReference());
         }
 
+        public static unsafe void DeleteBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers)
+        {
+            // SpanOverloader
+            thisApi.DeleteBuffers(n, in buffers.GetPinnableReference());
+        }
+
         public static unsafe void DeleteQueries(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids)
+        {
+            // SpanOverloader
+            thisApi.DeleteQueries(n, in ids.GetPinnableReference());
+        }
+
+        public static unsafe void DeleteQueries(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Query> ids)
         {
             // SpanOverloader
             thisApi.DeleteQueries(n, in ids.GetPinnableReference());
@@ -10968,7 +11370,19 @@ namespace Silk.NET.OpenGL.Legacy
             thisApi.GenBuffers(n, out buffers.GetPinnableReference());
         }
 
+        public static unsafe void GenBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Buffer> buffers)
+        {
+            // SpanOverloader
+            thisApi.GenBuffers(n, out buffers.GetPinnableReference());
+        }
+
         public static unsafe void GenQueries(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+        {
+            // SpanOverloader
+            thisApi.GenQueries(n, out ids.GetPinnableReference());
+        }
+
+        public static unsafe void GenQueries(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Query> ids)
         {
             // SpanOverloader
             thisApi.GenQueries(n, out ids.GetPinnableReference());
@@ -11891,6 +12305,48 @@ namespace Silk.NET.OpenGL.Legacy
         }
 
         [System.Obsolete("Deprecated in version 1.1")]
+        public static unsafe bool AreTexturesResident(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
+        {
+            // SpanOverloader
+            return thisApi.AreTexturesResident(n, textures, out residences.GetPinnableReference());
+        }
+
+        [System.Obsolete("Deprecated in version 1.1")]
+        public static unsafe bool AreTexturesResident(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences)
+        {
+            // SpanOverloader
+            return thisApi.AreTexturesResident(n, in textures.GetPinnableReference(), residences);
+        }
+
+        [System.Obsolete("Deprecated in version 1.1")]
+        public static unsafe bool AreTexturesResident(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
+        {
+            // SpanOverloader
+            return thisApi.AreTexturesResident(n, in textures.GetPinnableReference(), out residences.GetPinnableReference());
+        }
+
+        [System.Obsolete("Deprecated in version 1.1")]
+        public static unsafe bool AreTexturesResident(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
+        {
+            // SpanOverloader
+            return thisApi.AreTexturesResident(n, textures, out residences.GetPinnableReference());
+        }
+
+        [System.Obsolete("Deprecated in version 1.1")]
+        public static unsafe bool AreTexturesResident(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences)
+        {
+            // SpanOverloader
+            return thisApi.AreTexturesResident(n, in textures.GetPinnableReference(), residences);
+        }
+
+        [System.Obsolete("Deprecated in version 1.1")]
+        public static unsafe bool AreTexturesResident(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
+        {
+            // SpanOverloader
+            return thisApi.AreTexturesResident(n, in textures.GetPinnableReference(), out residences.GetPinnableReference());
+        }
+
+        [System.Obsolete("Deprecated in version 1.1")]
         public static unsafe void ColorPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
         {
             // SpanOverloader
@@ -11905,6 +12361,12 @@ namespace Silk.NET.OpenGL.Legacy
         }
 
         public static unsafe void DeleteTextures(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures)
+        {
+            // SpanOverloader
+            thisApi.DeleteTextures(n, in textures.GetPinnableReference());
+        }
+
+        public static unsafe void DeleteTextures(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures)
         {
             // SpanOverloader
             thisApi.DeleteTextures(n, in textures.GetPinnableReference());
@@ -11942,6 +12404,12 @@ namespace Silk.NET.OpenGL.Legacy
         }
 
         public static unsafe void GenTextures(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures)
+        {
+            // SpanOverloader
+            thisApi.GenTextures(n, out textures.GetPinnableReference());
+        }
+
+        public static unsafe void GenTextures(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Texture> textures)
         {
             // SpanOverloader
             thisApi.GenTextures(n, out textures.GetPinnableReference());
@@ -12012,6 +12480,27 @@ namespace Silk.NET.OpenGL.Legacy
 
         [System.Obsolete("Deprecated in version 1.1")]
         public static unsafe void PrioritizeTextures(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> priorities)
+        {
+            // SpanOverloader
+            thisApi.PrioritizeTextures(n, in textures.GetPinnableReference(), in priorities.GetPinnableReference());
+        }
+
+        [System.Obsolete("Deprecated in version 1.1")]
+        public static unsafe void PrioritizeTextures(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> priorities)
+        {
+            // SpanOverloader
+            thisApi.PrioritizeTextures(n, textures, in priorities.GetPinnableReference());
+        }
+
+        [System.Obsolete("Deprecated in version 1.1")]
+        public static unsafe void PrioritizeTextures(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities)
+        {
+            // SpanOverloader
+            thisApi.PrioritizeTextures(n, in textures.GetPinnableReference(), priorities);
+        }
+
+        [System.Obsolete("Deprecated in version 1.1")]
+        public static unsafe void PrioritizeTextures(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> priorities)
         {
             // SpanOverloader
             thisApi.PrioritizeTextures(n, in textures.GetPinnableReference(), in priorities.GetPinnableReference());

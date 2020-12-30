@@ -75,6 +75,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         public string OriginalGroup { get; set; }
 
         /// <summary>
+        /// Gets or sets the original class of this type.
+        /// </summary>
+        public string OriginalClass { get; set; }
+
+        /// <summary>
         /// Gets or sets the generic types arguments for this type.
         /// </summary>
         public List<Type> GenericTypes { get; set; } = new List<Type>();

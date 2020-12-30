@@ -177,7 +177,21 @@ namespace Silk.NET.BuildTools.Converters.Constructors
         /// <inheritdoc />
         public void WriteStructs(Profile profile, IEnumerable<Struct> structs, BindTask task)
         {
-            // do nothing
+            if (!profile.Projects.ContainsKey("Core"))
+            {
+                profile.Projects.Add
+                (
+                    "Core",
+                    new Project
+                    {
+                        IsRoot = true,
+                        Namespace = string.Empty,
+                        Classes = new List<Class>{new Class{ClassName = task.ConverterOpts.ClassName}}
+                    }
+                );
+            }
+            
+            profile.Projects["Core"].Structs.AddRange(structs);
         }
 
         /// <inheritdoc />
