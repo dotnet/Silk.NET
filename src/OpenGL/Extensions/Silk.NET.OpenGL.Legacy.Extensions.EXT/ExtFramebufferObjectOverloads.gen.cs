@@ -24,7 +24,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.DeleteFramebuffers(n, in framebuffers.GetPinnableReference());
         }
 
+        public static unsafe void DeleteFramebuffers(this ExtFramebufferObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Framebuffer> framebuffers)
+        {
+            // SpanOverloader
+            thisApi.DeleteFramebuffers(n, in framebuffers.GetPinnableReference());
+        }
+
         public static unsafe void DeleteRenderbuffers(this ExtFramebufferObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> renderbuffers)
+        {
+            // SpanOverloader
+            thisApi.DeleteRenderbuffers(n, in renderbuffers.GetPinnableReference());
+        }
+
+        public static unsafe void DeleteRenderbuffers(this ExtFramebufferObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Renderbuffer> renderbuffers)
         {
             // SpanOverloader
             thisApi.DeleteRenderbuffers(n, in renderbuffers.GetPinnableReference());
@@ -36,7 +48,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.GenFramebuffers(n, out framebuffers.GetPinnableReference());
         }
 
+        public static unsafe void GenFramebuffers(this ExtFramebufferObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Framebuffer> framebuffers)
+        {
+            // SpanOverloader
+            thisApi.GenFramebuffers(n, out framebuffers.GetPinnableReference());
+        }
+
         public static unsafe void GenRenderbuffers(this ExtFramebufferObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> renderbuffers)
+        {
+            // SpanOverloader
+            thisApi.GenRenderbuffers(n, out renderbuffers.GetPinnableReference());
+        }
+
+        public static unsafe void GenRenderbuffers(this ExtFramebufferObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Renderbuffer> renderbuffers)
         {
             // SpanOverloader
             thisApi.GenRenderbuffers(n, out renderbuffers.GetPinnableReference());

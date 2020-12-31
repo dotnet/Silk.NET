@@ -46,6 +46,30 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
         public partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
 
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
+
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out bool residences);
+
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
+
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out bool residences);
+
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
+
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
+
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public unsafe partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
+
+        [NativeApi(EntryPoint = "glAreTexturesResidentEXT")]
+        public partial bool AreTexturesResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
+
         [NativeApi(EntryPoint = "glBindTextureEXT")]
         public partial void BindTexture([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint texture);
 
@@ -58,11 +82,23 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glDeleteTexturesEXT")]
         public partial void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures);
 
+        [NativeApi(EntryPoint = "glDeleteTexturesEXT")]
+        public unsafe partial void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures);
+
+        [NativeApi(EntryPoint = "glDeleteTexturesEXT")]
+        public partial void DeleteTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures);
+
         [NativeApi(EntryPoint = "glGenTexturesEXT")]
         public unsafe partial void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* textures);
 
         [NativeApi(EntryPoint = "glGenTexturesEXT")]
         public partial void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint textures);
+
+        [NativeApi(EntryPoint = "glGenTexturesEXT")]
+        public unsafe partial void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Texture* textures);
+
+        [NativeApi(EntryPoint = "glGenTexturesEXT")]
+        public partial void GenTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Texture textures);
 
         [NativeApi(EntryPoint = "glIsTextureEXT")]
         public partial bool IsTexture([Flow(FlowDirection.In)] uint texture);
@@ -78,6 +114,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 
         [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
         public partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float priorities);
+
+        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
+        public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities);
+
+        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
+        public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float priorities);
+
+        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
+        public unsafe partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities);
+
+        [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
+        public partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float priorities);
 
         public unsafe void DeleteTexture([Count(Parameter = "n"), Flow(FlowDirection.In)] uint textures)
         {

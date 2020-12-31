@@ -676,6 +676,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
         [NativeApi(EntryPoint = "glPrioritizeTexturesxOES")]
         public partial void PrioritizeTexturesx([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] in int priorities);
 
+        [NativeApi(EntryPoint = "glPrioritizeTexturesxOES")]
+        public unsafe partial void PrioritizeTexturesx([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] int* priorities);
+
+        [NativeApi(EntryPoint = "glPrioritizeTexturesxOES")]
+        public unsafe partial void PrioritizeTexturesx([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] in int priorities);
+
+        [NativeApi(EntryPoint = "glPrioritizeTexturesxOES")]
+        public unsafe partial void PrioritizeTexturesx([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] int* priorities);
+
+        [NativeApi(EntryPoint = "glPrioritizeTexturesxOES")]
+        public partial void PrioritizeTexturesx([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] in int priorities);
+
         [NativeApi(EntryPoint = "glRasterPos2xOES")]
         public partial void RasterPos2x([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y);
 

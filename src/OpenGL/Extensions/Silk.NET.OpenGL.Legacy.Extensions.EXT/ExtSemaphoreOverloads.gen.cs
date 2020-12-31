@@ -156,6 +156,258 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), in dstLayouts.GetPinnableReference());
         }
 
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, textures, in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] EXT* dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), dstLayouts);
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] EXT* dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, dstLayouts);
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] EXT* dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), dstLayouts);
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, textures, in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] TextureLayout* dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), dstLayouts);
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] TextureLayout* dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, dstLayouts);
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] TextureLayout* dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), dstLayouts);
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] uint* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, textures, in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] EXT* dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), dstLayouts);
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] uint* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] EXT* dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, dstLayouts);
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] uint* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] EXT* dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), dstLayouts);
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] uint* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, textures, in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] TextureLayout* dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), dstLayouts);
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] uint* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] TextureLayout* dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, dstLayouts);
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] uint* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] TextureLayout* dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), dstLayouts);
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, textures, in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] EXT* dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), dstLayouts);
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] EXT* dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, dstLayouts);
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] EXT* dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), dstLayouts);
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, textures, in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] TextureLayout* dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), dstLayouts);
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] TextureLayout* dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, dstLayouts);
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, in dstLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] TextureLayout* dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), dstLayouts);
+        }
+
+        public static unsafe void SignalSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> dstLayouts)
+        {
+            // SpanOverloader
+            thisApi.SignalSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), in dstLayouts.GetPinnableReference());
+        }
+
         public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] uint* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> srcLayouts)
         {
             // SpanOverloader
@@ -235,6 +487,258 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         }
 
         public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, textures, in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] EXT* srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), srcLayouts);
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] EXT* srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, srcLayouts);
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] EXT* srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), srcLayouts);
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, textures, in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] TextureLayout* srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), srcLayouts);
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] TextureLayout* srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, srcLayouts);
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] TextureLayout* srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), srcLayouts);
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] uint* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, textures, in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] EXT* srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), srcLayouts);
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] uint* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] EXT* srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, srcLayouts);
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] uint* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] EXT* srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), srcLayouts);
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] uint* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, textures, in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] TextureLayout* srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), srcLayouts);
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] uint* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] TextureLayout* srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, srcLayouts);
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] uint* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] TextureLayout* srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), srcLayouts);
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, textures, in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] EXT* srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), srcLayouts);
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] EXT* srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, srcLayouts);
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] EXT* srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), srcLayouts);
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, textures, in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] TextureLayout* srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), srcLayouts);
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, buffers, numTextureBarriers, in textures.GetPinnableReference(), in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] TextureLayout* srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, srcLayouts);
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] Texture* textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, textures, in srcLayouts.GetPinnableReference());
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] TextureLayout* srcLayouts)
+        {
+            // SpanOverloader
+            thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), srcLayouts);
+        }
+
+        public static unsafe void WaitSemaphore(this ExtSemaphore thisApi, [Flow(FlowDirection.In)] uint semaphore, [Flow(FlowDirection.In)] uint numBufferBarriers, [Count(Computed = "numBufferBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] uint numTextureBarriers, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Computed = "numTextureBarriers"), Flow(FlowDirection.In)] ReadOnlySpan<TextureLayout> srcLayouts)
         {
             // SpanOverloader
             thisApi.WaitSemaphore(semaphore, numBufferBarriers, in buffers.GetPinnableReference(), numTextureBarriers, in textures.GetPinnableReference(), in srcLayouts.GetPinnableReference());

@@ -10,6 +10,7 @@ namespace CLMultiplication
         {
             return n <= 1 ? 1 : n * Factorial(n - 1);
         }
+
         private static unsafe void Main(string[] args)
         {
             string[] kernelCode =

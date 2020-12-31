@@ -24,7 +24,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.DeleteProgram(n, in programs.GetPinnableReference());
         }
 
+        public static unsafe void DeleteProgram(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Program> programs)
+        {
+            // SpanOverloader
+            thisApi.DeleteProgram(n, in programs.GetPinnableReference());
+        }
+
         public static unsafe void GenProgram(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> programs)
+        {
+            // SpanOverloader
+            thisApi.GenProgram(n, out programs.GetPinnableReference());
+        }
+
+        public static unsafe void GenProgram(this ArbFragmentProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Program> programs)
         {
             // SpanOverloader
             thisApi.GenProgram(n, out programs.GetPinnableReference());

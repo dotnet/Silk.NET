@@ -11,12 +11,14 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Xml.Linq;
+using Humanizer;
 using JetBrains.Annotations;
 using Microsoft.CodeAnalysis.CSharp;
 using MoreLinq.Extensions;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
 using Silk.NET.BuildTools.Common.Functions;
+using Silk.NET.BuildTools.Common.Structs;
 using Attribute = Silk.NET.BuildTools.Common.Attribute;
 using Enum = Silk.NET.BuildTools.Common.Enums.Enum;
 using Type = Silk.NET.BuildTools.Common.Functions.Type;
@@ -31,17 +33,35 @@ namespace Silk.NET.BuildTools.Converters.Readers
     /// </summary>
     public class OpenGLReader : IReader
     {
+        private class State
+        {
+            public XDocument Document { get; set; }
+            [CanBeNull] public IEnumerable<Function> Functions { get; set; }
+        }
+        
         /// <inheritdoc />
         public object Load(Stream stream)
         {
-            return XDocument.Load(stream);
+            return new State {Document = XDocument.Load(stream)};
         }
 
         /// <inheritdoc />
         public IEnumerable<Struct> ReadStructs(object obj, BindTask task)
-        {
-            return Enumerable.Empty<Struct>();
-        }
+            => ReadFunctions(obj, task)
+                .SelectMany(x => x.Parameters.Select(y => y.Type).Concat(x.ReturnType))
+                .Select(x => x.OriginalClass)
+                .Where(x => x is not null)
+                .Distinct()
+                .Select
+                (
+                    x => new Struct
+                    {
+                        Fields = new List<Field>
+                            {new Field {Name = "Handle", Type = new Type {Name = "uint"}}},
+                        Name = task.RenamedNativeNames.TryGetValue(x, out var name) ? name : x.Pascalize(),
+                        NativeName = x
+                    }
+                );
         
         ////////////////////////////////////////////////////////////////////////////////////////
         // Function Parsing
@@ -50,108 +70,150 @@ namespace Silk.NET.BuildTools.Converters.Readers
         /// <inheritdoc />
         public IEnumerable<Function> ReadFunctions(object obj, BindTask task)
         {
-            var doc = obj as XDocument;
-            Debug.Assert(doc != null, $"{nameof(doc)} != null");
+            var state = (State) obj;
+            return state.Functions ??= CoreReadFunctions();
 
-            var registry = doc.Element("registry");
-            Debug.Assert(registry != null, $"{nameof(registry)} != null");
-            
-            var allFunctions = registry.Elements("commands")
-                .Elements("command")
-                .Select(x => TranslateCommand(x, task))
-                .ToDictionary(x => x.Attribute("name")?.Value, x => x);
-            Debug.Assert(allFunctions != null, $"{nameof(allFunctions) != null}");
-            
-            var apis = registry.Elements("feature")
-                .Concat(registry.Elements("extensions").Elements("extension")
-                        ?? throw new InvalidDataException());
-            Debug.Assert(apis != null, $"{nameof(apis)} != null");
-            
-            var removals = registry
-                .Elements("feature")
-                .Elements("remove")
-                .Elements("command")
-                .Attributes("name")
-                .Select(x => x.Value)
-                .ToList();
-            Debug.Assert(removals != null, $"{nameof(removals) != null}");
-            
-            foreach (var api in apis)
+            IEnumerable<Function> CoreReadFunctions()
             {
-                foreach (var requirement in api.Elements("require"))
-                {
-                    var apiName = requirement.Attribute("api")?.Value ??
-                                  api.Attribute("api")?.Value ??
-                                  api.Attribute("supported")?.Value ??
-                                  "gl";
-                    var apiVersion = api.Attribute("number") != null
-                        ? Version.Parse(api.Attribute("number")?.Value ?? throw new InvalidDataException())
-                        : null;
-                    foreach (var name in apiName.Split('|'))
-                    {
-                        foreach (var function in requirement.Elements("command")
-                            .Attributes("name")
-                            .Select(x => x.Value))
-                        {
-                            var xf = allFunctions[TrimName(function, task)];
+                var doc = state.Document;
+                Debug.Assert(doc != null, $"{nameof(doc)} != null");
 
-                            var ret = new Function
+                var registry = doc.Element("registry");
+                Debug.Assert(registry != null, $"{nameof(registry)} != null");
+
+                var allFunctions = registry.Elements("commands")
+                    .Elements("command")
+                    .Select(x => TranslateCommand(x, task))
+                    .ToDictionary(x => x.Attribute("name")?.Value, x => x);
+                Debug.Assert(allFunctions != null, $"{nameof(allFunctions) != null}");
+
+                var apis = registry.Elements("feature")
+                    .Concat
+                    (
+                        registry.Elements("extensions").Elements("extension")
+                        ?? throw new InvalidDataException()
+                    );
+                Debug.Assert(apis != null, $"{nameof(apis)} != null");
+
+                var removals = registry
+                    .Elements("feature")
+                    .Elements("remove")
+                    .Elements("command")
+                    .Attributes("name")
+                    .Select(x => x.Value)
+                    .ToList();
+                Debug.Assert(removals != null, $"{nameof(removals) != null}");
+
+                foreach (var api in apis)
+                {
+                    foreach (var requirement in api.Elements("require"))
+                    {
+                        var apiName = requirement.Attribute("api")?.Value ??
+                                      api.Attribute("api")?.Value ??
+                                      api.Attribute("supported")?.Value ??
+                                      "gl";
+                        var apiVersion = api.Attribute("number") != null
+                            ? Version.Parse(api.Attribute("number")?.Value ?? throw new InvalidDataException())
+                            : null;
+                        foreach (var name in apiName.Split('|'))
+                        {
+                            foreach (var function in requirement.Elements("command")
+                                .Attributes("name")
+                                .Select(x => x.Value))
                             {
-                                Attributes = removals.Contains(function)
-                                    ? new List<Attribute>
-                                    {
-                                        new Attribute
+                                var xf = allFunctions[TrimName(function, task)];
+
+                                var ret = new Function
+                                {
+                                    Attributes = removals.Contains(function)
+                                        ? new List<Attribute>
                                         {
-                                            Name = "System.Obsolete",
-                                            Arguments = new List<string>
+                                            new Attribute
                                             {
-                                                $"\"Deprecated in version {apiVersion?.ToString(2)}\""
+                                                Name = "System.Obsolete",
+                                                Arguments = new List<string>
+                                                {
+                                                    $"\"Deprecated in version {apiVersion?.ToString(2)}\""
+                                                }
                                             }
                                         }
-                                    }
-                                    : new List<Attribute>(),
-                                Categories = new List<string>{TrimName(api.Attribute("name")?.Value, task)},
-                                Doc = string.Empty,
-                                ExtensionName = api.Name == "feature" ? "Core" : TrimName(api.Attribute("name")?.Value, task),
-                                GenericTypeParameters = new List<GenericTypeParameter>(),
-                                Name = Naming.Translate(NameTrimmer
-                                    .Trim(TrimName(xf.Attribute("name")?.Value, task),
-                                        task.FunctionPrefix), task.FunctionPrefix),
-                                NativeName = function,
-                                Parameters = ParseParameters(xf),
-                                ProfileName = name,
-                                ProfileVersion = apiVersion,
-                                ReturnType = ParseTypeSignature(xf.Element("returns")
-                                                                ?? throw new InvalidDataException())
-                            };
-
-                            yield return ret;
-
-                            if (api.Name == "feature" && name == "gl" && ret.Attributes.Count == 0)
-                            {
-                                yield return new Function
-                                {
-                                    Attributes = new List<Attribute>(),
-                                    Categories = ret.Categories,
-                                    Doc = ret.Doc,
-                                    ExtensionName = ret.ExtensionName,
+                                        : new List<Attribute>(),
+                                    Categories = new List<string> {TrimName(api.Attribute("name")?.Value, task)},
+                                    Doc = string.Empty,
+                                    ExtensionName = api.Name == "feature"
+                                        ? "Core"
+                                        : TrimName(api.Attribute("name")?.Value, task),
                                     GenericTypeParameters = new List<GenericTypeParameter>(),
-                                    Name = ret.Name,
-                                    NativeName = ret.NativeName,
-                                    Parameters = ret.Parameters,
-                                    ProfileName = "glcore",
+                                    Name = task.RenamedNativeNames.TryGetValue(xf.Attribute("name")!.Value, out var n)
+                                        ? n
+                                        : Naming.Translate
+                                        (
+                                            NameTrimmer
+                                                .Trim
+                                                (
+                                                    TrimName(xf.Attribute("name")?.Value, task),
+                                                    task.FunctionPrefix
+                                                ), task.FunctionPrefix
+                                        ),
+                                    NativeName = function,
+                                    Parameters = ParseParameters(xf),
+                                    ProfileName = name,
                                     ProfileVersion = apiVersion,
-                                    ReturnType = ret.ReturnType
+                                    ReturnType = ParseTypeSignature
+                                    (
+                                        xf.Element("returns")
+                                        ?? throw new InvalidDataException()
+                                    )
                                 };
-                            }
+                                
+                                foreach (var param in ret.Parameters)
+                                {
+                                    Rename(task.RenamedNativeNames, param.Type);
+                                }
+                                
+                                Rename(task.RenamedNativeNames, ret.ReturnType);
 
-                            allFunctions.Remove(function);
+                                yield return ret;
+
+                                if (api.Name == "feature" && name == "gl" && ret.Attributes.Count == 0)
+                                {
+                                    yield return new Function
+                                    {
+                                        Attributes = new List<Attribute>(),
+                                        Categories = ret.Categories,
+                                        Doc = ret.Doc,
+                                        ExtensionName = ret.ExtensionName,
+                                        GenericTypeParameters = new List<GenericTypeParameter>(),
+                                        Name = ret.Name,
+                                        NativeName = ret.NativeName,
+                                        Parameters = ret.Parameters,
+                                        ProfileName = "glcore",
+                                        ProfileVersion = apiVersion,
+                                        ReturnType = ret.ReturnType
+                                    };
+                                }
+
+                                allFunctions.Remove(function);
+                            }
                         }
                     }
                 }
             }
         }
-        
+
+        private static void Rename(IReadOnlyDictionary<string, string> renames, Type type)
+        {
+            if (type.OriginalGroup is not null && renames.TryGetValue(type.OriginalGroup, out var s))
+            {
+                type.OriginalGroup = s;
+            }
+                                    
+            if (type.OriginalClass is not null && renames.TryGetValue(type.OriginalClass, out var c))
+            {
+                type.OriginalClass = c;
+            }
+        }
+
         /// <summary>
         /// Parse the type signature of the provided element.
         /// </summary>
@@ -162,12 +224,18 @@ namespace Silk.NET.BuildTools.Converters.Readers
         {
             var typeString = typeElement.Attribute("type")?.Value ?? throw new DataException("Couldn't find type.");
             var group = typeElement.Attribute("group")?.Value;
+            var @class = typeElement.Attribute("class")?.Value;
 
             var ret = ParseTypeSignature(typeString);
 
             if (!(group is null))
             {
                 ret.OriginalGroup = group;
+            }
+
+            if (!(@class is null))
+            {
+                ret.OriginalClass = @class;
             }
 
             return ret;
@@ -526,27 +594,45 @@ namespace Silk.NET.BuildTools.Converters.Readers
             var cmdName = FunctionName(command, task);
             var name = new XAttribute("name", cmdName);
 
+            var returnsAttributes = new List<XAttribute>();
+            returnsAttributes.Add(new XAttribute
+            (
+                "type",
+                FunctionParameterType(command.Element("proto"))
+                    .Replace("const", string.Empty)
+                    .Replace("struct", string.Empty)
+                    .Replace("String *", "String")
+                    .Trim()
+            ));
+
+            if (command.Element("proto")?.Attribute("group") is not null)
+            {
+                returnsAttributes.Add
+                (
+                    new XAttribute
+                    (
+                        "group", command.Element("proto")?.Attribute("group")?.Value
+                                 ?? throw new InvalidDataException()
+                    )
+                );
+            }
+
+            if (command.Element("proto")?.Attribute("class") is not null)
+            {
+                returnsAttributes.Add
+                (
+                    new XAttribute
+                    (
+                        "class", command.Element("proto")?.Attribute("class")?.Value
+                                 ?? throw new InvalidDataException()
+                    )
+                );
+            }
+            
             var returns = new XElement
             (
                 "returns",
-                command.Element("proto")?.Attribute("group") is null ? new object[]{new XAttribute
-                (
-                    "type",
-                    FunctionParameterType(command.Element("proto"))
-                        .Replace("const", string.Empty)
-                        .Replace("struct", string.Empty)
-                        .Replace("String *", "String")
-                        .Trim()
-                )} : new object[]{new XAttribute
-                (
-                    "type",
-                    FunctionParameterType(command.Element("proto"))
-                        .Replace("const", string.Empty)
-                        .Replace("struct", string.Empty)
-                        .Replace("String *", "String")
-                        .Trim()
-                ), new XAttribute("group", command.Element("proto")?.Attribute("group")?.Value
-                                           ?? throw new InvalidDataException())}
+                returnsAttributes.Cast<object>().ToArray()
             );
 
             foreach (var parameter in command.Elements("param"))
@@ -588,6 +674,12 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                                   ?? throw new InvalidDataException()));
                 }
 
+                if (!(parameter.Attribute("class") is null))
+                {
+                    p.Add(new XAttribute("class", parameter.Attribute("class")?.Value
+                                                  ?? throw new InvalidDataException()));
+                }
+
                 function.Add(p);
             }
 
@@ -603,7 +695,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
         /// <inheritdoc />
         public IEnumerable<Enum> ReadEnums(object obj, BindTask task)
         {
-            var doc = obj as XDocument;
+            var state = (State) obj;
+            var doc = state.Document;
             Debug.Assert(doc != null, nameof(doc) + " != null");
 
             var registry = doc.Element("registry");
@@ -655,12 +748,14 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                     }
                                     : new List<Attribute>(),
                                 Doc = string.Empty,
-                                Name = Naming.Translate(TrimName(token.Value, task), task.FunctionPrefix),
+                                Name = task.RenamedNativeNames.TryGetValue(token.Value, out var n)
+                                    ? n
+                                    : Naming.Translate(TrimName(token.Value, task), task.FunctionPrefix),
                                 NativeName = token.Value,
                                 Value = allEnums[token.Value].Item1
                             }
                         )
-                        .ToList(); 
+                        .ToList();
                     foreach (var name in apiName.Split('|'))
                     {
                         var ret = new Enum
@@ -669,7 +764,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             ExtensionName = api.Name == "feature"
                                 ? "Core"
                                 : TrimName(api.Attribute("name")?.Value, task),
-                            Name = Naming.Translate(TrimName(api.Attribute("name")?.Value, task), task.FunctionPrefix),
+                            Name = task.RenamedNativeNames.TryGetValue(api.Attribute("name")!.Value, out var n)
+                                ? n
+                                : Naming.Translate(TrimName(api.Attribute("name")?.Value, task), task.FunctionPrefix),
                             NativeName = api.Attribute("name")?.Value,
                             ProfileName = name,
                             ProfileVersion = apiVersion,
@@ -707,22 +804,27 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 {
                     if (groups.ContainsKey(group))
                     {
-                        groups[group].Add(new Token
-                        {
-                            Attributes = removals.Contains(@enum.Key)
-                                ? new List<Attribute>
-                                {
-                                    new Attribute
+                        groups[group].Add
+                        (
+                            new Token
+                            {
+                                Attributes = removals.Contains(@enum.Key)
+                                    ? new List<Attribute>
                                     {
-                                        Name = "System.Obsolete"
+                                        new Attribute
+                                        {
+                                            Name = "System.Obsolete"
+                                        }
                                     }
-                                }
-                                : new List<Attribute>(),
-                            Doc = string.Empty,
-                            Name = Naming.Translate(TrimName(@enum.Key, task), task.FunctionPrefix),
-                            NativeName = @enum.Key,
-                            Value = @enum.Value.Item1
-                        });
+                                    : new List<Attribute>(),
+                                Doc = string.Empty,
+                                Name = task.RenamedNativeNames.TryGetValue(@enum.Key, out var n)
+                                    ? n
+                                    : Naming.Translate(TrimName(@enum.Key, task), task.FunctionPrefix),
+                                NativeName = @enum.Key,
+                                Value = @enum.Value.Item1
+                            }
+                        );
                     }
                     else
                     {
@@ -742,7 +844,9 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                         }
                                         : new List<Attribute>(),
                                     Doc = string.Empty,
-                                    Name = Naming.Translate(TrimName(@enum.Key, task), task.FunctionPrefix),
+                                    Name = task.RenamedNativeNames.TryGetValue(@enum.Key, out var n)
+                                        ? n
+                                        : Naming.Translate(TrimName(@enum.Key, task), task.FunctionPrefix),
                                     NativeName = @enum.Key,
                                     Value = @enum.Value.Item1
                                 }
@@ -761,7 +865,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 {
                     var ret = new Enum
                     {
-                        Name = group.Key,
+                        Name = task.RenamedNativeNames.TryGetValue(group.Key, out var n) ? n : group.Key,
                         NativeName = group.Key,
                         Attributes = new List<Attribute>(),
                         ExtensionName = "Core (Grouped)",

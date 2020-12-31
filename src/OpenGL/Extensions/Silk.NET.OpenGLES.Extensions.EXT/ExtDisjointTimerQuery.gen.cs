@@ -34,6 +34,12 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glDeleteQueriesEXT")]
         public partial void DeleteQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint ids);
 
+        [NativeApi(EntryPoint = "glDeleteQueriesEXT")]
+        public unsafe partial void DeleteQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Query* ids);
+
+        [NativeApi(EntryPoint = "glDeleteQueriesEXT")]
+        public partial void DeleteQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Query ids);
+
         [NativeApi(EntryPoint = "glEndQueryEXT")]
         public partial void EndQuery([Flow(FlowDirection.In)] EXT target);
 
@@ -45,6 +51,12 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
 
         [NativeApi(EntryPoint = "glGenQueriesEXT")]
         public partial void GenQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint ids);
+
+        [NativeApi(EntryPoint = "glGenQueriesEXT")]
+        public unsafe partial void GenQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Query* ids);
+
+        [NativeApi(EntryPoint = "glGenQueriesEXT")]
+        public partial void GenQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Query ids);
 
         [NativeApi(EntryPoint = "glGetInteger64vEXT")]
         public unsafe partial void GetInteger64([Flow(FlowDirection.In)] EXT pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* data);

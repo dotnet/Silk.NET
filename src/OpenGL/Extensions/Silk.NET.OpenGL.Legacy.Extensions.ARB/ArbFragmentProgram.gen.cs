@@ -34,11 +34,23 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glDeleteProgramsARB")]
         public partial void DeleteProgram([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint programs);
 
+        [NativeApi(EntryPoint = "glDeleteProgramsARB")]
+        public unsafe partial void DeleteProgram([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Program* programs);
+
+        [NativeApi(EntryPoint = "glDeleteProgramsARB")]
+        public partial void DeleteProgram([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Program programs);
+
         [NativeApi(EntryPoint = "glGenProgramsARB")]
         public unsafe partial void GenProgram([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* programs);
 
         [NativeApi(EntryPoint = "glGenProgramsARB")]
         public partial void GenProgram([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint programs);
+
+        [NativeApi(EntryPoint = "glGenProgramsARB")]
+        public unsafe partial void GenProgram([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Program* programs);
+
+        [NativeApi(EntryPoint = "glGenProgramsARB")]
+        public partial void GenProgram([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Program programs);
 
         [NativeApi(EntryPoint = "glGetProgramivARB")]
         public unsafe partial void GetProgram([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB pname, [Count(Count = 1), Flow(FlowDirection.Out)] int* @params);

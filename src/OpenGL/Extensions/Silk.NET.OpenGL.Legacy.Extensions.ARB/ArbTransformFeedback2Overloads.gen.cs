@@ -24,7 +24,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.DeleteTransformFeedbacks(n, in ids.GetPinnableReference());
         }
 
+        public static unsafe void DeleteTransformFeedbacks(this ArbTransformFeedback2 thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<TransformFeedback> ids)
+        {
+            // SpanOverloader
+            thisApi.DeleteTransformFeedbacks(n, in ids.GetPinnableReference());
+        }
+
         public static unsafe void GenTransformFeedbacks(this ArbTransformFeedback2 thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+        {
+            // SpanOverloader
+            thisApi.GenTransformFeedbacks(n, out ids.GetPinnableReference());
+        }
+
+        public static unsafe void GenTransformFeedbacks(this ArbTransformFeedback2 thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<TransformFeedback> ids)
         {
             // SpanOverloader
             thisApi.GenTransformFeedbacks(n, out ids.GetPinnableReference());

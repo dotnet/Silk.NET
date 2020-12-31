@@ -27,6 +27,9 @@
                 "licenseFile": "build/LICENSE_HEADER.txt",
                 "props": "build/props/bindings.props"
             },
+            "rename": {
+                "Buffer": "BufferKind"
+            },
             "namespace": "Silk.NET.OpenGL",
             "extensionsNamespace": "Silk.NET.OpenGL.Extensions",
             "typeMaps": [
@@ -65,6 +68,9 @@
                 "licenseFile": "build/LICENSE_HEADER.txt",
                 "props": "build/props/bindings.props"
             },
+            "rename": {
+                "Buffer": "BufferKind"
+            },
             "namespace": "Silk.NET.OpenGL.Legacy",
             "extensionsNamespace": "Silk.NET.OpenGL.Legacy.Extensions",
             "typeMaps": [
@@ -102,6 +108,9 @@
                 "path": "src/OpenGL",
                 "licenseFile": "build/LICENSE_HEADER.txt",
                 "props": "build/props/bindings.props"
+            },
+            "rename": {
+                "Buffer": "BufferKind"
             },
             "namespace": "Silk.NET.OpenGLES",
             "extensionsNamespace": "Silk.NET.OpenGLES.Extensions",

@@ -24,7 +24,19 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             thisApi.DeleteSamplers(count, in samplers.GetPinnableReference());
         }
 
+        public static unsafe void DeleteSamplers(this ArbSamplerObjects thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Sampler> samplers)
+        {
+            // SpanOverloader
+            thisApi.DeleteSamplers(count, in samplers.GetPinnableReference());
+        }
+
         public static unsafe void GenSamplers(this ArbSamplerObjects thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> samplers)
+        {
+            // SpanOverloader
+            thisApi.GenSamplers(count, out samplers.GetPinnableReference());
+        }
+
+        public static unsafe void GenSamplers(this ArbSamplerObjects thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<Sampler> samplers)
         {
             // SpanOverloader
             thisApi.GenSamplers(count, out samplers.GetPinnableReference());

@@ -70,11 +70,23 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glDeleteBuffersARB")]
         public partial void DeleteBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint buffers);
 
+        [NativeApi(EntryPoint = "glDeleteBuffersARB")]
+        public unsafe partial void DeleteBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Buffer* buffers);
+
+        [NativeApi(EntryPoint = "glDeleteBuffersARB")]
+        public partial void DeleteBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Buffer buffers);
+
         [NativeApi(EntryPoint = "glGenBuffersARB")]
         public unsafe partial void GenBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* buffers);
 
         [NativeApi(EntryPoint = "glGenBuffersARB")]
         public partial void GenBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint buffers);
+
+        [NativeApi(EntryPoint = "glGenBuffersARB")]
+        public unsafe partial void GenBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Buffer* buffers);
+
+        [NativeApi(EntryPoint = "glGenBuffersARB")]
+        public partial void GenBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Buffer buffers);
 
         [NativeApi(EntryPoint = "glGetBufferParameterivARB")]
         public unsafe partial void GetBufferParameter([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);

@@ -54,7 +54,49 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             return thisApi.AreProgramsResident(n, in programs.GetPinnableReference(), out residences.GetPinnableReference());
         }
 
+        public static unsafe bool AreProgramsResident(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Program* programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
+        {
+            // SpanOverloader
+            return thisApi.AreProgramsResident(n, programs, out residences.GetPinnableReference());
+        }
+
+        public static unsafe bool AreProgramsResident(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Program> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences)
+        {
+            // SpanOverloader
+            return thisApi.AreProgramsResident(n, in programs.GetPinnableReference(), residences);
+        }
+
+        public static unsafe bool AreProgramsResident(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Program> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
+        {
+            // SpanOverloader
+            return thisApi.AreProgramsResident(n, in programs.GetPinnableReference(), out residences.GetPinnableReference());
+        }
+
+        public static unsafe bool AreProgramsResident(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Program* programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
+        {
+            // SpanOverloader
+            return thisApi.AreProgramsResident(n, programs, out residences.GetPinnableReference());
+        }
+
+        public static unsafe bool AreProgramsResident(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Program> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences)
+        {
+            // SpanOverloader
+            return thisApi.AreProgramsResident(n, in programs.GetPinnableReference(), residences);
+        }
+
+        public static unsafe bool AreProgramsResident(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Program> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
+        {
+            // SpanOverloader
+            return thisApi.AreProgramsResident(n, in programs.GetPinnableReference(), out residences.GetPinnableReference());
+        }
+
         public static unsafe void DeleteProgram(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> programs)
+        {
+            // SpanOverloader
+            thisApi.DeleteProgram(n, in programs.GetPinnableReference());
+        }
+
+        public static unsafe void DeleteProgram(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Program> programs)
         {
             // SpanOverloader
             thisApi.DeleteProgram(n, in programs.GetPinnableReference());
@@ -73,6 +115,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         }
 
         public static unsafe void GenProgram(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> programs)
+        {
+            // SpanOverloader
+            thisApi.GenProgram(n, out programs.GetPinnableReference());
+        }
+
+        public static unsafe void GenProgram(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Program> programs)
         {
             // SpanOverloader
             thisApi.GenProgram(n, out programs.GetPinnableReference());
@@ -271,6 +319,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         }
 
         public static unsafe void RequestResidentProgram(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> programs)
+        {
+            // SpanOverloader
+            thisApi.RequestResidentProgram(n, in programs.GetPinnableReference());
+        }
+
+        public static unsafe void RequestResidentProgram(this NVVertexProgram thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Program> programs)
         {
             // SpanOverloader
             thisApi.RequestResidentProgram(n, in programs.GetPinnableReference());

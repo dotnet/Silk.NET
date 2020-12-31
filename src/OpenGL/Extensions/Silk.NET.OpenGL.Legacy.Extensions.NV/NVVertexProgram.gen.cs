@@ -46,6 +46,30 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glAreProgramsResidentNV")]
         public partial bool AreProgramsResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
 
+        [NativeApi(EntryPoint = "glAreProgramsResidentNV")]
+        public unsafe partial bool AreProgramsResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Program* programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
+
+        [NativeApi(EntryPoint = "glAreProgramsResidentNV")]
+        public unsafe partial bool AreProgramsResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Program* programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out bool residences);
+
+        [NativeApi(EntryPoint = "glAreProgramsResidentNV")]
+        public unsafe partial bool AreProgramsResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Program programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences);
+
+        [NativeApi(EntryPoint = "glAreProgramsResidentNV")]
+        public partial bool AreProgramsResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Program programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out bool residences);
+
+        [NativeApi(EntryPoint = "glAreProgramsResidentNV")]
+        public unsafe partial bool AreProgramsResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Program* programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
+
+        [NativeApi(EntryPoint = "glAreProgramsResidentNV")]
+        public unsafe partial bool AreProgramsResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Program* programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
+
+        [NativeApi(EntryPoint = "glAreProgramsResidentNV")]
+        public unsafe partial bool AreProgramsResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Program programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences);
+
+        [NativeApi(EntryPoint = "glAreProgramsResidentNV")]
+        public partial bool AreProgramsResident([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Program programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Boolean residences);
+
         [NativeApi(EntryPoint = "glBindProgramNV")]
         public partial void BindProgram([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint id);
 
@@ -57,6 +81,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 
         [NativeApi(EntryPoint = "glDeleteProgramsNV")]
         public partial void DeleteProgram([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint programs);
+
+        [NativeApi(EntryPoint = "glDeleteProgramsNV")]
+        public unsafe partial void DeleteProgram([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Program* programs);
+
+        [NativeApi(EntryPoint = "glDeleteProgramsNV")]
+        public partial void DeleteProgram([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Program programs);
 
         [NativeApi(EntryPoint = "glExecuteProgramNV")]
         public unsafe partial void ExecuteProgram([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint id, [Count(Count = 4), Flow(FlowDirection.In)] float* @params);
@@ -75,6 +105,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 
         [NativeApi(EntryPoint = "glGenProgramsNV")]
         public partial void GenProgram([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint programs);
+
+        [NativeApi(EntryPoint = "glGenProgramsNV")]
+        public unsafe partial void GenProgram([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Program* programs);
+
+        [NativeApi(EntryPoint = "glGenProgramsNV")]
+        public partial void GenProgram([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Program programs);
 
         [NativeApi(EntryPoint = "glGetProgramivNV")]
         public unsafe partial void GetProgram([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV pname, [Count(Count = 4), Flow(FlowDirection.Out)] int* @params);
@@ -312,6 +348,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 
         [NativeApi(EntryPoint = "glRequestResidentProgramsNV")]
         public partial void RequestResidentProgram([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint programs);
+
+        [NativeApi(EntryPoint = "glRequestResidentProgramsNV")]
+        public unsafe partial void RequestResidentProgram([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Program* programs);
+
+        [NativeApi(EntryPoint = "glRequestResidentProgramsNV")]
+        public partial void RequestResidentProgram([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Program programs);
 
         [NativeApi(EntryPoint = "glTrackMatrixNV")]
         public partial void TrackMatrix([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint address, [Flow(FlowDirection.In)] NV matrix, [Flow(FlowDirection.In)] NV transform);

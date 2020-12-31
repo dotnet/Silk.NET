@@ -24,7 +24,19 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
             thisApi.DeleteQueries(n, in ids.GetPinnableReference());
         }
 
+        public static unsafe void DeleteQueries(this ExtDisjointTimerQuery thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Query> ids)
+        {
+            // SpanOverloader
+            thisApi.DeleteQueries(n, in ids.GetPinnableReference());
+        }
+
         public static unsafe void GenQueries(this ExtDisjointTimerQuery thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+        {
+            // SpanOverloader
+            thisApi.GenQueries(n, out ids.GetPinnableReference());
+        }
+
+        public static unsafe void GenQueries(this ExtDisjointTimerQuery thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Query> ids)
         {
             // SpanOverloader
             thisApi.GenQueries(n, out ids.GetPinnableReference());

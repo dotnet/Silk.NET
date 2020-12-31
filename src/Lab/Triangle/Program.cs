@@ -8,6 +8,7 @@ using Silk.NET.Maths;
 using Silk.NET.OpenGL;
 using Silk.NET.Windowing;
 using SdlProvider = Silk.NET.SDL.SdlProvider;
+using Shader = SampleBase.Shader;
 
 namespace Triangle
 {

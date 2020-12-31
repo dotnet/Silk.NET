@@ -60,7 +60,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.DeleteBuffers(n, in buffers.GetPinnableReference());
         }
 
+        public static unsafe void DeleteBuffers(this ArbVertexBufferObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers)
+        {
+            // SpanOverloader
+            thisApi.DeleteBuffers(n, in buffers.GetPinnableReference());
+        }
+
         public static unsafe void GenBuffers(this ArbVertexBufferObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> buffers)
+        {
+            // SpanOverloader
+            thisApi.GenBuffers(n, out buffers.GetPinnableReference());
+        }
+
+        public static unsafe void GenBuffers(this ArbVertexBufferObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Buffer> buffers)
         {
             // SpanOverloader
             thisApi.GenBuffers(n, out buffers.GetPinnableReference());

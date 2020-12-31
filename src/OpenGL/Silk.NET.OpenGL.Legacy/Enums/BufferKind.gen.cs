@@ -9,10 +9,10 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES
+namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "Buffer")]
-    public enum Buffer
+    public enum BufferKind
     {
         [NativeName("Name", "GL_COLOR")]
         Color = 0x1800,

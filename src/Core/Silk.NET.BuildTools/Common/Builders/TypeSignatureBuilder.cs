@@ -30,6 +30,10 @@ namespace Silk.NET.BuildTools.Common.Builders
 
         private readonly string _newOriginalName;
 
+        private readonly string _newOriginalGroup;
+
+        private readonly string _newOriginalClass;
+
         [NotNull] private string _newName;
         
         private Function _newFunctionPointerSignature;
@@ -47,6 +51,8 @@ namespace Silk.NET.BuildTools.Common.Builders
             _newIsIn = typeSignature.IsIn;
             _newIsOut = typeSignature.IsOut;
             _newOriginalName = typeSignature.OriginalName;
+            _newOriginalGroup = typeSignature.OriginalGroup;
+            _newOriginalClass = typeSignature.OriginalClass;
             _newIsGenericType = typeSignature.IsGenericTypeParameterReference;
             _newFunctionPointerSignature = typeSignature.FunctionPointerSignature;
         }
@@ -139,6 +145,8 @@ namespace Silk.NET.BuildTools.Common.Builders
                 IsOut = _newIsOut,
                 IsIn = _newIsIn,
                 OriginalName = _newOriginalName,
+                OriginalGroup = _newOriginalGroup,
+                OriginalClass = _newOriginalClass,
                 IsGenericTypeParameterReference = _newIsGenericType
             };
         }
