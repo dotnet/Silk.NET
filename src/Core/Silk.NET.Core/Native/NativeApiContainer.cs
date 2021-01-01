@@ -34,6 +34,7 @@ namespace Silk.NET.Core.Native
             }
             _vTable.Initialize(_ctx, slotCount);
             GcUtility = new GcUtility(1, CoreGcSlotCount());
+            PostInit();
             // ReSharper restore VirtualMemberCallInConstructor
         }
         
@@ -76,6 +77,11 @@ namespace Silk.NET.Core.Native
         protected nint Load(int slot, string entryPoint)
         {
             return CurrentVTable.Load(slot, entryPoint);
+        }
+
+        protected virtual void PostInit()
+        {
+            // do nothing by default
         }
     }
 }
