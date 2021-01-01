@@ -25,6 +25,7 @@
 
     <ItemGroup>
       <Folder Include="Pipeline" />
+      <Compile Include="..\Silk.NET.Core\Attributes\InjectAttribute.cs" />
     </ItemGroup>
 
     <Import Project="..\..\..\build\props\common.props" />

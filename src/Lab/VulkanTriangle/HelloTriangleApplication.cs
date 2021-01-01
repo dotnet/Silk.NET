@@ -547,6 +547,8 @@ namespace VulkanTriangle
             {
                 throw new NotSupportedException("KHR_swapchain extension not found.");
             }
+            
+            Console.WriteLine($"{_vk.CurrentInstance?.Handle} {_vk.CurrentDevice?.Handle}");
         }
 
         private unsafe void CreateSwapChain()

@@ -8,6 +8,7 @@ using System.Linq;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Silk.NET.Core.Attributes;
+using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
 
 namespace Silk.NET.SilkTouch
 {
@@ -26,19 +27,29 @@ namespace Silk.NET.SilkTouch
             {
                 var injectPoint = (SilkTouchStage) injectData.ConstructorArguments[0].Value!;
                 var code = (string)injectData.ConstructorArguments[1].Value!;
-                var syntax = SyntaxFactory.ParseStatement(code);
                 ctx.AddSideEffectToStage(injectPoint, ctx =>
                 {
                     if (ctx.ResultVariable.HasValue)
                     {
-                        var c = code.Replace
+                        code = code.Replace
                         (
-                            "{RESULT}",
-                            SyntaxFactory.ParenthesizedExpression(ctx.ResolveVariable(ctx.ResultVariable.Value).Value).NormalizeWhitespace().ToFullString()
+                            "%$RESULT$%",
+                            ParenthesizedExpression(ctx.ResolveVariable(ctx.ResultVariable.Value).Value).NormalizeWhitespace().ToFullString()
                         );
-                        return SyntaxFactory.ParseStatement(c);
                     }
-                    return syntax;
+                    
+                    for (var i = 0; i < ctx.ParameterVariables.Length; i++)
+                    {
+                        code = code.Replace
+                        (
+                            $"%$PARAM({ctx.MethodSymbol.Parameters[i].Name})$%",
+                            ParenthesizedExpression(ctx.ResolveVariable(ctx.ParameterVariables[i]).Value)
+                                .NormalizeWhitespace()
+                                .ToFullString()
+                        );
+                    }
+
+                    return ParseStatement(code);
                 });
             }
 

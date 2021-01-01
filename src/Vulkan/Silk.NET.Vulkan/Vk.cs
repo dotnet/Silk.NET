@@ -20,12 +20,12 @@ namespace Silk.NET.Vulkan
         public Instance? CurrentInstance
         {
             get => _currentInstance;
-            set => SwapVTable(_vTables.GetOrAdd((_currentInstance = value, _currentDevice), _ => CreateVTable()));
+            set => SwapVTable(_vTables.GetOrAdd((_currentInstance = value, _currentDevice), _ => VulkanCreateVTable()));
         }
         public Device? CurrentDevice
         {
             get => _currentDevice;
-            set => SwapVTable(_vTables.GetOrAdd((_currentInstance, _currentDevice = value), _ => CreateVTable()));
+            set => SwapVTable(_vTables.GetOrAdd((_currentInstance, _currentDevice = value), _ => VulkanCreateVTable()));
         }
         public static Version32 Version10 => new Version32(1, 0, 0);
         public static Version32 Version11 => new Version32(1, 1, 0);
@@ -361,6 +361,13 @@ namespace Silk.NET.Vulkan
             {
                 _cachedDeviceExtensionsLock.ExitWriteLock();
             }
+        }
+
+        private IVTable VulkanCreateVTable()
+        {
+            var ret = CreateVTable();
+            ret.Initialize(Context, CoreGetSlotCount());
+            return ret;
         }
     }
 }
