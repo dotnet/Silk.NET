@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_MESSAGE_CATEGORY")]
-    public enum MessageCategory
+    public enum MessageCategory : int
     {
         [NativeName("Name", "D3D11_MESSAGE_CATEGORY_APPLICATION_DEFINED")]
         MessageCategoryApplicationDefined = 0x0,

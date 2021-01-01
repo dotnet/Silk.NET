@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "GraphicsResetStatus")]
-    public enum GraphicsResetStatus
+    public enum GraphicsResetStatus : int
     {
         [NativeName("Name", "GL_NO_ERROR")]
         NoError = 0x0,

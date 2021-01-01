@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "ProgramStagePName")]
-    public enum ProgramStagePName
+    public enum ProgramStagePName : int
     {
         [NativeName("Name", "GL_ACTIVE_SUBROUTINES")]
         ActiveSubroutines = 0x8DE5,

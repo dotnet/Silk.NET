@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "BufferAccessARB")]
-    public enum BufferAccessARB
+    public enum BufferAccessARB : int
     {
         [NativeName("Name", "GL_READ_ONLY")]
         ReadOnly = 0x88B8,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Extensions.EXT
 {
     [NativeName("Name", "GLenum")]
-    public enum EXT
+    public enum EXT : int
     {
         [NativeName("Name", "GL_PROGRAM_PIPELINE_OBJECT_EXT")]
         ProgramPipelineObjectExt = 0x8A4F,

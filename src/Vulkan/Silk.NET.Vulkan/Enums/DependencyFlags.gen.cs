@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkDependencyFlags")]
-    public enum DependencyFlags
+    public enum DependencyFlags : int
     {
         [NativeName("Name", "VK_DEPENDENCY_BY_REGION_BIT")]
         DependencyByRegionBit = 1,

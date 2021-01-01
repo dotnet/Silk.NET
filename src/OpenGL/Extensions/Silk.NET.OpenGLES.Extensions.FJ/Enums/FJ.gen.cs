@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES.Extensions.FJ
 {
     [NativeName("Name", "GLenum")]
-    public enum FJ
+    public enum FJ : int
     {
         [NativeName("Name", "GL_GCCSO_SHADER_BINARY_FJ")]
         GccsoShaderBinaryFJ = 0x9260,

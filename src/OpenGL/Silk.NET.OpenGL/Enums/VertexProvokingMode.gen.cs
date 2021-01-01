@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "VertexProvokingMode")]
-    public enum VertexProvokingMode
+    public enum VertexProvokingMode : int
     {
         [NativeName("Name", "GL_FIRST_VERTEX_CONVENTION")]
         FirstVertexConvention = 0x8E4D,

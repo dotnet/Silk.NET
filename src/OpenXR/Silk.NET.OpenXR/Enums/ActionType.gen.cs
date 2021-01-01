@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenXR
 {
     [NativeName("Name", "XrActionType")]
-    public enum ActionType
+    public enum ActionType : int
     {
         [NativeName("Name", "XR_ACTION_TYPE_BOOLEAN_INPUT")]
         BooleanInput = 1,

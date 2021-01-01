@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "D3D_TESSELLATOR_OUTPUT_PRIMITIVE")]
-    public enum D3DTessellatorOutputPrimitive
+    public enum D3DTessellatorOutputPrimitive : int
     {
         [NativeName("Name", "D3D_TESSELLATOR_OUTPUT_UNDEFINED")]
         D3DTessellatorOutputUndefined = 0x0,

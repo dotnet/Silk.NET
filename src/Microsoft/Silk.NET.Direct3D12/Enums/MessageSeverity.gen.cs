@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_MESSAGE_SEVERITY")]
-    public enum MessageSeverity
+    public enum MessageSeverity : int
     {
         [NativeName("Name", "D3D12_MESSAGE_SEVERITY_CORRUPTION")]
         MessageSeverityCorruption = 0x0,

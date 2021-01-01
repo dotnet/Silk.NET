@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "FogParameter")]
-    public enum FogParameter
+    public enum FogParameter : int
     {
         [NativeName("Name", "GL_FOG_OFFSET_VALUE_SGIX")]
         FogOffsetValueSgix = 0x8199,

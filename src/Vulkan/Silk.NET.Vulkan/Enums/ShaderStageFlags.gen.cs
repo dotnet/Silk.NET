@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkShaderStageFlags")]
-    public enum ShaderStageFlags
+    public enum ShaderStageFlags : int
     {
         [NativeName("Name", "VK_SHADER_STAGE_VERTEX_BIT")]
         ShaderStageVertexBit = 1,

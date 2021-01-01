@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "ProgramInterface")]
-    public enum ProgramInterface
+    public enum ProgramInterface : int
     {
         [NativeName("Name", "GL_TRANSFORM_FEEDBACK_BUFFER")]
         TransformFeedbackBuffer = 0x8C8E,

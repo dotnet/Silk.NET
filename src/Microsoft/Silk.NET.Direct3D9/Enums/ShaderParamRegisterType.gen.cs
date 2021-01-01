@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DSHADER_PARAM_REGISTER_TYPE")]
-    public enum ShaderParamRegisterType
+    public enum ShaderParamRegisterType : int
     {
         [NativeName("Name", "D3DSPR_TEMP")]
         SprTemp = 0x0,

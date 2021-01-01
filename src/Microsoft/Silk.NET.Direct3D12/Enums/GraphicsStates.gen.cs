@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_GRAPHICS_STATES")]
-    public enum GraphicsStates
+    public enum GraphicsStates : int
     {
         [NativeName("Name", "D3D12_GRAPHICS_STATE_NONE")]
         GraphicsStateNone = 0x0,

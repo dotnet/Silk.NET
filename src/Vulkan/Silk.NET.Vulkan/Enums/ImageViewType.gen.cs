@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageViewType")]
-    public enum ImageViewType
+    public enum ImageViewType : int
     {
         [NativeName("Name", "VK_IMAGE_VIEW_TYPE_1D")]
         ImageViewType1D = 0,

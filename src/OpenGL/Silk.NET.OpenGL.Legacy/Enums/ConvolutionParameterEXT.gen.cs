@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "ConvolutionParameterEXT")]
-    public enum ConvolutionParameterEXT
+    public enum ConvolutionParameterEXT : int
     {
         [NativeName("Name", "GL_CONVOLUTION_BORDER_MODE")]
         ConvolutionBorderMode = 0x8013,

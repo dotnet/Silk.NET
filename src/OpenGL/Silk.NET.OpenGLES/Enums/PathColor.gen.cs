@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "PathColor")]
-    public enum PathColor
+    public enum PathColor : int
     {
         [NativeName("Name", "GL_PRIMARY_COLOR_NV")]
         PrimaryColorNV = 0x852C,

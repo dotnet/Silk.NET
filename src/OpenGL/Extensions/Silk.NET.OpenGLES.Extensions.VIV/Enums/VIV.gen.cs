@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES.Extensions.VIV
 {
     [NativeName("Name", "GLenum")]
-    public enum VIV
+    public enum VIV : int
     {
         [NativeName("Name", "GL_SHADER_BINARY_VIV")]
         ShaderBinaryViv = 0x8FC4,

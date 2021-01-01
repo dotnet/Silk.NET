@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "MemoryObjectParameterName")]
-    public enum MemoryObjectParameterName
+    public enum MemoryObjectParameterName : int
     {
         [NativeName("Name", "GL_DEDICATED_MEMORY_OBJECT_EXT")]
         DedicatedMemoryObjectExt = 0x9581,

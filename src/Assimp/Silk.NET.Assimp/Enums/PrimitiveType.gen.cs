@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiPrimitiveType")]
-    public enum PrimitiveType
+    public enum PrimitiveType : int
     {
         [NativeName("Name", "aiPrimitiveType_POINT")]
         PrimitiveTypePoint = 0x1,

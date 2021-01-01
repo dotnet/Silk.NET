@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_COMMAND_LIST_SUPPORT_FLAGS")]
-    public enum CommandListSupportFlags
+    public enum CommandListSupportFlags : int
     {
         [NativeName("Name", "D3D12_COMMAND_LIST_SUPPORT_FLAG_NONE")]
         CommandListSupportFlagNone = 0x0,

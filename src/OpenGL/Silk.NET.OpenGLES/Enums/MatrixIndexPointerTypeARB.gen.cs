@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "MatrixIndexPointerTypeARB")]
-    public enum MatrixIndexPointerTypeARB
+    public enum MatrixIndexPointerTypeARB : int
     {
         [NativeName("Name", "GL_UNSIGNED_BYTE")]
         UnsignedByte = 0x1401,

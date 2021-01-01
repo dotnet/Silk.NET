@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES.Extensions.APPLE
 {
     [NativeName("Name", "GLenum")]
-    public enum APPLE
+    public enum APPLE : int
     {
         [NativeName("Name", "GL_MAX_CLIP_DISTANCES_APPLE")]
         MaxClipDistancesApple = 0xD32,

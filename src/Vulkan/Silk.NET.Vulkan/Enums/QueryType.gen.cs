@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueryType")]
-    public enum QueryType
+    public enum QueryType : int
     {
         [NativeName("Name", "VK_QUERY_TYPE_OCCLUSION")]
         Occlusion = 0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "GetPName")]
-    public enum GetPName
+    public enum GetPName : int
     {
         [NativeName("Name", "GL_POINT_SIZE")]
         PointSize = 0xB11,

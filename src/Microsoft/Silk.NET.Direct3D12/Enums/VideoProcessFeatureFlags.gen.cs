@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_VIDEO_PROCESS_FEATURE_FLAGS")]
-    public enum VideoProcessFeatureFlags
+    public enum VideoProcessFeatureFlags : int
     {
         [NativeName("Name", "D3D12_VIDEO_PROCESS_FEATURE_FLAG_NONE")]
         VideoProcessFeatureFlagNone = 0x0,

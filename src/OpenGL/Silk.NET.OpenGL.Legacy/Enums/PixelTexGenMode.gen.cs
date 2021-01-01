@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "PixelTexGenMode")]
-    public enum PixelTexGenMode
+    public enum PixelTexGenMode : int
     {
         [NativeName("Name", "GL_NONE")]
         None = 0x0,

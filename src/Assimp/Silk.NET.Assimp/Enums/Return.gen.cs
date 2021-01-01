@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiReturn")]
-    public enum Return
+    public enum Return : int
     {
         [NativeName("Name", "aiReturn_SUCCESS")]
         ReturnSuccess = 0x0,

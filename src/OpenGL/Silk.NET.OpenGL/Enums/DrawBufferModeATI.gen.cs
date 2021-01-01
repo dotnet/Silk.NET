@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "DrawBufferModeATI")]
-    public enum DrawBufferModeATI
+    public enum DrawBufferModeATI : int
     {
         [NativeName("Name", "GL_COLOR_ATTACHMENT0_NV")]
         ColorAttachment0NV = 0x8CE0,

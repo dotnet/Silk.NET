@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_DRED_ENABLEMENT")]
-    public enum DredEnablement
+    public enum DredEnablement : int
     {
         [NativeName("Name", "D3D12_DRED_ENABLEMENT_SYSTEM_CONTROLLED")]
         DredEnablementSystemControlled = 0x0,

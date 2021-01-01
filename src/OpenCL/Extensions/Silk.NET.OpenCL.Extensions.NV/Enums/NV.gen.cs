@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.NV
 {
     [NativeName("Name", "GLenum")]
-    public enum NV
+    public enum NV : int
     {
         [NativeName("Name", "CL_DEVICE_COMPUTE_CAPABILITY_MAJOR_NV")]
         DeviceComputeCapabilityMajorNV = 0x4000,

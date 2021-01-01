@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "SyncStatus")]
-    public enum SyncStatus
+    public enum SyncStatus : int
     {
         [NativeName("Name", "GL_ALREADY_SIGNALED")]
         AlreadySignaled = 0x911A,

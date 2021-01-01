@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "ClipPlaneName")]
-    public enum ClipPlaneName
+    public enum ClipPlaneName : int
     {
         [NativeName("Name", "GL_CLIP_DISTANCE0")]
         ClipDistance0 = 0x3000,

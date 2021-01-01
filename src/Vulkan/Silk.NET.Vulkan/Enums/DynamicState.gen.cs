@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDynamicState")]
-    public enum DynamicState
+    public enum DynamicState : int
     {
         [NativeName("Name", "VK_DYNAMIC_STATE_VIEWPORT")]
         Viewport = 0,

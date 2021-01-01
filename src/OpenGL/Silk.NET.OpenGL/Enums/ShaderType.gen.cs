@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "ShaderType")]
-    public enum ShaderType
+    public enum ShaderType : int
     {
         [NativeName("Name", "GL_FRAGMENT_SHADER")]
         FragmentShader = 0x8B30,

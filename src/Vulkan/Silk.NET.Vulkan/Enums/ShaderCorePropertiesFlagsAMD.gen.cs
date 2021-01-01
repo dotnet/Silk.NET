@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkShaderCorePropertiesFlagsAMD")]
-    public enum ShaderCorePropertiesFlagsAMD
+    public enum ShaderCorePropertiesFlagsAMD : int
     {
     }
 }

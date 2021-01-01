@@ -37,7 +37,7 @@ namespace Silk.NET.BuildTools.Bind
             }
 
             sw.WriteLine($"    [NativeName(\"Name\", \"{@enum.NativeName}\")]");
-            sw.WriteLine($"    public enum {@enum.Name}");
+            sw.WriteLine($"    public enum {@enum.Name} : {@enum.EnumBaseType}");
             sw.WriteLine("    {");
             for (var index = 0; index < @enum.Tokens.Count; index++)
             {

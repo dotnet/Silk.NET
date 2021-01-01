@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_BIND_FLAG")]
-    public enum BindFlag
+    public enum BindFlag : int
     {
         [NativeName("Name", "D3D11_BIND_VERTEX_BUFFER")]
         BindVertexBuffer = 0x1,

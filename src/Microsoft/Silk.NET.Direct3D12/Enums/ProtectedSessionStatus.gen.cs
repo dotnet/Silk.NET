@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_PROTECTED_SESSION_STATUS")]
-    public enum ProtectedSessionStatus
+    public enum ProtectedSessionStatus : int
     {
         [NativeName("Name", "D3D12_PROTECTED_SESSION_STATUS_OK")]
         ProtectedSessionStatusOK = 0x0,

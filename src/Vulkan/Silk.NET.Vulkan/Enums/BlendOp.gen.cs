@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBlendOp")]
-    public enum BlendOp
+    public enum BlendOp : int
     {
         [NativeName("Name", "VK_BLEND_OP_ADD")]
         Add = 0,

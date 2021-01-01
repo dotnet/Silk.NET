@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "VertexBufferObjectParameter")]
-    public enum VertexBufferObjectParameter
+    public enum VertexBufferObjectParameter : int
     {
         [NativeName("Name", "GL_BUFFER_IMMUTABLE_STORAGE")]
         BufferImmutableStorage = 0x821F,

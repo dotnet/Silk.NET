@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "SyncBehaviorFlags")]
-    public enum SyncBehaviorFlags
+    public enum SyncBehaviorFlags : int
     {
         [NativeName("Name", "GL_NONE")]
         None = 0x0,

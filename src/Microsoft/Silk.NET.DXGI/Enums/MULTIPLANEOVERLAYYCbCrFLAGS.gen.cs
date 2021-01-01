@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAGS")]
-    public enum MULTIPLANEOVERLAYYCbCrFLAGS
+    public enum MULTIPLANEOVERLAYYCbCrFLAGS : int
     {
         [NativeName("Name", "DXGI_MULTIPLANE_OVERLAY_YCbCr_FLAG_NOMINAL_RANGE")]
         MultiplaneOverlayYCbCrFlagNominalRange = 0x1,

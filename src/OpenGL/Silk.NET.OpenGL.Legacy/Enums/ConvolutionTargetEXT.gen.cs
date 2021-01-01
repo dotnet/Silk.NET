@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "ConvolutionTargetEXT")]
-    public enum ConvolutionTargetEXT
+    public enum ConvolutionTargetEXT : int
     {
         [NativeName("Name", "GL_CONVOLUTION_1D")]
         Convolution1D = 0x8010,

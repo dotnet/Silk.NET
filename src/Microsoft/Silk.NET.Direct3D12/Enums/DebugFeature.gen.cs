@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_DEBUG_FEATURE")]
-    public enum DebugFeature
+    public enum DebugFeature : int
     {
         [NativeName("Name", "D3D12_DEBUG_FEATURE_NONE")]
         DebugFeatureNone = 0x0,

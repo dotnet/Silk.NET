@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_BUS_TYPE")]
-    public enum BusType
+    public enum BusType : int
     {
         [NativeName("Name", "D3D11_BUS_TYPE_OTHER")]
         BusTypeOther = 0x0,

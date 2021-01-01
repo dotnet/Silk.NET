@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_INDIRECT_ARGUMENT_TYPE")]
-    public enum IndirectArgumentType
+    public enum IndirectArgumentType : int
     {
         [NativeName("Name", "D3D12_INDIRECT_ARGUMENT_TYPE_DRAW")]
         IndirectArgumentTypeDraw = 0x0,

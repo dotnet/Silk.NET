@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "LightTexturePNameEXT")]
-    public enum LightTexturePNameEXT
+    public enum LightTexturePNameEXT : int
     {
         [NativeName("Name", "GL_ATTENUATION_EXT")]
         AttenuationExt = 0x834D,

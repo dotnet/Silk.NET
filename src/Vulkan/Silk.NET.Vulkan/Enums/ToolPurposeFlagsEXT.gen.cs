@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkToolPurposeFlagsEXT")]
-    public enum ToolPurposeFlagsEXT
+    public enum ToolPurposeFlagsEXT : int
     {
         [NativeName("Name", "VK_TOOL_PURPOSE_VALIDATION_BIT_EXT")]
         ToolPurposeValidationBitExt = 1,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "VertexShaderTextureUnitParameter")]
-    public enum VertexShaderTextureUnitParameter
+    public enum VertexShaderTextureUnitParameter : int
     {
     }
 }

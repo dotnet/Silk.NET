@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_audio_L395_C9")]
     [NativeName("Name", "SDL_AudioStatus")]
-    public enum AudioStatus
+    public enum AudioStatus : int
     {
         [NativeName("Name", "SDL_AUDIO_STOPPED")]
         AudioStopped = 0x0,

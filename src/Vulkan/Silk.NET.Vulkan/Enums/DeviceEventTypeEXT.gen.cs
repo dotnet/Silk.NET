@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDeviceEventTypeEXT")]
-    public enum DeviceEventTypeEXT
+    public enum DeviceEventTypeEXT : int
     {
         [NativeName("Name", "VK_DEVICE_EVENT_TYPE_DISPLAY_HOTPLUG_EXT")]
         DeviceEventTypeDisplayHotplugExt = 0,

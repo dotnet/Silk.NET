@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiTextureFlags")]
-    public enum TextureFlags
+    public enum TextureFlags : int
     {
         [NativeName("Name", "aiTextureFlags_Invert")]
         TextureFlagsInvert = 0x1,

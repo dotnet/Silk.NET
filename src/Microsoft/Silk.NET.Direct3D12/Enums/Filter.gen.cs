@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_FILTER")]
-    public enum Filter
+    public enum Filter : int
     {
         [NativeName("Name", "D3D12_FILTER_MIN_MAG_MIP_POINT")]
         FilterMinMagMipPoint = 0x0,

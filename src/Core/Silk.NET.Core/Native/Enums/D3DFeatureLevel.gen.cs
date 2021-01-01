@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "D3D_FEATURE_LEVEL")]
-    public enum D3DFeatureLevel
+    public enum D3DFeatureLevel : int
     {
         [NativeName("Name", "D3D_FEATURE_LEVEL_1_0_CORE")]
         D3DFeatureLevel10Core = 0x1000,

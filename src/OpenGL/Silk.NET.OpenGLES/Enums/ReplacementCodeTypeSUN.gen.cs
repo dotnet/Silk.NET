@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "ReplacementCodeTypeSUN")]
-    public enum ReplacementCodeTypeSUN
+    public enum ReplacementCodeTypeSUN : int
     {
         [NativeName("Name", "GL_UNSIGNED_BYTE")]
         UnsignedByte = 0x1401,

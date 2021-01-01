@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPrimitiveTopology")]
-    public enum PrimitiveTopology
+    public enum PrimitiveTopology : int
     {
         [NativeName("Name", "VK_PRIMITIVE_TOPOLOGY_POINT_LIST")]
         PointList = 0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DRESOURCETYPE")]
-    public enum Resourcetype
+    public enum Resourcetype : int
     {
         [NativeName("Name", "D3DRTYPE_SURFACE")]
         RtypeSurface = 0x1,

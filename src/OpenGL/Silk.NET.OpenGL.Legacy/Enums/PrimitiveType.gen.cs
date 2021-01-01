@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "PrimitiveType")]
-    public enum PrimitiveType
+    public enum PrimitiveType : int
     {
         [NativeName("Name", "GL_POINTS")]
         Points = 0x0,

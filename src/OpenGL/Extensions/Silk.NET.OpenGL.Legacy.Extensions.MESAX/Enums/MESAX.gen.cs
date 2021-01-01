@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.MESAX
 {
     [NativeName("Name", "GLenum")]
-    public enum MESAX
+    public enum MESAX : int
     {
         [NativeName("Name", "GL_TEXTURE_1D_STACK_MESAX")]
         Texture1DStackMesax = 0x8759,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "TextureGenParameter")]
-    public enum TextureGenParameter
+    public enum TextureGenParameter : int
     {
         [NativeName("Name", "GL_TEXTURE_GEN_MODE")]
         TextureGenMode = 0x2500,

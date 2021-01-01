@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "TextureUnit")]
-    public enum TextureUnit
+    public enum TextureUnit : int
     {
         [NativeName("Name", "GL_TEXTURE0")]
         Texture0 = 0x84C0,

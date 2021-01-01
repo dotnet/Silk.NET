@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "VertexArrayPName")]
-    public enum VertexArrayPName
+    public enum VertexArrayPName : int
     {
         [NativeName("Name", "GL_VERTEX_ATTRIB_RELATIVE_OFFSET")]
         VertexAttribRelativeOffset = 0x82D5,

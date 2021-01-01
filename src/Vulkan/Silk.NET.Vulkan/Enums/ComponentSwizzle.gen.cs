@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkComponentSwizzle")]
-    public enum ComponentSwizzle
+    public enum ComponentSwizzle : int
     {
         [NativeName("Name", "VK_COMPONENT_SWIZZLE_IDENTITY")]
         Identity = 0,

@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkDeviceDiagnosticsConfigFlagsNV")]
-    public enum DeviceDiagnosticsConfigFlagsNV
+    public enum DeviceDiagnosticsConfigFlagsNV : int
     {
         [NativeName("Name", "VK_DEVICE_DIAGNOSTICS_CONFIG_ENABLE_SHADER_DEBUG_INFO_BIT_NV")]
         DeviceDiagnosticsConfigEnableShaderDebugInfoBitNV = 1,

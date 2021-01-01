@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBlendOverlapEXT")]
-    public enum BlendOverlapEXT
+    public enum BlendOverlapEXT : int
     {
         [NativeName("Name", "VK_BLEND_OVERLAP_UNCORRELATED_EXT")]
         BlendOverlapUncorrelatedExt = 0,

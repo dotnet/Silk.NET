@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "PNTrianglesPNameATI")]
-    public enum PNTrianglesPNameATI
+    public enum PNTrianglesPNameATI : int
     {
         [NativeName("Name", "GL_PN_TRIANGLES_POINT_MODE_ATI")]
         PNTrianglesPointModeAti = 0x87F2,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_MESSAGE_ID")]
-    public enum MessageID
+    public enum MessageID : int
     {
         [NativeName("Name", "D3D11_MESSAGE_ID_UNKNOWN")]
         MessageIDUnknown = 0x0,

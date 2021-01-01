@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "VertexAttribEnum")]
-    public enum VertexAttribEnum
+    public enum VertexAttribEnum : int
     {
         [NativeName("Name", "GL_VERTEX_ATTRIB_ARRAY_ENABLED")]
         VertexAttribArrayEnabled = 0x8622,

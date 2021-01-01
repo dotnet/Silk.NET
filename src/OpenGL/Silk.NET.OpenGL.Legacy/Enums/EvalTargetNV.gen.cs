@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "EvalTargetNV")]
-    public enum EvalTargetNV
+    public enum EvalTargetNV : int
     {
         [NativeName("Name", "GL_EVAL_2D_NV")]
         Eval2DNV = 0x86C0,

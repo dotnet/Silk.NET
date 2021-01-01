@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES.Extensions.OES
 {
     [NativeName("Name", "GLenum")]
-    public enum OES
+    public enum OES : int
     {
         [NativeName("Name", "GL_ETC1_RGB8_OES")]
         Etc1Rgb8Oes = 0x8D64,

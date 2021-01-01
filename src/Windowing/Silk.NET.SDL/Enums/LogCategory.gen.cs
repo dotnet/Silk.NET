@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_log_L64_C9")]
     [NativeName("Name", "SDL_LogCategory")]
-    public enum LogCategory
+    public enum LogCategory : int
     {
         [NativeName("Name", "SDL_LOG_CATEGORY_APPLICATION")]
         LogCategoryApplication = 0x0,

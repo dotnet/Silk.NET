@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "PathColorFormat")]
-    public enum PathColorFormat
+    public enum PathColorFormat : int
     {
         [NativeName("Name", "GL_NONE")]
         None = 0x0,

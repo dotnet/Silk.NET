@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "TextureGenMode")]
-    public enum TextureGenMode
+    public enum TextureGenMode : int
     {
         [NativeName("Name", "GL_EYE_DISTANCE_TO_POINT_SGIS")]
         EyeDistanceToPointSgis = 0x81F0,

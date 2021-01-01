@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "VertexShaderOpEXT")]
-    public enum VertexShaderOpEXT
+    public enum VertexShaderOpEXT : int
     {
         [NativeName("Name", "GL_OP_INDEX_EXT")]
         OpIndexExt = 0x8782,

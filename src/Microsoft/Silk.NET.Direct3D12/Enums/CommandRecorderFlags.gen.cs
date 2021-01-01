@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_COMMAND_RECORDER_FLAGS")]
-    public enum CommandRecorderFlags
+    public enum CommandRecorderFlags : int
     {
         [NativeName("Name", "D3D12_COMMAND_RECORDER_FLAG_NONE")]
         CommandRecorderFlagNone = 0x0,

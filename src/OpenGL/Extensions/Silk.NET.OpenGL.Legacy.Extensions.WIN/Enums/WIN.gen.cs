@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.WIN
 {
     [NativeName("Name", "GLenum")]
-    public enum WIN
+    public enum WIN : int
     {
         [NativeName("Name", "GL_PHONG_WIN")]
         PhongWin = 0x80EA,

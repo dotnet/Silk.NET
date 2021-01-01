@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE")]
-    public enum PipelineStateSubobjectType
+    public enum PipelineStateSubobjectType : int
     {
         [NativeName("Name", "D3D12_PIPELINE_STATE_SUBOBJECT_TYPE_ROOT_SIGNATURE")]
         PipelineStateSubobjectTypeRootSignature = 0x0,

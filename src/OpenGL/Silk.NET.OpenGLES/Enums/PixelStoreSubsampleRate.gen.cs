@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "PixelStoreSubsampleRate")]
-    public enum PixelStoreSubsampleRate
+    public enum PixelStoreSubsampleRate : int
     {
         [NativeName("Name", "GL_PIXEL_SUBSAMPLE_4444_SGIX")]
         PixelSubsample4444Sgix = 0x85A2,

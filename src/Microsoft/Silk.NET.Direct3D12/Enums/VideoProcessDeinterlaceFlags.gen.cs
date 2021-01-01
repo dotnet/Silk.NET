@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_VIDEO_PROCESS_DEINTERLACE_FLAGS")]
-    public enum VideoProcessDeinterlaceFlags
+    public enum VideoProcessDeinterlaceFlags : int
     {
         [NativeName("Name", "D3D12_VIDEO_PROCESS_DEINTERLACE_FLAG_NONE")]
         VideoProcessDeinterlaceFlagNone = 0x0,

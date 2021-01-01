@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "_D3D_SHADER_VARIABLE_TYPE")]
-    public enum D3DShaderVariableType
+    public enum D3DShaderVariableType : int
     {
         [NativeName("Name", "D3D_SVT_VOID")]
         D3DSvtVoid = 0x0,

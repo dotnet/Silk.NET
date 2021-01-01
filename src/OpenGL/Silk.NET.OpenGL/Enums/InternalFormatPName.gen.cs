@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "InternalFormatPName")]
-    public enum InternalFormatPName
+    public enum InternalFormatPName : int
     {
         [NativeName("Name", "GL_SAMPLES")]
         Samples = 0x80A9,

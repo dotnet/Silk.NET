@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "VariantCapEXT")]
-    public enum VariantCapEXT
+    public enum VariantCapEXT : int
     {
         [NativeName("Name", "GL_VARIANT_ARRAY_EXT")]
         VariantArrayExt = 0x87E8,

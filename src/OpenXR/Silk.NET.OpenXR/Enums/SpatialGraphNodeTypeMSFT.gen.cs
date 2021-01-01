@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenXR
 {
     [NativeName("Name", "XrSpatialGraphNodeTypeMSFT")]
-    public enum SpatialGraphNodeTypeMSFT
+    public enum SpatialGraphNodeTypeMSFT : int
     {
         [NativeName("Name", "XR_SPATIAL_GRAPH_NODE_TYPE_STATIC_MSFT")]
         SpatialGraphNodeTypeStaticMsft = 1,

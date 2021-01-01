@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkExternalFenceHandleTypeFlagsKHR")]
-    public enum ExternalFenceHandleTypeFlagsKHR
+    public enum ExternalFenceHandleTypeFlagsKHR : int
     {
         [NativeName("Name", "VK_EXTERNAL_FENCE_HANDLE_TYPE_OPAQUE_FD_BIT")]
         ExternalFenceHandleTypeOpaqueFDBit = 1,

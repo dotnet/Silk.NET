@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "StencilFunction")]
-    public enum StencilFunction
+    public enum StencilFunction : int
     {
         [NativeName("Name", "GL_NEVER")]
         Never = 0x200,

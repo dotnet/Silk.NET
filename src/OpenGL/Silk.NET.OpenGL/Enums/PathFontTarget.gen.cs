@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "PathFontTarget")]
-    public enum PathFontTarget
+    public enum PathFontTarget : int
     {
         [NativeName("Name", "GL_STANDARD_FONT_NAME_NV")]
         StandardFontNameNV = 0x9072,

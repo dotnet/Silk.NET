@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES.Extensions.ANGLE
 {
     [NativeName("Name", "GLenum")]
-    public enum ANGLE
+    public enum ANGLE : int
     {
         [NativeName("Name", "GL_DEPTH_COMPONENT")]
         DepthComponent = 0x1902,

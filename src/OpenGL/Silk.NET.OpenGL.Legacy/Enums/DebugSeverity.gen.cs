@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "DebugSeverity")]
-    public enum DebugSeverity
+    public enum DebugSeverity : int
     {
         [NativeName("Name", "GL_DONT_CARE")]
         DontCare = 0x1100,

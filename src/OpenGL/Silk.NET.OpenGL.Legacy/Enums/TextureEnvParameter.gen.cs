@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "TextureEnvParameter")]
-    public enum TextureEnvParameter
+    public enum TextureEnvParameter : int
     {
         [NativeName("Name", "GL_TEXTURE_ENV_MODE")]
         TextureEnvMode = 0x2200,

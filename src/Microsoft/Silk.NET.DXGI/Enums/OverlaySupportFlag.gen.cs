@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_OVERLAY_SUPPORT_FLAG")]
-    public enum OverlaySupportFlag
+    public enum OverlaySupportFlag : int
     {
         [NativeName("Name", "DXGI_OVERLAY_SUPPORT_FLAG_DIRECT")]
         OverlaySupportFlagDirect = 0x1,

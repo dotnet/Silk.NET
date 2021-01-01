@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "FragmentOpATI")]
-    public enum FragmentOpATI
+    public enum FragmentOpATI : int
     {
         [NativeName("Name", "GL_MOV_ATI")]
         MovAti = 0x8961,

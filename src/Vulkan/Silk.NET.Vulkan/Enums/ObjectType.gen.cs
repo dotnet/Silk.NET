@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkObjectType")]
-    public enum ObjectType
+    public enum ObjectType : int
     {
         [NativeName("Name", "VK_OBJECT_TYPE_UNKNOWN")]
         Unknown = 0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "CullFaceMode")]
-    public enum CullFaceMode
+    public enum CullFaceMode : int
     {
         [NativeName("Name", "GL_FRONT")]
         Front = 0x404,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "PathGenMode")]
-    public enum PathGenMode
+    public enum PathGenMode : int
     {
         [NativeName("Name", "GL_NONE")]
         None = 0x0,

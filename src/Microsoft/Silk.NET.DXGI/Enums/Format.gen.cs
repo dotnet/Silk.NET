@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_FORMAT")]
-    public enum Format
+    public enum Format : int
     {
         [NativeName("Name", "DXGI_FORMAT_UNKNOWN")]
         FormatUnknown = 0x0,

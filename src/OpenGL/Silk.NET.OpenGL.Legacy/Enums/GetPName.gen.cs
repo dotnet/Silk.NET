@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "GetPName")]
-    public enum GetPName
+    public enum GetPName : int
     {
         [NativeName("Name", "GL_CURRENT_COLOR")]
         CurrentColor = 0xB00,

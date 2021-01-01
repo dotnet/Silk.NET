@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "FenceParameterNameNV")]
-    public enum FenceParameterNameNV
+    public enum FenceParameterNameNV : int
     {
         [NativeName("Name", "GL_FENCE_STATUS_NV")]
         FenceStatusNV = 0x84F3,

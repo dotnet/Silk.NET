@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.REND
 {
     [NativeName("Name", "GLenum")]
-    public enum REND
+    public enum REND : int
     {
         [NativeName("Name", "GL_SCREEN_COORDINATES_REND")]
         ScreenCoordinatesRend = 0x8490,

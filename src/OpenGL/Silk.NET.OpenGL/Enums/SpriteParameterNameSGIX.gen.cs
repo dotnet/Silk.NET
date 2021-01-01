@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "SpriteParameterNameSGIX")]
-    public enum SpriteParameterNameSGIX
+    public enum SpriteParameterNameSGIX : int
     {
         [NativeName("Name", "GL_SPRITE_MODE_SGIX")]
         SpriteModeSgix = 0x8149,

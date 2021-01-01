@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "IndexMaterialParameterEXT")]
-    public enum IndexMaterialParameterEXT
+    public enum IndexMaterialParameterEXT : int
     {
         [NativeName("Name", "GL_INDEX_OFFSET")]
         IndexOffset = 0xD13,

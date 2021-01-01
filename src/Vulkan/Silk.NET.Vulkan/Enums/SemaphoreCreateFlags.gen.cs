@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkSemaphoreCreateFlags")]
-    public enum SemaphoreCreateFlags
+    public enum SemaphoreCreateFlags : int
     {
     }
 }

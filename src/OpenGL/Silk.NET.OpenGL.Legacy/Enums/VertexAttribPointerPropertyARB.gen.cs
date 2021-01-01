@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "VertexAttribPointerPropertyARB")]
-    public enum VertexAttribPointerPropertyARB
+    public enum VertexAttribPointerPropertyARB : int
     {
         [NativeName("Name", "GL_VERTEX_ATTRIB_ARRAY_POINTER")]
         VertexAttribArrayPointer = 0x8645,

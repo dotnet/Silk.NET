@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCoverageModulationModeNV")]
-    public enum CoverageModulationModeNV
+    public enum CoverageModulationModeNV : int
     {
         [NativeName("Name", "VK_COVERAGE_MODULATION_MODE_NONE_NV")]
         CoverageModulationModeNoneNV = 0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCoarseSampleOrderTypeNV")]
-    public enum CoarseSampleOrderTypeNV
+    public enum CoarseSampleOrderTypeNV : int
     {
         [NativeName("Name", "VK_COARSE_SAMPLE_ORDER_TYPE_DEFAULT_NV")]
         CoarseSampleOrderTypeDefaultNV = 0,

@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_mouse_L46_C9")]
     [NativeName("Name", "SDL_SystemCursor")]
-    public enum SystemCursor
+    public enum SystemCursor : int
     {
         [NativeName("Name", "SDL_SYSTEM_CURSOR_ARROW")]
         SystemCursorArrow = 0x0,

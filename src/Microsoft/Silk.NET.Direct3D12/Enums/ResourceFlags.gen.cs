@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_RESOURCE_FLAGS")]
-    public enum ResourceFlags
+    public enum ResourceFlags : int
     {
         [NativeName("Name", "D3D12_RESOURCE_FLAG_NONE")]
         ResourceFlagNone = 0x0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DDEGREETYPE")]
-    public enum Degreetype
+    public enum Degreetype : int
     {
         [NativeName("Name", "D3DDEGREE_LINEAR")]
         DegreeLinear = 0x1,

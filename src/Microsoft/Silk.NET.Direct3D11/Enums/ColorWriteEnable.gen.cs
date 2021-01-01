@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_COLOR_WRITE_ENABLE")]
-    public enum ColorWriteEnable
+    public enum ColorWriteEnable : int
     {
         [NativeName("Name", "D3D11_COLOR_WRITE_ENABLE_RED")]
         ColorWriteEnableRed = 0x1,

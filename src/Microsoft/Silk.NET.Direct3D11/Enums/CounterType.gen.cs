@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_COUNTER_TYPE")]
-    public enum CounterType
+    public enum CounterType : int
     {
         [NativeName("Name", "D3D11_COUNTER_TYPE_FLOAT32")]
         CounterTypeFloat32 = 0x0,

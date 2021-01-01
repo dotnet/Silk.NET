@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "PixelTransferParameter")]
-    public enum PixelTransferParameter
+    public enum PixelTransferParameter : int
     {
         [NativeName("Name", "GL_POST_CONVOLUTION_RED_SCALE")]
         PostConvolutionRedScale = 0x801C,

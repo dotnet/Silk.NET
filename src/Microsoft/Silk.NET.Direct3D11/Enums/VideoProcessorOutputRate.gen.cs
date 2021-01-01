@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_VIDEO_PROCESSOR_OUTPUT_RATE")]
-    public enum VideoProcessorOutputRate
+    public enum VideoProcessorOutputRate : int
     {
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_OUTPUT_RATE_NORMAL")]
         VideoProcessorOutputRateNormal = 0x0,

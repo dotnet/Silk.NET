@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L249_C9")]
     [NativeName("Name", "SDL_GLContextResetNotification")]
-    public enum GLContextResetNotification
+    public enum GLContextResetNotification : int
     {
         [NativeName("Name", "SDL_GL_CONTEXT_RESET_NO_NOTIFICATION")]
         GLContextResetNoNotification = 0x0,

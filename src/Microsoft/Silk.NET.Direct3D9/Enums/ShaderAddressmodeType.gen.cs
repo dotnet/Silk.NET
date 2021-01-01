@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DSHADER_ADDRESSMODE_TYPE")]
-    public enum ShaderAddressmodeType
+    public enum ShaderAddressmodeType : int
     {
         [NativeName("Name", "D3DSHADER_ADDRMODE_ABSOLUTE")]
         ShaderAddrmodeAbsolute = 0x0,

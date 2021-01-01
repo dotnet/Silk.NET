@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "MapQuery")]
-    public enum MapQuery
+    public enum MapQuery : int
     {
     }
 }

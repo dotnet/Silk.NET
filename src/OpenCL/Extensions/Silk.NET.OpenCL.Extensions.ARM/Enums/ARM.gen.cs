@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.ARM
 {
     [NativeName("Name", "GLenum")]
-    public enum ARM
+    public enum ARM : int
     {
         [NativeName("Name", "CL_DEVICE_COMPUTE_UNITS_BITFIELD_ARM")]
         DeviceComputeUnitsBitfieldArm = 0x40BF,

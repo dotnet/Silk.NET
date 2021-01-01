@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "ColorPointerType")]
-    public enum ColorPointerType
+    public enum ColorPointerType : int
     {
         [NativeName("Name", "GL_BYTE")]
         Byte = 0x1400,

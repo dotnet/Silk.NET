@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "TextureGenMode")]
-    public enum TextureGenMode
+    public enum TextureGenMode : int
     {
         [NativeName("Name", "GL_EYE_LINEAR")]
         EyeLinear = 0x2400,

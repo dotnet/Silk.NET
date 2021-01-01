@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "_DXGI_RECLAIM_RESOURCE_RESULTS")]
-    public enum ReclaimResourceResults
+    public enum ReclaimResourceResults : int
     {
         [NativeName("Name", "DXGI_RECLAIM_RESOURCE_RESULT_OK")]
         ReclaimResourceResultOK = 0x0,

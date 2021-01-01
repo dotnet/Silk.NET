@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "ShaderBinaryFormat")]
-    public enum ShaderBinaryFormat
+    public enum ShaderBinaryFormat : int
     {
         [NativeName("Name", "GL_SHADER_BINARY_FORMAT_SPIR_V")]
         ShaderBinaryFormatSpirV = 0x9551,

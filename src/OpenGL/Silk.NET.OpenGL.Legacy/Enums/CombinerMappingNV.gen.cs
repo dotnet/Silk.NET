@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "CombinerMappingNV")]
-    public enum CombinerMappingNV
+    public enum CombinerMappingNV : int
     {
         [NativeName("Name", "GL_UNSIGNED_IDENTITY_NV")]
         UnsignedIdentityNV = 0x8536,

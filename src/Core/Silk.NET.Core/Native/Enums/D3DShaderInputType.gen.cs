@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "_D3D_SHADER_INPUT_TYPE")]
-    public enum D3DShaderInputType
+    public enum D3DShaderInputType : int
     {
         [NativeName("Name", "D3D_SIT_CBUFFER")]
         D3DSitCbuffer = 0x0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "LightEnvParameterSGIX")]
-    public enum LightEnvParameterSGIX
+    public enum LightEnvParameterSGIX : int
     {
         [NativeName("Name", "GL_LIGHT_ENV_MODE_SGIX")]
         LightEnvModeSgix = 0x8407,

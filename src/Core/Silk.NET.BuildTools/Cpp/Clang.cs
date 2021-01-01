@@ -925,11 +925,11 @@ namespace Silk.NET.BuildTools.Cpp
                                         {
                                             Name = Naming.Translate(Naming.TrimName(x.Name, task), task.FunctionPrefix),
                                             NativeName = x.Name,
-                                            Value = CheckToken("0x" + x.InitVal.ToString("X"))
+                                            Value = x.InitVal.ToString("X")
                                         }
                                     )
                                     .ToList(),
-                                EnumBaseType = GetType(enumDecl.TypeForDecl, out _, ref _f, out _)
+                                EnumBaseType = GetType(enumDecl.IntegerType, out _, ref _f, out _)
                             }
                         );
                         break;
@@ -1362,34 +1362,6 @@ namespace Silk.NET.BuildTools.Cpp
                     (new Field {Name = "LpVtbl", Type = new Type {Name = "void", IndirectionLevels = 2}, NativeName = "lpVtbl"});
                 OutputVtblHelperMethods(cxxRecordDecl, ref i, @struct);
             }
-        }
-
-        public static string CheckToken(string token)
-        {
-            var tokenHex = token.StartsWith("0x") ? token.Substring(2) : token;
-
-            if (!long.TryParse(tokenHex, NumberStyles.HexNumber, CultureInfo.InvariantCulture, out var value))
-            {
-                if (!long.TryParse(tokenHex, out value))
-                {
-                    if (!ulong.TryParse(tokenHex, out var uValue))
-                    {
-                        throw new InvalidDataException("Token value was not in a valid format.");
-                    }
-
-                    value = unchecked((long) uValue);
-                }
-            }
-
-            var valueString = $"0x{value:X}";
-            var needsCasting = value > int.MaxValue || value < 0;
-            if (needsCasting)
-            {
-                Console.WriteLine($"Warning: casting overflowing enum value {token} from 64-bit to 32-bit.");
-                valueString = $"unchecked((int){valueString})";
-            }
-
-            return valueString;
         }
     }
 }

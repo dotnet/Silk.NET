@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkShaderInfoTypeAMD")]
-    public enum ShaderInfoTypeAMD
+    public enum ShaderInfoTypeAMD : int
     {
         [NativeName("Name", "VK_SHADER_INFO_TYPE_STATISTICS_AMD")]
         ShaderInfoTypeStatisticsAmd = 0,

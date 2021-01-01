@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkVendorId")]
-    public enum VendorId
+    public enum VendorId : int
     {
         [NativeName("Name", "VK_VENDOR_ID_VIV")]
         VendorIDViv = 65537,

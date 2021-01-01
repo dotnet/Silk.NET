@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_RESIDENCY_FLAGS")]
-    public enum ResidencyFlags
+    public enum ResidencyFlags : int
     {
         [NativeName("Name", "D3D12_RESIDENCY_FLAG_NONE")]
         ResidencyFlagNone = 0x0,

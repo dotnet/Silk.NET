@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "PixelTransferParameter")]
-    public enum PixelTransferParameter
+    public enum PixelTransferParameter : int
     {
         [NativeName("Name", "GL_MAP_COLOR")]
         MapColor = 0xD10,

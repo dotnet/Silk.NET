@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_TRACE_GS_INPUT_PRIMITIVE")]
-    public enum TraceGSInputPrimitive
+    public enum TraceGSInputPrimitive : int
     {
         [NativeName("Name", "D3D11_TRACE_GS_INPUT_PRIMITIVE_UNDEFINED")]
         TraceGSInputPrimitiveUndefined = 0x0,

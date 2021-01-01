@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSemaphoreType")]
-    public enum SemaphoreType
+    public enum SemaphoreType : int
     {
         [NativeName("Name", "VK_SEMAPHORE_TYPE_BINARY")]
         Binary = 0,

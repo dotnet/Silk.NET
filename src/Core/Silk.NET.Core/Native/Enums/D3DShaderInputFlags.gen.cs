@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "_D3D_SHADER_INPUT_FLAGS")]
-    public enum D3DShaderInputFlags
+    public enum D3DShaderInputFlags : int
     {
         [NativeName("Name", "D3D_SIF_USERPACKED")]
         D3DSifUserpacked = 0x1,

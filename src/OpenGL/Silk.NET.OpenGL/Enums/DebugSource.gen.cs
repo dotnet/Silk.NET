@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "DebugSource")]
-    public enum DebugSource
+    public enum DebugSource : int
     {
         [NativeName("Name", "GL_DONT_CARE")]
         DontCare = 0x1100,

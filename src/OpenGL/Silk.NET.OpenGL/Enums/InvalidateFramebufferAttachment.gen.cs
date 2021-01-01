@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "InvalidateFramebufferAttachment")]
-    public enum InvalidateFramebufferAttachment
+    public enum InvalidateFramebufferAttachment : int
     {
         [NativeName("Name", "GL_COLOR")]
         Color = 0x1800,

@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_joystick_L83_C9")]
     [NativeName("Name", "SDL_JoystickType")]
-    public enum JoystickType
+    public enum JoystickType : int
     {
         [NativeName("Name", "SDL_JOYSTICK_TYPE_UNKNOWN")]
         JoystickTypeUnknown = 0x0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "VertexBufferObjectUsage")]
-    public enum VertexBufferObjectUsage
+    public enum VertexBufferObjectUsage : int
     {
         [NativeName("Name", "GL_STREAM_DRAW")]
         StreamDraw = 0x88E0,

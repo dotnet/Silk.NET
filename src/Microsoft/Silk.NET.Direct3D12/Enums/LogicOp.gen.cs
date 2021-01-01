@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_LOGIC_OP")]
-    public enum LogicOp
+    public enum LogicOp : int
     {
         [NativeName("Name", "D3D12_LOGIC_OP_CLEAR")]
         LogicOpClear = 0x0,

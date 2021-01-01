@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DSHADER_MISCTYPE_OFFSETS")]
-    public enum ShaderMisctypeOffsets
+    public enum ShaderMisctypeOffsets : int
     {
         [NativeName("Name", "D3DSMO_POSITION")]
         SmoPosition = 0x0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_INPUT_CLASSIFICATION")]
-    public enum InputClassification
+    public enum InputClassification : int
     {
         [NativeName("Name", "D3D11_INPUT_PER_VERTEX_DATA")]
         InputPerVertexData = 0x0,

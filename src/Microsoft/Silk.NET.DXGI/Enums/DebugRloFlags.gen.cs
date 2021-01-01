@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_DEBUG_RLO_FLAGS")]
-    public enum DebugRloFlags
+    public enum DebugRloFlags : int
     {
         [NativeName("Name", "DXGI_DEBUG_RLO_SUMMARY")]
         DebugRloSummary = 0x1,

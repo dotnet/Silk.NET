@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_VIEW_INSTANCING_TIER")]
-    public enum ViewInstancingTier
+    public enum ViewInstancingTier : int
     {
         [NativeName("Name", "D3D12_VIEW_INSTANCING_TIER_NOT_SUPPORTED")]
         ViewInstancingTierNotSupported = 0x0,

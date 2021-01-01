@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "MeshMode1")]
-    public enum MeshMode1
+    public enum MeshMode1 : int
     {
         [NativeName("Name", "GL_POINT")]
         Point = 0x1B00,

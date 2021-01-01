@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "EnableCap")]
-    public enum EnableCap
+    public enum EnableCap : int
     {
         [NativeName("Name", "GL_LINE_SMOOTH")]
         LineSmooth = 0xB20,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "SamplePatternEXT")]
-    public enum SamplePatternEXT
+    public enum SamplePatternEXT : int
     {
         [NativeName("Name", "GL_1PASS_EXT")]
         Gl1PassExt = 0x80A1,

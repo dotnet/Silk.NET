@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkImageCreateFlags")]
-    public enum ImageCreateFlags
+    public enum ImageCreateFlags : int
     {
         [NativeName("Name", "VK_IMAGE_CREATE_SPARSE_BINDING_BIT")]
         ImageCreateSparseBindingBit = 1,

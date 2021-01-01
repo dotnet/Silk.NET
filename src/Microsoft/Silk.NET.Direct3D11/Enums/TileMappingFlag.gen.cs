@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_TILE_MAPPING_FLAG")]
-    public enum TileMappingFlag
+    public enum TileMappingFlag : int
     {
         [NativeName("Name", "D3D11_TILE_MAPPING_NO_OVERWRITE")]
         TileMappingNoOverwrite = 0x1,

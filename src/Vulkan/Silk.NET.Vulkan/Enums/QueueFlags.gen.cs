@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkQueueFlags")]
-    public enum QueueFlags
+    public enum QueueFlags : int
     {
         [NativeName("Name", "VK_QUEUE_GRAPHICS_BIT")]
         QueueGraphicsBit = 1,

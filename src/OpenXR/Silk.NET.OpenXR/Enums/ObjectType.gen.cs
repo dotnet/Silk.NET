@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenXR
 {
     [NativeName("Name", "XrObjectType")]
-    public enum ObjectType
+    public enum ObjectType : int
     {
         [NativeName("Name", "XR_OBJECT_TYPE_UNKNOWN")]
         Unknown = 0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "VertexPointerType")]
-    public enum VertexPointerType
+    public enum VertexPointerType : int
     {
         [NativeName("Name", "GL_SHORT")]
         Short = 0x1402,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_SHADER_TRACKING_OPTION")]
-    public enum ShaderTrackingOption
+    public enum ShaderTrackingOption : int
     {
         [NativeName("Name", "D3D11_SHADER_TRACKING_OPTION_IGNORE")]
         ShaderTrackingOptionIgnore = 0x0,

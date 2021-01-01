@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkViewportCoordinateSwizzleNV")]
-    public enum ViewportCoordinateSwizzleNV
+    public enum ViewportCoordinateSwizzleNV : int
     {
         [NativeName("Name", "VK_VIEWPORT_COORDINATE_SWIZZLE_POSITIVE_X_NV")]
         ViewportCoordinateSwizzlePositiveXNV = 0,

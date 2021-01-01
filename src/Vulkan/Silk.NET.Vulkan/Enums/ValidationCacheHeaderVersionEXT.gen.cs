@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkValidationCacheHeaderVersionEXT")]
-    public enum ValidationCacheHeaderVersionEXT
+    public enum ValidationCacheHeaderVersionEXT : int
     {
         [NativeName("Name", "VK_VALIDATION_CACHE_HEADER_VERSION_ONE_EXT")]
         ValidationCacheHeaderVersionOneExt = 1,

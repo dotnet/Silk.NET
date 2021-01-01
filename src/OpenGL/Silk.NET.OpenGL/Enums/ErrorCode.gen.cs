@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "ErrorCode")]
-    public enum ErrorCode
+    public enum ErrorCode : int
     {
         [NativeName("Name", "GL_NO_ERROR")]
         NoError = 0x0,

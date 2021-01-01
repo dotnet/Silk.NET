@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "CombinerBiasNV")]
-    public enum CombinerBiasNV
+    public enum CombinerBiasNV : int
     {
         [NativeName("Name", "GL_NONE")]
         None = 0x0,

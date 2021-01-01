@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkBufferCreateFlags")]
-    public enum BufferCreateFlags
+    public enum BufferCreateFlags : int
     {
         [NativeName("Name", "VK_BUFFER_CREATE_SPARSE_BINDING_BIT")]
         BufferCreateSparseBindingBit = 1,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "D3D_TESSELLATOR_PARTITIONING")]
-    public enum D3DTessellatorPartitioning
+    public enum D3DTessellatorPartitioning : int
     {
         [NativeName("Name", "D3D_TESSELLATOR_PARTITIONING_UNDEFINED")]
         D3DTessellatorPartitioningUndefined = 0x0,

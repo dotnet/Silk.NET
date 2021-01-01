@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "PathFontStyle")]
-    public enum PathFontStyle
+    public enum PathFontStyle : int
     {
         [NativeName("Name", "GL_BOLD_BIT_NV")]
         BoldBitNV = 0x1,

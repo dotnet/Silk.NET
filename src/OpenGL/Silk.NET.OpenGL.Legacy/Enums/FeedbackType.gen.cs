@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "FeedbackType")]
-    public enum FeedbackType
+    public enum FeedbackType : int
     {
         [NativeName("Name", "GL_2D")]
         Gl2D = 0x600,

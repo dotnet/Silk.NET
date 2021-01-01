@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "VertexShaderStorageTypeEXT")]
-    public enum VertexShaderStorageTypeEXT
+    public enum VertexShaderStorageTypeEXT : int
     {
         [NativeName("Name", "GL_VARIANT_EXT")]
         VariantExt = 0x87C1,

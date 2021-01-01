@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_BUFFEREX_SRV_FLAG")]
-    public enum BufferexSrvFlag
+    public enum BufferexSrvFlag : int
     {
         [NativeName("Name", "D3D11_BUFFEREX_SRV_FLAG_RAW")]
         BufferexSrvFlagRaw = 0x1,

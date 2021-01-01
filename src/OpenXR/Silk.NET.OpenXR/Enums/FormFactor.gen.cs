@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenXR
 {
     [NativeName("Name", "XrFormFactor")]
-    public enum FormFactor
+    public enum FormFactor : int
     {
         [NativeName("Name", "XR_FORM_FACTOR_HEAD_MOUNTED_DISPLAY")]
         HeadMountedDisplay = 1,

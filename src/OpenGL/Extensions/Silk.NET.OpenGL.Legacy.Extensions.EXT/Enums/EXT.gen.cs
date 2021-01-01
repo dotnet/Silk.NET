@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
 {
     [NativeName("Name", "GLenum")]
-    public enum EXT
+    public enum EXT : int
     {
         [NativeName("Name", "GL_422_EXT")]
         Gl422Ext = 0x80CC,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "VertexShaderTextureUnitParameter")]
-    public enum VertexShaderTextureUnitParameter
+    public enum VertexShaderTextureUnitParameter : int
     {
         [NativeName("Name", "GL_CURRENT_TEXTURE_COORDS")]
         CurrentTextureCoords = 0xB03,

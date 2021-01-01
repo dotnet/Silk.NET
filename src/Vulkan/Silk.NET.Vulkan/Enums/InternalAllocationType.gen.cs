@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkInternalAllocationType")]
-    public enum InternalAllocationType
+    public enum InternalAllocationType : int
     {
         [NativeName("Name", "VK_INTERNAL_ALLOCATION_TYPE_EXECUTABLE")]
         Executable = 0,

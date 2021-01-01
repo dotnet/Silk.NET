@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_pixels_L68_C9")]
     [NativeName("Name", "SDL_BitmapOrder")]
-    public enum BitmapOrder
+    public enum BitmapOrder : int
     {
         [NativeName("Name", "SDL_BITMAPORDER_NONE")]
         BitmaporderNone = 0x0,

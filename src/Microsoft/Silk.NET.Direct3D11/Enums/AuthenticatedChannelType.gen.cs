@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_AUTHENTICATED_CHANNEL_TYPE")]
-    public enum AuthenticatedChannelType
+    public enum AuthenticatedChannelType : int
     {
         [NativeName("Name", "D3D11_AUTHENTICATED_CHANNEL_D3D11")]
         AuthenticatedChannelD3D11 = 0x1,

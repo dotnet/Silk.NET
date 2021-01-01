@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAGS")]
-    public enum VideoProtectedResourceSupportFlags
+    public enum VideoProtectedResourceSupportFlags : int
     {
         [NativeName("Name", "D3D12_VIDEO_PROTECTED_RESOURCE_SUPPORT_FLAG_NONE")]
         VideoProtectedResourceSupportFlagNone = 0x0,

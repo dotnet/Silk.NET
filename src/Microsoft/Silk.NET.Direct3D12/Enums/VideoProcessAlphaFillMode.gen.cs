@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE")]
-    public enum VideoProcessAlphaFillMode
+    public enum VideoProcessAlphaFillMode : int
     {
         [NativeName("Name", "D3D12_VIDEO_PROCESS_ALPHA_FILL_MODE_OPAQUE")]
         VideoProcessAlphaFillModeOpaque = 0x0,

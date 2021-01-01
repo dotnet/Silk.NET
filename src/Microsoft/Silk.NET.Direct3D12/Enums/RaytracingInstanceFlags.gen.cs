@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_RAYTRACING_INSTANCE_FLAGS")]
-    public enum RaytracingInstanceFlags
+    public enum RaytracingInstanceFlags : int
     {
         [NativeName("Name", "D3D12_RAYTRACING_INSTANCE_FLAG_NONE")]
         RaytracingInstanceFlagNone = 0x0,

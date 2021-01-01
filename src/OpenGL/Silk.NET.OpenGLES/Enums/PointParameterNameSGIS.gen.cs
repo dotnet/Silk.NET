@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "PointParameterNameSGIS")]
-    public enum PointParameterNameSGIS
+    public enum PointParameterNameSGIS : int
     {
         [NativeName("Name", "GL_POINT_SIZE_MIN")]
         PointSizeMin = 0x8126,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "PathListMode")]
-    public enum PathListMode
+    public enum PathListMode : int
     {
         [NativeName("Name", "GL_ACCUM_ADJACENT_PAIRS_NV")]
         AccumAdjacentPairsNV = 0x90AD,

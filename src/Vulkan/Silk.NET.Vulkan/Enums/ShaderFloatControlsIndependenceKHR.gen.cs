@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkShaderFloatControlsIndependenceKHR")]
-    public enum ShaderFloatControlsIndependenceKHR
+    public enum ShaderFloatControlsIndependenceKHR : int
     {
         [NativeName("Name", "VK_SHADER_FLOAT_CONTROLS_INDEPENDENCE_32_BIT_ONLY")]
         ShaderFloatControlsIndependence32BitOnly = 0,

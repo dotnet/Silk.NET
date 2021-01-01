@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS")]
-    public enum VideoProcessorAutoStreamCaps
+    public enum VideoProcessorAutoStreamCaps : int
     {
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_AUTO_STREAM_CAPS_DENOISE")]
         VideoProcessorAutoStreamCapsDenoise = 0x1,

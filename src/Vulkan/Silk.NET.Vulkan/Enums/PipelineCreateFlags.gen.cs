@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkPipelineCreateFlags")]
-    public enum PipelineCreateFlags
+    public enum PipelineCreateFlags : int
     {
         [NativeName("Name", "VK_PIPELINE_CREATE_DISABLE_OPTIMIZATION_BIT")]
         PipelineCreateDisableOptimizationBit = 1,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "CombinerPortionNV")]
-    public enum CombinerPortionNV
+    public enum CombinerPortionNV : int
     {
         [NativeName("Name", "GL_ALPHA")]
         Alpha = 0x1906,

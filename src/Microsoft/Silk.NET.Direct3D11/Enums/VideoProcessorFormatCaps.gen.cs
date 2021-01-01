@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_VIDEO_PROCESSOR_FORMAT_CAPS")]
-    public enum VideoProcessorFormatCaps
+    public enum VideoProcessorFormatCaps : int
     {
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_FORMAT_CAPS_RGB_INTERLACED")]
         VideoProcessorFormatCapsRgbInterlaced = 0x1,

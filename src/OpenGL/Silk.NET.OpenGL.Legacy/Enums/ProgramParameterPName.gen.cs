@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "ProgramParameterPName")]
-    public enum ProgramParameterPName
+    public enum ProgramParameterPName : int
     {
         [NativeName("Name", "GL_PROGRAM_BINARY_RETRIEVABLE_HINT")]
         ProgramBinaryRetrievableHint = 0x8257,

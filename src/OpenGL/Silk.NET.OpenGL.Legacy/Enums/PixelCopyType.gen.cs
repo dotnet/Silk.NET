@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "PixelCopyType")]
-    public enum PixelCopyType
+    public enum PixelCopyType : int
     {
         [NativeName("Name", "GL_COLOR")]
         Color = 0x1800,

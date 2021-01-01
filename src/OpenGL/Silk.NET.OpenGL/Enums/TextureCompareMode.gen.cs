@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "TextureCompareMode")]
-    public enum TextureCompareMode
+    public enum TextureCompareMode : int
     {
         [NativeName("Name", "GL_NONE")]
         None = 0x0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION")]
-    public enum VideoMotionEstimatorVectorPrecision
+    public enum VideoMotionEstimatorVectorPrecision : int
     {
         [NativeName("Name", "D3D12_VIDEO_MOTION_ESTIMATOR_VECTOR_PRECISION_QUARTER_PEL")]
         VideoMotionEstimatorVectorPrecisionQuarterPel = 0x0,

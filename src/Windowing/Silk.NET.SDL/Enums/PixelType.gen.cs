@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_pixels_L51_C9")]
     [NativeName("Name", "SDL_PixelType")]
-    public enum PixelType
+    public enum PixelType : int
     {
         [NativeName("Name", "SDL_PIXELTYPE_UNKNOWN")]
         PixeltypeUnknown = 0x0,

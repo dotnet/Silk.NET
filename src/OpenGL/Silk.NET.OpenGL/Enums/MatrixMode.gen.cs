@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "MatrixMode")]
-    public enum MatrixMode
+    public enum MatrixMode : int
     {
         [NativeName("Name", "GL_MODELVIEW0_EXT")]
         Modelview0Ext = 0x1700,

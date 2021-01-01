@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE")]
-    public enum VideoExtensionCommandParameterType
+    public enum VideoExtensionCommandParameterType : int
     {
         [NativeName("Name", "D3D12_VIDEO_EXTENSION_COMMAND_PARAMETER_TYPE_UINT8")]
         VideoExtensionCommandParameterTypeUint8 = 0x0,

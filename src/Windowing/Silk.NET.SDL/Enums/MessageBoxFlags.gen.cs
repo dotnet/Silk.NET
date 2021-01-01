@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_messagebox_L37_C9")]
     [NativeName("Name", "SDL_MessageBoxFlags")]
-    public enum MessageBoxFlags
+    public enum MessageBoxFlags : int
     {
         [NativeName("Name", "SDL_MESSAGEBOX_ERROR")]
         MessageboxError = 0x10,

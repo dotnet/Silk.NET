@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "TextureMinFilter")]
-    public enum TextureMinFilter
+    public enum TextureMinFilter : int
     {
         [NativeName("Name", "GL_NEAREST")]
         Nearest = 0x2600,

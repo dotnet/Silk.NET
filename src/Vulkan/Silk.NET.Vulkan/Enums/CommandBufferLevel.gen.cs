@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCommandBufferLevel")]
-    public enum CommandBufferLevel
+    public enum CommandBufferLevel : int
     {
         [NativeName("Name", "VK_COMMAND_BUFFER_LEVEL_PRIMARY")]
         Primary = 0,

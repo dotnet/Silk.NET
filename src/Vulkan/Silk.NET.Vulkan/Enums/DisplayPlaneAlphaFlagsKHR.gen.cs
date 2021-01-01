@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkDisplayPlaneAlphaFlagsKHR")]
-    public enum DisplayPlaneAlphaFlagsKHR
+    public enum DisplayPlaneAlphaFlagsKHR : int
     {
         [NativeName("Name", "VK_DISPLAY_PLANE_ALPHA_OPAQUE_BIT_KHR")]
         DisplayPlaneAlphaOpaqueBitKhr = 1,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiDefaultLogStream")]
-    public enum DefaultLogStream
+    public enum DefaultLogStream : int
     {
         [NativeName("Name", "aiDefaultLogStream_FILE")]
         DefaultLogStreamFile = 0x1,

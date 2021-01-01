@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_VIDEO_FIELD_TYPE")]
-    public enum VideoFieldType
+    public enum VideoFieldType : int
     {
         [NativeName("Name", "D3D12_VIDEO_FIELD_TYPE_NONE")]
         VideoFieldTypeNone = 0x0,

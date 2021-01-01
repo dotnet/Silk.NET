@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_messagebox_L49_C9")]
     [NativeName("Name", "SDL_MessageBoxButtonFlags")]
-    public enum MessageBoxButtonFlags
+    public enum MessageBoxButtonFlags : int
     {
         [NativeName("Name", "SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT")]
         MessageboxButtonReturnkeyDefault = 0x1,

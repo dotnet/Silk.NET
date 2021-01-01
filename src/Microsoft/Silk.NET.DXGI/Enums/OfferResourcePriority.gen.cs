@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "_DXGI_OFFER_RESOURCE_PRIORITY")]
-    public enum OfferResourcePriority
+    public enum OfferResourcePriority : int
     {
         [NativeName("Name", "DXGI_OFFER_RESOURCE_PRIORITY_LOW")]
         OfferResourcePriorityLow = 0x1,

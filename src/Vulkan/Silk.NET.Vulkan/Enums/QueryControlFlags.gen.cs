@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkQueryControlFlags")]
-    public enum QueryControlFlags
+    public enum QueryControlFlags : int
     {
         [NativeName("Name", "VK_QUERY_CONTROL_PRECISE_BIT")]
         QueryControlPreciseBit = 1,

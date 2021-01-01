@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkGeometryTypeKHR")]
-    public enum GeometryTypeKHR
+    public enum GeometryTypeKHR : int
     {
         [NativeName("Name", "VK_GEOMETRY_TYPE_TRIANGLES_KHR")]
         GeometryTypeTrianglesKhr = 0,

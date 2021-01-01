@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorType")]
-    public enum DescriptorType
+    public enum DescriptorType : int
     {
         [NativeName("Name", "VK_DESCRIPTOR_TYPE_SAMPLER")]
         Sampler = 0,

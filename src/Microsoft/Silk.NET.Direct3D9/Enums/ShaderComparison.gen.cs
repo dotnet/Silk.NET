@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DSHADER_COMPARISON")]
-    public enum ShaderComparison
+    public enum ShaderComparison : int
     {
         [NativeName("Name", "D3DSPC_RESERVED0")]
         SpcReserved0 = 0x0,

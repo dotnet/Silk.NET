@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDriverId")]
-    public enum DriverId
+    public enum DriverId : int
     {
         [NativeName("Name", "VK_DRIVER_ID_AMD_PROPRIETARY")]
         DriverIDAmdProprietary = 1,

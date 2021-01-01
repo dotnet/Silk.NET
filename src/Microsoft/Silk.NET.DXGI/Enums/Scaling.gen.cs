@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_SCALING")]
-    public enum Scaling
+    public enum Scaling : int
     {
         [NativeName("Name", "DXGI_SCALING_STRETCH")]
         ScalingStretch = 0x0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_DSV_FLAG")]
-    public enum DsvFlag
+    public enum DsvFlag : int
     {
         [NativeName("Name", "D3D11_DSV_READ_ONLY_DEPTH")]
         DsvReadOnlyDepth = 0x1,

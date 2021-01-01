@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "D3D_INTERPOLATION_MODE")]
-    public enum D3DInterpolationMode
+    public enum D3DInterpolationMode : int
     {
         [NativeName("Name", "D3D_INTERPOLATION_UNDEFINED")]
         D3DInterpolationUndefined = 0x0,

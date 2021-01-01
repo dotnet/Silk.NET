@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiOrigin")]
-    public enum Origin
+    public enum Origin : int
     {
         [NativeName("Name", "aiOrigin_SET")]
         OriginSet = 0x0,

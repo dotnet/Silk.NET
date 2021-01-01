@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkDescriptorPoolCreateFlags")]
-    public enum DescriptorPoolCreateFlags
+    public enum DescriptorPoolCreateFlags : int
     {
         [NativeName("Name", "VK_DESCRIPTOR_POOL_CREATE_FREE_DESCRIPTOR_SET_BIT")]
         DescriptorPoolCreateFreeDescriptorSetBit = 1,

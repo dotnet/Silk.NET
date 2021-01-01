@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkTimeDomainEXT")]
-    public enum TimeDomainEXT
+    public enum TimeDomainEXT : int
     {
         [NativeName("Name", "VK_TIME_DOMAIN_DEVICE_EXT")]
         TimeDomainDeviceExt = 0,

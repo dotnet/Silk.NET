@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_CLEAR_FLAGS")]
-    public enum ClearFlags
+    public enum ClearFlags : int
     {
         [NativeName("Name", "D3D12_CLEAR_FLAG_DEPTH")]
         ClearFlagDepth = 0x1,

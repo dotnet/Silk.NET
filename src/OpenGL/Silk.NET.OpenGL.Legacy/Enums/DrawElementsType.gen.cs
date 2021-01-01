@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "DrawElementsType")]
-    public enum DrawElementsType
+    public enum DrawElementsType : int
     {
         [NativeName("Name", "GL_UNSIGNED_BYTE")]
         UnsignedByte = 0x1401,

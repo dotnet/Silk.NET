@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.INGR
 {
     [NativeName("Name", "GLenum")]
-    public enum INGR
+    public enum INGR : int
     {
         [NativeName("Name", "GL_RED_MIN_CLAMP_INGR")]
         RedMinClampIngr = 0x8560,

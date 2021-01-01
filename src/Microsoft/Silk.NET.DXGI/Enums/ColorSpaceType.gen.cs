@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_COLOR_SPACE_TYPE")]
-    public enum ColorSpaceType
+    public enum ColorSpaceType : int
     {
         [NativeName("Name", "DXGI_COLOR_SPACE_RGB_FULL_G22_NONE_P709")]
         ColorSpaceRgbFullG22NoneP709 = 0x0,

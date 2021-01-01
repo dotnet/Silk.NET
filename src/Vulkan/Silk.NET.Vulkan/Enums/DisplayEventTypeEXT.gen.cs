@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDisplayEventTypeEXT")]
-    public enum DisplayEventTypeEXT
+    public enum DisplayEventTypeEXT : int
     {
         [NativeName("Name", "VK_DISPLAY_EVENT_TYPE_FIRST_PIXEL_OUT_EXT")]
         DisplayEventTypeFirstPixelOutExt = 0,

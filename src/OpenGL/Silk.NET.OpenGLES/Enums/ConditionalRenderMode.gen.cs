@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "ConditionalRenderMode")]
-    public enum ConditionalRenderMode
+    public enum ConditionalRenderMode : int
     {
         [NativeName("Name", "GL_QUERY_WAIT")]
         QueryWait = 0x8E13,

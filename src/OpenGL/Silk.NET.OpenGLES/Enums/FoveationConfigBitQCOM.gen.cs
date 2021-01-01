@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "FoveationConfigBitQCOM")]
-    public enum FoveationConfigBitQCOM
+    public enum FoveationConfigBitQCOM : int
     {
         [NativeName("Name", "GL_FOVEATION_ENABLE_BIT_QCOM")]
         FoveationEnableBitQCom = 0x1,

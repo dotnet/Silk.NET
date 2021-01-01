@@ -18,26 +18,6 @@ namespace Silk.NET.SDL
 {
     public unsafe partial class Sdl : NativeAPI
     {
-        /* Function prototypes */
-        /**
-         *  \brief This function allows access to driver-dependent window information.
-         *
-         *  \param window The window about which information is being requested
-         *  \param info This structure must be initialized with the SDL version, and is
-         *              then filled in with information about the given window.
-         *
-         *  \return SDL_TRUE if the function is implemented and the version member of
-         *          the \c info struct is valid, SDL_FALSE otherwise.
-         *
-         *  You typically use this function like this:
-         *  \code
-         *  SDL_SysWMinfo info;
-         *  SDL_VERSION(&info.version);
-         *  if ( SDL_GetWindowWMInfo(window, &info) ) { ... }
-         *  \endcode
-         */
-        [NativeApi(EntryPoint = "SDL_GetWindowWMInfo")]
-        public unsafe partial bool GetWindowWMInfo(Window* window, SysWMInfo* info);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 188, Column 38 in build/submodules/SDL-mirror/include/SDL_platform.h")]

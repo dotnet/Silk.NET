@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "QueryObjectParameterName")]
-    public enum QueryObjectParameterName
+    public enum QueryObjectParameterName : int
     {
         [NativeName("Name", "GL_QUERY_TARGET")]
         QueryTarget = 0x82EA,

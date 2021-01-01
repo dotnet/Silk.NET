@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenXR
 {
     [NativeName("Name", "XrPerfSettingsDomainEXT")]
-    public enum PerfSettingsDomainEXT
+    public enum PerfSettingsDomainEXT : int
     {
         [NativeName("Name", "XR_PERF_SETTINGS_DOMAIN_CPU_EXT")]
         PerfSettingsDomainCpuExt = 1,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "LightModelParameter")]
-    public enum LightModelParameter
+    public enum LightModelParameter : int
     {
         [NativeName("Name", "GL_LIGHT_MODEL_COLOR_CONTROL_EXT")]
         LightModelColorControlExt = 0x81F8,

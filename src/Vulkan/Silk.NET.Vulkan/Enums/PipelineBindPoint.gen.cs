@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineBindPoint")]
-    public enum PipelineBindPoint
+    public enum PipelineBindPoint : int
     {
         [NativeName("Name", "VK_PIPELINE_BIND_POINT_GRAPHICS")]
         Graphics = 0,

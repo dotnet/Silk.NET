@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "GetVariantValueEXT")]
-    public enum GetVariantValueEXT
+    public enum GetVariantValueEXT : int
     {
         [NativeName("Name", "GL_VARIANT_VALUE_EXT")]
         VariantValueExt = 0x87E4,

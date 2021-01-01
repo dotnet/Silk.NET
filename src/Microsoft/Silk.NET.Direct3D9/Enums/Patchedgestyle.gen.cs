@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DPATCHEDGESTYLE")]
-    public enum Patchedgestyle
+    public enum Patchedgestyle : int
     {
         [NativeName("Name", "D3DPATCHEDGE_DISCRETE")]
         PatchedgeDiscrete = 0x0,

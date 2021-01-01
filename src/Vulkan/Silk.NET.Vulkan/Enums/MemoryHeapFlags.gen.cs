@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkMemoryHeapFlags")]
-    public enum MemoryHeapFlags
+    public enum MemoryHeapFlags : int
     {
         [NativeName("Name", "VK_MEMORY_HEAP_DEVICE_LOCAL_BIT")]
         MemoryHeapDeviceLocalBit = 1,

@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkConditionalRenderingFlagsEXT")]
-    public enum ConditionalRenderingFlagsEXT
+    public enum ConditionalRenderingFlagsEXT : int
     {
         [NativeName("Name", "VK_CONDITIONAL_RENDERING_INVERTED_BIT_EXT")]
         ConditionalRenderingInvertedBitExt = 1,

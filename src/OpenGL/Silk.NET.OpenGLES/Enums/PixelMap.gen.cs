@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "PixelMap")]
-    public enum PixelMap
+    public enum PixelMap : int
     {
         [NativeName("Name", "GL_PIXEL_MAP_I_TO_I")]
         PixelMapIToI = 0xC70,

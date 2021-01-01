@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiPropertyTypeInfo")]
-    public enum PropertyTypeInfo
+    public enum PropertyTypeInfo : int
     {
         [NativeName("Name", "aiPTI_Float")]
         PtiFloat = 0x1,

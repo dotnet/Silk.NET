@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageLayout")]
-    public enum ImageLayout
+    public enum ImageLayout : int
     {
         [NativeName("Name", "VK_IMAGE_LAYOUT_UNDEFINED")]
         Undefined = 0,

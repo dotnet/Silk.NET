@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenXR
 {
     [NativeName("Name", "XrPerfSettingsLevelEXT")]
-    public enum PerfSettingsLevelEXT
+    public enum PerfSettingsLevelEXT : int
     {
         [NativeName("Name", "XR_PERF_SETTINGS_LEVEL_POWER_SAVINGS_EXT")]
         PerfSettingsLevelPowerSavingsExt = 0,

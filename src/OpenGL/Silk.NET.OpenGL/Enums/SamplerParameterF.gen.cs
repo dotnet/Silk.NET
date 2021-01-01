@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "SamplerParameterF")]
-    public enum SamplerParameterF
+    public enum SamplerParameterF : int
     {
         [NativeName("Name", "GL_TEXTURE_BORDER_COLOR")]
         TextureBorderColor = 0x1004,

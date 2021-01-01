@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "ColorMaterialParameter")]
-    public enum ColorMaterialParameter
+    public enum ColorMaterialParameter : int
     {
     }
 }

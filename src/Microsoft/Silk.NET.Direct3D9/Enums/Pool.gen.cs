@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DPOOL")]
-    public enum Pool
+    public enum Pool : int
     {
         [NativeName("Name", "D3DPOOL_DEFAULT")]
         PoolDefault = 0x0,

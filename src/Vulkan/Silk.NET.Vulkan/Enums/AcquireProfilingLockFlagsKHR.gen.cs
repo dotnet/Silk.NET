@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkAcquireProfilingLockFlagsKHR")]
-    public enum AcquireProfilingLockFlagsKHR
+    public enum AcquireProfilingLockFlagsKHR : int
     {
     }
 }

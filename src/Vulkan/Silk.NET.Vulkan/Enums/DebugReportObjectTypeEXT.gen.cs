@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDebugReportObjectTypeEXT")]
-    public enum DebugReportObjectTypeEXT
+    public enum DebugReportObjectTypeEXT : int
     {
         [NativeName("Name", "VK_DEBUG_REPORT_OBJECT_TYPE_UNKNOWN_EXT")]
         DebugReportObjectTypeUnknownExt = 0,

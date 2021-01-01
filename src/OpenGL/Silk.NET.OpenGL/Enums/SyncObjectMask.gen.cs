@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "SyncObjectMask")]
-    public enum SyncObjectMask
+    public enum SyncObjectMask : int
     {
         [NativeName("Name", "GL_SYNC_FLUSH_COMMANDS_BIT")]
         SyncFlushCommandsBit = 0x1,

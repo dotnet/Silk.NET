@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFilter")]
-    public enum Filter
+    public enum Filter : int
     {
         [NativeName("Name", "VK_FILTER_NEAREST")]
         Nearest = 0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_CULL_MODE")]
-    public enum CullMode
+    public enum CullMode : int
     {
         [NativeName("Name", "D3D11_CULL_NONE")]
         CullNone = 0x1,

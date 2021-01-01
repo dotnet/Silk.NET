@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_keycode_L50_C9")]
     [NativeName("Name", "SDL_KeyCode")]
-    public enum KeyCode
+    public enum KeyCode : int
     {
         [NativeName("Name", "SDLK_UNKNOWN")]
         KUnknown = 0x0,

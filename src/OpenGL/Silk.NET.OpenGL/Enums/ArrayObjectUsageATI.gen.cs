@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "ArrayObjectUsageATI")]
-    public enum ArrayObjectUsageATI
+    public enum ArrayObjectUsageATI : int
     {
         [NativeName("Name", "GL_STATIC_ATI")]
         StaticAti = 0x8760,

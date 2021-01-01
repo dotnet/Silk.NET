@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DSAMPLERSTATETYPE")]
-    public enum Samplerstatetype
+    public enum Samplerstatetype : int
     {
         [NativeName("Name", "D3DSAMP_ADDRESSU")]
         SampAddressu = 0x1,

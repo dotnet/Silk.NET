@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "ElementPointerTypeATI")]
-    public enum ElementPointerTypeATI
+    public enum ElementPointerTypeATI : int
     {
         [NativeName("Name", "GL_UNSIGNED_BYTE")]
         UnsignedByte = 0x1401,

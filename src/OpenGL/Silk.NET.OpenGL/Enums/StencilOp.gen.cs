@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "StencilOp")]
-    public enum StencilOp
+    public enum StencilOp : int
     {
         [NativeName("Name", "GL_ZERO")]
         Zero = 0x0,

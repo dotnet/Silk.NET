@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "ReadBufferMode")]
-    public enum ReadBufferMode
+    public enum ReadBufferMode : int
     {
         [NativeName("Name", "GL_NONE")]
         None = 0x0,

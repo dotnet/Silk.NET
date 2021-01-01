@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDisplayPowerStateEXT")]
-    public enum DisplayPowerStateEXT
+    public enum DisplayPowerStateEXT : int
     {
         [NativeName("Name", "VK_DISPLAY_POWER_STATE_OFF_EXT")]
         DisplayPowerStateOffExt = 0,

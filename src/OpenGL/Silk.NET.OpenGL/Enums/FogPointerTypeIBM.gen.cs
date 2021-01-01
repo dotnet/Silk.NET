@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "FogPointerTypeIBM")]
-    public enum FogPointerTypeIBM
+    public enum FogPointerTypeIBM : int
     {
         [NativeName("Name", "GL_FLOAT")]
         Float = 0x1406,

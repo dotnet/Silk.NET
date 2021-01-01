@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "IndexPointerType")]
-    public enum IndexPointerType
+    public enum IndexPointerType : int
     {
         [NativeName("Name", "GL_SHORT")]
         Short = 0x1402,

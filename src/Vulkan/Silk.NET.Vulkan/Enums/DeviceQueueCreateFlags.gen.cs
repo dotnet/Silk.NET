@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkDeviceQueueCreateFlags")]
-    public enum DeviceQueueCreateFlags
+    public enum DeviceQueueCreateFlags : int
     {
         [NativeName("Name", "VK_DEVICE_QUEUE_CREATE_PROTECTED_BIT")]
         DeviceQueueCreateProtectedBit = 1,

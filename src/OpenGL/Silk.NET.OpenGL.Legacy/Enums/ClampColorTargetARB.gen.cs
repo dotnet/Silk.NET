@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "ClampColorTargetARB")]
-    public enum ClampColorTargetARB
+    public enum ClampColorTargetARB : int
     {
         [NativeName("Name", "GL_CLAMP_VERTEX_COLOR_ARB")]
         ClampVertexColorArb = 0x891A,

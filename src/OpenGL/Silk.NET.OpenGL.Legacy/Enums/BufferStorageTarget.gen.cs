@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "BufferStorageTarget")]
-    public enum BufferStorageTarget
+    public enum BufferStorageTarget : int
     {
         [NativeName("Name", "GL_ARRAY_BUFFER")]
         ArrayBuffer = 0x8892,

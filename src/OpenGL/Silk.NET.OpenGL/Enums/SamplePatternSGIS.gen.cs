@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "SamplePatternSGIS")]
-    public enum SamplePatternSGIS
+    public enum SamplePatternSGIS : int
     {
         [NativeName("Name", "GL_1PASS_EXT")]
         Gl1PassExt = 0x80A1,

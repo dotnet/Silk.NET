@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES.Extensions.QCOM
 {
     [NativeName("Name", "GLenum")]
-    public enum QCOM
+    public enum QCOM : int
     {
         [NativeName("Name", "GL_ALPHA_TEST_QCOM")]
         AlphaTestQCom = 0xBC0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "SwizzleOpATI")]
-    public enum SwizzleOpATI
+    public enum SwizzleOpATI : int
     {
         [NativeName("Name", "GL_SWIZZLE_STR_ATI")]
         SwizzleStrAti = 0x8976,

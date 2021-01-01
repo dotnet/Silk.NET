@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkComponentTypeNV")]
-    public enum ComponentTypeNV
+    public enum ComponentTypeNV : int
     {
         [NativeName("Name", "VK_COMPONENT_TYPE_FLOAT16_NV")]
         ComponentTypeFloat16NV = 0,

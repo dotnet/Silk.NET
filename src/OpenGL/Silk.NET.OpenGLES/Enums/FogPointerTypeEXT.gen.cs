@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "FogPointerTypeEXT")]
-    public enum FogPointerTypeEXT
+    public enum FogPointerTypeEXT : int
     {
         [NativeName("Name", "GL_FLOAT")]
         Float = 0x1406,

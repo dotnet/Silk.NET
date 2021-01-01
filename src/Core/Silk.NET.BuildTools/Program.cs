@@ -98,6 +98,7 @@ namespace Silk.NET.BuildTools
             }
 
             sw.Stop();
+            ConsoleWriter.Instance.Wait();
             Console.SetOut(ConsoleWriter.Instance.Base);
             Console.WriteLine($"Complete bind took {sw.Elapsed.TotalSeconds} second(s).");
 
@@ -117,7 +118,6 @@ namespace Silk.NET.BuildTools
                 return -2000000000 - failedJobs;
             }
 
-            ConsoleWriter.Instance.Wait();
             return 0;
         }
 

@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_render_L64_C9")]
     [NativeName("Name", "SDL_RendererFlags")]
-    public enum RendererFlags
+    public enum RendererFlags : int
     {
         [NativeName("Name", "SDL_RENDERER_SOFTWARE")]
         RendererSoftware = 0x1,

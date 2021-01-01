@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkDeviceGroupPresentModeFlagsKHR")]
-    public enum DeviceGroupPresentModeFlagsKHR
+    public enum DeviceGroupPresentModeFlagsKHR : int
     {
         [NativeName("Name", "VK_DEVICE_GROUP_PRESENT_MODE_LOCAL_BIT_KHR")]
         DeviceGroupPresentModeLocalBitKhr = 1,

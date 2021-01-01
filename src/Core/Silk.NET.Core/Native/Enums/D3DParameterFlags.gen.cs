@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "_D3D_PARAMETER_FLAGS")]
-    public enum D3DParameterFlags
+    public enum D3DParameterFlags : int
     {
         [NativeName("Name", "D3D_PF_NONE")]
         D3DPFNone = 0x0,

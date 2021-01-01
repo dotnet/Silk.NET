@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.APPLE
 {
     [NativeName("Name", "GLenum")]
-    public enum APPLE
+    public enum APPLE : int
     {
     }
 }

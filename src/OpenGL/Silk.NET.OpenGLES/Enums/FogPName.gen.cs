@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "FogPName")]
-    public enum FogPName
+    public enum FogPName : int
     {
         [NativeName("Name", "GL_FOG_INDEX")]
         FogIndex = 0xB61,

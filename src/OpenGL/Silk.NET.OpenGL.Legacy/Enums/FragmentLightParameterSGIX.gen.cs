@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "FragmentLightParameterSGIX")]
-    public enum FragmentLightParameterSGIX
+    public enum FragmentLightParameterSGIX : int
     {
         [NativeName("Name", "GL_AMBIENT")]
         Ambient = 0x1200,

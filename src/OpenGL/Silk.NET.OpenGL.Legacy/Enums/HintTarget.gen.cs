@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "HintTarget")]
-    public enum HintTarget
+    public enum HintTarget : int
     {
         [NativeName("Name", "GL_PERSPECTIVE_CORRECTION_HINT")]
         PerspectiveCorrectionHint = 0xC50,

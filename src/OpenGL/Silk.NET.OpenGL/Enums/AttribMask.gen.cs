@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "AttribMask")]
-    public enum AttribMask
+    public enum AttribMask : int
     {
         [NativeName("Name", "GL_DEPTH_BUFFER_BIT")]
         DepthBufferBit = 0x100,

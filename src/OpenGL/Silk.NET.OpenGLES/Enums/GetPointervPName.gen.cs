@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "GetPointervPName")]
-    public enum GetPointervPName
+    public enum GetPointervPName : int
     {
         [NativeName("Name", "GL_FEEDBACK_BUFFER_POINTER")]
         FeedbackBufferPointer = 0xDF0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_CONSERVATIVE_RASTERIZATION_TIER")]
-    public enum ConservativeRasterizationTier
+    public enum ConservativeRasterizationTier : int
     {
         [NativeName("Name", "D3D11_CONSERVATIVE_RASTERIZATION_NOT_SUPPORTED")]
         ConservativeRasterizationNotSupported = 0x0,

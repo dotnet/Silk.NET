@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "ListMode")]
-    public enum ListMode
+    public enum ListMode : int
     {
         [NativeName("Name", "GL_COMPILE")]
         Compile = 0x1300,

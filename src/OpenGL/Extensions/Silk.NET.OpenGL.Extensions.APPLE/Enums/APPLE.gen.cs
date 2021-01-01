@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Extensions.APPLE
 {
     [NativeName("Name", "GLenum")]
-    public enum APPLE
+    public enum APPLE : int
     {
         [NativeName("Name", "GL_RGB_422_APPLE")]
         Rgb422Apple = 0x8A1F,

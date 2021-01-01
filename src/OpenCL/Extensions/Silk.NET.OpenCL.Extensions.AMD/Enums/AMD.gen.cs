@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.AMD
 {
     [NativeName("Name", "GLenum")]
-    public enum AMD
+    public enum AMD : int
     {
         [NativeName("Name", "CL_DEVICE_PROFILING_TIMER_OFFSET_AMD")]
         DeviceProfilingTimerOffsetAmd = 0x4036,

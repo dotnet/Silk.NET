@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkExternalFenceFeatureFlagsKHR")]
-    public enum ExternalFenceFeatureFlagsKHR
+    public enum ExternalFenceFeatureFlagsKHR : int
     {
         [NativeName("Name", "VK_EXTERNAL_FENCE_FEATURE_EXPORTABLE_BIT")]
         ExternalFenceFeatureExportableBit = 1,

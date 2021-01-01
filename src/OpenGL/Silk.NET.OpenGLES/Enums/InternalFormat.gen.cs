@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "InternalFormat")]
-    public enum InternalFormat
+    public enum InternalFormat : int
     {
         [NativeName("Name", "GL_STENCIL_INDEX")]
         StencilIndex = 0x1901,

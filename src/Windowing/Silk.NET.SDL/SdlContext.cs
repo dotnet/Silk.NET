@@ -78,7 +78,7 @@ namespace Silk.NET.SDL
 
         private void AssertCreated()
         {
-            if (_ctx is null)
+            if (_ctx == null)
             {
                 throw new InvalidOperationException("Context not created.");
             }
@@ -86,7 +86,7 @@ namespace Silk.NET.SDL
 
         private void AssertNotCreated()
         {
-            if (_ctx is not null)
+            if (_ctx != null)
             {
                 throw new InvalidOperationException("Context created already.");
             }

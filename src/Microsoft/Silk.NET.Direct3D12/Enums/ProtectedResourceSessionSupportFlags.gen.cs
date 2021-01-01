@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAGS")]
-    public enum ProtectedResourceSessionSupportFlags
+    public enum ProtectedResourceSessionSupportFlags : int
     {
         [NativeName("Name", "D3D12_PROTECTED_RESOURCE_SESSION_SUPPORT_FLAG_NONE")]
         ProtectedResourceSessionSupportFlagNone = 0x0,

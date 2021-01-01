@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "LightParameter")]
-    public enum LightParameter
+    public enum LightParameter : int
     {
         [NativeName("Name", "GL_POSITION")]
         Position = 0x1203,

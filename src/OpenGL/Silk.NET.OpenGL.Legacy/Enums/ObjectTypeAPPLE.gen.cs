@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "ObjectTypeAPPLE")]
-    public enum ObjectTypeAPPLE
+    public enum ObjectTypeAPPLE : int
     {
         [NativeName("Name", "GL_DRAW_PIXELS_APPLE")]
         DrawPixelsApple = 0x8A0A,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DSTENCILOP")]
-    public enum Stencilop
+    public enum Stencilop : int
     {
         [NativeName("Name", "D3DSTENCILOP_KEEP")]
         StencilopKeep = 0x1,

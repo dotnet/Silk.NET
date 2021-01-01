@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "BufferPointerNameARB")]
-    public enum BufferPointerNameARB
+    public enum BufferPointerNameARB : int
     {
         [NativeName("Name", "GL_BUFFER_MAP_POINTER")]
         BufferMapPointer = 0x88BD,

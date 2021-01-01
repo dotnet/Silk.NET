@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_VIDEO_PROCESSOR_STEREO_FORMAT")]
-    public enum VideoProcessorStereoFormat
+    public enum VideoProcessorStereoFormat : int
     {
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_STEREO_FORMAT_MONO")]
         VideoProcessorStereoFormatMono = 0x0,

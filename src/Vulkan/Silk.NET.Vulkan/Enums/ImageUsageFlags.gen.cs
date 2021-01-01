@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkImageUsageFlags")]
-    public enum ImageUsageFlags
+    public enum ImageUsageFlags : int
     {
         [NativeName("Name", "VK_IMAGE_USAGE_TRANSFER_SRC_BIT")]
         ImageUsageTransferSrcBit = 1,

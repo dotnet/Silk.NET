@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT")]
-    public enum VideoProcessorFormatSupport
+    public enum VideoProcessorFormatSupport : int
     {
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_FORMAT_SUPPORT_INPUT")]
         VideoProcessorFormatSupportInput = 0x1,

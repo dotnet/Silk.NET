@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "PixelTransformTargetEXT")]
-    public enum PixelTransformTargetEXT
+    public enum PixelTransformTargetEXT : int
     {
         [NativeName("Name", "GL_PIXEL_TRANSFORM_2D_EXT")]
         PixelTransform2DExt = 0x8330,

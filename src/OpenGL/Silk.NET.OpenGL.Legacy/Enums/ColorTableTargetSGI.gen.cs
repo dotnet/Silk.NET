@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "ColorTableTargetSGI")]
-    public enum ColorTableTargetSGI
+    public enum ColorTableTargetSGI : int
     {
         [NativeName("Name", "GL_TEXTURE_COLOR_TABLE_SGI")]
         TextureColorTableSgi = 0x80BC,

@@ -38,8 +38,8 @@ namespace Silk.NET.BuildTools.Common.Enums
         
         [JsonIgnore]
         public string[] ClangMetadata { get; set; }
-        
-        public Type EnumBaseType { get; set; }
+
+        public Type EnumBaseType { get; set; } = new Type {Name = "int"};
 
         /// <summary>
         /// Gets or sets the extension to which this enum belongs. Generally, this is either Core or the

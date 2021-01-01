@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "DrawBufferMode")]
-    public enum DrawBufferMode
+    public enum DrawBufferMode : int
     {
         [NativeName("Name", "GL_NONE")]
         None = 0x0,

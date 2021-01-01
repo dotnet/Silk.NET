@@ -13,7 +13,7 @@ namespace Silk.NET.OpenXR
 {
     [Flags()]
     [NativeName("Name", "XrSpaceVelocityFlags")]
-    public enum SpaceVelocityFlags
+    public enum SpaceVelocityFlags : int
     {
         [NativeName("Name", "XR_SPACE_VELOCITY_LINEAR_VALID_BIT")]
         SpaceVelocityLinearValidBit = 1,

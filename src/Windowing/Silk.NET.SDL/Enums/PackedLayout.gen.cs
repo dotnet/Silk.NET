@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_pixels_L104_C9")]
     [NativeName("Name", "SDL_PackedLayout")]
-    public enum PackedLayout
+    public enum PackedLayout : int
     {
         [NativeName("Name", "SDL_PACKEDLAYOUT_NONE")]
         PackedlayoutNone = 0x0,

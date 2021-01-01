@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "MapAttribParameterNV")]
-    public enum MapAttribParameterNV
+    public enum MapAttribParameterNV : int
     {
         [NativeName("Name", "GL_MAP_ATTRIB_U_ORDER_NV")]
         MapAttribUOrderNV = 0x86C3,

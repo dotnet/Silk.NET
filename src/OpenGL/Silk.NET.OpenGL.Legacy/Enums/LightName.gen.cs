@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "LightName")]
-    public enum LightName
+    public enum LightName : int
     {
         [NativeName("Name", "GL_LIGHT0")]
         Light0 = 0x4000,

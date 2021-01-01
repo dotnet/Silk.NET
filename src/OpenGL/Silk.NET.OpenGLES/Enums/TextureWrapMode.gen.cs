@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "TextureWrapMode")]
-    public enum TextureWrapMode
+    public enum TextureWrapMode : int
     {
         [NativeName("Name", "GL_LINEAR_MIPMAP_LINEAR")]
         LinearMipmapLinear = 0x2703,

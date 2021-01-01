@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
 {
     [NativeName("Name", "GLenum")]
-    public enum IBM
+    public enum IBM : int
     {
         [NativeName("Name", "GL_CULL_VERTEX_IBM")]
         CullVertexIbm = 0x103050,

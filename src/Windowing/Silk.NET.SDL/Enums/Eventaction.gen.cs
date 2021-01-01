@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_events_L614_C9")]
     [NativeName("Name", "SDL_eventaction")]
-    public enum Eventaction
+    public enum Eventaction : int
     {
         [NativeName("Name", "SDL_ADDEVENT")]
         Addevent = 0x0,

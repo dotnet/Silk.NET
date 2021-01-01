@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkIndirectCommandsTokenTypeNV")]
-    public enum IndirectCommandsTokenTypeNV
+    public enum IndirectCommandsTokenTypeNV : int
     {
         [NativeName("Name", "VK_INDIRECT_COMMANDS_TOKEN_TYPE_SHADER_GROUP_NV")]
         IndirectCommandsTokenTypeShaderGroupNV = 0,

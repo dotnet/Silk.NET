@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "VertexAttribIType")]
-    public enum VertexAttribIType
+    public enum VertexAttribIType : int
     {
         [NativeName("Name", "GL_BYTE")]
         Byte = 0x1400,

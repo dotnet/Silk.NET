@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "AttribMask")]
-    public enum AttribMask
+    public enum AttribMask : int
     {
         [NativeName("Name", "GL_CURRENT_BIT")]
         CurrentBit = 0x1,

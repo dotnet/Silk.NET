@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Extensions.AMD
 {
     [NativeName("Name", "GLenum")]
-    public enum AMD
+    public enum AMD : int
     {
         [NativeName("Name", "GL_RENDERBUFFER_STORAGE_SAMPLES_AMD")]
         RenderbufferStorageSamplesAmd = 0x91B2,

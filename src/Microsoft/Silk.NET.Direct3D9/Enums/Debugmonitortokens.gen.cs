@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DDEBUGMONITORTOKENS")]
-    public enum Debugmonitortokens
+    public enum Debugmonitortokens : int
     {
         [NativeName("Name", "D3DDMT_ENABLE")]
         DmtEnable = 0x0,

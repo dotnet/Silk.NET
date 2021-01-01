@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkBufferUsageFlags")]
-    public enum BufferUsageFlags
+    public enum BufferUsageFlags : int
     {
         [NativeName("Name", "VK_BUFFER_USAGE_TRANSFER_SRC_BIT")]
         BufferUsageTransferSrcBit = 1,

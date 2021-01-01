@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "GlslTypeToken")]
-    public enum GlslTypeToken
+    public enum GlslTypeToken : int
     {
         [NativeName("Name", "GL_INT")]
         Int = 0x1404,

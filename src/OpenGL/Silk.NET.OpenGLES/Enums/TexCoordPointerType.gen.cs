@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "TexCoordPointerType")]
-    public enum TexCoordPointerType
+    public enum TexCoordPointerType : int
     {
         [NativeName("Name", "GL_SHORT")]
         Short = 0x1402,

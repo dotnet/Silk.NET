@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_surface_L104_C9")]
     [NativeName("Name", "SDL_YUV_CONVERSION_MODE")]
-    public enum YUVCONVERSIONMODE
+    public enum YUVCONVERSIONMODE : int
     {
         [NativeName("Name", "SDL_YUV_CONVERSION_JPEG")]
         YuvConversionJpeg = 0x0,

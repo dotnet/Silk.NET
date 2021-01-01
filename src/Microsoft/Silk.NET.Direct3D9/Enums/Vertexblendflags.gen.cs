@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DVERTEXBLENDFLAGS")]
-    public enum Vertexblendflags
+    public enum Vertexblendflags : int
     {
         [NativeName("Name", "D3DVBF_DISABLE")]
         VbfDisable = 0x0,

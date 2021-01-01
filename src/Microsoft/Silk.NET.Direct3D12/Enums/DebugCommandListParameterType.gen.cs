@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_DEBUG_COMMAND_LIST_PARAMETER_TYPE")]
-    public enum DebugCommandListParameterType
+    public enum DebugCommandListParameterType : int
     {
         [NativeName("Name", "D3D12_DEBUG_COMMAND_LIST_PARAMETER_GPU_BASED_VALIDATION_SETTINGS")]
         DebugCommandListParameterGpuBasedValidationSettings = 0x0,

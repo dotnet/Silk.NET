@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenXR
 {
     [NativeName("Name", "XrResult")]
-    public enum Result
+    public enum Result : int
     {
         [NativeName("Name", "XR_SUCCESS")]
         Success = 0,

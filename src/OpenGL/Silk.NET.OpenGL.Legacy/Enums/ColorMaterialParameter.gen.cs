@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "ColorMaterialParameter")]
-    public enum ColorMaterialParameter
+    public enum ColorMaterialParameter : int
     {
         [NativeName("Name", "GL_AMBIENT")]
         Ambient = 0x1200,

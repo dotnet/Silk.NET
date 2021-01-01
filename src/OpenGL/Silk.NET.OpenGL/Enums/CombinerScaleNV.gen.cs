@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "CombinerScaleNV")]
-    public enum CombinerScaleNV
+    public enum CombinerScaleNV : int
     {
         [NativeName("Name", "GL_NONE")]
         None = 0x0,

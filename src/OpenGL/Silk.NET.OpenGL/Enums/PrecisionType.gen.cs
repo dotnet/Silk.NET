@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "PrecisionType")]
-    public enum PrecisionType
+    public enum PrecisionType : int
     {
         [NativeName("Name", "GL_LOW_FLOAT")]
         LowFloat = 0x8DF0,

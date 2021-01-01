@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkQueryPoolSamplingModeINTEL")]
-    public enum QueryPoolSamplingModeINTEL
+    public enum QueryPoolSamplingModeINTEL : int
     {
         [NativeName("Name", "VK_QUERY_POOL_SAMPLING_MODE_MANUAL_INTEL")]
         QueryPoolSamplingModeManualIntel = 0,

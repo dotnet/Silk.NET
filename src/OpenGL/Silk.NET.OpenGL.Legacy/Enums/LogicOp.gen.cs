@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "LogicOp")]
-    public enum LogicOp
+    public enum LogicOp : int
     {
         [NativeName("Name", "GL_CLEAR")]
         Clear = 0x1500,

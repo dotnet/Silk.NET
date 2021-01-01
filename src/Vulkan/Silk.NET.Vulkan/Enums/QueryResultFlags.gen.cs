@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkQueryResultFlags")]
-    public enum QueryResultFlags
+    public enum QueryResultFlags : int
     {
         [NativeName("Name", "VK_QUERY_RESULT_64_BIT")]
         QueryResult64Bit = 1,

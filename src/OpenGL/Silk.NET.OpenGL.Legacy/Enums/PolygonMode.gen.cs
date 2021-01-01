@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "PolygonMode")]
-    public enum PolygonMode
+    public enum PolygonMode : int
     {
         [NativeName("Name", "GL_POINT")]
         Point = 0x1B00,

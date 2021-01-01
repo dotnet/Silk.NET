@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DBACKBUFFER_TYPE")]
-    public enum BackbufferType
+    public enum BackbufferType : int
     {
         [NativeName("Name", "D3DBACKBUFFER_TYPE_MONO")]
         BackbufferTypeMono = 0x0,

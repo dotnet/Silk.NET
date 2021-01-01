@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAGS")]
-    public enum CryptoSessionKeyExchangeFlags
+    public enum CryptoSessionKeyExchangeFlags : int
     {
         [NativeName("Name", "D3D11_CRYPTO_SESSION_KEY_EXCHANGE_FLAG_NONE")]
         CryptoSessionKeyExchangeFlagNone = 0x0,

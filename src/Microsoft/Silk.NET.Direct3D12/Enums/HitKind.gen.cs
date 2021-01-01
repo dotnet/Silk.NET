@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_HIT_KIND")]
-    public enum HitKind
+    public enum HitKind : int
     {
         [NativeName("Name", "D3D12_HIT_KIND_TRIANGLE_FRONT_FACE")]
         HitKindTriangleFrontFace = 0xFE,

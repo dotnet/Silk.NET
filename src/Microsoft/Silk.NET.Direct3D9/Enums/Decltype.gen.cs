@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DDECLTYPE")]
-    public enum Decltype
+    public enum Decltype : int
     {
         [NativeName("Name", "D3DDECLTYPE_FLOAT1")]
         DecltypeFloat1 = 0x0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPointClippingBehavior")]
-    public enum PointClippingBehavior
+    public enum PointClippingBehavior : int
     {
         [NativeName("Name", "VK_POINT_CLIPPING_BEHAVIOR_ALL_CLIP_PLANES")]
         AllClipPlanes = 0,

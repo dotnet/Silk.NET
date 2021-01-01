@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiTextureOp")]
-    public enum TextureOp
+    public enum TextureOp : int
     {
         [NativeName("Name", "aiTextureOp_Multiply")]
         TextureOpMultiply = 0x0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "ProgramPropertyARB")]
-    public enum ProgramPropertyARB
+    public enum ProgramPropertyARB : int
     {
         [NativeName("Name", "GL_COMPUTE_WORK_GROUP_SIZE")]
         ComputeWorkGroupSize = 0x8267,

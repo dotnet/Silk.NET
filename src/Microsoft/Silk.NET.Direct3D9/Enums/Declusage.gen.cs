@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DDECLUSAGE")]
-    public enum Declusage
+    public enum Declusage : int
     {
         [NativeName("Name", "D3DDECLUSAGE_POSITION")]
         DeclusagePosition = 0x0,

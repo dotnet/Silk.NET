@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DSHADER_PARAM_SRCMOD_TYPE")]
-    public enum ShaderParamSrcmodType
+    public enum ShaderParamSrcmodType : int
     {
         [NativeName("Name", "D3DSPSM_NONE")]
         SpsmNone = 0x0,

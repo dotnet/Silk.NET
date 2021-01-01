@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DSHADER_INSTRUCTION_OPCODE_TYPE")]
-    public enum ShaderInstructionOpcodeType
+    public enum ShaderInstructionOpcodeType : int
     {
         [NativeName("Name", "D3DSIO_NOP")]
         SioNop = 0x0,

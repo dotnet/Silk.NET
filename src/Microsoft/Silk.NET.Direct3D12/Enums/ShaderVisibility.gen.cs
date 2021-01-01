@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_SHADER_VISIBILITY")]
-    public enum ShaderVisibility
+    public enum ShaderVisibility : int
     {
         [NativeName("Name", "D3D12_SHADER_VISIBILITY_ALL")]
         ShaderVisibilityAll = 0x0,

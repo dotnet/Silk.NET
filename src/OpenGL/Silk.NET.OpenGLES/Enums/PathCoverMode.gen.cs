@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "PathCoverMode")]
-    public enum PathCoverMode
+    public enum PathCoverMode : int
     {
         [NativeName("Name", "GL_PATH_FILL_COVER_MODE_NV")]
         PathFillCoverModeNV = 0x9082,

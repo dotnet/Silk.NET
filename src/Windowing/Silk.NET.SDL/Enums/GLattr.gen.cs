@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L197_C9")]
     [NativeName("Name", "SDL_GLattr")]
-    public enum GLattr
+    public enum GLattr : int
     {
         [NativeName("Name", "SDL_GL_RED_SIZE")]
         GLRedSize = 0x0,

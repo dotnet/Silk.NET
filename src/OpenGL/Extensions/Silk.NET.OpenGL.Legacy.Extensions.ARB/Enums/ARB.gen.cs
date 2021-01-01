@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     [NativeName("Name", "GLenum")]
-    public enum ARB
+    public enum ARB : int
     {
         [NativeName("Name", "GL_UNSIGNED_INT64_ARB")]
         UnsignedInt64Arb = 0x140F,

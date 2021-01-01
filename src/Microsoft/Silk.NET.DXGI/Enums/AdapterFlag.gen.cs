@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_ADAPTER_FLAG")]
-    public enum AdapterFlag
+    public enum AdapterFlag : int
     {
         [NativeName("Name", "DXGI_ADAPTER_FLAG_NONE")]
         AdapterFlagNone = 0x0,

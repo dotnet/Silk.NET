@@ -56,7 +56,7 @@ namespace Silk.NET.BuildTools
                 {
                     Console.WriteLine
                     (
-                        i.Ordinalize() +
+                        (i++).Ordinalize() +
                         $" attempt to remove generated files failed with " +
                         $"{ex.GetType().Name}: {ex.Message}"
                     );
@@ -116,7 +116,6 @@ namespace Silk.NET.BuildTools
         }
         
         public static void RunTask(BindTask task) => RunTask(task, null);
-
         private static void RunTask(BindTask task, Stopwatch? sw)
         {
             foreach (var typeMap in task.TypeMaps)

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "FeedBackToken")]
-    public enum FeedBackToken
+    public enum FeedBackToken : int
     {
         [NativeName("Name", "GL_PASS_THROUGH_TOKEN")]
         PassThroughToken = 0x700,

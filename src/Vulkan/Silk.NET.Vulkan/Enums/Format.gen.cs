@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFormat")]
-    public enum Format
+    public enum Format : int
     {
         [NativeName("Name", "VK_FORMAT_UNDEFINED")]
         Undefined = 0,

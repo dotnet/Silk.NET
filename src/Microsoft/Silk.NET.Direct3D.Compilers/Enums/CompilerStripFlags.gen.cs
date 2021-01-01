@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D.Compilers
 {
     [NativeName("Name", "D3DCOMPILER_STRIP_FLAGS")]
-    public enum CompilerStripFlags
+    public enum CompilerStripFlags : int
     {
         [NativeName("Name", "D3DCOMPILER_STRIP_REFLECTION_DATA")]
         CompilerStripReflectionData = 0x1,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "TextureCoordName")]
-    public enum TextureCoordName
+    public enum TextureCoordName : int
     {
         [NativeName("Name", "GL_S")]
         S = 0x2000,

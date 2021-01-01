@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkPipelineCacheCreateFlags")]
-    public enum PipelineCacheCreateFlags
+    public enum PipelineCacheCreateFlags : int
     {
         [NativeName("Name", "VK_PIPELINE_CACHE_CREATE_RESERVED_1_BIT_EXT")]
         PipelineCacheCreateReserved1BitExt = 2,

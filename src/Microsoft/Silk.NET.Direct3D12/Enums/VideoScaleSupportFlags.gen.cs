@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_VIDEO_SCALE_SUPPORT_FLAGS")]
-    public enum VideoScaleSupportFlags
+    public enum VideoScaleSupportFlags : int
     {
         [NativeName("Name", "D3D12_VIDEO_SCALE_SUPPORT_FLAG_NONE")]
         VideoScaleSupportFlagNone = 0x0,

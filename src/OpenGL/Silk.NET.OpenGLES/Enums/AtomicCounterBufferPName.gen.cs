@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "AtomicCounterBufferPName")]
-    public enum AtomicCounterBufferPName
+    public enum AtomicCounterBufferPName : int
     {
         [NativeName("Name", "GL_ATOMIC_COUNTER_BUFFER_REFERENCED_BY_COMPUTE_SHADER")]
         AtomicCounterBufferReferencedByComputeShader = 0x90ED,

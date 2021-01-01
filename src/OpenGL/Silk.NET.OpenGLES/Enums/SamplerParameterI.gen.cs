@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "SamplerParameterI")]
-    public enum SamplerParameterI
+    public enum SamplerParameterI : int
     {
         [NativeName("Name", "GL_TEXTURE_MAG_FILTER")]
         TextureMagFilter = 0x2800,

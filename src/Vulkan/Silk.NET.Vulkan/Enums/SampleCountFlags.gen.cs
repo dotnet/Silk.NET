@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkSampleCountFlags")]
-    public enum SampleCountFlags
+    public enum SampleCountFlags : int
     {
         [NativeName("Name", "VK_SAMPLE_COUNT_1_BIT")]
         SampleCount1Bit = 1,

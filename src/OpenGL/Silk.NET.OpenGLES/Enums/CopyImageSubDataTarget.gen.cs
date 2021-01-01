@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "CopyImageSubDataTarget")]
-    public enum CopyImageSubDataTarget
+    public enum CopyImageSubDataTarget : int
     {
         [NativeName("Name", "GL_TEXTURE_1D")]
         Texture1D = 0xDE0,

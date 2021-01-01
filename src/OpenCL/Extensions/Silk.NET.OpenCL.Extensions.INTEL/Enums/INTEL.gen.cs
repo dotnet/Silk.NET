@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.INTEL
 {
     [NativeName("Name", "GLenum")]
-    public enum INTEL
+    public enum INTEL : int
     {
         [NativeName("Name", "CL_ACCELERATOR_DESCRIPTOR_INTEL")]
         AcceleratorDescriptorIntel = 0x4090,

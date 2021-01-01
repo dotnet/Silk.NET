@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "PathElementType")]
-    public enum PathElementType
+    public enum PathElementType : int
     {
         [NativeName("Name", "GL_UTF8_NV")]
         Utf8NV = 0x909A,

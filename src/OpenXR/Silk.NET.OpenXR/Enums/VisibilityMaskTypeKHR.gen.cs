@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenXR
 {
     [NativeName("Name", "XrVisibilityMaskTypeKHR")]
-    public enum VisibilityMaskTypeKHR
+    public enum VisibilityMaskTypeKHR : int
     {
         [NativeName("Name", "XR_VISIBILITY_MASK_TYPE_HIDDEN_TRIANGLE_MESH_KHR")]
         VisibilityMaskTypeHiddenTriangleMeshKhr = 1,

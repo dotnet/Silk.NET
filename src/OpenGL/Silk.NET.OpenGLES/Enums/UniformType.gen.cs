@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "UniformType")]
-    public enum UniformType
+    public enum UniformType : int
     {
         [NativeName("Name", "GL_INT")]
         Int = 0x1404,

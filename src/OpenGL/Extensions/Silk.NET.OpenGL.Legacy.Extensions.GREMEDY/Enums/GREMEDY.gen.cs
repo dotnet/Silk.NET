@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.GREMEDY
 {
     [NativeName("Name", "GLenum")]
-    public enum GREMEDY
+    public enum GREMEDY : int
     {
     }
 }

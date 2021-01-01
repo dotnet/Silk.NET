@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_MEMORY_SEGMENT_GROUP")]
-    public enum MemorySegmentGroup
+    public enum MemorySegmentGroup : int
     {
         [NativeName("Name", "DXGI_MEMORY_SEGMENT_GROUP_LOCAL")]
         MemorySegmentGroupLocal = 0x0,

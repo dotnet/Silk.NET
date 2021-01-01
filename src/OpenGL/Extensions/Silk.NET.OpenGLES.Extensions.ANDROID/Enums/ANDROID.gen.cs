@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES.Extensions.ANDROID
 {
     [NativeName("Name", "GLenum")]
-    public enum ANDROID
+    public enum ANDROID : int
     {
     }
 }

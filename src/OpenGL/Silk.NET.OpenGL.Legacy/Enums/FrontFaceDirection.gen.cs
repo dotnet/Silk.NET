@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "FrontFaceDirection")]
-    public enum FrontFaceDirection
+    public enum FrontFaceDirection : int
     {
         [NativeName("Name", "GL_CW")]
         CW = 0x900,

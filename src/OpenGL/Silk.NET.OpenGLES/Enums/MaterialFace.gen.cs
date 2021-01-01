@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "MaterialFace")]
-    public enum MaterialFace
+    public enum MaterialFace : int
     {
         [NativeName("Name", "GL_FRONT")]
         Front = 0x404,

@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkPeerMemoryFeatureFlags")]
-    public enum PeerMemoryFeatureFlags
+    public enum PeerMemoryFeatureFlags : int
     {
         [NativeName("Name", "VK_PEER_MEMORY_FEATURE_COPY_SRC_BIT")]
         PeerMemoryFeatureCopySrcBit = 1,

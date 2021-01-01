@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkResult")]
-    public enum Result
+    public enum Result : int
     {
         [NativeName("Name", "VK_SUCCESS")]
         Success = 0,

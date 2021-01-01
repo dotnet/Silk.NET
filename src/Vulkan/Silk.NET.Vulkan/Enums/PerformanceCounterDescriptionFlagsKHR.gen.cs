@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkPerformanceCounterDescriptionFlagsKHR")]
-    public enum PerformanceCounterDescriptionFlagsKHR
+    public enum PerformanceCounterDescriptionFlagsKHR : int
     {
         [NativeName("Name", "VK_PERFORMANCE_COUNTER_DESCRIPTION_PERFORMANCE_IMPACTING_KHR")]
         PerformanceCounterDescriptionPerformanceImpactingKhr = 1,

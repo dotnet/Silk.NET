@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_EXPORT_FLAGS")]
-    public enum ExportFlags
+    public enum ExportFlags : int
     {
         [NativeName("Name", "D3D12_EXPORT_FLAG_NONE")]
         ExportFlagNone = 0x0,

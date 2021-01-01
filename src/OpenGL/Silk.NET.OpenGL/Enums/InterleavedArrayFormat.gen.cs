@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "InterleavedArrayFormat")]
-    public enum InterleavedArrayFormat
+    public enum InterleavedArrayFormat : int
     {
     }
 }

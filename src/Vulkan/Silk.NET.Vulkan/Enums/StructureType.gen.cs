@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkStructureType")]
-    public enum StructureType
+    public enum StructureType : int
     {
         [NativeName("Name", "VK_STRUCTURE_TYPE_APPLICATION_INFO")]
         ApplicationInfo = 0,

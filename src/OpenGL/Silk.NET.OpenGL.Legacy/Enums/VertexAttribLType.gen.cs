@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "VertexAttribLType")]
-    public enum VertexAttribLType
+    public enum VertexAttribLType : int
     {
         [NativeName("Name", "GL_DOUBLE")]
         Double = 0x140A,

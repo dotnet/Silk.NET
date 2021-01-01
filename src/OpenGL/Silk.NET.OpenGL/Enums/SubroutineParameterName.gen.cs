@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "SubroutineParameterName")]
-    public enum SubroutineParameterName
+    public enum SubroutineParameterName : int
     {
         [NativeName("Name", "GL_UNIFORM_SIZE")]
         UniformSize = 0x8A38,

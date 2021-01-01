@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "GetMultisamplePNameNV")]
-    public enum GetMultisamplePNameNV
+    public enum GetMultisamplePNameNV : int
     {
         [NativeName("Name", "GL_SAMPLE_POSITION")]
         SamplePosition = 0x8E50,

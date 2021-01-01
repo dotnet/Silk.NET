@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "PathFillMode")]
-    public enum PathFillMode
+    public enum PathFillMode : int
     {
         [NativeName("Name", "GL_INVERT")]
         Invert = 0x150A,

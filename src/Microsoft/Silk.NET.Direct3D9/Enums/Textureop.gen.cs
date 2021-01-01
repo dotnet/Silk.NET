@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DTEXTUREOP")]
-    public enum Textureop
+    public enum Textureop : int
     {
         [NativeName("Name", "D3DTOP_DISABLE")]
         TopDisable = 0x1,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "ClientAttribMask")]
-    public enum ClientAttribMask
+    public enum ClientAttribMask : int
     {
         [NativeName("Name", "GL_CLIENT_PIXEL_STORE_BIT")]
         ClientPixelStoreBit = 0x1,

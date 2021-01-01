@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.IMG
 {
     [NativeName("Name", "GLenum")]
-    public enum IMG
+    public enum IMG : int
     {
         [NativeName("Name", "CL_MEM_USE_UNCACHED_CPU_MEMORY_IMG")]
         MemUseUncachedCpuMemoryImg = 0x67108864,

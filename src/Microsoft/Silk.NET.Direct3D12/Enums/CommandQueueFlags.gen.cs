@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_COMMAND_QUEUE_FLAGS")]
-    public enum CommandQueueFlags
+    public enum CommandQueueFlags : int
     {
         [NativeName("Name", "D3D12_COMMAND_QUEUE_FLAG_NONE")]
         CommandQueueFlagNone = 0x0,

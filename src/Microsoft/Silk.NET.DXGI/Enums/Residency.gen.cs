@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_RESIDENCY")]
-    public enum Residency
+    public enum Residency : int
     {
         [NativeName("Name", "DXGI_RESIDENCY_FULLY_RESIDENT")]
         ResidencyFullyResident = 0x1,

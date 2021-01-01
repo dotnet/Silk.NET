@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "FogMode")]
-    public enum FogMode
+    public enum FogMode : int
     {
         [NativeName("Name", "GL_EXP")]
         Exp = 0x800,

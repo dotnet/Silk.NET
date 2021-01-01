@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkExternalMemoryHandleTypeFlagsNV")]
-    public enum ExternalMemoryHandleTypeFlagsNV
+    public enum ExternalMemoryHandleTypeFlagsNV : int
     {
         [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_OPAQUE_WIN32_BIT_NV")]
         ExternalMemoryHandleTypeOpaqueWin32BitNV = 1,

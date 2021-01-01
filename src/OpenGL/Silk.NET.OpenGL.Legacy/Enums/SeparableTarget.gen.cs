@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "SeparableTarget")]
-    public enum SeparableTarget
+    public enum SeparableTarget : int
     {
         [NativeName("Name", "GL_SEPARABLE_2D")]
         Separable2D = 0x8012,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "ProgramFormat")]
-    public enum ProgramFormat
+    public enum ProgramFormat : int
     {
         [NativeName("Name", "GL_PROGRAM_FORMAT_ASCII_ARB")]
         ProgramFormatAsciiArb = 0x8875,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_DRED_ALLOCATION_TYPE")]
-    public enum DredAllocationType
+    public enum DredAllocationType : int
     {
         [NativeName("Name", "D3D12_DRED_ALLOCATION_TYPE_COMMAND_QUEUE")]
         DredAllocationTypeCommandQueue = 0x13,

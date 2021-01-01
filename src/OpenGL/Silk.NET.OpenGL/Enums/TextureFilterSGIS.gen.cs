@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "TextureFilterSGIS")]
-    public enum TextureFilterSGIS
+    public enum TextureFilterSGIS : int
     {
         [NativeName("Name", "GL_FILTER4_SGIS")]
         Filter4Sgis = 0x8146,

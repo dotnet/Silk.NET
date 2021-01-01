@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_MEMORY_POOL")]
-    public enum MemoryPool
+    public enum MemoryPool : int
     {
         [NativeName("Name", "D3D12_MEMORY_POOL_UNKNOWN")]
         MemoryPoolUnknown = 0x0,

@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkPipelineShaderStageCreateFlags")]
-    public enum PipelineShaderStageCreateFlags
+    public enum PipelineShaderStageCreateFlags : int
     {
         [NativeName("Name", "VK_PIPELINE_SHADER_STAGE_CREATE_RESERVED_2_BIT_NV")]
         PipelineShaderStageCreateReserved2BitNV = 4,

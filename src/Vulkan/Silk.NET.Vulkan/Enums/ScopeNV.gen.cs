@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkScopeNV")]
-    public enum ScopeNV
+    public enum ScopeNV : int
     {
         [NativeName("Name", "VK_SCOPE_DEVICE_NV")]
         ScopeDeviceNV = 1,

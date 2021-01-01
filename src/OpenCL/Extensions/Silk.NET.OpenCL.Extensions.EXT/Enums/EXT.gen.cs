@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.EXT
 {
     [NativeName("Name", "GLenum")]
-    public enum EXT
+    public enum EXT : int
     {
         [NativeName("Name", "CL_DEVICE_CXX_FOR_OPENCL_NUMERIC_VERSION_EXT")]
         DeviceCxxForOpenclNumericVersionExt = 0x4230,

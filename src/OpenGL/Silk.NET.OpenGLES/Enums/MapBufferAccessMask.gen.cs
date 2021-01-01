@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "MapBufferAccessMask")]
-    public enum MapBufferAccessMask
+    public enum MapBufferAccessMask : int
     {
         [NativeName("Name", "GL_MAP_READ_BIT")]
         MapReadBit = 0x1,

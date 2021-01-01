@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "PreserveModeATI")]
-    public enum PreserveModeATI
+    public enum PreserveModeATI : int
     {
         [NativeName("Name", "GL_PRESERVE_ATI")]
         PreserveAti = 0x8762,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "TriangleListSUN")]
-    public enum TriangleListSUN
+    public enum TriangleListSUN : int
     {
         [NativeName("Name", "GL_RESTART_SUN")]
         RestartSun = 0x1,

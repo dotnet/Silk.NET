@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_TILE_RANGE_FLAGS")]
-    public enum TileRangeFlags
+    public enum TileRangeFlags : int
     {
         [NativeName("Name", "D3D12_TILE_RANGE_FLAG_NONE")]
         TileRangeFlagNone = 0x0,

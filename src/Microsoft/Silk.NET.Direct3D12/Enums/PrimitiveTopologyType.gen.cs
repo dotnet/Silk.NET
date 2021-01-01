@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_PRIMITIVE_TOPOLOGY_TYPE")]
-    public enum PrimitiveTopologyType
+    public enum PrimitiveTopologyType : int
     {
         [NativeName("Name", "D3D12_PRIMITIVE_TOPOLOGY_TYPE_UNDEFINED")]
         PrimitiveTopologyTypeUndefined = 0x0,

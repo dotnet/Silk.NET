@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_RLDO_FLAGS")]
-    public enum RldoFlags
+    public enum RldoFlags : int
     {
         [NativeName("Name", "D3D11_RLDO_SUMMARY")]
         RldoSummary = 0x1,

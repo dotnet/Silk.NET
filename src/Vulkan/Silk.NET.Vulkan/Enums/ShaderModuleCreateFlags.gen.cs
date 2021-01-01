@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkShaderModuleCreateFlags")]
-    public enum ShaderModuleCreateFlags
+    public enum ShaderModuleCreateFlags : int
     {
         [NativeName("Name", "VK_SHADER_MODULE_CREATE_RESERVED_0_BIT_NV")]
         ShaderModuleCreateReserved0BitNV = 1,

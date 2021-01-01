@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "ShadingModel")]
-    public enum ShadingModel
+    public enum ShadingModel : int
     {
         [NativeName("Name", "GL_FLAT")]
         Flat = 0x1D00,

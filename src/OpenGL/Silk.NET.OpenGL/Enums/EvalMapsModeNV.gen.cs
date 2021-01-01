@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "EvalMapsModeNV")]
-    public enum EvalMapsModeNV
+    public enum EvalMapsModeNV : int
     {
         [NativeName("Name", "GL_FILL_NV")]
         FillNV = 0x1B02,

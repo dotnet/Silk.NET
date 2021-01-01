@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkDescriptorSetLayoutCreateFlags")]
-    public enum DescriptorSetLayoutCreateFlags
+    public enum DescriptorSetLayoutCreateFlags : int
     {
         [NativeName("Name", "VK_DESCRIPTOR_SET_LAYOUT_CREATE_PUSH_DESCRIPTOR_BIT_KHR")]
         DescriptorSetLayoutCreatePushDescriptorBitKhr = 1,

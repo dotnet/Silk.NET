@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "PathStringFormat")]
-    public enum PathStringFormat
+    public enum PathStringFormat : int
     {
         [NativeName("Name", "GL_PATH_FORMAT_SVG_NV")]
         PathFormatSvgNV = 0x9070,

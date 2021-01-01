@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "PathParameter")]
-    public enum PathParameter
+    public enum PathParameter : int
     {
         [NativeName("Name", "GL_PATH_STROKE_WIDTH_NV")]
         PathStrokeWidthNV = 0x9075,

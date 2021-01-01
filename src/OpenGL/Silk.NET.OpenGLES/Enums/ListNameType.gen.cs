@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "ListNameType")]
-    public enum ListNameType
+    public enum ListNameType : int
     {
         [NativeName("Name", "GL_BYTE")]
         Byte = 0x1400,

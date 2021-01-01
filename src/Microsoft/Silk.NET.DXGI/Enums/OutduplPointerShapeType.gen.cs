@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_OUTDUPL_POINTER_SHAPE_TYPE")]
-    public enum OutduplPointerShapeType
+    public enum OutduplPointerShapeType : int
     {
         [NativeName("Name", "DXGI_OUTDUPL_POINTER_SHAPE_TYPE_MONOCHROME")]
         OutduplPointerShapeTypeMonochrome = 0x1,

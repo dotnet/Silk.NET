@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "ColorTableTarget")]
-    public enum ColorTableTarget
+    public enum ColorTableTarget : int
     {
         [NativeName("Name", "GL_COLOR_TABLE")]
         ColorTable = 0x80D0,

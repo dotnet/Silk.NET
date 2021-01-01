@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "PixelTexGenParameterNameSGIS")]
-    public enum PixelTexGenParameterNameSGIS
+    public enum PixelTexGenParameterNameSGIS : int
     {
         [NativeName("Name", "GL_PIXEL_FRAGMENT_RGB_SOURCE_SGIS")]
         PixelFragmentRgbSourceSgis = 0x8354,
