@@ -155,7 +155,9 @@ class Build : NukeBuild
             }
             else
             {
-                DotNetClean(s => s.SetProject(ProcessedSolution).SetProperties(ProcessedMsbuildProperties));
+                DotNetClean(s => s.SetProject(ProcessedSolution)
+                    .SetConfiguration(Configuration)
+                    .SetProperties(ProcessedMsbuildProperties));
             }
 
             if (Directory.Exists(RootDirectory / "build" / "output_packages"))
@@ -189,6 +191,7 @@ class Build : NukeBuild
                 (
                     s => s
                         .SetTargetPath(ProcessedSolution)
+                        .SetConfiguration(Configuration)
                         .SetTargets("Restore")
                         .SetMaxCpuCount(Environment.ProcessorCount)
                         .SetProperties(ProcessedMsbuildProperties)
