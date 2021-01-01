@@ -33,10 +33,10 @@ namespace Silk.NET.SDL
         ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnAssertionHandler From(AssertionHandler proc) => new PfnAssertionHandler(proc);
-        public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
+        public void Dispose() => SilkMarshal.Free((nint) _handle);
 
-        public static implicit operator IntPtr(PfnAssertionHandler pfn) => (IntPtr) pfn.Handle;
-        public static explicit operator PfnAssertionHandler(IntPtr pfn)
+        public static implicit operator nint(PfnAssertionHandler pfn) => (nint) pfn.Handle;
+        public static explicit operator PfnAssertionHandler(nint pfn)
             => new PfnAssertionHandler((delegate* unmanaged[Cdecl]<AssertData*, void*, AssertState>) pfn);
 
         public static implicit operator PfnAssertionHandler(AssertionHandler proc)

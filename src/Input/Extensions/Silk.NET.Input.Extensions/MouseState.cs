@@ -38,7 +38,7 @@ namespace Silk.NET.Input.Extensions
             }
 
             _pressedButtons = (MouseButton*) Marshal.ReAllocHGlobal
-                ((IntPtr) _pressedButtons, (IntPtr) (_pressedButtonCount * sizeof(MouseButton)));
+                ((nint) _pressedButtons, (nint) (_pressedButtonCount * sizeof(MouseButton)));
             var wheels = mouse.ScrollWheels;
             _scrollWheelCount = wheels.Count;
             _scrollWheels = (ScrollWheel*) Marshal.AllocHGlobal(_scrollWheelCount * sizeof(ScrollWheel));
@@ -91,9 +91,9 @@ namespace Silk.NET.Input.Extensions
 
         private unsafe void ReleaseUnmanagedResources()
         {
-            Marshal.FreeHGlobal((IntPtr) _buttons);
-            Marshal.FreeHGlobal((IntPtr) _pressedButtons);
-            Marshal.FreeHGlobal((IntPtr) _scrollWheels);
+            Marshal.FreeHGlobal((nint) _buttons);
+            Marshal.FreeHGlobal((nint) _pressedButtons);
+            Marshal.FreeHGlobal((nint) _scrollWheels);
         }
 
         ~MouseState()

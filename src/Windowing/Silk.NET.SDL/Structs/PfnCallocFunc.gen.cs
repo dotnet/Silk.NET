@@ -33,10 +33,10 @@ namespace Silk.NET.SDL
         ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnCallocFunc From(CallocFunc proc) => new PfnCallocFunc(proc);
-        public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
+        public void Dispose() => SilkMarshal.Free((nint) _handle);
 
-        public static implicit operator IntPtr(PfnCallocFunc pfn) => (IntPtr) pfn.Handle;
-        public static explicit operator PfnCallocFunc(IntPtr pfn)
+        public static implicit operator nint(PfnCallocFunc pfn) => (nint) pfn.Handle;
+        public static explicit operator PfnCallocFunc(nint pfn)
             => new PfnCallocFunc((delegate* unmanaged[Cdecl]<uint, uint, void*>) pfn);
 
         public static implicit operator PfnCallocFunc(CallocFunc proc)

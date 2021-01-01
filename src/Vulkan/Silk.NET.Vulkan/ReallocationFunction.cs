@@ -5,7 +5,7 @@ namespace Silk.NET.Vulkan
     public unsafe delegate void* ReallocationFunction(
         void* pUserData,
         void* pOriginal,
-        UIntPtr size,
-        UIntPtr alignment,
+        nuint size,
+        nuint alignment,
         SystemAllocationScope allocationScope);
 }

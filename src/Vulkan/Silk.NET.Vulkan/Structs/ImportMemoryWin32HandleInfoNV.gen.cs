@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.ImportMemoryWin32HandleInfoNV,
             void* pNext = null,
             ExternalMemoryHandleTypeFlagsNV? handleType = null,
-            IntPtr? handle = null
+            nint? handle = null
         ) : this()
         {
             if (sType is not null)
@@ -69,6 +69,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "handle")]
-        public IntPtr Handle;
+        public nint Handle;
     }
 }

@@ -37,7 +37,7 @@ namespace Silk.NET.Vulkan
                         return default;
                     }
 
-                    IntPtr ptr = default;
+                    nint ptr = default;
                     ptr = ret.GetInstanceProcAddr(ret.CurrentInstance.GetValueOrDefault(), x);
                     if (ptr != default)
                     {
@@ -67,7 +67,7 @@ namespace Silk.NET.Vulkan
                         return default;
                     }
 
-                    IntPtr ptr = default;
+                    nint ptr = default;
                     ptr = ret.GetInstanceProcAddr(ret.CurrentInstance.GetValueOrDefault(), x);
                     if (ptr != default)
                     {
@@ -104,7 +104,7 @@ namespace Silk.NET.Vulkan
                         return default;
                     }
 
-                    IntPtr ptr = default;
+                    nint ptr = default;
                     ptr = ret.GetInstanceProcAddr(ret.CurrentInstance.GetValueOrDefault(), x);
                     if (ptr != default)
                     {
@@ -195,7 +195,7 @@ namespace Silk.NET.Vulkan
                 cachedInstanceExtensions = new HashSet<string>();
                 for (var p = 0; p < instanceExtPropertiesCount; p++)
                 {
-                    cachedInstanceExtensions.Add(Marshal.PtrToStringAnsi((IntPtr) props[p].ExtensionName));
+                    cachedInstanceExtensions.Add(Marshal.PtrToStringAnsi((nint) props[p].ExtensionName));
                 }
 
                 // Thread-safe, only one initialisation will actually succeed.
@@ -267,7 +267,7 @@ namespace Silk.NET.Vulkan
                     for (int j = 0; j < deviceExtPropertiesCount; j++)
                     {
                         // Prefix the extension name
-                        var newKey = prefix_sep + Marshal.PtrToStringAnsi((IntPtr) props[j].ExtensionName);
+                        var newKey = prefix_sep + Marshal.PtrToStringAnsi((nint) props[j].ExtensionName);
                         _cachedDeviceExtensions.Add(newKey);
                         if (!result && string.Equals(newKey, fullKey))
                         {
@@ -299,7 +299,7 @@ namespace Silk.NET.Vulkan
         public unsafe bool IsDeviceExtensionPresent(Instance instance, string extension, out PhysicalDevice device)
         {
             device = GetPhysicalDevices(instance).FirstOrDefault(pd => IsDeviceExtensionPresent(pd, extension));
-            return device.Handle != IntPtr.Zero;
+            return device.Handle != 0;
         }
 
         /// <summary>

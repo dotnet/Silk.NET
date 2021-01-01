@@ -18,37 +18,37 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
     public static class ArbVertexBufferObjectOverloads
     {
-        public static unsafe void BufferData<T0>(this ArbVertexBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] ARB usage) where T0 : unmanaged
+        public static unsafe void BufferData<T0>(this ArbVertexBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] ARB usage) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferData(target, size, in data.GetPinnableReference(), usage);
         }
 
-        public static unsafe void BufferData<T0>(this ArbVertexBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
+        public static unsafe void BufferData<T0>(this ArbVertexBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferData(target, size, in data.GetPinnableReference(), usage);
         }
 
-        public static unsafe void BufferData<T0>(this ArbVertexBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] ARB usage) where T0 : unmanaged
+        public static unsafe void BufferData<T0>(this ArbVertexBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] ARB usage) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferData(target, size, in data.GetPinnableReference(), usage);
         }
 
-        public static unsafe void BufferData<T0>(this ArbVertexBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
+        public static unsafe void BufferData<T0>(this ArbVertexBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferData(target, size, in data.GetPinnableReference(), usage);
         }
 
-        public static unsafe void BufferSubData<T0>(this ArbVertexBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void BufferSubData<T0>(this ArbVertexBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferSubData(target, offset, size, in data.GetPinnableReference());
         }
 
-        public static unsafe void BufferSubData<T0>(this ArbVertexBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void BufferSubData<T0>(this ArbVertexBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferSubData(target, offset, size, in data.GetPinnableReference());
@@ -102,13 +102,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetBufferParameter(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetBufferSubData<T0>(this ArbVertexBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        public static unsafe void GetBufferSubData<T0>(this ArbVertexBufferObject thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetBufferSubData(target, offset, size, out data.GetPinnableReference());
         }
 
-        public static unsafe void GetBufferSubData<T0>(this ArbVertexBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        public static unsafe void GetBufferSubData<T0>(this ArbVertexBufferObject thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetBufferSubData(target, offset, size, out data.GetPinnableReference());

@@ -366,8 +366,8 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             // StringArrayOverloader
             var strings = (byte**) SilkMarshal.StringArrayToPtr(stringsSa);
             var ret = CreateShaderProgram(type, count, strings);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
-            SilkMarshal.Free((IntPtr) strings);
+            SilkMarshal.CopyPtrToStringArray((nint) strings, stringsSa);
+            SilkMarshal.Free((nint) strings);
             return ret;
         }
 
@@ -376,8 +376,8 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             // StringArrayOverloader
             var strings = (byte**) SilkMarshal.StringArrayToPtr(stringsSa);
             var ret = CreateShaderProgram(type, count, strings);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
-            SilkMarshal.Free((IntPtr) strings);
+            SilkMarshal.CopyPtrToStringArray((nint) strings, stringsSa);
+            SilkMarshal.Free((nint) strings);
             return ret;
         }
 

@@ -26,7 +26,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         public partial int GetUniformBufferSize([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location);
 
         [NativeApi(EntryPoint = "glGetUniformOffsetEXT")]
-        public partial IntPtr GetUniformOffset([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location);
+        public partial nint GetUniformOffset([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location);
 
         [NativeApi(EntryPoint = "glUniformBufferEXT")]
         public partial void UniformBuffer([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint buffer);

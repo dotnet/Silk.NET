@@ -22,7 +22,7 @@ namespace Silk.NET.OpenGL.Legacy
         );
 
         public static GL GetApi(IGLContext ctx) => GetApi((INativeContext) ctx);
-        public static GL GetApi(Func<string, IntPtr> getProcAddress) => GetApi(new LamdaNativeContext(getProcAddress));
+        public static GL GetApi(Func<string, nint> getProcAddress) => GetApi(new LamdaNativeContext(getProcAddress));
 
         public static GL GetApi(INativeContext ctx) => new GL(ctx);
 

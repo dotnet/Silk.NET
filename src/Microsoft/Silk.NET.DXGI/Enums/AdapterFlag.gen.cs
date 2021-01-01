@@ -21,6 +21,6 @@ namespace Silk.NET.DXGI
         [NativeName("Name", "DXGI_ADAPTER_FLAG_SOFTWARE")]
         AdapterFlagSoftware = 0x2,
         [NativeName("Name", "DXGI_ADAPTER_FLAG_FORCE_DWORD")]
-        AdapterFlagForceDword = unchecked((int)0xFFFFFFFFFFFFFFFF),
+        AdapterFlagForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
     }
 }

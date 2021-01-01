@@ -707,40 +707,40 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Present(Silk.NET.Maths.Rectangle<long>* pSourceRect, Silk.NET.Maths.Rectangle<long>* pDestRect, IntPtr hDestWindowOverride, RGNData* pDirtyRegion)
+        public readonly unsafe int Present(Silk.NET.Maths.Rectangle<long>* pSourceRect, Silk.NET.Maths.Rectangle<long>* pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Silk.NET.Maths.Rectangle<long>*, Silk.NET.Maths.Rectangle<long>*, IntPtr, RGNData*, int>)LpVtbl[17])(@this, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegion);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Silk.NET.Maths.Rectangle<long>*, Silk.NET.Maths.Rectangle<long>*, nint, RGNData*, int>)LpVtbl[17])(@this, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegion);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Present(Silk.NET.Maths.Rectangle<long>* pSourceRect, Silk.NET.Maths.Rectangle<long>* pDestRect, IntPtr hDestWindowOverride, ref RGNData pDirtyRegion)
+        public readonly unsafe int Present(Silk.NET.Maths.Rectangle<long>* pSourceRect, Silk.NET.Maths.Rectangle<long>* pDestRect, nint hDestWindowOverride, ref RGNData pDirtyRegion)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (RGNData* pDirtyRegionPtr = &pDirtyRegion)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Silk.NET.Maths.Rectangle<long>*, Silk.NET.Maths.Rectangle<long>*, IntPtr, RGNData*, int>)LpVtbl[17])(@this, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegionPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Silk.NET.Maths.Rectangle<long>*, Silk.NET.Maths.Rectangle<long>*, nint, RGNData*, int>)LpVtbl[17])(@this, pSourceRect, pDestRect, hDestWindowOverride, pDirtyRegionPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Present(Silk.NET.Maths.Rectangle<long>* pSourceRect, ref Silk.NET.Maths.Rectangle<long> pDestRect, IntPtr hDestWindowOverride, RGNData* pDirtyRegion)
+        public readonly unsafe int Present(Silk.NET.Maths.Rectangle<long>* pSourceRect, ref Silk.NET.Maths.Rectangle<long> pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (Silk.NET.Maths.Rectangle<long>* pDestRectPtr = &pDestRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Silk.NET.Maths.Rectangle<long>*, Silk.NET.Maths.Rectangle<long>*, IntPtr, RGNData*, int>)LpVtbl[17])(@this, pSourceRect, pDestRectPtr, hDestWindowOverride, pDirtyRegion);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Silk.NET.Maths.Rectangle<long>*, Silk.NET.Maths.Rectangle<long>*, nint, RGNData*, int>)LpVtbl[17])(@this, pSourceRect, pDestRectPtr, hDestWindowOverride, pDirtyRegion);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Present(Silk.NET.Maths.Rectangle<long>* pSourceRect, ref Silk.NET.Maths.Rectangle<long> pDestRect, IntPtr hDestWindowOverride, ref RGNData pDirtyRegion)
+        public readonly unsafe int Present(Silk.NET.Maths.Rectangle<long>* pSourceRect, ref Silk.NET.Maths.Rectangle<long> pDestRect, nint hDestWindowOverride, ref RGNData pDirtyRegion)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -748,26 +748,26 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (RGNData* pDirtyRegionPtr = &pDirtyRegion)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Silk.NET.Maths.Rectangle<long>*, Silk.NET.Maths.Rectangle<long>*, IntPtr, RGNData*, int>)LpVtbl[17])(@this, pSourceRect, pDestRectPtr, hDestWindowOverride, pDirtyRegionPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Silk.NET.Maths.Rectangle<long>*, Silk.NET.Maths.Rectangle<long>*, nint, RGNData*, int>)LpVtbl[17])(@this, pSourceRect, pDestRectPtr, hDestWindowOverride, pDirtyRegionPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Present(ref Silk.NET.Maths.Rectangle<long> pSourceRect, Silk.NET.Maths.Rectangle<long>* pDestRect, IntPtr hDestWindowOverride, RGNData* pDirtyRegion)
+        public readonly unsafe int Present(ref Silk.NET.Maths.Rectangle<long> pSourceRect, Silk.NET.Maths.Rectangle<long>* pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (Silk.NET.Maths.Rectangle<long>* pSourceRectPtr = &pSourceRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Silk.NET.Maths.Rectangle<long>*, Silk.NET.Maths.Rectangle<long>*, IntPtr, RGNData*, int>)LpVtbl[17])(@this, pSourceRectPtr, pDestRect, hDestWindowOverride, pDirtyRegion);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Silk.NET.Maths.Rectangle<long>*, Silk.NET.Maths.Rectangle<long>*, nint, RGNData*, int>)LpVtbl[17])(@this, pSourceRectPtr, pDestRect, hDestWindowOverride, pDirtyRegion);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Present(ref Silk.NET.Maths.Rectangle<long> pSourceRect, Silk.NET.Maths.Rectangle<long>* pDestRect, IntPtr hDestWindowOverride, ref RGNData pDirtyRegion)
+        public readonly unsafe int Present(ref Silk.NET.Maths.Rectangle<long> pSourceRect, Silk.NET.Maths.Rectangle<long>* pDestRect, nint hDestWindowOverride, ref RGNData pDirtyRegion)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -775,14 +775,14 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (RGNData* pDirtyRegionPtr = &pDirtyRegion)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Silk.NET.Maths.Rectangle<long>*, Silk.NET.Maths.Rectangle<long>*, IntPtr, RGNData*, int>)LpVtbl[17])(@this, pSourceRectPtr, pDestRect, hDestWindowOverride, pDirtyRegionPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Silk.NET.Maths.Rectangle<long>*, Silk.NET.Maths.Rectangle<long>*, nint, RGNData*, int>)LpVtbl[17])(@this, pSourceRectPtr, pDestRect, hDestWindowOverride, pDirtyRegionPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Present(ref Silk.NET.Maths.Rectangle<long> pSourceRect, ref Silk.NET.Maths.Rectangle<long> pDestRect, IntPtr hDestWindowOverride, RGNData* pDirtyRegion)
+        public readonly unsafe int Present(ref Silk.NET.Maths.Rectangle<long> pSourceRect, ref Silk.NET.Maths.Rectangle<long> pDestRect, nint hDestWindowOverride, RGNData* pDirtyRegion)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -790,14 +790,14 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (Silk.NET.Maths.Rectangle<long>* pDestRectPtr = &pDestRect)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Silk.NET.Maths.Rectangle<long>*, Silk.NET.Maths.Rectangle<long>*, IntPtr, RGNData*, int>)LpVtbl[17])(@this, pSourceRectPtr, pDestRectPtr, hDestWindowOverride, pDirtyRegion);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Silk.NET.Maths.Rectangle<long>*, Silk.NET.Maths.Rectangle<long>*, nint, RGNData*, int>)LpVtbl[17])(@this, pSourceRectPtr, pDestRectPtr, hDestWindowOverride, pDirtyRegion);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Present(ref Silk.NET.Maths.Rectangle<long> pSourceRect, ref Silk.NET.Maths.Rectangle<long> pDestRect, IntPtr hDestWindowOverride, ref RGNData pDirtyRegion)
+        public readonly int Present(ref Silk.NET.Maths.Rectangle<long> pSourceRect, ref Silk.NET.Maths.Rectangle<long> pDestRect, nint hDestWindowOverride, ref RGNData pDirtyRegion)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -807,7 +807,7 @@ namespace Silk.NET.Direct3D9
                 {
                     fixed (RGNData* pDirtyRegionPtr = &pDirtyRegion)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Silk.NET.Maths.Rectangle<long>*, Silk.NET.Maths.Rectangle<long>*, IntPtr, RGNData*, int>)LpVtbl[17])(@this, pSourceRectPtr, pDestRectPtr, hDestWindowOverride, pDirtyRegionPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Silk.NET.Maths.Rectangle<long>*, Silk.NET.Maths.Rectangle<long>*, nint, RGNData*, int>)LpVtbl[17])(@this, pSourceRectPtr, pDestRectPtr, hDestWindowOverride, pDirtyRegionPtr);
                     }
                 }
             }

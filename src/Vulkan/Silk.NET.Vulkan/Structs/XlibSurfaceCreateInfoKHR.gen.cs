@@ -26,8 +26,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.XlibSurfaceCreateInfoKhr,
             void* pNext = null,
             uint? flags = null,
-            IntPtr* dpy = null,
-            IntPtr? window = null
+            nint* dpy = null,
+            nint? window = null
         ) : this()
         {
             if (sType is not null)
@@ -75,11 +75,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "Display*")]
         [NativeName("Type.Name", "Display")]
         [NativeName("Name", "dpy")]
-        public IntPtr* Dpy;
+        public nint* Dpy;
 /// <summary></summary>
         [NativeName("Type", "Window")]
         [NativeName("Type.Name", "Window")]
         [NativeName("Name", "window")]
-        public IntPtr Window;
+        public nint Window;
     }
 }

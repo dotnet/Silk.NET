@@ -21,8 +21,8 @@ namespace Silk.NET.Direct3D12
         [NativeName("Name", "D3D12_RESIDENCY_PRIORITY_NORMAL")]
         ResidencyPriorityNormal = 0x78000000,
         [NativeName("Name", "D3D12_RESIDENCY_PRIORITY_HIGH")]
-        ResidencyPriorityHigh = unchecked((int)0xFFFFFFFFA0010000),
+        ResidencyPriorityHigh = unchecked((int) 0xFFFFFFFFA0010000),
         [NativeName("Name", "D3D12_RESIDENCY_PRIORITY_MAXIMUM")]
-        ResidencyPriorityMaximum = unchecked((int)0xFFFFFFFFC8000000),
+        ResidencyPriorityMaximum = unchecked((int) 0xFFFFFFFFC8000000),
     }
 }

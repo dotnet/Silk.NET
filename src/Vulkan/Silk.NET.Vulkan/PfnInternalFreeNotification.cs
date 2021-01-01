@@ -31,6 +31,6 @@ namespace Silk.NET.Vulkan
 
         public static explicit operator InternalFreeNotification
             (PfnInternalFreeNotification pfn) => SilkMarshal.PtrToDelegate<InternalFreeNotification>
-            ((IntPtr) pfn.Handle);
+            ((nint) pfn.Handle);
     }
 }

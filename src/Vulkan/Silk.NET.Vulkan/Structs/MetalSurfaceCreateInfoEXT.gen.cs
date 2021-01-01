@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.MetalSurfaceCreateInfoExt,
             void* pNext = null,
             uint? flags = null,
-            IntPtr* pLayer = null
+            nint* pLayer = null
         ) : this()
         {
             if (sType is not null)
@@ -69,6 +69,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "CAMetalLayer*")]
         [NativeName("Type.Name", "CAMetalLayer")]
         [NativeName("Name", "pLayer")]
-        public IntPtr* PLayer;
+        public nint* PLayer;
     }
 }

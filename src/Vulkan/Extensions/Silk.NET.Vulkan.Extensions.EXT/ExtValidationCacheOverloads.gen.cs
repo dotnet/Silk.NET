@@ -75,21 +75,21 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetValidationCacheData<T0>(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] UIntPtr* pDataSize, [Count(Computed = "pDataSize")] Span<T0> pData) where T0 : unmanaged
+        public static unsafe Result GetValidationCacheData<T0>(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] nuint* pDataSize, [Count(Computed = "pDataSize")] Span<T0> pData) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.GetValidationCacheData(device, validationCache, pDataSize, ref pData.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetValidationCacheData(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] Span<UIntPtr> pDataSize, [Count(Computed = "pDataSize")] void* pData)
+        public static unsafe Result GetValidationCacheData(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] Span<nuint> pDataSize, [Count(Computed = "pDataSize")] void* pData)
         {
             // SpanOverloader
             return thisApi.GetValidationCacheData(device, validationCache, ref pDataSize.GetPinnableReference(), pData);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetValidationCacheData<T0>(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] Span<UIntPtr> pDataSize, [Count(Computed = "pDataSize")] Span<T0> pData) where T0 : unmanaged
+        public static unsafe Result GetValidationCacheData<T0>(this ExtValidationCache thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] Span<nuint> pDataSize, [Count(Computed = "pDataSize")] Span<T0> pData) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.GetValidationCacheData(device, validationCache, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());

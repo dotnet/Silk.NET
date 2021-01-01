@@ -284,7 +284,7 @@ namespace Silk.NET.Core.Native
                 int ret = default;
             var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
             ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentData, ppData, pBytes);
-            Marshal.FreeHGlobal((IntPtr)pFileNamePtr);
+            Marshal.FreeHGlobal((nint)pFileNamePtr);
             return ret;
         }
 
@@ -298,7 +298,7 @@ namespace Silk.NET.Core.Native
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentData, ppData, pBytesPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pFileNamePtr);
+            Marshal.FreeHGlobal((nint)pFileNamePtr);
             return ret;
         }
 
@@ -312,7 +312,7 @@ namespace Silk.NET.Core.Native
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentData, ppDataPtr, pBytes);
             }
-            Marshal.FreeHGlobal((IntPtr)pFileNamePtr);
+            Marshal.FreeHGlobal((nint)pFileNamePtr);
             return ret;
         }
 
@@ -329,7 +329,7 @@ namespace Silk.NET.Core.Native
                     ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, void*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentData, ppDataPtr, pBytesPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pFileNamePtr);
+            Marshal.FreeHGlobal((nint)pFileNamePtr);
             return ret;
         }
 
@@ -343,7 +343,7 @@ namespace Silk.NET.Core.Native
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, T0*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppData, pBytes);
             }
-            Marshal.FreeHGlobal((IntPtr)pFileNamePtr);
+            Marshal.FreeHGlobal((nint)pFileNamePtr);
             return ret;
         }
 
@@ -360,7 +360,7 @@ namespace Silk.NET.Core.Native
                     ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, T0*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppData, pBytesPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pFileNamePtr);
+            Marshal.FreeHGlobal((nint)pFileNamePtr);
             return ret;
         }
 
@@ -377,7 +377,7 @@ namespace Silk.NET.Core.Native
                     ret = ((delegate* unmanaged[Cdecl]<ID3DInclude*, D3DIncludeType, byte*, T0*, void**, uint*, int>)LpVtbl[0])(@this, IncludeType, pFileNamePtr, pParentDataPtr, ppDataPtr, pBytes);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pFileNamePtr);
+            Marshal.FreeHGlobal((nint)pFileNamePtr);
             return ret;
         }
 
@@ -397,7 +397,7 @@ namespace Silk.NET.Core.Native
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pFileNamePtr);
+            Marshal.FreeHGlobal((nint)pFileNamePtr);
             return ret;
         }
 

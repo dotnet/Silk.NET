@@ -23,6 +23,6 @@ namespace Silk.NET.DXGI
         [NativeName("Name", "DXGI_ALPHA_MODE_IGNORE")]
         AlphaModeIgnore = 0x3,
         [NativeName("Name", "DXGI_ALPHA_MODE_FORCE_DWORD")]
-        AlphaModeForceDword = unchecked((int)0xFFFFFFFFFFFFFFFF),
+        AlphaModeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
     }
 }

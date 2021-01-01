@@ -6,6 +6,7 @@
 using System.IO;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Enums;
+using Silk.NET.BuildTools.Common.Functions;
 
 namespace Silk.NET.BuildTools.Bind
 {
@@ -42,12 +43,9 @@ namespace Silk.NET.BuildTools.Bind
             for (var index = 0; index < @enum.Tokens.Count; index++)
             {
                 var token = @enum.Tokens[index];
-
                 sw.WriteLine($"        [NativeName(\"Name\", \"{token.NativeName}\")]");
-                sw.WriteLine
-                (
-                    $"        {token.Name} = {token.Value}{(index != @enum.Tokens.Count ? "," : string.Empty)}"
-                );
+                sw.Write($"        {token.Name} = {MakeUnchecked(token.Value, @enum.EnumBaseType)}");
+                sw.WriteLine($"{(index != @enum.Tokens.Count ? "," : string.Empty)}");
             }
 
             sw.WriteLine("    }");
@@ -55,5 +53,20 @@ namespace Silk.NET.BuildTools.Bind
             sw.Flush();
             sw.Dispose();
         }
+
+        private static string MakeUnchecked(string value, Type enumBaseType) => value.Contains("unchecked")
+            ? value
+            : enumBaseType.Name switch
+            {
+                "sbyte" => Utilities.ParseSbyte(value) is null ? $"unchecked((sbyte) {value})" : value,
+                "byte" => Utilities.ParseByte(value) is null ? $"unchecked((byte) {value})" : value,
+                "short" => Utilities.ParseShort(value) is null ? $"unchecked((short) {value})" : value,
+                "ushort" => Utilities.ParseUshort(value) is null ? $"unchecked((ushort) {value})" : value,
+                "int" => Utilities.ParseInt(value) is null ? $"unchecked((int) {value})" : value,
+                "uint" => Utilities.ParseUint(value) is null ? $"unchecked((uint) {value})" : value,
+                "long" => Utilities.ParseLong(value) is null ? $"unchecked((long) {value})" : value,
+                "ulong" => Utilities.ParseUlong(value) is null ? $"unchecked((ulong) {value})" : value,
+                _ => value
+            };
     }
 }

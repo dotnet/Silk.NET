@@ -19,7 +19,7 @@ namespace Silk.NET.Vulkan
                 DebugUtilsMessengerCallbackDataEXT*, void*, Bool32> ptr
         ) => _handle = ptr;
 
-        public static implicit operator IntPtr(PfnDebugUtilsMessengerCallbackEXT pfn) => (IntPtr) pfn.Handle;
+        public static implicit operator nint(PfnDebugUtilsMessengerCallbackEXT pfn) => (nint) pfn.Handle;
 
         public PfnDebugUtilsMessengerCallbackEXT(DebugUtilsMessengerCallbackFunctionEXT func) => _handle =
             (delegate* unmanaged[Cdecl]<DebugUtilsMessageSeverityFlagsEXT, DebugUtilsMessageTypeFlagsEXT,
@@ -40,6 +40,6 @@ namespace Silk.NET.Vulkan
 
         public static explicit operator DebugUtilsMessengerCallbackFunctionEXT
             (PfnDebugUtilsMessengerCallbackEXT pfn) => SilkMarshal.PtrToDelegate<DebugUtilsMessengerCallbackFunctionEXT>
-            ((IntPtr) pfn.Handle);
+            ((nint) pfn.Handle);
     }
 }

@@ -33,10 +33,10 @@ namespace Silk.NET.SDL
         ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnEventFilter From(EventFilter proc) => new PfnEventFilter(proc);
-        public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
+        public void Dispose() => SilkMarshal.Free((nint) _handle);
 
-        public static implicit operator IntPtr(PfnEventFilter pfn) => (IntPtr) pfn.Handle;
-        public static explicit operator PfnEventFilter(IntPtr pfn)
+        public static implicit operator nint(PfnEventFilter pfn) => (nint) pfn.Handle;
+        public static explicit operator PfnEventFilter(nint pfn)
             => new PfnEventFilter((delegate* unmanaged[Cdecl]<void*, Event*, int>) pfn);
 
         public static implicit operator PfnEventFilter(EventFilter proc)

@@ -23,7 +23,7 @@ namespace Silk.NET.OpenGL.Extensions.NV
     {
         public const string ExtensionName = "NV_vertex_buffer_unified_memory";
         [NativeApi(EntryPoint = "glBufferAddressRangeNV")]
-        public partial void BufferAddressRange([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ulong address, [Flow(FlowDirection.In)] UIntPtr length);
+        public partial void BufferAddressRange([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ulong address, [Flow(FlowDirection.In)] nuint length);
 
         [NativeApi(EntryPoint = "glColorFormatNV")]
         public partial void ColorFormat([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride);

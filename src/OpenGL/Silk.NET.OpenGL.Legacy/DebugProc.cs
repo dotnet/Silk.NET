@@ -7,5 +7,5 @@ using System;
 
 namespace Silk.NET.OpenGL.Legacy
 {
-    public delegate void DebugProc(GLEnum source, GLEnum type, int id, GLEnum severity, int length, IntPtr message, IntPtr userParam);
+    public delegate void DebugProc(GLEnum source, GLEnum type, int id, GLEnum severity, int length, nint message, nint userParam);
 }

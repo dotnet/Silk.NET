@@ -590,32 +590,32 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDC(IntPtr* phdc)
+        public readonly unsafe int GetDC(nint* phdc)
         {
             var @this = (IDirect3DSurface9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, IntPtr*, int>)LpVtbl[15])(@this, phdc);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, nint*, int>)LpVtbl[15])(@this, phdc);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetDC(ref IntPtr phdc)
+        public readonly int GetDC(ref nint phdc)
         {
             var @this = (IDirect3DSurface9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (IntPtr* phdcPtr = &phdc)
+            fixed (nint* phdcPtr = &phdc)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, IntPtr*, int>)LpVtbl[15])(@this, phdcPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, nint*, int>)LpVtbl[15])(@this, phdcPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int ReleaseDC(IntPtr hdc)
+        public readonly int ReleaseDC(nint hdc)
         {
             var @this = (IDirect3DSurface9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, IntPtr, int>)LpVtbl[16])(@this, hdc);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DSurface9*, nint, int>)LpVtbl[16])(@this, hdc);
             return ret;
         }
 

@@ -291,7 +291,7 @@ namespace Silk.NET.Direct3D.Compilers
                 int ret = default;
             var pFileNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFileName);
             ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncoding);
-            Marshal.FreeHGlobal((IntPtr)pFileNamePtr);
+            Marshal.FreeHGlobal((nint)pFileNamePtr);
             return ret;
         }
 
@@ -305,7 +305,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePage, pBlobEncodingPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pFileNamePtr);
+            Marshal.FreeHGlobal((nint)pFileNamePtr);
             return ret;
         }
 
@@ -319,7 +319,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncoding);
             }
-            Marshal.FreeHGlobal((IntPtr)pFileNamePtr);
+            Marshal.FreeHGlobal((nint)pFileNamePtr);
             return ret;
         }
 
@@ -336,7 +336,7 @@ namespace Silk.NET.Direct3D.Compilers
                     ret = ((delegate* unmanaged[Cdecl]<IDxcLibrary*, byte*, uint*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pFileNamePtr, codePagePtr, pBlobEncodingPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pFileNamePtr);
+            Marshal.FreeHGlobal((nint)pFileNamePtr);
             return ret;
         }
 

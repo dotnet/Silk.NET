@@ -24,27 +24,27 @@ namespace Silk.NET.OpenXR.Extensions.KHR
         public const string ExtensionName = "XR_KHR_convert_timespec_time";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrConvertTimespecTimeToTimeKHR")]
-        public unsafe partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ValueTuple<IntPtr,IntPtr>* timespecTime, [Count(Count = 0)] long* time);
+        public unsafe partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ValueTuple<nint,nint>* timespecTime, [Count(Count = 0)] long* time);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrConvertTimespecTimeToTimeKHR")]
-        public unsafe partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ValueTuple<IntPtr,IntPtr>* timespecTime, [Count(Count = 0)] ref long time);
+        public unsafe partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ValueTuple<nint,nint>* timespecTime, [Count(Count = 0)] ref long time);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrConvertTimespecTimeToTimeKHR")]
-        public unsafe partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in ValueTuple<IntPtr,IntPtr> timespecTime, [Count(Count = 0)] long* time);
+        public unsafe partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in ValueTuple<nint,nint> timespecTime, [Count(Count = 0)] long* time);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrConvertTimespecTimeToTimeKHR")]
-        public partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in ValueTuple<IntPtr,IntPtr> timespecTime, [Count(Count = 0)] ref long time);
+        public partial Result ConvertTimespecTimeToTime([Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] in ValueTuple<nint,nint> timespecTime, [Count(Count = 0)] ref long time);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrConvertTimeToTimespecTimeKHR")]
-        public unsafe partial Result ConvertTimeToTimespecTime([Count(Count = 0)] Instance instance, [Count(Count = 0)] long time, [Count(Count = 0)] ValueTuple<IntPtr,IntPtr>* timespecTime);
+        public unsafe partial Result ConvertTimeToTimespecTime([Count(Count = 0)] Instance instance, [Count(Count = 0)] long time, [Count(Count = 0)] ValueTuple<nint,nint>* timespecTime);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrConvertTimeToTimespecTimeKHR")]
-        public partial Result ConvertTimeToTimespecTime([Count(Count = 0)] Instance instance, [Count(Count = 0)] long time, [Count(Count = 0)] ref ValueTuple<IntPtr,IntPtr> timespecTime);
+        public partial Result ConvertTimeToTimespecTime([Count(Count = 0)] Instance instance, [Count(Count = 0)] long time, [Count(Count = 0)] ref ValueTuple<nint,nint> timespecTime);
 
         public KhrConvertTimespecTime(INativeContext ctx)
             : base(ctx)

@@ -836,7 +836,7 @@ namespace Silk.NET.XAudio
                 int ret = default;
             var szDeviceIdPtr = (byte*) Marshal.StringToHGlobalAnsi(szDeviceId);
             ret = ((delegate* unmanaged[Cdecl]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, byte*, EffectChain*, AudioStreamCategory, int>)LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChain, StreamCategory);
-            Marshal.FreeHGlobal((IntPtr)szDeviceIdPtr);
+            Marshal.FreeHGlobal((nint)szDeviceIdPtr);
             return ret;
         }
 
@@ -850,7 +850,7 @@ namespace Silk.NET.XAudio
             {
                 ret = ((delegate* unmanaged[Cdecl]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, byte*, EffectChain*, AudioStreamCategory, int>)LpVtbl[7])(@this, ppMasteringVoice, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChainPtr, StreamCategory);
             }
-            Marshal.FreeHGlobal((IntPtr)szDeviceIdPtr);
+            Marshal.FreeHGlobal((nint)szDeviceIdPtr);
             return ret;
         }
 
@@ -923,7 +923,7 @@ namespace Silk.NET.XAudio
             {
             var szDeviceIdPtr = (byte*) Marshal.StringToHGlobalAnsi(szDeviceId);
                 ret = ((delegate* unmanaged[Cdecl]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, byte*, EffectChain*, AudioStreamCategory, int>)LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChain, StreamCategory);
-            Marshal.FreeHGlobal((IntPtr)szDeviceIdPtr);
+            Marshal.FreeHGlobal((nint)szDeviceIdPtr);
             }
             return ret;
         }
@@ -940,7 +940,7 @@ namespace Silk.NET.XAudio
                 {
                     ret = ((delegate* unmanaged[Cdecl]<IXAudio2*, IXAudio2MasteringVoice**, uint, uint, uint, byte*, EffectChain*, AudioStreamCategory, int>)LpVtbl[7])(@this, ppMasteringVoicePtr, InputChannels, InputSampleRate, Flags, szDeviceIdPtr, pEffectChainPtr, StreamCategory);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDeviceIdPtr);
+            Marshal.FreeHGlobal((nint)szDeviceIdPtr);
             }
             return ret;
         }

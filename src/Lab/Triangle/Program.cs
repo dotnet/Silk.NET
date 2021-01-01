@@ -82,7 +82,7 @@ namespace Triangle
             fixed (float* vertices = _vertices)
             {
                 _gl.BufferData
-                    (GLEnum.ArrayBuffer, (UIntPtr)( _vertices.Length * sizeof(float)), vertices, GLEnum.StaticDraw);
+                    (GLEnum.ArrayBuffer, (nuint)( _vertices.Length * sizeof(float)), vertices, GLEnum.StaticDraw);
             }
 
             _shader = new Shader("Triangle.shader.vert", "Triangle.shader.frag", _gl, typeof(Program));
@@ -105,7 +105,7 @@ namespace Triangle
         }
 
         private static void OnDebug
-            (GLEnum source, GLEnum type, int id, GLEnum severity, int length, IntPtr message, IntPtr userparam)
+            (GLEnum source, GLEnum type, int id, GLEnum severity, int length, nint message, nint userparam)
         {
             Console.WriteLine
             (

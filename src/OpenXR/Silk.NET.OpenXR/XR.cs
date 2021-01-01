@@ -97,7 +97,7 @@ namespace Silk.NET.OpenXR
                     EnumerateInstanceExtensionProperties((byte*) layerName, extensionCount, &extensionCount, exts);
                     for (var i = 0; i < extensionCount; i++)
                     {
-                        var newKey = layer_sep + Marshal.PtrToStringAnsi((IntPtr) exts[i].ExtensionName);
+                        var newKey = layer_sep + Marshal.PtrToStringAnsi((nint) exts[i].ExtensionName);
                         _cachedInstanceExtensions.Add(newKey);
                         if (!result && string.Equals(newKey, fullKey))
                         {

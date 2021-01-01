@@ -25,7 +25,7 @@ namespace Silk.NET.OpenXR
         (
             StructureType? type = StructureType.TypeGraphicsBindingOpenglWaylandKhr,
             void* next = null,
-            IntPtr* display = null
+            nint* display = null
         ) : this()
         {
             if (type is not null)
@@ -58,6 +58,6 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "wl_display*")]
         [NativeName("Type.Name", "wl_display")]
         [NativeName("Name", "display")]
-        public IntPtr* Display;
+        public nint* Display;
     }
 }

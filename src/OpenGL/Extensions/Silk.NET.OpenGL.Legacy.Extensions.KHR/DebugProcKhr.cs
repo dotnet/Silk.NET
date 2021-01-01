@@ -7,5 +7,5 @@ using System;
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
 {
-    public delegate void DebugProcKhr(KHR source, KHR type, int id, KHR severity, int length, IntPtr message, IntPtr userParam);
+    public delegate void DebugProcKhr(KHR source, KHR type, int id, KHR severity, int length, nint message, nint userParam);
 }

@@ -25,9 +25,9 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.ExportSemaphoreWin32HandleInfoKhr,
             void* pNext = null,
-            IntPtr* pAttributes = null,
+            nint* pAttributes = null,
             int? dwAccess = null,
-            IntPtr? name = null
+            nint? name = null
         ) : this()
         {
             if (sType is not null)
@@ -70,7 +70,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "SECURITY_ATTRIBUTES*")]
         [NativeName("Type.Name", "SECURITY_ATTRIBUTES")]
         [NativeName("Name", "pAttributes")]
-        public IntPtr* PAttributes;
+        public nint* PAttributes;
 /// <summary></summary>
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]
@@ -80,6 +80,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "LPCWSTR")]
         [NativeName("Type.Name", "LPCWSTR")]
         [NativeName("Name", "name")]
-        public IntPtr Name;
+        public nint Name;
     }
 }

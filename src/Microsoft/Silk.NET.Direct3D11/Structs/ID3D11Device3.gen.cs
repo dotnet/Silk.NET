@@ -2864,7 +2864,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             return ret;
         }
 
@@ -2878,7 +2878,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             return ret;
         }
 
@@ -2951,7 +2951,7 @@ namespace Silk.NET.Direct3D11
             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
             return ret;
         }
@@ -2968,7 +2968,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
             return ret;
         }
@@ -3042,7 +3042,7 @@ namespace Silk.NET.Direct3D11
             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
             return ret;
         }
@@ -3059,7 +3059,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
             return ret;
         }
@@ -3147,7 +3147,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -3167,7 +3167,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -3180,7 +3180,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             return ret;
         }
 
@@ -3194,7 +3194,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             return ret;
         }
 
@@ -3208,7 +3208,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             return ret;
         }
 
@@ -3225,7 +3225,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             return ret;
         }
 
@@ -3237,8 +3237,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             return ret;
         }
 
@@ -3253,8 +3253,8 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             return ret;
         }
 
@@ -3268,7 +3268,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             return ret;
         }
 
@@ -3285,7 +3285,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             return ret;
         }
 
@@ -3302,7 +3302,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             return ret;
         }
 
@@ -3322,7 +3322,7 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             return ret;
         }
 
@@ -3336,9 +3336,9 @@ namespace Silk.NET.Direct3D11
             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             return ret;
         }
 
@@ -3355,9 +3355,9 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             return ret;
         }
 
@@ -3430,7 +3430,7 @@ namespace Silk.NET.Direct3D11
             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
             return ret;
         }
@@ -3447,7 +3447,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
             return ret;
         }
@@ -3535,7 +3535,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -3555,7 +3555,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -3644,7 +3644,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -3664,7 +3664,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -3767,7 +3767,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -3790,7 +3790,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -3806,7 +3806,7 @@ namespace Silk.NET.Direct3D11
             {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -3823,7 +3823,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -3840,7 +3840,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -3860,7 +3860,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -3875,8 +3875,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -3894,8 +3894,8 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -3912,7 +3912,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -3932,7 +3932,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -3952,7 +3952,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -3975,7 +3975,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -3992,9 +3992,9 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -4014,9 +4014,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -4090,7 +4090,7 @@ namespace Silk.NET.Direct3D11
             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
             return ret;
         }
@@ -4107,7 +4107,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
             return ret;
         }
@@ -4195,7 +4195,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -4215,7 +4215,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -4304,7 +4304,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -4324,7 +4324,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -4427,7 +4427,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -4450,7 +4450,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -4466,7 +4466,7 @@ namespace Silk.NET.Direct3D11
             {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -4483,7 +4483,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -4500,7 +4500,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -4520,7 +4520,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -4535,8 +4535,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -4554,8 +4554,8 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -4572,7 +4572,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -4592,7 +4592,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -4612,7 +4612,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -4635,7 +4635,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -4652,9 +4652,9 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -4674,9 +4674,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -4764,7 +4764,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -4784,7 +4784,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -4887,7 +4887,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -4910,7 +4910,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -5014,7 +5014,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -5037,7 +5037,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -5155,7 +5155,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -5181,7 +5181,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -5200,7 +5200,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -5220,7 +5220,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -5240,7 +5240,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -5263,7 +5263,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -5281,8 +5281,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -5303,8 +5303,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -5324,7 +5324,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -5347,7 +5347,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -5370,7 +5370,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -5396,7 +5396,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -5416,9 +5416,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -5441,9 +5441,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -5456,7 +5456,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5470,7 +5470,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescription, pDescriptionLengthPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5484,7 +5484,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5501,7 +5501,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5513,8 +5513,8 @@ namespace Silk.NET.Direct3D11
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5529,8 +5529,8 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5544,7 +5544,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLength);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5561,7 +5561,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5578,7 +5578,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5598,7 +5598,7 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5612,9 +5612,9 @@ namespace Silk.NET.Direct3D11
             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5631,9 +5631,9 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5647,7 +5647,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5664,7 +5664,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5681,7 +5681,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5701,7 +5701,7 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5715,9 +5715,9 @@ namespace Silk.NET.Direct3D11
             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5734,9 +5734,9 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5753,7 +5753,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5773,7 +5773,7 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5793,7 +5793,7 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5816,7 +5816,7 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5832,10 +5832,10 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5854,10 +5854,10 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5869,8 +5869,8 @@ namespace Silk.NET.Direct3D11
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5885,8 +5885,8 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5901,8 +5901,8 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5920,8 +5920,8 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5934,9 +5934,9 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5952,9 +5952,9 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5969,8 +5969,8 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -5988,8 +5988,8 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6007,8 +6007,8 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6029,8 +6029,8 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6045,10 +6045,10 @@ namespace Silk.NET.Direct3D11
             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6066,10 +6066,10 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6083,7 +6083,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescription, pDescriptionLength);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6100,7 +6100,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescription, pDescriptionLengthPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6117,7 +6117,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6137,7 +6137,7 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6151,9 +6151,9 @@ namespace Silk.NET.Direct3D11
             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6170,9 +6170,9 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6189,7 +6189,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLength);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6209,7 +6209,7 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6229,7 +6229,7 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6252,7 +6252,7 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6268,10 +6268,10 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6290,10 +6290,10 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6310,7 +6310,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6330,7 +6330,7 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6350,7 +6350,7 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6373,7 +6373,7 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6389,10 +6389,10 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6411,10 +6411,10 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6434,7 +6434,7 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6457,7 +6457,7 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6480,7 +6480,7 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6506,7 +6506,7 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6524,11 +6524,11 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6549,11 +6549,11 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6567,9 +6567,9 @@ namespace Silk.NET.Direct3D11
             {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6586,9 +6586,9 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6605,9 +6605,9 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6627,9 +6627,9 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6644,10 +6644,10 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6665,10 +6665,10 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6685,9 +6685,9 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6707,9 +6707,9 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6729,9 +6729,9 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6754,9 +6754,9 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6773,11 +6773,11 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6797,11 +6797,11 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             return ret;
         }
 
@@ -6874,7 +6874,7 @@ namespace Silk.NET.Direct3D11
             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
             return ret;
         }
@@ -6891,7 +6891,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
             return ret;
         }
@@ -6979,7 +6979,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -6999,7 +6999,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -7088,7 +7088,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -7108,7 +7108,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -7211,7 +7211,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -7234,7 +7234,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -7250,7 +7250,7 @@ namespace Silk.NET.Direct3D11
             {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -7267,7 +7267,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -7284,7 +7284,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -7304,7 +7304,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -7319,8 +7319,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -7338,8 +7338,8 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -7356,7 +7356,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -7376,7 +7376,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -7396,7 +7396,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -7419,7 +7419,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -7436,9 +7436,9 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -7458,9 +7458,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -7548,7 +7548,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -7568,7 +7568,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -7671,7 +7671,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -7694,7 +7694,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -7798,7 +7798,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -7821,7 +7821,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -7939,7 +7939,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -7965,7 +7965,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -7984,7 +7984,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8004,7 +8004,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8024,7 +8024,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8047,7 +8047,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8065,8 +8065,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8087,8 +8087,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8108,7 +8108,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8131,7 +8131,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8154,7 +8154,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8180,7 +8180,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8200,9 +8200,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8225,9 +8225,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8316,7 +8316,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -8336,7 +8336,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -8439,7 +8439,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -8462,7 +8462,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -8566,7 +8566,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -8589,7 +8589,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -8707,7 +8707,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -8733,7 +8733,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -8752,7 +8752,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8772,7 +8772,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8792,7 +8792,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8815,7 +8815,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8833,8 +8833,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8855,8 +8855,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8876,7 +8876,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8899,7 +8899,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8922,7 +8922,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8948,7 +8948,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8968,9 +8968,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -8993,9 +8993,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -9098,7 +9098,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -9121,7 +9121,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -9239,7 +9239,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -9265,7 +9265,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -9384,7 +9384,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -9410,7 +9410,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -9543,7 +9543,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -9572,7 +9572,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -9594,7 +9594,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -9617,7 +9617,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -9640,7 +9640,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -9666,7 +9666,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -9687,8 +9687,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -9712,8 +9712,8 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -9736,7 +9736,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -9762,7 +9762,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -9788,7 +9788,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -9817,7 +9817,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -9840,9 +9840,9 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -9868,9 +9868,9 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -9886,7 +9886,7 @@ namespace Silk.NET.Direct3D11
             {
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -9903,7 +9903,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescription, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -9920,7 +9920,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -9940,7 +9940,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -9955,8 +9955,8 @@ namespace Silk.NET.Direct3D11
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -9974,8 +9974,8 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -9992,7 +9992,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10012,7 +10012,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10032,7 +10032,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10055,7 +10055,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10072,9 +10072,9 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10094,9 +10094,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10113,7 +10113,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10133,7 +10133,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10153,7 +10153,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10176,7 +10176,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10193,9 +10193,9 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10215,9 +10215,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10237,7 +10237,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10260,7 +10260,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10283,7 +10283,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10309,7 +10309,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10328,10 +10328,10 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10353,10 +10353,10 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10371,8 +10371,8 @@ namespace Silk.NET.Direct3D11
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10390,8 +10390,8 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10409,8 +10409,8 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10431,8 +10431,8 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10448,9 +10448,9 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10469,9 +10469,9 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10489,8 +10489,8 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10511,8 +10511,8 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10533,8 +10533,8 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10558,8 +10558,8 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10577,10 +10577,10 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10601,10 +10601,10 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10621,7 +10621,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescription, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10641,7 +10641,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10661,7 +10661,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10684,7 +10684,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10701,9 +10701,9 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10723,9 +10723,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10745,7 +10745,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10768,7 +10768,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10791,7 +10791,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10817,7 +10817,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10836,10 +10836,10 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10861,10 +10861,10 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10884,7 +10884,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10907,7 +10907,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10930,7 +10930,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10956,7 +10956,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -10975,10 +10975,10 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -11000,10 +11000,10 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -11026,7 +11026,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -11052,7 +11052,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -11078,7 +11078,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -11107,7 +11107,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -11128,11 +11128,11 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -11156,11 +11156,11 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -11177,9 +11177,9 @@ namespace Silk.NET.Direct3D11
                 {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -11199,9 +11199,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -11221,9 +11221,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -11246,9 +11246,9 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -11266,10 +11266,10 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -11290,10 +11290,10 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -11313,9 +11313,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -11338,9 +11338,9 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -11363,9 +11363,9 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -11391,9 +11391,9 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -11413,11 +11413,11 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -11440,11 +11440,11 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -11518,7 +11518,7 @@ namespace Silk.NET.Direct3D11
             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
             return ret;
         }
@@ -11535,7 +11535,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
             return ret;
         }
@@ -11623,7 +11623,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -11643,7 +11643,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -11732,7 +11732,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -11752,7 +11752,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -11855,7 +11855,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -11878,7 +11878,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -11894,7 +11894,7 @@ namespace Silk.NET.Direct3D11
             {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -11911,7 +11911,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -11928,7 +11928,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -11948,7 +11948,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -11963,8 +11963,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -11982,8 +11982,8 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -12000,7 +12000,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -12020,7 +12020,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -12040,7 +12040,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -12063,7 +12063,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -12080,9 +12080,9 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -12102,9 +12102,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -12192,7 +12192,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -12212,7 +12212,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -12315,7 +12315,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -12338,7 +12338,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -12442,7 +12442,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -12465,7 +12465,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -12583,7 +12583,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -12609,7 +12609,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -12628,7 +12628,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -12648,7 +12648,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -12668,7 +12668,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -12691,7 +12691,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -12709,8 +12709,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -12731,8 +12731,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -12752,7 +12752,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -12775,7 +12775,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -12798,7 +12798,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -12824,7 +12824,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -12844,9 +12844,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -12869,9 +12869,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -12960,7 +12960,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -12980,7 +12980,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -13083,7 +13083,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -13106,7 +13106,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -13210,7 +13210,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -13233,7 +13233,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -13351,7 +13351,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -13377,7 +13377,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -13396,7 +13396,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -13416,7 +13416,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -13436,7 +13436,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -13459,7 +13459,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -13477,8 +13477,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -13499,8 +13499,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -13520,7 +13520,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -13543,7 +13543,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -13566,7 +13566,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -13592,7 +13592,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -13612,9 +13612,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -13637,9 +13637,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -13742,7 +13742,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -13765,7 +13765,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -13883,7 +13883,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -13909,7 +13909,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -14028,7 +14028,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -14054,7 +14054,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -14187,7 +14187,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -14216,7 +14216,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -14238,7 +14238,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -14261,7 +14261,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -14284,7 +14284,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -14310,7 +14310,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -14331,8 +14331,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -14356,8 +14356,8 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -14380,7 +14380,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -14406,7 +14406,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -14432,7 +14432,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -14461,7 +14461,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -14484,9 +14484,9 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -14512,9 +14512,9 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -14530,7 +14530,7 @@ namespace Silk.NET.Direct3D11
             {
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14547,7 +14547,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescription, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14564,7 +14564,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14584,7 +14584,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14599,8 +14599,8 @@ namespace Silk.NET.Direct3D11
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14618,8 +14618,8 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14636,7 +14636,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14656,7 +14656,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14676,7 +14676,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14699,7 +14699,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14716,9 +14716,9 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14738,9 +14738,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14757,7 +14757,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14777,7 +14777,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14797,7 +14797,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14820,7 +14820,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14837,9 +14837,9 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14859,9 +14859,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14881,7 +14881,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14904,7 +14904,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14927,7 +14927,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14953,7 +14953,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14972,10 +14972,10 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -14997,10 +14997,10 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15015,8 +15015,8 @@ namespace Silk.NET.Direct3D11
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15034,8 +15034,8 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15053,8 +15053,8 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15075,8 +15075,8 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15092,9 +15092,9 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15113,9 +15113,9 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15133,8 +15133,8 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15155,8 +15155,8 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15177,8 +15177,8 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15202,8 +15202,8 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15221,10 +15221,10 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15245,10 +15245,10 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15265,7 +15265,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescription, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15285,7 +15285,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15305,7 +15305,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15328,7 +15328,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15345,9 +15345,9 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15367,9 +15367,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15389,7 +15389,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15412,7 +15412,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15435,7 +15435,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15461,7 +15461,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15480,10 +15480,10 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15505,10 +15505,10 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15528,7 +15528,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15551,7 +15551,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15574,7 +15574,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15600,7 +15600,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15619,10 +15619,10 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15644,10 +15644,10 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15670,7 +15670,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15696,7 +15696,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15722,7 +15722,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15751,7 +15751,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15772,11 +15772,11 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15800,11 +15800,11 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15821,9 +15821,9 @@ namespace Silk.NET.Direct3D11
                 {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15843,9 +15843,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15865,9 +15865,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15890,9 +15890,9 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15910,10 +15910,10 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15934,10 +15934,10 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15957,9 +15957,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -15982,9 +15982,9 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -16007,9 +16007,9 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -16035,9 +16035,9 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -16057,11 +16057,11 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -16084,11 +16084,11 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -16176,7 +16176,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -16196,7 +16196,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -16299,7 +16299,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -16322,7 +16322,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -16426,7 +16426,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -16449,7 +16449,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -16567,7 +16567,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -16593,7 +16593,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -16612,7 +16612,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -16632,7 +16632,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -16652,7 +16652,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -16675,7 +16675,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -16693,8 +16693,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -16715,8 +16715,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -16736,7 +16736,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -16759,7 +16759,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -16782,7 +16782,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -16808,7 +16808,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -16828,9 +16828,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -16853,9 +16853,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -16958,7 +16958,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -16981,7 +16981,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -17099,7 +17099,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -17125,7 +17125,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -17244,7 +17244,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -17270,7 +17270,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -17403,7 +17403,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -17432,7 +17432,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -17454,7 +17454,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -17477,7 +17477,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -17500,7 +17500,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -17526,7 +17526,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -17547,8 +17547,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -17572,8 +17572,8 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -17596,7 +17596,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -17622,7 +17622,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -17648,7 +17648,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -17677,7 +17677,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -17700,9 +17700,9 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -17728,9 +17728,9 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -17834,7 +17834,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -17857,7 +17857,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -17975,7 +17975,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -18001,7 +18001,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -18120,7 +18120,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -18146,7 +18146,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -18279,7 +18279,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -18308,7 +18308,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -18330,7 +18330,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -18353,7 +18353,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -18376,7 +18376,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -18402,7 +18402,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -18423,8 +18423,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -18448,8 +18448,8 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -18472,7 +18472,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -18498,7 +18498,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -18524,7 +18524,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -18553,7 +18553,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -18576,9 +18576,9 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -18604,9 +18604,9 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -18724,7 +18724,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -18750,7 +18750,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -18883,7 +18883,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -18912,7 +18912,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -19046,7 +19046,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -19075,7 +19075,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -19223,7 +19223,7 @@ namespace Silk.NET.Direct3D11
                                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                                 }
                             }
                         }
@@ -19255,7 +19255,7 @@ namespace Silk.NET.Direct3D11
                                     {
                                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                                 }
                             }
                         }
@@ -19280,7 +19280,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -19306,7 +19306,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -19332,7 +19332,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -19361,7 +19361,7 @@ namespace Silk.NET.Direct3D11
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -19385,8 +19385,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -19413,8 +19413,8 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -19440,7 +19440,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -19469,7 +19469,7 @@ namespace Silk.NET.Direct3D11
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -19498,7 +19498,7 @@ namespace Silk.NET.Direct3D11
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -19530,7 +19530,7 @@ namespace Silk.NET.Direct3D11
                                     }
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -19556,9 +19556,9 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -19587,9 +19587,9 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -19608,7 +19608,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -19628,7 +19628,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -19648,7 +19648,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -19671,7 +19671,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -19689,8 +19689,8 @@ namespace Silk.NET.Direct3D11
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -19711,8 +19711,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -19732,7 +19732,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -19755,7 +19755,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -19778,7 +19778,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -19804,7 +19804,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -19824,9 +19824,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -19849,9 +19849,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -19871,7 +19871,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -19894,7 +19894,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -19917,7 +19917,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -19943,7 +19943,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -19963,9 +19963,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -19988,9 +19988,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20013,7 +20013,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20039,7 +20039,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20065,7 +20065,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20094,7 +20094,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20116,10 +20116,10 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20144,10 +20144,10 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20165,8 +20165,8 @@ namespace Silk.NET.Direct3D11
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20187,8 +20187,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20209,8 +20209,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20234,8 +20234,8 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20254,9 +20254,9 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20278,9 +20278,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20301,8 +20301,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20326,8 +20326,8 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20351,8 +20351,8 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20379,8 +20379,8 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20401,10 +20401,10 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20428,10 +20428,10 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20451,7 +20451,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20474,7 +20474,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20497,7 +20497,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20523,7 +20523,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20543,9 +20543,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20568,9 +20568,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20593,7 +20593,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20619,7 +20619,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20645,7 +20645,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20674,7 +20674,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20696,10 +20696,10 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20724,10 +20724,10 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20750,7 +20750,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20776,7 +20776,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20802,7 +20802,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20831,7 +20831,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20853,10 +20853,10 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20881,10 +20881,10 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20910,7 +20910,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20939,7 +20939,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -20968,7 +20968,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -21000,7 +21000,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -21024,11 +21024,11 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -21055,11 +21055,11 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -21079,9 +21079,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -21104,9 +21104,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -21129,9 +21129,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -21157,9 +21157,9 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -21180,10 +21180,10 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -21207,10 +21207,10 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -21233,9 +21233,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -21261,9 +21261,9 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -21289,9 +21289,9 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -21320,9 +21320,9 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -21345,11 +21345,11 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -21375,11 +21375,11 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDesc, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -21454,7 +21454,7 @@ namespace Silk.NET.Direct3D11
             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
             return ret;
         }
@@ -21471,7 +21471,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
             }
             return ret;
         }
@@ -21559,7 +21559,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -21579,7 +21579,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -21668,7 +21668,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -21688,7 +21688,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -21791,7 +21791,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -21814,7 +21814,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -21830,7 +21830,7 @@ namespace Silk.NET.Direct3D11
             {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -21847,7 +21847,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -21864,7 +21864,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -21884,7 +21884,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -21899,8 +21899,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -21918,8 +21918,8 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -21936,7 +21936,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -21956,7 +21956,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -21976,7 +21976,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -21999,7 +21999,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -22016,9 +22016,9 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -22038,9 +22038,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
             }
             return ret;
         }
@@ -22128,7 +22128,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -22148,7 +22148,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -22251,7 +22251,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -22274,7 +22274,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -22378,7 +22378,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -22401,7 +22401,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -22519,7 +22519,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -22545,7 +22545,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -22564,7 +22564,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -22584,7 +22584,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -22604,7 +22604,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -22627,7 +22627,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -22645,8 +22645,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -22667,8 +22667,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -22688,7 +22688,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -22711,7 +22711,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -22734,7 +22734,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -22760,7 +22760,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -22780,9 +22780,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -22805,9 +22805,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -22896,7 +22896,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -22916,7 +22916,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -23019,7 +23019,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -23042,7 +23042,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -23146,7 +23146,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -23169,7 +23169,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -23287,7 +23287,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -23313,7 +23313,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -23332,7 +23332,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -23352,7 +23352,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -23372,7 +23372,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -23395,7 +23395,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -23413,8 +23413,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -23435,8 +23435,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -23456,7 +23456,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -23479,7 +23479,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -23502,7 +23502,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -23528,7 +23528,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -23548,9 +23548,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -23573,9 +23573,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -23678,7 +23678,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -23701,7 +23701,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -23819,7 +23819,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -23845,7 +23845,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -23964,7 +23964,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -23990,7 +23990,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -24123,7 +24123,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -24152,7 +24152,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -24174,7 +24174,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -24197,7 +24197,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -24220,7 +24220,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -24246,7 +24246,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -24267,8 +24267,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -24292,8 +24292,8 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -24316,7 +24316,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -24342,7 +24342,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -24368,7 +24368,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -24397,7 +24397,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -24420,9 +24420,9 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -24448,9 +24448,9 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -24466,7 +24466,7 @@ namespace Silk.NET.Direct3D11
             {
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24483,7 +24483,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescription, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24500,7 +24500,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24520,7 +24520,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24535,8 +24535,8 @@ namespace Silk.NET.Direct3D11
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24554,8 +24554,8 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24572,7 +24572,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24592,7 +24592,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24612,7 +24612,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24635,7 +24635,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24652,9 +24652,9 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24674,9 +24674,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24693,7 +24693,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24713,7 +24713,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24733,7 +24733,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24756,7 +24756,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24773,9 +24773,9 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24795,9 +24795,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24817,7 +24817,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24840,7 +24840,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24863,7 +24863,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24889,7 +24889,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24908,10 +24908,10 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24933,10 +24933,10 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24951,8 +24951,8 @@ namespace Silk.NET.Direct3D11
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24970,8 +24970,8 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -24989,8 +24989,8 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25011,8 +25011,8 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25028,9 +25028,9 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25049,9 +25049,9 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25069,8 +25069,8 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25091,8 +25091,8 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25113,8 +25113,8 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25138,8 +25138,8 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25157,10 +25157,10 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25181,10 +25181,10 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25201,7 +25201,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescription, pDescriptionLength);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25221,7 +25221,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25241,7 +25241,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25264,7 +25264,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25281,9 +25281,9 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25303,9 +25303,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25325,7 +25325,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25348,7 +25348,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25371,7 +25371,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25397,7 +25397,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25416,10 +25416,10 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25441,10 +25441,10 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25464,7 +25464,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25487,7 +25487,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25510,7 +25510,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25536,7 +25536,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25555,10 +25555,10 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25580,10 +25580,10 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25606,7 +25606,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25632,7 +25632,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25658,7 +25658,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25687,7 +25687,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25708,11 +25708,11 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25736,11 +25736,11 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25757,9 +25757,9 @@ namespace Silk.NET.Direct3D11
                 {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25779,9 +25779,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25801,9 +25801,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25826,9 +25826,9 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25846,10 +25846,10 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25870,10 +25870,10 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25893,9 +25893,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25918,9 +25918,9 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25943,9 +25943,9 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25971,9 +25971,9 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -25993,11 +25993,11 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -26020,11 +26020,11 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
             }
             return ret;
         }
@@ -26112,7 +26112,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -26132,7 +26132,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -26235,7 +26235,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -26258,7 +26258,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -26362,7 +26362,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -26385,7 +26385,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -26503,7 +26503,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -26529,7 +26529,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -26548,7 +26548,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -26568,7 +26568,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -26588,7 +26588,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -26611,7 +26611,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -26629,8 +26629,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -26651,8 +26651,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -26672,7 +26672,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -26695,7 +26695,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -26718,7 +26718,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -26744,7 +26744,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -26764,9 +26764,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -26789,9 +26789,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -26894,7 +26894,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -26917,7 +26917,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -27035,7 +27035,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -27061,7 +27061,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -27180,7 +27180,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -27206,7 +27206,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -27339,7 +27339,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -27368,7 +27368,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -27390,7 +27390,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -27413,7 +27413,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -27436,7 +27436,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -27462,7 +27462,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -27483,8 +27483,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -27508,8 +27508,8 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -27532,7 +27532,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -27558,7 +27558,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -27584,7 +27584,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -27613,7 +27613,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -27636,9 +27636,9 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -27664,9 +27664,9 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -27770,7 +27770,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -27793,7 +27793,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -27911,7 +27911,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -27937,7 +27937,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -28056,7 +28056,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -28082,7 +28082,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -28215,7 +28215,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -28244,7 +28244,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -28266,7 +28266,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -28289,7 +28289,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -28312,7 +28312,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -28338,7 +28338,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -28359,8 +28359,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -28384,8 +28384,8 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -28408,7 +28408,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -28434,7 +28434,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -28460,7 +28460,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -28489,7 +28489,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -28512,9 +28512,9 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -28540,9 +28540,9 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -28660,7 +28660,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -28686,7 +28686,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -28819,7 +28819,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -28848,7 +28848,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -28982,7 +28982,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -29011,7 +29011,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -29159,7 +29159,7 @@ namespace Silk.NET.Direct3D11
                                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                                 }
                             }
                         }
@@ -29191,7 +29191,7 @@ namespace Silk.NET.Direct3D11
                                     {
                                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                                 }
                             }
                         }
@@ -29216,7 +29216,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -29242,7 +29242,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -29268,7 +29268,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -29297,7 +29297,7 @@ namespace Silk.NET.Direct3D11
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -29321,8 +29321,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -29349,8 +29349,8 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -29376,7 +29376,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -29405,7 +29405,7 @@ namespace Silk.NET.Direct3D11
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -29434,7 +29434,7 @@ namespace Silk.NET.Direct3D11
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -29466,7 +29466,7 @@ namespace Silk.NET.Direct3D11
                                     }
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -29492,9 +29492,9 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -29523,9 +29523,9 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -29544,7 +29544,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -29564,7 +29564,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -29584,7 +29584,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -29607,7 +29607,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -29625,8 +29625,8 @@ namespace Silk.NET.Direct3D11
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -29647,8 +29647,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -29668,7 +29668,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -29691,7 +29691,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -29714,7 +29714,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -29740,7 +29740,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -29760,9 +29760,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -29785,9 +29785,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -29807,7 +29807,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -29830,7 +29830,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -29853,7 +29853,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -29879,7 +29879,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -29899,9 +29899,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -29924,9 +29924,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -29949,7 +29949,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -29975,7 +29975,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30001,7 +30001,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30030,7 +30030,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30052,10 +30052,10 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30080,10 +30080,10 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30101,8 +30101,8 @@ namespace Silk.NET.Direct3D11
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30123,8 +30123,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30145,8 +30145,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30170,8 +30170,8 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30190,9 +30190,9 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30214,9 +30214,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30237,8 +30237,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30262,8 +30262,8 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30287,8 +30287,8 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30315,8 +30315,8 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30337,10 +30337,10 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30364,10 +30364,10 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30387,7 +30387,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30410,7 +30410,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30433,7 +30433,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30459,7 +30459,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30479,9 +30479,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30504,9 +30504,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30529,7 +30529,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30555,7 +30555,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30581,7 +30581,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30610,7 +30610,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30632,10 +30632,10 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30660,10 +30660,10 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30686,7 +30686,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30712,7 +30712,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30738,7 +30738,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30767,7 +30767,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30789,10 +30789,10 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30817,10 +30817,10 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30846,7 +30846,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30875,7 +30875,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30904,7 +30904,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30936,7 +30936,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30960,11 +30960,11 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -30991,11 +30991,11 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -31015,9 +31015,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -31040,9 +31040,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -31065,9 +31065,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -31093,9 +31093,9 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -31116,10 +31116,10 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -31143,10 +31143,10 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -31169,9 +31169,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -31197,9 +31197,9 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -31225,9 +31225,9 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -31256,9 +31256,9 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -31281,11 +31281,11 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -31311,11 +31311,11 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pType, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -31404,7 +31404,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -31424,7 +31424,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                 }
             }
             return ret;
@@ -31527,7 +31527,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -31550,7 +31550,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -31654,7 +31654,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -31677,7 +31677,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -31795,7 +31795,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -31821,7 +31821,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -31840,7 +31840,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -31860,7 +31860,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -31880,7 +31880,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -31903,7 +31903,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -31921,8 +31921,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -31943,8 +31943,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -31964,7 +31964,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -31987,7 +31987,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -32010,7 +32010,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -32036,7 +32036,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -32056,9 +32056,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -32081,9 +32081,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                 }
             }
             return ret;
@@ -32186,7 +32186,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -32209,7 +32209,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -32327,7 +32327,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -32353,7 +32353,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -32472,7 +32472,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -32498,7 +32498,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -32631,7 +32631,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -32660,7 +32660,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -32682,7 +32682,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -32705,7 +32705,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -32728,7 +32728,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -32754,7 +32754,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -32775,8 +32775,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -32800,8 +32800,8 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -32824,7 +32824,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -32850,7 +32850,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -32876,7 +32876,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -32905,7 +32905,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -32928,9 +32928,9 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -32956,9 +32956,9 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -33062,7 +33062,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -33085,7 +33085,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -33203,7 +33203,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -33229,7 +33229,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -33348,7 +33348,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -33374,7 +33374,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -33507,7 +33507,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -33536,7 +33536,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -33558,7 +33558,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -33581,7 +33581,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -33604,7 +33604,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -33630,7 +33630,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -33651,8 +33651,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -33676,8 +33676,8 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -33700,7 +33700,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -33726,7 +33726,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -33752,7 +33752,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -33781,7 +33781,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -33804,9 +33804,9 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -33832,9 +33832,9 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -33952,7 +33952,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -33978,7 +33978,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -34111,7 +34111,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -34140,7 +34140,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -34274,7 +34274,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -34303,7 +34303,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -34451,7 +34451,7 @@ namespace Silk.NET.Direct3D11
                                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                                 }
                             }
                         }
@@ -34483,7 +34483,7 @@ namespace Silk.NET.Direct3D11
                                     {
                                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                                 }
                             }
                         }
@@ -34508,7 +34508,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -34534,7 +34534,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -34560,7 +34560,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -34589,7 +34589,7 @@ namespace Silk.NET.Direct3D11
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -34613,8 +34613,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -34641,8 +34641,8 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -34668,7 +34668,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -34697,7 +34697,7 @@ namespace Silk.NET.Direct3D11
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -34726,7 +34726,7 @@ namespace Silk.NET.Direct3D11
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -34758,7 +34758,7 @@ namespace Silk.NET.Direct3D11
                                     }
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -34784,9 +34784,9 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -34815,9 +34815,9 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -34836,7 +34836,7 @@ namespace Silk.NET.Direct3D11
                 {
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -34856,7 +34856,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -34876,7 +34876,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -34899,7 +34899,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -34917,8 +34917,8 @@ namespace Silk.NET.Direct3D11
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -34939,8 +34939,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -34960,7 +34960,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -34983,7 +34983,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35006,7 +35006,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35032,7 +35032,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35052,9 +35052,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35077,9 +35077,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35099,7 +35099,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35122,7 +35122,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35145,7 +35145,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35171,7 +35171,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35191,9 +35191,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35216,9 +35216,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35241,7 +35241,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35267,7 +35267,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35293,7 +35293,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35322,7 +35322,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35344,10 +35344,10 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35372,10 +35372,10 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35393,8 +35393,8 @@ namespace Silk.NET.Direct3D11
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35415,8 +35415,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35437,8 +35437,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35462,8 +35462,8 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35482,9 +35482,9 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35506,9 +35506,9 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35529,8 +35529,8 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35554,8 +35554,8 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35579,8 +35579,8 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35607,8 +35607,8 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35629,10 +35629,10 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35656,10 +35656,10 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35679,7 +35679,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescription, pDescriptionLength);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35702,7 +35702,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescription, pDescriptionLengthPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35725,7 +35725,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35751,7 +35751,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35771,9 +35771,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35796,9 +35796,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35821,7 +35821,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35847,7 +35847,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35873,7 +35873,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35902,7 +35902,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35924,10 +35924,10 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35952,10 +35952,10 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -35978,7 +35978,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36004,7 +36004,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36030,7 +36030,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36059,7 +36059,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36081,10 +36081,10 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36109,10 +36109,10 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36138,7 +36138,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36167,7 +36167,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36196,7 +36196,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36228,7 +36228,7 @@ namespace Silk.NET.Direct3D11
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36252,11 +36252,11 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36283,11 +36283,11 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36307,9 +36307,9 @@ namespace Silk.NET.Direct3D11
                     {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36332,9 +36332,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36357,9 +36357,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36385,9 +36385,9 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36408,10 +36408,10 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36435,10 +36435,10 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36461,9 +36461,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36489,9 +36489,9 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36517,9 +36517,9 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36548,9 +36548,9 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36573,11 +36573,11 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36603,11 +36603,11 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCounters, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                 }
             }
             return ret;
@@ -36710,7 +36710,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -36733,7 +36733,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                     }
                 }
             }
@@ -36851,7 +36851,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -36877,7 +36877,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -36996,7 +36996,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -37022,7 +37022,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -37155,7 +37155,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -37184,7 +37184,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -37206,7 +37206,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -37229,7 +37229,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -37252,7 +37252,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -37278,7 +37278,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -37299,8 +37299,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -37324,8 +37324,8 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -37348,7 +37348,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -37374,7 +37374,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -37400,7 +37400,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -37429,7 +37429,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -37452,9 +37452,9 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -37480,9 +37480,9 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                     }
                 }
             }
@@ -37600,7 +37600,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -37626,7 +37626,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -37759,7 +37759,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -37788,7 +37788,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -37922,7 +37922,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -37951,7 +37951,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -38099,7 +38099,7 @@ namespace Silk.NET.Direct3D11
                                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                                 }
                             }
                         }
@@ -38131,7 +38131,7 @@ namespace Silk.NET.Direct3D11
                                     {
                                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                                 }
                             }
                         }
@@ -38156,7 +38156,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -38182,7 +38182,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -38208,7 +38208,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -38237,7 +38237,7 @@ namespace Silk.NET.Direct3D11
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -38261,8 +38261,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -38289,8 +38289,8 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -38316,7 +38316,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -38345,7 +38345,7 @@ namespace Silk.NET.Direct3D11
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -38374,7 +38374,7 @@ namespace Silk.NET.Direct3D11
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -38406,7 +38406,7 @@ namespace Silk.NET.Direct3D11
                                     }
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -38432,9 +38432,9 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -38463,9 +38463,9 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szName, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -38584,7 +38584,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -38610,7 +38610,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
                     }
                 }
@@ -38743,7 +38743,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -38772,7 +38772,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -38906,7 +38906,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -38935,7 +38935,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -39083,7 +39083,7 @@ namespace Silk.NET.Direct3D11
                                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                                 }
                             }
                         }
@@ -39115,7 +39115,7 @@ namespace Silk.NET.Direct3D11
                                     {
                                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                                 }
                             }
                         }
@@ -39140,7 +39140,7 @@ namespace Silk.NET.Direct3D11
                         {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -39166,7 +39166,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -39192,7 +39192,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -39221,7 +39221,7 @@ namespace Silk.NET.Direct3D11
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -39245,8 +39245,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -39273,8 +39273,8 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -39300,7 +39300,7 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -39329,7 +39329,7 @@ namespace Silk.NET.Direct3D11
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -39358,7 +39358,7 @@ namespace Silk.NET.Direct3D11
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -39390,7 +39390,7 @@ namespace Silk.NET.Direct3D11
                                     }
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -39416,9 +39416,9 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -39447,9 +39447,9 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
                     }
                 }
@@ -39582,7 +39582,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -39611,7 +39611,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
                     }
@@ -39759,7 +39759,7 @@ namespace Silk.NET.Direct3D11
                                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                                 }
                             }
                         }
@@ -39791,7 +39791,7 @@ namespace Silk.NET.Direct3D11
                                     {
                                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                                 }
                             }
                         }
@@ -39940,7 +39940,7 @@ namespace Silk.NET.Direct3D11
                                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                                 }
                             }
                         }
@@ -39972,7 +39972,7 @@ namespace Silk.NET.Direct3D11
                                     {
                                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                                 }
                             }
                         }
@@ -40135,7 +40135,7 @@ namespace Silk.NET.Direct3D11
                                     {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                                     }
                                 }
                             }
@@ -40170,7 +40170,7 @@ namespace Silk.NET.Direct3D11
                                         {
                                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                                     }
                                 }
                             }
@@ -40198,7 +40198,7 @@ namespace Silk.NET.Direct3D11
                             {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                             }
                         }
                     }
@@ -40227,7 +40227,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                             }
                         }
                     }
@@ -40256,7 +40256,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                             }
                         }
                     }
@@ -40288,7 +40288,7 @@ namespace Silk.NET.Direct3D11
                                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                                     }
                                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                             }
                         }
                     }
@@ -40315,8 +40315,8 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                             }
                         }
                     }
@@ -40346,8 +40346,8 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                             }
                         }
                     }
@@ -40376,7 +40376,7 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                             }
                         }
                     }
@@ -40408,7 +40408,7 @@ namespace Silk.NET.Direct3D11
                                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                                     }
                                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                             }
                         }
                     }
@@ -40440,7 +40440,7 @@ namespace Silk.NET.Direct3D11
                                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                                     }
                                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                             }
                         }
                     }
@@ -40475,7 +40475,7 @@ namespace Silk.NET.Direct3D11
                                         }
                                     }
                                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                             }
                         }
                     }
@@ -40504,9 +40504,9 @@ namespace Silk.NET.Direct3D11
                                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                             }
                         }
                     }
@@ -40538,9 +40538,9 @@ namespace Silk.NET.Direct3D11
                                     {
                                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                             }
                         }
                     }
@@ -40562,7 +40562,7 @@ namespace Silk.NET.Direct3D11
                     {
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -40585,7 +40585,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescription, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -40608,7 +40608,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -40634,7 +40634,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -40655,8 +40655,8 @@ namespace Silk.NET.Direct3D11
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -40680,8 +40680,8 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -40704,7 +40704,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -40730,7 +40730,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -40756,7 +40756,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -40785,7 +40785,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -40808,9 +40808,9 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -40836,9 +40836,9 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -40861,7 +40861,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -40887,7 +40887,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -40913,7 +40913,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -40942,7 +40942,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -40965,9 +40965,9 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -40993,9 +40993,9 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41021,7 +41021,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41050,7 +41050,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41079,7 +41079,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41111,7 +41111,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41136,10 +41136,10 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41167,10 +41167,10 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41191,8 +41191,8 @@ namespace Silk.NET.Direct3D11
             var szNamePtr = (byte*) Marshal.StringToHGlobalAnsi(szName);
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41216,8 +41216,8 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41241,8 +41241,8 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41269,8 +41269,8 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41292,9 +41292,9 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41319,9 +41319,9 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41345,8 +41345,8 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41373,8 +41373,8 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41401,8 +41401,8 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41432,8 +41432,8 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41457,10 +41457,10 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41487,10 +41487,10 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLength, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41513,7 +41513,7 @@ namespace Silk.NET.Direct3D11
                         {
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescription, pDescriptionLength);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41539,7 +41539,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescription, pDescriptionLengthPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41565,7 +41565,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41594,7 +41594,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41617,9 +41617,9 @@ namespace Silk.NET.Direct3D11
                         {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41645,9 +41645,9 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41673,7 +41673,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescription, pDescriptionLength);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41702,7 +41702,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41731,7 +41731,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41763,7 +41763,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41788,10 +41788,10 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41819,10 +41819,10 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnits, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41848,7 +41848,7 @@ namespace Silk.NET.Direct3D11
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41877,7 +41877,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41906,7 +41906,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41938,7 +41938,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41963,10 +41963,10 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -41994,10 +41994,10 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -42026,7 +42026,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -42058,7 +42058,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -42090,7 +42090,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -42125,7 +42125,7 @@ namespace Silk.NET.Direct3D11
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -42152,11 +42152,11 @@ namespace Silk.NET.Direct3D11
                                 {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -42186,11 +42186,11 @@ namespace Silk.NET.Direct3D11
                                     {
                                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                     }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                                 }
                             }
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -42213,9 +42213,9 @@ namespace Silk.NET.Direct3D11
                         {
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -42241,9 +42241,9 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescription, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -42269,9 +42269,9 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -42300,9 +42300,9 @@ namespace Silk.NET.Direct3D11
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -42326,10 +42326,10 @@ namespace Silk.NET.Direct3D11
             var szUnitsPtr = (byte*) Marshal.StringToHGlobalAnsi(szUnits);
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -42356,10 +42356,10 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLength, szDescriptionPtr, pDescriptionLengthPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -42385,9 +42385,9 @@ namespace Silk.NET.Direct3D11
                             {
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLength);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -42416,9 +42416,9 @@ namespace Silk.NET.Direct3D11
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescription, pDescriptionLengthPtr);
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -42447,9 +42447,9 @@ namespace Silk.NET.Direct3D11
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -42481,9 +42481,9 @@ namespace Silk.NET.Direct3D11
                                     }
                                 }
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -42509,11 +42509,11 @@ namespace Silk.NET.Direct3D11
                             {
             var szDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(szDescription);
                                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLength);
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -42542,11 +42542,11 @@ namespace Silk.NET.Direct3D11
                                 {
                                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, CounterDesc*, CounterType*, uint*, byte*, uint*, byte*, uint*, byte*, uint*, int>)LpVtbl[32])(@this, pDescPtr, pTypePtr, pActiveCountersPtr, szNamePtr, pNameLengthPtr, szUnitsPtr, pUnitsLengthPtr, szDescriptionPtr, pDescriptionLengthPtr);
                                 }
-            Marshal.FreeHGlobal((IntPtr)szDescriptionPtr);
+            Marshal.FreeHGlobal((nint)szDescriptionPtr);
                             }
-            Marshal.FreeHGlobal((IntPtr)szUnitsPtr);
+            Marshal.FreeHGlobal((nint)szUnitsPtr);
                         }
-            Marshal.FreeHGlobal((IntPtr)szNamePtr);
+            Marshal.FreeHGlobal((nint)szNamePtr);
                     }
                 }
             }
@@ -43437,7 +43437,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var lpNamePtr = (byte*) Marshal.StringToHGlobalAnsi(lpName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, byte*, uint, Guid*, void**, int>)LpVtbl[49])(@this, lpNamePtr, dwDesiredAccess, returnedInterface, ppResource);
-            Marshal.FreeHGlobal((IntPtr)lpNamePtr);
+            Marshal.FreeHGlobal((nint)lpNamePtr);
             return ret;
         }
 
@@ -43451,7 +43451,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, byte*, uint, Guid*, void**, int>)LpVtbl[49])(@this, lpNamePtr, dwDesiredAccess, returnedInterface, ppResourcePtr);
             }
-            Marshal.FreeHGlobal((IntPtr)lpNamePtr);
+            Marshal.FreeHGlobal((nint)lpNamePtr);
             return ret;
         }
 
@@ -43465,7 +43465,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, byte*, uint, Guid*, void**, int>)LpVtbl[49])(@this, lpNamePtr, dwDesiredAccess, returnedInterfacePtr, ppResource);
             }
-            Marshal.FreeHGlobal((IntPtr)lpNamePtr);
+            Marshal.FreeHGlobal((nint)lpNamePtr);
             return ret;
         }
 
@@ -43482,7 +43482,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, byte*, uint, Guid*, void**, int>)LpVtbl[49])(@this, lpNamePtr, dwDesiredAccess, returnedInterfacePtr, ppResourcePtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)lpNamePtr);
+            Marshal.FreeHGlobal((nint)lpNamePtr);
             return ret;
         }
 

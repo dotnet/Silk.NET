@@ -33,6 +33,6 @@ namespace Silk.NET.Direct3D11
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS_222222222223")]
         VideoProcessorItelecineCaps222222222223 = 0x100,
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_ITELECINE_CAPS_OTHER")]
-        VideoProcessorItelecineCapsOther = unchecked((int)0xFFFFFFFF80000000),
+        VideoProcessorItelecineCapsOther = unchecked((int) 0xFFFFFFFF80000000),
     }
 }

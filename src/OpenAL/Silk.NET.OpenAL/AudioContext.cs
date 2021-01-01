@@ -20,11 +20,11 @@ namespace Silk.NET.OpenAL
 
         private static readonly object AudioContextLock = new object();
 
-        private static readonly Dictionary<IntPtr, AudioContext> AvailableContexts =
-            new Dictionary<IntPtr, AudioContext>();
+        private static readonly Dictionary<nint, AudioContext> AvailableContexts =
+            new Dictionary<nint, AudioContext>();
 
         private bool _contextExists;
-        private IntPtr _contextHandle;
+        private nint _contextHandle;
 
         private string _deviceName;
         private bool _disposed;
@@ -270,7 +270,7 @@ namespace Silk.NET.OpenAL
                     IsCurrent = false;
                 }
 
-                if (_contextHandle != IntPtr.Zero)
+                if (_contextHandle != 0)
                 {
                     AvailableContexts.Remove(_contextHandle);
 
@@ -309,7 +309,7 @@ namespace Silk.NET.OpenAL
             {
                 unsafe
                 {
-                    var contextHandle = context?._contextHandle ?? IntPtr.Zero;
+                    var contextHandle = context?._contextHandle ?? 0;
 
                     if (ContextAPI.MakeContextCurrent(contextHandle))
                     {
@@ -456,7 +456,7 @@ namespace Silk.NET.OpenAL
                 _contextHandle = ContextAPI.CreateContextHandle(Device, ptr);
             }
 
-            if (_contextHandle == IntPtr.Zero)
+            if (_contextHandle == 0)
             {
                 ContextAPI.CloseDevice(Device);
                 throw new AudioContextException

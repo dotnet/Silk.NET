@@ -33,10 +33,10 @@ namespace Silk.NET.Assimp
         ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnFileReadProc From(FileReadProc proc) => new PfnFileReadProc(proc);
-        public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
+        public void Dispose() => SilkMarshal.Free((nint) _handle);
 
-        public static implicit operator IntPtr(PfnFileReadProc pfn) => (IntPtr) pfn.Handle;
-        public static explicit operator PfnFileReadProc(IntPtr pfn)
+        public static implicit operator nint(PfnFileReadProc pfn) => (nint) pfn.Handle;
+        public static explicit operator PfnFileReadProc(nint pfn)
             => new PfnFileReadProc((delegate* unmanaged[Cdecl]<File*, byte*, uint, uint, uint>) pfn);
 
         public static implicit operator PfnFileReadProc(FileReadProc proc)

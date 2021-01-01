@@ -25,12 +25,12 @@ namespace Silk.NET.OpenXR
         (
             StructureType? type = StructureType.TypeGraphicsBindingOpenglXcbKhr,
             void* next = null,
-            IntPtr* connection = null,
+            nint* connection = null,
             uint? screenNumber = null,
-            IntPtr? fbconfigid = null,
-            IntPtr? visualid = null,
-            IntPtr? glxDrawable = null,
-            IntPtr? glxContext = null
+            nint? fbconfigid = null,
+            nint? visualid = null,
+            nint? glxDrawable = null,
+            nint? glxContext = null
         ) : this()
         {
             if (type is not null)
@@ -88,7 +88,7 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "xcb_connection_t*")]
         [NativeName("Type.Name", "xcb_connection_t")]
         [NativeName("Name", "connection")]
-        public IntPtr* Connection;
+        public nint* Connection;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
@@ -98,21 +98,21 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "xcb_glx_fbconfig_t")]
         [NativeName("Type.Name", "xcb_glx_fbconfig_t")]
         [NativeName("Name", "fbconfigid")]
-        public IntPtr Fbconfigid;
+        public nint Fbconfigid;
 /// <summary></summary>
         [NativeName("Type", "xcb_visualid_t")]
         [NativeName("Type.Name", "xcb_visualid_t")]
         [NativeName("Name", "visualid")]
-        public IntPtr Visualid;
+        public nint Visualid;
 /// <summary></summary>
         [NativeName("Type", "xcb_glx_drawable_t")]
         [NativeName("Type.Name", "xcb_glx_drawable_t")]
         [NativeName("Name", "glxDrawable")]
-        public IntPtr GlxDrawable;
+        public nint GlxDrawable;
 /// <summary></summary>
         [NativeName("Type", "xcb_glx_context_t")]
         [NativeName("Type.Name", "xcb_glx_context_t")]
         [NativeName("Name", "glxContext")]
-        public IntPtr GlxContext;
+        public nint GlxContext;
     }
 }

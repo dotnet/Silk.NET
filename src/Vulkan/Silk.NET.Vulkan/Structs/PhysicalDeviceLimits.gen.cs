@@ -85,7 +85,7 @@ namespace Silk.NET.Vulkan
             float? maxSamplerAnisotropy = null,
             uint? maxViewports = null,
             uint? viewportSubPixelBits = null,
-            UIntPtr? minMemoryMapAlignment = null,
+            nuint? minMemoryMapAlignment = null,
             ulong? minTexelBufferOffsetAlignment = null,
             ulong? minUniformBufferOffsetAlignment = null,
             ulong? minStorageBufferOffsetAlignment = null,
@@ -960,7 +960,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "minMemoryMapAlignment")]
-        public UIntPtr MinMemoryMapAlignment;
+        public nuint MinMemoryMapAlignment;
 /// <summary></summary>
         [NativeName("Type", "VkDeviceSize")]
         [NativeName("Type.Name", "VkDeviceSize")]

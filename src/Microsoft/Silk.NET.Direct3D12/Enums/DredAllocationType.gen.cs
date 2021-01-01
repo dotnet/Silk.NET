@@ -67,6 +67,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Name", "D3D12_DRED_ALLOCATION_TYPE_VIDEO_EXTENSION_COMMAND")]
         DredAllocationTypeVideoExtensionCommand = 0x2F,
         [NativeName("Name", "D3D12_DRED_ALLOCATION_TYPE_INVALID")]
-        DredAllocationTypeInvalid = unchecked((int)0xFFFFFFFFFFFFFFFF),
+        DredAllocationTypeInvalid = unchecked((int) 0xFFFFFFFFFFFFFFFF),
     }
 }

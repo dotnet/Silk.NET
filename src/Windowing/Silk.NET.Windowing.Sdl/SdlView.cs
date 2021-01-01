@@ -60,7 +60,7 @@ namespace Silk.NET.Windowing.Sdl
             : null;
 
         public override IVkSurface? VkSurface => _vk ??= API.API == ContextAPI.Vulkan ? new SdlVkSurface(this) : null;
-        protected override IntPtr CoreHandle => (IntPtr) SdlWindow;
+        protected override nint CoreHandle => (nint) SdlWindow;
         internal SDL.Sdl Sdl { get; }
         internal SDL.Window* SdlWindow { get; private set; }
         internal bool IsClosingVal { get; set; }

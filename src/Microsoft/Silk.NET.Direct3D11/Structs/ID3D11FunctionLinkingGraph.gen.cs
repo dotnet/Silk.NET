@@ -306,7 +306,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
-            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
+            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
             return ret;
         }
 
@@ -320,7 +320,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
+            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
             return ret;
         }
 
@@ -393,7 +393,7 @@ namespace Silk.NET.Direct3D11
             {
             var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
-            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
+            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
             }
             return ret;
         }
@@ -410,7 +410,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespace, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
+            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
             }
             return ret;
         }
@@ -484,7 +484,7 @@ namespace Silk.NET.Direct3D11
             {
             var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
-            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
+            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
             }
             return ret;
         }
@@ -501,7 +501,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
+            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
             }
             return ret;
         }
@@ -589,7 +589,7 @@ namespace Silk.NET.Direct3D11
                 {
             var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
-            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
+            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
                 }
             }
             return ret;
@@ -609,7 +609,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
+            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
                 }
             }
             return ret;
@@ -622,7 +622,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNode);
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
@@ -636,7 +636,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionName, ppCallNodePtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
@@ -650,7 +650,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
             }
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
@@ -667,7 +667,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
@@ -679,8 +679,8 @@ namespace Silk.NET.Direct3D11
             var pModuleInstanceNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pModuleInstanceNamespace);
             var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNode);
-            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
+            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
@@ -695,8 +695,8 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototype, pFunctionNamePtr, ppCallNodePtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
+            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
@@ -710,7 +710,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNode);
             }
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
@@ -727,7 +727,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionName, ppCallNodePtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
@@ -744,7 +744,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
@@ -764,7 +764,7 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
@@ -778,9 +778,9 @@ namespace Silk.NET.Direct3D11
             {
             var pFunctionNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFunctionName);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNode);
-            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
+            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
@@ -797,9 +797,9 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, byte*, ID3D11Module*, byte*, ID3D11LinkingNode**, int>)LpVtbl[6])(@this, pModuleInstanceNamespacePtr, pModuleWithFunctionPrototypePtr, pFunctionNamePtr, ppCallNodePtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)pFunctionNamePtr);
+            Marshal.FreeHGlobal((nint)pFunctionNamePtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pModuleInstanceNamespacePtr);
+            Marshal.FreeHGlobal((nint)pModuleInstanceNamespacePtr);
             return ret;
         }
 
@@ -879,7 +879,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
             return ret;
         }
 
@@ -919,7 +919,7 @@ namespace Silk.NET.Direct3D11
             {
             var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
             }
             return ret;
         }
@@ -960,7 +960,7 @@ namespace Silk.NET.Direct3D11
             {
             var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
             }
             return ret;
         }
@@ -1009,7 +1009,7 @@ namespace Silk.NET.Direct3D11
                 {
             var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
                 }
             }
             return ret;
@@ -1022,7 +1022,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
-            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
             return ret;
         }
 
@@ -1036,7 +1036,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
             return ret;
         }
 
@@ -1048,8 +1048,8 @@ namespace Silk.NET.Direct3D11
             var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
             var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
-            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
             return ret;
         }
 
@@ -1063,7 +1063,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
             }
-            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
             return ret;
         }
 
@@ -1080,7 +1080,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
             return ret;
         }
 
@@ -1094,9 +1094,9 @@ namespace Silk.NET.Direct3D11
             {
             var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNode, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
             return ret;
         }
 
@@ -1136,7 +1136,7 @@ namespace Silk.NET.Direct3D11
             {
             var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNode, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
             }
             return ret;
         }
@@ -1185,7 +1185,7 @@ namespace Silk.NET.Direct3D11
                 {
             var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzle, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
                 }
             }
             return ret;
@@ -1235,7 +1235,7 @@ namespace Silk.NET.Direct3D11
                 {
             var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
                 }
             }
             return ret;
@@ -1293,7 +1293,7 @@ namespace Silk.NET.Direct3D11
                     {
             var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
                     }
                 }
             }
@@ -1309,7 +1309,7 @@ namespace Silk.NET.Direct3D11
             {
             var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzle);
-            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
             }
             return ret;
         }
@@ -1326,7 +1326,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
             }
             return ret;
         }
@@ -1341,8 +1341,8 @@ namespace Silk.NET.Direct3D11
             var pSrcSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrcSwizzle);
             var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNode, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
-            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
             }
             return ret;
         }
@@ -1359,7 +1359,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzle);
                 }
-            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
             }
             return ret;
         }
@@ -1379,7 +1379,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
             }
             return ret;
         }
@@ -1396,9 +1396,9 @@ namespace Silk.NET.Direct3D11
                 {
             var pDstSwizzlePtr = (byte*) Marshal.StringToHGlobalAnsi(pDstSwizzle);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11FunctionLinkingGraph*, ID3D11LinkingNode*, int, byte*, ID3D11LinkingNode*, int, byte*, int>)LpVtbl[8])(@this, pSrcNodePtr, SrcParameterIndex, pSrcSwizzlePtr, pDstNodePtr, DstParameterIndex, pDstSwizzlePtr);
-            Marshal.FreeHGlobal((IntPtr)pDstSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pDstSwizzlePtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)pSrcSwizzlePtr);
+            Marshal.FreeHGlobal((nint)pSrcSwizzlePtr);
             }
             return ret;
         }

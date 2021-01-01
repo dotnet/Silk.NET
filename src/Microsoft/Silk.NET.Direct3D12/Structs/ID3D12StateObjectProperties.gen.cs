@@ -135,7 +135,7 @@ namespace Silk.NET.Direct3D12
                 void* ret = default;
             var pExportNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pExportName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, byte*, void*>)LpVtbl[3])(@this, pExportNamePtr);
-            Marshal.FreeHGlobal((IntPtr)pExportNamePtr);
+            Marshal.FreeHGlobal((nint)pExportNamePtr);
             return ret;
         }
 
@@ -167,7 +167,7 @@ namespace Silk.NET.Direct3D12
                 ulong ret = default;
             var pExportNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pExportName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, byte*, ulong>)LpVtbl[4])(@this, pExportNamePtr);
-            Marshal.FreeHGlobal((IntPtr)pExportNamePtr);
+            Marshal.FreeHGlobal((nint)pExportNamePtr);
             return ret;
         }
 

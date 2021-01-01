@@ -65,6 +65,6 @@ namespace Silk.NET.DXGI
         [NativeName("Name", "DXGI_COLOR_SPACE_YCBCR_STUDIO_G24_TOPLEFT_P2020")]
         ColorSpaceYcbcrStudioG24TopleftP2020 = 0x18,
         [NativeName("Name", "DXGI_COLOR_SPACE_CUSTOM")]
-        ColorSpaceCustom = unchecked((int)0xFFFFFFFFFFFFFFFF),
+        ColorSpaceCustom = unchecked((int) 0xFFFFFFFFFFFFFFFF),
     }
 }

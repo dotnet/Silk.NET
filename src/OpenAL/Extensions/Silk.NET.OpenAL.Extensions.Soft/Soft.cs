@@ -34,6 +34,6 @@ namespace Silk.NET.OpenAL.Extensions.Soft
         public partial int GetInteger(SoftStateInteger param);
 
         /// <inheritdoc />
-        public partial IntPtr GetPointer(StatePointer param);
+        public partial nint GetPointer(StatePointer param);
     }
 }

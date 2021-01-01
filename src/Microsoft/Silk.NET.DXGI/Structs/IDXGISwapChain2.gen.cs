@@ -702,22 +702,22 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetHwnd(IntPtr* pHwnd)
+        public readonly unsafe int GetHwnd(nint* pHwnd)
         {
             var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain2*, IntPtr*, int>)LpVtbl[20])(@this, pHwnd);
+            ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain2*, nint*, int>)LpVtbl[20])(@this, pHwnd);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetHwnd(ref IntPtr pHwnd)
+        public readonly int GetHwnd(ref nint pHwnd)
         {
             var @this = (IDXGISwapChain2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (IntPtr* pHwndPtr = &pHwnd)
+            fixed (nint* pHwndPtr = &pHwnd)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain2*, IntPtr*, int>)LpVtbl[20])(@this, pHwndPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDXGISwapChain2*, nint*, int>)LpVtbl[20])(@this, pHwndPtr);
             }
             return ret;
         }

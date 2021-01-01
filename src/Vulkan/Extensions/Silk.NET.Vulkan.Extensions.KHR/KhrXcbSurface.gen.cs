@@ -56,11 +56,11 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceXcbPresentationSupportKHR")]
-        public unsafe partial Bool32 GetPhysicalDeviceXcbPresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] IntPtr* connection, [Count(Count = 0)] IntPtr visual_id);
+        public unsafe partial Bool32 GetPhysicalDeviceXcbPresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] nint* connection, [Count(Count = 0)] nint visual_id);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceXcbPresentationSupportKHR")]
-        public partial Bool32 GetPhysicalDeviceXcbPresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] ref IntPtr connection, [Count(Count = 0)] IntPtr visual_id);
+        public partial Bool32 GetPhysicalDeviceXcbPresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] ref nint connection, [Count(Count = 0)] nint visual_id);
 
         public KhrXcbSurface(INativeContext ctx)
             : base(ctx)

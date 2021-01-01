@@ -162,7 +162,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var pNamespacePtr = (byte*) Marshal.StringToHGlobalAnsi(pNamespace);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Module*, byte*, ID3D11ModuleInstance**, int>)LpVtbl[3])(@this, pNamespacePtr, ppModuleInstance);
-            Marshal.FreeHGlobal((IntPtr)pNamespacePtr);
+            Marshal.FreeHGlobal((nint)pNamespacePtr);
             return ret;
         }
 
@@ -176,7 +176,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Module*, byte*, ID3D11ModuleInstance**, int>)LpVtbl[3])(@this, pNamespacePtr, ppModuleInstancePtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pNamespacePtr);
+            Marshal.FreeHGlobal((nint)pNamespacePtr);
             return ret;
         }
 

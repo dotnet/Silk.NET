@@ -13,8 +13,8 @@ namespace Silk.NET.Core.Native
         private ComObject(){}
         public ComObject(object o) => Handle = (IUnknown*) Marshal.GetIUnknownForObject(o);
         public static ComObject? FromPtr(IUnknown* ptr) => ptr is null ? null : new ComObject{Handle = ptr};
-        public object Value => Marshal.GetObjectForIUnknown((IntPtr) Handle);
-        public object UniqueValue => Marshal.GetUniqueObjectForIUnknown((IntPtr) Handle);
+        public object Value => Marshal.GetObjectForIUnknown((nint) Handle);
+        public object UniqueValue => Marshal.GetUniqueObjectForIUnknown((nint) Handle);
         public IUnknown* Handle { get; set; }
 
         public int QueryInterface(ref Guid riid, out ComObject? comObject)

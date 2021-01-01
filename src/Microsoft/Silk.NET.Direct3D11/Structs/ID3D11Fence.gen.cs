@@ -386,7 +386,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var lpNamePtr = (byte*) Marshal.StringToHGlobalAnsi(lpName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[7])(@this, pAttributes, dwAccess, lpNamePtr, pHandle);
-            Marshal.FreeHGlobal((IntPtr)lpNamePtr);
+            Marshal.FreeHGlobal((nint)lpNamePtr);
             return ret;
         }
 
@@ -400,7 +400,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[7])(@this, pAttributes, dwAccess, lpNamePtr, pHandlePtr);
             }
-            Marshal.FreeHGlobal((IntPtr)lpNamePtr);
+            Marshal.FreeHGlobal((nint)lpNamePtr);
             return ret;
         }
 
@@ -473,7 +473,7 @@ namespace Silk.NET.Direct3D11
             {
             var lpNamePtr = (byte*) Marshal.StringToHGlobalAnsi(lpName);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[7])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandle);
-            Marshal.FreeHGlobal((IntPtr)lpNamePtr);
+            Marshal.FreeHGlobal((nint)lpNamePtr);
             }
             return ret;
         }
@@ -490,7 +490,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[7])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandlePtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)lpNamePtr);
+            Marshal.FreeHGlobal((nint)lpNamePtr);
             }
             return ret;
         }

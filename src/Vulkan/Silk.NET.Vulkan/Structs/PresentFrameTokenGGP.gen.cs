@@ -25,7 +25,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.PresentFrameTokenGgp,
             void* pNext = null,
-            IntPtr? frameToken = null
+            nint? frameToken = null
         ) : this()
         {
             if (sType is not null)
@@ -58,6 +58,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "GgpFrameToken")]
         [NativeName("Type.Name", "GgpFrameToken")]
         [NativeName("Name", "frameToken")]
-        public IntPtr FrameToken;
+        public nint FrameToken;
     }
 }

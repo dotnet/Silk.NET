@@ -101,19 +101,19 @@ namespace Silk.NET.SDL
         }
 
         /// <inheritdoc cref="IGLContext" />
-        public IntPtr GetProcAddress(string proc, int? slot = default)
+        public nint GetProcAddress(string proc, int? slot = default)
         {
             AssertCreated();
-            return (IntPtr) _sdl.GLGetProcAddress(proc);
+            return (nint) _sdl.GLGetProcAddress(proc);
         }
 
         /// <inheritdoc cref="IGLContext" />
-        public IntPtr Handle
+        public nint Handle
         {
             get
             {
                 AssertCreated();
-                return (IntPtr) _ctx;
+                return (nint) _ctx;
             }
         }
 

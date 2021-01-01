@@ -386,7 +386,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var pClassInstanceNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pClassInstanceName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassLinkage*, byte*, uint, ID3D11ClassInstance**, int>)LpVtbl[7])(@this, pClassInstanceNamePtr, InstanceIndex, ppInstance);
-            Marshal.FreeHGlobal((IntPtr)pClassInstanceNamePtr);
+            Marshal.FreeHGlobal((nint)pClassInstanceNamePtr);
             return ret;
         }
 
@@ -400,7 +400,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassLinkage*, byte*, uint, ID3D11ClassInstance**, int>)LpVtbl[7])(@this, pClassInstanceNamePtr, InstanceIndex, ppInstancePtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pClassInstanceNamePtr);
+            Marshal.FreeHGlobal((nint)pClassInstanceNamePtr);
             return ret;
         }
 
@@ -459,7 +459,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var pClassTypeNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pClassTypeName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassLinkage*, byte*, uint, uint, uint, uint, ID3D11ClassInstance**, int>)LpVtbl[8])(@this, pClassTypeNamePtr, ConstantBufferOffset, ConstantVectorOffset, TextureOffset, SamplerOffset, ppInstance);
-            Marshal.FreeHGlobal((IntPtr)pClassTypeNamePtr);
+            Marshal.FreeHGlobal((nint)pClassTypeNamePtr);
             return ret;
         }
 
@@ -473,7 +473,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassLinkage*, byte*, uint, uint, uint, uint, ID3D11ClassInstance**, int>)LpVtbl[8])(@this, pClassTypeNamePtr, ConstantBufferOffset, ConstantVectorOffset, TextureOffset, SamplerOffset, ppInstancePtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pClassTypeNamePtr);
+            Marshal.FreeHGlobal((nint)pClassTypeNamePtr);
             return ret;
         }
 

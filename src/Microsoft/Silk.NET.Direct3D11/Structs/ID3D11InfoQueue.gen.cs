@@ -515,7 +515,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var pDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(pDescription);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, MessageCategory, MessageSeverity, MessageID, byte*, int>)LpVtbl[28])(@this, Category, Severity, ID, pDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)pDescriptionPtr);
+            Marshal.FreeHGlobal((nint)pDescriptionPtr);
             return ret;
         }
 
@@ -547,7 +547,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var pDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(pDescription);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, MessageSeverity, byte*, int>)LpVtbl[29])(@this, Severity, pDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)pDescriptionPtr);
+            Marshal.FreeHGlobal((nint)pDescriptionPtr);
             return ret;
         }
 

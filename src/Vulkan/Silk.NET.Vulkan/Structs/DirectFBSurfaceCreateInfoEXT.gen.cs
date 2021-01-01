@@ -26,8 +26,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.DirectfbSurfaceCreateInfoExt,
             void* pNext = null,
             uint? flags = null,
-            IntPtr? dfb = null,
-            IntPtr? surface = null
+            nint? dfb = null,
+            nint? surface = null
         ) : this()
         {
             if (sType is not null)
@@ -75,11 +75,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "IDirectFB*")]
         [NativeName("Type.Name", "IDirectFB")]
         [NativeName("Name", "dfb")]
-        public IntPtr Dfb;
+        public nint Dfb;
 /// <summary></summary>
         [NativeName("Type", "IDirectFBSurface*")]
         [NativeName("Type.Name", "IDirectFBSurface")]
         [NativeName("Name", "surface")]
-        public IntPtr Surface;
+        public nint Surface;
     }
 }

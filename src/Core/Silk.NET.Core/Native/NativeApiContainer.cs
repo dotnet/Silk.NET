@@ -73,7 +73,7 @@ namespace Silk.NET.Core.Native
             CurrentVTable.Purge();
         }
         
-        protected IntPtr Load(int slot, string entryPoint)
+        protected nint Load(int slot, string entryPoint)
         {
             return CurrentVTable.Load(slot, entryPoint);
         }

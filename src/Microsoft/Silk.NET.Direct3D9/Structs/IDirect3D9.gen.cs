@@ -299,49 +299,49 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly IntPtr GetAdapterMonitor(uint Adapter)
+        public readonly nint GetAdapterMonitor(uint Adapter)
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                IntPtr ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, IntPtr>)LpVtbl[15])(@this, Adapter);
+                nint ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, nint>)LpVtbl[15])(@this, Adapter);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDevice(uint Adapter, Devtype DeviceType, IntPtr hFocusWindow, uint BehaviorFlags, PresentParameters* pPresentationParameters, IDirect3DDevice9** ppReturnedDeviceInterface)
+        public readonly unsafe int CreateDevice(uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, PresentParameters* pPresentationParameters, IDirect3DDevice9** ppReturnedDeviceInterface)
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, IntPtr, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ppReturnedDeviceInterface);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ppReturnedDeviceInterface);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDevice(uint Adapter, Devtype DeviceType, IntPtr hFocusWindow, uint BehaviorFlags, PresentParameters* pPresentationParameters, ref IDirect3DDevice9* ppReturnedDeviceInterface)
+        public readonly unsafe int CreateDevice(uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, PresentParameters* pPresentationParameters, ref IDirect3DDevice9* ppReturnedDeviceInterface)
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (IDirect3DDevice9** ppReturnedDeviceInterfacePtr = &ppReturnedDeviceInterface)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, IntPtr, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ppReturnedDeviceInterfacePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParameters, ppReturnedDeviceInterfacePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDevice(uint Adapter, Devtype DeviceType, IntPtr hFocusWindow, uint BehaviorFlags, ref PresentParameters pPresentationParameters, IDirect3DDevice9** ppReturnedDeviceInterface)
+        public readonly unsafe int CreateDevice(uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, ref PresentParameters pPresentationParameters, IDirect3DDevice9** ppReturnedDeviceInterface)
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (PresentParameters* pPresentationParametersPtr = &pPresentationParameters)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, IntPtr, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, ppReturnedDeviceInterface);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, ppReturnedDeviceInterface);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDevice(uint Adapter, Devtype DeviceType, IntPtr hFocusWindow, uint BehaviorFlags, ref PresentParameters pPresentationParameters, ref IDirect3DDevice9* ppReturnedDeviceInterface)
+        public readonly unsafe int CreateDevice(uint Adapter, Devtype DeviceType, nint hFocusWindow, uint BehaviorFlags, ref PresentParameters pPresentationParameters, ref IDirect3DDevice9* ppReturnedDeviceInterface)
         {
             var @this = (IDirect3D9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -349,7 +349,7 @@ namespace Silk.NET.Direct3D9
             {
                 fixed (IDirect3DDevice9** ppReturnedDeviceInterfacePtr = &ppReturnedDeviceInterface)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, IntPtr, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, ppReturnedDeviceInterfacePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3D9*, uint, Devtype, nint, uint, PresentParameters*, IDirect3DDevice9**, int>)LpVtbl[16])(@this, Adapter, DeviceType, hFocusWindow, BehaviorFlags, pPresentationParametersPtr, ppReturnedDeviceInterfacePtr);
                 }
             }
             return ret;

@@ -14,9 +14,9 @@ namespace Silk.NET.Input
     public interface IInputContext : IDisposable
     {
         /// <summary>
-        /// A handle to the underlying window.
+        /// A handle to the underlying input context.
         /// </summary>
-        IntPtr Handle { get; }
+        nint Handle { get; }
 
         /// <summary>
         /// A list of all available gamepads.

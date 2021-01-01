@@ -33,10 +33,10 @@ namespace Silk.NET.Assimp
         ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnFileFlushProc From(FileFlushProc proc) => new PfnFileFlushProc(proc);
-        public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
+        public void Dispose() => SilkMarshal.Free((nint) _handle);
 
-        public static implicit operator IntPtr(PfnFileFlushProc pfn) => (IntPtr) pfn.Handle;
-        public static explicit operator PfnFileFlushProc(IntPtr pfn)
+        public static implicit operator nint(PfnFileFlushProc pfn) => (nint) pfn.Handle;
+        public static explicit operator PfnFileFlushProc(nint pfn)
             => new PfnFileFlushProc((delegate* unmanaged[Cdecl]<File*, void>) pfn);
 
         public static implicit operator PfnFileFlushProc(FileFlushProc proc)

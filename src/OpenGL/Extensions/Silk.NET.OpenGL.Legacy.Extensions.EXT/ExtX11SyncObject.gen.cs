@@ -23,7 +23,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     {
         public const string ExtensionName = "EXT_x11_sync_object";
         [NativeApi(EntryPoint = "glImportSyncEXT")]
-        public partial IntPtr ImportSync([Flow(FlowDirection.In)] EXT external_sync_type, [Flow(FlowDirection.In)] IntPtr external_sync, [Flow(FlowDirection.In)] uint flags);
+        public partial nint ImportSync([Flow(FlowDirection.In)] EXT external_sync_type, [Flow(FlowDirection.In)] nint external_sync, [Flow(FlowDirection.In)] uint flags);
 
         public ExtX11SyncObject(INativeContext ctx)
             : base(ctx)

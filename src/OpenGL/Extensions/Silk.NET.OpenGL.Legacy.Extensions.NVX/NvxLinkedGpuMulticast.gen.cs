@@ -29,10 +29,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NVX
         public partial void Lgpuinterlock();
 
         [NativeApi(EntryPoint = "glLGPUNamedBufferSubDataNVX")]
-        public unsafe partial void LgpunamedBufferSubData([Flow(FlowDirection.In)] uint gpuMask, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] void* data);
+        public unsafe partial void LgpunamedBufferSubData([Flow(FlowDirection.In)] uint gpuMask, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glLGPUNamedBufferSubDataNVX")]
-        public partial void LgpunamedBufferSubData<T0>([Flow(FlowDirection.In)] uint gpuMask, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+        public partial void LgpunamedBufferSubData<T0>([Flow(FlowDirection.In)] uint gpuMask, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         public NvxLinkedGpuMulticast(INativeContext ctx)
             : base(ctx)

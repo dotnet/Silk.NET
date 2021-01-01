@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
         public PfnReallocationFunction
             (delegate* unmanaged[Cdecl]<void*, void*, nuint, nuint, SystemAllocationScope, void*> ptr) => _handle = ptr;
 
-        public static implicit operator IntPtr(PfnReallocationFunction pfn) => (IntPtr) pfn.Handle;
+        public static implicit operator nint(PfnReallocationFunction pfn) => (nint) pfn.Handle;
 
         public PfnReallocationFunction
             (ReallocationFunction func) => _handle =
@@ -29,6 +29,6 @@ namespace Silk.NET.Vulkan
         public static implicit operator PfnReallocationFunction(ReallocationFunction func) => new(func);
 
         public static explicit operator ReallocationFunction
-            (PfnReallocationFunction pfn) => SilkMarshal.PtrToDelegate<ReallocationFunction>((IntPtr) pfn.Handle);
+            (PfnReallocationFunction pfn) => SilkMarshal.PtrToDelegate<ReallocationFunction>((nint) pfn.Handle);
     }
 }

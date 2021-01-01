@@ -47,7 +47,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         public partial bool SetBufferMode(int count, ReadOnlySpan<uint> buffers, int mode);
 
         /// <inheritdoc />
-        public partial int GetBufferMode(uint buffer, IntPtr reserved);
+        public partial int GetBufferMode(uint buffer, nint reserved);
 
         /// <inheritdoc cref="GetInteger(int)" />
         public int GetInteger(XRamGetInteger param)
@@ -202,7 +202,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
 
         [return: UnmanagedType(UnmanagedType.I4)]
         public partial bool IsExtensionPresent(string name);
-        public partial IntPtr GetProcAddress(string name);
+        public partial nint GetProcAddress(string name);
         public partial int GetEnumValue(string name);
     }
 }

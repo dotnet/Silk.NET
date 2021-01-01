@@ -25,7 +25,7 @@ namespace Silk.NET.Vulkan
         (
             uint? constantID = null,
             uint? offset = null,
-            UIntPtr? size = null
+            nuint? size = null
         ) : this()
         {
             if (constantID is not null)
@@ -58,6 +58,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "size")]
-        public UIntPtr Size;
+        public nuint Size;
     }
 }

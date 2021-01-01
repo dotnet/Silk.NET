@@ -96,7 +96,7 @@ namespace Silk.NET.Direct3D12
                 ID3D12ShaderReflectionType* ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderReflectionType*, byte*, ID3D12ShaderReflectionType*>)LpVtbl[2])(@this, NamePtr);
-            Marshal.FreeHGlobal((IntPtr)NamePtr);
+            Marshal.FreeHGlobal((nint)NamePtr);
             return ret;
         }
 

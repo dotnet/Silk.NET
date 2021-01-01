@@ -533,7 +533,7 @@ namespace Silk.NET.DXGI
                 int ret = default;
             var pDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(pDescription);
             ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, Guid, InfoQueueMessageCategory, InfoQueueMessageSeverity, int, byte*, int>)LpVtbl[30])(@this, Producer, Category, Severity, ID, pDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)pDescriptionPtr);
+            Marshal.FreeHGlobal((nint)pDescriptionPtr);
             return ret;
         }
 
@@ -565,7 +565,7 @@ namespace Silk.NET.DXGI
                 int ret = default;
             var pDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(pDescription);
             ret = ((delegate* unmanaged[Cdecl]<IDXGIInfoQueue*, InfoQueueMessageSeverity, byte*, int>)LpVtbl[31])(@this, Severity, pDescriptionPtr);
-            Marshal.FreeHGlobal((IntPtr)pDescriptionPtr);
+            Marshal.FreeHGlobal((nint)pDescriptionPtr);
             return ret;
         }
 

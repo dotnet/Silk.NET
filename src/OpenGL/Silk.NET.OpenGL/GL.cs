@@ -61,7 +61,7 @@ namespace Silk.NET.OpenGL
         /// <returns>
         ///     A <see cref="GL" /> instance.
         /// </returns>
-        public static GL GetApi(Func<string, IntPtr> getProcAddress) => GetApi(new LamdaNativeContext(getProcAddress));
+        public static GL GetApi(Func<string, nint> getProcAddress) => GetApi(new LamdaNativeContext(getProcAddress));
 
         /// <summary>
         ///     Creates a <see cref="GL" /> instance from an <see cref="INativeContext" />.

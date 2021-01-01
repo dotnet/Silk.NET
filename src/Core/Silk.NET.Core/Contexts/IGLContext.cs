@@ -9,7 +9,7 @@ namespace Silk.NET.Core.Contexts
 {
     public interface IGLContext : INativeContext, IDisposable
     {
-        IntPtr Handle { get; }
+        nint Handle { get; }
         IGLContextSource? Source { get; }
         bool IsCurrent { get; }
         void SwapInterval(int interval);

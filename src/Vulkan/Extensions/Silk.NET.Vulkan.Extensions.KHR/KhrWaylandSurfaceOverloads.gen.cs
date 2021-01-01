@@ -68,7 +68,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Bool32 GetPhysicalDeviceWaylandPresentationSupport(this KhrWaylandSurface thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0), Flow(FlowDirection.Out)] Span<IntPtr> display)
+        public static unsafe Bool32 GetPhysicalDeviceWaylandPresentationSupport(this KhrWaylandSurface thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0), Flow(FlowDirection.Out)] Span<nint> display)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceWaylandPresentationSupport(physicalDevice, queueFamilyIndex, out display.GetPinnableReference());

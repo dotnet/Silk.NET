@@ -257,6 +257,6 @@ namespace Silk.NET.DXGI
         [NativeName("Name", "DXGI_FORMAT_SAMPLER_FEEDBACK_MIP_REGION_USED_OPAQUE")]
         FormatSamplerFeedbackMipRegionUsedOpaque = 0xBE,
         [NativeName("Name", "DXGI_FORMAT_FORCE_UINT")]
-        FormatForceUint = unchecked((int)0xFFFFFFFFFFFFFFFF),
+        FormatForceUint = unchecked((int) 0xFFFFFFFFFFFFFFFF),
     }
 }

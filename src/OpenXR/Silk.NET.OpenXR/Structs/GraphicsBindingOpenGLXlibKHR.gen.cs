@@ -25,11 +25,11 @@ namespace Silk.NET.OpenXR
         (
             StructureType? type = StructureType.TypeGraphicsBindingOpenglXlibKhr,
             void* next = null,
-            IntPtr* xDisplay = null,
+            nint* xDisplay = null,
             uint? visualid = null,
-            IntPtr? glxFbconfig = null,
-            IntPtr? glxDrawable = null,
-            IntPtr? glxContext = null
+            nint? glxFbconfig = null,
+            nint? glxDrawable = null,
+            nint? glxContext = null
         ) : this()
         {
             if (type is not null)
@@ -82,7 +82,7 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "Display*")]
         [NativeName("Type.Name", "Display")]
         [NativeName("Name", "xDisplay")]
-        public IntPtr* XDisplay;
+        public nint* XDisplay;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
@@ -92,16 +92,16 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "GLXFBConfig")]
         [NativeName("Type.Name", "GLXFBConfig")]
         [NativeName("Name", "glxFBConfig")]
-        public IntPtr GlxFbconfig;
+        public nint GlxFbconfig;
 /// <summary></summary>
         [NativeName("Type", "GLXDrawable")]
         [NativeName("Type.Name", "GLXDrawable")]
         [NativeName("Name", "glxDrawable")]
-        public IntPtr GlxDrawable;
+        public nint GlxDrawable;
 /// <summary></summary>
         [NativeName("Type", "GLXContext")]
         [NativeName("Type.Name", "GLXContext")]
         [NativeName("Name", "glxContext")]
-        public IntPtr GlxContext;
+        public nint GlxContext;
     }
 }

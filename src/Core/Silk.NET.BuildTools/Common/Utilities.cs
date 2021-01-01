@@ -202,26 +202,180 @@ namespace Silk.NET.BuildTools.Common
             return field;
         }
 
-        public static int ParseInt(ReadOnlySpan<char> chars)
+        public static sbyte? ParseSbyte(ReadOnlySpan<char> chars)
         {
             if (chars.StartsWith("0x"))
             {
-                return int.Parse(chars.Slice(2), NumberStyles.HexNumber);
+                return sbyte.TryParse(chars.Slice(2), NumberStyles.HexNumber, null, out var hex) ? hex : null;
             }
-
-            if (!int.TryParse(chars, out var ret))
+            
+            if (!sbyte.TryParse(chars, out var ret))
             {
-                if (int.TryParse(chars, NumberStyles.HexNumber, null, out var hexRet))
+                if (sbyte.TryParse(chars, NumberStyles.HexNumber, null, out ret))
                 {
-                    Console.WriteLine
-                    (
-                        $"Warning: Implicitly treating \"{chars.ToString()}\" as hex integer \"{hexRet}\"."
-                    );
-
-                    return hexRet;
+                    Console.WriteLine($"Warning: Implicitly treating \"{chars.ToString()}\" as hex sbyte \"{ret}\"");
+                }
+                else
+                {
+                    Console.WriteLine($"Warning: Couldn't parse \"{chars.ToString()}\" as a sbyte. Returning null.");
+                    return null;
                 }
             }
-
+            
+            return ret;
+        }
+        public static byte? ParseByte(ReadOnlySpan<char> chars)
+        {
+            if (chars.StartsWith("0x"))
+            {
+                return byte.TryParse(chars.Slice(2), NumberStyles.HexNumber, null, out var hex) ? hex : null;
+            }
+            
+            if (!byte.TryParse(chars, out var ret))
+            {
+                if (byte.TryParse(chars, NumberStyles.HexNumber, null, out ret))
+                {
+                    Console.WriteLine($"Warning: Implicitly treating \"{chars.ToString()}\" as hex byte \"{ret}\"");
+                }
+                else
+                {
+                    Console.WriteLine($"Warning: Couldn't parse \"{chars.ToString()}\" as a byte. Returning null.");
+                    return null;
+                }
+            }
+            
+            return ret;
+        }
+        public static short? ParseShort(ReadOnlySpan<char> chars)
+        {
+            if (chars.StartsWith("0x"))
+            {
+                return short.TryParse(chars.Slice(2), NumberStyles.HexNumber, null, out var hex) ? hex : null;
+            }
+            
+            if (!short.TryParse(chars, out var ret))
+            {
+                if (short.TryParse(chars, NumberStyles.HexNumber, null, out ret))
+                {
+                    Console.WriteLine($"Warning: Implicitly treating \"{chars.ToString()}\" as hex short \"{ret}\"");
+                }
+                else
+                {
+                    Console.WriteLine($"Warning: Couldn't parse \"{chars.ToString()}\" as a short. Returning null.");
+                    return null;
+                }
+            }
+            
+            return ret;
+        }
+        public static ushort? ParseUshort(ReadOnlySpan<char> chars)
+        {
+            if (chars.StartsWith("0x"))
+            {
+                return ushort.TryParse(chars.Slice(2), NumberStyles.HexNumber, null, out var hex) ? hex : null;
+            }
+            
+            if (!ushort.TryParse(chars, out var ret))
+            {
+                if (ushort.TryParse(chars, NumberStyles.HexNumber, null, out ret))
+                {
+                    Console.WriteLine($"Warning: Implicitly treating \"{chars.ToString()}\" as hex ushort \"{ret}\"");
+                }
+                else
+                {
+                    Console.WriteLine($"Warning: Couldn't parse \"{chars.ToString()}\" as a ushort. Returning null.");
+                    return null;
+                }
+            }
+            
+            return ret;
+        }
+        public static int? ParseInt(ReadOnlySpan<char> chars)
+        {
+            if (chars.StartsWith("0x"))
+            {
+                return int.TryParse(chars.Slice(2), NumberStyles.HexNumber, null, out var hex) ? hex : null;
+            }
+            
+            if (!int.TryParse(chars, out var ret))
+            {
+                if (int.TryParse(chars, NumberStyles.HexNumber, null, out ret))
+                {
+                    Console.WriteLine($"Warning: Implicitly treating \"{chars.ToString()}\" as hex int \"{ret}\"");
+                }
+                else
+                {
+                    Console.WriteLine($"Warning: Couldn't parse \"{chars.ToString()}\" as a int. Returning null.");
+                    return null;
+                }
+            }
+            
+            return ret;
+        }
+        public static uint? ParseUint(ReadOnlySpan<char> chars)
+        {
+            if (chars.StartsWith("0x"))
+            {
+                return uint.TryParse(chars.Slice(2), NumberStyles.HexNumber, null, out var hex) ? hex : null;
+            }
+            
+            if (!uint.TryParse(chars, out var ret))
+            {
+                if (uint.TryParse(chars, NumberStyles.HexNumber, null, out ret))
+                {
+                    Console.WriteLine($"Warning: Implicitly treating \"{chars.ToString()}\" as hex uint \"{ret}\"");
+                }
+                else
+                {
+                    Console.WriteLine($"Warning: Couldn't parse \"{chars.ToString()}\" as a uint. Returning null.");
+                    return null;
+                }
+            }
+            
+            return ret;
+        }
+        public static long? ParseLong(ReadOnlySpan<char> chars)
+        {
+            if (chars.StartsWith("0x"))
+            {
+                return long.TryParse(chars.Slice(2), NumberStyles.HexNumber, null, out var hex) ? hex : null;
+            }
+            
+            if (!long.TryParse(chars, out var ret))
+            {
+                if (long.TryParse(chars, NumberStyles.HexNumber, null, out ret))
+                {
+                    Console.WriteLine($"Warning: Implicitly treating \"{chars.ToString()}\" as hex long \"{ret}\"");
+                }
+                else
+                {
+                    Console.WriteLine($"Warning: Couldn't parse \"{chars.ToString()}\" as a long. Returning null.");
+                    return null;
+                }
+            }
+            
+            return ret;
+        }
+        public static ulong? ParseUlong(ReadOnlySpan<char> chars)
+        {
+            if (chars.StartsWith("0x"))
+            {
+                return ulong.TryParse(chars.Slice(2), NumberStyles.HexNumber, null, out var hex) ? hex : null;
+            }
+            
+            if (!ulong.TryParse(chars, out var ret))
+            {
+                if (ulong.TryParse(chars, NumberStyles.HexNumber, null, out ret))
+                {
+                    Console.WriteLine($"Warning: Implicitly treating \"{chars.ToString()}\" as hex ulong \"{ret}\"");
+                }
+                else
+                {
+                    Console.WriteLine($"Warning: Couldn't parse \"{chars.ToString()}\" as a ulong. Returning null.");
+                    return null;
+                }
+            }
+            
             return ret;
         }
 

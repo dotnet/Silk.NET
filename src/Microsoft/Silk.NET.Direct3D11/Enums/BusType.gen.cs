@@ -35,6 +35,6 @@ namespace Silk.NET.Direct3D11
         [NativeName("Name", "D3D11_BUS_IMPL_MODIFIER_DAUGHTER_BOARD_CONNECTOR_INSIDE_OF_NUAE")]
         BusImplModifierDaughterBoardConnectorInsideOfNuae = 0x50000,
         [NativeName("Name", "D3D11_BUS_IMPL_MODIFIER_NON_STANDARD")]
-        BusImplModifierNonStandard = unchecked((int)0xFFFFFFFF80000000),
+        BusImplModifierNonStandard = unchecked((int) 0xFFFFFFFF80000000),
     }
 }

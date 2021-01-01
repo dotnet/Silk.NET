@@ -340,7 +340,7 @@
                     "PFN_vkDebugReportCallbackEXT": "PfnDebugReportCallbackEXT",
                     "PFN_vkDebugUtilsMessengerCallbackEXT": "PfnDebugUtilsMessengerCallbackEXT",
                     "char": "byte",
-                    "Window": "IntPtr",
+                    "Window": "nint",
                     "VkAabbPositionsKHR": "Silk.NET.Maths.Box3D<float>",
                     "VkAabbPositionsNV": "Silk.NET.Maths.Box3D<float>"
                 },
@@ -532,10 +532,10 @@
                     "ID3D12Resource*": "void*",
                     "ID3D12CommandQueue*": "void*",
                     "IUnknown*": "Silk.NET.Core.Native.IUnknown*",
-                    "EGLDisplay": "IntPtr",
-                    "EGLConfig": "IntPtr",
-                    "EGLContext": "IntPtr",
-                    "GLXFBConfig": "IntPtr",
+                    "EGLDisplay": "nint",
+                    "EGLConfig": "nint",
+                    "EGLContext": "nint",
+                    "GLXFBConfig": "nint",
                     "VkFormat": "uint"
                 },
                 {

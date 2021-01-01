@@ -26,7 +26,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public partial void InvalidateBufferData([Flow(FlowDirection.In)] uint buffer);
 
         [NativeApi(EntryPoint = "glInvalidateBufferSubData")]
-        public partial void InvalidateBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length);
+        public partial void InvalidateBufferSubData([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint length);
 
         [NativeApi(EntryPoint = "glInvalidateFramebuffer")]
         public unsafe partial void InvalidateFramebuffer([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ARB* attachments);

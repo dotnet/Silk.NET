@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.AndroidSurfaceCreateInfoKhr,
             void* pNext = null,
             uint? flags = null,
-            IntPtr* window = null
+            nint* window = null
         ) : this()
         {
             if (sType is not null)
@@ -69,6 +69,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "ANativeWindow*")]
         [NativeName("Type.Name", "ANativeWindow")]
         [NativeName("Name", "window")]
-        public IntPtr* Window;
+        public nint* Window;
     }
 }
