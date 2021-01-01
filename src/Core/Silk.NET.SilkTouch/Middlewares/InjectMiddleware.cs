@@ -27,7 +27,19 @@ namespace Silk.NET.SilkTouch
                 var injectPoint = (SilkTouchStage) injectData.ConstructorArguments[0].Value!;
                 var code = (string)injectData.ConstructorArguments[1].Value!;
                 var syntax = SyntaxFactory.ParseStatement(code);
-                ctx.AddSideEffectToStage(injectPoint, _ => syntax);
+                ctx.AddSideEffectToStage(injectPoint, ctx =>
+                {
+                    if (ctx.ResultVariable.HasValue)
+                    {
+                        var c = code.Replace
+                        (
+                            "{RESULT}",
+                            SyntaxFactory.ParenthesizedExpression(ctx.ResolveVariable(ctx.ResultVariable.Value).Value).NormalizeWhitespace().ToFullString()
+                        );
+                        return SyntaxFactory.ParseStatement(c);
+                    }
+                    return syntax;
+                });
             }
 
             ctx.TransitionTo(SilkTouchStage.Begin);
