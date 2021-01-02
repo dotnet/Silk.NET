@@ -507,7 +507,16 @@
                 "mode": "Default",
                 "path": "src/OpenXR",
                 "licenseFile": "build/LICENSE_HEADER.txt",
-                "props": "build/props/bindings.props"
+                "props": "build/props/bindings.props",
+                "inject": [
+                    {
+                        "functions": [
+                            "xrCreateInstance"
+                        ],
+                        "stage": "end",
+                        "code": "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(instance)$%; }"
+                    }
+                ]
             },
             "namespace": "Silk.NET.OpenXR",
             "extensionsNamespace": "Silk.NET.OpenXR.Extensions",

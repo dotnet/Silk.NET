@@ -1,5 +1,6 @@
 <Project>
     <PropertyGroup>
         <AssemblyName>Tutorial</AssemblyName>
+        <LangVersion>9</LangVersion>
     </PropertyGroup>
 </Project>

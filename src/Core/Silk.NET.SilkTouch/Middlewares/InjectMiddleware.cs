@@ -29,24 +29,29 @@ namespace Silk.NET.SilkTouch
                 var code = (string)injectData.ConstructorArguments[1].Value!;
                 ctx.AddSideEffectToStage(injectPoint, ctx =>
                 {
-                    if (ctx.ResultVariable.HasValue)
+                    if (injectPoint == SilkTouchStage.End)
                     {
-                        code = code.Replace
-                        (
-                            "%$RESULT$%",
-                            ParenthesizedExpression(ctx.ResolveVariable(ctx.ResultVariable.Value).Value).NormalizeWhitespace().ToFullString()
-                        );
-                    }
-                    
-                    for (var i = 0; i < ctx.ParameterVariables.Length; i++)
-                    {
-                        code = code.Replace
-                        (
-                            $"%$PARAM({ctx.MethodSymbol.Parameters[i].Name})$%",
-                            ParenthesizedExpression(ctx.ResolveVariable(ctx.ParameterVariables[i]).Value)
-                                .NormalizeWhitespace()
-                                .ToFullString()
-                        );
+                        if (ctx.ResultVariable.HasValue)
+                        {
+                            code = code.Replace
+                            (
+                                "%$RESULT$%",
+                                ParenthesizedExpression(ctx.ResolveVariable(ctx.ResultVariable.Value).Value)
+                                    .NormalizeWhitespace()
+                                    .ToFullString()
+                            );
+                        }
+
+                        for (var i = 0; i < ctx.ParameterVariables.Length; i++)
+                        {
+                            code = code.Replace
+                            (
+                                $"%$PARAM({ctx.MethodSymbol.Parameters[i].Name})$%",
+                                ParenthesizedExpression(ctx.ResolveVariable(ctx.ParameterVariables[i]).Value)
+                                    .NormalizeWhitespace()
+                                    .ToFullString()
+                            );
+                        }
                     }
 
                     return ParseStatement(code);

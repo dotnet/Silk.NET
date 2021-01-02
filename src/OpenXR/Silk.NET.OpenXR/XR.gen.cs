@@ -178,18 +178,22 @@ namespace Silk.NET.OpenXR
         public partial Result CreateActionSpace([Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] in ActionSpaceCreateInfo createInfo, [Count(Count = 0)] ref Space space);
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(instance)$%; }")]
         [NativeApi(EntryPoint = "xrCreateInstance")]
         public unsafe partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] InstanceCreateInfo* createInfo, [Count(Count = 0)] Instance* instance);
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(instance)$%; }")]
         [NativeApi(EntryPoint = "xrCreateInstance")]
         public unsafe partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] InstanceCreateInfo* createInfo, [Count(Count = 0)] ref Instance instance);
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(instance)$%; }")]
         [NativeApi(EntryPoint = "xrCreateInstance")]
         public unsafe partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] in InstanceCreateInfo createInfo, [Count(Count = 0)] Instance* instance);
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(instance)$%; }")]
         [NativeApi(EntryPoint = "xrCreateInstance")]
         public partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] in InstanceCreateInfo createInfo, [Count(Count = 0)] ref Instance instance);
 

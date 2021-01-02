@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using ObjCRuntime;
@@ -46,7 +45,7 @@ namespace Silk.NET.Windowing.Sdl.iOS
             EndRun();
         }
 
-        public static unsafe void RunApp(int numArgs, byte** args, Action<string[]> callback)
+        public static unsafe void RunApp(int numArgs, byte** args, System.Action<string[]> callback)
         {
             BeginRun();
             CurrentMain = (inNumArgs, argsPtr) => callback(SilkMarshal.PtrToStringArray((nint)argsPtr, inNumArgs));
@@ -66,7 +65,7 @@ namespace Silk.NET.Windowing.Sdl.iOS
             EndRun();
         }
 
-        public static unsafe void RunApp(IReadOnlyList<string> args, Action<string[]> callback)
+        public static unsafe void RunApp(IReadOnlyList<string> args, System.Action<string[]> callback)
         {
             BeginRun();
             var argsPtr = SilkMarshal.StringArrayToPtr(args);
@@ -87,7 +86,7 @@ namespace Silk.NET.Windowing.Sdl.iOS
         {
             if (_running)
             {
-                throw new InvalidOperationException("App already running.");
+                throw new System.InvalidOperationException("App already running.");
             }
 
             SdlWindowing.RegisterPlatform();

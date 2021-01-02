@@ -145,6 +145,7 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
         public static unsafe Result CreateInstance(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] InstanceCreateInfo* createInfo, [Count(Count = 0)] Span<Instance> instance)
         {
             // SpanOverloader
@@ -152,6 +153,7 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
         public static unsafe Result CreateInstance(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InstanceCreateInfo> createInfo, [Count(Count = 0)] Instance* instance)
         {
             // SpanOverloader
@@ -159,6 +161,7 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
         public static unsafe Result CreateInstance(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InstanceCreateInfo> createInfo, [Count(Count = 0)] Span<Instance> instance)
         {
             // SpanOverloader
