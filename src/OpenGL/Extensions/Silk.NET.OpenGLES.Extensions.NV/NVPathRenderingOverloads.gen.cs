@@ -996,7 +996,7 @@ namespace Silk.NET.OpenGLES.Extensions.NV
             thisApi.PathGlyphRange(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, firstGlyph, numGlyphs, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
-        public static unsafe NV PathMemoryGlyphIndexArray<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] NV fontTarget, [Flow(FlowDirection.In)] UIntPtr fontSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fontData, [Flow(FlowDirection.In)] uint faceIndex, [Flow(FlowDirection.In)] uint firstGlyphIndex, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        public static unsafe NV PathMemoryGlyphIndexArray<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] NV fontTarget, [Flow(FlowDirection.In)] nuint fontSize, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fontData, [Flow(FlowDirection.In)] uint faceIndex, [Flow(FlowDirection.In)] uint firstGlyphIndex, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.PathMemoryGlyphIndexArray(firstPathName, fontTarget, fontSize, in fontData.GetPinnableReference(), faceIndex, firstGlyphIndex, numGlyphs, pathParameterTemplate, emScale);

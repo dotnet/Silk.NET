@@ -26,7 +26,7 @@ namespace Silk.NET.Windowing.Sdl.Android
         internal static MainFunc CurrentMain { get; private set; }
 
         [DllImport("libmain.so", EntryPoint = "sdSetMain")]
-        internal static extern void SetupMain(IntPtr funcPtr);
+        internal static extern void SetupMain(nint funcPtr);
 
         static SilkActivity()
         {

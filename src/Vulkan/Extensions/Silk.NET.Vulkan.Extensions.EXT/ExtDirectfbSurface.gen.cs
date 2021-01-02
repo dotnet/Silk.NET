@@ -56,7 +56,7 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceDirectFBPresentationSupportEXT")]
-        public partial Bool32 GetPhysicalDeviceDirectFbpresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0), Flow(FlowDirection.Out)] IntPtr dfb);
+        public partial Bool32 GetPhysicalDeviceDirectFbpresentationSupport([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0), Flow(FlowDirection.Out)] nint dfb);
 
         public ExtDirectfbSurface(INativeContext ctx)
             : base(ctx)

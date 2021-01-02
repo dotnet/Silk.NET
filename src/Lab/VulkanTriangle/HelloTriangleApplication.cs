@@ -279,12 +279,12 @@ namespace VulkanTriangle
                 throw new NotSupportedException("KHR_surface extension not found.");
             }
 
-            Marshal.FreeHGlobal((IntPtr) appInfo.PApplicationName);
-            Marshal.FreeHGlobal((IntPtr) appInfo.PEngineName);
+            Marshal.FreeHGlobal((nint) appInfo.PApplicationName);
+            Marshal.FreeHGlobal((nint) appInfo.PEngineName);
 
             if (EnableValidationLayers)
             {
-                SilkMarshal.Free((IntPtr) createInfo.PpEnabledLayerNames);
+                SilkMarshal.Free((nint) createInfo.PpEnabledLayerNames);
             }
         }
 
@@ -327,7 +327,7 @@ namespace VulkanTriangle
         )
         {
             Console.WriteLine
-                ($"{messageSeverity} {messageTypes}" + Marshal.PtrToStringAnsi((IntPtr) pCallbackData->PMessage));
+                ($"{messageSeverity} {messageTypes}" + Marshal.PtrToStringAnsi((nint) pCallbackData->PMessage));
             return Vk.False;
         }
 
@@ -361,7 +361,7 @@ namespace VulkanTriangle
                 return indices.IsComplete() && extensionsSupported && swapChainAdequate;
             });
 
-            if (_physicalDevice.Handle == IntPtr.Zero)
+            if (_physicalDevice.Handle == 0)
                 throw new Exception("No suitable device.");
         }
 
@@ -547,6 +547,8 @@ namespace VulkanTriangle
             {
                 throw new NotSupportedException("KHR_swapchain extension not found.");
             }
+            
+            Console.WriteLine($"{_vk.CurrentInstance?.Handle} {_vk.CurrentDevice?.Handle}");
         }
 
         private unsafe void CreateSwapChain()
@@ -922,7 +924,7 @@ namespace VulkanTriangle
             var createInfo = new ShaderModuleCreateInfo
             {
                 SType = StructureType.ShaderModuleCreateInfo,
-                CodeSize = new UIntPtr((uint) code.Length)
+                CodeSize = (nuint) code.Length
             };
             fixed (byte* codePtr = code)
             {
@@ -1088,7 +1090,7 @@ namespace VulkanTriangle
 
                 foreach (var layerProperties in availableLayers)
                 {
-                    if (layerName == Marshal.PtrToStringAnsi((IntPtr) layerProperties.LayerName))
+                    if (layerName == Marshal.PtrToStringAnsi((nint) layerProperties.LayerName))
                     {
                         layerFound = true;
                         break;

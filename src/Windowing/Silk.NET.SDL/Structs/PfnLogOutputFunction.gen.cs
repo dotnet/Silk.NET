@@ -33,10 +33,10 @@ namespace Silk.NET.SDL
         ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnLogOutputFunction From(LogOutputFunction proc) => new PfnLogOutputFunction(proc);
-        public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
+        public void Dispose() => SilkMarshal.Free((nint) _handle);
 
-        public static implicit operator IntPtr(PfnLogOutputFunction pfn) => (IntPtr) pfn.Handle;
-        public static explicit operator PfnLogOutputFunction(IntPtr pfn)
+        public static implicit operator nint(PfnLogOutputFunction pfn) => (nint) pfn.Handle;
+        public static explicit operator PfnLogOutputFunction(nint pfn)
             => new PfnLogOutputFunction((delegate* unmanaged[Cdecl]<void*, int, LogPriority, byte*, void>) pfn);
 
         public static implicit operator PfnLogOutputFunction(LogOutputFunction proc)

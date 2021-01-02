@@ -2958,16 +2958,16 @@ namespace Silk.NET.OpenGLES
         public partial void TexBuffer([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer);
 
         [NativeApi(EntryPoint = "glTexBufferRange")]
-        public partial void TexBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size);
+        public partial void TexBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
 
         [NativeApi(EntryPoint = "glTexBufferRange")]
-        public partial void TexBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size);
+        public partial void TexBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
 
         [NativeApi(EntryPoint = "glTexBufferRange")]
-        public partial void TexBufferRange([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size);
+        public partial void TexBufferRange([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
 
         [NativeApi(EntryPoint = "glTexBufferRange")]
-        public partial void TexBufferRange([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size);
+        public partial void TexBufferRange([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
 
         [NativeApi(EntryPoint = "glTexParameterIiv")]
         public unsafe partial void TexParameterI([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] int* @params);
@@ -3048,7 +3048,7 @@ namespace Silk.NET.OpenGLES
         public partial void BindProgramPipeline([Flow(FlowDirection.In)] uint pipeline);
 
         [NativeApi(EntryPoint = "glBindVertexBuffer")]
-        public partial void BindVertexBuffer([Flow(FlowDirection.In)] uint bindingindex, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] uint stride);
+        public partial void BindVertexBuffer([Flow(FlowDirection.In)] uint bindingindex, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glCreateShaderProgramv")]
         public unsafe partial uint CreateShaderProgram([Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** strings);
@@ -3078,7 +3078,7 @@ namespace Silk.NET.OpenGLES
         public partial void DispatchCompute([Flow(FlowDirection.In)] uint num_groups_x, [Flow(FlowDirection.In)] uint num_groups_y, [Flow(FlowDirection.In)] uint num_groups_z);
 
         [NativeApi(EntryPoint = "glDispatchComputeIndirect")]
-        public partial void DispatchComputeIndirect([Flow(FlowDirection.In)] IntPtr indirect);
+        public partial void DispatchComputeIndirect([Flow(FlowDirection.In)] nint indirect);
 
         [NativeApi(EntryPoint = "glDrawArraysIndirect")]
         public unsafe partial void DrawArraysIndirect([Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] void* indirect);
@@ -3699,10 +3699,10 @@ namespace Silk.NET.OpenGLES
         public partial void BindBufferBase([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer);
 
         [NativeApi(EntryPoint = "glBindBufferRange")]
-        public partial void BindBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size);
+        public partial void BindBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
 
         [NativeApi(EntryPoint = "glBindBufferRange")]
-        public partial void BindBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size);
+        public partial void BindBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
 
         [NativeApi(EntryPoint = "glBindSampler")]
         public partial void BindSampler([Flow(FlowDirection.In)] uint unit, [Flow(FlowDirection.In)] uint sampler);
@@ -3765,7 +3765,7 @@ namespace Silk.NET.OpenGLES
         public partial void ClearBuffer([Flow(FlowDirection.In)] BufferKind buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] float depth, [Flow(FlowDirection.In)] int stencil);
 
         [NativeApi(EntryPoint = "glClientWaitSync")]
-        public partial GLEnum ClientWaitSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] ulong timeout);
+        public partial GLEnum ClientWaitSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] ulong timeout);
 
         [NativeApi(EntryPoint = "glCompressedTexImage3D")]
         public unsafe partial void CompressedTexImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] void* data);
@@ -3816,16 +3816,16 @@ namespace Silk.NET.OpenGLES
         public partial void CompressedTexSubImage3D<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] uint imageSize, [Count(Parameter = "imageSize"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCopyBufferSubData")]
-        public partial void CopyBufferSubData([Flow(FlowDirection.In)] GLEnum readTarget, [Flow(FlowDirection.In)] GLEnum writeTarget, [Flow(FlowDirection.In)] IntPtr readOffset, [Flow(FlowDirection.In)] IntPtr writeOffset, [Flow(FlowDirection.In)] UIntPtr size);
+        public partial void CopyBufferSubData([Flow(FlowDirection.In)] GLEnum readTarget, [Flow(FlowDirection.In)] GLEnum writeTarget, [Flow(FlowDirection.In)] nint readOffset, [Flow(FlowDirection.In)] nint writeOffset, [Flow(FlowDirection.In)] nuint size);
 
         [NativeApi(EntryPoint = "glCopyBufferSubData")]
-        public partial void CopyBufferSubData([Flow(FlowDirection.In)] GLEnum readTarget, [Flow(FlowDirection.In)] CopyBufferSubDataTarget writeTarget, [Flow(FlowDirection.In)] IntPtr readOffset, [Flow(FlowDirection.In)] IntPtr writeOffset, [Flow(FlowDirection.In)] UIntPtr size);
+        public partial void CopyBufferSubData([Flow(FlowDirection.In)] GLEnum readTarget, [Flow(FlowDirection.In)] CopyBufferSubDataTarget writeTarget, [Flow(FlowDirection.In)] nint readOffset, [Flow(FlowDirection.In)] nint writeOffset, [Flow(FlowDirection.In)] nuint size);
 
         [NativeApi(EntryPoint = "glCopyBufferSubData")]
-        public partial void CopyBufferSubData([Flow(FlowDirection.In)] CopyBufferSubDataTarget readTarget, [Flow(FlowDirection.In)] GLEnum writeTarget, [Flow(FlowDirection.In)] IntPtr readOffset, [Flow(FlowDirection.In)] IntPtr writeOffset, [Flow(FlowDirection.In)] UIntPtr size);
+        public partial void CopyBufferSubData([Flow(FlowDirection.In)] CopyBufferSubDataTarget readTarget, [Flow(FlowDirection.In)] GLEnum writeTarget, [Flow(FlowDirection.In)] nint readOffset, [Flow(FlowDirection.In)] nint writeOffset, [Flow(FlowDirection.In)] nuint size);
 
         [NativeApi(EntryPoint = "glCopyBufferSubData")]
-        public partial void CopyBufferSubData([Flow(FlowDirection.In)] CopyBufferSubDataTarget readTarget, [Flow(FlowDirection.In)] CopyBufferSubDataTarget writeTarget, [Flow(FlowDirection.In)] IntPtr readOffset, [Flow(FlowDirection.In)] IntPtr writeOffset, [Flow(FlowDirection.In)] UIntPtr size);
+        public partial void CopyBufferSubData([Flow(FlowDirection.In)] CopyBufferSubDataTarget readTarget, [Flow(FlowDirection.In)] CopyBufferSubDataTarget writeTarget, [Flow(FlowDirection.In)] nint readOffset, [Flow(FlowDirection.In)] nint writeOffset, [Flow(FlowDirection.In)] nuint size);
 
         [NativeApi(EntryPoint = "glCopyTexSubImage3D")]
         public partial void CopyTexSubImage3D([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
@@ -3858,7 +3858,7 @@ namespace Silk.NET.OpenGLES
         public partial void DeleteSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Sampler samplers);
 
         [NativeApi(EntryPoint = "glDeleteSync")]
-        public partial void DeleteSync([Flow(FlowDirection.In)] IntPtr sync);
+        public partial void DeleteSync([Flow(FlowDirection.In)] nint sync);
 
         [NativeApi(EntryPoint = "glDeleteTransformFeedbacks")]
         public unsafe partial void DeleteTransformFeedbacks([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] uint* ids);
@@ -3960,16 +3960,16 @@ namespace Silk.NET.OpenGLES
         public partial void EndTransformFeedback();
 
         [NativeApi(EntryPoint = "glFenceSync")]
-        public partial IntPtr FenceSync([Flow(FlowDirection.In)] GLEnum condition, [Flow(FlowDirection.In)] uint flags);
+        public partial nint FenceSync([Flow(FlowDirection.In)] GLEnum condition, [Flow(FlowDirection.In)] uint flags);
 
         [NativeApi(EntryPoint = "glFenceSync")]
-        public partial IntPtr FenceSync([Flow(FlowDirection.In)] SyncCondition condition, [Flow(FlowDirection.In)] uint flags);
+        public partial nint FenceSync([Flow(FlowDirection.In)] SyncCondition condition, [Flow(FlowDirection.In)] uint flags);
 
         [NativeApi(EntryPoint = "glFlushMappedBufferRange")]
-        public partial void FlushMappedBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length);
+        public partial void FlushMappedBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint length);
 
         [NativeApi(EntryPoint = "glFlushMappedBufferRange")]
-        public partial void FlushMappedBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length);
+        public partial void FlushMappedBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint length);
 
         [NativeApi(EntryPoint = "glFramebufferTextureLayer")]
         public partial void FramebufferTextureLayer([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum attachment, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int layer);
@@ -4323,28 +4323,28 @@ namespace Silk.NET.OpenGLES
         public partial string GetStringS([Flow(FlowDirection.In)] StringName name, [Flow(FlowDirection.In)] uint index);
 
         [NativeApi(EntryPoint = "glGetSynciv")]
-        public unsafe partial void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
+        public unsafe partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
 
         [NativeApi(EntryPoint = "glGetSynciv")]
-        public unsafe partial void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int values);
+        public unsafe partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int values);
 
         [NativeApi(EntryPoint = "glGetSynciv")]
-        public unsafe partial void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
+        public unsafe partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
 
         [NativeApi(EntryPoint = "glGetSynciv")]
-        public partial void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int values);
+        public partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int values);
 
         [NativeApi(EntryPoint = "glGetSynciv")]
-        public unsafe partial void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
+        public unsafe partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
 
         [NativeApi(EntryPoint = "glGetSynciv")]
-        public unsafe partial void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int values);
+        public unsafe partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int values);
 
         [NativeApi(EntryPoint = "glGetSynciv")]
-        public unsafe partial void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
+        public unsafe partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
 
         [NativeApi(EntryPoint = "glGetSynciv")]
-        public partial void GetSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int values);
+        public partial void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int values);
 
         [NativeApi(EntryPoint = "glGetTransformFeedbackVarying")]
         public unsafe partial void GetTransformFeedbackVarying([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] uint* size, [Count(Count = 1), Flow(FlowDirection.Out)] GLEnum* type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* name);
@@ -4596,7 +4596,7 @@ namespace Silk.NET.OpenGLES
         public partial bool IsSampler([Flow(FlowDirection.In)] uint sampler);
 
         [NativeApi(EntryPoint = "glIsSync")]
-        public partial bool IsSync([Flow(FlowDirection.In)] IntPtr sync);
+        public partial bool IsSync([Flow(FlowDirection.In)] nint sync);
 
         [NativeApi(EntryPoint = "glIsTransformFeedback")]
         public partial bool IsTransformFeedback([Flow(FlowDirection.In)] uint id);
@@ -4605,10 +4605,10 @@ namespace Silk.NET.OpenGLES
         public partial bool IsVertexArray([Flow(FlowDirection.In)] uint array);
 
         [NativeApi(EntryPoint = "glMapBufferRange")]
-        public unsafe partial void* MapBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.In)] uint access);
+        public unsafe partial void* MapBufferRange([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.In)] uint access);
 
         [NativeApi(EntryPoint = "glMapBufferRange")]
-        public unsafe partial void* MapBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr length, [Flow(FlowDirection.In)] uint access);
+        public unsafe partial void* MapBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.In)] uint access);
 
         [NativeApi(EntryPoint = "glPauseTransformFeedback")]
         public partial void PauseTransformFeedback();
@@ -4929,7 +4929,7 @@ namespace Silk.NET.OpenGLES
         public partial void VertexAttribIPointer<T0>([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribIType type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glWaitSync")]
-        public partial void WaitSync([Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] ulong timeout);
+        public partial void WaitSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] ulong timeout);
 
         [NativeApi(EntryPoint = "glActiveTexture")]
         public partial void ActiveTexture([Flow(FlowDirection.In)] GLEnum texture);
@@ -5055,40 +5055,40 @@ namespace Silk.NET.OpenGLES
         public partial void BlendFuncSeparate([Flow(FlowDirection.In)] BlendingFactor sfactorRGB, [Flow(FlowDirection.In)] BlendingFactor dfactorRGB, [Flow(FlowDirection.In)] BlendingFactor sfactorAlpha, [Flow(FlowDirection.In)] BlendingFactor dfactorAlpha);
 
         [NativeApi(EntryPoint = "glBufferData")]
-        public unsafe partial void BufferData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] GLEnum usage);
+        public unsafe partial void BufferData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] GLEnum usage);
 
         [NativeApi(EntryPoint = "glBufferData")]
-        public partial void BufferData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged;
+        public partial void BufferData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glBufferData")]
-        public unsafe partial void BufferData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] BufferUsageARB usage);
+        public unsafe partial void BufferData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] BufferUsageARB usage);
 
         [NativeApi(EntryPoint = "glBufferData")]
-        public partial void BufferData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged;
+        public partial void BufferData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glBufferData")]
-        public unsafe partial void BufferData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] GLEnum usage);
+        public unsafe partial void BufferData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] GLEnum usage);
 
         [NativeApi(EntryPoint = "glBufferData")]
-        public partial void BufferData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged;
+        public partial void BufferData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glBufferData")]
-        public unsafe partial void BufferData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] BufferUsageARB usage);
+        public unsafe partial void BufferData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data, [Flow(FlowDirection.In)] BufferUsageARB usage);
 
         [NativeApi(EntryPoint = "glBufferData")]
-        public partial void BufferData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged;
+        public partial void BufferData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glBufferSubData")]
-        public unsafe partial void BufferSubData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void BufferSubData([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glBufferSubData")]
-        public partial void BufferSubData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+        public partial void BufferSubData<T0>([Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glBufferSubData")]
-        public unsafe partial void BufferSubData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data);
+        public unsafe partial void BufferSubData([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] void* data);
 
         [NativeApi(EntryPoint = "glBufferSubData")]
-        public partial void BufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
+        public partial void BufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] in T0 data) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glCheckFramebufferStatus")]
         public partial GLEnum CheckFramebufferStatus([Flow(FlowDirection.In)] GLEnum target);
@@ -6721,8 +6721,8 @@ namespace Silk.NET.OpenGLES
             // StringArrayOverloader
             var strings = (byte**) SilkMarshal.StringArrayToPtr(stringsSa);
             var ret = CreateShaderProgram(type, count, strings);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
-            SilkMarshal.Free((IntPtr) strings);
+            SilkMarshal.CopyPtrToStringArray((nint) strings, stringsSa);
+            SilkMarshal.Free((nint) strings);
             return ret;
         }
 
@@ -6731,8 +6731,8 @@ namespace Silk.NET.OpenGLES
             // StringArrayOverloader
             var strings = (byte**) SilkMarshal.StringArrayToPtr(stringsSa);
             var ret = CreateShaderProgram(type, count, strings);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
-            SilkMarshal.Free((IntPtr) strings);
+            SilkMarshal.CopyPtrToStringArray((nint) strings, stringsSa);
+            SilkMarshal.Free((nint) strings);
             return ret;
         }
 
@@ -6824,8 +6824,8 @@ namespace Silk.NET.OpenGLES
             // StringArrayOverloader
             var uniformNames = (byte**) SilkMarshal.StringArrayToPtr(uniformNamesSa);
             GetUniformIndices(program, uniformCount, uniformNames, uniformIndices);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) uniformNames, uniformNamesSa);
-            SilkMarshal.Free((IntPtr) uniformNames);
+            SilkMarshal.CopyPtrToStringArray((nint) uniformNames, uniformNamesSa);
+            SilkMarshal.Free((nint) uniformNames);
         }
 
         public unsafe void GetUniformIndices([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(FlowDirection.In)] string[] uniformNamesSa, [Count(Computed = "uniformCount"), Flow(FlowDirection.Out)] out uint uniformIndices)
@@ -6833,8 +6833,8 @@ namespace Silk.NET.OpenGLES
             // StringArrayOverloader
             var uniformNames = (byte**) SilkMarshal.StringArrayToPtr(uniformNamesSa);
             GetUniformIndices(program, uniformCount, uniformNames, out uniformIndices);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) uniformNames, uniformNamesSa);
-            SilkMarshal.Free((IntPtr) uniformNames);
+            SilkMarshal.CopyPtrToStringArray((nint) uniformNames, uniformNamesSa);
+            SilkMarshal.Free((nint) uniformNames);
         }
 
         public unsafe void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] varyingsSa, [Flow(FlowDirection.In)] GLEnum bufferMode)
@@ -6842,8 +6842,8 @@ namespace Silk.NET.OpenGLES
             // StringArrayOverloader
             var varyings = (byte**) SilkMarshal.StringArrayToPtr(varyingsSa);
             TransformFeedbackVaryings(program, count, varyings, bufferMode);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) varyings, varyingsSa);
-            SilkMarshal.Free((IntPtr) varyings);
+            SilkMarshal.CopyPtrToStringArray((nint) varyings, varyingsSa);
+            SilkMarshal.Free((nint) varyings);
         }
 
         public unsafe void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] varyingsSa, [Flow(FlowDirection.In)] TransformFeedbackBufferMode bufferMode)
@@ -6851,8 +6851,8 @@ namespace Silk.NET.OpenGLES
             // StringArrayOverloader
             var varyings = (byte**) SilkMarshal.StringArrayToPtr(varyingsSa);
             TransformFeedbackVaryings(program, count, varyings, bufferMode);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) varyings, varyingsSa);
-            SilkMarshal.Free((IntPtr) varyings);
+            SilkMarshal.CopyPtrToStringArray((nint) varyings, varyingsSa);
+            SilkMarshal.Free((nint) varyings);
         }
 
         public unsafe void DeleteBuffer([Count(Parameter = "n"), Flow(FlowDirection.In)] uint buffers)
@@ -6944,8 +6944,8 @@ namespace Silk.NET.OpenGLES
             // StringArrayOverloader
             var @string = (byte**) SilkMarshal.StringArrayToPtr(@stringSa);
             ShaderSource(shader, count, @string, length);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) @string, @stringSa);
-            SilkMarshal.Free((IntPtr) @string);
+            SilkMarshal.CopyPtrToStringArray((nint) @string, @stringSa);
+            SilkMarshal.Free((nint) @string);
         }
 
         public unsafe void ShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] @stringSa, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int length)
@@ -6953,8 +6953,8 @@ namespace Silk.NET.OpenGLES
             // StringArrayOverloader
             var @string = (byte**) SilkMarshal.StringArrayToPtr(@stringSa);
             ShaderSource(shader, count, @string, in length);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) @string, @stringSa);
-            SilkMarshal.Free((IntPtr) @string);
+            SilkMarshal.CopyPtrToStringArray((nint) @string, @stringSa);
+            SilkMarshal.Free((nint) @string);
         }
 
 

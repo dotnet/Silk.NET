@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.ImagepipeSurfaceCreateInfoFuchsia,
             void* pNext = null,
             uint? flags = null,
-            IntPtr? imagePipeHandle = null
+            nint? imagePipeHandle = null
         ) : this()
         {
             if (sType is not null)
@@ -69,6 +69,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "zx_handle_t")]
         [NativeName("Type.Name", "zx_handle_t")]
         [NativeName("Name", "imagePipeHandle")]
-        public IntPtr ImagePipeHandle;
+        public nint ImagePipeHandle;
     }
 }

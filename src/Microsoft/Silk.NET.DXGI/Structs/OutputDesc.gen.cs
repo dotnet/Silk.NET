@@ -26,7 +26,7 @@ namespace Silk.NET.DXGI
             Silk.NET.Maths.Rectangle<long>? desktopCoordinates = null,
             int? attachedToDesktop = null,
             ModeRotation? rotation = null,
-            IntPtr? monitor = null
+            nint? monitor = null
         ) : this()
         {
             if (desktopCoordinates is not null)
@@ -73,6 +73,6 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "HMONITOR")]
         [NativeName("Type.Name", "HMONITOR")]
         [NativeName("Name", "Monitor")]
-        public IntPtr Monitor;
+        public nint Monitor;
     }
 }

@@ -26,16 +26,16 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public partial void Vdpaufin();
 
         [NativeApi(EntryPoint = "glVDPAUGetSurfaceivNV")]
-        public unsafe partial void VdpaugetSurface([Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
+        public unsafe partial void VdpaugetSurface([Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
 
         [NativeApi(EntryPoint = "glVDPAUGetSurfaceivNV")]
-        public unsafe partial void VdpaugetSurface([Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int values);
+        public unsafe partial void VdpaugetSurface([Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int values);
 
         [NativeApi(EntryPoint = "glVDPAUGetSurfaceivNV")]
-        public unsafe partial void VdpaugetSurface([Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
+        public unsafe partial void VdpaugetSurface([Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values);
 
         [NativeApi(EntryPoint = "glVDPAUGetSurfaceivNV")]
-        public partial void VdpaugetSurface([Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int values);
+        public partial void VdpaugetSurface([Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int values);
 
         [NativeApi(EntryPoint = "glVDPAUInitNV")]
         public unsafe partial void Vdpauinit([Flow(FlowDirection.In)] void* vdpDevice, [Flow(FlowDirection.In)] void* getProcAddress);
@@ -50,49 +50,49 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public partial void Vdpauinit<T0, T1>([Flow(FlowDirection.In)] in T0 vdpDevice, [Flow(FlowDirection.In)] in T1 getProcAddress) where T0 : unmanaged where T1 : unmanaged;
 
         [NativeApi(EntryPoint = "glVDPAUIsSurfaceNV")]
-        public partial bool VdpauisSurface([Flow(FlowDirection.In)] IntPtr surface);
+        public partial bool VdpauisSurface([Flow(FlowDirection.In)] nint surface);
 
         [NativeApi(EntryPoint = "glVDPAUMapSurfacesNV")]
-        public unsafe partial void VdpaumapSurfaces([Flow(FlowDirection.In)] uint numSurfaces, [Count(Parameter = "numSurfaces"), Flow(FlowDirection.In)] IntPtr* surfaces);
+        public unsafe partial void VdpaumapSurfaces([Flow(FlowDirection.In)] uint numSurfaces, [Count(Parameter = "numSurfaces"), Flow(FlowDirection.In)] nint* surfaces);
 
         [NativeApi(EntryPoint = "glVDPAUMapSurfacesNV")]
-        public partial void VdpaumapSurfaces([Flow(FlowDirection.In)] uint numSurfaces, [Count(Parameter = "numSurfaces"), Flow(FlowDirection.In)] in IntPtr surfaces);
+        public partial void VdpaumapSurfaces([Flow(FlowDirection.In)] uint numSurfaces, [Count(Parameter = "numSurfaces"), Flow(FlowDirection.In)] in nint surfaces);
 
         [NativeApi(EntryPoint = "glVDPAURegisterOutputSurfaceNV")]
-        public unsafe partial IntPtr VdpauregisterOutputSurface([Flow(FlowDirection.In)] void* vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] uint* textureNames);
+        public unsafe partial nint VdpauregisterOutputSurface([Flow(FlowDirection.In)] void* vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] uint* textureNames);
 
         [NativeApi(EntryPoint = "glVDPAURegisterOutputSurfaceNV")]
-        public unsafe partial IntPtr VdpauregisterOutputSurface([Flow(FlowDirection.In)] void* vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] in uint textureNames);
+        public unsafe partial nint VdpauregisterOutputSurface([Flow(FlowDirection.In)] void* vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] in uint textureNames);
 
         [NativeApi(EntryPoint = "glVDPAURegisterOutputSurfaceNV")]
-        public unsafe partial IntPtr VdpauregisterOutputSurface<T0>([Flow(FlowDirection.In)] in T0 vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] uint* textureNames) where T0 : unmanaged;
+        public unsafe partial nint VdpauregisterOutputSurface<T0>([Flow(FlowDirection.In)] in T0 vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] uint* textureNames) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glVDPAURegisterOutputSurfaceNV")]
-        public partial IntPtr VdpauregisterOutputSurface<T0>([Flow(FlowDirection.In)] in T0 vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] in uint textureNames) where T0 : unmanaged;
+        public partial nint VdpauregisterOutputSurface<T0>([Flow(FlowDirection.In)] in T0 vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] in uint textureNames) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glVDPAURegisterVideoSurfaceNV")]
-        public unsafe partial IntPtr VdpauregisterVideoSurface([Flow(FlowDirection.In)] void* vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] uint* textureNames);
+        public unsafe partial nint VdpauregisterVideoSurface([Flow(FlowDirection.In)] void* vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] uint* textureNames);
 
         [NativeApi(EntryPoint = "glVDPAURegisterVideoSurfaceNV")]
-        public unsafe partial IntPtr VdpauregisterVideoSurface([Flow(FlowDirection.In)] void* vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] in uint textureNames);
+        public unsafe partial nint VdpauregisterVideoSurface([Flow(FlowDirection.In)] void* vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] in uint textureNames);
 
         [NativeApi(EntryPoint = "glVDPAURegisterVideoSurfaceNV")]
-        public unsafe partial IntPtr VdpauregisterVideoSurface<T0>([Flow(FlowDirection.In)] in T0 vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] uint* textureNames) where T0 : unmanaged;
+        public unsafe partial nint VdpauregisterVideoSurface<T0>([Flow(FlowDirection.In)] in T0 vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] uint* textureNames) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glVDPAURegisterVideoSurfaceNV")]
-        public partial IntPtr VdpauregisterVideoSurface<T0>([Flow(FlowDirection.In)] in T0 vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] in uint textureNames) where T0 : unmanaged;
+        public partial nint VdpauregisterVideoSurface<T0>([Flow(FlowDirection.In)] in T0 vdpSurface, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint numTextureNames, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] in uint textureNames) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glVDPAUSurfaceAccessNV")]
-        public partial void VdpausurfaceAccess([Flow(FlowDirection.In)] IntPtr surface, [Flow(FlowDirection.In)] NV access);
+        public partial void VdpausurfaceAccess([Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] NV access);
 
         [NativeApi(EntryPoint = "glVDPAUUnmapSurfacesNV")]
-        public unsafe partial void VdpauunmapSurfaces([Flow(FlowDirection.In)] uint numSurface, [Count(Parameter = "numSurface"), Flow(FlowDirection.In)] IntPtr* surfaces);
+        public unsafe partial void VdpauunmapSurfaces([Flow(FlowDirection.In)] uint numSurface, [Count(Parameter = "numSurface"), Flow(FlowDirection.In)] nint* surfaces);
 
         [NativeApi(EntryPoint = "glVDPAUUnmapSurfacesNV")]
-        public partial void VdpauunmapSurfaces([Flow(FlowDirection.In)] uint numSurface, [Count(Parameter = "numSurface"), Flow(FlowDirection.In)] in IntPtr surfaces);
+        public partial void VdpauunmapSurfaces([Flow(FlowDirection.In)] uint numSurface, [Count(Parameter = "numSurface"), Flow(FlowDirection.In)] in nint surfaces);
 
         [NativeApi(EntryPoint = "glVDPAUUnregisterSurfaceNV")]
-        public partial void VdpauunregisterSurface([Flow(FlowDirection.In)] IntPtr surface);
+        public partial void VdpauunregisterSurface([Flow(FlowDirection.In)] nint surface);
 
         public NVVdpauInterop(INativeContext ctx)
             : base(ctx)

@@ -33,10 +33,10 @@ namespace Silk.NET.Core.Native
         ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnDestructionCallback From(DestructionCallback proc) => new PfnDestructionCallback(proc);
-        public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
+        public void Dispose() => SilkMarshal.Free((nint) _handle);
 
-        public static implicit operator IntPtr(PfnDestructionCallback pfn) => (IntPtr) pfn.Handle;
-        public static explicit operator PfnDestructionCallback(IntPtr pfn)
+        public static implicit operator nint(PfnDestructionCallback pfn) => (nint) pfn.Handle;
+        public static explicit operator PfnDestructionCallback(nint pfn)
             => new PfnDestructionCallback((delegate* unmanaged[Cdecl]<void*, void>) pfn);
 
         public static implicit operator PfnDestructionCallback(DestructionCallback proc)

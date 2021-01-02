@@ -19,6 +19,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Name", "D3D12_VIDEO_PROCESS_DEINTERLACE_FLAG_BOB")]
         VideoProcessDeinterlaceFlagBob = 0x1,
         [NativeName("Name", "D3D12_VIDEO_PROCESS_DEINTERLACE_FLAG_CUSTOM")]
-        VideoProcessDeinterlaceFlagCustom = unchecked((int)0xFFFFFFFF80000000),
+        VideoProcessDeinterlaceFlagCustom = unchecked((int) 0xFFFFFFFF80000000),
     }
 }

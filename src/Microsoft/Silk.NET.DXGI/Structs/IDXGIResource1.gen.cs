@@ -564,7 +564,7 @@ namespace Silk.NET.DXGI
                 int ret = default;
             var lpNamePtr = (byte*) Marshal.StringToHGlobalAnsi(lpName);
             ret = ((delegate* unmanaged[Cdecl]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandle);
-            Marshal.FreeHGlobal((IntPtr)lpNamePtr);
+            Marshal.FreeHGlobal((nint)lpNamePtr);
             return ret;
         }
 
@@ -578,7 +578,7 @@ namespace Silk.NET.DXGI
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[13])(@this, pAttributes, dwAccess, lpNamePtr, pHandlePtr);
             }
-            Marshal.FreeHGlobal((IntPtr)lpNamePtr);
+            Marshal.FreeHGlobal((nint)lpNamePtr);
             return ret;
         }
 
@@ -651,7 +651,7 @@ namespace Silk.NET.DXGI
             {
             var lpNamePtr = (byte*) Marshal.StringToHGlobalAnsi(lpName);
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandle);
-            Marshal.FreeHGlobal((IntPtr)lpNamePtr);
+            Marshal.FreeHGlobal((nint)lpNamePtr);
             }
             return ret;
         }
@@ -668,7 +668,7 @@ namespace Silk.NET.DXGI
                 {
                     ret = ((delegate* unmanaged[Cdecl]<IDXGIResource1*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[13])(@this, pAttributesPtr, dwAccess, lpNamePtr, pHandlePtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)lpNamePtr);
+            Marshal.FreeHGlobal((nint)lpNamePtr);
             }
             return ret;
         }

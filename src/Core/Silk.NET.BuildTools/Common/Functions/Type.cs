@@ -166,7 +166,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <returns>A value indicating whether this signature represents an IntPtr.</returns>
         public bool IsIntPtr()
         {
-            return ToString() == "IntPtr" && !IsIn && !IsByRef && !IsOut;
+            return (ToString() == "IntPtr" || ToString() == "nint") && !IsIn && !IsByRef && !IsOut;
         }
 
         /// <summary>
@@ -175,7 +175,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <returns>A value indicating whether this signature represents a UIntPtr.</returns>
         public bool IsUIntPtr()
         {
-            return ToString() == "UIntPtr" && !IsIn && !IsByRef && !IsOut;
+            return (ToString() == "UIntPtr" || ToString() == "nuint") && !IsIn && !IsByRef && !IsOut;
         }
 
         public bool Eq(Type other) // can't use default equatable logic due to json.net thinking fnptrs self-reference

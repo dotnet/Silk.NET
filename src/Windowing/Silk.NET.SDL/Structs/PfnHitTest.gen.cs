@@ -33,10 +33,10 @@ namespace Silk.NET.SDL
         ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnHitTest From(HitTest proc) => new PfnHitTest(proc);
-        public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
+        public void Dispose() => SilkMarshal.Free((nint) _handle);
 
-        public static implicit operator IntPtr(PfnHitTest pfn) => (IntPtr) pfn.Handle;
-        public static explicit operator PfnHitTest(IntPtr pfn)
+        public static implicit operator nint(PfnHitTest pfn) => (nint) pfn.Handle;
+        public static explicit operator PfnHitTest(nint pfn)
             => new PfnHitTest((delegate* unmanaged[Cdecl]<Window*, Point*, void*, HitTestResult>) pfn);
 
         public static implicit operator PfnHitTest(HitTest proc)

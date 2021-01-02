@@ -23,8 +23,8 @@ namespace Silk.NET.OpenCL
     {
         public BufferRegion
         (
-            UIntPtr? origin = null,
-            UIntPtr? size = null
+            nuint? origin = null,
+            nuint? size = null
         ) : this()
         {
             if (origin is not null)
@@ -42,11 +42,11 @@ namespace Silk.NET.OpenCL
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "origin")]
-        public UIntPtr Origin;
+        public nuint Origin;
 /// <summary></summary>
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "size")]
-        public UIntPtr Size;
+        public nuint Size;
     }
 }

@@ -10,7 +10,7 @@ namespace Silk.NET.Core
         public delegate* unmanaged[Cdecl]<void> Handle => (delegate* unmanaged[Cdecl]<void>) _handle;
         public PfnVoidFunction(delegate* unmanaged[Cdecl]<void> ptr) => _handle = ptr;
 
-        public static implicit operator IntPtr(PfnVoidFunction pfn) => (IntPtr) pfn.Handle;
+        public static implicit operator nint(PfnVoidFunction pfn) => (nint) pfn.Handle;
 
         public PfnVoidFunction
             (Delegate func) => _handle = (delegate* unmanaged[Cdecl]<void>) SilkMarshal.DelegateToPtr

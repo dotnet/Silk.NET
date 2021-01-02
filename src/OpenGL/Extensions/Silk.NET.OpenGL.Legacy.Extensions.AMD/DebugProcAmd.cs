@@ -7,5 +7,5 @@ using System;
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
 {
-    public delegate void DebugProcAmd(AMD source, AMD type, int id, AMD severity, int length, IntPtr message, IntPtr userParam);
+    public delegate void DebugProcAmd(AMD source, AMD type, int id, AMD severity, int length, nint message, nint userParam);
 }

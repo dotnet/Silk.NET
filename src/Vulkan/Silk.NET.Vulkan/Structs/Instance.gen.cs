@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
     {
         public Instance
         (
-            IntPtr? handle = null
+            nint? handle = null
         ) : this()
         {
             if (handle is not null)
@@ -36,6 +36,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "")]
         [NativeName("Type.Name", "")]
         [NativeName("Name", "")]
-        public IntPtr Handle;
+        public nint Handle;
     }
 }

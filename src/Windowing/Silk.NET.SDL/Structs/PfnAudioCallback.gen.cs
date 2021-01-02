@@ -33,10 +33,10 @@ namespace Silk.NET.SDL
         ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnAudioCallback From(AudioCallback proc) => new PfnAudioCallback(proc);
-        public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
+        public void Dispose() => SilkMarshal.Free((nint) _handle);
 
-        public static implicit operator IntPtr(PfnAudioCallback pfn) => (IntPtr) pfn.Handle;
-        public static explicit operator PfnAudioCallback(IntPtr pfn)
+        public static implicit operator nint(PfnAudioCallback pfn) => (nint) pfn.Handle;
+        public static explicit operator PfnAudioCallback(nint pfn)
             => new PfnAudioCallback((delegate* unmanaged[Cdecl]<void*, byte*, int, void>) pfn);
 
         public static implicit operator PfnAudioCallback(AudioCallback proc)

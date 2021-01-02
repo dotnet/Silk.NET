@@ -18,6 +18,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Windowing.Common", "src\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj", "{956F722C-DFD3-435E-9D2E-A0549C4D8BC0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{E1F91563-7277-4E9B-A3B7-8D5FD9802A4A}"
+ProjectSection(SolutionItems) = preProject
+	examples\Directory.Build.props = examples\Directory.Build.props
+EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenAL", "OpenAL", "{081E7761-B200-4DBF-8950-941464DECACE}"
 EndProject

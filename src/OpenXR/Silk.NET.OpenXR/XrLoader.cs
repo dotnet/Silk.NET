@@ -37,19 +37,19 @@ namespace Silk.NET.OpenXR
         }
 
         /// <inheritdoc />
-        protected override IntPtr CoreLoadNativeLibrary(string name) => BaseLoader.LoadNativeLibrary(name);
+        protected override nint CoreLoadNativeLibrary(string name) => BaseLoader.LoadNativeLibrary(name);
         
         /// <inheritdoc />
-        protected override void CoreFreeNativeLibrary(IntPtr handle) => BaseLoader.FreeNativeLibrary(handle);
+        protected override void CoreFreeNativeLibrary(nint handle) => BaseLoader.FreeNativeLibrary(handle);
         
         /// <inheritdoc />
-        protected override IntPtr CoreLoadFunctionPointer(IntPtr library, string symbolName)
+        protected override nint CoreLoadFunctionPointer(nint library, string symbolName)
         {
-            IntPtr sym = default;
+            nint sym = default;
             try
             {
                 sym = BaseLoader.LoadFunctionPointer(library, symbolName);
-                if (sym != IntPtr.Zero)
+                if (sym != 0)
                 {
                     return sym;
                 }
@@ -59,7 +59,7 @@ namespace Silk.NET.OpenXR
                 // do nothing, just move on.
             }
 
-            OpenXR.GetInstanceProcAddr(default, symbolName, ref Unsafe.As<IntPtr, PfnVoidFunction>(ref sym));
+            OpenXR.GetInstanceProcAddr(default, symbolName, ref Unsafe.As<nint, PfnVoidFunction>(ref sym));
             if (sym != default)
             {
                 return sym;
@@ -68,7 +68,7 @@ namespace Silk.NET.OpenXR
             if (OpenXR.CurrentInstance.HasValue)
             {
                 OpenXR.GetInstanceProcAddr
-                    (OpenXR.CurrentInstance.Value, symbolName, ref Unsafe.As<IntPtr, PfnVoidFunction>(ref sym));
+                    (OpenXR.CurrentInstance.Value, symbolName, ref Unsafe.As<nint, PfnVoidFunction>(ref sym));
                 if (sym != default)
                 {
                     return sym;

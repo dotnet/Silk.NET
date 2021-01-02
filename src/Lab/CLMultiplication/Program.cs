@@ -22,17 +22,17 @@ namespace CLMultiplication
 
             // OpenCL related declarations
             int err;
-            IntPtr platform;
-            IntPtr device;
-            var props = stackalloc IntPtr[3];
-            props[0] = (IntPtr) CLEnum.ContextPlatform;
-            props[0] = IntPtr.Zero;
-            props[0] = IntPtr.Zero;
-            IntPtr ctx;
-            IntPtr program;
-            IntPtr queue;
-            IntPtr @event = default;
-            IntPtr kMultiplyby;
+            nint platform;
+            nint device;
+            var props = stackalloc nint[3];
+            props[0] = (nint) CLEnum.ContextPlatform;
+            props[0] = 0;
+            props[0] = 0;
+            nint ctx;
+            nint program;
+            nint queue;
+            nint @event = default;
+            nint kMultiplyby;
             int i;
 
             // OpenCL instantiation
@@ -52,7 +52,7 @@ namespace CLMultiplication
                 cPtr[i] = coeff * i;
             }
 
-            IntPtr dA; // buffer object for A
+            nint dA; // buffer object for A
 
             /* Setup OpenCL environment. */
             err = cl.GetPlatformIDs(1, &platform, null);
@@ -76,10 +76,10 @@ namespace CLMultiplication
             catch (Exception ex)
             {
                 var logsize = UIntPtr.Zero;
-                cl.GetProgramBuildInfo(program, device, (uint) CLEnum.ProgramBuildLog, UIntPtr.Zero, null, &logsize);
-                var log = Marshal.AllocHGlobal((IntPtr) logsize.ToPointer());
+                cl.GetProgramBuildInfo(program, device, (uint) CLEnum.ProgramBuildLog, 0, null, &logsize);
+                var log = Marshal.AllocHGlobal((nint) logsize.ToPointer());
                 cl.GetProgramBuildInfo
-                    (program, device, (uint) CLEnum.ProgramBuildLog, logsize, log.ToPointer(), (UIntPtr*) null);
+                    (program, device, (uint) CLEnum.ProgramBuildLog, logsize, log.ToPointer(), (nuint*) null);
                 throw new Exception(Marshal.PtrToStringAnsi(log), ex);
             }
 
@@ -87,26 +87,26 @@ namespace CLMultiplication
             AssertZero(err);
 
             // initialize buffer with data
-            dA = cl.CreateBuffer(ctx, CLEnum.MemReadWrite, (UIntPtr) (n * sizeof(int)), null, &err);
+            dA = cl.CreateBuffer(ctx, CLEnum.MemReadWrite, (nuint) (n * sizeof(int)), null, &err);
             AssertZero(err);
 
             err = cl.EnqueueWriteBuffer
-                (queue, dA, true, (UIntPtr) 0, (UIntPtr) (n * sizeof(int)), a, 0, null, (IntPtr*) null);
+                (queue, dA, true, (nuint) 0, (nuint) (n * sizeof(int)), a, 0, null, (nint*) null);
             AssertZero(err);
 
-            cl.SetKernelArg(kMultiplyby, 0, (UIntPtr) sizeof(void*), &dA);
+            cl.SetKernelArg(kMultiplyby, 0, (nuint) sizeof(void*), &dA);
             var c = 0;
             for (c = 2; c <= cMax; c++)
             {
-                cl.SetKernelArg(kMultiplyby, 1, (UIntPtr) sizeof(int), &c);
-                cl.EnqueueNdrangeKernel(queue, kMultiplyby, 1, null, (UIntPtr*) &n, (UIntPtr*) &n, 0u, null, null);
+                cl.SetKernelArg(kMultiplyby, 1, (nuint) sizeof(int), &c);
+                cl.EnqueueNdrangeKernel(queue, kMultiplyby, 1, null, (nuint*) &n, (nuint*) &n, 0u, null, null);
             }
 
             err = cl.Finish(queue);
             AssertZero(err);
 
             err = cl.EnqueueReadBuffer
-                (queue, dA, true, (UIntPtr) 0, (UIntPtr) (n * sizeof(int)), b, 0, null, (IntPtr*) null);
+                (queue, dA, true, (nuint) 0, (nuint) (n * sizeof(int)), b, 0, null, (nint*) null);
             AssertZero(err);
             err = cl.Finish(queue);
             AssertZero(err);
@@ -137,9 +137,9 @@ namespace CLMultiplication
             }
         }
 
-        private static unsafe void NotifyFunc(byte* errinfo, void* privateinfo, UIntPtr cb, void* userdata)
+        private static unsafe void NotifyFunc(byte* errinfo, void* privateinfo, nuint cb, void* userdata)
         {
-            Console.WriteLine($"Notification: {Marshal.PtrToStringAnsi((IntPtr) errinfo)}");
+            Console.WriteLine($"Notification: {Marshal.PtrToStringAnsi((nint) errinfo)}");
         }
     }
 }

@@ -9,14 +9,14 @@ namespace Silk.NET.Core.Contexts
 {
     public struct LamdaNativeContext : INativeContext
     {
-        private readonly Func<string, IntPtr> _getProcAddress;
+        private readonly Func<string, nint> _getProcAddress;
 
-        public LamdaNativeContext(Func<string, IntPtr> getProcAddress)
+        public LamdaNativeContext(Func<string, nint> getProcAddress)
         {
             _getProcAddress = getProcAddress;
         }
 
-        public IntPtr GetProcAddress(string proc, int? slot = default)
+        public nint GetProcAddress(string proc, int? slot = default)
         {
             return _getProcAddress(proc);
         }

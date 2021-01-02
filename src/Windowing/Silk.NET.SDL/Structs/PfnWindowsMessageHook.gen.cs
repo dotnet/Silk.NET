@@ -33,10 +33,10 @@ namespace Silk.NET.SDL
         ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnWindowsMessageHook From(WindowsMessageHook proc) => new PfnWindowsMessageHook(proc);
-        public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
+        public void Dispose() => SilkMarshal.Free((nint) _handle);
 
-        public static implicit operator IntPtr(PfnWindowsMessageHook pfn) => (IntPtr) pfn.Handle;
-        public static explicit operator PfnWindowsMessageHook(IntPtr pfn)
+        public static implicit operator nint(PfnWindowsMessageHook pfn) => (nint) pfn.Handle;
+        public static explicit operator PfnWindowsMessageHook(nint pfn)
             => new PfnWindowsMessageHook((delegate* unmanaged[Cdecl]<void*, void*, uint, ulong, long, void>) pfn);
 
         public static implicit operator PfnWindowsMessageHook(WindowsMessageHook proc)

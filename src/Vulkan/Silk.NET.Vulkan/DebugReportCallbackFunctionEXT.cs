@@ -6,7 +6,7 @@ namespace Silk.NET.Vulkan
         uint flags,
         DebugReportObjectTypeEXT objectType,
         ulong @object,
-        UIntPtr location,
+        nuint location,
         int messageCode,
         byte* pLayerPrefix,
         byte* pMessage,

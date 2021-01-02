@@ -12,7 +12,7 @@ namespace Silk.NET.Vulkan
 
         public PfnFreeFunction(delegate* unmanaged[Cdecl]<void*, void*, void> ptr) => _handle = ptr;
 
-        public static implicit operator IntPtr(PfnFreeFunction pfn) => (IntPtr) pfn.Handle;
+        public static implicit operator nint(PfnFreeFunction pfn) => (nint) pfn.Handle;
 
         public PfnFreeFunction
             (FreeFunction func) => _handle = (delegate* unmanaged[Cdecl]<void*, void*, void>) SilkMarshal.DelegateToPtr
@@ -27,6 +27,6 @@ namespace Silk.NET.Vulkan
         public static implicit operator PfnFreeFunction(FreeFunction func) => new(func);
 
         public static explicit operator FreeFunction(PfnFreeFunction pfn) => SilkMarshal.PtrToDelegate<FreeFunction>
-            ((IntPtr) pfn.Handle);
+            ((nint) pfn.Handle);
     }
 }

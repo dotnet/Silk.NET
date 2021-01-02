@@ -144,7 +144,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[4])(@this, pNamePtr, uDstSlot, cbDstOffset);
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 
@@ -185,7 +185,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[6])(@this, pNamePtr, uDstSlot, uCount);
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 
@@ -226,7 +226,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[8])(@this, pNamePtr, uDstSlot, uCount);
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 
@@ -267,7 +267,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[10])(@this, pNamePtr, uDstSlot, uCount);
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 
@@ -308,7 +308,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var pSrvNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pSrvName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ModuleInstance*, byte*, uint, uint, int>)LpVtbl[12])(@this, pSrvNamePtr, uDstUavSlot, uCount);
-            Marshal.FreeHGlobal((IntPtr)pSrvNamePtr);
+            Marshal.FreeHGlobal((nint)pSrvNamePtr);
             return ret;
         }
 

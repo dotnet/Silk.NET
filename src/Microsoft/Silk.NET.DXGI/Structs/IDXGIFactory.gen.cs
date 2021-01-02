@@ -384,31 +384,31 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int MakeWindowAssociation(IntPtr WindowHandle, uint Flags)
+        public readonly int MakeWindowAssociation(nint WindowHandle, uint Flags)
         {
             var @this = (IDXGIFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory*, IntPtr, uint, int>)LpVtbl[8])(@this, WindowHandle, Flags);
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory*, nint, uint, int>)LpVtbl[8])(@this, WindowHandle, Flags);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetWindowAssociation(IntPtr* pWindowHandle)
+        public readonly unsafe int GetWindowAssociation(nint* pWindowHandle)
         {
             var @this = (IDXGIFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory*, IntPtr*, int>)LpVtbl[9])(@this, pWindowHandle);
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory*, nint*, int>)LpVtbl[9])(@this, pWindowHandle);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetWindowAssociation(ref IntPtr pWindowHandle)
+        public readonly int GetWindowAssociation(ref nint pWindowHandle)
         {
             var @this = (IDXGIFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (IntPtr* pWindowHandlePtr = &pWindowHandle)
+            fixed (nint* pWindowHandlePtr = &pWindowHandle)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory*, IntPtr*, int>)LpVtbl[9])(@this, pWindowHandlePtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory*, nint*, int>)LpVtbl[9])(@this, pWindowHandlePtr);
             }
             return ret;
         }
@@ -522,22 +522,22 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSoftwareAdapter(IntPtr Module, Silk.NET.DXGI.IDXGIAdapter** ppAdapter)
+        public readonly unsafe int CreateSoftwareAdapter(nint Module, Silk.NET.DXGI.IDXGIAdapter** ppAdapter)
         {
             var @this = (IDXGIFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory*, IntPtr, Silk.NET.DXGI.IDXGIAdapter**, int>)LpVtbl[11])(@this, Module, ppAdapter);
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory*, nint, Silk.NET.DXGI.IDXGIAdapter**, int>)LpVtbl[11])(@this, Module, ppAdapter);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateSoftwareAdapter(IntPtr Module, ref Silk.NET.DXGI.IDXGIAdapter* ppAdapter)
+        public readonly unsafe int CreateSoftwareAdapter(nint Module, ref Silk.NET.DXGI.IDXGIAdapter* ppAdapter)
         {
             var @this = (IDXGIFactory*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (Silk.NET.DXGI.IDXGIAdapter** ppAdapterPtr = &ppAdapter)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory*, IntPtr, Silk.NET.DXGI.IDXGIAdapter**, int>)LpVtbl[11])(@this, Module, ppAdapterPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory*, nint, Silk.NET.DXGI.IDXGIAdapter**, int>)LpVtbl[11])(@this, Module, ppAdapterPtr);
             }
             return ret;
         }

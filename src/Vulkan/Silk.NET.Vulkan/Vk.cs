@@ -14,14 +14,26 @@ namespace Silk.NET.Vulkan
 {
     public partial class Vk
     {
-        public Instance? CurrentInstance { get; set; }
-        public Device? CurrentDevice { get; set; }
+        private Instance? _currentInstance;
+        private Device? _currentDevice;
+        private ConcurrentDictionary<(Instance?, Device?), IVTable> _vTables = new();
+        public Instance? CurrentInstance
+        {
+            get => _currentInstance;
+            set => SwapVTable(_vTables.GetOrAdd((_currentInstance = value, _currentDevice), _ => VulkanCreateVTable()));
+        }
+        public Device? CurrentDevice
+        {
+            get => _currentDevice;
+            set => SwapVTable(_vTables.GetOrAdd((_currentInstance, _currentDevice = value), _ => VulkanCreateVTable()));
+        }
         public static Version32 Version10 => new Version32(1, 0, 0);
         public static Version32 Version11 => new Version32(1, 1, 0);
         public static Version32 Version12 => new Version32(1, 2, 0);
 
         public static Version32 MakeVersion
             (uint major, uint minor, uint patch = 0) => new Version32(major, minor, patch);
+        
 
         public static Vk GetApi()
         {
@@ -37,7 +49,7 @@ namespace Silk.NET.Vulkan
                         return default;
                     }
 
-                    IntPtr ptr = default;
+                    nint ptr = default;
                     ptr = ret.GetInstanceProcAddr(ret.CurrentInstance.GetValueOrDefault(), x);
                     if (ptr != default)
                     {
@@ -67,7 +79,7 @@ namespace Silk.NET.Vulkan
                         return default;
                     }
 
-                    IntPtr ptr = default;
+                    nint ptr = default;
                     ptr = ret.GetInstanceProcAddr(ret.CurrentInstance.GetValueOrDefault(), x);
                     if (ptr != default)
                     {
@@ -104,7 +116,7 @@ namespace Silk.NET.Vulkan
                         return default;
                     }
 
-                    IntPtr ptr = default;
+                    nint ptr = default;
                     ptr = ret.GetInstanceProcAddr(ret.CurrentInstance.GetValueOrDefault(), x);
                     if (ptr != default)
                     {
@@ -119,6 +131,11 @@ namespace Silk.NET.Vulkan
             instance = default;
             ret.CreateInstance(in info, in callbacks, out instance);
             return ret;
+        }
+
+        protected override void PostInit()
+        {
+            _vTables.TryAdd(default, CurrentVTable);
         }
 
         /// <summary>
@@ -195,7 +212,7 @@ namespace Silk.NET.Vulkan
                 cachedInstanceExtensions = new HashSet<string>();
                 for (var p = 0; p < instanceExtPropertiesCount; p++)
                 {
-                    cachedInstanceExtensions.Add(Marshal.PtrToStringAnsi((IntPtr) props[p].ExtensionName));
+                    cachedInstanceExtensions.Add(Marshal.PtrToStringAnsi((nint) props[p].ExtensionName));
                 }
 
                 // Thread-safe, only one initialisation will actually succeed.
@@ -267,7 +284,7 @@ namespace Silk.NET.Vulkan
                     for (int j = 0; j < deviceExtPropertiesCount; j++)
                     {
                         // Prefix the extension name
-                        var newKey = prefix_sep + Marshal.PtrToStringAnsi((IntPtr) props[j].ExtensionName);
+                        var newKey = prefix_sep + Marshal.PtrToStringAnsi((nint) props[j].ExtensionName);
                         _cachedDeviceExtensions.Add(newKey);
                         if (!result && string.Equals(newKey, fullKey))
                         {
@@ -299,7 +316,7 @@ namespace Silk.NET.Vulkan
         public unsafe bool IsDeviceExtensionPresent(Instance instance, string extension, out PhysicalDevice device)
         {
             device = GetPhysicalDevices(instance).FirstOrDefault(pd => IsDeviceExtensionPresent(pd, extension));
-            return device.Handle != IntPtr.Zero;
+            return device.Handle != 0;
         }
 
         /// <summary>
@@ -344,6 +361,13 @@ namespace Silk.NET.Vulkan
             {
                 _cachedDeviceExtensionsLock.ExitWriteLock();
             }
+        }
+
+        private IVTable VulkanCreateVTable()
+        {
+            var ret = CreateVTable();
+            ret.Initialize(Context, CoreGetSlotCount());
+            return ret;
         }
     }
 }

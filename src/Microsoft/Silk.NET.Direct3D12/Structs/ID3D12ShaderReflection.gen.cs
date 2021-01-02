@@ -165,7 +165,7 @@ namespace Silk.NET.Direct3D12
                 ID3D12ShaderReflectionConstantBuffer* ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderReflection*, byte*, ID3D12ShaderReflectionConstantBuffer*>)LpVtbl[5])(@this, NamePtr);
-            Marshal.FreeHGlobal((IntPtr)NamePtr);
+            Marshal.FreeHGlobal((nint)NamePtr);
             return ret;
         }
 
@@ -281,7 +281,7 @@ namespace Silk.NET.Direct3D12
                 ID3D12ShaderReflectionVariable* ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderReflection*, byte*, ID3D12ShaderReflectionVariable*>)LpVtbl[10])(@this, NamePtr);
-            Marshal.FreeHGlobal((IntPtr)NamePtr);
+            Marshal.FreeHGlobal((nint)NamePtr);
             return ret;
         }
 
@@ -340,7 +340,7 @@ namespace Silk.NET.Direct3D12
                 int ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, NamePtr, pDesc);
-            Marshal.FreeHGlobal((IntPtr)NamePtr);
+            Marshal.FreeHGlobal((nint)NamePtr);
             return ret;
         }
 
@@ -354,7 +354,7 @@ namespace Silk.NET.Direct3D12
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderReflection*, byte*, ShaderInputBindDesc*, int>)LpVtbl[11])(@this, NamePtr, pDescPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)NamePtr);
+            Marshal.FreeHGlobal((nint)NamePtr);
             return ret;
         }
 

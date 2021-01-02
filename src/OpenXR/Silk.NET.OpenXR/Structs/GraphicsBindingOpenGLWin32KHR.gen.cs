@@ -25,8 +25,8 @@ namespace Silk.NET.OpenXR
         (
             StructureType? type = StructureType.TypeGraphicsBindingOpenglWin32Khr,
             void* next = null,
-            IntPtr? hDC = null,
-            IntPtr? hGlrc = null
+            nint? hDC = null,
+            nint? hGlrc = null
         ) : this()
         {
             if (type is not null)
@@ -64,11 +64,11 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "HDC")]
         [NativeName("Type.Name", "HDC")]
         [NativeName("Name", "hDC")]
-        public IntPtr HDC;
+        public nint HDC;
 /// <summary></summary>
         [NativeName("Type", "HGLRC")]
         [NativeName("Type.Name", "HGLRC")]
         [NativeName("Name", "hGLRC")]
-        public IntPtr HGlrc;
+        public nint HGlrc;
     }
 }

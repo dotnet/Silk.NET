@@ -460,35 +460,35 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetRayTracingCaptureReplayShaderGroupHandles<T0>(this KhrRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint firstGroup, [Count(Count = 0)] uint groupCount, [Count(Count = 0)] UIntPtr dataSize, [Count(Computed = "dataSize")] Span<T0> pData) where T0 : unmanaged
+        public static unsafe Result GetRayTracingCaptureReplayShaderGroupHandles<T0>(this KhrRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint firstGroup, [Count(Count = 0)] uint groupCount, [Count(Count = 0)] nuint dataSize, [Count(Computed = "dataSize")] Span<T0> pData) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.GetRayTracingCaptureReplayShaderGroupHandles(device, pipeline, firstGroup, groupCount, dataSize, ref pData.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetRayTracingShaderGroupHandles<T0>(this KhrRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint firstGroup, [Count(Count = 0)] uint groupCount, [Count(Count = 0)] UIntPtr dataSize, [Count(Computed = "dataSize")] Span<T0> pData) where T0 : unmanaged
+        public static unsafe Result GetRayTracingShaderGroupHandles<T0>(this KhrRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint firstGroup, [Count(Count = 0)] uint groupCount, [Count(Count = 0)] nuint dataSize, [Count(Computed = "dataSize")] Span<T0> pData) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.GetRayTracingShaderGroupHandles(device, pipeline, firstGroup, groupCount, dataSize, ref pData.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result WriteAccelerationStructuresProperties<T0>(this KhrRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Computed = "accelerationStructureCount"), Flow(FlowDirection.In)] AccelerationStructureKHR* pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] UIntPtr dataSize, [Count(Computed = "dataSize")] Span<T0> pData, [Count(Count = 0)] UIntPtr stride) where T0 : unmanaged
+        public static unsafe Result WriteAccelerationStructuresProperties<T0>(this KhrRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Computed = "accelerationStructureCount"), Flow(FlowDirection.In)] AccelerationStructureKHR* pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Computed = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.WriteAccelerationStructuresProperties(device, accelerationStructureCount, pAccelerationStructures, queryType, dataSize, ref pData.GetPinnableReference(), stride);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result WriteAccelerationStructuresProperties(this KhrRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Computed = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] UIntPtr dataSize, [Count(Computed = "dataSize")] void* pData, [Count(Count = 0)] UIntPtr stride)
+        public static unsafe Result WriteAccelerationStructuresProperties(this KhrRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Computed = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Computed = "dataSize")] void* pData, [Count(Count = 0)] nuint stride)
         {
             // SpanOverloader
             return thisApi.WriteAccelerationStructuresProperties(device, accelerationStructureCount, in pAccelerationStructures.GetPinnableReference(), queryType, dataSize, pData, stride);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result WriteAccelerationStructuresProperties<T0>(this KhrRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Computed = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] UIntPtr dataSize, [Count(Computed = "dataSize")] Span<T0> pData, [Count(Count = 0)] UIntPtr stride) where T0 : unmanaged
+        public static unsafe Result WriteAccelerationStructuresProperties<T0>(this KhrRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Computed = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Computed = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.WriteAccelerationStructuresProperties(device, accelerationStructureCount, in pAccelerationStructures.GetPinnableReference(), queryType, dataSize, ref pData.GetPinnableReference(), stride);

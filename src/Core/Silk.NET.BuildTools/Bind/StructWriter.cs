@@ -409,10 +409,10 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine($"        ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);");
             sw.WriteLine();
             sw.WriteLine($"        public static {pfnName} From({delegateName} proc) => new {pfnName}(proc);");
-            sw.WriteLine($"        public void Dispose() => SilkMarshal.Free((IntPtr) _handle);");
+            sw.WriteLine($"        public void Dispose() => SilkMarshal.Free((nint) _handle);");
             sw.WriteLine();
-            sw.WriteLine($"        public static implicit operator IntPtr({pfnName} pfn) => (IntPtr) pfn.Handle;");
-            sw.WriteLine($"        public static explicit operator {pfnName}(IntPtr pfn)");
+            sw.WriteLine($"        public static implicit operator nint({pfnName} pfn) => (nint) pfn.Handle;");
+            sw.WriteLine($"        public static explicit operator {pfnName}(nint pfn)");
             sw.WriteLine($"            => new {pfnName}(({fnPtrSig}) pfn);");
             sw.WriteLine();
             sw.WriteLine($"        public static implicit operator {pfnName}({delegateName} proc)");

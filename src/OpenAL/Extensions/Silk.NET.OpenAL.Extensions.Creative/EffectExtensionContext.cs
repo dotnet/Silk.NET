@@ -25,7 +25,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetIntegerv")]
-        public unsafe partial void GetContextProperty(IntPtr device, EFXContextInteger param, int size, int* data);
+        public unsafe partial void GetContextProperty(nint device, EFXContextInteger param, int size, int* data);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetIntegerv")]
@@ -36,7 +36,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         /// </summary>
         /// <param name="device">The device that the context is on.</param>
         /// <returns>The major version.</returns>
-        public int GetEFXMajorVersion(IntPtr device)
+        public int GetEFXMajorVersion(nint device)
         {
             unsafe
             {
@@ -52,7 +52,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         /// </summary>
         /// <param name="device">The device that the context is on.</param>
         /// <returns>The minor version.</returns>
-        public int GetEFXMinorVersion(IntPtr device)
+        public int GetEFXMinorVersion(nint device)
         {
             unsafe
             {
@@ -68,7 +68,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         /// </summary>
         /// <param name="device">The device that the context is on.</param>
         /// <returns>The version.</returns>
-        public Version GetEFXVersion(IntPtr device)
+        public Version GetEFXVersion(nint device)
         {
             return new Version(GetEFXMajorVersion(device), GetEFXMinorVersion(device));
         }

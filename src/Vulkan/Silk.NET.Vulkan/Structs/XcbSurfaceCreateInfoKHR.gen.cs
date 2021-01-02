@@ -26,8 +26,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.XcbSurfaceCreateInfoKhr,
             void* pNext = null,
             uint? flags = null,
-            IntPtr* connection = null,
-            IntPtr? window = null
+            nint* connection = null,
+            nint? window = null
         ) : this()
         {
             if (sType is not null)
@@ -75,11 +75,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "xcb_connection_t*")]
         [NativeName("Type.Name", "xcb_connection_t")]
         [NativeName("Name", "connection")]
-        public IntPtr* Connection;
+        public nint* Connection;
 /// <summary></summary>
         [NativeName("Type", "xcb_window_t")]
         [NativeName("Type.Name", "xcb_window_t")]
         [NativeName("Name", "window")]
-        public IntPtr Window;
+        public nint Window;
     }
 }

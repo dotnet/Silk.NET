@@ -26,13 +26,13 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         public partial void DrawVkImage([Flow(FlowDirection.In)] ulong vkImage, [Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] float x0, [Flow(FlowDirection.In)] float y0, [Flow(FlowDirection.In)] float x1, [Flow(FlowDirection.In)] float y1, [Flow(FlowDirection.In)] float z, [Flow(FlowDirection.In)] float s0, [Flow(FlowDirection.In)] float t0, [Flow(FlowDirection.In)] float s1, [Flow(FlowDirection.In)] float t1);
 
         [NativeApi(EntryPoint = "glGetVkProcAddrNV")]
-        public unsafe partial IntPtr GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
+        public unsafe partial nint GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] byte* name);
 
         [NativeApi(EntryPoint = "glGetVkProcAddrNV")]
-        public partial IntPtr GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
+        public partial nint GetVkProcAddr([Count(Computed = "name"), Flow(FlowDirection.In)] in byte name);
 
         [NativeApi(EntryPoint = "glGetVkProcAddrNV")]
-        public partial IntPtr GetVkProcAddr([Flow(FlowDirection.In)] string name);
+        public partial nint GetVkProcAddr([Flow(FlowDirection.In)] string name);
 
         [NativeApi(EntryPoint = "glSignalVkFenceNV")]
         public partial void SignalVkFence([Flow(FlowDirection.In)] ulong vkFence);

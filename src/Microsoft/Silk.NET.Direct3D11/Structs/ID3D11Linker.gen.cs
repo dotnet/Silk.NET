@@ -222,7 +222,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
             return ret;
         }
 
@@ -236,7 +236,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
             return ret;
         }
 
@@ -250,7 +250,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
             }
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
             return ret;
         }
 
@@ -267,7 +267,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
             return ret;
         }
 
@@ -412,7 +412,7 @@ namespace Silk.NET.Direct3D11
             {
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
             }
             return ret;
         }
@@ -429,7 +429,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
             }
             return ret;
         }
@@ -446,7 +446,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
                 }
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
             }
             return ret;
         }
@@ -466,7 +466,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
             }
             return ret;
         }
@@ -478,7 +478,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -492,7 +492,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -506,7 +506,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -523,7 +523,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -537,7 +537,7 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -554,7 +554,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -571,7 +571,7 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -591,7 +591,7 @@ namespace Silk.NET.Direct3D11
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -603,8 +603,8 @@ namespace Silk.NET.Direct3D11
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -619,8 +619,8 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -635,8 +635,8 @@ namespace Silk.NET.Direct3D11
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
             }
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -654,8 +654,8 @@ namespace Silk.NET.Direct3D11
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -800,7 +800,7 @@ namespace Silk.NET.Direct3D11
             {
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
             }
             return ret;
         }
@@ -817,7 +817,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
             }
             return ret;
         }
@@ -834,7 +834,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
                 }
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
             }
             return ret;
         }
@@ -854,7 +854,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
             }
             return ret;
         }
@@ -1026,7 +1026,7 @@ namespace Silk.NET.Direct3D11
                 {
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
                 }
             }
             return ret;
@@ -1046,7 +1046,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
                     }
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
                 }
             }
             return ret;
@@ -1066,7 +1066,7 @@ namespace Silk.NET.Direct3D11
                     {
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
                     }
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
                 }
             }
             return ret;
@@ -1089,7 +1089,7 @@ namespace Silk.NET.Direct3D11
                             ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
                         }
                     }
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
                 }
             }
             return ret;
@@ -1104,7 +1104,7 @@ namespace Silk.NET.Direct3D11
             {
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             }
             return ret;
         }
@@ -1121,7 +1121,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             }
             return ret;
         }
@@ -1138,7 +1138,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
                 }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             }
             return ret;
         }
@@ -1158,7 +1158,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             }
             return ret;
         }
@@ -1175,7 +1175,7 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
                 }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             }
             return ret;
         }
@@ -1195,7 +1195,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             }
             return ret;
         }
@@ -1215,7 +1215,7 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             }
             return ret;
         }
@@ -1238,7 +1238,7 @@ namespace Silk.NET.Direct3D11
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             }
             return ret;
         }
@@ -1253,8 +1253,8 @@ namespace Silk.NET.Direct3D11
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             }
             return ret;
         }
@@ -1272,8 +1272,8 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBufferPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             }
             return ret;
         }
@@ -1291,8 +1291,8 @@ namespace Silk.NET.Direct3D11
                 {
                     ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBuffer);
                 }
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             }
             return ret;
         }
@@ -1313,8 +1313,8 @@ namespace Silk.NET.Direct3D11
                         ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlobPtr, ppErrorBufferPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)pTargetNamePtr);
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             }
             return ret;
         }

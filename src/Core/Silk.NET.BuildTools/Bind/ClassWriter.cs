@@ -108,6 +108,8 @@ namespace Silk.NET.BuildTools.Bind
                         .ToArray();
                     foreach (var function in allFunctions)
                     {
+                        AddInjectionAttributes(function, task);
+                        
                         if (!string.IsNullOrWhiteSpace(function.PreprocessorConditions))
                         {
                             sw.WriteLine($"#if {function.PreprocessorConditions}");
@@ -289,6 +291,8 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine($"        public const string ExtensionName = \"{key}\";");
                         foreach (var function in i.Functions)
                         {
+                            AddInjectionAttributes(function, task);
+
                             if (!string.IsNullOrWhiteSpace(function.PreprocessorConditions))
                             {
                                 sw.WriteLine($"#if {function.PreprocessorConditions}");
@@ -416,6 +420,27 @@ namespace Silk.NET.BuildTools.Bind
                 swOverloads?.WriteLine();
                 swOverloads?.Flush();
                 swOverloads?.Dispose();
+            }
+        }
+
+        private static void AddInjectionAttributes(Function function, BindState state)
+        {
+            foreach (var injection in state.Task.OutputOpts.Injections ?? Enumerable.Empty<Injection>())
+            {
+                if (injection.FunctionNativeNames.Contains(function.NativeName))
+                {
+                    function.Attributes.Add
+                    (
+                        new()
+                        {
+                            Name = "Inject", Arguments = new()
+                            {
+                                $"(SilkTouchStage) {(int) injection.Stage}",
+                                $"\"{injection.Code.Replace("\"", "\\\"").Replace("\\", "\\\\")}\""
+                            }
+                        }
+                    );
+                }
             }
         }
     }

@@ -74,9 +74,9 @@ namespace Silk.NET.Input.Extensions
 
         private unsafe void ReleaseUnmanagedResources()
         {
-            Marshal.FreeHGlobal((IntPtr) _axes);
-            Marshal.FreeHGlobal((IntPtr) _buttons);
-            Marshal.FreeHGlobal((IntPtr) _hats);
+            Marshal.FreeHGlobal((nint) _axes);
+            Marshal.FreeHGlobal((nint) _buttons);
+            Marshal.FreeHGlobal((nint) _hats);
         }
 
         ~JoystickState()

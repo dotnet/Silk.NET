@@ -33,10 +33,10 @@ namespace Silk.NET.Assimp
         ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnLogStreamCallback From(LogStreamCallback proc) => new PfnLogStreamCallback(proc);
-        public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
+        public void Dispose() => SilkMarshal.Free((nint) _handle);
 
-        public static implicit operator IntPtr(PfnLogStreamCallback pfn) => (IntPtr) pfn.Handle;
-        public static explicit operator PfnLogStreamCallback(IntPtr pfn)
+        public static implicit operator nint(PfnLogStreamCallback pfn) => (nint) pfn.Handle;
+        public static explicit operator PfnLogStreamCallback(nint pfn)
             => new PfnLogStreamCallback((delegate* unmanaged[Cdecl]<byte*, byte*, void>) pfn);
 
         public static implicit operator PfnLogStreamCallback(LogStreamCallback proc)

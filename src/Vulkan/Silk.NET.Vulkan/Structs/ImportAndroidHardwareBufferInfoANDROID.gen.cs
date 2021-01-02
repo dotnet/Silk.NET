@@ -25,7 +25,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.ImportAndroidHardwareBufferInfoAndroid,
             void* pNext = null,
-            IntPtr* buffer = null
+            nint* buffer = null
         ) : this()
         {
             if (sType is not null)
@@ -58,6 +58,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "AHardwareBuffer*")]
         [NativeName("Type.Name", "AHardwareBuffer")]
         [NativeName("Name", "buffer")]
-        public IntPtr* Buffer;
+        public nint* Buffer;
     }
 }

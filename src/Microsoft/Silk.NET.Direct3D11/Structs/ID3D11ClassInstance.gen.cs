@@ -411,7 +411,7 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var pInstanceNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pInstanceName);
             ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, uint*, void>)LpVtbl[9])(@this, pInstanceNamePtr, pBufferLength);
-            Marshal.FreeHGlobal((IntPtr)pInstanceNamePtr);
+            Marshal.FreeHGlobal((nint)pInstanceNamePtr);
         }
 
         /// <summary>To be documented.</summary>
@@ -423,7 +423,7 @@ namespace Silk.NET.Direct3D11
             {
                 ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, uint*, void>)LpVtbl[9])(@this, pInstanceNamePtr, pBufferLengthPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pInstanceNamePtr);
+            Marshal.FreeHGlobal((nint)pInstanceNamePtr);
         }
 
         /// <summary>To be documented.</summary>
@@ -472,7 +472,7 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var pTypeNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTypeName);
             ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, uint*, void>)LpVtbl[10])(@this, pTypeNamePtr, pBufferLength);
-            Marshal.FreeHGlobal((IntPtr)pTypeNamePtr);
+            Marshal.FreeHGlobal((nint)pTypeNamePtr);
         }
 
         /// <summary>To be documented.</summary>
@@ -484,7 +484,7 @@ namespace Silk.NET.Direct3D11
             {
                 ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, uint*, void>)LpVtbl[10])(@this, pTypeNamePtr, pBufferLengthPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pTypeNamePtr);
+            Marshal.FreeHGlobal((nint)pTypeNamePtr);
         }
 
     }

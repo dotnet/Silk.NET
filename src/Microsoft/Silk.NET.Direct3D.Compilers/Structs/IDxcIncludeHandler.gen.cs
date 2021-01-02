@@ -162,7 +162,7 @@ namespace Silk.NET.Direct3D.Compilers
                 int ret = default;
             var pFilenamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFilename);
             ret = ((delegate* unmanaged[Cdecl]<IDxcIncludeHandler*, byte*, IDxcBlob**, int>)LpVtbl[3])(@this, pFilenamePtr, ppIncludeSource);
-            Marshal.FreeHGlobal((IntPtr)pFilenamePtr);
+            Marshal.FreeHGlobal((nint)pFilenamePtr);
             return ret;
         }
 
@@ -176,7 +176,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcIncludeHandler*, byte*, IDxcBlob**, int>)LpVtbl[3])(@this, pFilenamePtr, ppIncludeSourcePtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pFilenamePtr);
+            Marshal.FreeHGlobal((nint)pFilenamePtr);
             return ret;
         }
 

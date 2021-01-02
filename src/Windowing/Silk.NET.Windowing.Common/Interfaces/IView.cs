@@ -17,7 +17,7 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// A handle to the underlying window.
         /// </summary>
-        IntPtr Handle { get; }
+        nint Handle { get; }
 
         /// <summary>
         /// Determines whether the underlying platform has requested the window to close.

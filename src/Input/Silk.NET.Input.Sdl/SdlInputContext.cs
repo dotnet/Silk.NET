@@ -16,7 +16,7 @@ namespace Silk.NET.Input.Sdl
     {
         private readonly IView _view;
         private readonly SdlView _sdlView; // to circumvent CS0122
-        private IntPtr _lastHandle;
+        private nint _lastHandle;
 
         public SdlInputContext(SdlView view)
         {
@@ -50,12 +50,12 @@ namespace Silk.NET.Input.Sdl
         public Dictionary<int, SdlJoystick> SdlJoysticks { get; }
 
         public SDL.Sdl Sdl => _sdlView.Sdl;
-        public IntPtr Handle => _view.Handle;
+        public nint Handle => _view.Handle;
         public event Action<IInputDevice, bool>? ConnectionChanged;
 
         private void Update(double obj)
         {
-            if (_view.Handle == IntPtr.Zero)
+            if (_view.Handle == 0)
             {
                 throw new InvalidOperationException("Input update event fired without an underlying window.");
             }

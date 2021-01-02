@@ -345,7 +345,7 @@ namespace Silk.NET.Direct3D12
                 int ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, int>)LpVtbl[6])(@this, NamePtr);
-            Marshal.FreeHGlobal((IntPtr)NamePtr);
+            Marshal.FreeHGlobal((nint)NamePtr);
             return ret;
         }
 
@@ -452,7 +452,7 @@ namespace Silk.NET.Direct3D12
                 int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pNamePtr, pPipeline);
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 
@@ -466,7 +466,7 @@ namespace Silk.NET.Direct3D12
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pNamePtr, pPipelinePtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 
@@ -717,7 +717,7 @@ namespace Silk.NET.Direct3D12
                 int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineState);
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 
@@ -731,7 +731,7 @@ namespace Silk.NET.Direct3D12
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 
@@ -745,7 +745,7 @@ namespace Silk.NET.Direct3D12
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
             }
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 
@@ -762,7 +762,7 @@ namespace Silk.NET.Direct3D12
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 
@@ -776,7 +776,7 @@ namespace Silk.NET.Direct3D12
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
             }
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 
@@ -793,7 +793,7 @@ namespace Silk.NET.Direct3D12
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 
@@ -810,7 +810,7 @@ namespace Silk.NET.Direct3D12
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 
@@ -830,7 +830,7 @@ namespace Silk.NET.Direct3D12
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 
@@ -1081,7 +1081,7 @@ namespace Silk.NET.Direct3D12
                 int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineState);
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 
@@ -1095,7 +1095,7 @@ namespace Silk.NET.Direct3D12
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineStatePtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 
@@ -1109,7 +1109,7 @@ namespace Silk.NET.Direct3D12
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineState);
             }
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 
@@ -1126,7 +1126,7 @@ namespace Silk.NET.Direct3D12
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riidPtr, ppPipelineStatePtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 
@@ -1140,7 +1140,7 @@ namespace Silk.NET.Direct3D12
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineState);
             }
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 
@@ -1157,7 +1157,7 @@ namespace Silk.NET.Direct3D12
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riid, ppPipelineStatePtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 
@@ -1174,7 +1174,7 @@ namespace Silk.NET.Direct3D12
                     ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDescPtr, riidPtr, ppPipelineState);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 
@@ -1194,7 +1194,7 @@ namespace Silk.NET.Direct3D12
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pNamePtr);
+            Marshal.FreeHGlobal((nint)pNamePtr);
             return ret;
         }
 

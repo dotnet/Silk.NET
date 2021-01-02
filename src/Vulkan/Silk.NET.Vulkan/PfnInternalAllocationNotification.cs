@@ -37,6 +37,6 @@ namespace Silk.NET.Vulkan
 
         public static explicit operator InternalAllocationNotification
             (PfnInternalAllocationNotification pfn) => SilkMarshal.PtrToDelegate<InternalAllocationNotification>
-            ((IntPtr) pfn.Handle);
+            ((nint) pfn.Handle);
     }
 }

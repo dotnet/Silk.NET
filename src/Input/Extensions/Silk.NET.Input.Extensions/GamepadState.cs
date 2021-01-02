@@ -60,9 +60,9 @@ namespace Silk.NET.Input.Extensions
 
         private unsafe void ReleaseUnmanagedResources()
         {
-            Marshal.FreeHGlobal((IntPtr) _buttons);
-            Marshal.FreeHGlobal((IntPtr) _thumbsticks);
-            Marshal.FreeHGlobal((IntPtr) _triggers);
+            Marshal.FreeHGlobal((nint) _buttons);
+            Marshal.FreeHGlobal((nint) _thumbsticks);
+            Marshal.FreeHGlobal((nint) _triggers);
         }
 
         ~GamepadState()

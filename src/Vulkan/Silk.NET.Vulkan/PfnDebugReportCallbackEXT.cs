@@ -19,7 +19,7 @@ namespace Silk.NET.Vulkan
                 void*, Bool32> ptr
         ) => _handle = ptr;
 
-        public static implicit operator IntPtr(PfnDebugReportCallbackEXT pfn) => (IntPtr) pfn.Handle;
+        public static implicit operator nint(PfnDebugReportCallbackEXT pfn) => (nint) pfn.Handle;
 
         public PfnDebugReportCallbackEXT
             (DebugReportCallbackFunctionEXT func) => _handle =
@@ -39,6 +39,6 @@ namespace Silk.NET.Vulkan
 
         public static explicit operator DebugReportCallbackFunctionEXT
             (PfnDebugReportCallbackEXT pfn) => SilkMarshal.PtrToDelegate<DebugReportCallbackFunctionEXT>
-            ((IntPtr) pfn.Handle);
+            ((nint) pfn.Handle);
     }
 }

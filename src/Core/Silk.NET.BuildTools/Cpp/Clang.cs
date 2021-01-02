@@ -724,7 +724,7 @@ namespace Silk.NET.BuildTools.Cpp
                     }
                     else
                     {
-                        ret = new Type {Name = "IntPtr"};
+                        ret = new Type {Name = "nint"};
                     }
                 }
                 else if (type is PointerType pointerType)
@@ -925,7 +925,7 @@ namespace Silk.NET.BuildTools.Cpp
                                         {
                                             Name = Naming.Translate(Naming.TrimName(x.Name, task), task.FunctionPrefix),
                                             NativeName = x.Name,
-                                            Value = x.InitVal.ToString("X")
+                                            Value = "0x" + x.InitVal.ToString("X")
                                         }
                                     )
                                     .ToList(),

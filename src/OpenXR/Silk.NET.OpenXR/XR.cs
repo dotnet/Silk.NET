@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -14,7 +15,13 @@ namespace Silk.NET.OpenXR
 {
     public partial class XR
     {
-        public Instance? CurrentInstance { get; set; }
+        private Instance? _currentInstance;
+        private ConcurrentDictionary<Instance?, IVTable> _vTables = new();
+        public Instance? CurrentInstance
+        {
+            get => _currentInstance;
+            set => SwapVTable(_vTables.GetOrAdd(_currentInstance = value, _ => XrCreateVTable()));
+        }
         public static XR GetApi()
         {
             return new XR(CreateDefaultContext(new OpenXRLibraryNameContainer().GetLibraryName()));
@@ -64,8 +71,8 @@ namespace Silk.NET.OpenXR
         {
             // For a detailed explanation of the logic see Silk.Net.Vulkan.Vk.IsDeviceExtensionPresent
             layer ??= string.Empty;
-            var layer_sep = layer + '\0';
-            var fullKey = layer_sep + extension;
+            var layerSep = layer + '\0';
+            var fullKey = layerSep + extension;
             var result = false;
 
             _cachedInstanceExtensionsLock.EnterUpgradeableReadLock();
@@ -88,7 +95,6 @@ namespace Silk.NET.OpenXR
                     mem = GlobalMemory.Allocate((int) extensionCount * sizeof(ExtensionProperties));
                     var exts = (ExtensionProperties*) Unsafe.AsPointer(ref mem.GetPinnableReference());
 
-                    // TODO Is this necessary?
                     for (int i = 0; i < extensionCount; i++)
                     {
                         exts[i] = new ExtensionProperties(StructureType.TypeExtensionProperties);
@@ -97,7 +103,7 @@ namespace Silk.NET.OpenXR
                     EnumerateInstanceExtensionProperties((byte*) layerName, extensionCount, &extensionCount, exts);
                     for (var i = 0; i < extensionCount; i++)
                     {
-                        var newKey = layer_sep + Marshal.PtrToStringAnsi((IntPtr) exts[i].ExtensionName);
+                        var newKey = layerSep + Marshal.PtrToStringAnsi((nint) exts[i].ExtensionName);
                         _cachedInstanceExtensions.Add(newKey);
                         if (!result && string.Equals(newKey, fullKey))
                         {
@@ -116,6 +122,15 @@ namespace Silk.NET.OpenXR
             _cachedInstanceExtensionsLock.ExitUpgradeableReadLock();
             return result;
         }
+
+        private IVTable XrCreateVTable()
+        {
+            var ret = CreateVTable();
+            ret.Initialize(Context, CoreGetSlotCount());
+            return ret;
+        }
+
+        protected override void PostInit() => _vTables.TryAdd(null, CurrentVTable);
     }
 }
 

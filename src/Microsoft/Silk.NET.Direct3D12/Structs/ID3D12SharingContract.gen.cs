@@ -108,19 +108,19 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void Present(ID3D12Resource* pResource, uint Subresource, IntPtr window)
+        public readonly unsafe void Present(ID3D12Resource* pResource, uint Subresource, nint window)
         {
             var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, ID3D12Resource*, uint, IntPtr, void>)LpVtbl[3])(@this, pResource, Subresource, window);
+            ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, ID3D12Resource*, uint, nint, void>)LpVtbl[3])(@this, pResource, Subresource, window);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void Present(ref ID3D12Resource pResource, uint Subresource, IntPtr window)
+        public readonly void Present(ref ID3D12Resource pResource, uint Subresource, nint window)
         {
             var @this = (ID3D12SharingContract*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D12Resource* pResourcePtr = &pResource)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, ID3D12Resource*, uint, IntPtr, void>)LpVtbl[3])(@this, pResourcePtr, Subresource, window);
+                ((delegate* unmanaged[Cdecl]<ID3D12SharingContract*, ID3D12Resource*, uint, nint, void>)LpVtbl[3])(@this, pResourcePtr, Subresource, window);
             }
         }
 

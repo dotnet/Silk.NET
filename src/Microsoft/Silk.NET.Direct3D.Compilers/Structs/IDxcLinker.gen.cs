@@ -162,7 +162,7 @@ namespace Silk.NET.Direct3D.Compilers
                 int ret = default;
             var pLibNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pLibName);
             ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibNamePtr, pLib);
-            Marshal.FreeHGlobal((IntPtr)pLibNamePtr);
+            Marshal.FreeHGlobal((nint)pLibNamePtr);
             return ret;
         }
 
@@ -176,7 +176,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibNamePtr, pLibPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pLibNamePtr);
+            Marshal.FreeHGlobal((nint)pLibNamePtr);
             return ret;
         }
 
@@ -427,7 +427,7 @@ namespace Silk.NET.Direct3D.Compilers
                 int ret = default;
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
             ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
             return ret;
         }
 
@@ -441,7 +441,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
             return ret;
         }
 
@@ -455,7 +455,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
             }
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
             return ret;
         }
 
@@ -472,7 +472,7 @@ namespace Silk.NET.Direct3D.Compilers
                     ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
             return ret;
         }
 
@@ -486,7 +486,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
             }
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
             return ret;
         }
 
@@ -503,7 +503,7 @@ namespace Silk.NET.Direct3D.Compilers
                     ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
             return ret;
         }
 
@@ -520,7 +520,7 @@ namespace Silk.NET.Direct3D.Compilers
                     ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
             return ret;
         }
 
@@ -540,7 +540,7 @@ namespace Silk.NET.Direct3D.Compilers
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
             return ret;
         }
 
@@ -841,7 +841,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
             }
             return ret;
         }
@@ -858,7 +858,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
                 }
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
             }
             return ret;
         }
@@ -875,7 +875,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
                 }
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
             }
             return ret;
         }
@@ -895,7 +895,7 @@ namespace Silk.NET.Direct3D.Compilers
                         ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
             }
             return ret;
         }
@@ -912,7 +912,7 @@ namespace Silk.NET.Direct3D.Compilers
                 {
                     ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
                 }
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
             }
             return ret;
         }
@@ -932,7 +932,7 @@ namespace Silk.NET.Direct3D.Compilers
                         ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
             }
             return ret;
         }
@@ -952,7 +952,7 @@ namespace Silk.NET.Direct3D.Compilers
                         ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
             }
             return ret;
         }
@@ -975,7 +975,7 @@ namespace Silk.NET.Direct3D.Compilers
                         }
                     }
                 }
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
             }
             return ret;
         }
@@ -987,7 +987,7 @@ namespace Silk.NET.Direct3D.Compilers
                 int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1001,7 +1001,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResultPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1015,7 +1015,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1032,7 +1032,7 @@ namespace Silk.NET.Direct3D.Compilers
                     ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1046,7 +1046,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1063,7 +1063,7 @@ namespace Silk.NET.Direct3D.Compilers
                     ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1080,7 +1080,7 @@ namespace Silk.NET.Direct3D.Compilers
                     ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1100,7 +1100,7 @@ namespace Silk.NET.Direct3D.Compilers
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1114,7 +1114,7 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1131,7 +1131,7 @@ namespace Silk.NET.Direct3D.Compilers
                     ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1148,7 +1148,7 @@ namespace Silk.NET.Direct3D.Compilers
                     ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1168,7 +1168,7 @@ namespace Silk.NET.Direct3D.Compilers
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1185,7 +1185,7 @@ namespace Silk.NET.Direct3D.Compilers
                     ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1205,7 +1205,7 @@ namespace Silk.NET.Direct3D.Compilers
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1225,7 +1225,7 @@ namespace Silk.NET.Direct3D.Compilers
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1248,7 +1248,7 @@ namespace Silk.NET.Direct3D.Compilers
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1260,8 +1260,8 @@ namespace Silk.NET.Direct3D.Compilers
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
             ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1276,8 +1276,8 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResultPtr);
             }
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1292,8 +1292,8 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
             }
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1311,8 +1311,8 @@ namespace Silk.NET.Direct3D.Compilers
                     ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArgumentsPtr, argCount, ppResultPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1327,8 +1327,8 @@ namespace Silk.NET.Direct3D.Compilers
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
             }
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1346,8 +1346,8 @@ namespace Silk.NET.Direct3D.Compilers
                     ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArguments, argCount, ppResultPtr);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1365,8 +1365,8 @@ namespace Silk.NET.Direct3D.Compilers
                     ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNamesPtr, libCount, pArgumentsPtr, argCount, ppResult);
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 
@@ -1387,8 +1387,8 @@ namespace Silk.NET.Direct3D.Compilers
                     }
                 }
             }
-            Marshal.FreeHGlobal((IntPtr)pTargetProfilePtr);
-            Marshal.FreeHGlobal((IntPtr)pEntryNamePtr);
+            Marshal.FreeHGlobal((nint)pTargetProfilePtr);
+            Marshal.FreeHGlobal((nint)pEntryNamePtr);
             return ret;
         }
 

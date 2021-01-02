@@ -25,7 +25,7 @@ namespace Silk.NET.Core.Loader
         /// </summary>
         /// <param name="name">The name of the library to open.</param>
         /// <returns>The operating system handle for the shared library.</returns>
-        public IntPtr LoadNativeLibrary(string name)
+        public nint LoadNativeLibrary(string name)
         {
             var success = TryLoadNativeLibrary(name, out var result);
 
@@ -49,7 +49,7 @@ namespace Silk.NET.Core.Loader
         /// <param name="name">The name of the library to open.</param>
         /// <param name="result">A pointer to the loaded library.</param>
         /// <returns>The operating system handle for the shared library.</returns>
-        public bool TryLoadNativeLibrary(string name, out IntPtr result)
+        public bool TryLoadNativeLibrary(string name, out nint result)
         {
             var success = TryLoadNativeLibrary(new[] {name}, PathResolver.Default, out result);
 
@@ -63,7 +63,7 @@ namespace Silk.NET.Core.Loader
         ///     An ordered list of names. Each name is tried in turn, until the library is successfully loaded.
         /// </param>
         /// <returns>The operating system handle for the shared library.</returns>
-        public IntPtr LoadNativeLibrary(string[] names)
+        public nint LoadNativeLibrary(string[] names)
         {
             var success = TryLoadNativeLibrary(names, out var result);
 
@@ -90,7 +90,7 @@ namespace Silk.NET.Core.Loader
         /// </param>
         /// <param name="result">A pointer to the loaded library.</param>
         /// <returns>The operating system handle for the shared library.</returns>
-        public bool TryLoadNativeLibrary(string[] names, out IntPtr result)
+        public bool TryLoadNativeLibrary(string[] names, out nint result)
         {
             var success = TryLoadNativeLibrary(names, PathResolver.Default, out var libPtr);
             result = libPtr;
@@ -104,7 +104,7 @@ namespace Silk.NET.Core.Loader
         /// <param name="name">The name of the library to open.</param>
         /// <param name="pathResolver">The path resolver to use.</param>
         /// <returns>The operating system handle for the shared library.</returns>
-        public IntPtr LoadNativeLibrary(string name, PathResolver pathResolver)
+        public nint LoadNativeLibrary(string name, PathResolver pathResolver)
         {
             if (string.IsNullOrEmpty(name))
             {
@@ -135,7 +135,7 @@ namespace Silk.NET.Core.Loader
         /// <param name="pathResolver">The path resolver to use.</param>
         /// <param name="result">A pointer to the loaded library.</param>
         /// <returns>The operating system handle for the shared library.</returns>
-        public bool TryLoadNativeLibrary(string name, PathResolver pathResolver, out IntPtr result)
+        public bool TryLoadNativeLibrary(string name, PathResolver pathResolver, out nint result)
         {
             var success = TryLoadNativeLibrary(new[] {name}, pathResolver, out var libPtr);
             result = libPtr;
@@ -151,7 +151,7 @@ namespace Silk.NET.Core.Loader
         /// </param>
         /// <param name="pathResolver">The path resolver to use.</param>
         /// <returns>The operating system handle for the shared library.</returns>
-        public IntPtr LoadNativeLibrary(string[] names, PathResolver pathResolver)
+        public nint LoadNativeLibrary(string[] names, PathResolver pathResolver)
         {
             if (names == null || names.Length == 0)
             {
@@ -179,9 +179,9 @@ namespace Silk.NET.Core.Loader
         /// <param name="pathResolver">The path resolver to use.</param>
         /// <param name="result">A pointer to the loaded library.</param>
         /// <returns>The operating system handle for the shared library.</returns>
-        public bool TryLoadNativeLibrary(string[] names, PathResolver pathResolver, out IntPtr result)
+        public bool TryLoadNativeLibrary(string[] names, PathResolver pathResolver, out nint result)
         {
-            result = IntPtr.Zero;
+            result = 0;
 
             if (names == null || names.Length == 0)
             {
@@ -191,16 +191,16 @@ namespace Silk.NET.Core.Loader
             foreach (var name in names)
             {
                 result = LoadWithResolver(name, pathResolver);
-                if (result != IntPtr.Zero)
+                if (result != 0)
                 {
                     break;
                 }
             }
 
-            return result != IntPtr.Zero;
+            return result != 0;
         }
 
-        private IntPtr LoadWithResolver(string name, PathResolver pathResolver)
+        private nint LoadWithResolver(string name, PathResolver pathResolver)
         {
             if (name == "__Internal")
             {
@@ -217,7 +217,7 @@ namespace Silk.NET.Core.Loader
                 try
                 {
                     var ret = CoreLoadNativeLibrary(loadTarget);
-                    if (ret != IntPtr.Zero)
+                    if (ret != 0)
                     {
                         return ret;
                     }
@@ -228,7 +228,7 @@ namespace Silk.NET.Core.Loader
                 }
             }
 
-            return IntPtr.Zero;
+            return 0;
         }
 
         /// <summary>
@@ -237,7 +237,7 @@ namespace Silk.NET.Core.Loader
         /// <param name="handle">The operating system handle of the opened shared library.</param>
         /// <param name="functionName">The name of the exported function to load.</param>
         /// <returns>A pointer to the loaded function.</returns>
-        public IntPtr LoadFunctionPointer(IntPtr handle, string functionName)
+        public nint LoadFunctionPointer(nint handle, string functionName)
         {
             if (string.IsNullOrEmpty(functionName))
             {
@@ -246,7 +246,7 @@ namespace Silk.NET.Core.Loader
             }
 
             var ret = CoreLoadFunctionPointer(handle, functionName);
-            if (ret == IntPtr.Zero)
+            if (ret == 0)
             {
                 ThrowSymbolLoading(functionName);
                 return default;
@@ -264,9 +264,9 @@ namespace Silk.NET.Core.Loader
         ///     Frees the library represented by the given operating system handle.
         /// </summary>
         /// <param name="handle">The handle of the open shared library.</param>
-        public void FreeNativeLibrary(IntPtr handle)
+        public void FreeNativeLibrary(nint handle)
         {
-            if (handle == IntPtr.Zero)
+            if (handle == 0)
             {
                 throw new ArgumentException("Parameter must not be zero.", nameof(handle));
             }
@@ -282,13 +282,13 @@ namespace Silk.NET.Core.Loader
         ///     The operating system handle for the shared library.
         ///     If the library cannot be loaded, IntPtr.Zero should be returned.
         /// </returns>
-        protected abstract IntPtr CoreLoadNativeLibrary(string name);
+        protected abstract nint CoreLoadNativeLibrary(string name);
 
         /// <summary>
         ///     Frees the library represented by the given operating system handle.
         /// </summary>
         /// <param name="handle">The handle of the open shared library. This must not be zero.</param>
-        protected abstract void CoreFreeNativeLibrary(IntPtr handle);
+        protected abstract void CoreFreeNativeLibrary(nint handle);
 
         /// <summary>
         ///     Loads a function pointer out of the given library by name.
@@ -296,7 +296,7 @@ namespace Silk.NET.Core.Loader
         /// <param name="handle">The operating system handle of the opened shared library. This must not be zero.</param>
         /// <param name="functionName">The name of the exported function to load. This must not be null or empty.</param>
         /// <returns>A pointer to the loaded function.</returns>
-        protected abstract IntPtr CoreLoadFunctionPointer(IntPtr handle, string functionName);
+        protected abstract nint CoreLoadFunctionPointer(nint handle, string functionName);
 
         /// <summary>
         ///     Returns a default library loader for the running operating system.
@@ -337,49 +337,49 @@ namespace Silk.NET.Core.Loader
 #if NETCOREAPP3_1 || NET5_0
         private class NetNextNativeLibraryLoader : LibraryLoader
         {
-            protected override IntPtr CoreLoadNativeLibrary(string name)
+            protected override nint CoreLoadNativeLibrary(string name)
             {
                 if (NativeLibrary3.TryLoad(name, out var lib))
                 {
                     return lib;
                 }
                 
-                return IntPtr.Zero;
+                return 0;
             }
 
-            protected override void CoreFreeNativeLibrary(IntPtr handle)
+            protected override void CoreFreeNativeLibrary(nint handle)
             {
-                if (handle != IntPtr.Zero)
+                if (handle != 0)
                 {
                     NativeLibrary3.Free(handle);
                 }
             }
 
-            protected override IntPtr CoreLoadFunctionPointer(IntPtr handle, string functionName)
+            protected override nint CoreLoadFunctionPointer(nint handle, string functionName)
             {
                 if (NativeLibrary3.TryGetExport(handle, functionName, out var ptr))
                 {
                     return ptr;
                 }
                 
-                return IntPtr.Zero;
+                return 0;
             }
         }
 #endif
 
         private class BsdLibraryLoader : LibraryLoader
         {
-            protected override void CoreFreeNativeLibrary(IntPtr handle)
+            protected override void CoreFreeNativeLibrary(nint handle)
             {
                 Libc.dlclose(handle);
             }
 
-            protected override IntPtr CoreLoadFunctionPointer(IntPtr handle, string functionName)
+            protected override nint CoreLoadFunctionPointer(nint handle, string functionName)
             {
                 return Libc.dlsym(handle, functionName);
             }
 
-            protected override IntPtr CoreLoadNativeLibrary(string name)
+            protected override nint CoreLoadNativeLibrary(string name)
             {
                 return Libc.dlopen(name, Libc.RtldNow);
             }
@@ -387,17 +387,17 @@ namespace Silk.NET.Core.Loader
 
         private class Win32LibraryLoader : LibraryLoader
         {
-            protected override void CoreFreeNativeLibrary(IntPtr handle)
+            protected override void CoreFreeNativeLibrary(nint handle)
             {
                 Kernel32.FreeLibrary(handle);
             }
 
-            protected override IntPtr CoreLoadFunctionPointer(IntPtr handle, string functionName)
+            protected override nint CoreLoadFunctionPointer(nint handle, string functionName)
             {
                 return Kernel32.GetProcAddress(handle, functionName);
             }
 
-            protected override IntPtr CoreLoadNativeLibrary(string name)
+            protected override nint CoreLoadNativeLibrary(string name)
             {
                 return Kernel32.LoadLibrary(name);
             }
@@ -405,17 +405,17 @@ namespace Silk.NET.Core.Loader
 
         private class UnixLibraryLoader : LibraryLoader
         {
-            protected override void CoreFreeNativeLibrary(IntPtr handle)
+            protected override void CoreFreeNativeLibrary(nint handle)
             {
                 Libdl.dlclose(handle);
             }
 
-            protected override IntPtr CoreLoadFunctionPointer(IntPtr handle, string functionName)
+            protected override nint CoreLoadFunctionPointer(nint handle, string functionName)
             {
                 return Libdl.dlsym(handle, functionName);
             }
 
-            protected override IntPtr CoreLoadNativeLibrary(string name)
+            protected override nint CoreLoadNativeLibrary(string name)
             {
                 return Libdl.dlopen(name, Libdl.RtldNow);
             }

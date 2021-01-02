@@ -6258,37 +6258,37 @@ namespace Silk.NET.OpenGLES
             thisApi.GetSamplerParameter(sampler, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
+        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
         {
             // SpanOverloader
             thisApi.GetSync(sync, pname, count, length, out values.GetPinnableReference());
         }
 
-        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values)
+        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values)
         {
             // SpanOverloader
             thisApi.GetSync(sync, pname, count, out length.GetPinnableReference(), values);
         }
 
-        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
+        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
         {
             // SpanOverloader
             thisApi.GetSync(sync, pname, count, out length.GetPinnableReference(), out values.GetPinnableReference());
         }
 
-        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
+        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
         {
             // SpanOverloader
             thisApi.GetSync(sync, pname, count, length, out values.GetPinnableReference());
         }
 
-        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values)
+        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values)
         {
             // SpanOverloader
             thisApi.GetSync(sync, pname, count, out length.GetPinnableReference(), values);
         }
 
-        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
+        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
         {
             // SpanOverloader
             thisApi.GetSync(sync, pname, count, out length.GetPinnableReference(), out values.GetPinnableReference());
@@ -6882,37 +6882,37 @@ namespace Silk.NET.OpenGLES
             thisApi.BindAttribLocation(program, index, in name.GetPinnableReference());
         }
 
-        public static unsafe void BufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged
+        public static unsafe void BufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferData(target, size, in data.GetPinnableReference(), usage);
         }
 
-        public static unsafe void BufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
+        public static unsafe void BufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferData(target, size, in data.GetPinnableReference(), usage);
         }
 
-        public static unsafe void BufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged
+        public static unsafe void BufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferData(target, size, in data.GetPinnableReference(), usage);
         }
 
-        public static unsafe void BufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
+        public static unsafe void BufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferData(target, size, in data.GetPinnableReference(), usage);
         }
 
-        public static unsafe void BufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void BufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferSubData(target, offset, size, in data.GetPinnableReference());
         }
 
-        public static unsafe void BufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void BufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferSubData(target, offset, size, in data.GetPinnableReference());

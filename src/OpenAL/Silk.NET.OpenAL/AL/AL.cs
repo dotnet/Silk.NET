@@ -32,7 +32,7 @@ namespace Silk.NET.OpenAL
         public SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
 
         /// <inheritdoc />
-        public partial IntPtr GetProcAddress(string name);
+        public partial nint GetProcAddress(string name);
 
         /// <inheritdoc />
         public partial int GetEnumValue(string name);

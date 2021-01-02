@@ -23,28 +23,28 @@ namespace Silk.NET.OpenCL.Extensions.ARM
     {
         public const string ExtensionName = "ARM_import_memory";
         [NativeApi(EntryPoint = "clImportMemoryARM")]
-        public unsafe partial IntPtr ImportMemory([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] IntPtr* properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial nint ImportMemory([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clImportMemoryARM")]
-        public unsafe partial IntPtr ImportMemory([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] IntPtr* properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial nint ImportMemory([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clImportMemoryARM")]
-        public unsafe partial IntPtr ImportMemory<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] IntPtr* properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+        public unsafe partial nint ImportMemory<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clImportMemoryARM")]
-        public unsafe partial IntPtr ImportMemory<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] IntPtr* properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+        public unsafe partial nint ImportMemory<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clImportMemoryARM")]
-        public unsafe partial IntPtr ImportMemory([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] in IntPtr properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial nint ImportMemory([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clImportMemoryARM")]
-        public unsafe partial IntPtr ImportMemory([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] in IntPtr properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial nint ImportMemory([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clImportMemoryARM")]
-        public unsafe partial IntPtr ImportMemory<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] in IntPtr properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+        public unsafe partial nint ImportMemory<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clImportMemoryARM")]
-        public partial IntPtr ImportMemory<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] in IntPtr properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+        public partial nint ImportMemory<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         public ArmImportMemory(INativeContext ctx)
             : base(ctx)

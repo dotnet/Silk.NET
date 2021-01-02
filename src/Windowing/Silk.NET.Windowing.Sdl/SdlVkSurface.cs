@@ -42,12 +42,12 @@ namespace Silk.NET.Windowing.Sdl
                 {
                     if (_requiredExtensions == null)
                     {
-                        _requiredExtensions = (byte**) Marshal.AllocHGlobal((IntPtr) (sizeof(byte*) * count));
+                        _requiredExtensions = (byte**) Marshal.AllocHGlobal((nint) (sizeof(byte*) * count));
                     }
                     else
                     {
                         _requiredExtensions = (byte**) Marshal.ReAllocHGlobal
-                            ((IntPtr) _requiredExtensions, (IntPtr) (sizeof(byte*) * count));
+                            ((nint) _requiredExtensions, (nint) (sizeof(byte*) * count));
                     }
 
                     if (_view.Sdl.VulkanGetInstanceExtensions

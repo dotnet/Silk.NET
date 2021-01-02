@@ -32,10 +32,11 @@ namespace Silk.NET.SilkTouch
 
         public static string Name(string suggestion)
         {
-            return ToAlphabetString(_c++);
-#if DEBUG
+            // BUG the name shortener for some reason is causing duplicate member bugs. such as:
+            // GL.3491994.gen.cs(107452,35): Error CS0111 : Type 'GL.TXDY' already defines a member called 'VNWU' with
+            //                                              the same parameter types
+            // return ToAlphabetString(_c++);
             return suggestion;
-#endif
         }
     }
 }

@@ -23,16 +23,16 @@ namespace Silk.NET.OpenGL.Extensions.ARB
     {
         public const string ExtensionName = "ARB_cl_event";
         [NativeApi(EntryPoint = "glCreateSyncFromCLeventARB")]
-        public unsafe partial IntPtr CreateSyncFromCLevent([Flow(FlowDirection.Out)] IntPtr* context, [Flow(FlowDirection.Out)] IntPtr* @event, [Flow(FlowDirection.In)] uint flags);
+        public unsafe partial nint CreateSyncFromCLevent([Flow(FlowDirection.Out)] nint* context, [Flow(FlowDirection.Out)] nint* @event, [Flow(FlowDirection.In)] uint flags);
 
         [NativeApi(EntryPoint = "glCreateSyncFromCLeventARB")]
-        public unsafe partial IntPtr CreateSyncFromCLevent([Flow(FlowDirection.Out)] IntPtr* context, [Flow(FlowDirection.Out)] out IntPtr @event, [Flow(FlowDirection.In)] uint flags);
+        public unsafe partial nint CreateSyncFromCLevent([Flow(FlowDirection.Out)] nint* context, [Flow(FlowDirection.Out)] out nint @event, [Flow(FlowDirection.In)] uint flags);
 
         [NativeApi(EntryPoint = "glCreateSyncFromCLeventARB")]
-        public unsafe partial IntPtr CreateSyncFromCLevent([Flow(FlowDirection.Out)] out IntPtr context, [Flow(FlowDirection.Out)] IntPtr* @event, [Flow(FlowDirection.In)] uint flags);
+        public unsafe partial nint CreateSyncFromCLevent([Flow(FlowDirection.Out)] out nint context, [Flow(FlowDirection.Out)] nint* @event, [Flow(FlowDirection.In)] uint flags);
 
         [NativeApi(EntryPoint = "glCreateSyncFromCLeventARB")]
-        public partial IntPtr CreateSyncFromCLevent([Flow(FlowDirection.Out)] out IntPtr context, [Flow(FlowDirection.Out)] out IntPtr @event, [Flow(FlowDirection.In)] uint flags);
+        public partial nint CreateSyncFromCLevent([Flow(FlowDirection.Out)] out nint context, [Flow(FlowDirection.Out)] out nint @event, [Flow(FlowDirection.In)] uint flags);
 
         public ArbClEvent(INativeContext ctx)
             : base(ctx)

@@ -34,7 +34,7 @@ namespace Silk.NET.Input.Extensions
                 }
             }
 
-            _keys = (Key*) Marshal.ReAllocHGlobal((IntPtr) _pressedKeys, (IntPtr) (_pressedKeyCount * sizeof(Key)));
+            _keys = (Key*) Marshal.ReAllocHGlobal((nint) _pressedKeys, (nint) (_pressedKeyCount * sizeof(Key)));
         }
 
         public string Name { get; }
@@ -74,8 +74,8 @@ namespace Silk.NET.Input.Extensions
 
         private unsafe void Free()
         {
-            Marshal.FreeHGlobal((IntPtr) _keys);
-            Marshal.FreeHGlobal((IntPtr) _pressedKeys);
+            Marshal.FreeHGlobal((nint) _keys);
+            Marshal.FreeHGlobal((nint) _pressedKeys);
         }
 
         ~KeyboardState()

@@ -33,10 +33,10 @@ namespace Silk.NET.SDL
         ) => _handle = (void*) SilkMarshal.DelegateToPtr(proc);
 
         public static PfnSDLCurrentEndThread From(SDLCurrentEndThread proc) => new PfnSDLCurrentEndThread(proc);
-        public void Dispose() => SilkMarshal.Free((IntPtr) _handle);
+        public void Dispose() => SilkMarshal.Free((nint) _handle);
 
-        public static implicit operator IntPtr(PfnSDLCurrentEndThread pfn) => (IntPtr) pfn.Handle;
-        public static explicit operator PfnSDLCurrentEndThread(IntPtr pfn)
+        public static implicit operator nint(PfnSDLCurrentEndThread pfn) => (nint) pfn.Handle;
+        public static explicit operator PfnSDLCurrentEndThread(nint pfn)
             => new PfnSDLCurrentEndThread((delegate* unmanaged[Cdecl]<uint, void>) pfn);
 
         public static implicit operator PfnSDLCurrentEndThread(SDLCurrentEndThread proc)

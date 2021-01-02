@@ -8813,7 +8813,7 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var pLabelPtr = (byte*) Marshal.StringToHGlobalAnsi(pLabel);
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, byte*, int, void>)LpVtbl[141])(@this, pLabelPtr, Data);
-            Marshal.FreeHGlobal((IntPtr)pLabelPtr);
+            Marshal.FreeHGlobal((nint)pLabelPtr);
         }
 
         /// <summary>To be documented.</summary>
@@ -8839,7 +8839,7 @@ namespace Silk.NET.Direct3D11
             var @this = (ID3D11DeviceContext2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var pLabelPtr = (byte*) Marshal.StringToHGlobalAnsi(pLabel);
             ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext2*, byte*, int, void>)LpVtbl[142])(@this, pLabelPtr, Data);
-            Marshal.FreeHGlobal((IntPtr)pLabelPtr);
+            Marshal.FreeHGlobal((nint)pLabelPtr);
         }
 
         /// <summary>To be documented.</summary>

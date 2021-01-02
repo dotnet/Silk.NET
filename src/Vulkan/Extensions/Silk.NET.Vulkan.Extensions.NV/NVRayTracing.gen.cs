@@ -132,11 +132,11 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetAccelerationStructureHandleNV")]
-        public unsafe partial Result GetAccelerationStructureHandle([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureKHR accelerationStructure, [Count(Count = 0)] UIntPtr dataSize, [Count(Computed = "dataSize")] void* pData);
+        public unsafe partial Result GetAccelerationStructureHandle([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureKHR accelerationStructure, [Count(Count = 0)] nuint dataSize, [Count(Computed = "dataSize")] void* pData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetAccelerationStructureHandleNV")]
-        public partial Result GetAccelerationStructureHandle<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureKHR accelerationStructure, [Count(Count = 0)] UIntPtr dataSize, [Count(Computed = "dataSize")] ref T0 pData) where T0 : unmanaged;
+        public partial Result GetAccelerationStructureHandle<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureKHR accelerationStructure, [Count(Count = 0)] nuint dataSize, [Count(Computed = "dataSize")] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetAccelerationStructureMemoryRequirementsNV")]
@@ -156,11 +156,11 @@ namespace Silk.NET.Vulkan.Extensions.NV
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetRayTracingShaderGroupHandlesNV")]
-        public unsafe partial Result GetRayTracingShaderGroupHandles([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint firstGroup, [Count(Count = 0)] uint groupCount, [Count(Count = 0)] UIntPtr dataSize, [Count(Computed = "dataSize")] void* pData);
+        public unsafe partial Result GetRayTracingShaderGroupHandles([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint firstGroup, [Count(Count = 0)] uint groupCount, [Count(Count = 0)] nuint dataSize, [Count(Computed = "dataSize")] void* pData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetRayTracingShaderGroupHandlesNV")]
-        public partial Result GetRayTracingShaderGroupHandles<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint firstGroup, [Count(Count = 0)] uint groupCount, [Count(Count = 0)] UIntPtr dataSize, [Count(Computed = "dataSize")] ref T0 pData) where T0 : unmanaged;
+        public partial Result GetRayTracingShaderGroupHandles<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint firstGroup, [Count(Count = 0)] uint groupCount, [Count(Count = 0)] nuint dataSize, [Count(Computed = "dataSize")] ref T0 pData) where T0 : unmanaged;
 
         public NVRayTracing(INativeContext ctx)
             : base(ctx)

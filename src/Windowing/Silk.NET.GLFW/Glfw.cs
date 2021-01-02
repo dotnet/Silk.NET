@@ -399,7 +399,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public unsafe partial void SetMonitorUserPointer(Monitor* monitor, IntPtr pointer);
+        public unsafe partial void SetMonitorUserPointer(Monitor* monitor, nint pointer);
 
         /// <summary>
         /// <para>
@@ -420,7 +420,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public unsafe partial IntPtr GetMonitorUserPointer(Monitor* monitor);
+        public unsafe partial nint GetMonitorUserPointer(Monitor* monitor);
 
         /// <summary>
         /// <para>
@@ -1494,7 +1494,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public partial void SetJoystickUserPointer(int jid, IntPtr ptr);
+        public partial void SetJoystickUserPointer(int jid, nint ptr);
 
         /// <summary>
         /// <para>
@@ -1515,7 +1515,7 @@ namespace Silk.NET.GLFW
         /// Possible errors include <see cref="ErrorCode.NotInitialized" />.
         /// </para>
         /// </remarks>
-        public partial IntPtr GetJoystickUserPointer(int jid);
+        public partial nint GetJoystickUserPointer(int jid);
 
         /// <summary>
         /// <para>
@@ -3745,7 +3745,7 @@ namespace Silk.NET.GLFW
         /// </param>
         /// <param name="procName">The ASCII encoded name of the function.</param>
         /// <returns>The address of the function, or <c>null</c> if an error occurred.</returns>
-        public unsafe partial IntPtr GetInstanceProcAddress(VkHandle instance, byte* procName);
+        public unsafe partial nint GetInstanceProcAddress(VkHandle instance, byte* procName);
 
         /// <summary>
         /// Returns whether the specified queue family can present images.
@@ -3885,7 +3885,7 @@ namespace Silk.NET.GLFW
         /// </summary>
         /// <param name="name">The ASCII encoded name of the function.</param>
         /// <returns>The address of the function, or IntPtr.Zero if an error occurred.</returns>
-        public partial IntPtr GetProcAddress(string name);
+        public partial nint GetProcAddress(string name);
 
         /// <summary>Retrieves the work area of the monitor.</summary>
         /// <remarks>

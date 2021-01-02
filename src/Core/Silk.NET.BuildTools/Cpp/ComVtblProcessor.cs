@@ -102,7 +102,7 @@ namespace Silk.NET.BuildTools.Cpp
                         sb.AppendLine($"var {parameter.Name}Ptr = &{parameter.Name}PtrInit;");
                         parameterInvocations.Add
                             ((new Type {Name = "byte", IndirectionLevels = 2}, $"{parameter.Name}Ptr"));
-                        epilogue.Add(() => sb.AppendLine($"Marshal.FreeHGlobal((IntPtr){parameter.Name}PtrInit);"));
+                        epilogue.Add(() => sb.AppendLine($"Marshal.FreeHGlobal((nint){parameter.Name}PtrInit);"));
                     }
                     else if (parameter.Type.IsByRef)
                     {
@@ -116,7 +116,7 @@ namespace Silk.NET.BuildTools.Cpp
                             () =>
                             {
                                 sb.AppendLine($"{parameter.Name} = Marshal.PtrToStringAnsi(*{parameter.Name}Ptr);");
-                                sb.AppendLine($"Marshal.FreeHGlobal((IntPtr){parameter.Name}PtrInit);");
+                                sb.AppendLine($"Marshal.FreeHGlobal((nint){parameter.Name}PtrInit);");
                             }
                         );
                     }
@@ -135,7 +135,7 @@ namespace Silk.NET.BuildTools.Cpp
                             ((new Type {Name = "byte", IndirectionLevels = 1}, $"{parameter.Name}Ptr"));
                         epilogue.Add
                         (
-                            () => { sb.AppendLine($"Marshal.FreeHGlobal((IntPtr){parameter.Name}Ptr);"); }
+                            () => { sb.AppendLine($"Marshal.FreeHGlobal((nint){parameter.Name}Ptr);"); }
                         );
                     }
                 }

@@ -26,8 +26,8 @@ namespace Silk.NET.Vulkan
             uint? numUsedVgprs = null,
             uint? numUsedSgprs = null,
             uint? ldsSizePerLocalWorkGroup = null,
-            UIntPtr? ldsUsageSizeInBytes = null,
-            UIntPtr? scratchMemUsageInBytes = null
+            nuint? ldsUsageSizeInBytes = null,
+            nuint? scratchMemUsageInBytes = null
         ) : this()
         {
             if (numUsedVgprs is not null)
@@ -75,11 +75,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "ldsUsageSizeInBytes")]
-        public UIntPtr LdsUsageSizeInBytes;
+        public nuint LdsUsageSizeInBytes;
 /// <summary></summary>
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "scratchMemUsageInBytes")]
-        public UIntPtr ScratchMemUsageInBytes;
+        public nuint ScratchMemUsageInBytes;
     }
 }

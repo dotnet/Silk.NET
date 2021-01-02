@@ -316,7 +316,23 @@
                 "mode": "Default",
                 "path": "src/Vulkan",
                 "licenseFile": "build/LICENSE_HEADER.txt",
-                "props": "build/props/bindings.props"
+                "props": "build/props/bindings.props",
+                "inject": [
+                    {
+                        "functions": [
+                            "vkCreateInstance"
+                        ],
+                        "stage": "end",
+                        "code": "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }"
+                    },
+                    {
+                        "functions": [
+                            "vkCreateDevice"
+                        ],
+                        "stage": "end",
+                        "code": "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }"
+                    }
+                ]
             },
             "namespace": "Silk.NET.Vulkan",
             "extensionsNamespace": "Silk.NET.Vulkan.Extensions",
@@ -340,7 +356,7 @@
                     "PFN_vkDebugReportCallbackEXT": "PfnDebugReportCallbackEXT",
                     "PFN_vkDebugUtilsMessengerCallbackEXT": "PfnDebugUtilsMessengerCallbackEXT",
                     "char": "byte",
-                    "Window": "IntPtr",
+                    "Window": "nint",
                     "VkAabbPositionsKHR": "Silk.NET.Maths.Box3D<float>",
                     "VkAabbPositionsNV": "Silk.NET.Maths.Box3D<float>"
                 },
@@ -491,7 +507,16 @@
                 "mode": "Default",
                 "path": "src/OpenXR",
                 "licenseFile": "build/LICENSE_HEADER.txt",
-                "props": "build/props/bindings.props"
+                "props": "build/props/bindings.props",
+                "inject": [
+                    {
+                        "functions": [
+                            "xrCreateInstance"
+                        ],
+                        "stage": "end",
+                        "code": "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(instance)$%; }"
+                    }
+                ]
             },
             "namespace": "Silk.NET.OpenXR",
             "extensionsNamespace": "Silk.NET.OpenXR.Extensions",
@@ -532,10 +557,10 @@
                     "ID3D12Resource*": "void*",
                     "ID3D12CommandQueue*": "void*",
                     "IUnknown*": "Silk.NET.Core.Native.IUnknown*",
-                    "EGLDisplay": "IntPtr",
-                    "EGLConfig": "IntPtr",
-                    "EGLContext": "IntPtr",
-                    "GLXFBConfig": "IntPtr",
+                    "EGLDisplay": "nint",
+                    "EGLConfig": "nint",
+                    "EGLContext": "nint",
+                    "GLXFBConfig": "nint",
                     "VkFormat": "uint"
                 },
                 {

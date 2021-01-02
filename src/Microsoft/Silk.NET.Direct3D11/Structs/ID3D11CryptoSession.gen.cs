@@ -414,7 +414,7 @@ namespace Silk.NET.Direct3D11
                 int ret = default;
             var pCertificatePtr = (byte*) Marshal.StringToHGlobalAnsi(pCertificate);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11CryptoSession*, uint, byte*, int>)LpVtbl[10])(@this, CertificateSize, pCertificatePtr);
-            Marshal.FreeHGlobal((IntPtr)pCertificatePtr);
+            Marshal.FreeHGlobal((nint)pCertificatePtr);
             return ret;
         }
 

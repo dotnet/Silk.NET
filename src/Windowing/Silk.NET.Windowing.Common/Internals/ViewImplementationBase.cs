@@ -55,7 +55,7 @@ namespace Silk.NET.Windowing.Internals
 
         // Property bases - these have extra functionality baked into their getters and setters
         protected abstract Vector2D<int> CoreSize { get; }
-        protected abstract IntPtr CoreHandle { get; }
+        protected abstract nint CoreHandle { get; }
 
         // Function bases - again extra functionality on top
         protected abstract void CoreInitialize(ViewOptions opts);
@@ -188,7 +188,7 @@ namespace Silk.NET.Windowing.Internals
         // Misc properties
         protected bool IsInitialized { get; set; }
         public Vector2D<int> Size => IsInitialized ? CoreSize : default;
-        public IntPtr Handle => IsInitialized ? CoreHandle : IntPtr.Zero;
+        public nint Handle => IsInitialized ? CoreHandle : 0;
         public GraphicsAPI API => _optionsCache.API;
         public double Time => _lifetimeStopwatch.Elapsed.TotalSeconds;
         public int? PreferredDepthBufferBits => _optionsCache.PreferredDepthBufferBits;

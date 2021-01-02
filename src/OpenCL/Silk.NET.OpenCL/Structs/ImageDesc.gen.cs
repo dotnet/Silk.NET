@@ -24,12 +24,12 @@ namespace Silk.NET.OpenCL
         public ImageDesc
         (
             uint? imageType = null,
-            UIntPtr? imageWidth = null,
-            UIntPtr? imageHeight = null,
-            UIntPtr? imageDepth = null,
-            UIntPtr? imageArraySize = null,
-            UIntPtr? imageRowPitch = null,
-            UIntPtr? imageSlicePitch = null,
+            nuint? imageWidth = null,
+            nuint? imageHeight = null,
+            nuint? imageDepth = null,
+            nuint? imageArraySize = null,
+            nuint? imageRowPitch = null,
+            nuint? imageSlicePitch = null,
             uint? numMipLevels = null,
             uint? numSamples = null
         ) : this()
@@ -89,32 +89,32 @@ namespace Silk.NET.OpenCL
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "image_width")]
-        public UIntPtr ImageWidth;
+        public nuint ImageWidth;
 /// <summary></summary>
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "image_height")]
-        public UIntPtr ImageHeight;
+        public nuint ImageHeight;
 /// <summary></summary>
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "image_depth")]
-        public UIntPtr ImageDepth;
+        public nuint ImageDepth;
 /// <summary></summary>
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "image_array_size")]
-        public UIntPtr ImageArraySize;
+        public nuint ImageArraySize;
 /// <summary></summary>
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "image_row_pitch")]
-        public UIntPtr ImageRowPitch;
+        public nuint ImageRowPitch;
 /// <summary></summary>
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "image_slice_pitch")]
-        public UIntPtr ImageSlicePitch;
+        public nuint ImageSlicePitch;
 /// <summary></summary>
         [NativeName("Type", "cl_uint")]
         [NativeName("Type.Name", "cl_uint")]

@@ -54,7 +54,7 @@ namespace Silk.NET.GLFW
         /// <param name="count">The number of dropped files.</param>
         /// <param name="paths">The UTF-8 encoded file and/or directory path names.</param>
         /// <seealso cref="IGlfw.SetDropCallback" />
-        public delegate void DropCallback(WindowHandle* window, int count, IntPtr paths);
+        public delegate void DropCallback(WindowHandle* window, int count, nint paths);
 
         /// <summary>
         /// The function signature for error callback functions.

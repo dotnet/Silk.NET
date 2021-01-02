@@ -4,7 +4,7 @@ namespace Silk.NET.Vulkan
 {
     public unsafe delegate void InternalAllocationNotification(
         void* pUserData,
-        UIntPtr size,
+        nuint size,
         InternalAllocationType allocationType,
         SystemAllocationScope allocationScope);
 }

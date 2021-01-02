@@ -62,7 +62,7 @@ namespace Silk.NET.Windowing.Glfw
             }
         }
 
-        protected override IntPtr CoreHandle => (IntPtr) _glfwWindow;
+        protected override nint CoreHandle => (nint) _glfwWindow;
 
         protected override void CoreReset()
         {
@@ -523,7 +523,7 @@ namespace Silk.NET.Windowing.Glfw
             GC.SuppressFinalize(this);
         }
 
-        public IntPtr GetProcAddress(string proc, int? slot = default) => _glfw.GetProcAddress(proc);
+        public nint GetProcAddress(string proc, int? slot = default) => _glfw.GetProcAddress(proc);
 
         public override void Close()
         {
@@ -617,7 +617,7 @@ namespace Silk.NET.Windowing.Glfw
             {
                 var arrayOfPaths = new string[count];
 
-                if (count == 0 || paths == IntPtr.Zero)
+                if (count == 0 || paths == 0)
                 {
                     return;
                 }

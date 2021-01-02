@@ -23,10 +23,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
     {
         public const string ExtensionName = "EXT_external_buffer";
         [NativeApi(EntryPoint = "glBufferStorageExternalEXT")]
-        public partial void BufferStorageExternal([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] IntPtr clientBuffer, [Flow(FlowDirection.In)] uint flags);
+        public partial void BufferStorageExternal([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] nint clientBuffer, [Flow(FlowDirection.In)] uint flags);
 
         [NativeApi(EntryPoint = "glNamedBufferStorageExternalEXT")]
-        public partial void NamedBufferStorageExternal([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] IntPtr clientBuffer, [Flow(FlowDirection.In)] uint flags);
+        public partial void NamedBufferStorageExternal([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] nint clientBuffer, [Flow(FlowDirection.In)] uint flags);
 
         public ExtExternalBuffer(INativeContext ctx)
             : base(ctx)

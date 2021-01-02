@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using Silk.NET.BuildTools.Common;
+using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.BuildTools
 {
@@ -98,6 +99,20 @@ namespace Silk.NET.BuildTools
         public string Props { get; set; }
         
         [JsonProperty("conditional")] public Dictionary<string, string[]> ConditionalFunctions { get; set; }
+        [JsonProperty("inject")] public Injection[]? Injections { get; set; }
+    }
+
+    public struct Injection
+    {
+        [JsonProperty("functions")]
+        public string[] FunctionNativeNames { get; set; }
+        
+        [JsonProperty("stage")]
+        [JsonConverter(typeof(StringEnumConverter))]
+        public SilkTouchStage Stage { get; set; }
+        
+        [JsonProperty("code")]
+        public string Code { get; set; }
     }
 
     public enum ConverterMode
