@@ -7,7 +7,7 @@ Silk.NET works on any .NET Standard 2.0 compliant platform. This includes Xamari
 
 # Features
 - **Performance**: We use lesser-known techniques for our native interop which makes our bindings blazing fast.
-- **Up-to-date**: We've built Silk.NET around the latest versions of the Khronos specifications. This means that Silk.NET includes OpenGL 4.6 (and its **NVIDIA ray-tracing** extensions), OpenGLES 3.2.
+- **Up-to-date**: We've built Silk.NET around the latest versions of the Khronos specifications. This means that Silk.NET includes OpenGL 4.6, OpenGLES 3.2, Vulkan 1.2 (and its **NVIDIA and KHR ray-tracing** extensions), and more.
 - **High-level utilities**: We provide high-level abstractions around Windowing and Input APIs, which means your apps can run on any platform without changing a single line.
 - **Game-ready**: Making games or game engines with Silk.NET is a breeze as you already have everything a game needs - Graphics, Audio, Input, and Windowing; all in one product!
 
@@ -25,10 +25,9 @@ As well as some helpers from the community:
 
 # Building from source
 
-- Make sure you have the .NET Core SDK installed
+- Make sure you have at least the .NET 5 SDK installed, preferably with Visual Studio's .NET Framework and Xamarin workloads too.
 - Clone the repository
-- Run `generator.bat` or `generator.sh` (to generate the bindings)
-- Run `dotnet build`
+- Run build.sh, build.cmd, build.ps1, or `nuke build`. To build for iOS and Android, add the `--feature-sets ios android` arguments.
 
 # Contributing
 
