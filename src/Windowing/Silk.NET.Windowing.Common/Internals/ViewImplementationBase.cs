@@ -165,13 +165,14 @@ namespace Silk.NET.Windowing.Internals
                     _swapIntervalChanged = false;
                 }
 
-                Render?.Invoke(_renderStopwatch.Elapsed.TotalSeconds);
+                delta = _renderStopwatch.Elapsed.TotalSeconds;
+                _renderStopwatch.Restart();
+                Render?.Invoke(delta);
+
                 if (ShouldSwapAutomatically)
                 {
                     GLContext?.SwapBuffers();
                 }
-
-                _renderStopwatch.Restart();
             }
         }
 
@@ -180,8 +181,8 @@ namespace Silk.NET.Windowing.Internals
             var delta = _updateStopwatch.Elapsed.TotalSeconds;
             if (delta >= _updatePeriod)
             {
-                Update?.Invoke(_updateStopwatch.Elapsed.TotalSeconds);
                 _updateStopwatch.Restart();
+                Update?.Invoke(delta);
             }
         }
 
