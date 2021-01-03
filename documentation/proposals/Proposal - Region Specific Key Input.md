@@ -75,6 +75,7 @@ public class KeyboardLayout
 ```
 
 ## Layout File
+```cs
 // Original Value In QWERTY -> New Value In Your Layout
 // Obviously this is only done for the keys included in GLFW, but as they
 // are close to ASCII it should be simple to write. No lowercase letters
@@ -82,6 +83,7 @@ public class KeyboardLayout
 65 -> 68 // A will be D
 // alternatively, as char and int are interchangeable in c# :) :
 A->D
+```
 
 ## Example Usage
 ```cs
