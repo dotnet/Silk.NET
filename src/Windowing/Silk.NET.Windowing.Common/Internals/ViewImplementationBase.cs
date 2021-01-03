@@ -23,16 +23,18 @@ namespace Silk.NET.Windowing.Internals
     internal abstract class ViewImplementationBase : IView
     {
         private const int InitialInvocationRental = 2;
+        // Cache the boxed version of frequency.
+        private static readonly double Frequency = Stopwatch.Frequency;
 
         // Cache the options for when the window is closed
         protected ViewOptions _optionsCache;
 
         // Game loop fields
-        private readonly Stopwatch _renderStopwatch = new Stopwatch();
-        private readonly Stopwatch _updateStopwatch = new Stopwatch();
-        private readonly Stopwatch _lifetimeStopwatch = new Stopwatch();
-        private double _renderPeriod;
-        private double _updatePeriod;
+        private long _renderTimestamp;
+        private long _updateTimestamp;
+        private long _lifetimeTimestamp;
+        private long _renderPeriod;
+        private long _updatePeriod;
 
         // Invocations
         private readonly ArrayPool<object> _returnArrayPool = ArrayPool<object>.Create();
@@ -97,9 +99,7 @@ namespace Silk.NET.Windowing.Internals
             CoreInitialize(_optionsCache);
             RegisterCallbacks();
             EnsureArrayIsReady(-1);
-            _renderStopwatch.Start();
-            _updateStopwatch.Start();
-            _lifetimeStopwatch.Start();
+            _renderTimestamp = _updateTimestamp = _lifetimeTimestamp = Stopwatch.GetTimestamp();
             IsInitialized = true;
             IsEventDriven = _optionsCache.IsEventDriven;
             GLContext?.MakeCurrent();
@@ -109,9 +109,7 @@ namespace Silk.NET.Windowing.Internals
 
         public void Reset()
         {
-            _renderStopwatch.Reset();
-            _updateStopwatch.Reset();
-            _lifetimeStopwatch.Reset();
+            _renderTimestamp = _updateTimestamp = _lifetimeTimestamp = Stopwatch.GetTimestamp();
             CoreReset();
             UnregisterCallbacks();
             IsInitialized = false;
@@ -120,14 +118,14 @@ namespace Silk.NET.Windowing.Internals
         // Game loop controls
         public double FramesPerSecond
         {
-            get => _renderPeriod <= double.Epsilon ? 0 : 1 / _renderPeriod;
-            set => _renderPeriod = value <= double.Epsilon ? 0 : 1 / value;
+            get => _renderPeriod < 1 ? 0 : Frequency / _renderPeriod;
+            set => _renderPeriod = value <= double.Epsilon ? 0 : (long) (Frequency / value);
         }
 
         public double UpdatesPerSecond
         {
-            get => _updatePeriod <= double.Epsilon ? 0 : 1 / _updatePeriod;
-            set => _updatePeriod = value <= double.Epsilon ? 0 : 1 / value;
+            get => _updatePeriod < 1 ? 0 : Frequency / _renderPeriod;
+            set => _updatePeriod = value <= double.Epsilon ? 0 : (long) (Frequency / value);
         }
 
         public bool ShouldSwapAutomatically => _optionsCache.ShouldSwapAutomatically /* TODO set? */;
@@ -151,8 +149,8 @@ namespace Silk.NET.Windowing.Internals
         public void DoRender()
         {
             DoInvokes();
-            var delta = _renderStopwatch.Elapsed.TotalSeconds;
-            if ((delta >= _renderPeriod) || VSync)
+            // Check elapsed time
+            if (((Stopwatch.GetTimestamp() - _renderTimestamp) >= _renderPeriod) || VSync)
             {
                 if (!(GLContext is null) && !GLContext.IsCurrent)
                 {
@@ -165,9 +163,8 @@ namespace Silk.NET.Windowing.Internals
                     _swapIntervalChanged = false;
                 }
 
-                delta = _renderStopwatch.Elapsed.TotalSeconds;
-                _renderStopwatch.Restart();
-                Render?.Invoke(delta);
+                // Re-calculte the elapsed time, resetting the current timestamp
+                Render?.Invoke((-Interlocked.Exchange(ref _renderTimestamp, Stopwatch.GetTimestamp()) + _renderTimestamp) / Frequency);
 
                 if (ShouldSwapAutomatically)
                 {
@@ -178,11 +175,11 @@ namespace Silk.NET.Windowing.Internals
 
         public void DoUpdate()
         {
-            var delta = _updateStopwatch.Elapsed.TotalSeconds;
-            if (delta >= _updatePeriod)
+            // Check elapsed time
+            if ((Stopwatch.GetTimestamp() - _updateTimestamp) >= _updatePeriod)
             {
-                _updateStopwatch.Restart();
-                Update?.Invoke(delta);
+                // Re-calculte the elapsed time, resetting the current timestamp
+                Update?.Invoke((-Interlocked.Exchange(ref _updateTimestamp, Stopwatch.GetTimestamp()) + _updateTimestamp) / Frequency);
             }
         }
 
@@ -191,7 +188,7 @@ namespace Silk.NET.Windowing.Internals
         public Vector2D<int> Size => IsInitialized ? CoreSize : default;
         public nint Handle => IsInitialized ? CoreHandle : 0;
         public GraphicsAPI API => _optionsCache.API;
-        public double Time => _lifetimeStopwatch.Elapsed.TotalSeconds;
+        public double Time => (Stopwatch.GetTimestamp() - _lifetimeTimestamp) / Frequency;
         public int? PreferredDepthBufferBits => _optionsCache.PreferredDepthBufferBits;
         public int? PreferredStencilBufferBits => _optionsCache.PreferredStencilBufferBits;
         public Vector4D<int>? PreferredBitDepth => _optionsCache.PreferredBitDepth;
