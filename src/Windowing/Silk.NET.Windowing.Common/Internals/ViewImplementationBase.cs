@@ -150,7 +150,7 @@ namespace Silk.NET.Windowing.Internals
         {
             DoInvokes();
             // Check elapsed time
-            if (((Stopwatch.GetTimestamp() - _renderTimestamp) >= _renderPeriod) || VSync)
+            if (VSync || ((Stopwatch.GetTimestamp() - _renderTimestamp) >= _renderPeriod))
             {
                 if (!(GLContext is null) && !GLContext.IsCurrent)
                 {
