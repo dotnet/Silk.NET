@@ -124,7 +124,7 @@ namespace Silk.NET.Windowing.Internals
 
         public double UpdatesPerSecond
         {
-            get => _updatePeriod < 1 ? 0 : Frequency / _renderPeriod;
+            get => _updatePeriod < 1 ? 0 : Frequency / _updatePeriod;
             set => _updatePeriod = value <= double.Epsilon ? 0 : (long) (Frequency / value);
         }
 
