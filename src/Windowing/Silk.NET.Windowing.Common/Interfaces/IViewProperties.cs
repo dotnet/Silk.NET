@@ -39,6 +39,7 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// The number of rendering operations to run every second.
         /// </summary>
+        /// <remarks>This value is ignored if <see cref="VSync">VSync</see> is set to <see langref="true"/>.</remarks>
         double FramesPerSecond { get; set; }
 
         /// <summary>
@@ -54,6 +55,8 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// Whether or not VSync is enabled for this view.
         /// </summary>
+        /// <remarks>This value will set the SwapInterval for OpenGL, but on other frameworks (e.g. Vulkan) you will need to turn on
+        /// VSync manually.  Whilst <see langref="true"/>, the value of <see cref="FramesPerSecond"/> is ignored, to prevent frame skipping.</remarks>
         bool VSync { get; set; }
 
         /// <summary>
