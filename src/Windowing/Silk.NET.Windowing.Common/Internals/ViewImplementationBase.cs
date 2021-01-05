@@ -164,7 +164,10 @@ namespace Silk.NET.Windowing.Internals
                 }
 
                 // Re-calculte the elapsed time, resetting the current timestamp
-                Render?.Invoke((-Interlocked.Exchange(ref _renderTimestamp, Stopwatch.GetTimestamp()) + _renderTimestamp) / Frequency);
+                var newTimeStamp = Stopwatch.GetTimestamp();
+                var delta = (newTimeStamp - _renderTimestamp) / Frequency;
+                _renderTimestamp = newTimeStamp;
+                Render?.Invoke(delta);
 
                 if (ShouldSwapAutomatically)
                 {
@@ -176,10 +179,13 @@ namespace Silk.NET.Windowing.Internals
         public void DoUpdate()
         {
             // Check elapsed time
-            if ((Stopwatch.GetTimestamp() - _updateTimestamp) >= _updatePeriod)
+            var newTimeStamp = Stopwatch.GetTimestamp();
+            if ((newTimeStamp - _updateTimestamp) >= _updatePeriod)
             {
                 // Re-calculte the elapsed time, resetting the current timestamp
-                Update?.Invoke((-Interlocked.Exchange(ref _updateTimestamp, Stopwatch.GetTimestamp()) + _updateTimestamp) / Frequency);
+                var delta = (newTimeStamp - _updateTimestamp) / Frequency;
+                _updateTimestamp = newTimeStamp;
+                Update?.Invoke(delta);
             }
         }
 
