@@ -124,8 +124,16 @@ namespace Silk.NET.Windowing.Internals
 
         public double UpdatesPerSecond
         {
-            get => _updatePeriod < 1 ? 0 : Frequency / _updatePeriod;
-            set => _updatePeriod = value <= double.Epsilon ? 0 : (long) (Frequency / value);
+            get
+            {
+                var updatePeriod = Interlocked.Read(ref _updatePeriod);
+                return updatePeriod < 1 ? 0 : Frequency / updatePeriod;
+            }
+
+            set
+            {
+                Interlocked.Exchange(ref _updatePeriod, value <= double.Epsilon ? 0 : (long) (Frequency / value));
+            }
         }
 
         public bool ShouldSwapAutomatically => _optionsCache.ShouldSwapAutomatically /* TODO set? */;
@@ -178,15 +186,38 @@ namespace Silk.NET.Windowing.Internals
 
         public void DoUpdate()
         {
-            // Check elapsed time
-            var newTimestamp = Stopwatch.GetTimestamp();
-            if ((newTimestamp - _updateTimestamp) >= _updatePeriod)
+            // Note this method is thread-safe and can be called from multiple threads.
+            var update = Update;
+            if (update is null)
             {
-                // Re-calculte the elapsed time, resetting the current timestamp
-                var delta = (newTimestamp - _updateTimestamp) / Frequency;
-                _updateTimestamp = newTimestamp;
-                Update?.Invoke(delta);
+                // If there are no update callbacks then no need to track the update time.
+                return;
             }
+
+            var updateTimestamp = Interlocked.Read(ref _updateTimestamp);
+            var newTimestamp = Stopwatch.GetTimestamp();
+            var updatePeriod = Interlocked.Read(ref _updatePeriod);
+
+            /*
+             * The first check ensures that enough time has passed to perform an update, if it fails we return.
+             *
+             * If it succeeds then we try to update the timestamp, however, note that we may not 'win' if
+             * another thread updates the timestamp before us.  If we fail, we don't raise the Update event 
+             * as it will have been called by the winning thread.
+             *
+             * However, if updatePeriod <=0, there's an assumption that Update events will be called every time DoUpdate()
+             * is called.  As such we, only return if updatePeriod is positive and we failed.
+             */
+            if ((newTimestamp - updateTimestamp) < updatePeriod ||
+                (Interlocked.CompareExchange(ref _updateTimestamp, newTimestamp, updateTimestamp) == updateTimestamp && updatePeriod > 0))
+            {
+                // Not enough time has elapsed since last update, or we didn't succeed in updating
+                return;
+            }
+
+            // We use the cached version of the Update event from above for thread-safety, 
+            // and pass through the elapsed time in seconds.
+            update((newTimestamp - updateTimestamp) / Frequency);
         }
 
         // Misc properties
