@@ -12,17 +12,19 @@ namespace Silk.NET.Jupyter
 {
     public class JupyterView : IView
     {
-        private readonly IGLContext _glContext;
+        private readonly int _width;
+        private readonly int _height;
+        private JupyterGLContext? _glContext;
 
-        public static IView Create(int height, int width)
+        public static IView Create(int width, int height)
         {
-            return new JupyterView(height, width);
+            return new JupyterView(width, height);
         }
 
-        private JupyterView(int height, int width)
+        private JupyterView(int width, int height)
         {
-            _glContext = new JupyterGLContext(this);
-            
+            _width = width;
+            _height = height;
         }
 
         public bool ShouldSwapAutomatically => throw new NotImplementedException();
@@ -33,7 +35,7 @@ namespace Silk.NET.Jupyter
             set => throw new NotImplementedException();
         }
 
-        public Vector2D<int> Size => throw new NotImplementedException();
+        public Vector2D<int> Size => new(_width, _height);
 
         public double FramesPerSecond
         {
@@ -66,7 +68,7 @@ namespace Silk.NET.Jupyter
 
         public void Dispose()
         {
-            _glContext.Dispose();
+            _glContext?.Dispose();
         }
 
         public nint Handle => throw new NotImplementedException();
@@ -83,7 +85,7 @@ namespace Silk.NET.Jupyter
 
         public void Initialize()
         {
-            throw new NotImplementedException();
+            _glContext = new JupyterGLContext(this, _width, _height);
         }
 
         public void DoRender()

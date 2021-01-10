@@ -17,7 +17,7 @@ namespace Silk.NET.EGL
     {
         public static EGL GetApi()
         {
-             throw new NotImplementedException();
+            return new EGL(CreateDefaultContext(new GlfwLibraryNameContainer().GetLibraryName()));
         }
 
         public bool TryGetExtension<T>(out T ext)
