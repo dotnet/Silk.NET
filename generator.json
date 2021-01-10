@@ -83,6 +83,126 @@
             ]
         },
         {
+            "profileName": "OpenGL",
+            "sources": [
+                "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/master/xml/gl.xml"
+            ],
+            "mode": "ConvertConstruct",
+            "cacheDir": "build/cache",
+            "cacheKey": "glcore",
+            "controlDescriptors": [],
+            "converter": {
+                "reader": "gl",
+                "constructor": "gl",
+                "className": "GL"
+            },
+            "prefix": "gl",
+            "clang": {},
+            "bakery": {
+                "profileNames": [
+                    "glcore"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/OpenGL",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "rename": {
+                "Buffer": "BufferKind"
+            },
+            "namespace": "Silk.NET.OpenGL",
+            "extensionsNamespace": "Silk.NET.OpenGL.Extensions",
+            "typeMaps": [
+                {
+                    "$include.glTypeMap": "build/gl_typemap.json"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "EGL",
+            "sources": [
+                "https://raw.githubusercontent.com/KhronosGroup/EGL-Registry/master/api/egl.xml"
+            ],
+            "mode": "ConvertConstruct",
+            "cacheDir": "build/cache",
+            "cacheKey": "egl",
+            "controlDescriptors": [],
+            "converter": {
+                "reader": "gl",
+                "constructor": "gl",
+                "className": "EGL"
+            },
+            "prefix": "egl",
+            "clang": {},
+            "bakery": {
+                "profileNames": [
+                    "egl"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/EGL",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "rename": {
+                "Buffer": "BufferKind"
+            },
+            "namespace": "Silk.NET.EGL",
+            "extensionsNamespace": "Silk.NET.EGL.Extensions",
+            "typeMaps": [
+                {
+                    "$include.glTypeMap": "build/gl_typemap.json"
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                },
+                {
+                    "EGLBoolean": "bool",
+                    "EGLint": "int",
+                    "EGLDisplay": "nint",
+                    "EGLConfig": "nint",
+                    "EGLSurface": "nint",
+                    "EGLContext": "nint",
+                    "EGLAttrib": "nint",
+                    "EGLAttribKHR": "nint",
+                    "EGLClientBuffer": "nint",
+                    "EGLDeviceEXT": "nint",
+                    "EGLImage": "nint",
+                    "EGLImageKHR": "nint",
+                    "EGLLabelKHR": "nint",
+                    "EGLObjectKHR": "nint",
+                    "EGLOutputLayerEXT": "nint",
+                    "EGLOutputPortEXT": "nint",
+                    "EGLStreamKHR": "nint",
+                    "EGLSync": "nint",
+                    "EGLSyncKHR": "nint",
+                    "EGLSyncNV": "nint",
+                    "EGLTimeKHR": "ulong",
+                    "EGLTime": "ulong",
+                    "EGLTimeNV": "ulong",
+                    "EGLuint64NV": "ulong",
+                    "EGLuint64KHR": "ulong",
+                    "EGLnsecsANDROID": "long",
+                    "EGLNativeFileDescriptorKHR": "int",
+                    "EGLsizeiANDROID": "int",
+                    "EGLClientPixmapHI": "ClientPixmapHI",
+                    "EGLNativeDisplayType": "nint",
+                    "EGLNativePixmapType": "nint",
+                    "EGLNativeWindowType": "nint",
+                    "__eglMustCastToProperFunctionPointerType": "void*",
+                    "EGLSetBlobFuncANDROID": "PfnSetBlobFuncANDROID",
+                    "EGLGetBlobFuncANDROID": "PfnGetBlobFuncANDROID",
+                    "EGLDEBUGPROCKHR": "PfnDebugProcKhr"
+                }
+            ]
+        },
+        {
             "profileName": "OpenGLES",
             "sources": [
                 "https://raw.githubusercontent.com/KhronosGroup/OpenGL-Registry/master/xml/gl.xml"
