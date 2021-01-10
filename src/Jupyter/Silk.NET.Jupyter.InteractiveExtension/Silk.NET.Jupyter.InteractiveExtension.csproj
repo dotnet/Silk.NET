@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Silk.NET.Jupyter.Library\Silk.NET.Jupyter.Library.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.DotNet.Interactive" Version="1.0.0-beta.20553.2" />
+      <PackageReference Include="Microsoft.DotNet.Interactive.CSharp" Version="1.0.0-beta.20553.2" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Library</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        
+        <PackageId>Silk.NET.Jupyter</PackageId>
+        <IsPackable>true</IsPackable>
+        <Description>Silk.NET for Jupyter notebooks!</Description>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\Silk.NET.Jupyter.Library\Silk.NET.Jupyter.Library.csproj" >
+            <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+        </ProjectReference>
+        <ProjectReference Include="..\Silk.NET.Jupyter.InteractiveExtension\Silk.NET.Jupyter.InteractiveExtension.csproj">
+            <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+        </ProjectReference>
+    </ItemGroup>
+
+    <ItemGroup>
+        <None
+            Include="../Silk.NET.Jupyter.Library/bin/$(Configuration)/$(TargetFramework)/*.dll"
+            Pack="true"
+            PackagePath="lib/$(TargetFramework)" />
+        <None
+            Include="../Silk.NET.Jupyter.InteractiveExtension/bin/$(Configuration)/$(TargetFramework)/*.dll"
+            Exclude="../Silk.NET.Jupyter.InteractiveExtension/bin/$(Configuration)/$(TargetFramework)/Library.dll"
+            Pack="true"
+            PackagePath="interactive-extensions/dotnet" />
+    </ItemGroup>
+
+</Project>
