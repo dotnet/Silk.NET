@@ -55,7 +55,7 @@ public class KeyboardLayout
     /// <summary>
     /// The name of the Layout.
     /// </summary>
-    public static string Name { get; }
+    public string Name { get; }
 
     /// <summary>
     /// Get an included layout by name.
