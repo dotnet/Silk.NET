@@ -137,12 +137,15 @@ namespace Silk.NET.Core.Native
         /// </summary>
         /// <param name="length">The number of bytes to allocate.</param>
         /// <returns>A block of global memory.</returns>
-        public static GlobalMemory Allocate(int length) =>
+        public static GlobalMemory Allocate(int length)
+        {
+            length = length <= 0 ? 1 : length;
 #if !NET5_0
-            new GlobalMemory(new GCHandleByteArray(length), length);
+            return new GlobalMemory(new GCHandleByteArray(length), length);
 #else
-            new GlobalMemory(GC.AllocateUninitializedArray<byte>(length, true), length);
+            return new GlobalMemory(GC.AllocateUninitializedArray<byte>(length, true), length);
 #endif
+        }
 
         // Encapsulations different kinds of memory
         private interface IGlobalMemory

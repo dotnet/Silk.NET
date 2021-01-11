@@ -23,10 +23,10 @@ namespace Silk.NET.EGL.Extensions.KHR
     {
         public const string ExtensionName = "KHR_partial_update";
         [NativeApi(EntryPoint = "eglSetDamageRegionKHR")]
-        public unsafe partial bool SetDamageRegion([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.Out)] int* rects, [Flow(FlowDirection.In)] int n_rects);
+        public unsafe partial int SetDamageRegion([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.Out)] int* rects, [Flow(FlowDirection.In)] int n_rects);
 
         [NativeApi(EntryPoint = "eglSetDamageRegionKHR")]
-        public partial bool SetDamageRegion([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.Out)] out int rects, [Flow(FlowDirection.In)] int n_rects);
+        public partial int SetDamageRegion([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.Out)] out int rects, [Flow(FlowDirection.In)] int n_rects);
 
         public KhrPartialUpdate(INativeContext ctx)
             : base(ctx)

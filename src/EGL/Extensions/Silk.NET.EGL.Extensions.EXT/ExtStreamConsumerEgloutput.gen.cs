@@ -23,7 +23,7 @@ namespace Silk.NET.EGL.Extensions.EXT
     {
         public const string ExtensionName = "EXT_stream_consumer_egloutput";
         [NativeApi(EntryPoint = "eglStreamConsumerOutputEXT")]
-        public partial bool StreamConsumerOutput([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] nint layer);
+        public partial int StreamConsumerOutput([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] nint layer);
 
         public ExtStreamConsumerEgloutput(INativeContext ctx)
             : base(ctx)

@@ -18,7 +18,7 @@ namespace Silk.NET.EGL.Extensions.KHR
 {
     public static class KhrPartialUpdateOverloads
     {
-        public static unsafe bool SetDamageRegion(this KhrPartialUpdate thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.Out)] Span<int> rects, [Flow(FlowDirection.In)] int n_rects)
+        public static unsafe int SetDamageRegion(this KhrPartialUpdate thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.Out)] Span<int> rects, [Flow(FlowDirection.In)] int n_rects)
         {
             // SpanOverloader
             return thisApi.SetDamageRegion(dpy, surface, out rects.GetPinnableReference(), n_rects);

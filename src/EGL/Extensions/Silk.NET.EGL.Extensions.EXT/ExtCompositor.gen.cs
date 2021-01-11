@@ -23,37 +23,37 @@ namespace Silk.NET.EGL.Extensions.EXT
     {
         public const string ExtensionName = "EXT_compositor";
         [NativeApi(EntryPoint = "eglCompositorBindTexWindowEXT")]
-        public partial bool CompositorBindTexWindow([Flow(FlowDirection.In)] int external_win_id);
+        public partial int CompositorBindTexWindow([Flow(FlowDirection.In)] int external_win_id);
 
         [NativeApi(EntryPoint = "eglCompositorSetContextAttributesEXT")]
-        public unsafe partial bool CompositorSetContextAttributes([Flow(FlowDirection.In)] int external_ref_id, [Flow(FlowDirection.In)] int* context_attributes, [Flow(FlowDirection.In)] int num_entries);
+        public unsafe partial int CompositorSetContextAttributes([Flow(FlowDirection.In)] int external_ref_id, [Flow(FlowDirection.In)] int* context_attributes, [Flow(FlowDirection.In)] int num_entries);
 
         [NativeApi(EntryPoint = "eglCompositorSetContextAttributesEXT")]
-        public partial bool CompositorSetContextAttributes([Flow(FlowDirection.In)] int external_ref_id, [Flow(FlowDirection.In)] in int context_attributes, [Flow(FlowDirection.In)] int num_entries);
+        public partial int CompositorSetContextAttributes([Flow(FlowDirection.In)] int external_ref_id, [Flow(FlowDirection.In)] in int context_attributes, [Flow(FlowDirection.In)] int num_entries);
 
         [NativeApi(EntryPoint = "eglCompositorSetContextListEXT")]
-        public unsafe partial bool CompositorSetContextList([Flow(FlowDirection.In)] int* external_ref_ids, [Flow(FlowDirection.In)] int num_entries);
+        public unsafe partial int CompositorSetContextList([Flow(FlowDirection.In)] int* external_ref_ids, [Flow(FlowDirection.In)] int num_entries);
 
         [NativeApi(EntryPoint = "eglCompositorSetContextListEXT")]
-        public partial bool CompositorSetContextList([Flow(FlowDirection.In)] in int external_ref_ids, [Flow(FlowDirection.In)] int num_entries);
+        public partial int CompositorSetContextList([Flow(FlowDirection.In)] in int external_ref_ids, [Flow(FlowDirection.In)] int num_entries);
 
         [NativeApi(EntryPoint = "eglCompositorSetSizeEXT")]
-        public partial bool CompositorSetSize([Flow(FlowDirection.In)] int external_win_id, [Flow(FlowDirection.In)] int width, [Flow(FlowDirection.In)] int height);
+        public partial int CompositorSetSize([Flow(FlowDirection.In)] int external_win_id, [Flow(FlowDirection.In)] int width, [Flow(FlowDirection.In)] int height);
 
         [NativeApi(EntryPoint = "eglCompositorSetWindowAttributesEXT")]
-        public unsafe partial bool CompositorSetWindowAttributes([Flow(FlowDirection.In)] int external_win_id, [Flow(FlowDirection.In)] int* window_attributes, [Flow(FlowDirection.In)] int num_entries);
+        public unsafe partial int CompositorSetWindowAttributes([Flow(FlowDirection.In)] int external_win_id, [Flow(FlowDirection.In)] int* window_attributes, [Flow(FlowDirection.In)] int num_entries);
 
         [NativeApi(EntryPoint = "eglCompositorSetWindowAttributesEXT")]
-        public partial bool CompositorSetWindowAttributes([Flow(FlowDirection.In)] int external_win_id, [Flow(FlowDirection.In)] in int window_attributes, [Flow(FlowDirection.In)] int num_entries);
+        public partial int CompositorSetWindowAttributes([Flow(FlowDirection.In)] int external_win_id, [Flow(FlowDirection.In)] in int window_attributes, [Flow(FlowDirection.In)] int num_entries);
 
         [NativeApi(EntryPoint = "eglCompositorSetWindowListEXT")]
-        public unsafe partial bool CompositorSetWindowList([Flow(FlowDirection.In)] int external_ref_id, [Flow(FlowDirection.In)] int* external_win_ids, [Flow(FlowDirection.In)] int num_entries);
+        public unsafe partial int CompositorSetWindowList([Flow(FlowDirection.In)] int external_ref_id, [Flow(FlowDirection.In)] int* external_win_ids, [Flow(FlowDirection.In)] int num_entries);
 
         [NativeApi(EntryPoint = "eglCompositorSetWindowListEXT")]
-        public partial bool CompositorSetWindowList([Flow(FlowDirection.In)] int external_ref_id, [Flow(FlowDirection.In)] in int external_win_ids, [Flow(FlowDirection.In)] int num_entries);
+        public partial int CompositorSetWindowList([Flow(FlowDirection.In)] int external_ref_id, [Flow(FlowDirection.In)] in int external_win_ids, [Flow(FlowDirection.In)] int num_entries);
 
         [NativeApi(EntryPoint = "eglCompositorSwapPolicyEXT")]
-        public partial bool CompositorSwapPolicy([Flow(FlowDirection.In)] int external_win_id, [Flow(FlowDirection.In)] int policy);
+        public partial int CompositorSwapPolicy([Flow(FlowDirection.In)] int external_win_id, [Flow(FlowDirection.In)] int policy);
 
         public ExtCompositor(INativeContext ctx)
             : base(ctx)

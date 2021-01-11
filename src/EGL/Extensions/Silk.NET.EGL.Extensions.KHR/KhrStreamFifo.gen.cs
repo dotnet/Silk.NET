@@ -23,10 +23,10 @@ namespace Silk.NET.EGL.Extensions.KHR
     {
         public const string ExtensionName = "KHR_stream_fifo";
         [NativeApi(EntryPoint = "eglQueryStreamTimeKHR")]
-        public unsafe partial bool QueryStreamTime([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] ulong* value);
+        public unsafe partial int QueryStreamTime([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] ulong* value);
 
         [NativeApi(EntryPoint = "eglQueryStreamTimeKHR")]
-        public partial bool QueryStreamTime([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] out ulong value);
+        public partial int QueryStreamTime([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] out ulong value);
 
         public KhrStreamFifo(INativeContext ctx)
             : base(ctx)

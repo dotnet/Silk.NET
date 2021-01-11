@@ -24,43 +24,43 @@ namespace Silk.NET.EGL.Extensions.MESA
             return thisApi.CreateDrmimage(dpy, in attrib_list.GetPinnableReference());
         }
 
-        public static unsafe bool ExportDrmimage(this MesaDrmImage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] int* name, [Flow(FlowDirection.Out)] int* handle, [Flow(FlowDirection.Out)] Span<int> stride)
+        public static unsafe int ExportDrmimage(this MesaDrmImage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] int* name, [Flow(FlowDirection.Out)] int* handle, [Flow(FlowDirection.Out)] Span<int> stride)
         {
             // SpanOverloader
             return thisApi.ExportDrmimage(dpy, image, name, handle, out stride.GetPinnableReference());
         }
 
-        public static unsafe bool ExportDrmimage(this MesaDrmImage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] int* name, [Flow(FlowDirection.Out)] Span<int> handle, [Flow(FlowDirection.Out)] int* stride)
+        public static unsafe int ExportDrmimage(this MesaDrmImage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] int* name, [Flow(FlowDirection.Out)] Span<int> handle, [Flow(FlowDirection.Out)] int* stride)
         {
             // SpanOverloader
             return thisApi.ExportDrmimage(dpy, image, name, out handle.GetPinnableReference(), stride);
         }
 
-        public static unsafe bool ExportDrmimage(this MesaDrmImage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] int* name, [Flow(FlowDirection.Out)] Span<int> handle, [Flow(FlowDirection.Out)] Span<int> stride)
+        public static unsafe int ExportDrmimage(this MesaDrmImage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] int* name, [Flow(FlowDirection.Out)] Span<int> handle, [Flow(FlowDirection.Out)] Span<int> stride)
         {
             // SpanOverloader
             return thisApi.ExportDrmimage(dpy, image, name, out handle.GetPinnableReference(), out stride.GetPinnableReference());
         }
 
-        public static unsafe bool ExportDrmimage(this MesaDrmImage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] Span<int> name, [Flow(FlowDirection.Out)] int* handle, [Flow(FlowDirection.Out)] int* stride)
+        public static unsafe int ExportDrmimage(this MesaDrmImage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] Span<int> name, [Flow(FlowDirection.Out)] int* handle, [Flow(FlowDirection.Out)] int* stride)
         {
             // SpanOverloader
             return thisApi.ExportDrmimage(dpy, image, out name.GetPinnableReference(), handle, stride);
         }
 
-        public static unsafe bool ExportDrmimage(this MesaDrmImage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] Span<int> name, [Flow(FlowDirection.Out)] int* handle, [Flow(FlowDirection.Out)] Span<int> stride)
+        public static unsafe int ExportDrmimage(this MesaDrmImage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] Span<int> name, [Flow(FlowDirection.Out)] int* handle, [Flow(FlowDirection.Out)] Span<int> stride)
         {
             // SpanOverloader
             return thisApi.ExportDrmimage(dpy, image, out name.GetPinnableReference(), handle, out stride.GetPinnableReference());
         }
 
-        public static unsafe bool ExportDrmimage(this MesaDrmImage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] Span<int> name, [Flow(FlowDirection.Out)] Span<int> handle, [Flow(FlowDirection.Out)] int* stride)
+        public static unsafe int ExportDrmimage(this MesaDrmImage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] Span<int> name, [Flow(FlowDirection.Out)] Span<int> handle, [Flow(FlowDirection.Out)] int* stride)
         {
             // SpanOverloader
             return thisApi.ExportDrmimage(dpy, image, out name.GetPinnableReference(), out handle.GetPinnableReference(), stride);
         }
 
-        public static unsafe bool ExportDrmimage(this MesaDrmImage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] Span<int> name, [Flow(FlowDirection.Out)] Span<int> handle, [Flow(FlowDirection.Out)] Span<int> stride)
+        public static unsafe int ExportDrmimage(this MesaDrmImage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] Span<int> name, [Flow(FlowDirection.Out)] Span<int> handle, [Flow(FlowDirection.Out)] Span<int> stride)
         {
             // SpanOverloader
             return thisApi.ExportDrmimage(dpy, image, out name.GetPinnableReference(), out handle.GetPinnableReference(), out stride.GetPinnableReference());

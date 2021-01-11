@@ -23,28 +23,28 @@ namespace Silk.NET.EGL.Extensions.WL
     {
         public const string ExtensionName = "WL_bind_wayland_display";
         [NativeApi(EntryPoint = "eglBindWaylandDisplayWL")]
-        public unsafe partial bool BindWaylandDisplayWL([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] nint* display);
+        public unsafe partial int BindWaylandDisplayWL([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] nint* display);
 
         [NativeApi(EntryPoint = "eglBindWaylandDisplayWL")]
-        public partial bool BindWaylandDisplayWL([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] out nint display);
+        public partial int BindWaylandDisplayWL([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] out nint display);
 
         [NativeApi(EntryPoint = "eglQueryWaylandBufferWL")]
-        public unsafe partial bool QueryWaylandBufferWL([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] nint* buffer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] int* value);
+        public unsafe partial int QueryWaylandBufferWL([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] nint* buffer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] int* value);
 
         [NativeApi(EntryPoint = "eglQueryWaylandBufferWL")]
-        public unsafe partial bool QueryWaylandBufferWL([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] nint* buffer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out int value);
+        public unsafe partial int QueryWaylandBufferWL([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] nint* buffer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out int value);
 
         [NativeApi(EntryPoint = "eglQueryWaylandBufferWL")]
-        public unsafe partial bool QueryWaylandBufferWL([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] out nint buffer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] int* value);
+        public unsafe partial int QueryWaylandBufferWL([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] out nint buffer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] int* value);
 
         [NativeApi(EntryPoint = "eglQueryWaylandBufferWL")]
-        public partial bool QueryWaylandBufferWL([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] out nint buffer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out int value);
+        public partial int QueryWaylandBufferWL([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] out nint buffer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out int value);
 
         [NativeApi(EntryPoint = "eglUnbindWaylandDisplayWL")]
-        public unsafe partial bool UnbindWaylandDisplayWL([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] nint* display);
+        public unsafe partial int UnbindWaylandDisplayWL([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] nint* display);
 
         [NativeApi(EntryPoint = "eglUnbindWaylandDisplayWL")]
-        public partial bool UnbindWaylandDisplayWL([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] out nint display);
+        public partial int UnbindWaylandDisplayWL([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] out nint display);
 
         public WLBindWaylandDisplay(INativeContext ctx)
             : base(ctx)

@@ -23,10 +23,10 @@ namespace Silk.NET.EGL.Extensions.EXT
     {
         public const string ExtensionName = "EXT_swap_buffers_with_damage";
         [NativeApi(EntryPoint = "eglSwapBuffersWithDamageEXT")]
-        public unsafe partial bool SwapBuffersWithDamage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int* rects, [Flow(FlowDirection.In)] int n_rects);
+        public unsafe partial int SwapBuffersWithDamage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int* rects, [Flow(FlowDirection.In)] int n_rects);
 
         [NativeApi(EntryPoint = "eglSwapBuffersWithDamageEXT")]
-        public partial bool SwapBuffersWithDamage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] in int rects, [Flow(FlowDirection.In)] int n_rects);
+        public partial int SwapBuffersWithDamage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] in int rects, [Flow(FlowDirection.In)] int n_rects);
 
         public ExtSwapBuffersWithDamage(INativeContext ctx)
             : base(ctx)

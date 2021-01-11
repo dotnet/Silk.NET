@@ -23,40 +23,40 @@ namespace Silk.NET.EGL.Extensions.ANDROID
     {
         public const string ExtensionName = "ANDROID_get_frame_timestamps";
         [NativeApi(EntryPoint = "eglGetCompositorTimingANDROID")]
-        public unsafe partial bool GetCompositorTiming([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int numTimestamps, [Flow(FlowDirection.In)] int* names, [Flow(FlowDirection.Out)] long* values);
+        public unsafe partial int GetCompositorTiming([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int numTimestamps, [Flow(FlowDirection.In)] int* names, [Flow(FlowDirection.Out)] long* values);
 
         [NativeApi(EntryPoint = "eglGetCompositorTimingANDROID")]
-        public unsafe partial bool GetCompositorTiming([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int numTimestamps, [Flow(FlowDirection.In)] int* names, [Flow(FlowDirection.Out)] out long values);
+        public unsafe partial int GetCompositorTiming([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int numTimestamps, [Flow(FlowDirection.In)] int* names, [Flow(FlowDirection.Out)] out long values);
 
         [NativeApi(EntryPoint = "eglGetCompositorTimingANDROID")]
-        public unsafe partial bool GetCompositorTiming([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int numTimestamps, [Flow(FlowDirection.In)] in int names, [Flow(FlowDirection.Out)] long* values);
+        public unsafe partial int GetCompositorTiming([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int numTimestamps, [Flow(FlowDirection.In)] in int names, [Flow(FlowDirection.Out)] long* values);
 
         [NativeApi(EntryPoint = "eglGetCompositorTimingANDROID")]
-        public partial bool GetCompositorTiming([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int numTimestamps, [Flow(FlowDirection.In)] in int names, [Flow(FlowDirection.Out)] out long values);
+        public partial int GetCompositorTiming([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int numTimestamps, [Flow(FlowDirection.In)] in int names, [Flow(FlowDirection.Out)] out long values);
 
         [NativeApi(EntryPoint = "eglGetCompositorTimingSupportedANDROID")]
-        public partial bool GetCompositorTimingSupporte([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int name);
+        public partial int GetCompositorTimingSupporte([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int name);
 
         [NativeApi(EntryPoint = "eglGetFrameTimestampsANDROID")]
-        public unsafe partial bool GetFrameTimestamp([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] ulong frameId, [Flow(FlowDirection.In)] int numTimestamps, [Flow(FlowDirection.In)] int* timestamps, [Flow(FlowDirection.Out)] long* values);
+        public unsafe partial int GetFrameTimestamp([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] ulong frameId, [Flow(FlowDirection.In)] int numTimestamps, [Flow(FlowDirection.In)] int* timestamps, [Flow(FlowDirection.Out)] long* values);
 
         [NativeApi(EntryPoint = "eglGetFrameTimestampsANDROID")]
-        public unsafe partial bool GetFrameTimestamp([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] ulong frameId, [Flow(FlowDirection.In)] int numTimestamps, [Flow(FlowDirection.In)] int* timestamps, [Flow(FlowDirection.Out)] out long values);
+        public unsafe partial int GetFrameTimestamp([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] ulong frameId, [Flow(FlowDirection.In)] int numTimestamps, [Flow(FlowDirection.In)] int* timestamps, [Flow(FlowDirection.Out)] out long values);
 
         [NativeApi(EntryPoint = "eglGetFrameTimestampsANDROID")]
-        public unsafe partial bool GetFrameTimestamp([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] ulong frameId, [Flow(FlowDirection.In)] int numTimestamps, [Flow(FlowDirection.In)] in int timestamps, [Flow(FlowDirection.Out)] long* values);
+        public unsafe partial int GetFrameTimestamp([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] ulong frameId, [Flow(FlowDirection.In)] int numTimestamps, [Flow(FlowDirection.In)] in int timestamps, [Flow(FlowDirection.Out)] long* values);
 
         [NativeApi(EntryPoint = "eglGetFrameTimestampsANDROID")]
-        public partial bool GetFrameTimestamp([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] ulong frameId, [Flow(FlowDirection.In)] int numTimestamps, [Flow(FlowDirection.In)] in int timestamps, [Flow(FlowDirection.Out)] out long values);
+        public partial int GetFrameTimestamp([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] ulong frameId, [Flow(FlowDirection.In)] int numTimestamps, [Flow(FlowDirection.In)] in int timestamps, [Flow(FlowDirection.Out)] out long values);
 
         [NativeApi(EntryPoint = "eglGetFrameTimestampSupportedANDROID")]
-        public partial bool GetFrameTimestampSupporte([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int timestamp);
+        public partial int GetFrameTimestampSupporte([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int timestamp);
 
         [NativeApi(EntryPoint = "eglGetNextFrameIdANDROID")]
-        public unsafe partial bool GetNextFrameId([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.Out)] ulong* frameId);
+        public unsafe partial int GetNextFrameId([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.Out)] ulong* frameId);
 
         [NativeApi(EntryPoint = "eglGetNextFrameIdANDROID")]
-        public partial bool GetNextFrameId([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.Out)] out ulong frameId);
+        public partial int GetNextFrameId([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.Out)] out ulong frameId);
 
         public AndroidGetFrameTimestamps(INativeContext ctx)
             : base(ctx)

@@ -23,10 +23,10 @@ namespace Silk.NET.EGL.Extensions.KHR
     {
         public const string ExtensionName = "KHR_display_reference";
         [NativeApi(EntryPoint = "eglQueryDisplayAttribKHR")]
-        public unsafe partial bool QueryDisplayAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int name, [Flow(FlowDirection.Out)] nint* value);
+        public unsafe partial int QueryDisplayAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int name, [Flow(FlowDirection.Out)] nint* value);
 
         [NativeApi(EntryPoint = "eglQueryDisplayAttribKHR")]
-        public partial bool QueryDisplayAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int name, [Flow(FlowDirection.Out)] out nint value);
+        public partial int QueryDisplayAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int name, [Flow(FlowDirection.Out)] out nint value);
 
         public KhrDisplayReference(INativeContext ctx)
             : base(ctx)

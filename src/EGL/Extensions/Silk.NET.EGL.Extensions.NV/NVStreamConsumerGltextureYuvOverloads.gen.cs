@@ -18,7 +18,7 @@ namespace Silk.NET.EGL.Extensions.NV
 {
     public static class NVStreamConsumerGltextureYuvOverloads
     {
-        public static unsafe bool StreamConsumerGltextureExternalAttrib(this NVStreamConsumerGltextureYuv thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] ReadOnlySpan<nint> attrib_list)
+        public static unsafe int StreamConsumerGltextureExternalAttrib(this NVStreamConsumerGltextureYuv thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] ReadOnlySpan<nint> attrib_list)
         {
             // SpanOverloader
             return thisApi.StreamConsumerGltextureExternalAttrib(dpy, stream, in attrib_list.GetPinnableReference());

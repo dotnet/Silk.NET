@@ -18,19 +18,19 @@ namespace Silk.NET.EGL.Extensions.EXT
 {
     public static class ExtDeviceEnumerationOverloads
     {
-        public static unsafe bool QueryDevices(this ExtDeviceEnumeration thisApi, [Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] Span<int> num_devices)
+        public static unsafe int QueryDevices(this ExtDeviceEnumeration thisApi, [Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] Span<int> num_devices)
         {
             // SpanOverloader
             return thisApi.QueryDevices(max_devices, devices, out num_devices.GetPinnableReference());
         }
 
-        public static unsafe bool QueryDevices(this ExtDeviceEnumeration thisApi, [Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] int* num_devices)
+        public static unsafe int QueryDevices(this ExtDeviceEnumeration thisApi, [Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] int* num_devices)
         {
             // SpanOverloader
             return thisApi.QueryDevices(max_devices, out devices.GetPinnableReference(), num_devices);
         }
 
-        public static unsafe bool QueryDevices(this ExtDeviceEnumeration thisApi, [Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] Span<int> num_devices)
+        public static unsafe int QueryDevices(this ExtDeviceEnumeration thisApi, [Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] Span<int> num_devices)
         {
             // SpanOverloader
             return thisApi.QueryDevices(max_devices, out devices.GetPinnableReference(), out num_devices.GetPinnableReference());

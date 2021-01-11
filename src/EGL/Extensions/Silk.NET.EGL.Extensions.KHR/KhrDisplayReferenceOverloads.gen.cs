@@ -18,7 +18,7 @@ namespace Silk.NET.EGL.Extensions.KHR
 {
     public static class KhrDisplayReferenceOverloads
     {
-        public static unsafe bool QueryDisplayAttrib(this KhrDisplayReference thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int name, [Flow(FlowDirection.Out)] Span<nint> value)
+        public static unsafe int QueryDisplayAttrib(this KhrDisplayReference thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int name, [Flow(FlowDirection.Out)] Span<nint> value)
         {
             // SpanOverloader
             return thisApi.QueryDisplayAttrib(dpy, name, out value.GetPinnableReference());

@@ -29,22 +29,22 @@ namespace Silk.NET.EGL.Extensions.KHR
         public partial nint CreateStream([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] in int attrib_list);
 
         [NativeApi(EntryPoint = "eglDestroyStreamKHR")]
-        public partial bool DestroyStream([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream);
+        public partial int DestroyStream([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream);
 
         [NativeApi(EntryPoint = "eglQueryStreamKHR")]
-        public unsafe partial bool QueryStream([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] int* value);
+        public unsafe partial int QueryStream([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] int* value);
 
         [NativeApi(EntryPoint = "eglQueryStreamKHR")]
-        public partial bool QueryStream([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] out int value);
+        public partial int QueryStream([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] out int value);
 
         [NativeApi(EntryPoint = "eglQueryStreamu64KHR")]
-        public unsafe partial bool QueryStreamu64([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] ulong* value);
+        public unsafe partial int QueryStreamu64([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] ulong* value);
 
         [NativeApi(EntryPoint = "eglQueryStreamu64KHR")]
-        public partial bool QueryStreamu64([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] out ulong value);
+        public partial int QueryStreamu64([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] out ulong value);
 
         [NativeApi(EntryPoint = "eglStreamAttribKHR")]
-        public partial bool StreamAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.In)] int value);
+        public partial int StreamAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.In)] int value);
 
         public KhrStream(INativeContext ctx)
             : base(ctx)

@@ -23,10 +23,10 @@ namespace Silk.NET.EGL.Extensions.ANGLE
     {
         public const string ExtensionName = "ANGLE_query_surface_pointer";
         [NativeApi(EntryPoint = "eglQuerySurfacePointerANGLE")]
-        public unsafe partial bool QuerySurfacePointer([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] void** value);
+        public unsafe partial int QuerySurfacePointer([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] void** value);
 
         [NativeApi(EntryPoint = "eglQuerySurfacePointerANGLE")]
-        public unsafe partial bool QuerySurfacePointer([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out void* value);
+        public unsafe partial int QuerySurfacePointer([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out void* value);
 
         public AngleQuerySurfacePointer(INativeContext ctx)
             : base(ctx)

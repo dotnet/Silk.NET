@@ -23,7 +23,7 @@ namespace Silk.NET.EGL.Extensions.ANDROID
     {
         public const string ExtensionName = "ANDROID_presentation_time";
         [NativeApi(EntryPoint = "eglPresentationTimeANDROID")]
-        public partial bool PresentationTime([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] long time);
+        public partial int PresentationTime([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] long time);
 
         public AndroidPresentationTime(INativeContext ctx)
             : base(ctx)

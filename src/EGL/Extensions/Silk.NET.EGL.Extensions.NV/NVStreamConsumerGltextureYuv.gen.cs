@@ -23,10 +23,10 @@ namespace Silk.NET.EGL.Extensions.NV
     {
         public const string ExtensionName = "NV_stream_consumer_gltexture_yuv";
         [NativeApi(EntryPoint = "eglStreamConsumerGLTextureExternalAttribsNV")]
-        public unsafe partial bool StreamConsumerGltextureExternalAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] nint* attrib_list);
+        public unsafe partial int StreamConsumerGltextureExternalAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] nint* attrib_list);
 
         [NativeApi(EntryPoint = "eglStreamConsumerGLTextureExternalAttribsNV")]
-        public partial bool StreamConsumerGltextureExternalAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] in nint attrib_list);
+        public partial int StreamConsumerGltextureExternalAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] in nint attrib_list);
 
         public NVStreamConsumerGltextureYuv(INativeContext ctx)
             : base(ctx)

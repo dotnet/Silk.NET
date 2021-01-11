@@ -18,7 +18,7 @@ namespace Silk.NET.EGL.Extensions.KHR
 {
     public static class KhrSwapBuffersWithDamageOverloads
     {
-        public static unsafe bool SwapBuffersWithDamage(this KhrSwapBuffersWithDamage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] ReadOnlySpan<int> rects, [Flow(FlowDirection.In)] int n_rects)
+        public static unsafe int SwapBuffersWithDamage(this KhrSwapBuffersWithDamage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] ReadOnlySpan<int> rects, [Flow(FlowDirection.In)] int n_rects)
         {
             // SpanOverloader
             return thisApi.SwapBuffersWithDamage(dpy, surface, in rects.GetPinnableReference(), n_rects);

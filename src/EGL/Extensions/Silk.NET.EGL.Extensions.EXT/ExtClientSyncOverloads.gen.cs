@@ -18,7 +18,7 @@ namespace Silk.NET.EGL.Extensions.EXT
 {
     public static class ExtClientSyncOverloads
     {
-        public static unsafe bool ClientSignalSync(this ExtClientSync thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] ReadOnlySpan<nint> attrib_list)
+        public static unsafe int ClientSignalSync(this ExtClientSync thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] ReadOnlySpan<nint> attrib_list)
         {
             // SpanOverloader
             return thisApi.ClientSignalSync(dpy, sync, in attrib_list.GetPinnableReference());

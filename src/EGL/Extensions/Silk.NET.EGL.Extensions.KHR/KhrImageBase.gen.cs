@@ -29,7 +29,7 @@ namespace Silk.NET.EGL.Extensions.KHR
         public partial nint CreateImage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint ctx, [Flow(FlowDirection.In)] KHR target, [Flow(FlowDirection.In)] nint buffer, [Flow(FlowDirection.In)] in int attrib_list);
 
         [NativeApi(EntryPoint = "eglDestroyImageKHR")]
-        public partial bool DestroyImage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image);
+        public partial int DestroyImage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image);
 
         public KhrImageBase(INativeContext ctx)
             : base(ctx)

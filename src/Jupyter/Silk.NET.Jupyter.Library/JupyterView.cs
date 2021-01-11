@@ -4,27 +4,33 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Runtime.CompilerServices;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Maths;
 using Silk.NET.Windowing;
 
+[assembly: InternalsVisibleTo("Silk.NET.Jupyter.InteractiveExtension")]
 namespace Silk.NET.Jupyter
 {
-    public class JupyterView : IView
+    public sealed class JupyterView : IView
     {
+        internal static JupyterView LastCreated;
+        
         private readonly int _width;
         private readonly int _height;
         private JupyterGLContext? _glContext;
 
-        public static IView Create(int width, int height)
+        public static IView Create(int width, int height, GraphicsAPI api)
         {
-            return new JupyterView(width, height);
+            return new JupyterView(width, height, api);
         }
 
-        private JupyterView(int width, int height)
+        private JupyterView(int width, int height, GraphicsAPI api)
         {
             _width = width;
             _height = height;
+            API = api;
+            LastCreated = this;
         }
 
         public bool ShouldSwapAutomatically => throw new NotImplementedException();
@@ -49,7 +55,7 @@ namespace Silk.NET.Jupyter
             set => throw new NotImplementedException();
         }
 
-        public GraphicsAPI API => throw new NotImplementedException();
+        public GraphicsAPI API { get; }
 
         public bool VSync
         {
@@ -85,7 +91,7 @@ namespace Silk.NET.Jupyter
 
         public void Initialize()
         {
-            _glContext = new JupyterGLContext(this, _width, _height);
+            _glContext ??= new JupyterGLContext(this, _width, _height, API);
         }
 
         public void DoRender()

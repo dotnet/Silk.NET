@@ -18,13 +18,13 @@ namespace Silk.NET.EGL.Extensions.KHR
 {
     public static class KhrLockSurface3Overloads
     {
-        public static unsafe bool LockSurface(this KhrLockSurface3 thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] ReadOnlySpan<int> attrib_list)
+        public static unsafe int LockSurface(this KhrLockSurface3 thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] ReadOnlySpan<int> attrib_list)
         {
             // SpanOverloader
             return thisApi.LockSurface(dpy, surface, in attrib_list.GetPinnableReference());
         }
 
-        public static unsafe bool QuerySurface64(this KhrLockSurface3 thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<nint> value)
+        public static unsafe int QuerySurface64(this KhrLockSurface3 thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<nint> value)
         {
             // SpanOverloader
             return thisApi.QuerySurface64(dpy, surface, attribute, out value.GetPinnableReference());

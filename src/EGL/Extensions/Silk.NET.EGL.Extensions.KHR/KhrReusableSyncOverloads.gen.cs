@@ -24,7 +24,7 @@ namespace Silk.NET.EGL.Extensions.KHR
             return thisApi.CreateSync(dpy, type, in attrib_list.GetPinnableReference());
         }
 
-        public static unsafe bool GetSyncAttrib(this KhrReusableSync thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<int> value)
+        public static unsafe int GetSyncAttrib(this KhrReusableSync thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<int> value)
         {
             // SpanOverloader
             return thisApi.GetSyncAttrib(dpy, sync, attribute, out value.GetPinnableReference());

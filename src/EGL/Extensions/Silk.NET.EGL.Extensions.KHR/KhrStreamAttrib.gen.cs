@@ -29,25 +29,25 @@ namespace Silk.NET.EGL.Extensions.KHR
         public partial nint CreateStreamAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] in nint attrib_list);
 
         [NativeApi(EntryPoint = "eglQueryStreamAttribKHR")]
-        public unsafe partial bool QueryStreamAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] nint* value);
+        public unsafe partial int QueryStreamAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] nint* value);
 
         [NativeApi(EntryPoint = "eglQueryStreamAttribKHR")]
-        public partial bool QueryStreamAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] out nint value);
+        public partial int QueryStreamAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] out nint value);
 
         [NativeApi(EntryPoint = "eglSetStreamAttribKHR")]
-        public partial bool SetStreamAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.In)] nint value);
+        public partial int SetStreamAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.In)] nint value);
 
         [NativeApi(EntryPoint = "eglStreamConsumerAcquireAttribKHR")]
-        public unsafe partial bool StreamConsumerAcquireAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] nint* attrib_list);
+        public unsafe partial int StreamConsumerAcquireAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] nint* attrib_list);
 
         [NativeApi(EntryPoint = "eglStreamConsumerAcquireAttribKHR")]
-        public partial bool StreamConsumerAcquireAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] in nint attrib_list);
+        public partial int StreamConsumerAcquireAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] in nint attrib_list);
 
         [NativeApi(EntryPoint = "eglStreamConsumerReleaseAttribKHR")]
-        public unsafe partial bool StreamConsumerReleaseAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] nint* attrib_list);
+        public unsafe partial int StreamConsumerReleaseAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] nint* attrib_list);
 
         [NativeApi(EntryPoint = "eglStreamConsumerReleaseAttribKHR")]
-        public partial bool StreamConsumerReleaseAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] in nint attrib_list);
+        public partial int StreamConsumerReleaseAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] in nint attrib_list);
 
         public KhrStreamAttrib(INativeContext ctx)
             : base(ctx)

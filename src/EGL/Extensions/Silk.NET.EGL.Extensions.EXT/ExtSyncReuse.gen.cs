@@ -23,10 +23,10 @@ namespace Silk.NET.EGL.Extensions.EXT
     {
         public const string ExtensionName = "EXT_sync_reuse";
         [NativeApi(EntryPoint = "eglUnsignalSyncEXT")]
-        public unsafe partial bool UnsignalSync([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] nint* attrib_list);
+        public unsafe partial int UnsignalSync([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] nint* attrib_list);
 
         [NativeApi(EntryPoint = "eglUnsignalSyncEXT")]
-        public partial bool UnsignalSync([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] in nint attrib_list);
+        public partial int UnsignalSync([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] in nint attrib_list);
 
         public ExtSyncReuse(INativeContext ctx)
             : base(ctx)

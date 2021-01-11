@@ -23,64 +23,64 @@ namespace Silk.NET.EGL.Extensions.EXT
     {
         public const string ExtensionName = "EXT_output_base";
         [NativeApi(EntryPoint = "eglGetOutputLayersEXT")]
-        public unsafe partial bool GetOutputLayers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint* attrib_list, [Flow(FlowDirection.Out)] nint* layers, [Flow(FlowDirection.In)] int max_layers, [Flow(FlowDirection.Out)] int* num_layers);
+        public unsafe partial int GetOutputLayers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint* attrib_list, [Flow(FlowDirection.Out)] nint* layers, [Flow(FlowDirection.In)] int max_layers, [Flow(FlowDirection.Out)] int* num_layers);
 
         [NativeApi(EntryPoint = "eglGetOutputLayersEXT")]
-        public unsafe partial bool GetOutputLayers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint* attrib_list, [Flow(FlowDirection.Out)] nint* layers, [Flow(FlowDirection.In)] int max_layers, [Flow(FlowDirection.Out)] out int num_layers);
+        public unsafe partial int GetOutputLayers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint* attrib_list, [Flow(FlowDirection.Out)] nint* layers, [Flow(FlowDirection.In)] int max_layers, [Flow(FlowDirection.Out)] out int num_layers);
 
         [NativeApi(EntryPoint = "eglGetOutputLayersEXT")]
-        public unsafe partial bool GetOutputLayers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint* attrib_list, [Flow(FlowDirection.Out)] out nint layers, [Flow(FlowDirection.In)] int max_layers, [Flow(FlowDirection.Out)] int* num_layers);
+        public unsafe partial int GetOutputLayers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint* attrib_list, [Flow(FlowDirection.Out)] out nint layers, [Flow(FlowDirection.In)] int max_layers, [Flow(FlowDirection.Out)] int* num_layers);
 
         [NativeApi(EntryPoint = "eglGetOutputLayersEXT")]
-        public unsafe partial bool GetOutputLayers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint* attrib_list, [Flow(FlowDirection.Out)] out nint layers, [Flow(FlowDirection.In)] int max_layers, [Flow(FlowDirection.Out)] out int num_layers);
+        public unsafe partial int GetOutputLayers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint* attrib_list, [Flow(FlowDirection.Out)] out nint layers, [Flow(FlowDirection.In)] int max_layers, [Flow(FlowDirection.Out)] out int num_layers);
 
         [NativeApi(EntryPoint = "eglGetOutputLayersEXT")]
-        public unsafe partial bool GetOutputLayers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] in nint attrib_list, [Flow(FlowDirection.Out)] nint* layers, [Flow(FlowDirection.In)] int max_layers, [Flow(FlowDirection.Out)] int* num_layers);
+        public unsafe partial int GetOutputLayers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] in nint attrib_list, [Flow(FlowDirection.Out)] nint* layers, [Flow(FlowDirection.In)] int max_layers, [Flow(FlowDirection.Out)] int* num_layers);
 
         [NativeApi(EntryPoint = "eglGetOutputLayersEXT")]
-        public unsafe partial bool GetOutputLayers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] in nint attrib_list, [Flow(FlowDirection.Out)] nint* layers, [Flow(FlowDirection.In)] int max_layers, [Flow(FlowDirection.Out)] out int num_layers);
+        public unsafe partial int GetOutputLayers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] in nint attrib_list, [Flow(FlowDirection.Out)] nint* layers, [Flow(FlowDirection.In)] int max_layers, [Flow(FlowDirection.Out)] out int num_layers);
 
         [NativeApi(EntryPoint = "eglGetOutputLayersEXT")]
-        public unsafe partial bool GetOutputLayers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] in nint attrib_list, [Flow(FlowDirection.Out)] out nint layers, [Flow(FlowDirection.In)] int max_layers, [Flow(FlowDirection.Out)] int* num_layers);
+        public unsafe partial int GetOutputLayers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] in nint attrib_list, [Flow(FlowDirection.Out)] out nint layers, [Flow(FlowDirection.In)] int max_layers, [Flow(FlowDirection.Out)] int* num_layers);
 
         [NativeApi(EntryPoint = "eglGetOutputLayersEXT")]
-        public partial bool GetOutputLayers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] in nint attrib_list, [Flow(FlowDirection.Out)] out nint layers, [Flow(FlowDirection.In)] int max_layers, [Flow(FlowDirection.Out)] out int num_layers);
+        public partial int GetOutputLayers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] in nint attrib_list, [Flow(FlowDirection.Out)] out nint layers, [Flow(FlowDirection.In)] int max_layers, [Flow(FlowDirection.Out)] out int num_layers);
 
         [NativeApi(EntryPoint = "eglGetOutputPortsEXT")]
-        public unsafe partial bool GetOutputPorts([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint* attrib_list, [Flow(FlowDirection.Out)] nint* ports, [Flow(FlowDirection.In)] int max_ports, [Flow(FlowDirection.Out)] int* num_ports);
+        public unsafe partial int GetOutputPorts([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint* attrib_list, [Flow(FlowDirection.Out)] nint* ports, [Flow(FlowDirection.In)] int max_ports, [Flow(FlowDirection.Out)] int* num_ports);
 
         [NativeApi(EntryPoint = "eglGetOutputPortsEXT")]
-        public unsafe partial bool GetOutputPorts([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint* attrib_list, [Flow(FlowDirection.Out)] nint* ports, [Flow(FlowDirection.In)] int max_ports, [Flow(FlowDirection.Out)] out int num_ports);
+        public unsafe partial int GetOutputPorts([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint* attrib_list, [Flow(FlowDirection.Out)] nint* ports, [Flow(FlowDirection.In)] int max_ports, [Flow(FlowDirection.Out)] out int num_ports);
 
         [NativeApi(EntryPoint = "eglGetOutputPortsEXT")]
-        public unsafe partial bool GetOutputPorts([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint* attrib_list, [Flow(FlowDirection.Out)] out nint ports, [Flow(FlowDirection.In)] int max_ports, [Flow(FlowDirection.Out)] int* num_ports);
+        public unsafe partial int GetOutputPorts([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint* attrib_list, [Flow(FlowDirection.Out)] out nint ports, [Flow(FlowDirection.In)] int max_ports, [Flow(FlowDirection.Out)] int* num_ports);
 
         [NativeApi(EntryPoint = "eglGetOutputPortsEXT")]
-        public unsafe partial bool GetOutputPorts([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint* attrib_list, [Flow(FlowDirection.Out)] out nint ports, [Flow(FlowDirection.In)] int max_ports, [Flow(FlowDirection.Out)] out int num_ports);
+        public unsafe partial int GetOutputPorts([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint* attrib_list, [Flow(FlowDirection.Out)] out nint ports, [Flow(FlowDirection.In)] int max_ports, [Flow(FlowDirection.Out)] out int num_ports);
 
         [NativeApi(EntryPoint = "eglGetOutputPortsEXT")]
-        public unsafe partial bool GetOutputPorts([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] in nint attrib_list, [Flow(FlowDirection.Out)] nint* ports, [Flow(FlowDirection.In)] int max_ports, [Flow(FlowDirection.Out)] int* num_ports);
+        public unsafe partial int GetOutputPorts([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] in nint attrib_list, [Flow(FlowDirection.Out)] nint* ports, [Flow(FlowDirection.In)] int max_ports, [Flow(FlowDirection.Out)] int* num_ports);
 
         [NativeApi(EntryPoint = "eglGetOutputPortsEXT")]
-        public unsafe partial bool GetOutputPorts([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] in nint attrib_list, [Flow(FlowDirection.Out)] nint* ports, [Flow(FlowDirection.In)] int max_ports, [Flow(FlowDirection.Out)] out int num_ports);
+        public unsafe partial int GetOutputPorts([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] in nint attrib_list, [Flow(FlowDirection.Out)] nint* ports, [Flow(FlowDirection.In)] int max_ports, [Flow(FlowDirection.Out)] out int num_ports);
 
         [NativeApi(EntryPoint = "eglGetOutputPortsEXT")]
-        public unsafe partial bool GetOutputPorts([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] in nint attrib_list, [Flow(FlowDirection.Out)] out nint ports, [Flow(FlowDirection.In)] int max_ports, [Flow(FlowDirection.Out)] int* num_ports);
+        public unsafe partial int GetOutputPorts([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] in nint attrib_list, [Flow(FlowDirection.Out)] out nint ports, [Flow(FlowDirection.In)] int max_ports, [Flow(FlowDirection.Out)] int* num_ports);
 
         [NativeApi(EntryPoint = "eglGetOutputPortsEXT")]
-        public partial bool GetOutputPorts([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] in nint attrib_list, [Flow(FlowDirection.Out)] out nint ports, [Flow(FlowDirection.In)] int max_ports, [Flow(FlowDirection.Out)] out int num_ports);
+        public partial int GetOutputPorts([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] in nint attrib_list, [Flow(FlowDirection.Out)] out nint ports, [Flow(FlowDirection.In)] int max_ports, [Flow(FlowDirection.Out)] out int num_ports);
 
         [NativeApi(EntryPoint = "eglOutputLayerAttribEXT")]
-        public partial bool OutputLayerAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint layer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.In)] nint value);
+        public partial int OutputLayerAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint layer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.In)] nint value);
 
         [NativeApi(EntryPoint = "eglOutputPortAttribEXT")]
-        public partial bool OutputPortAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint port, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.In)] nint value);
+        public partial int OutputPortAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint port, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.In)] nint value);
 
         [NativeApi(EntryPoint = "eglQueryOutputLayerAttribEXT")]
-        public unsafe partial bool QueryOutputLayerAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint layer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] nint* value);
+        public unsafe partial int QueryOutputLayerAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint layer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] nint* value);
 
         [NativeApi(EntryPoint = "eglQueryOutputLayerAttribEXT")]
-        public partial bool QueryOutputLayerAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint layer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out nint value);
+        public partial int QueryOutputLayerAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint layer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out nint value);
 
         [NativeApi(EntryPoint = "eglQueryOutputLayerStringEXT")]
         public unsafe partial byte* QueryOutputLayerString([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint layer, [Flow(FlowDirection.In)] int name);
@@ -89,10 +89,10 @@ namespace Silk.NET.EGL.Extensions.EXT
         public partial string QueryOutputLayerStringS([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint layer, [Flow(FlowDirection.In)] int name);
 
         [NativeApi(EntryPoint = "eglQueryOutputPortAttribEXT")]
-        public unsafe partial bool QueryOutputPortAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint port, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] nint* value);
+        public unsafe partial int QueryOutputPortAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint port, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] nint* value);
 
         [NativeApi(EntryPoint = "eglQueryOutputPortAttribEXT")]
-        public partial bool QueryOutputPortAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint port, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out nint value);
+        public partial int QueryOutputPortAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint port, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out nint value);
 
         [NativeApi(EntryPoint = "eglQueryOutputPortStringEXT")]
         public unsafe partial byte* QueryOutputPortString([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint port, [Flow(FlowDirection.In)] int name);

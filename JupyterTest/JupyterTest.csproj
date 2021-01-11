@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\src\Jupyter\Silk.NET.Jupyter.Library\Silk.NET.Jupyter.Library.csproj" />
+      <ProjectReference Include="..\src\OpenGL\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="libEGL.dll">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="libGLESV2.dll">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="SixLabors.ImageSharp" Version="1.0.2" />
+    </ItemGroup>
+
+</Project>

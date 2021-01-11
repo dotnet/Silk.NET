@@ -24,19 +24,19 @@ namespace Silk.NET.EGL.Extensions.KHR
             return thisApi.CreateStreamAttrib(dpy, in attrib_list.GetPinnableReference());
         }
 
-        public static unsafe bool QueryStreamAttrib(this KhrStreamAttrib thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] Span<nint> value)
+        public static unsafe int QueryStreamAttrib(this KhrStreamAttrib thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] Span<nint> value)
         {
             // SpanOverloader
             return thisApi.QueryStreamAttrib(dpy, stream, attribute, out value.GetPinnableReference());
         }
 
-        public static unsafe bool StreamConsumerAcquireAttrib(this KhrStreamAttrib thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] ReadOnlySpan<nint> attrib_list)
+        public static unsafe int StreamConsumerAcquireAttrib(this KhrStreamAttrib thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] ReadOnlySpan<nint> attrib_list)
         {
             // SpanOverloader
             return thisApi.StreamConsumerAcquireAttrib(dpy, stream, in attrib_list.GetPinnableReference());
         }
 
-        public static unsafe bool StreamConsumerReleaseAttrib(this KhrStreamAttrib thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] ReadOnlySpan<nint> attrib_list)
+        public static unsafe int StreamConsumerReleaseAttrib(this KhrStreamAttrib thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] ReadOnlySpan<nint> attrib_list)
         {
             // SpanOverloader
             return thisApi.StreamConsumerReleaseAttrib(dpy, stream, in attrib_list.GetPinnableReference());

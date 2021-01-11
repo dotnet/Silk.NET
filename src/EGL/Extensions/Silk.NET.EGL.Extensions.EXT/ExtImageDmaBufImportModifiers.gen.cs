@@ -23,40 +23,40 @@ namespace Silk.NET.EGL.Extensions.EXT
     {
         public const string ExtensionName = "EXT_image_dma_buf_import_modifiers";
         [NativeApi(EntryPoint = "eglQueryDmaBufFormatsEXT")]
-        public unsafe partial bool QueryDmaBufFormats([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int max_formats, [Flow(FlowDirection.Out)] int* formats, [Flow(FlowDirection.Out)] int* num_formats);
+        public unsafe partial int QueryDmaBufFormats([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int max_formats, [Flow(FlowDirection.Out)] int* formats, [Flow(FlowDirection.Out)] int* num_formats);
 
         [NativeApi(EntryPoint = "eglQueryDmaBufFormatsEXT")]
-        public unsafe partial bool QueryDmaBufFormats([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int max_formats, [Flow(FlowDirection.Out)] int* formats, [Flow(FlowDirection.Out)] out int num_formats);
+        public unsafe partial int QueryDmaBufFormats([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int max_formats, [Flow(FlowDirection.Out)] int* formats, [Flow(FlowDirection.Out)] out int num_formats);
 
         [NativeApi(EntryPoint = "eglQueryDmaBufFormatsEXT")]
-        public unsafe partial bool QueryDmaBufFormats([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int max_formats, [Flow(FlowDirection.Out)] out int formats, [Flow(FlowDirection.Out)] int* num_formats);
+        public unsafe partial int QueryDmaBufFormats([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int max_formats, [Flow(FlowDirection.Out)] out int formats, [Flow(FlowDirection.Out)] int* num_formats);
 
         [NativeApi(EntryPoint = "eglQueryDmaBufFormatsEXT")]
-        public partial bool QueryDmaBufFormats([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int max_formats, [Flow(FlowDirection.Out)] out int formats, [Flow(FlowDirection.Out)] out int num_formats);
+        public partial int QueryDmaBufFormats([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int max_formats, [Flow(FlowDirection.Out)] out int formats, [Flow(FlowDirection.Out)] out int num_formats);
 
         [NativeApi(EntryPoint = "eglQueryDmaBufModifiersEXT")]
-        public unsafe partial bool QueryDmaBufModifiers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int format, [Flow(FlowDirection.In)] int max_modifiers, [Flow(FlowDirection.Out)] ulong* modifiers, [Flow(FlowDirection.Out)] bool* external_only, [Flow(FlowDirection.Out)] int* num_modifiers);
+        public unsafe partial int QueryDmaBufModifiers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int format, [Flow(FlowDirection.In)] int max_modifiers, [Flow(FlowDirection.Out)] ulong* modifiers, [Flow(FlowDirection.Out)] int* external_only, [Flow(FlowDirection.Out)] int* num_modifiers);
 
         [NativeApi(EntryPoint = "eglQueryDmaBufModifiersEXT")]
-        public unsafe partial bool QueryDmaBufModifiers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int format, [Flow(FlowDirection.In)] int max_modifiers, [Flow(FlowDirection.Out)] ulong* modifiers, [Flow(FlowDirection.Out)] bool* external_only, [Flow(FlowDirection.Out)] out int num_modifiers);
+        public unsafe partial int QueryDmaBufModifiers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int format, [Flow(FlowDirection.In)] int max_modifiers, [Flow(FlowDirection.Out)] ulong* modifiers, [Flow(FlowDirection.Out)] int* external_only, [Flow(FlowDirection.Out)] out int num_modifiers);
 
         [NativeApi(EntryPoint = "eglQueryDmaBufModifiersEXT")]
-        public unsafe partial bool QueryDmaBufModifiers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int format, [Flow(FlowDirection.In)] int max_modifiers, [Flow(FlowDirection.Out)] ulong* modifiers, [Flow(FlowDirection.Out)] out bool external_only, [Flow(FlowDirection.Out)] int* num_modifiers);
+        public unsafe partial int QueryDmaBufModifiers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int format, [Flow(FlowDirection.In)] int max_modifiers, [Flow(FlowDirection.Out)] ulong* modifiers, [Flow(FlowDirection.Out)] out int external_only, [Flow(FlowDirection.Out)] int* num_modifiers);
 
         [NativeApi(EntryPoint = "eglQueryDmaBufModifiersEXT")]
-        public unsafe partial bool QueryDmaBufModifiers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int format, [Flow(FlowDirection.In)] int max_modifiers, [Flow(FlowDirection.Out)] ulong* modifiers, [Flow(FlowDirection.Out)] out bool external_only, [Flow(FlowDirection.Out)] out int num_modifiers);
+        public unsafe partial int QueryDmaBufModifiers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int format, [Flow(FlowDirection.In)] int max_modifiers, [Flow(FlowDirection.Out)] ulong* modifiers, [Flow(FlowDirection.Out)] out int external_only, [Flow(FlowDirection.Out)] out int num_modifiers);
 
         [NativeApi(EntryPoint = "eglQueryDmaBufModifiersEXT")]
-        public unsafe partial bool QueryDmaBufModifiers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int format, [Flow(FlowDirection.In)] int max_modifiers, [Flow(FlowDirection.Out)] out ulong modifiers, [Flow(FlowDirection.Out)] bool* external_only, [Flow(FlowDirection.Out)] int* num_modifiers);
+        public unsafe partial int QueryDmaBufModifiers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int format, [Flow(FlowDirection.In)] int max_modifiers, [Flow(FlowDirection.Out)] out ulong modifiers, [Flow(FlowDirection.Out)] int* external_only, [Flow(FlowDirection.Out)] int* num_modifiers);
 
         [NativeApi(EntryPoint = "eglQueryDmaBufModifiersEXT")]
-        public unsafe partial bool QueryDmaBufModifiers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int format, [Flow(FlowDirection.In)] int max_modifiers, [Flow(FlowDirection.Out)] out ulong modifiers, [Flow(FlowDirection.Out)] bool* external_only, [Flow(FlowDirection.Out)] out int num_modifiers);
+        public unsafe partial int QueryDmaBufModifiers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int format, [Flow(FlowDirection.In)] int max_modifiers, [Flow(FlowDirection.Out)] out ulong modifiers, [Flow(FlowDirection.Out)] int* external_only, [Flow(FlowDirection.Out)] out int num_modifiers);
 
         [NativeApi(EntryPoint = "eglQueryDmaBufModifiersEXT")]
-        public unsafe partial bool QueryDmaBufModifiers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int format, [Flow(FlowDirection.In)] int max_modifiers, [Flow(FlowDirection.Out)] out ulong modifiers, [Flow(FlowDirection.Out)] out bool external_only, [Flow(FlowDirection.Out)] int* num_modifiers);
+        public unsafe partial int QueryDmaBufModifiers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int format, [Flow(FlowDirection.In)] int max_modifiers, [Flow(FlowDirection.Out)] out ulong modifiers, [Flow(FlowDirection.Out)] out int external_only, [Flow(FlowDirection.Out)] int* num_modifiers);
 
         [NativeApi(EntryPoint = "eglQueryDmaBufModifiersEXT")]
-        public partial bool QueryDmaBufModifiers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int format, [Flow(FlowDirection.In)] int max_modifiers, [Flow(FlowDirection.Out)] out ulong modifiers, [Flow(FlowDirection.Out)] out bool external_only, [Flow(FlowDirection.Out)] out int num_modifiers);
+        public partial int QueryDmaBufModifiers([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int format, [Flow(FlowDirection.In)] int max_modifiers, [Flow(FlowDirection.Out)] out ulong modifiers, [Flow(FlowDirection.Out)] out int external_only, [Flow(FlowDirection.Out)] out int num_modifiers);
 
         public ExtImageDmaBufImportModifiers(INativeContext ctx)
             : base(ctx)

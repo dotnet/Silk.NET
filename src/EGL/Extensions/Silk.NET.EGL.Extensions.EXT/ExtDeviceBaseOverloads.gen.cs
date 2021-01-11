@@ -18,31 +18,31 @@ namespace Silk.NET.EGL.Extensions.EXT
 {
     public static class ExtDeviceBaseOverloads
     {
-        public static unsafe bool QueryDeviceAttrib(this ExtDeviceBase thisApi, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<nint> value)
+        public static unsafe int QueryDeviceAttrib(this ExtDeviceBase thisApi, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<nint> value)
         {
             // SpanOverloader
             return thisApi.QueryDeviceAttrib(device, attribute, out value.GetPinnableReference());
         }
 
-        public static unsafe bool QueryDevices(this ExtDeviceBase thisApi, [Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] Span<int> num_devices)
+        public static unsafe int QueryDevices(this ExtDeviceBase thisApi, [Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] Span<int> num_devices)
         {
             // SpanOverloader
             return thisApi.QueryDevices(max_devices, devices, out num_devices.GetPinnableReference());
         }
 
-        public static unsafe bool QueryDevices(this ExtDeviceBase thisApi, [Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] int* num_devices)
+        public static unsafe int QueryDevices(this ExtDeviceBase thisApi, [Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] int* num_devices)
         {
             // SpanOverloader
             return thisApi.QueryDevices(max_devices, out devices.GetPinnableReference(), num_devices);
         }
 
-        public static unsafe bool QueryDevices(this ExtDeviceBase thisApi, [Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] Span<int> num_devices)
+        public static unsafe int QueryDevices(this ExtDeviceBase thisApi, [Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] Span<nint> devices, [Flow(FlowDirection.Out)] Span<int> num_devices)
         {
             // SpanOverloader
             return thisApi.QueryDevices(max_devices, out devices.GetPinnableReference(), out num_devices.GetPinnableReference());
         }
 
-        public static unsafe bool QueryDisplayAttrib(this ExtDeviceBase thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<nint> value)
+        public static unsafe int QueryDisplayAttrib(this ExtDeviceBase thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<nint> value)
         {
             // SpanOverloader
             return thisApi.QueryDisplayAttrib(dpy, attribute, out value.GetPinnableReference());

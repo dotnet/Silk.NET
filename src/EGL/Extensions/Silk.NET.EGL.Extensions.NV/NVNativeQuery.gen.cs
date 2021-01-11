@@ -23,22 +23,22 @@ namespace Silk.NET.EGL.Extensions.NV
     {
         public const string ExtensionName = "NV_native_query";
         [NativeApi(EntryPoint = "eglQueryNativeDisplayNV")]
-        public unsafe partial bool QueryNativeDisplay([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] nint* display_id);
+        public unsafe partial int QueryNativeDisplay([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] nint* display_id);
 
         [NativeApi(EntryPoint = "eglQueryNativeDisplayNV")]
-        public partial bool QueryNativeDisplay([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] out nint display_id);
+        public partial int QueryNativeDisplay([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] out nint display_id);
 
         [NativeApi(EntryPoint = "eglQueryNativePixmapNV")]
-        public unsafe partial bool QueryNativePixmap([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surf, [Flow(FlowDirection.Out)] nint* pixmap);
+        public unsafe partial int QueryNativePixmap([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surf, [Flow(FlowDirection.Out)] nint* pixmap);
 
         [NativeApi(EntryPoint = "eglQueryNativePixmapNV")]
-        public partial bool QueryNativePixmap([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surf, [Flow(FlowDirection.Out)] out nint pixmap);
+        public partial int QueryNativePixmap([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surf, [Flow(FlowDirection.Out)] out nint pixmap);
 
         [NativeApi(EntryPoint = "eglQueryNativeWindowNV")]
-        public unsafe partial bool QueryNativeWindow([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surf, [Flow(FlowDirection.Out)] nint* window);
+        public unsafe partial int QueryNativeWindow([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surf, [Flow(FlowDirection.Out)] nint* window);
 
         [NativeApi(EntryPoint = "eglQueryNativeWindowNV")]
-        public partial bool QueryNativeWindow([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surf, [Flow(FlowDirection.Out)] out nint window);
+        public partial int QueryNativeWindow([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surf, [Flow(FlowDirection.Out)] out nint window);
 
         public NVNativeQuery(INativeContext ctx)
             : base(ctx)

@@ -35,25 +35,25 @@ namespace Silk.NET.EGL.Extensions.NV
         public partial int QueryStreamConsumerEvent([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] ulong timeout, [Flow(FlowDirection.Out)] out NV @event, [Flow(FlowDirection.Out)] out nint aux);
 
         [NativeApi(EntryPoint = "eglStreamAcquireImageNV")]
-        public unsafe partial bool StreamAcquireImage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.Out)] nint* pImage, [Flow(FlowDirection.In)] nint sync);
+        public unsafe partial int StreamAcquireImage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.Out)] nint* pImage, [Flow(FlowDirection.In)] nint sync);
 
         [NativeApi(EntryPoint = "eglStreamAcquireImageNV")]
-        public partial bool StreamAcquireImage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.Out)] out nint pImage, [Flow(FlowDirection.In)] nint sync);
+        public partial int StreamAcquireImage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.Out)] out nint pImage, [Flow(FlowDirection.In)] nint sync);
 
         [NativeApi(EntryPoint = "eglStreamImageConsumerConnectNV")]
-        public unsafe partial bool StreamImageConsumerConnect([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] int num_modifiers, [Flow(FlowDirection.Out)] ulong* modifiers, [Flow(FlowDirection.Out)] nint* attrib_list);
+        public unsafe partial int StreamImageConsumerConnect([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] int num_modifiers, [Flow(FlowDirection.Out)] ulong* modifiers, [Flow(FlowDirection.Out)] nint* attrib_list);
 
         [NativeApi(EntryPoint = "eglStreamImageConsumerConnectNV")]
-        public unsafe partial bool StreamImageConsumerConnect([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] int num_modifiers, [Flow(FlowDirection.Out)] ulong* modifiers, [Flow(FlowDirection.Out)] out nint attrib_list);
+        public unsafe partial int StreamImageConsumerConnect([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] int num_modifiers, [Flow(FlowDirection.Out)] ulong* modifiers, [Flow(FlowDirection.Out)] out nint attrib_list);
 
         [NativeApi(EntryPoint = "eglStreamImageConsumerConnectNV")]
-        public unsafe partial bool StreamImageConsumerConnect([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] int num_modifiers, [Flow(FlowDirection.Out)] out ulong modifiers, [Flow(FlowDirection.Out)] nint* attrib_list);
+        public unsafe partial int StreamImageConsumerConnect([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] int num_modifiers, [Flow(FlowDirection.Out)] out ulong modifiers, [Flow(FlowDirection.Out)] nint* attrib_list);
 
         [NativeApi(EntryPoint = "eglStreamImageConsumerConnectNV")]
-        public partial bool StreamImageConsumerConnect([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] int num_modifiers, [Flow(FlowDirection.Out)] out ulong modifiers, [Flow(FlowDirection.Out)] out nint attrib_list);
+        public partial int StreamImageConsumerConnect([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] int num_modifiers, [Flow(FlowDirection.Out)] out ulong modifiers, [Flow(FlowDirection.Out)] out nint attrib_list);
 
         [NativeApi(EntryPoint = "eglStreamReleaseImageNV")]
-        public partial bool StreamReleaseImage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] nint sync);
+        public partial int StreamReleaseImage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] nint sync);
 
         public NVStreamConsumerEglimage(INativeContext ctx)
             : base(ctx)

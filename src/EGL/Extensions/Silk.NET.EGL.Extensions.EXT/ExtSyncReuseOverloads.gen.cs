@@ -18,7 +18,7 @@ namespace Silk.NET.EGL.Extensions.EXT
 {
     public static class ExtSyncReuseOverloads
     {
-        public static unsafe bool UnsignalSync(this ExtSyncReuse thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] ReadOnlySpan<nint> attrib_list)
+        public static unsafe int UnsignalSync(this ExtSyncReuse thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] ReadOnlySpan<nint> attrib_list)
         {
             // SpanOverloader
             return thisApi.UnsignalSync(dpy, sync, in attrib_list.GetPinnableReference());

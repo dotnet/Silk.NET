@@ -36,25 +36,25 @@ namespace Silk.NET.EGL.Extensions.NV
             return thisApi.QueryStreamConsumerEvent(dpy, stream, timeout, out @event.GetPinnableReference(), out aux.GetPinnableReference());
         }
 
-        public static unsafe bool StreamAcquireImage(this NVStreamConsumerEglimage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.Out)] Span<nint> pImage, [Flow(FlowDirection.In)] nint sync)
+        public static unsafe int StreamAcquireImage(this NVStreamConsumerEglimage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.Out)] Span<nint> pImage, [Flow(FlowDirection.In)] nint sync)
         {
             // SpanOverloader
             return thisApi.StreamAcquireImage(dpy, stream, out pImage.GetPinnableReference(), sync);
         }
 
-        public static unsafe bool StreamImageConsumerConnect(this NVStreamConsumerEglimage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] int num_modifiers, [Flow(FlowDirection.Out)] ulong* modifiers, [Flow(FlowDirection.Out)] Span<nint> attrib_list)
+        public static unsafe int StreamImageConsumerConnect(this NVStreamConsumerEglimage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] int num_modifiers, [Flow(FlowDirection.Out)] ulong* modifiers, [Flow(FlowDirection.Out)] Span<nint> attrib_list)
         {
             // SpanOverloader
             return thisApi.StreamImageConsumerConnect(dpy, stream, num_modifiers, modifiers, out attrib_list.GetPinnableReference());
         }
 
-        public static unsafe bool StreamImageConsumerConnect(this NVStreamConsumerEglimage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] int num_modifiers, [Flow(FlowDirection.Out)] Span<ulong> modifiers, [Flow(FlowDirection.Out)] nint* attrib_list)
+        public static unsafe int StreamImageConsumerConnect(this NVStreamConsumerEglimage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] int num_modifiers, [Flow(FlowDirection.Out)] Span<ulong> modifiers, [Flow(FlowDirection.Out)] nint* attrib_list)
         {
             // SpanOverloader
             return thisApi.StreamImageConsumerConnect(dpy, stream, num_modifiers, out modifiers.GetPinnableReference(), attrib_list);
         }
 
-        public static unsafe bool StreamImageConsumerConnect(this NVStreamConsumerEglimage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] int num_modifiers, [Flow(FlowDirection.Out)] Span<ulong> modifiers, [Flow(FlowDirection.Out)] Span<nint> attrib_list)
+        public static unsafe int StreamImageConsumerConnect(this NVStreamConsumerEglimage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] int num_modifiers, [Flow(FlowDirection.Out)] Span<ulong> modifiers, [Flow(FlowDirection.Out)] Span<nint> attrib_list)
         {
             // SpanOverloader
             return thisApi.StreamImageConsumerConnect(dpy, stream, num_modifiers, out modifiers.GetPinnableReference(), out attrib_list.GetPinnableReference());

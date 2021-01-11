@@ -24,13 +24,13 @@ namespace Silk.NET.EGL.Extensions.KHR
             return thisApi.CreateStream(dpy, in attrib_list.GetPinnableReference());
         }
 
-        public static unsafe bool QueryStream(this KhrStream thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] Span<int> value)
+        public static unsafe int QueryStream(this KhrStream thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] Span<int> value)
         {
             // SpanOverloader
             return thisApi.QueryStream(dpy, stream, attribute, out value.GetPinnableReference());
         }
 
-        public static unsafe bool QueryStreamu64(this KhrStream thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] Span<ulong> value)
+        public static unsafe int QueryStreamu64(this KhrStream thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] Span<ulong> value)
         {
             // SpanOverloader
             return thisApi.QueryStreamu64(dpy, stream, attribute, out value.GetPinnableReference());

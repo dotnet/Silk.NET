@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -15,6 +16,8 @@ namespace Silk.NET.EGL
 {
     public partial class EGL
     {
+        private string[] _extensions;
+        
         public static EGL GetApi()
         {
             return new EGL(CreateDefaultContext(new EGLLibraryNameContainer().GetLibraryName()));
@@ -29,9 +32,15 @@ namespace Silk.NET.EGL
              return ext is not null;
         }
 
-        public override bool IsExtensionPresent(string extension)
+        public override unsafe bool IsExtensionPresent(string extension)
         {
-            throw new NotImplementedException();
+            if (_extensions is null)
+            {
+                var pExtensions = this.QueryString((nint) EGLEnum.NoDisplay, (int) EGLEnum.Extensions);
+                _extensions = SilkMarshal.PtrToString((nint) pExtensions).Split(' ');
+            }
+
+            return _extensions.Contains(extension);
         }
     }
 }

@@ -23,10 +23,10 @@ namespace Silk.NET.EGL.Extensions.EXT
     {
         public const string ExtensionName = "EXT_client_sync";
         [NativeApi(EntryPoint = "eglClientSignalSyncEXT")]
-        public unsafe partial bool ClientSignalSync([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] nint* attrib_list);
+        public unsafe partial int ClientSignalSync([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] nint* attrib_list);
 
         [NativeApi(EntryPoint = "eglClientSignalSyncEXT")]
-        public partial bool ClientSignalSync([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] in nint attrib_list);
+        public partial int ClientSignalSync([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] in nint attrib_list);
 
         public ExtClientSync(INativeContext ctx)
             : base(ctx)

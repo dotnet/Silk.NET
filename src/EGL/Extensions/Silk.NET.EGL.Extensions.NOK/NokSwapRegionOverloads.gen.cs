@@ -18,7 +18,7 @@ namespace Silk.NET.EGL.Extensions.NOK
 {
     public static class NokSwapRegionOverloads
     {
-        public static unsafe bool SwapBuffersRegionNok(this NokSwapRegion thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int numRects, [Flow(FlowDirection.In)] ReadOnlySpan<int> rects)
+        public static unsafe int SwapBuffersRegionNok(this NokSwapRegion thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int numRects, [Flow(FlowDirection.In)] ReadOnlySpan<int> rects)
         {
             // SpanOverloader
             return thisApi.SwapBuffersRegionNok(dpy, surface, numRects, in rects.GetPinnableReference());

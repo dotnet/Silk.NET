@@ -23,7 +23,7 @@ namespace Silk.NET.EGL.Extensions.NV
     {
         public const string ExtensionName = "NV_stream_flush";
         [NativeApi(EntryPoint = "eglStreamFlushNV")]
-        public partial bool StreamFlush([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream);
+        public partial int StreamFlush([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream);
 
         public NVStreamFlush(INativeContext ctx)
             : base(ctx)

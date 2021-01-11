@@ -23,22 +23,22 @@ namespace Silk.NET.EGL.Extensions.EXT
     {
         public const string ExtensionName = "EXT_device_base";
         [NativeApi(EntryPoint = "eglQueryDeviceAttribEXT")]
-        public unsafe partial bool QueryDeviceAttrib([Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] nint* value);
+        public unsafe partial int QueryDeviceAttrib([Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] nint* value);
 
         [NativeApi(EntryPoint = "eglQueryDeviceAttribEXT")]
-        public partial bool QueryDeviceAttrib([Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out nint value);
+        public partial int QueryDeviceAttrib([Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out nint value);
 
         [NativeApi(EntryPoint = "eglQueryDevicesEXT")]
-        public unsafe partial bool QueryDevices([Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] int* num_devices);
+        public unsafe partial int QueryDevices([Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] int* num_devices);
 
         [NativeApi(EntryPoint = "eglQueryDevicesEXT")]
-        public unsafe partial bool QueryDevices([Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] out int num_devices);
+        public unsafe partial int QueryDevices([Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] nint* devices, [Flow(FlowDirection.Out)] out int num_devices);
 
         [NativeApi(EntryPoint = "eglQueryDevicesEXT")]
-        public unsafe partial bool QueryDevices([Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] out nint devices, [Flow(FlowDirection.Out)] int* num_devices);
+        public unsafe partial int QueryDevices([Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] out nint devices, [Flow(FlowDirection.Out)] int* num_devices);
 
         [NativeApi(EntryPoint = "eglQueryDevicesEXT")]
-        public partial bool QueryDevices([Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] out nint devices, [Flow(FlowDirection.Out)] out int num_devices);
+        public partial int QueryDevices([Flow(FlowDirection.In)] int max_devices, [Flow(FlowDirection.Out)] out nint devices, [Flow(FlowDirection.Out)] out int num_devices);
 
         [NativeApi(EntryPoint = "eglQueryDeviceStringEXT")]
         public unsafe partial byte* QueryDeviceString([Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] int name);
@@ -47,10 +47,10 @@ namespace Silk.NET.EGL.Extensions.EXT
         public partial string QueryDeviceStringS([Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] int name);
 
         [NativeApi(EntryPoint = "eglQueryDisplayAttribEXT")]
-        public unsafe partial bool QueryDisplayAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] nint* value);
+        public unsafe partial int QueryDisplayAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] nint* value);
 
         [NativeApi(EntryPoint = "eglQueryDisplayAttribEXT")]
-        public partial bool QueryDisplayAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out nint value);
+        public partial int QueryDisplayAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out nint value);
 
         public ExtDeviceBase(INativeContext ctx)
             : base(ctx)

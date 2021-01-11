@@ -84,7 +84,7 @@ namespace Silk.NET.EGL
             return thisApi.GetPlatformDisplay(platform, out native_display.GetPinnableReference(), in attrib_list.GetPinnableReference());
         }
 
-        public static unsafe bool GetSyncAttrib(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<nint> value)
+        public static unsafe int GetSyncAttrib(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<nint> value)
         {
             // SpanOverloader
             return thisApi.GetSyncAttrib(dpy, sync, attribute, out value.GetPinnableReference());
@@ -96,43 +96,43 @@ namespace Silk.NET.EGL
             return thisApi.CreatePbufferFromClientBuffer(dpy, buftype, buffer, config, in attrib_list.GetPinnableReference());
         }
 
-        public static unsafe bool ChooseConfig(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int* attrib_list, [Flow(FlowDirection.Out)] nint* configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] Span<int> num_config)
+        public static unsafe int ChooseConfig(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int* attrib_list, [Flow(FlowDirection.Out)] nint* configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] Span<int> num_config)
         {
             // SpanOverloader
             return thisApi.ChooseConfig(dpy, attrib_list, configs, config_size, out num_config.GetPinnableReference());
         }
 
-        public static unsafe bool ChooseConfig(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int* attrib_list, [Flow(FlowDirection.Out)] Span<nint> configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] int* num_config)
+        public static unsafe int ChooseConfig(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int* attrib_list, [Flow(FlowDirection.Out)] Span<nint> configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] int* num_config)
         {
             // SpanOverloader
             return thisApi.ChooseConfig(dpy, attrib_list, out configs.GetPinnableReference(), config_size, num_config);
         }
 
-        public static unsafe bool ChooseConfig(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int* attrib_list, [Flow(FlowDirection.Out)] Span<nint> configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] Span<int> num_config)
+        public static unsafe int ChooseConfig(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int* attrib_list, [Flow(FlowDirection.Out)] Span<nint> configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] Span<int> num_config)
         {
             // SpanOverloader
             return thisApi.ChooseConfig(dpy, attrib_list, out configs.GetPinnableReference(), config_size, out num_config.GetPinnableReference());
         }
 
-        public static unsafe bool ChooseConfig(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] ReadOnlySpan<int> attrib_list, [Flow(FlowDirection.Out)] nint* configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] int* num_config)
+        public static unsafe int ChooseConfig(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] ReadOnlySpan<int> attrib_list, [Flow(FlowDirection.Out)] nint* configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] int* num_config)
         {
             // SpanOverloader
             return thisApi.ChooseConfig(dpy, in attrib_list.GetPinnableReference(), configs, config_size, num_config);
         }
 
-        public static unsafe bool ChooseConfig(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] ReadOnlySpan<int> attrib_list, [Flow(FlowDirection.Out)] nint* configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] Span<int> num_config)
+        public static unsafe int ChooseConfig(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] ReadOnlySpan<int> attrib_list, [Flow(FlowDirection.Out)] nint* configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] Span<int> num_config)
         {
             // SpanOverloader
             return thisApi.ChooseConfig(dpy, in attrib_list.GetPinnableReference(), configs, config_size, out num_config.GetPinnableReference());
         }
 
-        public static unsafe bool ChooseConfig(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] ReadOnlySpan<int> attrib_list, [Flow(FlowDirection.Out)] Span<nint> configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] int* num_config)
+        public static unsafe int ChooseConfig(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] ReadOnlySpan<int> attrib_list, [Flow(FlowDirection.Out)] Span<nint> configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] int* num_config)
         {
             // SpanOverloader
             return thisApi.ChooseConfig(dpy, in attrib_list.GetPinnableReference(), out configs.GetPinnableReference(), config_size, num_config);
         }
 
-        public static unsafe bool ChooseConfig(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] ReadOnlySpan<int> attrib_list, [Flow(FlowDirection.Out)] Span<nint> configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] Span<int> num_config)
+        public static unsafe int ChooseConfig(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] ReadOnlySpan<int> attrib_list, [Flow(FlowDirection.Out)] Span<nint> configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] Span<int> num_config)
         {
             // SpanOverloader
             return thisApi.ChooseConfig(dpy, in attrib_list.GetPinnableReference(), out configs.GetPinnableReference(), config_size, out num_config.GetPinnableReference());
@@ -162,25 +162,25 @@ namespace Silk.NET.EGL
             return thisApi.CreateWindowSurface(dpy, config, win, in attrib_list.GetPinnableReference());
         }
 
-        public static unsafe bool GetConfigAttrib(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint config, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<int> value)
+        public static unsafe int GetConfigAttrib(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint config, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<int> value)
         {
             // SpanOverloader
             return thisApi.GetConfigAttrib(dpy, config, attribute, out value.GetPinnableReference());
         }
 
-        public static unsafe bool GetConfigs(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] nint* configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] Span<int> num_config)
+        public static unsafe int GetConfigs(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] nint* configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] Span<int> num_config)
         {
             // SpanOverloader
             return thisApi.GetConfigs(dpy, configs, config_size, out num_config.GetPinnableReference());
         }
 
-        public static unsafe bool GetConfigs(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] Span<nint> configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] int* num_config)
+        public static unsafe int GetConfigs(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] Span<nint> configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] int* num_config)
         {
             // SpanOverloader
             return thisApi.GetConfigs(dpy, out configs.GetPinnableReference(), config_size, num_config);
         }
 
-        public static unsafe bool GetConfigs(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] Span<nint> configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] Span<int> num_config)
+        public static unsafe int GetConfigs(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] Span<nint> configs, [Flow(FlowDirection.In)] int config_size, [Flow(FlowDirection.Out)] Span<int> num_config)
         {
             // SpanOverloader
             return thisApi.GetConfigs(dpy, out configs.GetPinnableReference(), config_size, out num_config.GetPinnableReference());
@@ -192,31 +192,31 @@ namespace Silk.NET.EGL
             return thisApi.GetProcAddress(in procname.GetPinnableReference());
         }
 
-        public static unsafe bool Initialize(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] int* major, [Flow(FlowDirection.Out)] Span<int> minor)
+        public static unsafe int Initialize(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] int* major, [Flow(FlowDirection.Out)] Span<int> minor)
         {
             // SpanOverloader
             return thisApi.Initialize(dpy, major, out minor.GetPinnableReference());
         }
 
-        public static unsafe bool Initialize(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] Span<int> major, [Flow(FlowDirection.Out)] int* minor)
+        public static unsafe int Initialize(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] Span<int> major, [Flow(FlowDirection.Out)] int* minor)
         {
             // SpanOverloader
             return thisApi.Initialize(dpy, out major.GetPinnableReference(), minor);
         }
 
-        public static unsafe bool Initialize(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] Span<int> major, [Flow(FlowDirection.Out)] Span<int> minor)
+        public static unsafe int Initialize(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] Span<int> major, [Flow(FlowDirection.Out)] Span<int> minor)
         {
             // SpanOverloader
             return thisApi.Initialize(dpy, out major.GetPinnableReference(), out minor.GetPinnableReference());
         }
 
-        public static unsafe bool QueryContext(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint ctx, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<int> value)
+        public static unsafe int QueryContext(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint ctx, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<int> value)
         {
             // SpanOverloader
             return thisApi.QueryContext(dpy, ctx, attribute, out value.GetPinnableReference());
         }
 
-        public static unsafe bool QuerySurface(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<int> value)
+        public static unsafe int QuerySurface(this EGL thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<int> value)
         {
             // SpanOverloader
             return thisApi.QuerySurface(dpy, surface, attribute, out value.GetPinnableReference());

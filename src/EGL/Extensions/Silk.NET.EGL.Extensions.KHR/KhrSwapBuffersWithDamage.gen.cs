@@ -23,10 +23,10 @@ namespace Silk.NET.EGL.Extensions.KHR
     {
         public const string ExtensionName = "KHR_swap_buffers_with_damage";
         [NativeApi(EntryPoint = "eglSwapBuffersWithDamageKHR")]
-        public unsafe partial bool SwapBuffersWithDamage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int* rects, [Flow(FlowDirection.In)] int n_rects);
+        public unsafe partial int SwapBuffersWithDamage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int* rects, [Flow(FlowDirection.In)] int n_rects);
 
         [NativeApi(EntryPoint = "eglSwapBuffersWithDamageKHR")]
-        public partial bool SwapBuffersWithDamage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] in int rects, [Flow(FlowDirection.In)] int n_rects);
+        public partial int SwapBuffersWithDamage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] in int rects, [Flow(FlowDirection.In)] int n_rects);
 
         public KhrSwapBuffersWithDamage(INativeContext ctx)
             : base(ctx)

@@ -18,31 +18,31 @@ namespace Silk.NET.EGL.Extensions.WL
 {
     public static class WLBindWaylandDisplayOverloads
     {
-        public static unsafe bool BindWaylandDisplayWL(this WLBindWaylandDisplay thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] Span<nint> display)
+        public static unsafe int BindWaylandDisplayWL(this WLBindWaylandDisplay thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] Span<nint> display)
         {
             // SpanOverloader
             return thisApi.BindWaylandDisplayWL(dpy, out display.GetPinnableReference());
         }
 
-        public static unsafe bool QueryWaylandBufferWL(this WLBindWaylandDisplay thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] nint* buffer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<int> value)
+        public static unsafe int QueryWaylandBufferWL(this WLBindWaylandDisplay thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] nint* buffer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<int> value)
         {
             // SpanOverloader
             return thisApi.QueryWaylandBufferWL(dpy, buffer, attribute, out value.GetPinnableReference());
         }
 
-        public static unsafe bool QueryWaylandBufferWL(this WLBindWaylandDisplay thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] Span<nint> buffer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] int* value)
+        public static unsafe int QueryWaylandBufferWL(this WLBindWaylandDisplay thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] Span<nint> buffer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] int* value)
         {
             // SpanOverloader
             return thisApi.QueryWaylandBufferWL(dpy, out buffer.GetPinnableReference(), attribute, value);
         }
 
-        public static unsafe bool QueryWaylandBufferWL(this WLBindWaylandDisplay thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] Span<nint> buffer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<int> value)
+        public static unsafe int QueryWaylandBufferWL(this WLBindWaylandDisplay thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] Span<nint> buffer, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<int> value)
         {
             // SpanOverloader
             return thisApi.QueryWaylandBufferWL(dpy, out buffer.GetPinnableReference(), attribute, out value.GetPinnableReference());
         }
 
-        public static unsafe bool UnbindWaylandDisplayWL(this WLBindWaylandDisplay thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] Span<nint> display)
+        public static unsafe int UnbindWaylandDisplayWL(this WLBindWaylandDisplay thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] Span<nint> display)
         {
             // SpanOverloader
             return thisApi.UnbindWaylandDisplayWL(dpy, out display.GetPinnableReference());

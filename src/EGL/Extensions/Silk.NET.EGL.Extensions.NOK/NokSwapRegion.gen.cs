@@ -23,10 +23,10 @@ namespace Silk.NET.EGL.Extensions.NOK
     {
         public const string ExtensionName = "NOK_swap_region";
         [NativeApi(EntryPoint = "eglSwapBuffersRegionNOK")]
-        public unsafe partial bool SwapBuffersRegionNok([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int numRects, [Flow(FlowDirection.In)] int* rects);
+        public unsafe partial int SwapBuffersRegionNok([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int numRects, [Flow(FlowDirection.In)] int* rects);
 
         [NativeApi(EntryPoint = "eglSwapBuffersRegionNOK")]
-        public partial bool SwapBuffersRegionNok([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int numRects, [Flow(FlowDirection.In)] in int rects);
+        public partial int SwapBuffersRegionNok([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int numRects, [Flow(FlowDirection.In)] in int rects);
 
         public NokSwapRegion(INativeContext ctx)
             : base(ctx)

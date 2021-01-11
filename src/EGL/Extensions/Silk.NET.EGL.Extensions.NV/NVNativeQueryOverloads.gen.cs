@@ -18,19 +18,19 @@ namespace Silk.NET.EGL.Extensions.NV
 {
     public static class NVNativeQueryOverloads
     {
-        public static unsafe bool QueryNativeDisplay(this NVNativeQuery thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] Span<nint> display_id)
+        public static unsafe int QueryNativeDisplay(this NVNativeQuery thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.Out)] Span<nint> display_id)
         {
             // SpanOverloader
             return thisApi.QueryNativeDisplay(dpy, out display_id.GetPinnableReference());
         }
 
-        public static unsafe bool QueryNativePixmap(this NVNativeQuery thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surf, [Flow(FlowDirection.Out)] Span<nint> pixmap)
+        public static unsafe int QueryNativePixmap(this NVNativeQuery thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surf, [Flow(FlowDirection.Out)] Span<nint> pixmap)
         {
             // SpanOverloader
             return thisApi.QueryNativePixmap(dpy, surf, out pixmap.GetPinnableReference());
         }
 
-        public static unsafe bool QueryNativeWindow(this NVNativeQuery thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surf, [Flow(FlowDirection.Out)] Span<nint> window)
+        public static unsafe int QueryNativeWindow(this NVNativeQuery thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surf, [Flow(FlowDirection.Out)] Span<nint> window)
         {
             // SpanOverloader
             return thisApi.QueryNativeWindow(dpy, surf, out window.GetPinnableReference());

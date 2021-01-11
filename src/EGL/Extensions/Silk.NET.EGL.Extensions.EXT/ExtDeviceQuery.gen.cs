@@ -23,10 +23,10 @@ namespace Silk.NET.EGL.Extensions.EXT
     {
         public const string ExtensionName = "EXT_device_query";
         [NativeApi(EntryPoint = "eglQueryDeviceAttribEXT")]
-        public unsafe partial bool QueryDeviceAttrib([Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] nint* value);
+        public unsafe partial int QueryDeviceAttrib([Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] nint* value);
 
         [NativeApi(EntryPoint = "eglQueryDeviceAttribEXT")]
-        public partial bool QueryDeviceAttrib([Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out nint value);
+        public partial int QueryDeviceAttrib([Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out nint value);
 
         [NativeApi(EntryPoint = "eglQueryDeviceStringEXT")]
         public unsafe partial byte* QueryDeviceString([Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] int name);
@@ -35,10 +35,10 @@ namespace Silk.NET.EGL.Extensions.EXT
         public partial string QueryDeviceStringS([Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] int name);
 
         [NativeApi(EntryPoint = "eglQueryDisplayAttribEXT")]
-        public unsafe partial bool QueryDisplayAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] nint* value);
+        public unsafe partial int QueryDisplayAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] nint* value);
 
         [NativeApi(EntryPoint = "eglQueryDisplayAttribEXT")]
-        public partial bool QueryDisplayAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out nint value);
+        public partial int QueryDisplayAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out nint value);
 
         public ExtDeviceQuery(INativeContext ctx)
             : base(ctx)

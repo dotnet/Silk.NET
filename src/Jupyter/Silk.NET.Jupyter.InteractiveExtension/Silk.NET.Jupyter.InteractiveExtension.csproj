@@ -2,6 +2,7 @@
 
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     </PropertyGroup>
 
     <ItemGroup>
@@ -11,6 +12,7 @@
     <ItemGroup>
       <PackageReference Include="Microsoft.DotNet.Interactive" Version="1.0.0-beta.20553.2" />
       <PackageReference Include="Microsoft.DotNet.Interactive.CSharp" Version="1.0.0-beta.20553.2" />
+      <PackageReference Include="SixLabors.ImageSharp" Version="1.0.2" />
     </ItemGroup>
 
 </Project>

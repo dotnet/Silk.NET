@@ -40,7 +40,7 @@
                     "$include.commonTypeMap": "build/csharp_typemap.json"
                 },
                 {
-                    "EGLBoolean": "bool",
+                    "EGLBoolean": "int", "__comment1__": "we unfortunately use int, because build tools can't emit MarshalAs(UnmanagedType.I4) yet",
                     "EGLint": "int",
                     "EGLDisplay": "nint",
                     "EGLConfig": "nint",

@@ -24,7 +24,7 @@ namespace Silk.NET.EGL.Extensions.KHR
             return thisApi.DebugMessageControl(callback, in attrib_list.GetPinnableReference());
         }
 
-        public static unsafe bool QueryDebug(this KhrDebug thisApi, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<nint> value)
+        public static unsafe int QueryDebug(this KhrDebug thisApi, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<nint> value)
         {
             // SpanOverloader
             return thisApi.QueryDebug(attribute, out value.GetPinnableReference());

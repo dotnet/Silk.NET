@@ -23,7 +23,7 @@ namespace Silk.NET.EGL.Extensions.NV
     {
         public const string ExtensionName = "NV_post_sub_buffer";
         [NativeApi(EntryPoint = "eglPostSubBufferNV")]
-        public partial bool PostSubBuffer([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int width, [Flow(FlowDirection.In)] int height);
+        public partial int PostSubBuffer([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] int width, [Flow(FlowDirection.In)] int height);
 
         public NVPostSubBuffer(INativeContext ctx)
             : base(ctx)

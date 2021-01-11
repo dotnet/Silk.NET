@@ -18,7 +18,7 @@ namespace Silk.NET.EGL.Extensions.KHR
 {
     public static class KhrStreamFifoOverloads
     {
-        public static unsafe bool QueryStreamTime(this KhrStreamFifo thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] Span<ulong> value)
+        public static unsafe int QueryStreamTime(this KhrStreamFifo thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream, [Flow(FlowDirection.In)] KHR attribute, [Flow(FlowDirection.Out)] Span<ulong> value)
         {
             // SpanOverloader
             return thisApi.QueryStreamTime(dpy, stream, attribute, out value.GetPinnableReference());

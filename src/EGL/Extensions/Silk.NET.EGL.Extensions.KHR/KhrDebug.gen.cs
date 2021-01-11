@@ -32,10 +32,10 @@ namespace Silk.NET.EGL.Extensions.KHR
         public partial int LabelObject([Flow(FlowDirection.In)] nint display, [Flow(FlowDirection.In)] KHR objectType, [Flow(FlowDirection.In)] nint @object, [Flow(FlowDirection.In)] nint label);
 
         [NativeApi(EntryPoint = "eglQueryDebugKHR")]
-        public unsafe partial bool QueryDebug([Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] nint* value);
+        public unsafe partial int QueryDebug([Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] nint* value);
 
         [NativeApi(EntryPoint = "eglQueryDebugKHR")]
-        public partial bool QueryDebug([Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out nint value);
+        public partial int QueryDebug([Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out nint value);
 
         public KhrDebug(INativeContext ctx)
             : base(ctx)

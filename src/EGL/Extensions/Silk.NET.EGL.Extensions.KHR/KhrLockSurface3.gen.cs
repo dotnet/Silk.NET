@@ -23,19 +23,19 @@ namespace Silk.NET.EGL.Extensions.KHR
     {
         public const string ExtensionName = "KHR_lock_surface3";
         [NativeApi(EntryPoint = "eglLockSurfaceKHR")]
-        public unsafe partial bool LockSurface([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int* attrib_list);
+        public unsafe partial int LockSurface([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int* attrib_list);
 
         [NativeApi(EntryPoint = "eglLockSurfaceKHR")]
-        public partial bool LockSurface([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] in int attrib_list);
+        public partial int LockSurface([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] in int attrib_list);
 
         [NativeApi(EntryPoint = "eglQuerySurface64KHR")]
-        public unsafe partial bool QuerySurface64([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] nint* value);
+        public unsafe partial int QuerySurface64([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] nint* value);
 
         [NativeApi(EntryPoint = "eglQuerySurface64KHR")]
-        public partial bool QuerySurface64([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out nint value);
+        public partial int QuerySurface64([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out nint value);
 
         [NativeApi(EntryPoint = "eglUnlockSurfaceKHR")]
-        public partial bool UnlockSurface([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface);
+        public partial int UnlockSurface([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface);
 
         public KhrLockSurface3(INativeContext ctx)
             : base(ctx)

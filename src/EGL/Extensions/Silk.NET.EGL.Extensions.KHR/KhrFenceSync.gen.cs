@@ -32,13 +32,13 @@ namespace Silk.NET.EGL.Extensions.KHR
         public partial nint CreateSync([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] in int attrib_list);
 
         [NativeApi(EntryPoint = "eglDestroySyncKHR")]
-        public partial bool DestroySync([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync);
+        public partial int DestroySync([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync);
 
         [NativeApi(EntryPoint = "eglGetSyncAttribKHR")]
-        public unsafe partial bool GetSyncAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] int* value);
+        public unsafe partial int GetSyncAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] int* value);
 
         [NativeApi(EntryPoint = "eglGetSyncAttribKHR")]
-        public partial bool GetSyncAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out int value);
+        public partial int GetSyncAttrib([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out int value);
 
         public KhrFenceSync(INativeContext ctx)
             : base(ctx)

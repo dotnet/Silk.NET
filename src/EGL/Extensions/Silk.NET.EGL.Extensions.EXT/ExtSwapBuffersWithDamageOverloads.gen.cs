@@ -18,7 +18,7 @@ namespace Silk.NET.EGL.Extensions.EXT
 {
     public static class ExtSwapBuffersWithDamageOverloads
     {
-        public static unsafe bool SwapBuffersWithDamage(this ExtSwapBuffersWithDamage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] ReadOnlySpan<int> rects, [Flow(FlowDirection.In)] int n_rects)
+        public static unsafe int SwapBuffersWithDamage(this ExtSwapBuffersWithDamage thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] ReadOnlySpan<int> rects, [Flow(FlowDirection.In)] int n_rects)
         {
             // SpanOverloader
             return thisApi.SwapBuffersWithDamage(dpy, surface, in rects.GetPinnableReference(), n_rects);

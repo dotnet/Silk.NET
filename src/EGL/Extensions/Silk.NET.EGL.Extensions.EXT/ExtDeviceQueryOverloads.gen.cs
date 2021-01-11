@@ -18,13 +18,13 @@ namespace Silk.NET.EGL.Extensions.EXT
 {
     public static class ExtDeviceQueryOverloads
     {
-        public static unsafe bool QueryDeviceAttrib(this ExtDeviceQuery thisApi, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<nint> value)
+        public static unsafe int QueryDeviceAttrib(this ExtDeviceQuery thisApi, [Flow(FlowDirection.In)] nint device, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<nint> value)
         {
             // SpanOverloader
             return thisApi.QueryDeviceAttrib(device, attribute, out value.GetPinnableReference());
         }
 
-        public static unsafe bool QueryDisplayAttrib(this ExtDeviceQuery thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<nint> value)
+        public static unsafe int QueryDisplayAttrib(this ExtDeviceQuery thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<nint> value)
         {
             // SpanOverloader
             return thisApi.QueryDisplayAttrib(dpy, attribute, out value.GetPinnableReference());

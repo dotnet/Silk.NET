@@ -29,28 +29,28 @@ namespace Silk.NET.EGL.Extensions.MESA
         public partial nint CreateDrmimage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] in int attrib_list);
 
         [NativeApi(EntryPoint = "eglExportDRMImageMESA")]
-        public unsafe partial bool ExportDrmimage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] int* name, [Flow(FlowDirection.Out)] int* handle, [Flow(FlowDirection.Out)] int* stride);
+        public unsafe partial int ExportDrmimage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] int* name, [Flow(FlowDirection.Out)] int* handle, [Flow(FlowDirection.Out)] int* stride);
 
         [NativeApi(EntryPoint = "eglExportDRMImageMESA")]
-        public unsafe partial bool ExportDrmimage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] int* name, [Flow(FlowDirection.Out)] int* handle, [Flow(FlowDirection.Out)] out int stride);
+        public unsafe partial int ExportDrmimage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] int* name, [Flow(FlowDirection.Out)] int* handle, [Flow(FlowDirection.Out)] out int stride);
 
         [NativeApi(EntryPoint = "eglExportDRMImageMESA")]
-        public unsafe partial bool ExportDrmimage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] int* name, [Flow(FlowDirection.Out)] out int handle, [Flow(FlowDirection.Out)] int* stride);
+        public unsafe partial int ExportDrmimage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] int* name, [Flow(FlowDirection.Out)] out int handle, [Flow(FlowDirection.Out)] int* stride);
 
         [NativeApi(EntryPoint = "eglExportDRMImageMESA")]
-        public unsafe partial bool ExportDrmimage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] int* name, [Flow(FlowDirection.Out)] out int handle, [Flow(FlowDirection.Out)] out int stride);
+        public unsafe partial int ExportDrmimage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] int* name, [Flow(FlowDirection.Out)] out int handle, [Flow(FlowDirection.Out)] out int stride);
 
         [NativeApi(EntryPoint = "eglExportDRMImageMESA")]
-        public unsafe partial bool ExportDrmimage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] out int name, [Flow(FlowDirection.Out)] int* handle, [Flow(FlowDirection.Out)] int* stride);
+        public unsafe partial int ExportDrmimage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] out int name, [Flow(FlowDirection.Out)] int* handle, [Flow(FlowDirection.Out)] int* stride);
 
         [NativeApi(EntryPoint = "eglExportDRMImageMESA")]
-        public unsafe partial bool ExportDrmimage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] out int name, [Flow(FlowDirection.Out)] int* handle, [Flow(FlowDirection.Out)] out int stride);
+        public unsafe partial int ExportDrmimage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] out int name, [Flow(FlowDirection.Out)] int* handle, [Flow(FlowDirection.Out)] out int stride);
 
         [NativeApi(EntryPoint = "eglExportDRMImageMESA")]
-        public unsafe partial bool ExportDrmimage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] out int name, [Flow(FlowDirection.Out)] out int handle, [Flow(FlowDirection.Out)] int* stride);
+        public unsafe partial int ExportDrmimage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] out int name, [Flow(FlowDirection.Out)] out int handle, [Flow(FlowDirection.Out)] int* stride);
 
         [NativeApi(EntryPoint = "eglExportDRMImageMESA")]
-        public partial bool ExportDrmimage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] out int name, [Flow(FlowDirection.Out)] out int handle, [Flow(FlowDirection.Out)] out int stride);
+        public partial int ExportDrmimage([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.Out)] out int name, [Flow(FlowDirection.Out)] out int handle, [Flow(FlowDirection.Out)] out int stride);
 
         public MesaDrmImage(INativeContext ctx)
             : base(ctx)

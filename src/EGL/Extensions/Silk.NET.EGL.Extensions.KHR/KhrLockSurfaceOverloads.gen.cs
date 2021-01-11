@@ -18,7 +18,7 @@ namespace Silk.NET.EGL.Extensions.KHR
 {
     public static class KhrLockSurfaceOverloads
     {
-        public static unsafe bool LockSurface(this KhrLockSurface thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] ReadOnlySpan<int> attrib_list)
+        public static unsafe int LockSurface(this KhrLockSurface thisApi, [Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] ReadOnlySpan<int> attrib_list)
         {
             // SpanOverloader
             return thisApi.LockSurface(dpy, surface, in attrib_list.GetPinnableReference());

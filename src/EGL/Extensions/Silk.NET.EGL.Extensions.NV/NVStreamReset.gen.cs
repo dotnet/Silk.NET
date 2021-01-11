@@ -23,7 +23,7 @@ namespace Silk.NET.EGL.Extensions.NV
     {
         public const string ExtensionName = "NV_stream_reset";
         [NativeApi(EntryPoint = "eglResetStreamNV")]
-        public partial bool ResetStream([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream);
+        public partial int ResetStream([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream);
 
         public NVStreamReset(INativeContext ctx)
             : base(ctx)

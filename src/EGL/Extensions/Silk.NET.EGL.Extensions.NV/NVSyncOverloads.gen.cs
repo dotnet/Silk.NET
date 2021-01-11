@@ -24,7 +24,7 @@ namespace Silk.NET.EGL.Extensions.NV
             return thisApi.CreateFenceSync(dpy, condition, in attrib_list.GetPinnableReference());
         }
 
-        public static unsafe bool GetSyncAttrib(this NVSync thisApi, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<int> value)
+        public static unsafe int GetSyncAttrib(this NVSync thisApi, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] Span<int> value)
         {
             // SpanOverloader
             return thisApi.GetSyncAttrib(sync, attribute, out value.GetPinnableReference());

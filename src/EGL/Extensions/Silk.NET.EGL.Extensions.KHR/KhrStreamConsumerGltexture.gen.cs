@@ -23,13 +23,13 @@ namespace Silk.NET.EGL.Extensions.KHR
     {
         public const string ExtensionName = "KHR_stream_consumer_gltexture";
         [NativeApi(EntryPoint = "eglStreamConsumerAcquireKHR")]
-        public partial bool StreamConsumerAcquire([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream);
+        public partial int StreamConsumerAcquire([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream);
 
         [NativeApi(EntryPoint = "eglStreamConsumerGLTextureExternalKHR")]
-        public partial bool StreamConsumerGltextureExternal([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream);
+        public partial int StreamConsumerGltextureExternal([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream);
 
         [NativeApi(EntryPoint = "eglStreamConsumerReleaseKHR")]
-        public partial bool StreamConsumerRelease([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream);
+        public partial int StreamConsumerRelease([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] nint stream);
 
         public KhrStreamConsumerGltexture(INativeContext ctx)
             : base(ctx)

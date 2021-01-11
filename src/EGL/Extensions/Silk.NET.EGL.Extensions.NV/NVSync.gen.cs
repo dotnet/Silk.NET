@@ -32,19 +32,19 @@ namespace Silk.NET.EGL.Extensions.NV
         public partial nint CreateFenceSync([Flow(FlowDirection.In)] nint dpy, [Flow(FlowDirection.In)] NV condition, [Flow(FlowDirection.In)] in int attrib_list);
 
         [NativeApi(EntryPoint = "eglDestroySyncNV")]
-        public partial bool DestroySync([Flow(FlowDirection.In)] nint sync);
+        public partial int DestroySync([Flow(FlowDirection.In)] nint sync);
 
         [NativeApi(EntryPoint = "eglFenceNV")]
-        public partial bool Fence([Flow(FlowDirection.In)] nint sync);
+        public partial int Fence([Flow(FlowDirection.In)] nint sync);
 
         [NativeApi(EntryPoint = "eglGetSyncAttribNV")]
-        public unsafe partial bool GetSyncAttrib([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] int* value);
+        public unsafe partial int GetSyncAttrib([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] int* value);
 
         [NativeApi(EntryPoint = "eglGetSyncAttribNV")]
-        public partial bool GetSyncAttrib([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out int value);
+        public partial int GetSyncAttrib([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] int attribute, [Flow(FlowDirection.Out)] out int value);
 
         [NativeApi(EntryPoint = "eglSignalSyncNV")]
-        public partial bool SignalSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] NV mode);
+        public partial int SignalSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] NV mode);
 
         public NVSync(INativeContext ctx)
             : base(ctx)

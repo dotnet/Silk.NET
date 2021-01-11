@@ -11,7 +11,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Silk.NET.Jupyter.Library\Silk.NET.Jupyter.Library.csproj" >
+        <ProjectReference Include="..\Silk.NET.Jupyter.Library\Silk.NET.Jupyter.Library.csproj">
             <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
         </ProjectReference>
         <ProjectReference Include="..\Silk.NET.Jupyter.InteractiveExtension\Silk.NET.Jupyter.InteractiveExtension.csproj">
@@ -20,15 +20,12 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None
-            Include="../Silk.NET.Jupyter.Library/bin/$(Configuration)/$(TargetFramework)/*.dll"
-            Pack="true"
-            PackagePath="lib/$(TargetFramework)" />
-        <None
-            Include="../Silk.NET.Jupyter.InteractiveExtension/bin/$(Configuration)/$(TargetFramework)/*.dll"
-            Exclude="../Silk.NET.Jupyter.InteractiveExtension/bin/$(Configuration)/$(TargetFramework)/Library.dll"
-            Pack="true"
-            PackagePath="interactive-extensions/dotnet" />
+        <None Include="../Silk.NET.Jupyter.Library/bin/$(Configuration)/$(TargetFramework)/*.dll" Pack="true" PackagePath="lib/$(TargetFramework)" />
+        <None Include="../Silk.NET.Jupyter.InteractiveExtension/bin/$(Configuration)/$(TargetFramework)/*.dll" Exclude="../Silk.NET.Jupyter.InteractiveExtension/bin/$(Configuration)/$(TargetFramework)/Library.dll" Pack="true" PackagePath="interactive-extensions/dotnet" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="SixLabors.ImageSharp" Version="1.0.2" />
     </ItemGroup>
 
 </Project>
