@@ -23,64 +23,99 @@ considered, but that might be implemented at a later time.
 
 # Proposed API
 
-## KeyboardLayout
+## IKeyboardLayout
 ```cs
-public class KeyboardLayout
+internal interface IKeyboardLayout
 {
 
     /// <summary>
-    /// The different included layouts.
+    /// Gets the name from an instance.
     /// </summary>
-    public enum Layouts
-    {
-        /// <summary>
-        /// Automatically detect layout and use.
-        /// Works slightly differently to the hard-coded ones.
-        /// </summary>
-        Auto,
-
-        /// <summary>
-        /// The QWERTY layout
-        /// </summary>
-        QWERTY,
-        QÜERTY,
-        ÄWERTY,
-        QERTZ,
-        ...
-
-        NoLayout,
-        LastLayout
-    }
+    string Name { get; }
 
     /// <summary>
-    /// The name of the Layout.
+    /// Called from GlfwKeyboard.ConvertKey, easy place to get the keys,
+    /// and no use converting to Silk.NET keys and then swap them arround again.
     /// </summary>
-    public string Name { get; }
+    Key MapKey(Keys glfwKey);
+
+}
+```
+
+## QWERTYLayout
+```cs
+/// <summary>
+/// Example class for all layouts.
+/// </summary>
+public sealed class QWERTYLayout : IKeyboardLayout
+{
 
     /// <summary>
-    /// Get an included layout by name.
+    /// The name of the layout.
     /// </summary>
-    public static KeyboardLayout Get(Layouts.Path);
+    public const string NAME = "QWERTY";
 
     /// <summary>
-    /// Get a custom keyboard layout by path to the specifications file.
+    /// Non-Static name.
     /// </summary>
-    public static KeyboardLayout Get(string path);
+    public string Name { get } = NAME;
+
+}
+```
+
+## CustomLayout
+```cs
+/// <summary>
+/// The implementation of custom, file-read layouts.
+/// </summary>
+public sealed class CustomLayout : IKeyboardLayout
+{
+
+    /// <summary>
+    /// Get the name. No static name here because it changes with each file.
+    /// </summary>
+    public string Name { get => _name }
+
+    /// <summary>
+    /// Loads the file and uses the contained layout as the keyboard layout.
+    /// </summary>
+    public CustomLayout(string file);
+
+}
+```
+
+## KeyboardLayout
+```cs
+public static class LayoutManager
+{
+
+    /// <summary>
+    /// The QWERTY layout.
+    /// </summary>
+    public static readonly IKeyboardLayout QWERTY;
+    ...
+
+    /// <summary>
+    /// Automatically gets the keyboard layout set on the device.
+    /// </summary>
+    public static IKeyboardLayout GetDeviceLayout();
+
 }
 ```
 
 ## IInputContext
 ```diff
-+ KeyboardLayout Layout { get; set } = KeyboardLayout.Get(KeyboardLayout.Layouts.Auto)
++ IKeyboardLayout Layout { get; set } = LayoutManager.GetDeviceLayout();
 ```
 
 ## Layout File
-```cs
+```
 // Original Value In QWERTY -> New Value In Your Layout
 // Obviously this is only done for the keys included in GLFW, but as they
 // are close to ASCII it should be simple to write. No lowercase letters
 // as they only exist on the char callbacks, not the key callbacks.
-65 -> 68 // A will be D
+"ExampleLayout"
+65->68 // A will be D
 // alternatively, as char and int are interchangeable in c# :) :
 A->D
 ```
@@ -93,8 +128,8 @@ class ExampleUsage
     private static void OnLoad()
     {
         var input = window.CreateInput();
-        input.Layout = KeyboardLayout.Get(KeyboardLayout.Layouts.QWERTZ);
-        // alternatively: input.Layout = KeyboardLayout.Get("layouts/mySpecialAndGreatLayoutThatCuresCancer.txtOrWhateverIdontKnowYet");
+        input.Layout = KeyboardLayout.QWERTY;
+        // alternatively: input.Layout = new CustomLayout("exampleLayout.layout");
         foreach (var keyboard in input.Keyboards)
         {
             keyboard.KeyDown += KeyDown;
