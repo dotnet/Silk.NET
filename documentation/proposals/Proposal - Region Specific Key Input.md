@@ -114,6 +114,7 @@ public static class LayoutManager
 // Obviously this is only done for the keys included in GLFW, but as they
 // are close to ASCII it should be simple to write. No lowercase letters
 // as they only exist on the char callbacks, not the key callbacks.
+// The line in double quotes in the beginning of the file is the name.
 "ExampleLayout"
 65->68 // A will be D
 // alternatively, as char and int are interchangeable in c# :) :
@@ -128,7 +129,7 @@ class ExampleUsage
     private static void OnLoad()
     {
         var input = window.CreateInput();
-        input.Layout = KeyboardLayout.QWERTY;
+        input.Layout = LayoutManager.QWERTY;
         // alternatively: input.Layout = new CustomLayout("exampleLayout.layout");
         foreach (var keyboard in input.Keyboards)
         {
