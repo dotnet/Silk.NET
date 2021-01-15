@@ -1291,7 +1291,7 @@ namespace Silk.NET.BuildTools.Cpp
                         {
                             CX_CXXAccessSpecifier.CX_CXXInvalidAccessSpecifier => Accessibility.Public,
                             CX_CXXAccessSpecifier.CX_CXXPublic => Accessibility.Public,
-                            CX_CXXAccessSpecifier.CX_CXXProtected => Accessibility.Protected,
+                            CX_CXXAccessSpecifier.CX_CXXProtected => Accessibility.Public,
                             CX_CXXAccessSpecifier.CX_CXXPrivate => Accessibility.Private,
                             _ => Accessibility.Internal
                         },
