@@ -139,9 +139,9 @@ namespace Silk.NET.Core.Native
         /// <returns>A block of global memory.</returns>
         public static GlobalMemory Allocate(int length) =>
 #if !NET5_0
-            new GlobalMemory(new GCHandleByteArray(length), length);
+            new GlobalMemory(new GCHandleByteArray(length), length > 0 ? length : 1);
 #else
-            new GlobalMemory(GC.AllocateUninitializedArray<byte>(length, true), length);
+            new GlobalMemory(GC.AllocateUninitializedArray<byte>(length > 0 ? length : 1, true), length);
 #endif
 
         // Encapsulations different kinds of memory
