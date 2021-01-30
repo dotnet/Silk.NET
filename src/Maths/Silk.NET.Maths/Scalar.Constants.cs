@@ -14,6 +14,19 @@ namespace Silk.NET.Maths
     /// <typeparam name="T">To be added.</typeparam>
     public static partial class Scalar<T> where T : unmanaged
     {
+        public static bool IsSupported => typeof(T) == typeof(sbyte)
+                                          || typeof(T) == typeof(byte)
+                                          || typeof(T) == typeof(ushort)
+                                          || typeof(T) == typeof(short)
+                                          || typeof(T) == typeof(uint)
+                                          || typeof(T) == typeof(int)
+                                          || typeof(T) == typeof(ulong)
+                                          || typeof(T) == typeof(long)
+                                          || typeof(T) == typeof(Half)
+                                          || typeof(T) == typeof(float)
+                                          || typeof(T) == typeof(double)
+                                          || typeof(T) == typeof(decimal);
+        
         /// <summary>
         /// Represents the smallest positive value that is greater than zero. Zero for non-floating point numbers.
         /// </summary>
@@ -88,17 +101,6 @@ namespace Silk.NET.Maths
         /// Represents the number of radians in one turn, specified by the constant, <code>τ</code>.
         /// </summary>
         public static readonly T Tau;
-
-        internal static readonly bool IntrinsicsApplicable = typeof(T) == typeof(byte)
-                                                            || typeof(T) == typeof(sbyte)
-                                                            || typeof(T) == typeof(ushort)
-                                                            || typeof(T) == typeof(short)
-                                                            || typeof(T) == typeof(uint)
-                                                            || typeof(T) == typeof(int)
-                                                            || typeof(T) == typeof(ulong)
-                                                            || typeof(T) == typeof(long)
-                                                            || typeof(T) == typeof(float)
-                                                            || typeof(T) == typeof(double);
 
         private const float FloatE = 2.71828175f;
         private const float FloatPi = 3.14159274f;

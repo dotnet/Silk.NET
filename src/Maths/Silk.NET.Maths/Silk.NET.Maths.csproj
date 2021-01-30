@@ -8,7 +8,7 @@
         <WarningsAsErrors>true</WarningsAsErrors>
         <LangVersion>9.0</LangVersion>
 
-        <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1' Or '$(TargetFramework)' == 'net5.0'">$(DefineConstants);SSE</DefineConstants>
+        <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1' Or '$(TargetFramework)' == 'net5.0'">$(DefineConstants);SSE;INTRINSICS</DefineConstants>
         <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1' Or '$(TargetFramework)' == 'net5.0' Or '$(TargetFramework)' == 'netstandard2.1'">$(DefineConstants);BTEC_INTRINSICS;MATHF</DefineConstants>
         <DefineConstants Condition="'$(TargetFramework)' == 'net5.0'">$(DefineConstants);POH;AdvSIMD</DefineConstants>
         <EnableNETAnalyzers>true</EnableNETAnalyzers>
@@ -23,11 +23,21 @@
       </PackageReference>
       <PackageReference Include="Ultz.Bcl.Half" Version="1.0.0" />
     </ItemGroup>
-
-    <ItemGroup>
-        <AdditionalFiles Include="PublicAPI.Shipped.txt" />
-        <AdditionalFiles Include="PublicAPI.Unshipped.txt" />
-    </ItemGroup>
+    
+    <Choose>
+        <When Condition="'$(TargetFramework)' == 'netcoreapp3.1' Or '$(TargetFramework)' == 'net5.0'">
+            <ItemGroup>
+                <AdditionalFiles Include="PublicAPI/WithIntrinsics/PublicAPI.Shipped.txt" />
+                <AdditionalFiles Include="PublicAPI/WithIntrinsics/PublicAPI.Unshipped.txt" />
+            </ItemGroup>
+        </When>
+        <Otherwise>
+            <ItemGroup>
+                <AdditionalFiles Include="PublicAPI/WithoutIntrinsics/PublicAPI.Shipped.txt" />
+                <AdditionalFiles Include="PublicAPI/WithoutIntrinsics/PublicAPI.Unshipped.txt" />
+            </ItemGroup>
+        </Otherwise>
+    </Choose>
 
 	<Import Project="..\..\..\build\props\common.props" />
 </Project>
