@@ -603,6 +603,12 @@ namespace Silk.NET.Maths
                 return default; // unreachable
             }
         }
+
+        [MethodImpl(Scalar.MaxOpt)]
+        public static bool AllBitsSet<T>(Vector128<T> vector) where T : unmanaged
+        {
+            return Equal(vector, Vector128<T>.AllBitsSet);
+        }
     }
 }
 #endif
