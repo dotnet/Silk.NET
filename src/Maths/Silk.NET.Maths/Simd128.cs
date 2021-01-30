@@ -4,7 +4,6 @@
 // of the MIT license. See the LICENSE file for details.
 
 #if INTRINSICS
-using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics;
 #if SSE
@@ -40,9 +39,6 @@ namespace Silk.NET.Maths
                         return (Vector128<T>) (object) AdvSimd.LoadVector128((byte*) ptr);
                     }
 #endif
-
-                    var bPtr = (byte*) ptr;
-                    return (Vector128<T>)(object)Vector128.Create(bPtr[0], bPtr[1], bPtr[2], bPtr[3], bPtr[4], bPtr[5], bPtr[6], bPtr[7], bPtr[8], bPtr[9], bPtr[10], bPtr[11], bPtr[12], bPtr[13], bPtr[14], bPtr[15]);
                 }
 
                 return SByte(ptr);
@@ -65,9 +61,6 @@ namespace Silk.NET.Maths
                         return (Vector128<T>) (object) AdvSimd.LoadVector128((sbyte*) ptr);
                     }
 #endif
-
-                    var bPtr = (sbyte*) ptr;
-                    return (Vector128<T>)(object)Vector128.Create(bPtr[0], bPtr[1], bPtr[2], bPtr[3], bPtr[4], bPtr[5], bPtr[6], bPtr[7], bPtr[8], bPtr[9], bPtr[10], bPtr[11], bPtr[12], bPtr[13], bPtr[14], bPtr[15]);
                 }
 
                 return UShort(ptr);
@@ -90,9 +83,6 @@ namespace Silk.NET.Maths
                         return (Vector128<T>) (object) AdvSimd.LoadVector128((ushort*) ptr);
                     }
 #endif
-
-                    var bPtr = (ushort*) ptr;
-                    return (Vector128<T>)(object)Vector128.Create(bPtr[0], bPtr[1], bPtr[2], bPtr[3], bPtr[4], bPtr[5], bPtr[6], bPtr[7]);
                 }
 
                 return Short(ptr);
@@ -115,9 +105,6 @@ namespace Silk.NET.Maths
                         return (Vector128<T>) (object) AdvSimd.LoadVector128((short*) ptr);
                     }
 #endif
-
-                    var bPtr = (short*) ptr;
-                    return (Vector128<T>)(object)Vector128.Create(bPtr[0], bPtr[1], bPtr[2], bPtr[3], bPtr[4], bPtr[5], bPtr[6], bPtr[7]);
                 }
 
                 return UInt(ptr);
@@ -140,9 +127,6 @@ namespace Silk.NET.Maths
                         return (Vector128<T>) (object) AdvSimd.LoadVector128((uint*) ptr);
                     }
 #endif
-
-                    var bPtr = (uint*) ptr;
-                    return (Vector128<T>)(object)Vector128.Create(bPtr[0], bPtr[1], bPtr[2], bPtr[3]);
                 }
 
                 return Int(ptr);
@@ -165,9 +149,6 @@ namespace Silk.NET.Maths
                         return (Vector128<T>) (object) AdvSimd.LoadVector128((int*) ptr);
                     }
 #endif
-
-                    var bPtr = (int*) ptr;
-                    return (Vector128<T>)(object)Vector128.Create(bPtr[0], bPtr[1], bPtr[2], bPtr[3]);
                 }
 
                 return ULong(ptr);
@@ -190,9 +171,6 @@ namespace Silk.NET.Maths
                         return (Vector128<T>) (object) AdvSimd.LoadVector128((ulong*) ptr);
                     }
 #endif
-
-                    var bPtr = (ulong*) ptr;
-                    return (Vector128<T>)(object)Vector128.Create(bPtr[0], bPtr[1]);
                 }
 
                 return Long(ptr);
@@ -215,9 +193,6 @@ namespace Silk.NET.Maths
                         return (Vector128<T>) (object) AdvSimd.LoadVector128((long*) ptr);
                     }
 #endif
-
-                    var bPtr = (long*) ptr;
-                    return (Vector128<T>)(object)Vector128.Create(bPtr[0], bPtr[1]);
                 }
 
                 return Float(ptr);
@@ -240,9 +215,6 @@ namespace Silk.NET.Maths
                         return (Vector128<T>) (object) AdvSimd.LoadVector128((float*) ptr);
                     }
 #endif
-
-                    var bPtr = (float*) ptr;
-                    return (Vector128<T>)(object)Vector128.Create(bPtr[0], bPtr[1], bPtr[2], bPtr[3]);
                 }
 
                 return Double(ptr);
@@ -265,12 +237,269 @@ namespace Silk.NET.Maths
                         return (Vector128<T>) (object) AdvSimd.LoadVector128((double*) ptr);
                     }
 #endif
-
-                    var bPtr = (double*) ptr;
-                    return (Vector128<T>)(object)Vector128.Create(bPtr[0], bPtr[1]);
                 }
 
-                return Float(ptr);
+                return Other(ptr);
+            }
+            
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> Other(T* ptr)
+            {
+                return Unsafe.ReadUnaligned<Vector128<T>>(ptr);
+            }
+        }
+        
+        [MethodImpl(Scalar.MaxOpt)]
+        public static void Store<T>(T* destination, Vector128<T> source) where T : unmanaged
+        {
+            Byte(destination, source);
+            return;
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static void Byte(T* destination, Vector128<T> source)
+            {
+                if (typeof(T) == typeof(byte))
+                {
+#if SSE
+                    if (Sse2.IsSupported)
+                    {
+                        Sse2.Store((byte*) destination, (Vector128<byte>)(object)source);
+                        return;
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        AdvSimd.Store((byte*) destination, (Vector128<byte>)(object)source);
+                        return;
+                    }
+#endif
+                }
+
+                SByte(destination, source);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static void SByte(T* destination, Vector128<T> source)
+            {
+                if (typeof(T) == typeof(sbyte))
+                {
+#if SSE
+                    if (Sse2.IsSupported)
+                    {
+                        Sse2.Store((sbyte*) destination, (Vector128<sbyte>)(object)source);
+                        return;
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        AdvSimd.Store((sbyte*) destination, (Vector128<sbyte>)(object)source);
+                        return;
+                    }
+#endif
+                }
+
+                UShort(destination, source);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static void UShort(T* destination, Vector128<T> source)
+            {
+                if (typeof(T) == typeof(ushort))
+                {
+#if SSE
+                    if (Sse2.IsSupported)
+                    {
+                        Sse2.Store((ushort*) destination, (Vector128<ushort>)(object)source);
+                        return;
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        AdvSimd.Store((ushort*) destination, (Vector128<ushort>)(object)source);
+                        return;
+                    }
+#endif
+                }
+
+                Short(destination, source);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static void Short(T* destination, Vector128<T> source)
+            {
+                if (typeof(T) == typeof(short))
+                {
+#if SSE
+                    if (Sse2.IsSupported)
+                    {
+                        Sse2.Store((short*) destination, (Vector128<short>)(object)source);
+                        return;
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        AdvSimd.Store((short*) destination, (Vector128<short>)(object)source);
+                        return;
+                    }
+#endif
+                }
+
+                UInt(destination, source);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static void UInt(T* destination, Vector128<T> source)
+            {
+                if (typeof(T) == typeof(uint))
+                {
+#if SSE
+                    if (Sse2.IsSupported)
+                    {
+                        Sse2.Store((uint*) destination, (Vector128<uint>)(object)source);
+                        return;
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        AdvSimd.Store((uint*) destination, (Vector128<uint>)(object)source);
+                        return;
+                    }
+#endif
+                }
+
+                Int(destination, source);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static void Int(T* destination, Vector128<T> source)
+            {
+                if (typeof(T) == typeof(int))
+                {
+#if SSE
+                    if (Sse2.IsSupported)
+                    {
+                        Sse2.Store((int*) destination, (Vector128<int>)(object)source);
+                        return;
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        AdvSimd.Store((int*) destination, (Vector128<int>)(object)source);
+                        return;
+                    }
+#endif
+                }
+
+                ULong(destination, source);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static void ULong(T* destination, Vector128<T> source)
+            {
+                if (typeof(T) == typeof(ulong))
+                {
+#if SSE
+                    if (Sse2.IsSupported)
+                    {
+                        Sse2.Store((ulong*) destination, (Vector128<ulong>)(object)source);
+                        return;
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        AdvSimd.Store((ulong*) destination, (Vector128<ulong>)(object)source);
+                        return;
+                    }
+#endif
+                }
+
+                Long(destination, source);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static void Long(T* destination, Vector128<T> source)
+            {
+                if (typeof(T) == typeof(long))
+                {
+#if SSE
+                    if (Sse2.IsSupported)
+                    {
+                        Sse2.Store((long*) destination, (Vector128<long>)(object)source);
+                        return;
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        AdvSimd.Store((long*) destination, (Vector128<long>)(object)source);
+                        return;
+                    }
+#endif
+                }
+
+                Float(destination, source);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static void Float(T* destination, Vector128<T> source)
+            {
+                if (typeof(T) == typeof(float))
+                {
+#if SSE
+                    if (Sse.IsSupported)
+                    {
+                        Sse.Store((float*) destination, (Vector128<float>)(object)source);
+                        return;
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        AdvSimd.Store((float*) destination, (Vector128<float>)(object)source);
+                        return;
+                    }
+#endif
+                }
+
+                Double(destination, source);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static void Double(T* destination, Vector128<T> source)
+            {
+                if (typeof(T) == typeof(double))
+                {
+#if SSE
+                    if (Sse2.IsSupported)
+                    {
+                        Sse2.Store((double*) destination, (Vector128<double>)(object)source);
+                        return;
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        AdvSimd.Store((double*) destination, (Vector128<double>)(object)source);
+                        return;
+                    }
+#endif
+                }
+
+                Other(destination, source);
+            }
+
+            [MethodImpl(Scalar.MaxOpt)]
+            static void Other(T* dest, Vector128<T> src)
+            {
+                Unsafe.WriteUnaligned(dest, src);
             }
         }
     }
