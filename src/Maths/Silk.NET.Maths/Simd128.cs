@@ -502,6 +502,107 @@ namespace Silk.NET.Maths
                 Unsafe.WriteUnaligned(dest, src);
             }
         }
+
+        [MethodImpl(Scalar.MaxOpt)]
+        public static Vector128<T> Create<T>(T value) where T : unmanaged
+        {
+            return Byte(value);
+
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> Byte(T value)
+            {
+                if (typeof(T) == typeof(byte))
+                {
+                    return (Vector128<T>)(object)Vector128.Create((byte) (object) value);
+                }
+
+                return SByte(value);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> SByte(T value)
+            {
+                if (typeof(T) == typeof(sbyte))
+                {
+                    return (Vector128<T>)(object)Vector128.Create((sbyte) (object) value);
+                }
+
+                return UInt(value);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> UInt(T value)
+            {
+                if (typeof(T) == typeof(uint))
+                {
+                    return (Vector128<T>)(object)Vector128.Create((uint) (object) value);
+                }
+
+                return Int(value);
+            }
+                        
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> Int(T value)
+            {
+                if (typeof(T) == typeof(int))
+                {
+                    return (Vector128<T>)(object)Vector128.Create((int) (object) value);
+                }
+
+                return ULong(value);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> ULong(T value)
+            {
+                if (typeof(T) == typeof(ulong))
+                {
+                    return (Vector128<T>)(object)Vector128.Create((ulong) (object) value);
+                }
+
+                return Long(value);
+            }
+                        
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> Long(T value)
+            {
+                if (typeof(T) == typeof(long))
+                {
+                    return (Vector128<T>)(object)Vector128.Create((long) (object) value);
+                }
+
+                return Float(value);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> Float(T value)
+            {
+                if (typeof(T) == typeof(float))
+                {
+                    return (Vector128<T>)(object)Vector128.Create((float) (object) value);
+                }
+
+                return Double(value);
+            }
+                        
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> Double(T value)
+            {
+                if (typeof(T) == typeof(double))
+                {
+                    return (Vector128<T>)(object)Vector128.Create((double) (object) value);
+                }
+
+                return Other(value);
+            }
+
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> Other(T value)
+            {
+                Scalar.ThrowUnsupportedType();
+                return default; // unreachable
+            }
+        }
     }
 }
 #endif
