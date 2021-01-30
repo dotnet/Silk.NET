@@ -8,14 +8,11 @@
 using System;
 using System.Runtime.InteropServices;
 using System.Text;
-using Silk.NET.Core.Loader;
-using Silk.NET.GLFW;
+using Silk.NET.Core.Contexts;
 using Veldrid;
 using Veldrid.OpenGL;
 using Veldrid.Vk;
 using Vulkan.Xlib;
-using VideoMode = Silk.NET.Windowing.VideoMode;
-using XWindow = Vulkan.Xlib.Window;
 
 namespace Silk.NET.Windowing.Extensions.Veldrid
 {
@@ -24,27 +21,26 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
     /// </summary>
     public static class VeldridWindow
     {
-        // TODO view support
-
-        [DllImport("user32.dll", EntryPoint = "GetWindowLong")]
-        static extern IntPtr GetWindowLongPtr(IntPtr hWnd, int nIndex = -6);
-
         /// <summary>
         /// Creates a window and a graphics device with the given options.
         /// </summary>
         /// <param name="windowCI">The window options, used to create a window.</param>
         /// <param name="window">The new window.</param>
         /// <param name="gd">The new graphics device.</param>
-        public static void CreateWindowAndGraphicsDevice(
+        public static void CreateWindowAndGraphicsDevice
+        (
             WindowOptions windowCI,
             out IWindow window,
-            out GraphicsDevice gd)
-            => CreateWindowAndGraphicsDevice(
+            out GraphicsDevice gd
+        )
+            => CreateWindowAndGraphicsDevice
+            (
                 windowCI,
                 new GraphicsDeviceOptions(),
                 GetPlatformDefaultBackend(),
                 out window,
-                out gd);
+                out gd
+            );
 
         /// <summary>
         /// Creates a window and a graphics device with the given options.
@@ -53,12 +49,13 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
         /// <param name="deviceOptions">The device options, used to create the graphics device.</param>
         /// <param name="window">The new window.</param>
         /// <param name="gd">The new graphics device.</param>
-        public static void CreateWindowAndGraphicsDevice(
+        public static void CreateWindowAndGraphicsDevice
+        (
             WindowOptions windowCI,
             GraphicsDeviceOptions deviceOptions,
             out IWindow window,
-            out GraphicsDevice gd)
-            => CreateWindowAndGraphicsDevice(windowCI, deviceOptions, GetPlatformDefaultBackend(), out window, out gd);
+            out GraphicsDevice gd
+        ) => CreateWindowAndGraphicsDevice(windowCI, deviceOptions, GetPlatformDefaultBackend(), out window, out gd);
 
         /// <summary>
         /// Creates a window and a graphics device with the given options.
@@ -68,12 +65,14 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
         /// <param name="preferredBackend">The preferred graphics backend for the graphics device.</param>
         /// <param name="window">The new window.</param>
         /// <param name="gd">The new graphics device.</param>
-        public static void CreateWindowAndGraphicsDevice(
+        public static void CreateWindowAndGraphicsDevice
+        (
             WindowOptions windowCI,
             GraphicsDeviceOptions deviceOptions,
             GraphicsBackend preferredBackend,
             out IWindow window,
-            out GraphicsDevice gd)
+            out GraphicsDevice gd
+        )
         {
             var opts = new WindowOptions
             (
@@ -114,7 +113,7 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
         /// </summary>
         /// <param name="window">The window to create a graphics device from.</param>
         /// <returns>The new graphics device.</returns>
-        public static GraphicsDevice CreateGraphicsDevice(IWindow window)
+        public static GraphicsDevice CreateGraphicsDevice(this IView window)
             => CreateGraphicsDevice(window, new GraphicsDeviceOptions(), GetPlatformDefaultBackend());
 
         /// <summary>
@@ -123,7 +122,7 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
         /// <param name="window">The window to create a graphics device from.</param>
         /// <param name="options">The graphics device options.</param>
         /// <returns>The new graphics device.</returns>
-        public static GraphicsDevice CreateGraphicsDevice(IWindow window, GraphicsDeviceOptions options)
+        public static GraphicsDevice CreateGraphicsDevice(this IView window, GraphicsDeviceOptions options)
             => CreateGraphicsDevice(window, options, GetPlatformDefaultBackend());
 
         /// <summary>
@@ -132,7 +131,7 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
         /// <param name="window">The window to create a graphics device from.</param>
         /// <param name="preferredBackend">The preferred graphics backend for the graphics device.</param>
         /// <returns>The new graphics device.</returns>
-        public static GraphicsDevice CreateGraphicsDevice(IWindow window, GraphicsBackend preferredBackend)
+        public static GraphicsDevice CreateGraphicsDevice(this IView window, GraphicsBackend preferredBackend)
             => CreateGraphicsDevice(window, new GraphicsDeviceOptions(), preferredBackend);
 
         /// <summary>
@@ -142,10 +141,12 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
         /// <param name="options">The graphics device options.</param>
         /// <param name="preferredBackend">The preferred graphics backend for the graphics device.</param>
         /// <returns>The new graphics device.</returns>
-        public static GraphicsDevice CreateGraphicsDevice(
-            IWindow window,
+        public static GraphicsDevice CreateGraphicsDevice
+        (
+            this IView window,
             GraphicsDeviceOptions options,
-            GraphicsBackend preferredBackend) =>
+            GraphicsBackend preferredBackend
+        ) =>
             preferredBackend switch
             {
                 GraphicsBackend.Direct3D11 => CreateDefaultD3D11GraphicsDevice(options, window),
@@ -156,177 +157,127 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
                 _ => throw new VeldridException("Invalid GraphicsBackend: " + preferredBackend)
             };
 
-        private unsafe delegate IntPtr GetWin32Window(WindowHandle* handle);
-
-        private unsafe delegate IntPtr GetX11Display();
-
-        private unsafe delegate IntPtr GetX11Window(WindowHandle* handle);
-
-        private unsafe delegate IntPtr GetWaylandDisplay();
-
-        private unsafe delegate IntPtr GetWaylandWindow(WindowHandle* handle);
-
-        private unsafe delegate IntPtr GetCocoaWindow(WindowHandle* handle);
-
-        private static unsafe SwapchainSource GetSwapchainSource(IView view)
+        private static unsafe SwapchainSource GetSwapchainSource(INativeWindow view)
         {
-            if (view.GetType().FullName == "Silk.NET.Windowing.Desktop.GlfwWindow" ||
-                view.GetType().FullName == "Silk.NET.Windowing.Glfw.GlfwWindow")
+            if (view.WinRT.HasValue)
             {
-                var handle = (WindowHandle*) view.Handle;
-                var glfw = GlfwProvider.GLFW.Value;
-                try
-                {
-                    var x11Window = glfw.Library.LoadFunction<GetX11Window>("glfwGetX11Window")(handle);
-                    var x11Display = glfw.Library.LoadFunction<GetX11Display>("glfwGetX11Display")();
-                    if (x11Display != IntPtr.Zero && x11Window != IntPtr.Zero)
-                    {
-                        return SwapchainSource.CreateXlib(x11Display, x11Window);
-                    }
-                }
-                catch (GlfwException)
-                {
-                    // do nothing
-                }
-                catch (SymbolLoadingException)
-                {
-                    // do nothing
-                }
+                ThrowWinRT();
 
-                try
-                {
-                    var win32Window = glfw.Library.LoadFunction<GetWin32Window>("glfwGetWin32Window")(handle);
-                    if (win32Window != IntPtr.Zero)
-                    {
-                        return SwapchainSource.CreateWin32(win32Window, GetWindowLongPtr(win32Window));
-                    }
-                }
-                catch (GlfwException)
-                {
-                    // do nothing
-                }
-                catch (SymbolLoadingException)
-                {
-                    // do nothing
-                }
+                static void ThrowWinRT() => throw new NotSupportedException
+                    ("Silk.NET only supports CoreWindow UWP views, which Veldrid does not support today");
+            }
 
-                try
-                {
-                    var waylandWindow = glfw.Library.LoadFunction<GetWaylandWindow>("glfwGetWaylandWindow")(handle);
-                    var waylandDisplay = glfw.Library.LoadFunction<GetWaylandDisplay>("glfwGetWaylandDisplay")();
-                    if (waylandWindow != IntPtr.Zero && waylandDisplay != IntPtr.Zero)
-                    {
-                        return SwapchainSource.CreateWayland(waylandDisplay, waylandWindow);
-                    }
-                }
-                catch (GlfwException)
-                {
-                    // do nothing
-                }
-                catch (SymbolLoadingException)
-                {
-                    // do nothing
-                }
+            if (view.Win32.HasValue)
+            {
+                return SwapchainSource.CreateWin32(view.Win32.Value.Hwnd, view.Win32.Value.HInstance);
+            }
 
-                try
+            if (view.X11.HasValue)
+            {
+                return SwapchainSource.CreateXlib(view.X11.Value.Display, (nint) view.X11.Value.Window);
+            }
+
+            if (view.Wayland.HasValue)
+            {
+                return SwapchainSource.CreateWayland(view.Wayland.Value.Display, view.Wayland.Value.Surface);
+            }
+
+            if (view.Android.HasValue)
+            {
+                return SwapchainSource.CreateAndroidSurface
+                    (view.Android.Value.Surface, AndroidSupport.JNIEnv ?? ThrowJNIEnv());
+
+                static nint ThrowJNIEnv()
                 {
-                    var cocoaWindow = glfw.Library.LoadFunction<GetCocoaWindow>("glfwGetCocoaWindow")(handle);
-                    if (cocoaWindow != IntPtr.Zero)
-                    {
-                        return SwapchainSource.CreateNSWindow(cocoaWindow);
-                    }
-                }
-                catch (GlfwException)
-                {
-                    // do nothing
-                }
-                catch (SymbolLoadingException)
-                {
-                    // do nothing
+                    throw new InvalidOperationException
+                    (
+                        "Android applications must set the AndroidSupport.JNIEnv property" +
+                        " (sourced from Android.Runtime.JNIEnv.Handle property in " +
+                        "Mono.Android) to create swapchains from Android views."
+                    );
+
+                    return default;
                 }
             }
 
-            throw new PlatformNotSupportedException();
+            if (view.Cocoa.HasValue)
+            {
+                return SwapchainSource.CreateNSWindow(view.Cocoa.Value);
+            }
+
+            if (view.UIKit.HasValue)
+            {
+                return SwapchainSource.CreateUIView(view.UIKit.Value.Window);
+            }
+
+            Throw();
+            return null!;
+
+            static void Throw() => throw new PlatformNotSupportedException();
         }
 
-        private static unsafe VkSurfaceSource GetSurfaceSource(IView view)
+        private static unsafe VkSurfaceSource GetSurfaceSource(INativeWindow window)
         {
-            if (view.GetType().FullName == "Silk.NET.Windowing.Desktop.GlfwWindow")
+            if (window.X11.HasValue)
             {
-                var handle = (WindowHandle*) view.Handle;
-                var glfw = GlfwProvider.GLFW.Value;
-                try
-                {
-                    var x11Window = glfw.Library.LoadFunction<GetX11Window>("glfwGetX11Window")(handle);
-                    var x11Display = glfw.Library.LoadFunction<GetX11Display>("glfwGetX11Display")();
-                    if (x11Display != IntPtr.Zero && x11Window != IntPtr.Zero)
-                    {
-                        return VkSurfaceSource.CreateXlib((Display*) x11Display, new XWindow { Value = x11Window });
-                    }
-                }
-                catch (GlfwException)
-                {
-                    // do nothing
-                }
-                catch (SymbolLoadingException)
-                {
-                    // do nothing
-                }
-
-                try
-                {
-                    var win32Window = glfw.Library.LoadFunction<GetWin32Window>("glfwGetWin32Window")(handle);
-                    if (win32Window != IntPtr.Zero)
-                    {
-                        return VkSurfaceSource.CreateWin32(GetWindowLongPtr(win32Window), win32Window);
-                    }
-                }
-                catch (GlfwException)
-                {
-                    // do nothing
-                }
-                catch (SymbolLoadingException)
-                {
-                    // do nothing
-                }
+                return VkSurfaceSource.CreateXlib
+                    ((Display*) window.X11.Value.Display, new() {Value = (nint) window.X11.Value.Window});
             }
 
-            throw new PlatformNotSupportedException();
+            if (window.Win32.HasValue)
+            {
+                return VkSurfaceSource.CreateWin32(window.Win32.Value.HInstance, window.Win32.Value.Hwnd);
+            }
+
+            Throw();
+            return null!;
+
+            static void Throw() => throw new PlatformNotSupportedException();
         }
 
         public static unsafe GraphicsDevice CreateVulkanGraphicsDevice(GraphicsDeviceOptions options, IView window)
             => CreateVulkanGraphicsDevice(options, window, false);
-        public static unsafe GraphicsDevice CreateVulkanGraphicsDevice(
+
+        public static unsafe GraphicsDevice CreateVulkanGraphicsDevice
+        (
             GraphicsDeviceOptions options,
             IView window,
-            bool colorSrgb)
+            bool colorSrgb
+        )
         {
-            SwapchainDescription scDesc = new SwapchainDescription(
-                GetSwapchainSource(window),
-                (uint) window.Size.Width,
-                (uint) window.Size.Height,
+            var scDesc = new SwapchainDescription
+            (
+                GetSwapchainSource(window.Native),
+                (uint) window.Size.X,
+                (uint) window.Size.Y,
                 options.SwapchainDepthFormat,
                 options.SyncToVerticalBlank,
-                colorSrgb);
-            GraphicsDevice gd = GraphicsDevice.CreateVulkan(options, scDesc);
+                colorSrgb
+            );
+            var gd = GraphicsDevice.CreateVulkan(options, scDesc);
 
             return gd;
         }
 
-        private static unsafe GraphicsDevice CreateMetalGraphicsDevice(GraphicsDeviceOptions options, IWindow window)
+        private static unsafe GraphicsDevice CreateMetalGraphicsDevice(GraphicsDeviceOptions options, IView window)
             => CreateMetalGraphicsDevice(options, window, false);
-        private static unsafe GraphicsDevice CreateMetalGraphicsDevice(
+
+        private static unsafe GraphicsDevice CreateMetalGraphicsDevice
+        (
             GraphicsDeviceOptions options,
-            IWindow window,
-            bool colorSrgb)
+            IView window,
+            bool colorSrgb
+        )
         {
-            SwapchainSource source = GetSwapchainSource(window);
-            SwapchainDescription swapchainDesc = new SwapchainDescription(
+            var source = GetSwapchainSource(window.Native);
+            var swapchainDesc = new SwapchainDescription
+            (
                 source,
-                (uint) window.Size.Width, (uint) window.Size.Height,
+                (uint) window.Size.X, (uint) window.Size.Y,
                 options.SwapchainDepthFormat,
                 options.SyncToVerticalBlank,
-                colorSrgb);
+                colorSrgb
+            );
 
             return GraphicsDevice.CreateMetal(options, swapchainDesc);
         }
@@ -353,35 +304,58 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
                 ? GraphicsBackend.Vulkan
                 : GraphicsBackend.OpenGL;
         }
+        
+        private const int GlesMajor = 3;
+        private const int GlesMinor = 1;
+        private const int GlMajor = 4;
+        private const int GlMinor = 5;
 
-        private static unsafe GraphicsDevice CreateDefaultOpenGlGraphicsDevice(
-            GraphicsDeviceOptions options,
-            IWindow window,
-            GraphicsBackend backend)
+        public static GraphicsAPI ToGraphicsAPI(this GraphicsBackend backend) => backend switch
         {
-            OpenGLPlatformInfo platformInfo = new OpenGLPlatformInfo(
-                window.Handle,
-                x => GlfwProvider.GLFW.Value.GetProcAddress(x),
-                context => GlfwProvider.GLFW.Value.MakeContextCurrent((WindowHandle*) context),
-                () => (IntPtr) GlfwProvider.GLFW.Value.GetCurrentContext(),
-                () => GlfwProvider.GLFW.Value.MakeContextCurrent(default),
-                _ => { },
-                () => GlfwProvider.GLFW.Value.SwapBuffers((WindowHandle*) window.Handle),
-                sync => GlfwProvider.GLFW.Value.SwapInterval(sync ? 1 : 0));
+            GraphicsBackend.Direct3D11 => GraphicsAPI.None, GraphicsBackend.Vulkan => GraphicsAPI.DefaultVulkan,
+            GraphicsBackend.OpenGL => new(ContextAPI.OpenGL, new(GlMajor, GlMinor)),
+            GraphicsBackend.Metal => GraphicsAPI.None,
+            GraphicsBackend.OpenGLES => new(ContextAPI.OpenGLES, new(GlesMajor, GlesMinor)),
+            _ => throw new ArgumentOutOfRangeException()
+        };
 
-            return GraphicsDevice.CreateOpenGL(
+        private static unsafe GraphicsDevice CreateDefaultOpenGlGraphicsDevice
+        (
+            GraphicsDeviceOptions options,
+            IView window,
+            GraphicsBackend backend
+        )
+        {
+            var platformInfo = new OpenGLPlatformInfo
+            (
+                window.Handle,
+                x => window.GLContext!.GetProcAddress(x),
+                _ => window.GLContext!.MakeCurrent(),
+                () => window.GLContext!.IsCurrent ? window.GLContext!.Handle : default,
+                () => window.GLContext!.Clear(),
+                _ => window.GLContext!.Dispose(),
+                () => window.GLContext!.SwapBuffers(),
+                sync => window.GLContext!.SwapInterval(sync ? 1 : 0)
+            );
+
+            return GraphicsDevice.CreateOpenGL
+            (
                 options,
                 platformInfo,
-                (uint) window.Size.Width,
-                (uint) window.Size.Height);
+                (uint) window.Size.X,
+                (uint) window.Size.Y
+            );
         }
 
-        private static void SetGlContextAttributes(GraphicsDeviceOptions options, GraphicsBackend backend, ref WindowOptions opts)
+        private static void SetGlContextAttributes
+            (GraphicsDeviceOptions options, GraphicsBackend backend, ref WindowOptions opts)
         {
             if (backend != GraphicsBackend.OpenGL && backend != GraphicsBackend.OpenGLES)
             {
-                throw new VeldridException(
-                    $"{nameof(backend)} must be {nameof(GraphicsBackend.OpenGL)} or {nameof(GraphicsBackend.OpenGLES)}.");
+                throw new VeldridException
+                (
+                    $"{nameof(backend)} must be {nameof(GraphicsBackend.OpenGL)} or {nameof(GraphicsBackend.OpenGLES)}."
+                );
             }
 
             var api = opts.API;
@@ -391,7 +365,7 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
 
             api.Flags = contextFlags;
 
-            (int major, int minor) = GetMaxGLVersion(backend == GraphicsBackend.OpenGLES);
+            (var major, var minor) = GetMaxGLVersion(backend == GraphicsBackend.OpenGLES);
 
             if (backend == GraphicsBackend.OpenGL)
             {
@@ -406,8 +380,8 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
                 api.Version = new APIVersion(major, minor);
             }
 
-            int depthBits = 0;
-            int stencilBits = 0;
+            var depthBits = 0;
+            var stencilBits = 0;
             if (options.SwapchainDepthFormat.HasValue)
             {
                 switch (options.SwapchainDepthFormat)
@@ -432,29 +406,33 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
             }
 
             opts.PreferredDepthBufferBits = depthBits;
-            // TODO stencil?
+            opts.PreferredStencilBufferBits = stencilBits;
 
             opts.API = api;
         }
 
-        private static GraphicsDevice CreateDefaultD3D11GraphicsDevice(
+        private static GraphicsDevice CreateDefaultD3D11GraphicsDevice
+        (
             GraphicsDeviceOptions options,
-            IWindow window)
+            IView view
+        )
         {
-            SwapchainSource source = GetSwapchainSource(window);
-            SwapchainDescription swapchainDesc = new SwapchainDescription(
+            var source = GetSwapchainSource(view.Native);
+            var swapchainDesc = new SwapchainDescription
+            (
                 source,
-                (uint) window.Size.Width, (uint) window.Size.Height,
+                (uint) view.Size.X, (uint) view.Size.Y,
                 options.SwapchainDepthFormat,
                 options.SyncToVerticalBlank,
-                options.SwapchainSrgbFormat);
+                options.SwapchainSrgbFormat
+            );
 
             return GraphicsDevice.CreateD3D11(options, swapchainDesc);
         }
 
         private static unsafe string GetString(byte* stringStart)
         {
-            int characters = 0;
+            var characters = 0;
             while (stringStart[characters] != 0)
             {
                 characters++;
@@ -463,61 +441,7 @@ namespace Silk.NET.Windowing.Extensions.Veldrid
             return Encoding.UTF8.GetString(stringStart, characters);
         }
 
-        private static readonly object s_glVersionLock = new object();
-        private static (int Major, int Minor)? s_maxSupportedGLVersion;
-        private static (int Major, int Minor)? s_maxSupportedGLESVersion;
-
-        private static (int Major, int Minor) GetMaxGLVersion(bool gles)
-        {
-            lock (s_glVersionLock)
-            {
-                (int Major, int Minor)? maxVer = gles ? s_maxSupportedGLESVersion : s_maxSupportedGLVersion;
-                if (maxVer == null)
-                {
-                    maxVer = TestMaxVersion(gles);
-                    if (gles) { s_maxSupportedGLESVersion = maxVer; }
-                    else { s_maxSupportedGLVersion = maxVer; }
-                }
-
-                return maxVer.Value;
-            }
-        }
-
-        private static (int Major, int Minor) TestMaxVersion(bool gles)
-        {
-            //(int, int)[] testVersions = gles
-            //    ? new[] { (3, 2), (3, 0) }
-            //    : new[] { (4, 6), (4, 3), (4, 0), (3, 3), (3, 0) };
-
-            //foreach ((int major, int minor) in testVersions)
-            //{
-            //    if (TestIndividualGLVersion(gles, major, minor)) { return (major, minor); }
-            //}
-
-            //throw new PlatformNotSupportedException("OpenGL not supported.");
-            return (4, 0); // BUG because of the cross-boundary exception issue, this has been temporarily disabled.
-        }
-
-        //private static unsafe bool TestIndividualGLVersion(bool gles, int major, int minor)
-        //{
-        //    var gl = gles ? "OpenGLES" : "OpenGL";
-        //    try
-        //    {
-        //        var opts = WindowOptions.Default;
-        //        opts.IsVisible = false;
-        //        opts.Size = new Size(1, 1);
-        //        opts.WindowBorder = WindowBorder.Hidden;
-        //        opts.API = new GraphicsAPI(gles ? ContextAPI.OpenGLES : ContextAPI.OpenGL, ContextProfile.Core,
-        //            ContextFlags.ForwardCompatible, new APIVersion(major, minor));
-        //        var window = GlfwPlatform.Instance.CreateWindow(opts);
-        //        window.Initialize();
-        //        window.Reset();
-        //        return true;
-        //    }
-        //    catch (GlfwException)
-        //    {
-        //        return false;
-        //    }
-        //}
+        private static (int Major, int Minor) GetMaxGLVersion
+            (bool gles) => gles ? (GlesMajor, GlesMinor) : (GlMajor, GlMinor);
     }
 }
