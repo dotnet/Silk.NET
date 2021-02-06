@@ -22,6 +22,8 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "IDXGIDevice2")]
     public unsafe partial struct IDXGIDevice2
     {
+        public static readonly Guid Guid = new("05008617-fbfd-4051-a790-144884b4f6a9");
+
         public static implicit operator IDXGIDevice1(IDXGIDevice2 val)
             => Unsafe.As<IDXGIDevice2, IDXGIDevice1>(ref val);
 

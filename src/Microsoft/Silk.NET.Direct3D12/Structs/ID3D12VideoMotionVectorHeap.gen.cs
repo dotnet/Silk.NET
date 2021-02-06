@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "ID3D12VideoMotionVectorHeap")]
     public unsafe partial struct ID3D12VideoMotionVectorHeap
     {
+        public static readonly Guid Guid = new("5be17987-743a-4061-834b-23d22daea505");
+
         public static implicit operator ID3D12Pageable(ID3D12VideoMotionVectorHeap val)
             => Unsafe.As<ID3D12VideoMotionVectorHeap, ID3D12Pageable>(ref val);
 

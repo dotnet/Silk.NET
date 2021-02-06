@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "IDirect3DStateBlock9")]
     public unsafe partial struct IDirect3DStateBlock9
     {
+        public static readonly Guid Guid = new("b07c4fe5-310d-4ba8-a23c-4f0f206f218b");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDirect3DStateBlock9 val)
             => Unsafe.As<IDirect3DStateBlock9, Silk.NET.Core.Native.IUnknown>(ref val);
 

@@ -22,6 +22,8 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "IDXGIKeyedMutex")]
     public unsafe partial struct IDXGIKeyedMutex
     {
+        public static readonly Guid Guid = new("9d8e1289-d7b3-465f-8126-250e349af85d");
+
         public static implicit operator IDXGIDeviceSubObject(IDXGIKeyedMutex val)
             => Unsafe.As<IDXGIKeyedMutex, IDXGIDeviceSubObject>(ref val);
 

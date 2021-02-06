@@ -45,11 +45,17 @@ namespace Silk.NET.BuildTools.Bind
             var ns = project.IsRoot ? task.Task.Namespace : task.Task.ExtensionsNamespace;
             sw.WriteLine($"namespace {ns}{project.Namespace}");
             sw.WriteLine("{");
+            string guid = null;
             foreach (var attr in @struct.Attributes)
             {
                 if (attr.Name == "BuildToolsIntrinsic")
                 {
                     continue;
+                }
+
+                if (guid is null && attr.Name == "Guid")
+                {
+                    guid = string.Join(", ", attr.Arguments);
                 }
                 
                 sw.WriteLine($"    {attr}");
@@ -58,6 +64,12 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine($"    [NativeName(\"Name\", \"{@struct.NativeName}\")]");
             sw.WriteLine($"    public unsafe partial struct {@struct.Name}");
             sw.WriteLine("    {");
+            if (guid is not null)
+            {
+                sw.WriteLine($"        public static readonly Guid Guid = new({guid});");
+                sw.WriteLine();
+            }
+            
             foreach (var comBase in @struct.ComBases)
             {
                 var asSuffix = comBase.Split('.').Last();

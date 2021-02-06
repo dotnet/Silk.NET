@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3DUserDefinedAnnotation")]
     public unsafe partial struct ID3DUserDefinedAnnotation
     {
+        public static readonly Guid Guid = new("b2daad8b-03d4-4dbf-95eb-32ab4b63d0ab");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3DUserDefinedAnnotation val)
             => Unsafe.As<ID3DUserDefinedAnnotation, Silk.NET.Core.Native.IUnknown>(ref val);
 

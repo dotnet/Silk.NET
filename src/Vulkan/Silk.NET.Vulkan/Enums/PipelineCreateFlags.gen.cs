@@ -37,10 +37,10 @@ namespace Silk.NET.Vulkan
         PipelineCreateRayTracingSkipTrianglesBitKhr = 4096,
         [NativeName("Name", "VK_PIPELINE_CREATE_RAY_TRACING_SKIP_AABBS_BIT_KHR")]
         PipelineCreateRayTracingSkipAabbsBitKhr = 8192,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RAY_TRACING_SHADER_GROUP_HANDLE_CAPTURE_REPLAY_BIT_KHR")]
+        PipelineCreateRayTracingShaderGroupHandleCaptureReplayBitKhr = 524288,
         [NativeName("Name", "VK_PIPELINE_CREATE_DEFER_COMPILE_BIT_NV")]
         PipelineCreateDeferCompileBitNV = 32,
-        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_19_BIT_KHR")]
-        PipelineCreateReserved19BitKhr = 524288,
         [NativeName("Name", "VK_PIPELINE_CREATE_CAPTURE_STATISTICS_BIT_KHR")]
         PipelineCreateCaptureStatisticsBitKhr = 64,
         [NativeName("Name", "VK_PIPELINE_CREATE_CAPTURE_INTERNAL_REPRESENTATIONS_BIT_KHR")]

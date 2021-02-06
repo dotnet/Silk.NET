@@ -14,11 +14,11 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkAccelerationStructureMemoryRequirementsTypeNV")]
     public enum AccelerationStructureMemoryRequirementsTypeNV : int
     {
-        [NativeName("Name", "VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_OBJECT_KHR")]
-        AccelerationStructureMemoryRequirementsTypeObjectKhr = 0,
-        [NativeName("Name", "VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_BUILD_SCRATCH_KHR")]
-        AccelerationStructureMemoryRequirementsTypeBuildScratchKhr = 1,
-        [NativeName("Name", "VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_UPDATE_SCRATCH_KHR")]
-        AccelerationStructureMemoryRequirementsTypeUpdateScratchKhr = 2,
+        [NativeName("Name", "VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_OBJECT_NV")]
+        AccelerationStructureMemoryRequirementsTypeObjectNV = 0,
+        [NativeName("Name", "VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_BUILD_SCRATCH_NV")]
+        AccelerationStructureMemoryRequirementsTypeBuildScratchNV = 1,
+        [NativeName("Name", "VK_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_TYPE_UPDATE_SCRATCH_NV")]
+        AccelerationStructureMemoryRequirementsTypeUpdateScratchNV = 2,
     }
 }

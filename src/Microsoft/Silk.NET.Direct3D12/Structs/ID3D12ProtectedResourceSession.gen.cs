@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "ID3D12ProtectedResourceSession")]
     public unsafe partial struct ID3D12ProtectedResourceSession
     {
+        public static readonly Guid Guid = new("6cd696f4-f289-40cc-8091-5a6c0a099c3d");
+
         public static implicit operator ID3D12ProtectedSession(ID3D12ProtectedResourceSession val)
             => Unsafe.As<ID3D12ProtectedResourceSession, ID3D12ProtectedSession>(ref val);
 

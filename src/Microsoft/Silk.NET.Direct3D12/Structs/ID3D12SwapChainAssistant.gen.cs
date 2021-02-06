@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "ID3D12SwapChainAssistant")]
     public unsafe partial struct ID3D12SwapChainAssistant
     {
+        public static readonly Guid Guid = new("f1df64b6-57fd-49cd-8807-c0eb88b45c8f");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12SwapChainAssistant val)
             => Unsafe.As<ID3D12SwapChainAssistant, Silk.NET.Core.Native.IUnknown>(ref val);
 

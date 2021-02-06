@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "ID3D12VideoEncodeCommandList")]
     public unsafe partial struct ID3D12VideoEncodeCommandList
     {
+        public static readonly Guid Guid = new("8455293a-0cbd-4831-9b39-fbdbab724723");
+
         public static implicit operator ID3D12CommandList(ID3D12VideoEncodeCommandList val)
             => Unsafe.As<ID3D12VideoEncodeCommandList, ID3D12CommandList>(ref val);
 

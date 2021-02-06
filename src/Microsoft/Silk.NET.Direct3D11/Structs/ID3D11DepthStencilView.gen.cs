@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11DepthStencilView")]
     public unsafe partial struct ID3D11DepthStencilView
     {
+        public static readonly Guid Guid = new("9fdac92a-1876-48c3-afad-25b94f84a9b6");
+
         public static implicit operator ID3D11View(ID3D11DepthStencilView val)
             => Unsafe.As<ID3D11DepthStencilView, ID3D11View>(ref val);
 

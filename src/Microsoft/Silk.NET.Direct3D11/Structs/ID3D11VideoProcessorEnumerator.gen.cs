@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11VideoProcessorEnumerator")]
     public unsafe partial struct ID3D11VideoProcessorEnumerator
     {
+        public static readonly Guid Guid = new("31627037-53ab-4200-9061-05faa9ab45f9");
+
         public static implicit operator ID3D11DeviceChild(ID3D11VideoProcessorEnumerator val)
             => Unsafe.As<ID3D11VideoProcessorEnumerator, ID3D11DeviceChild>(ref val);
 

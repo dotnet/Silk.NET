@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11Linker")]
     public unsafe partial struct ID3D11Linker
     {
+        public static readonly Guid Guid = new("59a6cd0e-e10d-4c1f-88c0-63aba1daf30e");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11Linker val)
             => Unsafe.As<ID3D11Linker, Silk.NET.Core.Native.IUnknown>(ref val);
 

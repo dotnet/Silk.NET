@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11RefDefaultTrackingOptions")]
     public unsafe partial struct ID3D11RefDefaultTrackingOptions
     {
+        public static readonly Guid Guid = new("03916615-c644-418c-9bf4-75db5be63ca0");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11RefDefaultTrackingOptions val)
             => Unsafe.As<ID3D11RefDefaultTrackingOptions, Silk.NET.Core.Native.IUnknown>(ref val);
 

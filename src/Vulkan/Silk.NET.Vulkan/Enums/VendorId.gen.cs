@@ -24,5 +24,7 @@ namespace Silk.NET.Vulkan
         VendorIDCodeplay = 65540,
         [NativeName("Name", "VK_VENDOR_ID_MESA")]
         VendorIDMesa = 65541,
+        [NativeName("Name", "VK_VENDOR_ID_POCL")]
+        VendorIDPocl = 65542,
     }
 }

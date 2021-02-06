@@ -57,10 +57,10 @@ namespace Silk.NET.Vulkan
         PipelineStageTransformFeedbackBitExt = 16777216,
         [NativeName("Name", "VK_PIPELINE_STAGE_CONDITIONAL_RENDERING_BIT_EXT")]
         PipelineStageConditionalRenderingBitExt = 262144,
-        [NativeName("Name", "VK_PIPELINE_STAGE_RAY_TRACING_SHADER_BIT_KHR")]
-        PipelineStageRayTracingShaderBitKhr = 2097152,
         [NativeName("Name", "VK_PIPELINE_STAGE_ACCELERATION_STRUCTURE_BUILD_BIT_KHR")]
         PipelineStageAccelerationStructureBuildBitKhr = 33554432,
+        [NativeName("Name", "VK_PIPELINE_STAGE_RAY_TRACING_SHADER_BIT_KHR")]
+        PipelineStageRayTracingShaderBitKhr = 2097152,
         [NativeName("Name", "VK_PIPELINE_STAGE_SHADING_RATE_IMAGE_BIT_NV")]
         PipelineStageShadingRateImageBitNV = 4194304,
         [NativeName("Name", "VK_PIPELINE_STAGE_RAY_TRACING_SHADER_BIT_NV")]
@@ -73,6 +73,8 @@ namespace Silk.NET.Vulkan
         PipelineStageMeshShaderBitNV = 1048576,
         [NativeName("Name", "VK_PIPELINE_STAGE_FRAGMENT_DENSITY_PROCESS_BIT_EXT")]
         PipelineStageFragmentDensityProcessBitExt = 8388608,
+        [NativeName("Name", "VK_PIPELINE_STAGE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
+        PipelineStageFragmentShadingRateAttachmentBitKhr = 4194304,
         [NativeName("Name", "VK_PIPELINE_STAGE_COMMAND_PREPROCESS_BIT_NV")]
         PipelineStageCommandPreprocessBitNV = 131072,
     }

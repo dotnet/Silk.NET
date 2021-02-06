@@ -242,6 +242,8 @@ namespace Silk.NET.OpenXR
         TypeViewConfigurationViewFovEpic = 1000059000,
         [NativeName("Name", "XR_TYPE_HOLOGRAPHIC_WINDOW_ATTACHMENT_MSFT")]
         TypeHolographicWindowAttachmentMsft = 1000063000,
+        [NativeName("Name", "XR_TYPE_ANDROID_SURFACE_SWAPCHAIN_CREATE_INFO_FB")]
+        TypeAndroidSurfaceSwapchainCreateInfoFB = 1000070000,
         [NativeName("Name", "XR_TYPE_INTERACTION_PROFILE_ANALOG_THRESHOLD_VALVE")]
         TypeInteractionProfileAnalogThresholdValve = 1000079000,
         [NativeName("Name", "XR_TYPE_LOADER_INIT_INFO_ANDROID_KHR")]

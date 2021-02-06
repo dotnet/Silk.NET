@@ -27,11 +27,11 @@ namespace Silk.NET.Vulkan
             void* pNext = null,
             AccelerationStructureTypeKHR? type = null,
             BuildAccelerationStructureFlagsKHR? flags = null,
-            Bool32? update = null,
+            BuildAccelerationStructureModeKHR? mode = null,
             AccelerationStructureKHR? srcAccelerationStructure = null,
             AccelerationStructureKHR? dstAccelerationStructure = null,
-            Bool32? geometryArrayOfPointers = null,
             uint? geometryCount = null,
+            AccelerationStructureGeometryKHR* pGeometries = null,
             AccelerationStructureGeometryKHR** ppGeometries = null,
             DeviceOrHostAddressKHR? scratchData = null
         ) : this()
@@ -56,9 +56,9 @@ namespace Silk.NET.Vulkan
                 Flags = flags.Value;
             }
 
-            if (update is not null)
+            if (mode is not null)
             {
-                Update = update.Value;
+                Mode = mode.Value;
             }
 
             if (srcAccelerationStructure is not null)
@@ -71,14 +71,14 @@ namespace Silk.NET.Vulkan
                 DstAccelerationStructure = dstAccelerationStructure.Value;
             }
 
-            if (geometryArrayOfPointers is not null)
-            {
-                GeometryArrayOfPointers = geometryArrayOfPointers.Value;
-            }
-
             if (geometryCount is not null)
             {
                 GeometryCount = geometryCount.Value;
+            }
+
+            if (pGeometries is not null)
+            {
+                PGeometries = pGeometries;
             }
 
             if (ppGeometries is not null)
@@ -113,10 +113,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "flags")]
         public BuildAccelerationStructureFlagsKHR Flags;
 /// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "update")]
-        public Bool32 Update;
+        [NativeName("Type", "VkBuildAccelerationStructureModeKHR")]
+        [NativeName("Type.Name", "VkBuildAccelerationStructureModeKHR")]
+        [NativeName("Name", "mode")]
+        public BuildAccelerationStructureModeKHR Mode;
 /// <summary></summary>
         [NativeName("Type", "VkAccelerationStructureKHR")]
         [NativeName("Type.Name", "VkAccelerationStructureKHR")]
@@ -128,15 +128,15 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "dstAccelerationStructure")]
         public AccelerationStructureKHR DstAccelerationStructure;
 /// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "geometryArrayOfPointers")]
-        public Bool32 GeometryArrayOfPointers;
-/// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
         [NativeName("Name", "geometryCount")]
         public uint GeometryCount;
+/// <summary></summary>
+        [NativeName("Type", "VkAccelerationStructureGeometryKHR*")]
+        [NativeName("Type.Name", "VkAccelerationStructureGeometryKHR")]
+        [NativeName("Name", "pGeometries")]
+        public AccelerationStructureGeometryKHR* PGeometries;
 /// <summary></summary>
         [NativeName("Type", "VkAccelerationStructureGeometryKHR**")]
         [NativeName("Type.Name", "VkAccelerationStructureGeometryKHR")]

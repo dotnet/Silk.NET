@@ -432,6 +432,10 @@ namespace Silk.NET.OpenGL.Legacy
         Rgb16SNorm = 0x8F9A,
         [NativeName("Name", "GL_RGB16_SNORM_EXT")]
         Rgb16SNormExt = 0x8F9A,
+        [NativeName("Name", "GL_SR8_EXT")]
+        SR8Ext = 0x8FBD,
+        [NativeName("Name", "GL_SRG8_EXT")]
+        Srg8Ext = 0x8FBE,
         [NativeName("Name", "GL_RGB10_A2UI")]
         Rgb10A2ui = 0x906F,
         [NativeName("Name", "GL_COMPRESSED_R11_EAC")]

@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11UnorderedAccessView1")]
     public unsafe partial struct ID3D11UnorderedAccessView1
     {
+        public static readonly Guid Guid = new("7b3b6153-a886-4544-ab37-6537c8500403");
+
         public static implicit operator ID3D11UnorderedAccessView(ID3D11UnorderedAccessView1 val)
             => Unsafe.As<ID3D11UnorderedAccessView1, ID3D11UnorderedAccessView>(ref val);
 

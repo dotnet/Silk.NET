@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "ID3D12DebugCommandQueue")]
     public unsafe partial struct ID3D12DebugCommandQueue
     {
+        public static readonly Guid Guid = new("09e0bf36-54ac-484f-8847-4baeeab6053a");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12DebugCommandQueue val)
             => Unsafe.As<ID3D12DebugCommandQueue, Silk.NET.Core.Native.IUnknown>(ref val);
 

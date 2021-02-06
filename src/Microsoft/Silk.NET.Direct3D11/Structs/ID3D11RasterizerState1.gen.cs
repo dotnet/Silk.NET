@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11RasterizerState1")]
     public unsafe partial struct ID3D11RasterizerState1
     {
+        public static readonly Guid Guid = new("1217d7a6-5039-418c-b042-9cbe256afd6e");
+
         public static implicit operator ID3D11RasterizerState(ID3D11RasterizerState1 val)
             => Unsafe.As<ID3D11RasterizerState1, ID3D11RasterizerState>(ref val);
 

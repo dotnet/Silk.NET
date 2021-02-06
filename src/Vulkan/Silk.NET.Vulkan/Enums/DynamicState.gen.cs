@@ -38,12 +38,16 @@ namespace Silk.NET.Vulkan
         DiscardRectangleExt = 1000099000,
         [NativeName("Name", "VK_DYNAMIC_STATE_SAMPLE_LOCATIONS_EXT")]
         SampleLocationsExt = 1000143000,
+        [NativeName("Name", "VK_DYNAMIC_STATE_RAY_TRACING_PIPELINE_STACK_SIZE_KHR")]
+        RayTracingPipelineStackSizeKhr = 1000347000,
         [NativeName("Name", "VK_DYNAMIC_STATE_VIEWPORT_SHADING_RATE_PALETTE_NV")]
         ViewportShadingRatePaletteNV = 1000164004,
         [NativeName("Name", "VK_DYNAMIC_STATE_VIEWPORT_COARSE_SAMPLE_ORDER_NV")]
         ViewportCoarseSampleOrderNV = 1000164006,
         [NativeName("Name", "VK_DYNAMIC_STATE_EXCLUSIVE_SCISSOR_NV")]
         ExclusiveScissorNV = 1000205001,
+        [NativeName("Name", "VK_DYNAMIC_STATE_FRAGMENT_SHADING_RATE_KHR")]
+        FragmentShadingRateKhr = 1000226000,
         [NativeName("Name", "VK_DYNAMIC_STATE_LINE_STIPPLE_EXT")]
         LineStippleExt = 1000259000,
         [NativeName("Name", "VK_DYNAMIC_STATE_CULL_MODE_EXT")]

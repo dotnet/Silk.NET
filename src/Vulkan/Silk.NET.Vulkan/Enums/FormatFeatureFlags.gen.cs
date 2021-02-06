@@ -77,8 +77,8 @@ namespace Silk.NET.Vulkan
         FormatFeatureSampledImageFilterCubicBitExt = 8192,
         [NativeName("Name", "VK_FORMAT_FEATURE_FRAGMENT_DENSITY_MAP_BIT_EXT")]
         FormatFeatureFragmentDensityMapBitExt = 16777216,
-        [NativeName("Name", "VK_FORMAT_FEATURE_AMD_RESERVED_30_BIT")]
-        FormatFeatureAmdReserved30Bit = 1073741824,
+        [NativeName("Name", "VK_FORMAT_FEATURE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
+        FormatFeatureFragmentShadingRateAttachmentBitKhr = 1073741824,
         [NativeName("Name", "VK_FORMAT_FEATURE_TRANSFER_SRC_BIT")]
         FormatFeatureTransferSrcBit = 16384,
         [NativeName("Name", "VK_FORMAT_FEATURE_TRANSFER_DST_BIT")]

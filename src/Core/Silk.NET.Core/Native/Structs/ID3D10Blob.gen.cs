@@ -22,6 +22,8 @@ namespace Silk.NET.Core.Native
     [NativeName("Name", "ID3D10Blob")]
     public unsafe partial struct ID3D10Blob
     {
+        public static readonly Guid Guid = new("8ba5fb08-5195-40e2-ac58-0d989c3a0102");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D10Blob val)
             => Unsafe.As<ID3D10Blob, Silk.NET.Core.Native.IUnknown>(ref val);
 

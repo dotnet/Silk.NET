@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11RenderTargetView1")]
     public unsafe partial struct ID3D11RenderTargetView1
     {
+        public static readonly Guid Guid = new("ffbe2e23-f011-418a-ac56-5ceed7c5b94b");
+
         public static implicit operator ID3D11RenderTargetView(ID3D11RenderTargetView1 val)
             => Unsafe.As<ID3D11RenderTargetView1, ID3D11RenderTargetView>(ref val);
 

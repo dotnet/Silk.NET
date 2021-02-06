@@ -290,7 +290,7 @@
         {
             "profileName": "Vulkan",
             "sources": [
-                "https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/master/xml/vk.xml"
+                "https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/main/xml/vk.xml"
             ],
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
@@ -578,7 +578,9 @@
             "cacheDir": "build/cache",
             "cacheKey": "sdl",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "no-convert",
+                "no-bind"
             ],
             "converter": {},
             "prefix": "sdl",

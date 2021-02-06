@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "ID3D12ShaderReflection")]
     public unsafe partial struct ID3D12ShaderReflection
     {
+        public static readonly Guid Guid = new("5a58797d-a72c-478d-8ba2-efc6b0efe88e");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12ShaderReflection val)
             => Unsafe.As<ID3D12ShaderReflection, Silk.NET.Core.Native.IUnknown>(ref val);
 

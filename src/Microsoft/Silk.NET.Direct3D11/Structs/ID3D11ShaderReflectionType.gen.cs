@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11ShaderReflectionType")]
     public unsafe partial struct ID3D11ShaderReflectionType
     {
+        public static readonly Guid Guid = new("6e6ffa6a-9bae-4613-a51e-91652d508c21");
+
         public ID3D11ShaderReflectionType
         (
             void** lpVtbl = null

@@ -43,6 +43,8 @@ namespace Silk.NET.Vulkan
         ImageCreateAliasBitKhr = 1024,
         [NativeName("Name", "VK_IMAGE_CREATE_SUBSAMPLED_BIT_EXT")]
         ImageCreateSubsampledBitExt = 16384,
+        [NativeName("Name", "VK_IMAGE_CREATE_RESERVED_15_BIT_NV")]
+        ImageCreateReserved15BitNV = 32768,
         [NativeName("Name", "VK_IMAGE_CREATE_ALIAS_BIT")]
         ImageCreateAliasBit = 1024,
         [NativeName("Name", "VK_IMAGE_CREATE_SPLIT_INSTANCE_BIND_REGIONS_BIT")]

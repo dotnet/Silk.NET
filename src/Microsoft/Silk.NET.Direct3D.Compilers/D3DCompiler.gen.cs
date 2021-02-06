@@ -18,6 +18,63 @@ namespace Silk.NET.Direct3D.Compilers
 {
     public unsafe partial class D3DCompiler : NativeAPI
     {
+        [NativeName("Type", "")]
+        [NativeName("Name", "D3DCOMPILER_DLL_W")]
+        public const string CompilerDllW = "d3dcompiler_47.dll";
+        [NativeName("Type", "")]
+        [NativeName("Name", "D3DCOMPILER_DLL_A")]
+        public const string CompilerDllA = "d3dcompiler_47.dll";
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_COMPILER_VERSION")]
+        public const int CompilerVersion = unchecked((int) 0x2F);
+        [NativeName("Type", "")]
+        [NativeName("Name", "D3DCOMPILER_DLL")]
+        public const string CompilerDll = "d3dcompiler_47.dll";
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3DCOMPILE_OPTIMIZATION_LEVEL1")]
+        public const int CompileOptimizationLevel1 = unchecked((int) 0x0);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3DCOMPILE_FLAGS2_FORCE_ROOT_SIGNATURE_LATEST")]
+        public const int CompileFlags2ForceRootSignatureLatest = unchecked((int) 0x0);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3DCOMPILE_SECDATA_MERGE_UAV_SLOTS")]
+        public const int CompileSecdataMergeUavSlots = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3DCOMPILE_SECDATA_PRESERVE_TEMPLATE_SLOTS")]
+        public const int CompileSecdataPreserveTemplateSlots = unchecked((int) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3DCOMPILE_SECDATA_REQUIRE_TEMPLATE_MATCH")]
+        public const int CompileSecdataRequireTemplateMatch = unchecked((int) 0x4);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_DISASM_ENABLE_COLOR_CODE")]
+        public const int DisasmEnableColorCode = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_DISASM_ENABLE_DEFAULT_VALUE_PRINTS")]
+        public const int DisasmEnableDefaultValuePrints = unchecked((int) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_DISASM_ENABLE_INSTRUCTION_NUMBERING")]
+        public const int DisasmEnableInstructionNumbering = unchecked((int) 0x4);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_DISASM_ENABLE_INSTRUCTION_CYCLE")]
+        public const int DisasmEnableInstructionCycle = unchecked((int) 0x8);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_DISASM_DISABLE_DEBUG_INFO")]
+        public const int DisasmDisableDebugInfo = unchecked((int) 0x10);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_DISASM_ENABLE_INSTRUCTION_OFFSET")]
+        public const int DisasmEnableInstructionOffset = unchecked((int) 0x20);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_DISASM_INSTRUCTION_ONLY")]
+        public const int DisasmInstructionOnly = unchecked((int) 0x40);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_DISASM_PRINT_HEX_LITERALS")]
+        public const int DisasmPrintHexLiterals = unchecked((int) 0x80);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_GET_INST_OFFSETS_INCLUDE_NON_EXECUTABLE")]
+        public const int GetInstOffsetsIncludeNonExecutable = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "D3D_COMPRESS_SHADER_KEEP_ALL_PARTS")]
+        public const int CompressShaderKeepAllParts = unchecked((int) 0x1);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 55, Column 1 in d3dcompiler.h")]

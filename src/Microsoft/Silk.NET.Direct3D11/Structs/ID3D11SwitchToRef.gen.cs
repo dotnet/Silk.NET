@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11SwitchToRef")]
     public unsafe partial struct ID3D11SwitchToRef
     {
+        public static readonly Guid Guid = new("1ef337e3-58e7-4f83-a692-db221f5ed47e");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11SwitchToRef val)
             => Unsafe.As<ID3D11SwitchToRef, Silk.NET.Core.Native.IUnknown>(ref val);
 

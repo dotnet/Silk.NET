@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11VideoProcessorOutputView")]
     public unsafe partial struct ID3D11VideoProcessorOutputView
     {
+        public static readonly Guid Guid = new("a048285e-25a9-4527-bd93-d68b68c44254");
+
         public static implicit operator ID3D11View(ID3D11VideoProcessorOutputView val)
             => Unsafe.As<ID3D11VideoProcessorOutputView, ID3D11View>(ref val);
 

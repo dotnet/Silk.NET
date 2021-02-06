@@ -22,6 +22,8 @@ namespace Silk.NET.XAudio
     [NativeName("Name", "IXAudio2Extension")]
     public unsafe partial struct IXAudio2Extension
     {
+        public static readonly Guid Guid = new("84ac29bb-d619-44d2-b197-e4acf7df3ed6");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(IXAudio2Extension val)
             => Unsafe.As<IXAudio2Extension, Silk.NET.Core.Native.IUnknown>(ref val);
 

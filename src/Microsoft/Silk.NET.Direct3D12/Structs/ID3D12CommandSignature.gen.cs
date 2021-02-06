@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "ID3D12CommandSignature")]
     public unsafe partial struct ID3D12CommandSignature
     {
+        public static readonly Guid Guid = new("c36a797c-ec80-4f0a-8985-a7b2475082d1");
+
         public static implicit operator ID3D12Pageable(ID3D12CommandSignature val)
             => Unsafe.As<ID3D12CommandSignature, ID3D12Pageable>(ref val);
 

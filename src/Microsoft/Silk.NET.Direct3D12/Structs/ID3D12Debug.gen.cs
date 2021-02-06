@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "ID3D12Debug")]
     public unsafe partial struct ID3D12Debug
     {
+        public static readonly Guid Guid = new("344488b7-6846-474b-b989-f027448245e0");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12Debug val)
             => Unsafe.As<ID3D12Debug, Silk.NET.Core.Native.IUnknown>(ref val);
 

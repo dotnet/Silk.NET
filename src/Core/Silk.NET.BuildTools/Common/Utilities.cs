@@ -9,7 +9,9 @@ using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
+using ClangSharp.Interop;
 using JetBrains.Annotations;
+using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Common.Structs;
 
 namespace Silk.NET.BuildTools.Common
@@ -401,5 +403,14 @@ namespace Silk.NET.BuildTools.Common
 
             yield return singleItem;
         }
+
+        public static Accessibility MapAccessibility(this CX_CXXAccessSpecifier access) => access switch
+        {
+            CX_CXXAccessSpecifier.CX_CXXInvalidAccessSpecifier => Accessibility.Public,
+            CX_CXXAccessSpecifier.CX_CXXPublic => Accessibility.Public,
+            CX_CXXAccessSpecifier.CX_CXXProtected => Accessibility.Public,
+            CX_CXXAccessSpecifier.CX_CXXPrivate => Accessibility.Private,
+            _ => Accessibility.Internal
+        };
     }
 }

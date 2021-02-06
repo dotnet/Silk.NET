@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "IDirect3DSwapChain9")]
     public unsafe partial struct IDirect3DSwapChain9
     {
+        public static readonly Guid Guid = new("794950f2-adfc-458a-905e-10a10b0b503b");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDirect3DSwapChain9 val)
             => Unsafe.As<IDirect3DSwapChain9, Silk.NET.Core.Native.IUnknown>(ref val);
 

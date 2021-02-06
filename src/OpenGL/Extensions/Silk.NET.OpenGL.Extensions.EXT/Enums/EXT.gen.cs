@@ -72,6 +72,8 @@ namespace Silk.NET.OpenGL.Extensions.EXT
         SkipDecodeExt = 0x8A4A,
         [NativeName("Name", "GL_SR8_EXT")]
         SR8Ext = 0x8FBD,
+        [NativeName("Name", "GL_SRG8_EXT")]
+        Srg8Ext = 0x8FBE,
         [NativeName("Name", "GL_INCLUSIVE_EXT")]
         InclusiveExt = 0x8F10,
         [NativeName("Name", "GL_EXCLUSIVE_EXT")]

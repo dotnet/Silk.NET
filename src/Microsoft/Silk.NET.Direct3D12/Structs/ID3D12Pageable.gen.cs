@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "ID3D12Pageable")]
     public unsafe partial struct ID3D12Pageable
     {
+        public static readonly Guid Guid = new("63ee58fb-1268-4835-86da-f008ce62f0d6");
+
         public static implicit operator ID3D12DeviceChild(ID3D12Pageable val)
             => Unsafe.As<ID3D12Pageable, ID3D12DeviceChild>(ref val);
 

@@ -18,5 +18,7 @@ namespace Silk.NET.Vulkan
         AccelerationStructureTypeTopLevelKhr = 0,
         [NativeName("Name", "VK_ACCELERATION_STRUCTURE_TYPE_BOTTOM_LEVEL_KHR")]
         AccelerationStructureTypeBottomLevelKhr = 1,
+        [NativeName("Name", "VK_ACCELERATION_STRUCTURE_TYPE_GENERIC_KHR")]
+        AccelerationStructureTypeGenericKhr = 2,
     }
 }

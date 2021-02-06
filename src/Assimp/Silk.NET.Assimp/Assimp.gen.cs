@@ -18,6 +18,9 @@ namespace Silk.NET.Assimp
 {
     public unsafe partial class Assimp : NativeAPI
     {
+        [NativeName("Type", "const size_t")]
+        [NativeName("Name", "MAXLEN")]
+        public const uint Maxlen = unchecked((uint) 0x400);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 86, Column 19 in src/Assimp/Include\\assimp/cexport.h")]

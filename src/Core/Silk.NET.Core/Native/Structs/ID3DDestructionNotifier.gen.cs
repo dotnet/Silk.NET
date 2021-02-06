@@ -22,6 +22,8 @@ namespace Silk.NET.Core.Native
     [NativeName("Name", "ID3DDestructionNotifier")]
     public unsafe partial struct ID3DDestructionNotifier
     {
+        public static readonly Guid Guid = new("a06eb39a-50da-425b-8c31-4eecd6c270f3");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3DDestructionNotifier val)
             => Unsafe.As<ID3DDestructionNotifier, Silk.NET.Core.Native.IUnknown>(ref val);
 

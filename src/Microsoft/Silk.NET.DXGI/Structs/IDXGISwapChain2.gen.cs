@@ -22,6 +22,8 @@ namespace Silk.NET.DXGI
     [NativeName("Name", "IDXGISwapChain2")]
     public unsafe partial struct IDXGISwapChain2
     {
+        public static readonly Guid Guid = new("a8be2ac4-199f-4946-b331-79599fb98de7");
+
         public static implicit operator IDXGISwapChain1(IDXGISwapChain2 val)
             => Unsafe.As<IDXGISwapChain2, IDXGISwapChain1>(ref val);
 

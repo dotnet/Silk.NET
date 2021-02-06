@@ -500,14 +500,10 @@ namespace Silk.NET.Vulkan
         PipelineColorBlendAdvancedStateCreateInfoExt = 1000148002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_COVERAGE_TO_COLOR_STATE_CREATE_INFO_NV")]
         PipelineCoverageToColorStateCreateInfoNV = 1000149000,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_BIND_ACCELERATION_STRUCTURE_MEMORY_INFO_KHR")]
-        BindAccelerationStructureMemoryInfoKhr = 1000165006,
         [NativeName("Name", "VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET_ACCELERATION_STRUCTURE_KHR")]
-        WriteDescriptorSetAccelerationStructureKhr = 1000165007,
+        WriteDescriptorSetAccelerationStructureKhr = 1000150007,
         [NativeName("Name", "VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_BUILD_GEOMETRY_INFO_KHR")]
         AccelerationStructureBuildGeometryInfoKhr = 1000150000,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_CREATE_GEOMETRY_TYPE_INFO_KHR")]
-        AccelerationStructureCreateGeometryTypeInfoKhr = 1000150001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_DEVICE_ADDRESS_INFO_KHR")]
         AccelerationStructureDeviceAddressInfoKhr = 1000150002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_GEOMETRY_AABBS_DATA_KHR")]
@@ -518,28 +514,34 @@ namespace Silk.NET.Vulkan
         AccelerationStructureGeometryTrianglesDataKhr = 1000150005,
         [NativeName("Name", "VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_GEOMETRY_KHR")]
         AccelerationStructureGeometryKhr = 1000150006,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_MEMORY_REQUIREMENTS_INFO_KHR")]
-        AccelerationStructureMemoryRequirementsInfoKhr = 1000150008,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_VERSION_KHR")]
-        AccelerationStructureVersionKhr = 1000150009,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_VERSION_INFO_KHR")]
+        AccelerationStructureVersionInfoKhr = 1000150009,
         [NativeName("Name", "VK_STRUCTURE_TYPE_COPY_ACCELERATION_STRUCTURE_INFO_KHR")]
         CopyAccelerationStructureInfoKhr = 1000150010,
         [NativeName("Name", "VK_STRUCTURE_TYPE_COPY_ACCELERATION_STRUCTURE_TO_MEMORY_INFO_KHR")]
         CopyAccelerationStructureToMemoryInfoKhr = 1000150011,
         [NativeName("Name", "VK_STRUCTURE_TYPE_COPY_MEMORY_TO_ACCELERATION_STRUCTURE_INFO_KHR")]
         CopyMemoryToAccelerationStructureInfoKhr = 1000150012,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_FEATURES_KHR")]
-        PhysicalDeviceRayTracingFeaturesKhr = 1000150013,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_PROPERTIES_KHR")]
-        PhysicalDeviceRayTracingPropertiesKhr = 1000150014,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ACCELERATION_STRUCTURE_FEATURES_KHR")]
+        PhysicalDeviceAccelerationStructureFeaturesKhr = 1000150013,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ACCELERATION_STRUCTURE_PROPERTIES_KHR")]
+        PhysicalDeviceAccelerationStructurePropertiesKhr = 1000150014,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_CREATE_INFO_KHR")]
+        AccelerationStructureCreateInfoKhr = 1000150017,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_BUILD_SIZES_INFO_KHR")]
+        AccelerationStructureBuildSizesInfoKhr = 1000150020,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_PIPELINE_FEATURES_KHR")]
+        PhysicalDeviceRayTracingPipelineFeaturesKhr = 1000347000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_PIPELINE_PROPERTIES_KHR")]
+        PhysicalDeviceRayTracingPipelinePropertiesKhr = 1000347001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_RAY_TRACING_PIPELINE_CREATE_INFO_KHR")]
         RayTracingPipelineCreateInfoKhr = 1000150015,
         [NativeName("Name", "VK_STRUCTURE_TYPE_RAY_TRACING_SHADER_GROUP_CREATE_INFO_KHR")]
         RayTracingShaderGroupCreateInfoKhr = 1000150016,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_CREATE_INFO_KHR")]
-        AccelerationStructureCreateInfoKhr = 1000150017,
         [NativeName("Name", "VK_STRUCTURE_TYPE_RAY_TRACING_PIPELINE_INTERFACE_CREATE_INFO_KHR")]
         RayTracingPipelineInterfaceCreateInfoKhr = 1000150018,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_QUERY_FEATURES_KHR")]
+        PhysicalDeviceRayQueryFeaturesKhr = 1000348013,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_COVERAGE_MODULATION_STATE_CREATE_INFO_NV")]
         PipelineCoverageModulationStateCreateInfoNV = 1000152000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_SM_BUILTINS_FEATURES_NV")]
@@ -564,8 +566,6 @@ namespace Silk.NET.Vulkan
         BindImageMemoryInfoKhr = 1000157001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DRM_FORMAT_MODIFIER_PROPERTIES_LIST_EXT")]
         DrmFormatModifierPropertiesListExt = 1000158000,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_DRM_FORMAT_MODIFIER_PROPERTIES_EXT")]
-        DrmFormatModifierPropertiesExt = 1000158001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_DRM_FORMAT_MODIFIER_INFO_EXT")]
         PhysicalDeviceImageDrmFormatModifierInfoExt = 1000158002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGE_DRM_FORMAT_MODIFIER_LIST_CREATE_INFO_EXT")]
@@ -588,6 +588,10 @@ namespace Silk.NET.Vulkan
         DescriptorSetVariableDescriptorCountAllocateInfoExt = 1000161003,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DESCRIPTOR_SET_VARIABLE_DESCRIPTOR_COUNT_LAYOUT_SUPPORT_EXT")]
         DescriptorSetVariableDescriptorCountLayoutSupportExt = 1000161004,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PORTABILITY_SUBSET_FEATURES_KHR")]
+        PhysicalDevicePortabilitySubsetFeaturesKhr = 1000163000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PORTABILITY_SUBSET_PROPERTIES_KHR")]
+        PhysicalDevicePortabilitySubsetPropertiesKhr = 1000163001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_VIEWPORT_SHADING_RATE_IMAGE_STATE_CREATE_INFO_NV")]
         PipelineViewportShadingRateImageStateCreateInfoNV = 1000164000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADING_RATE_IMAGE_FEATURES_NV")]
@@ -728,6 +732,8 @@ namespace Silk.NET.Vulkan
         SwapchainDisplayNativeHdrCreateInfoAmd = 1000213001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGEPIPE_SURFACE_CREATE_INFO_FUCHSIA")]
         ImagepipeSurfaceCreateInfoFuchsia = 1000214000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_TERMINATE_INVOCATION_FEATURES_KHR")]
+        PhysicalDeviceShaderTerminateInvocationFeaturesKhr = 1000215000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_METAL_SURFACE_CREATE_INFO_EXT")]
         MetalSurfaceCreateInfoExt = 1000217000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_FEATURES_EXT")]
@@ -744,10 +750,22 @@ namespace Silk.NET.Vulkan
         PipelineShaderStageRequiredSubgroupSizeCreateInfoExt = 1000225001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_SIZE_CONTROL_FEATURES_EXT")]
         PhysicalDeviceSubgroupSizeControlFeaturesExt = 1000225002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_FRAGMENT_SHADING_RATE_ATTACHMENT_INFO_KHR")]
+        FragmentShadingRateAttachmentInfoKhr = 1000226000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_FRAGMENT_SHADING_RATE_STATE_CREATE_INFO_KHR")]
+        PipelineFragmentShadingRateStateCreateInfoKhr = 1000226001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADING_RATE_PROPERTIES_KHR")]
+        PhysicalDeviceFragmentShadingRatePropertiesKhr = 1000226002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADING_RATE_FEATURES_KHR")]
+        PhysicalDeviceFragmentShadingRateFeaturesKhr = 1000226003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADING_RATE_KHR")]
+        PhysicalDeviceFragmentShadingRateKhr = 1000226004,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_CORE_PROPERTIES_2_AMD")]
         PhysicalDeviceShaderCoreProperties2Amd = 1000227000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COHERENT_MEMORY_FEATURES_AMD")]
         PhysicalDeviceCoherentMemoryFeaturesAmd = 1000229000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_IMAGE_ATOMIC_INT64_FEATURES_EXT")]
+        PhysicalDeviceShaderImageAtomicInt64FeaturesExt = 1000234000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_BUDGET_PROPERTIES_EXT")]
         PhysicalDeviceMemoryBudgetPropertiesExt = 1000237000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MEMORY_PRIORITY_FEATURES_EXT")]
@@ -828,8 +846,6 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceIndexTypeUint8FeaturesExt = 1000265000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_DYNAMIC_STATE_FEATURES_EXT")]
         PhysicalDeviceExtendedDynamicStateFeaturesExt = 1000267000,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_DEFERRED_OPERATION_INFO_KHR")]
-        DeferredOperationInfoKhr = 1000268000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_EXECUTABLE_PROPERTIES_FEATURES_KHR")]
         PhysicalDevicePipelineExecutablePropertiesFeaturesKhr = 1000269000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_INFO_KHR")]
@@ -868,6 +884,12 @@ namespace Silk.NET.Vulkan
         CommandBufferInheritanceRenderPassTransformInfoQCom = 1000282000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_RENDER_PASS_TRANSFORM_BEGIN_INFO_QCOM")]
         RenderPassTransformBeginInfoQCom = 1000282001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEVICE_MEMORY_REPORT_FEATURES_EXT")]
+        PhysicalDeviceDeviceMemoryReportFeaturesExt = 1000284000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_DEVICE_DEVICE_MEMORY_REPORT_CREATE_INFO_EXT")]
+        DeviceDeviceMemoryReportCreateInfoExt = 1000284001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_DEVICE_MEMORY_REPORT_CALLBACK_DATA_EXT")]
+        DeviceMemoryReportCallbackDataExt = 1000284002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ROBUSTNESS_2_FEATURES_EXT")]
         PhysicalDeviceRobustness2FeaturesExt = 1000286000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ROBUSTNESS_2_PROPERTIES_EXT")]
@@ -894,16 +916,56 @@ namespace Silk.NET.Vulkan
         DeviceDiagnosticsConfigCreateInfoNV = 1000300001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_RESERVED_QCOM")]
         ReservedQCom = 1000309000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ZERO_INITIALIZE_WORKGROUP_MEMORY_FEATURES_KHR")]
+        PhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKhr = 1000325000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADING_RATE_ENUMS_PROPERTIES_NV")]
+        PhysicalDeviceFragmentShadingRateEnumsPropertiesNV = 1000326000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADING_RATE_ENUMS_FEATURES_NV")]
+        PhysicalDeviceFragmentShadingRateEnumsFeaturesNV = 1000326001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_FRAGMENT_SHADING_RATE_ENUM_STATE_CREATE_INFO_NV")]
+        PipelineFragmentShadingRateEnumStateCreateInfoNV = 1000326002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_2_FEATURES_EXT")]
         PhysicalDeviceFragmentDensityMap2FeaturesExt = 1000332000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_2_PROPERTIES_EXT")]
         PhysicalDeviceFragmentDensityMap2PropertiesExt = 1000332001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_COPY_COMMAND_TRANSFORM_INFO_QCOM")]
+        CopyCommandTransformInfoQCom = 1000333000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_IMAGE_ROBUSTNESS_FEATURES_EXT")]
         PhysicalDeviceImageRobustnessFeaturesExt = 1000335000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_WORKGROUP_MEMORY_EXPLICIT_LAYOUT_FEATURES_KHR")]
+        PhysicalDeviceWorkgroupMemoryExplicitLayoutFeaturesKhr = 1000336000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_COPY_BUFFER_INFO_2_KHR")]
+        CopyBufferInfo2Khr = 1000337000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_COPY_IMAGE_INFO_2_KHR")]
+        CopyImageInfo2Khr = 1000337001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_COPY_BUFFER_TO_IMAGE_INFO_2_KHR")]
+        CopyBufferToImageInfo2Khr = 1000337002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_COPY_IMAGE_TO_BUFFER_INFO_2_KHR")]
+        CopyImageToBufferInfo2Khr = 1000337003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_BLIT_IMAGE_INFO_2_KHR")]
+        BlitImageInfo2Khr = 1000337004,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_RESOLVE_IMAGE_INFO_2_KHR")]
+        ResolveImageInfo2Khr = 1000337005,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_BUFFER_COPY_2_KHR")]
+        BufferCopy2Khr = 1000337006,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGE_COPY_2_KHR")]
+        ImageCopy2Khr = 1000337007,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGE_BLIT_2_KHR")]
+        ImageBlit2Khr = 1000337008,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_BUFFER_IMAGE_COPY_2_KHR")]
+        BufferImageCopy2Khr = 1000337009,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGE_RESOLVE_2_KHR")]
+        ImageResolve2Khr = 1000337010,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_4444_FORMATS_FEATURES_EXT")]
         PhysicalDevice4444FormatsFeaturesExt = 1000340000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DIRECTFB_SURFACE_CREATE_INFO_EXT")]
         DirectfbSurfaceCreateInfoExt = 1000346000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MUTABLE_DESCRIPTOR_TYPE_FEATURES_VALVE")]
+        PhysicalDeviceMutableDescriptorTypeFeaturesValve = 1000351000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_MUTABLE_DESCRIPTOR_TYPE_CREATE_INFO_VALVE")]
+        MutableDescriptorTypeCreateInfoValve = 1000351002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_SCREEN_SURFACE_CREATE_INFO_QNX")]
+        ScreenSurfaceCreateInfoQnx = 1000378000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_PROPERTIES")]
         PhysicalDeviceSubgroupProperties = 1000094000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_BIND_BUFFER_MEMORY_INFO")]

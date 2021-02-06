@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D.Compilers
     [NativeName("Name", "IDxcAssembler")]
     public unsafe partial struct IDxcAssembler
     {
+        public static readonly Guid Guid = new("091f7a26-1c1f-4948-904b-e6e3a8a771d5");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDxcAssembler val)
             => Unsafe.As<IDxcAssembler, Silk.NET.Core.Native.IUnknown>(ref val);
 

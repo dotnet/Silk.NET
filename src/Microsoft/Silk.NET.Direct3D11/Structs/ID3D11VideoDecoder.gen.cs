@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11VideoDecoder")]
     public unsafe partial struct ID3D11VideoDecoder
     {
+        public static readonly Guid Guid = new("3c9c5b51-995d-48d1-9b8d-fa5caeded65c");
+
         public static implicit operator ID3D11DeviceChild(ID3D11VideoDecoder val)
             => Unsafe.As<ID3D11VideoDecoder, ID3D11DeviceChild>(ref val);
 

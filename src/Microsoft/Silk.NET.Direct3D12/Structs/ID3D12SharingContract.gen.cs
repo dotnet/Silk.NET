@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "ID3D12SharingContract")]
     public unsafe partial struct ID3D12SharingContract
     {
+        public static readonly Guid Guid = new("0adf7d52-929c-4e61-addb-ffed30de66ef");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12SharingContract val)
             => Unsafe.As<ID3D12SharingContract, Silk.NET.Core.Native.IUnknown>(ref val);
 

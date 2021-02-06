@@ -2,7 +2,7 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <TargetFramework>net5.0</TargetFramework>
         <RootNamespace>Silk.NET.BuildTools</RootNamespace>
         <GenerateDocumentationFile>false</GenerateDocumentationFile>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
@@ -12,7 +12,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="ClangSharp" Version="10.0.0-beta" />
       <PackageReference Include="CommandLineParser" Version="2.8.0" />
       <PackageReference Include="HtmlAgilityPack" Version="1.11.24" />
       <PackageReference Include="Humanizer.Core" Version="2.8.26" />
@@ -21,6 +20,7 @@
       <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="3.1.8" />
       <PackageReference Include="morelinq" Version="3.3.2" />
       <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+      <PackageReference Include="Ultz.Private.ClangSharp" Version="2021.1.31-nightly" />
     </ItemGroup>
 
     <ItemGroup>

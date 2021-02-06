@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "ID3D12RootSignatureDeserializer")]
     public unsafe partial struct ID3D12RootSignatureDeserializer
     {
+        public static readonly Guid Guid = new("34ab647b-3cc8-46ac-841b-c0965645c046");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12RootSignatureDeserializer val)
             => Unsafe.As<ID3D12RootSignatureDeserializer, Silk.NET.Core.Native.IUnknown>(ref val);
 

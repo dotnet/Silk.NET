@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "ID3D12FunctionReflection")]
     public unsafe partial struct ID3D12FunctionReflection
     {
+        public static readonly Guid Guid = new("1108795c-2772-4ba9-b2a8-d464dc7e2799");
+
         public ID3D12FunctionReflection
         (
             void** lpVtbl = null

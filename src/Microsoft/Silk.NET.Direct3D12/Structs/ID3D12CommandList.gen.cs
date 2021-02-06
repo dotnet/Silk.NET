@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "ID3D12CommandList")]
     public unsafe partial struct ID3D12CommandList
     {
+        public static readonly Guid Guid = new("7116d91c-e7e4-47ce-b8c6-ec8168f437e5");
+
         public static implicit operator ID3D12DeviceChild(ID3D12CommandList val)
             => Unsafe.As<ID3D12CommandList, ID3D12DeviceChild>(ref val);
 
