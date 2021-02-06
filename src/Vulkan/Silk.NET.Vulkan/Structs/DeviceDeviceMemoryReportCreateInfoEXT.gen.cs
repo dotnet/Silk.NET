@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.DeviceDeviceMemoryReportCreateInfoExt,
             void* pNext = null,
             uint? flags = null,
-            PFN_vkDeviceMemoryReportCallbackEXT? pfnUserCallback = null,
+            PfnDeviceMemoryReportCallbackEXT? pfnUserCallback = null,
             void* pUserData = null
         ) : this()
         {
@@ -75,7 +75,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "PFN_vkDeviceMemoryReportCallbackEXT")]
         [NativeName("Type.Name", "PFN_vkDeviceMemoryReportCallbackEXT")]
         [NativeName("Name", "pfnUserCallback")]
-        public PFN_vkDeviceMemoryReportCallbackEXT PfnUserCallback;
+        public PfnDeviceMemoryReportCallbackEXT PfnUserCallback;
 /// <summary></summary>
         [NativeName("Type", "void*")]
         [NativeName("Type.Name", "void")]

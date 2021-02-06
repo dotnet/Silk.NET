@@ -45,7 +45,8 @@ namespace Silk.NET.BuildTools.Cpp
             "UHALF_PTR",
             "UINT_PTR",
             "ULONG_PTR",
-            "ULONGLONG"
+            "ULONGLONG",
+            "LONG_PTR"
         };
 
         public static bool ShouldVisit(Cursor cursor, BindTask task, bool nullTolerant = false)

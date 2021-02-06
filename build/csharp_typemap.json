@@ -159,5 +159,6 @@
     "POINTER_UNSIGNED": "nuint",
     "SIZE_T":  "nuint",
     "ULONG_PTR": "nuint",
-    "ULONGLONG":  "ulong"
+    "ULONGLONG":  "ulong",
+    "LONG_PTR": "nint"
 }
