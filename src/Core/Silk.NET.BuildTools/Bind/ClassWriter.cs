@@ -97,7 +97,11 @@ namespace Silk.NET.BuildTools.Bind
                     {
                         sw.WriteLine($"        [NativeName(\"Type\", \"{constant.Type.OriginalName}\")]");
                         sw.WriteLine($"        [NativeName(\"Name\", \"{constant.NativeName}\")]");
-                        sw.WriteLine($"        public const {constant.Type} {constant.Name} = {constant.Value};");
+                        sw.WriteLine
+                        (
+                            $"        public const {constant.Type} {constant.Name} = " +
+                            $"unchecked(({constant.Type}) {constant.Value});"
+                        );
                     }
 
                     sw.WriteLine();

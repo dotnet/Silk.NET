@@ -24,9 +24,9 @@ namespace Silk.NET.DXGI
         public PresentParameters
         (
             uint? dirtyRectsCount = null,
-            Silk.NET.Maths.Rectangle<long>* pDirtyRects = null,
-            Silk.NET.Maths.Rectangle<long>* pScrollRect = null,
-            Silk.NET.Maths.Vector2D<long>* pScrollOffset = null
+            Silk.NET.Maths.Rectangle<int>* pDirtyRects = null,
+            Silk.NET.Maths.Rectangle<int>* pScrollRect = null,
+            Silk.NET.Maths.Vector2D<int>* pScrollOffset = null
         ) : this()
         {
             if (dirtyRectsCount is not null)
@@ -59,16 +59,16 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "RECT *")]
         [NativeName("Type.Name", "RECT *")]
         [NativeName("Name", "pDirtyRects")]
-        public Silk.NET.Maths.Rectangle<long>* PDirtyRects;
+        public Silk.NET.Maths.Rectangle<int>* PDirtyRects;
 
         [NativeName("Type", "RECT *")]
         [NativeName("Type.Name", "RECT *")]
         [NativeName("Name", "pScrollRect")]
-        public Silk.NET.Maths.Rectangle<long>* PScrollRect;
+        public Silk.NET.Maths.Rectangle<int>* PScrollRect;
 
         [NativeName("Type", "POINT *")]
         [NativeName("Type.Name", "POINT *")]
         [NativeName("Name", "pScrollOffset")]
-        public Silk.NET.Maths.Vector2D<long>* PScrollOffset;
+        public Silk.NET.Maths.Vector2D<int>* PScrollOffset;
     }
 }

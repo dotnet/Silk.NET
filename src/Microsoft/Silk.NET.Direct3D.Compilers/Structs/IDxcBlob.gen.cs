@@ -119,11 +119,11 @@ namespace Silk.NET.Direct3D.Compilers
         }
 
         /// <summary>To be documented.</summary>
-        public readonly uint GetBufferSize()
+        public readonly nuint GetBufferSize()
         {
             var @this = (IDxcBlob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcBlob*, uint>)LpVtbl[4])(@this);
+                nuint ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDxcBlob*, nuint>)LpVtbl[4])(@this);
             return ret;
         }
 

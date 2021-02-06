@@ -26,9 +26,9 @@ namespace Silk.NET.Direct3D12
             uint? nodeIndex = null,
             Guid? commandId = null,
             void* pInputData = null,
-            uint? inputDataSizeInBytes = null,
+            nuint? inputDataSizeInBytes = null,
             void* pOutputData = null,
-            uint? outputDataSizeInBytes = null
+            nuint? outputDataSizeInBytes = null
         ) : this()
         {
             if (nodeIndex is not null)
@@ -81,7 +81,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "SIZE_T")]
         [NativeName("Type.Name", "SIZE_T")]
         [NativeName("Name", "InputDataSizeInBytes")]
-        public uint InputDataSizeInBytes;
+        public nuint InputDataSizeInBytes;
 
         [NativeName("Type", "void *")]
         [NativeName("Type.Name", "void *")]
@@ -91,6 +91,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "SIZE_T")]
         [NativeName("Type.Name", "SIZE_T")]
         [NativeName("Name", "OutputDataSizeInBytes")]
-        public uint OutputDataSizeInBytes;
+        public nuint OutputDataSizeInBytes;
     }
 }

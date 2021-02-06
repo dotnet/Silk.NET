@@ -1214,42 +1214,42 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3779, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer")]
-        public unsafe partial int CreateRootSignatureDeserializer(void* pSrcData, uint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
+        public unsafe partial int CreateRootSignatureDeserializer(void* pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3779, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer")]
-        public unsafe partial int CreateRootSignatureDeserializer(void* pSrcData, uint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer);
+        public unsafe partial int CreateRootSignatureDeserializer(void* pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3779, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer")]
-        public unsafe partial int CreateRootSignatureDeserializer(void* pSrcData, uint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
+        public unsafe partial int CreateRootSignatureDeserializer(void* pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3779, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer")]
-        public unsafe partial int CreateRootSignatureDeserializer(void* pSrcData, uint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer);
+        public unsafe partial int CreateRootSignatureDeserializer(void* pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3779, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer")]
-        public unsafe partial int CreateRootSignatureDeserializer<T0>(ref T0 pSrcData, uint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged;
+        public unsafe partial int CreateRootSignatureDeserializer<T0>(ref T0 pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3779, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer")]
-        public unsafe partial int CreateRootSignatureDeserializer<T0>(ref T0 pSrcData, uint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged;
+        public unsafe partial int CreateRootSignatureDeserializer<T0>(ref T0 pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3779, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer")]
-        public unsafe partial int CreateRootSignatureDeserializer<T0>(ref T0 pSrcData, uint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged;
+        public unsafe partial int CreateRootSignatureDeserializer<T0>(ref T0 pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3779, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateRootSignatureDeserializer")]
-        public unsafe partial int CreateRootSignatureDeserializer<T0>(ref T0 pSrcData, uint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged;
+        public unsafe partial int CreateRootSignatureDeserializer<T0>(ref T0 pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3790, Column 16 in d3d12.h")]
@@ -1294,42 +1294,42 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3801, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer")]
-        public unsafe partial int CreateVersionedRootSignatureDeserializer(void* pSrcData, uint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
+        public unsafe partial int CreateVersionedRootSignatureDeserializer(void* pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3801, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer")]
-        public unsafe partial int CreateVersionedRootSignatureDeserializer(void* pSrcData, uint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer);
+        public unsafe partial int CreateVersionedRootSignatureDeserializer(void* pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3801, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer")]
-        public unsafe partial int CreateVersionedRootSignatureDeserializer(void* pSrcData, uint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
+        public unsafe partial int CreateVersionedRootSignatureDeserializer(void* pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3801, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer")]
-        public unsafe partial int CreateVersionedRootSignatureDeserializer(void* pSrcData, uint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer);
+        public unsafe partial int CreateVersionedRootSignatureDeserializer(void* pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3801, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer")]
-        public unsafe partial int CreateVersionedRootSignatureDeserializer<T0>(ref T0 pSrcData, uint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged;
+        public unsafe partial int CreateVersionedRootSignatureDeserializer<T0>(ref T0 pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3801, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer")]
-        public unsafe partial int CreateVersionedRootSignatureDeserializer<T0>(ref T0 pSrcData, uint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged;
+        public unsafe partial int CreateVersionedRootSignatureDeserializer<T0>(ref T0 pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3801, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer")]
-        public unsafe partial int CreateVersionedRootSignatureDeserializer<T0>(ref T0 pSrcData, uint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged;
+        public unsafe partial int CreateVersionedRootSignatureDeserializer<T0>(ref T0 pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3801, Column 16 in d3d12.h")]
         [NativeApi(EntryPoint = "D3D12CreateVersionedRootSignatureDeserializer")]
-        public unsafe partial int CreateVersionedRootSignatureDeserializer<T0>(ref T0 pSrcData, uint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged;
+        public unsafe partial int CreateVersionedRootSignatureDeserializer<T0>(ref T0 pSrcData, nuint SrcDataSizeInBytes, ref Guid pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 18561, Column 16 in d3d12.h")]

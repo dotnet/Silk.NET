@@ -1036,42 +1036,42 @@ namespace Silk.NET.Direct3D11
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 1 in d3d11shadertracing.h")]
         [NativeApi(EntryPoint = "D3DDisassemble11Trace")]
-        public unsafe partial int D3DDisassemble11Trace(void* pSrcData, uint SrcDataSize, ID3D11ShaderTrace* pTrace, uint StartStep, uint NumSteps, uint Flags, Silk.NET.Core.Native.ID3D10Blob** ppDisassembly);
+        public unsafe partial int D3DDisassemble11Trace(void* pSrcData, nuint SrcDataSize, ID3D11ShaderTrace* pTrace, uint StartStep, uint NumSteps, uint Flags, Silk.NET.Core.Native.ID3D10Blob** ppDisassembly);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 1 in d3d11shadertracing.h")]
         [NativeApi(EntryPoint = "D3DDisassemble11Trace")]
-        public unsafe partial int D3DDisassemble11Trace(void* pSrcData, uint SrcDataSize, ID3D11ShaderTrace* pTrace, uint StartStep, uint NumSteps, uint Flags, ref Silk.NET.Core.Native.ID3D10Blob* ppDisassembly);
+        public unsafe partial int D3DDisassemble11Trace(void* pSrcData, nuint SrcDataSize, ID3D11ShaderTrace* pTrace, uint StartStep, uint NumSteps, uint Flags, ref Silk.NET.Core.Native.ID3D10Blob* ppDisassembly);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 1 in d3d11shadertracing.h")]
         [NativeApi(EntryPoint = "D3DDisassemble11Trace")]
-        public unsafe partial int D3DDisassemble11Trace(void* pSrcData, uint SrcDataSize, ref ID3D11ShaderTrace pTrace, uint StartStep, uint NumSteps, uint Flags, Silk.NET.Core.Native.ID3D10Blob** ppDisassembly);
+        public unsafe partial int D3DDisassemble11Trace(void* pSrcData, nuint SrcDataSize, ref ID3D11ShaderTrace pTrace, uint StartStep, uint NumSteps, uint Flags, Silk.NET.Core.Native.ID3D10Blob** ppDisassembly);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 1 in d3d11shadertracing.h")]
         [NativeApi(EntryPoint = "D3DDisassemble11Trace")]
-        public unsafe partial int D3DDisassemble11Trace(void* pSrcData, uint SrcDataSize, ref ID3D11ShaderTrace pTrace, uint StartStep, uint NumSteps, uint Flags, ref Silk.NET.Core.Native.ID3D10Blob* ppDisassembly);
+        public unsafe partial int D3DDisassemble11Trace(void* pSrcData, nuint SrcDataSize, ref ID3D11ShaderTrace pTrace, uint StartStep, uint NumSteps, uint Flags, ref Silk.NET.Core.Native.ID3D10Blob* ppDisassembly);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 1 in d3d11shadertracing.h")]
         [NativeApi(EntryPoint = "D3DDisassemble11Trace")]
-        public unsafe partial int D3DDisassemble11Trace<T0>(ref T0 pSrcData, uint SrcDataSize, ID3D11ShaderTrace* pTrace, uint StartStep, uint NumSteps, uint Flags, Silk.NET.Core.Native.ID3D10Blob** ppDisassembly) where T0 : unmanaged;
+        public unsafe partial int D3DDisassemble11Trace<T0>(ref T0 pSrcData, nuint SrcDataSize, ID3D11ShaderTrace* pTrace, uint StartStep, uint NumSteps, uint Flags, Silk.NET.Core.Native.ID3D10Blob** ppDisassembly) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 1 in d3d11shadertracing.h")]
         [NativeApi(EntryPoint = "D3DDisassemble11Trace")]
-        public unsafe partial int D3DDisassemble11Trace<T0>(ref T0 pSrcData, uint SrcDataSize, ID3D11ShaderTrace* pTrace, uint StartStep, uint NumSteps, uint Flags, ref Silk.NET.Core.Native.ID3D10Blob* ppDisassembly) where T0 : unmanaged;
+        public unsafe partial int D3DDisassemble11Trace<T0>(ref T0 pSrcData, nuint SrcDataSize, ID3D11ShaderTrace* pTrace, uint StartStep, uint NumSteps, uint Flags, ref Silk.NET.Core.Native.ID3D10Blob* ppDisassembly) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 1 in d3d11shadertracing.h")]
         [NativeApi(EntryPoint = "D3DDisassemble11Trace")]
-        public unsafe partial int D3DDisassemble11Trace<T0>(ref T0 pSrcData, uint SrcDataSize, ref ID3D11ShaderTrace pTrace, uint StartStep, uint NumSteps, uint Flags, Silk.NET.Core.Native.ID3D10Blob** ppDisassembly) where T0 : unmanaged;
+        public unsafe partial int D3DDisassemble11Trace<T0>(ref T0 pSrcData, nuint SrcDataSize, ref ID3D11ShaderTrace pTrace, uint StartStep, uint NumSteps, uint Flags, Silk.NET.Core.Native.ID3D10Blob** ppDisassembly) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 1 in d3d11shadertracing.h")]
         [NativeApi(EntryPoint = "D3DDisassemble11Trace")]
-        public unsafe partial int D3DDisassemble11Trace<T0>(ref T0 pSrcData, uint SrcDataSize, ref ID3D11ShaderTrace pTrace, uint StartStep, uint NumSteps, uint Flags, ref Silk.NET.Core.Native.ID3D10Blob* ppDisassembly) where T0 : unmanaged;
+        public unsafe partial int D3DDisassemble11Trace<T0>(ref T0 pSrcData, nuint SrcDataSize, ref ID3D11ShaderTrace pTrace, uint StartStep, uint NumSteps, uint Flags, ref Silk.NET.Core.Native.ID3D10Blob* ppDisassembly) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 14447, Column 16 in d3d11.h")]

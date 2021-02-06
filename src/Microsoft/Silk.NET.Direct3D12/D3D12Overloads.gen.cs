@@ -52,7 +52,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3779, Column 16 in d3d12.h")]
-        public static unsafe int CreateRootSignatureDeserializer(this D3D12 thisApi, void* pSrcData, uint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer)
+        public static unsafe int CreateRootSignatureDeserializer(this D3D12 thisApi, void* pSrcData, nuint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer)
         {
             // SpanOverloader
             return thisApi.CreateRootSignatureDeserializer(pSrcData, SrcDataSizeInBytes, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ppRootSignatureDeserializer);
@@ -60,7 +60,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3779, Column 16 in d3d12.h")]
-        public static unsafe int CreateRootSignatureDeserializer(this D3D12 thisApi, void* pSrcData, uint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer)
+        public static unsafe int CreateRootSignatureDeserializer(this D3D12 thisApi, void* pSrcData, nuint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer)
         {
             // SpanOverloader
             return thisApi.CreateRootSignatureDeserializer(pSrcData, SrcDataSizeInBytes, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ref ppRootSignatureDeserializer);
@@ -68,7 +68,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3779, Column 16 in d3d12.h")]
-        public static unsafe int CreateRootSignatureDeserializer<T0>(this D3D12 thisApi, Span<T0> pSrcData, uint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged
+        public static unsafe int CreateRootSignatureDeserializer<T0>(this D3D12 thisApi, Span<T0> pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateRootSignatureDeserializer(ref pSrcData.GetPinnableReference(), SrcDataSizeInBytes, pRootSignatureDeserializerInterface, ppRootSignatureDeserializer);
@@ -76,7 +76,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3779, Column 16 in d3d12.h")]
-        public static unsafe int CreateRootSignatureDeserializer<T0>(this D3D12 thisApi, Span<T0> pSrcData, uint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged
+        public static unsafe int CreateRootSignatureDeserializer<T0>(this D3D12 thisApi, Span<T0> pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateRootSignatureDeserializer(ref pSrcData.GetPinnableReference(), SrcDataSizeInBytes, pRootSignatureDeserializerInterface, ref ppRootSignatureDeserializer);
@@ -84,7 +84,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3779, Column 16 in d3d12.h")]
-        public static unsafe int CreateRootSignatureDeserializer<T0>(this D3D12 thisApi, Span<T0> pSrcData, uint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged
+        public static unsafe int CreateRootSignatureDeserializer<T0>(this D3D12 thisApi, Span<T0> pSrcData, nuint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateRootSignatureDeserializer(ref pSrcData.GetPinnableReference(), SrcDataSizeInBytes, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ppRootSignatureDeserializer);
@@ -92,7 +92,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3779, Column 16 in d3d12.h")]
-        public static unsafe int CreateRootSignatureDeserializer<T0>(this D3D12 thisApi, Span<T0> pSrcData, uint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged
+        public static unsafe int CreateRootSignatureDeserializer<T0>(this D3D12 thisApi, Span<T0> pSrcData, nuint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateRootSignatureDeserializer(ref pSrcData.GetPinnableReference(), SrcDataSizeInBytes, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ref ppRootSignatureDeserializer);
@@ -132,7 +132,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3801, Column 16 in d3d12.h")]
-        public static unsafe int CreateVersionedRootSignatureDeserializer(this D3D12 thisApi, void* pSrcData, uint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer)
+        public static unsafe int CreateVersionedRootSignatureDeserializer(this D3D12 thisApi, void* pSrcData, nuint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer)
         {
             // SpanOverloader
             return thisApi.CreateVersionedRootSignatureDeserializer(pSrcData, SrcDataSizeInBytes, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ppRootSignatureDeserializer);
@@ -140,7 +140,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3801, Column 16 in d3d12.h")]
-        public static unsafe int CreateVersionedRootSignatureDeserializer(this D3D12 thisApi, void* pSrcData, uint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer)
+        public static unsafe int CreateVersionedRootSignatureDeserializer(this D3D12 thisApi, void* pSrcData, nuint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer)
         {
             // SpanOverloader
             return thisApi.CreateVersionedRootSignatureDeserializer(pSrcData, SrcDataSizeInBytes, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ref ppRootSignatureDeserializer);
@@ -148,7 +148,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3801, Column 16 in d3d12.h")]
-        public static unsafe int CreateVersionedRootSignatureDeserializer<T0>(this D3D12 thisApi, Span<T0> pSrcData, uint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged
+        public static unsafe int CreateVersionedRootSignatureDeserializer<T0>(this D3D12 thisApi, Span<T0> pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateVersionedRootSignatureDeserializer(ref pSrcData.GetPinnableReference(), SrcDataSizeInBytes, pRootSignatureDeserializerInterface, ppRootSignatureDeserializer);
@@ -156,7 +156,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3801, Column 16 in d3d12.h")]
-        public static unsafe int CreateVersionedRootSignatureDeserializer<T0>(this D3D12 thisApi, Span<T0> pSrcData, uint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged
+        public static unsafe int CreateVersionedRootSignatureDeserializer<T0>(this D3D12 thisApi, Span<T0> pSrcData, nuint SrcDataSizeInBytes, Guid* pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateVersionedRootSignatureDeserializer(ref pSrcData.GetPinnableReference(), SrcDataSizeInBytes, pRootSignatureDeserializerInterface, ref ppRootSignatureDeserializer);
@@ -164,7 +164,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3801, Column 16 in d3d12.h")]
-        public static unsafe int CreateVersionedRootSignatureDeserializer<T0>(this D3D12 thisApi, Span<T0> pSrcData, uint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged
+        public static unsafe int CreateVersionedRootSignatureDeserializer<T0>(this D3D12 thisApi, Span<T0> pSrcData, nuint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, void** ppRootSignatureDeserializer) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateVersionedRootSignatureDeserializer(ref pSrcData.GetPinnableReference(), SrcDataSizeInBytes, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ppRootSignatureDeserializer);
@@ -172,7 +172,7 @@ namespace Silk.NET.Direct3D12
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 3801, Column 16 in d3d12.h")]
-        public static unsafe int CreateVersionedRootSignatureDeserializer<T0>(this D3D12 thisApi, Span<T0> pSrcData, uint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged
+        public static unsafe int CreateVersionedRootSignatureDeserializer<T0>(this D3D12 thisApi, Span<T0> pSrcData, nuint SrcDataSizeInBytes, Span<Guid> pRootSignatureDeserializerInterface, ref void* ppRootSignatureDeserializer) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateVersionedRootSignatureDeserializer(ref pSrcData.GetPinnableReference(), SrcDataSizeInBytes, ref pRootSignatureDeserializerInterface.GetPinnableReference(), ref ppRootSignatureDeserializer);

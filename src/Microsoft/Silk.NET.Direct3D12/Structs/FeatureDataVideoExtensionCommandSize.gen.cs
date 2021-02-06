@@ -26,7 +26,7 @@ namespace Silk.NET.Direct3D12
             uint? nodeIndex = null,
             Guid? commandId = null,
             void* pCreationParameters = null,
-            uint? creationParametersSizeInBytes = null,
+            nuint? creationParametersSizeInBytes = null,
             ulong? memoryPoolL0Size = null,
             ulong? memoryPoolL1Size = null
         ) : this()
@@ -81,7 +81,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "SIZE_T")]
         [NativeName("Type.Name", "SIZE_T")]
         [NativeName("Name", "CreationParametersSizeInBytes")]
-        public uint CreationParametersSizeInBytes;
+        public nuint CreationParametersSizeInBytes;
 
         [NativeName("Type", "UINT64")]
         [NativeName("Type.Name", "UINT64")]

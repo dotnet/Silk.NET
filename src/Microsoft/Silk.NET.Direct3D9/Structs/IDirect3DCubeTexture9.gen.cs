@@ -563,48 +563,48 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LockRect(CubemapFaces FaceType, uint Level, LockedRect* pLockedRect, Silk.NET.Maths.Rectangle<long>* pRect, uint Flags)
+        public readonly unsafe int LockRect(CubemapFaces FaceType, uint Level, LockedRect* pLockedRect, Silk.NET.Maths.Rectangle<int>* pRect, uint Flags)
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<long>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRect, pRect, Flags);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRect, pRect, Flags);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LockRect(CubemapFaces FaceType, uint Level, LockedRect* pLockedRect, ref Silk.NET.Maths.Rectangle<long> pRect, uint Flags)
+        public readonly unsafe int LockRect(CubemapFaces FaceType, uint Level, LockedRect* pLockedRect, ref Silk.NET.Maths.Rectangle<int> pRect, uint Flags)
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<long>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<long>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRect, pRectPtr, Flags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRect, pRectPtr, Flags);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int LockRect(CubemapFaces FaceType, uint Level, ref LockedRect pLockedRect, Silk.NET.Maths.Rectangle<long>* pRect, uint Flags)
+        public readonly unsafe int LockRect(CubemapFaces FaceType, uint Level, ref LockedRect pLockedRect, Silk.NET.Maths.Rectangle<int>* pRect, uint Flags)
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (LockedRect* pLockedRectPtr = &pLockedRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<long>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRectPtr, pRect, Flags);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRectPtr, pRect, Flags);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int LockRect(CubemapFaces FaceType, uint Level, ref LockedRect pLockedRect, ref Silk.NET.Maths.Rectangle<long> pRect, uint Flags)
+        public readonly int LockRect(CubemapFaces FaceType, uint Level, ref LockedRect pLockedRect, ref Silk.NET.Maths.Rectangle<int> pRect, uint Flags)
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (LockedRect* pLockedRectPtr = &pLockedRect)
             {
-                fixed (Silk.NET.Maths.Rectangle<long>* pRectPtr = &pRect)
+                fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<long>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRectPtr, pRectPtr, Flags);
+                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, uint, LockedRect*, Silk.NET.Maths.Rectangle<int>*, uint, int>)LpVtbl[19])(@this, FaceType, Level, pLockedRectPtr, pRectPtr, Flags);
                 }
             }
             return ret;
@@ -620,22 +620,22 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int AddDirtyRect(CubemapFaces FaceType, Silk.NET.Maths.Rectangle<long>* pDirtyRect)
+        public readonly unsafe int AddDirtyRect(CubemapFaces FaceType, Silk.NET.Maths.Rectangle<int>* pDirtyRect)
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, Silk.NET.Maths.Rectangle<long>*, int>)LpVtbl[21])(@this, FaceType, pDirtyRect);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[21])(@this, FaceType, pDirtyRect);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int AddDirtyRect(CubemapFaces FaceType, ref Silk.NET.Maths.Rectangle<long> pDirtyRect)
+        public readonly int AddDirtyRect(CubemapFaces FaceType, ref Silk.NET.Maths.Rectangle<int> pDirtyRect)
         {
             var @this = (IDirect3DCubeTexture9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<long>* pDirtyRectPtr = &pDirtyRect)
+            fixed (Silk.NET.Maths.Rectangle<int>* pDirtyRectPtr = &pDirtyRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, Silk.NET.Maths.Rectangle<long>*, int>)LpVtbl[21])(@this, FaceType, pDirtyRectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DCubeTexture9*, CubemapFaces, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[21])(@this, FaceType, pDirtyRectPtr);
             }
             return ret;
         }

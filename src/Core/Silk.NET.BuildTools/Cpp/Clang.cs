@@ -29,6 +29,25 @@ namespace Silk.NET.BuildTools.Cpp
     {
         private static FlowDirection _f; // a throwaway variable to store flows where we don't need them
 
+        private static readonly string[] _primitives = new[]
+        {
+            "intptr_t",
+            "uintptr_t",
+            "size_t",
+            "ptrdiff_t",
+            "HALF_PTR",
+            "INT_PTR",
+            "POINTER_32",
+            "POINTER_64",
+            "POINTER_SIGNED",
+            "POINTER_UNSIGNED",
+            "SIZE_T",
+            "UHALF_PTR",
+            "UINT_PTR",
+            "ULONG_PTR",
+            "ULONGLONG"
+        };
+
         public static bool ShouldVisit(Cursor cursor, BindTask task, bool nullTolerant = false)
         {
             var traversals = task.ClangOpts.Traverse;
@@ -79,7 +98,7 @@ namespace Silk.NET.BuildTools.Cpp
                 {
                     return false;
                 }
-                
+
                 return traversals.Contains(Path.GetFullPath(path).Replace("\\", "/"));
             }
         }
@@ -214,6 +233,7 @@ namespace Silk.NET.BuildTools.Cpp
             {
                 TypeMapper.Map(map, project.Structs);
                 TypeMapper.Map(map, @class.NativeApis[fileName].Functions);
+                TypeMapper.Map(map, @class.Constants);
             }
 
             return profile;
@@ -305,20 +325,20 @@ namespace Silk.NET.BuildTools.Cpp
                 static string WriteType(Type type) => type.IsFunctionPointer
                     ? $"Fv{GetFunctionPointerWrapperName(type)}"
                     : type.Name switch
-                {
-                    "void" => "V",
-                    "int" => "i",
-                    "uint" => "ui",
-                    "long" => "i64",
-                    "ulong" => "ui64",
-                    "short" => "s",
-                    "ushort" => "us",
-                    "Half" => "h",
-                    "float" => "f",
-                    "double" => "d",
-                    "byte" => "b",
-                    _ => type.Name
-                } + new string('v', type.IndirectionLevels);
+                    {
+                        "void" => "V",
+                        "int" => "i",
+                        "uint" => "ui",
+                        "long" => "i64",
+                        "ulong" => "ui64",
+                        "short" => "s",
+                        "ushort" => "us",
+                        "Half" => "h",
+                        "float" => "f",
+                        "double" => "d",
+                        "byte" => "b",
+                        _ => type.Name
+                    } + new string('v', type.IndirectionLevels);
             }
 
             void VisitDecls(IEnumerable<Decl> decls)
@@ -848,7 +868,7 @@ namespace Silk.NET.BuildTools.Cpp
                     // We check remapped names here so that types that have variable sizes
                     // can be treated correctly. Otherwise, they will resolve to a particular
                     // platform size, based on whatever parameters were passed into clang.
-                    if (task.ExcludedNativeNames.Contains(typedefType.Decl.Name))
+                    if (task.ExcludedNativeNames.Contains(typedefType.Decl.Name) || _primitives.Contains(typedefType.Decl.Name))
                     {
                         ret = new Type {Name = typedefType.Decl.Name};
                     }
@@ -1290,7 +1310,7 @@ namespace Silk.NET.BuildTools.Cpp
                                     {
                                         Name = name, Type = silkType, ExtensionName = "Core",
                                         NativeName = nativeName,
-                                        Value = $"unchecked(({silkType}) 0x{intLiteral.Value:X})"
+                                        Value = $"0x{intLiteral.Value:X}"
                                     }
                                 );
                                 break;

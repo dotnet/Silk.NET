@@ -119,11 +119,11 @@ namespace Silk.NET.Core.Native
         }
 
         /// <summary>To be documented.</summary>
-        public readonly uint GetBufferSize()
+        public readonly nuint GetBufferSize()
         {
             var @this = (ID3D10Blob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D10Blob*, uint>)LpVtbl[4])(@this);
+                nuint ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D10Blob*, nuint>)LpVtbl[4])(@this);
             return ret;
         }
 

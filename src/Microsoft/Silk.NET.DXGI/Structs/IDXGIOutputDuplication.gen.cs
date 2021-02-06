@@ -430,48 +430,48 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFrameDirtyRects(uint DirtyRectsBufferSize, Silk.NET.Maths.Rectangle<long>* pDirtyRectsBuffer, uint* pDirtyRectsBufferSizeRequired)
+        public readonly unsafe int GetFrameDirtyRects(uint DirtyRectsBufferSize, Silk.NET.Maths.Rectangle<int>* pDirtyRectsBuffer, uint* pDirtyRectsBufferSizeRequired)
         {
             var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, Silk.NET.Maths.Rectangle<long>*, uint*, int>)LpVtbl[9])(@this, DirtyRectsBufferSize, pDirtyRectsBuffer, pDirtyRectsBufferSizeRequired);
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, Silk.NET.Maths.Rectangle<int>*, uint*, int>)LpVtbl[9])(@this, DirtyRectsBufferSize, pDirtyRectsBuffer, pDirtyRectsBufferSizeRequired);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFrameDirtyRects(uint DirtyRectsBufferSize, Silk.NET.Maths.Rectangle<long>* pDirtyRectsBuffer, ref uint pDirtyRectsBufferSizeRequired)
+        public readonly unsafe int GetFrameDirtyRects(uint DirtyRectsBufferSize, Silk.NET.Maths.Rectangle<int>* pDirtyRectsBuffer, ref uint pDirtyRectsBufferSizeRequired)
         {
             var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (uint* pDirtyRectsBufferSizeRequiredPtr = &pDirtyRectsBufferSizeRequired)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, Silk.NET.Maths.Rectangle<long>*, uint*, int>)LpVtbl[9])(@this, DirtyRectsBufferSize, pDirtyRectsBuffer, pDirtyRectsBufferSizeRequiredPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, Silk.NET.Maths.Rectangle<int>*, uint*, int>)LpVtbl[9])(@this, DirtyRectsBufferSize, pDirtyRectsBuffer, pDirtyRectsBufferSizeRequiredPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetFrameDirtyRects(uint DirtyRectsBufferSize, ref Silk.NET.Maths.Rectangle<long> pDirtyRectsBuffer, uint* pDirtyRectsBufferSizeRequired)
+        public readonly unsafe int GetFrameDirtyRects(uint DirtyRectsBufferSize, ref Silk.NET.Maths.Rectangle<int> pDirtyRectsBuffer, uint* pDirtyRectsBufferSizeRequired)
         {
             var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<long>* pDirtyRectsBufferPtr = &pDirtyRectsBuffer)
+            fixed (Silk.NET.Maths.Rectangle<int>* pDirtyRectsBufferPtr = &pDirtyRectsBuffer)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, Silk.NET.Maths.Rectangle<long>*, uint*, int>)LpVtbl[9])(@this, DirtyRectsBufferSize, pDirtyRectsBufferPtr, pDirtyRectsBufferSizeRequired);
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, Silk.NET.Maths.Rectangle<int>*, uint*, int>)LpVtbl[9])(@this, DirtyRectsBufferSize, pDirtyRectsBufferPtr, pDirtyRectsBufferSizeRequired);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetFrameDirtyRects(uint DirtyRectsBufferSize, ref Silk.NET.Maths.Rectangle<long> pDirtyRectsBuffer, ref uint pDirtyRectsBufferSizeRequired)
+        public readonly int GetFrameDirtyRects(uint DirtyRectsBufferSize, ref Silk.NET.Maths.Rectangle<int> pDirtyRectsBuffer, ref uint pDirtyRectsBufferSizeRequired)
         {
             var @this = (IDXGIOutputDuplication*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<long>* pDirtyRectsBufferPtr = &pDirtyRectsBuffer)
+            fixed (Silk.NET.Maths.Rectangle<int>* pDirtyRectsBufferPtr = &pDirtyRectsBuffer)
             {
                 fixed (uint* pDirtyRectsBufferSizeRequiredPtr = &pDirtyRectsBufferSizeRequired)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, Silk.NET.Maths.Rectangle<long>*, uint*, int>)LpVtbl[9])(@this, DirtyRectsBufferSize, pDirtyRectsBufferPtr, pDirtyRectsBufferSizeRequiredPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIOutputDuplication*, uint, Silk.NET.Maths.Rectangle<int>*, uint*, int>)LpVtbl[9])(@this, DirtyRectsBufferSize, pDirtyRectsBufferPtr, pDirtyRectsBufferSizeRequiredPtr);
                 }
             }
             return ret;

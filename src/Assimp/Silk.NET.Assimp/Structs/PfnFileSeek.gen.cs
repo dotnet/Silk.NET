@@ -21,10 +21,10 @@ namespace Silk.NET.Assimp
     public unsafe readonly struct PfnFileSeek : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<File*, uint, Origin, Return> Handle => (delegate* unmanaged[Cdecl]<File*, uint, Origin, Return>) _handle;
+        public delegate* unmanaged[Cdecl]<File*, nuint, Origin, Return> Handle => (delegate* unmanaged[Cdecl]<File*, nuint, Origin, Return>) _handle;
         public PfnFileSeek
         (
-            delegate* unmanaged[Cdecl]<File*, uint, Origin, Return> ptr
+            delegate* unmanaged[Cdecl]<File*, nuint, Origin, Return> ptr
         ) => _handle = ptr;
 
         public PfnFileSeek
@@ -37,7 +37,7 @@ namespace Silk.NET.Assimp
 
         public static implicit operator nint(PfnFileSeek pfn) => (nint) pfn.Handle;
         public static explicit operator PfnFileSeek(nint pfn)
-            => new PfnFileSeek((delegate* unmanaged[Cdecl]<File*, uint, Origin, Return>) pfn);
+            => new PfnFileSeek((delegate* unmanaged[Cdecl]<File*, nuint, Origin, Return>) pfn);
 
         public static implicit operator PfnFileSeek(FileSeek proc)
             => new PfnFileSeek(proc);
@@ -45,10 +45,10 @@ namespace Silk.NET.Assimp
         public static explicit operator FileSeek(PfnFileSeek pfn)
             => SilkMarshal.PtrToDelegate<FileSeek>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<File*, uint, Origin, Return>(PfnFileSeek pfn) => pfn.Handle;
-        public static implicit operator PfnFileSeek(delegate* unmanaged[Cdecl]<File*, uint, Origin, Return> ptr) => new PfnFileSeek(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<File*, nuint, Origin, Return>(PfnFileSeek pfn) => pfn.Handle;
+        public static implicit operator PfnFileSeek(delegate* unmanaged[Cdecl]<File*, nuint, Origin, Return> ptr) => new PfnFileSeek(ptr);
     }
 
-    public unsafe delegate Return FileSeek(File* arg0, uint arg1, Origin arg2);
+    public unsafe delegate Return FileSeek(File* arg0, nuint arg1, Origin arg2);
 }
 

@@ -1120,40 +1120,40 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRootSignature(uint nodeMask, void* pBlobWithRootSignature, uint blobLengthInBytes, Guid* riid, void** ppvRootSignature)
+        public readonly unsafe int CreateRootSignature(uint nodeMask, void* pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, void** ppvRootSignature)
         {
             var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, uint, void*, uint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignature, blobLengthInBytes, riid, ppvRootSignature);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignature, blobLengthInBytes, riid, ppvRootSignature);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRootSignature(uint nodeMask, void* pBlobWithRootSignature, uint blobLengthInBytes, Guid* riid, ref void* ppvRootSignature)
+        public readonly unsafe int CreateRootSignature(uint nodeMask, void* pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, ref void* ppvRootSignature)
         {
             var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (void** ppvRootSignaturePtr = &ppvRootSignature)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, uint, void*, uint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignature, blobLengthInBytes, riid, ppvRootSignaturePtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignature, blobLengthInBytes, riid, ppvRootSignaturePtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRootSignature(uint nodeMask, void* pBlobWithRootSignature, uint blobLengthInBytes, ref Guid riid, void** ppvRootSignature)
+        public readonly unsafe int CreateRootSignature(uint nodeMask, void* pBlobWithRootSignature, nuint blobLengthInBytes, ref Guid riid, void** ppvRootSignature)
         {
             var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, uint, void*, uint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignature, blobLengthInBytes, riidPtr, ppvRootSignature);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignature, blobLengthInBytes, riidPtr, ppvRootSignature);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRootSignature(uint nodeMask, void* pBlobWithRootSignature, uint blobLengthInBytes, ref Guid riid, ref void* ppvRootSignature)
+        public readonly unsafe int CreateRootSignature(uint nodeMask, void* pBlobWithRootSignature, nuint blobLengthInBytes, ref Guid riid, ref void* ppvRootSignature)
         {
             var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1161,26 +1161,26 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppvRootSignaturePtr = &ppvRootSignature)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, uint, void*, uint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignature, blobLengthInBytes, riidPtr, ppvRootSignaturePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignature, blobLengthInBytes, riidPtr, ppvRootSignaturePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRootSignature<T0>(uint nodeMask, ref T0 pBlobWithRootSignature, uint blobLengthInBytes, Guid* riid, void** ppvRootSignature) where T0 : unmanaged
+        public readonly unsafe int CreateRootSignature<T0>(uint nodeMask, ref T0 pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, void** ppvRootSignature) where T0 : unmanaged
         {
             var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (T0* pBlobWithRootSignaturePtr = &pBlobWithRootSignature)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, uint, T0*, uint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riid, ppvRootSignature);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riid, ppvRootSignature);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRootSignature<T0>(uint nodeMask, ref T0 pBlobWithRootSignature, uint blobLengthInBytes, Guid* riid, ref void* ppvRootSignature) where T0 : unmanaged
+        public readonly unsafe int CreateRootSignature<T0>(uint nodeMask, ref T0 pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, ref void* ppvRootSignature) where T0 : unmanaged
         {
             var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1188,14 +1188,14 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppvRootSignaturePtr = &ppvRootSignature)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, uint, T0*, uint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riid, ppvRootSignaturePtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riid, ppvRootSignaturePtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRootSignature<T0>(uint nodeMask, ref T0 pBlobWithRootSignature, uint blobLengthInBytes, ref Guid riid, void** ppvRootSignature) where T0 : unmanaged
+        public readonly unsafe int CreateRootSignature<T0>(uint nodeMask, ref T0 pBlobWithRootSignature, nuint blobLengthInBytes, ref Guid riid, void** ppvRootSignature) where T0 : unmanaged
         {
             var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1203,14 +1203,14 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, uint, T0*, uint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riidPtr, ppvRootSignature);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riidPtr, ppvRootSignature);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateRootSignature<T0>(uint nodeMask, ref T0 pBlobWithRootSignature, uint blobLengthInBytes, ref Guid riid, ref void* ppvRootSignature) where T0 : unmanaged
+        public readonly unsafe int CreateRootSignature<T0>(uint nodeMask, ref T0 pBlobWithRootSignature, nuint blobLengthInBytes, ref Guid riid, ref void* ppvRootSignature) where T0 : unmanaged
         {
             var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1220,7 +1220,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (void** ppvRootSignaturePtr = &ppvRootSignature)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, uint, T0*, uint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riidPtr, ppvRootSignaturePtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riidPtr, ppvRootSignaturePtr);
                     }
                 }
             }
@@ -5621,40 +5621,40 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePipelineLibrary(void* pLibraryBlob, uint BlobLength, Guid* riid, void** ppPipelineLibrary)
+        public readonly unsafe int CreatePipelineLibrary(void* pLibraryBlob, nuint BlobLength, Guid* riid, void** ppPipelineLibrary)
         {
             var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, void*, uint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlob, BlobLength, riid, ppPipelineLibrary);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, void*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlob, BlobLength, riid, ppPipelineLibrary);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePipelineLibrary(void* pLibraryBlob, uint BlobLength, Guid* riid, ref void* ppPipelineLibrary)
+        public readonly unsafe int CreatePipelineLibrary(void* pLibraryBlob, nuint BlobLength, Guid* riid, ref void* ppPipelineLibrary)
         {
             var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (void** ppPipelineLibraryPtr = &ppPipelineLibrary)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, void*, uint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlob, BlobLength, riid, ppPipelineLibraryPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, void*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlob, BlobLength, riid, ppPipelineLibraryPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePipelineLibrary(void* pLibraryBlob, uint BlobLength, ref Guid riid, void** ppPipelineLibrary)
+        public readonly unsafe int CreatePipelineLibrary(void* pLibraryBlob, nuint BlobLength, ref Guid riid, void** ppPipelineLibrary)
         {
             var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, void*, uint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlob, BlobLength, riidPtr, ppPipelineLibrary);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, void*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlob, BlobLength, riidPtr, ppPipelineLibrary);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePipelineLibrary(void* pLibraryBlob, uint BlobLength, ref Guid riid, ref void* ppPipelineLibrary)
+        public readonly unsafe int CreatePipelineLibrary(void* pLibraryBlob, nuint BlobLength, ref Guid riid, ref void* ppPipelineLibrary)
         {
             var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -5662,26 +5662,26 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppPipelineLibraryPtr = &ppPipelineLibrary)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, void*, uint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlob, BlobLength, riidPtr, ppPipelineLibraryPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, void*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlob, BlobLength, riidPtr, ppPipelineLibraryPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePipelineLibrary<T0>(ref T0 pLibraryBlob, uint BlobLength, Guid* riid, void** ppPipelineLibrary) where T0 : unmanaged
+        public readonly unsafe int CreatePipelineLibrary<T0>(ref T0 pLibraryBlob, nuint BlobLength, Guid* riid, void** ppPipelineLibrary) where T0 : unmanaged
         {
             var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (T0* pLibraryBlobPtr = &pLibraryBlob)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, T0*, uint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riid, ppPipelineLibrary);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, T0*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riid, ppPipelineLibrary);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePipelineLibrary<T0>(ref T0 pLibraryBlob, uint BlobLength, Guid* riid, ref void* ppPipelineLibrary) where T0 : unmanaged
+        public readonly unsafe int CreatePipelineLibrary<T0>(ref T0 pLibraryBlob, nuint BlobLength, Guid* riid, ref void* ppPipelineLibrary) where T0 : unmanaged
         {
             var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -5689,14 +5689,14 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (void** ppPipelineLibraryPtr = &ppPipelineLibrary)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, T0*, uint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riid, ppPipelineLibraryPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, T0*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riid, ppPipelineLibraryPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePipelineLibrary<T0>(ref T0 pLibraryBlob, uint BlobLength, ref Guid riid, void** ppPipelineLibrary) where T0 : unmanaged
+        public readonly unsafe int CreatePipelineLibrary<T0>(ref T0 pLibraryBlob, nuint BlobLength, ref Guid riid, void** ppPipelineLibrary) where T0 : unmanaged
         {
             var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -5704,14 +5704,14 @@ namespace Silk.NET.Direct3D12
             {
                 fixed (Guid* riidPtr = &riid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, T0*, uint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riidPtr, ppPipelineLibrary);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, T0*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riidPtr, ppPipelineLibrary);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePipelineLibrary<T0>(ref T0 pLibraryBlob, uint BlobLength, ref Guid riid, ref void* ppPipelineLibrary) where T0 : unmanaged
+        public readonly unsafe int CreatePipelineLibrary<T0>(ref T0 pLibraryBlob, nuint BlobLength, ref Guid riid, ref void* ppPipelineLibrary) where T0 : unmanaged
         {
             var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -5721,7 +5721,7 @@ namespace Silk.NET.Direct3D12
                 {
                     fixed (void** ppPipelineLibraryPtr = &ppPipelineLibrary)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, T0*, uint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riidPtr, ppPipelineLibraryPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, T0*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riidPtr, ppPipelineLibraryPtr);
                     }
                 }
             }

@@ -23,8 +23,8 @@ namespace Silk.NET.Direct3D12
     {
         public Range
         (
-            uint? begin = null,
-            uint? end = null
+            nuint? begin = null,
+            nuint? end = null
         ) : this()
         {
             if (begin is not null)
@@ -42,11 +42,11 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "SIZE_T")]
         [NativeName("Type.Name", "SIZE_T")]
         [NativeName("Name", "Begin")]
-        public uint Begin;
+        public nuint Begin;
 
         [NativeName("Type", "SIZE_T")]
         [NativeName("Type.Name", "SIZE_T")]
         [NativeName("Name", "End")]
-        public uint End;
+        public nuint End;
     }
 }

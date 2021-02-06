@@ -126,48 +126,48 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMessageA(ulong MessageIndex, Message* pMessage, uint* pMessageByteLength)
+        public readonly unsafe int GetMessageA(ulong MessageIndex, Message* pMessage, nuint* pMessageByteLength)
         {
             var @this = (ID3D11InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, ulong, Message*, uint*, int>)LpVtbl[5])(@this, MessageIndex, pMessage, pMessageByteLength);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, ulong, Message*, nuint*, int>)LpVtbl[5])(@this, MessageIndex, pMessage, pMessageByteLength);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMessageA(ulong MessageIndex, Message* pMessage, ref uint pMessageByteLength)
+        public readonly unsafe int GetMessageA(ulong MessageIndex, Message* pMessage, ref nuint pMessageByteLength)
         {
             var @this = (ID3D11InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (uint* pMessageByteLengthPtr = &pMessageByteLength)
+            fixed (nuint* pMessageByteLengthPtr = &pMessageByteLength)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, ulong, Message*, uint*, int>)LpVtbl[5])(@this, MessageIndex, pMessage, pMessageByteLengthPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, ulong, Message*, nuint*, int>)LpVtbl[5])(@this, MessageIndex, pMessage, pMessageByteLengthPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetMessageA(ulong MessageIndex, ref Message pMessage, uint* pMessageByteLength)
+        public readonly unsafe int GetMessageA(ulong MessageIndex, ref Message pMessage, nuint* pMessageByteLength)
         {
             var @this = (ID3D11InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (Message* pMessagePtr = &pMessage)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, ulong, Message*, uint*, int>)LpVtbl[5])(@this, MessageIndex, pMessagePtr, pMessageByteLength);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, ulong, Message*, nuint*, int>)LpVtbl[5])(@this, MessageIndex, pMessagePtr, pMessageByteLength);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetMessageA(ulong MessageIndex, ref Message pMessage, ref uint pMessageByteLength)
+        public readonly int GetMessageA(ulong MessageIndex, ref Message pMessage, ref nuint pMessageByteLength)
         {
             var @this = (ID3D11InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (Message* pMessagePtr = &pMessage)
             {
-                fixed (uint* pMessageByteLengthPtr = &pMessageByteLength)
+                fixed (nuint* pMessageByteLengthPtr = &pMessageByteLength)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, ulong, Message*, uint*, int>)LpVtbl[5])(@this, MessageIndex, pMessagePtr, pMessageByteLengthPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, ulong, Message*, nuint*, int>)LpVtbl[5])(@this, MessageIndex, pMessagePtr, pMessageByteLengthPtr);
                 }
             }
             return ret;
@@ -249,48 +249,48 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetStorageFilter(InfoQueueFilter* pFilter, uint* pFilterByteLength)
+        public readonly unsafe int GetStorageFilter(InfoQueueFilter* pFilter, nuint* pFilterByteLength)
         {
             var @this = (ID3D11InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, InfoQueueFilter*, uint*, int>)LpVtbl[13])(@this, pFilter, pFilterByteLength);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, pFilter, pFilterByteLength);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetStorageFilter(InfoQueueFilter* pFilter, ref uint pFilterByteLength)
+        public readonly unsafe int GetStorageFilter(InfoQueueFilter* pFilter, ref nuint pFilterByteLength)
         {
             var @this = (ID3D11InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (uint* pFilterByteLengthPtr = &pFilterByteLength)
+            fixed (nuint* pFilterByteLengthPtr = &pFilterByteLength)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, InfoQueueFilter*, uint*, int>)LpVtbl[13])(@this, pFilter, pFilterByteLengthPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, pFilter, pFilterByteLengthPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetStorageFilter(ref InfoQueueFilter pFilter, uint* pFilterByteLength)
+        public readonly unsafe int GetStorageFilter(ref InfoQueueFilter pFilter, nuint* pFilterByteLength)
         {
             var @this = (ID3D11InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, InfoQueueFilter*, uint*, int>)LpVtbl[13])(@this, pFilterPtr, pFilterByteLength);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, pFilterPtr, pFilterByteLength);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetStorageFilter(ref InfoQueueFilter pFilter, ref uint pFilterByteLength)
+        public readonly int GetStorageFilter(ref InfoQueueFilter pFilter, ref nuint pFilterByteLength)
         {
             var @this = (ID3D11InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
-                fixed (uint* pFilterByteLengthPtr = &pFilterByteLength)
+                fixed (nuint* pFilterByteLengthPtr = &pFilterByteLength)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, InfoQueueFilter*, uint*, int>)LpVtbl[13])(@this, pFilterPtr, pFilterByteLengthPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, pFilterPtr, pFilterByteLengthPtr);
                 }
             }
             return ret;
@@ -380,48 +380,48 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetRetrievalFilter(InfoQueueFilter* pFilter, uint* pFilterByteLength)
+        public readonly unsafe int GetRetrievalFilter(InfoQueueFilter* pFilter, nuint* pFilterByteLength)
         {
             var @this = (ID3D11InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, InfoQueueFilter*, uint*, int>)LpVtbl[21])(@this, pFilter, pFilterByteLength);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, InfoQueueFilter*, nuint*, int>)LpVtbl[21])(@this, pFilter, pFilterByteLength);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetRetrievalFilter(InfoQueueFilter* pFilter, ref uint pFilterByteLength)
+        public readonly unsafe int GetRetrievalFilter(InfoQueueFilter* pFilter, ref nuint pFilterByteLength)
         {
             var @this = (ID3D11InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (uint* pFilterByteLengthPtr = &pFilterByteLength)
+            fixed (nuint* pFilterByteLengthPtr = &pFilterByteLength)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, InfoQueueFilter*, uint*, int>)LpVtbl[21])(@this, pFilter, pFilterByteLengthPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, InfoQueueFilter*, nuint*, int>)LpVtbl[21])(@this, pFilter, pFilterByteLengthPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetRetrievalFilter(ref InfoQueueFilter pFilter, uint* pFilterByteLength)
+        public readonly unsafe int GetRetrievalFilter(ref InfoQueueFilter pFilter, nuint* pFilterByteLength)
         {
             var @this = (ID3D11InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, InfoQueueFilter*, uint*, int>)LpVtbl[21])(@this, pFilterPtr, pFilterByteLength);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, InfoQueueFilter*, nuint*, int>)LpVtbl[21])(@this, pFilterPtr, pFilterByteLength);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetRetrievalFilter(ref InfoQueueFilter pFilter, ref uint pFilterByteLength)
+        public readonly int GetRetrievalFilter(ref InfoQueueFilter pFilter, ref nuint pFilterByteLength)
         {
             var @this = (ID3D11InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
-                fixed (uint* pFilterByteLengthPtr = &pFilterByteLength)
+                fixed (nuint* pFilterByteLengthPtr = &pFilterByteLength)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, InfoQueueFilter*, uint*, int>)LpVtbl[21])(@this, pFilterPtr, pFilterByteLengthPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11InfoQueue*, InfoQueueFilter*, nuint*, int>)LpVtbl[21])(@this, pFilterPtr, pFilterByteLengthPtr);
                 }
             }
             return ret;

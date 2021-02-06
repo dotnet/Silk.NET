@@ -20,22 +20,22 @@ namespace Silk.NET.XAudio
     {
         [NativeName("Type", "")]
         [NativeName("Name", "XAUDIO2_DLL_A")]
-        public const string DllA = "xaudio2_9.dll";
+        public const string DllA = unchecked((string) "xaudio2_9.dll");
         [NativeName("Type", "")]
         [NativeName("Name", "XAUDIO2_DLL_W")]
-        public const string DllW = "xaudio2_9.dll";
+        public const string DllW = unchecked((string) "xaudio2_9.dll");
         [NativeName("Type", "")]
         [NativeName("Name", "XAUDIO2D_DLL_A")]
-        public const string DDllA = "xaudio2_9d.dll";
+        public const string DDllA = unchecked((string) "xaudio2_9d.dll");
         [NativeName("Type", "")]
         [NativeName("Name", "XAUDIO2D_DLL_W")]
-        public const string DDllW = "xaudio2_9d.dll";
+        public const string DDllW = unchecked((string) "xaudio2_9d.dll");
         [NativeName("Type", "")]
         [NativeName("Name", "XAUDIO2_DLL")]
-        public const string Dll = "xaudio2_9.dll";
+        public const string Dll = unchecked((string) "xaudio2_9.dll");
         [NativeName("Type", "")]
         [NativeName("Name", "XAUDIO2D_DLL")]
-        public const string DDll = "xaudio2_9d.dll";
+        public const string DDll = unchecked((string) "xaudio2_9d.dll");
         [NativeName("Type", "unsigned int")]
         [NativeName("Name", "XAUDIO2_MAX_BUFFER_BYTES")]
         public const uint MaxBufferBytes = unchecked((uint) 0xFFFFFFFF80000000);

@@ -28,7 +28,7 @@ namespace Silk.NET.DXGI
             InfoQueueMessageSeverity? severity = null,
             int? iD = null,
             byte* pDescription = null,
-            uint? descriptionByteLength = null
+            nuint? descriptionByteLength = null
         ) : this()
         {
             if (producer is not null)
@@ -91,6 +91,6 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "SIZE_T")]
         [NativeName("Type.Name", "SIZE_T")]
         [NativeName("Name", "DescriptionByteLength")]
-        public uint DescriptionByteLength;
+        public nuint DescriptionByteLength;
     }
 }

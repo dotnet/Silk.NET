@@ -158,7 +158,7 @@ namespace Silk.NET.BuildTools
                     }
                 }
             }
-            
+
             Profile profile;
             if (ShouldConvert(task.Controls))
             {

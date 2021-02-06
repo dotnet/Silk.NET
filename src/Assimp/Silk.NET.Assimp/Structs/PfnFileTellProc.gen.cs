@@ -21,10 +21,10 @@ namespace Silk.NET.Assimp
     public unsafe readonly struct PfnFileTellProc : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<File*, uint> Handle => (delegate* unmanaged[Cdecl]<File*, uint>) _handle;
+        public delegate* unmanaged[Cdecl]<File*, nuint> Handle => (delegate* unmanaged[Cdecl]<File*, nuint>) _handle;
         public PfnFileTellProc
         (
-            delegate* unmanaged[Cdecl]<File*, uint> ptr
+            delegate* unmanaged[Cdecl]<File*, nuint> ptr
         ) => _handle = ptr;
 
         public PfnFileTellProc
@@ -37,7 +37,7 @@ namespace Silk.NET.Assimp
 
         public static implicit operator nint(PfnFileTellProc pfn) => (nint) pfn.Handle;
         public static explicit operator PfnFileTellProc(nint pfn)
-            => new PfnFileTellProc((delegate* unmanaged[Cdecl]<File*, uint>) pfn);
+            => new PfnFileTellProc((delegate* unmanaged[Cdecl]<File*, nuint>) pfn);
 
         public static implicit operator PfnFileTellProc(FileTellProc proc)
             => new PfnFileTellProc(proc);
@@ -45,10 +45,10 @@ namespace Silk.NET.Assimp
         public static explicit operator FileTellProc(PfnFileTellProc pfn)
             => SilkMarshal.PtrToDelegate<FileTellProc>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<File*, uint>(PfnFileTellProc pfn) => pfn.Handle;
-        public static implicit operator PfnFileTellProc(delegate* unmanaged[Cdecl]<File*, uint> ptr) => new PfnFileTellProc(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<File*, nuint>(PfnFileTellProc pfn) => pfn.Handle;
+        public static implicit operator PfnFileTellProc(delegate* unmanaged[Cdecl]<File*, nuint> ptr) => new PfnFileTellProc(ptr);
     }
 
-    public unsafe delegate uint FileTellProc(File* arg0);
+    public unsafe delegate nuint FileTellProc(File* arg0);
 }
 

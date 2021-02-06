@@ -983,40 +983,40 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInputLayout(InputElementDesc* pInputElementDescs, uint NumElements, void* pShaderBytecodeWithInputSignature, uint BytecodeLength, ID3D11InputLayout** ppInputLayout)
+        public readonly unsafe int CreateInputLayout(InputElementDesc* pInputElementDescs, uint NumElements, void* pShaderBytecodeWithInputSignature, nuint BytecodeLength, ID3D11InputLayout** ppInputLayout)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, InputElementDesc*, uint, void*, uint, ID3D11InputLayout**, int>)LpVtbl[11])(@this, pInputElementDescs, NumElements, pShaderBytecodeWithInputSignature, BytecodeLength, ppInputLayout);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, InputElementDesc*, uint, void*, nuint, ID3D11InputLayout**, int>)LpVtbl[11])(@this, pInputElementDescs, NumElements, pShaderBytecodeWithInputSignature, BytecodeLength, ppInputLayout);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInputLayout(InputElementDesc* pInputElementDescs, uint NumElements, void* pShaderBytecodeWithInputSignature, uint BytecodeLength, ref ID3D11InputLayout* ppInputLayout)
+        public readonly unsafe int CreateInputLayout(InputElementDesc* pInputElementDescs, uint NumElements, void* pShaderBytecodeWithInputSignature, nuint BytecodeLength, ref ID3D11InputLayout* ppInputLayout)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (ID3D11InputLayout** ppInputLayoutPtr = &ppInputLayout)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, InputElementDesc*, uint, void*, uint, ID3D11InputLayout**, int>)LpVtbl[11])(@this, pInputElementDescs, NumElements, pShaderBytecodeWithInputSignature, BytecodeLength, ppInputLayoutPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, InputElementDesc*, uint, void*, nuint, ID3D11InputLayout**, int>)LpVtbl[11])(@this, pInputElementDescs, NumElements, pShaderBytecodeWithInputSignature, BytecodeLength, ppInputLayoutPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInputLayout<T0>(InputElementDesc* pInputElementDescs, uint NumElements, ref T0 pShaderBytecodeWithInputSignature, uint BytecodeLength, ID3D11InputLayout** ppInputLayout) where T0 : unmanaged
+        public readonly unsafe int CreateInputLayout<T0>(InputElementDesc* pInputElementDescs, uint NumElements, ref T0 pShaderBytecodeWithInputSignature, nuint BytecodeLength, ID3D11InputLayout** ppInputLayout) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (T0* pShaderBytecodeWithInputSignaturePtr = &pShaderBytecodeWithInputSignature)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, InputElementDesc*, uint, T0*, uint, ID3D11InputLayout**, int>)LpVtbl[11])(@this, pInputElementDescs, NumElements, pShaderBytecodeWithInputSignaturePtr, BytecodeLength, ppInputLayout);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, InputElementDesc*, uint, T0*, nuint, ID3D11InputLayout**, int>)LpVtbl[11])(@this, pInputElementDescs, NumElements, pShaderBytecodeWithInputSignaturePtr, BytecodeLength, ppInputLayout);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInputLayout<T0>(InputElementDesc* pInputElementDescs, uint NumElements, ref T0 pShaderBytecodeWithInputSignature, uint BytecodeLength, ref ID3D11InputLayout* ppInputLayout) where T0 : unmanaged
+        public readonly unsafe int CreateInputLayout<T0>(InputElementDesc* pInputElementDescs, uint NumElements, ref T0 pShaderBytecodeWithInputSignature, nuint BytecodeLength, ref ID3D11InputLayout* ppInputLayout) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1024,26 +1024,26 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11InputLayout** ppInputLayoutPtr = &ppInputLayout)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, InputElementDesc*, uint, T0*, uint, ID3D11InputLayout**, int>)LpVtbl[11])(@this, pInputElementDescs, NumElements, pShaderBytecodeWithInputSignaturePtr, BytecodeLength, ppInputLayoutPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, InputElementDesc*, uint, T0*, nuint, ID3D11InputLayout**, int>)LpVtbl[11])(@this, pInputElementDescs, NumElements, pShaderBytecodeWithInputSignaturePtr, BytecodeLength, ppInputLayoutPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInputLayout(ref InputElementDesc pInputElementDescs, uint NumElements, void* pShaderBytecodeWithInputSignature, uint BytecodeLength, ID3D11InputLayout** ppInputLayout)
+        public readonly unsafe int CreateInputLayout(ref InputElementDesc pInputElementDescs, uint NumElements, void* pShaderBytecodeWithInputSignature, nuint BytecodeLength, ID3D11InputLayout** ppInputLayout)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (InputElementDesc* pInputElementDescsPtr = &pInputElementDescs)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, InputElementDesc*, uint, void*, uint, ID3D11InputLayout**, int>)LpVtbl[11])(@this, pInputElementDescsPtr, NumElements, pShaderBytecodeWithInputSignature, BytecodeLength, ppInputLayout);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, InputElementDesc*, uint, void*, nuint, ID3D11InputLayout**, int>)LpVtbl[11])(@this, pInputElementDescsPtr, NumElements, pShaderBytecodeWithInputSignature, BytecodeLength, ppInputLayout);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInputLayout(ref InputElementDesc pInputElementDescs, uint NumElements, void* pShaderBytecodeWithInputSignature, uint BytecodeLength, ref ID3D11InputLayout* ppInputLayout)
+        public readonly unsafe int CreateInputLayout(ref InputElementDesc pInputElementDescs, uint NumElements, void* pShaderBytecodeWithInputSignature, nuint BytecodeLength, ref ID3D11InputLayout* ppInputLayout)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1051,14 +1051,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11InputLayout** ppInputLayoutPtr = &ppInputLayout)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, InputElementDesc*, uint, void*, uint, ID3D11InputLayout**, int>)LpVtbl[11])(@this, pInputElementDescsPtr, NumElements, pShaderBytecodeWithInputSignature, BytecodeLength, ppInputLayoutPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, InputElementDesc*, uint, void*, nuint, ID3D11InputLayout**, int>)LpVtbl[11])(@this, pInputElementDescsPtr, NumElements, pShaderBytecodeWithInputSignature, BytecodeLength, ppInputLayoutPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInputLayout<T0>(ref InputElementDesc pInputElementDescs, uint NumElements, ref T0 pShaderBytecodeWithInputSignature, uint BytecodeLength, ID3D11InputLayout** ppInputLayout) where T0 : unmanaged
+        public readonly unsafe int CreateInputLayout<T0>(ref InputElementDesc pInputElementDescs, uint NumElements, ref T0 pShaderBytecodeWithInputSignature, nuint BytecodeLength, ID3D11InputLayout** ppInputLayout) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1066,14 +1066,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (T0* pShaderBytecodeWithInputSignaturePtr = &pShaderBytecodeWithInputSignature)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, InputElementDesc*, uint, T0*, uint, ID3D11InputLayout**, int>)LpVtbl[11])(@this, pInputElementDescsPtr, NumElements, pShaderBytecodeWithInputSignaturePtr, BytecodeLength, ppInputLayout);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, InputElementDesc*, uint, T0*, nuint, ID3D11InputLayout**, int>)LpVtbl[11])(@this, pInputElementDescsPtr, NumElements, pShaderBytecodeWithInputSignaturePtr, BytecodeLength, ppInputLayout);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateInputLayout<T0>(ref InputElementDesc pInputElementDescs, uint NumElements, ref T0 pShaderBytecodeWithInputSignature, uint BytecodeLength, ref ID3D11InputLayout* ppInputLayout) where T0 : unmanaged
+        public readonly unsafe int CreateInputLayout<T0>(ref InputElementDesc pInputElementDescs, uint NumElements, ref T0 pShaderBytecodeWithInputSignature, nuint BytecodeLength, ref ID3D11InputLayout* ppInputLayout) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1083,7 +1083,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11InputLayout** ppInputLayoutPtr = &ppInputLayout)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, InputElementDesc*, uint, T0*, uint, ID3D11InputLayout**, int>)LpVtbl[11])(@this, pInputElementDescsPtr, NumElements, pShaderBytecodeWithInputSignaturePtr, BytecodeLength, ppInputLayoutPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, InputElementDesc*, uint, T0*, nuint, ID3D11InputLayout**, int>)LpVtbl[11])(@this, pInputElementDescsPtr, NumElements, pShaderBytecodeWithInputSignaturePtr, BytecodeLength, ppInputLayoutPtr);
                     }
                 }
             }
@@ -1091,40 +1091,40 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11VertexShader** ppVertexShader)
+        public readonly unsafe int CreateVertexShader(void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11VertexShader** ppVertexShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)LpVtbl[12])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppVertexShader);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)LpVtbl[12])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppVertexShader);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11VertexShader* ppVertexShader)
+        public readonly unsafe int CreateVertexShader(void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11VertexShader* ppVertexShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (ID3D11VertexShader** ppVertexShaderPtr = &ppVertexShader)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)LpVtbl[12])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppVertexShaderPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)LpVtbl[12])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppVertexShaderPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexShader(void* pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11VertexShader** ppVertexShader)
+        public readonly unsafe int CreateVertexShader(void* pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11VertexShader** ppVertexShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)LpVtbl[12])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppVertexShader);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)LpVtbl[12])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppVertexShader);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexShader(void* pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11VertexShader* ppVertexShader)
+        public readonly unsafe int CreateVertexShader(void* pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11VertexShader* ppVertexShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1132,26 +1132,26 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VertexShader** ppVertexShaderPtr = &ppVertexShader)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)LpVtbl[12])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppVertexShaderPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)LpVtbl[12])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppVertexShaderPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11VertexShader** ppVertexShader) where T0 : unmanaged
+        public readonly unsafe int CreateVertexShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11VertexShader** ppVertexShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (T0* pShaderBytecodePtr = &pShaderBytecode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)LpVtbl[12])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppVertexShader);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)LpVtbl[12])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppVertexShader);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11VertexShader* ppVertexShader) where T0 : unmanaged
+        public readonly unsafe int CreateVertexShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11VertexShader* ppVertexShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1159,14 +1159,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11VertexShader** ppVertexShaderPtr = &ppVertexShader)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)LpVtbl[12])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppVertexShaderPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)LpVtbl[12])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppVertexShaderPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11VertexShader** ppVertexShader) where T0 : unmanaged
+        public readonly unsafe int CreateVertexShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11VertexShader** ppVertexShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1174,14 +1174,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)LpVtbl[12])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppVertexShader);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)LpVtbl[12])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppVertexShader);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateVertexShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11VertexShader* ppVertexShader) where T0 : unmanaged
+        public readonly unsafe int CreateVertexShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11VertexShader* ppVertexShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1191,7 +1191,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11VertexShader** ppVertexShaderPtr = &ppVertexShader)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)LpVtbl[12])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppVertexShaderPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11VertexShader**, int>)LpVtbl[12])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppVertexShaderPtr);
                     }
                 }
             }
@@ -1199,40 +1199,40 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
+        public readonly unsafe int CreateGeometryShader(void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[13])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppGeometryShader);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[13])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppGeometryShader);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
+        public readonly unsafe int CreateGeometryShader(void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[13])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppGeometryShaderPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[13])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppGeometryShaderPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShader(void* pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
+        public readonly unsafe int CreateGeometryShader(void* pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[13])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppGeometryShader);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[13])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppGeometryShader);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShader(void* pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
+        public readonly unsafe int CreateGeometryShader(void* pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1240,26 +1240,26 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[13])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppGeometryShaderPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[13])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppGeometryShaderPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+        public readonly unsafe int CreateGeometryShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (T0* pShaderBytecodePtr = &pShaderBytecode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[13])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppGeometryShader);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[13])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppGeometryShader);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+        public readonly unsafe int CreateGeometryShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1267,14 +1267,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[13])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppGeometryShaderPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[13])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppGeometryShaderPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+        public readonly unsafe int CreateGeometryShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1282,14 +1282,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[13])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppGeometryShader);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[13])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppGeometryShader);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+        public readonly unsafe int CreateGeometryShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1299,7 +1299,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[13])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppGeometryShaderPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[13])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppGeometryShaderPtr);
                     }
                 }
             }
@@ -1307,40 +1307,40 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, uint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, uint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, uint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, uint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1348,26 +1348,26 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, uint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (uint* pBufferStridesPtr = &pBufferStrides)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, uint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1375,14 +1375,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, uint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1390,14 +1390,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, uint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1407,7 +1407,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
                     }
                 }
             }
@@ -1415,19 +1415,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, uint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (SODeclarationEntry* pSODeclarationPtr = &pSODeclaration)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, uint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1435,14 +1435,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, uint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1450,14 +1450,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, uint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1467,7 +1467,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
                     }
                 }
             }
@@ -1475,7 +1475,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, uint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1483,14 +1483,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pBufferStridesPtr = &pBufferStrides)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, uint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1500,7 +1500,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
                     }
                 }
             }
@@ -1508,7 +1508,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, uint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1518,7 +1518,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
                     }
                 }
             }
@@ -1526,7 +1526,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, uint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput(void* pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1538,7 +1538,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecode, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
                         }
                     }
                 }
@@ -1547,19 +1547,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, uint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (T0* pShaderBytecodePtr = &pShaderBytecode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, uint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1567,14 +1567,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, uint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1582,14 +1582,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, uint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1599,7 +1599,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
                     }
                 }
             }
@@ -1607,7 +1607,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, uint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1615,14 +1615,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (uint* pBufferStridesPtr = &pBufferStrides)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, uint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1632,7 +1632,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
                     }
                 }
             }
@@ -1640,7 +1640,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, uint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1650,7 +1650,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
                     }
                 }
             }
@@ -1658,7 +1658,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, uint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, SODeclarationEntry* pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1670,7 +1670,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclaration, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
                         }
                     }
                 }
@@ -1679,7 +1679,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1687,14 +1687,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (SODeclarationEntry* pSODeclarationPtr = &pSODeclaration)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1704,7 +1704,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
                     }
                 }
             }
@@ -1712,7 +1712,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1722,7 +1722,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
                     }
                 }
             }
@@ -1730,7 +1730,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, uint* pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1742,7 +1742,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStrides, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
                         }
                     }
                 }
@@ -1751,7 +1751,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1761,7 +1761,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (uint* pBufferStridesPtr = &pBufferStrides)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShader);
                     }
                 }
             }
@@ -1769,7 +1769,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ID3D11ClassLinkage* pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1781,7 +1781,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkage, ppGeometryShaderPtr);
                         }
                     }
                 }
@@ -1790,7 +1790,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ID3D11GeometryShader** ppGeometryShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1802,7 +1802,7 @@ namespace Silk.NET.Direct3D11
                     {
                         fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
                         {
-                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
+                            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShader);
                         }
                     }
                 }
@@ -1811,7 +1811,7 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
+        public readonly unsafe int CreateGeometryShaderWithStreamOutput<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ref SODeclarationEntry pSODeclaration, uint NumEntries, ref uint pBufferStrides, uint NumStrides, uint RasterizedStream, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11GeometryShader* ppGeometryShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1825,7 +1825,7 @@ namespace Silk.NET.Direct3D11
                         {
                             fixed (ID3D11GeometryShader** ppGeometryShaderPtr = &ppGeometryShader)
                             {
-                                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
+                                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, SODeclarationEntry*, uint, uint*, uint, uint, ID3D11ClassLinkage*, ID3D11GeometryShader**, int>)LpVtbl[14])(@this, pShaderBytecodePtr, BytecodeLength, pSODeclarationPtr, NumEntries, pBufferStridesPtr, NumStrides, RasterizedStream, pClassLinkagePtr, ppGeometryShaderPtr);
                             }
                         }
                     }
@@ -1835,40 +1835,40 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePixelShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11PixelShader** ppPixelShader)
+        public readonly unsafe int CreatePixelShader(void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11PixelShader** ppPixelShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)LpVtbl[15])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppPixelShader);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)LpVtbl[15])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppPixelShader);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePixelShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11PixelShader* ppPixelShader)
+        public readonly unsafe int CreatePixelShader(void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11PixelShader* ppPixelShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (ID3D11PixelShader** ppPixelShaderPtr = &ppPixelShader)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)LpVtbl[15])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppPixelShaderPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)LpVtbl[15])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppPixelShaderPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePixelShader(void* pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11PixelShader** ppPixelShader)
+        public readonly unsafe int CreatePixelShader(void* pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11PixelShader** ppPixelShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)LpVtbl[15])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppPixelShader);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)LpVtbl[15])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppPixelShader);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePixelShader(void* pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11PixelShader* ppPixelShader)
+        public readonly unsafe int CreatePixelShader(void* pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11PixelShader* ppPixelShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1876,26 +1876,26 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11PixelShader** ppPixelShaderPtr = &ppPixelShader)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)LpVtbl[15])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppPixelShaderPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)LpVtbl[15])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppPixelShaderPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePixelShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11PixelShader** ppPixelShader) where T0 : unmanaged
+        public readonly unsafe int CreatePixelShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11PixelShader** ppPixelShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (T0* pShaderBytecodePtr = &pShaderBytecode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)LpVtbl[15])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppPixelShader);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)LpVtbl[15])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppPixelShader);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePixelShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11PixelShader* ppPixelShader) where T0 : unmanaged
+        public readonly unsafe int CreatePixelShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11PixelShader* ppPixelShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1903,14 +1903,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11PixelShader** ppPixelShaderPtr = &ppPixelShader)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)LpVtbl[15])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppPixelShaderPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)LpVtbl[15])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppPixelShaderPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePixelShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11PixelShader** ppPixelShader) where T0 : unmanaged
+        public readonly unsafe int CreatePixelShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11PixelShader** ppPixelShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1918,14 +1918,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)LpVtbl[15])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppPixelShader);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)LpVtbl[15])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppPixelShader);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreatePixelShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11PixelShader* ppPixelShader) where T0 : unmanaged
+        public readonly unsafe int CreatePixelShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11PixelShader* ppPixelShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1935,7 +1935,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11PixelShader** ppPixelShaderPtr = &ppPixelShader)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)LpVtbl[15])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppPixelShaderPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11PixelShader**, int>)LpVtbl[15])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppPixelShaderPtr);
                     }
                 }
             }
@@ -1943,40 +1943,40 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateHullShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11HullShader** ppHullShader)
+        public readonly unsafe int CreateHullShader(void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11HullShader** ppHullShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)LpVtbl[16])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppHullShader);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)LpVtbl[16])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppHullShader);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateHullShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11HullShader* ppHullShader)
+        public readonly unsafe int CreateHullShader(void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11HullShader* ppHullShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (ID3D11HullShader** ppHullShaderPtr = &ppHullShader)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)LpVtbl[16])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppHullShaderPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)LpVtbl[16])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppHullShaderPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateHullShader(void* pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11HullShader** ppHullShader)
+        public readonly unsafe int CreateHullShader(void* pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11HullShader** ppHullShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)LpVtbl[16])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppHullShader);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)LpVtbl[16])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppHullShader);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateHullShader(void* pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11HullShader* ppHullShader)
+        public readonly unsafe int CreateHullShader(void* pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11HullShader* ppHullShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -1984,26 +1984,26 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11HullShader** ppHullShaderPtr = &ppHullShader)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)LpVtbl[16])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppHullShaderPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)LpVtbl[16])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppHullShaderPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateHullShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11HullShader** ppHullShader) where T0 : unmanaged
+        public readonly unsafe int CreateHullShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11HullShader** ppHullShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (T0* pShaderBytecodePtr = &pShaderBytecode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)LpVtbl[16])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppHullShader);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)LpVtbl[16])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppHullShader);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateHullShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11HullShader* ppHullShader) where T0 : unmanaged
+        public readonly unsafe int CreateHullShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11HullShader* ppHullShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -2011,14 +2011,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11HullShader** ppHullShaderPtr = &ppHullShader)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)LpVtbl[16])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppHullShaderPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)LpVtbl[16])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppHullShaderPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateHullShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11HullShader** ppHullShader) where T0 : unmanaged
+        public readonly unsafe int CreateHullShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11HullShader** ppHullShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -2026,14 +2026,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)LpVtbl[16])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppHullShader);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)LpVtbl[16])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppHullShader);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateHullShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11HullShader* ppHullShader) where T0 : unmanaged
+        public readonly unsafe int CreateHullShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11HullShader* ppHullShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -2043,7 +2043,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11HullShader** ppHullShaderPtr = &ppHullShader)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)LpVtbl[16])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppHullShaderPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11HullShader**, int>)LpVtbl[16])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppHullShaderPtr);
                     }
                 }
             }
@@ -2051,40 +2051,40 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDomainShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11DomainShader** ppDomainShader)
+        public readonly unsafe int CreateDomainShader(void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11DomainShader** ppDomainShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)LpVtbl[17])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppDomainShader);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)LpVtbl[17])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppDomainShader);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDomainShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11DomainShader* ppDomainShader)
+        public readonly unsafe int CreateDomainShader(void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11DomainShader* ppDomainShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (ID3D11DomainShader** ppDomainShaderPtr = &ppDomainShader)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)LpVtbl[17])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppDomainShaderPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)LpVtbl[17])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppDomainShaderPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDomainShader(void* pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11DomainShader** ppDomainShader)
+        public readonly unsafe int CreateDomainShader(void* pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11DomainShader** ppDomainShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)LpVtbl[17])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppDomainShader);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)LpVtbl[17])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppDomainShader);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDomainShader(void* pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11DomainShader* ppDomainShader)
+        public readonly unsafe int CreateDomainShader(void* pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11DomainShader* ppDomainShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -2092,26 +2092,26 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11DomainShader** ppDomainShaderPtr = &ppDomainShader)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)LpVtbl[17])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppDomainShaderPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)LpVtbl[17])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppDomainShaderPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDomainShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11DomainShader** ppDomainShader) where T0 : unmanaged
+        public readonly unsafe int CreateDomainShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11DomainShader** ppDomainShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (T0* pShaderBytecodePtr = &pShaderBytecode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)LpVtbl[17])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppDomainShader);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)LpVtbl[17])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppDomainShader);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDomainShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11DomainShader* ppDomainShader) where T0 : unmanaged
+        public readonly unsafe int CreateDomainShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11DomainShader* ppDomainShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -2119,14 +2119,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11DomainShader** ppDomainShaderPtr = &ppDomainShader)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)LpVtbl[17])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppDomainShaderPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)LpVtbl[17])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppDomainShaderPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDomainShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11DomainShader** ppDomainShader) where T0 : unmanaged
+        public readonly unsafe int CreateDomainShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11DomainShader** ppDomainShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -2134,14 +2134,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)LpVtbl[17])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppDomainShader);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)LpVtbl[17])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppDomainShader);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateDomainShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11DomainShader* ppDomainShader) where T0 : unmanaged
+        public readonly unsafe int CreateDomainShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11DomainShader* ppDomainShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -2151,7 +2151,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11DomainShader** ppDomainShaderPtr = &ppDomainShader)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)LpVtbl[17])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppDomainShaderPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11DomainShader**, int>)LpVtbl[17])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppDomainShaderPtr);
                     }
                 }
             }
@@ -2159,40 +2159,40 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateComputeShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11ComputeShader** ppComputeShader)
+        public readonly unsafe int CreateComputeShader(void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11ComputeShader** ppComputeShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)LpVtbl[18])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppComputeShader);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)LpVtbl[18])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppComputeShader);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateComputeShader(void* pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11ComputeShader* ppComputeShader)
+        public readonly unsafe int CreateComputeShader(void* pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11ComputeShader* ppComputeShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (ID3D11ComputeShader** ppComputeShaderPtr = &ppComputeShader)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)LpVtbl[18])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppComputeShaderPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)LpVtbl[18])(@this, pShaderBytecode, BytecodeLength, pClassLinkage, ppComputeShaderPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateComputeShader(void* pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11ComputeShader** ppComputeShader)
+        public readonly unsafe int CreateComputeShader(void* pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11ComputeShader** ppComputeShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)LpVtbl[18])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppComputeShader);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)LpVtbl[18])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppComputeShader);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateComputeShader(void* pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11ComputeShader* ppComputeShader)
+        public readonly unsafe int CreateComputeShader(void* pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11ComputeShader* ppComputeShader)
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -2200,26 +2200,26 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11ComputeShader** ppComputeShaderPtr = &ppComputeShader)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, uint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)LpVtbl[18])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppComputeShaderPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, void*, nuint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)LpVtbl[18])(@this, pShaderBytecode, BytecodeLength, pClassLinkagePtr, ppComputeShaderPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateComputeShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11ComputeShader** ppComputeShader) where T0 : unmanaged
+        public readonly unsafe int CreateComputeShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ID3D11ComputeShader** ppComputeShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (T0* pShaderBytecodePtr = &pShaderBytecode)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)LpVtbl[18])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppComputeShader);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)LpVtbl[18])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppComputeShader);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateComputeShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11ComputeShader* ppComputeShader) where T0 : unmanaged
+        public readonly unsafe int CreateComputeShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ID3D11ClassLinkage* pClassLinkage, ref ID3D11ComputeShader* ppComputeShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -2227,14 +2227,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11ComputeShader** ppComputeShaderPtr = &ppComputeShader)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)LpVtbl[18])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppComputeShaderPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)LpVtbl[18])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkage, ppComputeShaderPtr);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateComputeShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11ComputeShader** ppComputeShader) where T0 : unmanaged
+        public readonly unsafe int CreateComputeShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ID3D11ComputeShader** ppComputeShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -2242,14 +2242,14 @@ namespace Silk.NET.Direct3D11
             {
                 fixed (ID3D11ClassLinkage* pClassLinkagePtr = &pClassLinkage)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)LpVtbl[18])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppComputeShader);
+                    ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)LpVtbl[18])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppComputeShader);
                 }
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int CreateComputeShader<T0>(ref T0 pShaderBytecode, uint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11ComputeShader* ppComputeShader) where T0 : unmanaged
+        public readonly unsafe int CreateComputeShader<T0>(ref T0 pShaderBytecode, nuint BytecodeLength, ref ID3D11ClassLinkage pClassLinkage, ref ID3D11ComputeShader* ppComputeShader) where T0 : unmanaged
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
@@ -2259,7 +2259,7 @@ namespace Silk.NET.Direct3D11
                 {
                     fixed (ID3D11ComputeShader** ppComputeShaderPtr = &ppComputeShader)
                     {
-                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, uint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)LpVtbl[18])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppComputeShaderPtr);
+                        ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, T0*, nuint, ID3D11ClassLinkage*, ID3D11ComputeShader**, int>)LpVtbl[18])(@this, pShaderBytecodePtr, BytecodeLength, pClassLinkagePtr, ppComputeShaderPtr);
                     }
                 }
             }

@@ -20,7 +20,7 @@ namespace Silk.NET.Direct3D11
     {
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 1 in d3d11shadertracing.h")]
-        public static unsafe int D3DDisassemble11Trace(this D3D11 thisApi, void* pSrcData, uint SrcDataSize, Span<ID3D11ShaderTrace> pTrace, uint StartStep, uint NumSteps, uint Flags, Silk.NET.Core.Native.ID3D10Blob** ppDisassembly)
+        public static unsafe int D3DDisassemble11Trace(this D3D11 thisApi, void* pSrcData, nuint SrcDataSize, Span<ID3D11ShaderTrace> pTrace, uint StartStep, uint NumSteps, uint Flags, Silk.NET.Core.Native.ID3D10Blob** ppDisassembly)
         {
             // SpanOverloader
             return thisApi.D3DDisassemble11Trace(pSrcData, SrcDataSize, ref pTrace.GetPinnableReference(), StartStep, NumSteps, Flags, ppDisassembly);
@@ -28,7 +28,7 @@ namespace Silk.NET.Direct3D11
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 1 in d3d11shadertracing.h")]
-        public static unsafe int D3DDisassemble11Trace(this D3D11 thisApi, void* pSrcData, uint SrcDataSize, Span<ID3D11ShaderTrace> pTrace, uint StartStep, uint NumSteps, uint Flags, ref Silk.NET.Core.Native.ID3D10Blob* ppDisassembly)
+        public static unsafe int D3DDisassemble11Trace(this D3D11 thisApi, void* pSrcData, nuint SrcDataSize, Span<ID3D11ShaderTrace> pTrace, uint StartStep, uint NumSteps, uint Flags, ref Silk.NET.Core.Native.ID3D10Blob* ppDisassembly)
         {
             // SpanOverloader
             return thisApi.D3DDisassemble11Trace(pSrcData, SrcDataSize, ref pTrace.GetPinnableReference(), StartStep, NumSteps, Flags, ref ppDisassembly);
@@ -36,7 +36,7 @@ namespace Silk.NET.Direct3D11
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 1 in d3d11shadertracing.h")]
-        public static unsafe int D3DDisassemble11Trace<T0>(this D3D11 thisApi, Span<T0> pSrcData, uint SrcDataSize, ID3D11ShaderTrace* pTrace, uint StartStep, uint NumSteps, uint Flags, Silk.NET.Core.Native.ID3D10Blob** ppDisassembly) where T0 : unmanaged
+        public static unsafe int D3DDisassemble11Trace<T0>(this D3D11 thisApi, Span<T0> pSrcData, nuint SrcDataSize, ID3D11ShaderTrace* pTrace, uint StartStep, uint NumSteps, uint Flags, Silk.NET.Core.Native.ID3D10Blob** ppDisassembly) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.D3DDisassemble11Trace(ref pSrcData.GetPinnableReference(), SrcDataSize, pTrace, StartStep, NumSteps, Flags, ppDisassembly);
@@ -44,7 +44,7 @@ namespace Silk.NET.Direct3D11
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 1 in d3d11shadertracing.h")]
-        public static unsafe int D3DDisassemble11Trace<T0>(this D3D11 thisApi, Span<T0> pSrcData, uint SrcDataSize, ID3D11ShaderTrace* pTrace, uint StartStep, uint NumSteps, uint Flags, ref Silk.NET.Core.Native.ID3D10Blob* ppDisassembly) where T0 : unmanaged
+        public static unsafe int D3DDisassemble11Trace<T0>(this D3D11 thisApi, Span<T0> pSrcData, nuint SrcDataSize, ID3D11ShaderTrace* pTrace, uint StartStep, uint NumSteps, uint Flags, ref Silk.NET.Core.Native.ID3D10Blob* ppDisassembly) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.D3DDisassemble11Trace(ref pSrcData.GetPinnableReference(), SrcDataSize, pTrace, StartStep, NumSteps, Flags, ref ppDisassembly);
@@ -52,7 +52,7 @@ namespace Silk.NET.Direct3D11
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 1 in d3d11shadertracing.h")]
-        public static unsafe int D3DDisassemble11Trace<T0>(this D3D11 thisApi, Span<T0> pSrcData, uint SrcDataSize, Span<ID3D11ShaderTrace> pTrace, uint StartStep, uint NumSteps, uint Flags, Silk.NET.Core.Native.ID3D10Blob** ppDisassembly) where T0 : unmanaged
+        public static unsafe int D3DDisassemble11Trace<T0>(this D3D11 thisApi, Span<T0> pSrcData, nuint SrcDataSize, Span<ID3D11ShaderTrace> pTrace, uint StartStep, uint NumSteps, uint Flags, Silk.NET.Core.Native.ID3D10Blob** ppDisassembly) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.D3DDisassemble11Trace(ref pSrcData.GetPinnableReference(), SrcDataSize, ref pTrace.GetPinnableReference(), StartStep, NumSteps, Flags, ppDisassembly);
@@ -60,7 +60,7 @@ namespace Silk.NET.Direct3D11
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 548, Column 1 in d3d11shadertracing.h")]
-        public static unsafe int D3DDisassemble11Trace<T0>(this D3D11 thisApi, Span<T0> pSrcData, uint SrcDataSize, Span<ID3D11ShaderTrace> pTrace, uint StartStep, uint NumSteps, uint Flags, ref Silk.NET.Core.Native.ID3D10Blob* ppDisassembly) where T0 : unmanaged
+        public static unsafe int D3DDisassemble11Trace<T0>(this D3D11 thisApi, Span<T0> pSrcData, nuint SrcDataSize, Span<ID3D11ShaderTrace> pTrace, uint StartStep, uint NumSteps, uint Flags, ref Silk.NET.Core.Native.ID3D10Blob* ppDisassembly) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.D3DDisassemble11Trace(ref pSrcData.GetPinnableReference(), SrcDataSize, ref pTrace.GetPinnableReference(), StartStep, NumSteps, Flags, ref ppDisassembly);

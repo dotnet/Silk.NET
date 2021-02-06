@@ -119,43 +119,43 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetSourceRect(Silk.NET.Maths.Rectangle<long>* pRect)
+        public readonly unsafe int SetSourceRect(Silk.NET.Maths.Rectangle<int>* pRect)
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<long>*, int>)LpVtbl[4])(@this, pRect);
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[4])(@this, pRect);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetSourceRect(ref Silk.NET.Maths.Rectangle<long> pRect)
+        public readonly int SetSourceRect(ref Silk.NET.Maths.Rectangle<int> pRect)
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<long>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<long>*, int>)LpVtbl[4])(@this, pRectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[4])(@this, pRectPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetTargetRect(Silk.NET.Maths.Rectangle<long>* pRect)
+        public readonly unsafe int SetTargetRect(Silk.NET.Maths.Rectangle<int>* pRect)
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<long>*, int>)LpVtbl[5])(@this, pRect);
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, pRect);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetTargetRect(ref Silk.NET.Maths.Rectangle<long> pRect)
+        public readonly int SetTargetRect(ref Silk.NET.Maths.Rectangle<int> pRect)
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<long>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<long>*, int>)LpVtbl[5])(@this, pRectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[5])(@this, pRectPtr);
             }
             return ret;
         }
@@ -170,43 +170,43 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSourceRect(Silk.NET.Maths.Rectangle<long>* pRect)
+        public readonly unsafe int GetSourceRect(Silk.NET.Maths.Rectangle<int>* pRect)
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<long>*, int>)LpVtbl[7])(@this, pRect);
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[7])(@this, pRect);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetSourceRect(ref Silk.NET.Maths.Rectangle<long> pRect)
+        public readonly int GetSourceRect(ref Silk.NET.Maths.Rectangle<int> pRect)
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<long>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<long>*, int>)LpVtbl[7])(@this, pRectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[7])(@this, pRectPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTargetRect(Silk.NET.Maths.Rectangle<long>* pRect)
+        public readonly unsafe int GetTargetRect(Silk.NET.Maths.Rectangle<int>* pRect)
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<long>*, int>)LpVtbl[8])(@this, pRect);
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[8])(@this, pRect);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetTargetRect(ref Silk.NET.Maths.Rectangle<long> pRect)
+        public readonly int GetTargetRect(ref Silk.NET.Maths.Rectangle<int> pRect)
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (Silk.NET.Maths.Rectangle<long>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<long>*, int>)LpVtbl[8])(@this, pRectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, Silk.NET.Maths.Rectangle<int>*, int>)LpVtbl[8])(@this, pRectPtr);
             }
             return ret;
         }

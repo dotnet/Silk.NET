@@ -20,13 +20,13 @@ namespace Silk.NET.XInput
     {
         [NativeName("Type", "")]
         [NativeName("Name", "XINPUT_DLL_A")]
-        public const string DllA = "xinput1_4.dll";
+        public const string DllA = unchecked((string) "xinput1_4.dll");
         [NativeName("Type", "")]
         [NativeName("Name", "XINPUT_DLL_W")]
-        public const string DllW = "xinput1_4.dll";
+        public const string DllW = unchecked((string) "xinput1_4.dll");
         [NativeName("Type", "")]
         [NativeName("Name", "XINPUT_DLL")]
-        public const string Dll = "xinput1_4.dll";
+        public const string Dll = unchecked((string) "xinput1_4.dll");
         [NativeName("Type", "int")]
         [NativeName("Name", "XINPUT_DEVTYPE_GAMEPAD")]
         public const int DevtypeGamepad = unchecked((int) 0x1);

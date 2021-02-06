@@ -1201,31 +1201,31 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly uint GetSerializedSize()
+        public readonly nuint GetSerializedSize()
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, uint>)LpVtbl[11])(@this);
+                nuint ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, nuint>)LpVtbl[11])(@this);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Serialize(void* pData, uint DataSizeInBytes)
+        public readonly unsafe int Serialize(void* pData, nuint DataSizeInBytes)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, void*, uint, int>)LpVtbl[12])(@this, pData, DataSizeInBytes);
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, void*, nuint, int>)LpVtbl[12])(@this, pData, DataSizeInBytes);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Serialize<T0>(ref T0 pData, uint DataSizeInBytes) where T0 : unmanaged
+        public readonly int Serialize<T0>(ref T0 pData, nuint DataSizeInBytes) where T0 : unmanaged
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, T0*, uint, int>)LpVtbl[12])(@this, pDataPtr, DataSizeInBytes);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, T0*, nuint, int>)LpVtbl[12])(@this, pDataPtr, DataSizeInBytes);
             }
             return ret;
         }
