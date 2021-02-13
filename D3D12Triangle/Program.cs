@@ -19,11 +19,14 @@ namespace D3D12Triangle
             {
                 pSample.OnInit
                 (
-                    Format.FormatUnknown, new Vector4(0.0f, 0.2f, 0.4f, 1.0f), Format.FormatUnknown, 1, 2, window,
+                    Format.FormatUnknown, Vector4.Zero, Format.FormatUnknown, 1, 2, window,
                     args.Any(y => y.Equals("--use-warp-device", StringComparison.OrdinalIgnoreCase))
                 );
             };
-            window.Closing += () => { pSample.OnDestroy(); };
+            window.Closing += pSample.OnDestroy;
+            window.Render += _ => pSample.OnRender();
+            window.Update += _ => pSample.OnUpdate();
+            window.Resize += pSample.OnWindowSizeChanged;
             window.Run();
         }
     }

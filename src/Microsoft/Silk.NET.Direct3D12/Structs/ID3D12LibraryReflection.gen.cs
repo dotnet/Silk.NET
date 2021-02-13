@@ -47,7 +47,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (ID3D12LibraryReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12LibraryReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -56,7 +56,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (ID3D12LibraryReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12LibraryReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -68,7 +68,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (ID3D12LibraryReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12LibraryReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -80,7 +80,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (ID3D12LibraryReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -95,7 +95,7 @@ namespace Silk.NET.Direct3D12
         public readonly uint AddRef()
         {
             var @this = (ID3D12LibraryReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12LibraryReflection*, uint>)LpVtbl[1])(@this);
             return ret;
         }
@@ -104,7 +104,7 @@ namespace Silk.NET.Direct3D12
         public readonly uint Release()
         {
             var @this = (ID3D12LibraryReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12LibraryReflection*, uint>)LpVtbl[2])(@this);
             return ret;
         }
@@ -113,7 +113,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetDesc(LibraryDesc* pDesc)
         {
             var @this = (ID3D12LibraryReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12LibraryReflection*, LibraryDesc*, int>)LpVtbl[3])(@this, pDesc);
             return ret;
         }
@@ -122,7 +122,7 @@ namespace Silk.NET.Direct3D12
         public readonly int GetDesc(ref LibraryDesc pDesc)
         {
             var @this = (ID3D12LibraryReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (LibraryDesc* pDescPtr = &pDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12LibraryReflection*, LibraryDesc*, int>)LpVtbl[3])(@this, pDescPtr);
@@ -134,7 +134,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe ID3D12FunctionReflection* GetFunctionByIndex(int FunctionIndex)
         {
             var @this = (ID3D12LibraryReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                ID3D12FunctionReflection* ret = default;
+            ID3D12FunctionReflection* ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12LibraryReflection*, int, ID3D12FunctionReflection*>)LpVtbl[4])(@this, FunctionIndex);
             return ret;
         }

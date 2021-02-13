@@ -47,7 +47,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -56,7 +56,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -68,7 +68,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -80,7 +80,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -95,7 +95,7 @@ namespace Silk.NET.Direct3D12
         public readonly uint AddRef()
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, uint>)LpVtbl[1])(@this);
             return ret;
         }
@@ -104,7 +104,7 @@ namespace Silk.NET.Direct3D12
         public readonly uint Release()
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, uint>)LpVtbl[2])(@this);
             return ret;
         }
@@ -113,7 +113,7 @@ namespace Silk.NET.Direct3D12
         public readonly int SetMessageCountLimit(ulong MessageCountLimit)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, ulong, int>)LpVtbl[3])(@this, MessageCountLimit);
             return ret;
         }
@@ -129,7 +129,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetMessageA(ulong MessageIndex, Message* pMessage, nuint* pMessageByteLength)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, ulong, Message*, nuint*, int>)LpVtbl[5])(@this, MessageIndex, pMessage, pMessageByteLength);
             return ret;
         }
@@ -138,7 +138,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetMessageA(ulong MessageIndex, Message* pMessage, ref nuint pMessageByteLength)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (nuint* pMessageByteLengthPtr = &pMessageByteLength)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, ulong, Message*, nuint*, int>)LpVtbl[5])(@this, MessageIndex, pMessage, pMessageByteLengthPtr);
@@ -150,7 +150,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetMessageA(ulong MessageIndex, ref Message pMessage, nuint* pMessageByteLength)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Message* pMessagePtr = &pMessage)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, ulong, Message*, nuint*, int>)LpVtbl[5])(@this, MessageIndex, pMessagePtr, pMessageByteLength);
@@ -162,7 +162,7 @@ namespace Silk.NET.Direct3D12
         public readonly int GetMessageA(ulong MessageIndex, ref Message pMessage, ref nuint pMessageByteLength)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Message* pMessagePtr = &pMessage)
             {
                 fixed (nuint* pMessageByteLengthPtr = &pMessageByteLength)
@@ -177,7 +177,7 @@ namespace Silk.NET.Direct3D12
         public readonly ulong GetNumMessagesAllowedByStorageFilter()
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                ulong ret = default;
+            ulong ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, ulong>)LpVtbl[6])(@this);
             return ret;
         }
@@ -186,7 +186,7 @@ namespace Silk.NET.Direct3D12
         public readonly ulong GetNumMessagesDeniedByStorageFilter()
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                ulong ret = default;
+            ulong ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, ulong>)LpVtbl[7])(@this);
             return ret;
         }
@@ -195,7 +195,7 @@ namespace Silk.NET.Direct3D12
         public readonly ulong GetNumStoredMessages()
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                ulong ret = default;
+            ulong ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, ulong>)LpVtbl[8])(@this);
             return ret;
         }
@@ -204,7 +204,7 @@ namespace Silk.NET.Direct3D12
         public readonly ulong GetNumStoredMessagesAllowedByRetrievalFilter()
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                ulong ret = default;
+            ulong ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, ulong>)LpVtbl[9])(@this);
             return ret;
         }
@@ -213,7 +213,7 @@ namespace Silk.NET.Direct3D12
         public readonly ulong GetNumMessagesDiscardedByMessageCountLimit()
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                ulong ret = default;
+            ulong ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, ulong>)LpVtbl[10])(@this);
             return ret;
         }
@@ -222,7 +222,7 @@ namespace Silk.NET.Direct3D12
         public readonly ulong GetMessageCountLimit()
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                ulong ret = default;
+            ulong ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, ulong>)LpVtbl[11])(@this);
             return ret;
         }
@@ -231,7 +231,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int AddStorageFilterEntries(InfoQueueFilter* pFilter)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, InfoQueueFilter*, int>)LpVtbl[12])(@this, pFilter);
             return ret;
         }
@@ -240,7 +240,7 @@ namespace Silk.NET.Direct3D12
         public readonly int AddStorageFilterEntries(ref InfoQueueFilter pFilter)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, InfoQueueFilter*, int>)LpVtbl[12])(@this, pFilterPtr);
@@ -252,7 +252,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetStorageFilter(InfoQueueFilter* pFilter, nuint* pFilterByteLength)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, pFilter, pFilterByteLength);
             return ret;
         }
@@ -261,7 +261,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetStorageFilter(InfoQueueFilter* pFilter, ref nuint pFilterByteLength)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (nuint* pFilterByteLengthPtr = &pFilterByteLength)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, pFilter, pFilterByteLengthPtr);
@@ -273,7 +273,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetStorageFilter(ref InfoQueueFilter pFilter, nuint* pFilterByteLength)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, InfoQueueFilter*, nuint*, int>)LpVtbl[13])(@this, pFilterPtr, pFilterByteLength);
@@ -285,7 +285,7 @@ namespace Silk.NET.Direct3D12
         public readonly int GetStorageFilter(ref InfoQueueFilter pFilter, ref nuint pFilterByteLength)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
                 fixed (nuint* pFilterByteLengthPtr = &pFilterByteLength)
@@ -307,7 +307,7 @@ namespace Silk.NET.Direct3D12
         public readonly int PushEmptyStorageFilter()
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, int>)LpVtbl[15])(@this);
             return ret;
         }
@@ -316,7 +316,7 @@ namespace Silk.NET.Direct3D12
         public readonly int PushCopyOfStorageFilter()
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, int>)LpVtbl[16])(@this);
             return ret;
         }
@@ -325,7 +325,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int PushStorageFilter(InfoQueueFilter* pFilter)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, InfoQueueFilter*, int>)LpVtbl[17])(@this, pFilter);
             return ret;
         }
@@ -334,7 +334,7 @@ namespace Silk.NET.Direct3D12
         public readonly int PushStorageFilter(ref InfoQueueFilter pFilter)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, InfoQueueFilter*, int>)LpVtbl[17])(@this, pFilterPtr);
@@ -353,7 +353,7 @@ namespace Silk.NET.Direct3D12
         public readonly uint GetStorageFilterStackSize()
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, uint>)LpVtbl[19])(@this);
             return ret;
         }
@@ -362,7 +362,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int AddRetrievalFilterEntries(InfoQueueFilter* pFilter)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, InfoQueueFilter*, int>)LpVtbl[20])(@this, pFilter);
             return ret;
         }
@@ -371,7 +371,7 @@ namespace Silk.NET.Direct3D12
         public readonly int AddRetrievalFilterEntries(ref InfoQueueFilter pFilter)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, InfoQueueFilter*, int>)LpVtbl[20])(@this, pFilterPtr);
@@ -383,7 +383,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetRetrievalFilter(InfoQueueFilter* pFilter, nuint* pFilterByteLength)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, InfoQueueFilter*, nuint*, int>)LpVtbl[21])(@this, pFilter, pFilterByteLength);
             return ret;
         }
@@ -392,7 +392,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetRetrievalFilter(InfoQueueFilter* pFilter, ref nuint pFilterByteLength)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (nuint* pFilterByteLengthPtr = &pFilterByteLength)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, InfoQueueFilter*, nuint*, int>)LpVtbl[21])(@this, pFilter, pFilterByteLengthPtr);
@@ -404,7 +404,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetRetrievalFilter(ref InfoQueueFilter pFilter, nuint* pFilterByteLength)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, InfoQueueFilter*, nuint*, int>)LpVtbl[21])(@this, pFilterPtr, pFilterByteLength);
@@ -416,7 +416,7 @@ namespace Silk.NET.Direct3D12
         public readonly int GetRetrievalFilter(ref InfoQueueFilter pFilter, ref nuint pFilterByteLength)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
                 fixed (nuint* pFilterByteLengthPtr = &pFilterByteLength)
@@ -438,7 +438,7 @@ namespace Silk.NET.Direct3D12
         public readonly int PushEmptyRetrievalFilter()
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, int>)LpVtbl[23])(@this);
             return ret;
         }
@@ -447,7 +447,7 @@ namespace Silk.NET.Direct3D12
         public readonly int PushCopyOfRetrievalFilter()
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, int>)LpVtbl[24])(@this);
             return ret;
         }
@@ -456,7 +456,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int PushRetrievalFilter(InfoQueueFilter* pFilter)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, InfoQueueFilter*, int>)LpVtbl[25])(@this, pFilter);
             return ret;
         }
@@ -465,7 +465,7 @@ namespace Silk.NET.Direct3D12
         public readonly int PushRetrievalFilter(ref InfoQueueFilter pFilter)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (InfoQueueFilter* pFilterPtr = &pFilter)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, InfoQueueFilter*, int>)LpVtbl[25])(@this, pFilterPtr);
@@ -484,7 +484,7 @@ namespace Silk.NET.Direct3D12
         public readonly uint GetRetrievalFilterStackSize()
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, uint>)LpVtbl[27])(@this);
             return ret;
         }
@@ -493,7 +493,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int AddMessage(MessageCategory Category, MessageSeverity Severity, MessageID ID, byte* pDescription)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, MessageCategory, MessageSeverity, MessageID, byte*, int>)LpVtbl[28])(@this, Category, Severity, ID, pDescription);
             return ret;
         }
@@ -502,7 +502,7 @@ namespace Silk.NET.Direct3D12
         public readonly int AddMessage(MessageCategory Category, MessageSeverity Severity, MessageID ID, ref byte pDescription)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (byte* pDescriptionPtr = &pDescription)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, MessageCategory, MessageSeverity, MessageID, byte*, int>)LpVtbl[28])(@this, Category, Severity, ID, pDescriptionPtr);
@@ -514,7 +514,7 @@ namespace Silk.NET.Direct3D12
         public readonly int AddMessage(MessageCategory Category, MessageSeverity Severity, MessageID ID, string pDescription)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(pDescription);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, MessageCategory, MessageSeverity, MessageID, byte*, int>)LpVtbl[28])(@this, Category, Severity, ID, pDescriptionPtr);
             Marshal.FreeHGlobal((nint)pDescriptionPtr);
@@ -525,7 +525,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int AddApplicationMessage(MessageSeverity Severity, byte* pDescription)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, MessageSeverity, byte*, int>)LpVtbl[29])(@this, Severity, pDescription);
             return ret;
         }
@@ -534,7 +534,7 @@ namespace Silk.NET.Direct3D12
         public readonly int AddApplicationMessage(MessageSeverity Severity, ref byte pDescription)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (byte* pDescriptionPtr = &pDescription)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, MessageSeverity, byte*, int>)LpVtbl[29])(@this, Severity, pDescriptionPtr);
@@ -546,7 +546,7 @@ namespace Silk.NET.Direct3D12
         public readonly int AddApplicationMessage(MessageSeverity Severity, string pDescription)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pDescriptionPtr = (byte*) Marshal.StringToHGlobalAnsi(pDescription);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, MessageSeverity, byte*, int>)LpVtbl[29])(@this, Severity, pDescriptionPtr);
             Marshal.FreeHGlobal((nint)pDescriptionPtr);
@@ -557,7 +557,7 @@ namespace Silk.NET.Direct3D12
         public readonly int SetBreakOnCategory(MessageCategory Category, int bEnable)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, MessageCategory, int, int>)LpVtbl[30])(@this, Category, bEnable);
             return ret;
         }
@@ -566,7 +566,7 @@ namespace Silk.NET.Direct3D12
         public readonly int SetBreakOnSeverity(MessageSeverity Severity, int bEnable)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, MessageSeverity, int, int>)LpVtbl[31])(@this, Severity, bEnable);
             return ret;
         }
@@ -575,7 +575,7 @@ namespace Silk.NET.Direct3D12
         public readonly int SetBreakOnID(MessageID ID, int bEnable)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, MessageID, int, int>)LpVtbl[32])(@this, ID, bEnable);
             return ret;
         }
@@ -584,7 +584,7 @@ namespace Silk.NET.Direct3D12
         public readonly int GetBreakOnCategory(MessageCategory Category)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, MessageCategory, int>)LpVtbl[33])(@this, Category);
             return ret;
         }
@@ -593,7 +593,7 @@ namespace Silk.NET.Direct3D12
         public readonly int GetBreakOnSeverity(MessageSeverity Severity)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, MessageSeverity, int>)LpVtbl[34])(@this, Severity);
             return ret;
         }
@@ -602,7 +602,7 @@ namespace Silk.NET.Direct3D12
         public readonly int GetBreakOnID(MessageID ID)
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, MessageID, int>)LpVtbl[35])(@this, ID);
             return ret;
         }
@@ -618,7 +618,7 @@ namespace Silk.NET.Direct3D12
         public readonly int GetMuteDebugOutput()
         {
             var @this = (ID3D12InfoQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12InfoQueue*, int>)LpVtbl[37])(@this);
             return ret;
         }

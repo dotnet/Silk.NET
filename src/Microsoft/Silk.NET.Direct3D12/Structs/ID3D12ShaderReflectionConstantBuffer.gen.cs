@@ -44,7 +44,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetDesc(ShaderBufferDesc* pDesc)
         {
             var @this = (ID3D12ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderReflectionConstantBuffer*, ShaderBufferDesc*, int>)LpVtbl[0])(@this, pDesc);
             return ret;
         }
@@ -53,7 +53,7 @@ namespace Silk.NET.Direct3D12
         public readonly int GetDesc(ref ShaderBufferDesc pDesc)
         {
             var @this = (ID3D12ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ShaderBufferDesc* pDescPtr = &pDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderReflectionConstantBuffer*, ShaderBufferDesc*, int>)LpVtbl[0])(@this, pDescPtr);
@@ -65,7 +65,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe ID3D12ShaderReflectionVariable* GetVariableByIndex(uint Index)
         {
             var @this = (ID3D12ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                ID3D12ShaderReflectionVariable* ret = default;
+            ID3D12ShaderReflectionVariable* ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderReflectionConstantBuffer*, uint, ID3D12ShaderReflectionVariable*>)LpVtbl[1])(@this, Index);
             return ret;
         }
@@ -74,7 +74,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe ID3D12ShaderReflectionVariable* GetVariableByName(byte* Name)
         {
             var @this = (ID3D12ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                ID3D12ShaderReflectionVariable* ret = default;
+            ID3D12ShaderReflectionVariable* ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderReflectionConstantBuffer*, byte*, ID3D12ShaderReflectionVariable*>)LpVtbl[2])(@this, Name);
             return ret;
         }
@@ -83,7 +83,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe ID3D12ShaderReflectionVariable* GetVariableByName(ref byte Name)
         {
             var @this = (ID3D12ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                ID3D12ShaderReflectionVariable* ret = default;
+            ID3D12ShaderReflectionVariable* ret = default;
             fixed (byte* NamePtr = &Name)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderReflectionConstantBuffer*, byte*, ID3D12ShaderReflectionVariable*>)LpVtbl[2])(@this, NamePtr);
@@ -95,7 +95,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe ID3D12ShaderReflectionVariable* GetVariableByName(string Name)
         {
             var @this = (ID3D12ShaderReflectionConstantBuffer*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                ID3D12ShaderReflectionVariable* ret = default;
+            ID3D12ShaderReflectionVariable* ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderReflectionConstantBuffer*, byte*, ID3D12ShaderReflectionVariable*>)LpVtbl[2])(@this, NamePtr);
             Marshal.FreeHGlobal((nint)NamePtr);

@@ -47,7 +47,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -56,7 +56,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -68,7 +68,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -80,7 +80,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -95,7 +95,7 @@ namespace Silk.NET.DXGI
         public readonly uint AddRef()
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, uint>)LpVtbl[1])(@this);
             return ret;
         }
@@ -104,7 +104,7 @@ namespace Silk.NET.DXGI
         public readonly uint Release()
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, uint>)LpVtbl[2])(@this);
             return ret;
         }
@@ -113,7 +113,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurface, pDesc, pRestrictToOutput, ppSwapChain);
             return ret;
         }
@@ -122,7 +122,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurface, pDesc, pRestrictToOutput, ppSwapChainPtr);
@@ -134,7 +134,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurface, pDesc, pRestrictToOutputPtr, ppSwapChain);
@@ -146,7 +146,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
             {
                 fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
@@ -161,7 +161,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (SwapChainDesc1* pDescPtr = &pDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurface, pDescPtr, pRestrictToOutput, ppSwapChain);
@@ -173,7 +173,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (SwapChainDesc1* pDescPtr = &pDesc)
             {
                 fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
@@ -188,7 +188,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (SwapChainDesc1* pDescPtr = &pDesc)
             {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
@@ -203,7 +203,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (SwapChainDesc1* pDescPtr = &pDesc)
             {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
@@ -221,7 +221,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevice, hSurfacePtr, pDesc, pRestrictToOutput, ppSwapChain);
@@ -233,7 +233,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
@@ -248,7 +248,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
@@ -263,7 +263,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
@@ -281,7 +281,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (SwapChainDesc1* pDescPtr = &pDesc)
@@ -296,7 +296,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (SwapChainDesc1* pDescPtr = &pDesc)
@@ -314,7 +314,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (SwapChainDesc1* pDescPtr = &pDesc)
@@ -332,7 +332,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (SwapChainDesc1* pDescPtr = &pDesc)
@@ -353,7 +353,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, SwapChainDesc1*, IDXGIOutput*, IDXGISwapChain1**, int>)LpVtbl[3])(@this, pDevicePtr, hSurface, pDesc, pRestrictToOutput, ppSwapChain);
@@ -365,7 +365,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (IDXGISwapChain1** ppSwapChainPtr = &ppSwapChain)
@@ -380,7 +380,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
@@ -395,7 +395,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
@@ -413,7 +413,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (SwapChainDesc1* pDescPtr = &pDesc)
@@ -428,7 +428,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (SwapChainDesc1* pDescPtr = &pDesc)
@@ -446,7 +446,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (SwapChainDesc1* pDescPtr = &pDesc)
@@ -464,7 +464,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (SwapChainDesc1* pDescPtr = &pDesc)
@@ -485,7 +485,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -500,7 +500,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -518,7 +518,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -536,7 +536,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, SwapChainDesc1* pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -557,7 +557,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -575,7 +575,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, IDXGIOutput* pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -596,7 +596,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, IDXGISwapChain1** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -617,7 +617,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref SwapChainDesc1 pDesc, ref IDXGIOutput pRestrictToOutput, ref IDXGISwapChain1* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -641,7 +641,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
             return ret;
         }
@@ -650,7 +650,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChainPtr);
@@ -662,7 +662,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutputPtr, ppSwapChain);
@@ -674,7 +674,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
             {
                 fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
@@ -689,7 +689,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDesc, pYuvDecodeBuffersPtr, pRestrictToOutput, ppSwapChain);
@@ -701,7 +701,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
             {
                 fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
@@ -716,7 +716,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
             {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
@@ -731,7 +731,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
             {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
@@ -749,7 +749,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurface, pDescPtr, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
@@ -761,7 +761,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
             {
                 fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
@@ -776,7 +776,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
             {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
@@ -791,7 +791,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
             {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
@@ -809,7 +809,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
             {
                 fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
@@ -824,7 +824,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
             {
                 fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
@@ -842,7 +842,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
             {
                 fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
@@ -860,7 +860,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(Silk.NET.Core.Native.IUnknown* pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
             {
                 fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
@@ -881,7 +881,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, T0*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevice, hSurfacePtr, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
@@ -893,7 +893,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
@@ -908,7 +908,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
@@ -923,7 +923,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
@@ -941,7 +941,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
@@ -956,7 +956,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
@@ -974,7 +974,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
@@ -992,7 +992,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
@@ -1013,7 +1013,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
@@ -1028,7 +1028,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
@@ -1046,7 +1046,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
@@ -1064,7 +1064,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
@@ -1085,7 +1085,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
@@ -1103,7 +1103,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
@@ -1124,7 +1124,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
@@ -1145,7 +1145,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(Silk.NET.Core.Native.IUnknown* pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hSurfacePtr = &hSurface)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
@@ -1169,7 +1169,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIFactoryMedia*, Silk.NET.Core.Native.IUnknown*, void*, DecodeSwapChainDesc*, IDXGIResource*, IDXGIOutput*, IDXGIDecodeSwapChain**, int>)LpVtbl[4])(@this, pDevicePtr, hSurface, pDesc, pYuvDecodeBuffers, pRestrictToOutput, ppSwapChain);
@@ -1181,7 +1181,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (IDXGIDecodeSwapChain** ppSwapChainPtr = &ppSwapChain)
@@ -1196,7 +1196,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
@@ -1211,7 +1211,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (IDXGIOutput* pRestrictToOutputPtr = &pRestrictToOutput)
@@ -1229,7 +1229,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
@@ -1244,7 +1244,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
@@ -1262,7 +1262,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
@@ -1280,7 +1280,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (IDXGIResource* pYuvDecodeBuffersPtr = &pYuvDecodeBuffers)
@@ -1301,7 +1301,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
@@ -1316,7 +1316,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
@@ -1334,7 +1334,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
@@ -1352,7 +1352,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
@@ -1373,7 +1373,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
@@ -1391,7 +1391,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
@@ -1412,7 +1412,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
@@ -1433,7 +1433,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle(ref Silk.NET.Core.Native.IUnknown pDevice, void* hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain)
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (DecodeSwapChainDesc* pDescPtr = &pDesc)
@@ -1457,7 +1457,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -1472,7 +1472,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -1490,7 +1490,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -1508,7 +1508,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -1529,7 +1529,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -1547,7 +1547,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -1568,7 +1568,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -1589,7 +1589,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, DecodeSwapChainDesc* pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -1613,7 +1613,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -1631,7 +1631,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -1652,7 +1652,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -1673,7 +1673,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, IDXGIResource* pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -1697,7 +1697,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -1718,7 +1718,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, IDXGIOutput* pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -1742,7 +1742,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, IDXGIDecodeSwapChain** ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)
@@ -1766,7 +1766,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CreateDecodeSwapChainForCompositionSurfaceHandle<T0>(ref Silk.NET.Core.Native.IUnknown pDevice, ref T0 hSurface, ref DecodeSwapChainDesc pDesc, ref IDXGIResource pYuvDecodeBuffers, ref IDXGIOutput pRestrictToOutput, ref IDXGIDecodeSwapChain* ppSwapChain) where T0 : unmanaged
         {
             var @this = (IDXGIFactoryMedia*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDevicePtr = &pDevice)
             {
                 fixed (T0* hSurfacePtr = &hSurface)

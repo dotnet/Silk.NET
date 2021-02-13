@@ -56,7 +56,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -65,7 +65,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -77,7 +77,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -89,7 +89,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -104,7 +104,7 @@ namespace Silk.NET.Direct3D12
         public readonly uint AddRef()
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint>)LpVtbl[1])(@this);
             return ret;
         }
@@ -113,7 +113,7 @@ namespace Silk.NET.Direct3D12
         public readonly uint Release()
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint>)LpVtbl[2])(@this);
             return ret;
         }
@@ -122,7 +122,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetPrivateData(Guid* guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSize, pData);
             return ret;
         }
@@ -131,7 +131,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetPrivateData<T0>(Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, Guid*, uint*, T0*, int>)LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
@@ -143,7 +143,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetPrivateData(Guid* guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pData);
@@ -155,7 +155,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetPrivateData<T0>(Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -170,7 +170,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetPrivateData(ref Guid guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pData);
@@ -182,7 +182,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetPrivateData<T0>(ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -197,7 +197,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetPrivateData(ref Guid guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
@@ -212,7 +212,7 @@ namespace Silk.NET.Direct3D12
         public readonly int GetPrivateData<T0>(ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
@@ -230,7 +230,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, void* pData)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guid, DataSize, pData);
             return ret;
         }
@@ -239,7 +239,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, Guid*, uint, T0*, int>)LpVtbl[4])(@this, guid, DataSize, pDataPtr);
@@ -251,7 +251,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, void* pData)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pData);
@@ -263,7 +263,7 @@ namespace Silk.NET.Direct3D12
         public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -278,7 +278,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pData);
             return ret;
         }
@@ -287,7 +287,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pDataPtr);
@@ -299,7 +299,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pData);
@@ -311,7 +311,7 @@ namespace Silk.NET.Direct3D12
         public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
@@ -326,7 +326,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetName(char* Name)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, char*, int>)LpVtbl[6])(@this, Name);
             return ret;
         }
@@ -335,7 +335,7 @@ namespace Silk.NET.Direct3D12
         public readonly int SetName(ref char Name)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* NamePtr = &Name)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, char*, int>)LpVtbl[6])(@this, NamePtr);
@@ -347,7 +347,7 @@ namespace Silk.NET.Direct3D12
         public readonly int SetName(string Name)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, byte*, int>)LpVtbl[6])(@this, NamePtr);
             Marshal.FreeHGlobal((nint)NamePtr);
@@ -358,7 +358,7 @@ namespace Silk.NET.Direct3D12
         public readonly uint GetNodeCount()
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint>)LpVtbl[7])(@this);
             return ret;
         }
@@ -367,7 +367,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandQueue(CommandQueueDesc* pDesc, Guid* riid, void** ppCommandQueue)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, CommandQueueDesc*, Guid*, void**, int>)LpVtbl[8])(@this, pDesc, riid, ppCommandQueue);
             return ret;
         }
@@ -376,7 +376,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandQueue(CommandQueueDesc* pDesc, Guid* riid, ref void* ppCommandQueue)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppCommandQueuePtr = &ppCommandQueue)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, CommandQueueDesc*, Guid*, void**, int>)LpVtbl[8])(@this, pDesc, riid, ppCommandQueuePtr);
@@ -388,7 +388,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandQueue(CommandQueueDesc* pDesc, ref Guid riid, void** ppCommandQueue)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, CommandQueueDesc*, Guid*, void**, int>)LpVtbl[8])(@this, pDesc, riidPtr, ppCommandQueue);
@@ -400,7 +400,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandQueue(CommandQueueDesc* pDesc, ref Guid riid, ref void* ppCommandQueue)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppCommandQueuePtr = &ppCommandQueue)
@@ -415,7 +415,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandQueue(ref CommandQueueDesc pDesc, Guid* riid, void** ppCommandQueue)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (CommandQueueDesc* pDescPtr = &pDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, CommandQueueDesc*, Guid*, void**, int>)LpVtbl[8])(@this, pDescPtr, riid, ppCommandQueue);
@@ -427,7 +427,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandQueue(ref CommandQueueDesc pDesc, Guid* riid, ref void* ppCommandQueue)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (CommandQueueDesc* pDescPtr = &pDesc)
             {
                 fixed (void** ppCommandQueuePtr = &ppCommandQueue)
@@ -442,7 +442,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandQueue(ref CommandQueueDesc pDesc, ref Guid riid, void** ppCommandQueue)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (CommandQueueDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -457,7 +457,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandQueue(ref CommandQueueDesc pDesc, ref Guid riid, ref void* ppCommandQueue)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (CommandQueueDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -475,7 +475,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandAllocator(CommandListType type, Guid* riid, void** ppCommandAllocator)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, CommandListType, Guid*, void**, int>)LpVtbl[9])(@this, type, riid, ppCommandAllocator);
             return ret;
         }
@@ -484,7 +484,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandAllocator(CommandListType type, Guid* riid, ref void* ppCommandAllocator)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppCommandAllocatorPtr = &ppCommandAllocator)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, CommandListType, Guid*, void**, int>)LpVtbl[9])(@this, type, riid, ppCommandAllocatorPtr);
@@ -496,7 +496,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandAllocator(CommandListType type, ref Guid riid, void** ppCommandAllocator)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, CommandListType, Guid*, void**, int>)LpVtbl[9])(@this, type, riidPtr, ppCommandAllocator);
@@ -508,7 +508,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandAllocator(CommandListType type, ref Guid riid, ref void* ppCommandAllocator)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppCommandAllocatorPtr = &ppCommandAllocator)
@@ -523,7 +523,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateGraphicsPipelineState(GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pDesc, riid, ppPipelineState);
             return ret;
         }
@@ -532,7 +532,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateGraphicsPipelineState(GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppPipelineStatePtr = &ppPipelineState)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pDesc, riid, ppPipelineStatePtr);
@@ -544,7 +544,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateGraphicsPipelineState(GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pDesc, riidPtr, ppPipelineState);
@@ -556,7 +556,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateGraphicsPipelineState(GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
@@ -571,7 +571,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateGraphicsPipelineState(ref GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pDescPtr, riid, ppPipelineState);
@@ -583,7 +583,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateGraphicsPipelineState(ref GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
@@ -598,7 +598,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateGraphicsPipelineState(ref GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -613,7 +613,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateGraphicsPipelineState(ref GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -631,7 +631,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateComputePipelineState(ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[11])(@this, pDesc, riid, ppPipelineState);
             return ret;
         }
@@ -640,7 +640,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateComputePipelineState(ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppPipelineStatePtr = &ppPipelineState)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[11])(@this, pDesc, riid, ppPipelineStatePtr);
@@ -652,7 +652,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateComputePipelineState(ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[11])(@this, pDesc, riidPtr, ppPipelineState);
@@ -664,7 +664,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateComputePipelineState(ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
@@ -679,7 +679,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateComputePipelineState(ref ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[11])(@this, pDescPtr, riid, ppPipelineState);
@@ -691,7 +691,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateComputePipelineState(ref ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
@@ -706,7 +706,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateComputePipelineState(ref ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -721,7 +721,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateComputePipelineState(ref ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -739,7 +739,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandList(uint nodeMask, CommandListType type, ID3D12CommandAllocator* pCommandAllocator, ID3D12PipelineState* pInitialState, Guid* riid, void** ppCommandList)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint, CommandListType, ID3D12CommandAllocator*, ID3D12PipelineState*, Guid*, void**, int>)LpVtbl[12])(@this, nodeMask, type, pCommandAllocator, pInitialState, riid, ppCommandList);
             return ret;
         }
@@ -748,7 +748,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandList(uint nodeMask, CommandListType type, ID3D12CommandAllocator* pCommandAllocator, ID3D12PipelineState* pInitialState, Guid* riid, ref void* ppCommandList)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppCommandListPtr = &ppCommandList)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint, CommandListType, ID3D12CommandAllocator*, ID3D12PipelineState*, Guid*, void**, int>)LpVtbl[12])(@this, nodeMask, type, pCommandAllocator, pInitialState, riid, ppCommandListPtr);
@@ -760,7 +760,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandList(uint nodeMask, CommandListType type, ID3D12CommandAllocator* pCommandAllocator, ID3D12PipelineState* pInitialState, ref Guid riid, void** ppCommandList)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint, CommandListType, ID3D12CommandAllocator*, ID3D12PipelineState*, Guid*, void**, int>)LpVtbl[12])(@this, nodeMask, type, pCommandAllocator, pInitialState, riidPtr, ppCommandList);
@@ -772,7 +772,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandList(uint nodeMask, CommandListType type, ID3D12CommandAllocator* pCommandAllocator, ID3D12PipelineState* pInitialState, ref Guid riid, ref void* ppCommandList)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppCommandListPtr = &ppCommandList)
@@ -787,7 +787,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandList(uint nodeMask, CommandListType type, ID3D12CommandAllocator* pCommandAllocator, ref ID3D12PipelineState pInitialState, Guid* riid, void** ppCommandList)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12PipelineState* pInitialStatePtr = &pInitialState)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint, CommandListType, ID3D12CommandAllocator*, ID3D12PipelineState*, Guid*, void**, int>)LpVtbl[12])(@this, nodeMask, type, pCommandAllocator, pInitialStatePtr, riid, ppCommandList);
@@ -799,7 +799,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandList(uint nodeMask, CommandListType type, ID3D12CommandAllocator* pCommandAllocator, ref ID3D12PipelineState pInitialState, Guid* riid, ref void* ppCommandList)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12PipelineState* pInitialStatePtr = &pInitialState)
             {
                 fixed (void** ppCommandListPtr = &ppCommandList)
@@ -814,7 +814,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandList(uint nodeMask, CommandListType type, ID3D12CommandAllocator* pCommandAllocator, ref ID3D12PipelineState pInitialState, ref Guid riid, void** ppCommandList)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12PipelineState* pInitialStatePtr = &pInitialState)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -829,7 +829,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandList(uint nodeMask, CommandListType type, ID3D12CommandAllocator* pCommandAllocator, ref ID3D12PipelineState pInitialState, ref Guid riid, ref void* ppCommandList)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12PipelineState* pInitialStatePtr = &pInitialState)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -847,7 +847,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandList(uint nodeMask, CommandListType type, ref ID3D12CommandAllocator pCommandAllocator, ID3D12PipelineState* pInitialState, Guid* riid, void** ppCommandList)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12CommandAllocator* pCommandAllocatorPtr = &pCommandAllocator)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint, CommandListType, ID3D12CommandAllocator*, ID3D12PipelineState*, Guid*, void**, int>)LpVtbl[12])(@this, nodeMask, type, pCommandAllocatorPtr, pInitialState, riid, ppCommandList);
@@ -859,7 +859,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandList(uint nodeMask, CommandListType type, ref ID3D12CommandAllocator pCommandAllocator, ID3D12PipelineState* pInitialState, Guid* riid, ref void* ppCommandList)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12CommandAllocator* pCommandAllocatorPtr = &pCommandAllocator)
             {
                 fixed (void** ppCommandListPtr = &ppCommandList)
@@ -874,7 +874,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandList(uint nodeMask, CommandListType type, ref ID3D12CommandAllocator pCommandAllocator, ID3D12PipelineState* pInitialState, ref Guid riid, void** ppCommandList)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12CommandAllocator* pCommandAllocatorPtr = &pCommandAllocator)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -889,7 +889,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandList(uint nodeMask, CommandListType type, ref ID3D12CommandAllocator pCommandAllocator, ID3D12PipelineState* pInitialState, ref Guid riid, ref void* ppCommandList)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12CommandAllocator* pCommandAllocatorPtr = &pCommandAllocator)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -907,7 +907,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandList(uint nodeMask, CommandListType type, ref ID3D12CommandAllocator pCommandAllocator, ref ID3D12PipelineState pInitialState, Guid* riid, void** ppCommandList)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12CommandAllocator* pCommandAllocatorPtr = &pCommandAllocator)
             {
                 fixed (ID3D12PipelineState* pInitialStatePtr = &pInitialState)
@@ -922,7 +922,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandList(uint nodeMask, CommandListType type, ref ID3D12CommandAllocator pCommandAllocator, ref ID3D12PipelineState pInitialState, Guid* riid, ref void* ppCommandList)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12CommandAllocator* pCommandAllocatorPtr = &pCommandAllocator)
             {
                 fixed (ID3D12PipelineState* pInitialStatePtr = &pInitialState)
@@ -940,7 +940,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandList(uint nodeMask, CommandListType type, ref ID3D12CommandAllocator pCommandAllocator, ref ID3D12PipelineState pInitialState, ref Guid riid, void** ppCommandList)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12CommandAllocator* pCommandAllocatorPtr = &pCommandAllocator)
             {
                 fixed (ID3D12PipelineState* pInitialStatePtr = &pInitialState)
@@ -958,7 +958,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandList(uint nodeMask, CommandListType type, ref ID3D12CommandAllocator pCommandAllocator, ref ID3D12PipelineState pInitialState, ref Guid riid, ref void* ppCommandList)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12CommandAllocator* pCommandAllocatorPtr = &pCommandAllocator)
             {
                 fixed (ID3D12PipelineState* pInitialStatePtr = &pInitialState)
@@ -979,7 +979,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CheckFeatureSupport(Feature Feature, void* pFeatureSupportData, uint FeatureSupportDataSize)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, Feature, void*, uint, int>)LpVtbl[13])(@this, Feature, pFeatureSupportData, FeatureSupportDataSize);
             return ret;
         }
@@ -988,7 +988,7 @@ namespace Silk.NET.Direct3D12
         public readonly int CheckFeatureSupport<T0>(Feature Feature, ref T0 pFeatureSupportData, uint FeatureSupportDataSize) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pFeatureSupportDataPtr = &pFeatureSupportData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, Feature, T0*, uint, int>)LpVtbl[13])(@this, Feature, pFeatureSupportDataPtr, FeatureSupportDataSize);
@@ -1000,7 +1000,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateDescriptorHeap(DescriptorHeapDesc* pDescriptorHeapDesc, Guid* riid, void** ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, DescriptorHeapDesc*, Guid*, void**, int>)LpVtbl[14])(@this, pDescriptorHeapDesc, riid, ppvHeap);
             return ret;
         }
@@ -1009,7 +1009,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateDescriptorHeap(DescriptorHeapDesc* pDescriptorHeapDesc, Guid* riid, ref void* ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvHeapPtr = &ppvHeap)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, DescriptorHeapDesc*, Guid*, void**, int>)LpVtbl[14])(@this, pDescriptorHeapDesc, riid, ppvHeapPtr);
@@ -1021,7 +1021,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateDescriptorHeap(DescriptorHeapDesc* pDescriptorHeapDesc, ref Guid riid, void** ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, DescriptorHeapDesc*, Guid*, void**, int>)LpVtbl[14])(@this, pDescriptorHeapDesc, riidPtr, ppvHeap);
@@ -1033,7 +1033,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateDescriptorHeap(DescriptorHeapDesc* pDescriptorHeapDesc, ref Guid riid, ref void* ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvHeapPtr = &ppvHeap)
@@ -1048,7 +1048,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateDescriptorHeap(ref DescriptorHeapDesc pDescriptorHeapDesc, Guid* riid, void** ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (DescriptorHeapDesc* pDescriptorHeapDescPtr = &pDescriptorHeapDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, DescriptorHeapDesc*, Guid*, void**, int>)LpVtbl[14])(@this, pDescriptorHeapDescPtr, riid, ppvHeap);
@@ -1060,7 +1060,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateDescriptorHeap(ref DescriptorHeapDesc pDescriptorHeapDesc, Guid* riid, ref void* ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (DescriptorHeapDesc* pDescriptorHeapDescPtr = &pDescriptorHeapDesc)
             {
                 fixed (void** ppvHeapPtr = &ppvHeap)
@@ -1075,7 +1075,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateDescriptorHeap(ref DescriptorHeapDesc pDescriptorHeapDesc, ref Guid riid, void** ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (DescriptorHeapDesc* pDescriptorHeapDescPtr = &pDescriptorHeapDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -1090,7 +1090,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateDescriptorHeap(ref DescriptorHeapDesc pDescriptorHeapDesc, ref Guid riid, ref void* ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (DescriptorHeapDesc* pDescriptorHeapDescPtr = &pDescriptorHeapDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -1108,7 +1108,7 @@ namespace Silk.NET.Direct3D12
         public readonly uint GetDescriptorHandleIncrementSize(DescriptorHeapType DescriptorHeapType)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, DescriptorHeapType, uint>)LpVtbl[15])(@this, DescriptorHeapType);
             return ret;
         }
@@ -1117,7 +1117,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateRootSignature(uint nodeMask, void* pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, void** ppvRootSignature)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignature, blobLengthInBytes, riid, ppvRootSignature);
             return ret;
         }
@@ -1126,7 +1126,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateRootSignature(uint nodeMask, void* pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, ref void* ppvRootSignature)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvRootSignaturePtr = &ppvRootSignature)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignature, blobLengthInBytes, riid, ppvRootSignaturePtr);
@@ -1138,7 +1138,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateRootSignature(uint nodeMask, void* pBlobWithRootSignature, nuint blobLengthInBytes, ref Guid riid, void** ppvRootSignature)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint, void*, nuint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignature, blobLengthInBytes, riidPtr, ppvRootSignature);
@@ -1150,7 +1150,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateRootSignature(uint nodeMask, void* pBlobWithRootSignature, nuint blobLengthInBytes, ref Guid riid, ref void* ppvRootSignature)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvRootSignaturePtr = &ppvRootSignature)
@@ -1165,7 +1165,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateRootSignature<T0>(uint nodeMask, ref T0 pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, void** ppvRootSignature) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pBlobWithRootSignaturePtr = &pBlobWithRootSignature)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint, T0*, nuint, Guid*, void**, int>)LpVtbl[16])(@this, nodeMask, pBlobWithRootSignaturePtr, blobLengthInBytes, riid, ppvRootSignature);
@@ -1177,7 +1177,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateRootSignature<T0>(uint nodeMask, ref T0 pBlobWithRootSignature, nuint blobLengthInBytes, Guid* riid, ref void* ppvRootSignature) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pBlobWithRootSignaturePtr = &pBlobWithRootSignature)
             {
                 fixed (void** ppvRootSignaturePtr = &ppvRootSignature)
@@ -1192,7 +1192,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateRootSignature<T0>(uint nodeMask, ref T0 pBlobWithRootSignature, nuint blobLengthInBytes, ref Guid riid, void** ppvRootSignature) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pBlobWithRootSignaturePtr = &pBlobWithRootSignature)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -1207,7 +1207,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateRootSignature<T0>(uint nodeMask, ref T0 pBlobWithRootSignature, nuint blobLengthInBytes, ref Guid riid, ref void* ppvRootSignature) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pBlobWithRootSignaturePtr = &pBlobWithRootSignature)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -1685,38 +1685,44 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be documented.</summary>
         public readonly unsafe ResourceAllocationInfo GetResourceAllocationInfo(uint visibleMask, uint numResourceDescs, ResourceDesc* pResourceDescs)
         {
+            ResourceAllocationInfo silkDotNetReturnFixupResult;
+            var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                ResourceAllocationInfo ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint, uint, ResourceDesc*, ResourceAllocationInfo>)LpVtbl[25])(@this, visibleMask, numResourceDescs, pResourceDescs);
-            return ret;
+            ResourceAllocationInfo* ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ResourceAllocationInfo*, uint, uint, ResourceDesc*, ResourceAllocationInfo*>)LpVtbl[25])(@this, pSilkDotNetReturnFixupResult, visibleMask, numResourceDescs, pResourceDescs);
+            return *ret;
         }
 
         /// <summary>To be documented.</summary>
         public readonly ResourceAllocationInfo GetResourceAllocationInfo(uint visibleMask, uint numResourceDescs, ref ResourceDesc pResourceDescs)
         {
+            ResourceAllocationInfo silkDotNetReturnFixupResult;
+            var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                ResourceAllocationInfo ret = default;
+            ResourceAllocationInfo* ret = default;
             fixed (ResourceDesc* pResourceDescsPtr = &pResourceDescs)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint, uint, ResourceDesc*, ResourceAllocationInfo>)LpVtbl[25])(@this, visibleMask, numResourceDescs, pResourceDescsPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ResourceAllocationInfo*, uint, uint, ResourceDesc*, ResourceAllocationInfo*>)LpVtbl[25])(@this, pSilkDotNetReturnFixupResult, visibleMask, numResourceDescs, pResourceDescsPtr);
             }
-            return ret;
+            return *ret;
         }
 
         /// <summary>To be documented.</summary>
         public readonly HeapProperties GetCustomHeapProperties(uint nodeMask, HeapType heapType)
         {
+            HeapProperties silkDotNetReturnFixupResult;
+            var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                HeapProperties ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint, HeapType, HeapProperties>)LpVtbl[26])(@this, nodeMask, heapType);
-            return ret;
+            HeapProperties* ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, HeapProperties*, uint, HeapType, HeapProperties*>)LpVtbl[26])(@this, pSilkDotNetReturnFixupResult, nodeMask, heapType);
+            return *ret;
         }
 
         /// <summary>To be documented.</summary>
         public readonly unsafe int CreateCommittedResource(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, Guid*, void**, int>)LpVtbl[27])(@this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, riidResource, ppvResource);
             return ret;
         }
@@ -1725,7 +1731,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvResourcePtr = &ppvResource)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, Guid*, void**, int>)LpVtbl[27])(@this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, riidResource, ppvResourcePtr);
@@ -1737,7 +1743,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidResourcePtr = &riidResource)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, Guid*, void**, int>)LpVtbl[27])(@this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, riidResourcePtr, ppvResource);
@@ -1749,7 +1755,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidResourcePtr = &riidResource)
             {
                 fixed (void** ppvResourcePtr = &ppvResource)
@@ -1764,7 +1770,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, Guid*, void**, int>)LpVtbl[27])(@this, pHeapProperties, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValuePtr, riidResource, ppvResource);
@@ -1776,7 +1782,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
             {
                 fixed (void** ppvResourcePtr = &ppvResource)
@@ -1791,7 +1797,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
             {
                 fixed (Guid* riidResourcePtr = &riidResource)
@@ -1806,7 +1812,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
             {
                 fixed (Guid* riidResourcePtr = &riidResource)
@@ -1824,7 +1830,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, Guid*, void**, int>)LpVtbl[27])(@this, pHeapProperties, HeapFlags, pDescPtr, InitialResourceState, pOptimizedClearValue, riidResource, ppvResource);
@@ -1836,7 +1842,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 fixed (void** ppvResourcePtr = &ppvResource)
@@ -1851,7 +1857,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidResourcePtr = &riidResource)
@@ -1866,7 +1872,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidResourcePtr = &riidResource)
@@ -1884,7 +1890,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
@@ -1899,7 +1905,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
@@ -1917,7 +1923,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
@@ -1935,7 +1941,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(HeapProperties* pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
@@ -1956,7 +1962,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, HeapProperties*, HeapFlags, ResourceDesc*, ResourceStates, ClearValue*, Guid*, void**, int>)LpVtbl[27])(@this, pHeapPropertiesPtr, HeapFlags, pDesc, InitialResourceState, pOptimizedClearValue, riidResource, ppvResource);
@@ -1968,7 +1974,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
             {
                 fixed (void** ppvResourcePtr = &ppvResource)
@@ -1983,7 +1989,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
             {
                 fixed (Guid* riidResourcePtr = &riidResource)
@@ -1998,7 +2004,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
             {
                 fixed (Guid* riidResourcePtr = &riidResource)
@@ -2016,7 +2022,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
             {
                 fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
@@ -2031,7 +2037,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
             {
                 fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
@@ -2049,7 +2055,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
             {
                 fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
@@ -2067,7 +2073,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ResourceDesc* pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
             {
                 fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
@@ -2088,7 +2094,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
             {
                 fixed (ResourceDesc* pDescPtr = &pDesc)
@@ -2103,7 +2109,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
             {
                 fixed (ResourceDesc* pDescPtr = &pDesc)
@@ -2121,7 +2127,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
             {
                 fixed (ResourceDesc* pDescPtr = &pDesc)
@@ -2139,7 +2145,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ClearValue* pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
             {
                 fixed (ResourceDesc* pDescPtr = &pDesc)
@@ -2160,7 +2166,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, Guid* riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
             {
                 fixed (ResourceDesc* pDescPtr = &pDesc)
@@ -2178,7 +2184,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, Guid* riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
             {
                 fixed (ResourceDesc* pDescPtr = &pDesc)
@@ -2199,7 +2205,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref Guid riidResource, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
             {
                 fixed (ResourceDesc* pDescPtr = &pDesc)
@@ -2220,7 +2226,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommittedResource(ref HeapProperties pHeapProperties, HeapFlags HeapFlags, ref ResourceDesc pDesc, ResourceStates InitialResourceState, ref ClearValue pOptimizedClearValue, ref Guid riidResource, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (HeapProperties* pHeapPropertiesPtr = &pHeapProperties)
             {
                 fixed (ResourceDesc* pDescPtr = &pDesc)
@@ -2244,7 +2250,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateHeap(HeapDesc* pDesc, Guid* riid, void** ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, HeapDesc*, Guid*, void**, int>)LpVtbl[28])(@this, pDesc, riid, ppvHeap);
             return ret;
         }
@@ -2253,7 +2259,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateHeap(HeapDesc* pDesc, Guid* riid, ref void* ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvHeapPtr = &ppvHeap)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, HeapDesc*, Guid*, void**, int>)LpVtbl[28])(@this, pDesc, riid, ppvHeapPtr);
@@ -2265,7 +2271,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateHeap(HeapDesc* pDesc, ref Guid riid, void** ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, HeapDesc*, Guid*, void**, int>)LpVtbl[28])(@this, pDesc, riidPtr, ppvHeap);
@@ -2277,7 +2283,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateHeap(HeapDesc* pDesc, ref Guid riid, ref void* ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvHeapPtr = &ppvHeap)
@@ -2292,7 +2298,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateHeap(ref HeapDesc pDesc, Guid* riid, void** ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (HeapDesc* pDescPtr = &pDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, HeapDesc*, Guid*, void**, int>)LpVtbl[28])(@this, pDescPtr, riid, ppvHeap);
@@ -2304,7 +2310,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateHeap(ref HeapDesc pDesc, Guid* riid, ref void* ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (HeapDesc* pDescPtr = &pDesc)
             {
                 fixed (void** ppvHeapPtr = &ppvHeap)
@@ -2319,7 +2325,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateHeap(ref HeapDesc pDesc, ref Guid riid, void** ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (HeapDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -2334,7 +2340,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateHeap(ref HeapDesc pDesc, ref Guid riid, ref void* ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (HeapDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -2352,7 +2358,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ID3D12Heap*, ulong, ResourceDesc*, ResourceStates, ClearValue*, Guid*, void**, int>)LpVtbl[29])(@this, pHeap, HeapOffset, pDesc, InitialState, pOptimizedClearValue, riid, ppvResource);
             return ret;
         }
@@ -2361,7 +2367,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvResourcePtr = &ppvResource)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ID3D12Heap*, ulong, ResourceDesc*, ResourceStates, ClearValue*, Guid*, void**, int>)LpVtbl[29])(@this, pHeap, HeapOffset, pDesc, InitialState, pOptimizedClearValue, riid, ppvResourcePtr);
@@ -2373,7 +2379,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ID3D12Heap*, ulong, ResourceDesc*, ResourceStates, ClearValue*, Guid*, void**, int>)LpVtbl[29])(@this, pHeap, HeapOffset, pDesc, InitialState, pOptimizedClearValue, riidPtr, ppvResource);
@@ -2385,7 +2391,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvResourcePtr = &ppvResource)
@@ -2400,7 +2406,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ID3D12Heap*, ulong, ResourceDesc*, ResourceStates, ClearValue*, Guid*, void**, int>)LpVtbl[29])(@this, pHeap, HeapOffset, pDesc, InitialState, pOptimizedClearValuePtr, riid, ppvResource);
@@ -2412,7 +2418,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
             {
                 fixed (void** ppvResourcePtr = &ppvResource)
@@ -2427,7 +2433,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -2442,7 +2448,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ID3D12Heap* pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -2460,7 +2466,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ID3D12Heap* pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ID3D12Heap*, ulong, ResourceDesc*, ResourceStates, ClearValue*, Guid*, void**, int>)LpVtbl[29])(@this, pHeap, HeapOffset, pDescPtr, InitialState, pOptimizedClearValue, riid, ppvResource);
@@ -2472,7 +2478,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ID3D12Heap* pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 fixed (void** ppvResourcePtr = &ppvResource)
@@ -2487,7 +2493,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ID3D12Heap* pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -2502,7 +2508,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ID3D12Heap* pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -2520,7 +2526,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ID3D12Heap* pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
@@ -2535,7 +2541,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ID3D12Heap* pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
@@ -2553,7 +2559,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ID3D12Heap* pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
@@ -2571,7 +2577,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ID3D12Heap* pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
@@ -2592,7 +2598,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ref ID3D12Heap pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Heap* pHeapPtr = &pHeap)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ID3D12Heap*, ulong, ResourceDesc*, ResourceStates, ClearValue*, Guid*, void**, int>)LpVtbl[29])(@this, pHeapPtr, HeapOffset, pDesc, InitialState, pOptimizedClearValue, riid, ppvResource);
@@ -2604,7 +2610,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ref ID3D12Heap pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Heap* pHeapPtr = &pHeap)
             {
                 fixed (void** ppvResourcePtr = &ppvResource)
@@ -2619,7 +2625,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ref ID3D12Heap pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Heap* pHeapPtr = &pHeap)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -2634,7 +2640,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ref ID3D12Heap pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Heap* pHeapPtr = &pHeap)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -2652,7 +2658,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ref ID3D12Heap pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Heap* pHeapPtr = &pHeap)
             {
                 fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
@@ -2667,7 +2673,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ref ID3D12Heap pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Heap* pHeapPtr = &pHeap)
             {
                 fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
@@ -2685,7 +2691,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ref ID3D12Heap pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Heap* pHeapPtr = &pHeap)
             {
                 fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
@@ -2703,7 +2709,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ref ID3D12Heap pHeap, ulong HeapOffset, ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Heap* pHeapPtr = &pHeap)
             {
                 fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
@@ -2724,7 +2730,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ref ID3D12Heap pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Heap* pHeapPtr = &pHeap)
             {
                 fixed (ResourceDesc* pDescPtr = &pDesc)
@@ -2739,7 +2745,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ref ID3D12Heap pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Heap* pHeapPtr = &pHeap)
             {
                 fixed (ResourceDesc* pDescPtr = &pDesc)
@@ -2757,7 +2763,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ref ID3D12Heap pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Heap* pHeapPtr = &pHeap)
             {
                 fixed (ResourceDesc* pDescPtr = &pDesc)
@@ -2775,7 +2781,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ref ID3D12Heap pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Heap* pHeapPtr = &pHeap)
             {
                 fixed (ResourceDesc* pDescPtr = &pDesc)
@@ -2796,7 +2802,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ref ID3D12Heap pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Heap* pHeapPtr = &pHeap)
             {
                 fixed (ResourceDesc* pDescPtr = &pDesc)
@@ -2814,7 +2820,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ref ID3D12Heap pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Heap* pHeapPtr = &pHeap)
             {
                 fixed (ResourceDesc* pDescPtr = &pDesc)
@@ -2835,7 +2841,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ref ID3D12Heap pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Heap* pHeapPtr = &pHeap)
             {
                 fixed (ResourceDesc* pDescPtr = &pDesc)
@@ -2856,7 +2862,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePlacedResource(ref ID3D12Heap pHeap, ulong HeapOffset, ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Heap* pHeapPtr = &pHeap)
             {
                 fixed (ResourceDesc* pDescPtr = &pDesc)
@@ -2880,7 +2886,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateReservedResource(ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ResourceDesc*, ResourceStates, ClearValue*, Guid*, void**, int>)LpVtbl[30])(@this, pDesc, InitialState, pOptimizedClearValue, riid, ppvResource);
             return ret;
         }
@@ -2889,7 +2895,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateReservedResource(ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvResourcePtr = &ppvResource)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ResourceDesc*, ResourceStates, ClearValue*, Guid*, void**, int>)LpVtbl[30])(@this, pDesc, InitialState, pOptimizedClearValue, riid, ppvResourcePtr);
@@ -2901,7 +2907,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateReservedResource(ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ResourceDesc*, ResourceStates, ClearValue*, Guid*, void**, int>)LpVtbl[30])(@this, pDesc, InitialState, pOptimizedClearValue, riidPtr, ppvResource);
@@ -2913,7 +2919,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateReservedResource(ResourceDesc* pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvResourcePtr = &ppvResource)
@@ -2928,7 +2934,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateReservedResource(ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ResourceDesc*, ResourceStates, ClearValue*, Guid*, void**, int>)LpVtbl[30])(@this, pDesc, InitialState, pOptimizedClearValuePtr, riid, ppvResource);
@@ -2940,7 +2946,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateReservedResource(ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
             {
                 fixed (void** ppvResourcePtr = &ppvResource)
@@ -2955,7 +2961,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateReservedResource(ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -2970,7 +2976,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateReservedResource(ResourceDesc* pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -2988,7 +2994,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateReservedResource(ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ResourceDesc*, ResourceStates, ClearValue*, Guid*, void**, int>)LpVtbl[30])(@this, pDescPtr, InitialState, pOptimizedClearValue, riid, ppvResource);
@@ -3000,7 +3006,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateReservedResource(ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 fixed (void** ppvResourcePtr = &ppvResource)
@@ -3015,7 +3021,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateReservedResource(ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -3030,7 +3036,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateReservedResource(ref ResourceDesc pDesc, ResourceStates InitialState, ClearValue* pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -3048,7 +3054,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateReservedResource(ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, Guid* riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
@@ -3063,7 +3069,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateReservedResource(ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, Guid* riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
@@ -3081,7 +3087,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateReservedResource(ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref Guid riid, void** ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
@@ -3099,7 +3105,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateReservedResource(ref ResourceDesc pDesc, ResourceStates InitialState, ref ClearValue pOptimizedClearValue, ref Guid riid, ref void* ppvResource)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResourceDesc* pDescPtr = &pDesc)
             {
                 fixed (ClearValue* pOptimizedClearValuePtr = &pOptimizedClearValue)
@@ -3120,7 +3126,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, char* Name, void** pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObject, pAttributes, Access, Name, pHandle);
             return ret;
         }
@@ -3129,7 +3135,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, char* Name, ref void* pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** pHandlePtr = &pHandle)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObject, pAttributes, Access, Name, pHandlePtr);
@@ -3141,7 +3147,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, ref char Name, void** pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* NamePtr = &Name)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObject, pAttributes, Access, NamePtr, pHandle);
@@ -3153,7 +3159,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, ref char Name, ref void* pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* NamePtr = &Name)
             {
                 fixed (void** pHandlePtr = &pHandle)
@@ -3168,7 +3174,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, string Name, void** pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[31])(@this, pObject, pAttributes, Access, NamePtr, pHandle);
             Marshal.FreeHGlobal((nint)NamePtr);
@@ -3179,7 +3185,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, string Name, ref void* pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
             fixed (void** pHandlePtr = &pHandle)
             {
@@ -3193,7 +3199,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, char* Name, void** pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObject, pAttributesPtr, Access, Name, pHandle);
@@ -3205,7 +3211,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, char* Name, ref void* pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
             {
                 fixed (void** pHandlePtr = &pHandle)
@@ -3220,7 +3226,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, ref char Name, void** pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
             {
                 fixed (char* NamePtr = &Name)
@@ -3235,7 +3241,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, ref char Name, ref void* pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
             {
                 fixed (char* NamePtr = &Name)
@@ -3253,7 +3259,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, string Name, void** pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
             {
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
@@ -3267,7 +3273,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ID3D12DeviceChild* pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, string Name, ref void* pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
             {
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
@@ -3284,7 +3290,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, char* Name, void** pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ID3D12DeviceChild*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[31])(@this, pObjectPtr, pAttributes, Access, Name, pHandle);
@@ -3296,7 +3302,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, char* Name, ref void* pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
             {
                 fixed (void** pHandlePtr = &pHandle)
@@ -3311,7 +3317,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, ref char Name, void** pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
             {
                 fixed (char* NamePtr = &Name)
@@ -3326,7 +3332,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, ref char Name, ref void* pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
             {
                 fixed (char* NamePtr = &Name)
@@ -3344,7 +3350,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, string Name, void** pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
             {
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
@@ -3358,7 +3364,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint Access, string Name, ref void* pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
             {
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
@@ -3375,7 +3381,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, char* Name, void** pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
             {
                 fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
@@ -3390,7 +3396,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, char* Name, ref void* pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
             {
                 fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
@@ -3408,7 +3414,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, ref char Name, void** pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
             {
                 fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
@@ -3426,7 +3432,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, ref char Name, ref void* pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
             {
                 fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
@@ -3447,7 +3453,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, string Name, void** pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
             {
                 fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
@@ -3464,7 +3470,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateSharedHandle(ref ID3D12DeviceChild pObject, ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint Access, string Name, ref void* pHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12DeviceChild* pObjectPtr = &pObject)
             {
                 fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
@@ -3484,7 +3490,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int OpenSharedHandle(void* NTHandle, Guid* riid, void** ppvObj)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, void*, Guid*, void**, int>)LpVtbl[32])(@this, NTHandle, riid, ppvObj);
             return ret;
         }
@@ -3493,7 +3499,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int OpenSharedHandle(void* NTHandle, Guid* riid, ref void* ppvObj)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjPtr = &ppvObj)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, void*, Guid*, void**, int>)LpVtbl[32])(@this, NTHandle, riid, ppvObjPtr);
@@ -3505,7 +3511,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int OpenSharedHandle(void* NTHandle, ref Guid riid, void** ppvObj)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, void*, Guid*, void**, int>)LpVtbl[32])(@this, NTHandle, riidPtr, ppvObj);
@@ -3517,7 +3523,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int OpenSharedHandle(void* NTHandle, ref Guid riid, ref void* ppvObj)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjPtr = &ppvObj)
@@ -3532,7 +3538,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int OpenSharedHandle<T0>(ref T0 NTHandle, Guid* riid, void** ppvObj) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* NTHandlePtr = &NTHandle)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, T0*, Guid*, void**, int>)LpVtbl[32])(@this, NTHandlePtr, riid, ppvObj);
@@ -3544,7 +3550,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int OpenSharedHandle<T0>(ref T0 NTHandle, Guid* riid, ref void* ppvObj) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* NTHandlePtr = &NTHandle)
             {
                 fixed (void** ppvObjPtr = &ppvObj)
@@ -3559,7 +3565,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int OpenSharedHandle<T0>(ref T0 NTHandle, ref Guid riid, void** ppvObj) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* NTHandlePtr = &NTHandle)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -3574,7 +3580,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int OpenSharedHandle<T0>(ref T0 NTHandle, ref Guid riid, ref void* ppvObj) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* NTHandlePtr = &NTHandle)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -3592,7 +3598,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int OpenSharedHandleByName(char* Name, uint Access, void** pNTHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, char*, uint, void**, int>)LpVtbl[33])(@this, Name, Access, pNTHandle);
             return ret;
         }
@@ -3601,7 +3607,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int OpenSharedHandleByName(char* Name, uint Access, ref void* pNTHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** pNTHandlePtr = &pNTHandle)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, char*, uint, void**, int>)LpVtbl[33])(@this, Name, Access, pNTHandlePtr);
@@ -3613,7 +3619,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int OpenSharedHandleByName(ref char Name, uint Access, void** pNTHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* NamePtr = &Name)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, char*, uint, void**, int>)LpVtbl[33])(@this, NamePtr, Access, pNTHandle);
@@ -3625,7 +3631,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int OpenSharedHandleByName(ref char Name, uint Access, ref void* pNTHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* NamePtr = &Name)
             {
                 fixed (void** pNTHandlePtr = &pNTHandle)
@@ -3640,7 +3646,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int OpenSharedHandleByName(string Name, uint Access, void** pNTHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, byte*, uint, void**, int>)LpVtbl[33])(@this, NamePtr, Access, pNTHandle);
             Marshal.FreeHGlobal((nint)NamePtr);
@@ -3651,7 +3657,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int OpenSharedHandleByName(string Name, uint Access, ref void* pNTHandle)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
             fixed (void** pNTHandlePtr = &pNTHandle)
             {
@@ -3665,7 +3671,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int MakeResident(uint NumObjects, ID3D12Pageable** ppObjects)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint, ID3D12Pageable**, int>)LpVtbl[34])(@this, NumObjects, ppObjects);
             return ret;
         }
@@ -3674,7 +3680,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int MakeResident(uint NumObjects, ref ID3D12Pageable* ppObjects)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Pageable** ppObjectsPtr = &ppObjects)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint, ID3D12Pageable**, int>)LpVtbl[34])(@this, NumObjects, ppObjectsPtr);
@@ -3686,7 +3692,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int Evict(uint NumObjects, ID3D12Pageable** ppObjects)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint, ID3D12Pageable**, int>)LpVtbl[35])(@this, NumObjects, ppObjects);
             return ret;
         }
@@ -3695,7 +3701,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int Evict(uint NumObjects, ref ID3D12Pageable* ppObjects)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Pageable** ppObjectsPtr = &ppObjects)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint, ID3D12Pageable**, int>)LpVtbl[35])(@this, NumObjects, ppObjectsPtr);
@@ -3707,7 +3713,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateFence(ulong InitialValue, FenceFlags Flags, Guid* riid, void** ppFence)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ulong, FenceFlags, Guid*, void**, int>)LpVtbl[36])(@this, InitialValue, Flags, riid, ppFence);
             return ret;
         }
@@ -3716,7 +3722,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateFence(ulong InitialValue, FenceFlags Flags, Guid* riid, ref void* ppFence)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppFencePtr = &ppFence)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ulong, FenceFlags, Guid*, void**, int>)LpVtbl[36])(@this, InitialValue, Flags, riid, ppFencePtr);
@@ -3728,7 +3734,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateFence(ulong InitialValue, FenceFlags Flags, ref Guid riid, void** ppFence)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ulong, FenceFlags, Guid*, void**, int>)LpVtbl[36])(@this, InitialValue, Flags, riidPtr, ppFence);
@@ -3740,7 +3746,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateFence(ulong InitialValue, FenceFlags Flags, ref Guid riid, ref void* ppFence)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppFencePtr = &ppFence)
@@ -3755,7 +3761,7 @@ namespace Silk.NET.Direct3D12
         public readonly int GetDeviceRemovedReason()
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, int>)LpVtbl[37])(@this);
             return ret;
         }
@@ -4228,7 +4234,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateQueryHeap(QueryHeapDesc* pDesc, Guid* riid, void** ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, QueryHeapDesc*, Guid*, void**, int>)LpVtbl[39])(@this, pDesc, riid, ppvHeap);
             return ret;
         }
@@ -4237,7 +4243,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateQueryHeap(QueryHeapDesc* pDesc, Guid* riid, ref void* ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvHeapPtr = &ppvHeap)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, QueryHeapDesc*, Guid*, void**, int>)LpVtbl[39])(@this, pDesc, riid, ppvHeapPtr);
@@ -4249,7 +4255,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateQueryHeap(QueryHeapDesc* pDesc, ref Guid riid, void** ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, QueryHeapDesc*, Guid*, void**, int>)LpVtbl[39])(@this, pDesc, riidPtr, ppvHeap);
@@ -4261,7 +4267,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateQueryHeap(QueryHeapDesc* pDesc, ref Guid riid, ref void* ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvHeapPtr = &ppvHeap)
@@ -4276,7 +4282,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateQueryHeap(ref QueryHeapDesc pDesc, Guid* riid, void** ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (QueryHeapDesc* pDescPtr = &pDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, QueryHeapDesc*, Guid*, void**, int>)LpVtbl[39])(@this, pDescPtr, riid, ppvHeap);
@@ -4288,7 +4294,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateQueryHeap(ref QueryHeapDesc pDesc, Guid* riid, ref void* ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (QueryHeapDesc* pDescPtr = &pDesc)
             {
                 fixed (void** ppvHeapPtr = &ppvHeap)
@@ -4303,7 +4309,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateQueryHeap(ref QueryHeapDesc pDesc, ref Guid riid, void** ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (QueryHeapDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -4318,7 +4324,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateQueryHeap(ref QueryHeapDesc pDesc, ref Guid riid, ref void* ppvHeap)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (QueryHeapDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -4336,7 +4342,7 @@ namespace Silk.NET.Direct3D12
         public readonly int SetStablePowerState(int Enable)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, int, int>)LpVtbl[40])(@this, Enable);
             return ret;
         }
@@ -4345,7 +4351,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandSignature(CommandSignatureDesc* pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, void** ppvCommandSignature)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, CommandSignatureDesc*, ID3D12RootSignature*, Guid*, void**, int>)LpVtbl[41])(@this, pDesc, pRootSignature, riid, ppvCommandSignature);
             return ret;
         }
@@ -4354,7 +4360,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandSignature(CommandSignatureDesc* pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, ref void* ppvCommandSignature)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvCommandSignaturePtr = &ppvCommandSignature)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, CommandSignatureDesc*, ID3D12RootSignature*, Guid*, void**, int>)LpVtbl[41])(@this, pDesc, pRootSignature, riid, ppvCommandSignaturePtr);
@@ -4366,7 +4372,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandSignature(CommandSignatureDesc* pDesc, ID3D12RootSignature* pRootSignature, ref Guid riid, void** ppvCommandSignature)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, CommandSignatureDesc*, ID3D12RootSignature*, Guid*, void**, int>)LpVtbl[41])(@this, pDesc, pRootSignature, riidPtr, ppvCommandSignature);
@@ -4378,7 +4384,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandSignature(CommandSignatureDesc* pDesc, ID3D12RootSignature* pRootSignature, ref Guid riid, ref void* ppvCommandSignature)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvCommandSignaturePtr = &ppvCommandSignature)
@@ -4393,7 +4399,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandSignature(CommandSignatureDesc* pDesc, ref ID3D12RootSignature pRootSignature, Guid* riid, void** ppvCommandSignature)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12RootSignature* pRootSignaturePtr = &pRootSignature)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, CommandSignatureDesc*, ID3D12RootSignature*, Guid*, void**, int>)LpVtbl[41])(@this, pDesc, pRootSignaturePtr, riid, ppvCommandSignature);
@@ -4405,7 +4411,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandSignature(CommandSignatureDesc* pDesc, ref ID3D12RootSignature pRootSignature, Guid* riid, ref void* ppvCommandSignature)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12RootSignature* pRootSignaturePtr = &pRootSignature)
             {
                 fixed (void** ppvCommandSignaturePtr = &ppvCommandSignature)
@@ -4420,7 +4426,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandSignature(CommandSignatureDesc* pDesc, ref ID3D12RootSignature pRootSignature, ref Guid riid, void** ppvCommandSignature)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12RootSignature* pRootSignaturePtr = &pRootSignature)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -4435,7 +4441,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandSignature(CommandSignatureDesc* pDesc, ref ID3D12RootSignature pRootSignature, ref Guid riid, ref void* ppvCommandSignature)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12RootSignature* pRootSignaturePtr = &pRootSignature)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -4453,7 +4459,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandSignature(ref CommandSignatureDesc pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, void** ppvCommandSignature)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (CommandSignatureDesc* pDescPtr = &pDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, CommandSignatureDesc*, ID3D12RootSignature*, Guid*, void**, int>)LpVtbl[41])(@this, pDescPtr, pRootSignature, riid, ppvCommandSignature);
@@ -4465,7 +4471,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandSignature(ref CommandSignatureDesc pDesc, ID3D12RootSignature* pRootSignature, Guid* riid, ref void* ppvCommandSignature)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (CommandSignatureDesc* pDescPtr = &pDesc)
             {
                 fixed (void** ppvCommandSignaturePtr = &ppvCommandSignature)
@@ -4480,7 +4486,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandSignature(ref CommandSignatureDesc pDesc, ID3D12RootSignature* pRootSignature, ref Guid riid, void** ppvCommandSignature)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (CommandSignatureDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -4495,7 +4501,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandSignature(ref CommandSignatureDesc pDesc, ID3D12RootSignature* pRootSignature, ref Guid riid, ref void* ppvCommandSignature)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (CommandSignatureDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -4513,7 +4519,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandSignature(ref CommandSignatureDesc pDesc, ref ID3D12RootSignature pRootSignature, Guid* riid, void** ppvCommandSignature)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (CommandSignatureDesc* pDescPtr = &pDesc)
             {
                 fixed (ID3D12RootSignature* pRootSignaturePtr = &pRootSignature)
@@ -4528,7 +4534,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandSignature(ref CommandSignatureDesc pDesc, ref ID3D12RootSignature pRootSignature, Guid* riid, ref void* ppvCommandSignature)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (CommandSignatureDesc* pDescPtr = &pDesc)
             {
                 fixed (ID3D12RootSignature* pRootSignaturePtr = &pRootSignature)
@@ -4546,7 +4552,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandSignature(ref CommandSignatureDesc pDesc, ref ID3D12RootSignature pRootSignature, ref Guid riid, void** ppvCommandSignature)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (CommandSignatureDesc* pDescPtr = &pDesc)
             {
                 fixed (ID3D12RootSignature* pRootSignaturePtr = &pRootSignature)
@@ -4564,7 +4570,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreateCommandSignature(ref CommandSignatureDesc pDesc, ref ID3D12RootSignature pRootSignature, ref Guid riid, ref void* ppvCommandSignature)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (CommandSignatureDesc* pDescPtr = &pDesc)
             {
                 fixed (ID3D12RootSignature* pRootSignaturePtr = &pRootSignature)
@@ -5608,17 +5614,19 @@ namespace Silk.NET.Direct3D12
         /// <summary>To be documented.</summary>
         public readonly ValueTuple<ulong,long> GetAdapterLuid()
         {
+            ValueTuple<ulong,long> silkDotNetReturnFixupResult;
+            var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                ValueTuple<ulong,long> ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ValueTuple<ulong,long>>)LpVtbl[43])(@this);
-            return ret;
+            ValueTuple<ulong,long>* ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ValueTuple<ulong,long>*, ValueTuple<ulong,long>*>)LpVtbl[43])(@this, pSilkDotNetReturnFixupResult);
+            return *ret;
         }
 
         /// <summary>To be documented.</summary>
         public readonly unsafe int CreatePipelineLibrary(void* pLibraryBlob, nuint BlobLength, Guid* riid, void** ppPipelineLibrary)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, void*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlob, BlobLength, riid, ppPipelineLibrary);
             return ret;
         }
@@ -5627,7 +5635,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePipelineLibrary(void* pLibraryBlob, nuint BlobLength, Guid* riid, ref void* ppPipelineLibrary)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppPipelineLibraryPtr = &ppPipelineLibrary)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, void*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlob, BlobLength, riid, ppPipelineLibraryPtr);
@@ -5639,7 +5647,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePipelineLibrary(void* pLibraryBlob, nuint BlobLength, ref Guid riid, void** ppPipelineLibrary)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, void*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlob, BlobLength, riidPtr, ppPipelineLibrary);
@@ -5651,7 +5659,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePipelineLibrary(void* pLibraryBlob, nuint BlobLength, ref Guid riid, ref void* ppPipelineLibrary)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppPipelineLibraryPtr = &ppPipelineLibrary)
@@ -5666,7 +5674,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePipelineLibrary<T0>(ref T0 pLibraryBlob, nuint BlobLength, Guid* riid, void** ppPipelineLibrary) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pLibraryBlobPtr = &pLibraryBlob)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, T0*, nuint, Guid*, void**, int>)LpVtbl[44])(@this, pLibraryBlobPtr, BlobLength, riid, ppPipelineLibrary);
@@ -5678,7 +5686,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePipelineLibrary<T0>(ref T0 pLibraryBlob, nuint BlobLength, Guid* riid, ref void* ppPipelineLibrary) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pLibraryBlobPtr = &pLibraryBlob)
             {
                 fixed (void** ppPipelineLibraryPtr = &ppPipelineLibrary)
@@ -5693,7 +5701,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePipelineLibrary<T0>(ref T0 pLibraryBlob, nuint BlobLength, ref Guid riid, void** ppPipelineLibrary) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pLibraryBlobPtr = &pLibraryBlob)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -5708,7 +5716,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePipelineLibrary<T0>(ref T0 pLibraryBlob, nuint BlobLength, ref Guid riid, ref void* ppPipelineLibrary) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pLibraryBlobPtr = &pLibraryBlob)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -5726,7 +5734,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetEventOnMultipleFenceCompletion(ID3D12Fence** ppFences, ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)LpVtbl[45])(@this, ppFences, pFenceValues, NumFences, Flags, hEvent);
             return ret;
         }
@@ -5735,7 +5743,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetEventOnMultipleFenceCompletion<T0>(ID3D12Fence** ppFences, ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hEventPtr = &hEvent)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, T0*, int>)LpVtbl[45])(@this, ppFences, pFenceValues, NumFences, Flags, hEventPtr);
@@ -5747,7 +5755,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetEventOnMultipleFenceCompletion(ID3D12Fence** ppFences, ref ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ulong* pFenceValuesPtr = &pFenceValues)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)LpVtbl[45])(@this, ppFences, pFenceValuesPtr, NumFences, Flags, hEvent);
@@ -5759,7 +5767,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetEventOnMultipleFenceCompletion<T0>(ID3D12Fence** ppFences, ref ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ulong* pFenceValuesPtr = &pFenceValues)
             {
                 fixed (T0* hEventPtr = &hEvent)
@@ -5774,7 +5782,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetEventOnMultipleFenceCompletion(ref ID3D12Fence* ppFences, ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Fence** ppFencesPtr = &ppFences)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, ID3D12Fence**, ulong*, uint, MultipleFenceWaitFlags, void*, int>)LpVtbl[45])(@this, ppFencesPtr, pFenceValues, NumFences, Flags, hEvent);
@@ -5786,7 +5794,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetEventOnMultipleFenceCompletion<T0>(ref ID3D12Fence* ppFences, ulong* pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Fence** ppFencesPtr = &ppFences)
             {
                 fixed (T0* hEventPtr = &hEvent)
@@ -5801,7 +5809,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetEventOnMultipleFenceCompletion(ref ID3D12Fence* ppFences, ref ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, void* hEvent)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Fence** ppFencesPtr = &ppFences)
             {
                 fixed (ulong* pFenceValuesPtr = &pFenceValues)
@@ -5816,7 +5824,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetEventOnMultipleFenceCompletion<T0>(ref ID3D12Fence* ppFences, ref ulong pFenceValues, uint NumFences, MultipleFenceWaitFlags Flags, ref T0 hEvent) where T0 : unmanaged
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Fence** ppFencesPtr = &ppFences)
             {
                 fixed (ulong* pFenceValuesPtr = &pFenceValues)
@@ -5834,7 +5842,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetResidencyPriority(uint NumObjects, ID3D12Pageable** ppObjects, ResidencyPriority* pPriorities)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint, ID3D12Pageable**, ResidencyPriority*, int>)LpVtbl[46])(@this, NumObjects, ppObjects, pPriorities);
             return ret;
         }
@@ -5843,7 +5851,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetResidencyPriority(uint NumObjects, ID3D12Pageable** ppObjects, ref ResidencyPriority pPriorities)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ResidencyPriority* pPrioritiesPtr = &pPriorities)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint, ID3D12Pageable**, ResidencyPriority*, int>)LpVtbl[46])(@this, NumObjects, ppObjects, pPrioritiesPtr);
@@ -5855,7 +5863,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetResidencyPriority(uint NumObjects, ref ID3D12Pageable* ppObjects, ResidencyPriority* pPriorities)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Pageable** ppObjectsPtr = &ppObjects)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, uint, ID3D12Pageable**, ResidencyPriority*, int>)LpVtbl[46])(@this, NumObjects, ppObjectsPtr, pPriorities);
@@ -5867,7 +5875,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetResidencyPriority(uint NumObjects, ref ID3D12Pageable* ppObjects, ref ResidencyPriority pPriorities)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12Pageable** ppObjectsPtr = &ppObjects)
             {
                 fixed (ResidencyPriority* pPrioritiesPtr = &pPriorities)
@@ -5882,7 +5890,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePipelineState(PipelineStateStreamDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, PipelineStateStreamDesc*, Guid*, void**, int>)LpVtbl[47])(@this, pDesc, riid, ppPipelineState);
             return ret;
         }
@@ -5891,7 +5899,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePipelineState(PipelineStateStreamDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppPipelineStatePtr = &ppPipelineState)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, PipelineStateStreamDesc*, Guid*, void**, int>)LpVtbl[47])(@this, pDesc, riid, ppPipelineStatePtr);
@@ -5903,7 +5911,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePipelineState(PipelineStateStreamDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, PipelineStateStreamDesc*, Guid*, void**, int>)LpVtbl[47])(@this, pDesc, riidPtr, ppPipelineState);
@@ -5915,7 +5923,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePipelineState(PipelineStateStreamDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
@@ -5930,7 +5938,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePipelineState(ref PipelineStateStreamDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (PipelineStateStreamDesc* pDescPtr = &pDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12Device2*, PipelineStateStreamDesc*, Guid*, void**, int>)LpVtbl[47])(@this, pDescPtr, riid, ppPipelineState);
@@ -5942,7 +5950,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePipelineState(ref PipelineStateStreamDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (PipelineStateStreamDesc* pDescPtr = &pDesc)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
@@ -5957,7 +5965,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePipelineState(ref PipelineStateStreamDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (PipelineStateStreamDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -5972,7 +5980,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int CreatePipelineState(ref PipelineStateStreamDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12Device2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (PipelineStateStreamDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)

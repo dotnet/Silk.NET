@@ -50,7 +50,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -59,7 +59,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -71,7 +71,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -83,7 +83,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -98,7 +98,7 @@ namespace Silk.NET.DXGI
         public readonly uint AddRef()
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, uint>)LpVtbl[1])(@this);
             return ret;
         }
@@ -107,7 +107,7 @@ namespace Silk.NET.DXGI
         public readonly uint Release()
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, uint>)LpVtbl[2])(@this);
             return ret;
         }
@@ -116,7 +116,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int SetPrivateData(Guid* Name, uint DataSize, void* pData)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, uint, void*, int>)LpVtbl[3])(@this, Name, DataSize, pData);
             return ret;
         }
@@ -125,7 +125,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int SetPrivateData<T0>(Guid* Name, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, uint, T0*, int>)LpVtbl[3])(@this, Name, DataSize, pDataPtr);
@@ -137,7 +137,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int SetPrivateData(ref Guid Name, uint DataSize, void* pData)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* NamePtr = &Name)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, uint, void*, int>)LpVtbl[3])(@this, NamePtr, DataSize, pData);
@@ -149,7 +149,7 @@ namespace Silk.NET.DXGI
         public readonly int SetPrivateData<T0>(ref Guid Name, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* NamePtr = &Name)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -164,7 +164,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknown);
             return ret;
         }
@@ -173,7 +173,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int SetPrivateDataInterface(Guid* Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, Name, pUnknownPtr);
@@ -185,7 +185,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pUnknown)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* NamePtr = &Name)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[4])(@this, NamePtr, pUnknown);
@@ -197,7 +197,7 @@ namespace Silk.NET.DXGI
         public readonly int SetPrivateDataInterface(ref Guid Name, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pUnknown)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* NamePtr = &Name)
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pUnknownPtr = &pUnknown)
@@ -212,7 +212,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int GetPrivateData(Guid* Name, uint* pDataSize, void* pData)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSize, pData);
             return ret;
         }
@@ -221,7 +221,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int GetPrivateData<T0>(Guid* Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, uint*, T0*, int>)LpVtbl[5])(@this, Name, pDataSize, pDataPtr);
@@ -233,7 +233,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int GetPrivateData(Guid* Name, ref uint pDataSize, void* pData)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, Name, pDataSizePtr, pData);
@@ -245,7 +245,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int GetPrivateData<T0>(Guid* Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -260,7 +260,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int GetPrivateData(ref Guid Name, uint* pDataSize, void* pData)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* NamePtr = &Name)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, uint*, void*, int>)LpVtbl[5])(@this, NamePtr, pDataSize, pData);
@@ -272,7 +272,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int GetPrivateData<T0>(ref Guid Name, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* NamePtr = &Name)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -287,7 +287,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int GetPrivateData(ref Guid Name, ref uint pDataSize, void* pData)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* NamePtr = &Name)
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
@@ -302,7 +302,7 @@ namespace Silk.NET.DXGI
         public readonly int GetPrivateData<T0>(ref Guid Name, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* NamePtr = &Name)
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
@@ -320,7 +320,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int GetParent(Guid* riid, void** ppParent)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParent);
             return ret;
         }
@@ -329,7 +329,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int GetParent(Guid* riid, ref void* ppParent)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppParentPtr = &ppParent)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, void**, int>)LpVtbl[6])(@this, riid, ppParentPtr);
@@ -341,7 +341,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int GetParent(ref Guid riid, void** ppParent)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, void**, int>)LpVtbl[6])(@this, riidPtr, ppParent);
@@ -353,7 +353,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int GetParent(ref Guid riid, ref void* ppParent)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppParentPtr = &ppParent)
@@ -368,7 +368,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int EnumOutputs(uint Output, IDXGIOutput** ppOutput)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, uint, IDXGIOutput**, int>)LpVtbl[7])(@this, Output, ppOutput);
             return ret;
         }
@@ -377,7 +377,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int EnumOutputs(uint Output, ref IDXGIOutput* ppOutput)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDXGIOutput** ppOutputPtr = &ppOutput)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, uint, IDXGIOutput**, int>)LpVtbl[7])(@this, Output, ppOutputPtr);
@@ -389,7 +389,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int GetDesc(AdapterDesc* pDesc)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, AdapterDesc*, int>)LpVtbl[8])(@this, pDesc);
             return ret;
         }
@@ -398,7 +398,7 @@ namespace Silk.NET.DXGI
         public readonly int GetDesc(ref AdapterDesc pDesc)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (AdapterDesc* pDescPtr = &pDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, AdapterDesc*, int>)LpVtbl[8])(@this, pDescPtr);
@@ -410,7 +410,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CheckInterfaceSupport(Guid* InterfaceName, long* pUMDVersion)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, long*, int>)LpVtbl[9])(@this, InterfaceName, pUMDVersion);
             return ret;
         }
@@ -419,7 +419,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CheckInterfaceSupport(Guid* InterfaceName, ref long pUMDVersion)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (long* pUMDVersionPtr = &pUMDVersion)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, long*, int>)LpVtbl[9])(@this, InterfaceName, pUMDVersionPtr);
@@ -431,7 +431,7 @@ namespace Silk.NET.DXGI
         public readonly unsafe int CheckInterfaceSupport(ref Guid InterfaceName, long* pUMDVersion)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* InterfaceNamePtr = &InterfaceName)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDXGIAdapter*, Guid*, long*, int>)LpVtbl[9])(@this, InterfaceNamePtr, pUMDVersion);
@@ -443,7 +443,7 @@ namespace Silk.NET.DXGI
         public readonly int CheckInterfaceSupport(ref Guid InterfaceName, ref long pUMDVersion)
         {
             var @this = (IDXGIAdapter*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* InterfaceNamePtr = &InterfaceName)
             {
                 fixed (long* pUMDVersionPtr = &pUMDVersion)

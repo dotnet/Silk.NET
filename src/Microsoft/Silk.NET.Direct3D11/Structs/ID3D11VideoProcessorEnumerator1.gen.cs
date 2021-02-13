@@ -53,7 +53,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -62,7 +62,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -74,7 +74,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -86,7 +86,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -101,7 +101,7 @@ namespace Silk.NET.Direct3D11
         public readonly uint AddRef()
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, uint>)LpVtbl[1])(@this);
             return ret;
         }
@@ -110,7 +110,7 @@ namespace Silk.NET.Direct3D11
         public readonly uint Release()
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, uint>)LpVtbl[2])(@this);
             return ret;
         }
@@ -136,7 +136,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData(Guid* guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pData);
             return ret;
         }
@@ -145,7 +145,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData<T0>(Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, T0*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
@@ -157,7 +157,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData(Guid* guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pData);
@@ -169,7 +169,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData<T0>(Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -184,7 +184,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData(ref Guid guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pData);
@@ -196,7 +196,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData<T0>(ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -211,7 +211,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData(ref Guid guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
@@ -226,7 +226,7 @@ namespace Silk.NET.Direct3D11
         public readonly int GetPrivateData<T0>(ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
@@ -244,7 +244,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, void* pData)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pData);
             return ret;
         }
@@ -253,7 +253,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint, T0*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
@@ -265,7 +265,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, void* pData)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pData);
@@ -277,7 +277,7 @@ namespace Silk.NET.Direct3D11
         public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -292,7 +292,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
             return ret;
         }
@@ -301,7 +301,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
@@ -313,7 +313,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
@@ -325,7 +325,7 @@ namespace Silk.NET.Direct3D11
         public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
@@ -340,7 +340,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetVideoProcessorContentDesc(VideoProcessorContentDesc* pContentDesc)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, VideoProcessorContentDesc*, int>)LpVtbl[7])(@this, pContentDesc);
             return ret;
         }
@@ -349,7 +349,7 @@ namespace Silk.NET.Direct3D11
         public readonly int GetVideoProcessorContentDesc(ref VideoProcessorContentDesc pContentDesc)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (VideoProcessorContentDesc* pContentDescPtr = &pContentDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, VideoProcessorContentDesc*, int>)LpVtbl[7])(@this, pContentDescPtr);
@@ -361,7 +361,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CheckVideoProcessorFormat(Silk.NET.DXGI.Format Format, uint* pFlags)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, uint*, int>)LpVtbl[8])(@this, Format, pFlags);
             return ret;
         }
@@ -370,7 +370,7 @@ namespace Silk.NET.Direct3D11
         public readonly int CheckVideoProcessorFormat(Silk.NET.DXGI.Format Format, ref uint pFlags)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pFlagsPtr = &pFlags)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, uint*, int>)LpVtbl[8])(@this, Format, pFlagsPtr);
@@ -382,7 +382,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetVideoProcessorCaps(VideoProcessorCaps* pCaps)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, VideoProcessorCaps*, int>)LpVtbl[9])(@this, pCaps);
             return ret;
         }
@@ -391,7 +391,7 @@ namespace Silk.NET.Direct3D11
         public readonly int GetVideoProcessorCaps(ref VideoProcessorCaps pCaps)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (VideoProcessorCaps* pCapsPtr = &pCaps)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, VideoProcessorCaps*, int>)LpVtbl[9])(@this, pCapsPtr);
@@ -403,7 +403,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetVideoProcessorRateConversionCaps(uint TypeIndex, VideoProcessorRateConversionCaps* pCaps)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, uint, VideoProcessorRateConversionCaps*, int>)LpVtbl[10])(@this, TypeIndex, pCaps);
             return ret;
         }
@@ -412,7 +412,7 @@ namespace Silk.NET.Direct3D11
         public readonly int GetVideoProcessorRateConversionCaps(uint TypeIndex, ref VideoProcessorRateConversionCaps pCaps)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (VideoProcessorRateConversionCaps* pCapsPtr = &pCaps)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, uint, VideoProcessorRateConversionCaps*, int>)LpVtbl[10])(@this, TypeIndex, pCapsPtr);
@@ -424,7 +424,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetVideoProcessorCustomRate(uint TypeIndex, uint CustomRateIndex, VideoProcessorCustomRate* pRate)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, uint, uint, VideoProcessorCustomRate*, int>)LpVtbl[11])(@this, TypeIndex, CustomRateIndex, pRate);
             return ret;
         }
@@ -433,7 +433,7 @@ namespace Silk.NET.Direct3D11
         public readonly int GetVideoProcessorCustomRate(uint TypeIndex, uint CustomRateIndex, ref VideoProcessorCustomRate pRate)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (VideoProcessorCustomRate* pRatePtr = &pRate)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, uint, uint, VideoProcessorCustomRate*, int>)LpVtbl[11])(@this, TypeIndex, CustomRateIndex, pRatePtr);
@@ -445,7 +445,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetVideoProcessorFilterRange(VideoProcessorFilter Filter, VideoProcessorFilterRange* pRange)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, VideoProcessorFilter, VideoProcessorFilterRange*, int>)LpVtbl[12])(@this, Filter, pRange);
             return ret;
         }
@@ -454,7 +454,7 @@ namespace Silk.NET.Direct3D11
         public readonly int GetVideoProcessorFilterRange(VideoProcessorFilter Filter, ref VideoProcessorFilterRange pRange)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (VideoProcessorFilterRange* pRangePtr = &pRange)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, VideoProcessorFilter, VideoProcessorFilterRange*, int>)LpVtbl[12])(@this, Filter, pRangePtr);
@@ -466,7 +466,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CheckVideoProcessorFormatConversion(Silk.NET.DXGI.Format InputFormat, Silk.NET.DXGI.ColorSpaceType InputColorSpace, Silk.NET.DXGI.Format OutputFormat, Silk.NET.DXGI.ColorSpaceType OutputColorSpace, int* pSupported)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, int*, int>)LpVtbl[13])(@this, InputFormat, InputColorSpace, OutputFormat, OutputColorSpace, pSupported);
             return ret;
         }
@@ -475,7 +475,7 @@ namespace Silk.NET.Direct3D11
         public readonly int CheckVideoProcessorFormatConversion(Silk.NET.DXGI.Format InputFormat, Silk.NET.DXGI.ColorSpaceType InputColorSpace, Silk.NET.DXGI.Format OutputFormat, Silk.NET.DXGI.ColorSpaceType OutputColorSpace, ref int pSupported)
         {
             var @this = (ID3D11VideoProcessorEnumerator1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (int* pSupportedPtr = &pSupported)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoProcessorEnumerator1*, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, Silk.NET.DXGI.Format, Silk.NET.DXGI.ColorSpaceType, int*, int>)LpVtbl[13])(@this, InputFormat, InputColorSpace, OutputFormat, OutputColorSpace, pSupportedPtr);

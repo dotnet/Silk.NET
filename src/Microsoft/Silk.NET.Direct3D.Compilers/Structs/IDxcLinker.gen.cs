@@ -47,7 +47,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -56,7 +56,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -68,7 +68,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -80,7 +80,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -95,7 +95,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly uint AddRef()
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, uint>)LpVtbl[1])(@this);
             return ret;
         }
@@ -104,7 +104,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly uint Release()
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, uint>)LpVtbl[2])(@this);
             return ret;
         }
@@ -113,7 +113,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int RegisterLibrary(char* pLibName, IDxcBlob* pLib)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibName, pLib);
             return ret;
         }
@@ -122,7 +122,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int RegisterLibrary(char* pLibName, ref IDxcBlob pLib)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDxcBlob* pLibPtr = &pLib)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibName, pLibPtr);
@@ -134,7 +134,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int RegisterLibrary(ref char pLibName, IDxcBlob* pLib)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pLibNamePtr = &pLibName)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibNamePtr, pLib);
@@ -146,7 +146,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly int RegisterLibrary(ref char pLibName, ref IDxcBlob pLib)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pLibNamePtr = &pLibName)
             {
                 fixed (IDxcBlob* pLibPtr = &pLib)
@@ -161,7 +161,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int RegisterLibrary(string pLibName, IDxcBlob* pLib)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pLibNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pLibName);
             ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, IDxcBlob*, int>)LpVtbl[3])(@this, pLibNamePtr, pLib);
             Marshal.FreeHGlobal((nint)pLibNamePtr);
@@ -172,7 +172,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly int RegisterLibrary(string pLibName, ref IDxcBlob pLib)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pLibNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pLibName);
             fixed (IDxcBlob* pLibPtr = &pLib)
             {
@@ -186,7 +186,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
             return ret;
         }
@@ -195,7 +195,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDxcOperationResult** ppResultPtr = &ppResult)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResultPtr);
@@ -207,7 +207,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char** pArgumentsPtr = &pArguments)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNames, libCount, pArgumentsPtr, argCount, ppResult);
@@ -219,7 +219,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char** pArgumentsPtr = &pArguments)
             {
                 fixed (IDxcOperationResult** ppResultPtr = &ppResult)
@@ -234,7 +234,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char** pLibNamesPtr = &pLibNames)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfile, pLibNamesPtr, libCount, pArguments, argCount, ppResult);
@@ -246,7 +246,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char** pLibNamesPtr = &pLibNames)
             {
                 fixed (IDxcOperationResult** ppResultPtr = &ppResult)
@@ -261,7 +261,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char** pLibNamesPtr = &pLibNames)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
@@ -276,7 +276,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char** pLibNamesPtr = &pLibNames)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
@@ -294,7 +294,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
@@ -306,7 +306,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (IDxcOperationResult** ppResultPtr = &ppResult)
@@ -321,7 +321,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
@@ -336,7 +336,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
@@ -354,7 +354,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (char** pLibNamesPtr = &pLibNames)
@@ -369,7 +369,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (char** pLibNamesPtr = &pLibNames)
@@ -387,7 +387,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (char** pLibNamesPtr = &pLibNames)
@@ -405,7 +405,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
                 fixed (char** pLibNamesPtr = &pLibNames)
@@ -426,7 +426,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
             ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryName, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
             Marshal.FreeHGlobal((nint)pTargetProfilePtr);
@@ -437,7 +437,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
             fixed (IDxcOperationResult** ppResultPtr = &ppResult)
             {
@@ -451,7 +451,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
             fixed (char** pArgumentsPtr = &pArguments)
             {
@@ -465,7 +465,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
             fixed (char** pArgumentsPtr = &pArguments)
             {
@@ -482,7 +482,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
             fixed (char** pLibNamesPtr = &pLibNames)
             {
@@ -496,7 +496,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
             fixed (char** pLibNamesPtr = &pLibNames)
             {
@@ -513,7 +513,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
             fixed (char** pLibNamesPtr = &pLibNames)
             {
@@ -530,7 +530,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(char* pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
             fixed (char** pLibNamesPtr = &pLibNames)
             {
@@ -550,7 +550,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, char*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
@@ -562,7 +562,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
                 fixed (IDxcOperationResult** ppResultPtr = &ppResult)
@@ -577,7 +577,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
@@ -592,7 +592,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
                 fixed (char** pArgumentsPtr = &pArguments)
@@ -610,7 +610,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
                 fixed (char** pLibNamesPtr = &pLibNames)
@@ -625,7 +625,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
                 fixed (char** pLibNamesPtr = &pLibNames)
@@ -643,7 +643,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
                 fixed (char** pLibNamesPtr = &pLibNames)
@@ -661,7 +661,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
                 fixed (char** pLibNamesPtr = &pLibNames)
@@ -682,7 +682,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
                 fixed (char* pTargetProfilePtr = &pTargetProfile)
@@ -697,7 +697,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
                 fixed (char* pTargetProfilePtr = &pTargetProfile)
@@ -715,7 +715,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
                 fixed (char* pTargetProfilePtr = &pTargetProfile)
@@ -733,7 +733,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
                 fixed (char* pTargetProfilePtr = &pTargetProfile)
@@ -754,7 +754,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
                 fixed (char* pTargetProfilePtr = &pTargetProfile)
@@ -772,7 +772,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
                 fixed (char* pTargetProfilePtr = &pTargetProfile)
@@ -793,7 +793,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
                 fixed (char* pTargetProfilePtr = &pTargetProfile)
@@ -814,7 +814,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
                 fixed (char* pTargetProfilePtr = &pTargetProfile)
@@ -838,7 +838,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
@@ -852,7 +852,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
@@ -869,7 +869,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
@@ -886,7 +886,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
@@ -906,7 +906,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
@@ -923,7 +923,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
@@ -943,7 +943,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
@@ -963,7 +963,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(ref char pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pEntryNamePtr = &pEntryName)
             {
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
@@ -986,7 +986,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, char*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfile, pLibNames, libCount, pArguments, argCount, ppResult);
             Marshal.FreeHGlobal((nint)pEntryNamePtr);
@@ -997,7 +997,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (IDxcOperationResult** ppResultPtr = &ppResult)
             {
@@ -1011,7 +1011,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (char** pArgumentsPtr = &pArguments)
             {
@@ -1025,7 +1025,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, char* pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (char** pArgumentsPtr = &pArguments)
             {
@@ -1042,7 +1042,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (char** pLibNamesPtr = &pLibNames)
             {
@@ -1056,7 +1056,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (char** pLibNamesPtr = &pLibNames)
             {
@@ -1073,7 +1073,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (char** pLibNamesPtr = &pLibNames)
             {
@@ -1090,7 +1090,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, char* pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (char** pLibNamesPtr = &pLibNames)
             {
@@ -1110,7 +1110,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
@@ -1124,7 +1124,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
@@ -1141,7 +1141,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
@@ -1158,7 +1158,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, ref char pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
@@ -1178,7 +1178,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
@@ -1195,7 +1195,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
@@ -1215,7 +1215,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
@@ -1235,7 +1235,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, ref char pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (char* pTargetProfilePtr = &pTargetProfile)
             {
@@ -1258,7 +1258,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
             ret = ((delegate* unmanaged[Cdecl]<IDxcLinker*, byte*, byte*, char**, uint, char**, uint, IDxcOperationResult**, int>)LpVtbl[4])(@this, pEntryNamePtr, pTargetProfilePtr, pLibNames, libCount, pArguments, argCount, ppResult);
@@ -1271,7 +1271,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, string pTargetProfile, char** pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
             fixed (IDxcOperationResult** ppResultPtr = &ppResult)
@@ -1287,7 +1287,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
             fixed (char** pArgumentsPtr = &pArguments)
@@ -1303,7 +1303,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, string pTargetProfile, char** pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
             fixed (char** pArgumentsPtr = &pArguments)
@@ -1322,7 +1322,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
             fixed (char** pLibNamesPtr = &pLibNames)
@@ -1338,7 +1338,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, char** pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
             fixed (char** pLibNamesPtr = &pLibNames)
@@ -1357,7 +1357,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
             fixed (char** pLibNamesPtr = &pLibNames)
@@ -1376,7 +1376,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Link(string pEntryName, string pTargetProfile, ref char* pLibNames, uint libCount, ref char* pArguments, uint argCount, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcLinker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             var pTargetProfilePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetProfile);
             fixed (char** pLibNamesPtr = &pLibNames)

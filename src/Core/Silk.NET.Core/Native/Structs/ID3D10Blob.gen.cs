@@ -47,7 +47,7 @@ namespace Silk.NET.Core.Native
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (ID3D10Blob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D10Blob*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -56,7 +56,7 @@ namespace Silk.NET.Core.Native
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (ID3D10Blob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D10Blob*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -68,7 +68,7 @@ namespace Silk.NET.Core.Native
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (ID3D10Blob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D10Blob*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -80,7 +80,7 @@ namespace Silk.NET.Core.Native
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (ID3D10Blob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -95,7 +95,7 @@ namespace Silk.NET.Core.Native
         public readonly uint AddRef()
         {
             var @this = (ID3D10Blob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D10Blob*, uint>)LpVtbl[1])(@this);
             return ret;
         }
@@ -104,7 +104,7 @@ namespace Silk.NET.Core.Native
         public readonly uint Release()
         {
             var @this = (ID3D10Blob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D10Blob*, uint>)LpVtbl[2])(@this);
             return ret;
         }
@@ -113,7 +113,7 @@ namespace Silk.NET.Core.Native
         public readonly unsafe void* GetBufferPointer()
         {
             var @this = (ID3D10Blob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                void* ret = default;
+            void* ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D10Blob*, void*>)LpVtbl[3])(@this);
             return ret;
         }
@@ -122,7 +122,7 @@ namespace Silk.NET.Core.Native
         public readonly nuint GetBufferSize()
         {
             var @this = (ID3D10Blob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                nuint ret = default;
+            nuint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D10Blob*, nuint>)LpVtbl[4])(@this);
             return ret;
         }

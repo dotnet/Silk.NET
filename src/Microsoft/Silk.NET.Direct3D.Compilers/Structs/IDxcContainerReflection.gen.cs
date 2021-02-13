@@ -47,7 +47,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (IDxcContainerReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcContainerReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -56,7 +56,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (IDxcContainerReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcContainerReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -68,7 +68,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (IDxcContainerReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcContainerReflection*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -80,7 +80,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (IDxcContainerReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -95,7 +95,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly uint AddRef()
         {
             var @this = (IDxcContainerReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcContainerReflection*, uint>)LpVtbl[1])(@this);
             return ret;
         }
@@ -104,7 +104,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly uint Release()
         {
             var @this = (IDxcContainerReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcContainerReflection*, uint>)LpVtbl[2])(@this);
             return ret;
         }
@@ -113,7 +113,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int Load(IDxcBlob* pContainer)
         {
             var @this = (IDxcContainerReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcContainerReflection*, IDxcBlob*, int>)LpVtbl[3])(@this, pContainer);
             return ret;
         }
@@ -122,7 +122,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly int Load(ref IDxcBlob pContainer)
         {
             var @this = (IDxcContainerReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDxcBlob* pContainerPtr = &pContainer)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcContainerReflection*, IDxcBlob*, int>)LpVtbl[3])(@this, pContainerPtr);
@@ -134,7 +134,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetPartCount(uint* pResult)
         {
             var @this = (IDxcContainerReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcContainerReflection*, uint*, int>)LpVtbl[4])(@this, pResult);
             return ret;
         }
@@ -143,7 +143,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly int GetPartCount(ref uint pResult)
         {
             var @this = (IDxcContainerReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pResultPtr = &pResult)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcContainerReflection*, uint*, int>)LpVtbl[4])(@this, pResultPtr);
@@ -155,7 +155,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetPartKind(uint idx, uint* pResult)
         {
             var @this = (IDxcContainerReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcContainerReflection*, uint, uint*, int>)LpVtbl[5])(@this, idx, pResult);
             return ret;
         }
@@ -164,7 +164,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly int GetPartKind(uint idx, ref uint pResult)
         {
             var @this = (IDxcContainerReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pResultPtr = &pResult)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcContainerReflection*, uint, uint*, int>)LpVtbl[5])(@this, idx, pResultPtr);
@@ -176,7 +176,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetPartContent(uint idx, IDxcBlob** ppResult)
         {
             var @this = (IDxcContainerReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcContainerReflection*, uint, IDxcBlob**, int>)LpVtbl[6])(@this, idx, ppResult);
             return ret;
         }
@@ -185,7 +185,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetPartContent(uint idx, ref IDxcBlob* ppResult)
         {
             var @this = (IDxcContainerReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDxcBlob** ppResultPtr = &ppResult)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcContainerReflection*, uint, IDxcBlob**, int>)LpVtbl[6])(@this, idx, ppResultPtr);
@@ -197,7 +197,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int FindFirstPartKind(uint kind, uint* pResult)
         {
             var @this = (IDxcContainerReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcContainerReflection*, uint, uint*, int>)LpVtbl[7])(@this, kind, pResult);
             return ret;
         }
@@ -206,7 +206,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly int FindFirstPartKind(uint kind, ref uint pResult)
         {
             var @this = (IDxcContainerReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pResultPtr = &pResult)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcContainerReflection*, uint, uint*, int>)LpVtbl[7])(@this, kind, pResultPtr);
@@ -218,7 +218,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetPartReflection(uint idx, Guid* iid, void** ppvObject)
         {
             var @this = (IDxcContainerReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcContainerReflection*, uint, Guid*, void**, int>)LpVtbl[8])(@this, idx, iid, ppvObject);
             return ret;
         }
@@ -227,7 +227,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetPartReflection(uint idx, Guid* iid, ref void* ppvObject)
         {
             var @this = (IDxcContainerReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcContainerReflection*, uint, Guid*, void**, int>)LpVtbl[8])(@this, idx, iid, ppvObjectPtr);
@@ -239,7 +239,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetPartReflection(uint idx, ref Guid iid, void** ppvObject)
         {
             var @this = (IDxcContainerReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* iidPtr = &iid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcContainerReflection*, uint, Guid*, void**, int>)LpVtbl[8])(@this, idx, iidPtr, ppvObject);
@@ -251,7 +251,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetPartReflection(uint idx, ref Guid iid, ref void* ppvObject)
         {
             var @this = (IDxcContainerReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* iidPtr = &iid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)

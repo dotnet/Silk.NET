@@ -50,7 +50,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (ID3D12DebugDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -59,7 +59,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (ID3D12DebugDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -71,7 +71,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (ID3D12DebugDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -83,7 +83,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (ID3D12DebugDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -98,7 +98,7 @@ namespace Silk.NET.Direct3D12
         public readonly uint AddRef()
         {
             var @this = (ID3D12DebugDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice2*, uint>)LpVtbl[1])(@this);
             return ret;
         }
@@ -107,7 +107,7 @@ namespace Silk.NET.Direct3D12
         public readonly uint Release()
         {
             var @this = (ID3D12DebugDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
+            uint ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice2*, uint>)LpVtbl[2])(@this);
             return ret;
         }
@@ -116,7 +116,7 @@ namespace Silk.NET.Direct3D12
         public readonly int SetFeatureMask(DebugFeature Mask)
         {
             var @this = (ID3D12DebugDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice2*, DebugFeature, int>)LpVtbl[3])(@this, Mask);
             return ret;
         }
@@ -125,7 +125,7 @@ namespace Silk.NET.Direct3D12
         public readonly DebugFeature GetFeatureMask()
         {
             var @this = (ID3D12DebugDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                DebugFeature ret = default;
+            DebugFeature ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice2*, DebugFeature>)LpVtbl[4])(@this);
             return ret;
         }
@@ -134,7 +134,7 @@ namespace Silk.NET.Direct3D12
         public readonly int ReportLiveDeviceObjects(RldoFlags Flags)
         {
             var @this = (ID3D12DebugDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice2*, RldoFlags, int>)LpVtbl[5])(@this, Flags);
             return ret;
         }
@@ -143,7 +143,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetDebugParameter(DebugDeviceParameterType Type, void* pData, uint DataSize)
         {
             var @this = (ID3D12DebugDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice2*, DebugDeviceParameterType, void*, uint, int>)LpVtbl[6])(@this, Type, pData, DataSize);
             return ret;
         }
@@ -152,7 +152,7 @@ namespace Silk.NET.Direct3D12
         public readonly int SetDebugParameter<T0>(DebugDeviceParameterType Type, ref T0 pData, uint DataSize) where T0 : unmanaged
         {
             var @this = (ID3D12DebugDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice2*, DebugDeviceParameterType, T0*, uint, int>)LpVtbl[6])(@this, Type, pDataPtr, DataSize);
@@ -164,7 +164,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetDebugParameter(DebugDeviceParameterType Type, void* pData, uint DataSize)
         {
             var @this = (ID3D12DebugDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice2*, DebugDeviceParameterType, void*, uint, int>)LpVtbl[7])(@this, Type, pData, DataSize);
             return ret;
         }
@@ -173,7 +173,7 @@ namespace Silk.NET.Direct3D12
         public readonly int GetDebugParameter<T0>(DebugDeviceParameterType Type, ref T0 pData, uint DataSize) where T0 : unmanaged
         {
             var @this = (ID3D12DebugDevice2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12DebugDevice2*, DebugDeviceParameterType, T0*, uint, int>)LpVtbl[7])(@this, Type, pDataPtr, DataSize);

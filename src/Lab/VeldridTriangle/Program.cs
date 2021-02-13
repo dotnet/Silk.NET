@@ -82,9 +82,9 @@ void main()
 
             VertexPositionColor[] quadVertices =
             {
-                new(new(0, .75f), RgbaFloat.Red),
-                new(new(.75f, -.75f), RgbaFloat.Green),
-                new(new(-.75f, -.75f), RgbaFloat.Blue)
+                new(new(0, .5f), RgbaFloat.Red),
+                new(new(.5f, -.5f), RgbaFloat.Green),
+                new(new(-.5f, -.5f), RgbaFloat.Blue)
             };
             var vbDescription = new BufferDescription
             (

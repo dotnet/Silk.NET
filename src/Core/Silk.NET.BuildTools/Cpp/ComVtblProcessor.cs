@@ -12,6 +12,7 @@ using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
 using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Overloading;
+using Attribute = Silk.NET.BuildTools.Common.Attribute;
 using Type = Silk.NET.BuildTools.Common.Functions.Type;
 
 namespace Silk.NET.BuildTools.Cpp
@@ -73,8 +74,34 @@ namespace Silk.NET.BuildTools.Cpp
             }
         }
 
-        public static void Implement(StringBuilder sb, Function function, Struct parent, int index)
+        public static void Implement(StringBuilder sb, Function function, Struct parent, int index, bool retDeref = false)
         {
+            if (function.Attributes.IsBuildToolsIntrinsic(out var args) && args[0] == "$CPPRETFIXUP")
+            {
+                sb.AppendLine($"{function.ReturnType} silkDotNetReturnFixupResult;");
+                sb.AppendLine("var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;");
+                var indIncremented = new TypeSignatureBuilder(function.ReturnType)
+                    .WithIndirectionLevel(function.ReturnType.IndirectionLevels + 1)
+                    .Build();
+                var fixedUpFunction = new FunctionSignatureBuilder(function)
+                    .WithReturnType(indIncremented)
+                    .WithAttributes(Array.Empty<Attribute>())
+                    .WithParameters
+                    (
+                        function.Parameters.Prepend
+                        (
+                            new Parameter
+                            {
+                                Name = "pSilkDotNetReturnFixupResult",
+                                Type = indIncremented
+                            }
+                        ).ToArray()
+                    ).Build();
+                Implement(sb, fixedUpFunction, parent, index, true);
+                function.Attributes.RemoveAll(x => x.Name == "BuildToolsIntrinsic");
+                return;
+            }
+            
             var ind = "";
             sb.AppendLine($"var @this = ({parent.Name}*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));");
 
@@ -86,7 +113,7 @@ namespace Silk.NET.BuildTools.Cpp
 
             if (function.ReturnType.ToString() != "void")
             {
-                sb.AppendLine($"    {function.ReturnType} ret = default;");
+                sb.AppendLine($"{function.ReturnType} ret = default;");
             }
 
             for (var i = 0; i < function.Parameters.Count; i++)
@@ -204,7 +231,11 @@ namespace Silk.NET.BuildTools.Cpp
                 epilogue[i]();
             }
 
-            if (function.ReturnType.ToString() != "void")
+            if (retDeref)
+            {
+                sb.AppendLine("return *ret;");
+            }
+            else if (function.ReturnType.ToString() != "void")
             {
                 sb.AppendLine("return ret;");
             }

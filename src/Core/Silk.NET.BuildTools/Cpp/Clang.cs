@@ -1704,37 +1704,81 @@ namespace Silk.NET.BuildTools.Cpp
                 string name = null;
                 task.RenamedNativeNames.TryGetValue(cxxMethodDecl.Name, out name);
 
-                @struct.Vtbl.Add
-                (
-                    new Function
-                    {
-                        Accessibility = cxxMethodDecl.Access.MapAccessibility(),
-                        Attributes = new List<Attribute>(),
-                        Convention = GetCallingConvention
-                            ((cxxMethodDecl.Type as FunctionType)?.CallConv ?? CXCallingConv.CXCallingConv_C),
-                        Name = name ?? Naming.TranslateLite
-                            (Naming.TrimName(cxxMethodDecl.Name, task), task.FunctionPrefix),
-                        NativeName = cxxMethodDecl.Name,
-                        VtblIndex = vtblIndex,
-                        ReturnType = GetType(cxxMethodDecl.ReturnType, out _, ref _f, out _),
-                        Parameters = cxxMethodDecl.Parameters.Select
-                            (
-                                (x, i) =>
+                var fun = new Function
+                {
+                    Accessibility = cxxMethodDecl.Access.MapAccessibility(),
+                    Attributes = new List<Attribute>(),
+                    Convention = GetCallingConvention
+                        ((cxxMethodDecl.Type as FunctionType)?.CallConv ?? CXCallingConv.CXCallingConv_C),
+                    Name = name ?? Naming.TranslateLite
+                        (Naming.TrimName(cxxMethodDecl.Name, task), task.FunctionPrefix),
+                    NativeName = cxxMethodDecl.Name,
+                    VtblIndex = vtblIndex,
+                    ReturnType = GetType(cxxMethodDecl.ReturnType, out _, ref _f, out _),
+                    Parameters = cxxMethodDecl.Parameters.Select
+                        (
+                            (x, i) =>
+                            {
+                                var parameterFlow = FlowDirection.Undefined;
+                                return new Parameter
                                 {
-                                    var parameterFlow = FlowDirection.Undefined;
-                                    return new Parameter
-                                    {
-                                        Name = string.IsNullOrWhiteSpace(x.Name) ? $"arg{i}" : x.Name,
-                                        Type = GetType(x.Type, out var count, ref parameterFlow, out _),
-                                        Flow = parameterFlow,
-                                        Count = count
-                                    };
-                                }
-                            )
-                            .ToList()
-                    }
-                );
+                                    Name = string.IsNullOrWhiteSpace(x.Name) ? $"arg{i}" : x.Name,
+                                    Type = GetType(x.Type, out var count, ref parameterFlow, out _),
+                                    Flow = parameterFlow,
+                                    Count = count
+                                };
+                            }
+                        )
+                        .ToList()
+                };
+
+                if (NeedsReturnFixup(cxxMethodDecl))
+                {
+                    fun.Attributes.Add(new(){Name = "BuildToolsIntrinsic", Arguments = new (){"$CPPRETFIXUP"}});
+                }
+
+                @struct.Vtbl.Add(fun);
                 vtblIndex += 1;
+            }
+            
+            bool NeedsReturnFixup(CXXMethodDecl cxxMethodDecl)
+            {
+                Debug.Assert(cxxMethodDecl != null);
+
+                var needsReturnFixup = false;
+
+                if (cxxMethodDecl.IsVirtual)
+                {
+                    var canonicalReturnType = cxxMethodDecl.ReturnType.CanonicalType;
+
+                    switch (canonicalReturnType.TypeClass)
+                    {
+                        case CX_TypeClass.CX_TypeClass_Builtin:
+                        case CX_TypeClass.CX_TypeClass_Enum:
+                        case CX_TypeClass.CX_TypeClass_Pointer:
+                        {
+                            break;
+                        }
+
+                        case CX_TypeClass.CX_TypeClass_Record:
+                        {
+                            needsReturnFixup = true;
+                            break;
+                        }
+
+                        default:
+                        {
+                            Console.WriteLine
+                            (
+                                $"Warning: Unsupported return type for abstract method: " +
+                                $"'{canonicalReturnType.TypeClass}'. Generated bindings may be incomplete."
+                            );
+                            break;
+                        }
+                    }
+                }
+
+                return needsReturnFixup;
             }
 
             void OutputVtblHelperMethods
