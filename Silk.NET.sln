@@ -364,7 +364,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Windowing.Extensio
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeldridTriangle", "src\Lab\VeldridTriangle\VeldridTriangle.csproj", "{FD88C431-C25B-45B0-ACB1-E66FD62DD755}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D3D12Triangle", "D3D12Triangle\D3D12Triangle.csproj", "{760BE7AD-0683-451A-B28A-975A76404662}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D3D12Triangle", "src\Lab\D3D12Triangle\D3D12Triangle.csproj", "{760BE7AD-0683-451A-B28A-975A76404662}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
