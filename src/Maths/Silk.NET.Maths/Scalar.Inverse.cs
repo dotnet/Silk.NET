@@ -64,7 +64,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(sbyte))
                 {
-                    return (T) (object) (((sbyte) 1) / (sbyte) (object) x);
+                    return (T) (object) (sbyte) (((sbyte) 1) / (sbyte) (object) x);
                 }
 
                 return Byte(x);
@@ -75,7 +75,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(byte))
                 {
-                    return (T) (object) (((byte) 1) / (byte) (object) x);
+                    return (T) (object) (byte) (((byte) 1) / (byte) (object) x);
                 }
 
                 return UShort(x);
