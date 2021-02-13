@@ -54,11 +54,19 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "__AnonymousRecord_d3d12_L17439_C5")]
         [NativeName("Name", "anonymous1")]
         public RenderPassBeginningAccessUnion Anonymous;
+#if NETSTANDARD2_1
+        public ref RenderPassBeginningAccessClearParameters Clear
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Clear;
+        }
+#else
         public RenderPassBeginningAccessClearParameters Clear
         {
             get => Anonymous.Clear;
             set => Anonymous.Clear = value;
         }
+#endif
 
     }
 }

@@ -77,23 +77,47 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "__AnonymousRecord_d3d12_L2754_C5")]
         [NativeName("Name", "anonymous1")]
         public ResourceBarrierUnion Anonymous;
+#if NETSTANDARD2_1
+        public ref ResourceTransitionBarrier Transition
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Transition;
+        }
+#else
         public ResourceTransitionBarrier Transition
         {
             get => Anonymous.Transition;
             set => Anonymous.Transition = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref ResourceAliasingBarrier Aliasing
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Aliasing;
+        }
+#else
         public ResourceAliasingBarrier Aliasing
         {
             get => Anonymous.Aliasing;
             set => Anonymous.Aliasing = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref ResourceUavBarrier UAV
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.UAV;
+        }
+#else
         public ResourceUavBarrier UAV
         {
             get => Anonymous.UAV;
             set => Anonymous.UAV = value;
         }
+#endif
 
     }
 }

@@ -72,29 +72,61 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type.Name", "__AnonymousRecord_d3d11_L3298_C5")]
         [NativeName("Name", "anonymous2")]
         public BufferSrvUnion2 Anonymous2;
+#if NETSTANDARD2_1
+        public ref uint FirstElement
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous1.FirstElement;
+        }
+#else
         public uint FirstElement
         {
             get => Anonymous1.FirstElement;
             set => Anonymous1.FirstElement = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref uint ElementOffset
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous1.ElementOffset;
+        }
+#else
         public uint ElementOffset
         {
             get => Anonymous1.ElementOffset;
             set => Anonymous1.ElementOffset = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref uint NumElements
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous2.NumElements;
+        }
+#else
         public uint NumElements
         {
             get => Anonymous2.NumElements;
             set => Anonymous2.NumElements = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref uint ElementWidth
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous2.ElementWidth;
+        }
+#else
         public uint ElementWidth
         {
             get => Anonymous2.ElementWidth;
             set => Anonymous2.ElementWidth = value;
         }
+#endif
 
     }
 }

@@ -44,7 +44,7 @@ namespace D3D12Triangle
             Dispose(isDisposing: false);
         }
 
-        public float AspectRatio => Size.X / (float)Size.Y;
+        public float AspectRatio => Size.X / (float) Size.Y;
 
         public string AssetsPath => AppContext.BaseDirectory;
 
@@ -52,15 +52,9 @@ namespace D3D12Triangle
 
         public Vector4 BackgroundColor
         {
-            get
-            {
-                return _backgroundColor;
-            }
+            get { return _backgroundColor; }
 
-            set
-            {
-                _backgroundColor = value;
-            }
+            set { _backgroundColor = value; }
         }
 
         public Format DepthBufferFormat => _depthBufferFormat;
@@ -95,11 +89,23 @@ namespace D3D12Triangle
             DestroyDeviceDependentResources();
         }
 
-        public void OnInit(Format backBufferFormat, Vector4 backgroundColor, Format depthBufferFormat, float dpi, uint frameCount, IWindow window, bool useWarpDevice)
+        public void OnInit
+        (
+            Format backBufferFormat,
+            Vector4 backgroundColor,
+            Format depthBufferFormat,
+            float dpi,
+            uint frameCount,
+            IWindow window,
+            bool useWarpDevice
+        )
         {
-            _backBufferFormat = (backBufferFormat != Format.FormatUnknown) ? backBufferFormat : Format.FormatR8G8B8A8Unorm;
+            _backBufferFormat = (backBufferFormat != Format.FormatUnknown)
+                ? backBufferFormat
+                : Format.FormatR8G8B8A8Unorm;
             _backgroundColor = backgroundColor;
-            _depthBufferFormat = (depthBufferFormat != Format.FormatUnknown) ? depthBufferFormat : Format.FormatD32Float;
+            _depthBufferFormat =
+                (depthBufferFormat != Format.FormatUnknown) ? depthBufferFormat : Format.FormatD32Float;
             _dpi = dpi;
             _frameCount = Math.Max(frameCount, 1);
             _window = window;
@@ -159,16 +165,18 @@ namespace D3D12Triangle
         protected IDXGIAdapter1* GetHardwareAdapter(IDXGIFactory1* pFactory)
         {
             IDXGIAdapter1* adapter;
-            
-            // TODO DXGI_ERROR_NOT_FOUND is 0x887A0002 - maybe we should add Winerror.h somewhere in Silk.NET.Core?
-            const int errorNotFound = unchecked((int)0x887A0002);
 
-            for (var adapterIndex = 0u; errorNotFound != pFactory->EnumAdapters1(adapterIndex, &adapter); ++adapterIndex)
+            // TODO DXGI_ERROR_NOT_FOUND is 0x887A0002 - maybe we should add Winerror.h somewhere in Silk.NET.Core?
+            const int errorNotFound = unchecked((int) 0x887A0002);
+
+            for (var adapterIndex = 0u;
+                errorNotFound != pFactory->EnumAdapters1(adapterIndex, &adapter);
+                ++adapterIndex)
             {
                 AdapterDesc1 desc;
                 _ = adapter->GetDesc1(&desc);
 
-                if ((desc.Flags & (uint)AdapterFlag.AdapterFlagSoftware) != 0)
+                if ((desc.Flags & (uint) AdapterFlag.AdapterFlagSoftware) != 0)
                 {
                     // Don't select the Basic Render Driver adapter.
                     // If you want a software adapter, pass in "/warp" on the command line.

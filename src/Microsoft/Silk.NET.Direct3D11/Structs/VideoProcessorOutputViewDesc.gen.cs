@@ -60,17 +60,33 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type.Name", "__AnonymousRecord_d3d11_L11546_C5")]
         [NativeName("Name", "anonymous1")]
         public VideoProcessorOutputViewDescUnion Anonymous;
+#if NETSTANDARD2_1
+        public ref Tex2DVpov Texture2D
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Texture2D;
+        }
+#else
         public Tex2DVpov Texture2D
         {
             get => Anonymous.Texture2D;
             set => Anonymous.Texture2D = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref Tex2DArrayVpov Texture2DArray
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Texture2DArray;
+        }
+#else
         public Tex2DArrayVpov Texture2DArray
         {
             get => Anonymous.Texture2DArray;
             set => Anonymous.Texture2DArray = value;
         }
+#endif
 
     }
 }

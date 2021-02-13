@@ -462,11 +462,19 @@ namespace Silk.NET.BuildTools.Bind
       
         public static void WriteFusedField(Field field, List<string> args, StreamWriter sw)
         {
+            sw.WriteLine("#if NETSTANDARD2_1");
+            sw.WriteLine($"        public ref {field.Type} {field.Name}");
+            sw.WriteLine("        {");
+            sw.WriteLine("            [MethodImpl((MethodImplOptions) 768)]");
+            sw.WriteLine($"            get => ref {args[1]}.{args[2]};");
+            sw.WriteLine("        }");
+            sw.WriteLine("#else");
             sw.WriteLine($"        public {field.Type} {field.Name}");
             sw.WriteLine("        {");
             sw.WriteLine($"            get => {args[1]}.{args[2]};");
             sw.WriteLine($"            set => {args[1]}.{args[2]} = value;");
             sw.WriteLine("        }");
+            sw.WriteLine("#endif");
             sw.WriteLine();
         }
     }

@@ -125,71 +125,159 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type.Name", "__AnonymousRecord_d3d11_L3381_C5")]
         [NativeName("Name", "anonymous1")]
         public ShaderResourceViewDescUnion Anonymous;
+#if NETSTANDARD2_1
+        public ref BufferSrv Buffer
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Buffer;
+        }
+#else
         public BufferSrv Buffer
         {
             get => Anonymous.Buffer;
             set => Anonymous.Buffer = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref Tex1DSrv Texture1D
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Texture1D;
+        }
+#else
         public Tex1DSrv Texture1D
         {
             get => Anonymous.Texture1D;
             set => Anonymous.Texture1D = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref Tex1DArraySrv Texture1DArray
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Texture1DArray;
+        }
+#else
         public Tex1DArraySrv Texture1DArray
         {
             get => Anonymous.Texture1DArray;
             set => Anonymous.Texture1DArray = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref Tex2DSrv Texture2D
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Texture2D;
+        }
+#else
         public Tex2DSrv Texture2D
         {
             get => Anonymous.Texture2D;
             set => Anonymous.Texture2D = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref Tex2DArraySrv Texture2DArray
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Texture2DArray;
+        }
+#else
         public Tex2DArraySrv Texture2DArray
         {
             get => Anonymous.Texture2DArray;
             set => Anonymous.Texture2DArray = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref Tex2DmsSrv Texture2DMS
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Texture2DMS;
+        }
+#else
         public Tex2DmsSrv Texture2DMS
         {
             get => Anonymous.Texture2DMS;
             set => Anonymous.Texture2DMS = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref Tex2DmsArraySrv Texture2DMSArray
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Texture2DMSArray;
+        }
+#else
         public Tex2DmsArraySrv Texture2DMSArray
         {
             get => Anonymous.Texture2DMSArray;
             set => Anonymous.Texture2DMSArray = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref Tex3DSrv Texture3D
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Texture3D;
+        }
+#else
         public Tex3DSrv Texture3D
         {
             get => Anonymous.Texture3D;
             set => Anonymous.Texture3D = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref TexcubeSrv TextureCube
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.TextureCube;
+        }
+#else
         public TexcubeSrv TextureCube
         {
             get => Anonymous.TextureCube;
             set => Anonymous.TextureCube = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref TexcubeArraySrv TextureCubeArray
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.TextureCubeArray;
+        }
+#else
         public TexcubeArraySrv TextureCubeArray
         {
             get => Anonymous.TextureCubeArray;
             set => Anonymous.TextureCubeArray = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref BufferexSrv BufferEx
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.BufferEx;
+        }
+#else
         public BufferexSrv BufferEx
         {
             get => Anonymous.BufferEx;
             set => Anonymous.BufferEx = value;
         }
+#endif
 
     }
 }

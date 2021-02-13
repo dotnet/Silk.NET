@@ -99,23 +99,47 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "__AnonymousRecord_d3d12_L12497_C5")]
         [NativeName("Name", "anonymous1")]
         public BuildRaytracingAccelerationStructureInputsUnion Anonymous;
+#if NETSTANDARD2_1
+        public ref ulong InstanceDescs
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.InstanceDescs;
+        }
+#else
         public ulong InstanceDescs
         {
             get => Anonymous.InstanceDescs;
             set => Anonymous.InstanceDescs = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref RaytracingGeometryDesc* PGeometryDescs
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.PGeometryDescs;
+        }
+#else
         public RaytracingGeometryDesc* PGeometryDescs
         {
             get => Anonymous.PGeometryDescs;
             set => Anonymous.PGeometryDescs = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref RaytracingGeometryDesc** PpGeometryDescs
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.PpGeometryDescs;
+        }
+#else
         public RaytracingGeometryDesc** PpGeometryDescs
         {
             get => Anonymous.PpGeometryDescs;
             set => Anonymous.PpGeometryDescs = value;
         }
+#endif
 
     }
 }

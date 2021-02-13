@@ -66,23 +66,47 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "__AnonymousRecord_d3d12_L13459_C5")]
         [NativeName("Name", "anonymous1")]
         public VersionedDeviceRemovedExtendedDataUnion Anonymous;
+#if NETSTANDARD2_1
+        public ref DeviceRemovedExtendedData Dred10
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Dred10;
+        }
+#else
         public DeviceRemovedExtendedData Dred10
         {
             get => Anonymous.Dred10;
             set => Anonymous.Dred10 = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref DeviceRemovedExtendedData1 Dred11
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Dred11;
+        }
+#else
         public DeviceRemovedExtendedData1 Dred11
         {
             get => Anonymous.Dred11;
             set => Anonymous.Dred11 = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref DeviceRemovedExtendedData2 Dred12
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Dred12;
+        }
+#else
         public DeviceRemovedExtendedData2 Dred12
         {
             get => Anonymous.Dred12;
             set => Anonymous.Dred12 = value;
         }
+#endif
 
     }
 }

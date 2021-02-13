@@ -7,19 +7,19 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\src\Microsoft\Silk.NET.Direct3D.Compilers\Silk.NET.Direct3D.Compilers.csproj" />
-      <ProjectReference Include="..\src\Microsoft\Silk.NET.Direct3D12\Silk.NET.Direct3D12.csproj" />
-      <ProjectReference Include="..\src\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
+        <ProjectReference Include="..\..\Microsoft\Silk.NET.Direct3D.Compilers\Silk.NET.Direct3D.Compilers.csproj" />
+        <ProjectReference Include="..\..\Microsoft\Silk.NET.Direct3D12\Silk.NET.Direct3D12.csproj" />
+        <ProjectReference Include="..\..\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
     </ItemGroup>
 
     <ItemGroup>
-      <Content Include="HelloTriangle.hlsl">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
+        <Content Include="HelloTriangle.hlsl">
+            <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+        </Content>
     </ItemGroup>
 
     <ItemGroup>
-      <PackageReference Include="Ultz.Extensions.Logging" Version="2.0.1" />
+        <PackageReference Include="Ultz.Extensions.Logging" Version="2.0.1" />
     </ItemGroup>
 
 </Project>

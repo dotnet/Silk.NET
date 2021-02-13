@@ -49,17 +49,33 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type.Name", "__AnonymousRecord_d3d11_L10354_C5")]
         [NativeName("Name", "anonymous1")]
         public VideoColorUnion Anonymous;
+#if NETSTANDARD2_1
+        public ref VIDEOCOLORYCbCrA YCbCr
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.YCbCr;
+        }
+#else
         public VIDEOCOLORYCbCrA YCbCr
         {
             get => Anonymous.YCbCr;
             set => Anonymous.YCbCr = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref VideoColorRgba RGBA
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.RGBA;
+        }
+#else
         public VideoColorRgba RGBA
         {
             get => Anonymous.RGBA;
             set => Anonymous.RGBA = value;
         }
+#endif
 
     }
 }

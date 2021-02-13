@@ -77,23 +77,47 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "D3D12_SHADER_VISIBILITY")]
         [NativeName("Name", "ShaderVisibility")]
         public ShaderVisibility ShaderVisibility;
+#if NETSTANDARD2_1
+        public ref RootDescriptorTable1 DescriptorTable
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.DescriptorTable;
+        }
+#else
         public RootDescriptorTable1 DescriptorTable
         {
             get => Anonymous.DescriptorTable;
             set => Anonymous.DescriptorTable = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref RootConstants Constants
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Constants;
+        }
+#else
         public RootConstants Constants
         {
             get => Anonymous.Constants;
             set => Anonymous.Constants = value;
         }
+#endif
 
+#if NETSTANDARD2_1
+        public ref RootDescriptor1 Descriptor
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Descriptor;
+        }
+#else
         public RootDescriptor1 Descriptor
         {
             get => Anonymous.Descriptor;
             set => Anonymous.Descriptor = value;
         }
+#endif
 
     }
 }
