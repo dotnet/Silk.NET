@@ -70,6 +70,28 @@ namespace Silk.NET.Core.Native
             => new Span<T>(Unsafe.AsPointer(ref GetPinnableReference()), Length / sizeof(T));
 
         /// <summary>
+        /// Gets a reference of the given type to a specific index within this block of global memory.
+        /// </summary>
+        /// <param name="index">
+        /// The index to get a reference to. This is in terms of the destination type, and is not a byte offset (i.e.
+        /// the index is multiplied by the size of the destination type to get the byte offset)
+        /// </param>
+        /// <typeparam name="T">The type of the reference to return.</typeparam>
+        /// <returns>A reference to global memory.</returns>
+        public ref T AsRef<T>(int index = 0) where T : unmanaged => ref AsSpan<T>()[index];
+        
+        /// <summary>
+        /// Gets a pointer of the given type to a specific index within this block of global memory.
+        /// </summary>
+        /// <param name="index">
+        /// The index to get a pointer to. This is in terms of the destination type, and is not a byte offset (i.e.
+        /// the index is multiplied by the size of the destination type to get the byte offset)
+        /// </param>
+        /// <typeparam name="T">The type of the pointer to return.</typeparam>
+        /// <returns>A pointer to global memory.</returns>
+        public unsafe T* AsPtr<T>(int index = 0) where T : unmanaged => (T*) Unsafe.AsPointer(ref AsRef<T>(index)); 
+
+        /// <summary>
         /// Gets a span representing this block of global memory.
         /// </summary>
         /// <returns>A span of global memory.</returns>

@@ -24,7 +24,14 @@ namespace Silk.NET.Direct3D11
         public CD3D11UnorderedAccessViewDesc
         (
             Silk.NET.DXGI.Format? format = null,
-            UavDimension? viewDimension = null
+            UavDimension? viewDimension = null,
+            UnorderedAccessViewDescUnion? anonymous = null,
+            BufferUav? buffer = null,
+            Tex1DUav? texture1D = null,
+            Tex1DArrayUav? texture1DArray = null,
+            Tex2DUav? texture2D = null,
+            Tex2DArrayUav? texture2DArray = null,
+            Tex3DUav? texture3D = null
         ) : this()
         {
             if (format is not null)
@@ -35,6 +42,41 @@ namespace Silk.NET.Direct3D11
             if (viewDimension is not null)
             {
                 ViewDimension = viewDimension.Value;
+            }
+
+            if (anonymous is not null)
+            {
+                Anonymous = anonymous.Value;
+            }
+
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
+
+            if (texture1D is not null)
+            {
+                Texture1D = texture1D.Value;
+            }
+
+            if (texture1DArray is not null)
+            {
+                Texture1DArray = texture1DArray.Value;
+            }
+
+            if (texture2D is not null)
+            {
+                Texture2D = texture2D.Value;
+            }
+
+            if (texture2DArray is not null)
+            {
+                Texture2DArray = texture2DArray.Value;
+            }
+
+            if (texture3D is not null)
+            {
+                Texture3D = texture3D.Value;
             }
         }
 
@@ -48,5 +90,46 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type.Name", "D3D11_UAV_DIMENSION")]
         [NativeName("Name", "ViewDimension")]
         public UavDimension ViewDimension;
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d11_L4635_C5")]
+        [NativeName("Name", "anonymous1")]
+        public UnorderedAccessViewDescUnion Anonymous;
+        public BufferUav Buffer
+        {
+            get => Anonymous.Buffer;
+            set => Anonymous.Buffer = value;
+        }
+
+        public Tex1DUav Texture1D
+        {
+            get => Anonymous.Texture1D;
+            set => Anonymous.Texture1D = value;
+        }
+
+        public Tex1DArrayUav Texture1DArray
+        {
+            get => Anonymous.Texture1DArray;
+            set => Anonymous.Texture1DArray = value;
+        }
+
+        public Tex2DUav Texture2D
+        {
+            get => Anonymous.Texture2D;
+            set => Anonymous.Texture2D = value;
+        }
+
+        public Tex2DArrayUav Texture2DArray
+        {
+            get => Anonymous.Texture2DArray;
+            set => Anonymous.Texture2DArray = value;
+        }
+
+        public Tex3DUav Texture3D
+        {
+            get => Anonymous.Texture3D;
+            set => Anonymous.Texture3D = value;
+        }
+
     }
 }

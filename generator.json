@@ -280,7 +280,8 @@
                     "cl_mem_advice_intel": "cl_uint",
                     "cl_version": "cl_uint",
                     "cl_mem_properties": "CLenum",
-                    "cl_mipmap_filter_mode_img": "CLenum"
+                    "cl_mipmap_filter_mode_img": "CLenum",
+                    "cl_command_queue_capabilities_intel": "CLenum"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -1063,6 +1064,9 @@
                 }
             },
             "exclude": [
+                "__AnonymousRecord_d3d9types_L93_C9",
+                "__AnonymousRecord_d3d9types_L92_C5",
+                "_D3DMATRIX"
             ],
             "rename": {
                 "_D3D_OMAC": "D3DOMac"
@@ -1091,7 +1095,8 @@
             },
             "typeMaps": [
                 {
-                    "_RGNDATA": "RGNData"
+                    "_RGNDATA": "RGNData",
+                    "_D3DMATRIX": "System.Numerics.Matrix4x4"
                 },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",

@@ -237,6 +237,9 @@ namespace Silk.NET.BuildTools.Cpp
                 TypeMapper.Map(map, @class.Constants);
             }
 
+            Console.WriteLine("Applying postprocessing...");
+            FusionReactor.ReactStructs(structs);
+
             return profile;
 
             Type GetOrAddPfnWrapper(Type type)
@@ -869,7 +872,8 @@ namespace Silk.NET.BuildTools.Cpp
                     // We check remapped names here so that types that have variable sizes
                     // can be treated correctly. Otherwise, they will resolve to a particular
                     // platform size, based on whatever parameters were passed into clang.
-                    if (task.ExcludedNativeNames.Contains(typedefType.Decl.Name) || _primitives.Contains(typedefType.Decl.Name))
+                    if (task.ExcludedNativeNames.Contains(typedefType.Decl.Name) || _primitives.Contains
+                        (typedefType.Decl.Name))
                     {
                         ret = new Type {Name = typedefType.Decl.Name};
                     }
@@ -916,27 +920,131 @@ namespace Silk.NET.BuildTools.Cpp
                 return ret;
             }
 
-            IEnumerable<Field> ConvertAll(RecordDecl recordDecl) => recordDecl.Fields.Select
-            (
-                x => new Field
+            IEnumerable<Field> ConvertAll(RecordDecl recordDecl, string? remappedNativeName)
+            {
+                Field firstNestedRecordField = null;
+                string? firstNestedRecord = null;
+                var nestedRecordFieldCount = 0;
+                var rejiggedFirstNestedRecordField = false;
+                for (var i = 0; i < recordDecl.Decls.Count; i++)
                 {
-                    Name = Naming.TranslateLite
-                        (Naming.TrimName(x.Name, task), task.FunctionPrefix),
-                    NativeName = x.Name,
-                    Type = GetType(x.Type, out var count, ref _f, out _),
-                    NativeType = x.Type.AsString.Replace("\\", "\\\\"), Count = count,
-                    Attributes = recordDecl.IsUnion
-                        ? new List<Attribute>
+                    var decl = recordDecl.Decls[i];
+                    switch (decl)
+                    {
+                        case FieldDecl field:
                         {
-                            new Attribute
+                            yield return new Field
                             {
-                                Name = "FieldOffset",
-                                Arguments = new List<string> {x.Handle.OffsetOfField.ToString()}
-                            }
+                                Name = Naming.TranslateLite
+                                    (Naming.TrimName(field.Name, task), task.FunctionPrefix),
+                                NativeName = field.Name,
+                                Type = GetType(field.Type, out var count, ref _f, out _),
+                                NativeType = field.Type.AsString.Replace("\\", "\\\\"), Count = count,
+                                Attributes = recordDecl.IsUnion
+                                    ? new List<Attribute>
+                                    {
+                                        new Attribute
+                                        {
+                                            Name = "FieldOffset",
+                                            Arguments = new List<string> {field.Handle.OffsetOfField.ToString()}
+                                        }
+                                    }
+                                    : new List<Attribute>()
+                            };
+                            break;
                         }
-                        : new List<Attribute>()
+                        case RecordDecl nestedRecordDecl:
+                        {
+                            nestedRecordFieldCount++;
+                            var name = firstNestedRecordField is null
+                                ? "Anonymous"
+                                : $"Anonymous{nestedRecordFieldCount}";
+                            var nestedName = GetAnonymousName(nestedRecordDecl, "Record");
+                            var nestedNameMapped = remappedNativeName ?? Naming.TranslateVariable
+                                (Naming.TrimName(recordDecl.Name, task), task.FunctionPrefix);
+                            var ret = new Field
+                            {
+                                Name = Naming.TranslateLite
+                                    (Naming.TrimName(name, task), task.FunctionPrefix),
+                                NativeName = $"anonymous{nestedRecordFieldCount}",
+                                Type = new Type {Name = nestedName, OriginalName = nestedName},
+                                NativeType = nestedRecordDecl.Spelling.Replace("\\", "\\\\"),
+                                Attributes = recordDecl.IsUnion
+                                    ? new List<Attribute>
+                                    {
+                                        new Attribute
+                                        {
+                                            Name = "FieldOffset",
+                                            Arguments = new List<string> {"0"}
+                                        }
+                                    }
+                                    : new List<Attribute>()
+                            };
+
+                            ret.Attributes.Add
+                            (
+                                new Attribute
+                                {
+                                    Name = "BuildToolsIntrinsic",
+                                    Arguments = new List<string>
+                                        {"$FUSECPP", nestedName}
+                                }
+                            );
+
+                            if (firstNestedRecordField is null)
+                            {
+                                firstNestedRecordField = ret;
+                                firstNestedRecord = nestedName;
+                                task.RenamedNativeNames[nestedName] = $"{nestedNameMapped}Union";
+                            }
+                            else
+                            {
+                                if (!rejiggedFirstNestedRecordField && task.RenamedNativeNames[firstNestedRecord!] ==
+                                    $"{nestedNameMapped}Union")
+                                {
+                                    rejiggedFirstNestedRecordField = true;
+                                    firstNestedRecordField.Name = "Anonymous1";
+                                    task.RenamedNativeNames[firstNestedRecord!] = $"{nestedNameMapped}Union1";
+                                }
+
+                                task.RenamedNativeNames[nestedName] =
+                                    $"{nestedNameMapped}Union{nestedRecordFieldCount}";
+                            }
+
+                            var skip = false;
+                            for (var j = i + 1; j < recordDecl.Decls.Count; j++)
+                            {
+                                if (recordDecl.Decls[j] is FieldDecl nestedFieldDecl)
+                                {
+                                    if (GetType(nestedFieldDecl.Type, out _, ref _f, out _).Name == ret.Type.Name)
+                                    {
+                                        skip = true;
+                                        task.RenamedNativeNames[nestedName] =
+                                            nestedNameMapped + nestedFieldDecl.Name.Pascalize();
+                                        break;
+                                    }
+                                }
+                            }
+
+                            if (!skip)
+                            {
+                                yield return ret;
+                            }
+
+                            break;
+                        }
+                        default:
+                        {
+                            // TODO trace if we ever add actually good logging
+                            // Console.WriteLine
+                            // (
+                            //     $"Warning: Bad decl \"{decl.GetType().Name}\" within struct " + $"\"{recordDecl.Spelling}\""
+                            // );
+                            break;
+                        }
+                    }
                 }
-            );
+            }
 
             void VisitDecl(Decl decl, string typedef = null)
             {
@@ -1082,14 +1190,35 @@ namespace Silk.NET.BuildTools.Cpp
                         string name = null;
                         task.RenamedNativeNames.TryGetValue(nativeName, out name);
 
+                        var alignment = recordDecl.TypeForDecl.Handle.AlignOf;
+                        var maxAlignm = recordDecl.Fields.Any()
+                            ? recordDecl.Fields.Max((fieldDecl) => fieldDecl.Type.Handle.AlignOf)
+                            : alignment;
+
                         var attrs = new List<Attribute>();
                         if (recordDecl.IsUnion)
+                        {
+                            var structLayoutAttr = new Attribute
+                            {
+                                Name = "StructLayout",
+                                Arguments = new List<string> {"LayoutKind.Explicit"}
+                            };
+
+                            if (alignment < maxAlignm)
+                            {
+                                structLayoutAttr.Arguments.Add($"Pack = {alignment}");
+                            }
+
+                            attrs.Add(structLayoutAttr);
+                        }
+                        else if (alignment < maxAlignm)
                         {
                             attrs.Add
                             (
                                 new Attribute
                                 {
-                                    Name = "StructLayout", Arguments = new List<string> {"LayoutKind.Explicit"}
+                                    Name = "StructLayout",
+                                    Arguments = new List<string> {"LayoutKind.Sequential", $"Pack = {alignment}"}
                                 }
                             );
                         }
@@ -1108,7 +1237,7 @@ namespace Silk.NET.BuildTools.Cpp
                                     (Naming.TrimName(nativeName, task), task.FunctionPrefix),
                                 NativeName = nativeName,
                                 ClangMetadata = new[] {recordDecl.Location.ToString()},
-                                Fields = ConvertAll(recordDecl).ToList(),
+                                Fields = ConvertAll(recordDecl, name).ToList(),
                                 Attributes = attrs
                             }
                         );
@@ -1123,7 +1252,7 @@ namespace Silk.NET.BuildTools.Cpp
                                 @struct.Fields.InsertRange
                                 (
                                     0,
-                                    ConvertAll(baseCxxRecordDecl)
+                                    ConvertAll(baseCxxRecordDecl, name ?? @struct.Name)
                                 );
                             }
                         }

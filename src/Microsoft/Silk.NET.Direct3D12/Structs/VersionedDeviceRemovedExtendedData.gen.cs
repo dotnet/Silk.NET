@@ -23,12 +23,36 @@ namespace Silk.NET.Direct3D12
     {
         public VersionedDeviceRemovedExtendedData
         (
-            DredVersion? version = null
+            DredVersion? version = null,
+            VersionedDeviceRemovedExtendedDataUnion? anonymous = null,
+            DeviceRemovedExtendedData? dred10 = null,
+            DeviceRemovedExtendedData1? dred11 = null,
+            DeviceRemovedExtendedData2? dred12 = null
         ) : this()
         {
             if (version is not null)
             {
                 Version = version.Value;
+            }
+
+            if (anonymous is not null)
+            {
+                Anonymous = anonymous.Value;
+            }
+
+            if (dred10 is not null)
+            {
+                Dred10 = dred10.Value;
+            }
+
+            if (dred11 is not null)
+            {
+                Dred11 = dred11.Value;
+            }
+
+            if (dred12 is not null)
+            {
+                Dred12 = dred12.Value;
             }
         }
 
@@ -37,5 +61,28 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "D3D12_DRED_VERSION")]
         [NativeName("Name", "Version")]
         public DredVersion Version;
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L13459_C5")]
+        [NativeName("Name", "anonymous1")]
+        public VersionedDeviceRemovedExtendedDataUnion Anonymous;
+        public DeviceRemovedExtendedData Dred10
+        {
+            get => Anonymous.Dred10;
+            set => Anonymous.Dred10 = value;
+        }
+
+        public DeviceRemovedExtendedData1 Dred11
+        {
+            get => Anonymous.Dred11;
+            set => Anonymous.Dred11 = value;
+        }
+
+        public DeviceRemovedExtendedData2 Dred12
+        {
+            get => Anonymous.Dred12;
+            set => Anonymous.Dred12 = value;
+        }
+
     }
 }

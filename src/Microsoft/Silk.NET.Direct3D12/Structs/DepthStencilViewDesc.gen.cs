@@ -25,7 +25,14 @@ namespace Silk.NET.Direct3D12
         (
             Silk.NET.DXGI.Format? format = null,
             DsvDimension? viewDimension = null,
-            DsvFlags? flags = null
+            DsvFlags? flags = null,
+            DepthStencilViewDescUnion? anonymous = null,
+            Tex1DDsv? texture1D = null,
+            Tex1DArrayDsv? texture1DArray = null,
+            Tex2DDsv? texture2D = null,
+            Tex2DArrayDsv? texture2DArray = null,
+            Tex2DmsDsv? texture2DMS = null,
+            Tex2DmsArrayDsv? texture2DMSArray = null
         ) : this()
         {
             if (format is not null)
@@ -41,6 +48,41 @@ namespace Silk.NET.Direct3D12
             if (flags is not null)
             {
                 Flags = flags.Value;
+            }
+
+            if (anonymous is not null)
+            {
+                Anonymous = anonymous.Value;
+            }
+
+            if (texture1D is not null)
+            {
+                Texture1D = texture1D.Value;
+            }
+
+            if (texture1DArray is not null)
+            {
+                Texture1DArray = texture1DArray.Value;
+            }
+
+            if (texture2D is not null)
+            {
+                Texture2D = texture2D.Value;
+            }
+
+            if (texture2DArray is not null)
+            {
+                Texture2DArray = texture2DArray.Value;
+            }
+
+            if (texture2DMS is not null)
+            {
+                Texture2DMS = texture2DMS.Value;
+            }
+
+            if (texture2DMSArray is not null)
+            {
+                Texture2DMSArray = texture2DMSArray.Value;
             }
         }
 
@@ -59,5 +101,46 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "D3D12_DSV_FLAGS")]
         [NativeName("Name", "Flags")]
         public DsvFlags Flags;
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L3333_C5")]
+        [NativeName("Name", "anonymous1")]
+        public DepthStencilViewDescUnion Anonymous;
+        public Tex1DDsv Texture1D
+        {
+            get => Anonymous.Texture1D;
+            set => Anonymous.Texture1D = value;
+        }
+
+        public Tex1DArrayDsv Texture1DArray
+        {
+            get => Anonymous.Texture1DArray;
+            set => Anonymous.Texture1DArray = value;
+        }
+
+        public Tex2DDsv Texture2D
+        {
+            get => Anonymous.Texture2D;
+            set => Anonymous.Texture2D = value;
+        }
+
+        public Tex2DArrayDsv Texture2DArray
+        {
+            get => Anonymous.Texture2DArray;
+            set => Anonymous.Texture2DArray = value;
+        }
+
+        public Tex2DmsDsv Texture2DMS
+        {
+            get => Anonymous.Texture2DMS;
+            set => Anonymous.Texture2DMS = value;
+        }
+
+        public Tex2DmsArrayDsv Texture2DMSArray
+        {
+            get => Anonymous.Texture2DMSArray;
+            set => Anonymous.Texture2DMSArray = value;
+        }
+
     }
 }

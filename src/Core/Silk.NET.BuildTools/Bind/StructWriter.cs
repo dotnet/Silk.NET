@@ -139,7 +139,7 @@ namespace Silk.NET.BuildTools.Bind
                 var first = true;
                 foreach (var field in @struct.Fields)
                 {
-                    if (!(field.Count is null))
+                    if (!(field.Count is null) || field.Type.IsByRef || field.Type.IsIn || field.Type.IsOut)
                         continue; // I've chosen not to initialize multi-count fields from ctors.
                     var argName = field.Name[0].ToString().ToLower() + field.Name.Substring(1);
                     argName = Utilities.CSharpKeywords.Contains(argName) ? $"@{argName}" : argName;
@@ -162,7 +162,7 @@ namespace Silk.NET.BuildTools.Bind
                 first = true;
                 foreach (var field in @struct.Fields)
                 {
-                    if (!(field.Count is null))
+                    if (!(field.Count is null) || field.Type.IsByRef || field.Type.IsIn || field.Type.IsOut)
                         continue; // I've chosen not to initialize multi-count fields from ctors.
                     var argName = field.Name[0].ToString().ToLower() + field.Name.Substring(1);
                     argName = Utilities.CSharpKeywords.Contains(argName) ? $"@{argName}" : argName;
@@ -189,7 +189,11 @@ namespace Silk.NET.BuildTools.Bind
 
             foreach (var structField in @struct.Fields)
             {
-                if (!(structField.Count is null))
+                if (structField.Attributes.IsBuildToolsIntrinsic(out var intrinsic) && intrinsic[0] == "$FUSEFLD")
+                {
+                    WriteFusedField(structField, intrinsic, sw);
+                }
+                else if (!(structField.Count is null))
                 {
                     if (!Field.FixedCapableTypes.Contains(structField.Type.Name))
                     {
@@ -454,6 +458,16 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine("}");
             sw.WriteLine();
             sw.Flush();
+        }
+      
+        public static void WriteFusedField(Field field, List<string> args, StreamWriter sw)
+        {
+            sw.WriteLine($"        public {field.Type} {field.Name}");
+            sw.WriteLine("        {");
+            sw.WriteLine($"            get => {args[1]}.{args[2]};");
+            sw.WriteLine($"            set => {args[1]}.{args[2]} = value;");
+            sw.WriteLine("        }");
+            sw.WriteLine();
         }
     }
 }

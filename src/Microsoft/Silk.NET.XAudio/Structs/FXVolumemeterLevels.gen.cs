@@ -18,6 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.XAudio
 {
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [NativeName("Name", "XAUDIO2FX_VOLUMEMETER_LEVELS")]
     public unsafe partial struct FXVolumemeterLevels
     {

@@ -14,6 +14,26 @@ namespace Silk.NET.OpenCL.Extensions.ARM
     [NativeName("Name", "GLenum")]
     public enum ARM : int
     {
+        [NativeName("Name", "CL_COMMAND_TERMINATED_ITSELF_WITH_FAILURE_ARM")]
+        CommandTerminatedItselfWithFailureArm = unchecked((int)0xFFFFFFFFFFFFFBAC),
+        [NativeName("Name", "CL_DEVICE_CONTROLLED_TERMINATION_SUCCESS_ARM")]
+        DeviceControlledTerminationSuccessArm = 0x1,
+        [NativeName("Name", "CL_DEVICE_CONTROLLED_TERMINATION_FAILURE_ARM")]
+        DeviceControlledTerminationFailureArm = 0x2,
+        [NativeName("Name", "CL_DEVICE_CONTROLLED_TERMINATION_QUERY_ARM")]
+        DeviceControlledTerminationQueryArm = 0x4,
+        [NativeName("Name", "CL_DEVICE_CONTROLLED_TERMINATION_CAPABILITIES_ARM")]
+        DeviceControlledTerminationCapabilitiesArm = 0x41EE,
+        [NativeName("Name", "CL_EVENT_COMMAND_TERMINATION_REASON_ARM")]
+        EventCommandTerminationReasonArm = 0x41ED,
+        [NativeName("Name", "CL_COMMAND_TERMINATION_COMPLETION_ARM")]
+        CommandTerminationCompletionArm = 0x0,
+        [NativeName("Name", "CL_COMMAND_TERMINATION_CONTROLLED_SUCCESS_ARM")]
+        CommandTerminationControlledSuccessArm = 0x1,
+        [NativeName("Name", "CL_COMMAND_TERMINATION_CONTROLLED_FAILURE_ARM")]
+        CommandTerminationControlledFailureArm = 0x2,
+        [NativeName("Name", "CL_COMMAND_TERMINATION_ERROR_ARM")]
+        CommandTerminationErrorArm = 0x3,
         [NativeName("Name", "CL_DEVICE_COMPUTE_UNITS_BITFIELD_ARM")]
         DeviceComputeUnitsBitfieldArm = 0x40BF,
         [NativeName("Name", "CL_IMPORT_TYPE_ARM")]
@@ -34,14 +54,28 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         PrintfCallbackArm = 0x40B0,
         [NativeName("Name", "CL_PRINTF_BUFFERSIZE_ARM")]
         PrintfBuffersizeArm = 0x40B1,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_KERNEL_BATCHING_ARM")]
+        DeviceSchedulingKernelBatchingArm = 0x1,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_WORKGROUP_BATCH_SIZE_ARM")]
+        DeviceSchedulingWorkgroupBatchSizeArm = 0x2,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_WORKGROUP_BATCH_SIZE_MODIFIER_ARM")]
+        DeviceSchedulingWorkgroupBatchSizeModifierArm = 0x4,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_DEFERRED_FLUSH_ARM")]
+        DeviceSchedulingDeferredFlushArm = 0x8,
+        [NativeName("Name", "CL_DEVICE_SCHEDULING_REGISTER_ALLOCATION_ARM")]
+        DeviceSchedulingRegisterAllocationArm = 0x16,
         [NativeName("Name", "CL_DEVICE_SCHEDULING_CONTROLS_CAPABILITIES_ARM")]
         DeviceSchedulingControlsCapabilitiesArm = 0x41E4,
+        [NativeName("Name", "CL_DEVICE_SUPPORTED_REGISTER_ALLOCATIONS_ARM")]
+        DeviceSupportedRegisterAllocationsArm = 0x41EB,
         [NativeName("Name", "CL_KERNEL_EXEC_INFO_WORKGROUP_BATCH_SIZE_ARM")]
         KernelExecInfoWorkgroupBatchSizeArm = 0x41E5,
         [NativeName("Name", "CL_KERNEL_EXEC_INFO_WORKGROUP_BATCH_SIZE_MODIFIER_ARM")]
         KernelExecInfoWorkgroupBatchSizeModifierArm = 0x41E6,
         [NativeName("Name", "CL_QUEUE_KERNEL_BATCHING_ARM")]
         QueueKernelBatchingArm = 0x41E7,
+        [NativeName("Name", "CL_QUEUE_DEFERRED_FLUSH_ARM")]
+        QueueDeferredFlushArm = 0x41EC,
         [NativeName("Name", "CL_DEVICE_SVM_CAPABILITIES_ARM")]
         DeviceSvmCapabilitiesArm = 0x40B6,
         [NativeName("Name", "CL_MEM_USES_SVM_POINTER_ARM")]

@@ -10,9 +10,11 @@
 using System;
 using System.IO;
 using System.Numerics;
+using Microsoft.Extensions.Logging;
 using Silk.NET.DXGI;
 using Silk.NET.Maths;
 using Silk.NET.Windowing;
+using Ultz.Extensions.Logging;
 
 namespace D3D12Triangle
 {
@@ -27,10 +29,14 @@ namespace D3D12Triangle
         private uint _frameIndex;
         private bool _useWarpDevice;
         private IWindow _window;
+        private ILogger _logger;
+        private ILoggerProvider _loggerProvider;
 
         protected DXSample(string name)
         {
             _name = name;
+            _loggerProvider = new UltzLoggerProvider();
+            _logger = _loggerProvider.CreateLogger(name);
         }
 
         ~DXSample()
@@ -74,6 +80,8 @@ namespace D3D12Triangle
         public Vector2D<int> Size => Window.Size;
 
         public bool UseWarpDevice => _useWarpDevice;
+
+        public ILogger Log => _logger;
 
         public void Dispose()
         {

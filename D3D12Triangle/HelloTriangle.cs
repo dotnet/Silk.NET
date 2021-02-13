@@ -9,19 +9,24 @@
 
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using Silk.NET.Core.Native;
+using Silk.NET.Direct3D.Compilers;
+using Silk.NET.Direct3D12;
+using Silk.NET.DXGI;
 
 namespace D3D12Triangle
 {
-    public unsafe class HelloTriangle12 : HelloWindow12
+    public unsafe class HelloTriangle : HelloWindow
     {
         private ID3D12Resource* _vertexBuffer;
-        private D3D12_VERTEX_BUFFER_VIEW _vertexBufferView;
+        private VertexBufferView _vertexBufferView;
+        private D3DCompiler _d3d = D3DCompiler.GetApi();
 
-        public HelloTriangle12(string name) : base(name)
+        public HelloTriangle(string name) : base(name)
         {
         }
 
-        public ref D3D12_VERTEX_BUFFER_VIEW VertexBufferView => ref _vertexBufferView;
+        public ref VertexBufferView VertexBufferView => ref _vertexBufferView;
 
         protected override void CreateAssets()
         {
@@ -36,119 +41,220 @@ namespace D3D12Triangle
 
         protected override unsafe ID3D12PipelineState* CreatePipelineState()
         {
-            using ComPtr<ID3DBlob> pixelShader = null;
-            using ComPtr<ID3DBlob> vertexShader = null;
+            using ComPtr<ID3D10Blob> pixelShader = null;
+            using ComPtr<ID3D10Blob> vertexShader = null;
 
             var compileFlags = 0u;
 
 #if DEBUG
             // Enable better shader debugging with the graphics debugging tools.
-            compileFlags |= D3DCOMPILE_DEBUG | D3DCOMPILE_SKIP_OPTIMIZATION;
+            compileFlags |= (1 << 0) | (1 << 2);
 #endif
-            fixed (char* fileName = GetAssetFullPath(@"D3D12\Assets\Shaders\HelloTriangle.hlsl"))
+            fixed (char* fileName = GetAssetFullPath(@"HelloTriangle.hlsl"))
             {
-                var entryPoint = 0x00006E69614D5356;    // VSMain
-                var target = 0x0000305F355F7376;        // vs_5_0
-                ThrowIfFailed(nameof(D3DCompileFromFile), D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, vertexShader.GetAddressOf(), ppErrorMsgs: null));
+                var entryPoint = 0x00006E69614D5356; // VSMain
+                var target = 0x0000305F355F7376; // vs_5_0
+                ID3D10Blob* errorMsgs;
+                SilkMarshal.ThrowHResult
+                (
+                    _d3d.CompileFromFile
+                    (
+                        (char*) fileName, pDefines: null, pInclude: null, (byte*) &entryPoint, (byte*) &target,
+                        compileFlags, Flags2: 0, vertexShader.GetAddressOf(), ppErrorMsgs: &errorMsgs
+                    )
+                );
 
-                entryPoint = 0x00006E69614D5350;        // PSMain
-                target = 0x0000305F355F7370;            // ps_5_0
-                ThrowIfFailed(nameof(D3DCompileFromFile), D3DCompileFromFile((ushort*)fileName, pDefines: null, pInclude: null, (sbyte*)&entryPoint, (sbyte*)&target, compileFlags, Flags2: 0, pixelShader.GetAddressOf(), ppErrorMsgs: null));
+                entryPoint = 0x00006E69614D5350; // PSMain
+                target = 0x0000305F355F7370; // ps_5_0
+                SilkMarshal.ThrowHResult
+                (
+                    _d3d.CompileFromFile
+                    (
+                        (char*) fileName, pDefines: null, pInclude: null, (byte*) &entryPoint, (byte*) &target,
+                        compileFlags, Flags2: 0, pixelShader.GetAddressOf(), ppErrorMsgs: &errorMsgs
+                    )
+                );
             }
 
             // Define the vertex input layout.
             const int InputElementDescsCount = 2;
 
-            var semanticName0 = stackalloc ulong[2] {
-                0x4E4F495449534F50,     // POSITION
+            var semanticName0 = stackalloc ulong[2]
+            {
+                0x4E4F495449534F50, // POSITION
                 0x0000000000000000,
             };
 
-            var semanticName1 = stackalloc ulong[1] {
-                0x000000524F4C4F43,     // COLOR
+            var semanticName1 = stackalloc ulong[1]
+            {
+                0x000000524F4C4F43, // COLOR
             };
 
-            var inputElementDescs = stackalloc D3D12_INPUT_ELEMENT_DESC[InputElementDescsCount] {
-                new D3D12_INPUT_ELEMENT_DESC {
-                    SemanticName = (sbyte*)semanticName0,
-                    Format = DXGI_FORMAT_R32G32B32_FLOAT,
-                    InputSlotClass = D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA,
+            var inputElementDescs = stackalloc InputElementDesc[InputElementDescsCount]
+            {
+                new InputElementDesc
+                {
+                    SemanticName = (byte*) semanticName0,
+                    Format = Format.FormatR32G32B32Float,
+                    InputSlotClass = InputClassification.InputClassificationPerVertexData,
                 },
-                new D3D12_INPUT_ELEMENT_DESC {
-                    SemanticName = (sbyte*)semanticName1,
-                    Format = DXGI_FORMAT_R32G32B32A32_FLOAT,
+                new InputElementDesc
+                {
+                    SemanticName = (byte*) semanticName1,
+                    Format = Format.FormatR32G32B32A32Float,
                     AlignedByteOffset = 12,
-                    InputSlotClass = D3D12_INPUT_CLASSIFICATION_PER_VERTEX_DATA,
+                    InputSlotClass = InputClassification.InputClassificationPerVertexData,
                 },
+            };
+
+            var defaultRenderTargetBlend = new RenderTargetBlendDesc()
+            {
+                BlendEnable = 0,
+                LogicOpEnable = 0,
+                SrcBlend = Blend.BlendOne,
+                DestBlend = Blend.BlendZero,
+                BlendOp = BlendOp.BlendOpAdd,
+                SrcBlendAlpha = Blend.BlendOne,
+                DestBlendAlpha = Blend.BlendZero,
+                BlendOpAlpha = BlendOp.BlendOpAdd,
+                LogicOp = LogicOp.LogicOpNoop,
+                RenderTargetWriteMask = (byte) ColorWriteEnable.ColorWriteEnableAll
+            };
+
+            var defaultStencilOp = new DepthStencilopDesc
+            {
+                StencilFailOp = StencilOp.StencilOpKeep,
+                StencilDepthFailOp = StencilOp.StencilOpKeep,
+                StencilPassOp = StencilOp.StencilOpKeep,
+                StencilFunc = ComparisonFunc.ComparisonFuncAlways
             };
 
             // Describe and create the graphics pipeline state object (PSO).
-            var psoDesc = new D3D12_GRAPHICS_PIPELINE_STATE_DESC {
-                InputLayout = new D3D12_INPUT_LAYOUT_DESC {
-                    pInputElementDescs = inputElementDescs,
+            var psoDesc = new GraphicsPipelineStateDesc
+            {
+                InputLayout = new InputLayoutDesc
+                {
+                    PInputElementDescs = inputElementDescs,
                     NumElements = InputElementDescsCount,
                 },
-                pRootSignature = RootSignature,
-                VS = new D3D12_SHADER_BYTECODE(vertexShader),
-                PS = new D3D12_SHADER_BYTECODE(pixelShader),
-                RasterizerState = D3D12_RASTERIZER_DESC.DEFAULT,
-                BlendState = D3D12_BLEND_DESC.DEFAULT,
-                DepthStencilState = D3D12_DEPTH_STENCIL_DESC.DEFAULT,
+                PRootSignature = RootSignature,
+                VS = new ShaderBytecode(vertexShader.Get().GetBufferPointer(), vertexShader.Get().GetBufferSize()),
+                PS = new ShaderBytecode(pixelShader.Get().GetBufferPointer(), pixelShader.Get().GetBufferSize()),
+                RasterizerState = new RasterizerDesc
+                {
+                    FillMode = FillMode.FillModeSolid,
+                    CullMode = CullMode.CullModeBack,
+                    FrontCounterClockwise = 0,
+                    DepthBias = D3D12.DefaultDepthBias,
+                    DepthBiasClamp = 0,
+                    SlopeScaledDepthBias = 0,
+                    DepthClipEnable = 1,
+                    MultisampleEnable = 0,
+                    AntialiasedLineEnable = 0,
+                    ForcedSampleCount = 0,
+                    ConservativeRaster = ConservativeRasterizationMode.ConservativeRasterizationModeOff,
+                },
+                BlendState = new BlendDesc
+                {
+                    AlphaToCoverageEnable = 0,
+                    IndependentBlendEnable = 0,
+                    RenderTarget = new BlendDesc.RenderTargetBuffer()
+                    {
+                        [0] = defaultRenderTargetBlend,
+                        [1] = defaultRenderTargetBlend,
+                        [2] = defaultRenderTargetBlend,
+                        [3] = defaultRenderTargetBlend,
+                        [4] = defaultRenderTargetBlend,
+                        [5] = defaultRenderTargetBlend,
+                        [6] = defaultRenderTargetBlend,
+                        [7] = defaultRenderTargetBlend
+                    }
+                },
+                DepthStencilState = new DepthStencilDesc
+                {
+                    DepthEnable = 1,
+                    DepthWriteMask = DepthWriteMask.DepthWriteMaskAll,
+                    DepthFunc = ComparisonFunc.ComparisonFuncLess,
+                    StencilEnable = 0,
+                    StencilReadMask = D3D12.DefaultStencilReadMask,
+                    StencilWriteMask = D3D12.DefaultStencilWriteMask,
+                    FrontFace = defaultStencilOp,
+                    BackFace = defaultStencilOp
+                },
                 SampleMask = uint.MaxValue,
-                PrimitiveTopologyType = D3D12_PRIMITIVE_TOPOLOGY_TYPE_TRIANGLE,
+                PrimitiveTopologyType = PrimitiveTopologyType.PrimitiveTopologyTypeTriangle,
                 NumRenderTargets = 1,
-                SampleDesc = new DXGI_SAMPLE_DESC(count: 1, quality: 0),
+                SampleDesc = new SampleDesc(count: 1, quality: 0),
             };
-            psoDesc.DepthStencilState.DepthEnable = FALSE;
-            psoDesc.RTVFormats[0] = DXGI_FORMAT_R8G8B8A8_UNORM;
+            psoDesc.DepthStencilState.DepthEnable = 0;
+            psoDesc.RTVFormats[0] = Format.FormatR8G8B8A8Unorm;
 
             ID3D12PipelineState* pipelineState;
 
-            var iid = IID_ID3D12PipelineState;
-            ThrowIfFailed(nameof(ID3D12Device.CreateGraphicsPipelineState), D3DDevice->CreateGraphicsPipelineState(&psoDesc, &iid, (void**)&pipelineState));
+            var iid = ID3D12PipelineState.Guid;
+            SilkMarshal.ThrowHResult(D3DDevice->CreateGraphicsPipelineState(&psoDesc, &iid, (void**) &pipelineState));
 
             return pipelineState;
         }
 
         protected override unsafe ID3D12RootSignature* CreateRootSignature()
         {
-            using ComPtr<ID3DBlob> signature = null;
-            using ComPtr<ID3DBlob> error = null;
+            using ComPtr<ID3D10Blob> signature = null;
+            using ComPtr<ID3D10Blob> error = null;
 
-            var rootSignatureDesc = new D3D12_ROOT_SIGNATURE_DESC {
-                Flags = D3D12_ROOT_SIGNATURE_FLAG_ALLOW_INPUT_ASSEMBLER_INPUT_LAYOUT
+            var rootSignatureDesc = new RootSignatureDesc
+            {
+                Flags = RootSignatureFlags.RootSignatureFlagAllowInputAssemblerInputLayout
             };
 
-            ThrowIfFailed(nameof(D3D12SerializeRootSignature), D3D12SerializeRootSignature(&rootSignatureDesc, D3D_ROOT_SIGNATURE_VERSION_1, signature.GetAddressOf(), error.GetAddressOf()));
+            SilkMarshal.ThrowHResult
+            (
+                D3D12.SerializeRootSignature
+                (
+                    &rootSignatureDesc, D3DRootSignatureVersion.D3DRootSignatureVersion1, signature.GetAddressOf(),
+                    error.GetAddressOf()
+                )
+            );
 
             ID3D12RootSignature* rootSignature;
 
-            var iid = IID_ID3D12RootSignature;
-            ThrowIfFailed(nameof(ID3D12Device.CreateRootSignature), D3DDevice->CreateRootSignature(nodeMask: 0, signature.Get()->GetBufferPointer(), signature.Get()->GetBufferSize(), &iid, (void**)&rootSignature));
+            var iid = ID3D12RootSignature.Guid;
+            SilkMarshal.ThrowHResult
+            (
+                D3DDevice->CreateRootSignature
+                (
+                    nodeMask: 0, signature.Get().GetBufferPointer(), signature.Get().GetBufferSize(), &iid,
+                    (void**) &rootSignature
+                )
+            );
 
             return rootSignature;
         }
 
-        protected virtual ID3D12Resource* CreateVertexBuffer(out D3D12_VERTEX_BUFFER_VIEW vertexBufferView)
+        protected virtual ID3D12Resource* CreateVertexBuffer(out VertexBufferView vertexBufferView)
         {
             // Define the geometry for a triangle.
             const int TriangleVerticesCount = 3;
-            var triangleVertices = stackalloc Vertex[TriangleVerticesCount] {
-                new Vertex {
+            var triangleVertices = stackalloc Vertex[TriangleVerticesCount]
+            {
+                new Vertex
+                {
                     Position = new Vector3(0.0f, 0.25f * AspectRatio, 0.0f),
                     Color = new Vector4(1.0f, 0.0f, 0.0f, 1.0f)
                 },
-                new Vertex {
+                new Vertex
+                {
                     Position = new Vector3(0.25f, -0.25f * AspectRatio, 0.0f),
                     Color = new Vector4(0.0f, 1.0f, 0.0f, 1.0f)
                 },
-                new Vertex {
+                new Vertex
+                {
                     Position = new Vector3(-0.25f, -0.25f * AspectRatio, 0.0f),
                     Color = new Vector4(0.0f, 0.0f, 1.0f, 1.0f)
                 },
             };
 
-            var vertexBufferSize = (uint)sizeof(Vertex) * TriangleVerticesCount;
+            var vertexBufferSize = (uint) sizeof(Vertex) * TriangleVerticesCount;
 
             // Note: using upload heaps to transfer static data like vert buffers is not
             // recommended. Every time the GPU needs it, the upload heap will be marshalled
@@ -156,31 +262,40 @@ namespace D3D12Triangle
             // code simplicity and because there are very few verts to actually transfer.
             ID3D12Resource* vertexBuffer;
 
-            var heapProperties = new D3D12_HEAP_PROPERTIES(D3D12_HEAP_TYPE_UPLOAD);
-            var bufferDesc = D3D12_RESOURCE_DESC.Buffer(vertexBufferSize);
+            var heapProperties = new HeapProperties(HeapType.HeapTypeUpload);
+            var bufferDesc = new ResourceDesc
+            (
+                ResourceDimension.ResourceDimensionBuffer, 0, vertexBufferSize, 1, 1, 1, Format.FormatUnknown,
+                new SampleDesc(1, 0),
+                TextureLayout.TextureLayoutRowMajor, ResourceFlags.ResourceFlagNone
+            );
 
-            var iid = IID_ID3D12Resource;
-            ThrowIfFailed(nameof(ID3D12Device.CreateCommittedResource), D3DDevice->CreateCommittedResource(
-                &heapProperties,
-                D3D12_HEAP_FLAG_NONE,
-                &bufferDesc,
-                D3D12_RESOURCE_STATE_GENERIC_READ,
-                pOptimizedClearValue: null,
-                &iid,
-                (void**)&vertexBuffer
-            ));
+            var iid = ID3D12Resource.Guid;
+            SilkMarshal.ThrowHResult
+            (
+                D3DDevice->CreateCommittedResource
+                (
+                    &heapProperties,
+                    HeapFlags.HeapFlagNone,
+                    &bufferDesc,
+                    ResourceStates.ResourceStateGenericRead,
+                    pOptimizedClearValue: null,
+                    &iid,
+                    (void**) &vertexBuffer
+                )
+            );
 
             // Copy the triangle data to the vertex buffer.
-            var readRange = new D3D12_RANGE();
+            var readRange = new Range();
 
             byte* pVertexDataBegin;
-            ThrowIfFailed(nameof(ID3D12Resource.Map), vertexBuffer->Map(Subresource: 0, &readRange, (void**)&pVertexDataBegin));
+            SilkMarshal.ThrowHResult(vertexBuffer->Map(Subresource: 0, &readRange, (void**) &pVertexDataBegin));
             Unsafe.CopyBlock(pVertexDataBegin, triangleVertices, vertexBufferSize);
             vertexBuffer->Unmap(0, null);
 
             // Initialize the vertex buffer view.
             vertexBufferView.BufferLocation = vertexBuffer->GetGPUVirtualAddress();
-            vertexBufferView.StrideInBytes = (uint)sizeof(Vertex);
+            vertexBufferView.StrideInBytes = (uint) sizeof(Vertex);
             vertexBufferView.SizeInBytes = vertexBufferSize;
 
             return vertexBuffer;
@@ -209,14 +324,15 @@ namespace D3D12Triangle
 
         protected override void Draw()
         {
-            GraphicsCommandList->IASetPrimitiveTopology(D3D_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+            GraphicsCommandList->IASetPrimitiveTopology(D3DPrimitiveTopology.D3DPrimitiveTopologyTrianglelist);
 
-            fixed (D3D12_VERTEX_BUFFER_VIEW* vertexBufferView = &_vertexBufferView)
+            fixed (VertexBufferView* vertexBufferView = &_vertexBufferView)
             {
                 GraphicsCommandList->IASetVertexBuffers(StartSlot: 0, 1, vertexBufferView);
             }
 
-            GraphicsCommandList->DrawInstanced(VertexCountPerInstance: 3, InstanceCount: 1, StartVertexLocation: 0, StartInstanceLocation: 0);
+            GraphicsCommandList->DrawInstanced
+                (VertexCountPerInstance: 3, InstanceCount: 1, StartVertexLocation: 0, StartInstanceLocation: 0);
         }
 
         public struct Vertex

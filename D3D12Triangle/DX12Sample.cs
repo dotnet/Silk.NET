@@ -6,10 +6,16 @@
 
 using System;
 using System.Runtime.InteropServices;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+using Microsoft.Extensions.Logging;
 using Silk.NET.Core.Native;
 using Silk.NET.Direct3D12;
 using Silk.NET.DXGI;
 using Silk.NET.Maths;
+using InfoQueueFilter = Silk.NET.Direct3D12.InfoQueueFilter;
+using InfoQueueFilterDesc = Silk.NET.Direct3D12.InfoQueueFilterDesc;
 
 namespace D3D12Triangle
 {
@@ -29,6 +35,7 @@ namespace D3D12Triangle
         private Rectangle<int> _scissorRect;
         private uint _rtvDescriptorSize;
         private Silk.NET.Direct3D12.D3D12 _d3d12;
+        private Silk.NET.DXGI.DXGI _dxgi;
 
         private ID3D12Fence* _fence;
         private ulong[] _fenceValues;
@@ -38,6 +45,12 @@ namespace D3D12Triangle
         private ID3D12RootSignature* _rootSignature;
         private ID3D12PipelineState* _pipelineState;
 
+        private bool _debug;
+
+        private ID3D12InfoQueue* _infoQueue;
+        private Task _infoPump;
+        private CancellationTokenSource _infoPumpCancellationToken;
+
         protected DX12Sample(string name) : base(name)
         {
             _renderTargets = new ID3D12Resource*[2];
@@ -45,9 +58,12 @@ namespace D3D12Triangle
             _fenceValues = new ulong[2];
             _graphicsCommandLists = new ID3D12GraphicsCommandList*[2];
             _d3d12 = Silk.NET.Direct3D12.D3D12.GetApi();
+            _dxgi = DXGI.GetApi();
         }
 
         public Silk.NET.Direct3D12.D3D12 D3D12 => _d3d12;
+
+        public Silk.NET.DXGI.DXGI Dxgi => _dxgi;
 
         public ID3D12CommandAllocator* CommandAllocator => _commandAllocators[FrameIndex];
 
@@ -90,6 +106,7 @@ namespace D3D12Triangle
         public override void OnDestroy()
         {
             WaitForGpu(moveToNextFrame: false);
+            _infoPumpCancellationToken.Cancel();
             base.OnDestroy();
         }
 
@@ -114,7 +131,14 @@ namespace D3D12Triangle
 
                 var backgroundColor = BackgroundColor;
 
-                var rtvHandle = new CpuDescriptorHandle(RTVHeap->GetCPUDescriptorHandleForHeapStart(), (int)FrameIndex, RTVDescriptorSize);
+                // in d3dx12.h:
+                // new CpuDescriptorHandle(RTVHeap->GetCPUDescriptorHandleForHeapStart(), (int)FrameIndex,
+                //                         RTVDescriptorSize)
+                var rtvHandle = new CpuDescriptorHandle
+                {
+                    Ptr = (nuint) ((long) @RTVHeap->GetCPUDescriptorHandleForHeapStart().Ptr +
+                                   ((long) FrameIndex * (long) RTVDescriptorSize))
+                };
                 GraphicsCommandList->ClearRenderTargetView(rtvHandle, (float*)&backgroundColor, 0, null);
 
                 var dsvHandle = DSVHeap->GetCPUDescriptorHandleForHeapStart();
@@ -131,7 +155,7 @@ namespace D3D12Triangle
 
         protected virtual void CreateAssets()
         {
-            SilkMarshal.ThrowHResult(GraphicsCommandList->Close()););
+            SilkMarshal.ThrowHResult(GraphicsCommandList->Close());
             ExecuteGraphicsCommandList();
             WaitForGpu(moveToNextFrame: false);
         }
@@ -144,11 +168,19 @@ namespace D3D12Triangle
 
             var resourceDesc = new ResourceDesc
             (
-                ResourceDimension.ResourceDimensionTexture2D, 0ul, Size.Width, Size.Height, 1, 1, DepthBufferFormat, 1,
-                0, TextureLayout.TextureLayoutUnknown, ResourceFlags.ResourceFlagAllowDepthStencil
+                ResourceDimension.ResourceDimensionTexture2D,
+                0ul,
+                (ulong)Size.X,
+                (uint)Size.Y,
+                1,
+                1,
+                DepthBufferFormat, 
+                new SampleDesc(){Count = 1, Quality = 0},
+                TextureLayout.TextureLayoutUnknown,
+                ResourceFlags.ResourceFlagAllowDepthStencil
             );
 
-            var clearValue = new ClearValue(DepthBufferFormat, 1.0f, 0);
+            var clearValue = new ClearValue(DepthBufferFormat, depthStencil: new DepthStencilValue(1.0f, 0));
 
             var iid = ID3D12Resource.Guid;
             SilkMarshal.ThrowHResult(D3DDevice->CreateCommittedResource(&heapProperties, HeapFlags.HeapFlagNone, &resourceDesc, ResourceStates.ResourceStateDepthWrite, &clearValue, &iid, (void**)&depthStencil));
@@ -204,6 +236,7 @@ namespace D3D12Triangle
             _dxgiFactory = CreateDxgiFactory();
             _dxgiAdapter = GetDxgiAdapter();
             _d3dDevice = CreateD3DDevice();
+            StartInfoPump();
             _commandQueue = CreateCommandQueue();
 
             CreateDescriptorHeaps();
@@ -265,7 +298,7 @@ namespace D3D12Triangle
                 IDXGIFactory4* dxgiFactory;
 
                 var iid = IDXGIFactory4.Guid;
-                SilkMarshal.ThrowHResult(DXGI.CreateDXGIFactory2(dxgiFactoryFlags, &iid, (void**)&dxgiFactory));
+                SilkMarshal.ThrowHResult(Dxgi.CreateDXGIFactory2(dxgiFactoryFlags, &iid, (void**)&dxgiFactory));
 
                 return dxgiFactory;
             }
@@ -282,7 +315,7 @@ namespace D3D12Triangle
 
             IntPtr CreateFenceEvent()
             {
-                var fenceEvent = SilkMarshal.CreateWindowsEvent(lpEventAttributes: null, bManualReset: 0, bInitialState: 0, lpName: null);
+                var fenceEvent = SilkMarshal.CreateWindowsEvent(null, false, false, null);
 
                 if (fenceEvent == IntPtr.Zero)
                 {
@@ -343,15 +376,110 @@ namespace D3D12Triangle
 
                 using ComPtr<ID3D12Debug> debugController = null;
                 var iid = ID3D12Debug.Guid;
+                var hr = D3D12.GetDebugInterface(&iid, (void**) &debugController);
 
-                if (HResult.IndicatesSuccess(D3D12.GetDebugInterface(&iid, (void**)&debugController)))
+                if (HResult.IndicatesSuccess(hr))
                 {
                     debugController.Get().EnableDebugLayer();
-                    return true;
+                    Log.LogInformation("Debug layer enabled");
+                    return _debug = true;
+                }
+                else
+                {
+                    Log.LogWarning
+                    (
+                        Marshal.GetExceptionForHR(hr),
+                        $"Failed to enable debug layer, failed with result {hr} (0x{hr:x8})"
+                    );
                 }
 #endif
 
                 return false;
+            }
+            
+            void StartInfoPump()
+            {
+                #if DEBUG
+                if (!_debug)
+                {
+                    Log.LogInformation("Skipped creation of info pump due to the debug layer not being enabled.");
+                    return;
+                }
+                
+                var iid = ID3D12InfoQueue.Guid;
+                fixed (ID3D12InfoQueue** @out = &_infoQueue)
+                {
+                    SilkMarshal.ThrowHResult(D3DDevice->QueryInterface(&iid, (void**) @out));
+                }
+
+                _infoPumpCancellationToken = new();
+                _infoPump = Task.Run
+                (
+                    () =>
+                    {
+                        Log.LogInformation("Info queue pump started");
+                        while (!_infoPumpCancellationToken.Token.IsCancellationRequested)
+                        {
+                            var numMessages = _infoQueue->GetNumStoredMessages();
+                            if (numMessages == 0)
+                            {
+                                continue;
+                            }
+
+                            for (var i = 0ul; i < numMessages; i++)
+                            {
+                                nuint msgByteLength;
+                                SilkMarshal.ThrowHResult(_infoQueue->GetMessageA(i, null, &msgByteLength));
+                                using var memory = GlobalMemory.Allocate((int) msgByteLength);
+                                SilkMarshal.ThrowHResult
+                                (
+                                    _infoQueue->GetMessageA(i, memory.AsPtr<Message>(), &msgByteLength)
+                                );
+                                
+                                ref var msg = ref memory.AsRef<Message>();
+                                var descBytes = new Span<byte>(msg.PDescription, (int) msg.DescriptionByteLength);
+                                var desc = Encoding.UTF8.GetString(descBytes[..^1]);
+                                var eid = new EventId((int) msg.ID, msg.ID.ToString()["MessageID".Length..]);
+                                var str = $"{msg.Category.ToString()["MessageCategory".Length..]} (From D3D12): {desc}";
+                                switch (msg.Severity)
+                                {
+                                    case MessageSeverity.MessageSeverityCorruption:
+                                    {
+                                        Log.LogCritical(eid, str);
+                                        break;
+                                    }
+                                    case MessageSeverity.MessageSeverityError:
+                                    {
+                                        Log.LogError(eid, str);
+                                        break;
+                                    }
+                                    case MessageSeverity.MessageSeverityWarning:
+                                    {
+                                        Log.LogWarning(eid, str);
+                                        break;
+                                    }
+                                    case MessageSeverity.MessageSeverityInfo:
+                                    {
+                                        Log.LogInformation(eid, str);
+                                        break;
+                                    }
+                                    case MessageSeverity.MessageSeverityMessage:
+                                    {
+                                        Log.LogTrace(eid, str);
+                                        break;
+                                    }
+                                    default:
+                                        throw new ArgumentOutOfRangeException();
+                                }
+                            }
+
+                            _infoQueue->ClearStoredMessages();
+                        }
+                        
+                        Log.LogInformation("Info queue pump stopped");
+                    }, _infoPumpCancellationToken.Token
+                );
+                #endif
             }
         }
 
@@ -363,8 +491,8 @@ namespace D3D12Triangle
 
             for (var i = 0u; i < FrameCount; i++)
             {
-                D3DDevice->CreateRenderTargetView(_renderTargets[i], pDesc: null, rtvHandle);
-                rtvHandle.Offset(1, RTVDescriptorSize);
+                D3DDevice->CreateRenderTargetView(_renderTargets[i], null, rtvHandle);
+                rtvHandle.Ptr = (nuint) ((long) rtvHandle.Ptr + RTVDescriptorSize);
             }
         }
 
@@ -409,7 +537,7 @@ namespace D3D12Triangle
 
             if (_swapChain != null)
             {
-                SilkMarshal.ThrowHResult(_swapChain->ResizeBuffers(FrameCount, (uint)Size.Width, (uint)Size.Height, BackBufferFormat, 0));
+                SilkMarshal.ThrowHResult(_swapChain->ResizeBuffers(FrameCount, (uint)Size.X, (uint)Size.Y, BackBufferFormat, 0));
             }
             else
             {
@@ -421,8 +549,8 @@ namespace D3D12Triangle
             _viewport = new Viewport {
                 TopLeftX = 0,
                 TopLeftY = 0,
-                Width = Size.Width,
-                Height = Size.Height,
+                Width = Size.X,
+                Height = Size.Y,
                 MinDepth = 0,
                 MaxDepth = 1
             };
@@ -435,8 +563,8 @@ namespace D3D12Triangle
 
                 var swapChainDesc = new SwapChainDesc1 {
                     BufferCount = FrameCount,
-                    Width = (uint)Size.Width,
-                    Height = (uint)Size.Height,
+                    Width = (uint)Size.X,
+                    Height = (uint)Size.Y,
                     Format = BackBufferFormat,
                     BufferUsage = DXGI.UsageRenderTargetOutput,
                     SwapEffect = SwapEffect.SwapEffectFlipDiscard,
@@ -444,7 +572,7 @@ namespace D3D12Triangle
                 };
 
                 SilkMarshal.ThrowHResult(Window.CreateDxgiSwapchain(
-                    DxgiFactory,
+                    (IDXGIFactory2*) DxgiFactory,
                     (IUnknown*)_commandQueue,         // Swap chain needs the queue so that it can force a flush on it.
                     &swapChainDesc,
                     pFullscreenDesc: null,
@@ -589,7 +717,7 @@ namespace D3D12Triangle
                 if (fenceEvent != IntPtr.Zero)
                 {
                     _fenceEvent = IntPtr.Zero;
-                    _ = CloseHandle(_fenceEvent);
+                    _ = SilkMarshal.CloseWindowsHandle(_fenceEvent);
                 }
             }
 
@@ -694,16 +822,29 @@ namespace D3D12Triangle
                 GraphicsCommandList->RSSetScissorRects(1, scissorRect);
             }
         }
+        
+        private static ResourceBarrier InitTransition(ID3D12Resource* pResource, ResourceStates stateBefore, ResourceStates stateAfter, uint subresource = D3D12.ResourceBarrierAllSubresources, ResourceBarrierFlags flags = ResourceBarrierFlags.ResourceBarrierFlagNone)
+        {
+            // TODO THIS IS A D3DX12 FUNCTION
+            ResourceBarrier result = default;
+            result.Type = ResourceBarrierType.ResourceBarrierTypeTransition;
+            result.Flags = flags;
+            result.Anonymous.Transition.PResource = pResource;
+            result.Anonymous.Transition.StateBefore = stateBefore;
+            result.Anonymous.Transition.StateAfter = stateAfter;
+            result.Anonymous.Transition.Subresource = subresource;
+            return result;
+        }
 
         protected virtual void TransitionForRender()
         {
-            var barrier = D3D12_RESOURCE_BARRIER.InitTransition(RenderTarget, D3D12_RESOURCE_STATE_PRESENT, D3D12_RESOURCE_STATE_RENDER_TARGET);
+            var barrier = InitTransition(RenderTarget, ResourceStates.ResourceStatePresent, ResourceStates.ResourceStateRenderTarget);
             GraphicsCommandList->ResourceBarrier(1, &barrier);
         }
 
         protected virtual void TransitionForPresent()
         {
-            var barrier = D3D12_RESOURCE_BARRIER.InitTransition(RenderTarget, D3D12_RESOURCE_STATE_RENDER_TARGET, D3D12_RESOURCE_STATE_PRESENT);
+            var barrier = InitTransition(RenderTarget, ResourceStates.ResourceStateRenderTarget, ResourceStates.ResourceStatePresent);
             GraphicsCommandList->ResourceBarrier(1, &barrier);
         }
 

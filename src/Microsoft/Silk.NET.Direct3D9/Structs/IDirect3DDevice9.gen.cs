@@ -41,9 +41,9 @@ namespace Silk.NET.Direct3D9
             uint? vertexShaders = null,
             uint? pixelShaders = null,
             Viewport9? viewport = null,
-            Matrix? projectionMatrix = null,
-            Matrix? viewMatrix = null,
-            Matrix? worldMatrix = null,
+            System.Numerics.Matrix4x4? projectionMatrix = null,
+            System.Numerics.Matrix4x4? viewMatrix = null,
+            System.Numerics.Matrix4x4? worldMatrix = null,
             uint? fVF = null,
             uint? vertexSize = null,
             uint? vertexShaderVersion = null,
@@ -246,17 +246,17 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "D3DMATRIX")]
         [NativeName("Type.Name", "D3DMATRIX")]
         [NativeName("Name", "ProjectionMatrix")]
-        public Matrix ProjectionMatrix;
+        public System.Numerics.Matrix4x4 ProjectionMatrix;
 
         [NativeName("Type", "D3DMATRIX")]
         [NativeName("Type.Name", "D3DMATRIX")]
         [NativeName("Name", "ViewMatrix")]
-        public Matrix ViewMatrix;
+        public System.Numerics.Matrix4x4 ViewMatrix;
 
         [NativeName("Type", "D3DMATRIX")]
         [NativeName("Type.Name", "D3DMATRIX")]
         [NativeName("Name", "WorldMatrix")]
-        public Matrix WorldMatrix;
+        public System.Numerics.Matrix4x4 WorldMatrix;
         
         [NativeName("Type", "D3DMATRIX [8]")]
         [NativeName("Type.Name", "D3DMATRIX [8]")]
@@ -265,15 +265,15 @@ namespace Silk.NET.Direct3D9
 
         public struct TextureMatricesBuffer
         {
-            public Matrix Element0;
-            public Matrix Element1;
-            public Matrix Element2;
-            public Matrix Element3;
-            public Matrix Element4;
-            public Matrix Element5;
-            public Matrix Element6;
-            public Matrix Element7;
-            public ref Matrix this[int index]
+            public System.Numerics.Matrix4x4 Element0;
+            public System.Numerics.Matrix4x4 Element1;
+            public System.Numerics.Matrix4x4 Element2;
+            public System.Numerics.Matrix4x4 Element3;
+            public System.Numerics.Matrix4x4 Element4;
+            public System.Numerics.Matrix4x4 Element5;
+            public System.Numerics.Matrix4x4 Element6;
+            public System.Numerics.Matrix4x4 Element7;
+            public ref System.Numerics.Matrix4x4 this[int index]
             {
                 get
                 {
@@ -282,7 +282,7 @@ namespace Silk.NET.Direct3D9
                         throw new ArgumentOutOfRangeException(nameof(index));
                     }
 
-                    fixed (Matrix* ptr = &Element0)
+                    fixed (System.Numerics.Matrix4x4* ptr = &Element0)
                     {
                         return ref ptr[index];
                     }
@@ -290,7 +290,7 @@ namespace Silk.NET.Direct3D9
             }
 
 #if NETSTANDARD2_1
-            public Span<Matrix> AsSpan()
+            public Span<System.Numerics.Matrix4x4> AsSpan()
                 => MemoryMarshal.CreateSpan(ref Element0, 8);
 #endif
         }
@@ -2054,64 +2054,64 @@ namespace Silk.NET.Direct3D9
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int SetTransform(Transformstatetype State, Matrix* pMatrix)
+        public readonly unsafe int SetTransform(Transformstatetype State, System.Numerics.Matrix4x4* pMatrix)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Transformstatetype, Matrix*, int>)LpVtbl[44])(@this, State, pMatrix);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Transformstatetype, System.Numerics.Matrix4x4*, int>)LpVtbl[44])(@this, State, pMatrix);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int SetTransform(Transformstatetype State, ref Matrix pMatrix)
+        public readonly int SetTransform(Transformstatetype State, ref System.Numerics.Matrix4x4 pMatrix)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (Matrix* pMatrixPtr = &pMatrix)
+            fixed (System.Numerics.Matrix4x4* pMatrixPtr = &pMatrix)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Transformstatetype, Matrix*, int>)LpVtbl[44])(@this, State, pMatrixPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Transformstatetype, System.Numerics.Matrix4x4*, int>)LpVtbl[44])(@this, State, pMatrixPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetTransform(Transformstatetype State, Matrix* pMatrix)
+        public readonly unsafe int GetTransform(Transformstatetype State, System.Numerics.Matrix4x4* pMatrix)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Transformstatetype, Matrix*, int>)LpVtbl[45])(@this, State, pMatrix);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Transformstatetype, System.Numerics.Matrix4x4*, int>)LpVtbl[45])(@this, State, pMatrix);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetTransform(Transformstatetype State, ref Matrix pMatrix)
+        public readonly int GetTransform(Transformstatetype State, ref System.Numerics.Matrix4x4 pMatrix)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (Matrix* pMatrixPtr = &pMatrix)
+            fixed (System.Numerics.Matrix4x4* pMatrixPtr = &pMatrix)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Transformstatetype, Matrix*, int>)LpVtbl[45])(@this, State, pMatrixPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Transformstatetype, System.Numerics.Matrix4x4*, int>)LpVtbl[45])(@this, State, pMatrixPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int MultiplyTransform(Transformstatetype arg0, Matrix* arg1)
+        public readonly unsafe int MultiplyTransform(Transformstatetype arg0, System.Numerics.Matrix4x4* arg1)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Transformstatetype, Matrix*, int>)LpVtbl[46])(@this, arg0, arg1);
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Transformstatetype, System.Numerics.Matrix4x4*, int>)LpVtbl[46])(@this, arg0, arg1);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int MultiplyTransform(Transformstatetype arg0, ref Matrix arg1)
+        public readonly int MultiplyTransform(Transformstatetype arg0, ref System.Numerics.Matrix4x4 arg1)
         {
             var @this = (IDirect3DDevice9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
                 int ret = default;
-            fixed (Matrix* arg1Ptr = &arg1)
+            fixed (System.Numerics.Matrix4x4* arg1Ptr = &arg1)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Transformstatetype, Matrix*, int>)LpVtbl[46])(@this, arg0, arg1Ptr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DDevice9*, Transformstatetype, System.Numerics.Matrix4x4*, int>)LpVtbl[46])(@this, arg0, arg1Ptr);
             }
             return ret;
         }

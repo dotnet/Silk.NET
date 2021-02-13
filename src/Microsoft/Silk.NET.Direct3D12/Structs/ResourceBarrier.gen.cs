@@ -24,7 +24,11 @@ namespace Silk.NET.Direct3D12
         public ResourceBarrier
         (
             ResourceBarrierType? type = null,
-            ResourceBarrierFlags? flags = null
+            ResourceBarrierFlags? flags = null,
+            ResourceBarrierUnion? anonymous = null,
+            ResourceTransitionBarrier? transition = null,
+            ResourceAliasingBarrier? aliasing = null,
+            ResourceUavBarrier? uAV = null
         ) : this()
         {
             if (type is not null)
@@ -35,6 +39,26 @@ namespace Silk.NET.Direct3D12
             if (flags is not null)
             {
                 Flags = flags.Value;
+            }
+
+            if (anonymous is not null)
+            {
+                Anonymous = anonymous.Value;
+            }
+
+            if (transition is not null)
+            {
+                Transition = transition.Value;
+            }
+
+            if (aliasing is not null)
+            {
+                Aliasing = aliasing.Value;
+            }
+
+            if (uAV is not null)
+            {
+                UAV = uAV.Value;
             }
         }
 
@@ -48,5 +72,28 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "D3D12_RESOURCE_BARRIER_FLAGS")]
         [NativeName("Name", "Flags")]
         public ResourceBarrierFlags Flags;
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L2754_C5")]
+        [NativeName("Name", "anonymous1")]
+        public ResourceBarrierUnion Anonymous;
+        public ResourceTransitionBarrier Transition
+        {
+            get => Anonymous.Transition;
+            set => Anonymous.Transition = value;
+        }
+
+        public ResourceAliasingBarrier Aliasing
+        {
+            get => Anonymous.Aliasing;
+            set => Anonymous.Aliasing = value;
+        }
+
+        public ResourceUavBarrier UAV
+        {
+            get => Anonymous.UAV;
+            set => Anonymous.UAV = value;
+        }
+
     }
 }

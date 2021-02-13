@@ -721,16 +721,19 @@ namespace Silk.NET.Core.Native
             }
         }
 
-        [DllImport("kernel32", EntryPoint = "CreateEventW", ExactSpelling = true)]
+        [DllImport("kernel32", EntryPoint = "CreateEventW", ExactSpelling = true, SetLastError = true)]
         private static extern unsafe nint CoreCreateWinEvent
             (SecurityAttributes* lpEventAttributes, int bManualReset, int bInitialState, char* lpName);
 
-        [DllImport("kernel32", EntryPoint = "WaitForSingleObjectEx", ExactSpelling = true)]
+        [DllImport("kernel32", EntryPoint = "WaitForSingleObjectEx", ExactSpelling = true,  SetLastError = true)]
         private static extern uint CoreWaitObjects(nint hHandle, uint dwMilliseconds, int bAlertable);
 
-        [DllImport("kernel32", EntryPoint = "WaitForMultipleObjectsEx", ExactSpelling = true)]
+        [DllImport("kernel32", EntryPoint = "WaitForMultipleObjectsEx", ExactSpelling = true, SetLastError = true)]
         private static extern unsafe uint CoreWaitObjects
             (uint nCount, nint* lpHandles, int bWaitAll, uint dwMilliseconds, int bAlertable);
+            
+        [DllImport("kernel32", EntryPoint = "CloseHandle", ExactSpelling = true, SetLastError = true)]
+        public static extern int CloseWindowsHandle(nint hObject);
 
         public static unsafe nint CreateWindowsEvent
             (SecurityAttributes* lpEventAttributes, bool bManualReset, bool bInitialState, char* lpName)

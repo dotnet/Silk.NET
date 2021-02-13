@@ -26,7 +26,11 @@ namespace Silk.NET.Direct3D12
             RaytracingAccelerationStructureType? type = null,
             RaytracingAccelerationStructureBuildFlags? flags = null,
             uint? numDescs = null,
-            ElementsLayout? descsLayout = null
+            ElementsLayout? descsLayout = null,
+            BuildRaytracingAccelerationStructureInputsUnion? anonymous = null,
+            ulong? instanceDescs = null,
+            RaytracingGeometryDesc* pGeometryDescs = null,
+            RaytracingGeometryDesc** ppGeometryDescs = null
         ) : this()
         {
             if (type is not null)
@@ -47,6 +51,26 @@ namespace Silk.NET.Direct3D12
             if (descsLayout is not null)
             {
                 DescsLayout = descsLayout.Value;
+            }
+
+            if (anonymous is not null)
+            {
+                Anonymous = anonymous.Value;
+            }
+
+            if (instanceDescs is not null)
+            {
+                InstanceDescs = instanceDescs.Value;
+            }
+
+            if (pGeometryDescs is not null)
+            {
+                PGeometryDescs = pGeometryDescs;
+            }
+
+            if (ppGeometryDescs is not null)
+            {
+                PpGeometryDescs = ppGeometryDescs;
             }
         }
 
@@ -70,5 +94,28 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "D3D12_ELEMENTS_LAYOUT")]
         [NativeName("Name", "DescsLayout")]
         public ElementsLayout DescsLayout;
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L12497_C5")]
+        [NativeName("Name", "anonymous1")]
+        public BuildRaytracingAccelerationStructureInputsUnion Anonymous;
+        public ulong InstanceDescs
+        {
+            get => Anonymous.InstanceDescs;
+            set => Anonymous.InstanceDescs = value;
+        }
+
+        public RaytracingGeometryDesc* PGeometryDescs
+        {
+            get => Anonymous.PGeometryDescs;
+            set => Anonymous.PGeometryDescs = value;
+        }
+
+        public RaytracingGeometryDesc** PpGeometryDescs
+        {
+            get => Anonymous.PpGeometryDescs;
+            set => Anonymous.PpGeometryDescs = value;
+        }
+
     }
 }

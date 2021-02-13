@@ -24,7 +24,10 @@ namespace Silk.NET.Direct3D12
         public RaytracingGeometryDesc
         (
             RaytracingGeometryType? type = null,
-            RaytracingGeometryFlags? flags = null
+            RaytracingGeometryFlags? flags = null,
+            RaytracingGeometryDescUnion? anonymous = null,
+            RaytracingGeometryTrianglesDesc? triangles = null,
+            RaytracingGeometryAabbsDesc? aABBs = null
         ) : this()
         {
             if (type is not null)
@@ -35,6 +38,21 @@ namespace Silk.NET.Direct3D12
             if (flags is not null)
             {
                 Flags = flags.Value;
+            }
+
+            if (anonymous is not null)
+            {
+                Anonymous = anonymous.Value;
+            }
+
+            if (triangles is not null)
+            {
+                Triangles = triangles.Value;
+            }
+
+            if (aABBs is not null)
+            {
+                AABBs = aABBs.Value;
             }
         }
 
@@ -48,5 +66,22 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "D3D12_RAYTRACING_GEOMETRY_FLAGS")]
         [NativeName("Name", "Flags")]
         public RaytracingGeometryFlags Flags;
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L12484_C5")]
+        [NativeName("Name", "anonymous1")]
+        public RaytracingGeometryDescUnion Anonymous;
+        public RaytracingGeometryTrianglesDesc Triangles
+        {
+            get => Anonymous.Triangles;
+            set => Anonymous.Triangles = value;
+        }
+
+        public RaytracingGeometryAabbsDesc AABBs
+        {
+            get => Anonymous.AABBs;
+            set => Anonymous.AABBs = value;
+        }
+
     }
 }
