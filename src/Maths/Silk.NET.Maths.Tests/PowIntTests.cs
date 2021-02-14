@@ -45,7 +45,7 @@ namespace Silk.NET.Maths.Tests
         {
             var a = 2;
             var b = -4;
-            var expected = (int)(1f / (2 << 3));
+            var expected = Scalar.Reciprocal(2 << 3);
             Assert.Equal(expected, Scalar.Pow(a, b));
         }
     }
