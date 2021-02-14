@@ -458,7 +458,7 @@ namespace Silk.NET.XAudio
         public readonly void DestroyVoice()
         {
             var @this = (IXAudio2MasteringVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IXAudio2MasteringVoice*, void>)LpVtbl[18])(@this);
+            ((delegate* unmanaged[Stdcall]<IXAudio2MasteringVoice*, void>)LpVtbl[18])(@this);
         }
 
         /// <summary>To be documented.</summary>

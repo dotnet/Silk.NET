@@ -611,54 +611,6 @@ namespace Silk.NET.BuildTools.Cpp
                 }
             }
 
-            CallingConvention GetCallingConvention(CXCallingConv conv)
-            {
-                switch (conv)
-                {
-                    case CXCallingConv.CXCallingConv_Default: break;
-                    case CXCallingConv.CXCallingConv_C:
-                    {
-                        return CallingConvention.Cdecl;
-                    }
-                    case CXCallingConv.CXCallingConv_X86StdCall:
-                    {
-                        return CallingConvention.StdCall;
-                    }
-                    case CXCallingConv.CXCallingConv_X86FastCall:
-                    {
-                        return CallingConvention.FastCall;
-                    }
-                    case CXCallingConv.CXCallingConv_X86ThisCall:
-                    {
-                        return CallingConvention.ThisCall;
-                    }
-                    //case CXCallingConv.CXCallingConv_X86Pascal: break;
-                    //case CXCallingConv.CXCallingConv_AAPCS: break;
-                    //case CXCallingConv.CXCallingConv_AAPCS_VFP: break;
-                    //case CXCallingConv.CXCallingConv_X86RegCall: break; 
-                    //case CXCallingConv.CXCallingConv_IntelOclBicc: break;
-                    case CXCallingConv.CXCallingConv_Win64:
-                    {
-                        return CallingConvention.Winapi;
-                    }
-                    //case CXCallingConv.CXCallingConv_X86_64SysV: break;
-                    //case CXCallingConv.CXCallingConv_X86VectorCall: break;
-                    //case CXCallingConv.CXCallingConv_Swift: break;
-                    //case CXCallingConv.CXCallingConv_PreserveMost: break;
-                    //case CXCallingConv.CXCallingConv_PreserveAll: break;
-                    //case CXCallingConv.CXCallingConv_AArch64VectorCall: break;
-                    //case CXCallingConv.CXCallingConv_Invalid: break;
-                    //case CXCallingConv.CXCallingConv_Unexposed: break;
-                    default:
-                    {
-                        Console.WriteLine($"Warning: Unsupported calling convention {conv}. Defaulting to StdCall.");
-                        return CallingConvention.StdCall;
-                    }
-                }
-
-                return CallingConvention.StdCall;
-            }
-
             Type GetType(ClangSharp.Type type, out Count count, ref FlowDirection flow, out bool success)
             {
                 FlowDirection ignoreFlow = default;
@@ -816,7 +768,7 @@ namespace Silk.NET.BuildTools.Cpp
                                 Name = "void",
                                 FunctionPointerSignature = new Function
                                 {
-                                    Convention = GetCallingConvention(functionProtoType.CallConv),
+                                    Convention = GetCallingConvention(GetCallingConvention(functionProtoType)),
                                     Parameters = functionProtoType.ParamTypes.Select
                                         (
                                             (x, i) => new Parameter
@@ -1321,12 +1273,7 @@ namespace Silk.NET.BuildTools.Cpp
                                 Name = name ?? Naming.TranslateLite
                                     (Naming.TrimName(functionDecl.Name, task), task.FunctionPrefix),
                                 NativeName = functionDecl.Name,
-                                Convention = GetCallingConvention
-                                (
-                                    functionDecl.Type is AttributedType attributedType
-                                        ? attributedType.Handle.FunctionTypeCallingConv
-                                        : ((FunctionType) functionDecl.Type).CallConv
-                                ),
+                                Convention = GetCallingConvention(GetCallingConvention(functionDecl)),
                                 Parameters = functionDecl.Parameters.Select
                                     (
                                         (x, i) =>
@@ -1708,8 +1655,7 @@ namespace Silk.NET.BuildTools.Cpp
                 {
                     Accessibility = cxxMethodDecl.Access.MapAccessibility(),
                     Attributes = new List<Attribute>(),
-                    Convention = GetCallingConvention
-                        ((cxxMethodDecl.Type as FunctionType)?.CallConv ?? CXCallingConv.CXCallingConv_C),
+                    Convention = GetCallingConvention(GetCallingConvention(cxxMethodDecl)),
                     Name = name ?? Naming.TranslateLite
                         (Naming.TrimName(cxxMethodDecl.Name, task), task.FunctionPrefix),
                     NativeName = cxxMethodDecl.Name,
@@ -1827,6 +1773,80 @@ namespace Silk.NET.BuildTools.Cpp
                     }
                 );
                 OutputVtblHelperMethods(cxxRecordDecl, ref i, @struct);
+            }
+        }
+
+        public static CXCallingConv GetCallingConvention(FunctionDecl functionDecl)
+            => GetCallingConvention(functionDecl.Type);
+
+        public static CXCallingConv GetCallingConvention(ClangSharp.Type type)
+        {
+            var callConv = CXCallingConv.CXCallingConv_Invalid;
+
+            if (type is AttributedType attributedType)
+            {
+                type = attributedType.ModifiedType;
+                callConv = attributedType.Handle.FunctionTypeCallingConv;
+            }
+
+            if (type is FunctionType functionType)
+            {
+                if (callConv == CXCallingConv.CXCallingConv_Invalid)
+                {
+                    callConv = functionType.CallConv;
+                }
+            }
+
+            return callConv;
+        }
+
+        public static CallingConvention GetCallingConvention(CXCallingConv conv)
+        {
+            // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
+            switch (conv)
+            {
+                case CXCallingConv.CXCallingConv_Default:
+                {
+                    return CallingConvention.Winapi;
+                }
+                case CXCallingConv.CXCallingConv_C:
+                {
+                    return CallingConvention.Cdecl;
+                }
+                case CXCallingConv.CXCallingConv_X86StdCall:
+                {
+                    return CallingConvention.StdCall;
+                }
+                case CXCallingConv.CXCallingConv_X86FastCall:
+                {
+                    return CallingConvention.FastCall;
+                }
+                case CXCallingConv.CXCallingConv_X86ThisCall:
+                {
+                    return CallingConvention.ThisCall;
+                }
+                //case CXCallingConv.CXCallingConv_X86Pascal: break;
+                //case CXCallingConv.CXCallingConv_AAPCS: break;
+                //case CXCallingConv.CXCallingConv_AAPCS_VFP: break;
+                //case CXCallingConv.CXCallingConv_X86RegCall: break; 
+                //case CXCallingConv.CXCallingConv_IntelOclBicc: break;
+                case CXCallingConv.CXCallingConv_Win64:
+                {
+                    return CallingConvention.Winapi;
+                }
+                //case CXCallingConv.CXCallingConv_X86_64SysV: break;
+                //case CXCallingConv.CXCallingConv_X86VectorCall: break;
+                //case CXCallingConv.CXCallingConv_Swift: break;
+                //case CXCallingConv.CXCallingConv_PreserveMost: break;
+                //case CXCallingConv.CXCallingConv_PreserveAll: break;
+                //case CXCallingConv.CXCallingConv_AArch64VectorCall: break;
+                //case CXCallingConv.CXCallingConv_Invalid: break;
+                //case CXCallingConv.CXCallingConv_Unexposed: break;
+                default:
+                {
+                    Console.WriteLine($"Warning: Unsupported calling convention {conv}. Defaulting to Cdecl.");
+                    return CallingConvention.Cdecl;
+                }
             }
         }
     }

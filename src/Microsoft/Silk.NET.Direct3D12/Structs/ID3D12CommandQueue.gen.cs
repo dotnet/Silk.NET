@@ -105,7 +105,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12CommandQueue*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12CommandQueue*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -114,7 +114,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12CommandQueue*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12CommandQueue*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -3161,7 +3161,7 @@ namespace Silk.NET.Direct3D12
         public readonly void EndEvent()
         {
             var @this = (ID3D12CommandQueue*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D12CommandQueue*, void>)LpVtbl[13])(@this);
+            ((delegate* unmanaged[Stdcall]<ID3D12CommandQueue*, void>)LpVtbl[13])(@this);
         }
 
         /// <summary>To be documented.</summary>

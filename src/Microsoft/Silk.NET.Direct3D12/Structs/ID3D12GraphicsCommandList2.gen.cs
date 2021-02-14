@@ -111,7 +111,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList2*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList2*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -120,7 +120,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList2*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList2*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -413,7 +413,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             CommandListType ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList2*, CommandListType>)LpVtbl[8])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList2*, CommandListType>)LpVtbl[8])(@this);
             return ret;
         }
 
@@ -422,7 +422,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12GraphicsCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList2*, int>)LpVtbl[9])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList2*, int>)LpVtbl[9])(@this);
             return ret;
         }
 
@@ -1704,7 +1704,7 @@ namespace Silk.NET.Direct3D12
         public readonly void EndEvent()
         {
             var @this = (ID3D12GraphicsCommandList2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D12GraphicsCommandList2*, void>)LpVtbl[58])(@this);
+            ((delegate* unmanaged[Stdcall]<ID3D12GraphicsCommandList2*, void>)LpVtbl[58])(@this);
         }
 
         /// <summary>To be documented.</summary>

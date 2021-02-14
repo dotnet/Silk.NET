@@ -146,7 +146,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12ShaderReflectionType*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ID3D12ShaderReflectionType* ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*>)LpVtbl[5])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*>)LpVtbl[5])(@this);
             return ret;
         }
 
@@ -155,7 +155,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12ShaderReflectionType*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ID3D12ShaderReflectionType* ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*>)LpVtbl[6])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderReflectionType*, ID3D12ShaderReflectionType*>)LpVtbl[6])(@this);
             return ret;
         }
 
@@ -164,7 +164,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12ShaderReflectionType*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12ShaderReflectionType*, uint>)LpVtbl[7])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12ShaderReflectionType*, uint>)LpVtbl[7])(@this);
             return ret;
         }
 

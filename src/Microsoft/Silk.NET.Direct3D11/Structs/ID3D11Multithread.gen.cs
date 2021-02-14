@@ -96,7 +96,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Multithread*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Multithread*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Multithread*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -105,7 +105,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Multithread*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Multithread*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Multithread*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -113,14 +113,14 @@ namespace Silk.NET.Direct3D11
         public readonly void Enter()
         {
             var @this = (ID3D11Multithread*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11Multithread*, void>)LpVtbl[3])(@this);
+            ((delegate* unmanaged[Stdcall]<ID3D11Multithread*, void>)LpVtbl[3])(@this);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void Leave()
         {
             var @this = (ID3D11Multithread*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11Multithread*, void>)LpVtbl[4])(@this);
+            ((delegate* unmanaged[Stdcall]<ID3D11Multithread*, void>)LpVtbl[4])(@this);
         }
 
         /// <summary>To be documented.</summary>
@@ -137,7 +137,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Multithread*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Multithread*, int>)LpVtbl[6])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Multithread*, int>)LpVtbl[6])(@this);
             return ret;
         }
 

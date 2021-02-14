@@ -96,7 +96,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -105,7 +105,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -1167,7 +1167,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11VideoDevice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11VideoDevice*, uint>)LpVtbl[11])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11VideoDevice*, uint>)LpVtbl[11])(@this);
             return ret;
         }
 

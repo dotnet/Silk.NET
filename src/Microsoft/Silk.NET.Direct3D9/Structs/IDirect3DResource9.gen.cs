@@ -96,7 +96,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DResource9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DResource9*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DResource9*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -105,7 +105,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DResource9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DResource9*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DResource9*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -321,7 +321,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DResource9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DResource9*, uint>)LpVtbl[8])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DResource9*, uint>)LpVtbl[8])(@this);
             return ret;
         }
 
@@ -329,7 +329,7 @@ namespace Silk.NET.Direct3D9
         public readonly void PreLoad()
         {
             var @this = (IDirect3DResource9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IDirect3DResource9*, void>)LpVtbl[9])(@this);
+            ((delegate* unmanaged[Stdcall]<IDirect3DResource9*, void>)LpVtbl[9])(@this);
         }
 
         /// <summary>To be documented.</summary>
@@ -337,7 +337,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DResource9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             Resourcetype ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DResource9*, Resourcetype>)LpVtbl[10])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DResource9*, Resourcetype>)LpVtbl[10])(@this);
             return ret;
         }
 

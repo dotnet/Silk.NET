@@ -96,7 +96,7 @@ namespace Silk.NET.XAudio
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IXAudio2*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -105,7 +105,7 @@ namespace Silk.NET.XAudio
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IXAudio2*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -952,7 +952,7 @@ namespace Silk.NET.XAudio
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IXAudio2*, int>)LpVtbl[8])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2*, int>)LpVtbl[8])(@this);
             return ret;
         }
 
@@ -960,7 +960,7 @@ namespace Silk.NET.XAudio
         public readonly void StopEngine()
         {
             var @this = (IXAudio2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IXAudio2*, void>)LpVtbl[9])(@this);
+            ((delegate* unmanaged[Stdcall]<IXAudio2*, void>)LpVtbl[9])(@this);
         }
 
         /// <summary>To be documented.</summary>

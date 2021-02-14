@@ -99,7 +99,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDeviceSubObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDeviceSubObject*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDeviceSubObject*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -108,7 +108,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDeviceSubObject*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDeviceSubObject*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDeviceSubObject*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 

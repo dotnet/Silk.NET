@@ -105,7 +105,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -114,7 +114,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -42785,7 +42785,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             Silk.NET.Core.Native.D3DFeatureLevel ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, Silk.NET.Core.Native.D3DFeatureLevel>)LpVtbl[37])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, Silk.NET.Core.Native.D3DFeatureLevel>)LpVtbl[37])(@this);
             return ret;
         }
 
@@ -42794,7 +42794,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, uint>)LpVtbl[38])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, uint>)LpVtbl[38])(@this);
             return ret;
         }
 
@@ -42803,7 +42803,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, int>)LpVtbl[39])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, int>)LpVtbl[39])(@this);
             return ret;
         }
 
@@ -42838,7 +42838,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11Device3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Device3*, uint>)LpVtbl[42])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Device3*, uint>)LpVtbl[42])(@this);
             return ret;
         }
 

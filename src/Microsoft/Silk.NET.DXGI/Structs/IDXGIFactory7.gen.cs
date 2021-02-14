@@ -120,7 +120,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactory7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory7*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -129,7 +129,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactory7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory7*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -591,7 +591,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactory7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, int>)LpVtbl[13])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory7*, int>)LpVtbl[13])(@this);
             return ret;
         }
 
@@ -600,7 +600,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactory7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, int>)LpVtbl[14])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory7*, int>)LpVtbl[14])(@this);
             return ret;
         }
 
@@ -2105,7 +2105,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIFactory7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, uint>)LpVtbl[25])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIFactory7*, uint>)LpVtbl[25])(@this);
             return ret;
         }
 

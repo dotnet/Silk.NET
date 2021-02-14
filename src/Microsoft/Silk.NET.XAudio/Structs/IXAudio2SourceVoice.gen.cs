@@ -458,7 +458,7 @@ namespace Silk.NET.XAudio
         public readonly void DestroyVoice()
         {
             var @this = (IXAudio2SourceVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IXAudio2SourceVoice*, void>)LpVtbl[18])(@this);
+            ((delegate* unmanaged[Stdcall]<IXAudio2SourceVoice*, void>)LpVtbl[18])(@this);
         }
 
         /// <summary>To be documented.</summary>
@@ -532,7 +532,7 @@ namespace Silk.NET.XAudio
         {
             var @this = (IXAudio2SourceVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IXAudio2SourceVoice*, int>)LpVtbl[22])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2SourceVoice*, int>)LpVtbl[22])(@this);
             return ret;
         }
 
@@ -541,7 +541,7 @@ namespace Silk.NET.XAudio
         {
             var @this = (IXAudio2SourceVoice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IXAudio2SourceVoice*, int>)LpVtbl[23])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IXAudio2SourceVoice*, int>)LpVtbl[23])(@this);
             return ret;
         }
 

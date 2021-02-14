@@ -99,7 +99,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDebug1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDebug1*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDebug1*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -108,7 +108,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDebug1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDebug1*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDebug1*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -125,14 +125,14 @@ namespace Silk.NET.DXGI
         public readonly void EnableLeakTrackingForThread()
         {
             var @this = (IDXGIDebug1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IDXGIDebug1*, void>)LpVtbl[4])(@this);
+            ((delegate* unmanaged[Stdcall]<IDXGIDebug1*, void>)LpVtbl[4])(@this);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void DisableLeakTrackingForThread()
         {
             var @this = (IDXGIDebug1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IDXGIDebug1*, void>)LpVtbl[5])(@this);
+            ((delegate* unmanaged[Stdcall]<IDXGIDebug1*, void>)LpVtbl[5])(@this);
         }
 
         /// <summary>To be documented.</summary>
@@ -140,7 +140,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDebug1*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDebug1*, int>)LpVtbl[6])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDebug1*, int>)LpVtbl[6])(@this);
             return ret;
         }
 

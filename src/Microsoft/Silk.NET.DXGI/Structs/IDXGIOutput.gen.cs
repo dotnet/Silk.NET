@@ -99,7 +99,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -108,7 +108,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -546,7 +546,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIOutput*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIOutput*, int>)LpVtbl[10])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIOutput*, int>)LpVtbl[10])(@this);
             return ret;
         }
 
@@ -575,7 +575,7 @@ namespace Silk.NET.DXGI
         public readonly void ReleaseOwnership()
         {
             var @this = (IDXGIOutput*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IDXGIOutput*, void>)LpVtbl[12])(@this);
+            ((delegate* unmanaged[Stdcall]<IDXGIOutput*, void>)LpVtbl[12])(@this);
         }
 
         /// <summary>To be documented.</summary>

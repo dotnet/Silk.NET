@@ -184,7 +184,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DVolume9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DVolume9*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DVolume9*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -193,7 +193,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DVolume9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DVolume9*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DVolume9*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -517,7 +517,7 @@ namespace Silk.NET.Direct3D9
         {
             var @this = (IDirect3DVolume9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DVolume9*, int>)LpVtbl[10])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DVolume9*, int>)LpVtbl[10])(@this);
             return ret;
         }
 

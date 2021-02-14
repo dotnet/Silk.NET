@@ -96,7 +96,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -105,7 +105,7 @@ namespace Silk.NET.Direct3D11
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -134,7 +134,7 @@ namespace Silk.NET.Direct3D11
         public readonly void ResetTrace()
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, void>)LpVtbl[4])(@this);
+            ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, void>)LpVtbl[4])(@this);
         }
 
         /// <summary>To be documented.</summary>

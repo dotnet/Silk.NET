@@ -96,7 +96,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -105,7 +105,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -178,7 +178,7 @@ namespace Silk.NET.Direct3D12
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             ulong ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, ulong>)LpVtbl[5])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, ulong>)LpVtbl[5])(@this);
             return ret;
         }
 

@@ -96,7 +96,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -105,7 +105,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -273,7 +273,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDecodeSwapChain*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             MULTIPLANEOVERLAYYCbCrFLAGS ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDecodeSwapChain*, MULTIPLANEOVERLAYYCbCrFLAGS>)LpVtbl[11])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDecodeSwapChain*, MULTIPLANEOVERLAYYCbCrFLAGS>)LpVtbl[11])(@this);
             return ret;
         }
 

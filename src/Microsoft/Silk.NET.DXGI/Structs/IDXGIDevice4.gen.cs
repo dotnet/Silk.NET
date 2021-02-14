@@ -111,7 +111,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDevice4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDevice4*, uint>)LpVtbl[1])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -120,7 +120,7 @@ namespace Silk.NET.DXGI
         {
             var @this = (IDXGIDevice4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIDevice4*, uint>)LpVtbl[2])(@this);
+            ret = ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -707,7 +707,7 @@ namespace Silk.NET.DXGI
         public readonly void Trim()
         {
             var @this = (IDXGIDevice4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IDXGIDevice4*, void>)LpVtbl[17])(@this);
+            ((delegate* unmanaged[Stdcall]<IDXGIDevice4*, void>)LpVtbl[17])(@this);
         }
 
         /// <summary>To be documented.</summary>
