@@ -350,6 +350,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maths", "Maths", "{41EEBDB3-75C4-4A60-B4D5-673FBCA791E7}"
 ProjectSection(SolutionItems) = preProject
 	src\Maths\.editorconfig = src\Maths\.editorconfig
+	src\Maths\benchmark-testing-structure.md = src\Maths\benchmark-testing-structure.md
 EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Maths", "src\Maths\Silk.NET.Maths\Silk.NET.Maths.csproj", "{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}"

@@ -6,13 +6,18 @@ Each operation should receive a test in the form of:
 
 (replace `[T]` with the actual type, and `Operation` with the actual method)
 ```cs
-[Theory]
-[InlineData(....)]
-[InlineData(....)]
-public void Operation[T]([T] expected, [T] a, [T] b)
+public sealed class OperationTests
 {
-    var actual = Scalar.Operation(a, b);
-    Assert.Equal(expected, actual);
+    [Theory]
+    [InlineData(....)]
+    [InlineData(....)]
+    public void Operation[T]([T] expected, [T] a, [T] b)
+    {
+        var actual = Scalar.Operation(a, b);
+        Assert.Equal(expected, actual);
+    }
+
+    // ...
 }
 ```
 
@@ -22,6 +27,7 @@ and a benchmark in the form of:
 [GenericTypeArguments(typeof(byte))]
 [GenericTypeArguments(typeof(sbyte))]
 [GenericTypeArguments(typeof(ushort))]
+[GenericTypeArguments(typeof(short))]
 [GenericTypeArguments(typeof(uint))]
 [GenericTypeArguments(typeof(int))]
 [GenericTypeArguments(typeof(ulong))]
@@ -76,3 +82,32 @@ public class ScalarOperation<T>
         return Math.Operation(AD, BD);
     }
 }
+```
+
+For multi-cursor convenience (these are 10 lines):
+
+byte
+sbyte
+ushort
+short
+uint
+int
+ulong
+long
+Half
+float
+double
+decimal
+
+Byte
+SByte
+UShort
+Short
+UInt
+Int
+ULong
+Long
+Half
+Float
+Double
+Decimal
