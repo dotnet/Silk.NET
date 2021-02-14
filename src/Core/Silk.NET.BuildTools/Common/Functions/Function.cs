@@ -86,7 +86,7 @@ namespace Silk.NET.BuildTools.Common.Functions
         /// <summary>
         /// Gets or sets the calling convention of this function.
         /// </summary>
-        public CallingConvention Convention { get; set; }
+        public CallingConvention Convention { get; set; } = CallingConvention.Cdecl;
 
         /// <summary>
         /// The accessibility modifier to add to this function's declaration.

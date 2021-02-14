@@ -155,7 +155,7 @@ namespace Silk.NET.DXGI
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 85, Column 16 in dxgi1_6.h")]
-        [NativeApi(EntryPoint = "DXGIDeclareAdapterRemovalSupport")]
+        [NativeApi(EntryPoint = "DXGIDeclareAdapterRemovalSupport", Convention = CallingConvention.StdCall)]
         public partial int DeclareAdapterRemovalSupport();
 
         /// <summary>To be documented.</summary>

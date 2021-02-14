@@ -6,6 +6,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Functions;
 using Silk.NET.BuildTools.Overloading;
@@ -133,7 +134,20 @@ namespace Silk.NET.BuildTools.Bind
                             sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                         }
 
-                        sw.WriteLine($"        [NativeApi(EntryPoint = \"{function.NativeName}\")]");
+
+                        if (function.Convention != CallingConvention.Cdecl)
+                        {
+                            sw.WriteLine
+                            (
+                                $"        [NativeApi(EntryPoint = \"{function.NativeName}\", " +
+                                $"Convention = CallingConvention.{function.Convention})]"
+                            );
+                        }
+                        else
+                        {
+                            sw.WriteLine($"        [NativeApi(EntryPoint = \"{function.NativeName}\")]");
+                        }
+
                         using (var sr = new StringReader(function.ToString(null, true, true)))
                         {
                             string line;
@@ -316,7 +330,19 @@ namespace Silk.NET.BuildTools.Bind
                                 sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                             }
 
-                            sw.WriteLine($"        [NativeApi(EntryPoint = \"{function.NativeName}\")]");
+                            if (function.Convention != CallingConvention.Cdecl)
+                            {
+                                sw.WriteLine
+                                (
+                                    $"        [NativeApi(EntryPoint = \"{function.NativeName}\", " +
+                                    $"Convention = CallingConvention.{function.Convention})]"
+                                );
+                            }
+                            else
+                            {
+                                sw.WriteLine($"        [NativeApi(EntryPoint = \"{function.NativeName}\")]");
+                            }
+
                             using (var sr = new StringReader(function.ToString(null, true, true)))
                             {
                                 string line;
