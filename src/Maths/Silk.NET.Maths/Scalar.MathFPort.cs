@@ -4568,7 +4568,7 @@ namespace Silk.NET.Maths
         /// ## Remarks  
         ///             The following table indicates the return value when various values or ranges of values are specified for the `x` and `y` parameters. For more information, see <xref:System.Single.PositiveInfinity?displayProperty=nameWithType>, <xref:System.Single.NegativeInfinity?displayProperty=nameWithType>, and <xref:System.Single.NaN?displayProperty=nameWithType>.  
         ///   
-        ///             |Parameters|Return value|  
+        ///         |Parameters|Return value|  
         ///         |----------------|------------------|  
         ///         |`x` or `y` = `NaN`.|`NaN`|  
         ///         |`x` = Any value except `NaN`; `y` = 0.|1|  
@@ -4657,7 +4657,7 @@ namespace Silk.NET.Maths
 
                         if (oabsy == py)
                             return (T) (object) result;
-                        return (T) (object) (sbyte) (1f / result);
+                        return (T) (object) (sbyte) Scalar.Reciprocal(result);
                     }
                     else
                     {
@@ -4727,7 +4727,7 @@ namespace Silk.NET.Maths
 
                         if (oabsy == py)
                             return (T) (object) result;
-                        return (T) (object) (short) (1f / result);
+                        return (T) (object) (short) Scalar.Reciprocal(result);
                     }
                     else
                     {
@@ -4797,7 +4797,7 @@ namespace Silk.NET.Maths
 
                         if (oabsy == py)
                             return (T) (object) result;
-                        return (T) (object) (int) (1f / result);
+                        return (T) (object) (int) Scalar.Reciprocal(result);
                     }
                     else
                     {
@@ -4867,7 +4867,7 @@ namespace Silk.NET.Maths
 
                         if (oabsy == py)
                             return (T) (object) result;
-                        return (T) (object) (long) (1f / result);
+                        return (T) (object) (long) Scalar.Reciprocal(result);
                     }
                     else
                     {
