@@ -387,7 +387,7 @@
                 "args": [
                     "--language=c++",
                     "--std=c++17",
-                    "-m64",
+                    "-m32",
                     "-Wno-expansion-to-defined",
                     "-Wno-ignored-attributes",
                     "-Wno-ignored-pragma-intrinsic",
@@ -590,7 +590,7 @@
                 "args": [
                     "--language=c++",
                     "--std=c++17",
-                    "-m64",
+                    "-m32",
                     "-Wno-expansion-to-defined",
                     "-Wno-ignored-attributes",
                     "-Wno-ignored-pragma-intrinsic",
@@ -711,7 +711,7 @@
                 "args": [
                     "--language=c++",
                     "--std=c++17",
-                    "-m64",
+                    "-m32",
                     "-Wno-expansion-to-defined",
                     "-Wno-ignored-attributes",
                     "-Wno-ignored-pragma-intrinsic",
@@ -780,7 +780,7 @@
                 "args": [
                     "--language=c++",
                     "--std=c++17",
-                    "-m64",
+                    "-m32",
                     "-Wno-expansion-to-defined",
                     "-Wno-ignored-attributes",
                     "-Wno-ignored-pragma-intrinsic",
@@ -872,7 +872,7 @@
                 "args": [
                     "--language=c++",
                     "--std=c++17",
-                    "-m64",
+                    "-m32",
                     "-Wno-expansion-to-defined",
                     "-Wno-ignored-attributes",
                     "-Wno-ignored-pragma-intrinsic",
@@ -962,7 +962,7 @@
                 "args": [
                     "--language=c++",
                     "--std=c++17",
-                    "-m64",
+                    "-m32",
                     "-Wno-expansion-to-defined",
                     "-Wno-ignored-attributes",
                     "-Wno-ignored-pragma-intrinsic",
@@ -1039,7 +1039,7 @@
                 "args": [
                     "--language=c++",
                     "--std=c++17",
-                    "-m64",
+                    "-m32",
                     "-Wno-expansion-to-defined",
                     "-Wno-ignored-attributes",
                     "-Wno-ignored-pragma-intrinsic",
@@ -1121,7 +1121,7 @@
                 "args": [
                     "--language=c++",
                     "--std=c++17",
-                    "-m64",
+                    "-m32",
                     "-Wno-expansion-to-defined",
                     "-Wno-ignored-attributes",
                     "-Wno-ignored-pragma-intrinsic",
@@ -1193,7 +1193,7 @@
                 "args": [
                     "--language=c++",
                     "--std=c++17",
-                    "-m64",
+                    "-m32",
                     "-Wno-expansion-to-defined",
                     "-Wno-ignored-attributes",
                     "-Wno-ignored-pragma-intrinsic",
@@ -1275,7 +1275,7 @@
                 "args": [
                     "--language=c++",
                     "--std=c++17",
-                    "-m64",
+                    "-m32",
                     "-Wno-expansion-to-defined",
                     "-Wno-ignored-attributes",
                     "-Wno-ignored-pragma-intrinsic",
@@ -1345,7 +1345,7 @@
                 "args": [
                     "--language=c++",
                     "--std=c++17",
-                    "-m64",
+                    "-m32",
                     "-Wno-expansion-to-defined",
                     "-Wno-ignored-attributes",
                     "-Wno-ignored-pragma-intrinsic",
@@ -1411,7 +1411,7 @@
                 "args": [
                     "--language=c++",
                     "--std=c++17",
-                    "-m64",
+                    "-m32",
                     "-Wno-expansion-to-defined",
                     "-Wno-ignored-attributes",
                     "-Wno-ignored-pragma-intrinsic",
