@@ -242,6 +242,8 @@ namespace Silk.NET.OpenGL
         Max3DTextureSize = 0x8073,
         [NativeName("Name", "GL_MAX_3D_TEXTURE_SIZE_EXT")]
         Max3DTextureSizeExt = 0x8073,
+        [NativeName("Name", "GL_VERTEX_ARRAY")]
+        VertexArray = 0x8074,
         [NativeName("Name", "GL_VERTEX_ARRAY_COUNT_EXT")]
         VertexArrayCountExt = 0x807D,
         [NativeName("Name", "GL_NORMAL_ARRAY_COUNT_EXT")]

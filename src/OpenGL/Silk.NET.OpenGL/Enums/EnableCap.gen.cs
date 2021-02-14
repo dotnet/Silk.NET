@@ -72,6 +72,8 @@ namespace Silk.NET.OpenGL
         RescaleNormalExt = 0x803A,
         [NativeName("Name", "GL_TEXTURE_3D_EXT")]
         Texture3DExt = 0x806F,
+        [NativeName("Name", "GL_VERTEX_ARRAY")]
+        VertexArray = 0x8074,
         [NativeName("Name", "GL_INTERLACE_SGIX")]
         InterlaceSgix = 0x8094,
         [NativeName("Name", "GL_MULTISAMPLE")]

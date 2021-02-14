@@ -1750,6 +1750,8 @@ namespace Silk.NET.OpenGL
         TessGenPointMode = 0x8E79,
         [NativeName("Name", "GL_ISOLINES")]
         Isolines = 0x8E7A,
+        [NativeName("Name", "GL_QUADS")]
+        Quads = 0x7,
         [NativeName("Name", "GL_FRACTIONAL_ODD")]
         FractionalOdd = 0x8E7B,
         [NativeName("Name", "GL_FRACTIONAL_EVEN")]
@@ -2226,6 +2228,8 @@ namespace Silk.NET.OpenGL
         Shader = 0x82E1,
         [NativeName("Name", "GL_PROGRAM")]
         Program = 0x82E2,
+        [NativeName("Name", "GL_VERTEX_ARRAY")]
+        VertexArray = 0x8074,
         [NativeName("Name", "GL_QUERY")]
         Query = 0x82E3,
         [NativeName("Name", "GL_PROGRAM_PIPELINE")]
@@ -2616,6 +2620,10 @@ namespace Silk.NET.OpenGL
         VertexBindingBuffer = 0x8F4F,
         [NativeName("Name", "GL_DISPLAY_LIST")]
         DisplayList = 0x82E7,
+        [NativeName("Name", "GL_STACK_UNDERFLOW")]
+        StackUnderflow = 0x504,
+        [NativeName("Name", "GL_STACK_OVERFLOW")]
+        StackOverflow = 0x503,
         [NativeName("Name", "GL_MAX_VERTEX_ATTRIB_STRIDE")]
         MaxVertexAttribStride = 0x82E5,
         [NativeName("Name", "GL_PRIMITIVE_RESTART_FOR_PATCHES_SUPPORTED")]

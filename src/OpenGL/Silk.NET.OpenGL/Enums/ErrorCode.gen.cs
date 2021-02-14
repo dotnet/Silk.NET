@@ -22,6 +22,10 @@ namespace Silk.NET.OpenGL
         InvalidValue = 0x501,
         [NativeName("Name", "GL_INVALID_OPERATION")]
         InvalidOperation = 0x502,
+        [NativeName("Name", "GL_STACK_OVERFLOW")]
+        StackOverflow = 0x503,
+        [NativeName("Name", "GL_STACK_UNDERFLOW")]
+        StackUnderflow = 0x504,
         [NativeName("Name", "GL_OUT_OF_MEMORY")]
         OutOfMemory = 0x505,
         [NativeName("Name", "GL_INVALID_FRAMEBUFFER_OPERATION")]

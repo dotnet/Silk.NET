@@ -4816,6 +4816,18 @@ namespace Silk.NET.OpenGL
         [NativeApi(EntryPoint = "glGetObjectPtrLabel")]
         public partial void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string label) where T0 : unmanaged;
 
+        [NativeApi(EntryPoint = "glGetPointerv")]
+        public unsafe partial void GetPointer([Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
+
+        [NativeApi(EntryPoint = "glGetPointerv")]
+        public unsafe partial void GetPointer([Flow(FlowDirection.In)] GLEnum pname, [Count(Count = 1), Flow(FlowDirection.Out)] out void* @params);
+
+        [NativeApi(EntryPoint = "glGetPointerv")]
+        public unsafe partial void GetPointer([Flow(FlowDirection.In)] GetPointervPName pname, [Count(Count = 1), Flow(FlowDirection.Out)] void** @params);
+
+        [NativeApi(EntryPoint = "glGetPointerv")]
+        public unsafe partial void GetPointer([Flow(FlowDirection.In)] GetPointervPName pname, [Count(Count = 1), Flow(FlowDirection.Out)] out void* @params);
+
         [NativeApi(EntryPoint = "glGetProgramInterfaceiv")]
         public unsafe partial void GetProgramInterface([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] GLEnum programInterface, [Flow(FlowDirection.In)] GLEnum pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
 
@@ -11014,6 +11026,14 @@ namespace Silk.NET.OpenGL
             // ReturnTypeOverloader
             byte ret = default;
             GetnPolygonStipple(bufSize, &ret);
+            return ret;
+        }
+
+        public unsafe void* GetPointer([Flow(FlowDirection.In)] GLEnum pname)
+        {
+            // ReturnTypeOverloader
+            void* ret = default;
+            GetPointer(pname, &ret);
             return ret;
         }
 
