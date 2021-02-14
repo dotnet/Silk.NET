@@ -224,6 +224,8 @@ namespace Silk.NET.Maths
                 PositiveInfinity = default;
                 One = (T) (object) (sbyte) 1;
                 Two = (T) (object) (sbyte) 2;
+                MinusOne = (T) (object) (sbyte) -1;
+                MinusTwo = (T) (object) (sbyte) -2;
                 E = (T) (object) (sbyte) FloatE;
                 Pi = (T) (object) (sbyte) FloatPi;
                 Tau = (T) (object) (sbyte) FloatTau;
