@@ -6,35 +6,34 @@
         <LangVersion>preview</LangVersion>
         <Authors>Ultz Limited</Authors>
         <PackageReleaseNotes>
-            Silk.NET January 2021 Update - 2.0, the largest Silk.NET update to date
+            Silk.NET February 2021 Update
             
-            - Adds Assimp bindings
-            - Adds SDL bindings
-            - Adds a SDL windowing backend
-            - Adds a new, AOT-friendly interop system (SilkTouch)
-            - Adds Android support
-            - Adds a generic, flexible maths library to fill in the holes left by System.Numerics
-            - Adds an initial set of Microsoft DirectX bindings
-            - Adds improved function pointer support
-            - Adds more OpenGL framebuffer bit-depth options
-            - Adds shared OpenGL contexts
-            - (EXPERIMENTAL!) Adds OpenXR bindings
-            - (EXPERIMENTAL!) Adds iOS support
-            - Massive performance improvements
-            - GLFW fixes
-            - Windowing and Input fixes/refactorings
-            - OpenCL and OpenAL improvements
-            - Vulkan bug fixes
-            - Miscellaneous bug fixes and improvements 
+            - Add native handles for Windowing
+            - Add Veldrid support
+            - Add support for macro constants
+            - Add support for unnamed nested anonymous struct fields
+            - Add better name hinting for anonymous types
+            - Add support for OpenGL token reuse for tokens that had been previously deprecated & removed, fixing #400 
+            - Add nested anonymous struct "fusion" with their parent structs, allowing direct ref access on .NET Standard 2.1 platforms without going through the anonymous field
+            - Add static Guid members for structs with a COM interface ID
+            - Fix struct field size & type variation between 32-bit and 64-bit in generated C++ bindings
+            - Fix calling convention detection, and actually respect the calling convention we detect
+            - Fix being unable to specify calling convention using NativeApiAttribute
+            - Fix some type issues
+            - Fix accidental initialization of both platforms, resolving #407
+            - Fix zero-length string allocation resulting in an IndexOutOfRangeException exception by clamping the allocation length to 1, resolving #396
+            - Fix unreasonably small delta times when running a window with OpenGL V-Sync enabled
+            - Fix faulty addition in Silk.NET.Maths where (u)ints were produced by (s)byte and (u)short addition, resulting in an invalid cast
+            - Fix malformed XML in MSBuild targets included by Silk.NET.Windowing.Sdl.Android, resolving #405
 
-            This release may be breaking and will likely require some modification in updating existing code to it. Please contact us in our Discord server if this is the case. We'll do our best to publish a migration guide shortly.
+            This should be treated as an "emergency patch" and you should update as soon as reasonably practicable. Some of the bugs in 2.0 are fatal in some workloads.
         </PackageReleaseNotes>
         <PackageTags>OpenCL;OpenGL;OpenAL;OpenGLES;GLES;Vulkan;Assimp;DirectX;GLFW;SDL;Windowing;Input;Gamepad;Joystick;Keyboard;Mouse;SilkTouch;Source;Generator;C#;F#;.NET;DotNet;Mono;Vector;Math;Maths;Numerics;Game;Graphics;Compute;Audio;Sound;Engine;Silk;Silk.NET;Slim.NET;ElgarTK;GPU;Sharp;Science;Scientific;Visualization;Visual;Audiovisual;Windows;macOS;Linux;Android;Bindings;OSX;Wrapper;Native</PackageTags>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageOutputPath>$(MSBuildThisFileDirectory)/../output_packages</PackageOutputPath>
         <RepositoryUrl>https://github.com/Ultz/Silk.NET</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
-        <VersionPrefix>2.0.0</VersionPrefix>
+        <VersionPrefix>2.1.0</VersionPrefix>
         <VersionSuffix Condition="'$(VersionSuffix)' == ''"></VersionSuffix>
         <Description>
             Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, and DirectX.
