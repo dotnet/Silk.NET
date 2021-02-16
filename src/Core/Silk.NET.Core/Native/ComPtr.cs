@@ -50,7 +50,7 @@ namespace Silk.NET.Core.Native
         // 3. get a T* from that "reference to a T".
         // 4. cast it to a T**, which is its true identity.
         public readonly T** GetAddressOf()
-            => (T**) Unsafe.AsPointer(ref Unsafe.As<ComPtr<T>, T>(ref Unsafe.AsRef(in this)));
+            => (T**) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
 
         public readonly ref T* GetPinnableReference() => ref *GetAddressOf();
         public readonly ref T Get() => ref *Handle;
