@@ -13,10 +13,10 @@
             - Add support for macro constants
             - Add support for unnamed nested anonymous struct fields
             - Add better name hinting for anonymous types
-            - Add support for OpenGL token reuse for tokens that had been previously deprecated & removed, fixing #400 
+            - Add support for OpenGL token reuse for tokens that had been previously deprecated and removed, fixing #400 
             - Add nested anonymous struct "fusion" with their parent structs, allowing direct ref access on .NET Standard 2.1 platforms without going through the anonymous field
             - Add static Guid members for structs with a COM interface ID
-            - Fix struct field size & type variation between 32-bit and 64-bit in generated C++ bindings
+            - Fix struct field size and type variation between 32-bit and 64-bit in generated C++ bindings
             - Fix calling convention detection, and actually respect the calling convention we detect
             - Fix being unable to specify calling convention using NativeApiAttribute
             - Fix some type issues
