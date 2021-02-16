@@ -27,7 +27,7 @@ namespace Silk.NET.Direct3D11
             MessageSeverity? severity = null,
             MessageID? iD = null,
             byte* pDescription = null,
-            uint? descriptionByteLength = null
+            nuint? descriptionByteLength = null
         ) : this()
         {
             if (category is not null)
@@ -80,6 +80,6 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type", "SIZE_T")]
         [NativeName("Type.Name", "SIZE_T")]
         [NativeName("Name", "DescriptionByteLength")]
-        public uint DescriptionByteLength;
+        public nuint DescriptionByteLength;
     }
 }

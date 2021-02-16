@@ -24,7 +24,7 @@ namespace Silk.NET.Direct3D12
         public CachedPipelineState
         (
             void* pCachedBlob = null,
-            uint? cachedBlobSizeInBytes = null
+            nuint? cachedBlobSizeInBytes = null
         ) : this()
         {
             if (pCachedBlob is not null)
@@ -47,6 +47,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "SIZE_T")]
         [NativeName("Type.Name", "SIZE_T")]
         [NativeName("Name", "CachedBlobSizeInBytes")]
-        public uint CachedBlobSizeInBytes;
+        public nuint CachedBlobSizeInBytes;
     }
 }

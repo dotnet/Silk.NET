@@ -106,6 +106,48 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         MEBidirWeightTwoThirdIntel = 0x43,
         [NativeName("Name", "CL_ME_BIDIR_WEIGHT_THREE_QUARTER_INTEL")]
         MEBidirWeightThreeQuarterIntel = 0x48,
+        [NativeName("Name", "CL_QUEUE_FAMILY_MAX_NAME_SIZE_INTEL")]
+        QueueFamilyMaxNameSizeIntel = 0x64,
+        [NativeName("Name", "CL_DEVICE_QUEUE_FAMILY_PROPERTIES_INTEL")]
+        DeviceQueueFamilyPropertiesIntel = 0x418B,
+        [NativeName("Name", "CL_QUEUE_FAMILY_INTEL")]
+        QueueFamilyIntel = 0x418C,
+        [NativeName("Name", "CL_QUEUE_INDEX_INTEL")]
+        QueueIndexIntel = 0x418D,
+        [NativeName("Name", "CL_QUEUE_DEFAULT_CAPABILITIES_INTEL")]
+        QueueDefaultCapabilitiesIntel = 0x0,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_CREATE_SINGLE_QUEUE_EVENTS_INTEL")]
+        QueueCapabilityCreateSingleQueueEventsIntel = 0x1,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_CREATE_CROSS_QUEUE_EVENTS_INTEL")]
+        QueueCapabilityCreateCrossQueueEventsIntel = 0x2,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_SINGLE_QUEUE_EVENT_WAIT_LIST_INTEL")]
+        QueueCapabilitySingleQueueEventWaitListIntel = 0x4,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_CROSS_QUEUE_EVENT_WAIT_LIST_INTEL")]
+        QueueCapabilityCrossQueueEventWaitListIntel = 0x8,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_TRANSFER_BUFFER_INTEL")]
+        QueueCapabilityTransferBufferIntel = 0x256,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_TRANSFER_BUFFER_RECT_INTEL")]
+        QueueCapabilityTransferBufferRectIntel = 0x512,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_MAP_BUFFER_INTEL")]
+        QueueCapabilityMapBufferIntel = 0x1024,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_FILL_BUFFER_INTEL")]
+        QueueCapabilityFillBufferIntel = 0x2048,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_TRANSFER_IMAGE_INTEL")]
+        QueueCapabilityTransferImageIntel = 0x4096,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_MAP_IMAGE_INTEL")]
+        QueueCapabilityMapImageIntel = 0x8192,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_FILL_IMAGE_INTEL")]
+        QueueCapabilityFillImageIntel = 0x16384,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_TRANSFER_BUFFER_IMAGE_INTEL")]
+        QueueCapabilityTransferBufferImageIntel = 0x32768,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_TRANSFER_IMAGE_BUFFER_INTEL")]
+        QueueCapabilityTransferImageBufferIntel = 0x65536,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_MARKER_INTEL")]
+        QueueCapabilityMarkerIntel = 0x16777216,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_BARRIER_INTEL")]
+        QueueCapabilityBarrierIntel = 0x33554432,
+        [NativeName("Name", "CL_QUEUE_CAPABILITY_KERNEL_INTEL")]
+        QueueCapabilityKernelIntel = 0x67108864,
         [NativeName("Name", "CL_DEVICE_PARTITION_BY_NAMES_INTEL")]
         DevicePartitionByNamesIntel = 0x4052,
         [NativeName("Name", "CL_DEVICE_AVC_ME_VERSION_INTEL")]

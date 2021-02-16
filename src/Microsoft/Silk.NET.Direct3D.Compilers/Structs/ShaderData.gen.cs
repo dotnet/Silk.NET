@@ -24,7 +24,7 @@ namespace Silk.NET.Direct3D.Compilers
         public ShaderData
         (
             void* pBytecode = null,
-            uint? bytecodeLength = null
+            nuint? bytecodeLength = null
         ) : this()
         {
             if (pBytecode is not null)
@@ -47,6 +47,6 @@ namespace Silk.NET.Direct3D.Compilers
         [NativeName("Type", "SIZE_T")]
         [NativeName("Type.Name", "SIZE_T")]
         [NativeName("Name", "BytecodeLength")]
-        public uint BytecodeLength;
+        public nuint BytecodeLength;
     }
 }

@@ -19,10 +19,8 @@ namespace Silk.NET.Windowing.Sdl
     internal class SdlPlatform : IWindowPlatform
     {
         private SdlView? _view;
-        private SDL.Sdl _sdl = SdlProvider.SDL.Value;
         private List<Event> _eventBuffer = new();
         private BreakneckLock _lock = BreakneckLock.Create();
-
         public static SdlPlatform GetOrRegister()
         {
             var val = Window.GetOrDefault<SdlPlatform>();
@@ -58,7 +56,8 @@ namespace Silk.NET.Windowing.Sdl
         {
             if (!IsApplicable)
             {
-                throw new PlatformNotSupportedException();
+                ThrowUnsupported();
+                return null!;
             }
 
             if (IsViewOnly)
@@ -69,7 +68,7 @@ namespace Silk.NET.Windowing.Sdl
             return (SdlWindow)(_view = new SdlWindow(opts, null, null, this));
         }
 
-        public bool IsViewOnly => IsApplicable && SdlProvider.SDL.Value.GetPlatformS() switch
+        public bool IsViewOnly => IsApplicable && SdlProvider.UninitializedSDL.Value.GetPlatformS() switch
         {
             "Windows" => false,
             "Mac OS X" => false,
@@ -84,7 +83,8 @@ namespace Silk.NET.Windowing.Sdl
         {
             if (!IsApplicable)
             {
-                throw new PlatformNotSupportedException();
+                ThrowUnsupported();
+                return null!;
             }
 
             return opts switch
@@ -103,19 +103,44 @@ namespace Silk.NET.Windowing.Sdl
 
         public unsafe void ClearContexts()
         {
+            if (!IsApplicable)
+            {
+                ThrowUnsupported();
+                return;
+            }
+            
             var sdl = SdlProvider.SDL.Value;
             sdl.GLMakeCurrent(sdl.GLGetCurrentWindow(), null);
         }
 
         public IEnumerable<IMonitor> GetMonitors()
         {
+            if (!IsApplicable)
+            {
+                ThrowUnsupported();
+                yield break;
+            }
+
             for (var i = 0; i < SdlProvider.SDL.Value.GetNumVideoDisplays(); i++)
             {
                 yield return new SdlMonitor(this, i);
             }
         }
 
-        public IMonitor GetMainMonitor() => new SdlMonitor(this, 0);
+        public IMonitor GetMainMonitor()
+        {
+            if (!IsApplicable)
+            {
+                ThrowUnsupported();
+                return null!;
+            }
+            
+            return new SdlMonitor(this, 0);
+        }
+
+        private void ThrowUnsupported()
+            => throw new PlatformNotSupportedException("SDL not supported on this platform");
+
         public bool IsSourceOfView(IView view) => view is SdlView;
 
         public unsafe SdlView From(void* handle, IGLContext? ctx)
@@ -131,7 +156,7 @@ namespace Silk.NET.Windowing.Sdl
             }
             
             Event @event;
-            while (_sdl.PollEvent(&@event) == 1)
+            while (SdlProvider.SDL.Value.PollEvent(&@event) == 1)
             {
                 _eventBuffer.Add(@event);
             }

@@ -112,7 +112,20 @@ namespace Silk.NET.BuildTools.Common
                 }
             }
         }
-        
+
+        /// <summary>
+        /// Replaces the type names in the given constants.
+        /// </summary>
+        /// <param name="map">The typemap/dictionary to use.</param>
+        /// <param name="constants">The constants to map.</param>
+        public static void Map(Dictionary<string, string> map, IEnumerable<Constant> constants)
+        {
+            foreach (var constant in constants)
+            {
+                constant.Type = MapOne(map, constant.Type);
+            }
+        }
+
         public static void Map(Dictionary<string, string> map, Function function)
         {
             function.ReturnType = MapOne(map, function.ReturnType);
@@ -137,7 +150,8 @@ namespace Silk.NET.BuildTools.Common
                     {
                         foreach (var parameter in function.Parameters)
                         {
-                            if (parameter.Type.OriginalName == "GLenum" || parameter.Type.Name == "CLenum" || parameter.Type.Name == "EGLenum")
+                            if (parameter.Type.OriginalName == "GLenum" || parameter.Type.Name == "CLenum" ||
+                                parameter.Type.Name == "EGLenum")
                             {
                                 parameter.Type.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
                             }
@@ -151,7 +165,8 @@ namespace Silk.NET.BuildTools.Common
                             }
                         }
 
-                        if (function.ReturnType.OriginalName == "GLenum" || function.ReturnType.Name == "CLenum" || function.ReturnType.Name == "EGLenum")
+                        if (function.ReturnType.OriginalName == "GLenum" || function.ReturnType.Name == "CLenum" ||
+                            function.ReturnType.Name == "EGLenum")
                         {
                             function.ReturnType.Name = project.Enums.First(x => x.NativeName == "GLenum").Name;
                         }

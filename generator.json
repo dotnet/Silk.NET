@@ -280,7 +280,8 @@
                     "cl_mem_advice_intel": "cl_uint",
                     "cl_version": "cl_uint",
                     "cl_mem_properties": "CLenum",
-                    "cl_mipmap_filter_mode_img": "CLenum"
+                    "cl_mipmap_filter_mode_img": "CLenum",
+                    "cl_command_queue_capabilities_intel": "CLenum"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -290,7 +291,7 @@
         {
             "profileName": "Vulkan",
             "sources": [
-                "https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/master/xml/vk.xml"
+                "https://raw.githubusercontent.com/KhronosGroup/Vulkan-Docs/main/xml/vk.xml"
             ],
             "mode": "ConvertConstruct",
             "cacheDir": "build/cache",
@@ -355,6 +356,7 @@
                     "PFN_vkVoidFunction": "PfnVoidFunction",
                     "PFN_vkDebugReportCallbackEXT": "PfnDebugReportCallbackEXT",
                     "PFN_vkDebugUtilsMessengerCallbackEXT": "PfnDebugUtilsMessengerCallbackEXT",
+                    "PFN_vkDeviceMemoryReportCallbackEXT": "PfnDeviceMemoryReportCallbackEXT",
                     "char": "byte",
                     "Window": "nint",
                     "VkAabbPositionsKHR": "Silk.NET.Maths.Box3D<float>",
@@ -578,7 +580,9 @@
             "cacheDir": "build/cache",
             "cacheKey": "sdl",
             "controlDescriptors": [
-                "convert-windows-only"
+                "convert-windows-only",
+                "no-convert",
+                "no-bind"
             ],
             "converter": {},
             "prefix": "sdl",
@@ -1060,6 +1064,9 @@
                 }
             },
             "exclude": [
+                "__AnonymousRecord_d3d9types_L93_C9",
+                "__AnonymousRecord_d3d9types_L92_C5",
+                "_D3DMATRIX"
             ],
             "rename": {
                 "_D3D_OMAC": "D3DOMac"
@@ -1088,7 +1095,8 @@
             },
             "typeMaps": [
                 {
-                    "_RGNDATA": "RGNData"
+                    "_RGNDATA": "RGNData",
+                    "_D3DMATRIX": "System.Numerics.Matrix4x4"
                 },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",

@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "ID3D12StateObjectProperties")]
     public unsafe partial struct ID3D12StateObjectProperties
     {
+        public static readonly Guid Guid = new("de5fa827-9bf9-4f26-89ff-d7f56fde3860");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12StateObjectProperties val)
             => Unsafe.As<ID3D12StateObjectProperties, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -45,7 +47,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -54,7 +56,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -66,7 +68,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -78,7 +80,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -93,8 +95,8 @@ namespace Silk.NET.Direct3D12
         public readonly uint AddRef()
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, uint>)LpVtbl[1])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -102,8 +104,8 @@ namespace Silk.NET.Direct3D12
         public readonly uint Release()
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, uint>)LpVtbl[2])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -111,7 +113,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void* GetShaderIdentifier(char* pExportName)
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                void* ret = default;
+            void* ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, char*, void*>)LpVtbl[3])(@this, pExportName);
             return ret;
         }
@@ -120,7 +122,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void* GetShaderIdentifier(ref char pExportName)
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                void* ret = default;
+            void* ret = default;
             fixed (char* pExportNamePtr = &pExportName)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, char*, void*>)LpVtbl[3])(@this, pExportNamePtr);
@@ -132,7 +134,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe void* GetShaderIdentifier(string pExportName)
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                void* ret = default;
+            void* ret = default;
             var pExportNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pExportName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, byte*, void*>)LpVtbl[3])(@this, pExportNamePtr);
             Marshal.FreeHGlobal((nint)pExportNamePtr);
@@ -143,7 +145,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe ulong GetShaderStackSize(char* pExportName)
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                ulong ret = default;
+            ulong ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, char*, ulong>)LpVtbl[4])(@this, pExportName);
             return ret;
         }
@@ -152,7 +154,7 @@ namespace Silk.NET.Direct3D12
         public readonly ulong GetShaderStackSize(ref char pExportName)
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                ulong ret = default;
+            ulong ret = default;
             fixed (char* pExportNamePtr = &pExportName)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, char*, ulong>)LpVtbl[4])(@this, pExportNamePtr);
@@ -164,7 +166,7 @@ namespace Silk.NET.Direct3D12
         public readonly ulong GetShaderStackSize(string pExportName)
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                ulong ret = default;
+            ulong ret = default;
             var pExportNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pExportName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, byte*, ulong>)LpVtbl[4])(@this, pExportNamePtr);
             Marshal.FreeHGlobal((nint)pExportNamePtr);
@@ -175,8 +177,8 @@ namespace Silk.NET.Direct3D12
         public readonly ulong GetPipelineStackSize()
         {
             var @this = (ID3D12StateObjectProperties*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                ulong ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12StateObjectProperties*, ulong>)LpVtbl[5])(@this);
+            ulong ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12StateObjectProperties*, ulong>)LpVtbl[5])(@this);
             return ret;
         }
 

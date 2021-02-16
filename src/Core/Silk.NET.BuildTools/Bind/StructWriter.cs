@@ -45,11 +45,17 @@ namespace Silk.NET.BuildTools.Bind
             var ns = project.IsRoot ? task.Task.Namespace : task.Task.ExtensionsNamespace;
             sw.WriteLine($"namespace {ns}{project.Namespace}");
             sw.WriteLine("{");
+            string guid = null;
             foreach (var attr in @struct.Attributes)
             {
                 if (attr.Name == "BuildToolsIntrinsic")
                 {
                     continue;
+                }
+
+                if (guid is null && attr.Name == "Guid")
+                {
+                    guid = string.Join(", ", attr.Arguments);
                 }
                 
                 sw.WriteLine($"    {attr}");
@@ -58,6 +64,12 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine($"    [NativeName(\"Name\", \"{@struct.NativeName}\")]");
             sw.WriteLine($"    public unsafe partial struct {@struct.Name}");
             sw.WriteLine("    {");
+            if (guid is not null)
+            {
+                sw.WriteLine($"        public static readonly Guid Guid = new({guid});");
+                sw.WriteLine();
+            }
+            
             foreach (var comBase in @struct.ComBases)
             {
                 var asSuffix = comBase.Split('.').Last();
@@ -127,7 +139,7 @@ namespace Silk.NET.BuildTools.Bind
                 var first = true;
                 foreach (var field in @struct.Fields)
                 {
-                    if (!(field.Count is null))
+                    if (!(field.Count is null) || field.Type.IsByRef || field.Type.IsIn || field.Type.IsOut)
                         continue; // I've chosen not to initialize multi-count fields from ctors.
                     var argName = field.Name[0].ToString().ToLower() + field.Name.Substring(1);
                     argName = Utilities.CSharpKeywords.Contains(argName) ? $"@{argName}" : argName;
@@ -150,7 +162,7 @@ namespace Silk.NET.BuildTools.Bind
                 first = true;
                 foreach (var field in @struct.Fields)
                 {
-                    if (!(field.Count is null))
+                    if (!(field.Count is null) || field.Type.IsByRef || field.Type.IsIn || field.Type.IsOut)
                         continue; // I've chosen not to initialize multi-count fields from ctors.
                     var argName = field.Name[0].ToString().ToLower() + field.Name.Substring(1);
                     argName = Utilities.CSharpKeywords.Contains(argName) ? $"@{argName}" : argName;
@@ -177,7 +189,11 @@ namespace Silk.NET.BuildTools.Bind
 
             foreach (var structField in @struct.Fields)
             {
-                if (!(structField.Count is null))
+                if (structField.Attributes.IsBuildToolsIntrinsic(out var intrinsic) && intrinsic[0] == "$FUSEFLD")
+                {
+                    WriteFusedField(structField, intrinsic, sw);
+                }
+                else if (!(structField.Count is null))
                 {
                     if (!Field.FixedCapableTypes.Contains(structField.Type.Name))
                     {
@@ -442,6 +458,24 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine("}");
             sw.WriteLine();
             sw.Flush();
+        }
+      
+        public static void WriteFusedField(Field field, List<string> args, StreamWriter sw)
+        {
+            sw.WriteLine("#if NETSTANDARD2_1");
+            sw.WriteLine($"        public ref {field.Type} {field.Name}");
+            sw.WriteLine("        {");
+            sw.WriteLine("            [MethodImpl((MethodImplOptions) 768)]");
+            sw.WriteLine($"            get => ref {args[1]}.{args[2]};");
+            sw.WriteLine("        }");
+            sw.WriteLine("#else");
+            sw.WriteLine($"        public {field.Type} {field.Name}");
+            sw.WriteLine("        {");
+            sw.WriteLine($"            get => {args[1]}.{args[2]};");
+            sw.WriteLine($"            set => {args[1]}.{args[2]} = value;");
+            sw.WriteLine("        }");
+            sw.WriteLine("#endif");
+            sw.WriteLine();
         }
     }
 }

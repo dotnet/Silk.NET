@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D.Compilers
     [NativeName("Name", "IDxcAssembler")]
     public unsafe partial struct IDxcAssembler
     {
+        public static readonly Guid Guid = new("091f7a26-1c1f-4948-904b-e6e3a8a771d5");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDxcAssembler val)
             => Unsafe.As<IDxcAssembler, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -45,7 +47,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -54,7 +56,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -66,7 +68,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -78,7 +80,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -93,8 +95,8 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly uint AddRef()
         {
             var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, uint>)LpVtbl[1])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDxcAssembler*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -102,8 +104,8 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly uint Release()
         {
             var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, uint>)LpVtbl[2])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDxcAssembler*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -111,7 +113,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int AssembleToContainer(IDxcBlob* pShader, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, IDxcBlob*, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShader, ppResult);
             return ret;
         }
@@ -120,7 +122,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int AssembleToContainer(IDxcBlob* pShader, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDxcOperationResult** ppResultPtr = &ppResult)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, IDxcBlob*, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShader, ppResultPtr);
@@ -132,7 +134,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int AssembleToContainer(ref IDxcBlob pShader, IDxcOperationResult** ppResult)
         {
             var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDxcBlob* pShaderPtr = &pShader)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcAssembler*, IDxcBlob*, IDxcOperationResult**, int>)LpVtbl[3])(@this, pShaderPtr, ppResult);
@@ -144,7 +146,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int AssembleToContainer(ref IDxcBlob pShader, ref IDxcOperationResult* ppResult)
         {
             var @this = (IDxcAssembler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDxcBlob* pShaderPtr = &pShader)
             {
                 fixed (IDxcOperationResult** ppResultPtr = &ppResult)

@@ -19,21 +19,21 @@ namespace Silk.NET.Vulkan.Extensions.NV
     public static class NVRayTracingOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result BindAccelerationStructureMemory(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] ReadOnlySpan<BindAccelerationStructureMemoryInfoKHR> pBindInfos)
+        public static unsafe Result BindAccelerationStructureMemory(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] ReadOnlySpan<BindAccelerationStructureMemoryInfoNV> pBindInfos)
         {
             // SpanOverloader
             return thisApi.BindAccelerationStructureMemory(device, bindInfoCount, in pBindInfos.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructure(this NVRayTracing thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureInfoNV> pInfo, [Count(Count = 0)] Buffer instanceData, [Count(Count = 0)] ulong instanceOffset, [Count(Count = 0)] Bool32 update, [Count(Count = 0)] AccelerationStructureKHR dst, [Count(Count = 0)] AccelerationStructureKHR src, [Count(Count = 0)] Buffer scratch, [Count(Count = 0)] ulong scratchOffset)
+        public static unsafe void CmdBuildAccelerationStructure(this NVRayTracing thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureInfoNV> pInfo, [Count(Count = 0)] Buffer instanceData, [Count(Count = 0)] ulong instanceOffset, [Count(Count = 0)] Bool32 update, [Count(Count = 0)] AccelerationStructureNV dst, [Count(Count = 0)] AccelerationStructureNV src, [Count(Count = 0)] Buffer scratch, [Count(Count = 0)] ulong scratchOffset)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructure(commandBuffer, in pInfo.GetPinnableReference(), instanceData, instanceOffset, update, dst, src, scratch, scratchOffset);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdWriteAccelerationStructuresProperties(this NVRayTracing thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint accelerationStructureCount, [Count(Computed = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery)
+        public static unsafe void CmdWriteAccelerationStructuresProperties(this NVRayTracing thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint accelerationStructureCount, [Count(Computed = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureNV> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery)
         {
             // SpanOverloader
             thisApi.CmdWriteAccelerationStructuresProperties(commandBuffer, accelerationStructureCount, in pAccelerationStructures.GetPinnableReference(), queryType, queryPool, firstQuery);
@@ -138,14 +138,14 @@ namespace Silk.NET.Vulkan.Extensions.NV
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void DestroyAccelerationStructure(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureKHR accelerationStructure, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
+        public static unsafe void DestroyAccelerationStructure(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureNV accelerationStructure, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator)
         {
             // SpanOverloader
             thisApi.DestroyAccelerationStructure(device, accelerationStructure, in pAllocator.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetAccelerationStructureHandle<T0>(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureKHR accelerationStructure, [Count(Count = 0)] nuint dataSize, [Count(Computed = "dataSize")] Span<T0> pData) where T0 : unmanaged
+        public static unsafe Result GetAccelerationStructureHandle<T0>(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureNV accelerationStructure, [Count(Count = 0)] nuint dataSize, [Count(Computed = "dataSize")] Span<T0> pData) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.GetAccelerationStructureHandle(device, accelerationStructure, dataSize, ref pData.GetPinnableReference());

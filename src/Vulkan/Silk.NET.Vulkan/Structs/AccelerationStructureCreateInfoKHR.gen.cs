@@ -25,11 +25,11 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.AccelerationStructureCreateInfoKhr,
             void* pNext = null,
-            ulong? compactedSize = null,
+            AccelerationStructureCreateFlagsKHR? createFlags = null,
+            Buffer? buffer = null,
+            ulong? offset = null,
+            ulong? size = null,
             AccelerationStructureTypeKHR? type = null,
-            BuildAccelerationStructureFlagsKHR? flags = null,
-            uint? maxGeometryCount = null,
-            AccelerationStructureCreateGeometryTypeInfoKHR* pGeometryInfos = null,
             ulong? deviceAddress = null
         ) : this()
         {
@@ -43,29 +43,29 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (compactedSize is not null)
+            if (createFlags is not null)
             {
-                CompactedSize = compactedSize.Value;
+                CreateFlags = createFlags.Value;
+            }
+
+            if (buffer is not null)
+            {
+                Buffer = buffer.Value;
+            }
+
+            if (offset is not null)
+            {
+                Offset = offset.Value;
+            }
+
+            if (size is not null)
+            {
+                Size = size.Value;
             }
 
             if (type is not null)
             {
                 Type = type.Value;
-            }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
-
-            if (maxGeometryCount is not null)
-            {
-                MaxGeometryCount = maxGeometryCount.Value;
-            }
-
-            if (pGeometryInfos is not null)
-            {
-                PGeometryInfos = pGeometryInfos;
             }
 
             if (deviceAddress is not null)
@@ -85,30 +85,30 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
+        [NativeName("Type", "VkAccelerationStructureCreateFlagsKHR")]
+        [NativeName("Type.Name", "VkAccelerationStructureCreateFlagsKHR")]
+        [NativeName("Name", "createFlags")]
+        public AccelerationStructureCreateFlagsKHR CreateFlags;
+/// <summary></summary>
+        [NativeName("Type", "VkBuffer")]
+        [NativeName("Type.Name", "VkBuffer")]
+        [NativeName("Name", "buffer")]
+        public Buffer Buffer;
+/// <summary></summary>
         [NativeName("Type", "VkDeviceSize")]
         [NativeName("Type.Name", "VkDeviceSize")]
-        [NativeName("Name", "compactedSize")]
-        public ulong CompactedSize;
+        [NativeName("Name", "offset")]
+        public ulong Offset;
+/// <summary></summary>
+        [NativeName("Type", "VkDeviceSize")]
+        [NativeName("Type.Name", "VkDeviceSize")]
+        [NativeName("Name", "size")]
+        public ulong Size;
 /// <summary></summary>
         [NativeName("Type", "VkAccelerationStructureTypeKHR")]
         [NativeName("Type.Name", "VkAccelerationStructureTypeKHR")]
         [NativeName("Name", "type")]
         public AccelerationStructureTypeKHR Type;
-/// <summary></summary>
-        [NativeName("Type", "VkBuildAccelerationStructureFlagsKHR")]
-        [NativeName("Type.Name", "VkBuildAccelerationStructureFlagsKHR")]
-        [NativeName("Name", "flags")]
-        public BuildAccelerationStructureFlagsKHR Flags;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxGeometryCount")]
-        public uint MaxGeometryCount;
-/// <summary></summary>
-        [NativeName("Type", "VkAccelerationStructureCreateGeometryTypeInfoKHR*")]
-        [NativeName("Type.Name", "VkAccelerationStructureCreateGeometryTypeInfoKHR")]
-        [NativeName("Name", "pGeometryInfos")]
-        public AccelerationStructureCreateGeometryTypeInfoKHR* PGeometryInfos;
 /// <summary></summary>
         [NativeName("Type", "VkDeviceAddress")]
         [NativeName("Type.Name", "VkDeviceAddress")]

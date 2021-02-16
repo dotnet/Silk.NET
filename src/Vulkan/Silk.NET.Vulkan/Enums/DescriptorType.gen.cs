@@ -39,8 +39,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "VK_DESCRIPTOR_TYPE_INLINE_UNIFORM_BLOCK_EXT")]
         InlineUniformBlockExt = 1000138000,
         [NativeName("Name", "VK_DESCRIPTOR_TYPE_ACCELERATION_STRUCTURE_KHR")]
-        AccelerationStructureKhr = 1000165000,
+        AccelerationStructureKhr = 1000150000,
         [NativeName("Name", "VK_DESCRIPTOR_TYPE_ACCELERATION_STRUCTURE_NV")]
         AccelerationStructureNV = 1000165000,
+        [NativeName("Name", "VK_DESCRIPTOR_TYPE_MUTABLE_VALVE")]
+        MutableValve = 1000351000,
     }
 }

@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11Linker")]
     public unsafe partial struct ID3D11Linker
     {
+        public static readonly Guid Guid = new("59a6cd0e-e10d-4c1f-88c0-63aba1daf30e");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11Linker val)
             => Unsafe.As<ID3D11Linker, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -45,7 +47,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -54,7 +56,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -66,7 +68,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -78,7 +80,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -93,8 +95,8 @@ namespace Silk.NET.Direct3D11
         public readonly uint AddRef()
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, uint>)LpVtbl[1])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -102,8 +104,8 @@ namespace Silk.NET.Direct3D11
         public readonly uint Release()
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, uint>)LpVtbl[2])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Linker*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -111,7 +113,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
             return ret;
         }
@@ -120,7 +122,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBufferPtr);
@@ -132,7 +134,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetName, uFlags, ppShaderBlobPtr, ppErrorBuffer);
@@ -144,7 +146,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
@@ -159,7 +161,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (byte* pTargetNamePtr = &pTargetName)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
@@ -171,7 +173,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (byte* pTargetNamePtr = &pTargetName)
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
@@ -186,7 +188,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (byte* pTargetNamePtr = &pTargetName)
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
@@ -201,7 +203,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (byte* pTargetNamePtr = &pTargetName)
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
@@ -219,7 +221,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, byte* pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryName, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
             Marshal.FreeHGlobal((nint)pTargetNamePtr);
@@ -230,7 +232,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, byte* pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
             {
@@ -244,7 +246,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, byte* pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
             {
@@ -258,7 +260,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, byte* pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
             {
@@ -275,7 +277,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (byte* pEntryNamePtr = &pEntryName)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
@@ -287,7 +289,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (byte* pEntryNamePtr = &pEntryName)
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
@@ -302,7 +304,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (byte* pEntryNamePtr = &pEntryName)
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
@@ -317,7 +319,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (byte* pEntryNamePtr = &pEntryName)
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
@@ -335,7 +337,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (byte* pEntryNamePtr = &pEntryName)
             {
                 fixed (byte* pTargetNamePtr = &pTargetName)
@@ -350,7 +352,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (byte* pEntryNamePtr = &pEntryName)
             {
                 fixed (byte* pTargetNamePtr = &pTargetName)
@@ -368,7 +370,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (byte* pEntryNamePtr = &pEntryName)
             {
                 fixed (byte* pTargetNamePtr = &pTargetName)
@@ -386,7 +388,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (byte* pEntryNamePtr = &pEntryName)
             {
                 fixed (byte* pTargetNamePtr = &pTargetName)
@@ -407,7 +409,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, ref byte pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (byte* pEntryNamePtr = &pEntryName)
             {
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
@@ -421,7 +423,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, ref byte pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (byte* pEntryNamePtr = &pEntryName)
             {
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
@@ -438,7 +440,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, ref byte pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (byte* pEntryNamePtr = &pEntryName)
             {
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
@@ -455,7 +457,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, ref byte pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (byte* pEntryNamePtr = &pEntryName)
             {
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
@@ -475,7 +477,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
             Marshal.FreeHGlobal((nint)pEntryNamePtr);
@@ -486,7 +488,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
             {
@@ -500,7 +502,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
             {
@@ -514,7 +516,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
             {
@@ -531,7 +533,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (byte* pTargetNamePtr = &pTargetName)
             {
@@ -545,7 +547,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (byte* pTargetNamePtr = &pTargetName)
             {
@@ -562,7 +564,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (byte* pTargetNamePtr = &pTargetName)
             {
@@ -579,7 +581,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             fixed (byte* pTargetNamePtr = &pTargetName)
             {
@@ -599,7 +601,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntry, pEntryNamePtr, pTargetNamePtr, uFlags, ppShaderBlob, ppErrorBuffer);
@@ -612,7 +614,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
@@ -628,7 +630,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
@@ -644,7 +646,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ID3D11ModuleInstance* pEntry, string pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
             fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
@@ -663,7 +665,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, byte*, byte*, uint, Silk.NET.Core.Native.ID3D10Blob**, Silk.NET.Core.Native.ID3D10Blob**, int>)LpVtbl[3])(@this, pEntryPtr, pEntryName, pTargetName, uFlags, ppShaderBlob, ppErrorBuffer);
@@ -675,7 +677,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppErrorBufferPtr = &ppErrorBuffer)
@@ -690,7 +692,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
@@ -705,7 +707,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, byte* pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
                 fixed (Silk.NET.Core.Native.ID3D10Blob** ppShaderBlobPtr = &ppShaderBlob)
@@ -723,7 +725,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
                 fixed (byte* pTargetNamePtr = &pTargetName)
@@ -738,7 +740,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
                 fixed (byte* pTargetNamePtr = &pTargetName)
@@ -756,7 +758,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
                 fixed (byte* pTargetNamePtr = &pTargetName)
@@ -774,7 +776,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, byte* pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
                 fixed (byte* pTargetNamePtr = &pTargetName)
@@ -795,7 +797,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, byte* pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
@@ -809,7 +811,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, byte* pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
@@ -826,7 +828,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, byte* pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
@@ -843,7 +845,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, byte* pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
             var pTargetNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTargetName);
@@ -863,7 +865,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
                 fixed (byte* pEntryNamePtr = &pEntryName)
@@ -878,7 +880,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
                 fixed (byte* pEntryNamePtr = &pEntryName)
@@ -896,7 +898,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
                 fixed (byte* pEntryNamePtr = &pEntryName)
@@ -914,7 +916,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, ref byte pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
                 fixed (byte* pEntryNamePtr = &pEntryName)
@@ -935,7 +937,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
                 fixed (byte* pEntryNamePtr = &pEntryName)
@@ -953,7 +955,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
                 fixed (byte* pEntryNamePtr = &pEntryName)
@@ -974,7 +976,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
                 fixed (byte* pEntryNamePtr = &pEntryName)
@@ -995,7 +997,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, ref byte pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
                 fixed (byte* pEntryNamePtr = &pEntryName)
@@ -1019,7 +1021,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, ref byte pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
                 fixed (byte* pEntryNamePtr = &pEntryName)
@@ -1036,7 +1038,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, ref byte pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
                 fixed (byte* pEntryNamePtr = &pEntryName)
@@ -1056,7 +1058,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, ref byte pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
                 fixed (byte* pEntryNamePtr = &pEntryName)
@@ -1076,7 +1078,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, ref byte pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
                 fixed (byte* pEntryNamePtr = &pEntryName)
@@ -1099,7 +1101,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
@@ -1113,7 +1115,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, byte* pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
@@ -1130,7 +1132,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
@@ -1147,7 +1149,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, byte* pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
@@ -1167,7 +1169,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
@@ -1184,7 +1186,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, ref byte pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
@@ -1204,7 +1206,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
@@ -1224,7 +1226,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, ref byte pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
@@ -1247,7 +1249,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
@@ -1263,7 +1265,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, string pTargetName, uint uFlags, Silk.NET.Core.Native.ID3D10Blob** ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
@@ -1282,7 +1284,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, Silk.NET.Core.Native.ID3D10Blob** ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
@@ -1301,7 +1303,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Link(ref ID3D11ModuleInstance pEntry, string pEntryName, string pTargetName, uint uFlags, ref Silk.NET.Core.Native.ID3D10Blob* ppShaderBlob, ref Silk.NET.Core.Native.ID3D10Blob* ppErrorBuffer)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pEntryPtr = &pEntry)
             {
             var pEntryNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pEntryName);
@@ -1323,7 +1325,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UseLibrary(ID3D11ModuleInstance* pLibraryMI)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, int>)LpVtbl[4])(@this, pLibraryMI);
             return ret;
         }
@@ -1332,7 +1334,7 @@ namespace Silk.NET.Direct3D11
         public readonly int UseLibrary(ref ID3D11ModuleInstance pLibraryMI)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11ModuleInstance* pLibraryMIPtr = &pLibraryMI)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, ID3D11ModuleInstance*, int>)LpVtbl[4])(@this, pLibraryMIPtr);
@@ -1344,7 +1346,7 @@ namespace Silk.NET.Direct3D11
         public readonly int AddClipPlaneFromCBuffer(uint uCBufferSlot, uint uCBufferEntry)
         {
             var @this = (ID3D11Linker*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Linker*, uint, uint, int>)LpVtbl[5])(@this, uCBufferSlot, uCBufferEntry);
             return ret;
         }

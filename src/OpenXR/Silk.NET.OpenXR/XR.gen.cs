@@ -20,58 +20,58 @@ namespace Silk.NET.OpenXR
     {
         [NativeName("Type", "")]
         [NativeName("Name", "XR_FALSE")]
-        public const uint False = 0;
+        public const uint False = unchecked((uint) 0);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_MAX_ACTION_NAME_SIZE")]
-        public const uint MaxActionNameSize = 64;
+        public const uint MaxActionNameSize = unchecked((uint) 64);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_MAX_ACTION_SET_NAME_SIZE")]
-        public const uint MaxActionSetNameSize = 64;
+        public const uint MaxActionSetNameSize = unchecked((uint) 64);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_MAX_API_LAYER_DESCRIPTION_SIZE")]
-        public const uint MaxApiLayerDescriptionSize = 256;
+        public const uint MaxApiLayerDescriptionSize = unchecked((uint) 256);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_MAX_API_LAYER_NAME_SIZE")]
-        public const uint MaxApiLayerNameSize = 256;
+        public const uint MaxApiLayerNameSize = unchecked((uint) 256);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_MAX_APPLICATION_NAME_SIZE")]
-        public const uint MaxApplicationNameSize = 128;
+        public const uint MaxApplicationNameSize = unchecked((uint) 128);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_MAX_ENGINE_NAME_SIZE")]
-        public const uint MaxEngineNameSize = 128;
+        public const uint MaxEngineNameSize = unchecked((uint) 128);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_MAX_EXTENSION_NAME_SIZE")]
-        public const uint MaxExtensionNameSize = 128;
+        public const uint MaxExtensionNameSize = unchecked((uint) 128);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_MAX_GRAPHICS_APIS_SUPPORTED")]
-        public const uint MaxGraphicsApisSupported = 32;
+        public const uint MaxGraphicsApisSupported = unchecked((uint) 32);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_MAX_LOCALIZED_ACTION_NAME_SIZE")]
-        public const uint MaxLocalizedActionNameSize = 128;
+        public const uint MaxLocalizedActionNameSize = unchecked((uint) 128);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_MAX_LOCALIZED_ACTION_SET_NAME_SIZE")]
-        public const uint MaxLocalizedActionSetNameSize = 128;
+        public const uint MaxLocalizedActionSetNameSize = unchecked((uint) 128);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_MAX_PATH_LENGTH")]
-        public const uint MaxPathLength = 256;
+        public const uint MaxPathLength = unchecked((uint) 256);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_MAX_RESULT_STRING_SIZE")]
-        public const uint MaxResultStringSize = 64;
+        public const uint MaxResultStringSize = unchecked((uint) 64);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_MAX_RUNTIME_NAME_SIZE")]
-        public const uint MaxRuntimeNameSize = 128;
+        public const uint MaxRuntimeNameSize = unchecked((uint) 128);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_MAX_STRUCTURE_NAME_SIZE")]
-        public const uint MaxStructureNameSize = 64;
+        public const uint MaxStructureNameSize = unchecked((uint) 64);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_MAX_SYSTEM_NAME_SIZE")]
-        public const uint MaxSystemNameSize = 256;
+        public const uint MaxSystemNameSize = unchecked((uint) 256);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_MIN_COMPOSITION_LAYERS_SUPPORTED")]
-        public const uint MinCompositionLayersSupported = 16;
+        public const uint MinCompositionLayersSupported = unchecked((uint) 16);
         [NativeName("Type", "")]
         [NativeName("Name", "XR_TRUE")]
-        public const uint True = 1;
+        public const uint True = unchecked((uint) 1);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrAcquireSwapchainImage")]

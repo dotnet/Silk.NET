@@ -18,6 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.XAudio
 {
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [NativeName("Name", "XAUDIO2_EFFECT_DESCRIPTOR")]
     public unsafe partial struct EffectDescriptor
     {

@@ -18,5 +18,7 @@ namespace Silk.NET.Vulkan
         GeometryTypeTrianglesKhr = 0,
         [NativeName("Name", "VK_GEOMETRY_TYPE_AABBS_KHR")]
         GeometryTypeAabbsKhr = 1,
+        [NativeName("Name", "VK_GEOMETRY_TYPE_INSTANCES_KHR")]
+        GeometryTypeInstancesKhr = 2,
     }
 }

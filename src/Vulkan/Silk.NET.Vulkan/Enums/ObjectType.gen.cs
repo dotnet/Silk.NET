@@ -81,7 +81,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "VK_OBJECT_TYPE_DEBUG_UTILS_MESSENGER_EXT")]
         DebugUtilsMessengerExt = 1000128000,
         [NativeName("Name", "VK_OBJECT_TYPE_ACCELERATION_STRUCTURE_KHR")]
-        AccelerationStructureKhr = 1000165000,
+        AccelerationStructureKhr = 1000150000,
         [NativeName("Name", "VK_OBJECT_TYPE_SAMPLER_YCBCR_CONVERSION_KHR")]
         SamplerYcbcrConversionKhr = 1000156000,
         [NativeName("Name", "VK_OBJECT_TYPE_VALIDATION_CACHE_EXT")]

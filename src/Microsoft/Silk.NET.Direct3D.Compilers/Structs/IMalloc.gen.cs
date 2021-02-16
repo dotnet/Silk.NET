@@ -22,5 +22,7 @@ namespace Silk.NET.Direct3D.Compilers
     [NativeName("Name", "IMalloc")]
     public unsafe partial struct IMalloc
     {
+        public static readonly Guid Guid = new("00000002-0000-0000-c000-000000000046");
+
     }
 }

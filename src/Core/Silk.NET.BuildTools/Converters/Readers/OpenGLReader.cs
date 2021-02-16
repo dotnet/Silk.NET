@@ -97,11 +97,27 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
                 var removals = registry
                     .Elements("feature")
-                    .Elements("remove")
-                    .Elements("command")
-                    .Attributes("name")
-                    .Select(x => x.Value)
-                    .ToList();
+                    .Select
+                    (
+                        x => (x, x.Elements("remove")
+                            .Elements("command")
+                            .Attributes("name")
+                            .Select(y => y.Value))
+                    )
+                    .SelectMany
+                    (
+                        x => x.Item2.Select
+                        (
+                            y => (y,
+                                Version.Parse
+                                (
+                                    x.x.Attribute("number")?.Value ?? throw new DataException
+                                        ("Removal does not have associated version")
+                                ))
+                        )
+                    )
+                    .ToDictionary();
+
                 Debug.Assert(removals != null, $"{nameof(removals) != null}");
 
                 foreach (var api in apis)
@@ -125,7 +141,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
 
                                 var ret = new Function
                                 {
-                                    Attributes = removals.Contains(function)
+                                    Attributes = removals.TryGetValue(function, out var ver) && ver > apiVersion
                                         ? new List<Attribute>
                                         {
                                             new Attribute
@@ -712,13 +728,31 @@ namespace Silk.NET.BuildTools.Converters.Readers
                 );
             
             var apis = registry.Elements("feature").Concat(registry.Elements("extensions").Elements("extension"));
-            
-            var removals = registry.Elements("feature")
-                .Elements("remove")
-                .Elements("enum")
-                .Attributes("name")
-                .Select(x => x.Value)
-                .ToList();
+
+            var removals = registry
+                .Elements("feature")
+                .Select
+                (
+                    x => (x, x.Elements("remove")
+                        .Elements("enum")
+                        .Attributes("name")
+                        .Select(y => y.Value))
+                )
+                .SelectMany
+                (
+                    x => x.Item2.Select
+                    (
+                        y => (y,
+                            Version.Parse
+                            (
+                                x.x.Attribute("number")?.Value ?? throw new DataException
+                                    ("Removal does not have associated version")
+                            ))
+                    )
+                )
+                .ToDictionary();
+
+            var revivals = new Dictionary<string, Version>();
             foreach (var api in apis)
             {
                 foreach (var requirement in api.Elements("require"))
@@ -734,25 +768,43 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         .Attributes("name")
                         .Select
                         (
-                            token => new Token
+                            token =>
                             {
-                                Attributes = removals.Contains(token.Value)
-                                    ? new List<Attribute>
+                                if (removals.TryGetValue(token.Value, out var ver))
+                                {
+                                    if (ver <= apiVersion)
                                     {
-                                        new Attribute
+                                        if (!revivals.ContainsKey(token.Value) || ver > revivals[token.Value])
                                         {
-                                            Arguments = new List<string>
-                                                {$"\"Deprecated in version {apiVersion?.ToString(2)}\""},
-                                            Name = "System.Obsolete"
+                                            revivals[token.Value] = ver;
                                         }
                                     }
-                                    : new List<Attribute>(),
-                                Doc = string.Empty,
-                                Name = task.RenamedNativeNames.TryGetValue(token.Value, out var n)
-                                    ? n
-                                    : Naming.Translate(TrimName(token.Value, task), task.FunctionPrefix),
-                                NativeName = token.Value,
-                                Value = allEnums[token.Value].Item1
+                                    else if (revivals.TryGetValue(token.Value, out var revVer) && ver > revVer)
+                                    {
+                                        revivals.Remove(token.Value);
+                                    }
+                                }
+                                
+                                return new Token
+                                {
+                                    Attributes = removals.TryGetValue(token.Value, out ver) && ver > apiVersion
+                                        ? new List<Attribute>
+                                        {
+                                            new Attribute
+                                            {
+                                                Arguments = new List<string>
+                                                    {$"\"Deprecated in version {apiVersion?.ToString(2)}\""},
+                                                Name = "System.Obsolete"
+                                            }
+                                        }
+                                        : new List<Attribute>(),
+                                    Doc = string.Empty,
+                                    Name = task.RenamedNativeNames.TryGetValue(token.Value, out var n)
+                                        ? n
+                                        : Naming.Translate(TrimName(token.Value, task), task.FunctionPrefix),
+                                    NativeName = token.Value,
+                                    Value = allEnums[token.Value].Item1
+                                };
                             }
                         )
                         .ToList();
@@ -808,7 +860,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         (
                             new Token
                             {
-                                Attributes = removals.Contains(@enum.Key)
+                                Attributes = removals.ContainsKey(@enum.Key) && !revivals.ContainsKey(@enum.Key)
                                     ? new List<Attribute>
                                     {
                                         new Attribute
@@ -834,7 +886,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             {
                                 new Token
                                 {
-                                    Attributes = removals.Contains(@enum.Key)
+                                    Attributes = removals.ContainsKey(@enum.Key) && !revivals.ContainsKey(@enum.Key)
                                         ? new List<Attribute>
                                         {
                                             new Attribute

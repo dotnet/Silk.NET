@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Threading;
 
 namespace Silk.NET.Core.Native
 {
@@ -25,7 +26,7 @@ namespace Silk.NET.Core.Native
         /// <param name="length">The length of the string pointer, in bytes.</param>
         /// <returns>A pointer to the created string.</returns>
         public static nint AllocBStr(int length) => Marshal.StringToBSTR(new string('\0', length));
-        
+
         /// <summary>
         /// Free a BStr pointer
         /// </summary>
@@ -46,7 +47,7 @@ namespace Silk.NET.Core.Native
         private static readonly ConcurrentDictionary<nint, GCHandle> _otherGCHandles = new();
 
         private static nint RegisterMemory(GlobalMemory memory) => (_marshalledMemory[memory.Handle] = memory).Handle;
-        
+
         /// <summary>
         /// Allocates a block of global memory of the given size.
         /// </summary>
@@ -72,7 +73,7 @@ namespace Silk.NET.Core.Native
             {
                 gcHandle.Free();
             }
-            
+
             ret = _marshalledMemory.TryRemove(ptr, out var val);
             if (val is null)
             {
@@ -184,7 +185,7 @@ namespace Silk.NET.Core.Native
                 NativeStringEncoding.LPWStr => Allocate(length),
                 _ => ThrowInvalidEncoding<nint>()
             };
-        
+
         /// <summary>
         /// Free a string pointer
         /// </summary>
@@ -242,7 +243,7 @@ namespace Silk.NET.Core.Native
             };
 
             static unsafe string BStrToString(nint ptr)
-                => new string((char*) ptr, 0, (int)(*((uint*)ptr - 1) / sizeof(char)));
+                => new string((char*) ptr, 0, (int) (*((uint*) ptr - 1) / sizeof(char)));
 
             static unsafe string AnsiToString(nint ptr) => new string((sbyte*) ptr);
             static unsafe string WideToString(nint ptr) => new string((char*) ptr);
@@ -334,7 +335,7 @@ namespace Silk.NET.Core.Native
             _stringArrays.TryAdd(memory, input.Count);
             return RegisterMemory(memory);
         }
-        
+
         /// <summary>
         /// Converts & copies a pointer to an array of strings.
         /// </summary>
@@ -350,7 +351,7 @@ namespace Silk.NET.Core.Native
         {
             for (var i = 0; i < arr.Length; i++)
             {
-                arr[i] = PtrToString(((nint*)ptr)![i]);
+                arr[i] = PtrToString(((nint*) ptr)![i]);
             }
         }
 
@@ -377,7 +378,7 @@ namespace Silk.NET.Core.Native
 
             return ret;
         }
-        
+
         /// <summary>
         /// Reads an array null-terminated string from unmanaged memory, with the given custom pointer-to-string
         /// marshaller.
@@ -489,9 +490,12 @@ namespace Silk.NET.Core.Native
         /// Whether to pin the delegate such that the returned pointer remains valid for long periods of time.
         /// </param>
         /// <returns>A function pointer to the given delegate.</returns>
-        public static nint DelegateToPtr(Delegate @delegate,
+        public static nint DelegateToPtr
+        (
+            Delegate @delegate,
             DelegatePointerKind kind = DelegatePointerKind.Stub,
-            bool pinned = true)
+            bool pinned = true
+        )
         {
             if (kind == DelegatePointerKind.Passthrough)
             {
@@ -535,12 +539,15 @@ namespace Silk.NET.Core.Native
             }
 
             static void Throw(string nameof, CallingConvention delegateConv, CallingConvention desiredConv)
-                => throw new ArgumentException($"Attempted to create a {desiredConv} function pointer from a " +
-                                               $"{delegateConv} delegate.", nameof);
+                => throw new ArgumentException
+                (
+                    $"Attempted to create a {desiredConv} function pointer from a " +
+                    $"{delegateConv} delegate.", nameof
+                );
         }
 
         public static unsafe delegate*<void> DelegateToManaged(Delegate @delegate, bool pinned = true)
-            => (delegate*<void>)DelegateToPtr(@delegate, DelegatePointerKind.Passthrough);
+            => (delegate*<void>) DelegateToPtr(@delegate, DelegatePointerKind.Passthrough);
 
         /// <summary>
         /// Gets a function pointer for the given delegate using the <c>__cdecl</c> calling convention.
@@ -557,16 +564,19 @@ namespace Silk.NET.Core.Native
         /// Whether to skip validity checks, such as calling convention mismatch checks. 
         /// </param>
         /// <returns>A function pointer to the given delegate.</returns>
-        public static unsafe delegate* unmanaged[Cdecl]<void> DelegateToCdecl(Delegate @delegate,
+        public static unsafe delegate* unmanaged[Cdecl]<void> DelegateToCdecl
+        (
+            Delegate @delegate,
             DelegatePointerKind kind = DelegatePointerKind.Stub,
             bool pinned = true,
-            bool ignoreValidityChecks = false)
+            bool ignoreValidityChecks = false
+        )
         {
             if (!ignoreValidityChecks)
             {
                 DelegateSafetyCheck(@delegate, CallingConvention.Cdecl);
             }
-            
+
             return (delegate* unmanaged[Cdecl]<void>) DelegateToPtr(@delegate, kind, pinned);
         }
 
@@ -585,16 +595,19 @@ namespace Silk.NET.Core.Native
         /// Whether to skip validity checks, such as calling convention mismatch checks. 
         /// </param>
         /// <returns>A function pointer to the given delegate.</returns>
-        public static unsafe delegate* unmanaged[Stdcall]<void> DelegateToStdcall(Delegate @delegate,
+        public static unsafe delegate* unmanaged[Stdcall]<void> DelegateToStdcall
+        (
+            Delegate @delegate,
             DelegatePointerKind kind = DelegatePointerKind.Stub,
             bool pinned = true,
-            bool ignoreValidityChecks = false)
+            bool ignoreValidityChecks = false
+        )
         {
             if (!ignoreValidityChecks)
             {
                 DelegateSafetyCheck(@delegate, CallingConvention.StdCall);
             }
-            
+
             return (delegate* unmanaged[Stdcall]<void>) DelegateToPtr(@delegate, kind, pinned);
         }
 
@@ -613,16 +626,19 @@ namespace Silk.NET.Core.Native
         /// Whether to skip validity checks, such as calling convention mismatch checks. 
         /// </param>
         /// <returns>A function pointer to the given delegate.</returns>
-        public static unsafe delegate* unmanaged[Fastcall]<void> DelegateToFastcall(Delegate @delegate,
+        public static unsafe delegate* unmanaged[Fastcall]<void> DelegateToFastcall
+        (
+            Delegate @delegate,
             DelegatePointerKind kind = DelegatePointerKind.Stub,
             bool pinned = true,
-            bool ignoreValidityChecks = false)
+            bool ignoreValidityChecks = false
+        )
         {
             if (!ignoreValidityChecks)
             {
                 DelegateSafetyCheck(@delegate, CallingConvention.FastCall);
             }
-            
+
             return (delegate* unmanaged[Fastcall]<void>) DelegateToPtr(@delegate, kind, pinned);
         }
 
@@ -641,24 +657,30 @@ namespace Silk.NET.Core.Native
         /// Whether to skip validity checks, such as calling convention mismatch checks. 
         /// </param>
         /// <returns>A function pointer to the given delegate.</returns>
-        public static unsafe delegate* unmanaged[Thiscall]<void> DelegateToThiscall(Delegate @delegate,
+        public static unsafe delegate* unmanaged[Thiscall]<void> DelegateToThiscall
+        (
+            Delegate @delegate,
             DelegatePointerKind kind = DelegatePointerKind.Stub,
             bool pinned = true,
-            bool ignoreValidityChecks = false)
+            bool ignoreValidityChecks = false
+        )
         {
             if (!ignoreValidityChecks)
             {
                 DelegateSafetyCheck(@delegate, CallingConvention.ThisCall);
             }
-            
+
             return (delegate* unmanaged[Thiscall]<void>) DelegateToPtr(@delegate, kind, pinned);
         }
 
         public static T PtrToDelegate<T>(nint p) where T : Delegate => Marshal.GetDelegateForFunctionPointer<T>(p);
 
-        [MethodImpl((MethodImplOptions)768)] public static unsafe ref Guid GuidOf<T>() => ref *TypeGuid<T>.Riid;
-        [MethodImpl((MethodImplOptions)768)] public static unsafe Guid* GuidPtrOf<T>() => TypeGuid<T>.Riid;
-        
+        [MethodImpl((MethodImplOptions) 768)]
+        public static unsafe ref Guid GuidOf<T>() => ref *TypeGuid<T>.Riid;
+
+        [MethodImpl((MethodImplOptions) 768)]
+        public static unsafe Guid* GuidPtrOf<T>() => TypeGuid<T>.Riid;
+
         // Begin adapted TerraFX code
         // Copyright © Tanner Gooding and Contributors. Licensed under the MIT License (MIT).
         // See License.md in the repository root for more information.
@@ -668,20 +690,21 @@ namespace Silk.NET.Core.Native
         private static unsafe class TypeGuid<T>
         {
             public static readonly Guid* Riid = CreateRiid();
+
             private static Guid* CreateRiid()
             {
-                #if NET5_0
+#if NET5_0
                 var p = (Guid*) RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(T), sizeof(Guid));
-                #else
+#else
                 var p = (Guid*) Allocate(sizeof(Guid));
-                #endif
+#endif
 
                 *p = typeof(T).GUID;
 
                 return p;
             }
         }
-        
+
         // End adapted TerraFX code
 
         /// <summary>
@@ -695,6 +718,53 @@ namespace Silk.NET.Core.Native
             if (ex is not null)
             {
                 throw ex;
+            }
+        }
+
+        [DllImport("kernel32", EntryPoint = "CreateEventW", ExactSpelling = true, SetLastError = true)]
+        private static extern unsafe nint CoreCreateWinEvent
+            (SecurityAttributes* lpEventAttributes, int bManualReset, int bInitialState, char* lpName);
+
+        [DllImport("kernel32", EntryPoint = "WaitForSingleObjectEx", ExactSpelling = true,  SetLastError = true)]
+        private static extern uint CoreWaitObjects(nint hHandle, uint dwMilliseconds, int bAlertable);
+
+        [DllImport("kernel32", EntryPoint = "WaitForMultipleObjectsEx", ExactSpelling = true, SetLastError = true)]
+        private static extern unsafe uint CoreWaitObjects
+            (uint nCount, nint* lpHandles, int bWaitAll, uint dwMilliseconds, int bAlertable);
+            
+        [DllImport("kernel32", EntryPoint = "CloseHandle", ExactSpelling = true, SetLastError = true)]
+        public static extern int CloseWindowsHandle(nint hObject);
+
+        public static unsafe nint CreateWindowsEvent
+            (SecurityAttributes* lpEventAttributes, bool bManualReset, bool bInitialState, char* lpName)
+        {
+            var ret = CoreCreateWinEvent(lpEventAttributes, bManualReset ? 1 : 0, bInitialState ? 1 : 0, lpName);
+            if (ret == 0)
+            {
+                ThrowHResult(Marshal.GetHRForLastWin32Error());
+            }
+
+            return ret;
+        }
+
+        public static uint WaitWindowsObjects(nint @object, uint timeout = unchecked((uint) -1), bool alertable = false) => CoreWaitObjects(@object, timeout, alertable ? 1 : 0);
+
+        public static unsafe uint WaitWindowsObjects
+        (
+            ReadOnlySpan<nint> objects,
+            bool waitAll = true,
+            uint timeout = unchecked((uint) -1),
+            bool alertable = false
+        )
+        {
+            if (objects.Length == 1)
+            {
+                return CoreWaitObjects(objects[0], timeout, alertable ? 1 : 0);
+            }
+
+            fixed (nint* handles = objects)
+            {
+                return CoreWaitObjects((uint) objects.Length, handles, waitAll ? 1 : 0, timeout, alertable ? 1 : 0);
             }
         }
     }

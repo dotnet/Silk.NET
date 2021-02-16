@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11DeviceContext3")]
     public unsafe partial struct ID3D11DeviceContext3
     {
+        public static readonly Guid Guid = new("b4e3c01d-e79e-4637-91b2-510e9f4c9b8f");
+
         public static implicit operator ID3D11DeviceContext2(ID3D11DeviceContext3 val)
             => Unsafe.As<ID3D11DeviceContext3, ID3D11DeviceContext2>(ref val);
 
@@ -57,7 +59,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -66,7 +68,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -78,7 +80,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -90,7 +92,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -105,8 +107,8 @@ namespace Silk.NET.Direct3D11
         public readonly uint AddRef()
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, uint>)LpVtbl[1])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -114,8 +116,8 @@ namespace Silk.NET.Direct3D11
         public readonly uint Release()
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, uint>)LpVtbl[2])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -140,7 +142,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData(Guid* guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pData);
             return ret;
         }
@@ -149,7 +151,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData<T0>(Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, Guid*, uint*, T0*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
@@ -161,7 +163,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData(Guid* guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pData);
@@ -173,7 +175,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData<T0>(Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -188,7 +190,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData(ref Guid guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pData);
@@ -200,7 +202,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData<T0>(ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -215,7 +217,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData(ref Guid guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
@@ -230,7 +232,7 @@ namespace Silk.NET.Direct3D11
         public readonly int GetPrivateData<T0>(ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
@@ -248,7 +250,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, void* pData)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pData);
             return ret;
         }
@@ -257,7 +259,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, Guid*, uint, T0*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
@@ -269,7 +271,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, void* pData)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pData);
@@ -281,7 +283,7 @@ namespace Silk.NET.Direct3D11
         public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -296,7 +298,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
             return ret;
         }
@@ -305,7 +307,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
@@ -317,7 +319,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
@@ -329,7 +331,7 @@ namespace Silk.NET.Direct3D11
         public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
@@ -489,7 +491,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Map(ID3D11Resource* pResource, uint Subresource, Map MapType, uint MapFlags, MappedSubresource* pMappedResource)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Resource*, uint, Map, uint, MappedSubresource*, int>)LpVtbl[14])(@this, pResource, Subresource, MapType, MapFlags, pMappedResource);
             return ret;
         }
@@ -498,7 +500,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Map(ID3D11Resource* pResource, uint Subresource, Map MapType, uint MapFlags, ref MappedSubresource pMappedResource)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (MappedSubresource* pMappedResourcePtr = &pMappedResource)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Resource*, uint, Map, uint, MappedSubresource*, int>)LpVtbl[14])(@this, pResource, Subresource, MapType, MapFlags, pMappedResourcePtr);
@@ -510,7 +512,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Map(ref ID3D11Resource pResource, uint Subresource, Map MapType, uint MapFlags, MappedSubresource* pMappedResource)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pResourcePtr = &pResource)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Resource*, uint, Map, uint, MappedSubresource*, int>)LpVtbl[14])(@this, pResourcePtr, Subresource, MapType, MapFlags, pMappedResource);
@@ -522,7 +524,7 @@ namespace Silk.NET.Direct3D11
         public readonly int Map(ref ID3D11Resource pResource, uint Subresource, Map MapType, uint MapFlags, ref MappedSubresource pMappedResource)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pResourcePtr = &pResource)
             {
                 fixed (MappedSubresource* pMappedResourcePtr = &pMappedResource)
@@ -843,7 +845,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetData(ID3D11Asynchronous* pAsync, void* pData, uint DataSize, uint GetDataFlags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Asynchronous*, void*, uint, uint, int>)LpVtbl[29])(@this, pAsync, pData, DataSize, GetDataFlags);
             return ret;
         }
@@ -852,7 +854,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetData<T0>(ID3D11Asynchronous* pAsync, ref T0 pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Asynchronous*, T0*, uint, uint, int>)LpVtbl[29])(@this, pAsync, pDataPtr, DataSize, GetDataFlags);
@@ -864,7 +866,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetData(ref ID3D11Asynchronous pAsync, void* pData, uint DataSize, uint GetDataFlags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Asynchronous* pAsyncPtr = &pAsync)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Asynchronous*, void*, uint, uint, int>)LpVtbl[29])(@this, pAsyncPtr, pData, DataSize, GetDataFlags);
@@ -876,7 +878,7 @@ namespace Silk.NET.Direct3D11
         public readonly int GetData<T0>(ref ID3D11Asynchronous pAsync, ref T0 pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Asynchronous* pAsyncPtr = &pAsync)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -1287,7 +1289,7 @@ namespace Silk.NET.Direct3D11
         public readonly void DrawAuto()
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, void>)LpVtbl[38])(@this);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, void>)LpVtbl[38])(@this);
         }
 
         /// <summary>To be documented.</summary>
@@ -1383,19 +1385,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void RSSetScissorRects(uint NumRects, Silk.NET.Maths.Rectangle<long>* pRects)
+        public readonly unsafe void RSSetScissorRects(uint NumRects, Silk.NET.Maths.Rectangle<int>* pRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, uint, Silk.NET.Maths.Rectangle<long>*, void>)LpVtbl[45])(@this, NumRects, pRects);
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[45])(@this, NumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void RSSetScissorRects(uint NumRects, ref Silk.NET.Maths.Rectangle<long> pRects)
+        public readonly void RSSetScissorRects(uint NumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<long>* pRectsPtr = &pRects)
+            fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, uint, Silk.NET.Maths.Rectangle<long>*, void>)LpVtbl[45])(@this, NumRects, pRectsPtr);
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[45])(@this, NumRects, pRectsPtr);
             }
         }
 
@@ -1838,7 +1840,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe float GetResourceMinLOD(ID3D11Resource* pResource)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                float ret = default;
+            float ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Resource*, float>)LpVtbl[56])(@this, pResource);
             return ret;
         }
@@ -1847,7 +1849,7 @@ namespace Silk.NET.Direct3D11
         public readonly float GetResourceMinLOD(ref ID3D11Resource pResource)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                float ret = default;
+            float ret = default;
             fixed (ID3D11Resource* pResourcePtr = &pResource)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Resource*, float>)LpVtbl[56])(@this, pResourcePtr);
@@ -3251,41 +3253,41 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void RSGetScissorRects(uint* pNumRects, Silk.NET.Maths.Rectangle<long>* pRects)
+        public readonly unsafe void RSGetScissorRects(uint* pNumRects, Silk.NET.Maths.Rectangle<int>* pRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, uint*, Silk.NET.Maths.Rectangle<long>*, void>)LpVtbl[96])(@this, pNumRects, pRects);
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, uint*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[96])(@this, pNumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void RSGetScissorRects(uint* pNumRects, ref Silk.NET.Maths.Rectangle<long> pRects)
+        public readonly unsafe void RSGetScissorRects(uint* pNumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<long>* pRectsPtr = &pRects)
+            fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, uint*, Silk.NET.Maths.Rectangle<long>*, void>)LpVtbl[96])(@this, pNumRects, pRectsPtr);
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, uint*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[96])(@this, pNumRects, pRectsPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void RSGetScissorRects(ref uint pNumRects, Silk.NET.Maths.Rectangle<long>* pRects)
+        public readonly unsafe void RSGetScissorRects(ref uint pNumRects, Silk.NET.Maths.Rectangle<int>* pRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pNumRectsPtr = &pNumRects)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, uint*, Silk.NET.Maths.Rectangle<long>*, void>)LpVtbl[96])(@this, pNumRectsPtr, pRects);
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, uint*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[96])(@this, pNumRectsPtr, pRects);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void RSGetScissorRects(ref uint pNumRects, ref Silk.NET.Maths.Rectangle<long> pRects)
+        public readonly void RSGetScissorRects(ref uint pNumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pNumRectsPtr = &pNumRects)
             {
-                fixed (Silk.NET.Maths.Rectangle<long>* pRectsPtr = &pRects)
+                fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, uint*, Silk.NET.Maths.Rectangle<long>*, void>)LpVtbl[96])(@this, pNumRectsPtr, pRectsPtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, uint*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[96])(@this, pNumRectsPtr, pRectsPtr);
                 }
             }
         }
@@ -3740,22 +3742,22 @@ namespace Silk.NET.Direct3D11
         public readonly void ClearState()
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, void>)LpVtbl[110])(@this);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, void>)LpVtbl[110])(@this);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void Flush()
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, void>)LpVtbl[111])(@this);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, void>)LpVtbl[111])(@this);
         }
 
         /// <summary>To be documented.</summary>
         public readonly DeviceContextType GetType()
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                DeviceContextType ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, DeviceContextType>)LpVtbl[112])(@this);
+            DeviceContextType ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, DeviceContextType>)LpVtbl[112])(@this);
             return ret;
         }
 
@@ -3763,8 +3765,8 @@ namespace Silk.NET.Direct3D11
         public readonly uint GetContextFlags()
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, uint>)LpVtbl[113])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, uint>)LpVtbl[113])(@this);
             return ret;
         }
 
@@ -3772,7 +3774,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int FinishCommandList(int RestoreDeferredContextState, ID3D11CommandList** ppCommandList)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, int, ID3D11CommandList**, int>)LpVtbl[114])(@this, RestoreDeferredContextState, ppCommandList);
             return ret;
         }
@@ -3781,7 +3783,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int FinishCommandList(int RestoreDeferredContextState, ref ID3D11CommandList* ppCommandList)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11CommandList** ppCommandListPtr = &ppCommandList)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, int, ID3D11CommandList**, int>)LpVtbl[114])(@this, RestoreDeferredContextState, ppCommandListPtr);
@@ -5152,133 +5154,133 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] float* Color, Silk.NET.Maths.Rectangle<long>* pRect, uint NumRects)
+        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] float* Color, Silk.NET.Maths.Rectangle<int>* pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[132])(@this, pView, Color, pRect, NumRects);
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[132])(@this, pView, Color, pRect, NumRects);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] float* Color, ref Silk.NET.Maths.Rectangle<long> pRect, uint NumRects)
+        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] float* Color, ref Silk.NET.Maths.Rectangle<int> pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<long>* pRectPtr = &pRect)
+            fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[132])(@this, pView, Color, pRectPtr, NumRects);
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[132])(@this, pView, Color, pRectPtr, NumRects);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] ref float Color, Silk.NET.Maths.Rectangle<long>* pRect, uint NumRects)
+        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] ref float Color, Silk.NET.Maths.Rectangle<int>* pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* ColorPtr = &Color)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[132])(@this, pView, ColorPtr, pRect, NumRects);
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[132])(@this, pView, ColorPtr, pRect, NumRects);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Maths.Rectangle<long> pRect, uint NumRects)
+        public readonly unsafe void ClearView(ID3D11View* pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Maths.Rectangle<int> pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (float* ColorPtr = &Color)
             {
-                fixed (Silk.NET.Maths.Rectangle<long>* pRectPtr = &pRect)
+                fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[132])(@this, pView, ColorPtr, pRectPtr, NumRects);
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[132])(@this, pView, ColorPtr, pRectPtr, NumRects);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] float* Color, Silk.NET.Maths.Rectangle<long>* pRect, uint NumRects)
+        public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] float* Color, Silk.NET.Maths.Rectangle<int>* pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11View* pViewPtr = &pView)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[132])(@this, pViewPtr, Color, pRect, NumRects);
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[132])(@this, pViewPtr, Color, pRect, NumRects);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] float* Color, ref Silk.NET.Maths.Rectangle<long> pRect, uint NumRects)
+        public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] float* Color, ref Silk.NET.Maths.Rectangle<int> pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11View* pViewPtr = &pView)
             {
-                fixed (Silk.NET.Maths.Rectangle<long>* pRectPtr = &pRect)
+                fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[132])(@this, pViewPtr, Color, pRectPtr, NumRects);
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[132])(@this, pViewPtr, Color, pRectPtr, NumRects);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] ref float Color, Silk.NET.Maths.Rectangle<long>* pRect, uint NumRects)
+        public readonly unsafe void ClearView(ref ID3D11View pView, [Count(Count = 4)] ref float Color, Silk.NET.Maths.Rectangle<int>* pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11View* pViewPtr = &pView)
             {
                 fixed (float* ColorPtr = &Color)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[132])(@this, pViewPtr, ColorPtr, pRect, NumRects);
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[132])(@this, pViewPtr, ColorPtr, pRect, NumRects);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void ClearView(ref ID3D11View pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Maths.Rectangle<long> pRect, uint NumRects)
+        public readonly void ClearView(ref ID3D11View pView, [Count(Count = 4)] ref float Color, ref Silk.NET.Maths.Rectangle<int> pRect, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11View* pViewPtr = &pView)
             {
                 fixed (float* ColorPtr = &Color)
                 {
-                    fixed (Silk.NET.Maths.Rectangle<long>* pRectPtr = &pRect)
+                    fixed (Silk.NET.Maths.Rectangle<int>* pRectPtr = &pRect)
                     {
-                        ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[132])(@this, pViewPtr, ColorPtr, pRectPtr, NumRects);
+                        ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, float*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[132])(@this, pViewPtr, ColorPtr, pRectPtr, NumRects);
                     }
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DiscardView1(ID3D11View* pResourceView, Silk.NET.Maths.Rectangle<long>* pRects, uint NumRects)
+        public readonly unsafe void DiscardView1(ID3D11View* pResourceView, Silk.NET.Maths.Rectangle<int>* pRects, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[133])(@this, pResourceView, pRects, NumRects);
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[133])(@this, pResourceView, pRects, NumRects);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DiscardView1(ID3D11View* pResourceView, ref Silk.NET.Maths.Rectangle<long> pRects, uint NumRects)
+        public readonly unsafe void DiscardView1(ID3D11View* pResourceView, ref Silk.NET.Maths.Rectangle<int> pRects, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<long>* pRectsPtr = &pRects)
+            fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[133])(@this, pResourceView, pRectsPtr, NumRects);
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[133])(@this, pResourceView, pRectsPtr, NumRects);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void DiscardView1(ref ID3D11View pResourceView, Silk.NET.Maths.Rectangle<long>* pRects, uint NumRects)
+        public readonly unsafe void DiscardView1(ref ID3D11View pResourceView, Silk.NET.Maths.Rectangle<int>* pRects, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11View* pResourceViewPtr = &pResourceView)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[133])(@this, pResourceViewPtr, pRects, NumRects);
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[133])(@this, pResourceViewPtr, pRects, NumRects);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void DiscardView1(ref ID3D11View pResourceView, ref Silk.NET.Maths.Rectangle<long> pRects, uint NumRects)
+        public readonly void DiscardView1(ref ID3D11View pResourceView, ref Silk.NET.Maths.Rectangle<int> pRects, uint NumRects)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (ID3D11View* pResourceViewPtr = &pResourceView)
             {
-                fixed (Silk.NET.Maths.Rectangle<long>* pRectsPtr = &pRects)
+                fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, Silk.NET.Maths.Rectangle<long>*, uint, void>)LpVtbl[133])(@this, pResourceViewPtr, pRectsPtr, NumRects);
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11View*, Silk.NET.Maths.Rectangle<int>*, uint, void>)LpVtbl[133])(@this, pResourceViewPtr, pRectsPtr, NumRects);
                 }
             }
         }
@@ -5287,7 +5289,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Resource*, uint, TiledResourceCoordinate*, TileRegionSize*, ID3D11Buffer*, uint, uint*, uint*, uint*, uint, int>)LpVtbl[134])(@this, pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
             return ret;
         }
@@ -5296,7 +5298,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pRangeTileCountsPtr = &pRangeTileCounts)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Resource*, uint, TiledResourceCoordinate*, TileRegionSize*, ID3D11Buffer*, uint, uint*, uint*, uint*, uint, int>)LpVtbl[134])(@this, pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, pRangeTileCountsPtr, Flags);
@@ -5308,7 +5310,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pTilePoolStartOffsetsPtr = &pTilePoolStartOffsets)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Resource*, uint, TiledResourceCoordinate*, TileRegionSize*, ID3D11Buffer*, uint, uint*, uint*, uint*, uint, int>)LpVtbl[134])(@this, pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsetsPtr, pRangeTileCounts, Flags);
@@ -5320,7 +5322,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pTilePoolStartOffsetsPtr = &pTilePoolStartOffsets)
             {
                 fixed (uint* pRangeTileCountsPtr = &pRangeTileCounts)
@@ -5335,7 +5337,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pRangeFlagsPtr = &pRangeFlags)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Resource*, uint, TiledResourceCoordinate*, TileRegionSize*, ID3D11Buffer*, uint, uint*, uint*, uint*, uint, int>)LpVtbl[134])(@this, pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, pTilePool, NumRanges, pRangeFlagsPtr, pTilePoolStartOffsets, pRangeTileCounts, Flags);
@@ -5347,7 +5349,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pRangeFlagsPtr = &pRangeFlags)
             {
                 fixed (uint* pRangeTileCountsPtr = &pRangeTileCounts)
@@ -5362,7 +5364,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pRangeFlagsPtr = &pRangeFlags)
             {
                 fixed (uint* pTilePoolStartOffsetsPtr = &pTilePoolStartOffsets)
@@ -5377,7 +5379,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pRangeFlagsPtr = &pRangeFlags)
             {
                 fixed (uint* pTilePoolStartOffsetsPtr = &pTilePoolStartOffsets)
@@ -5395,7 +5397,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Resource*, uint, TiledResourceCoordinate*, TileRegionSize*, ID3D11Buffer*, uint, uint*, uint*, uint*, uint, int>)LpVtbl[134])(@this, pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, pTilePoolPtr, NumRanges, pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
@@ -5407,7 +5409,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
             {
                 fixed (uint* pRangeTileCountsPtr = &pRangeTileCounts)
@@ -5422,7 +5424,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
             {
                 fixed (uint* pTilePoolStartOffsetsPtr = &pTilePoolStartOffsets)
@@ -5437,7 +5439,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
             {
                 fixed (uint* pTilePoolStartOffsetsPtr = &pTilePoolStartOffsets)
@@ -5455,7 +5457,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
             {
                 fixed (uint* pRangeFlagsPtr = &pRangeFlags)
@@ -5470,7 +5472,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
             {
                 fixed (uint* pRangeFlagsPtr = &pRangeFlags)
@@ -5488,7 +5490,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
             {
                 fixed (uint* pRangeFlagsPtr = &pRangeFlags)
@@ -5506,7 +5508,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
             {
                 fixed (uint* pRangeFlagsPtr = &pRangeFlags)
@@ -5527,7 +5529,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Resource*, uint, TiledResourceCoordinate*, TileRegionSize*, ID3D11Buffer*, uint, uint*, uint*, uint*, uint, int>)LpVtbl[134])(@this, pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizesPtr, pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
@@ -5539,7 +5541,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
             {
                 fixed (uint* pRangeTileCountsPtr = &pRangeTileCounts)
@@ -5554,7 +5556,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
             {
                 fixed (uint* pTilePoolStartOffsetsPtr = &pTilePoolStartOffsets)
@@ -5569,7 +5571,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
             {
                 fixed (uint* pTilePoolStartOffsetsPtr = &pTilePoolStartOffsets)
@@ -5587,7 +5589,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
             {
                 fixed (uint* pRangeFlagsPtr = &pRangeFlags)
@@ -5602,7 +5604,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
             {
                 fixed (uint* pRangeFlagsPtr = &pRangeFlags)
@@ -5620,7 +5622,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
             {
                 fixed (uint* pRangeFlagsPtr = &pRangeFlags)
@@ -5638,7 +5640,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
             {
                 fixed (uint* pRangeFlagsPtr = &pRangeFlags)
@@ -5659,7 +5661,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -5674,7 +5676,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -5692,7 +5694,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -5710,7 +5712,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -5731,7 +5733,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -5749,7 +5751,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -5770,7 +5772,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -5791,7 +5793,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -5815,7 +5817,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Resource*, uint, TiledResourceCoordinate*, TileRegionSize*, ID3D11Buffer*, uint, uint*, uint*, uint*, uint, int>)LpVtbl[134])(@this, pTiledResource, NumTiledResourceRegions, pTiledResourceRegionStartCoordinatesPtr, pTiledResourceRegionSizes, pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
@@ -5827,7 +5829,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (uint* pRangeTileCountsPtr = &pRangeTileCounts)
@@ -5842,7 +5844,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (uint* pTilePoolStartOffsetsPtr = &pTilePoolStartOffsets)
@@ -5857,7 +5859,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (uint* pTilePoolStartOffsetsPtr = &pTilePoolStartOffsets)
@@ -5875,7 +5877,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (uint* pRangeFlagsPtr = &pRangeFlags)
@@ -5890,7 +5892,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (uint* pRangeFlagsPtr = &pRangeFlags)
@@ -5908,7 +5910,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (uint* pRangeFlagsPtr = &pRangeFlags)
@@ -5926,7 +5928,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (uint* pRangeFlagsPtr = &pRangeFlags)
@@ -5947,7 +5949,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -5962,7 +5964,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -5980,7 +5982,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -5998,7 +6000,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -6019,7 +6021,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -6037,7 +6039,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -6058,7 +6060,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -6079,7 +6081,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -6103,7 +6105,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6118,7 +6120,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6136,7 +6138,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6154,7 +6156,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6175,7 +6177,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6193,7 +6195,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6214,7 +6216,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6235,7 +6237,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6259,7 +6261,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6277,7 +6279,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6298,7 +6300,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6319,7 +6321,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6343,7 +6345,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6364,7 +6366,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6388,7 +6390,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6412,7 +6414,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ID3D11Resource* pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6439,7 +6441,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Resource*, uint, TiledResourceCoordinate*, TileRegionSize*, ID3D11Buffer*, uint, uint*, uint*, uint*, uint, int>)LpVtbl[134])(@this, pTiledResourcePtr, NumTiledResourceRegions, pTiledResourceRegionStartCoordinates, pTiledResourceRegionSizes, pTilePool, NumRanges, pRangeFlags, pTilePoolStartOffsets, pRangeTileCounts, Flags);
@@ -6451,7 +6453,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (uint* pRangeTileCountsPtr = &pRangeTileCounts)
@@ -6466,7 +6468,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (uint* pTilePoolStartOffsetsPtr = &pTilePoolStartOffsets)
@@ -6481,7 +6483,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (uint* pTilePoolStartOffsetsPtr = &pTilePoolStartOffsets)
@@ -6499,7 +6501,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (uint* pRangeFlagsPtr = &pRangeFlags)
@@ -6514,7 +6516,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (uint* pRangeFlagsPtr = &pRangeFlags)
@@ -6532,7 +6534,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (uint* pRangeFlagsPtr = &pRangeFlags)
@@ -6550,7 +6552,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (uint* pRangeFlagsPtr = &pRangeFlags)
@@ -6571,7 +6573,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -6586,7 +6588,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -6604,7 +6606,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -6622,7 +6624,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -6643,7 +6645,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -6661,7 +6663,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -6682,7 +6684,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -6703,7 +6705,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
@@ -6727,7 +6729,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6742,7 +6744,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6760,7 +6762,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6778,7 +6780,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6799,7 +6801,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6817,7 +6819,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6838,7 +6840,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6859,7 +6861,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6883,7 +6885,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6901,7 +6903,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6922,7 +6924,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6943,7 +6945,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6967,7 +6969,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -6988,7 +6990,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -7012,7 +7014,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -7036,7 +7038,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, TiledResourceCoordinate* pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TileRegionSize* pTiledResourceRegionSizesPtr = &pTiledResourceRegionSizes)
@@ -7063,7 +7065,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7078,7 +7080,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7096,7 +7098,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7114,7 +7116,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7135,7 +7137,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7153,7 +7155,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7174,7 +7176,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7195,7 +7197,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7219,7 +7221,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7237,7 +7239,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7258,7 +7260,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7279,7 +7281,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7303,7 +7305,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7324,7 +7326,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7348,7 +7350,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7372,7 +7374,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, TileRegionSize* pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7399,7 +7401,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7417,7 +7419,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7438,7 +7440,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7459,7 +7461,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7483,7 +7485,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7504,7 +7506,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7528,7 +7530,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7552,7 +7554,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ID3D11Buffer* pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7579,7 +7581,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7600,7 +7602,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7624,7 +7626,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7648,7 +7650,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, uint* pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7675,7 +7677,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7699,7 +7701,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, uint* pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7726,7 +7728,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, uint* pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7753,7 +7755,7 @@ namespace Silk.NET.Direct3D11
         public readonly int UpdateTileMappings(ref ID3D11Resource pTiledResource, uint NumTiledResourceRegions, ref TiledResourceCoordinate pTiledResourceRegionStartCoordinates, ref TileRegionSize pTiledResourceRegionSizes, ref ID3D11Buffer pTilePool, uint NumRanges, ref uint pRangeFlags, ref uint pTilePoolStartOffsets, ref uint pRangeTileCounts, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pTiledResourcePtr = &pTiledResource)
             {
                 fixed (TiledResourceCoordinate* pTiledResourceRegionStartCoordinatesPtr = &pTiledResourceRegionStartCoordinates)
@@ -7783,7 +7785,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Resource*, TiledResourceCoordinate*, ID3D11Resource*, TiledResourceCoordinate*, TileRegionSize*, uint, int>)LpVtbl[135])(@this, pDestTiledResource, pDestRegionStartCoordinate, pSourceTiledResource, pSourceRegionStartCoordinate, pTileRegionSize, Flags);
             return ret;
         }
@@ -7792,7 +7794,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Resource*, TiledResourceCoordinate*, ID3D11Resource*, TiledResourceCoordinate*, TileRegionSize*, uint, int>)LpVtbl[135])(@this, pDestTiledResource, pDestRegionStartCoordinate, pSourceTiledResource, pSourceRegionStartCoordinate, pTileRegionSizePtr, Flags);
@@ -7804,7 +7806,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pSourceRegionStartCoordinatePtr = &pSourceRegionStartCoordinate)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Resource*, TiledResourceCoordinate*, ID3D11Resource*, TiledResourceCoordinate*, TileRegionSize*, uint, int>)LpVtbl[135])(@this, pDestTiledResource, pDestRegionStartCoordinate, pSourceTiledResource, pSourceRegionStartCoordinatePtr, pTileRegionSize, Flags);
@@ -7816,7 +7818,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pSourceRegionStartCoordinatePtr = &pSourceRegionStartCoordinate)
             {
                 fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
@@ -7831,7 +7833,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pSourceTiledResourcePtr = &pSourceTiledResource)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Resource*, TiledResourceCoordinate*, ID3D11Resource*, TiledResourceCoordinate*, TileRegionSize*, uint, int>)LpVtbl[135])(@this, pDestTiledResource, pDestRegionStartCoordinate, pSourceTiledResourcePtr, pSourceRegionStartCoordinate, pTileRegionSize, Flags);
@@ -7843,7 +7845,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pSourceTiledResourcePtr = &pSourceTiledResource)
             {
                 fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
@@ -7858,7 +7860,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pSourceTiledResourcePtr = &pSourceTiledResource)
             {
                 fixed (TiledResourceCoordinate* pSourceRegionStartCoordinatePtr = &pSourceRegionStartCoordinate)
@@ -7873,7 +7875,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pSourceTiledResourcePtr = &pSourceTiledResource)
             {
                 fixed (TiledResourceCoordinate* pSourceRegionStartCoordinatePtr = &pSourceRegionStartCoordinate)
@@ -7891,7 +7893,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pDestRegionStartCoordinatePtr = &pDestRegionStartCoordinate)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Resource*, TiledResourceCoordinate*, ID3D11Resource*, TiledResourceCoordinate*, TileRegionSize*, uint, int>)LpVtbl[135])(@this, pDestTiledResource, pDestRegionStartCoordinatePtr, pSourceTiledResource, pSourceRegionStartCoordinate, pTileRegionSize, Flags);
@@ -7903,7 +7905,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pDestRegionStartCoordinatePtr = &pDestRegionStartCoordinate)
             {
                 fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
@@ -7918,7 +7920,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pDestRegionStartCoordinatePtr = &pDestRegionStartCoordinate)
             {
                 fixed (TiledResourceCoordinate* pSourceRegionStartCoordinatePtr = &pSourceRegionStartCoordinate)
@@ -7933,7 +7935,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pDestRegionStartCoordinatePtr = &pDestRegionStartCoordinate)
             {
                 fixed (TiledResourceCoordinate* pSourceRegionStartCoordinatePtr = &pSourceRegionStartCoordinate)
@@ -7951,7 +7953,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pDestRegionStartCoordinatePtr = &pDestRegionStartCoordinate)
             {
                 fixed (ID3D11Resource* pSourceTiledResourcePtr = &pSourceTiledResource)
@@ -7966,7 +7968,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pDestRegionStartCoordinatePtr = &pDestRegionStartCoordinate)
             {
                 fixed (ID3D11Resource* pSourceTiledResourcePtr = &pSourceTiledResource)
@@ -7984,7 +7986,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pDestRegionStartCoordinatePtr = &pDestRegionStartCoordinate)
             {
                 fixed (ID3D11Resource* pSourceTiledResourcePtr = &pSourceTiledResource)
@@ -8002,7 +8004,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ID3D11Resource* pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TiledResourceCoordinate* pDestRegionStartCoordinatePtr = &pDestRegionStartCoordinate)
             {
                 fixed (ID3D11Resource* pSourceTiledResourcePtr = &pSourceTiledResource)
@@ -8023,7 +8025,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Resource*, TiledResourceCoordinate*, ID3D11Resource*, TiledResourceCoordinate*, TileRegionSize*, uint, int>)LpVtbl[135])(@this, pDestTiledResourcePtr, pDestRegionStartCoordinate, pSourceTiledResource, pSourceRegionStartCoordinate, pTileRegionSize, Flags);
@@ -8035,7 +8037,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
             {
                 fixed (TileRegionSize* pTileRegionSizePtr = &pTileRegionSize)
@@ -8050,7 +8052,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
             {
                 fixed (TiledResourceCoordinate* pSourceRegionStartCoordinatePtr = &pSourceRegionStartCoordinate)
@@ -8065,7 +8067,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
             {
                 fixed (TiledResourceCoordinate* pSourceRegionStartCoordinatePtr = &pSourceRegionStartCoordinate)
@@ -8083,7 +8085,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
             {
                 fixed (ID3D11Resource* pSourceTiledResourcePtr = &pSourceTiledResource)
@@ -8098,7 +8100,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
             {
                 fixed (ID3D11Resource* pSourceTiledResourcePtr = &pSourceTiledResource)
@@ -8116,7 +8118,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
             {
                 fixed (ID3D11Resource* pSourceTiledResourcePtr = &pSourceTiledResource)
@@ -8134,7 +8136,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, TiledResourceCoordinate* pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
             {
                 fixed (ID3D11Resource* pSourceTiledResourcePtr = &pSourceTiledResource)
@@ -8155,7 +8157,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
             {
                 fixed (TiledResourceCoordinate* pDestRegionStartCoordinatePtr = &pDestRegionStartCoordinate)
@@ -8170,7 +8172,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
             {
                 fixed (TiledResourceCoordinate* pDestRegionStartCoordinatePtr = &pDestRegionStartCoordinate)
@@ -8188,7 +8190,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
             {
                 fixed (TiledResourceCoordinate* pDestRegionStartCoordinatePtr = &pDestRegionStartCoordinate)
@@ -8206,7 +8208,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ID3D11Resource* pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
             {
                 fixed (TiledResourceCoordinate* pDestRegionStartCoordinatePtr = &pDestRegionStartCoordinate)
@@ -8227,7 +8229,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
             {
                 fixed (TiledResourceCoordinate* pDestRegionStartCoordinatePtr = &pDestRegionStartCoordinate)
@@ -8245,7 +8247,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, TiledResourceCoordinate* pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
             {
                 fixed (TiledResourceCoordinate* pDestRegionStartCoordinatePtr = &pDestRegionStartCoordinate)
@@ -8266,7 +8268,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CopyTileMappings(ref ID3D11Resource pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, TileRegionSize* pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
             {
                 fixed (TiledResourceCoordinate* pDestRegionStartCoordinatePtr = &pDestRegionStartCoordinate)
@@ -8287,7 +8289,7 @@ namespace Silk.NET.Direct3D11
         public readonly int CopyTileMappings(ref ID3D11Resource pDestTiledResource, ref TiledResourceCoordinate pDestRegionStartCoordinate, ref ID3D11Resource pSourceTiledResource, ref TiledResourceCoordinate pSourceRegionStartCoordinate, ref TileRegionSize pTileRegionSize, uint Flags)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pDestTiledResourcePtr = &pDestTiledResource)
             {
                 fixed (TiledResourceCoordinate* pDestRegionStartCoordinatePtr = &pDestRegionStartCoordinate)
@@ -8727,7 +8729,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int ResizeTilePool(ID3D11Buffer* pTilePool, ulong NewSizeInBytes)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Buffer*, ulong, int>)LpVtbl[138])(@this, pTilePool, NewSizeInBytes);
             return ret;
         }
@@ -8736,7 +8738,7 @@ namespace Silk.NET.Direct3D11
         public readonly int ResizeTilePool(ref ID3D11Buffer pTilePool, ulong NewSizeInBytes)
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Buffer* pTilePoolPtr = &pTilePool)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, ID3D11Buffer*, ulong, int>)LpVtbl[138])(@this, pTilePoolPtr, NewSizeInBytes);
@@ -8788,8 +8790,8 @@ namespace Silk.NET.Direct3D11
         public readonly int IsAnnotationEnabled()
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, int>)LpVtbl[140])(@this);
+            int ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, int>)LpVtbl[140])(@this);
             return ret;
         }
 
@@ -8849,7 +8851,7 @@ namespace Silk.NET.Direct3D11
         public readonly void EndEvent()
         {
             var @this = (ID3D11DeviceContext3*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext3*, void>)LpVtbl[143])(@this);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext3*, void>)LpVtbl[143])(@this);
         }
 
         /// <summary>To be documented.</summary>

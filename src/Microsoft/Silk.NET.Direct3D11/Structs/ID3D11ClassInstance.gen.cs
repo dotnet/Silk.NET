@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11ClassInstance")]
     public unsafe partial struct ID3D11ClassInstance
     {
+        public static readonly Guid Guid = new("a6cd7faa-b0b7-4a2f-9436-8662a65797cb");
+
         public static implicit operator ID3D11DeviceChild(ID3D11ClassInstance val)
             => Unsafe.As<ID3D11ClassInstance, ID3D11DeviceChild>(ref val);
 
@@ -48,7 +50,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -57,7 +59,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -69,7 +71,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -81,7 +83,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -96,8 +98,8 @@ namespace Silk.NET.Direct3D11
         public readonly uint AddRef()
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, uint>)LpVtbl[1])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11ClassInstance*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -105,8 +107,8 @@ namespace Silk.NET.Direct3D11
         public readonly uint Release()
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, uint>)LpVtbl[2])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11ClassInstance*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -131,7 +133,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData(Guid* guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pData);
             return ret;
         }
@@ -140,7 +142,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData<T0>(Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, Guid*, uint*, T0*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
@@ -152,7 +154,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData(Guid* guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pData);
@@ -164,7 +166,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData<T0>(Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -179,7 +181,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData(ref Guid guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pData);
@@ -191,7 +193,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData<T0>(ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -206,7 +208,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData(ref Guid guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
@@ -221,7 +223,7 @@ namespace Silk.NET.Direct3D11
         public readonly int GetPrivateData<T0>(ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
@@ -239,7 +241,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, void* pData)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pData);
             return ret;
         }
@@ -248,7 +250,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, Guid*, uint, T0*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
@@ -260,7 +262,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, void* pData)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pData);
@@ -272,7 +274,7 @@ namespace Silk.NET.Direct3D11
         public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -287,7 +289,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
             return ret;
         }
@@ -296,7 +298,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
@@ -308,7 +310,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
@@ -320,7 +322,7 @@ namespace Silk.NET.Direct3D11
         public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
@@ -366,123 +368,123 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GetInstanceName(byte* pInstanceName, uint* pBufferLength)
+        public readonly unsafe void GetInstanceName(byte* pInstanceName, nuint* pBufferLength)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, uint*, void>)LpVtbl[9])(@this, pInstanceName, pBufferLength);
+            ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, nuint*, void>)LpVtbl[9])(@this, pInstanceName, pBufferLength);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GetInstanceName(byte* pInstanceName, ref uint pBufferLength)
+        public readonly unsafe void GetInstanceName(byte* pInstanceName, ref nuint pBufferLength)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (uint* pBufferLengthPtr = &pBufferLength)
+            fixed (nuint* pBufferLengthPtr = &pBufferLength)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, uint*, void>)LpVtbl[9])(@this, pInstanceName, pBufferLengthPtr);
+                ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, nuint*, void>)LpVtbl[9])(@this, pInstanceName, pBufferLengthPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GetInstanceName(ref byte pInstanceName, uint* pBufferLength)
+        public readonly unsafe void GetInstanceName(ref byte pInstanceName, nuint* pBufferLength)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (byte* pInstanceNamePtr = &pInstanceName)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, uint*, void>)LpVtbl[9])(@this, pInstanceNamePtr, pBufferLength);
+                ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, nuint*, void>)LpVtbl[9])(@this, pInstanceNamePtr, pBufferLength);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void GetInstanceName(ref byte pInstanceName, ref uint pBufferLength)
+        public readonly void GetInstanceName(ref byte pInstanceName, ref nuint pBufferLength)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (byte* pInstanceNamePtr = &pInstanceName)
             {
-                fixed (uint* pBufferLengthPtr = &pBufferLength)
+                fixed (nuint* pBufferLengthPtr = &pBufferLength)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, uint*, void>)LpVtbl[9])(@this, pInstanceNamePtr, pBufferLengthPtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, nuint*, void>)LpVtbl[9])(@this, pInstanceNamePtr, pBufferLengthPtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GetInstanceName(string pInstanceName, uint* pBufferLength)
+        public readonly unsafe void GetInstanceName(string pInstanceName, nuint* pBufferLength)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var pInstanceNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pInstanceName);
-            ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, uint*, void>)LpVtbl[9])(@this, pInstanceNamePtr, pBufferLength);
+            ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, nuint*, void>)LpVtbl[9])(@this, pInstanceNamePtr, pBufferLength);
             Marshal.FreeHGlobal((nint)pInstanceNamePtr);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void GetInstanceName(string pInstanceName, ref uint pBufferLength)
+        public readonly void GetInstanceName(string pInstanceName, ref nuint pBufferLength)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var pInstanceNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pInstanceName);
-            fixed (uint* pBufferLengthPtr = &pBufferLength)
+            fixed (nuint* pBufferLengthPtr = &pBufferLength)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, uint*, void>)LpVtbl[9])(@this, pInstanceNamePtr, pBufferLengthPtr);
+                ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, nuint*, void>)LpVtbl[9])(@this, pInstanceNamePtr, pBufferLengthPtr);
             }
             Marshal.FreeHGlobal((nint)pInstanceNamePtr);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GetTypeName(byte* pTypeName, uint* pBufferLength)
+        public readonly unsafe void GetTypeName(byte* pTypeName, nuint* pBufferLength)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, uint*, void>)LpVtbl[10])(@this, pTypeName, pBufferLength);
+            ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, nuint*, void>)LpVtbl[10])(@this, pTypeName, pBufferLength);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GetTypeName(byte* pTypeName, ref uint pBufferLength)
+        public readonly unsafe void GetTypeName(byte* pTypeName, ref nuint pBufferLength)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (uint* pBufferLengthPtr = &pBufferLength)
+            fixed (nuint* pBufferLengthPtr = &pBufferLength)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, uint*, void>)LpVtbl[10])(@this, pTypeName, pBufferLengthPtr);
+                ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, nuint*, void>)LpVtbl[10])(@this, pTypeName, pBufferLengthPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GetTypeName(ref byte pTypeName, uint* pBufferLength)
+        public readonly unsafe void GetTypeName(ref byte pTypeName, nuint* pBufferLength)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (byte* pTypeNamePtr = &pTypeName)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, uint*, void>)LpVtbl[10])(@this, pTypeNamePtr, pBufferLength);
+                ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, nuint*, void>)LpVtbl[10])(@this, pTypeNamePtr, pBufferLength);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void GetTypeName(ref byte pTypeName, ref uint pBufferLength)
+        public readonly void GetTypeName(ref byte pTypeName, ref nuint pBufferLength)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (byte* pTypeNamePtr = &pTypeName)
             {
-                fixed (uint* pBufferLengthPtr = &pBufferLength)
+                fixed (nuint* pBufferLengthPtr = &pBufferLength)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, uint*, void>)LpVtbl[10])(@this, pTypeNamePtr, pBufferLengthPtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, nuint*, void>)LpVtbl[10])(@this, pTypeNamePtr, pBufferLengthPtr);
                 }
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void GetTypeName(string pTypeName, uint* pBufferLength)
+        public readonly unsafe void GetTypeName(string pTypeName, nuint* pBufferLength)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var pTypeNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTypeName);
-            ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, uint*, void>)LpVtbl[10])(@this, pTypeNamePtr, pBufferLength);
+            ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, nuint*, void>)LpVtbl[10])(@this, pTypeNamePtr, pBufferLength);
             Marshal.FreeHGlobal((nint)pTypeNamePtr);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void GetTypeName(string pTypeName, ref uint pBufferLength)
+        public readonly void GetTypeName(string pTypeName, ref nuint pBufferLength)
         {
             var @this = (ID3D11ClassInstance*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             var pTypeNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pTypeName);
-            fixed (uint* pBufferLengthPtr = &pBufferLength)
+            fixed (nuint* pBufferLengthPtr = &pBufferLength)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, uint*, void>)LpVtbl[10])(@this, pTypeNamePtr, pBufferLengthPtr);
+                ((delegate* unmanaged[Cdecl]<ID3D11ClassInstance*, byte*, nuint*, void>)LpVtbl[10])(@this, pTypeNamePtr, pBufferLengthPtr);
             }
             Marshal.FreeHGlobal((nint)pTypeNamePtr);
         }

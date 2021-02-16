@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D9
     [NativeName("Name", "IDirect3DVertexDeclaration9")]
     public unsafe partial struct IDirect3DVertexDeclaration9
     {
+        public static readonly Guid Guid = new("dd13c59c-36fa-4098-a8fb-c7ed39dc8546");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDirect3DVertexDeclaration9 val)
             => Unsafe.As<IDirect3DVertexDeclaration9, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -45,7 +47,7 @@ namespace Silk.NET.Direct3D9
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -54,7 +56,7 @@ namespace Silk.NET.Direct3D9
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -66,7 +68,7 @@ namespace Silk.NET.Direct3D9
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -78,7 +80,7 @@ namespace Silk.NET.Direct3D9
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -93,8 +95,8 @@ namespace Silk.NET.Direct3D9
         public readonly uint AddRef()
         {
             var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, uint>)LpVtbl[1])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DVertexDeclaration9*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -102,8 +104,8 @@ namespace Silk.NET.Direct3D9
         public readonly uint Release()
         {
             var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, uint>)LpVtbl[2])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDirect3DVertexDeclaration9*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -111,7 +113,7 @@ namespace Silk.NET.Direct3D9
         public readonly unsafe int GetDevice(IDirect3DDevice9** ppDevice)
         {
             var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevice);
             return ret;
         }
@@ -120,7 +122,7 @@ namespace Silk.NET.Direct3D9
         public readonly unsafe int GetDevice(ref IDirect3DDevice9* ppDevice)
         {
             var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDirect3DDevice9** ppDevicePtr = &ppDevice)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevicePtr);
@@ -132,7 +134,7 @@ namespace Silk.NET.Direct3D9
         public readonly unsafe int GetDeclaration(Vertexelement9* arg0, uint* pNumElements)
         {
             var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Vertexelement9*, uint*, int>)LpVtbl[4])(@this, arg0, pNumElements);
             return ret;
         }
@@ -141,7 +143,7 @@ namespace Silk.NET.Direct3D9
         public readonly unsafe int GetDeclaration(Vertexelement9* arg0, ref uint pNumElements)
         {
             var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pNumElementsPtr = &pNumElements)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Vertexelement9*, uint*, int>)LpVtbl[4])(@this, arg0, pNumElementsPtr);
@@ -153,7 +155,7 @@ namespace Silk.NET.Direct3D9
         public readonly unsafe int GetDeclaration(ref Vertexelement9 arg0, uint* pNumElements)
         {
             var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Vertexelement9* arg0Ptr = &arg0)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Vertexelement9*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pNumElements);
@@ -165,7 +167,7 @@ namespace Silk.NET.Direct3D9
         public readonly int GetDeclaration(ref Vertexelement9 arg0, ref uint pNumElements)
         {
             var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Vertexelement9* arg0Ptr = &arg0)
             {
                 fixed (uint* pNumElementsPtr = &pNumElements)

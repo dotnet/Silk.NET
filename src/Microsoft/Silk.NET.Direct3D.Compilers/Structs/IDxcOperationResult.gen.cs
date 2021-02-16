@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D.Compilers
     [NativeName("Name", "IDxcOperationResult")]
     public unsafe partial struct IDxcOperationResult
     {
+        public static readonly Guid Guid = new("cedb484a-d4e9-445a-b991-ca21ca157dc2");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDxcOperationResult val)
             => Unsafe.As<IDxcOperationResult, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -45,7 +47,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -54,7 +56,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -66,7 +68,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -78,7 +80,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -93,8 +95,8 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly uint AddRef()
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, uint>)LpVtbl[1])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -102,8 +104,8 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly uint Release()
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, uint>)LpVtbl[2])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDxcOperationResult*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -111,7 +113,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetStatus(int* pStatus)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, int*, int>)LpVtbl[3])(@this, pStatus);
             return ret;
         }
@@ -120,7 +122,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly int GetStatus(ref int pStatus)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (int* pStatusPtr = &pStatus)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, int*, int>)LpVtbl[3])(@this, pStatusPtr);
@@ -132,7 +134,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetResult(IDxcBlob** pResult)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, IDxcBlob**, int>)LpVtbl[4])(@this, pResult);
             return ret;
         }
@@ -141,7 +143,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetResult(ref IDxcBlob* pResult)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDxcBlob** pResultPtr = &pResult)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, IDxcBlob**, int>)LpVtbl[4])(@this, pResultPtr);
@@ -153,7 +155,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetErrorBuffer(IDxcBlobEncoding** pErrors)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pErrors);
             return ret;
         }
@@ -162,7 +164,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetErrorBuffer(ref IDxcBlobEncoding* pErrors)
         {
             var @this = (IDxcOperationResult*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDxcBlobEncoding** pErrorsPtr = &pErrors)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcOperationResult*, IDxcBlobEncoding**, int>)LpVtbl[5])(@this, pErrorsPtr);

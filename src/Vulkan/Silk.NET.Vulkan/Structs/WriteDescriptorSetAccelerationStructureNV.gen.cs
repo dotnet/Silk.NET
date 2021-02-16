@@ -23,10 +23,10 @@ namespace Silk.NET.Vulkan
     {
         public WriteDescriptorSetAccelerationStructureNV
         (
-            StructureType? sType = StructureType.WriteDescriptorSetAccelerationStructureKhr,
+            StructureType? sType = StructureType.WriteDescriptorSetAccelerationStructureNV,
             void* pNext = null,
             uint? accelerationStructureCount = null,
-            AccelerationStructureKHR* pAccelerationStructures = null
+            AccelerationStructureNV* pAccelerationStructures = null
         ) : this()
         {
             if (sType is not null)
@@ -66,9 +66,9 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "accelerationStructureCount")]
         public uint AccelerationStructureCount;
 /// <summary></summary>
-        [NativeName("Type", "VkAccelerationStructureKHR*")]
-        [NativeName("Type.Name", "VkAccelerationStructureKHR")]
+        [NativeName("Type", "VkAccelerationStructureNV*")]
+        [NativeName("Type.Name", "VkAccelerationStructureNV")]
         [NativeName("Name", "pAccelerationStructures")]
-        public AccelerationStructureKHR* PAccelerationStructures;
+        public AccelerationStructureNV* PAccelerationStructures;
     }
 }

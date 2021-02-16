@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "ID3D12PipelineLibrary")]
     public unsafe partial struct ID3D12PipelineLibrary
     {
+        public static readonly Guid Guid = new("c64226a8-9201-46af-b4cc-53fb9ff7414f");
+
         public static implicit operator ID3D12DeviceChild(ID3D12PipelineLibrary val)
             => Unsafe.As<ID3D12PipelineLibrary, ID3D12DeviceChild>(ref val);
 
@@ -51,7 +53,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -60,7 +62,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -72,7 +74,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -84,7 +86,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -99,8 +101,8 @@ namespace Silk.NET.Direct3D12
         public readonly uint AddRef()
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, uint>)LpVtbl[1])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -108,8 +110,8 @@ namespace Silk.NET.Direct3D12
         public readonly uint Release()
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, uint>)LpVtbl[2])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -117,7 +119,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetPrivateData(Guid* guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSize, pData);
             return ret;
         }
@@ -126,7 +128,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetPrivateData<T0>(Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, uint*, T0*, int>)LpVtbl[3])(@this, guid, pDataSize, pDataPtr);
@@ -138,7 +140,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetPrivateData(Guid* guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guid, pDataSizePtr, pData);
@@ -150,7 +152,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetPrivateData<T0>(Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -165,7 +167,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetPrivateData(ref Guid guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, uint*, void*, int>)LpVtbl[3])(@this, guidPtr, pDataSize, pData);
@@ -177,7 +179,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetPrivateData<T0>(ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -192,7 +194,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetPrivateData(ref Guid guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
@@ -207,7 +209,7 @@ namespace Silk.NET.Direct3D12
         public readonly int GetPrivateData<T0>(ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
@@ -225,7 +227,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, void* pData)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guid, DataSize, pData);
             return ret;
         }
@@ -234,7 +236,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, uint, T0*, int>)LpVtbl[4])(@this, guid, DataSize, pDataPtr);
@@ -246,7 +248,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, void* pData)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, uint, void*, int>)LpVtbl[4])(@this, guidPtr, DataSize, pData);
@@ -258,7 +260,7 @@ namespace Silk.NET.Direct3D12
         public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -273,7 +275,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pData);
             return ret;
         }
@@ -282,7 +284,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guid, pDataPtr);
@@ -294,7 +296,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[5])(@this, guidPtr, pData);
@@ -306,7 +308,7 @@ namespace Silk.NET.Direct3D12
         public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
@@ -321,7 +323,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int SetName(char* Name)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, int>)LpVtbl[6])(@this, Name);
             return ret;
         }
@@ -330,7 +332,7 @@ namespace Silk.NET.Direct3D12
         public readonly int SetName(ref char Name)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* NamePtr = &Name)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, int>)LpVtbl[6])(@this, NamePtr);
@@ -342,7 +344,7 @@ namespace Silk.NET.Direct3D12
         public readonly int SetName(string Name)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var NamePtr = (byte*) Marshal.StringToHGlobalAnsi(Name);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, int>)LpVtbl[6])(@this, NamePtr);
             Marshal.FreeHGlobal((nint)NamePtr);
@@ -353,7 +355,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetDevice(Guid* riid, void** ppvDevice)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppvDevice);
             return ret;
         }
@@ -362,7 +364,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetDevice(Guid* riid, ref void* ppvDevice)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvDevicePtr = &ppvDevice)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[7])(@this, riid, ppvDevicePtr);
@@ -374,7 +376,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetDevice(ref Guid riid, void** ppvDevice)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, Guid*, void**, int>)LpVtbl[7])(@this, riidPtr, ppvDevice);
@@ -386,7 +388,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetDevice(ref Guid riid, ref void* ppvDevice)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvDevicePtr = &ppvDevice)
@@ -401,7 +403,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int StorePipeline(char* pName, ID3D12PipelineState* pPipeline)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pName, pPipeline);
             return ret;
         }
@@ -410,7 +412,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int StorePipeline(char* pName, ref ID3D12PipelineState pPipeline)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D12PipelineState* pPipelinePtr = &pPipeline)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pName, pPipelinePtr);
@@ -422,7 +424,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int StorePipeline(ref char pName, ID3D12PipelineState* pPipeline)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pNamePtr = &pName)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pNamePtr, pPipeline);
@@ -434,7 +436,7 @@ namespace Silk.NET.Direct3D12
         public readonly int StorePipeline(ref char pName, ref ID3D12PipelineState pPipeline)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pNamePtr = &pName)
             {
                 fixed (ID3D12PipelineState* pPipelinePtr = &pPipeline)
@@ -449,7 +451,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int StorePipeline(string pName, ID3D12PipelineState* pPipeline)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, ID3D12PipelineState*, int>)LpVtbl[8])(@this, pNamePtr, pPipeline);
             Marshal.FreeHGlobal((nint)pNamePtr);
@@ -460,7 +462,7 @@ namespace Silk.NET.Direct3D12
         public readonly int StorePipeline(string pName, ref ID3D12PipelineState pPipeline)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             fixed (ID3D12PipelineState* pPipelinePtr = &pPipeline)
             {
@@ -474,7 +476,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(char* pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDesc, riid, ppPipelineState);
             return ret;
         }
@@ -483,7 +485,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(char* pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppPipelineStatePtr = &ppPipelineState)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDesc, riid, ppPipelineStatePtr);
@@ -495,7 +497,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(char* pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDesc, riidPtr, ppPipelineState);
@@ -507,7 +509,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(char* pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
@@ -522,7 +524,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(char* pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pName, pDescPtr, riid, ppPipelineState);
@@ -534,7 +536,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(char* pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
@@ -549,7 +551,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(char* pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -564,7 +566,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(char* pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -582,7 +584,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(ref char pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pNamePtr = &pName)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineState);
@@ -594,7 +596,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(ref char pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pNamePtr = &pName)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
@@ -609,7 +611,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(ref char pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pNamePtr = &pName)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -624,7 +626,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(ref char pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pNamePtr = &pName)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -642,7 +644,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(ref char pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pNamePtr = &pName)
             {
                 fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
@@ -657,7 +659,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(ref char pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pNamePtr = &pName)
             {
                 fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
@@ -675,7 +677,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(ref char pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pNamePtr = &pName)
             {
                 fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
@@ -693,7 +695,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(ref char pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pNamePtr = &pName)
             {
                 fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
@@ -714,7 +716,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(string pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, GraphicsPipelineStateDesc*, Guid*, void**, int>)LpVtbl[9])(@this, pNamePtr, pDesc, riid, ppPipelineState);
             Marshal.FreeHGlobal((nint)pNamePtr);
@@ -725,7 +727,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(string pName, GraphicsPipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             fixed (void** ppPipelineStatePtr = &ppPipelineState)
             {
@@ -739,7 +741,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(string pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             fixed (Guid* riidPtr = &riid)
             {
@@ -753,7 +755,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(string pName, GraphicsPipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             fixed (Guid* riidPtr = &riid)
             {
@@ -770,7 +772,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(string pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
@@ -784,7 +786,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(string pName, ref GraphicsPipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
@@ -801,7 +803,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(string pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
@@ -818,7 +820,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadGraphicsPipeline(string pName, ref GraphicsPipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             fixed (GraphicsPipelineStateDesc* pDescPtr = &pDesc)
             {
@@ -838,7 +840,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(char* pName, ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDesc, riid, ppPipelineState);
             return ret;
         }
@@ -847,7 +849,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(char* pName, ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppPipelineStatePtr = &ppPipelineState)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDesc, riid, ppPipelineStatePtr);
@@ -859,7 +861,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(char* pName, ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDesc, riidPtr, ppPipelineState);
@@ -871,7 +873,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(char* pName, ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
@@ -886,7 +888,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(char* pName, ref ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pName, pDescPtr, riid, ppPipelineState);
@@ -898,7 +900,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(char* pName, ref ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
@@ -913,7 +915,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(char* pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -928,7 +930,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(char* pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -946,7 +948,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(ref char pName, ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pNamePtr = &pName)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, char*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineState);
@@ -958,7 +960,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(ref char pName, ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pNamePtr = &pName)
             {
                 fixed (void** ppPipelineStatePtr = &ppPipelineState)
@@ -973,7 +975,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(ref char pName, ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pNamePtr = &pName)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -988,7 +990,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(ref char pName, ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pNamePtr = &pName)
             {
                 fixed (Guid* riidPtr = &riid)
@@ -1006,7 +1008,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(ref char pName, ref ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pNamePtr = &pName)
             {
                 fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
@@ -1021,7 +1023,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(ref char pName, ref ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pNamePtr = &pName)
             {
                 fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
@@ -1039,7 +1041,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(ref char pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pNamePtr = &pName)
             {
                 fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
@@ -1057,7 +1059,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(ref char pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pNamePtr = &pName)
             {
                 fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
@@ -1078,7 +1080,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(string pName, ComputePipelineStateDesc* pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, byte*, ComputePipelineStateDesc*, Guid*, void**, int>)LpVtbl[10])(@this, pNamePtr, pDesc, riid, ppPipelineState);
             Marshal.FreeHGlobal((nint)pNamePtr);
@@ -1089,7 +1091,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(string pName, ComputePipelineStateDesc* pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             fixed (void** ppPipelineStatePtr = &ppPipelineState)
             {
@@ -1103,7 +1105,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(string pName, ComputePipelineStateDesc* pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             fixed (Guid* riidPtr = &riid)
             {
@@ -1117,7 +1119,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(string pName, ComputePipelineStateDesc* pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             fixed (Guid* riidPtr = &riid)
             {
@@ -1134,7 +1136,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(string pName, ref ComputePipelineStateDesc pDesc, Guid* riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
@@ -1148,7 +1150,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(string pName, ref ComputePipelineStateDesc pDesc, Guid* riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
@@ -1165,7 +1167,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(string pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, void** ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
@@ -1182,7 +1184,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int LoadComputePipeline(string pName, ref ComputePipelineStateDesc pDesc, ref Guid riid, ref void* ppPipelineState)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pNamePtr = (byte*) Marshal.StringToHGlobalAnsi(pName);
             fixed (ComputePipelineStateDesc* pDescPtr = &pDesc)
             {
@@ -1199,31 +1201,31 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly uint GetSerializedSize()
+        public readonly nuint GetSerializedSize()
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, uint>)LpVtbl[11])(@this);
+            nuint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D12PipelineLibrary*, nuint>)LpVtbl[11])(@this);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int Serialize(void* pData, uint DataSizeInBytes)
+        public readonly unsafe int Serialize(void* pData, nuint DataSizeInBytes)
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, void*, uint, int>)LpVtbl[12])(@this, pData, DataSizeInBytes);
+            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, void*, nuint, int>)LpVtbl[12])(@this, pData, DataSizeInBytes);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int Serialize<T0>(ref T0 pData, uint DataSizeInBytes) where T0 : unmanaged
+        public readonly int Serialize<T0>(ref T0 pData, nuint DataSizeInBytes) where T0 : unmanaged
         {
             var @this = (ID3D12PipelineLibrary*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, T0*, uint, int>)LpVtbl[12])(@this, pDataPtr, DataSizeInBytes);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12PipelineLibrary*, T0*, nuint, int>)LpVtbl[12])(@this, pDataPtr, DataSizeInBytes);
             }
             return ret;
         }

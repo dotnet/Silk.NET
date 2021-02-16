@@ -17,7 +17,7 @@ namespace BlankWindow
 {
     internal class Program
     {
-        public const bool Quieter = false;
+        public const bool Quieter = true;
 
         public static IWindow window;
 

@@ -23,12 +23,30 @@ namespace Silk.NET.Direct3D12
     {
         public VersionedRootSignatureDesc
         (
-            D3DRootSignatureVersion? version = null
+            D3DRootSignatureVersion? version = null,
+            VersionedRootSignatureDescUnion? anonymous = null,
+            RootSignatureDesc? desc10 = null,
+            RootSignatureDesc1? desc11 = null
         ) : this()
         {
             if (version is not null)
             {
                 Version = version.Value;
+            }
+
+            if (anonymous is not null)
+            {
+                Anonymous = anonymous.Value;
+            }
+
+            if (desc10 is not null)
+            {
+                Desc10 = desc10.Value;
+            }
+
+            if (desc11 is not null)
+            {
+                Desc11 = desc11.Value;
             }
         }
 
@@ -37,5 +55,38 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "D3D_ROOT_SIGNATURE_VERSION")]
         [NativeName("Name", "Version")]
         public D3DRootSignatureVersion Version;
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L3580_C5")]
+        [NativeName("Name", "anonymous1")]
+        public VersionedRootSignatureDescUnion Anonymous;
+#if NETSTANDARD2_1
+        public ref RootSignatureDesc Desc10
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Desc10;
+        }
+#else
+        public RootSignatureDesc Desc10
+        {
+            get => Anonymous.Desc10;
+            set => Anonymous.Desc10 = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref RootSignatureDesc1 Desc11
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Desc11;
+        }
+#else
+        public RootSignatureDesc1 Desc11
+        {
+            get => Anonymous.Desc11;
+            set => Anonymous.Desc11 = value;
+        }
+#endif
+
     }
 }

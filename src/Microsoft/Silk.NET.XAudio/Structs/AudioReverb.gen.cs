@@ -22,5 +22,7 @@ namespace Silk.NET.XAudio
     [NativeName("Name", "AudioReverb")]
     public unsafe partial struct AudioReverb
     {
+        public static readonly Guid Guid = new("c2633b16-471b-4498-b8c5-4f0959e2ec09");
+
     }
 }

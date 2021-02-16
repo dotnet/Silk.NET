@@ -19,6 +19,8 @@ namespace Silk.NET.Vulkan
         DescriptorPoolCreateFreeDescriptorSetBit = 1,
         [NativeName("Name", "VK_DESCRIPTOR_POOL_CREATE_UPDATE_AFTER_BIND_BIT_EXT")]
         DescriptorPoolCreateUpdateAfterBindBitExt = 2,
+        [NativeName("Name", "VK_DESCRIPTOR_POOL_CREATE_HOST_ONLY_BIT_VALVE")]
+        DescriptorPoolCreateHostOnlyBitValve = 4,
         [NativeName("Name", "VK_DESCRIPTOR_POOL_CREATE_UPDATE_AFTER_BIND_BIT")]
         DescriptorPoolCreateUpdateAfterBindBit = 2,
     }

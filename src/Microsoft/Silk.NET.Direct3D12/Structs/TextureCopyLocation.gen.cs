@@ -24,7 +24,10 @@ namespace Silk.NET.Direct3D12
         public TextureCopyLocation
         (
             ID3D12Resource* pResource = null,
-            TextureCopyType? type = null
+            TextureCopyType? type = null,
+            TextureCopyLocationUnion? anonymous = null,
+            PlacedSubresourceFootprint? placedFootprint = null,
+            uint? subresourceIndex = null
         ) : this()
         {
             if (pResource is not null)
@@ -35,6 +38,21 @@ namespace Silk.NET.Direct3D12
             if (type is not null)
             {
                 Type = type.Value;
+            }
+
+            if (anonymous is not null)
+            {
+                Anonymous = anonymous.Value;
+            }
+
+            if (placedFootprint is not null)
+            {
+                PlacedFootprint = placedFootprint.Value;
+            }
+
+            if (subresourceIndex is not null)
+            {
+                SubresourceIndex = subresourceIndex.Value;
             }
         }
 
@@ -48,5 +66,38 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type.Name", "D3D12_TEXTURE_COPY_TYPE")]
         [NativeName("Name", "Type")]
         public TextureCopyType Type;
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L2788_C5")]
+        [NativeName("Name", "anonymous1")]
+        public TextureCopyLocationUnion Anonymous;
+#if NETSTANDARD2_1
+        public ref PlacedSubresourceFootprint PlacedFootprint
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.PlacedFootprint;
+        }
+#else
+        public PlacedSubresourceFootprint PlacedFootprint
+        {
+            get => Anonymous.PlacedFootprint;
+            set => Anonymous.PlacedFootprint = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref uint SubresourceIndex
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.SubresourceIndex;
+        }
+#else
+        public uint SubresourceIndex
+        {
+            get => Anonymous.SubresourceIndex;
+            set => Anonymous.SubresourceIndex = value;
+        }
+#endif
+
     }
 }

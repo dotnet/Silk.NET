@@ -29,9 +29,9 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "VK_QUERY_TYPE_PERFORMANCE_QUERY_KHR")]
         PerformanceQueryKhr = 1000116000,
         [NativeName("Name", "VK_QUERY_TYPE_ACCELERATION_STRUCTURE_COMPACTED_SIZE_KHR")]
-        AccelerationStructureCompactedSizeKhr = 1000165000,
+        AccelerationStructureCompactedSizeKhr = 1000150000,
         [NativeName("Name", "VK_QUERY_TYPE_ACCELERATION_STRUCTURE_SERIALIZATION_SIZE_KHR")]
-        AccelerationStructureSerializationSizeKhr = 1000150000,
+        AccelerationStructureSerializationSizeKhr = 1000150001,
         [NativeName("Name", "VK_QUERY_TYPE_ACCELERATION_STRUCTURE_COMPACTED_SIZE_NV")]
         AccelerationStructureCompactedSizeNV = 1000165000,
         [NativeName("Name", "VK_QUERY_TYPE_PERFORMANCE_QUERY_INTEL")]

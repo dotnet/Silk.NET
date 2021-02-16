@@ -8,7 +8,7 @@ using System;
 namespace Silk.NET.SDL
 {
     /// <summary>
-    /// Singleton providing easy GLFW implementation access.
+    /// Singleton providing easy SDL implementation access.
     /// </summary>
     public static class SdlProvider
     {
@@ -35,26 +35,34 @@ namespace Silk.NET.SDL
         /// </summary>
         static SdlProvider()
         {
-            SDL = new Lazy<Sdl>
-            (
-                () =>
-                {
-                    var sdl = Sdl.GetApi();
-                    if (SetMainReady)
-                    {
-                        sdl.SetMainReady();
-                    }
+            UninitializedSDL = new Lazy<Sdl>(Sdl.GetApi);
+            SDL = new Lazy<Sdl>(GetSdl);
+        }
 
-                    sdl.Init(InitFlags);
-                    sdl.ThrowError();
+        private static Sdl GetSdl()
+        {
+            var sdl = UninitializedSDL.Value;
+            if (SetMainReady)
+            {
+                sdl.SetMainReady();
+            }
 
-                    return sdl;
-                }
-            );
+            #if DEBUG
+            Console.WriteLine("SDL initialized.");
+            #endif
+            sdl.Init(InitFlags);
+            sdl.ThrowError();
+
+            return sdl;
         }
 
         /// <summary>
-        /// Gets a GLFW interface implementation lazily.
+        /// Gets a SDL interface implementation lazily, without calling SDL_Init.
+        /// </summary>
+        public static Lazy<Sdl> UninitializedSDL { get; internal set; }
+
+        /// <summary>
+        /// Gets a SDL interface implementation lazily.
         /// </summary>
         public static Lazy<Sdl> SDL { get; internal set; }
 
@@ -64,22 +72,9 @@ namespace Silk.NET.SDL
         public static void Unload()
         {
             SDL.Value.Quit();
-            SDL = new Lazy<Sdl>
-            (
-                () =>
-                {
-                    var sdl = Sdl.GetApi();
-                    if (SetMainReady)
-                    {
-                        sdl.SetMainReady();
-                    }
-
-                    sdl.Init(InitFlags);
-                    sdl.ThrowError();
-
-                    return sdl;
-                }
-            );
+            SDL.Value.Dispose();
+            UninitializedSDL = new Lazy<Sdl>(Sdl.GetApi);
+            SDL = new Lazy<Sdl>(GetSdl);
         }
     }
 }

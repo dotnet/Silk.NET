@@ -23,7 +23,7 @@ namespace Silk.NET.Direct3D12
     {
         public PipelineStateStreamDesc
         (
-            uint? sizeInBytes = null,
+            nuint? sizeInBytes = null,
             void* pPipelineStateSubobjectStream = null
         ) : this()
         {
@@ -42,7 +42,7 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "SIZE_T")]
         [NativeName("Type.Name", "SIZE_T")]
         [NativeName("Name", "SizeInBytes")]
-        public uint SizeInBytes;
+        public nuint SizeInBytes;
 
         [NativeName("Type", "void *")]
         [NativeName("Type.Name", "void *")]

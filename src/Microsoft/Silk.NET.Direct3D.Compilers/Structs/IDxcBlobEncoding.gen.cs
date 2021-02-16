@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D.Compilers
     [NativeName("Name", "IDxcBlobEncoding")]
     public unsafe partial struct IDxcBlobEncoding
     {
+        public static readonly Guid Guid = new("7241d424-2646-4191-97c0-98e96e42fc68");
+
         public static implicit operator IDxcBlob(IDxcBlobEncoding val)
             => Unsafe.As<IDxcBlobEncoding, IDxcBlob>(ref val);
 
@@ -48,7 +50,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (IDxcBlobEncoding*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcBlobEncoding*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -57,7 +59,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (IDxcBlobEncoding*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcBlobEncoding*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -69,7 +71,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (IDxcBlobEncoding*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcBlobEncoding*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -81,7 +83,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (IDxcBlobEncoding*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -96,8 +98,8 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly uint AddRef()
         {
             var @this = (IDxcBlobEncoding*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcBlobEncoding*, uint>)LpVtbl[1])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDxcBlobEncoding*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -105,8 +107,8 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly uint Release()
         {
             var @this = (IDxcBlobEncoding*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcBlobEncoding*, uint>)LpVtbl[2])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDxcBlobEncoding*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -114,17 +116,17 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe void* GetBufferPointer()
         {
             var @this = (IDxcBlobEncoding*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                void* ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcBlobEncoding*, void*>)LpVtbl[3])(@this);
+            void* ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDxcBlobEncoding*, void*>)LpVtbl[3])(@this);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly uint GetBufferSize()
+        public readonly nuint GetBufferSize()
         {
             var @this = (IDxcBlobEncoding*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcBlobEncoding*, uint>)LpVtbl[4])(@this);
+            nuint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDxcBlobEncoding*, nuint>)LpVtbl[4])(@this);
             return ret;
         }
 
@@ -132,7 +134,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetEncoding(int* pKnown, uint* pCodePage)
         {
             var @this = (IDxcBlobEncoding*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcBlobEncoding*, int*, uint*, int>)LpVtbl[5])(@this, pKnown, pCodePage);
             return ret;
         }
@@ -141,7 +143,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetEncoding(int* pKnown, ref uint pCodePage)
         {
             var @this = (IDxcBlobEncoding*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pCodePagePtr = &pCodePage)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcBlobEncoding*, int*, uint*, int>)LpVtbl[5])(@this, pKnown, pCodePagePtr);
@@ -153,7 +155,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetEncoding(ref int pKnown, uint* pCodePage)
         {
             var @this = (IDxcBlobEncoding*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (int* pKnownPtr = &pKnown)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcBlobEncoding*, int*, uint*, int>)LpVtbl[5])(@this, pKnownPtr, pCodePage);
@@ -165,7 +167,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly int GetEncoding(ref int pKnown, ref uint pCodePage)
         {
             var @this = (IDxcBlobEncoding*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (int* pKnownPtr = &pKnown)
             {
                 fixed (uint* pCodePagePtr = &pCodePage)

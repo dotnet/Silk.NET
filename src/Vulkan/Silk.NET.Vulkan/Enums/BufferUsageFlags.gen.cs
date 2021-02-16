@@ -47,14 +47,14 @@ namespace Silk.NET.Vulkan
         BufferUsageTransformFeedbackCounterBufferBitExt = 4096,
         [NativeName("Name", "VK_BUFFER_USAGE_CONDITIONAL_RENDERING_BIT_EXT")]
         BufferUsageConditionalRenderingBitExt = 512,
-        [NativeName("Name", "VK_BUFFER_USAGE_RAY_TRACING_BIT_KHR")]
-        BufferUsageRayTracingBitKhr = 1024,
+        [NativeName("Name", "VK_BUFFER_USAGE_ACCELERATION_STRUCTURE_BUILD_INPUT_READ_ONLY_BIT_KHR")]
+        BufferUsageAccelerationStructureBuildInputReadOnlyBitKhr = 524288,
+        [NativeName("Name", "VK_BUFFER_USAGE_ACCELERATION_STRUCTURE_STORAGE_BIT_KHR")]
+        BufferUsageAccelerationStructureStorageBitKhr = 1048576,
+        [NativeName("Name", "VK_BUFFER_USAGE_SHADER_BINDING_TABLE_BIT_KHR")]
+        BufferUsageShaderBindingTableBitKhr = 1024,
         [NativeName("Name", "VK_BUFFER_USAGE_RAY_TRACING_BIT_NV")]
         BufferUsageRayTracingBitNV = 1024,
-        [NativeName("Name", "VK_BUFFER_USAGE_RESERVED_19_BIT_KHR")]
-        BufferUsageReserved19BitKhr = 524288,
-        [NativeName("Name", "VK_BUFFER_USAGE_RESERVED_20_BIT_KHR")]
-        BufferUsageReserved20BitKhr = 1048576,
         [NativeName("Name", "VK_BUFFER_USAGE_RESERVED_18_BIT_QCOM")]
         BufferUsageReserved18BitQCom = 262144,
         [NativeName("Name", "VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT_EXT")]

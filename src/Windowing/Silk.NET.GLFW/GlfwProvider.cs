@@ -17,27 +17,36 @@ namespace Silk.NET.GLFW
         /// </summary>
         static unsafe GlfwProvider()
         {
-            GLFW = new Lazy<Glfw>
-            (
-                () =>
-                {
-
-                    var glfw = Glfw.GetApi();
-
-                    if (!glfw.Init())
-                    {
-                        var code = glfw.GetError(out byte* pDesc);
-                        var len = new ReadOnlySpan<byte>(pDesc, int.MaxValue).IndexOf((byte) '\0');
-                        var desc = len <= 0 ? "Unknown" : System.Text.Encoding.UTF8.GetString(pDesc, len);
-                        throw new GlfwException($"GLFW Init failed, {code}: {desc}");
-                    }
-
-                    glfw.SetErrorCallback(Glfw.ErrorCallback);
-
-                    return glfw;
-                }
-            );
+            UninitializedGLFW = new Lazy<Glfw>(Glfw.GetApi);
+            GLFW = new Lazy<Glfw>(GetGlfw);
         }
+
+        private static unsafe Glfw GetGlfw()
+        {
+            var glfw = UninitializedGLFW.Value;
+
+            if (!glfw.Init())
+            {
+                var code = glfw.GetError(out var pDesc);
+                var len = new ReadOnlySpan<byte>(pDesc, int.MaxValue).IndexOf((byte) '\0');
+                var desc = len <= 0 ? "Unknown" : System.Text.Encoding.UTF8.GetString(pDesc, len);
+                throw new GlfwException($"GLFW Init failed, {code}: {desc}");
+            }
+
+#if DEBUG
+            Console.WriteLine("GLFW initialized");
+#endif
+
+            glfw.SetErrorCallback(Glfw.ErrorCallback);
+
+            return glfw;
+        }
+        
+        /// <summary>
+        /// Gets a GLFW interface implementation lazily.
+        /// </summary>
+        public static Lazy<Glfw> UninitializedGLFW { get; internal set; }
+
         /// <summary>
         /// Gets a GLFW interface implementation lazily.
         /// </summary>
@@ -49,17 +58,9 @@ namespace Silk.NET.GLFW
         public static void Unload()
         {
             GLFW.Value.Terminate();
-            GLFW = new Lazy<Glfw>
-            (
-                () =>
-                {
-                    var glfw = Glfw.GetApi();
-                    glfw.Init();
-                    glfw.SetErrorCallback(Glfw.ErrorCallback);
-
-                    return glfw;
-                }
-            );
+            GLFW.Value.Dispose();
+            UninitializedGLFW = new Lazy<Glfw>(Glfw.GetApi);
+            GLFW = new Lazy<Glfw>(GetGlfw);
         }
     }
 }

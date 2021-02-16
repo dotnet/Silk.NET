@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D.Compilers
     [NativeName("Name", "IDxcIncludeHandler")]
     public unsafe partial struct IDxcIncludeHandler
     {
+        public static readonly Guid Guid = new("7f61fc7d-950d-467f-b3e3-3c02fb49187c");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDxcIncludeHandler val)
             => Unsafe.As<IDxcIncludeHandler, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -45,7 +47,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -54,7 +56,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -66,7 +68,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcIncludeHandler*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -78,7 +80,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -93,8 +95,8 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly uint AddRef()
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcIncludeHandler*, uint>)LpVtbl[1])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDxcIncludeHandler*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -102,8 +104,8 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly uint Release()
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcIncludeHandler*, uint>)LpVtbl[2])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDxcIncludeHandler*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -111,7 +113,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int LoadSource(char* pFilename, IDxcBlob** ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcIncludeHandler*, char*, IDxcBlob**, int>)LpVtbl[3])(@this, pFilename, ppIncludeSource);
             return ret;
         }
@@ -120,7 +122,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int LoadSource(char* pFilename, ref IDxcBlob* ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IDxcBlob** ppIncludeSourcePtr = &ppIncludeSource)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcIncludeHandler*, char*, IDxcBlob**, int>)LpVtbl[3])(@this, pFilename, ppIncludeSourcePtr);
@@ -132,7 +134,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int LoadSource(ref char pFilename, IDxcBlob** ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pFilenamePtr = &pFilename)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcIncludeHandler*, char*, IDxcBlob**, int>)LpVtbl[3])(@this, pFilenamePtr, ppIncludeSource);
@@ -144,7 +146,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int LoadSource(ref char pFilename, ref IDxcBlob* ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* pFilenamePtr = &pFilename)
             {
                 fixed (IDxcBlob** ppIncludeSourcePtr = &ppIncludeSource)
@@ -159,7 +161,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int LoadSource(string pFilename, IDxcBlob** ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pFilenamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFilename);
             ret = ((delegate* unmanaged[Cdecl]<IDxcIncludeHandler*, byte*, IDxcBlob**, int>)LpVtbl[3])(@this, pFilenamePtr, ppIncludeSource);
             Marshal.FreeHGlobal((nint)pFilenamePtr);
@@ -170,7 +172,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int LoadSource(string pFilename, ref IDxcBlob* ppIncludeSource)
         {
             var @this = (IDxcIncludeHandler*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var pFilenamePtr = (byte*) Marshal.StringToHGlobalAnsi(pFilename);
             fixed (IDxcBlob** ppIncludeSourcePtr = &ppIncludeSource)
             {

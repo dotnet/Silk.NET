@@ -20,14 +20,10 @@ namespace Silk.NET.Windowing.Glfw
     internal class GlfwPlatform : IWindowPlatform
     {
         private IWindow? _lastCreatedWindow;
-        
-        /// <inheritdoc />
-        public bool IsViewOnly { get; } = false;
 
-        /// <inheritdoc />
-        public bool IsApplicable
-        {
-            get
+        private Lazy<bool> _isApplicable = new Lazy<bool>
+        (
+            () =>
             {
                 try
                 {
@@ -43,14 +39,38 @@ namespace Silk.NET.Windowing.Glfw
 
                 return true;
             }
-        }
+        );
+        
+        /// <inheritdoc />
+        public bool IsViewOnly { get; } = false;
 
         /// <inheritdoc />
-        public IWindow CreateWindow(WindowOptions options) => _lastCreatedWindow = new GlfwWindow(options, null, null);
+        public bool IsApplicable => _isApplicable.Value;
+        
+        private static void ThrowUnsupported()
+            => throw new PlatformNotSupportedException("GLFW is not supported on this platform.");
+
+        /// <inheritdoc />
+        public IWindow CreateWindow(WindowOptions options)
+        {
+            if (!IsApplicable)
+            {
+                ThrowUnsupported();
+                return null!;
+            }
+            
+            return _lastCreatedWindow = new GlfwWindow(options, null, null);
+        }
 
         /// <inheritdoc />
         public IView GetView(ViewOptions? opts = null)
         {
+            if (!IsApplicable)
+            {
+                ThrowUnsupported();
+                return null!;
+            }
+            
             return opts switch
             {
                 null when _lastCreatedWindow is null => throw new InvalidOperationException

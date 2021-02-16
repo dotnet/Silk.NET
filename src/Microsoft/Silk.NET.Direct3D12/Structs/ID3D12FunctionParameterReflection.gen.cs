@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D12
     [NativeName("Name", "ID3D12FunctionParameterReflection")]
     public unsafe partial struct ID3D12FunctionParameterReflection
     {
+        public static readonly Guid Guid = new("ec25f42d-7006-4f2b-b33e-02cc3375733f");
+
         public ID3D12FunctionParameterReflection
         (
             void** lpVtbl = null
@@ -42,7 +44,7 @@ namespace Silk.NET.Direct3D12
         public readonly unsafe int GetDesc(ParameterDesc* pDesc)
         {
             var @this = (ID3D12FunctionParameterReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D12FunctionParameterReflection*, ParameterDesc*, int>)LpVtbl[0])(@this, pDesc);
             return ret;
         }
@@ -51,7 +53,7 @@ namespace Silk.NET.Direct3D12
         public readonly int GetDesc(ref ParameterDesc pDesc)
         {
             var @this = (ID3D12FunctionParameterReflection*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ParameterDesc* pDescPtr = &pDesc)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D12FunctionParameterReflection*, ParameterDesc*, int>)LpVtbl[0])(@this, pDescPtr);

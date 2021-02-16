@@ -660,6 +660,8 @@ namespace Silk.NET.Windowing.Glfw
             }
         }
 
+        protected override INativeWindow GetNativeWindow() => new GlfwNativeWindow(_glfw, _glfwWindow);
+
         public override event Action<Vector2D<int>>? Resize;
         public override event Action<Vector2D<int>>? FramebufferResize;
         public override event Action? Closing;
@@ -689,6 +691,6 @@ namespace Silk.NET.Windowing.Glfw
             return surface[0];
         }
 
-        public byte** GetRequiredExtensions(out uint count) => (byte**) _glfw.GetRequiredInstanceExtensions(out count);
+        public byte** GetRequiredExtensions(out uint count) => _glfw.GetRequiredInstanceExtensions(out count);
     }
 }

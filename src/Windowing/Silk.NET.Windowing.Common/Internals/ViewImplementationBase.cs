@@ -76,6 +76,7 @@ namespace Silk.NET.Windowing.Internals
         public abstract void Close();
         protected abstract void RegisterCallbacks();
         protected abstract void UnregisterCallbacks();
+        protected abstract INativeWindow GetNativeWindow();
 
         // Events
         public abstract event Action<Vector2D<int>>? Resize;
@@ -104,6 +105,7 @@ namespace Silk.NET.Windowing.Internals
             IsEventDriven = _optionsCache.IsEventDriven;
             GLContext?.MakeCurrent();
             _swapIntervalChanged = true;
+            Native = GetNativeWindow();
             Load?.Invoke();
         }
 
@@ -114,6 +116,7 @@ namespace Silk.NET.Windowing.Internals
             _lifetimeStopwatch.Reset();
             CoreReset();
             UnregisterCallbacks();
+            Native = null;
             IsInitialized = false;
         }
 
@@ -188,6 +191,7 @@ namespace Silk.NET.Windowing.Internals
 
         // Misc properties
         protected bool IsInitialized { get; set; }
+        public INativeWindow? Native { get; private set; }
         public Vector2D<int> Size => IsInitialized ? CoreSize : default;
         public nint Handle => IsInitialized ? CoreHandle : 0;
         public GraphicsAPI API => _optionsCache.API;

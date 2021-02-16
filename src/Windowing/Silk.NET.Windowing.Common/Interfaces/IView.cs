@@ -12,7 +12,7 @@ namespace Silk.NET.Windowing
     /// <summary>
     /// Represents a window view.
     /// </summary>
-    public interface IView : IViewProperties, IGLContextSource, IVkSurfaceSource, IDisposable
+    public interface IView : IViewProperties, IGLContextSource, IVkSurfaceSource, IDisposable, INativeWindowSource
     {
         /// <summary>
         /// A handle to the underlying window.

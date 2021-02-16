@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D.Compilers
     [NativeName("Name", "IDxcOptimizerPass")]
     public unsafe partial struct IDxcOptimizerPass
     {
+        public static readonly Guid Guid = new("ae2cd79f-cc22-453f-9b6b-b124e7a5204c");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(IDxcOptimizerPass val)
             => Unsafe.As<IDxcOptimizerPass, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -45,7 +47,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -54,7 +56,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -66,7 +68,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -78,7 +80,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -93,8 +95,8 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly uint AddRef()
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint>)LpVtbl[1])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -102,8 +104,8 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly uint Release()
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint>)LpVtbl[2])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<IDxcOptimizerPass*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -111,7 +113,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetOptionName(char** ppResult)
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, char**, int>)LpVtbl[3])(@this, ppResult);
             return ret;
         }
@@ -120,7 +122,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetOptionName(ref char* ppResult)
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char** ppResultPtr = &ppResult)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, char**, int>)LpVtbl[3])(@this, ppResultPtr);
@@ -132,7 +134,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetDescription(char** ppResult)
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, char**, int>)LpVtbl[4])(@this, ppResult);
             return ret;
         }
@@ -141,7 +143,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetDescription(ref char* ppResult)
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char** ppResultPtr = &ppResult)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, char**, int>)LpVtbl[4])(@this, ppResultPtr);
@@ -153,7 +155,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetOptionArgCount(uint* pCount)
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint*, int>)LpVtbl[5])(@this, pCount);
             return ret;
         }
@@ -162,7 +164,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly int GetOptionArgCount(ref uint pCount)
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pCountPtr = &pCount)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint*, int>)LpVtbl[5])(@this, pCountPtr);
@@ -174,7 +176,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetOptionArgName(uint argIndex, char** ppResult)
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[6])(@this, argIndex, ppResult);
             return ret;
         }
@@ -183,7 +185,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetOptionArgName(uint argIndex, ref char* ppResult)
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char** ppResultPtr = &ppResult)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[6])(@this, argIndex, ppResultPtr);
@@ -195,7 +197,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetOptionArgDescription(uint argIndex, char** ppResult)
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[7])(@this, argIndex, ppResult);
             return ret;
         }
@@ -204,7 +206,7 @@ namespace Silk.NET.Direct3D.Compilers
         public readonly unsafe int GetOptionArgDescription(uint argIndex, ref char* ppResult)
         {
             var @this = (IDxcOptimizerPass*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char** ppResultPtr = &ppResult)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IDxcOptimizerPass*, uint, char**, int>)LpVtbl[7])(@this, argIndex, ppResultPtr);

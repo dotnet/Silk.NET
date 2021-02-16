@@ -15,8 +15,12 @@ namespace Silk.NET.Vulkan
     [NativeName("Name", "VkPerformanceCounterDescriptionFlagsKHR")]
     public enum PerformanceCounterDescriptionFlagsKHR : int
     {
+        [NativeName("Name", "VK_PERFORMANCE_COUNTER_DESCRIPTION_PERFORMANCE_IMPACTING_BIT_KHR")]
+        PerformanceCounterDescriptionPerformanceImpactingBitKhr = 1,
         [NativeName("Name", "VK_PERFORMANCE_COUNTER_DESCRIPTION_PERFORMANCE_IMPACTING_KHR")]
         PerformanceCounterDescriptionPerformanceImpactingKhr = 1,
+        [NativeName("Name", "VK_PERFORMANCE_COUNTER_DESCRIPTION_CONCURRENTLY_IMPACTED_BIT_KHR")]
+        PerformanceCounterDescriptionConcurrentlyImpactedBitKhr = 2,
         [NativeName("Name", "VK_PERFORMANCE_COUNTER_DESCRIPTION_CONCURRENTLY_IMPACTED_KHR")]
         PerformanceCounterDescriptionConcurrentlyImpactedKhr = 2,
     }

@@ -1298,6 +1298,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         SkipDecodeExt = 0x8A4A,
         [NativeName("Name", "GL_SR8_EXT")]
         SR8Ext = 0x8FBD,
+        [NativeName("Name", "GL_SRG8_EXT")]
+        Srg8Ext = 0x8FBE,
         [NativeName("Name", "GL_TEXTURE_SWIZZLE_R_EXT")]
         TextureSwizzleRExt = 0x8E42,
         [NativeName("Name", "GL_TEXTURE_SWIZZLE_G_EXT")]

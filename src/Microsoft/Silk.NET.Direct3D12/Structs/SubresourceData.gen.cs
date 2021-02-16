@@ -24,8 +24,8 @@ namespace Silk.NET.Direct3D12
         public SubresourceData
         (
             void* pData = null,
-            int? rowPitch = null,
-            int? slicePitch = null
+            nint? rowPitch = null,
+            nint? slicePitch = null
         ) : this()
         {
             if (pData is not null)
@@ -53,11 +53,11 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "LONG_PTR")]
         [NativeName("Type.Name", "LONG_PTR")]
         [NativeName("Name", "RowPitch")]
-        public int RowPitch;
+        public nint RowPitch;
 
         [NativeName("Type", "LONG_PTR")]
         [NativeName("Type.Name", "LONG_PTR")]
         [NativeName("Name", "SlicePitch")]
-        public int SlicePitch;
+        public nint SlicePitch;
     }
 }

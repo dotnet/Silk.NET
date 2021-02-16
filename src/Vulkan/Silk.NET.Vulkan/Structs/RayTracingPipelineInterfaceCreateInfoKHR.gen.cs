@@ -25,9 +25,8 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.RayTracingPipelineInterfaceCreateInfoKhr,
             void* pNext = null,
-            uint? maxPayloadSize = null,
-            uint? maxAttributeSize = null,
-            uint? maxCallableSize = null
+            uint? maxPipelineRayPayloadSize = null,
+            uint? maxPipelineRayHitAttributeSize = null
         ) : this()
         {
             if (sType is not null)
@@ -40,19 +39,14 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (maxPayloadSize is not null)
+            if (maxPipelineRayPayloadSize is not null)
             {
-                MaxPayloadSize = maxPayloadSize.Value;
+                MaxPipelineRayPayloadSize = maxPipelineRayPayloadSize.Value;
             }
 
-            if (maxAttributeSize is not null)
+            if (maxPipelineRayHitAttributeSize is not null)
             {
-                MaxAttributeSize = maxAttributeSize.Value;
-            }
-
-            if (maxCallableSize is not null)
-            {
-                MaxCallableSize = maxCallableSize.Value;
+                MaxPipelineRayHitAttributeSize = maxPipelineRayHitAttributeSize.Value;
             }
         }
 
@@ -69,17 +63,12 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxPayloadSize")]
-        public uint MaxPayloadSize;
+        [NativeName("Name", "maxPipelineRayPayloadSize")]
+        public uint MaxPipelineRayPayloadSize;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxAttributeSize")]
-        public uint MaxAttributeSize;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxCallableSize")]
-        public uint MaxCallableSize;
+        [NativeName("Name", "maxPipelineRayHitAttributeSize")]
+        public uint MaxPipelineRayHitAttributeSize;
     }
 }

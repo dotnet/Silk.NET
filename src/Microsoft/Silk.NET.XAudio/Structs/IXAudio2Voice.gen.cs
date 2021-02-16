@@ -58,7 +58,7 @@ namespace Silk.NET.XAudio
         public readonly unsafe int SetOutputVoices(VoiceSends* pSendList)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, VoiceSends*, int>)LpVtbl[1])(@this, pSendList);
             return ret;
         }
@@ -67,7 +67,7 @@ namespace Silk.NET.XAudio
         public readonly int SetOutputVoices(ref VoiceSends pSendList)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (VoiceSends* pSendListPtr = &pSendList)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, VoiceSends*, int>)LpVtbl[1])(@this, pSendListPtr);
@@ -79,7 +79,7 @@ namespace Silk.NET.XAudio
         public readonly unsafe int SetEffectChain(EffectChain* pEffectChain)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, EffectChain*, int>)LpVtbl[2])(@this, pEffectChain);
             return ret;
         }
@@ -88,7 +88,7 @@ namespace Silk.NET.XAudio
         public readonly int SetEffectChain(ref EffectChain pEffectChain)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (EffectChain* pEffectChainPtr = &pEffectChain)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, EffectChain*, int>)LpVtbl[2])(@this, pEffectChainPtr);
@@ -100,7 +100,7 @@ namespace Silk.NET.XAudio
         public readonly int EnableEffect(uint EffectIndex, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, uint, uint, int>)LpVtbl[3])(@this, EffectIndex, OperationSet);
             return ret;
         }
@@ -109,7 +109,7 @@ namespace Silk.NET.XAudio
         public readonly int DisableEffect(uint EffectIndex, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, uint, uint, int>)LpVtbl[4])(@this, EffectIndex, OperationSet);
             return ret;
         }
@@ -135,7 +135,7 @@ namespace Silk.NET.XAudio
         public readonly unsafe int SetEffectParameters(uint EffectIndex, void* pParameters, uint ParametersByteSize, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, uint, void*, uint, uint, int>)LpVtbl[6])(@this, EffectIndex, pParameters, ParametersByteSize, OperationSet);
             return ret;
         }
@@ -144,7 +144,7 @@ namespace Silk.NET.XAudio
         public readonly int SetEffectParameters<T0>(uint EffectIndex, ref T0 pParameters, uint ParametersByteSize, uint OperationSet) where T0 : unmanaged
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pParametersPtr = &pParameters)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, uint, T0*, uint, uint, int>)LpVtbl[6])(@this, EffectIndex, pParametersPtr, ParametersByteSize, OperationSet);
@@ -156,7 +156,7 @@ namespace Silk.NET.XAudio
         public readonly unsafe int GetEffectParameters(uint EffectIndex, void* pParameters, uint ParametersByteSize)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, uint, void*, uint, int>)LpVtbl[7])(@this, EffectIndex, pParameters, ParametersByteSize);
             return ret;
         }
@@ -165,7 +165,7 @@ namespace Silk.NET.XAudio
         public readonly int GetEffectParameters<T0>(uint EffectIndex, ref T0 pParameters, uint ParametersByteSize) where T0 : unmanaged
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pParametersPtr = &pParameters)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, uint, T0*, uint, int>)LpVtbl[7])(@this, EffectIndex, pParametersPtr, ParametersByteSize);
@@ -177,7 +177,7 @@ namespace Silk.NET.XAudio
         public readonly unsafe int SetFilterParameters(FilterParameters* pParameters, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[8])(@this, pParameters, OperationSet);
             return ret;
         }
@@ -186,7 +186,7 @@ namespace Silk.NET.XAudio
         public readonly int SetFilterParameters(ref FilterParameters pParameters, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (FilterParameters* pParametersPtr = &pParameters)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[8])(@this, pParametersPtr, OperationSet);
@@ -215,7 +215,7 @@ namespace Silk.NET.XAudio
         public readonly unsafe int SetOutputFilterParameters(IXAudio2Voice* pDestinationVoice, FilterParameters* pParameters, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[10])(@this, pDestinationVoice, pParameters, OperationSet);
             return ret;
         }
@@ -224,7 +224,7 @@ namespace Silk.NET.XAudio
         public readonly unsafe int SetOutputFilterParameters(IXAudio2Voice* pDestinationVoice, ref FilterParameters pParameters, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (FilterParameters* pParametersPtr = &pParameters)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[10])(@this, pDestinationVoice, pParametersPtr, OperationSet);
@@ -236,7 +236,7 @@ namespace Silk.NET.XAudio
         public readonly unsafe int SetOutputFilterParameters(ref IXAudio2Voice pDestinationVoice, FilterParameters* pParameters, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IXAudio2Voice* pDestinationVoicePtr = &pDestinationVoice)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, FilterParameters*, uint, int>)LpVtbl[10])(@this, pDestinationVoicePtr, pParameters, OperationSet);
@@ -248,7 +248,7 @@ namespace Silk.NET.XAudio
         public readonly int SetOutputFilterParameters(ref IXAudio2Voice pDestinationVoice, ref FilterParameters pParameters, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IXAudio2Voice* pDestinationVoicePtr = &pDestinationVoice)
             {
                 fixed (FilterParameters* pParametersPtr = &pParameters)
@@ -303,7 +303,7 @@ namespace Silk.NET.XAudio
         public readonly int SetVolume(float Volume, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, float, uint, int>)LpVtbl[12])(@this, Volume, OperationSet);
             return ret;
         }
@@ -329,7 +329,7 @@ namespace Silk.NET.XAudio
         public readonly unsafe int SetChannelVolumes(uint Channels, float* pVolumes, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, uint, float*, uint, int>)LpVtbl[14])(@this, Channels, pVolumes, OperationSet);
             return ret;
         }
@@ -338,7 +338,7 @@ namespace Silk.NET.XAudio
         public readonly int SetChannelVolumes(uint Channels, ref float pVolumes, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (float* pVolumesPtr = &pVolumes)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, uint, float*, uint, int>)LpVtbl[14])(@this, Channels, pVolumesPtr, OperationSet);
@@ -367,7 +367,7 @@ namespace Silk.NET.XAudio
         public readonly unsafe int SetOutputMatrix(IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, float* pLevelMatrix, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, uint, int>)LpVtbl[16])(@this, pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrix, OperationSet);
             return ret;
         }
@@ -376,7 +376,7 @@ namespace Silk.NET.XAudio
         public readonly unsafe int SetOutputMatrix(IXAudio2Voice* pDestinationVoice, uint SourceChannels, uint DestinationChannels, ref float pLevelMatrix, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (float* pLevelMatrixPtr = &pLevelMatrix)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, uint, int>)LpVtbl[16])(@this, pDestinationVoice, SourceChannels, DestinationChannels, pLevelMatrixPtr, OperationSet);
@@ -388,7 +388,7 @@ namespace Silk.NET.XAudio
         public readonly unsafe int SetOutputMatrix(ref IXAudio2Voice pDestinationVoice, uint SourceChannels, uint DestinationChannels, float* pLevelMatrix, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IXAudio2Voice* pDestinationVoicePtr = &pDestinationVoice)
             {
                 ret = ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, IXAudio2Voice*, uint, uint, float*, uint, int>)LpVtbl[16])(@this, pDestinationVoicePtr, SourceChannels, DestinationChannels, pLevelMatrix, OperationSet);
@@ -400,7 +400,7 @@ namespace Silk.NET.XAudio
         public readonly int SetOutputMatrix(ref IXAudio2Voice pDestinationVoice, uint SourceChannels, uint DestinationChannels, ref float pLevelMatrix, uint OperationSet)
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (IXAudio2Voice* pDestinationVoicePtr = &pDestinationVoice)
             {
                 fixed (float* pLevelMatrixPtr = &pLevelMatrix)
@@ -455,7 +455,7 @@ namespace Silk.NET.XAudio
         public readonly void DestroyVoice()
         {
             var @this = (IXAudio2Voice*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IXAudio2Voice*, void>)LpVtbl[18])(@this);
+            ((delegate* unmanaged[Stdcall]<IXAudio2Voice*, void>)LpVtbl[18])(@this);
         }
 
     }

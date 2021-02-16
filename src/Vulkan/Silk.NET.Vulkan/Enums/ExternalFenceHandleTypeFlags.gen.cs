@@ -23,5 +23,9 @@ namespace Silk.NET.Vulkan
         ExternalFenceHandleTypeOpaqueWin32KmtBit = 4,
         [NativeName("Name", "VK_EXTERNAL_FENCE_HANDLE_TYPE_SYNC_FD_BIT")]
         ExternalFenceHandleTypeSyncFDBit = 8,
+        [NativeName("Name", "VK_EXTERNAL_FENCE_HANDLE_TYPE_RESERVED_4_BIT_NV")]
+        ExternalFenceHandleTypeReserved4BitNV = 16,
+        [NativeName("Name", "VK_EXTERNAL_FENCE_HANDLE_TYPE_RESERVED_5_BIT_NV")]
+        ExternalFenceHandleTypeReserved5BitNV = 32,
     }
 }

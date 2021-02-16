@@ -70,7 +70,7 @@ namespace Silk.NET.BuildTools
                 var i1 = i;
                 if (TestMode)
                 {
-                    RunTask(config.Tasks[i1]);
+                    RunTaskUnguarded(config.Tasks[i1]);
                 }
                 else
                 {
@@ -114,6 +114,24 @@ namespace Silk.NET.BuildTools
                     new KeyValuePair<string, (TimeSpan, bool)>(task.Name, (sw.Elapsed, true));
             }
         }
+
+        public static void RunTaskUnguarded(BindTask task)
+        {
+            Stopwatch sw = null;
+            if (!(Program.ConsoleWriter.Instance is null))
+            {
+                Program.ConsoleWriter.Instance.CurrentName.Value = task.Name;
+                sw = Stopwatch.StartNew();
+            }
+            
+            RunTask(task, sw);
+            
+            if (sw is not null)
+            {
+                Program.ConsoleWriter.Instance.Timings.Value =
+                    new KeyValuePair<string, (TimeSpan, bool)>(task.Name, (sw.Elapsed, true));
+            }
+        }
         
         public static void RunTask(BindTask task) => RunTask(task, null);
         private static void RunTask(BindTask task, Stopwatch? sw)
@@ -140,7 +158,7 @@ namespace Silk.NET.BuildTools
                     }
                 }
             }
-            
+
             Profile profile;
             if (ShouldConvert(task.Controls))
             {

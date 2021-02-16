@@ -242,6 +242,8 @@ namespace Silk.NET.OpenGL
         Max3DTextureSize = 0x8073,
         [NativeName("Name", "GL_MAX_3D_TEXTURE_SIZE_EXT")]
         Max3DTextureSizeExt = 0x8073,
+        [NativeName("Name", "GL_VERTEX_ARRAY")]
+        VertexArray = 0x8074,
         [NativeName("Name", "GL_VERTEX_ARRAY_COUNT_EXT")]
         VertexArrayCountExt = 0x807D,
         [NativeName("Name", "GL_NORMAL_ARRAY_COUNT_EXT")]
@@ -666,6 +668,8 @@ namespace Silk.NET.OpenGL
         MaxElementIndex = 0x8D6B,
         [NativeName("Name", "GL_MAX_GEOMETRY_UNIFORM_COMPONENTS")]
         MaxGeometryUniformComponents = 0x8DDF,
+        [NativeName("Name", "GL_SHADER_BINARY_FORMATS")]
+        ShaderBinaryFormats = 0x8DF8,
         [NativeName("Name", "GL_NUM_SHADER_BINARY_FORMATS")]
         NumShaderBinaryFormats = 0x8DF9,
         [NativeName("Name", "GL_SHADER_COMPILER")]

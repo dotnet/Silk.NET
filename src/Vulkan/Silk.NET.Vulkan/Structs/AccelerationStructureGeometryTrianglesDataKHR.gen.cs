@@ -28,6 +28,7 @@ namespace Silk.NET.Vulkan
             Format? vertexFormat = null,
             DeviceOrHostAddressConstKHR? vertexData = null,
             ulong? vertexStride = null,
+            uint? maxVertex = null,
             IndexType? indexType = null,
             DeviceOrHostAddressConstKHR? indexData = null,
             DeviceOrHostAddressConstKHR? transformData = null
@@ -56,6 +57,11 @@ namespace Silk.NET.Vulkan
             if (vertexStride is not null)
             {
                 VertexStride = vertexStride.Value;
+            }
+
+            if (maxVertex is not null)
+            {
+                MaxVertex = maxVertex.Value;
             }
 
             if (indexType is not null)
@@ -99,6 +105,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkDeviceSize")]
         [NativeName("Name", "vertexStride")]
         public ulong VertexStride;
+/// <summary></summary>
+        [NativeName("Type", "uint32_t")]
+        [NativeName("Type.Name", "uint32_t")]
+        [NativeName("Name", "maxVertex")]
+        public uint MaxVertex;
 /// <summary></summary>
         [NativeName("Type", "VkIndexType")]
         [NativeName("Type.Name", "VkIndexType")]

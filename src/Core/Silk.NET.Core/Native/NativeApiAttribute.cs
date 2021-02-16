@@ -11,6 +11,8 @@ namespace Silk.NET.Core.Native
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method | AttributeTargets.Property)]
     public class NativeApiAttribute : Attribute
     {
+        private CallingConvention? _actualConvention;
+        
         // ReSharper disable once EmptyConstructor
         public NativeApiAttribute()
         {
@@ -31,7 +33,11 @@ namespace Silk.NET.Core.Native
         /// <summary>
         ///     Gets or sets the calling convention.
         /// </summary>
-        public CallingConvention? Convention { get; set; } = null;
+        public CallingConvention Convention
+        {
+            get => _actualConvention ?? CallingConvention.Cdecl;
+            set => _actualConvention = value;
+        }
 
         public static string GetEntryPoint(NativeApiAttribute attr, NativeApiAttribute parent, string method)
         {
@@ -41,7 +47,7 @@ namespace Silk.NET.Core.Native
 
         public static CallingConvention GetCallingConvention(NativeApiAttribute attr, NativeApiAttribute parent)
         {
-            return attr?.Convention ?? parent?.Convention ?? CallingConvention.Cdecl;
+            return attr?._actualConvention ?? parent?._actualConvention ?? CallingConvention.Cdecl;
         }
     }
 }

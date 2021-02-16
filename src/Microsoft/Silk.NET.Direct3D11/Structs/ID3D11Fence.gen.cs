@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11Fence")]
     public unsafe partial struct ID3D11Fence
     {
+        public static readonly Guid Guid = new("affde9d1-1df7-4bb7-8a34-0f46251dab80");
+
         public static implicit operator ID3D11DeviceChild(ID3D11Fence val)
             => Unsafe.As<ID3D11Fence, ID3D11DeviceChild>(ref val);
 
@@ -48,7 +50,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -57,7 +59,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -69,7 +71,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -81,7 +83,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -96,8 +98,8 @@ namespace Silk.NET.Direct3D11
         public readonly uint AddRef()
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, uint>)LpVtbl[1])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -105,8 +107,8 @@ namespace Silk.NET.Direct3D11
         public readonly uint Release()
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, uint>)LpVtbl[2])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -131,7 +133,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData(Guid* guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pData);
             return ret;
         }
@@ -140,7 +142,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData<T0>(Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Guid*, uint*, T0*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
@@ -152,7 +154,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData(Guid* guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pData);
@@ -164,7 +166,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData<T0>(Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -179,7 +181,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData(ref Guid guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pData);
@@ -191,7 +193,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData<T0>(ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -206,7 +208,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData(ref Guid guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
@@ -221,7 +223,7 @@ namespace Silk.NET.Direct3D11
         public readonly int GetPrivateData<T0>(ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
@@ -239,7 +241,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, void* pData)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pData);
             return ret;
         }
@@ -248,7 +250,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Guid*, uint, T0*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
@@ -260,7 +262,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, void* pData)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pData);
@@ -272,7 +274,7 @@ namespace Silk.NET.Direct3D11
         public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -287,7 +289,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
             return ret;
         }
@@ -296,7 +298,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
@@ -308,7 +310,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
@@ -320,7 +322,7 @@ namespace Silk.NET.Direct3D11
         public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
@@ -335,7 +337,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, char* lpName, void** pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[7])(@this, pAttributes, dwAccess, lpName, pHandle);
             return ret;
         }
@@ -344,7 +346,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, char* lpName, ref void* pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** pHandlePtr = &pHandle)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[7])(@this, pAttributes, dwAccess, lpName, pHandlePtr);
@@ -356,7 +358,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, ref char lpName, void** pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* lpNamePtr = &lpName)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[7])(@this, pAttributes, dwAccess, lpNamePtr, pHandle);
@@ -368,7 +370,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, ref char lpName, ref void* pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (char* lpNamePtr = &lpName)
             {
                 fixed (void** pHandlePtr = &pHandle)
@@ -383,7 +385,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, string lpName, void** pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var lpNamePtr = (byte*) Marshal.StringToHGlobalAnsi(lpName);
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, byte*, void**, int>)LpVtbl[7])(@this, pAttributes, dwAccess, lpNamePtr, pHandle);
             Marshal.FreeHGlobal((nint)lpNamePtr);
@@ -394,7 +396,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CreateSharedHandle(Silk.NET.Core.Native.SecurityAttributes* pAttributes, uint dwAccess, string lpName, ref void* pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             var lpNamePtr = (byte*) Marshal.StringToHGlobalAnsi(lpName);
             fixed (void** pHandlePtr = &pHandle)
             {
@@ -408,7 +410,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, char* lpName, void** pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, Silk.NET.Core.Native.SecurityAttributes*, uint, char*, void**, int>)LpVtbl[7])(@this, pAttributesPtr, dwAccess, lpName, pHandle);
@@ -420,7 +422,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, char* lpName, ref void* pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
             {
                 fixed (void** pHandlePtr = &pHandle)
@@ -435,7 +437,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, ref char lpName, void** pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
             {
                 fixed (char* lpNamePtr = &lpName)
@@ -450,7 +452,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, ref char lpName, ref void* pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
             {
                 fixed (char* lpNamePtr = &lpName)
@@ -468,7 +470,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, string lpName, void** pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
             {
             var lpNamePtr = (byte*) Marshal.StringToHGlobalAnsi(lpName);
@@ -482,7 +484,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int CreateSharedHandle(ref Silk.NET.Core.Native.SecurityAttributes pAttributes, uint dwAccess, string lpName, ref void* pHandle)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.SecurityAttributes* pAttributesPtr = &pAttributes)
             {
             var lpNamePtr = (byte*) Marshal.StringToHGlobalAnsi(lpName);
@@ -499,8 +501,8 @@ namespace Silk.NET.Direct3D11
         public readonly ulong GetCompletedValue()
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                ulong ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, ulong>)LpVtbl[8])(@this);
+            ulong ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11Fence*, ulong>)LpVtbl[8])(@this);
             return ret;
         }
 
@@ -508,7 +510,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetEventOnCompletion(ulong Value, void* hEvent)
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, ulong, void*, int>)LpVtbl[9])(@this, Value, hEvent);
             return ret;
         }
@@ -517,7 +519,7 @@ namespace Silk.NET.Direct3D11
         public readonly int SetEventOnCompletion<T0>(ulong Value, ref T0 hEvent) where T0 : unmanaged
         {
             var @this = (ID3D11Fence*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* hEventPtr = &hEvent)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11Fence*, ulong, T0*, int>)LpVtbl[9])(@this, Value, hEventPtr);
