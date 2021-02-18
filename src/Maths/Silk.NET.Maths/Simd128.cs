@@ -609,6 +609,151 @@ namespace Silk.NET.Maths
         {
             return Equal(vector, Vector128<T>.AllBitsSet);
         }
+
+        [MethodImpl(Scalar.MaxOpt)]
+        public static Vector128<T> Abs<T>(Vector128<T> vector) where T : unmanaged
+        {
+            return Start(vector);
+
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> Start(Vector128<T> vector)
+            {
+                if (typeof(T) == typeof(byte) || typeof(T) == typeof(ushort) || typeof(T) == typeof(uint) || typeof(T) == typeof(ulong))
+                    return vector;
+
+                return SByte(vector);
+            }
+
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> SByte(Vector128<T> vector)
+            {
+                if (typeof(T) == typeof(sbyte))
+                {
+#if SSE
+                    if (Ssse3.IsSupported)
+                    {
+                        return Ssse3.Abs(vector.AsSByte()).As<byte, T>();
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        return AdvSimd.Abs(vector.AsSByte()).As<byte, T>();
+                    }
+#endif
+                }
+
+                return Short(vector);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> Short(Vector128<T> vector)
+            {
+                if (typeof(T) == typeof(short))
+                {
+#if SSE
+                    if (Ssse3.IsSupported)
+                    {
+                        return Ssse3.Abs(vector.AsInt16()).As<ushort, T>();
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        return AdvSimd.Abs(vector.AsInt16()).As<ushort, T>();
+                    }
+#endif
+                }
+
+                return Int(vector);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> Int(Vector128<T> vector)
+            {
+                if (typeof(T) == typeof(int))
+                {
+#if SSE
+                    if (Ssse3.IsSupported)
+                    {
+                        return Ssse3.Abs(vector.AsInt32()).As<uint, T>();
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        return AdvSimd.Abs(vector.AsInt32()).As<uint, T>();
+                    }
+#endif
+                }
+
+                return Long(vector);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> Long(Vector128<T> vector)
+            {
+                if (typeof(T) == typeof(long))
+                {
+                    // no intrinsic available
+                }
+
+                return Float(vector);
+            }
+
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> Float(Vector128<T> vector)
+            {
+                if (typeof(T) == typeof(float))
+                {
+#if SSE
+                    if (Sse.IsSupported)
+                    {
+                        return Sse.And(vector.AsSingle(), Vector128.Create((uint)0x7FFF_FFFF).AsSingle()).As<float, T>();
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        return AdvSimd.And(vector.AsSingle(), Vector128.Create((uint)0x7FFF_FFFF).AsSingle()).As<float, T>();
+                    }
+#endif
+                }
+
+                return Double(vector);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> Double(Vector128<T> vector)
+            {
+                if (typeof(T) == typeof(double))
+                {
+#if SSE
+                    if (Sse2.IsSupported)
+                    {
+                        return Sse2.And(vector.AsDouble(), Vector128.Create((ulong)0x7FFF_FFFF_FFFF_FFF).AsDouble()).As<double, T>();
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        return AdvSimd.And(vector.AsDouble(), Vector128.Create((ulong)0x7FFF_FFFF_FFFF_FFF).AsDouble()).As<double, T>();
+                    }
+#endif
+                }
+
+                return Other(vector);
+            }
+
+
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> Other(Vector128<T> vector)
+            {
+                for (int i = 0; i < Vector128<T>.Count; i++)
+                    vector = vector.WithElement(i, Scalar.Abs(vector.GetElement(i)));
+                return vector;
+            }
+        }
     }
 }
 #endif
