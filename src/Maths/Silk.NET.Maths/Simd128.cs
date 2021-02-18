@@ -754,6 +754,15 @@ namespace Silk.NET.Maths
                 return vector;
             }
         }
+
+        [MethodImpl(Scalar.MaxOpt)]
+        public static Vector128<T> Acos<T>(Vector128<T> vector) where T : unmanaged
+        {
+            // there are no acos intrinsics.
+            for (int i = 0; i < Vector128<T>.Count; i++)
+                vector = vector.WithElement(i, Scalar.Acos(vector.GetElement(i)));
+            return vector;
+        }
     }
 }
 #endif
