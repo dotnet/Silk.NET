@@ -610,6 +610,24 @@ namespace Silk.NET.Maths
             return Equal(vector, Vector128<T>.AllBitsSet);
         }
 
+        // these two should ONLY be used in the constant-sized unrolled loops.
+        // unfortunately there is an issue otherwise. See https://sharplab.io/#v2:EYLgxg9gTgpgtADwGwBYA0AXEBDAzgWwB8ABAJgEYBYAKGIAYACY8gOgCUBXAOwwEt8YLAJI8ovLrl5hcAbho1iAZiakGAYRoBvGg11MUDACoxcGABQBKHXu3U99hgDNoDM+IwNeDALwM6MzwYAHgYANRgwDGhyUgAOIMcAGwhsDAA+FjUIbgwA3gBqfKs7B1KAOQgAeQAHNws5Et0AX2tdVv0GCpq3Hk9i+1tS3V5HVzMOdwtAtN8AegAqccn52fDI6LiE5NSMrJyp2dnguDgGbkh8AV6wPAx2oaZyAE5LBvsW6iagA
+        [MethodImpl(Scalar.MaxOpt)]
+        private static Vector128<T> WithElement<T>(Vector128<T> vector, int index, T value) where T : unmanaged
+        {
+            Vector128<T> result = vector;
+            ref T e0 = ref Unsafe.As<Vector128<T>, T>(ref result);
+            Unsafe.Add(ref e0, index) = value;
+            return result;
+        }
+        
+        [MethodImpl(Scalar.MaxOpt)]
+        private static T GetElement<T>(Vector128<T> vector, int index) where T : unmanaged
+        {
+            ref T e0 = ref Unsafe.As<Vector128<T>, T>(ref vector);
+            return Unsafe.Add(ref e0, index);
+        }
+        
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector128<T> Abs<T>(Vector128<T> vector) where T : unmanaged
         {
@@ -750,7 +768,7 @@ namespace Silk.NET.Maths
             static Vector128<T> Other(Vector128<T> vector)
             {
                 for (int i = 0; i < Vector128<T>.Count; i++)
-                    vector = vector.WithElement(i, Scalar.Abs(vector.GetElement(i)));
+                    vector = WithElement(vector, i, Scalar.Abs(GetElement(vector, i)));
                 return vector;
             }
         }
@@ -760,7 +778,7 @@ namespace Silk.NET.Maths
         {
             // there are no acos intrinsics.
             for (int i = 0; i < Vector128<T>.Count; i++)
-                vector = vector.WithElement(i, Scalar.Acos(vector.GetElement(i)));
+                vector = WithElement(vector, i, Scalar.Acos(GetElement(vector, i)));
             return vector;
         }
         
@@ -769,7 +787,7 @@ namespace Silk.NET.Maths
         {
             // there are no acosh intrinsics.
             for (int i = 0; i < Vector128<T>.Count; i++)
-                vector = vector.WithElement(i, Scalar.Acosh(vector.GetElement(i)));
+                vector = WithElement(vector, i, Scalar.Acosh(GetElement(vector, i)));
             return vector;
         }
                 
@@ -778,7 +796,7 @@ namespace Silk.NET.Maths
         {
             // there are no asin intrinsics.
             for (int i = 0; i < Vector128<T>.Count; i++)
-                vector = vector.WithElement(i, Scalar.Asin(vector.GetElement(i)));
+                vector = WithElement(vector, i, Scalar.Asin(GetElement(vector, i)));
             return vector;
         }
     }
