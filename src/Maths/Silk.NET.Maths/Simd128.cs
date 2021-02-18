@@ -772,6 +772,15 @@ namespace Silk.NET.Maths
                 vector = vector.WithElement(i, Scalar.Acosh(vector.GetElement(i)));
             return vector;
         }
+                
+        [MethodImpl(Scalar.MaxOpt)]
+        public static Vector128<T> Asin<T>(Vector128<T> vector) where T : unmanaged
+        {
+            // there are no asin intrinsics.
+            for (int i = 0; i < Vector128<T>.Count; i++)
+                vector = vector.WithElement(i, Scalar.Asin(vector.GetElement(i)));
+            return vector;
+        }
     }
 }
 #endif
