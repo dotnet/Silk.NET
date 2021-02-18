@@ -4,6 +4,7 @@
 // of the MIT license. See the LICENSE file for details.
 
 #if INTRINSICS
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.Intrinsics;
 #if SSE
@@ -21,7 +22,7 @@ namespace Silk.NET.Maths
         public static Vector128<T> Load<T>(T* ptr) where T : unmanaged
         {
             return Byte(ptr);
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Byte(T* ptr)
             {
@@ -43,7 +44,7 @@ namespace Silk.NET.Maths
 
                 return SByte(ptr);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> SByte(T* ptr)
             {
@@ -65,7 +66,7 @@ namespace Silk.NET.Maths
 
                 return UShort(ptr);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> UShort(T* ptr)
             {
@@ -87,7 +88,7 @@ namespace Silk.NET.Maths
 
                 return Short(ptr);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Short(T* ptr)
             {
@@ -109,7 +110,7 @@ namespace Silk.NET.Maths
 
                 return UInt(ptr);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> UInt(T* ptr)
             {
@@ -131,7 +132,7 @@ namespace Silk.NET.Maths
 
                 return Int(ptr);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Int(T* ptr)
             {
@@ -153,7 +154,7 @@ namespace Silk.NET.Maths
 
                 return ULong(ptr);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> ULong(T* ptr)
             {
@@ -175,7 +176,7 @@ namespace Silk.NET.Maths
 
                 return Long(ptr);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Long(T* ptr)
             {
@@ -197,7 +198,7 @@ namespace Silk.NET.Maths
 
                 return Float(ptr);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Float(T* ptr)
             {
@@ -219,7 +220,7 @@ namespace Silk.NET.Maths
 
                 return Double(ptr);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Double(T* ptr)
             {
@@ -241,21 +242,21 @@ namespace Silk.NET.Maths
 
                 return Other(ptr);
             }
-            
-            
+
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Other(T* ptr)
             {
                 return Unsafe.ReadUnaligned<Vector128<T>>(ptr);
             }
         }
-        
+
         [MethodImpl(Scalar.MaxOpt)]
         public static void Store<T>(T* destination, Vector128<T> source) where T : unmanaged
         {
             Byte(destination, source);
             return;
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static void Byte(T* destination, Vector128<T> source)
             {
@@ -264,14 +265,14 @@ namespace Silk.NET.Maths
 #if SSE
                     if (Sse2.IsSupported)
                     {
-                        Sse2.Store((byte*) destination, (Vector128<byte>)(object)source);
+                        Sse2.Store((byte*) destination, (Vector128<byte>) (object) source);
                         return;
                     }
 #endif
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        AdvSimd.Store((byte*) destination, (Vector128<byte>)(object)source);
+                        AdvSimd.Store((byte*) destination, (Vector128<byte>) (object) source);
                         return;
                     }
 #endif
@@ -279,7 +280,7 @@ namespace Silk.NET.Maths
 
                 SByte(destination, source);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static void SByte(T* destination, Vector128<T> source)
             {
@@ -288,14 +289,14 @@ namespace Silk.NET.Maths
 #if SSE
                     if (Sse2.IsSupported)
                     {
-                        Sse2.Store((sbyte*) destination, (Vector128<sbyte>)(object)source);
+                        Sse2.Store((sbyte*) destination, (Vector128<sbyte>) (object) source);
                         return;
                     }
 #endif
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        AdvSimd.Store((sbyte*) destination, (Vector128<sbyte>)(object)source);
+                        AdvSimd.Store((sbyte*) destination, (Vector128<sbyte>) (object) source);
                         return;
                     }
 #endif
@@ -303,7 +304,7 @@ namespace Silk.NET.Maths
 
                 UShort(destination, source);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static void UShort(T* destination, Vector128<T> source)
             {
@@ -312,14 +313,14 @@ namespace Silk.NET.Maths
 #if SSE
                     if (Sse2.IsSupported)
                     {
-                        Sse2.Store((ushort*) destination, (Vector128<ushort>)(object)source);
+                        Sse2.Store((ushort*) destination, (Vector128<ushort>) (object) source);
                         return;
                     }
 #endif
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        AdvSimd.Store((ushort*) destination, (Vector128<ushort>)(object)source);
+                        AdvSimd.Store((ushort*) destination, (Vector128<ushort>) (object) source);
                         return;
                     }
 #endif
@@ -327,7 +328,7 @@ namespace Silk.NET.Maths
 
                 Short(destination, source);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static void Short(T* destination, Vector128<T> source)
             {
@@ -336,14 +337,14 @@ namespace Silk.NET.Maths
 #if SSE
                     if (Sse2.IsSupported)
                     {
-                        Sse2.Store((short*) destination, (Vector128<short>)(object)source);
+                        Sse2.Store((short*) destination, (Vector128<short>) (object) source);
                         return;
                     }
 #endif
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        AdvSimd.Store((short*) destination, (Vector128<short>)(object)source);
+                        AdvSimd.Store((short*) destination, (Vector128<short>) (object) source);
                         return;
                     }
 #endif
@@ -351,7 +352,7 @@ namespace Silk.NET.Maths
 
                 UInt(destination, source);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static void UInt(T* destination, Vector128<T> source)
             {
@@ -360,14 +361,14 @@ namespace Silk.NET.Maths
 #if SSE
                     if (Sse2.IsSupported)
                     {
-                        Sse2.Store((uint*) destination, (Vector128<uint>)(object)source);
+                        Sse2.Store((uint*) destination, (Vector128<uint>) (object) source);
                         return;
                     }
 #endif
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        AdvSimd.Store((uint*) destination, (Vector128<uint>)(object)source);
+                        AdvSimd.Store((uint*) destination, (Vector128<uint>) (object) source);
                         return;
                     }
 #endif
@@ -375,7 +376,7 @@ namespace Silk.NET.Maths
 
                 Int(destination, source);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static void Int(T* destination, Vector128<T> source)
             {
@@ -384,14 +385,14 @@ namespace Silk.NET.Maths
 #if SSE
                     if (Sse2.IsSupported)
                     {
-                        Sse2.Store((int*) destination, (Vector128<int>)(object)source);
+                        Sse2.Store((int*) destination, (Vector128<int>) (object) source);
                         return;
                     }
 #endif
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        AdvSimd.Store((int*) destination, (Vector128<int>)(object)source);
+                        AdvSimd.Store((int*) destination, (Vector128<int>) (object) source);
                         return;
                     }
 #endif
@@ -399,7 +400,7 @@ namespace Silk.NET.Maths
 
                 ULong(destination, source);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static void ULong(T* destination, Vector128<T> source)
             {
@@ -408,14 +409,14 @@ namespace Silk.NET.Maths
 #if SSE
                     if (Sse2.IsSupported)
                     {
-                        Sse2.Store((ulong*) destination, (Vector128<ulong>)(object)source);
+                        Sse2.Store((ulong*) destination, (Vector128<ulong>) (object) source);
                         return;
                     }
 #endif
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        AdvSimd.Store((ulong*) destination, (Vector128<ulong>)(object)source);
+                        AdvSimd.Store((ulong*) destination, (Vector128<ulong>) (object) source);
                         return;
                     }
 #endif
@@ -423,7 +424,7 @@ namespace Silk.NET.Maths
 
                 Long(destination, source);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static void Long(T* destination, Vector128<T> source)
             {
@@ -432,14 +433,14 @@ namespace Silk.NET.Maths
 #if SSE
                     if (Sse2.IsSupported)
                     {
-                        Sse2.Store((long*) destination, (Vector128<long>)(object)source);
+                        Sse2.Store((long*) destination, (Vector128<long>) (object) source);
                         return;
                     }
 #endif
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        AdvSimd.Store((long*) destination, (Vector128<long>)(object)source);
+                        AdvSimd.Store((long*) destination, (Vector128<long>) (object) source);
                         return;
                     }
 #endif
@@ -447,7 +448,7 @@ namespace Silk.NET.Maths
 
                 Float(destination, source);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static void Float(T* destination, Vector128<T> source)
             {
@@ -456,14 +457,14 @@ namespace Silk.NET.Maths
 #if SSE
                     if (Sse.IsSupported)
                     {
-                        Sse.Store((float*) destination, (Vector128<float>)(object)source);
+                        Sse.Store((float*) destination, (Vector128<float>) (object) source);
                         return;
                     }
 #endif
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        AdvSimd.Store((float*) destination, (Vector128<float>)(object)source);
+                        AdvSimd.Store((float*) destination, (Vector128<float>) (object) source);
                         return;
                     }
 #endif
@@ -471,7 +472,7 @@ namespace Silk.NET.Maths
 
                 Double(destination, source);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static void Double(T* destination, Vector128<T> source)
             {
@@ -480,14 +481,14 @@ namespace Silk.NET.Maths
 #if SSE
                     if (Sse2.IsSupported)
                     {
-                        Sse2.Store((double*) destination, (Vector128<double>)(object)source);
+                        Sse2.Store((double*) destination, (Vector128<double>) (object) source);
                         return;
                     }
 #endif
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        AdvSimd.Store((double*) destination, (Vector128<double>)(object)source);
+                        AdvSimd.Store((double*) destination, (Vector128<double>) (object) source);
                         return;
                     }
 #endif
@@ -513,84 +514,84 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(byte))
                 {
-                    return (Vector128<T>)(object)Vector128.Create((byte) (object) value);
+                    return (Vector128<T>) (object) Vector128.Create((byte) (object) value);
                 }
 
                 return SByte(value);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> SByte(T value)
             {
                 if (typeof(T) == typeof(sbyte))
                 {
-                    return (Vector128<T>)(object)Vector128.Create((sbyte) (object) value);
+                    return (Vector128<T>) (object) Vector128.Create((sbyte) (object) value);
                 }
 
                 return UInt(value);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> UInt(T value)
             {
                 if (typeof(T) == typeof(uint))
                 {
-                    return (Vector128<T>)(object)Vector128.Create((uint) (object) value);
+                    return (Vector128<T>) (object) Vector128.Create((uint) (object) value);
                 }
 
                 return Int(value);
             }
-                        
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Int(T value)
             {
                 if (typeof(T) == typeof(int))
                 {
-                    return (Vector128<T>)(object)Vector128.Create((int) (object) value);
+                    return (Vector128<T>) (object) Vector128.Create((int) (object) value);
                 }
 
                 return ULong(value);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> ULong(T value)
             {
                 if (typeof(T) == typeof(ulong))
                 {
-                    return (Vector128<T>)(object)Vector128.Create((ulong) (object) value);
+                    return (Vector128<T>) (object) Vector128.Create((ulong) (object) value);
                 }
 
                 return Long(value);
             }
-                        
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Long(T value)
             {
                 if (typeof(T) == typeof(long))
                 {
-                    return (Vector128<T>)(object)Vector128.Create((long) (object) value);
+                    return (Vector128<T>) (object) Vector128.Create((long) (object) value);
                 }
 
                 return Float(value);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Float(T value)
             {
                 if (typeof(T) == typeof(float))
                 {
-                    return (Vector128<T>)(object)Vector128.Create((float) (object) value);
+                    return (Vector128<T>) (object) Vector128.Create((float) (object) value);
                 }
 
                 return Double(value);
             }
-                        
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Double(T value)
             {
                 if (typeof(T) == typeof(double))
                 {
-                    return (Vector128<T>)(object)Vector128.Create((double) (object) value);
+                    return (Vector128<T>) (object) Vector128.Create((double) (object) value);
                 }
 
                 return Other(value);
@@ -620,14 +621,14 @@ namespace Silk.NET.Maths
             Unsafe.Add(ref e0, index) = value;
             return result;
         }
-        
+
         [MethodImpl(Scalar.MaxOpt)]
         private static T GetElement<T>(Vector128<T> vector, int index) where T : unmanaged
         {
             ref T e0 = ref Unsafe.As<Vector128<T>, T>(ref vector);
             return Unsafe.Add(ref e0, index);
         }
-        
+
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector128<T> Abs<T>(Vector128<T> vector) where T : unmanaged
         {
@@ -663,7 +664,7 @@ namespace Silk.NET.Maths
 
                 return Short(vector);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Short(Vector128<T> vector)
             {
@@ -685,7 +686,7 @@ namespace Silk.NET.Maths
 
                 return Int(vector);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Int(Vector128<T> vector)
             {
@@ -707,7 +708,7 @@ namespace Silk.NET.Maths
 
                 return Long(vector);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Long(Vector128<T> vector)
             {
@@ -727,20 +728,20 @@ namespace Silk.NET.Maths
 #if SSE
                     if (Sse.IsSupported)
                     {
-                        return Sse.And(vector.AsSingle(), Vector128.Create((uint)0x7FFF_FFFF).AsSingle()).As<float, T>();
+                        return Sse.And(vector.AsSingle(), Vector128.Create((uint) 0x7FFF_FFFF).AsSingle()).As<float, T>();
                     }
 #endif
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.And(vector.AsSingle(), Vector128.Create((uint)0x7FFF_FFFF).AsSingle()).As<float, T>();
+                        return AdvSimd.And(vector.AsSingle(), Vector128.Create((uint) 0x7FFF_FFFF).AsSingle()).As<float, T>();
                     }
 #endif
                 }
 
                 return Double(vector);
             }
-            
+
             [MethodImpl(Scalar.MaxOpt)]
             static Vector128<T> Double(Vector128<T> vector)
             {
@@ -749,13 +750,13 @@ namespace Silk.NET.Maths
 #if SSE
                     if (Sse2.IsSupported)
                     {
-                        return Sse2.And(vector.AsDouble(), Vector128.Create((ulong)0x7FFF_FFFF_FFFF_FFF).AsDouble()).As<double, T>();
+                        return Sse2.And(vector.AsDouble(), Vector128.Create((ulong) 0x7FFF_FFFF_FFFF_FFF).AsDouble()).As<double, T>();
                     }
 #endif
 #if AdvSIMD
                     if (AdvSimd.IsSupported)
                     {
-                        return AdvSimd.And(vector.AsDouble(), Vector128.Create((ulong)0x7FFF_FFFF_FFFF_FFF).AsDouble()).As<double, T>();
+                        return AdvSimd.And(vector.AsDouble(), Vector128.Create((ulong) 0x7FFF_FFFF_FFFF_FFF).AsDouble()).As<double, T>();
                     }
 #endif
                 }
@@ -781,7 +782,7 @@ namespace Silk.NET.Maths
                 vector = WithElement(vector, i, Scalar.Acos(GetElement(vector, i)));
             return vector;
         }
-        
+
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector128<T> Acosh<T>(Vector128<T> vector) where T : unmanaged
         {
@@ -790,7 +791,7 @@ namespace Silk.NET.Maths
                 vector = WithElement(vector, i, Scalar.Acosh(GetElement(vector, i)));
             return vector;
         }
-                
+
         [MethodImpl(Scalar.MaxOpt)]
         public static Vector128<T> Asin<T>(Vector128<T> vector) where T : unmanaged
         {
@@ -798,6 +799,239 @@ namespace Silk.NET.Maths
             for (int i = 0; i < Vector128<T>.Count; i++)
                 vector = WithElement(vector, i, Scalar.Asin(GetElement(vector, i)));
             return vector;
+        }
+        
+            
+        [MethodImpl(Scalar.MaxOpt)]
+        public static Vector128<T> Add<T>(Vector128<T> left, Vector128<T> right) where T : unmanaged
+        {
+            return Byte(left, right);
+
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> Byte(Vector128<T> left, Vector128<T> right)
+            {
+                if (typeof(T) == typeof(byte))
+                {
+#if SSE
+                    if (Sse2.IsSupported)
+                    {
+                        return Sse2.Add(left.AsByte(), right.AsByte()).As<byte, T>();
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        return AdvSimd.Add(left.AsByte(), right.AsByte()).As<byte, T>();
+                    }
+#endif
+                }
+
+                return SByte(left, right);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> SByte(Vector128<T> left, Vector128<T> right)
+            {
+                if (typeof(T) == typeof(sbyte))
+                {
+#if SSE
+                    if (Sse2.IsSupported)
+                    {
+                        return Sse2.Add(left.AsSByte(), right.AsSByte()).As<sbyte, T>();
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        return AdvSimd.Add(left.AsSByte(), right.AsSByte()).As<sbyte, T>();
+                    }
+#endif
+                }
+
+                return UShort(left, right);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> UShort(Vector128<T> left, Vector128<T> right)
+            {
+                if (typeof(T) == typeof(ushort))
+                {
+#if SSE
+                    if (Sse2.IsSupported)
+                    {
+                        return Sse2.Add(left.AsUInt16(), right.AsUInt16()).As<ushort, T>();
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        return AdvSimd.Add(left.AsUInt16(), right.AsUInt16()).As<ushort, T>();
+                    }
+#endif
+                }
+
+                return Short(left, right);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> Short(Vector128<T> left, Vector128<T> right)
+            {
+                if (typeof(T) == typeof(short))
+                {
+#if SSE
+                    if (Sse2.IsSupported)
+                    {
+                        return Sse2.Add(left.AsInt16(), right.AsInt16()).As<short, T>();
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        return AdvSimd.Add(left.AsInt16(), right.AsInt16()).As<short, T>();
+                    }
+#endif
+                }
+
+                return UInt(left, right);
+            }
+                        
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> UInt(Vector128<T> left, Vector128<T> right)
+            {
+                if (typeof(T) == typeof(uint))
+                {
+#if SSE
+                    if (Sse2.IsSupported)
+                    {
+                        return Sse2.Add(left.AsUInt32(), right.AsUInt32()).As<uint, T>();
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        return AdvSimd.Add(left.AsUInt32(), right.AsUInt32()).As<uint, T>();
+                    }
+#endif
+                }
+
+                return Int(left, right);
+            }
+                                    
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> Int(Vector128<T> left, Vector128<T> right)
+            {
+                if (typeof(T) == typeof(int))
+                {
+#if SSE
+                    if (Sse2.IsSupported)
+                    {
+                        return Sse2.Add(left.AsInt32(), right.AsInt32()).As<int, T>();
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        return AdvSimd.Add(left.AsInt32(), right.AsInt32()).As<int, T>();
+                    }
+#endif
+                }
+
+                return ULong(left, right);
+            }
+                                                
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> ULong(Vector128<T> left, Vector128<T> right)
+            {
+                if (typeof(T) == typeof(ulong))
+                {
+#if SSE
+                    if (Sse2.IsSupported)
+                    {
+                        return Sse2.Add(left.AsUInt64(), right.AsUInt64()).As<ulong, T>();
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        return AdvSimd.Add(left.AsUInt64(), right.AsUInt64()).As<ulong, T>();
+                    }
+#endif
+                }
+
+                return Long(left, right);
+            }
+                                                            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> Long(Vector128<T> left, Vector128<T> right)
+            {
+                if (typeof(T) == typeof(long))
+                {
+#if SSE
+                    if (Sse2.IsSupported)
+                    {
+                        return Sse2.Add(left.AsInt64(), right.AsInt64()).As<long, T>();
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        return AdvSimd.Add(left.AsInt64(), right.AsInt64()).As<long, T>();
+                    }
+#endif
+                }
+
+                return Float(left, right);
+            }
+            
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> Float(Vector128<T> left, Vector128<T> right)
+            {
+                if (typeof(T) == typeof(float))
+                {
+#if SSE
+                    if (Sse.IsSupported)
+                    {
+                        return Sse.Add(left.AsSingle(), right.AsSingle()).As<float, T>();
+                    }
+#endif
+#if AdvSIMD
+                    if (AdvSimd.IsSupported)
+                    {
+                        return AdvSimd.Add(left.AsSingle(), right.AsSingle()).As<float, T>();
+                    }
+#endif
+                }
+
+                return Double(left, right);
+            }
+                        
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> Double(Vector128<T> left, Vector128<T> right)
+            {
+                if (typeof(T) == typeof(double))
+                {
+#if SSE
+                    if (Sse.IsSupported)
+                    {
+                        return Sse2.Add(left.AsDouble(), right.AsDouble()).As<double, T>();
+                    }
+#endif
+                }
+
+                return Other(left, right);
+            }
+
+            [MethodImpl(Scalar.MaxOpt)]
+            static Vector128<T> Other(Vector128<T> left, Vector128<T> right)
+            {
+                var vec = Vector128<T>.Zero;
+                for (int i = 0; i < Vector128<T>.Count; i++)
+                {
+                    WithElement(vec, i, Scalar.Add(GetElement(left, i), GetElement(right, i)));
+                }
+
+                return vec;
+            }
         }
     }
 }
