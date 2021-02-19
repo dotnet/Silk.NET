@@ -4,43 +4,44 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Buffers;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Input.Extensions
 {
     public sealed class JoystickState : IDisposable
     {
-        private readonly unsafe Axis* _axes;
-        private readonly int _axisCount;
-        private readonly int _buttonCount;
-        private readonly unsafe Button* _buttons;
-        private readonly int _hatCount;
-        private readonly unsafe Hat* _hats;
+        private readonly int _axisCount, _buttonCount, _hatCount;
+        private readonly IMemoryOwner<byte> _axes, _buttons, _hats;
 
-        internal unsafe JoystickState(IJoystick joystick)
+        internal unsafe JoystickState(IJoystick joystick, MemoryPool<byte> pool)
         {
             Name = joystick.Name;
             Index = joystick.Index;
             IsConnected = joystick.IsConnected;
-            var axes = joystick.Axes;
-            var buttons = joystick.Buttons;
-            var hats = joystick.Hats;
-            _axes = (Axis*) Marshal.AllocHGlobal((_axisCount = axes.Count) * sizeof(Axis));
-            _buttons = (Button*) Marshal.AllocHGlobal((_buttonCount = buttons.Count) * sizeof(Button));
-            _hats = (Hat*) Marshal.AllocHGlobal((_hatCount = hats.Count) * sizeof(Hat));
+            var srcAxes = joystick.Axes;
+            var srcButtons = joystick.Buttons;
+            var srcHats = joystick.Hats;
+            _axes = pool.Rent((_axisCount = srcAxes.Count) * sizeof(Axis));
+            _buttons = pool.Rent((_buttonCount = srcButtons.Count) * sizeof(Button));
+            _hats = pool.Rent((_hatCount = srcHats.Count) * sizeof(Hat));
+            var dstAxes = GetAxes();
+            var dstButtons = GetButtons();
+            var dstHats = GetHats();
             for (var i = 0; i < _axisCount; i++)
             {
-                _axes[i] = axes[i];
+                dstAxes[i] = srcAxes[i];
             }
 
             for (var i = 0; i < _buttonCount; i++)
             {
-                _buttons[i] = buttons[i];
+                dstButtons[i] = srcButtons[i];
             }
 
             for (var i = 0; i < _hatCount; i++)
             {
-                _hats[i] = hats[i];
+                dstHats[i] = srcHats[i];
             }
 
             Deadzone = joystick.Deadzone;
@@ -51,37 +52,18 @@ namespace Silk.NET.Input.Extensions
         public bool IsConnected { get; }
         public Deadzone Deadzone { get; }
 
+        public unsafe Span<Axis> GetAxes()
+            => new(Unsafe.AsPointer(ref _axes.Memory.Span.GetPinnableReference()), _axisCount);
+        public unsafe Span<Button> GetButtons()
+            => new(Unsafe.AsPointer(ref _buttons.Memory.Span.GetPinnableReference()), _buttonCount);
+        public unsafe Span<Hat> GetHats()
+            => new(Unsafe.AsPointer(ref _hats.Memory.Span.GetPinnableReference()), _hatCount);
+
         public void Dispose()
         {
-            ReleaseUnmanagedResources();
-            GC.SuppressFinalize(this);
-        }
-
-        public unsafe Span<Axis> GetAxes()
-        {
-            return new Span<Axis>(_axes, _axisCount);
-        }
-
-        public unsafe Span<Button> GetButtons()
-        {
-            return new Span<Button>(_buttons, _buttonCount);
-        }
-
-        public unsafe Span<Hat> GetHats()
-        {
-            return new Span<Hat>(_hats, _hatCount);
-        }
-
-        private unsafe void ReleaseUnmanagedResources()
-        {
-            Marshal.FreeHGlobal((nint) _axes);
-            Marshal.FreeHGlobal((nint) _buttons);
-            Marshal.FreeHGlobal((nint) _hats);
-        }
-
-        ~JoystickState()
-        {
-            ReleaseUnmanagedResources();
+            _axes?.Dispose();
+            _buttons?.Dispose();
+            _hats?.Dispose();
         }
     }
 }

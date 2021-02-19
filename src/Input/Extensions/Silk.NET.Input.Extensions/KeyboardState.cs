@@ -4,37 +4,51 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Buffers;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Input.Extensions
 {
     public sealed class KeyboardState : IDisposable
     {
-        private readonly int _keyCount;
-        private readonly unsafe Key* _keys;
-        private readonly int _pressedKeyCount;
-        private readonly unsafe Key* _pressedKeys;
+        private readonly int _keyCount, _pressedKeyCount;
+        private readonly IMemoryOwner<byte> _keys, _pressedKeys;
 
-        internal unsafe KeyboardState(IKeyboard keyboard)
+        internal KeyboardState(IKeyboard keyboard, MemoryPool<byte> pool)
         {
+            // The comments within this method were sponsored by my rubber duck
+
+            // Properties
             Name = keyboard.Name;
             Index = keyboard.Index;
             IsConnected = keyboard.IsConnected;
-            var keys = keyboard.SupportedKeys;
-            _keyCount = _pressedKeyCount = keys.Count;
-            _keys = (Key*) Marshal.AllocHGlobal(_keyCount * sizeof(Key));
-            _pressedKeys = (Key*) Marshal.AllocHGlobal(_keyCount * sizeof(Key));
-            _pressedKeyCount = 0;
+
+            // Initial rentals
+            var srcKeys = keyboard.SupportedKeys;
+            _keyCount = _pressedKeyCount = srcKeys.Count;
+            _keys = pool.Rent(_keyCount * sizeof(Key));
+            _pressedKeys = pool.Rent(_keyCount * sizeof(Key)); // we don't know how many keys are pressed, rent fully
+            
+            // Copy the supported and pressed keys 
+            var dstKeys = GetSupportedKeys(); // get a span of our newly rented key memory
+            _pressedKeyCount = _keyCount; // set the pressed key count to the full rental we just did
+            var dstPressedKeys = GetPressedKeys(); // get a span over the full rental
+            _pressedKeyCount = 0; // set key count back to zero so we can count how many keys are pressed
             for (var i = 0; i < _keyCount; i++)
             {
-                _keys[i] = keys[i];
-                if (keyboard.IsKeyPressed(keys[i]))
+                dstKeys[i] = srcKeys[i];
+                if (keyboard.IsKeyPressed(srcKeys[i]))
                 {
-                    _pressedKeys[_pressedKeyCount++] = keys[i];
+                    dstPressedKeys[_pressedKeyCount++] = srcKeys[i];
                 }
             }
-
-            _keys = (Key*) Marshal.ReAllocHGlobal((nint) _pressedKeys, (nint) (_pressedKeyCount * sizeof(Key)));
+            
+            // Trim the pressed keys span
+            dstPressedKeys = GetPressedKeys(); // recreate the span over the full rental with the trimmed count
+            using var wip = _pressedKeys; // create a variable with the full rental that we dispose of once we're done
+            _pressedKeys = pool.Rent(_pressedKeyCount * sizeof(Key)); // create the trimmed rental
+            dstPressedKeys.CopyTo(GetPressedKeys()); // copy the trimmed span over the full rental to the trimmed rental
         }
 
         public string Name { get; }
@@ -43,17 +57,11 @@ namespace Silk.NET.Input.Extensions
 
         public bool IsConnected { get; }
 
-        public void Dispose()
+        public bool IsKeyPressed(Key key)
         {
-            Free();
-            GC.SuppressFinalize(this);
-        }
-
-        public unsafe bool IsKeyPressed(Key key)
-        {
-            for (var i = 0; i < _pressedKeyCount; i++)
+            foreach (var pressedKey in GetPressedKeys())
             {
-                if (_pressedKeys[i] == key)
+                if (pressedKey == key)
                 {
                     return true;
                 }
@@ -63,24 +71,14 @@ namespace Silk.NET.Input.Extensions
         }
 
         public unsafe Span<Key> GetSupportedKeys()
-        {
-            return new Span<Key>(_keys, _keyCount);
-        }
-
+            => new(Unsafe.AsPointer(ref _keys.Memory.Span.GetPinnableReference()), _keyCount);
         public unsafe Span<Key> GetPressedKeys()
-        {
-            return new Span<Key>(_pressedKeys, _keyCount);
-        }
+            => new(Unsafe.AsPointer(ref _pressedKeys.Memory.Span.GetPinnableReference()), _pressedKeyCount);
 
-        private unsafe void Free()
+        public void Dispose()
         {
-            Marshal.FreeHGlobal((nint) _keys);
-            Marshal.FreeHGlobal((nint) _pressedKeys);
-        }
-
-        ~KeyboardState()
-        {
-            Free();
+            _keys?.Dispose();
+            _pressedKeys?.Dispose();
         }
     }
 }
