@@ -275,13 +275,13 @@ namespace Silk.NET.Windowing.Sdl
 
         public override void Dispose()
         {
-            CoreReset();
+            Reset();
             GC.SuppressFinalize(this);
         }
 
         ~SdlView()
         {
-            CoreReset();
+            Reset();
         }
 
         public override void Close()
