@@ -15,7 +15,7 @@
             - Update to latest OpenCL as of 2nd March 2021
             - Fix window disposal/reset bugs
             - Fix a build toolchain issue where packages released in Debug mode (#416)
-            - Fix a string marshalling issue & OpenAL regression (#414)
+            - Fix a string marshalling issue and OpenAL regression (#414)
         </PackageReleaseNotes>
         <PackageTags>OpenCL;OpenGL;OpenAL;OpenGLES;GLES;Vulkan;Assimp;DirectX;GLFW;SDL;Windowing;Input;Gamepad;Joystick;Keyboard;Mouse;SilkTouch;Source;Generator;C#;F#;.NET;DotNet;Mono;Vector;Math;Maths;Numerics;Game;Graphics;Compute;Audio;Sound;Engine;Silk;Silk.NET;Slim.NET;ElgarTK;GPU;Sharp;Science;Scientific;Visualization;Visual;Audiovisual;Windows;macOS;Linux;Android;Bindings;OSX;Wrapper;Native</PackageTags>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
