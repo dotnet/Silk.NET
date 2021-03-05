@@ -113,6 +113,8 @@ class Build : NukeBuild
                         return (object) x.Substring(idx + 1, x.Length - idx - 1);
                     }
                 );
+
+                ProcessedMsbuildPropertiesValue["Configuration"] = Configuration;
             }
 
             return ProcessedMsbuildPropertiesValue;
