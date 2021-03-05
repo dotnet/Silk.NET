@@ -11,9 +11,7 @@ using Nuke.Common.ProjectModel;
 using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Tools.MSBuild;
-using Nuke.Common.Tools.VSTest;
 using static Nuke.Common.Tools.MSBuild.MSBuildTasks;
-using static Nuke.Common.Tools.VSTest.VSTestTasks;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 using static Nuke.Common.IO.FileSystemTasks;
 
