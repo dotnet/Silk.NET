@@ -916,6 +916,26 @@ namespace Silk.NET.Vulkan
         DeviceDiagnosticsConfigCreateInfoNV = 1000300001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_RESERVED_QCOM")]
         ReservedQCom = 1000309000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_MEMORY_BARRIER_2_KHR")]
+        MemoryBarrier2Khr = 1000314000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_BUFFER_MEMORY_BARRIER_2_KHR")]
+        BufferMemoryBarrier2Khr = 1000314001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGE_MEMORY_BARRIER_2_KHR")]
+        ImageMemoryBarrier2Khr = 1000314002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_DEPENDENCY_INFO_KHR")]
+        DependencyInfoKhr = 1000314003,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_SUBMIT_INFO_2_KHR")]
+        SubmitInfo2Khr = 1000314004,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_SEMAPHORE_SUBMIT_INFO_KHR")]
+        SemaphoreSubmitInfoKhr = 1000314005,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_COMMAND_BUFFER_SUBMIT_INFO_KHR")]
+        CommandBufferSubmitInfoKhr = 1000314006,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SYNCHRONIZATION_2_FEATURES_KHR")]
+        PhysicalDeviceSynchronization2FeaturesKhr = 1000314007,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_QUEUE_FAMILY_CHECKPOINT_PROPERTIES_2_NV")]
+        QueueFamilyCheckpointProperties2NV = 1000314008,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_CHECKPOINT_DATA_2_NV")]
+        CheckpointData2NV = 1000314009,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_ZERO_INITIALIZE_WORKGROUP_MEMORY_FEATURES_KHR")]
         PhysicalDeviceZeroInitializeWorkgroupMemoryFeaturesKhr = 1000325000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_SHADING_RATE_ENUMS_PROPERTIES_NV")]

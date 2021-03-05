@@ -77,5 +77,7 @@ namespace Silk.NET.Vulkan
         PipelineStageFragmentShadingRateAttachmentBitKhr = 4194304,
         [NativeName("Name", "VK_PIPELINE_STAGE_COMMAND_PREPROCESS_BIT_NV")]
         PipelineStageCommandPreprocessBitNV = 131072,
+        [NativeName("Name", "VK_PIPELINE_STAGE_NONE_KHR")]
+        PipelineStageNoneKhr = 0,
     }
 }

@@ -32,42 +32,86 @@ namespace Silk.NET.OpenGLES
         R3G3B2 = 0x2A10,
         [NativeName("Name", "GL_ALPHA4")]
         Alpha4 = 0x803B,
+        [NativeName("Name", "GL_ALPHA4_EXT")]
+        Alpha4Ext = 0x803B,
         [NativeName("Name", "GL_ALPHA8")]
         Alpha8 = 0x803C,
+        [NativeName("Name", "GL_ALPHA8_EXT")]
+        Alpha8Ext = 0x803C,
+        [NativeName("Name", "GL_ALPHA8_OES")]
+        Alpha8Oes = 0x803C,
         [NativeName("Name", "GL_ALPHA12")]
         Alpha12 = 0x803D,
+        [NativeName("Name", "GL_ALPHA12_EXT")]
+        Alpha12Ext = 0x803D,
         [NativeName("Name", "GL_ALPHA16")]
         Alpha16 = 0x803E,
+        [NativeName("Name", "GL_ALPHA16_EXT")]
+        Alpha16Ext = 0x803E,
         [NativeName("Name", "GL_LUMINANCE4")]
         Luminance4 = 0x803F,
+        [NativeName("Name", "GL_LUMINANCE4_EXT")]
+        Luminance4Ext = 0x803F,
         [NativeName("Name", "GL_LUMINANCE8")]
         Luminance8 = 0x8040,
+        [NativeName("Name", "GL_LUMINANCE8_EXT")]
+        Luminance8Ext = 0x8040,
+        [NativeName("Name", "GL_LUMINANCE8_OES")]
+        Luminance8Oes = 0x8040,
         [NativeName("Name", "GL_LUMINANCE12")]
         Luminance12 = 0x8041,
+        [NativeName("Name", "GL_LUMINANCE12_EXT")]
+        Luminance12Ext = 0x8041,
         [NativeName("Name", "GL_LUMINANCE16")]
         Luminance16 = 0x8042,
+        [NativeName("Name", "GL_LUMINANCE16_EXT")]
+        Luminance16Ext = 0x8042,
         [NativeName("Name", "GL_LUMINANCE4_ALPHA4")]
         Luminance4Alpha4 = 0x8043,
+        [NativeName("Name", "GL_LUMINANCE4_ALPHA4_EXT")]
+        Luminance4Alpha4Ext = 0x8043,
+        [NativeName("Name", "GL_LUMINANCE4_ALPHA4_OES")]
+        Luminance4Alpha4Oes = 0x8043,
         [NativeName("Name", "GL_LUMINANCE6_ALPHA2")]
         Luminance6Alpha2 = 0x8044,
+        [NativeName("Name", "GL_LUMINANCE6_ALPHA2_EXT")]
+        Luminance6Alpha2Ext = 0x8044,
         [NativeName("Name", "GL_LUMINANCE8_ALPHA8")]
         Luminance8Alpha8 = 0x8045,
+        [NativeName("Name", "GL_LUMINANCE8_ALPHA8_EXT")]
+        Luminance8Alpha8Ext = 0x8045,
+        [NativeName("Name", "GL_LUMINANCE8_ALPHA8_OES")]
+        Luminance8Alpha8Oes = 0x8045,
         [NativeName("Name", "GL_LUMINANCE12_ALPHA4")]
         Luminance12Alpha4 = 0x8046,
+        [NativeName("Name", "GL_LUMINANCE12_ALPHA4_EXT")]
+        Luminance12Alpha4Ext = 0x8046,
         [NativeName("Name", "GL_LUMINANCE12_ALPHA12")]
         Luminance12Alpha12 = 0x8047,
+        [NativeName("Name", "GL_LUMINANCE12_ALPHA12_EXT")]
+        Luminance12Alpha12Ext = 0x8047,
         [NativeName("Name", "GL_LUMINANCE16_ALPHA16")]
         Luminance16Alpha16 = 0x8048,
+        [NativeName("Name", "GL_LUMINANCE16_ALPHA16_EXT")]
+        Luminance16Alpha16Ext = 0x8048,
         [NativeName("Name", "GL_INTENSITY")]
         Intensity = 0x8049,
         [NativeName("Name", "GL_INTENSITY4")]
         Intensity4 = 0x804A,
+        [NativeName("Name", "GL_INTENSITY4_EXT")]
+        Intensity4Ext = 0x804A,
         [NativeName("Name", "GL_INTENSITY8")]
         Intensity8 = 0x804B,
+        [NativeName("Name", "GL_INTENSITY8_EXT")]
+        Intensity8Ext = 0x804B,
         [NativeName("Name", "GL_INTENSITY12")]
         Intensity12 = 0x804C,
+        [NativeName("Name", "GL_INTENSITY12_EXT")]
+        Intensity12Ext = 0x804C,
         [NativeName("Name", "GL_INTENSITY16")]
         Intensity16 = 0x804D,
+        [NativeName("Name", "GL_INTENSITY16_EXT")]
+        Intensity16Ext = 0x804D,
         [NativeName("Name", "GL_RGB2_EXT")]
         Rgb2Ext = 0x804E,
         [NativeName("Name", "GL_RGB4")]
@@ -96,6 +140,10 @@ namespace Silk.NET.OpenGLES
         Rgb16 = 0x8054,
         [NativeName("Name", "GL_RGB16_EXT")]
         Rgb16Ext = 0x8054,
+        [NativeName("Name", "GL_RGBA2")]
+        Rgba2 = 0x8055,
+        [NativeName("Name", "GL_RGBA2_EXT")]
+        Rgba2Ext = 0x8055,
         [NativeName("Name", "GL_RGBA4")]
         Rgba4 = 0x8056,
         [NativeName("Name", "GL_RGBA4_EXT")]
@@ -174,12 +222,16 @@ namespace Silk.NET.OpenGLES
         DepthComponent16Oes = 0x81A5,
         [NativeName("Name", "GL_DEPTH_COMPONENT16_SGIX")]
         DepthComponent16Sgix = 0x81A5,
+        [NativeName("Name", "GL_DEPTH_COMPONENT24")]
+        DepthComponent24 = 0x81A6,
         [NativeName("Name", "GL_DEPTH_COMPONENT24_ARB")]
         DepthComponent24Arb = 0x81A6,
         [NativeName("Name", "GL_DEPTH_COMPONENT24_OES")]
         DepthComponent24Oes = 0x81A6,
         [NativeName("Name", "GL_DEPTH_COMPONENT24_SGIX")]
         DepthComponent24Sgix = 0x81A6,
+        [NativeName("Name", "GL_DEPTH_COMPONENT32")]
+        DepthComponent32 = 0x81A7,
         [NativeName("Name", "GL_DEPTH_COMPONENT32_ARB")]
         DepthComponent32Arb = 0x81A7,
         [NativeName("Name", "GL_DEPTH_COMPONENT32_OES")]
@@ -252,8 +304,12 @@ namespace Silk.NET.OpenGLES
         CompressedRgbS3TCDxt1Ext = 0x83F0,
         [NativeName("Name", "GL_COMPRESSED_RGBA_S3TC_DXT1_EXT")]
         CompressedRgbaS3TCDxt1Ext = 0x83F1,
+        [NativeName("Name", "GL_COMPRESSED_RGBA_S3TC_DXT3_ANGLE")]
+        CompressedRgbaS3TCDxt3Angle = 0x83F2,
         [NativeName("Name", "GL_COMPRESSED_RGBA_S3TC_DXT3_EXT")]
         CompressedRgbaS3TCDxt3Ext = 0x83F2,
+        [NativeName("Name", "GL_COMPRESSED_RGBA_S3TC_DXT5_ANGLE")]
+        CompressedRgbaS3TCDxt5Angle = 0x83F3,
         [NativeName("Name", "GL_COMPRESSED_RGBA_S3TC_DXT5_EXT")]
         CompressedRgbaS3TCDxt5Ext = 0x83F3,
         [NativeName("Name", "GL_COMPRESSED_RGB")]
@@ -278,6 +334,10 @@ namespace Silk.NET.OpenGLES
         Rgba32fExt = 0x8814,
         [NativeName("Name", "GL_RGB32F")]
         Rgb32f = 0x8815,
+        [NativeName("Name", "GL_RGB32F_ARB")]
+        Rgb32fArb = 0x8815,
+        [NativeName("Name", "GL_RGB32F_EXT")]
+        Rgb32fExt = 0x8815,
         [NativeName("Name", "GL_RGBA16F")]
         Rgba16f = 0x881A,
         [NativeName("Name", "GL_RGBA16F_ARB")]
@@ -332,12 +392,20 @@ namespace Silk.NET.OpenGLES
         CompressedSrgbAlpha = 0x8C49,
         [NativeName("Name", "GL_COMPRESSED_SRGB_S3TC_DXT1_EXT")]
         CompressedSrgbS3TCDxt1Ext = 0x8C4C,
+        [NativeName("Name", "GL_COMPRESSED_SRGB_S3TC_DXT1_NV")]
+        CompressedSrgbS3TCDxt1NV = 0x8C4C,
         [NativeName("Name", "GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_EXT")]
         CompressedSrgbAlphaS3TCDxt1Ext = 0x8C4D,
+        [NativeName("Name", "GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT1_NV")]
+        CompressedSrgbAlphaS3TCDxt1NV = 0x8C4D,
         [NativeName("Name", "GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT3_EXT")]
         CompressedSrgbAlphaS3TCDxt3Ext = 0x8C4E,
+        [NativeName("Name", "GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT3_NV")]
+        CompressedSrgbAlphaS3TCDxt3NV = 0x8C4E,
         [NativeName("Name", "GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_EXT")]
         CompressedSrgbAlphaS3TCDxt5Ext = 0x8C4F,
+        [NativeName("Name", "GL_COMPRESSED_SRGB_ALPHA_S3TC_DXT5_NV")]
+        CompressedSrgbAlphaS3TCDxt5NV = 0x8C4F,
         [NativeName("Name", "GL_DEPTH_COMPONENT32F")]
         DepthComponent32f = 0x8CAC,
         [NativeName("Name", "GL_DEPTH32F_STENCIL8")]
@@ -366,28 +434,100 @@ namespace Silk.NET.OpenGLES
         StencilIndex16Ext = 0x8D49,
         [NativeName("Name", "GL_RGBA32UI")]
         Rgba32ui = 0x8D70,
+        [NativeName("Name", "GL_RGBA32UI_EXT")]
+        Rgba32uiExt = 0x8D70,
         [NativeName("Name", "GL_RGB32UI")]
         Rgb32ui = 0x8D71,
+        [NativeName("Name", "GL_RGB32UI_EXT")]
+        Rgb32uiExt = 0x8D71,
+        [NativeName("Name", "GL_ALPHA32UI_EXT")]
+        Alpha32uiExt = 0x8D72,
+        [NativeName("Name", "GL_INTENSITY32UI_EXT")]
+        Intensity32uiExt = 0x8D73,
+        [NativeName("Name", "GL_LUMINANCE32UI_EXT")]
+        Luminance32uiExt = 0x8D74,
+        [NativeName("Name", "GL_LUMINANCE_ALPHA32UI_EXT")]
+        LuminanceAlpha32uiExt = 0x8D75,
         [NativeName("Name", "GL_RGBA16UI")]
         Rgba16ui = 0x8D76,
+        [NativeName("Name", "GL_RGBA16UI_EXT")]
+        Rgba16uiExt = 0x8D76,
         [NativeName("Name", "GL_RGB16UI")]
         Rgb16ui = 0x8D77,
+        [NativeName("Name", "GL_RGB16UI_EXT")]
+        Rgb16uiExt = 0x8D77,
+        [NativeName("Name", "GL_ALPHA16UI_EXT")]
+        Alpha16uiExt = 0x8D78,
+        [NativeName("Name", "GL_INTENSITY16UI_EXT")]
+        Intensity16uiExt = 0x8D79,
+        [NativeName("Name", "GL_LUMINANCE16UI_EXT")]
+        Luminance16uiExt = 0x8D7A,
+        [NativeName("Name", "GL_LUMINANCE_ALPHA16UI_EXT")]
+        LuminanceAlpha16uiExt = 0x8D7B,
         [NativeName("Name", "GL_RGBA8UI")]
         Rgba8ui = 0x8D7C,
+        [NativeName("Name", "GL_RGBA8UI_EXT")]
+        Rgba8uiExt = 0x8D7C,
         [NativeName("Name", "GL_RGB8UI")]
         Rgb8ui = 0x8D7D,
+        [NativeName("Name", "GL_RGB8UI_EXT")]
+        Rgb8uiExt = 0x8D7D,
+        [NativeName("Name", "GL_ALPHA8UI_EXT")]
+        Alpha8uiExt = 0x8D7E,
+        [NativeName("Name", "GL_INTENSITY8UI_EXT")]
+        Intensity8uiExt = 0x8D7F,
+        [NativeName("Name", "GL_LUMINANCE8UI_EXT")]
+        Luminance8uiExt = 0x8D80,
+        [NativeName("Name", "GL_LUMINANCE_ALPHA8UI_EXT")]
+        LuminanceAlpha8uiExt = 0x8D81,
         [NativeName("Name", "GL_RGBA32I")]
         Rgba32i = 0x8D82,
+        [NativeName("Name", "GL_RGBA32I_EXT")]
+        Rgba32iExt = 0x8D82,
         [NativeName("Name", "GL_RGB32I")]
         Rgb32i = 0x8D83,
+        [NativeName("Name", "GL_RGB32I_EXT")]
+        Rgb32iExt = 0x8D83,
+        [NativeName("Name", "GL_ALPHA32I_EXT")]
+        Alpha32iExt = 0x8D84,
+        [NativeName("Name", "GL_INTENSITY32I_EXT")]
+        Intensity32iExt = 0x8D85,
+        [NativeName("Name", "GL_LUMINANCE32I_EXT")]
+        Luminance32iExt = 0x8D86,
+        [NativeName("Name", "GL_LUMINANCE_ALPHA32I_EXT")]
+        LuminanceAlpha32iExt = 0x8D87,
         [NativeName("Name", "GL_RGBA16I")]
         Rgba16i = 0x8D88,
+        [NativeName("Name", "GL_RGBA16I_EXT")]
+        Rgba16iExt = 0x8D88,
         [NativeName("Name", "GL_RGB16I")]
         Rgb16i = 0x8D89,
+        [NativeName("Name", "GL_RGB16I_EXT")]
+        Rgb16iExt = 0x8D89,
+        [NativeName("Name", "GL_ALPHA16I_EXT")]
+        Alpha16iExt = 0x8D8A,
+        [NativeName("Name", "GL_INTENSITY16I_EXT")]
+        Intensity16iExt = 0x8D8B,
+        [NativeName("Name", "GL_LUMINANCE16I_EXT")]
+        Luminance16iExt = 0x8D8C,
+        [NativeName("Name", "GL_LUMINANCE_ALPHA16I_EXT")]
+        LuminanceAlpha16iExt = 0x8D8D,
         [NativeName("Name", "GL_RGBA8I")]
         Rgba8i = 0x8D8E,
+        [NativeName("Name", "GL_RGBA8I_EXT")]
+        Rgba8iExt = 0x8D8E,
         [NativeName("Name", "GL_RGB8I")]
         Rgb8i = 0x8D8F,
+        [NativeName("Name", "GL_RGB8I_EXT")]
+        Rgb8iExt = 0x8D8F,
+        [NativeName("Name", "GL_ALPHA8I_EXT")]
+        Alpha8iExt = 0x8D90,
+        [NativeName("Name", "GL_INTENSITY8I_EXT")]
+        Intensity8iExt = 0x8D91,
+        [NativeName("Name", "GL_LUMINANCE8I_EXT")]
+        Luminance8iExt = 0x8D92,
+        [NativeName("Name", "GL_LUMINANCE_ALPHA8I_EXT")]
+        LuminanceAlpha8iExt = 0x8D93,
         [NativeName("Name", "GL_DEPTH_COMPONENT32F_NV")]
         DepthComponent32fNV = 0x8DAB,
         [NativeName("Name", "GL_DEPTH32F_STENCIL8_NV")]
@@ -400,18 +540,38 @@ namespace Silk.NET.OpenGLES
         CompressedSignedRedRgtc1 = 0x8DBC,
         [NativeName("Name", "GL_COMPRESSED_SIGNED_RED_RGTC1_EXT")]
         CompressedSignedRedRgtc1Ext = 0x8DBC,
+        [NativeName("Name", "GL_COMPRESSED_RED_GREEN_RGTC2_EXT")]
+        CompressedRedGreenRgtc2Ext = 0x8DBD,
         [NativeName("Name", "GL_COMPRESSED_RG_RGTC2")]
         CompressedRGRgtc2 = 0x8DBD,
+        [NativeName("Name", "GL_COMPRESSED_SIGNED_RED_GREEN_RGTC2_EXT")]
+        CompressedSignedRedGreenRgtc2Ext = 0x8DBE,
         [NativeName("Name", "GL_COMPRESSED_SIGNED_RG_RGTC2")]
         CompressedSignedRGRgtc2 = 0x8DBE,
         [NativeName("Name", "GL_COMPRESSED_RGBA_BPTC_UNORM")]
         CompressedRgbaBptcUnorm = 0x8E8C,
+        [NativeName("Name", "GL_COMPRESSED_RGBA_BPTC_UNORM_ARB")]
+        CompressedRgbaBptcUnormArb = 0x8E8C,
+        [NativeName("Name", "GL_COMPRESSED_RGBA_BPTC_UNORM_EXT")]
+        CompressedRgbaBptcUnormExt = 0x8E8C,
         [NativeName("Name", "GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM")]
         CompressedSrgbAlphaBptcUnorm = 0x8E8D,
+        [NativeName("Name", "GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_ARB")]
+        CompressedSrgbAlphaBptcUnormArb = 0x8E8D,
+        [NativeName("Name", "GL_COMPRESSED_SRGB_ALPHA_BPTC_UNORM_EXT")]
+        CompressedSrgbAlphaBptcUnormExt = 0x8E8D,
         [NativeName("Name", "GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT")]
         CompressedRgbBptcSignedFloat = 0x8E8E,
+        [NativeName("Name", "GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT_ARB")]
+        CompressedRgbBptcSignedFloatArb = 0x8E8E,
+        [NativeName("Name", "GL_COMPRESSED_RGB_BPTC_SIGNED_FLOAT_EXT")]
+        CompressedRgbBptcSignedFloatExt = 0x8E8E,
         [NativeName("Name", "GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT")]
         CompressedRgbBptcUnsignedFloat = 0x8E8F,
+        [NativeName("Name", "GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_ARB")]
+        CompressedRgbBptcUnsignedFloatArb = 0x8E8F,
+        [NativeName("Name", "GL_COMPRESSED_RGB_BPTC_UNSIGNED_FLOAT_EXT")]
+        CompressedRgbBptcUnsignedFloatExt = 0x8E8F,
         [NativeName("Name", "GL_R8_SNORM")]
         R8SNorm = 0x8F94,
         [NativeName("Name", "GL_RG8_SNORM")]
@@ -432,6 +592,10 @@ namespace Silk.NET.OpenGLES
         Rgb16SNorm = 0x8F9A,
         [NativeName("Name", "GL_RGB16_SNORM_EXT")]
         Rgb16SNormExt = 0x8F9A,
+        [NativeName("Name", "GL_RGBA16_SNORM")]
+        Rgba16SNorm = 0x8F9B,
+        [NativeName("Name", "GL_RGBA16_SNORM_EXT")]
+        Rgba16SNormExt = 0x8F9B,
         [NativeName("Name", "GL_SR8_EXT")]
         SR8Ext = 0x8FBD,
         [NativeName("Name", "GL_SRG8_EXT")]
@@ -440,24 +604,44 @@ namespace Silk.NET.OpenGLES
         Rgb10A2ui = 0x906F,
         [NativeName("Name", "GL_COMPRESSED_R11_EAC")]
         CompressedR11Eac = 0x9270,
+        [NativeName("Name", "GL_COMPRESSED_R11_EAC_OES")]
+        CompressedR11EacOes = 0x9270,
         [NativeName("Name", "GL_COMPRESSED_SIGNED_R11_EAC")]
         CompressedSignedR11Eac = 0x9271,
+        [NativeName("Name", "GL_COMPRESSED_SIGNED_R11_EAC_OES")]
+        CompressedSignedR11EacOes = 0x9271,
         [NativeName("Name", "GL_COMPRESSED_RG11_EAC")]
         CompressedRG11Eac = 0x9272,
+        [NativeName("Name", "GL_COMPRESSED_RG11_EAC_OES")]
+        CompressedRG11EacOes = 0x9272,
         [NativeName("Name", "GL_COMPRESSED_SIGNED_RG11_EAC")]
         CompressedSignedRG11Eac = 0x9273,
+        [NativeName("Name", "GL_COMPRESSED_SIGNED_RG11_EAC_OES")]
+        CompressedSignedRG11EacOes = 0x9273,
         [NativeName("Name", "GL_COMPRESSED_RGB8_ETC2")]
         CompressedRgb8Etc2 = 0x9274,
+        [NativeName("Name", "GL_COMPRESSED_RGB8_ETC2_OES")]
+        CompressedRgb8Etc2Oes = 0x9274,
         [NativeName("Name", "GL_COMPRESSED_SRGB8_ETC2")]
         CompressedSrgb8Etc2 = 0x9275,
+        [NativeName("Name", "GL_COMPRESSED_SRGB8_ETC2_OES")]
+        CompressedSrgb8Etc2Oes = 0x9275,
         [NativeName("Name", "GL_COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2")]
         CompressedRgb8PunchthroughAlpha1Etc2 = 0x9276,
+        [NativeName("Name", "GL_COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2_OES")]
+        CompressedRgb8PunchthroughAlpha1Etc2Oes = 0x9276,
         [NativeName("Name", "GL_COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2")]
         CompressedSrgb8PunchthroughAlpha1Etc2 = 0x9277,
+        [NativeName("Name", "GL_COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2_OES")]
+        CompressedSrgb8PunchthroughAlpha1Etc2Oes = 0x9277,
         [NativeName("Name", "GL_COMPRESSED_RGBA8_ETC2_EAC")]
         CompressedRgba8Etc2Eac = 0x9278,
+        [NativeName("Name", "GL_COMPRESSED_RGBA8_ETC2_EAC_OES")]
+        CompressedRgba8Etc2EacOes = 0x9278,
         [NativeName("Name", "GL_COMPRESSED_SRGB8_ALPHA8_ETC2_EAC")]
         CompressedSrgb8Alpha8Etc2Eac = 0x9279,
+        [NativeName("Name", "GL_COMPRESSED_SRGB8_ALPHA8_ETC2_EAC_OES")]
+        CompressedSrgb8Alpha8Etc2EacOes = 0x9279,
         [NativeName("Name", "GL_COMPRESSED_RGBA_ASTC_4x4")]
         CompressedRgbaAstc4x4 = 0x93B0,
         [NativeName("Name", "GL_COMPRESSED_RGBA_ASTC_4x4_KHR")]

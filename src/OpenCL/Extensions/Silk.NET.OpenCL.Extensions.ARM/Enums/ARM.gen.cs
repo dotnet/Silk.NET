@@ -50,6 +50,10 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         ImportDmaBufDataConsistencyWithHostArm = 0x41E3,
         [NativeName("Name", "CL_IMPORT_MEMORY_WHOLE_ALLOCATION_ARM")]
         ImportMemoryWholeAllocationArm = -1,
+        [NativeName("Name", "CL_IMPORT_ANDROID_HARDWARE_BUFFER_PLANE_INDEX_ARM")]
+        ImportAndroidHardwareBufferPlaneIndexArm = 0x41EF,
+        [NativeName("Name", "CL_IMPORT_ANDROID_HARDWARE_BUFFER_LAYER_INDEX_ARM")]
+        ImportAndroidHardwareBufferLayerIndexArm = 0x41F0,
         [NativeName("Name", "CL_PRINTF_CALLBACK_ARM")]
         PrintfCallbackArm = 0x40B0,
         [NativeName("Name", "CL_PRINTF_BUFFERSIZE_ARM")]
