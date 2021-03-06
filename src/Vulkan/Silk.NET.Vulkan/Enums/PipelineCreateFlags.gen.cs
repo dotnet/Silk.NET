@@ -53,6 +53,8 @@ namespace Silk.NET.Vulkan
         PipelineCreateFailOnPipelineCompileRequiredBitExt = 256,
         [NativeName("Name", "VK_PIPELINE_CREATE_EARLY_RETURN_ON_FAILURE_BIT_EXT")]
         PipelineCreateEarlyReturnOnFailureBitExt = 512,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_BIT_20_NV")]
+        PipelineCreateReservedBit20NV = 1048576,
         [NativeName("Name", "VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT")]
         PipelineCreateViewIndexFromDeviceIndexBit = 8,
         [NativeName("Name", "VK_PIPELINE_CREATE_DISPATCH_BASE_BIT")]

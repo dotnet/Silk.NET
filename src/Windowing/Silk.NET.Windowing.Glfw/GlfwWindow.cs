@@ -519,7 +519,7 @@ namespace Silk.NET.Windowing.Glfw
 
         public override void Dispose()
         {
-            CoreReset();
+            Reset();
             GC.SuppressFinalize(this);
         }
 
@@ -669,7 +669,7 @@ namespace Silk.NET.Windowing.Glfw
 
         ~GlfwWindow()
         {
-            CoreReset();
+            Reset();
         }
 
         public bool IsCurrent => _glfw.GetCurrentContext() == _glfwWindow;

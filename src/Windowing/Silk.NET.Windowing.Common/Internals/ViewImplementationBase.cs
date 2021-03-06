@@ -111,6 +111,11 @@ namespace Silk.NET.Windowing.Internals
 
         public void Reset()
         {
+            if (!IsInitialized)
+            {
+                return;
+            }
+            
             _renderStopwatch.Reset();
             _updateStopwatch.Reset();
             _lifetimeStopwatch.Reset();

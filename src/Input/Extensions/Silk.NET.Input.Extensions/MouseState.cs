@@ -4,47 +4,59 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Buffers;
 using System.Numerics;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Input.Extensions
 {
     public sealed class MouseState : IDisposable
     {
-        private readonly int _buttonCount;
-        private readonly unsafe MouseButton* _buttons;
-        private readonly int _pressedButtonCount;
-        private readonly unsafe MouseButton* _pressedButtons;
-        private readonly int _scrollWheelCount;
-        private readonly unsafe ScrollWheel* _scrollWheels;
+        private readonly int _buttonCount, _pressedButtonCount, _scrollWheelCount;
+        private readonly IMemoryOwner<byte> _buttons, _pressedButtons, _scrollWheels;
 
-        internal unsafe MouseState(IMouse mouse)
+        internal unsafe MouseState(IMouse mouse, MemoryPool<byte> pool)
         {
+            // Set properties
             Name = mouse.Name;
             Index = mouse.Index;
             IsConnected = mouse.IsConnected;
-            var buttons = mouse.SupportedButtons;
-            _buttonCount = buttons.Count;
-            _buttons = (MouseButton*) Marshal.AllocHGlobal(_buttonCount * sizeof(MouseButton));
-            _pressedButtons = (MouseButton*) Marshal.AllocHGlobal(_buttonCount * sizeof(MouseButton));
-            _pressedButtonCount = 0;
+            
+            // Initial rentals
+            var srcButtons = mouse.SupportedButtons; // get the source's supported buttons
+            _buttonCount = srcButtons.Count; // assign the button count
+            _buttons = pool.Rent(_buttonCount * sizeof(MouseButton)); // do a full rental of all supported buttons
+            // we don't know how many buttons are pressed, do a full rental
+            _pressedButtons = pool.Rent(_buttonCount * sizeof(MouseButton));
+            _pressedButtonCount = _buttonCount; // set the pressed button count to span the entire initial rental
+            var buttons = GetSupportedButtons(); // get the span over the supported buttons
+            var pressedButtons = GetPressedButtons(); // get the full span of the initial rental of the pressed buttons
+            _pressedButtonCount = 0; // set the pressed button count to zero to actually count how many are pressed
             for (var i = 0; i < _buttonCount; i++)
             {
-                _buttons[i] = buttons[i];
-                if (mouse.IsButtonPressed(_buttons[i]))
+                buttons[i] = srcButtons[i];
+                if (mouse.IsButtonPressed(buttons[i]))
                 {
-                    _pressedButtons[_pressedButtonCount++] = _buttons[i];
+                    pressedButtons[_pressedButtonCount++] = buttons[i];
                 }
             }
 
-            _pressedButtons = (MouseButton*) Marshal.ReAllocHGlobal
-                ((nint) _pressedButtons, (nint) (_pressedButtonCount * sizeof(MouseButton)));
-            var wheels = mouse.ScrollWheels;
-            _scrollWheelCount = wheels.Count;
-            _scrollWheels = (ScrollWheel*) Marshal.AllocHGlobal(_scrollWheelCount * sizeof(ScrollWheel));
+            // Trim the pressed button rental
+            using var wip = _pressedButtons; // get the original rental, and dispose of it when we're done
+            var wipSpan = GetPressedButtons(); // get the trimmed span over the full initial rental
+            _pressedButtons = pool.Rent(_pressedButtonCount * sizeof(MouseButton)); // create the trimmed rental
+            pressedButtons = GetPressedButtons(); // get the span over the trimmed rental
+            wipSpan.CopyTo(pressedButtons); // copy the trimmed span over the full rental to the trimmed rental
+            
+            // Scroll wheels
+            var srcWheels = mouse.ScrollWheels;
+            _scrollWheelCount = srcWheels.Count;
+            _scrollWheels = pool.Rent(_scrollWheelCount * sizeof(ScrollWheel));
+            var dstWheels = GetScrollWheels();
             for (var i = 0; i < _scrollWheelCount; i++)
             {
-                _scrollWheels[i] = wheels[i];
+                dstWheels[i] = srcWheels[i];
             }
 
             Position = mouse.Position;
@@ -55,32 +67,20 @@ namespace Silk.NET.Input.Extensions
         public bool IsConnected { get; }
         public Vector2 Position { get; }
 
-        public void Dispose()
-        {
-            ReleaseUnmanagedResources();
-            GC.SuppressFinalize(this);
-        }
-
         public unsafe Span<MouseButton> GetSupportedButtons()
-        {
-            return new Span<MouseButton>(_buttons, _buttonCount);
-        }
+            => new(Unsafe.AsPointer(ref _buttons.Memory.Span.GetPinnableReference()), _buttonCount);
 
         public unsafe Span<MouseButton> GetPressedButtons()
-        {
-            return new Span<MouseButton>(_pressedButtons, _pressedButtonCount);
-        }
+            => new(Unsafe.AsPointer(ref _pressedButtons.Memory.Span.GetPinnableReference()), _pressedButtonCount);
 
         public unsafe Span<ScrollWheel> GetScrollWheels()
-        {
-            return new Span<ScrollWheel>(_scrollWheels, _scrollWheelCount);
-        }
+            => new(Unsafe.AsPointer(ref _scrollWheels.Memory.Span.GetPinnableReference()), _scrollWheelCount);
 
-        public unsafe bool IsButtonPressed(MouseButton btn)
+        public bool IsButtonPressed(MouseButton btn)
         {
-            for (var i = 0; i < _pressedButtonCount; i++)
+            foreach (var pressedButton in GetPressedButtons())
             {
-                if (_pressedButtons[i] == btn)
+                if (pressedButton == btn)
                 {
                     return true;
                 }
@@ -89,16 +89,11 @@ namespace Silk.NET.Input.Extensions
             return false;
         }
 
-        private unsafe void ReleaseUnmanagedResources()
+        public void Dispose()
         {
-            Marshal.FreeHGlobal((nint) _buttons);
-            Marshal.FreeHGlobal((nint) _pressedButtons);
-            Marshal.FreeHGlobal((nint) _scrollWheels);
-        }
-
-        ~MouseState()
-        {
-            ReleaseUnmanagedResources();
+            _buttons?.Dispose();
+            _pressedButtons?.Dispose();
+            _scrollWheels?.Dispose();
         }
     }
 }

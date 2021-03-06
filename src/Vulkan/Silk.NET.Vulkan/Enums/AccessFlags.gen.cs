@@ -83,5 +83,7 @@ namespace Silk.NET.Vulkan
         AccessCommandPreprocessReadBitNV = 131072,
         [NativeName("Name", "VK_ACCESS_COMMAND_PREPROCESS_WRITE_BIT_NV")]
         AccessCommandPreprocessWriteBitNV = 262144,
+        [NativeName("Name", "VK_ACCESS_NONE_KHR")]
+        AccessNoneKhr = 0,
     }
 }

@@ -4,31 +4,45 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Buffers;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 namespace Silk.NET.Input.Extensions
 {
     public sealed class GamepadState : IDisposable
     {
-        private readonly int _buttonCount;
-        private readonly unsafe Button* _buttons;
-        private readonly int _thumbstickCount;
-        private readonly unsafe Thumbstick* _thumbsticks;
-        private readonly int _triggerCount;
-        private readonly unsafe Trigger* _triggers;
+        private readonly int _buttonCount, _thumbstickCount, _triggerCount;
+        private readonly IMemoryOwner<byte> _buttons, _thumbsticks, _triggers;
 
-        internal unsafe GamepadState(IGamepad gamepad)
+        internal unsafe GamepadState(IGamepad gamepad, MemoryPool<byte> pool)
         {
             Name = gamepad.Name;
             Index = gamepad.Index;
             IsConnected = gamepad.IsConnected;
-            var buttons = gamepad.Buttons;
-            var thumbsticks = gamepad.Thumbsticks;
-            var triggers = gamepad.Triggers;
-            _buttons = (Button*) Marshal.AllocHGlobal((_buttonCount = buttons.Count) * sizeof(Button));
-            _thumbsticks = (Thumbstick*) Marshal.AllocHGlobal
-                ((_thumbstickCount = thumbsticks.Count) * sizeof(Thumbstick));
-            _triggers = (Trigger*) Marshal.AllocHGlobal((_triggerCount = triggers.Count) * sizeof(Trigger));
+            var srcButtons = gamepad.Buttons;
+            var srcThumbsticks = gamepad.Thumbsticks;
+            var srcTriggers = gamepad.Triggers;
+            _buttons = pool.Rent((_buttonCount = srcButtons.Count) * sizeof(Button));
+            _thumbsticks = pool.Rent((_thumbstickCount = srcThumbsticks.Count) * sizeof(Thumbstick));
+            _triggers = pool.Rent((_triggerCount = srcTriggers.Count) * sizeof(Trigger));
+            var dstButtons = GetButtons();
+            var dstThumbsticks = GetThumbsticks();
+            var dstTriggers = GetTriggers();
+            for (var i = 0; i < _buttonCount; i++)
+            {
+                dstButtons[i] = srcButtons[i];
+            }
+
+            for (var i = 0; i < _thumbstickCount; i++)
+            {
+                dstThumbsticks[i] = srcThumbsticks[i];
+            }
+
+            for (var i = 0; i < _triggerCount; i++)
+            {
+                dstTriggers[i] = srcTriggers[i];
+            }
             Deadzone = gamepad.Deadzone;
         }
 
@@ -37,37 +51,18 @@ namespace Silk.NET.Input.Extensions
         public bool IsConnected { get; }
         public Deadzone Deadzone { get; }
 
+        public unsafe Span<Button> GetButtons()
+            => new(Unsafe.AsPointer(ref _buttons.Memory.Span.GetPinnableReference()), _buttonCount);
+        public unsafe Span<Thumbstick> GetThumbsticks()
+            => new(Unsafe.AsPointer(ref _thumbsticks.Memory.Span.GetPinnableReference()), _thumbstickCount);
+        public unsafe Span<Trigger> GetTriggers()
+            => new(Unsafe.AsPointer(ref _triggers.Memory.Span.GetPinnableReference()), _triggerCount);
+
         public void Dispose()
         {
-            ReleaseUnmanagedResources();
-            GC.SuppressFinalize(this);
-        }
-
-        public unsafe Span<Button> GetButtons()
-        {
-            return new Span<Button>(_buttons, _buttonCount);
-        }
-
-        public unsafe Span<Thumbstick> GetThumbsticks()
-        {
-            return new Span<Thumbstick>(_thumbsticks, _thumbstickCount);
-        }
-
-        public unsafe Span<Trigger> GetTriggers()
-        {
-            return new Span<Trigger>(_triggers, _triggerCount);
-        }
-
-        private unsafe void ReleaseUnmanagedResources()
-        {
-            Marshal.FreeHGlobal((nint) _buttons);
-            Marshal.FreeHGlobal((nint) _thumbsticks);
-            Marshal.FreeHGlobal((nint) _triggers);
-        }
-
-        ~GamepadState()
-        {
-            ReleaseUnmanagedResources();
+            _buttons?.Dispose();
+            _thumbsticks?.Dispose();
+            _triggers?.Dispose();
         }
     }
 }

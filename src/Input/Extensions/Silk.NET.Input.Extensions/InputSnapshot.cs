@@ -4,12 +4,13 @@
 // of the MIT license. See the LICENSE file for details.
 
 using System;
+using System.Buffers;
 
 namespace Silk.NET.Input.Extensions
 {
     public sealed class InputSnapshot : IDisposable
     {
-        internal InputSnapshot(IInputContext ctx)
+        internal InputSnapshot(IInputContext ctx, MemoryPool<byte> pool)
         {
             var gamepads = ctx.Gamepads;
             var joysticks = ctx.Joysticks;
@@ -21,25 +22,26 @@ namespace Silk.NET.Input.Extensions
             Mice = new MouseState[mice.Count];
             for (var i = 0; i < gamepads.Count; i++)
             {
-                Gamepads[i] = new GamepadState(gamepads[i]);
+                Gamepads[i] = new(gamepads[i], pool);
             }
 
             for (var i = 0; i < joysticks.Count; i++)
             {
-                Joysticks[i] = new JoystickState(joysticks[i]);
+                Joysticks[i] = new(joysticks[i], pool);
             }
 
             for (var i = 0; i < keyboards.Count; i++)
             {
-                Keyboards[i] = new KeyboardState(keyboards[i]);
+                Keyboards[i] = new(keyboards[i], pool);
             }
 
             for (var i = 0; i < mice.Count; i++)
             {
-                Mice[i] = new MouseState(mice[i]);
+                Mice[i] = new(mice[i], pool);
             }
         }
 
+        // TODO in 3.0 rent these too! right now the capture extensions are very expensive
         public GamepadState[] Gamepads { get; }
         public JoystickState[] Joysticks { get; }
         public KeyboardState[] Keyboards { get; }

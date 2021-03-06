@@ -42,25 +42,25 @@ namespace Silk.NET.OpenGL.Extensions.EXT
             thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferData<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferData<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferData<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferData<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferData<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferData<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferData<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferData<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
@@ -85,6 +85,30 @@ namespace Silk.NET.OpenGL.Extensions.EXT
         }
 
         public static unsafe void ClearNamedBufferSubData<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
+        }
+
+        public static unsafe void ClearNamedBufferSubData<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
+        }
+
+        public static unsafe void ClearNamedBufferSubData<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] EXT format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
+        }
+
+        public static unsafe void ClearNamedBufferSubData<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
+        }
+
+        public static unsafe void ClearNamedBufferSubData<T0>(this ExtDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nuint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());

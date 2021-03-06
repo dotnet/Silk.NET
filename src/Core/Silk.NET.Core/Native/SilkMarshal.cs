@@ -25,7 +25,7 @@ namespace Silk.NET.Core.Native
         /// </summary>
         /// <param name="length">The length of the string pointer, in bytes.</param>
         /// <returns>A pointer to the created string.</returns>
-        public static nint AllocBStr(int length) => Marshal.StringToBSTR(new string('\0', length));
+        public static nint AllocBStr(int length) => Marshal.StringToBSTR(new('\0', length));
 
         /// <summary>
         /// Free a BStr pointer
@@ -211,6 +211,8 @@ namespace Silk.NET.Core.Native
             }
         }
 
+#nullable enable
+
         /// <summary>
         /// Gets a pointer to memory containing a copy of the input string marshalled per the specified
         /// native string encoding.
@@ -221,8 +223,8 @@ namespace Silk.NET.Core.Native
         /// <param name="input">The string to marshal.</param>
         /// <param name="encoding">The target native string encoding.</param>
         /// <returns>A pointer to the memory containing the marshalled string array.</returns>
-        public static nint StringToPtr(string input, NativeStringEncoding encoding = NativeStringEncoding.Ansi)
-            => RegisterMemory(StringToMemory(input, encoding));
+        public static nint StringToPtr(string? input, NativeStringEncoding encoding = NativeStringEncoding.Ansi)
+            => input is null ? 0 : RegisterMemory(StringToMemory(input, encoding));
 
         /// <summary>
         /// Reads a null-terminated string from unmanaged memory, with the given native encoding.
@@ -230,8 +232,13 @@ namespace Silk.NET.Core.Native
         /// <param name="input">A pointer to memory containing a null-terminated string.</param>
         /// <param name="encoding">The encoding of the string in memory.</param>
         /// <returns>The string read from memory.</returns>
-        public static string PtrToString(nint input, NativeStringEncoding encoding = NativeStringEncoding.Ansi)
+        public static string? PtrToString(nint input, NativeStringEncoding encoding = NativeStringEncoding.Ansi)
         {
+            if (input == 0)
+            {
+                return null;
+            }
+            
             return encoding switch
             {
                 NativeStringEncoding.BStr => BStrToString(input),
@@ -256,7 +263,9 @@ namespace Silk.NET.Core.Native
         /// <param name="e">The encoding of the string in memory.</param>
         /// <returns>The string read from memory.</returns>
         public static string MemoryToString(GlobalMemory input, NativeStringEncoding e = NativeStringEncoding.Ansi)
-            => PtrToString(input.Handle, e);
+            => PtrToString(input.Handle, e)!; // TODO tolerate a GlobalMemory.Null if we introduce one in the future?
+
+#nullable disable
 
         /// <summary>
         /// Returns a copy of the given string array in global memory, marshalled using the specified encoding.

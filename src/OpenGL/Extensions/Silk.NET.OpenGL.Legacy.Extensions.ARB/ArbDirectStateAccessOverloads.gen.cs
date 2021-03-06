@@ -42,25 +42,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
@@ -90,25 +90,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
