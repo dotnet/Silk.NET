@@ -7,7 +7,8 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\src\Core\Silk.NET\Silk.NET.csproj" />
+      <ProjectReference Include="..\..\..\src\Input\Silk.NET.Input\Silk.NET.Input.csproj" />
+      <PackageReference Include="Silk.NET.Windowing" Version="2.0.0" />
     </ItemGroup>
 
 </Project>
