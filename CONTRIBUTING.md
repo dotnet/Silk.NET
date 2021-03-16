@@ -45,10 +45,8 @@ You don't have to do this up-front. You can simply clone, fork, and submit your 
 ## File Headers
 The following file header is used for Silk.NET. Please use it for new files.
 ```cs
-// This file is part of Silk.NET.
-// 
-// You may modify and distribute Silk.NET under the terms
-// of the MIT license. See the LICENSE file for details.
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 ```
 
 ## Pull requests
