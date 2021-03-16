@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "ProgramTarget")]
-    public enum ProgramTarget
+    public enum ProgramTarget : int
     {
         [NativeName("Name", "GL_TEXT_FRAGMENT_SHADER_ATI")]
         TextFragmentShaderAti = 0x8200,

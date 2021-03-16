@@ -29,10 +29,10 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void BindBufferBase([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer);
 
         [NativeApi(EntryPoint = "glBindBufferRange")]
-        public partial void BindBufferRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size);
+        public partial void BindBufferRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
 
         [NativeApi(EntryPoint = "glBindBufferRange")]
-        public partial void BindBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size);
+        public partial void BindBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
 
         [NativeApi(EntryPoint = "glGetActiveUniformBlockiv")]
         public unsafe partial void GetActiveUniformBlock([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "program, uniformBlockIndex, pname"), Flow(FlowDirection.Out)] int* @params);
@@ -147,8 +147,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             // StringArrayOverloader
             var uniformNames = (byte**) SilkMarshal.StringArrayToPtr(uniformNamesSa);
             GetUniformIndices(program, uniformCount, uniformNames, uniformIndices);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) uniformNames, uniformNamesSa);
-            SilkMarshal.Free((IntPtr) uniformNames);
+            SilkMarshal.CopyPtrToStringArray((nint) uniformNames, uniformNamesSa);
+            SilkMarshal.Free((nint) uniformNames);
         }
 
         public unsafe void GetUniformIndices([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(FlowDirection.In)] string[] uniformNamesSa, [Count(Computed = "uniformCount"), Flow(FlowDirection.Out)] out uint uniformIndices)
@@ -156,8 +156,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             // StringArrayOverloader
             var uniformNames = (byte**) SilkMarshal.StringArrayToPtr(uniformNamesSa);
             GetUniformIndices(program, uniformCount, uniformNames, out uniformIndices);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) uniformNames, uniformNamesSa);
-            SilkMarshal.Free((IntPtr) uniformNames);
+            SilkMarshal.CopyPtrToStringArray((nint) uniformNames, uniformNamesSa);
+            SilkMarshal.Free((nint) uniformNames);
         }
 
         public ArbUniformBufferObject(INativeContext ctx)

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_COMMAND_LIST_TYPE")]
-    public enum CommandListType
+    public enum CommandListType : int
     {
         [NativeName("Name", "D3D12_COMMAND_LIST_TYPE_DIRECT")]
         CommandListTypeDirect = 0x0,

@@ -30,7 +30,7 @@ namespace Silk.NET.Direct3D9
             MultisampleType? multiSampleType = null,
             uint? multiSampleQuality = null,
             Swapeffect? swapEffect = null,
-            IntPtr? hDeviceWindow = null,
+            nint? hDeviceWindow = null,
             int? windowed = null,
             int? enableAutoDepthStencil = null,
             Format? autoDepthStencilFormat = null,
@@ -149,7 +149,7 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "HWND")]
         [NativeName("Type.Name", "HWND")]
         [NativeName("Name", "hDeviceWindow")]
-        public IntPtr HDeviceWindow;
+        public nint HDeviceWindow;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]

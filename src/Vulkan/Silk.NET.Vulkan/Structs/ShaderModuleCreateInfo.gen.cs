@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.ShaderModuleCreateInfo,
             void* pNext = null,
             ShaderModuleCreateFlags? flags = null,
-            UIntPtr? codeSize = null,
+            nuint? codeSize = null,
             uint* pCode = null
         ) : this()
         {
@@ -75,7 +75,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "codeSize")]
-        public UIntPtr CodeSize;
+        public nuint CodeSize;
 /// <summary></summary>
         [NativeName("Type", "uint32_t*")]
         [NativeName("Type.Name", "uint32_t")]

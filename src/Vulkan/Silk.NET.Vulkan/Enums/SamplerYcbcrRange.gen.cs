@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerYcbcrRange")]
-    public enum SamplerYcbcrRange
+    public enum SamplerYcbcrRange : int
     {
         [NativeName("Name", "VK_SAMPLER_YCBCR_RANGE_ITU_FULL")]
         ItuFull = 0,

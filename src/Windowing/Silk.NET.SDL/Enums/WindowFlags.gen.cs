@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L97_C9")]
     [NativeName("Name", "SDL_WindowFlags")]
-    public enum WindowFlags
+    public enum WindowFlags : int
     {
         [NativeName("Name", "SDL_WINDOW_FULLSCREEN")]
         WindowFullscreen = 0x1,

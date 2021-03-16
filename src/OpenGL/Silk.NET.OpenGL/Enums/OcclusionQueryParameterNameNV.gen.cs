@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "OcclusionQueryParameterNameNV")]
-    public enum OcclusionQueryParameterNameNV
+    public enum OcclusionQueryParameterNameNV : int
     {
         [NativeName("Name", "GL_PIXEL_COUNT_NV")]
         PixelCountNV = 0x8866,

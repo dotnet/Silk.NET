@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Extensions.NV
 {
     [NativeName("Name", "GLenum")]
-    public enum NV
+    public enum NV : int
     {
         [NativeName("Name", "GL_BLEND_OVERLAP_NV")]
         BlendOverlapNV = 0x9281,

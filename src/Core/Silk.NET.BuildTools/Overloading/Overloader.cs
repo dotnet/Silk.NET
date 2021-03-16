@@ -18,7 +18,8 @@ namespace Silk.NET.BuildTools.Overloading
         {
             new ISimpleParameterOverloader[]
             {
-                new GroupOverloader()
+                new GroupOverloader(),
+                new ClassOverloader()
             },
             new ISimpleParameterOverloader[]
             {

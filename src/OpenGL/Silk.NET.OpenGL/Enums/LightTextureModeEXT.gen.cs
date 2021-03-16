@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "LightTextureModeEXT")]
-    public enum LightTextureModeEXT
+    public enum LightTextureModeEXT : int
     {
         [NativeName("Name", "GL_FRAGMENT_MATERIAL_EXT")]
         FragmentMaterialExt = 0x8349,

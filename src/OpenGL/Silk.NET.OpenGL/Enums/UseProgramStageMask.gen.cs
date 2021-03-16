@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "UseProgramStageMask")]
-    public enum UseProgramStageMask
+    public enum UseProgramStageMask : int
     {
         [NativeName("Name", "GL_VERTEX_SHADER_BIT")]
         VertexShaderBit = 0x1,

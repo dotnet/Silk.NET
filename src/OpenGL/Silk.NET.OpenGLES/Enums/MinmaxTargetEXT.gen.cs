@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "MinmaxTargetEXT")]
-    public enum MinmaxTargetEXT
+    public enum MinmaxTargetEXT : int
     {
         [NativeName("Name", "GL_MINMAX")]
         Minmax = 0x802E,

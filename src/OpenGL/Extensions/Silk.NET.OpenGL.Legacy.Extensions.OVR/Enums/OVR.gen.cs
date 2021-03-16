@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.OVR
 {
     [NativeName("Name", "GLenum")]
-    public enum OVR
+    public enum OVR : int
     {
         [NativeName("Name", "GL_FRAMEBUFFER_ATTACHMENT_TEXTURE_NUM_VIEWS_OVR")]
         FramebufferAttachmentTextureNumViewsOvr = 0x9630,

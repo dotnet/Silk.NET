@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_render_L111_C9")]
     [NativeName("Name", "SDL_TextureModulate")]
-    public enum TextureModulate
+    public enum TextureModulate : int
     {
         [NativeName("Name", "SDL_TEXTUREMODULATE_NONE")]
         TexturemodulateNone = 0x0,

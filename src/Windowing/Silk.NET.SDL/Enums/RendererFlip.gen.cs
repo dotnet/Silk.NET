@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_render_L121_C9")]
     [NativeName("Name", "SDL_RendererFlip")]
-    public enum RendererFlip
+    public enum RendererFlip : int
     {
         [NativeName("Name", "SDL_FLIP_NONE")]
         FlipNone = 0x0,

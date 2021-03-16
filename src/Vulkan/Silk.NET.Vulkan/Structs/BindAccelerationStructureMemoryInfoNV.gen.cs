@@ -23,9 +23,9 @@ namespace Silk.NET.Vulkan
     {
         public BindAccelerationStructureMemoryInfoNV
         (
-            StructureType? sType = StructureType.BindAccelerationStructureMemoryInfoKhr,
+            StructureType? sType = StructureType.BindAccelerationStructureMemoryInfoNV,
             void* pNext = null,
-            AccelerationStructureKHR? accelerationStructure = null,
+            AccelerationStructureNV? accelerationStructure = null,
             DeviceMemory? memory = null,
             ulong? memoryOffset = null,
             uint? deviceIndexCount = null,
@@ -79,10 +79,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkAccelerationStructureKHR")]
-        [NativeName("Type.Name", "VkAccelerationStructureKHR")]
+        [NativeName("Type", "VkAccelerationStructureNV")]
+        [NativeName("Type.Name", "VkAccelerationStructureNV")]
         [NativeName("Name", "accelerationStructure")]
-        public AccelerationStructureKHR AccelerationStructure;
+        public AccelerationStructureNV AccelerationStructure;
 /// <summary></summary>
         [NativeName("Type", "VkDeviceMemory")]
         [NativeName("Type.Name", "VkDeviceMemory")]

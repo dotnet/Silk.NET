@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "EnableCap")]
-    public enum EnableCap
+    public enum EnableCap : int
     {
         [NativeName("Name", "GL_POINT_SMOOTH")]
         PointSmooth = 0xB10,

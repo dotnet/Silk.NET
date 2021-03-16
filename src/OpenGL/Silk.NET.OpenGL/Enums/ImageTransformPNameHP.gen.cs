@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "ImageTransformPNameHP")]
-    public enum ImageTransformPNameHP
+    public enum ImageTransformPNameHP : int
     {
         [NativeName("Name", "GL_IMAGE_SCALE_X_HP")]
         ImageScaleXHP = 0x8155,

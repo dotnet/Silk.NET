@@ -18,16 +18,19 @@ namespace Silk.NET.Assimp
 {
     public unsafe partial class Assimp : NativeAPI
     {
+        [NativeName("Type", "const size_t")]
+        [NativeName("Name", "MAXLEN")]
+        public const nuint Maxlen = unchecked((nuint) 0x400);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 86, Column 19 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiGetExportFormatCount")]
-        public partial uint GetExportFormatCount();
+        public partial nuint GetExportFormatCount();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 96, Column 47 in src/Assimp/Include\\assimp/cexport.h")]
         [NativeApi(EntryPoint = "aiGetExportFormatDescription")]
-        public unsafe partial ExportFormatDesc* GetExportFormatDescription(uint pIndex);
+        public unsafe partial ExportFormatDesc* GetExportFormatDescription(nuint pIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 103, Column 17 in src/Assimp/Include\\assimp/cexport.h")]
@@ -1172,12 +1175,12 @@ namespace Silk.NET.Assimp
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 551, Column 19 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiGetImportFormatCount")]
-        public partial uint GetImportFormatCount();
+        public partial nuint GetImportFormatCount();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 560, Column 43 in src/Assimp/Include\\assimp/cimport.h")]
         [NativeApi(EntryPoint = "aiGetImportFormatDescription")]
-        public unsafe partial ImporterDesc* GetImportFormatDescription(uint pIndex);
+        public unsafe partial ImporterDesc* GetImportFormatDescription(nuint pIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1368, Column 28 in src/Assimp/Include\\assimp/material.h")]

@@ -1377,6 +1377,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
         public static unsafe Result CreateDevice(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] DeviceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<Device> pDevice)
         {
             // SpanOverloader
@@ -1384,6 +1385,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
         public static unsafe Result CreateDevice(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] DeviceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Device* pDevice)
         {
             // SpanOverloader
@@ -1391,6 +1393,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
         public static unsafe Result CreateDevice(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] DeviceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<Device> pDevice)
         {
             // SpanOverloader
@@ -1398,6 +1401,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
         public static unsafe Result CreateDevice(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Device* pDevice)
         {
             // SpanOverloader
@@ -1405,6 +1409,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
         public static unsafe Result CreateDevice(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<Device> pDevice)
         {
             // SpanOverloader
@@ -1412,6 +1417,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
         public static unsafe Result CreateDevice(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Device* pDevice)
         {
             // SpanOverloader
@@ -1419,6 +1425,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
         public static unsafe Result CreateDevice(this Vk thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<Device> pDevice)
         {
             // SpanOverloader
@@ -1720,6 +1727,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
         public static unsafe Result CreateInstance(this Vk thisApi, [Count(Count = 0), Flow(FlowDirection.In)] InstanceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<Instance> pInstance)
         {
             // SpanOverloader
@@ -1727,6 +1735,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
         public static unsafe Result CreateInstance(this Vk thisApi, [Count(Count = 0), Flow(FlowDirection.In)] InstanceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Instance* pInstance)
         {
             // SpanOverloader
@@ -1734,6 +1743,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
         public static unsafe Result CreateInstance(this Vk thisApi, [Count(Count = 0), Flow(FlowDirection.In)] InstanceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<Instance> pInstance)
         {
             // SpanOverloader
@@ -1741,6 +1751,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
         public static unsafe Result CreateInstance(this Vk thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InstanceCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Instance* pInstance)
         {
             // SpanOverloader
@@ -1748,6 +1759,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
         public static unsafe Result CreateInstance(this Vk thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InstanceCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<Instance> pInstance)
         {
             // SpanOverloader
@@ -1755,6 +1767,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
         public static unsafe Result CreateInstance(this Vk thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InstanceCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Instance* pInstance)
         {
             // SpanOverloader
@@ -1762,6 +1775,7 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
         public static unsafe Result CreateInstance(this Vk thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InstanceCreateInfo> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<Instance> pInstance)
         {
             // SpanOverloader
@@ -2644,28 +2658,28 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPipelineCacheData<T0>(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] UIntPtr* pDataSize, [Count(Computed = "pDataSize")] Span<T0> pData) where T0 : unmanaged
+        public static unsafe Result GetPipelineCacheData<T0>(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] nuint* pDataSize, [Count(Computed = "pDataSize")] Span<T0> pData) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.GetPipelineCacheData(device, pipelineCache, pDataSize, ref pData.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPipelineCacheData(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] Span<UIntPtr> pDataSize, [Count(Computed = "pDataSize")] void* pData)
+        public static unsafe Result GetPipelineCacheData(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] Span<nuint> pDataSize, [Count(Computed = "pDataSize")] void* pData)
         {
             // SpanOverloader
             return thisApi.GetPipelineCacheData(device, pipelineCache, ref pDataSize.GetPinnableReference(), pData);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPipelineCacheData<T0>(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] Span<UIntPtr> pDataSize, [Count(Computed = "pDataSize")] Span<T0> pData) where T0 : unmanaged
+        public static unsafe Result GetPipelineCacheData<T0>(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] Span<nuint> pDataSize, [Count(Computed = "pDataSize")] Span<T0> pData) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.GetPipelineCacheData(device, pipelineCache, ref pDataSize.GetPinnableReference(), ref pData.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetQueryPoolResults<T0>(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Count = 0)] UIntPtr dataSize, [Count(Computed = "dataSize")] Span<T0> pData, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags) where T0 : unmanaged
+        public static unsafe Result GetQueryPoolResults<T0>(this Vk thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Count = 0)] nuint dataSize, [Count(Computed = "dataSize")] Span<T0> pData, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.GetQueryPoolResults(device, queryPool, firstQuery, queryCount, dataSize, ref pData.GetPinnableReference(), stride, flags);

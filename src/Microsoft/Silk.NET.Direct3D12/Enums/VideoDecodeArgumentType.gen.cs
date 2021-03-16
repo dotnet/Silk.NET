@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_VIDEO_DECODE_ARGUMENT_TYPE")]
-    public enum VideoDecodeArgumentType
+    public enum VideoDecodeArgumentType : int
     {
         [NativeName("Name", "D3D12_VIDEO_DECODE_ARGUMENT_TYPE_PICTURE_PARAMETERS")]
         VideoDecodeArgumentTypePictureParameters = 0x0,

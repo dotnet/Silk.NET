@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_DRIVER_MATCHING_IDENTIFIER_STATUS")]
-    public enum DriverMatchingIdentifierStatus
+    public enum DriverMatchingIdentifierStatus : int
     {
         [NativeName("Name", "D3D12_DRIVER_MATCHING_IDENTIFIER_COMPATIBLE_WITH_DEVICE")]
         DriverMatchingIdentifierCompatibleWithDevice = 0x0,

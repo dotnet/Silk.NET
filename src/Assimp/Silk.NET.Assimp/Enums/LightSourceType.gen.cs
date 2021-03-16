@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiLightSourceType")]
-    public enum LightSourceType
+    public enum LightSourceType : int
     {
         [NativeName("Name", "aiLightSource_UNDEFINED")]
         LightSourceUndefined = 0x0,

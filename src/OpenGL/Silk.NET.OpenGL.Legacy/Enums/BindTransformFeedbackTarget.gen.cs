@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "BindTransformFeedbackTarget")]
-    public enum BindTransformFeedbackTarget
+    public enum BindTransformFeedbackTarget : int
     {
         [NativeName("Name", "GL_TRANSFORM_FEEDBACK")]
         TransformFeedback = 0x8E22,

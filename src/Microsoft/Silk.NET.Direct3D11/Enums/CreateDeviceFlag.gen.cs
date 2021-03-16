@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_CREATE_DEVICE_FLAG")]
-    public enum CreateDeviceFlag
+    public enum CreateDeviceFlag : int
     {
         [NativeName("Name", "D3D11_CREATE_DEVICE_SINGLETHREADED")]
         CreateDeviceSinglethreaded = 0x1,

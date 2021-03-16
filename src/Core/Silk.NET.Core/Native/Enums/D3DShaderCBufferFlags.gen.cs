@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "_D3D_SHADER_CBUFFER_FLAGS")]
-    public enum D3DShaderCBufferFlags
+    public enum D3DShaderCBufferFlags : int
     {
         [NativeName("Name", "D3D_CBF_USERPACKED")]
         D3DCbfUserpacked = 0x1,

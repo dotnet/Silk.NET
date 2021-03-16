@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkBuildAccelerationStructureFlagsNV")]
-    public enum BuildAccelerationStructureFlagsNV
+    public enum BuildAccelerationStructureFlagsNV : int
     {
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_KHR")]
         BuildAccelerationStructureAllowUpdateBitKhr = 1,

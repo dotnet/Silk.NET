@@ -13,7 +13,7 @@ namespace Silk.NET.Core.Native
     public class ConcurrentDictionaryVTable : IVTable
     {
         private const int ConcurrencyLevel = 1;
-        private ConcurrentDictionary<int, IntPtr> _entryPoints;
+        private ConcurrentDictionary<int, nint> _entryPoints;
         private INativeContext _ctx;
 #if DEBUG
         private bool _initialized = false;
@@ -30,11 +30,11 @@ namespace Silk.NET.Core.Native
             Debug.Assert(!_initialized, "Do not re-initialize VTable");
             _initialized = true;
 #endif
-            _entryPoints = new ConcurrentDictionary<int, IntPtr>(ConcurrencyLevel, maxSlots);
+            _entryPoints = new ConcurrentDictionary<int, nint>(ConcurrencyLevel, maxSlots);
             _ctx = ctx;
         }
 
-        public IntPtr Load(int slot, string entryPoint)
+        public nint Load(int slot, string entryPoint)
         {
 #if DEBUG
             Debug.Assert(_initialized, "Cannot load from uninitialized VTable");
@@ -43,7 +43,7 @@ namespace Silk.NET.Core.Native
             {
                 var v = _ctx.GetProcAddress(entryPoint);
 
-                if (v == IntPtr.Zero)
+                if (v == 0)
                     ThrowEntryPointNotFound(entryPoint, i);
 
                 return v;

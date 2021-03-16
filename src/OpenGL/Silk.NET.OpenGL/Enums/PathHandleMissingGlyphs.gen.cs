@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "PathHandleMissingGlyphs")]
-    public enum PathHandleMissingGlyphs
+    public enum PathHandleMissingGlyphs : int
     {
         [NativeName("Name", "GL_SKIP_MISSING_GLYPH_NV")]
         SkipMissingGlyphNV = 0x90A9,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "HistogramTargetEXT")]
-    public enum HistogramTargetEXT
+    public enum HistogramTargetEXT : int
     {
         [NativeName("Name", "GL_HISTOGRAM")]
         Histogram = 0x8024,

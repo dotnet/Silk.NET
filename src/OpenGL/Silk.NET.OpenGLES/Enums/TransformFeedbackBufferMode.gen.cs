@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "TransformFeedbackBufferMode")]
-    public enum TransformFeedbackBufferMode
+    public enum TransformFeedbackBufferMode : int
     {
         [NativeName("Name", "GL_INTERLEAVED_ATTRIBS")]
         InterleavedAttribs = 0x8C8C,

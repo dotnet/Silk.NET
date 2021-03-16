@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DTEXTURESTAGESTATETYPE")]
-    public enum Texturestagestatetype
+    public enum Texturestagestatetype : int
     {
         [NativeName("Name", "D3DTSS_COLOROP")]
         TssColorop = 0x1,

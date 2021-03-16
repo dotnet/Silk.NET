@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkDescriptorUpdateTemplateTypeKHR")]
-    public enum DescriptorUpdateTemplateTypeKHR
+    public enum DescriptorUpdateTemplateTypeKHR : int
     {
         [NativeName("Name", "VK_DESCRIPTOR_UPDATE_TEMPLATE_TYPE_DESCRIPTOR_SET")]
         DescriptorUpdateTemplateTypeDescriptorSet = 0,

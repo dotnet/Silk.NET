@@ -387,8 +387,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             // StringArrayOverloader
             var @string = (byte**) SilkMarshal.StringArrayToPtr(@stringSa);
             ShaderSource(shaderObj, count, @string, length);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) @string, @stringSa);
-            SilkMarshal.Free((IntPtr) @string);
+            SilkMarshal.CopyPtrToStringArray((nint) @string, @stringSa);
+            SilkMarshal.Free((nint) @string);
         }
 
         public unsafe void ShaderSource([Flow(FlowDirection.In)] uint shaderObj, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] @stringSa, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int length)
@@ -396,8 +396,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             // StringArrayOverloader
             var @string = (byte**) SilkMarshal.StringArrayToPtr(@stringSa);
             ShaderSource(shaderObj, count, @string, in length);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) @string, @stringSa);
-            SilkMarshal.Free((IntPtr) @string);
+            SilkMarshal.CopyPtrToStringArray((nint) @string, @stringSa);
+            SilkMarshal.Free((nint) @string);
         }
 
         public ArbShaderObjects(INativeContext ctx)

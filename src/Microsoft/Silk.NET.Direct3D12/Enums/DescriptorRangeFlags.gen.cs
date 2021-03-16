@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_DESCRIPTOR_RANGE_FLAGS")]
-    public enum DescriptorRangeFlags
+    public enum DescriptorRangeFlags : int
     {
         [NativeName("Name", "D3D12_DESCRIPTOR_RANGE_FLAG_NONE")]
         DescriptorRangeFlagNone = 0x0,

@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_log_L102_C9")]
     [NativeName("Name", "SDL_LogPriority")]
-    public enum LogPriority
+    public enum LogPriority : int
     {
         [NativeName("Name", "SDL_LOG_PRIORITY_VERBOSE")]
         LogPriorityVerbose = 0x1,

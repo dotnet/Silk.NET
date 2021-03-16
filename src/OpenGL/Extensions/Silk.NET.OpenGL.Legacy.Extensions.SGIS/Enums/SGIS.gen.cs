@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
 {
     [NativeName("Name", "GLenum")]
-    public enum SGIS
+    public enum SGIS : int
     {
         [NativeName("Name", "GL_DETAIL_TEXTURE_2D_SGIS")]
         DetailTexture2DSgis = 0x8095,

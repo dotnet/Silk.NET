@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSystemAllocationScope")]
-    public enum SystemAllocationScope
+    public enum SystemAllocationScope : int
     {
         [NativeName("Name", "VK_SYSTEM_ALLOCATION_SCOPE_COMMAND")]
         Command = 0,

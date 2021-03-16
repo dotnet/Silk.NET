@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE_FLAGS")]
-    public enum VideoMotionEstimatorSearchBlockSizeFlags
+    public enum VideoMotionEstimatorSearchBlockSizeFlags : int
     {
         [NativeName("Name", "D3D12_VIDEO_MOTION_ESTIMATOR_SEARCH_BLOCK_SIZE_FLAG_NONE")]
         VideoMotionEstimatorSearchBlockSizeFlagNone = 0x0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DBLENDOP")]
-    public enum Blendop
+    public enum Blendop : int
     {
         [NativeName("Name", "D3DBLENDOP_ADD")]
         BlendopAdd = 0x1,

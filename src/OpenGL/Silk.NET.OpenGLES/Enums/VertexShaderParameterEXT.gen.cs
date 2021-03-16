@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "VertexShaderParameterEXT")]
-    public enum VertexShaderParameterEXT
+    public enum VertexShaderParameterEXT : int
     {
         [NativeName("Name", "GL_CURRENT_VERTEX_EXT")]
         CurrentVertexExt = 0x87E2,

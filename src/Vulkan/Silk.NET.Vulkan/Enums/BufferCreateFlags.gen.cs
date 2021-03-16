@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkBufferCreateFlags")]
-    public enum BufferCreateFlags
+    public enum BufferCreateFlags : int
     {
         [NativeName("Name", "VK_BUFFER_CREATE_SPARSE_BINDING_BIT")]
         BufferCreateSparseBindingBit = 1,
@@ -25,6 +25,8 @@ namespace Silk.NET.Vulkan
         BufferCreateDeviceAddressCaptureReplayBitExt = 16,
         [NativeName("Name", "VK_BUFFER_CREATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT_KHR")]
         BufferCreateDeviceAddressCaptureReplayBitKhr = 16,
+        [NativeName("Name", "VK_BUFFER_CREATE_RESERVED_5_BIT_NV")]
+        BufferCreateReserved5BitNV = 32,
         [NativeName("Name", "VK_BUFFER_CREATE_PROTECTED_BIT")]
         BufferCreateProtectedBit = 8,
         [NativeName("Name", "VK_BUFFER_CREATE_DEVICE_ADDRESS_CAPTURE_REPLAY_BIT")]

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_SWAP_CHAIN_FLAG")]
-    public enum SwapChainFlag
+    public enum SwapChainFlag : int
     {
         [NativeName("Name", "DXGI_SWAP_CHAIN_FLAG_NONPREROTATED")]
         SwapChainFlagNonprerotated = 0x1,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_RESOURCE_STATES")]
-    public enum ResourceStates
+    public enum ResourceStates : int
     {
         [NativeName("Name", "D3D12_RESOURCE_STATE_COMMON")]
         ResourceStateCommon = 0x0,

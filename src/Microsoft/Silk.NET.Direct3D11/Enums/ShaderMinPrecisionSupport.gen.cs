@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_SHADER_MIN_PRECISION_SUPPORT")]
-    public enum ShaderMinPrecisionSupport
+    public enum ShaderMinPrecisionSupport : int
     {
         [NativeName("Name", "D3D11_SHADER_MIN_PRECISION_10_BIT")]
         ShaderMinPrecision10Bit = 0x1,

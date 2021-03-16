@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "HintTarget")]
-    public enum HintTarget
+    public enum HintTarget : int
     {
         [NativeName("Name", "GL_LINE_SMOOTH_HINT")]
         LineSmoothHint = 0xC52,

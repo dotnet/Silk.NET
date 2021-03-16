@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "CopyBufferSubDataTarget")]
-    public enum CopyBufferSubDataTarget
+    public enum CopyBufferSubDataTarget : int
     {
         [NativeName("Name", "GL_ARRAY_BUFFER")]
         ArrayBuffer = 0x8892,

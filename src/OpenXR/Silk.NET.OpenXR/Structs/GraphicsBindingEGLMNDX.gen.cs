@@ -26,9 +26,9 @@ namespace Silk.NET.OpenXR
             StructureType? type = StructureType.TypeGraphicsBindingEglMndx,
             void* next = null,
             PfnVoidFunction? getProcAddress = null,
-            IntPtr? display = null,
-            IntPtr? config = null,
-            IntPtr? context = null
+            nint? display = null,
+            nint? config = null,
+            nint? context = null
         ) : this()
         {
             if (type is not null)
@@ -81,16 +81,16 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "EGLDisplay")]
         [NativeName("Type.Name", "EGLDisplay")]
         [NativeName("Name", "display")]
-        public IntPtr Display;
+        public nint Display;
 /// <summary></summary>
         [NativeName("Type", "EGLConfig")]
         [NativeName("Type.Name", "EGLConfig")]
         [NativeName("Name", "config")]
-        public IntPtr Config;
+        public nint Config;
 /// <summary></summary>
         [NativeName("Type", "EGLContext")]
         [NativeName("Type.Name", "EGLContext")]
         [NativeName("Name", "context")]
-        public IntPtr Context;
+        public nint Context;
     }
 }

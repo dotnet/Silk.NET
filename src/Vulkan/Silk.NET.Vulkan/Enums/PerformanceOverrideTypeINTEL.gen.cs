@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPerformanceOverrideTypeINTEL")]
-    public enum PerformanceOverrideTypeINTEL
+    public enum PerformanceOverrideTypeINTEL : int
     {
         [NativeName("Name", "VK_PERFORMANCE_OVERRIDE_TYPE_NULL_HARDWARE_INTEL")]
         PerformanceOverrideTypeNullHardwareIntel = 0,

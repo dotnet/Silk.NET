@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "TraceMaskMESA")]
-    public enum TraceMaskMESA
+    public enum TraceMaskMESA : int
     {
         [NativeName("Name", "GL_TRACE_OPERATIONS_BIT_MESA")]
         TraceOperationsBitMesa = 0x1,

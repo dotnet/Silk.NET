@@ -23,34 +23,34 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
     {
         public const string ExtensionName = "INTEL_accelerator";
         [NativeApi(EntryPoint = "clCreateAcceleratorINTEL")]
-        public unsafe partial IntPtr CreateAccelerator([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint accelerator_type, [Flow(FlowDirection.In)] UIntPtr descriptor_size, [Flow(FlowDirection.In)] void* descriptor, [Flow(FlowDirection.Out)] int* errcode_ret);
+        public unsafe partial nint CreateAccelerator([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] uint accelerator_type, [Flow(FlowDirection.In)] nuint descriptor_size, [Flow(FlowDirection.In)] void* descriptor, [Flow(FlowDirection.Out)] int* errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateAcceleratorINTEL")]
-        public unsafe partial IntPtr CreateAccelerator([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint accelerator_type, [Flow(FlowDirection.In)] UIntPtr descriptor_size, [Flow(FlowDirection.In)] void* descriptor, [Flow(FlowDirection.Out)] out int errcode_ret);
+        public unsafe partial nint CreateAccelerator([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] uint accelerator_type, [Flow(FlowDirection.In)] nuint descriptor_size, [Flow(FlowDirection.In)] void* descriptor, [Flow(FlowDirection.Out)] out int errcode_ret);
 
         [NativeApi(EntryPoint = "clCreateAcceleratorINTEL")]
-        public unsafe partial IntPtr CreateAccelerator<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint accelerator_type, [Flow(FlowDirection.In)] UIntPtr descriptor_size, [Flow(FlowDirection.In)] in T0 descriptor, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+        public unsafe partial nint CreateAccelerator<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] uint accelerator_type, [Flow(FlowDirection.In)] nuint descriptor_size, [Flow(FlowDirection.In)] in T0 descriptor, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clCreateAcceleratorINTEL")]
-        public partial IntPtr CreateAccelerator<T0>([Flow(FlowDirection.In)] IntPtr context, [Flow(FlowDirection.In)] uint accelerator_type, [Flow(FlowDirection.In)] UIntPtr descriptor_size, [Flow(FlowDirection.In)] in T0 descriptor, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+        public partial nint CreateAccelerator<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] uint accelerator_type, [Flow(FlowDirection.In)] nuint descriptor_size, [Flow(FlowDirection.In)] in T0 descriptor, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetAcceleratorInfoINTEL")]
-        public unsafe partial int GetAcceleratorInfo([Flow(FlowDirection.In)] IntPtr accelerator, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret);
+        public unsafe partial int GetAcceleratorInfo([Flow(FlowDirection.In)] nint accelerator, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetAcceleratorInfoINTEL")]
-        public unsafe partial int GetAcceleratorInfo([Flow(FlowDirection.In)] IntPtr accelerator, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] out UIntPtr param_value_size_ret);
+        public unsafe partial int GetAcceleratorInfo([Flow(FlowDirection.In)] nint accelerator, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] void* param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret);
 
         [NativeApi(EntryPoint = "clGetAcceleratorInfoINTEL")]
-        public unsafe partial int GetAcceleratorInfo<T0>([Flow(FlowDirection.In)] IntPtr accelerator, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] UIntPtr* param_value_size_ret) where T0 : unmanaged;
+        public unsafe partial int GetAcceleratorInfo<T0>([Flow(FlowDirection.In)] nint accelerator, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] nuint* param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clGetAcceleratorInfoINTEL")]
-        public partial int GetAcceleratorInfo<T0>([Flow(FlowDirection.In)] IntPtr accelerator, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] UIntPtr param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out UIntPtr param_value_size_ret) where T0 : unmanaged;
+        public partial int GetAcceleratorInfo<T0>([Flow(FlowDirection.In)] nint accelerator, [Flow(FlowDirection.In)] uint param_name, [Flow(FlowDirection.In)] nuint param_value_size, [Flow(FlowDirection.Out)] out T0 param_value, [Flow(FlowDirection.Out)] out nuint param_value_size_ret) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clReleaseAcceleratorINTEL")]
-        public partial int ReleaseAccelerator([Flow(FlowDirection.In)] IntPtr accelerator);
+        public partial int ReleaseAccelerator([Flow(FlowDirection.In)] nint accelerator);
 
         [NativeApi(EntryPoint = "clRetainAcceleratorINTEL")]
-        public partial int RetainAccelerator([Flow(FlowDirection.In)] IntPtr accelerator);
+        public partial int RetainAccelerator([Flow(FlowDirection.In)] nint accelerator);
 
         public IntelAccelerator(INativeContext ctx)
             : base(ctx)

@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkFenceCreateFlags")]
-    public enum FenceCreateFlags
+    public enum FenceCreateFlags : int
     {
         [NativeName("Name", "VK_FENCE_CREATE_SIGNALED_BIT")]
         FenceCreateSignaledBit = 1,

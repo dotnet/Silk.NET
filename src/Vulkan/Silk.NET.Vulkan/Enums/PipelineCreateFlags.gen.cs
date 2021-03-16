@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkPipelineCreateFlags")]
-    public enum PipelineCreateFlags
+    public enum PipelineCreateFlags : int
     {
         [NativeName("Name", "VK_PIPELINE_CREATE_DISABLE_OPTIMIZATION_BIT")]
         PipelineCreateDisableOptimizationBit = 1,
@@ -37,10 +37,10 @@ namespace Silk.NET.Vulkan
         PipelineCreateRayTracingSkipTrianglesBitKhr = 4096,
         [NativeName("Name", "VK_PIPELINE_CREATE_RAY_TRACING_SKIP_AABBS_BIT_KHR")]
         PipelineCreateRayTracingSkipAabbsBitKhr = 8192,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RAY_TRACING_SHADER_GROUP_HANDLE_CAPTURE_REPLAY_BIT_KHR")]
+        PipelineCreateRayTracingShaderGroupHandleCaptureReplayBitKhr = 524288,
         [NativeName("Name", "VK_PIPELINE_CREATE_DEFER_COMPILE_BIT_NV")]
         PipelineCreateDeferCompileBitNV = 32,
-        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_19_BIT_KHR")]
-        PipelineCreateReserved19BitKhr = 524288,
         [NativeName("Name", "VK_PIPELINE_CREATE_CAPTURE_STATISTICS_BIT_KHR")]
         PipelineCreateCaptureStatisticsBitKhr = 64,
         [NativeName("Name", "VK_PIPELINE_CREATE_CAPTURE_INTERNAL_REPRESENTATIONS_BIT_KHR")]
@@ -53,6 +53,8 @@ namespace Silk.NET.Vulkan
         PipelineCreateFailOnPipelineCompileRequiredBitExt = 256,
         [NativeName("Name", "VK_PIPELINE_CREATE_EARLY_RETURN_ON_FAILURE_BIT_EXT")]
         PipelineCreateEarlyReturnOnFailureBitExt = 512,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_BIT_20_NV")]
+        PipelineCreateReservedBit20NV = 1048576,
         [NativeName("Name", "VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT")]
         PipelineCreateViewIndexFromDeviceIndexBit = 8,
         [NativeName("Name", "VK_PIPELINE_CREATE_DISPATCH_BASE_BIT")]

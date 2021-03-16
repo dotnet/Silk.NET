@@ -24,8 +24,8 @@ namespace Silk.NET.Direct3D12
         public MemcpyDest
         (
             void* pData = null,
-            uint? rowPitch = null,
-            uint? slicePitch = null
+            nuint? rowPitch = null,
+            nuint? slicePitch = null
         ) : this()
         {
             if (pData is not null)
@@ -53,11 +53,11 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "SIZE_T")]
         [NativeName("Type.Name", "SIZE_T")]
         [NativeName("Name", "RowPitch")]
-        public uint RowPitch;
+        public nuint RowPitch;
 
         [NativeName("Type", "SIZE_T")]
         [NativeName("Type.Name", "SIZE_T")]
         [NativeName("Name", "SlicePitch")]
-        public uint SlicePitch;
+        public nuint SlicePitch;
     }
 }

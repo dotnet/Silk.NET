@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "BufferBitQCOM")]
-    public enum BufferBitQCOM
+    public enum BufferBitQCOM : int
     {
         [NativeName("Name", "GL_COLOR_BUFFER_BIT0_QCOM")]
         ColorBufferBit0QCom = 0x1,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "MemoryBarrierMask")]
-    public enum MemoryBarrierMask
+    public enum MemoryBarrierMask : int
     {
         [NativeName("Name", "GL_VERTEX_ATTRIB_ARRAY_BARRIER_BIT")]
         VertexAttribArrayBarrierBit = 0x1,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "CullParameterEXT")]
-    public enum CullParameterEXT
+    public enum CullParameterEXT : int
     {
         [NativeName("Name", "GL_CULL_VERTEX_EYE_POSITION_EXT")]
         CullVertexEyePositionExt = 0x81AB,

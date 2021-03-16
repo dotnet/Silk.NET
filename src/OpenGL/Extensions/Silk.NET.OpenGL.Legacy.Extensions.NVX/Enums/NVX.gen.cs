@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.NVX
 {
     [NativeName("Name", "GLenum")]
-    public enum NVX
+    public enum NVX : int
     {
         [NativeName("Name", "GL_GPU_MEMORY_INFO_DEDICATED_VIDMEM_NVX")]
         GpuMemoryInfoDedicatedVidmemNvx = 0x9047,

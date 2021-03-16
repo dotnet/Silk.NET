@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "DepthFunction")]
-    public enum DepthFunction
+    public enum DepthFunction : int
     {
         [NativeName("Name", "GL_NEVER")]
         Never = 0x200,

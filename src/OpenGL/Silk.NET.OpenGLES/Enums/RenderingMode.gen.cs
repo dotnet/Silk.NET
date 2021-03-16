@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "RenderingMode")]
-    public enum RenderingMode
+    public enum RenderingMode : int
     {
         [NativeName("Name", "GL_RENDER")]
         Render = 0x1C00,

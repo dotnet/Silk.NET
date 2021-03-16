@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DDEVTYPE")]
-    public enum Devtype
+    public enum Devtype : int
     {
         [NativeName("Name", "D3DDEVTYPE_HAL")]
         DevtypeHal = 0x1,

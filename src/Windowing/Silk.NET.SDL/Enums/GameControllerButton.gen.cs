@@ -13,10 +13,10 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_gamecontroller_L346_C9")]
     [NativeName("Name", "SDL_GameControllerButton")]
-    public enum GameControllerButton
+    public enum GameControllerButton : int
     {
         [NativeName("Name", "SDL_CONTROLLER_BUTTON_INVALID")]
-        ControllerButtonInvalid = unchecked((int)0xFFFFFFFFFFFFFFFF),
+        ControllerButtonInvalid = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "SDL_CONTROLLER_BUTTON_A")]
         ControllerButtonA = 0x0,
         [NativeName("Name", "SDL_CONTROLLER_BUTTON_B")]

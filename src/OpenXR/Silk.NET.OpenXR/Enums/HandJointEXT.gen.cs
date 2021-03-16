@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenXR
 {
     [NativeName("Name", "XrHandJointEXT")]
-    public enum HandJointEXT
+    public enum HandJointEXT : int
     {
         [NativeName("Name", "XR_HAND_JOINT_PALM_EXT")]
         HandJointPalmExt = 0,

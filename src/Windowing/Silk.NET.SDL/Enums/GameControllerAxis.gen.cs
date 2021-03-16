@@ -13,10 +13,10 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_gamecontroller_L302_C9")]
     [NativeName("Name", "SDL_GameControllerAxis")]
-    public enum GameControllerAxis
+    public enum GameControllerAxis : int
     {
         [NativeName("Name", "SDL_CONTROLLER_AXIS_INVALID")]
-        ControllerAxisInvalid = unchecked((int)0xFFFFFFFFFFFFFFFF),
+        ControllerAxisInvalid = unchecked((int) 0xFFFFFFFFFFFFFFFF),
         [NativeName("Name", "SDL_CONTROLLER_AXIS_LEFTX")]
         ControllerAxisLeftx = 0x0,
         [NativeName("Name", "SDL_CONTROLLER_AXIS_LEFTY")]

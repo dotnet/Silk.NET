@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_ADAPTER_FLAG3")]
-    public enum AdapterFlag3
+    public enum AdapterFlag3 : int
     {
         [NativeName("Name", "DXGI_ADAPTER_FLAG3_NONE")]
         AdapterFlag3None = 0x0,
@@ -29,6 +29,6 @@ namespace Silk.NET.DXGI
         [NativeName("Name", "DXGI_ADAPTER_FLAG3_KEYED_MUTEX_CONFORMANCE")]
         AdapterFlag3KeyedMutexConformance = 0x20,
         [NativeName("Name", "DXGI_ADAPTER_FLAG3_FORCE_DWORD")]
-        AdapterFlag3ForceDword = unchecked((int)0xFFFFFFFFFFFFFFFF),
+        AdapterFlag3ForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
     }
 }

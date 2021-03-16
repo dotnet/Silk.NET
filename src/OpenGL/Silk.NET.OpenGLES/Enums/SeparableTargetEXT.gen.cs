@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "SeparableTargetEXT")]
-    public enum SeparableTargetEXT
+    public enum SeparableTargetEXT : int
     {
         [NativeName("Name", "GL_SEPARABLE_2D")]
         Separable2D = 0x8012,

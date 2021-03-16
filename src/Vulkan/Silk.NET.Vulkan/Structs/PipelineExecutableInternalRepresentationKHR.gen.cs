@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.PipelineExecutableInternalRepresentationKhr,
             void* pNext = null,
             Bool32? isText = null,
-            UIntPtr? dataSize = null,
+            nuint? dataSize = null,
             void* pData = null
         ) : this()
         {
@@ -85,7 +85,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "dataSize")]
-        public UIntPtr DataSize;
+        public nuint DataSize;
 /// <summary></summary>
         [NativeName("Type", "void*")]
         [NativeName("Type.Name", "void")]

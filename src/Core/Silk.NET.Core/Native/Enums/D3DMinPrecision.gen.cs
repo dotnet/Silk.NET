@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "D3D_MIN_PRECISION")]
-    public enum D3DMinPrecision
+    public enum D3DMinPrecision : int
     {
         [NativeName("Name", "D3D_MIN_PRECISION_DEFAULT")]
         D3DMinPrecisionDefault = 0x0,

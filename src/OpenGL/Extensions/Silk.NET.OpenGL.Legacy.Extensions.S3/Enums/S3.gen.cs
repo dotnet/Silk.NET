@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.S3
 {
     [NativeName("Name", "GLenum")]
-    public enum S3
+    public enum S3 : int
     {
         [NativeName("Name", "GL_RGB_S3TC")]
         RgbS3TC = 0x83A0,

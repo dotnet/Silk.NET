@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiImporterFlags")]
-    public enum ImporterFlags
+    public enum ImporterFlags : int
     {
         [NativeName("Name", "aiImporterFlags_SupportTextFlavour")]
         ImporterFlagsSupportTextFlavour = 0x1,

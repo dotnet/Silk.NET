@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_SWAP_EFFECT")]
-    public enum SwapEffect
+    public enum SwapEffect : int
     {
         [NativeName("Name", "DXGI_SWAP_EFFECT_DISCARD")]
         SwapEffectDiscard = 0x0,

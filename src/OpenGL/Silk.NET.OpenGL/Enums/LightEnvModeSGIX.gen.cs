@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "LightEnvModeSGIX")]
-    public enum LightEnvModeSGIX
+    public enum LightEnvModeSGIX : int
     {
         [NativeName("Name", "GL_REPLACE")]
         Replace = 0x1E01,

@@ -24,7 +24,7 @@ namespace Silk.NET.OpenCL
         public Dx9SurfaceInfoKhr
         (
             void* resource = null,
-            IntPtr? sharedHandle = null
+            nint? sharedHandle = null
         ) : this()
         {
             if (resource is not null)
@@ -47,6 +47,6 @@ namespace Silk.NET.OpenCL
         [NativeName("Type", "HANDLE")]
         [NativeName("Type.Name", "HANDLE")]
         [NativeName("Name", "shared_handle")]
-        public IntPtr SharedHandle;
+        public nint SharedHandle;
     }
 }

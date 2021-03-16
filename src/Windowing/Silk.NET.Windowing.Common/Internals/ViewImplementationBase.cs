@@ -40,7 +40,7 @@ namespace Silk.NET.Windowing.Internals
         private int _rented;
 
         // Ensure we keep SwapInterval up-to-date
-        private bool _swapIntervalChanged;
+        private bool _swapIntervalChanged = true;
 
         /// <summary>
         /// Creates a base view with the given options.
@@ -55,7 +55,7 @@ namespace Silk.NET.Windowing.Internals
 
         // Property bases - these have extra functionality baked into their getters and setters
         protected abstract Vector2D<int> CoreSize { get; }
-        protected abstract IntPtr CoreHandle { get; }
+        protected abstract nint CoreHandle { get; }
 
         // Function bases - again extra functionality on top
         protected abstract void CoreInitialize(ViewOptions opts);
@@ -76,6 +76,7 @@ namespace Silk.NET.Windowing.Internals
         public abstract void Close();
         protected abstract void RegisterCallbacks();
         protected abstract void UnregisterCallbacks();
+        protected abstract INativeWindow GetNativeWindow();
 
         // Events
         public abstract event Action<Vector2D<int>>? Resize;
@@ -103,17 +104,24 @@ namespace Silk.NET.Windowing.Internals
             IsInitialized = true;
             IsEventDriven = _optionsCache.IsEventDriven;
             GLContext?.MakeCurrent();
-            _swapIntervalChanged = VSync; // if vsync is requested, ensure we enable it.
+            _swapIntervalChanged = true;
+            Native = GetNativeWindow();
             Load?.Invoke();
         }
 
         public void Reset()
         {
+            if (!IsInitialized)
+            {
+                return;
+            }
+            
             _renderStopwatch.Reset();
             _updateStopwatch.Reset();
             _lifetimeStopwatch.Reset();
             CoreReset();
             UnregisterCallbacks();
+            Native = null;
             IsInitialized = false;
         }
 
@@ -165,13 +173,14 @@ namespace Silk.NET.Windowing.Internals
                     _swapIntervalChanged = false;
                 }
 
-                Render?.Invoke(_renderStopwatch.Elapsed.TotalSeconds);
+                delta = _renderStopwatch.Elapsed.TotalSeconds;
+                _renderStopwatch.Restart();
+                Render?.Invoke(delta);
+
                 if (ShouldSwapAutomatically)
                 {
                     GLContext?.SwapBuffers();
                 }
-
-                _renderStopwatch.Restart();
             }
         }
 
@@ -180,18 +189,21 @@ namespace Silk.NET.Windowing.Internals
             var delta = _updateStopwatch.Elapsed.TotalSeconds;
             if (delta >= _updatePeriod)
             {
-                Update?.Invoke(_updateStopwatch.Elapsed.TotalSeconds);
                 _updateStopwatch.Restart();
+                Update?.Invoke(delta);
             }
         }
 
         // Misc properties
         protected bool IsInitialized { get; set; }
+        public INativeWindow? Native { get; private set; }
         public Vector2D<int> Size => IsInitialized ? CoreSize : default;
-        public IntPtr Handle => IsInitialized ? CoreHandle : IntPtr.Zero;
+        public nint Handle => IsInitialized ? CoreHandle : 0;
         public GraphicsAPI API => _optionsCache.API;
         public double Time => _lifetimeStopwatch.Elapsed.TotalSeconds;
         public int? PreferredDepthBufferBits => _optionsCache.PreferredDepthBufferBits;
+        public int? PreferredStencilBufferBits => _optionsCache.PreferredStencilBufferBits;
+        public Vector4D<int>? PreferredBitDepth => _optionsCache.PreferredBitDepth;
 
         public bool VSync
         {

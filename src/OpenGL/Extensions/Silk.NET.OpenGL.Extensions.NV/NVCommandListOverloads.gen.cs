@@ -42,19 +42,19 @@ namespace Silk.NET.OpenGL.Extensions.NV
             thisApi.DeleteStates(n, in states.GetPinnableReference());
         }
 
-        public static unsafe void DrawCommands(this NVCommandList thisApi, [Flow(FlowDirection.In)] NV primitiveMode, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr* indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void DrawCommands(this NVCommandList thisApi, [Flow(FlowDirection.In)] NV primitiveMode, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint* indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.DrawCommands(primitiveMode, buffer, indirects, in sizes.GetPinnableReference(), count);
         }
 
-        public static unsafe void DrawCommands(this NVCommandList thisApi, [Flow(FlowDirection.In)] NV primitiveMode, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void DrawCommands(this NVCommandList thisApi, [Flow(FlowDirection.In)] NV primitiveMode, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<nint> indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.DrawCommands(primitiveMode, buffer, in indirects.GetPinnableReference(), sizes, count);
         }
 
-        public static unsafe void DrawCommands(this NVCommandList thisApi, [Flow(FlowDirection.In)] NV primitiveMode, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void DrawCommands(this NVCommandList thisApi, [Flow(FlowDirection.In)] NV primitiveMode, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<nint> indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.DrawCommands(primitiveMode, buffer, in indirects.GetPinnableReference(), in sizes.GetPinnableReference(), count);
@@ -78,91 +78,91 @@ namespace Silk.NET.OpenGL.Extensions.NV
             thisApi.DrawCommandsAddress(primitiveMode, in indirects.GetPinnableReference(), in sizes.GetPinnableReference(), count);
         }
 
-        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr* indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint* indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.DrawCommandsStates(buffer, indirects, sizes, states, in fbos.GetPinnableReference(), count);
         }
 
-        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr* indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint* indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.DrawCommandsStates(buffer, indirects, sizes, in states.GetPinnableReference(), fbos, count);
         }
 
-        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr* indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint* indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.DrawCommandsStates(buffer, indirects, sizes, in states.GetPinnableReference(), in fbos.GetPinnableReference(), count);
         }
 
-        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr* indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint* indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.DrawCommandsStates(buffer, indirects, in sizes.GetPinnableReference(), states, fbos, count);
         }
 
-        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr* indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint* indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.DrawCommandsStates(buffer, indirects, in sizes.GetPinnableReference(), states, in fbos.GetPinnableReference(), count);
         }
 
-        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr* indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint* indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.DrawCommandsStates(buffer, indirects, in sizes.GetPinnableReference(), in states.GetPinnableReference(), fbos, count);
         }
 
-        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr* indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint* indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.DrawCommandsStates(buffer, indirects, in sizes.GetPinnableReference(), in states.GetPinnableReference(), in fbos.GetPinnableReference(), count);
         }
 
-        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<nint> indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.DrawCommandsStates(buffer, in indirects.GetPinnableReference(), sizes, states, fbos, count);
         }
 
-        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<nint> indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.DrawCommandsStates(buffer, in indirects.GetPinnableReference(), sizes, states, in fbos.GetPinnableReference(), count);
         }
 
-        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<nint> indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.DrawCommandsStates(buffer, in indirects.GetPinnableReference(), sizes, in states.GetPinnableReference(), fbos, count);
         }
 
-        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<nint> indirects, [Flow(FlowDirection.In)] uint* sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.DrawCommandsStates(buffer, in indirects.GetPinnableReference(), sizes, in states.GetPinnableReference(), in fbos.GetPinnableReference(), count);
         }
 
-        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<nint> indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.DrawCommandsStates(buffer, in indirects.GetPinnableReference(), in sizes.GetPinnableReference(), states, fbos, count);
         }
 
-        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<nint> indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] uint* states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.DrawCommandsStates(buffer, in indirects.GetPinnableReference(), in sizes.GetPinnableReference(), states, in fbos.GetPinnableReference(), count);
         }
 
-        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<nint> indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] uint* fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.DrawCommandsStates(buffer, in indirects.GetPinnableReference(), in sizes.GetPinnableReference(), in states.GetPinnableReference(), fbos, count);
         }
 
-        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
+        public static unsafe void DrawCommandsStates(this NVCommandList thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ReadOnlySpan<nint> indirects, [Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos, [Flow(FlowDirection.In)] uint count)
         {
             // SpanOverloader
             thisApi.DrawCommandsStates(buffer, in indirects.GetPinnableReference(), in sizes.GetPinnableReference(), in states.GetPinnableReference(), in fbos.GetPinnableReference(), count);

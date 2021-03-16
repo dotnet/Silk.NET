@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_TEXTURECUBE_FACE")]
-    public enum TexturecubeFace
+    public enum TexturecubeFace : int
     {
         [NativeName("Name", "D3D11_TEXTURECUBE_FACE_POSITIVE_X")]
         TexturecubeFacePositiveX = 0x0,

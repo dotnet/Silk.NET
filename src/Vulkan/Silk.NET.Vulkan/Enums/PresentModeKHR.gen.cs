@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPresentModeKHR")]
-    public enum PresentModeKHR
+    public enum PresentModeKHR : int
     {
         [NativeName("Name", "VK_PRESENT_MODE_IMMEDIATE_KHR")]
         PresentModeImmediateKhr = 0,

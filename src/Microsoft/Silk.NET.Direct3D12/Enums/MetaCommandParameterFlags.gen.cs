@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_META_COMMAND_PARAMETER_FLAGS")]
-    public enum MetaCommandParameterFlags
+    public enum MetaCommandParameterFlags : int
     {
         [NativeName("Name", "D3D12_META_COMMAND_PARAMETER_FLAG_INPUT")]
         MetaCommandParameterFlagInput = 0x1,

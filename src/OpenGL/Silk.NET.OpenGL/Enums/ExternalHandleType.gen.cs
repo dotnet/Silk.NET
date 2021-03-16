@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "ExternalHandleType")]
-    public enum ExternalHandleType
+    public enum ExternalHandleType : int
     {
         [NativeName("Name", "GL_HANDLE_TYPE_OPAQUE_FD_EXT")]
         HandleTypeOpaqueFDExt = 0x9586,

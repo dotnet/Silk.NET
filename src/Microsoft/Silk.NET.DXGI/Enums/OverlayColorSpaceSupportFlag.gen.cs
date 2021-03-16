@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG")]
-    public enum OverlayColorSpaceSupportFlag
+    public enum OverlayColorSpaceSupportFlag : int
     {
         [NativeName("Name", "DXGI_OVERLAY_COLOR_SPACE_SUPPORT_FLAG_PRESENT")]
         OverlayColorSpaceSupportFlagPresent = 0x1,

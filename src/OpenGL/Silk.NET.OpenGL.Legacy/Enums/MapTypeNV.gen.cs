@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "MapTypeNV")]
-    public enum MapTypeNV
+    public enum MapTypeNV : int
     {
         [NativeName("Name", "GL_FLOAT")]
         Float = 0x1406,

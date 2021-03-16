@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCopyAccelerationStructureModeKHR")]
-    public enum CopyAccelerationStructureModeKHR
+    public enum CopyAccelerationStructureModeKHR : int
     {
         [NativeName("Name", "VK_COPY_ACCELERATION_STRUCTURE_MODE_CLONE_KHR")]
         CopyAccelerationStructureModeCloneKhr = 0,

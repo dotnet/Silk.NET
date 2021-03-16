@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.OES
 {
     [NativeName("Name", "GLenum")]
-    public enum OES
+    public enum OES : int
     {
         [NativeName("Name", "GL_BYTE")]
         Byte = 0x1400,

@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkSwapchainCreateFlagsKHR")]
-    public enum SwapchainCreateFlagsKHR
+    public enum SwapchainCreateFlagsKHR : int
     {
         [NativeName("Name", "VK_SWAPCHAIN_CREATE_SPLIT_INSTANCE_BIND_REGIONS_BIT_KHR")]
         SwapchainCreateSplitInstanceBindRegionsBitKhr = 1,

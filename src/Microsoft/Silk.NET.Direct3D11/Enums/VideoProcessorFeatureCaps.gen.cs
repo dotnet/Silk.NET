@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_VIDEO_PROCESSOR_FEATURE_CAPS")]
-    public enum VideoProcessorFeatureCaps
+    public enum VideoProcessorFeatureCaps : int
     {
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_FEATURE_CAPS_ALPHA_FILL")]
         VideoProcessorFeatureCapsAlphaFill = 0x1,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkResult")]
-    public enum Result
+    public enum Result : int
     {
         [NativeName("Name", "VK_SUCCESS")]
         Success = 0,
@@ -70,8 +70,6 @@ namespace Silk.NET.Vulkan
         ErrorOutOfPoolMemoryKhr = -1000069000,
         [NativeName("Name", "VK_ERROR_INVALID_EXTERNAL_HANDLE_KHR")]
         ErrorInvalidExternalHandleKhr = -1000072003,
-        [NativeName("Name", "VK_ERROR_INCOMPATIBLE_VERSION_KHR")]
-        ErrorIncompatibleVersionKhr = -1000150000,
         [NativeName("Name", "VK_ERROR_INVALID_DRM_FORMAT_MODIFIER_PLANE_LAYOUT_EXT")]
         ErrorInvalidDrmFormatModifierPlaneLayoutExt = -1000158000,
         [NativeName("Name", "VK_ERROR_FRAGMENTATION_EXT")]

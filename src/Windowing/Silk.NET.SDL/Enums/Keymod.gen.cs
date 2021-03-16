@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_keycode_L325_C9")]
     [NativeName("Name", "SDL_Keymod")]
-    public enum Keymod
+    public enum Keymod : int
     {
         [NativeName("Name", "KMOD_NONE")]
         KmodNone = 0x0,

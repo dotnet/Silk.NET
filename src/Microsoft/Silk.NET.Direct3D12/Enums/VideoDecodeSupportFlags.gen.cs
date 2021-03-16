@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_VIDEO_DECODE_SUPPORT_FLAGS")]
-    public enum VideoDecodeSupportFlags
+    public enum VideoDecodeSupportFlags : int
     {
         [NativeName("Name", "D3D12_VIDEO_DECODE_SUPPORT_FLAG_NONE")]
         VideoDecodeSupportFlagNone = 0x0,

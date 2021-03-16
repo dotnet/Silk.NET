@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "StencilFaceDirection")]
-    public enum StencilFaceDirection
+    public enum StencilFaceDirection : int
     {
         [NativeName("Name", "GL_FRONT")]
         Front = 0x404,

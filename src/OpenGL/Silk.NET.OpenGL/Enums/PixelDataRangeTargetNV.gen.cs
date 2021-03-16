@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "PixelDataRangeTargetNV")]
-    public enum PixelDataRangeTargetNV
+    public enum PixelDataRangeTargetNV : int
     {
         [NativeName("Name", "GL_WRITE_PIXEL_DATA_RANGE_NV")]
         WritePixelDataRangeNV = 0x8878,

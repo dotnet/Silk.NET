@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DAUTHENTICATEDCHANNEL_PROCESSIDENTIFIERTYPE")]
-    public enum AuthenticatedchannelProcessidentifiertype
+    public enum AuthenticatedchannelProcessidentifiertype : int
     {
         [NativeName("Name", "PROCESSIDTYPE_UNKNOWN")]
         ProcessidtypeUnknown = 0x0,

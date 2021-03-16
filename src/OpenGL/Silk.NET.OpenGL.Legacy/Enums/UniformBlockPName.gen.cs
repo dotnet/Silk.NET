@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "UniformBlockPName")]
-    public enum UniformBlockPName
+    public enum UniformBlockPName : int
     {
         [NativeName("Name", "GL_UNIFORM_BLOCK_REFERENCED_BY_TESS_CONTROL_SHADER")]
         UniformBlockReferencedByTessControlShader = 0x84F0,

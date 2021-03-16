@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "CombinerVariableNV")]
-    public enum CombinerVariableNV
+    public enum CombinerVariableNV : int
     {
         [NativeName("Name", "GL_VARIABLE_A_NV")]
         VariableANV = 0x8523,

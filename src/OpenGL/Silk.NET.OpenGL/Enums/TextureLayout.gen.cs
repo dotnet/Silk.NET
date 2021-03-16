@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "TextureLayout")]
-    public enum TextureLayout
+    public enum TextureLayout : int
     {
         [NativeName("Name", "GL_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_EXT")]
         LayoutDepthReadOnlyStencilAttachmentExt = 0x9530,

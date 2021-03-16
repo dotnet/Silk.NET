@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_MESH_SHADER_TIER")]
-    public enum MeshShaderTier
+    public enum MeshShaderTier : int
     {
         [NativeName("Name", "D3D12_MESH_SHADER_TIER_NOT_SUPPORTED")]
         MeshShaderTierNotSupported = 0x0,

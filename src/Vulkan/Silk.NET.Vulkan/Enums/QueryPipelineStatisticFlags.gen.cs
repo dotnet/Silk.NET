@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkQueryPipelineStatisticFlags")]
-    public enum QueryPipelineStatisticFlags
+    public enum QueryPipelineStatisticFlags : int
     {
         [NativeName("Name", "VK_QUERY_PIPELINE_STATISTIC_INPUT_ASSEMBLY_VERTICES_BIT")]
         QueryPipelineStatisticInputAssemblyVerticesBit = 1,

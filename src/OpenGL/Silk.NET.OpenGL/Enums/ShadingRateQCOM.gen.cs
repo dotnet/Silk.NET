@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "ShadingRateQCOM")]
-    public enum ShadingRateQCOM
+    public enum ShadingRateQCOM : int
     {
         [NativeName("Name", "GL_SHADING_RATE_1X1_PIXELS_QCOM")]
         ShadingRate1X1PixelsQCom = 0x96A6,

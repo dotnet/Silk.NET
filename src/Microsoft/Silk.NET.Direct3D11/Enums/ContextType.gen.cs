@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_CONTEXT_TYPE")]
-    public enum ContextType
+    public enum ContextType : int
     {
         [NativeName("Name", "D3D11_CONTEXT_TYPE_ALL")]
         ContextTypeAll = 0x0,

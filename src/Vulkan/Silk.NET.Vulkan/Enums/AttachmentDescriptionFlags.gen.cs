@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkAttachmentDescriptionFlags")]
-    public enum AttachmentDescriptionFlags
+    public enum AttachmentDescriptionFlags : int
     {
         [NativeName("Name", "VK_ATTACHMENT_DESCRIPTION_MAY_ALIAS_BIT")]
         AttachmentDescriptionMayAliasBit = 1,

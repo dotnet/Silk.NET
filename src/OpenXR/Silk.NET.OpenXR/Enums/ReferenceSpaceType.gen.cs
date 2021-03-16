@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenXR
 {
     [NativeName("Name", "XrReferenceSpaceType")]
-    public enum ReferenceSpaceType
+    public enum ReferenceSpaceType : int
     {
         [NativeName("Name", "XR_REFERENCE_SPACE_TYPE_VIEW")]
         View = 1,

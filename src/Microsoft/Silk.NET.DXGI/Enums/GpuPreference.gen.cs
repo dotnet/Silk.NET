@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_GPU_PREFERENCE")]
-    public enum GpuPreference
+    public enum GpuPreference : int
     {
         [NativeName("Name", "DXGI_GPU_PREFERENCE_UNSPECIFIED")]
         GpuPreferenceUnspecified = 0x0,

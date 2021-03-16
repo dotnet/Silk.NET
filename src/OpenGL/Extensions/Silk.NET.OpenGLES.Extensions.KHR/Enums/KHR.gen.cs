@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES.Extensions.KHR
 {
     [NativeName("Name", "GLenum")]
-    public enum KHR
+    public enum KHR : int
     {
         [NativeName("Name", "GL_MULTIPLY_KHR")]
         MultiplyKhr = 0x9294,

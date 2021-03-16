@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.HP
 {
     [NativeName("Name", "GLenum")]
-    public enum HP
+    public enum HP : int
     {
         [NativeName("Name", "GL_IGNORE_BORDER_HP")]
         IgnoreBorderHP = 0x8150,

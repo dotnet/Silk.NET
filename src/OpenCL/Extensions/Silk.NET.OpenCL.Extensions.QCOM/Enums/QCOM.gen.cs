@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.QCOM
 {
     [NativeName("Name", "GLenum")]
-    public enum QCOM
+    public enum QCOM : int
     {
         [NativeName("Name", "CL_MEM_ANDROID_NATIVE_BUFFER_HOST_PTR_QCOM")]
         MemAndroidNativeBufferHostPtrQCom = 0x40C6,

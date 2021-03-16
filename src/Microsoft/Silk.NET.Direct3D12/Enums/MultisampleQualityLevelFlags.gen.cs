@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_MULTISAMPLE_QUALITY_LEVEL_FLAGS")]
-    public enum MultisampleQualityLevelFlags
+    public enum MultisampleQualityLevelFlags : int
     {
         [NativeName("Name", "D3D12_MULTISAMPLE_QUALITY_LEVELS_FLAG_NONE")]
         MultisampleQualityLevelsFlagNone = 0x0,

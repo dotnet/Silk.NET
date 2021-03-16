@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DRENDERSTATETYPE")]
-    public enum Renderstatetype
+    public enum Renderstatetype : int
     {
         [NativeName("Name", "D3DRS_ZENABLE")]
         RSZenable = 0x7,

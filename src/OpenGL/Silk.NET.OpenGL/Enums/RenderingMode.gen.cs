@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "RenderingMode")]
-    public enum RenderingMode
+    public enum RenderingMode : int
     {
     }
 }

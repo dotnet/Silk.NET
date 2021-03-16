@@ -11,9 +11,7 @@ using Nuke.Common.ProjectModel;
 using Nuke.Common.Tooling;
 using Nuke.Common.Tools.DotNet;
 using Nuke.Common.Tools.MSBuild;
-using Nuke.Common.Tools.VSTest;
 using static Nuke.Common.Tools.MSBuild.MSBuildTasks;
-using static Nuke.Common.Tools.VSTest.VSTestTasks;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 using static Nuke.Common.IO.FileSystemTasks;
 
@@ -113,6 +111,8 @@ class Build : NukeBuild
                         return (object) x.Substring(idx + 1, x.Length - idx - 1);
                     }
                 );
+
+                ProcessedMsbuildPropertiesValue["Configuration"] = Configuration;
             }
 
             return ProcessedMsbuildPropertiesValue;
@@ -155,7 +155,9 @@ class Build : NukeBuild
             }
             else
             {
-                DotNetClean(s => s.SetProject(ProcessedSolution).SetProperties(ProcessedMsbuildProperties));
+                DotNetClean(s => s.SetProject(ProcessedSolution)
+                    .SetConfiguration(Configuration)
+                    .SetProperties(ProcessedMsbuildProperties));
             }
 
             if (Directory.Exists(RootDirectory / "build" / "output_packages"))
@@ -189,6 +191,7 @@ class Build : NukeBuild
                 (
                     s => s
                         .SetTargetPath(ProcessedSolution)
+                        .SetConfiguration(Configuration)
                         .SetTargets("Restore")
                         .SetMaxCpuCount(Environment.ProcessorCount)
                         .SetProperties(ProcessedMsbuildProperties)

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "PathCoordType")]
-    public enum PathCoordType
+    public enum PathCoordType : int
     {
         [NativeName("Name", "GL_CLOSE_PATH_NV")]
         ClosePathNV = 0x0,

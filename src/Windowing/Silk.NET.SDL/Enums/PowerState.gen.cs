@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_power_L42_C9")]
     [NativeName("Name", "SDL_PowerState")]
-    public enum PowerState
+    public enum PowerState : int
     {
         [NativeName("Name", "SDL_POWERSTATE_UNKNOWN")]
         PowerstateUnknown = 0x0,

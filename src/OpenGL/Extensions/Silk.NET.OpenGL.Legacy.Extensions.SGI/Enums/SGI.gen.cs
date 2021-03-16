@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGI
 {
     [NativeName("Name", "GLenum")]
-    public enum SGI
+    public enum SGI : int
     {
         [NativeName("Name", "GL_COLOR_MATRIX_SGI")]
         ColorMatrixSgi = 0x80B1,

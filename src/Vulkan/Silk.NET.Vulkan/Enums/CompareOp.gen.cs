@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkCompareOp")]
-    public enum CompareOp
+    public enum CompareOp : int
     {
         [NativeName("Name", "VK_COMPARE_OP_NEVER")]
         Never = 0,

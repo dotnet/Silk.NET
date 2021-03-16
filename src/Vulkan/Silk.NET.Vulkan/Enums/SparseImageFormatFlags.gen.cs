@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkSparseImageFormatFlags")]
-    public enum SparseImageFormatFlags
+    public enum SparseImageFormatFlags : int
     {
         [NativeName("Name", "VK_SPARSE_IMAGE_FORMAT_SINGLE_MIPTAIL_BIT")]
         SparseImageFormatSingleMiptailBit = 1,

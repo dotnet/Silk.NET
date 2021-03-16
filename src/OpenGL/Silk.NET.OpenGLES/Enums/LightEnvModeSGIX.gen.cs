@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "LightEnvModeSGIX")]
-    public enum LightEnvModeSGIX
+    public enum LightEnvModeSGIX : int
     {
         [NativeName("Name", "GL_ADD")]
         Add = 0x104,

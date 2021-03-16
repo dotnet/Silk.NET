@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkImageLayout")]
-    public enum ImageLayout
+    public enum ImageLayout : int
     {
         [NativeName("Name", "VK_IMAGE_LAYOUT_UNDEFINED")]
         Undefined = 0,
@@ -44,6 +44,8 @@ namespace Silk.NET.Vulkan
         ShadingRateOptimalNV = 1000164003,
         [NativeName("Name", "VK_IMAGE_LAYOUT_FRAGMENT_DENSITY_MAP_OPTIMAL_EXT")]
         FragmentDensityMapOptimalExt = 1000218000,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_FRAGMENT_SHADING_RATE_ATTACHMENT_OPTIMAL_KHR")]
+        FragmentShadingRateAttachmentOptimalKhr = 1000226003,
         [NativeName("Name", "VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_OPTIMAL_KHR")]
         DepthAttachmentOptimalKhr = 1000241000,
         [NativeName("Name", "VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_OPTIMAL_KHR")]
@@ -52,6 +54,10 @@ namespace Silk.NET.Vulkan
         StencilAttachmentOptimalKhr = 1000241002,
         [NativeName("Name", "VK_IMAGE_LAYOUT_STENCIL_READ_ONLY_OPTIMAL_KHR")]
         StencilReadOnlyOptimalKhr = 1000241003,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_READ_ONLY_OPTIMAL_KHR")]
+        ReadOnlyOptimalKhr = 1000314000,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_ATTACHMENT_OPTIMAL_KHR")]
+        AttachmentOptimalKhr = 1000314001,
         [NativeName("Name", "VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_OPTIMAL")]
         DepthReadOnlyStencilAttachmentOptimal = 1000117000,
         [NativeName("Name", "VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_STENCIL_READ_ONLY_OPTIMAL")]

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "ColorBuffer")]
-    public enum ColorBuffer
+    public enum ColorBuffer : int
     {
         [NativeName("Name", "GL_NONE")]
         None = 0x0,

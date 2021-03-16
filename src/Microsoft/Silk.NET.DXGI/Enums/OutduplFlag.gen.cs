@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_OUTDUPL_FLAG")]
-    public enum OutduplFlag
+    public enum OutduplFlag : int
     {
         [NativeName("Name", "DXGI_OUTDUPL_COMPOSITED_UI_CAPTURE_ONLY")]
         OutduplCompositedUICaptureOnly = 0x1,

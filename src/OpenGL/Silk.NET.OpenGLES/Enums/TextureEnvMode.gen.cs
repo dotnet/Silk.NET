@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "TextureEnvMode")]
-    public enum TextureEnvMode
+    public enum TextureEnvMode : int
     {
         [NativeName("Name", "GL_ADD")]
         Add = 0x104,

@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkSamplerCreateFlags")]
-    public enum SamplerCreateFlags
+    public enum SamplerCreateFlags : int
     {
         [NativeName("Name", "VK_SAMPLER_CREATE_SUBSAMPLED_BIT_EXT")]
         SamplerCreateSubsampledBitExt = 1,

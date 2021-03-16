@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "TextureSwizzle")]
-    public enum TextureSwizzle
+    public enum TextureSwizzle : int
     {
         [NativeName("Name", "GL_ZERO")]
         Zero = 0x0,

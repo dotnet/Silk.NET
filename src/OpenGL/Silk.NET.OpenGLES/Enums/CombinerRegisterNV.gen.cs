@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "CombinerRegisterNV")]
-    public enum CombinerRegisterNV
+    public enum CombinerRegisterNV : int
     {
         [NativeName("Name", "GL_TEXTURE0_ARB")]
         Texture0Arb = 0x84C0,

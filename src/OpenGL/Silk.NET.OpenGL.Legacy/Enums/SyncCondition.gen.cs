@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "SyncCondition")]
-    public enum SyncCondition
+    public enum SyncCondition : int
     {
         [NativeName("Name", "GL_SYNC_GPU_COMMANDS_COMPLETE")]
         SyncGpuCommandsComplete = 0x9117,

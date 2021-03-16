@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_TEXTURE_ADDRESS_MODE")]
-    public enum TextureAddressMode
+    public enum TextureAddressMode : int
     {
         [NativeName("Name", "D3D12_TEXTURE_ADDRESS_MODE_WRAP")]
         TextureAddressModeWrap = 0x1,

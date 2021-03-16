@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_RAY_FLAGS")]
-    public enum RayFlags
+    public enum RayFlags : int
     {
         [NativeName("Name", "D3D12_RAY_FLAG_NONE")]
         RayFlagNone = 0x0,

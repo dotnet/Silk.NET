@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_FILTER_REDUCTION_TYPE")]
-    public enum FilterReductionType
+    public enum FilterReductionType : int
     {
         [NativeName("Name", "D3D11_FILTER_REDUCTION_TYPE_STANDARD")]
         FilterReductionTypeStandard = 0x0,

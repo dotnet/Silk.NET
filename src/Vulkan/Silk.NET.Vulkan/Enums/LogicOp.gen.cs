@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkLogicOp")]
-    public enum LogicOp
+    public enum LogicOp : int
     {
         [NativeName("Name", "VK_LOGIC_OP_CLEAR")]
         Clear = 0,

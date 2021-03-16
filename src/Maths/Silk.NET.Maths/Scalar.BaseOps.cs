@@ -1439,7 +1439,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(sbyte))
                 {
-                    return (T) (object) ((sbyte) (object) left + (sbyte) (object) right);
+                    return (T) (object) (sbyte) ((sbyte) (object) left + (sbyte) (object) right);
                 }
 
                 return Byte(left, right);
@@ -1450,7 +1450,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(byte))
                 {
-                    return (T) (object) ((byte) (object) left + (byte) (object) right);
+                    return (T) (object) (byte) ((byte) (object) left + (byte) (object) right);
                 }
 
                 return Short(left, right);
@@ -1461,7 +1461,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(short))
                 {
-                    return (T) (object) ((short) (object) left + (short) (object) right);
+                    return (T) (object) (short) ((short) (object) left + (short) (object) right);
                 }
 
                 return UShort(left, right);
@@ -1472,7 +1472,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(ushort))
                 {
-                    return (T) (object) ((ushort) (object) left + (ushort) (object) right);
+                    return (T) (object) (ushort) ((ushort) (object) left + (ushort) (object) right);
                 }
 
                 return Int(left, right);
@@ -1579,7 +1579,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(sbyte))
                 {
-                    return (T) (object) ((sbyte) (object) left - (sbyte) (object) right);
+                    return (T) (object) (sbyte) ((sbyte) (object) left - (sbyte) (object) right);
                 }
 
                 return Byte(left, right);
@@ -1590,7 +1590,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(byte))
                 {
-                    return (T) (object) ((byte) (object) left - (byte) (object) right);
+                    return (T) (object) (byte) ((byte) (object) left - (byte) (object) right);
                 }
 
                 return Short(left, right);
@@ -1601,7 +1601,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(short))
                 {
-                    return (T) (object) ((short) (object) left - (short) (object) right);
+                    return (T) (object) (short) ((short) (object) left - (short) (object) right);
                 }
 
                 return UShort(left, right);
@@ -1612,7 +1612,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(ushort))
                 {
-                    return (T) (object) ((ushort) (object) left - (ushort) (object) right);
+                    return (T) (object) (ushort) ((ushort) (object) left - (ushort) (object) right);
                 }
 
                 return Int(left, right);
@@ -1719,7 +1719,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(sbyte))
                 {
-                    return (T) (object) ((sbyte) (object) left * (sbyte) (object) right);
+                    return (T) (object) (sbyte) ((sbyte) (object) left * (sbyte) (object) right);
                 }
 
                 return Byte(left, right);
@@ -1730,7 +1730,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(byte))
                 {
-                    return (T) (object) ((byte) (object) left * (byte) (object) right);
+                    return (T) (object) (byte) ((byte) (object) left * (byte) (object) right);
                 }
 
                 return Short(left, right);
@@ -1741,7 +1741,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(short))
                 {
-                    return (T) (object) ((short) (object) left * (short) (object) right);
+                    return (T) (object) (short) ((short) (object) left * (short) (object) right);
                 }
 
                 return UShort(left, right);
@@ -1752,7 +1752,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(ushort))
                 {
-                    return (T) (object) ((ushort) (object) left * (ushort) (object) right);
+                    return (T) (object) (ushort) ((ushort) (object) left * (ushort) (object) right);
                 }
 
                 return Int(left, right);
@@ -1859,7 +1859,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(sbyte))
                 {
-                    return (T) (object) ((sbyte) (object) left / (sbyte) (object) right);
+                    return (T) (object) (sbyte) ((sbyte) (object) left / (sbyte) (object) right);
                 }
 
                 return Byte(left, right);
@@ -1870,7 +1870,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(byte))
                 {
-                    return (T) (object) ((byte) (object) left / (byte) (object) right);
+                    return (T) (object) (byte) ((byte) (object) left / (byte) (object) right);
                 }
 
                 return Short(left, right);
@@ -1881,7 +1881,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(short))
                 {
-                    return (T) (object) ((short) (object) left / (short) (object) right);
+                    return (T) (object) (short) ((short) (object) left / (short) (object) right);
                 }
 
                 return UShort(left, right);
@@ -1892,7 +1892,7 @@ namespace Silk.NET.Maths
             {
                 if (typeof(T) == typeof(ushort))
                 {
-                    return (T) (object) ((ushort) (object) left / (ushort) (object) right);
+                    return (T) (object) (ushort) ((ushort) (object) left / (ushort) (object) right);
                 }
 
                 return Int(left, right);

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "MapQuery")]
-    public enum MapQuery
+    public enum MapQuery : int
     {
         [NativeName("Name", "GL_COEFF")]
         Coeff = 0xA00,

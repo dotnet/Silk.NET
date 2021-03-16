@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_system_L209_C9")]
     [NativeName("Name", "SDL_WinRT_Path")]
-    public enum WinRTPath
+    public enum WinRTPath : int
     {
         [NativeName("Name", "SDL_WINRT_PATH_INSTALLED_LOCATION")]
         WinrtPathInstalledLocation = 0x0,

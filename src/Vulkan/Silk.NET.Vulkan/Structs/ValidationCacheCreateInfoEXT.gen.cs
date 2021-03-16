@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.ValidationCacheCreateInfoExt,
             void* pNext = null,
             uint? flags = null,
-            UIntPtr? initialDataSize = null,
+            nuint? initialDataSize = null,
             void* pInitialData = null
         ) : this()
         {
@@ -75,7 +75,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "initialDataSize")]
-        public UIntPtr InitialDataSize;
+        public nuint InitialDataSize;
 /// <summary></summary>
         [NativeName("Type", "void*")]
         [NativeName("Type.Name", "void")]

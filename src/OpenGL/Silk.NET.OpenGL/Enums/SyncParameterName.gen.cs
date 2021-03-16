@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "SyncParameterName")]
-    public enum SyncParameterName
+    public enum SyncParameterName : int
     {
         [NativeName("Name", "GL_OBJECT_TYPE")]
         ObjectType = 0x9112,

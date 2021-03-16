@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPerformanceConfigurationTypeINTEL")]
-    public enum PerformanceConfigurationTypeINTEL
+    public enum PerformanceConfigurationTypeINTEL : int
     {
         [NativeName("Name", "VK_PERFORMANCE_CONFIGURATION_TYPE_COMMAND_QUEUE_METRICS_DISCOVERY_ACTIVATED_INTEL")]
         PerformanceConfigurationTypeCommandQueueMetricsDiscoveryActivatedIntel = 0,

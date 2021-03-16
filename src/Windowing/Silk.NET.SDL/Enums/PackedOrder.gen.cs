@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_pixels_L76_C9")]
     [NativeName("Name", "SDL_PackedOrder")]
-    public enum PackedOrder
+    public enum PackedOrder : int
     {
         [NativeName("Name", "SDL_PACKEDORDER_NONE")]
         PackedorderNone = 0x0,

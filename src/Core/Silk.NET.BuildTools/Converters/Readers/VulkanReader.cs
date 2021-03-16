@@ -104,7 +104,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     h.Name, new Struct
                     {
                         Fields = new List<Field>
-                            {new Field {Name = "Handle", Type = new Type {Name = h.CanBeDispatched ? "IntPtr" : "ulong"}}},
+                            {new Field {Name = "Handle", Type = new Type {Name = h.CanBeDispatched ? "nint" : "ulong"}}},
                         Name = Naming.TranslateLite(TrimName(h.Name, task), prefix),
                         NativeName = h.Name
                     }

@@ -6,6 +6,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
 using Microsoft.Extensions.DependencyModel;
@@ -27,17 +28,48 @@ namespace Silk.NET.Core.Loader
         /// <param name="name">The name of the library to load.</param>
         /// <returns>An enumerator yielding load targets.</returns>
         public override IEnumerable<string> EnumeratePossibleLibraryLoadTargets(string name)
+            => CoreEnumeratePossibleLibraryLoadTargets(name);
+
+        private IEnumerable<string> CoreEnumeratePossibleLibraryLoadTargets(string name, bool noLinuxTraverse = false)
         {
+            yield return name;
             if (!string.IsNullOrEmpty(AppContext.BaseDirectory))
             {
                 yield return Path.Combine(AppContext.BaseDirectory, name);
             }
 
-            yield return name;
             if (TryLocateNativeAssetFromDeps(name, out var appLocalNativePath, out var depsResolvedPath))
             {
                 yield return appLocalNativePath;
                 yield return depsResolvedPath;
+            }
+
+            if (!noLinuxTraverse)
+            {
+                foreach (var linuxName in GetLinuxPossibilities(name))
+                {
+                    foreach (var possibleLoadTarget in CoreEnumeratePossibleLibraryLoadTargets(linuxName, true))
+                    {
+                        yield return possibleLoadTarget;
+                    }
+                }
+            }
+        }
+
+        private static IEnumerable<string> GetLinuxPossibilities(string name)
+        {
+            var nameSplit = name.Split('.');
+            var indexOfSo = Array.LastIndexOf(nameSplit, "so");
+            if (indexOfSo != -1)
+            {
+                // for libglfw.so.3.3 this should return:
+                // libglfw.so
+                // libglfw.so.3
+                // libglfw.so.3.3
+                for (var i = indexOfSo; i < nameSplit.Length; i++)
+                {
+                    yield return string.Join(".", nameSplit, 0, i + 1);
+                }
             }
         }
 

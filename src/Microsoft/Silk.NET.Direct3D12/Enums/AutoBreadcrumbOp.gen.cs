@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP")]
-    public enum AutoBreadcrumbOp
+    public enum AutoBreadcrumbOp : int
     {
         [NativeName("Name", "D3D12_AUTO_BREADCRUMB_OP_SETMARKER")]
         AutoBreadcrumbOpSetmarker = 0x0,

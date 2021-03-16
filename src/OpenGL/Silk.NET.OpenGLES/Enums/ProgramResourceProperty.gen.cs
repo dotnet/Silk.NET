@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "ProgramResourceProperty")]
-    public enum ProgramResourceProperty
+    public enum ProgramResourceProperty : int
     {
         [NativeName("Name", "GL_NUM_COMPATIBLE_SUBROUTINES")]
         NumCompatibleSubroutines = 0x8E4A,

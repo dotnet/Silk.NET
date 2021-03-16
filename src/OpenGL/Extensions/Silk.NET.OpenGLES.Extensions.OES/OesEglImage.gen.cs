@@ -23,10 +23,10 @@ namespace Silk.NET.OpenGLES.Extensions.OES
     {
         public const string ExtensionName = "OES_EGL_image";
         [NativeApi(EntryPoint = "glEGLImageTargetRenderbufferStorageOES")]
-        public partial void EglimageTargetRenderbufferStorage([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] IntPtr image);
+        public partial void EglimageTargetRenderbufferStorage([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] nint image);
 
         [NativeApi(EntryPoint = "glEGLImageTargetTexture2DOES")]
-        public partial void EglimageTargetTexture2D([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] IntPtr image);
+        public partial void EglimageTargetTexture2D([Flow(FlowDirection.In)] OES target, [Flow(FlowDirection.In)] nint image);
 
         public OesEglImage(INativeContext ctx)
             : base(ctx)

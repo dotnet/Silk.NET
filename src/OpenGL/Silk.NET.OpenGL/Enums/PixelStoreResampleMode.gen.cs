@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "PixelStoreResampleMode")]
-    public enum PixelStoreResampleMode
+    public enum PixelStoreResampleMode : int
     {
         [NativeName("Name", "GL_RESAMPLE_DECIMATE_SGIX")]
         ResampleDecimateSgix = 0x8430,

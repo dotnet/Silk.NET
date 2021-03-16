@@ -93,7 +93,7 @@ namespace Silk.NET.Input.Glfw
             }
         }
 
-        public IntPtr Handle { get; }
+        public nint Handle { get; }
         public IReadOnlyList<IGamepad> Gamepads { get; }
         public IReadOnlyList<IJoystick> Joysticks { get; }
         public IReadOnlyList<IKeyboard> Keyboards { get; }

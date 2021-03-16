@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_QUERY")]
-    public enum Query
+    public enum Query : int
     {
         [NativeName("Name", "D3D11_QUERY_EVENT")]
         QueryEvent = 0x0,

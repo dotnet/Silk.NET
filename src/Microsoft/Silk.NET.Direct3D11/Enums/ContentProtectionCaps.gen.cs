@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_CONTENT_PROTECTION_CAPS")]
-    public enum ContentProtectionCaps
+    public enum ContentProtectionCaps : int
     {
         [NativeName("Name", "D3D11_CONTENT_PROTECTION_CAPS_SOFTWARE")]
         ContentProtectionCapsSoftware = 0x1,

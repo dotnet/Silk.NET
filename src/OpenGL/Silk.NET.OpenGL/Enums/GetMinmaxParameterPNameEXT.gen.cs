@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "GetMinmaxParameterPNameEXT")]
-    public enum GetMinmaxParameterPNameEXT
+    public enum GetMinmaxParameterPNameEXT : int
     {
         [NativeName("Name", "GL_MINMAX_FORMAT")]
         MinmaxFormat = 0x802F,

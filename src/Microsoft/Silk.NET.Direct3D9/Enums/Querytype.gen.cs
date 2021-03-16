@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DQUERYTYPE")]
-    public enum Querytype
+    public enum Querytype : int
     {
         [NativeName("Name", "D3DQUERYTYPE_VCACHE")]
         QuerytypeVcache = 0x4,

@@ -23,12 +23,30 @@ namespace Silk.NET.Direct3D11
     {
         public VideoProcessorOutputViewDesc
         (
-            VpovDimension? viewDimension = null
+            VpovDimension? viewDimension = null,
+            VideoProcessorOutputViewDescUnion? anonymous = null,
+            Tex2DVpov? texture2D = null,
+            Tex2DArrayVpov? texture2DArray = null
         ) : this()
         {
             if (viewDimension is not null)
             {
                 ViewDimension = viewDimension.Value;
+            }
+
+            if (anonymous is not null)
+            {
+                Anonymous = anonymous.Value;
+            }
+
+            if (texture2D is not null)
+            {
+                Texture2D = texture2D.Value;
+            }
+
+            if (texture2DArray is not null)
+            {
+                Texture2DArray = texture2DArray.Value;
             }
         }
 
@@ -37,5 +55,38 @@ namespace Silk.NET.Direct3D11
         [NativeName("Type.Name", "D3D11_VPOV_DIMENSION")]
         [NativeName("Name", "ViewDimension")]
         public VpovDimension ViewDimension;
+
+        [NativeName("Type", "")]
+        [NativeName("Type.Name", "__AnonymousRecord_d3d11_L11546_C5")]
+        [NativeName("Name", "anonymous1")]
+        public VideoProcessorOutputViewDescUnion Anonymous;
+#if NETSTANDARD2_1
+        public ref Tex2DVpov Texture2D
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Texture2D;
+        }
+#else
+        public Tex2DVpov Texture2D
+        {
+            get => Anonymous.Texture2D;
+            set => Anonymous.Texture2D = value;
+        }
+#endif
+
+#if NETSTANDARD2_1
+        public ref Tex2DArrayVpov Texture2DArray
+        {
+            [MethodImpl((MethodImplOptions) 768)]
+            get => ref Anonymous.Texture2DArray;
+        }
+#else
+        public Tex2DArrayVpov Texture2DArray
+        {
+            get => Anonymous.Texture2DArray;
+            set => Anonymous.Texture2DArray = value;
+        }
+#endif
+
     }
 }

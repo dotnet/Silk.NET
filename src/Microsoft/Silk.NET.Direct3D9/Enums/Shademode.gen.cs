@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DSHADEMODE")]
-    public enum Shademode
+    public enum Shademode : int
     {
         [NativeName("Name", "D3DSHADE_FLAT")]
         ShadeFlat = 0x1,

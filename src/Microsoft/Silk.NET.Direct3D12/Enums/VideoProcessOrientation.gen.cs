@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_VIDEO_PROCESS_ORIENTATION")]
-    public enum VideoProcessOrientation
+    public enum VideoProcessOrientation : int
     {
         [NativeName("Name", "D3D12_VIDEO_PROCESS_ORIENTATION_DEFAULT")]
         VideoProcessOrientationDefault = 0x0,

@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11ShaderTrace")]
     public unsafe partial struct ID3D11ShaderTrace
     {
+        public static readonly Guid Guid = new("36b013e6-2811-4845-baa7-d623fe0df104");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D11ShaderTrace val)
             => Unsafe.As<ID3D11ShaderTrace, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -45,7 +47,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -54,7 +56,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -66,7 +68,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -78,7 +80,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -93,8 +95,8 @@ namespace Silk.NET.Direct3D11
         public readonly uint AddRef()
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint>)LpVtbl[1])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -102,8 +104,8 @@ namespace Silk.NET.Direct3D11
         public readonly uint Release()
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint>)LpVtbl[2])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -111,7 +113,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int TraceReady(ulong* pTestCount)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, ulong*, int>)LpVtbl[3])(@this, pTestCount);
             return ret;
         }
@@ -120,7 +122,7 @@ namespace Silk.NET.Direct3D11
         public readonly int TraceReady(ref ulong pTestCount)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ulong* pTestCountPtr = &pTestCount)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, ulong*, int>)LpVtbl[3])(@this, pTestCountPtr);
@@ -132,14 +134,14 @@ namespace Silk.NET.Direct3D11
         public readonly void ResetTrace()
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, void>)LpVtbl[4])(@this);
+            ((delegate* unmanaged[Stdcall]<ID3D11ShaderTrace*, void>)LpVtbl[4])(@this);
         }
 
         /// <summary>To be documented.</summary>
         public readonly unsafe int GetTraceStats(TraceStats* pTraceStats)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, TraceStats*, int>)LpVtbl[5])(@this, pTraceStats);
             return ret;
         }
@@ -148,7 +150,7 @@ namespace Silk.NET.Direct3D11
         public readonly int GetTraceStats(ref TraceStats pTraceStats)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TraceStats* pTraceStatsPtr = &pTraceStats)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, TraceStats*, int>)LpVtbl[5])(@this, pTraceStatsPtr);
@@ -160,7 +162,7 @@ namespace Silk.NET.Direct3D11
         public readonly int PSSelectStamp(uint stampIndex)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint, int>)LpVtbl[6])(@this, stampIndex);
             return ret;
         }
@@ -169,7 +171,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetInitialRegisterContents(TraceRegister* pRegister, TraceValue* pValue)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, TraceRegister*, TraceValue*, int>)LpVtbl[7])(@this, pRegister, pValue);
             return ret;
         }
@@ -178,7 +180,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetInitialRegisterContents(TraceRegister* pRegister, ref TraceValue pValue)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TraceValue* pValuePtr = &pValue)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, TraceRegister*, TraceValue*, int>)LpVtbl[7])(@this, pRegister, pValuePtr);
@@ -190,7 +192,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetInitialRegisterContents(ref TraceRegister pRegister, TraceValue* pValue)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TraceRegister* pRegisterPtr = &pRegister)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, TraceRegister*, TraceValue*, int>)LpVtbl[7])(@this, pRegisterPtr, pValue);
@@ -202,7 +204,7 @@ namespace Silk.NET.Direct3D11
         public readonly int GetInitialRegisterContents(ref TraceRegister pRegister, ref TraceValue pValue)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TraceRegister* pRegisterPtr = &pRegister)
             {
                 fixed (TraceValue* pValuePtr = &pValue)
@@ -217,7 +219,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetStep(uint stepIndex, TraceStep* pTraceStep)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint, TraceStep*, int>)LpVtbl[8])(@this, stepIndex, pTraceStep);
             return ret;
         }
@@ -226,7 +228,7 @@ namespace Silk.NET.Direct3D11
         public readonly int GetStep(uint stepIndex, ref TraceStep pTraceStep)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TraceStep* pTraceStepPtr = &pTraceStep)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint, TraceStep*, int>)LpVtbl[8])(@this, stepIndex, pTraceStepPtr);
@@ -238,7 +240,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetWrittenRegister(uint stepIndex, uint writtenRegisterIndex, TraceRegister* pRegister, TraceValue* pValue)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[9])(@this, stepIndex, writtenRegisterIndex, pRegister, pValue);
             return ret;
         }
@@ -247,7 +249,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetWrittenRegister(uint stepIndex, uint writtenRegisterIndex, TraceRegister* pRegister, ref TraceValue pValue)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TraceValue* pValuePtr = &pValue)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[9])(@this, stepIndex, writtenRegisterIndex, pRegister, pValuePtr);
@@ -259,7 +261,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetWrittenRegister(uint stepIndex, uint writtenRegisterIndex, ref TraceRegister pRegister, TraceValue* pValue)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TraceRegister* pRegisterPtr = &pRegister)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[9])(@this, stepIndex, writtenRegisterIndex, pRegisterPtr, pValue);
@@ -271,7 +273,7 @@ namespace Silk.NET.Direct3D11
         public readonly int GetWrittenRegister(uint stepIndex, uint writtenRegisterIndex, ref TraceRegister pRegister, ref TraceValue pValue)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TraceRegister* pRegisterPtr = &pRegister)
             {
                 fixed (TraceValue* pValuePtr = &pValue)
@@ -286,7 +288,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetReadRegister(uint stepIndex, uint readRegisterIndex, TraceRegister* pRegister, TraceValue* pValue)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[10])(@this, stepIndex, readRegisterIndex, pRegister, pValue);
             return ret;
         }
@@ -295,7 +297,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetReadRegister(uint stepIndex, uint readRegisterIndex, TraceRegister* pRegister, ref TraceValue pValue)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TraceValue* pValuePtr = &pValue)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[10])(@this, stepIndex, readRegisterIndex, pRegister, pValuePtr);
@@ -307,7 +309,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetReadRegister(uint stepIndex, uint readRegisterIndex, ref TraceRegister pRegister, TraceValue* pValue)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TraceRegister* pRegisterPtr = &pRegister)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11ShaderTrace*, uint, uint, TraceRegister*, TraceValue*, int>)LpVtbl[10])(@this, stepIndex, readRegisterIndex, pRegisterPtr, pValue);
@@ -319,7 +321,7 @@ namespace Silk.NET.Direct3D11
         public readonly int GetReadRegister(uint stepIndex, uint readRegisterIndex, ref TraceRegister pRegister, ref TraceValue pValue)
         {
             var @this = (ID3D11ShaderTrace*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (TraceRegister* pRegisterPtr = &pRegister)
             {
                 fixed (TraceValue* pValuePtr = &pValue)

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_FENCE_FLAG")]
-    public enum FenceFlag
+    public enum FenceFlag : int
     {
         [NativeName("Name", "D3D11_FENCE_FLAG_NONE")]
         FenceFlagNone = 0x0,

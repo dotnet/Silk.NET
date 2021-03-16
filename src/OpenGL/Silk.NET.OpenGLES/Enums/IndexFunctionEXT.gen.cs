@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "IndexFunctionEXT")]
-    public enum IndexFunctionEXT
+    public enum IndexFunctionEXT : int
     {
         [NativeName("Name", "GL_NEVER")]
         Never = 0x200,

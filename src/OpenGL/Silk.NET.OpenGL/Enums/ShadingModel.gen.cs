@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "ShadingModel")]
-    public enum ShadingModel
+    public enum ShadingModel : int
     {
     }
 }

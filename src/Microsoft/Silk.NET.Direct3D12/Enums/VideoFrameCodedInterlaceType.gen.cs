@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_VIDEO_FRAME_CODED_INTERLACE_TYPE")]
-    public enum VideoFrameCodedInterlaceType
+    public enum VideoFrameCodedInterlaceType : int
     {
         [NativeName("Name", "D3D12_VIDEO_FRAME_CODED_INTERLACE_TYPE_NONE")]
         VideoFrameCodedInterlaceTypeNone = 0x0,

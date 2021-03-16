@@ -14,6 +14,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Text;
+using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Native;
 using Silk.NET.SilkTouch.NativeContextOverrides;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
@@ -64,15 +65,20 @@ namespace Silk.NET.SilkTouch
 
 
             marshalBuilder = new MarshalBuilder();
-
+            
+            // begin            |           end
+            marshalBuilder.Use(Middlewares.InjectMiddleware);
             marshalBuilder.Use(Middlewares.ParameterInitMiddleware);
             marshalBuilder.Use(Middlewares.StringMarshaller);
             marshalBuilder.Use(Middlewares.PinMiddleware);
+            // post init        |           -
             marshalBuilder.Use(Middlewares.SpanMarshaller);
             marshalBuilder.Use(Middlewares.BoolMarshaller);
             marshalBuilder.Use(Middlewares.PinObjectMarshaller);
+            // post pin
             marshalBuilder.Use(Middlewares.DelegateMarshaller);
             marshalBuilder.Use(Middlewares.GenericPointerMarshaller);
+            // pre load         |           post load
 
             List<ITypeSymbol> processedSymbols = new List<ITypeSymbol>();
             
@@ -190,6 +196,7 @@ namespace Silk.NET.SilkTouch
             int slotCount = 0;
             int gcCount = 0;
             
+            var generatedVTableName = NameGenerator.Name("GeneratedVTable");
             Dictionary<int, string> entryPoints = new Dictionary<int, string>();
             var processedEntrypoints = new List<EntryPoint>();
             foreach (var (declaration, symbol, entryPoint, callingConvention) in from declaration in
@@ -216,7 +223,7 @@ namespace Silk.NET.SilkTouch
                 (
                     sourceContext, rootMarshalBuilder, callingConvention, entryPoints, entryPoint, classIsSealed,
                     generateSeal, generateVTable, slot, compilation, symbol, declaration, newMembers,
-                    ref gcCount, processedEntrypoints
+                    ref gcCount, processedEntrypoints, generatedVTableName
                 );
             }
 
@@ -292,7 +299,8 @@ namespace Silk.NET.SilkTouch
                     (
                         preloadVTable, entryPoints, emitAssert,
                         sourceContext.ParseOptions.PreprocessorSymbolNames.Any
-                            (x => x == "NETCOREAPP" || x == "NET5" /* SEE INativeContext.cs in Core */)
+                            (x => x == "NETCOREAPP" || x == "NET5" /* SEE INativeContext.cs in Core */),
+                        generatedVTableName
                     )
                 );
                 newMembers.Add
@@ -316,7 +324,7 @@ namespace Silk.NET.SilkTouch
                             ArrowExpressionClause
                             (
                                 ObjectCreationExpression
-                                    (IdentifierName("GeneratedVTable"))
+                                    (IdentifierName(generatedVTableName))
                                 .WithArgumentList(ArgumentList())
                             )
                         )
@@ -375,11 +383,14 @@ namespace Silk.NET.SilkTouch
             MethodDeclarationSyntax declaration,
             List<MemberDeclarationSyntax> newMembers,
             ref int gcCount,
-            List<EntryPoint> processedEntrypoints
+            List<EntryPoint> processedEntrypoints,
+            string generatedVTableName
         )
         {
             void BuildLoadInvoke(ref IMarshalContext ctx, Action next)
             {
+                ctx.TransitionTo(SilkTouchStage.PreLoad);
+
                 // this is terminal, we never call next
 
                 var parameters = ctx.ResolveAllLoadParameters();
@@ -437,7 +448,7 @@ namespace Silk.NET.SilkTouch
                         (
                             BinaryExpression
                             (
-                                SyntaxKind.AsExpression, IdentifierName("CurrentVTable"), IdentifierName("GeneratedVTable")
+                                SyntaxKind.AsExpression, IdentifierName("CurrentVTable"), IdentifierName(generatedVTableName)
                             )
                         ), IdentifierName("Load")
                     );
@@ -489,6 +500,7 @@ namespace Silk.NET.SilkTouch
                 }
 
                 ctx.CurrentResultType = ctx.ReturnLoadType;
+                ctx.TransitionTo(SilkTouchStage.PostLoad);
             }
 
             try

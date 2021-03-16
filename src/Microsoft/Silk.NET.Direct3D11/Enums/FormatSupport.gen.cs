@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_FORMAT_SUPPORT")]
-    public enum FormatSupport
+    public enum FormatSupport : int
     {
         [NativeName("Name", "D3D11_FORMAT_SUPPORT_BUFFER")]
         FormatSupportBuffer = 0x1,

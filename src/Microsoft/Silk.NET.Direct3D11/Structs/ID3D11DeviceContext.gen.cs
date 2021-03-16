@@ -22,6 +22,8 @@ namespace Silk.NET.Direct3D11
     [NativeName("Name", "ID3D11DeviceContext")]
     public unsafe partial struct ID3D11DeviceContext
     {
+        public static readonly Guid Guid = new("c0bfa96c-e089-44fb-8eaf-26f8796190da");
+
         public static implicit operator ID3D11DeviceChild(ID3D11DeviceContext val)
             => Unsafe.As<ID3D11DeviceContext, ID3D11DeviceChild>(ref val);
 
@@ -48,7 +50,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -57,7 +59,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -69,7 +71,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -81,7 +83,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -96,8 +98,8 @@ namespace Silk.NET.Direct3D11
         public readonly uint AddRef()
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, uint>)LpVtbl[1])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -105,8 +107,8 @@ namespace Silk.NET.Direct3D11
         public readonly uint Release()
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, uint>)LpVtbl[2])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -131,7 +133,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData(Guid* guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSize, pData);
             return ret;
         }
@@ -140,7 +142,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData<T0>(Guid* guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, uint*, T0*, int>)LpVtbl[4])(@this, guid, pDataSize, pDataPtr);
@@ -152,7 +154,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData(Guid* guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guid, pDataSizePtr, pData);
@@ -164,7 +166,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData<T0>(Guid* guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (uint* pDataSizePtr = &pDataSize)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -179,7 +181,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData(ref Guid guid, uint* pDataSize, void* pData)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, uint*, void*, int>)LpVtbl[4])(@this, guidPtr, pDataSize, pData);
@@ -191,7 +193,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData<T0>(ref Guid guid, uint* pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -206,7 +208,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetPrivateData(ref Guid guid, ref uint pDataSize, void* pData)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
@@ -221,7 +223,7 @@ namespace Silk.NET.Direct3D11
         public readonly int GetPrivateData<T0>(ref Guid guid, ref uint pDataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (uint* pDataSizePtr = &pDataSize)
@@ -239,7 +241,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateData(Guid* guid, uint DataSize, void* pData)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guid, DataSize, pData);
             return ret;
         }
@@ -248,7 +250,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateData<T0>(Guid* guid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, uint, T0*, int>)LpVtbl[5])(@this, guid, DataSize, pDataPtr);
@@ -260,7 +262,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateData(ref Guid guid, uint DataSize, void* pData)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, uint, void*, int>)LpVtbl[5])(@this, guidPtr, DataSize, pData);
@@ -272,7 +274,7 @@ namespace Silk.NET.Direct3D11
         public readonly int SetPrivateData<T0>(ref Guid guid, uint DataSize, ref T0 pData) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -287,7 +289,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pData);
             return ret;
         }
@@ -296,7 +298,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateDataInterface(Guid* guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guid, pDataPtr);
@@ -308,7 +310,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] Silk.NET.Core.Native.IUnknown* pData)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, Guid*, Silk.NET.Core.Native.IUnknown*, int>)LpVtbl[6])(@this, guidPtr, pData);
@@ -320,7 +322,7 @@ namespace Silk.NET.Direct3D11
         public readonly int SetPrivateDataInterface(ref Guid guid, [Flow(FlowDirection.In)] in Silk.NET.Core.Native.IUnknown pData)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* guidPtr = &guid)
             {
                 fixed (Silk.NET.Core.Native.IUnknown* pDataPtr = &pData)
@@ -480,7 +482,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Map(ID3D11Resource* pResource, uint Subresource, Map MapType, uint MapFlags, MappedSubresource* pMappedResource)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, ID3D11Resource*, uint, Map, uint, MappedSubresource*, int>)LpVtbl[14])(@this, pResource, Subresource, MapType, MapFlags, pMappedResource);
             return ret;
         }
@@ -489,7 +491,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Map(ID3D11Resource* pResource, uint Subresource, Map MapType, uint MapFlags, ref MappedSubresource pMappedResource)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (MappedSubresource* pMappedResourcePtr = &pMappedResource)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, ID3D11Resource*, uint, Map, uint, MappedSubresource*, int>)LpVtbl[14])(@this, pResource, Subresource, MapType, MapFlags, pMappedResourcePtr);
@@ -501,7 +503,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int Map(ref ID3D11Resource pResource, uint Subresource, Map MapType, uint MapFlags, MappedSubresource* pMappedResource)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pResourcePtr = &pResource)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, ID3D11Resource*, uint, Map, uint, MappedSubresource*, int>)LpVtbl[14])(@this, pResourcePtr, Subresource, MapType, MapFlags, pMappedResource);
@@ -513,7 +515,7 @@ namespace Silk.NET.Direct3D11
         public readonly int Map(ref ID3D11Resource pResource, uint Subresource, Map MapType, uint MapFlags, ref MappedSubresource pMappedResource)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Resource* pResourcePtr = &pResource)
             {
                 fixed (MappedSubresource* pMappedResourcePtr = &pMappedResource)
@@ -834,7 +836,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetData(ID3D11Asynchronous* pAsync, void* pData, uint DataSize, uint GetDataFlags)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, ID3D11Asynchronous*, void*, uint, uint, int>)LpVtbl[29])(@this, pAsync, pData, DataSize, GetDataFlags);
             return ret;
         }
@@ -843,7 +845,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetData<T0>(ID3D11Asynchronous* pAsync, ref T0 pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (T0* pDataPtr = &pData)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, ID3D11Asynchronous*, T0*, uint, uint, int>)LpVtbl[29])(@this, pAsync, pDataPtr, DataSize, GetDataFlags);
@@ -855,7 +857,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int GetData(ref ID3D11Asynchronous pAsync, void* pData, uint DataSize, uint GetDataFlags)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Asynchronous* pAsyncPtr = &pAsync)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, ID3D11Asynchronous*, void*, uint, uint, int>)LpVtbl[29])(@this, pAsyncPtr, pData, DataSize, GetDataFlags);
@@ -867,7 +869,7 @@ namespace Silk.NET.Direct3D11
         public readonly int GetData<T0>(ref ID3D11Asynchronous pAsync, ref T0 pData, uint DataSize, uint GetDataFlags) where T0 : unmanaged
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11Asynchronous* pAsyncPtr = &pAsync)
             {
                 fixed (T0* pDataPtr = &pData)
@@ -1278,7 +1280,7 @@ namespace Silk.NET.Direct3D11
         public readonly void DrawAuto()
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, void>)LpVtbl[38])(@this);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, void>)LpVtbl[38])(@this);
         }
 
         /// <summary>To be documented.</summary>
@@ -1374,19 +1376,19 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void RSSetScissorRects(uint NumRects, Silk.NET.Maths.Rectangle<long>* pRects)
+        public readonly unsafe void RSSetScissorRects(uint NumRects, Silk.NET.Maths.Rectangle<int>* pRects)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, uint, Silk.NET.Maths.Rectangle<long>*, void>)LpVtbl[45])(@this, NumRects, pRects);
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[45])(@this, NumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void RSSetScissorRects(uint NumRects, ref Silk.NET.Maths.Rectangle<long> pRects)
+        public readonly void RSSetScissorRects(uint NumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<long>* pRectsPtr = &pRects)
+            fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, uint, Silk.NET.Maths.Rectangle<long>*, void>)LpVtbl[45])(@this, NumRects, pRectsPtr);
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, uint, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[45])(@this, NumRects, pRectsPtr);
             }
         }
 
@@ -1829,7 +1831,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe float GetResourceMinLOD(ID3D11Resource* pResource)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                float ret = default;
+            float ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, ID3D11Resource*, float>)LpVtbl[56])(@this, pResource);
             return ret;
         }
@@ -1838,7 +1840,7 @@ namespace Silk.NET.Direct3D11
         public readonly float GetResourceMinLOD(ref ID3D11Resource pResource)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                float ret = default;
+            float ret = default;
             fixed (ID3D11Resource* pResourcePtr = &pResource)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, ID3D11Resource*, float>)LpVtbl[56])(@this, pResourcePtr);
@@ -3242,41 +3244,41 @@ namespace Silk.NET.Direct3D11
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void RSGetScissorRects(uint* pNumRects, Silk.NET.Maths.Rectangle<long>* pRects)
+        public readonly unsafe void RSGetScissorRects(uint* pNumRects, Silk.NET.Maths.Rectangle<int>* pRects)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Rectangle<long>*, void>)LpVtbl[96])(@this, pNumRects, pRects);
+            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[96])(@this, pNumRects, pRects);
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void RSGetScissorRects(uint* pNumRects, ref Silk.NET.Maths.Rectangle<long> pRects)
+        public readonly unsafe void RSGetScissorRects(uint* pNumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            fixed (Silk.NET.Maths.Rectangle<long>* pRectsPtr = &pRects)
+            fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Rectangle<long>*, void>)LpVtbl[96])(@this, pNumRects, pRectsPtr);
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[96])(@this, pNumRects, pRectsPtr);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe void RSGetScissorRects(ref uint pNumRects, Silk.NET.Maths.Rectangle<long>* pRects)
+        public readonly unsafe void RSGetScissorRects(ref uint pNumRects, Silk.NET.Maths.Rectangle<int>* pRects)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pNumRectsPtr = &pNumRects)
             {
-                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Rectangle<long>*, void>)LpVtbl[96])(@this, pNumRectsPtr, pRects);
+                ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[96])(@this, pNumRectsPtr, pRects);
             }
         }
 
         /// <summary>To be documented.</summary>
-        public readonly void RSGetScissorRects(ref uint pNumRects, ref Silk.NET.Maths.Rectangle<long> pRects)
+        public readonly void RSGetScissorRects(ref uint pNumRects, ref Silk.NET.Maths.Rectangle<int> pRects)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             fixed (uint* pNumRectsPtr = &pNumRects)
             {
-                fixed (Silk.NET.Maths.Rectangle<long>* pRectsPtr = &pRects)
+                fixed (Silk.NET.Maths.Rectangle<int>* pRectsPtr = &pRects)
                 {
-                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Rectangle<long>*, void>)LpVtbl[96])(@this, pNumRectsPtr, pRectsPtr);
+                    ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, uint*, Silk.NET.Maths.Rectangle<int>*, void>)LpVtbl[96])(@this, pNumRectsPtr, pRectsPtr);
                 }
             }
         }
@@ -3731,22 +3733,22 @@ namespace Silk.NET.Direct3D11
         public readonly void ClearState()
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, void>)LpVtbl[110])(@this);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, void>)LpVtbl[110])(@this);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void Flush()
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, void>)LpVtbl[111])(@this);
+            ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, void>)LpVtbl[111])(@this);
         }
 
         /// <summary>To be documented.</summary>
         public readonly DeviceContextType GetType()
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                DeviceContextType ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, DeviceContextType>)LpVtbl[112])(@this);
+            DeviceContextType ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, DeviceContextType>)LpVtbl[112])(@this);
             return ret;
         }
 
@@ -3754,8 +3756,8 @@ namespace Silk.NET.Direct3D11
         public readonly uint GetContextFlags()
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, uint>)LpVtbl[113])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D11DeviceContext*, uint>)LpVtbl[113])(@this);
             return ret;
         }
 
@@ -3763,7 +3765,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int FinishCommandList(int RestoreDeferredContextState, ID3D11CommandList** ppCommandList)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, int, ID3D11CommandList**, int>)LpVtbl[114])(@this, RestoreDeferredContextState, ppCommandList);
             return ret;
         }
@@ -3772,7 +3774,7 @@ namespace Silk.NET.Direct3D11
         public readonly unsafe int FinishCommandList(int RestoreDeferredContextState, ref ID3D11CommandList* ppCommandList)
         {
             var @this = (ID3D11DeviceContext*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (ID3D11CommandList** ppCommandListPtr = &ppCommandList)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D11DeviceContext*, int, ID3D11CommandList**, int>)LpVtbl[114])(@this, RestoreDeferredContextState, ppCommandListPtr);

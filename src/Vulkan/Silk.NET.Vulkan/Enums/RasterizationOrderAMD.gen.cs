@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkRasterizationOrderAMD")]
-    public enum RasterizationOrderAMD
+    public enum RasterizationOrderAMD : int
     {
         [NativeName("Name", "VK_RASTERIZATION_ORDER_STRICT_AMD")]
         RasterizationOrderStrictAmd = 0,

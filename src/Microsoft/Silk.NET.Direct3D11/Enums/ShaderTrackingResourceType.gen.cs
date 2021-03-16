@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_SHADER_TRACKING_RESOURCE_TYPE")]
-    public enum ShaderTrackingResourceType
+    public enum ShaderTrackingResourceType : int
     {
         [NativeName("Name", "D3D11_SHADER_TRACKING_RESOURCE_TYPE_NONE")]
         ShaderTrackingResourceTypeNone = 0x0,

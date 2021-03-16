@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "PixelStoreParameter")]
-    public enum PixelStoreParameter
+    public enum PixelStoreParameter : int
     {
         [NativeName("Name", "GL_UNPACK_SWAP_BYTES")]
         UnpackSwapBytes = 0xCF0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiMorphingMethod")]
-    public enum MorphingMethod
+    public enum MorphingMethod : int
     {
         [NativeName("Name", "aiMorphingMethod_VERTEX_BLEND")]
         MorphingMethodVertexBlend = 0x1,

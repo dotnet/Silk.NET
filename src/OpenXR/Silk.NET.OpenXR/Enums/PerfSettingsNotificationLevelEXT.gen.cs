@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenXR
 {
     [NativeName("Name", "XrPerfSettingsNotificationLevelEXT")]
-    public enum PerfSettingsNotificationLevelEXT
+    public enum PerfSettingsNotificationLevelEXT : int
     {
         [NativeName("Name", "XR_PERF_SETTINGS_NOTIF_LEVEL_NORMAL_EXT")]
         PerfSettingsNotifLevelNormalExt = 0,

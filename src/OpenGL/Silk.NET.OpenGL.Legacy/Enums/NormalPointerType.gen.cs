@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "NormalPointerType")]
-    public enum NormalPointerType
+    public enum NormalPointerType : int
     {
         [NativeName("Name", "GL_BYTE")]
         Byte = 0x1400,

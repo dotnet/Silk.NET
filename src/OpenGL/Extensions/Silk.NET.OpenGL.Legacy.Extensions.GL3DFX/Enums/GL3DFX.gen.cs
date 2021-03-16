@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.GL3DFX
 {
     [NativeName("Name", "GLenum")]
-    public enum GL3DFX
+    public enum GL3DFX : int
     {
         [NativeName("Name", "GL_MULTISAMPLE_3DFX")]
         Multisample3Dfx = 0x86B2,

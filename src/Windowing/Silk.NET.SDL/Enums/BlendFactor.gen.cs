@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_blendmode_L78_C9")]
     [NativeName("Name", "SDL_BlendFactor")]
-    public enum BlendFactor
+    public enum BlendFactor : int
     {
         [NativeName("Name", "SDL_BLENDFACTOR_ZERO")]
         BlendfactorZero = 0x1,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
 {
     [NativeName("Name", "GLenum")]
-    public enum APPLE
+    public enum APPLE : int
     {
         [NativeName("Name", "GL_AUX_DEPTH_STENCIL_APPLE")]
         AuxDepthStencilApple = 0x8A14,

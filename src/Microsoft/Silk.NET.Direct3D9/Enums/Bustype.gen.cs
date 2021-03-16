@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DBUSTYPE")]
-    public enum Bustype
+    public enum Bustype : int
     {
         [NativeName("Name", "D3DBUSTYPE_OTHER")]
         BustypeOther = 0x0,
@@ -35,6 +35,6 @@ namespace Silk.NET.Direct3D9
         [NativeName("Name", "D3DBUSIMPL_MODIFIER_DAUGHTER_BOARD_CONNECTOR_INSIDE_OF_NUAE")]
         BusimplModifierDaughterBoardConnectorInsideOfNuae = 0x50000,
         [NativeName("Name", "D3DBUSIMPL_MODIFIER_NON_STANDARD")]
-        BusimplModifierNonStandard = unchecked((int)0xFFFFFFFF80000000),
+        BusimplModifierNonStandard = unchecked((int) 0xFFFFFFFF80000000),
     }
 }

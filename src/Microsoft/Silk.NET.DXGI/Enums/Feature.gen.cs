@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_FEATURE")]
-    public enum Feature
+    public enum Feature : int
     {
         [NativeName("Name", "DXGI_FEATURE_PRESENT_ALLOW_TEARING")]
         FeaturePresentAllowTearing = 0x0,

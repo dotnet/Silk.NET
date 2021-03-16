@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "ClampColorModeARB")]
-    public enum ClampColorModeARB
+    public enum ClampColorModeARB : int
     {
         [NativeName("Name", "GL_FALSE")]
         False = 0x0,

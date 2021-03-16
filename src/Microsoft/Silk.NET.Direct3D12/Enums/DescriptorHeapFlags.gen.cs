@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_DESCRIPTOR_HEAP_FLAGS")]
-    public enum DescriptorHeapFlags
+    public enum DescriptorHeapFlags : int
     {
         [NativeName("Name", "D3D12_DESCRIPTOR_HEAP_FLAG_NONE")]
         DescriptorHeapFlagNone = 0x0,

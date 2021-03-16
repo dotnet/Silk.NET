@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkConservativeRasterizationModeEXT")]
-    public enum ConservativeRasterizationModeEXT
+    public enum ConservativeRasterizationModeEXT : int
     {
         [NativeName("Name", "VK_CONSERVATIVE_RASTERIZATION_MODE_DISABLED_EXT")]
         ConservativeRasterizationModeDisabledExt = 0,

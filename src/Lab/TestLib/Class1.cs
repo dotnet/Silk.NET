@@ -17,26 +17,31 @@ namespace TestLib
     {
 
         [NativeApi(EntryPoint = "MessageBoxA")]
-        public unsafe partial int MessageBox(IntPtr hwnd, char* text, char* caption, uint buttons);
+        [Inject(SilkTouchStage.Begin, "System.Console.WriteLine(\"Stage: Begin\");")]
+        [Inject(SilkTouchStage.PostInit, "System.Console.WriteLine(\"Stage: PostInit\");")]
+        [Inject(SilkTouchStage.PreLoad, "System.Console.WriteLine(\"Stage: PreLoad\");")]
+        [Inject(SilkTouchStage.PostLoad, "System.Console.WriteLine(\"Stage: PostLoad\");")]
+        [Inject(SilkTouchStage.End, "System.Console.WriteLine(\"Stage: End\");")]
+        public unsafe partial int MessageBox(nint hwnd, char* text, char* caption, uint buttons);
         
         [NativeApi(EntryPoint = "MessageBoxA")]
-        public partial int MessageBox(IntPtr hwnd, string text, string caption, uint buttons);
+        public partial int MessageBox(nint hwnd, string text, string caption, uint buttons);
 
         [NativeApi(EntryPoint = "MessageBoxA")]
-        public partial int MessageBox(IntPtr hwnd, string text, string caption,
+        public partial int MessageBox(nint hwnd, string text, string caption,
             [UnmanagedType(UnmanagedType.U4)] bool buttons);
         
         [NativeApi(EntryPoint = "MessageBoxA")]
-        public partial int MessageBox(IntPtr hwnd, string text, Span<char> caption, uint buttons);
+        public partial int MessageBox(nint hwnd, string text, Span<char> caption, uint buttons);
 
         [NativeApi(EntryPoint = "MessageBoxA")]
-        public unsafe partial int MessageBox(IntPtr hwnd, string text, char* caption, uint buttons);
+        public unsafe partial int MessageBox(nint hwnd, string text, char* caption, uint buttons);
 
         [NativeApi(EntryPoint = "MessageBoxA")]
         [ExcludeFromOverride(1)]
-        public partial int MessageBox<T>(IntPtr hwnd, string text, Span<T> caption, uint buttons) where T:unmanaged;
+        public partial int MessageBox<T>(nint hwnd, string text, Span<T> caption, uint buttons) where T:unmanaged;
         
-        public unsafe partial IntPtr CreateWindowExA(
+        public unsafe partial nint CreateWindowExA(
             uint     dwExStyle,
             string    lpClassName,
             string    lpWindowName,
@@ -45,9 +50,9 @@ namespace TestLib
             int       Y,
             int       nWidth,
             int       nHeight,
-            IntPtr      hWndParent,
-            IntPtr     hMenu,
-            IntPtr hInstance,
+            nint      hWndParent,
+            nint     hMenu,
+            nint hInstance,
             void*    lpParam
         );
 

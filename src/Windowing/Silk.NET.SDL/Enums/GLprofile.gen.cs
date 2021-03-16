@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L228_C9")]
     [NativeName("Name", "SDL_GLprofile")]
-    public enum GLprofile
+    public enum GLprofile : int
     {
         [NativeName("Name", "SDL_GL_CONTEXT_PROFILE_CORE")]
         GLContextProfileCore = 0x1,

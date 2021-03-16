@@ -18,6 +18,120 @@ namespace Silk.NET.DXGI
 {
     public unsafe partial class DXGI : NativeAPI
     {
+        [NativeName("Type", "int")]
+        [NativeName("Name", "__REQUIRED_RPCNDR_H_VERSION__")]
+        public const int RequiredRpcndrHVersion = unchecked((int) 0x1F4);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "__REQUIRED_RPCSAL_H_VERSION__")]
+        public const int RequiredRpcsalHVersion = unchecked((int) 0x64);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "DXGI_STANDARD_MULTISAMPLE_QUALITY_PATTERN")]
+        public const uint StandardMultisampleQualityPattern = unchecked((uint) 0xFFFFFFFFFFFFFFFF);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "DXGI_CENTER_MULTISAMPLE_QUALITY_PATTERN")]
+        public const uint CenterMultisampleQualityPattern = unchecked((uint) 0xFFFFFFFFFFFFFFFE);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "_FACDXGI")]
+        public const int Facdxgi = unchecked((int) 0x87A);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "DXGI_CPU_ACCESS_NONE")]
+        public const int CpuAccessNone = unchecked((int) 0x0);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "DXGI_CPU_ACCESS_DYNAMIC")]
+        public const int CpuAccessDynamic = unchecked((int) 0x1);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "DXGI_CPU_ACCESS_READ_WRITE")]
+        public const int CpuAccessReadWrite = unchecked((int) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "DXGI_CPU_ACCESS_SCRATCH")]
+        public const int CpuAccessScratch = unchecked((int) 0x3);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "DXGI_CPU_ACCESS_FIELD")]
+        public const int CpuAccessField = unchecked((int) 0xF);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_USAGE_SHADER_INPUT")]
+        public const uint UsageShaderInput = unchecked((uint) 0x10);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_USAGE_RENDER_TARGET_OUTPUT")]
+        public const uint UsageRenderTargetOutput = unchecked((uint) 0x20);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_USAGE_BACK_BUFFER")]
+        public const uint UsageBackBuffer = unchecked((uint) 0x40);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_USAGE_SHARED")]
+        public const uint UsageShared = unchecked((uint) 0x80);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_USAGE_READ_ONLY")]
+        public const uint UsageReadOnly = unchecked((uint) 0x100);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_USAGE_DISCARD_ON_PRESENT")]
+        public const uint UsageDiscardOnPresent = unchecked((uint) 0x200);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_USAGE_UNORDERED_ACCESS")]
+        public const uint UsageUnorderedAccess = unchecked((uint) 0x400);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "DXGI_RESOURCE_PRIORITY_MINIMUM")]
+        public const int ResourcePriorityMinimum = unchecked((int) 0x28000000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "DXGI_RESOURCE_PRIORITY_LOW")]
+        public const int ResourcePriorityLow = unchecked((int) 0x50000000);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "DXGI_RESOURCE_PRIORITY_NORMAL")]
+        public const int ResourcePriorityNormal = unchecked((int) 0x78000000);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "DXGI_RESOURCE_PRIORITY_HIGH")]
+        public const uint ResourcePriorityHigh = unchecked((uint) 0xFFFFFFFFA0000000);
+        [NativeName("Type", "unsigned int")]
+        [NativeName("Name", "DXGI_RESOURCE_PRIORITY_MAXIMUM")]
+        public const uint ResourcePriorityMaximum = unchecked((uint) 0xFFFFFFFFC8000000);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_MAP_READ")]
+        public const uint MapRead = unchecked((uint) 0x1);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_MAP_WRITE")]
+        public const uint MapWrite = unchecked((uint) 0x2);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_MAP_DISCARD")]
+        public const uint MapDiscard = unchecked((uint) 0x4);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_ENUM_MODES_INTERLACED")]
+        public const uint EnumModesInterlaced = unchecked((uint) 0x1);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_ENUM_MODES_SCALING")]
+        public const uint EnumModesScaling = unchecked((uint) 0x2);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "DXGI_MAX_SWAP_CHAIN_BUFFERS")]
+        public const int MaxSwapChainBuffers = unchecked((int) 0x10);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_PRESENT_TEST")]
+        public const uint PresentTest = unchecked((uint) 0x1);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_PRESENT_DO_NOT_SEQUENCE")]
+        public const uint PresentDONotSequence = unchecked((uint) 0x2);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_PRESENT_RESTART")]
+        public const uint PresentRestart = unchecked((uint) 0x4);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_PRESENT_DO_NOT_WAIT")]
+        public const uint PresentDONotWait = unchecked((uint) 0x8);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_PRESENT_STEREO_PREFER_RIGHT")]
+        public const uint PresentStereoPreferRight = unchecked((uint) 0x10);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_PRESENT_STEREO_TEMPORARY_MONO")]
+        public const uint PresentStereoTemporaryMono = unchecked((uint) 0x20);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_PRESENT_RESTRICT_TO_OUTPUT")]
+        public const uint PresentRestrictToOutput = unchecked((uint) 0x40);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_PRESENT_USE_DURATION")]
+        public const uint PresentUseDuration = unchecked((uint) 0x100);
+        [NativeName("Type", "unsigned long")]
+        [NativeName("Name", "DXGI_PRESENT_ALLOW_TEARING")]
+        public const uint PresentAllowTearing = unchecked((uint) 0x200);
+        [NativeName("Type", "int")]
+        [NativeName("Name", "DXGI_MWA_VALID")]
+        public const int MwaValid = unchecked((int) 0x7);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 155, Column 16 in dxgidebug.h")]
@@ -41,7 +155,7 @@ namespace Silk.NET.DXGI
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 85, Column 16 in dxgi1_6.h")]
-        [NativeApi(EntryPoint = "DXGIDeclareAdapterRemovalSupport")]
+        [NativeApi(EntryPoint = "DXGIDeclareAdapterRemovalSupport", Convention = CallingConvention.StdCall)]
         public partial int DeclareAdapterRemovalSupport();
 
         /// <summary>To be documented.</summary>

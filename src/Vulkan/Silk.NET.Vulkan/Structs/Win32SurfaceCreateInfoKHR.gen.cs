@@ -26,8 +26,8 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.Win32SurfaceCreateInfoKhr,
             void* pNext = null,
             uint? flags = null,
-            IntPtr? hinstance = null,
-            IntPtr? hwnd = null
+            nint? hinstance = null,
+            nint? hwnd = null
         ) : this()
         {
             if (sType is not null)
@@ -75,11 +75,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "HINSTANCE")]
         [NativeName("Type.Name", "HINSTANCE")]
         [NativeName("Name", "hinstance")]
-        public IntPtr Hinstance;
+        public nint Hinstance;
 /// <summary></summary>
         [NativeName("Type", "HWND")]
         [NativeName("Type.Name", "HWND")]
         [NativeName("Name", "hwnd")]
-        public IntPtr Hwnd;
+        public nint Hwnd;
     }
 }

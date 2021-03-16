@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_HEAP_SERIALIZATION_TIER")]
-    public enum HeapSerializationTier
+    public enum HeapSerializationTier : int
     {
         [NativeName("Name", "D3D12_HEAP_SERIALIZATION_TIER_0")]
         HeapSerializationTier0 = 0x0,

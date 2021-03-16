@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_FEATURE_VIDEO")]
-    public enum FeatureVideo
+    public enum FeatureVideo : int
     {
         [NativeName("Name", "D3D12_FEATURE_VIDEO_DECODE_SUPPORT")]
         FeatureVideoDecodeSupport = 0x0,

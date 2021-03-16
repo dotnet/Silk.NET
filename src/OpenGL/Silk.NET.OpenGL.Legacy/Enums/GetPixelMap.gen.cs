@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "GetPixelMap")]
-    public enum GetPixelMap
+    public enum GetPixelMap : int
     {
         [NativeName("Name", "GL_PIXEL_MAP_I_TO_I")]
         PixelMapIToI = 0xC70,

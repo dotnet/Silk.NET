@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_PREDICATION_OP")]
-    public enum PredicationOp
+    public enum PredicationOp : int
     {
         [NativeName("Name", "D3D12_PREDICATION_OP_EQUAL_ZERO")]
         PredicationOpEqualZero = 0x0,

@@ -27,7 +27,7 @@ namespace Silk.NET.DXGI
             SampleDesc? sampleDesc = null,
             uint? bufferUsage = null,
             uint? bufferCount = null,
-            IntPtr? outputWindow = null,
+            nint? outputWindow = null,
             int? windowed = null,
             SwapEffect? swapEffect = null,
             uint? flags = null
@@ -98,7 +98,7 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "HWND")]
         [NativeName("Type.Name", "HWND")]
         [NativeName("Name", "OutputWindow")]
-        public IntPtr OutputWindow;
+        public nint OutputWindow;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]

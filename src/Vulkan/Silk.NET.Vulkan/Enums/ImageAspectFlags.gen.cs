@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkImageAspectFlags")]
-    public enum ImageAspectFlags
+    public enum ImageAspectFlags : int
     {
         [NativeName("Name", "VK_IMAGE_ASPECT_COLOR_BIT")]
         ImageAspectColorBit = 1,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "CombinerComponentUsageNV")]
-    public enum CombinerComponentUsageNV
+    public enum CombinerComponentUsageNV : int
     {
         [NativeName("Name", "GL_BLUE")]
         Blue = 0x1905,

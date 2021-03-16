@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "PixelTransformPNameEXT")]
-    public enum PixelTransformPNameEXT
+    public enum PixelTransformPNameEXT : int
     {
         [NativeName("Name", "GL_PIXEL_MAG_FILTER_EXT")]
         PixelMagFilterExt = 0x8331,

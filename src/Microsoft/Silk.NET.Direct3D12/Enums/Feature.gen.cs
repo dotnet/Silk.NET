@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_FEATURE")]
-    public enum Feature
+    public enum Feature : int
     {
         [NativeName("Name", "D3D12_FEATURE_D3D12_OPTIONS")]
         FeatureD3D12Options = 0x0,

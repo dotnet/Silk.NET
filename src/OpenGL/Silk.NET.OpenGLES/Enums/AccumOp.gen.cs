@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "AccumOp")]
-    public enum AccumOp
+    public enum AccumOp : int
     {
         [NativeName("Name", "GL_ACCUM")]
         Accum = 0x100,

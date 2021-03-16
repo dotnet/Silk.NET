@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "FragmentLightParameterSGIX")]
-    public enum FragmentLightParameterSGIX
+    public enum FragmentLightParameterSGIX : int
     {
     }
 }

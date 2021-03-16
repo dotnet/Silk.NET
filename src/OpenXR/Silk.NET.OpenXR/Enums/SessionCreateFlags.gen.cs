@@ -13,7 +13,7 @@ namespace Silk.NET.OpenXR
 {
     [Flags()]
     [NativeName("Name", "XrSessionCreateFlags")]
-    public enum SessionCreateFlags
+    public enum SessionCreateFlags : int
     {
     }
 }

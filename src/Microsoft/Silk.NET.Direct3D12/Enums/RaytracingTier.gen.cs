@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_RAYTRACING_TIER")]
-    public enum RaytracingTier
+    public enum RaytracingTier : int
     {
         [NativeName("Name", "D3D12_RAYTRACING_TIER_NOT_SUPPORTED")]
         RaytracingTierNotSupported = 0x0,

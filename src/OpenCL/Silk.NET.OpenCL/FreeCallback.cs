@@ -7,5 +7,5 @@ using System;
 
 namespace Silk.NET.OpenCL
 {
-    public unsafe delegate void FreeCallback(IntPtr queue, uint numSvmPointers, void** svmPointers, void* userData);
+    public unsafe delegate void FreeCallback(nint queue, uint numSvmPointers, void** svmPointers, void* userData);
 }

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Core.Native
 {
     [NativeName("Name", "D3D_PRIMITIVE")]
-    public enum D3DPrimitive
+    public enum D3DPrimitive : int
     {
         [NativeName("Name", "D3D_PRIMITIVE_UNDEFINED")]
         D3DPrimitiveUndefined = 0x0,

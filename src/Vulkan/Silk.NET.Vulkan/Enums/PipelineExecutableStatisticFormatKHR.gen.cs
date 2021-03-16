@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPipelineExecutableStatisticFormatKHR")]
-    public enum PipelineExecutableStatisticFormatKHR
+    public enum PipelineExecutableStatisticFormatKHR : int
     {
         [NativeName("Name", "VK_PIPELINE_EXECUTABLE_STATISTIC_FORMAT_BOOL32_KHR")]
         PipelineExecutableStatisticFormatBool32Khr = 0,

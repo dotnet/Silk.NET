@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiTextureMapping")]
-    public enum TextureMapping
+    public enum TextureMapping : int
     {
         [NativeName("Name", "aiTextureMapping_UV")]
         TextureMappingUV = 0x0,

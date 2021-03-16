@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "ClearBufferMask")]
-    public enum ClearBufferMask
+    public enum ClearBufferMask : int
     {
         [NativeName("Name", "GL_DEPTH_BUFFER_BIT")]
         DepthBufferBit = 0x100,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES.Extensions.INTEL
 {
     [NativeName("Name", "GLenum")]
-    public enum INTEL
+    public enum INTEL : int
     {
         [NativeName("Name", "GL_BLACKHOLE_RENDER_INTEL")]
         BlackholeRenderIntel = 0x83FC,

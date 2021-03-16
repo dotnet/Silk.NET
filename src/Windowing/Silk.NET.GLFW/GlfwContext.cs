@@ -21,17 +21,22 @@ namespace Silk.NET.GLFW
         /// </summary>
         /// <param name="glfw">The GLFW API instance to use.</param>
         /// <param name="window">The window handle to source context info from.</param>
-        public unsafe GlfwContext(Glfw glfw, WindowHandle* window)
+        /// <param name="source">A <see cref="IGLContextSource"/> to associate this context to, if any.</param>
+        public unsafe GlfwContext(Glfw glfw, WindowHandle* window, IGLContextSource? source = null)
         {
             _window = window;
             _glfw = glfw;
+            Source = source;
         }
 
         /// <inheritdoc />
-        public IntPtr GetProcAddress(string proc, int? slot = default) => _glfw.GetProcAddress(proc);
+        public nint GetProcAddress(string proc, int? slot = default) => _glfw.GetProcAddress(proc);
 
         /// <inheritdoc />
-        public unsafe IntPtr Handle => (IntPtr) _window;
+        public unsafe nint Handle => (nint) _window;
+
+        /// <inheritdoc cref="IGLContext" />
+        public IGLContextSource? Source { get; }
 
         /// <inheritdoc />
         public unsafe bool IsCurrent => _glfw.GetCurrentContext() == _window;

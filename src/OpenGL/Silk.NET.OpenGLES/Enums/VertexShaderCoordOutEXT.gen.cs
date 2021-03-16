@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "VertexShaderCoordOutEXT")]
-    public enum VertexShaderCoordOutEXT
+    public enum VertexShaderCoordOutEXT : int
     {
         [NativeName("Name", "GL_X_EXT")]
         XExt = 0x87D5,

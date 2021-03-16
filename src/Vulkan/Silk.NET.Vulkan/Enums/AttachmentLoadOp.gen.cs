@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAttachmentLoadOp")]
-    public enum AttachmentLoadOp
+    public enum AttachmentLoadOp : int
     {
         [NativeName("Name", "VK_ATTACHMENT_LOAD_OP_LOAD")]
         Load = 0,

@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L235_C9")]
     [NativeName("Name", "SDL_GLcontextFlag")]
-    public enum GLcontextFlag
+    public enum GLcontextFlag : int
     {
         [NativeName("Name", "SDL_GL_CONTEXT_DEBUG_FLAG")]
         GLContextDebugFlag = 0x1,

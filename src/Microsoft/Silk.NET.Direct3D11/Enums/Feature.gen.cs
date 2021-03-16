@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_FEATURE")]
-    public enum Feature
+    public enum Feature : int
     {
         [NativeName("Name", "D3D11_FEATURE_THREADING")]
         FeatureThreading = 0x0,

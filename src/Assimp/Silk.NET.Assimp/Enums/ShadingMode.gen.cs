@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiShadingMode")]
-    public enum ShadingMode
+    public enum ShadingMode : int
     {
         [NativeName("Name", "aiShadingMode_Flat")]
         ShadingModeFlat = 0x1,

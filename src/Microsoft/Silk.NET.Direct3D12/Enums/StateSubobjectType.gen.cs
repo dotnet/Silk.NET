@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_STATE_SUBOBJECT_TYPE")]
-    public enum StateSubobjectType
+    public enum StateSubobjectType : int
     {
         [NativeName("Name", "D3D12_STATE_SUBOBJECT_TYPE_STATE_OBJECT_CONFIG")]
         StateSubobjectTypeStateObjectConfig = 0x0,

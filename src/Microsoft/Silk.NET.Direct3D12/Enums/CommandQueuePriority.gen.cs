@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_COMMAND_QUEUE_PRIORITY")]
-    public enum CommandQueuePriority
+    public enum CommandQueuePriority : int
     {
         [NativeName("Name", "D3D12_COMMAND_QUEUE_PRIORITY_NORMAL")]
         CommandQueuePriorityNormal = 0x0,

@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_thread_L59_C9")]
     [NativeName("Name", "SDL_ThreadPriority")]
-    public enum ThreadPriority
+    public enum ThreadPriority : int
     {
         [NativeName("Name", "SDL_THREAD_PRIORITY_LOW")]
         ThreadPriorityLow = 0x0,

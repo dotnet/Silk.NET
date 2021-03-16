@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkAccessFlags")]
-    public enum AccessFlags
+    public enum AccessFlags : int
     {
         [NativeName("Name", "VK_ACCESS_INDIRECT_COMMAND_READ_BIT")]
         AccessIndirectCommandReadBit = 1,
@@ -77,9 +77,13 @@ namespace Silk.NET.Vulkan
         AccessAccelerationStructureWriteBitNV = 4194304,
         [NativeName("Name", "VK_ACCESS_FRAGMENT_DENSITY_MAP_READ_BIT_EXT")]
         AccessFragmentDensityMapReadBitExt = 16777216,
+        [NativeName("Name", "VK_ACCESS_FRAGMENT_SHADING_RATE_ATTACHMENT_READ_BIT_KHR")]
+        AccessFragmentShadingRateAttachmentReadBitKhr = 8388608,
         [NativeName("Name", "VK_ACCESS_COMMAND_PREPROCESS_READ_BIT_NV")]
         AccessCommandPreprocessReadBitNV = 131072,
         [NativeName("Name", "VK_ACCESS_COMMAND_PREPROCESS_WRITE_BIT_NV")]
         AccessCommandPreprocessWriteBitNV = 262144,
+        [NativeName("Name", "VK_ACCESS_NONE_KHR")]
+        AccessNoneKhr = 0,
     }
 }

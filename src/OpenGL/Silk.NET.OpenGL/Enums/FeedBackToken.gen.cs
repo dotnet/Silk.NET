@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "FeedBackToken")]
-    public enum FeedBackToken
+    public enum FeedBackToken : int
     {
     }
 }

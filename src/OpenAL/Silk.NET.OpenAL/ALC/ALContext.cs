@@ -73,7 +73,7 @@ namespace Silk.NET.OpenAL
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetIntegerv")]
-        public unsafe partial void GetContextProperty(Device* device, GetContextInteger param, int count, IntPtr data);
+        public unsafe partial void GetContextProperty(Device* device, GetContextInteger param, int count, nint data);
 
         /// <inheritdoc />
         [NativeApi(EntryPoint = "GetIntegerv")]
@@ -98,7 +98,7 @@ namespace Silk.NET.OpenAL
                         return default;
                     }
 
-                    return (IntPtr) ret.GetProcAddress(ret.GetContextsDevice(ret.GetCurrentContext()), x);
+                    return (nint) ret.GetProcAddress(ret.GetContextsDevice(ret.GetCurrentContext()), x);
                 });
             return ret;
         }
@@ -116,13 +116,13 @@ namespace Silk.NET.OpenAL
         }
 
         /// <inheritdoc cref="CreateContext" />
-        public unsafe IntPtr CreateContextHandle(Device* device, int* attributeList)
+        public unsafe nint CreateContextHandle(Device* device, int* attributeList)
         {
-            return new IntPtr(CreateContext(device, attributeList));
+            return (nint)CreateContext(device, attributeList);
         }
 
         /// <inheritdoc cref="MakeContextCurrent(Context*)" />
-        public bool MakeContextCurrent(IntPtr context)
+        public bool MakeContextCurrent(nint context)
         {
             unsafe
             {
@@ -131,11 +131,11 @@ namespace Silk.NET.OpenAL
         }
 
         /// <inheritdoc cref="GetCurrentContext" />
-        public IntPtr GetCurrentContextHandle()
+        public nint GetCurrentContextHandle()
         {
             unsafe
             {
-                return new IntPtr(GetCurrentContext());
+                return (nint)GetCurrentContext();
             }
         }
     }

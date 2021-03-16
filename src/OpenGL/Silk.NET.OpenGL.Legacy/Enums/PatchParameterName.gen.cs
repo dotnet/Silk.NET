@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "PatchParameterName")]
-    public enum PatchParameterName
+    public enum PatchParameterName : int
     {
         [NativeName("Name", "GL_PATCH_VERTICES")]
         PatchVertices = 0x8E72,

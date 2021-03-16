@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPhysicalDeviceType")]
-    public enum PhysicalDeviceType
+    public enum PhysicalDeviceType : int
     {
         [NativeName("Name", "VK_PHYSICAL_DEVICE_TYPE_OTHER")]
         Other = 0,

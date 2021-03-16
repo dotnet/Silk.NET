@@ -19,13 +19,11 @@ namespace Silk.NET.Windowing.Glfw
     /// </summary>
     internal class GlfwPlatform : IWindowPlatform
     {
-        /// <inheritdoc />
-        public bool IsViewOnly { get; } = false;
+        private IWindow? _lastCreatedWindow;
 
-        /// <inheritdoc />
-        public bool IsApplicable
-        {
-            get
+        private Lazy<bool> _isApplicable = new Lazy<bool>
+        (
+            () =>
             {
                 try
                 {
@@ -41,13 +39,49 @@ namespace Silk.NET.Windowing.Glfw
 
                 return true;
             }
+        );
+        
+        /// <inheritdoc />
+        public bool IsViewOnly { get; } = false;
+
+        /// <inheritdoc />
+        public bool IsApplicable => _isApplicable.Value;
+        
+        private static void ThrowUnsupported()
+            => throw new PlatformNotSupportedException("GLFW is not supported on this platform.");
+
+        /// <inheritdoc />
+        public IWindow CreateWindow(WindowOptions options)
+        {
+            if (!IsApplicable)
+            {
+                ThrowUnsupported();
+                return null!;
+            }
+            
+            return _lastCreatedWindow = new GlfwWindow(options, null, null);
         }
 
         /// <inheritdoc />
-        public IWindow CreateWindow(WindowOptions options) => new GlfwWindow(options, null, null);
-
-        /// <inheritdoc />
-        public IView GetView(ViewOptions? opts = null) => CreateWindow(new WindowOptions(opts ?? ViewOptions.Default));
+        public IView GetView(ViewOptions? opts = null)
+        {
+            if (!IsApplicable)
+            {
+                ThrowUnsupported();
+                return null!;
+            }
+            
+            return opts switch
+            {
+                null when _lastCreatedWindow is null => throw new InvalidOperationException
+                (
+                    "No view has been created prior to this call, and couldn't " +
+                    "create one due to no view options being provided."
+                ),
+                null => _lastCreatedWindow!,
+                _ => _lastCreatedWindow = CreateWindow(new WindowOptions(opts.Value))
+            };
+        }
 
         /// <inheritdoc />
         public unsafe void ClearContexts() => GlfwProvider.GLFW.Value.MakeContextCurrent(null);

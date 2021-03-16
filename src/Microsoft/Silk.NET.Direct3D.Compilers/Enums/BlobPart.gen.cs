@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D.Compilers
 {
     [NativeName("Name", "D3D_BLOB_PART")]
-    public enum BlobPart
+    public enum BlobPart : int
     {
         [NativeName("Name", "D3D_BLOB_INPUT_SIGNATURE_BLOB")]
         BlobInputSignatureBlob = 0x0,

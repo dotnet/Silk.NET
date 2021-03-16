@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_SHARED_RESOURCE_TIER")]
-    public enum SharedResourceTier
+    public enum SharedResourceTier : int
     {
         [NativeName("Name", "D3D11_SHARED_RESOURCE_TIER_0")]
         SharedResourceTier0 = 0x0,

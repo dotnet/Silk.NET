@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_error_L55_C9")]
     [NativeName("Name", "SDL_errorcode")]
-    public enum Errorcode
+    public enum Errorcode : int
     {
         [NativeName("Name", "SDL_ENOMEM")]
         Enomem = 0x0,

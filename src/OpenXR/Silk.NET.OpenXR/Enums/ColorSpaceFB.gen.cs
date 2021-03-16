@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenXR
 {
     [NativeName("Name", "XrColorSpaceFB")]
-    public enum ColorSpaceFB
+    public enum ColorSpaceFB : int
     {
         [NativeName("Name", "XR_COLOR_SPACE_UNMANAGED_FB")]
         ColorSpaceUnmanagedFB = 0,

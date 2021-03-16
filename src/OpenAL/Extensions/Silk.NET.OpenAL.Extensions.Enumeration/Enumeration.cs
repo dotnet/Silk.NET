@@ -47,7 +47,7 @@ namespace Silk.NET.OpenAL.Extensions.Enumeration
                 var currentPos = result;
                 while (true)
                 {
-                    var currentString = Marshal.PtrToStringAnsi(new IntPtr(currentPos));
+                    var currentString = Marshal.PtrToStringAnsi((nint) currentPos);
                     if (string.IsNullOrEmpty(currentString))
                     {
                         break;

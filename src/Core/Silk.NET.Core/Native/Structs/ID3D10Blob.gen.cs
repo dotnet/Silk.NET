@@ -22,6 +22,8 @@ namespace Silk.NET.Core.Native
     [NativeName("Name", "ID3D10Blob")]
     public unsafe partial struct ID3D10Blob
     {
+        public static readonly Guid Guid = new("8ba5fb08-5195-40e2-ac58-0d989c3a0102");
+
         public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D10Blob val)
             => Unsafe.As<ID3D10Blob, Silk.NET.Core.Native.IUnknown>(ref val);
 
@@ -45,7 +47,7 @@ namespace Silk.NET.Core.Native
         public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
         {
             var @this = (ID3D10Blob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             ret = ((delegate* unmanaged[Cdecl]<ID3D10Blob*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
             return ret;
         }
@@ -54,7 +56,7 @@ namespace Silk.NET.Core.Native
         public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
         {
             var @this = (ID3D10Blob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (void** ppvObjectPtr = &ppvObject)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D10Blob*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
@@ -66,7 +68,7 @@ namespace Silk.NET.Core.Native
         public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
         {
             var @this = (ID3D10Blob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 ret = ((delegate* unmanaged[Cdecl]<ID3D10Blob*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
@@ -78,7 +80,7 @@ namespace Silk.NET.Core.Native
         public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
         {
             var @this = (ID3D10Blob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                int ret = default;
+            int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
                 fixed (void** ppvObjectPtr = &ppvObject)
@@ -93,8 +95,8 @@ namespace Silk.NET.Core.Native
         public readonly uint AddRef()
         {
             var @this = (ID3D10Blob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D10Blob*, uint>)LpVtbl[1])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D10Blob*, uint>)LpVtbl[1])(@this);
             return ret;
         }
 
@@ -102,8 +104,8 @@ namespace Silk.NET.Core.Native
         public readonly uint Release()
         {
             var @this = (ID3D10Blob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D10Blob*, uint>)LpVtbl[2])(@this);
+            uint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D10Blob*, uint>)LpVtbl[2])(@this);
             return ret;
         }
 
@@ -111,17 +113,17 @@ namespace Silk.NET.Core.Native
         public readonly unsafe void* GetBufferPointer()
         {
             var @this = (ID3D10Blob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                void* ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D10Blob*, void*>)LpVtbl[3])(@this);
+            void* ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D10Blob*, void*>)LpVtbl[3])(@this);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly uint GetBufferSize()
+        public readonly nuint GetBufferSize()
         {
             var @this = (ID3D10Blob*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-                uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D10Blob*, uint>)LpVtbl[4])(@this);
+            nuint ret = default;
+            ret = ((delegate* unmanaged[Stdcall]<ID3D10Blob*, nuint>)LpVtbl[4])(@this);
             return ret;
         }
 

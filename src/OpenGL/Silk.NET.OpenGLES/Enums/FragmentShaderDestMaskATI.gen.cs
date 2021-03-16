@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "FragmentShaderDestMaskATI")]
-    public enum FragmentShaderDestMaskATI
+    public enum FragmentShaderDestMaskATI : int
     {
         [NativeName("Name", "GL_RED_BIT_ATI")]
         RedBitAti = 0x1,

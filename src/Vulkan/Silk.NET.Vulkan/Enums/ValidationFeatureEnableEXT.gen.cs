@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkValidationFeatureEnableEXT")]
-    public enum ValidationFeatureEnableEXT
+    public enum ValidationFeatureEnableEXT : int
     {
         [NativeName("Name", "VK_VALIDATION_FEATURE_ENABLE_GPU_ASSISTED_EXT")]
         ValidationFeatureEnableGpuAssistedExt = 0,

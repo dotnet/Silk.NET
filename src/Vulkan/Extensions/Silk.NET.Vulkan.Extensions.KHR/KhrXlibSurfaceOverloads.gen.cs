@@ -68,7 +68,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Bool32 GetPhysicalDeviceXlibPresentationSupport(this KhrXlibSurface thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] Span<IntPtr> dpy, [Count(Count = 0)] IntPtr visualID)
+        public static unsafe Bool32 GetPhysicalDeviceXlibPresentationSupport(this KhrXlibSurface thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] Span<nint> dpy, [Count(Count = 0)] nint visualID)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceXlibPresentationSupport(physicalDevice, queueFamilyIndex, ref dpy.GetPinnableReference(), visualID);

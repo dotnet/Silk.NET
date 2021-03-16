@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkSwapchainImageUsageFlagsANDROID")]
-    public enum SwapchainImageUsageFlagsANDROID
+    public enum SwapchainImageUsageFlagsANDROID : int
     {
         [NativeName("Name", "VK_SWAPCHAIN_IMAGE_USAGE_SHARED_BIT_ANDROID")]
         SwapchainImageUsageSharedBitAndroid = 1,

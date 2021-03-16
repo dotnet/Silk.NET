@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D_SHADER_MODEL")]
-    public enum D3DShaderModel
+    public enum D3DShaderModel : int
     {
         [NativeName("Name", "D3D_SHADER_MODEL_5_1")]
         D3DShaderModel51 = 0x51,

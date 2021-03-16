@@ -18,37 +18,37 @@ namespace Silk.NET.OpenGL
 {
     public static class GLOverloads
     {
-        public static unsafe void MultiDrawArraysIndirectCount<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] IntPtr drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
+        public static unsafe void MultiDrawArraysIndirectCount<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] nint drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.MultiDrawArraysIndirectCount(mode, in indirect.GetPinnableReference(), drawcount, maxdrawcount, stride);
         }
 
-        public static unsafe void MultiDrawArraysIndirectCount<T0>(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] IntPtr drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
+        public static unsafe void MultiDrawArraysIndirectCount<T0>(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] nint drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.MultiDrawArraysIndirectCount(mode, in indirect.GetPinnableReference(), drawcount, maxdrawcount, stride);
         }
 
-        public static unsafe void MultiDrawElementsIndirectCount<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] IntPtr drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
+        public static unsafe void MultiDrawElementsIndirectCount<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] nint drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.MultiDrawElementsIndirectCount(mode, type, in indirect.GetPinnableReference(), drawcount, maxdrawcount, stride);
         }
 
-        public static unsafe void MultiDrawElementsIndirectCount<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] IntPtr drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
+        public static unsafe void MultiDrawElementsIndirectCount<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] nint drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.MultiDrawElementsIndirectCount(mode, type, in indirect.GetPinnableReference(), drawcount, maxdrawcount, stride);
         }
 
-        public static unsafe void MultiDrawElementsIndirectCount<T0>(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] IntPtr drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
+        public static unsafe void MultiDrawElementsIndirectCount<T0>(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] nint drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.MultiDrawElementsIndirectCount(mode, type, in indirect.GetPinnableReference(), drawcount, maxdrawcount, stride);
         }
 
-        public static unsafe void MultiDrawElementsIndirectCount<T0>(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] IntPtr drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
+        public static unsafe void MultiDrawElementsIndirectCount<T0>(this GL thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] DrawElementsType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect, [Flow(FlowDirection.In)] nint drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.MultiDrawElementsIndirectCount(mode, type, in indirect.GetPinnableReference(), drawcount, maxdrawcount, stride);
@@ -138,73 +138,73 @@ namespace Silk.NET.OpenGL
             thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
@@ -216,7 +216,7 @@ namespace Silk.NET.OpenGL
             thisApi.ClearNamedFramebuffer(framebuffer, buffer, drawbuffer, in value.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedFramebuffer(this GL thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] ReadOnlySpan<int> value)
+        public static unsafe void ClearNamedFramebuffer(this GL thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] BufferKind buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] ReadOnlySpan<int> value)
         {
             // SpanOverloader
             thisApi.ClearNamedFramebuffer(framebuffer, buffer, drawbuffer, in value.GetPinnableReference());
@@ -228,7 +228,7 @@ namespace Silk.NET.OpenGL
             thisApi.ClearNamedFramebuffer(framebuffer, buffer, drawbuffer, in value.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedFramebuffer(this GL thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
+        public static unsafe void ClearNamedFramebuffer(this GL thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] BufferKind buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // SpanOverloader
             thisApi.ClearNamedFramebuffer(framebuffer, buffer, drawbuffer, in value.GetPinnableReference());
@@ -240,7 +240,7 @@ namespace Silk.NET.OpenGL
             thisApi.ClearNamedFramebuffer(framebuffer, buffer, drawbuffer, in value.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedFramebuffer(this GL thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        public static unsafe void ClearNamedFramebuffer(this GL thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] BufferKind buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.ClearNamedFramebuffer(framebuffer, buffer, drawbuffer, in value.GetPinnableReference());
@@ -288,7 +288,19 @@ namespace Silk.NET.OpenGL
             thisApi.CreateBuffers(n, out buffers.GetPinnableReference());
         }
 
+        public static unsafe void CreateBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Buffer> buffers)
+        {
+            // SpanOverloader
+            thisApi.CreateBuffers(n, out buffers.GetPinnableReference());
+        }
+
         public static unsafe void CreateFramebuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> framebuffers)
+        {
+            // SpanOverloader
+            thisApi.CreateFramebuffers(n, out framebuffers.GetPinnableReference());
+        }
+
+        public static unsafe void CreateFramebuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Framebuffer> framebuffers)
         {
             // SpanOverloader
             thisApi.CreateFramebuffers(n, out framebuffers.GetPinnableReference());
@@ -300,7 +312,19 @@ namespace Silk.NET.OpenGL
             thisApi.CreateProgramPipelines(n, out pipelines.GetPinnableReference());
         }
 
+        public static unsafe void CreateProgramPipelines(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<ProgramPipeline> pipelines)
+        {
+            // SpanOverloader
+            thisApi.CreateProgramPipelines(n, out pipelines.GetPinnableReference());
+        }
+
         public static unsafe void CreateQueries(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+        {
+            // SpanOverloader
+            thisApi.CreateQueries(target, n, out ids.GetPinnableReference());
+        }
+
+        public static unsafe void CreateQueries(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Query> ids)
         {
             // SpanOverloader
             thisApi.CreateQueries(target, n, out ids.GetPinnableReference());
@@ -312,7 +336,19 @@ namespace Silk.NET.OpenGL
             thisApi.CreateQueries(target, n, out ids.GetPinnableReference());
         }
 
+        public static unsafe void CreateQueries(this GL thisApi, [Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Query> ids)
+        {
+            // SpanOverloader
+            thisApi.CreateQueries(target, n, out ids.GetPinnableReference());
+        }
+
         public static unsafe void CreateRenderbuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> renderbuffers)
+        {
+            // SpanOverloader
+            thisApi.CreateRenderbuffers(n, out renderbuffers.GetPinnableReference());
+        }
+
+        public static unsafe void CreateRenderbuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Renderbuffer> renderbuffers)
         {
             // SpanOverloader
             thisApi.CreateRenderbuffers(n, out renderbuffers.GetPinnableReference());
@@ -324,7 +360,19 @@ namespace Silk.NET.OpenGL
             thisApi.CreateSamplers(n, out samplers.GetPinnableReference());
         }
 
+        public static unsafe void CreateSamplers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Sampler> samplers)
+        {
+            // SpanOverloader
+            thisApi.CreateSamplers(n, out samplers.GetPinnableReference());
+        }
+
         public static unsafe void CreateTextures(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures)
+        {
+            // SpanOverloader
+            thisApi.CreateTextures(target, n, out textures.GetPinnableReference());
+        }
+
+        public static unsafe void CreateTextures(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Texture> textures)
         {
             // SpanOverloader
             thisApi.CreateTextures(target, n, out textures.GetPinnableReference());
@@ -336,13 +384,31 @@ namespace Silk.NET.OpenGL
             thisApi.CreateTextures(target, n, out textures.GetPinnableReference());
         }
 
+        public static unsafe void CreateTextures(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Texture> textures)
+        {
+            // SpanOverloader
+            thisApi.CreateTextures(target, n, out textures.GetPinnableReference());
+        }
+
         public static unsafe void CreateTransformFeedbacks(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
         {
             // SpanOverloader
             thisApi.CreateTransformFeedbacks(n, out ids.GetPinnableReference());
         }
 
+        public static unsafe void CreateTransformFeedbacks(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<TransformFeedback> ids)
+        {
+            // SpanOverloader
+            thisApi.CreateTransformFeedbacks(n, out ids.GetPinnableReference());
+        }
+
         public static unsafe void CreateVertexArrays(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays)
+        {
+            // SpanOverloader
+            thisApi.CreateVertexArrays(n, out arrays.GetPinnableReference());
+        }
+
+        public static unsafe void CreateVertexArrays(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<VertexArray> arrays)
         {
             // SpanOverloader
             thisApi.CreateVertexArrays(n, out arrays.GetPinnableReference());
@@ -384,7 +450,7 @@ namespace Silk.NET.OpenGL
             thisApi.GetNamedBufferParameter(buffer, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetNamedBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        public static unsafe void GetNamedBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetNamedBufferSubData(buffer, offset, size, out data.GetPinnableReference());
@@ -1386,25 +1452,25 @@ namespace Silk.NET.OpenGL
             thisApi.InvalidateNamedFramebufferSubData(framebuffer, numAttachments, in attachments.GetPinnableReference(), x, y, width, height);
         }
 
-        public static unsafe void NamedBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged
+        public static unsafe void NamedBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.NamedBufferData(buffer, size, in data.GetPinnableReference(), usage);
         }
 
-        public static unsafe void NamedBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] VertexBufferObjectUsage usage) where T0 : unmanaged
+        public static unsafe void NamedBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] VertexBufferObjectUsage usage) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.NamedBufferData(buffer, size, in data.GetPinnableReference(), usage);
         }
 
-        public static unsafe void NamedBufferStorage<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
+        public static unsafe void NamedBufferStorage<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.NamedBufferStorage(buffer, size, in data.GetPinnableReference(), flags);
         }
 
-        public static unsafe void NamedBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Computed = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void NamedBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Computed = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.NamedBufferSubData(buffer, offset, size, in data.GetPinnableReference());
@@ -1566,43 +1632,85 @@ namespace Silk.NET.OpenGL
             thisApi.TextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
         }
 
-        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] IntPtr* offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] nint* offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
         {
             // SpanOverloader
             thisApi.VertexArrayVertexBuffers(vaobj, first, count, buffers, offsets, in strides.GetPinnableReference());
         }
 
-        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Flow(FlowDirection.In)] uint* strides)
+        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Flow(FlowDirection.In)] uint* strides)
         {
             // SpanOverloader
             thisApi.VertexArrayVertexBuffers(vaobj, first, count, buffers, in offsets.GetPinnableReference(), strides);
         }
 
-        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
         {
             // SpanOverloader
             thisApi.VertexArrayVertexBuffers(vaobj, first, count, buffers, in offsets.GetPinnableReference(), in strides.GetPinnableReference());
         }
 
-        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] IntPtr* offsets, [Flow(FlowDirection.In)] uint* strides)
+        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] nint* offsets, [Flow(FlowDirection.In)] uint* strides)
         {
             // SpanOverloader
             thisApi.VertexArrayVertexBuffers(vaobj, first, count, in buffers.GetPinnableReference(), offsets, strides);
         }
 
-        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] IntPtr* offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] nint* offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
         {
             // SpanOverloader
             thisApi.VertexArrayVertexBuffers(vaobj, first, count, in buffers.GetPinnableReference(), offsets, in strides.GetPinnableReference());
         }
 
-        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Flow(FlowDirection.In)] uint* strides)
+        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Flow(FlowDirection.In)] uint* strides)
         {
             // SpanOverloader
             thisApi.VertexArrayVertexBuffers(vaobj, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), strides);
         }
 
-        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // SpanOverloader
+            thisApi.VertexArrayVertexBuffers(vaobj, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in strides.GetPinnableReference());
+        }
+
+        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] nint* offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // SpanOverloader
+            thisApi.VertexArrayVertexBuffers(vaobj, first, count, buffers, offsets, in strides.GetPinnableReference());
+        }
+
+        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Flow(FlowDirection.In)] uint* strides)
+        {
+            // SpanOverloader
+            thisApi.VertexArrayVertexBuffers(vaobj, first, count, buffers, in offsets.GetPinnableReference(), strides);
+        }
+
+        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // SpanOverloader
+            thisApi.VertexArrayVertexBuffers(vaobj, first, count, buffers, in offsets.GetPinnableReference(), in strides.GetPinnableReference());
+        }
+
+        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] nint* offsets, [Flow(FlowDirection.In)] uint* strides)
+        {
+            // SpanOverloader
+            thisApi.VertexArrayVertexBuffers(vaobj, first, count, in buffers.GetPinnableReference(), offsets, strides);
+        }
+
+        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] nint* offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // SpanOverloader
+            thisApi.VertexArrayVertexBuffers(vaobj, first, count, in buffers.GetPinnableReference(), offsets, in strides.GetPinnableReference());
+        }
+
+        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Flow(FlowDirection.In)] uint* strides)
+        {
+            // SpanOverloader
+            thisApi.VertexArrayVertexBuffers(vaobj, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), strides);
+        }
+
+        public static unsafe void VertexArrayVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
         {
             // SpanOverloader
             thisApi.VertexArrayVertexBuffers(vaobj, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in strides.GetPinnableReference());
@@ -1614,91 +1722,187 @@ namespace Silk.NET.OpenGL
             thisApi.BindBuffersBase(target, first, count, in buffers.GetPinnableReference());
         }
 
+        public static unsafe void BindBuffersBase(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersBase(target, first, count, in buffers.GetPinnableReference());
+        }
+
         public static unsafe void BindBuffersBase(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers)
         {
             // SpanOverloader
             thisApi.BindBuffersBase(target, first, count, in buffers.GetPinnableReference());
         }
 
-        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> sizes)
+        public static unsafe void BindBuffersBase(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersBase(target, first, count, in buffers.GetPinnableReference());
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
         {
             // SpanOverloader
             thisApi.BindBuffersRange(target, first, count, buffers, offsets, in sizes.GetPinnableReference());
         }
 
-        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes)
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
         {
             // SpanOverloader
             thisApi.BindBuffersRange(target, first, count, buffers, in offsets.GetPinnableReference(), sizes);
         }
 
-        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> sizes)
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
         {
             // SpanOverloader
             thisApi.BindBuffersRange(target, first, count, buffers, in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
         }
 
-        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes)
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
         {
             // SpanOverloader
             thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), offsets, sizes);
         }
 
-        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> sizes)
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
         {
             // SpanOverloader
             thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), offsets, in sizes.GetPinnableReference());
         }
 
-        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes)
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
         {
             // SpanOverloader
             thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), sizes);
         }
 
-        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> sizes)
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
         {
             // SpanOverloader
             thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
         }
 
-        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> sizes)
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
         {
             // SpanOverloader
             thisApi.BindBuffersRange(target, first, count, buffers, offsets, in sizes.GetPinnableReference());
         }
 
-        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes)
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
         {
             // SpanOverloader
             thisApi.BindBuffersRange(target, first, count, buffers, in offsets.GetPinnableReference(), sizes);
         }
 
-        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> sizes)
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
         {
             // SpanOverloader
             thisApi.BindBuffersRange(target, first, count, buffers, in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
         }
 
-        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes)
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
         {
             // SpanOverloader
             thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), offsets, sizes);
         }
 
-        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> sizes)
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
         {
             // SpanOverloader
             thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), offsets, in sizes.GetPinnableReference());
         }
 
-        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] UIntPtr* sizes)
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
         {
             // SpanOverloader
             thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), sizes);
         }
 
-        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<UIntPtr> sizes)
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, buffers, offsets, in sizes.GetPinnableReference());
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, buffers, in offsets.GetPinnableReference(), sizes);
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, buffers, in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), offsets, sizes);
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), offsets, in sizes.GetPinnableReference());
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), sizes);
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, buffers, offsets, in sizes.GetPinnableReference());
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, buffers, in offsets.GetPinnableReference(), sizes);
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, buffers, in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), offsets, sizes);
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), offsets, in sizes.GetPinnableReference());
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
+        {
+            // SpanOverloader
+            thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), sizes);
+        }
+
+        public static unsafe void BindBuffersRange(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
         {
             // SpanOverloader
             thisApi.BindBuffersRange(target, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
@@ -1710,7 +1914,19 @@ namespace Silk.NET.OpenGL
             thisApi.BindImageTextures(first, count, in textures.GetPinnableReference());
         }
 
+        public static unsafe void BindImageTextures(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures)
+        {
+            // SpanOverloader
+            thisApi.BindImageTextures(first, count, in textures.GetPinnableReference());
+        }
+
         public static unsafe void BindSamplers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> samplers)
+        {
+            // SpanOverloader
+            thisApi.BindSamplers(first, count, in samplers.GetPinnableReference());
+        }
+
+        public static unsafe void BindSamplers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Sampler> samplers)
         {
             // SpanOverloader
             thisApi.BindSamplers(first, count, in samplers.GetPinnableReference());
@@ -1722,55 +1938,103 @@ namespace Silk.NET.OpenGL
             thisApi.BindTextures(first, count, in textures.GetPinnableReference());
         }
 
-        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        public static unsafe void BindTextures(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures)
+        {
+            // SpanOverloader
+            thisApi.BindTextures(first, count, in textures.GetPinnableReference());
+        }
+
+        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
         {
             // SpanOverloader
             thisApi.BindVertexBuffers(first, count, buffers, offsets, in strides.GetPinnableReference());
         }
 
-        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides)
+        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides)
         {
             // SpanOverloader
             thisApi.BindVertexBuffers(first, count, buffers, in offsets.GetPinnableReference(), strides);
         }
 
-        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
         {
             // SpanOverloader
             thisApi.BindVertexBuffers(first, count, buffers, in offsets.GetPinnableReference(), in strides.GetPinnableReference());
         }
 
-        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides)
+        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides)
         {
             // SpanOverloader
             thisApi.BindVertexBuffers(first, count, in buffers.GetPinnableReference(), offsets, strides);
         }
 
-        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] IntPtr* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
         {
             // SpanOverloader
             thisApi.BindVertexBuffers(first, count, in buffers.GetPinnableReference(), offsets, in strides.GetPinnableReference());
         }
 
-        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides)
+        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides)
         {
             // SpanOverloader
             thisApi.BindVertexBuffers(first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), strides);
         }
 
-        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
         {
             // SpanOverloader
             thisApi.BindVertexBuffers(first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in strides.GetPinnableReference());
         }
 
-        public static unsafe void BufferStorage<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
+        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // SpanOverloader
+            thisApi.BindVertexBuffers(first, count, buffers, offsets, in strides.GetPinnableReference());
+        }
+
+        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides)
+        {
+            // SpanOverloader
+            thisApi.BindVertexBuffers(first, count, buffers, in offsets.GetPinnableReference(), strides);
+        }
+
+        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // SpanOverloader
+            thisApi.BindVertexBuffers(first, count, buffers, in offsets.GetPinnableReference(), in strides.GetPinnableReference());
+        }
+
+        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides)
+        {
+            // SpanOverloader
+            thisApi.BindVertexBuffers(first, count, in buffers.GetPinnableReference(), offsets, strides);
+        }
+
+        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // SpanOverloader
+            thisApi.BindVertexBuffers(first, count, in buffers.GetPinnableReference(), offsets, in strides.GetPinnableReference());
+        }
+
+        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides)
+        {
+            // SpanOverloader
+            thisApi.BindVertexBuffers(first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), strides);
+        }
+
+        public static unsafe void BindVertexBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // SpanOverloader
+            thisApi.BindVertexBuffers(first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in strides.GetPinnableReference());
+        }
+
+        public static unsafe void BufferStorage<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
         }
 
-        public static unsafe void BufferStorage<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
+        public static unsafe void BufferStorage<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
@@ -1848,25 +2112,25 @@ namespace Silk.NET.OpenGL
             thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
@@ -1896,121 +2160,121 @@ namespace Silk.NET.OpenGL
             thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferData(target, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] GLEnum internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearBufferSubData(target, internalformat, offset, size, format, type, in data.GetPinnableReference());
@@ -7410,6 +7674,12 @@ namespace Silk.NET.OpenGL
             thisApi.DeleteProgramPipelines(n, in pipelines.GetPinnableReference());
         }
 
+        public static unsafe void DeleteProgramPipelines(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<ProgramPipeline> pipelines)
+        {
+            // SpanOverloader
+            thisApi.DeleteProgramPipelines(n, in pipelines.GetPinnableReference());
+        }
+
         public static unsafe void DepthRangeArray(this GL thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // SpanOverloader
@@ -7417,6 +7687,12 @@ namespace Silk.NET.OpenGL
         }
 
         public static unsafe void GenProgramPipelines(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> pipelines)
+        {
+            // SpanOverloader
+            thisApi.GenProgramPipelines(n, out pipelines.GetPinnableReference());
+        }
+
+        public static unsafe void GenProgramPipelines(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<ProgramPipeline> pipelines)
         {
             // SpanOverloader
             thisApi.GenProgramPipelines(n, out pipelines.GetPinnableReference());
@@ -7872,6 +8148,42 @@ namespace Silk.NET.OpenGL
             thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), length);
         }
 
+        public static unsafe void ShaderBinary<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), length);
+        }
+
+        public static unsafe void ShaderBinary(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
+        {
+            // SpanOverloader
+            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, binary, length);
+        }
+
+        public static unsafe void ShaderBinary<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(FlowDirection.In)] GLEnum binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), length);
+        }
+
+        public static unsafe void ShaderBinary<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Shader* shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ShaderBinary(count, shaders, binaryFormat, in binary.GetPinnableReference(), length);
+        }
+
+        public static unsafe void ShaderBinary(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] void* binary, [Flow(FlowDirection.In)] uint length)
+        {
+            // SpanOverloader
+            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, binary, length);
+        }
+
+        public static unsafe void ShaderBinary<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Shader> shaders, [Flow(FlowDirection.In)] ShaderBinaryFormat binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary, [Flow(FlowDirection.In)] uint length) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.ShaderBinary(count, in shaders.GetPinnableReference(), binaryFormat, in binary.GetPinnableReference(), length);
+        }
+
         public static unsafe void VertexAttribL1(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
         {
             // SpanOverloader
@@ -7926,6 +8238,12 @@ namespace Silk.NET.OpenGL
             thisApi.DeleteTransformFeedbacks(n, in ids.GetPinnableReference());
         }
 
+        public static unsafe void DeleteTransformFeedbacks(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<TransformFeedback> ids)
+        {
+            // SpanOverloader
+            thisApi.DeleteTransformFeedbacks(n, in ids.GetPinnableReference());
+        }
+
         public static unsafe void DrawArraysIndirect<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] ReadOnlySpan<T0> indirect) where T0 : unmanaged
         {
             // SpanOverloader
@@ -7963,6 +8281,12 @@ namespace Silk.NET.OpenGL
         }
 
         public static unsafe void GenTransformFeedbacks(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+        {
+            // SpanOverloader
+            thisApi.GenTransformFeedbacks(n, out ids.GetPinnableReference());
+        }
+
+        public static unsafe void GenTransformFeedbacks(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<TransformFeedback> ids)
         {
             // SpanOverloader
             thisApi.GenTransformFeedbacks(n, out ids.GetPinnableReference());
@@ -8340,7 +8664,19 @@ namespace Silk.NET.OpenGL
             thisApi.DeleteSamplers(count, in samplers.GetPinnableReference());
         }
 
+        public static unsafe void DeleteSamplers(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Sampler> samplers)
+        {
+            // SpanOverloader
+            thisApi.DeleteSamplers(count, in samplers.GetPinnableReference());
+        }
+
         public static unsafe void GenSamplers(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> samplers)
+        {
+            // SpanOverloader
+            thisApi.GenSamplers(count, out samplers.GetPinnableReference());
+        }
+
+        public static unsafe void GenSamplers(this GL thisApi, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<Sampler> samplers)
         {
             // SpanOverloader
             thisApi.GenSamplers(count, out samplers.GetPinnableReference());
@@ -8856,37 +9192,37 @@ namespace Silk.NET.OpenGL
             thisApi.GetMultisample(pname, index, out val.GetPinnableReference());
         }
 
-        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
+        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
         {
             // SpanOverloader
             thisApi.GetSync(sync, pname, count, length, out values.GetPinnableReference());
         }
 
-        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values)
+        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values)
         {
             // SpanOverloader
             thisApi.GetSync(sync, pname, count, out length.GetPinnableReference(), values);
         }
 
-        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
+        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] GLEnum pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
         {
             // SpanOverloader
             thisApi.GetSync(sync, pname, count, out length.GetPinnableReference(), out values.GetPinnableReference());
         }
 
-        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
+        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
         {
             // SpanOverloader
             thisApi.GetSync(sync, pname, count, length, out values.GetPinnableReference());
         }
 
-        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values)
+        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* values)
         {
             // SpanOverloader
             thisApi.GetSync(sync, pname, count, out length.GetPinnableReference(), values);
         }
 
-        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] IntPtr sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
+        public static unsafe void GetSync(this GL thisApi, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
         {
             // SpanOverloader
             thisApi.GetSync(sync, pname, count, out length.GetPinnableReference(), out values.GetPinnableReference());
@@ -9210,7 +9546,7 @@ namespace Silk.NET.OpenGL
             thisApi.ClearBuffer(buffer, drawbuffer, in value.GetPinnableReference());
         }
 
-        public static unsafe void ClearBuffer(this GL thisApi, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
+        public static unsafe void ClearBuffer(this GL thisApi, [Flow(FlowDirection.In)] BufferKind buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
         {
             // SpanOverloader
             thisApi.ClearBuffer(buffer, drawbuffer, in value.GetPinnableReference());
@@ -9222,7 +9558,7 @@ namespace Silk.NET.OpenGL
             thisApi.ClearBuffer(buffer, drawbuffer, in value.GetPinnableReference());
         }
 
-        public static unsafe void ClearBuffer(this GL thisApi, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
+        public static unsafe void ClearBuffer(this GL thisApi, [Flow(FlowDirection.In)] BufferKind buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // SpanOverloader
             thisApi.ClearBuffer(buffer, drawbuffer, in value.GetPinnableReference());
@@ -9234,7 +9570,7 @@ namespace Silk.NET.OpenGL
             thisApi.ClearBuffer(buffer, drawbuffer, in value.GetPinnableReference());
         }
 
-        public static unsafe void ClearBuffer(this GL thisApi, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        public static unsafe void ClearBuffer(this GL thisApi, [Flow(FlowDirection.In)] BufferKind buffer, [Flow(FlowDirection.In)] int drawbuffer, [Count(Computed = "buffer"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.ClearBuffer(buffer, drawbuffer, in value.GetPinnableReference());
@@ -9246,7 +9582,19 @@ namespace Silk.NET.OpenGL
             thisApi.DeleteFramebuffers(n, in framebuffers.GetPinnableReference());
         }
 
+        public static unsafe void DeleteFramebuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Framebuffer> framebuffers)
+        {
+            // SpanOverloader
+            thisApi.DeleteFramebuffers(n, in framebuffers.GetPinnableReference());
+        }
+
         public static unsafe void DeleteRenderbuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> renderbuffers)
+        {
+            // SpanOverloader
+            thisApi.DeleteRenderbuffers(n, in renderbuffers.GetPinnableReference());
+        }
+
+        public static unsafe void DeleteRenderbuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Renderbuffer> renderbuffers)
         {
             // SpanOverloader
             thisApi.DeleteRenderbuffers(n, in renderbuffers.GetPinnableReference());
@@ -9258,7 +9606,19 @@ namespace Silk.NET.OpenGL
             thisApi.DeleteVertexArrays(n, in arrays.GetPinnableReference());
         }
 
+        public static unsafe void DeleteVertexArrays(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<VertexArray> arrays)
+        {
+            // SpanOverloader
+            thisApi.DeleteVertexArrays(n, in arrays.GetPinnableReference());
+        }
+
         public static unsafe void GenFramebuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> framebuffers)
+        {
+            // SpanOverloader
+            thisApi.GenFramebuffers(n, out framebuffers.GetPinnableReference());
+        }
+
+        public static unsafe void GenFramebuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Framebuffer> framebuffers)
         {
             // SpanOverloader
             thisApi.GenFramebuffers(n, out framebuffers.GetPinnableReference());
@@ -9270,7 +9630,19 @@ namespace Silk.NET.OpenGL
             thisApi.GenRenderbuffers(n, out renderbuffers.GetPinnableReference());
         }
 
+        public static unsafe void GenRenderbuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Renderbuffer> renderbuffers)
+        {
+            // SpanOverloader
+            thisApi.GenRenderbuffers(n, out renderbuffers.GetPinnableReference());
+        }
+
         public static unsafe void GenVertexArrays(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays)
+        {
+            // SpanOverloader
+            thisApi.GenVertexArrays(n, out arrays.GetPinnableReference());
+        }
+
+        public static unsafe void GenVertexArrays(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<VertexArray> arrays)
         {
             // SpanOverloader
             thisApi.GenVertexArrays(n, out arrays.GetPinnableReference());
@@ -10512,6 +10884,24 @@ namespace Silk.NET.OpenGL
             thisApi.GetAttachedShaders(program, maxCount, out count.GetPinnableReference(), out shaders.GetPinnableReference());
         }
 
+        public static unsafe void GetAttachedShaders(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] uint* count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] Span<Shader> shaders)
+        {
+            // SpanOverloader
+            thisApi.GetAttachedShaders(program, maxCount, count, out shaders.GetPinnableReference());
+        }
+
+        public static unsafe void GetAttachedShaders(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] Shader* shaders)
+        {
+            // SpanOverloader
+            thisApi.GetAttachedShaders(program, maxCount, out count.GetPinnableReference(), shaders);
+        }
+
+        public static unsafe void GetAttachedShaders(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint maxCount, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] Span<Shader> shaders)
+        {
+            // SpanOverloader
+            thisApi.GetAttachedShaders(program, maxCount, out count.GetPinnableReference(), out shaders.GetPinnableReference());
+        }
+
         public static unsafe int GetAttribLocation(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name)
         {
             // SpanOverloader
@@ -10914,37 +11304,37 @@ namespace Silk.NET.OpenGL
             thisApi.VertexAttribPointer(index, size, type, normalized, stride, in pointer.GetPinnableReference());
         }
 
-        public static unsafe void BufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged
+        public static unsafe void BufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferData(target, size, in data.GetPinnableReference(), usage);
         }
 
-        public static unsafe void BufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
+        public static unsafe void BufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferData(target, size, in data.GetPinnableReference(), usage);
         }
 
-        public static unsafe void BufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged
+        public static unsafe void BufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] GLEnum usage) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferData(target, size, in data.GetPinnableReference(), usage);
         }
 
-        public static unsafe void BufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
+        public static unsafe void BufferData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferData(target, size, in data.GetPinnableReference(), usage);
         }
 
-        public static unsafe void BufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void BufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferSubData(target, offset, size, in data.GetPinnableReference());
         }
 
-        public static unsafe void BufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void BufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferSubData(target, offset, size, in data.GetPinnableReference());
@@ -10956,7 +11346,19 @@ namespace Silk.NET.OpenGL
             thisApi.DeleteBuffers(n, in buffers.GetPinnableReference());
         }
 
+        public static unsafe void DeleteBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers)
+        {
+            // SpanOverloader
+            thisApi.DeleteBuffers(n, in buffers.GetPinnableReference());
+        }
+
         public static unsafe void DeleteQueries(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids)
+        {
+            // SpanOverloader
+            thisApi.DeleteQueries(n, in ids.GetPinnableReference());
+        }
+
+        public static unsafe void DeleteQueries(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Query> ids)
         {
             // SpanOverloader
             thisApi.DeleteQueries(n, in ids.GetPinnableReference());
@@ -10968,7 +11370,19 @@ namespace Silk.NET.OpenGL
             thisApi.GenBuffers(n, out buffers.GetPinnableReference());
         }
 
+        public static unsafe void GenBuffers(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Buffer> buffers)
+        {
+            // SpanOverloader
+            thisApi.GenBuffers(n, out buffers.GetPinnableReference());
+        }
+
         public static unsafe void GenQueries(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+        {
+            // SpanOverloader
+            thisApi.GenQueries(n, out ids.GetPinnableReference());
+        }
+
+        public static unsafe void GenQueries(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Query> ids)
         {
             // SpanOverloader
             thisApi.GenQueries(n, out ids.GetPinnableReference());
@@ -10998,13 +11412,13 @@ namespace Silk.NET.OpenGL
             thisApi.GetBufferParameter(target, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        public static unsafe void GetBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetBufferSubData(target, offset, size, out data.GetPinnableReference());
         }
 
-        public static unsafe void GetBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        public static unsafe void GetBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetBufferSubData(target, offset, size, out data.GetPinnableReference());
@@ -11448,6 +11862,12 @@ namespace Silk.NET.OpenGL
             thisApi.DeleteTextures(n, in textures.GetPinnableReference());
         }
 
+        public static unsafe void DeleteTextures(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures)
+        {
+            // SpanOverloader
+            thisApi.DeleteTextures(n, in textures.GetPinnableReference());
+        }
+
         public static unsafe void DrawElements<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices) where T0 : unmanaged
         {
             // SpanOverloader
@@ -11473,6 +11893,12 @@ namespace Silk.NET.OpenGL
         }
 
         public static unsafe void GenTextures(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures)
+        {
+            // SpanOverloader
+            thisApi.GenTextures(n, out textures.GetPinnableReference());
+        }
+
+        public static unsafe void GenTextures(this GL thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Texture> textures)
         {
             // SpanOverloader
             thisApi.GenTextures(n, out textures.GetPinnableReference());

@@ -20,88 +20,88 @@ namespace Silk.NET.Vulkan
     {
         [NativeName("Type", "")]
         [NativeName("Name", "VK_ATTACHMENT_UNUSED")]
-        public const uint AttachmentUnused = (~0U);
+        public const uint AttachmentUnused = unchecked((uint) (~0U));
         [NativeName("Type", "")]
         [NativeName("Name", "VK_FALSE")]
-        public const uint False = 0;
+        public const uint False = unchecked((uint) 0);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_LOD_CLAMP_NONE")]
-        public const float LodClampNone = 1000.0f;
+        public const float LodClampNone = unchecked((float) 1000.0f);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_LUID_SIZE")]
-        public const uint LuidSize = 8;
+        public const uint LuidSize = unchecked((uint) 8);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_LUID_SIZE_KHR")]
-        public const uint LuidSizeKhr = 8;
+        public const uint LuidSizeKhr = unchecked((uint) 8);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_DESCRIPTION_SIZE")]
-        public const uint MaxDescriptionSize = 256;
+        public const uint MaxDescriptionSize = unchecked((uint) 256);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_DEVICE_GROUP_SIZE")]
-        public const uint MaxDeviceGroupSize = 32;
+        public const uint MaxDeviceGroupSize = unchecked((uint) 32);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_DEVICE_GROUP_SIZE_KHR")]
-        public const uint MaxDeviceGroupSizeKhr = 32;
+        public const uint MaxDeviceGroupSizeKhr = unchecked((uint) 32);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_DRIVER_INFO_SIZE")]
-        public const uint MaxDriverInfoSize = 256;
+        public const uint MaxDriverInfoSize = unchecked((uint) 256);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_DRIVER_INFO_SIZE_KHR")]
-        public const uint MaxDriverInfoSizeKhr = 256;
+        public const uint MaxDriverInfoSizeKhr = unchecked((uint) 256);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_DRIVER_NAME_SIZE")]
-        public const uint MaxDriverNameSize = 256;
+        public const uint MaxDriverNameSize = unchecked((uint) 256);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_DRIVER_NAME_SIZE_KHR")]
-        public const uint MaxDriverNameSizeKhr = 256;
+        public const uint MaxDriverNameSizeKhr = unchecked((uint) 256);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_EXTENSION_NAME_SIZE")]
-        public const uint MaxExtensionNameSize = 256;
+        public const uint MaxExtensionNameSize = unchecked((uint) 256);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_MEMORY_HEAPS")]
-        public const uint MaxMemoryHeaps = 16;
+        public const uint MaxMemoryHeaps = unchecked((uint) 16);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_MEMORY_TYPES")]
-        public const uint MaxMemoryTypes = 32;
+        public const uint MaxMemoryTypes = unchecked((uint) 32);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_PHYSICAL_DEVICE_NAME_SIZE")]
-        public const uint MaxPhysicalDeviceNameSize = 256;
+        public const uint MaxPhysicalDeviceNameSize = unchecked((uint) 256);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_QUEUE_FAMILY_EXTERNAL")]
-        public const uint QueueFamilyExternal = (~0U-1);
+        public const uint QueueFamilyExternal = unchecked((uint) (~0U-1));
         [NativeName("Type", "")]
         [NativeName("Name", "VK_QUEUE_FAMILY_EXTERNAL_KHR")]
-        public const uint QueueFamilyExternalKhr = (~0U-1);
+        public const uint QueueFamilyExternalKhr = unchecked((uint) (~0U-1));
         [NativeName("Type", "")]
         [NativeName("Name", "VK_QUEUE_FAMILY_FOREIGN_EXT")]
-        public const uint QueueFamilyForeignExt = (~0U-2);
+        public const uint QueueFamilyForeignExt = unchecked((uint) (~0U-2));
         [NativeName("Type", "")]
         [NativeName("Name", "VK_QUEUE_FAMILY_IGNORED")]
-        public const uint QueueFamilyIgnored = (~0U);
+        public const uint QueueFamilyIgnored = unchecked((uint) (~0U));
         [NativeName("Type", "")]
         [NativeName("Name", "VK_REMAINING_ARRAY_LAYERS")]
-        public const uint RemainingArrayLayers = (~0U);
+        public const uint RemainingArrayLayers = unchecked((uint) (~0U));
         [NativeName("Type", "")]
         [NativeName("Name", "VK_REMAINING_MIP_LEVELS")]
-        public const uint RemainingMipLevels = (~0U);
+        public const uint RemainingMipLevels = unchecked((uint) (~0U));
         [NativeName("Type", "")]
         [NativeName("Name", "VK_SHADER_UNUSED_KHR")]
-        public const uint ShaderUnusedKhr = (~0U);
+        public const uint ShaderUnusedKhr = unchecked((uint) (~0U));
         [NativeName("Type", "")]
         [NativeName("Name", "VK_SHADER_UNUSED_NV")]
-        public const uint ShaderUnusedNV = (~0U);
+        public const uint ShaderUnusedNV = unchecked((uint) (~0U));
         [NativeName("Type", "")]
         [NativeName("Name", "VK_SUBPASS_EXTERNAL")]
-        public const uint SubpassExternal = (~0U);
+        public const uint SubpassExternal = unchecked((uint) (~0U));
         [NativeName("Type", "")]
         [NativeName("Name", "VK_TRUE")]
-        public const uint True = 1;
+        public const uint True = unchecked((uint) 1);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_UUID_SIZE")]
-        public const uint UuidSize = 16;
+        public const uint UuidSize = unchecked((uint) 16);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_WHOLE_SIZE")]
-        public const ulong WholeSize = (~0ul);
+        public const ulong WholeSize = unchecked((ulong) (~0ul));
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdBeginRenderPass2")]
@@ -1268,34 +1268,42 @@ namespace Silk.NET.Vulkan
         public partial Result CreateDescriptorSetLayout([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in DescriptorSetLayoutCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out DescriptorSetLayout pSetLayout);
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
         [NativeApi(EntryPoint = "vkCreateDevice")]
         public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] DeviceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Device* pDevice);
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
         [NativeApi(EntryPoint = "vkCreateDevice")]
         public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] DeviceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Device pDevice);
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
         [NativeApi(EntryPoint = "vkCreateDevice")]
         public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] DeviceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Device* pDevice);
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
         [NativeApi(EntryPoint = "vkCreateDevice")]
         public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] DeviceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Device pDevice);
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
         [NativeApi(EntryPoint = "vkCreateDevice")]
         public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Device* pDevice);
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
         [NativeApi(EntryPoint = "vkCreateDevice")]
         public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Device pDevice);
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
         [NativeApi(EntryPoint = "vkCreateDevice")]
         public unsafe partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Device* pDevice);
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentDevice = *%$PARAM(pDevice)$%; }")]
         [NativeApi(EntryPoint = "vkCreateDevice")]
         public partial Result CreateDevice([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] in DeviceCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Device pDevice);
 
@@ -1492,34 +1500,42 @@ namespace Silk.NET.Vulkan
         public partial Result CreateImageView([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in ImageViewCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out ImageView pView);
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
         [NativeApi(EntryPoint = "vkCreateInstance")]
         public unsafe partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] InstanceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Instance* pInstance);
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
         [NativeApi(EntryPoint = "vkCreateInstance")]
         public unsafe partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] InstanceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Instance pInstance);
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
         [NativeApi(EntryPoint = "vkCreateInstance")]
         public unsafe partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] InstanceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Instance* pInstance);
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
         [NativeApi(EntryPoint = "vkCreateInstance")]
         public unsafe partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] InstanceCreateInfo* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Instance pInstance);
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
         [NativeApi(EntryPoint = "vkCreateInstance")]
         public unsafe partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] in InstanceCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Instance* pInstance);
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
         [NativeApi(EntryPoint = "vkCreateInstance")]
         public unsafe partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] in InstanceCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Instance pInstance);
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
         [NativeApi(EntryPoint = "vkCreateInstance")]
         public unsafe partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] in InstanceCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Instance* pInstance);
 
         /// <summary>To be documented.</summary>
+        [Inject((SilkTouchStage) 6, "if (%$RESULT$% == Result.Success) { CurrentInstance = *%$PARAM(pInstance)$%; }")]
         [NativeApi(EntryPoint = "vkCreateInstance")]
         public partial Result CreateInstance([Count(Count = 0), Flow(FlowDirection.In)] in InstanceCreateInfo pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] out Instance pInstance);
 
@@ -2261,27 +2277,27 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineCacheData")]
-        public unsafe partial Result GetPipelineCacheData([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] UIntPtr* pDataSize, [Count(Computed = "pDataSize")] void* pData);
+        public unsafe partial Result GetPipelineCacheData([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] nuint* pDataSize, [Count(Computed = "pDataSize")] void* pData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineCacheData")]
-        public unsafe partial Result GetPipelineCacheData<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] UIntPtr* pDataSize, [Count(Computed = "pDataSize")] ref T0 pData) where T0 : unmanaged;
+        public unsafe partial Result GetPipelineCacheData<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] nuint* pDataSize, [Count(Computed = "pDataSize")] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineCacheData")]
-        public unsafe partial Result GetPipelineCacheData([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] ref UIntPtr pDataSize, [Count(Computed = "pDataSize")] void* pData);
+        public unsafe partial Result GetPipelineCacheData([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] ref nuint pDataSize, [Count(Computed = "pDataSize")] void* pData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPipelineCacheData")]
-        public partial Result GetPipelineCacheData<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] ref UIntPtr pDataSize, [Count(Computed = "pDataSize")] ref T0 pData) where T0 : unmanaged;
+        public partial Result GetPipelineCacheData<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] ref nuint pDataSize, [Count(Computed = "pDataSize")] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetQueryPoolResults")]
-        public unsafe partial Result GetQueryPoolResults([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Count = 0)] UIntPtr dataSize, [Count(Computed = "dataSize")] void* pData, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags);
+        public unsafe partial Result GetQueryPoolResults([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Count = 0)] nuint dataSize, [Count(Computed = "dataSize")] void* pData, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetQueryPoolResults")]
-        public partial Result GetQueryPoolResults<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Count = 0)] UIntPtr dataSize, [Count(Computed = "dataSize")] ref T0 pData, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags) where T0 : unmanaged;
+        public partial Result GetQueryPoolResults<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery, [Count(Count = 0)] uint queryCount, [Count(Count = 0)] nuint dataSize, [Count(Computed = "dataSize")] ref T0 pData, [Count(Count = 0)] ulong stride, [Count(Count = 0)] QueryResultFlags flags) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetRenderAreaGranularity")]

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_DEPTH_WRITE_MASK")]
-    public enum DepthWriteMask
+    public enum DepthWriteMask : int
     {
         [NativeName("Name", "D3D12_DEPTH_WRITE_MASK_ZERO")]
         DepthWriteMaskZero = 0x0,

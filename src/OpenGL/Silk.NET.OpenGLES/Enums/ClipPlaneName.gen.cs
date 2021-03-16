@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "ClipPlaneName")]
-    public enum ClipPlaneName
+    public enum ClipPlaneName : int
     {
         [NativeName("Name", "GL_CLIP_PLANE0")]
         ClipPlane0 = 0x3000,

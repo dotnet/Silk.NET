@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "IndexMaterialParameterEXT")]
-    public enum IndexMaterialParameterEXT
+    public enum IndexMaterialParameterEXT : int
     {
     }
 }

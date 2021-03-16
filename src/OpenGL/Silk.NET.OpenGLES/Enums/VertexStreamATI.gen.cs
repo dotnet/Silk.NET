@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "VertexStreamATI")]
-    public enum VertexStreamATI
+    public enum VertexStreamATI : int
     {
         [NativeName("Name", "GL_VERTEX_STREAM0_ATI")]
         VertexStream0Ati = 0x876C,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
 {
     [NativeName("Name", "GLenum")]
-    public enum AMD
+    public enum AMD : int
     {
         [NativeName("Name", "GL_FACTOR_MIN_AMD")]
         FactorMinAmd = 0x901C,

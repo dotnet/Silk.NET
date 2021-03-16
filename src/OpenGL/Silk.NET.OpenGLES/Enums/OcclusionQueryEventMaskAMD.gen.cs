@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "OcclusionQueryEventMaskAMD")]
-    public enum OcclusionQueryEventMaskAMD
+    public enum OcclusionQueryEventMaskAMD : int
     {
         [NativeName("Name", "GL_QUERY_DEPTH_PASS_EVENT_BIT_AMD")]
         QueryDepthPassEventBitAmd = 0x1,

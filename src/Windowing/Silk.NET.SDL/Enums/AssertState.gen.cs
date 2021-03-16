@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_assert_L102_C9")]
     [NativeName("Name", "SDL_AssertState")]
-    public enum AssertState
+    public enum AssertState : int
     {
         [NativeName("Name", "SDL_ASSERTION_RETRY")]
         AssertionRetry = 0x0,

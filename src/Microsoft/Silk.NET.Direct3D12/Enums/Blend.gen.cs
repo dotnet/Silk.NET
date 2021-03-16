@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_BLEND")]
-    public enum Blend
+    public enum Blend : int
     {
         [NativeName("Name", "D3D12_BLEND_ZERO")]
         BlendZero = 0x1,

@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkSubpassDescriptionFlags")]
-    public enum SubpassDescriptionFlags
+    public enum SubpassDescriptionFlags : int
     {
         [NativeName("Name", "VK_SUBPASS_DESCRIPTION_PER_VIEW_ATTRIBUTES_BIT_NVX")]
         SubpassDescriptionPerViewAttributesBitNvx = 1,

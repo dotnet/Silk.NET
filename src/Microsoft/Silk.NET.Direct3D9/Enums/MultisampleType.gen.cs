@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DMULTISAMPLE_TYPE")]
-    public enum MultisampleType
+    public enum MultisampleType : int
     {
         [NativeName("Name", "D3DMULTISAMPLE_NONE")]
         MultisampleNone = 0x0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_INFO_QUEUE_MESSAGE_CATEGORY")]
-    public enum InfoQueueMessageCategory
+    public enum InfoQueueMessageCategory : int
     {
         [NativeName("Name", "DXGI_INFO_QUEUE_MESSAGE_CATEGORY_UNKNOWN")]
         InfoQueueMessageCategoryUnknown = 0x0,

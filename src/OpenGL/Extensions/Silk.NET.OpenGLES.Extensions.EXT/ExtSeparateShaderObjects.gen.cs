@@ -46,11 +46,23 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glDeleteProgramPipelinesEXT")]
         public partial void DeleteProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint pipelines);
 
+        [NativeApi(EntryPoint = "glDeleteProgramPipelinesEXT")]
+        public unsafe partial void DeleteProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ProgramPipeline* pipelines);
+
+        [NativeApi(EntryPoint = "glDeleteProgramPipelinesEXT")]
+        public partial void DeleteProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in ProgramPipeline pipelines);
+
         [NativeApi(EntryPoint = "glGenProgramPipelinesEXT")]
         public unsafe partial void GenProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] uint* pipelines);
 
         [NativeApi(EntryPoint = "glGenProgramPipelinesEXT")]
         public partial void GenProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint pipelines);
+
+        [NativeApi(EntryPoint = "glGenProgramPipelinesEXT")]
+        public unsafe partial void GenProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] ProgramPipeline* pipelines);
+
+        [NativeApi(EntryPoint = "glGenProgramPipelinesEXT")]
+        public partial void GenProgramPipelines([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out ProgramPipeline pipelines);
 
         [NativeApi(EntryPoint = "glGetProgramPipelineivEXT")]
         public unsafe partial void GetProgramPipeline([Flow(FlowDirection.In)] uint pipeline, [Flow(FlowDirection.In)] EXT pname, [Flow(FlowDirection.Out)] int* @params);
@@ -264,8 +276,8 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
             // StringArrayOverloader
             var strings = (byte**) SilkMarshal.StringArrayToPtr(stringsSa);
             var ret = CreateShaderProgram(type, count, strings);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
-            SilkMarshal.Free((IntPtr) strings);
+            SilkMarshal.CopyPtrToStringArray((nint) strings, stringsSa);
+            SilkMarshal.Free((nint) strings);
             return ret;
         }
 
@@ -274,8 +286,8 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
             // StringArrayOverloader
             var strings = (byte**) SilkMarshal.StringArrayToPtr(stringsSa);
             var ret = CreateShaderProgram(type, count, strings);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) strings, stringsSa);
-            SilkMarshal.Free((IntPtr) strings);
+            SilkMarshal.CopyPtrToStringArray((nint) strings, stringsSa);
+            SilkMarshal.Free((nint) strings);
             return ret;
         }
 

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "ScalarType")]
-    public enum ScalarType
+    public enum ScalarType : int
     {
         [NativeName("Name", "GL_UNSIGNED_BYTE")]
         UnsignedByte = 0x1401,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "GetFramebufferParameter")]
-    public enum GetFramebufferParameter
+    public enum GetFramebufferParameter : int
     {
         [NativeName("Name", "GL_DOUBLEBUFFER")]
         Doublebuffer = 0xC32,

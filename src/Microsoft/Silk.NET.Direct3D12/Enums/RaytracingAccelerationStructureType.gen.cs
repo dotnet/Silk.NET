@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE")]
-    public enum RaytracingAccelerationStructureType
+    public enum RaytracingAccelerationStructureType : int
     {
         [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE_TOP_LEVEL")]
         RaytracingAccelerationStructureTypeTopLevel = 0x0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_SHADING_RATE")]
-    public enum ShadingRate
+    public enum ShadingRate : int
     {
         [NativeName("Name", "D3D12_SHADING_RATE_1X1")]
         ShadingRate1X1 = 0x0,

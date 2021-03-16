@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.OML
 {
     [NativeName("Name", "GLenum")]
-    public enum OML
+    public enum OML : int
     {
         [NativeName("Name", "GL_INTERLACE_OML")]
         InterlaceOml = 0x8980,

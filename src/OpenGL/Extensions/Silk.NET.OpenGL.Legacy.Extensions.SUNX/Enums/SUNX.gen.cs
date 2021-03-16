@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.SUNX
 {
     [NativeName("Name", "GLenum")]
-    public enum SUNX
+    public enum SUNX : int
     {
         [NativeName("Name", "GL_UNPACK_CONSTANT_DATA_SUNX")]
         UnpackConstantDataSunx = 0x81D5,

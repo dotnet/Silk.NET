@@ -30,9 +30,10 @@ namespace Silk.NET.Vulkan
             PipelineShaderStageCreateInfo* pStages = null,
             uint? groupCount = null,
             RayTracingShaderGroupCreateInfoKHR* pGroups = null,
-            uint? maxRecursionDepth = null,
-            PipelineLibraryCreateInfoKHR? libraries = null,
+            uint? maxPipelineRayRecursionDepth = null,
+            PipelineLibraryCreateInfoKHR* pLibraryInfo = null,
             RayTracingPipelineInterfaceCreateInfoKHR* pLibraryInterface = null,
+            PipelineDynamicStateCreateInfo* pDynamicState = null,
             PipelineLayout? layout = null,
             Pipeline? basePipelineHandle = null,
             int? basePipelineIndex = null
@@ -73,19 +74,24 @@ namespace Silk.NET.Vulkan
                 PGroups = pGroups;
             }
 
-            if (maxRecursionDepth is not null)
+            if (maxPipelineRayRecursionDepth is not null)
             {
-                MaxRecursionDepth = maxRecursionDepth.Value;
+                MaxPipelineRayRecursionDepth = maxPipelineRayRecursionDepth.Value;
             }
 
-            if (libraries is not null)
+            if (pLibraryInfo is not null)
             {
-                Libraries = libraries.Value;
+                PLibraryInfo = pLibraryInfo;
             }
 
             if (pLibraryInterface is not null)
             {
                 PLibraryInterface = pLibraryInterface;
+            }
+
+            if (pDynamicState is not null)
+            {
+                PDynamicState = pDynamicState;
             }
 
             if (layout is not null)
@@ -142,18 +148,23 @@ namespace Silk.NET.Vulkan
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxRecursionDepth")]
-        public uint MaxRecursionDepth;
+        [NativeName("Name", "maxPipelineRayRecursionDepth")]
+        public uint MaxPipelineRayRecursionDepth;
 /// <summary></summary>
-        [NativeName("Type", "VkPipelineLibraryCreateInfoKHR")]
+        [NativeName("Type", "VkPipelineLibraryCreateInfoKHR*")]
         [NativeName("Type.Name", "VkPipelineLibraryCreateInfoKHR")]
-        [NativeName("Name", "libraries")]
-        public PipelineLibraryCreateInfoKHR Libraries;
+        [NativeName("Name", "pLibraryInfo")]
+        public PipelineLibraryCreateInfoKHR* PLibraryInfo;
 /// <summary></summary>
         [NativeName("Type", "VkRayTracingPipelineInterfaceCreateInfoKHR*")]
         [NativeName("Type.Name", "VkRayTracingPipelineInterfaceCreateInfoKHR")]
         [NativeName("Name", "pLibraryInterface")]
         public RayTracingPipelineInterfaceCreateInfoKHR* PLibraryInterface;
+/// <summary></summary>
+        [NativeName("Type", "VkPipelineDynamicStateCreateInfo*")]
+        [NativeName("Type.Name", "VkPipelineDynamicStateCreateInfo")]
+        [NativeName("Name", "pDynamicState")]
+        public PipelineDynamicStateCreateInfo* PDynamicState;
 /// <summary></summary>
         [NativeName("Type", "VkPipelineLayout")]
         [NativeName("Type.Name", "VkPipelineLayout")]

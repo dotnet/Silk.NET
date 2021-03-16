@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkCommandBufferUsageFlags")]
-    public enum CommandBufferUsageFlags
+    public enum CommandBufferUsageFlags : int
     {
         [NativeName("Name", "VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT")]
         CommandBufferUsageOneTimeSubmitBit = 1,

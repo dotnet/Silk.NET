@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_RESOURCE_BARRIER_FLAGS")]
-    public enum ResourceBarrierFlags
+    public enum ResourceBarrierFlags : int
     {
         [NativeName("Name", "D3D12_RESOURCE_BARRIER_FLAG_NONE")]
         ResourceBarrierFlagNone = 0x0,

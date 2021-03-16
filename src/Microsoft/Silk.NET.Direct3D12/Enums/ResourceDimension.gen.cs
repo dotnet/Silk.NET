@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_RESOURCE_DIMENSION")]
-    public enum ResourceDimension
+    public enum ResourceDimension : int
     {
         [NativeName("Name", "D3D12_RESOURCE_DIMENSION_UNKNOWN")]
         ResourceDimensionUnknown = 0x0,

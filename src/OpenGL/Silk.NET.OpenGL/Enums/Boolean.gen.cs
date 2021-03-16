@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "Boolean")]
-    public enum Boolean
+    public enum Boolean : int
     {
         [NativeName("Name", "GL_FALSE")]
         False = 0x0,

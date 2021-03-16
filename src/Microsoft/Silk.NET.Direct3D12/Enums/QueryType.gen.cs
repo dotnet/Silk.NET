@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_QUERY_TYPE")]
-    public enum QueryType
+    public enum QueryType : int
     {
         [NativeName("Name", "D3D12_QUERY_TYPE_OCCLUSION")]
         QueryTypeOcclusion = 0x0,

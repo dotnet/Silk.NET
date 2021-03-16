@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAccelerationStructureBuildTypeKHR")]
-    public enum AccelerationStructureBuildTypeKHR
+    public enum AccelerationStructureBuildTypeKHR : int
     {
         [NativeName("Name", "VK_ACCELERATION_STRUCTURE_BUILD_TYPE_HOST_KHR")]
         AccelerationStructureBuildTypeHostKhr = 0,

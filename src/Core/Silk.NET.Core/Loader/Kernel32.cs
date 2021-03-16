@@ -11,12 +11,12 @@ namespace Silk.NET.Core.Loader
     internal static class Kernel32
     {
         [DllImport("kernel32")]
-        public static extern IntPtr LoadLibrary(string fileName);
+        public static extern nint LoadLibrary(string fileName);
 
         [DllImport("kernel32")]
-        public static extern IntPtr GetProcAddress(IntPtr module, string procName);
+        public static extern nint GetProcAddress(nint module, string procName);
 
         [DllImport("kernel32")]
-        public static extern int FreeLibrary(IntPtr module);
+        public static extern int FreeLibrary(nint module);
     }
 }

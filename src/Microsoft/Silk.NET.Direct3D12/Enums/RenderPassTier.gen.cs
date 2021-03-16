@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_RENDER_PASS_TIER")]
-    public enum RenderPassTier
+    public enum RenderPassTier : int
     {
         [NativeName("Name", "D3D12_RENDER_PASS_TIER_0")]
         RenderPassTier0 = 0x0,

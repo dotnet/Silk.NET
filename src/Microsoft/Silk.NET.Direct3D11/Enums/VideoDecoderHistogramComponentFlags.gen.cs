@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT_FLAGS")]
-    public enum VideoDecoderHistogramComponentFlags
+    public enum VideoDecoderHistogramComponentFlags : int
     {
         [NativeName("Name", "D3D11_VIDEO_DECODER_HISTOGRAM_COMPONENT_FLAG_NONE")]
         VideoDecoderHistogramComponentFlagNone = 0x0,

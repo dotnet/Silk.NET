@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenXR
 {
     [NativeName("Name", "XrSessionState")]
-    public enum SessionState
+    public enum SessionState : int
     {
         [NativeName("Name", "XR_SESSION_STATE_UNKNOWN")]
         Unknown = 0,

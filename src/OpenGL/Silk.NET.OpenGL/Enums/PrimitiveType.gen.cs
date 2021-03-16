@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "PrimitiveType")]
-    public enum PrimitiveType
+    public enum PrimitiveType : int
     {
         [NativeName("Name", "GL_POINTS")]
         Points = 0x0,
@@ -28,6 +28,8 @@ namespace Silk.NET.OpenGL
         TriangleStrip = 0x5,
         [NativeName("Name", "GL_TRIANGLE_FAN")]
         TriangleFan = 0x6,
+        [NativeName("Name", "GL_QUADS")]
+        Quads = 0x7,
         [NativeName("Name", "GL_QUADS_EXT")]
         QuadsExt = 0x7,
         [NativeName("Name", "GL_LINES_ADJACENCY")]

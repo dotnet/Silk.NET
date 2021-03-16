@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_SHADER_CACHE_SUPPORT_FLAGS")]
-    public enum ShaderCacheSupportFlags
+    public enum ShaderCacheSupportFlags : int
     {
         [NativeName("Name", "D3D12_SHADER_CACHE_SUPPORT_NONE")]
         ShaderCacheSupportNone = 0x0,

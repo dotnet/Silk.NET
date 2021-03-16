@@ -10,15 +10,18 @@ namespace Silk.NET.Vulkan
 {
     public readonly unsafe struct PfnInternalAllocationNotification
     {
-        public readonly delegate* unmanaged[Cdecl]<void*, nuint, InternalAllocationType, SystemAllocationScope, void>
-            Handle;
+        private readonly void* _handle;
+
+        public delegate* unmanaged[Cdecl]<void*, nuint, InternalAllocationType, SystemAllocationScope, void>
+            Handle =>
+            (delegate* unmanaged[Cdecl]<void*, nuint, InternalAllocationType, SystemAllocationScope, void>) _handle;
 
         public PfnInternalAllocationNotification
             (delegate* unmanaged[Cdecl]<void*, nuint, InternalAllocationType, SystemAllocationScope, void> ptr) =>
-            Handle = ptr;
+            _handle = ptr;
 
         public PfnInternalAllocationNotification
-            (InternalAllocationNotification func) => Handle =
+            (InternalAllocationNotification func) => _handle =
             (delegate* unmanaged[Cdecl]<void*, nuint, InternalAllocationType, SystemAllocationScope, void>) SilkMarshal
                 .DelegateToPtr(func);
 
@@ -34,6 +37,6 @@ namespace Silk.NET.Vulkan
 
         public static explicit operator InternalAllocationNotification
             (PfnInternalAllocationNotification pfn) => SilkMarshal.PtrToDelegate<InternalAllocationNotification>
-            ((IntPtr) pfn.Handle);
+            ((nint) pfn.Handle);
     }
 }

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "SemaphoreParameterName")]
-    public enum SemaphoreParameterName
+    public enum SemaphoreParameterName : int
     {
         [NativeName("Name", "GL_D3D12_FENCE_VALUE_EXT")]
         D3D12FenceValueExt = 0x9595,

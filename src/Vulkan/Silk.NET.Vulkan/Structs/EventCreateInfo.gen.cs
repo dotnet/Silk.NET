@@ -25,7 +25,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.EventCreateInfo,
             void* pNext = null,
-            uint? flags = null
+            EventCreateFlags? flags = null
         ) : this()
         {
             if (sType is not null)
@@ -58,6 +58,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "VkEventCreateFlags")]
         [NativeName("Type.Name", "VkEventCreateFlags")]
         [NativeName("Name", "flags")]
-        public uint Flags;
+        public EventCreateFlags Flags;
     }
 }

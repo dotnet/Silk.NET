@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenXR
 {
     [NativeName("Name", "XrEnvironmentBlendMode")]
-    public enum EnvironmentBlendMode
+    public enum EnvironmentBlendMode : int
     {
         [NativeName("Name", "XR_ENVIRONMENT_BLEND_MODE_OPAQUE")]
         Opaque = 1,

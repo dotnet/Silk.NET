@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.MESA
 {
     [NativeName("Name", "GLenum")]
-    public enum MESA
+    public enum MESA : int
     {
         [NativeName("Name", "GL_FRAMEBUFFER_FLIP_X_MESA")]
         FramebufferFlipXMesa = 0x8BBC,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DCMPFUNC")]
-    public enum Cmpfunc
+    public enum Cmpfunc : int
     {
         [NativeName("Name", "D3DCMP_NEVER")]
         CmpNever = 0x1,

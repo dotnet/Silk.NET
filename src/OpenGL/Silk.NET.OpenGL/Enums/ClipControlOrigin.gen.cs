@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "ClipControlOrigin")]
-    public enum ClipControlOrigin
+    public enum ClipControlOrigin : int
     {
         [NativeName("Name", "GL_LOWER_LEFT")]
         LowerLeft = 0x8CA1,

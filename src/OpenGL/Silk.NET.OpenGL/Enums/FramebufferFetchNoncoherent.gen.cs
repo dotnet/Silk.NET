@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "FramebufferFetchNoncoherent")]
-    public enum FramebufferFetchNoncoherent
+    public enum FramebufferFetchNoncoherent : int
     {
         [NativeName("Name", "GL_FRAMEBUFFER_FETCH_NONCOHERENT_QCOM")]
         FramebufferFetchNoncoherentQCom = 0x96A2,

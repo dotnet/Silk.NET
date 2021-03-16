@@ -27,8 +27,8 @@ namespace Silk.NET.Vulkan
             uint? dstArrayElement = null,
             uint? descriptorCount = null,
             DescriptorType? descriptorType = null,
-            UIntPtr? offset = null,
-            UIntPtr? stride = null
+            nuint? offset = null,
+            nuint? stride = null
         ) : this()
         {
             if (dstBinding is not null)
@@ -86,11 +86,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "offset")]
-        public UIntPtr Offset;
+        public nuint Offset;
 /// <summary></summary>
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "stride")]
-        public UIntPtr Stride;
+        public nuint Stride;
     }
 }

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "ProgramInterfacePName")]
-    public enum ProgramInterfacePName
+    public enum ProgramInterfacePName : int
     {
         [NativeName("Name", "GL_ACTIVE_RESOURCES")]
         ActiveResources = 0x92F5,

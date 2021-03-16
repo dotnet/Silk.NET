@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_TEXTURE_LAYOUT")]
-    public enum TextureLayout
+    public enum TextureLayout : int
     {
         [NativeName("Name", "D3D12_TEXTURE_LAYOUT_UNKNOWN")]
         TextureLayoutUnknown = 0x0,

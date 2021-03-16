@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "PixelMap")]
-    public enum PixelMap
+    public enum PixelMap : int
     {
     }
 }

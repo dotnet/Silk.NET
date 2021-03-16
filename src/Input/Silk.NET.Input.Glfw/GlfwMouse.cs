@@ -66,7 +66,6 @@ namespace Silk.NET.Input.Glfw
 
         public unsafe void Dispose()
         {
-            Marshal.FreeHGlobal((IntPtr) _handle);
         }
 
         public unsafe void Subscribe(GlfwEvents events)

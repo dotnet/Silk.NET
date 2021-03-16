@@ -28,7 +28,7 @@ namespace Silk.NET.Vulkan
             ObjectType? objectType = null,
             ulong? objectHandle = null,
             ulong? tagName = null,
-            UIntPtr? tagSize = null,
+            nuint? tagSize = null,
             void* pTag = null
         ) : this()
         {
@@ -97,7 +97,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "tagSize")]
-        public UIntPtr TagSize;
+        public nuint TagSize;
 /// <summary></summary>
         [NativeName("Type", "void*")]
         [NativeName("Type.Name", "void")]

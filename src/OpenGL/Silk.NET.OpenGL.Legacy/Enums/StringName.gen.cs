@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "StringName")]
-    public enum StringName
+    public enum StringName : int
     {
         [NativeName("Name", "GL_VENDOR")]
         Vendor = 0x1F00,

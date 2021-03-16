@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "PathTransformType")]
-    public enum PathTransformType
+    public enum PathTransformType : int
     {
         [NativeName("Name", "GL_NONE")]
         None = 0x0,

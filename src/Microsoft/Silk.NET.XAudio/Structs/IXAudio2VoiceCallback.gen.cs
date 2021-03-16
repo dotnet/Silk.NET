@@ -48,14 +48,14 @@ namespace Silk.NET.XAudio
         public readonly void OnVoiceProcessingPassEnd()
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void>)LpVtbl[1])(@this);
+            ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void>)LpVtbl[1])(@this);
         }
 
         /// <summary>To be documented.</summary>
         public readonly void OnStreamEnd()
         {
             var @this = (IXAudio2VoiceCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IXAudio2VoiceCallback*, void>)LpVtbl[2])(@this);
+            ((delegate* unmanaged[Stdcall]<IXAudio2VoiceCallback*, void>)LpVtbl[2])(@this);
         }
 
         /// <summary>To be documented.</summary>

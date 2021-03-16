@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using ObjCRuntime;
@@ -19,16 +18,16 @@ namespace Silk.NET.Windowing.Sdl.iOS
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         public unsafe delegate void MainFunction(int numArgs, byte** args);
         [DllImport("__Internal", EntryPoint = "SDL_UIKitRunApp")]
-        private static extern unsafe void CoreRunApp(int numArgs, byte** args, IntPtr callback);
+        private static extern unsafe void CoreRunApp(int numArgs, byte** args, nint callback);
             
-        public static unsafe void RunApp(int numArgs, byte** args, IntPtr callback)
+        public static unsafe void RunApp(int numArgs, byte** args, nint callback)
         {
             BeginRun();
             CoreRunApp(numArgs, args, callback);
             EndRun();
         }
 
-        public static unsafe void RunApp(IReadOnlyList<string> args, IntPtr callback)
+        public static unsafe void RunApp(IReadOnlyList<string> args, nint callback)
         {
             BeginRun();
             var argsPtr = SilkMarshal.StringArrayToPtr(args);
@@ -46,10 +45,10 @@ namespace Silk.NET.Windowing.Sdl.iOS
             EndRun();
         }
 
-        public static unsafe void RunApp(int numArgs, byte** args, Action<string[]> callback)
+        public static unsafe void RunApp(int numArgs, byte** args, System.Action<string[]> callback)
         {
             BeginRun();
-            CurrentMain = (inNumArgs, argsPtr) => callback(SilkMarshal.PtrToStringArray((IntPtr)argsPtr, inNumArgs));
+            CurrentMain = (inNumArgs, argsPtr) => callback(SilkMarshal.PtrToStringArray((nint)argsPtr, inNumArgs));
             CoreRunApp(numArgs, args, GetCallMainPtr());
             CurrentMain = null;
             EndRun();
@@ -66,11 +65,11 @@ namespace Silk.NET.Windowing.Sdl.iOS
             EndRun();
         }
 
-        public static unsafe void RunApp(IReadOnlyList<string> args, Action<string[]> callback)
+        public static unsafe void RunApp(IReadOnlyList<string> args, System.Action<string[]> callback)
         {
             BeginRun();
             var argsPtr = SilkMarshal.StringArrayToPtr(args);
-            CurrentMain = (numArgs, inArgsPtr) => callback(SilkMarshal.PtrToStringArray((IntPtr)inArgsPtr, numArgs));
+            CurrentMain = (numArgs, inArgsPtr) => callback(SilkMarshal.PtrToStringArray((nint)inArgsPtr, numArgs));
             CoreRunApp(args.Count, (byte**)argsPtr, GetCallMainPtr());
             CurrentMain = null;
             SilkMarshal.Free(argsPtr);
@@ -80,14 +79,14 @@ namespace Silk.NET.Windowing.Sdl.iOS
         [MonoPInvokeCallback(typeof(MainFunction))]
         private static unsafe void CallMain(int numArgs, byte** args) => CurrentMain!(numArgs, args);
         
-        private static unsafe IntPtr GetCallMainPtr()
+        private static unsafe nint GetCallMainPtr()
             => Marshal.GetFunctionPointerForDelegate((MainFunction) CallMain);
 
         private static void BeginRun()
         {
             if (_running)
             {
-                throw new InvalidOperationException("App already running.");
+                throw new System.InvalidOperationException("App already running.");
             }
 
             SdlWindowing.RegisterPlatform();

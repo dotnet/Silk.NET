@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES.Extensions.IMG
 {
     [NativeName("Name", "GLenum")]
-    public enum IMG
+    public enum IMG : int
     {
         [NativeName("Name", "GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE_AND_DOWNSAMPLE_IMG")]
         FramebufferIncompleteMultisampleAndDownsampleImg = 0x913C,

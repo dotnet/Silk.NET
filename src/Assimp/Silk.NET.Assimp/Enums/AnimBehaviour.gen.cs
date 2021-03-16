@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiAnimBehaviour")]
-    public enum AnimBehaviour
+    public enum AnimBehaviour : int
     {
         [NativeName("Name", "aiAnimBehaviour_DEFAULT")]
         AnimBehaviourDefault = 0x0,

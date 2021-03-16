@@ -24,7 +24,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.DeleteVertexArrays(n, in arrays.GetPinnableReference());
         }
 
+        public static unsafe void DeleteVertexArrays(this ArbVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<VertexArray> arrays)
+        {
+            // SpanOverloader
+            thisApi.DeleteVertexArrays(n, in arrays.GetPinnableReference());
+        }
+
         public static unsafe void GenVertexArrays(this ArbVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays)
+        {
+            // SpanOverloader
+            thisApi.GenVertexArrays(n, out arrays.GetPinnableReference());
+        }
+
+        public static unsafe void GenVertexArrays(this ArbVertexArrayObject thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<VertexArray> arrays)
         {
             // SpanOverloader
             thisApi.GenVertexArrays(n, out arrays.GetPinnableReference());

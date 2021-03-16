@@ -25,7 +25,7 @@ namespace Silk.NET.Direct3D9
         (
             uint? adapterOrdinal = null,
             Devtype? deviceType = null,
-            IntPtr? hFocusWindow = null,
+            nint? hFocusWindow = null,
             uint? behaviorFlags = null
         ) : this()
         {
@@ -64,7 +64,7 @@ namespace Silk.NET.Direct3D9
         [NativeName("Type", "HWND")]
         [NativeName("Type.Name", "HWND")]
         [NativeName("Name", "hFocusWindow")]
-        public IntPtr HFocusWindow;
+        public nint HFocusWindow;
 
         [NativeName("Type", "DWORD")]
         [NativeName("Type.Name", "DWORD")]

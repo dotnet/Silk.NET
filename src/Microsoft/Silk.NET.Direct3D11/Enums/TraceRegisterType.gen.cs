@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_TRACE_REGISTER_TYPE")]
-    public enum TraceRegisterType
+    public enum TraceRegisterType : int
     {
         [NativeName("Name", "D3D11_TRACE_OUTPUT_NULL_REGISTER")]
         TraceOutputNullRegister = 0x0,

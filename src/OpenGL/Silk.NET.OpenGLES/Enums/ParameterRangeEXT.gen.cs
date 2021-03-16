@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "ParameterRangeEXT")]
-    public enum ParameterRangeEXT
+    public enum ParameterRangeEXT : int
     {
         [NativeName("Name", "GL_NORMALIZED_RANGE_EXT")]
         NormalizedRangeExt = 0x87E0,

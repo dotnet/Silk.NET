@@ -23,7 +23,7 @@ namespace Silk.NET.DXGI
     {
         public OutduplPointerPosition
         (
-            Silk.NET.Maths.Vector2D<long>? position = null,
+            Silk.NET.Maths.Vector2D<int>? position = null,
             int? visible = null
         ) : this()
         {
@@ -42,7 +42,7 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "POINT")]
         [NativeName("Type.Name", "POINT")]
         [NativeName("Name", "Position")]
-        public Silk.NET.Maths.Vector2D<long> Position;
+        public Silk.NET.Maths.Vector2D<int> Position;
 
         [NativeName("Type", "BOOL")]
         [NativeName("Type.Name", "BOOL")]

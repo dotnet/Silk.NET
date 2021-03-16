@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "RenderbufferParameterName")]
-    public enum RenderbufferParameterName
+    public enum RenderbufferParameterName : int
     {
         [NativeName("Name", "GL_RENDERBUFFER_COVERAGE_SAMPLES_NV")]
         RenderbufferCoverageSamplesNV = 0x8CAB,

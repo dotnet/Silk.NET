@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_ALPHA_MODE")]
-    public enum AlphaMode
+    public enum AlphaMode : int
     {
         [NativeName("Name", "DXGI_ALPHA_MODE_UNSPECIFIED")]
         AlphaModeUnspecified = 0x0,
@@ -23,6 +23,6 @@ namespace Silk.NET.DXGI
         [NativeName("Name", "DXGI_ALPHA_MODE_IGNORE")]
         AlphaModeIgnore = 0x3,
         [NativeName("Name", "DXGI_ALPHA_MODE_FORCE_DWORD")]
-        AlphaModeForceDword = unchecked((int)0xFFFFFFFFFFFFFFFF),
+        AlphaModeForceDword = unchecked((int) 0xFFFFFFFFFFFFFFFF),
     }
 }

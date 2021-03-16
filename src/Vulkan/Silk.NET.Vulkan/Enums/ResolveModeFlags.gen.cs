@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkResolveModeFlags")]
-    public enum ResolveModeFlags
+    public enum ResolveModeFlags : int
     {
         [NativeName("Name", "VK_RESOLVE_MODE_NONE")]
         ResolveModeNone = 0,

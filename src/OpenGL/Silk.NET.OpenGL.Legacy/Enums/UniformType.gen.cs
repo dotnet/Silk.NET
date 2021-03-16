@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "UniformType")]
-    public enum UniformType
+    public enum UniformType : int
     {
         [NativeName("Name", "GL_INT")]
         Int = 0x1404,

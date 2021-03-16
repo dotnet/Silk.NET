@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "FfdTargetSGIX")]
-    public enum FfdTargetSGIX
+    public enum FfdTargetSGIX : int
     {
         [NativeName("Name", "GL_GEOMETRY_DEFORMATION_SGIX")]
         GeometryDeformationSgix = 0x8194,

@@ -30,7 +30,7 @@ namespace Silk.NET.Core.Contexts
         }
 
         /// <inheritdoc />
-        public IntPtr GetProcAddress(string proc, int? slot = default)
+        public nint GetProcAddress(string proc, int? slot = default)
         {
             foreach (var nativeContext in Contexts)
             {

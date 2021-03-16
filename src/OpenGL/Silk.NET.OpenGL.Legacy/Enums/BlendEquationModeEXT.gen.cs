@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "BlendEquationModeEXT")]
-    public enum BlendEquationModeEXT
+    public enum BlendEquationModeEXT : int
     {
         [NativeName("Name", "GL_FUNC_ADD")]
         FuncAdd = 0x8006,

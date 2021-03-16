@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_COLOR_SPACE_TYPE")]
-    public enum ColorSpaceType
+    public enum ColorSpaceType : int
     {
         [NativeName("Name", "DXGI_COLOR_SPACE_RGB_FULL_G22_NONE_P709")]
         ColorSpaceRgbFullG22NoneP709 = 0x0,
@@ -65,6 +65,6 @@ namespace Silk.NET.DXGI
         [NativeName("Name", "DXGI_COLOR_SPACE_YCBCR_STUDIO_G24_TOPLEFT_P2020")]
         ColorSpaceYcbcrStudioG24TopleftP2020 = 0x18,
         [NativeName("Name", "DXGI_COLOR_SPACE_CUSTOM")]
-        ColorSpaceCustom = unchecked((int)0xFFFFFFFFFFFFFFFF),
+        ColorSpaceCustom = unchecked((int) 0xFFFFFFFFFFFFFFFF),
     }
 }

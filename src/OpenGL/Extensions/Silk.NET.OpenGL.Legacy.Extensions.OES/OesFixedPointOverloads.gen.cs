@@ -498,6 +498,24 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
             thisApi.PrioritizeTexturesx(n, in textures.GetPinnableReference(), in priorities.GetPinnableReference());
         }
 
+        public static unsafe void PrioritizeTexturesx(this OesFixedPoint thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<int> priorities)
+        {
+            // SpanOverloader
+            thisApi.PrioritizeTexturesx(n, textures, in priorities.GetPinnableReference());
+        }
+
+        public static unsafe void PrioritizeTexturesx(this OesFixedPoint thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] int* priorities)
+        {
+            // SpanOverloader
+            thisApi.PrioritizeTexturesx(n, in textures.GetPinnableReference(), priorities);
+        }
+
+        public static unsafe void PrioritizeTexturesx(this OesFixedPoint thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<int> priorities)
+        {
+            // SpanOverloader
+            thisApi.PrioritizeTexturesx(n, in textures.GetPinnableReference(), in priorities.GetPinnableReference());
+        }
+
         public static unsafe void RasterPos2x(this OesFixedPoint thisApi, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<int> coords)
         {
             // SpanOverloader

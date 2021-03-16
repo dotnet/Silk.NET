@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "PerformanceQueryCapsMaskINTEL")]
-    public enum PerformanceQueryCapsMaskINTEL
+    public enum PerformanceQueryCapsMaskINTEL : int
     {
         [NativeName("Name", "GL_PERFQUERY_SINGLE_CONTEXT_INTEL")]
         PerfquerySingleContextIntel = 0x0,

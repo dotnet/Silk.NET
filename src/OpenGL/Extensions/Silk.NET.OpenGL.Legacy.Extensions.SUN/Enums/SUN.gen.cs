@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.SUN
 {
     [NativeName("Name", "GLenum")]
-    public enum SUN
+    public enum SUN : int
     {
         [NativeName("Name", "GL_WRAP_BORDER_SUN")]
         WrapBorderSun = 0x81D4,

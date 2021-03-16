@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_GPU_BASED_VALIDATION_PIPELINE_STATE_CREATE_FLAGS")]
-    public enum GpuBasedValidationPipelineStateCreateFlags
+    public enum GpuBasedValidationPipelineStateCreateFlags : int
     {
         [NativeName("Name", "D3D12_GPU_BASED_VALIDATION_PIPELINE_STATE_CREATE_FLAG_NONE")]
         GpuBasedValidationPipelineStateCreateFlagNone = 0x0,

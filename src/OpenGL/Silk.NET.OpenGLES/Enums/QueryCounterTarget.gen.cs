@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "QueryCounterTarget")]
-    public enum QueryCounterTarget
+    public enum QueryCounterTarget : int
     {
         [NativeName("Name", "GL_TIMESTAMP")]
         Timestamp = 0x8E28,

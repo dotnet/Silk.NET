@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "PipelineParameterName")]
-    public enum PipelineParameterName
+    public enum PipelineParameterName : int
     {
         [NativeName("Name", "GL_ACTIVE_PROGRAM")]
         ActiveProgram = 0x8259,

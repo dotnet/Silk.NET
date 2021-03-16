@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkShadingRatePaletteEntryNV")]
-    public enum ShadingRatePaletteEntryNV
+    public enum ShadingRatePaletteEntryNV : int
     {
         [NativeName("Name", "VK_SHADING_RATE_PALETTE_ENTRY_NO_INVOCATIONS_NV")]
         ShadingRatePaletteEntryNoInvocationsNV = 0,

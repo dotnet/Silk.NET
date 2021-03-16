@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkBuildAccelerationStructureFlagsKHR")]
-    public enum BuildAccelerationStructureFlagsKHR
+    public enum BuildAccelerationStructureFlagsKHR : int
     {
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_ALLOW_UPDATE_BIT_KHR")]
         BuildAccelerationStructureAllowUpdateBitKhr = 1,
@@ -25,5 +25,7 @@ namespace Silk.NET.Vulkan
         BuildAccelerationStructurePreferFastBuildBitKhr = 8,
         [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_LOW_MEMORY_BIT_KHR")]
         BuildAccelerationStructureLowMemoryBitKhr = 16,
+        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_RESERVED_BIT_5_NV")]
+        BuildAccelerationStructureReservedBit5NV = 32,
     }
 }

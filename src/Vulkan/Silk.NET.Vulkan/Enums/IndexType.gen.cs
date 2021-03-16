@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkIndexType")]
-    public enum IndexType
+    public enum IndexType : int
     {
         [NativeName("Name", "VK_INDEX_TYPE_UINT16")]
         Uint16 = 0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiBlendMode")]
-    public enum BlendMode
+    public enum BlendMode : int
     {
         [NativeName("Name", "aiBlendMode_Default")]
         BlendModeDefault = 0x0,

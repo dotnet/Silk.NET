@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkGeometryFlagsNV")]
-    public enum GeometryFlagsNV
+    public enum GeometryFlagsNV : int
     {
         [NativeName("Name", "VK_GEOMETRY_OPAQUE_BIT_KHR")]
         GeometryOpaqueBitKhr = 1,

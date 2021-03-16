@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkTessellationDomainOrigin")]
-    public enum TessellationDomainOrigin
+    public enum TessellationDomainOrigin : int
     {
         [NativeName("Name", "VK_TESSELLATION_DOMAIN_ORIGIN_UPPER_LEFT")]
         UpperLeft = 0,

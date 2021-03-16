@@ -27,9 +27,9 @@ namespace Silk.NET.DXGI
             uint? deviceId = null,
             uint? subSysId = null,
             uint? revision = null,
-            uint? dedicatedVideoMemory = null,
-            uint? dedicatedSystemMemory = null,
-            uint? sharedSystemMemory = null,
+            nuint? dedicatedVideoMemory = null,
+            nuint? dedicatedSystemMemory = null,
+            nuint? sharedSystemMemory = null,
             ValueTuple<ulong,long>? adapterLuid = null,
             uint? flags = null
         ) : this()
@@ -108,17 +108,17 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "SIZE_T")]
         [NativeName("Type.Name", "SIZE_T")]
         [NativeName("Name", "DedicatedVideoMemory")]
-        public uint DedicatedVideoMemory;
+        public nuint DedicatedVideoMemory;
 
         [NativeName("Type", "SIZE_T")]
         [NativeName("Type.Name", "SIZE_T")]
         [NativeName("Name", "DedicatedSystemMemory")]
-        public uint DedicatedSystemMemory;
+        public nuint DedicatedSystemMemory;
 
         [NativeName("Type", "SIZE_T")]
         [NativeName("Type.Name", "SIZE_T")]
         [NativeName("Name", "SharedSystemMemory")]
-        public uint SharedSystemMemory;
+        public nuint SharedSystemMemory;
 
         [NativeName("Type", "LUID")]
         [NativeName("Type.Name", "LUID")]

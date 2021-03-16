@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "LightParameter")]
-    public enum LightParameter
+    public enum LightParameter : int
     {
     }
 }

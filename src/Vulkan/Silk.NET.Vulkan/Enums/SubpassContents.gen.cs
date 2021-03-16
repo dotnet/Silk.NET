@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSubpassContents")]
-    public enum SubpassContents
+    public enum SubpassContents : int
     {
         [NativeName("Name", "VK_SUBPASS_CONTENTS_INLINE")]
         Inline = 0,

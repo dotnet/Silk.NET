@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_USAGE")]
-    public enum Usage
+    public enum Usage : int
     {
         [NativeName("Name", "D3D11_USAGE_DEFAULT")]
         UsageDefault = 0x0,

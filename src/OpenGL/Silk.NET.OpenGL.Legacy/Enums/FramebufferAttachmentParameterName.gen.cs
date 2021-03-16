@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "FramebufferAttachmentParameterName")]
-    public enum FramebufferAttachmentParameterName
+    public enum FramebufferAttachmentParameterName : int
     {
         [NativeName("Name", "GL_FRAMEBUFFER_ATTACHMENT_COLOR_ENCODING")]
         FramebufferAttachmentColorEncoding = 0x8210,

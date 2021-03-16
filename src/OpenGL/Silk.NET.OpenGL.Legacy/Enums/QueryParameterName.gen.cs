@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "QueryParameterName")]
-    public enum QueryParameterName
+    public enum QueryParameterName : int
     {
         [NativeName("Name", "GL_QUERY_COUNTER_BITS")]
         QueryCounterBits = 0x8864,

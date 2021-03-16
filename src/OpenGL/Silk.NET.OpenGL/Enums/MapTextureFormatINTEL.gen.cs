@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "MapTextureFormatINTEL")]
-    public enum MapTextureFormatINTEL
+    public enum MapTextureFormatINTEL : int
     {
         [NativeName("Name", "GL_LAYOUT_DEFAULT_INTEL")]
         LayoutDefaultIntel = 0x0,

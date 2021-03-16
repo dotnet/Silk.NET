@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPerformanceValueTypeINTEL")]
-    public enum PerformanceValueTypeINTEL
+    public enum PerformanceValueTypeINTEL : int
     {
         [NativeName("Name", "VK_PERFORMANCE_VALUE_TYPE_UINT32_INTEL")]
         PerformanceValueTypeUint32Intel = 0,

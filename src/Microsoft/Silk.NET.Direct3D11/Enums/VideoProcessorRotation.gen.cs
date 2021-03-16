@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_VIDEO_PROCESSOR_ROTATION")]
-    public enum VideoProcessorRotation
+    public enum VideoProcessorRotation : int
     {
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_ROTATION_IDENTITY")]
         VideoProcessorRotationIdentity = 0x0,

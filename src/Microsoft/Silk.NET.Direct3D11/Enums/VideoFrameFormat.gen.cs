@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_VIDEO_FRAME_FORMAT")]
-    public enum VideoFrameFormat
+    public enum VideoFrameFormat : int
     {
         [NativeName("Name", "D3D11_VIDEO_FRAME_FORMAT_PROGRESSIVE")]
         VideoFrameFormatProgressive = 0x0,

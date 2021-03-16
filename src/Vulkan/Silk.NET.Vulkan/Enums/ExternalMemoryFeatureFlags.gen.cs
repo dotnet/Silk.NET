@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkExternalMemoryFeatureFlags")]
-    public enum ExternalMemoryFeatureFlags
+    public enum ExternalMemoryFeatureFlags : int
     {
         [NativeName("Name", "VK_EXTERNAL_MEMORY_FEATURE_DEDICATED_ONLY_BIT")]
         ExternalMemoryFeatureDedicatedOnlyBit = 1,

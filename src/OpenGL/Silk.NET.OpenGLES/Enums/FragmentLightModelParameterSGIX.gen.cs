@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "FragmentLightModelParameterSGIX")]
-    public enum FragmentLightModelParameterSGIX
+    public enum FragmentLightModelParameterSGIX : int
     {
         [NativeName("Name", "GL_FRAGMENT_LIGHT_MODEL_LOCAL_VIEWER_SGIX")]
         FragmentLightModelLocalViewerSgix = 0x8408,

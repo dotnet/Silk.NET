@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "FragmentShaderColorModMaskATI")]
-    public enum FragmentShaderColorModMaskATI
+    public enum FragmentShaderColorModMaskATI : int
     {
         [NativeName("Name", "GL_COMP_BIT_ATI")]
         CompBitAti = 0x2,

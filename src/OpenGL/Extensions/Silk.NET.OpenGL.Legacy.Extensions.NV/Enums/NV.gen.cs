@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.NV
 {
     [NativeName("Name", "GLenum")]
-    public enum NV
+    public enum NV : int
     {
         [NativeName("Name", "GL_ALPHA_TO_COVERAGE_DITHER_DEFAULT_NV")]
         AlphaToCoverageDitherDefaultNV = 0x934D,

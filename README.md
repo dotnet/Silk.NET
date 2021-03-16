@@ -53,9 +53,9 @@ In addition, the Silk.NET working group help drive larger user-facing changes pr
 
 <h1 align="center">Building from source</h1>
 
-- Make sure you have the .NET Core SDK installed
+- Make sure you have at least the .NET 5 SDK installed, preferably with Visual Studio's .NET Framework and Xamarin workloads too.
 - Clone the repository
-- Run `nuke build`
+- Run build.sh, build.cmd, build.ps1, or `nuke build`. To build for iOS and Android, add the `--feature-sets ios android` arguments.
 
 There are more advanced build actions you can do too, such as FullBuild, Pack, FullPack, among others which you can view by doing `nuke --plan`.
 

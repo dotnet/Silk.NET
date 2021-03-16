@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkPerformanceCounterStorageKHR")]
-    public enum PerformanceCounterStorageKHR
+    public enum PerformanceCounterStorageKHR : int
     {
         [NativeName("Name", "VK_PERFORMANCE_COUNTER_STORAGE_INT32_KHR")]
         PerformanceCounterStorageInt32Khr = 0,

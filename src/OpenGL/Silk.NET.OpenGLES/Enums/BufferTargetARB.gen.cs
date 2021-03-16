@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "BufferTargetARB")]
-    public enum BufferTargetARB
+    public enum BufferTargetARB : int
     {
         [NativeName("Name", "GL_PARAMETER_BUFFER")]
         ParameterBuffer = 0x80EE,

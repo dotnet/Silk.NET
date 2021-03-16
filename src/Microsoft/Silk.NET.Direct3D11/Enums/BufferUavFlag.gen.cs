@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_BUFFER_UAV_FLAG")]
-    public enum BufferUavFlag
+    public enum BufferUavFlag : int
     {
         [NativeName("Name", "D3D11_BUFFER_UAV_FLAG_RAW")]
         BufferUavFlagRaw = 0x1,

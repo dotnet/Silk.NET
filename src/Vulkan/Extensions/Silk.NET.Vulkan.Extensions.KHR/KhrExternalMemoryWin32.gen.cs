@@ -24,27 +24,27 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public const string ExtensionName = "VK_KHR_external_memory_win32";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryWin32HandleKHR")]
-        public unsafe partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetWin32HandleInfoKHR* pGetWin32HandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] IntPtr* pHandle);
+        public unsafe partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetWin32HandleInfoKHR* pGetWin32HandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] nint* pHandle);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryWin32HandleKHR")]
-        public unsafe partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetWin32HandleInfoKHR* pGetWin32HandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out IntPtr pHandle);
+        public unsafe partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetWin32HandleInfoKHR* pGetWin32HandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out nint pHandle);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryWin32HandleKHR")]
-        public unsafe partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in MemoryGetWin32HandleInfoKHR pGetWin32HandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] IntPtr* pHandle);
+        public unsafe partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in MemoryGetWin32HandleInfoKHR pGetWin32HandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] nint* pHandle);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryWin32HandleKHR")]
-        public partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in MemoryGetWin32HandleInfoKHR pGetWin32HandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out IntPtr pHandle);
+        public partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in MemoryGetWin32HandleInfoKHR pGetWin32HandleInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out nint pHandle);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryWin32HandlePropertiesKHR")]
-        public unsafe partial Result GetMemoryWin32HandleProperties([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] IntPtr handle, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryWin32HandlePropertiesKHR* pMemoryWin32HandleProperties);
+        public unsafe partial Result GetMemoryWin32HandleProperties([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] nint handle, [Count(Count = 0), Flow(FlowDirection.Out)] MemoryWin32HandlePropertiesKHR* pMemoryWin32HandleProperties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetMemoryWin32HandlePropertiesKHR")]
-        public partial Result GetMemoryWin32HandleProperties([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] IntPtr handle, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryWin32HandlePropertiesKHR pMemoryWin32HandleProperties);
+        public partial Result GetMemoryWin32HandleProperties([Count(Count = 0)] Device device, [Count(Count = 0)] ExternalMemoryHandleTypeFlags handleType, [Count(Count = 0)] nint handle, [Count(Count = 0), Flow(FlowDirection.Out)] out MemoryWin32HandlePropertiesKHR pMemoryWin32HandleProperties);
 
         public KhrExternalMemoryWin32(INativeContext ctx)
             : base(ctx)

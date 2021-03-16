@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL.Extensions.KHR
 {
     [NativeName("Name", "GLenum")]
-    public enum KHR
+    public enum KHR : int
     {
         [NativeName("Name", "CL_INVALID_D3D10_DEVICE_KHR")]
         InvalidD3D10DeviceKhr = unchecked((int)0xFFFFFFFFFFFFFC16),

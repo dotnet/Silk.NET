@@ -18,6 +18,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.XAudio
 {
+    [StructLayout(LayoutKind.Sequential, Pack = 1)]
     [NativeName("Name", "XAUDIO2FX_REVERB_I3DL2_PARAMETERS")]
     public unsafe partial struct FXReverbI3DL2Parameters
     {

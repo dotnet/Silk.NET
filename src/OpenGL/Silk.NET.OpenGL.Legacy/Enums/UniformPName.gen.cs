@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "UniformPName")]
-    public enum UniformPName
+    public enum UniformPName : int
     {
         [NativeName("Name", "GL_UNIFORM_TYPE")]
         UniformType = 0x8A37,

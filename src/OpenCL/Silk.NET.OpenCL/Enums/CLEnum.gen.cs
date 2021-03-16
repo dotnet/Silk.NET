@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenCL
 {
     [NativeName("Name", "GLenum")]
-    public enum CLEnum
+    public enum CLEnum : int
     {
         [NativeName("Name", "CL_SUCCESS")]
         Success = 0x0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DSWAPEFFECT")]
-    public enum Swapeffect
+    public enum Swapeffect : int
     {
         [NativeName("Name", "D3DSWAPEFFECT_DISCARD")]
         SwapeffectDiscard = 0x1,

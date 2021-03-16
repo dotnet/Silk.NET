@@ -4,9 +4,11 @@ on:
   push:
     paths:
       - 'src/**/*'
+      - 'build/nuke/*'
   pull_request:
     paths:
       - 'src/**/*'
+      # don't trust changes to the build system on external PRs
 
 jobs:
   Build:

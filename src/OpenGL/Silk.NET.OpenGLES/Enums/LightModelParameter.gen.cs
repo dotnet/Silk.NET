@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "LightModelParameter")]
-    public enum LightModelParameter
+    public enum LightModelParameter : int
     {
         [NativeName("Name", "GL_LIGHT_MODEL_LOCAL_VIEWER")]
         LightModelLocalViewer = 0xB51,

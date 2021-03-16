@@ -31,11 +31,23 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         [NativeApi(EntryPoint = "glDeleteSamplers")]
         public partial void DeleteSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint samplers);
 
+        [NativeApi(EntryPoint = "glDeleteSamplers")]
+        public unsafe partial void DeleteSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] Sampler* samplers);
+
+        [NativeApi(EntryPoint = "glDeleteSamplers")]
+        public partial void DeleteSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Sampler samplers);
+
         [NativeApi(EntryPoint = "glGenSamplers")]
         public unsafe partial void GenSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* samplers);
 
         [NativeApi(EntryPoint = "glGenSamplers")]
         public partial void GenSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out uint samplers);
+
+        [NativeApi(EntryPoint = "glGenSamplers")]
+        public unsafe partial void GenSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Sampler* samplers);
+
+        [NativeApi(EntryPoint = "glGenSamplers")]
+        public partial void GenSamplers([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out Sampler samplers);
 
         [NativeApi(EntryPoint = "glGetSamplerParameteriv")]
         public unsafe partial void GetSamplerParameter([Flow(FlowDirection.In)] uint sampler, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);

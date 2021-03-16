@@ -26,7 +26,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public partial void BeginVideoCapture([Flow(FlowDirection.In)] uint video_capture_slot);
 
         [NativeApi(EntryPoint = "glBindVideoCaptureStreamBufferNV")]
-        public partial void BindVideoCaptureStreamBuffer([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV frame_region, [Flow(FlowDirection.In)] IntPtr offset);
+        public partial void BindVideoCaptureStreamBuffer([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV frame_region, [Flow(FlowDirection.In)] nint offset);
 
         [NativeApi(EntryPoint = "glBindVideoCaptureStreamTextureNV")]
         public partial void BindVideoCaptureStreamTexture([Flow(FlowDirection.In)] uint video_capture_slot, [Flow(FlowDirection.In)] uint stream, [Flow(FlowDirection.In)] NV frame_region, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint texture);

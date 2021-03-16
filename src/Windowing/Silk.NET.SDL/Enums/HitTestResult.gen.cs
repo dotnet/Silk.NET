@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L1019_C9")]
     [NativeName("Name", "SDL_HitTestResult")]
-    public enum HitTestResult
+    public enum HitTestResult : int
     {
         [NativeName("Name", "SDL_HITTEST_NORMAL")]
         HittestNormal = 0x0,

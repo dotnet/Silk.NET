@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "ContextFlagMask")]
-    public enum ContextFlagMask
+    public enum ContextFlagMask : int
     {
         [NativeName("Name", "GL_CONTEXT_FLAG_FORWARD_COMPATIBLE_BIT")]
         ContextFlagForwardCompatibleBit = 0x1,

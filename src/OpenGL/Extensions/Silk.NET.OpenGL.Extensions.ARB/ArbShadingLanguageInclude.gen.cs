@@ -156,8 +156,8 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             // StringArrayOverloader
             var path = (byte**) SilkMarshal.StringArrayToPtr(pathSa);
             CompileShaderInclude(shader, count, path, length);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) path, pathSa);
-            SilkMarshal.Free((IntPtr) path);
+            SilkMarshal.CopyPtrToStringArray((nint) path, pathSa);
+            SilkMarshal.Free((nint) path);
         }
 
         public unsafe void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] pathSa, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int length)
@@ -165,8 +165,8 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             // StringArrayOverloader
             var path = (byte**) SilkMarshal.StringArrayToPtr(pathSa);
             CompileShaderInclude(shader, count, path, in length);
-            SilkMarshal.CopyPtrToStringArray((IntPtr) path, pathSa);
-            SilkMarshal.Free((IntPtr) path);
+            SilkMarshal.CopyPtrToStringArray((nint) path, pathSa);
+            SilkMarshal.Free((nint) path);
         }
 
         public unsafe void DeleteNamedString([Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte name)

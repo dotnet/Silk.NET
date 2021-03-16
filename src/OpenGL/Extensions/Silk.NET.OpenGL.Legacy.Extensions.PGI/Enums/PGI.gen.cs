@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.PGI
 {
     [NativeName("Name", "GLenum")]
-    public enum PGI
+    public enum PGI : int
     {
         [NativeName("Name", "GL_PREFER_DOUBLEBUFFER_HINT_PGI")]
         PreferDoublebufferHintPgi = 0x1A1F8,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "PointParameterNameARB")]
-    public enum PointParameterNameARB
+    public enum PointParameterNameARB : int
     {
         [NativeName("Name", "GL_POINT_SIZE_MIN_EXT")]
         PointSizeMinExt = 0x8126,

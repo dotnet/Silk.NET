@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "ListParameterName")]
-    public enum ListParameterName
+    public enum ListParameterName : int
     {
         [NativeName("Name", "GL_LIST_PRIORITY_SGIX")]
         ListPrioritySgix = 0x8182,

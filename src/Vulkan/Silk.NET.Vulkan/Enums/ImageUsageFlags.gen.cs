@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkImageUsageFlags")]
-    public enum ImageUsageFlags
+    public enum ImageUsageFlags : int
     {
         [NativeName("Name", "VK_IMAGE_USAGE_TRANSFER_SRC_BIT")]
         ImageUsageTransferSrcBit = 1,
@@ -51,5 +51,7 @@ namespace Silk.NET.Vulkan
         ImageUsageReserved17BitQCom = 131072,
         [NativeName("Name", "VK_IMAGE_USAGE_FRAGMENT_DENSITY_MAP_BIT_EXT")]
         ImageUsageFragmentDensityMapBitExt = 512,
+        [NativeName("Name", "VK_IMAGE_USAGE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
+        ImageUsageFragmentShadingRateAttachmentBitKhr = 256,
     }
 }

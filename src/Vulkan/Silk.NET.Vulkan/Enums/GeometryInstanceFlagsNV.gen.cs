@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkGeometryInstanceFlagsNV")]
-    public enum GeometryInstanceFlagsNV
+    public enum GeometryInstanceFlagsNV : int
     {
         [NativeName("Name", "VK_GEOMETRY_INSTANCE_TRIANGLE_FACING_CULL_DISABLE_BIT_KHR")]
         GeometryInstanceTriangleFacingCullDisableBitKhr = 1,

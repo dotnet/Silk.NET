@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenXR
 {
     [NativeName("Name", "XrAndroidThreadTypeKHR")]
-    public enum AndroidThreadTypeKHR
+    public enum AndroidThreadTypeKHR : int
     {
         [NativeName("Name", "XR_ANDROID_THREAD_TYPE_APPLICATION_MAIN_KHR")]
         AndroidThreadTypeApplicationMainKhr = 1,

@@ -26,7 +26,7 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.StreamDescriptorSurfaceCreateInfoGgp,
             void* pNext = null,
             uint? flags = null,
-            IntPtr? streamDescriptor = null
+            nint? streamDescriptor = null
         ) : this()
         {
             if (sType is not null)
@@ -69,6 +69,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "GgpStreamDescriptor")]
         [NativeName("Type.Name", "GgpStreamDescriptor")]
         [NativeName("Name", "streamDescriptor")]
-        public IntPtr StreamDescriptor;
+        public nint StreamDescriptor;
     }
 }

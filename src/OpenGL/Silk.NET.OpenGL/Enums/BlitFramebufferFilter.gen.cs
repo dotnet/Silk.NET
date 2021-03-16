@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "BlitFramebufferFilter")]
-    public enum BlitFramebufferFilter
+    public enum BlitFramebufferFilter : int
     {
         [NativeName("Name", "GL_NEAREST")]
         Nearest = 0x2600,

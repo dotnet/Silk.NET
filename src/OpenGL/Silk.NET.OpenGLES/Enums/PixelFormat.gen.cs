@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "PixelFormat")]
-    public enum PixelFormat
+    public enum PixelFormat : int
     {
         [NativeName("Name", "GL_UNSIGNED_SHORT")]
         UnsignedShort = 0x1403,

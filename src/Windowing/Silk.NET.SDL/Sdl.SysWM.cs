@@ -35,16 +35,16 @@ namespace Silk.NET.SDL
 
     public struct SysWMMsgWindows
     {
-        public IntPtr hwnd;
+        public nint hwnd;
 
         /**< The window for the message */
         public uint Msg;
 
         /**< The type of message */
-        public UIntPtr WParam;
+        public nuint WParam;
 
         /**< WORD message parameter */
-        public IntPtr LParam; /**< LONG message parameter */
+        public nint LParam; /**< LONG message parameter */
     }
 
     public struct SysWMMsgX11
@@ -154,13 +154,13 @@ namespace Silk.NET.SDL
 
     public struct SysWMInfoWindows
     {
-        public IntPtr Hwnd;
+        public nint Hwnd;
 
         /**< The window handle */
-        public IntPtr HDC;
+        public nint HDC;
 
         /**< The window device context */
-        public IntPtr HInstance; /**< The instance handle */
+        public nint HInstance; /**< The instance handle */
     }
 
     public struct SysWMInfoVivante

@@ -23,7 +23,7 @@ namespace Silk.NET.Assimp
     {
         public ExportDataBlob
         (
-            uint? size = null,
+            nuint? size = null,
             void* data = null,
             AssimpString? name = null,
             ExportDataBlob* next = null
@@ -54,7 +54,7 @@ namespace Silk.NET.Assimp
         [NativeName("Type", "size_t")]
         [NativeName("Type.Name", "size_t")]
         [NativeName("Name", "size")]
-        public uint Size;
+        public nuint Size;
 
         [NativeName("Type", "void *")]
         [NativeName("Type.Name", "void *")]

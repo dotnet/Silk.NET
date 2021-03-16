@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "ListMode")]
-    public enum ListMode
+    public enum ListMode : int
     {
     }
 }

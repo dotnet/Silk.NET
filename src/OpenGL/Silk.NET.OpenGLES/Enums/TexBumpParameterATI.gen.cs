@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "TexBumpParameterATI")]
-    public enum TexBumpParameterATI
+    public enum TexBumpParameterATI : int
     {
         [NativeName("Name", "GL_BUMP_ROT_MATRIX_ATI")]
         BumpRotMatrixAti = 0x8775,

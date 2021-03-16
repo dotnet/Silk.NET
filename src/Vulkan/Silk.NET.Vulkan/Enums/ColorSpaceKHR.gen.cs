@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkColorSpaceKHR")]
-    public enum ColorSpaceKHR
+    public enum ColorSpaceKHR : int
     {
         [NativeName("Name", "VK_COLOR_SPACE_SRGB_NONLINEAR_KHR")]
         ColorSpaceSrgbNonlinearKhr = 0,

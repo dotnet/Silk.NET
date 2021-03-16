@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "FramebufferStatus")]
-    public enum FramebufferStatus
+    public enum FramebufferStatus : int
     {
         [NativeName("Name", "GL_FRAMEBUFFER_UNDEFINED")]
         FramebufferUndefined = 0x8219,

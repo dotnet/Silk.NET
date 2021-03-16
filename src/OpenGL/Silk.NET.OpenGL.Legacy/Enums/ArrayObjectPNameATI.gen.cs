@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "ArrayObjectPNameATI")]
-    public enum ArrayObjectPNameATI
+    public enum ArrayObjectPNameATI : int
     {
         [NativeName("Name", "GL_OBJECT_BUFFER_SIZE_ATI")]
         ObjectBufferSizeAti = 0x8764,

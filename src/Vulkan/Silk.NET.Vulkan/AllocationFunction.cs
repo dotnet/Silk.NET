@@ -9,7 +9,7 @@ namespace Silk.NET.Vulkan
 {
     public unsafe delegate void* AllocationFunction(
         void* pUserData,
-        UIntPtr size,
-        UIntPtr alignment,
+        nuint size,
+        nuint alignment,
         SystemAllocationScope allocationScope);
 }

@@ -35,123 +35,123 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe int SetMemoryFunctions<T0>(this Sdl thisApi, void* malloc_func, void* calloc_func, void* realloc_func, Span<T0> free_func) where T0 : unmanaged
+        [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
-            return thisApi.SetMemoryFunctions(malloc_func, calloc_func, realloc_func, ref free_func.GetPinnableReference());
+            thisApi.GetMemoryFunctions(malloc_func, calloc_func, realloc_func, ref free_func.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe int SetMemoryFunctions<T0>(this Sdl thisApi, void* malloc_func, void* calloc_func, Span<T0> realloc_func, void* free_func) where T0 : unmanaged
+        [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, Span<PfnReallocFunc> realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
-            return thisApi.SetMemoryFunctions(malloc_func, calloc_func, ref realloc_func.GetPinnableReference(), free_func);
+            thisApi.GetMemoryFunctions(malloc_func, calloc_func, ref realloc_func.GetPinnableReference(), free_func);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe int SetMemoryFunctions<T0, T1>(this Sdl thisApi, void* malloc_func, void* calloc_func, Span<T0> realloc_func, Span<T1> free_func) where T0 : unmanaged where T1 : unmanaged
+        [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, PfnCallocFunc* calloc_func, Span<PfnReallocFunc> realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
-            return thisApi.SetMemoryFunctions(malloc_func, calloc_func, ref realloc_func.GetPinnableReference(), ref free_func.GetPinnableReference());
+            thisApi.GetMemoryFunctions(malloc_func, calloc_func, ref realloc_func.GetPinnableReference(), ref free_func.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe int SetMemoryFunctions<T0>(this Sdl thisApi, void* malloc_func, Span<T0> calloc_func, void* realloc_func, void* free_func) where T0 : unmanaged
+        [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, Span<PfnCallocFunc> calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
-            return thisApi.SetMemoryFunctions(malloc_func, ref calloc_func.GetPinnableReference(), realloc_func, free_func);
+            thisApi.GetMemoryFunctions(malloc_func, ref calloc_func.GetPinnableReference(), realloc_func, free_func);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe int SetMemoryFunctions<T0, T1>(this Sdl thisApi, void* malloc_func, Span<T0> calloc_func, void* realloc_func, Span<T1> free_func) where T0 : unmanaged where T1 : unmanaged
+        [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, Span<PfnCallocFunc> calloc_func, PfnReallocFunc* realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
-            return thisApi.SetMemoryFunctions(malloc_func, ref calloc_func.GetPinnableReference(), realloc_func, ref free_func.GetPinnableReference());
+            thisApi.GetMemoryFunctions(malloc_func, ref calloc_func.GetPinnableReference(), realloc_func, ref free_func.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe int SetMemoryFunctions<T0, T1>(this Sdl thisApi, void* malloc_func, Span<T0> calloc_func, Span<T1> realloc_func, void* free_func) where T0 : unmanaged where T1 : unmanaged
+        [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, Span<PfnCallocFunc> calloc_func, Span<PfnReallocFunc> realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
-            return thisApi.SetMemoryFunctions(malloc_func, ref calloc_func.GetPinnableReference(), ref realloc_func.GetPinnableReference(), free_func);
+            thisApi.GetMemoryFunctions(malloc_func, ref calloc_func.GetPinnableReference(), ref realloc_func.GetPinnableReference(), free_func);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe int SetMemoryFunctions<T0, T1, T2>(this Sdl thisApi, void* malloc_func, Span<T0> calloc_func, Span<T1> realloc_func, Span<T2> free_func) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, PfnMallocFunc* malloc_func, Span<PfnCallocFunc> calloc_func, Span<PfnReallocFunc> realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
-            return thisApi.SetMemoryFunctions(malloc_func, ref calloc_func.GetPinnableReference(), ref realloc_func.GetPinnableReference(), ref free_func.GetPinnableReference());
+            thisApi.GetMemoryFunctions(malloc_func, ref calloc_func.GetPinnableReference(), ref realloc_func.GetPinnableReference(), ref free_func.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe int SetMemoryFunctions<T0>(this Sdl thisApi, Span<T0> malloc_func, void* calloc_func, void* realloc_func, void* free_func) where T0 : unmanaged
+        [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
-            return thisApi.SetMemoryFunctions(ref malloc_func.GetPinnableReference(), calloc_func, realloc_func, free_func);
+            thisApi.GetMemoryFunctions(ref malloc_func.GetPinnableReference(), calloc_func, realloc_func, free_func);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe int SetMemoryFunctions<T0, T1>(this Sdl thisApi, Span<T0> malloc_func, void* calloc_func, void* realloc_func, Span<T1> free_func) where T0 : unmanaged where T1 : unmanaged
+        [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, PfnCallocFunc* calloc_func, PfnReallocFunc* realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
-            return thisApi.SetMemoryFunctions(ref malloc_func.GetPinnableReference(), calloc_func, realloc_func, ref free_func.GetPinnableReference());
+            thisApi.GetMemoryFunctions(ref malloc_func.GetPinnableReference(), calloc_func, realloc_func, ref free_func.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe int SetMemoryFunctions<T0, T1>(this Sdl thisApi, Span<T0> malloc_func, void* calloc_func, Span<T1> realloc_func, void* free_func) where T0 : unmanaged where T1 : unmanaged
+        [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, PfnCallocFunc* calloc_func, Span<PfnReallocFunc> realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
-            return thisApi.SetMemoryFunctions(ref malloc_func.GetPinnableReference(), calloc_func, ref realloc_func.GetPinnableReference(), free_func);
+            thisApi.GetMemoryFunctions(ref malloc_func.GetPinnableReference(), calloc_func, ref realloc_func.GetPinnableReference(), free_func);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe int SetMemoryFunctions<T0, T1, T2>(this Sdl thisApi, Span<T0> malloc_func, void* calloc_func, Span<T1> realloc_func, Span<T2> free_func) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, PfnCallocFunc* calloc_func, Span<PfnReallocFunc> realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
-            return thisApi.SetMemoryFunctions(ref malloc_func.GetPinnableReference(), calloc_func, ref realloc_func.GetPinnableReference(), ref free_func.GetPinnableReference());
+            thisApi.GetMemoryFunctions(ref malloc_func.GetPinnableReference(), calloc_func, ref realloc_func.GetPinnableReference(), ref free_func.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe int SetMemoryFunctions<T0, T1>(this Sdl thisApi, Span<T0> malloc_func, Span<T1> calloc_func, void* realloc_func, void* free_func) where T0 : unmanaged where T1 : unmanaged
+        [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, Span<PfnCallocFunc> calloc_func, PfnReallocFunc* realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
-            return thisApi.SetMemoryFunctions(ref malloc_func.GetPinnableReference(), ref calloc_func.GetPinnableReference(), realloc_func, free_func);
+            thisApi.GetMemoryFunctions(ref malloc_func.GetPinnableReference(), ref calloc_func.GetPinnableReference(), realloc_func, free_func);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe int SetMemoryFunctions<T0, T1, T2>(this Sdl thisApi, Span<T0> malloc_func, Span<T1> calloc_func, void* realloc_func, Span<T2> free_func) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, Span<PfnCallocFunc> calloc_func, PfnReallocFunc* realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
-            return thisApi.SetMemoryFunctions(ref malloc_func.GetPinnableReference(), ref calloc_func.GetPinnableReference(), realloc_func, ref free_func.GetPinnableReference());
+            thisApi.GetMemoryFunctions(ref malloc_func.GetPinnableReference(), ref calloc_func.GetPinnableReference(), realloc_func, ref free_func.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe int SetMemoryFunctions<T0, T1, T2>(this Sdl thisApi, Span<T0> malloc_func, Span<T1> calloc_func, Span<T2> realloc_func, void* free_func) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, Span<PfnCallocFunc> calloc_func, Span<PfnReallocFunc> realloc_func, PfnFreeFunc* free_func)
         {
             // SpanOverloader
-            return thisApi.SetMemoryFunctions(ref malloc_func.GetPinnableReference(), ref calloc_func.GetPinnableReference(), ref realloc_func.GetPinnableReference(), free_func);
+            thisApi.GetMemoryFunctions(ref malloc_func.GetPinnableReference(), ref calloc_func.GetPinnableReference(), ref realloc_func.GetPinnableReference(), free_func);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 387, Column 29 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe int SetMemoryFunctions<T0, T1, T2, T3>(this Sdl thisApi, Span<T0> malloc_func, Span<T1> calloc_func, Span<T2> realloc_func, Span<T3> free_func) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged where T3 : unmanaged
+        [NativeName("Src", "Line 374, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
+        public static unsafe void GetMemoryFunctions(this Sdl thisApi, Span<PfnMallocFunc> malloc_func, Span<PfnCallocFunc> calloc_func, Span<PfnReallocFunc> realloc_func, Span<PfnFreeFunc> free_func)
         {
             // SpanOverloader
-            return thisApi.SetMemoryFunctions(ref malloc_func.GetPinnableReference(), ref calloc_func.GetPinnableReference(), ref realloc_func.GetPinnableReference(), ref free_func.GetPinnableReference());
+            thisApi.GetMemoryFunctions(ref malloc_func.GetPinnableReference(), ref calloc_func.GetPinnableReference(), ref realloc_func.GetPinnableReference(), ref free_func.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -204,26 +204,10 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 400, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe void Qsort<T0>(this Sdl thisApi, void* @base, uint nmemb, uint size, Span<T0> compare) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.Qsort(@base, nmemb, size, ref compare.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 400, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe void Qsort<T0>(this Sdl thisApi, Span<T0> @base, uint nmemb, uint size, void* compare) where T0 : unmanaged
+        public static unsafe void Qsort<T0>(this Sdl thisApi, Span<T0> @base, uint nmemb, uint size, PfnVvVvI compare) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.Qsort(ref @base.GetPinnableReference(), nmemb, size, compare);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 400, Column 30 in build/submodules/SDL-mirror/include/SDL_stdinc.h")]
-        public static unsafe void Qsort<T0, T1>(this Sdl thisApi, Span<T0> @base, uint nmemb, uint size, Span<T1> compare) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.Qsort(ref @base.GetPinnableReference(), nmemb, size, ref compare.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -6964,7 +6948,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        public static unsafe int SetWindowHitTest<T0>(this Sdl thisApi, Window* window, void* callback, Span<T0> callback_data) where T0 : unmanaged
+        public static unsafe int SetWindowHitTest<T0>(this Sdl thisApi, Window* window, PfnHitTest callback, Span<T0> callback_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.SetWindowHitTest(window, callback, ref callback_data.GetPinnableReference());
@@ -6972,23 +6956,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        public static unsafe int SetWindowHitTest<T0>(this Sdl thisApi, Window* window, Span<T0> callback, void* callback_data) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetWindowHitTest(window, ref callback.GetPinnableReference(), callback_data);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        public static unsafe int SetWindowHitTest<T0, T1>(this Sdl thisApi, Window* window, Span<T0> callback, Span<T1> callback_data) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetWindowHitTest(window, ref callback.GetPinnableReference(), ref callback_data.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        public static unsafe int SetWindowHitTest(this Sdl thisApi, Span<Window> window, void* callback, void* callback_data)
+        public static unsafe int SetWindowHitTest(this Sdl thisApi, Span<Window> window, PfnHitTest callback, void* callback_data)
         {
             // SpanOverloader
             return thisApi.SetWindowHitTest(ref window.GetPinnableReference(), callback, callback_data);
@@ -6996,26 +6964,10 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        public static unsafe int SetWindowHitTest<T0>(this Sdl thisApi, Span<Window> window, void* callback, Span<T0> callback_data) where T0 : unmanaged
+        public static unsafe int SetWindowHitTest<T0>(this Sdl thisApi, Span<Window> window, PfnHitTest callback, Span<T0> callback_data) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.SetWindowHitTest(ref window.GetPinnableReference(), callback, ref callback_data.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        public static unsafe int SetWindowHitTest<T0>(this Sdl thisApi, Span<Window> window, Span<T0> callback, void* callback_data) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetWindowHitTest(ref window.GetPinnableReference(), ref callback.GetPinnableReference(), callback_data);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1079, Column 29 in build/submodules/SDL-mirror/include\\SDL_video.h")]
-        public static unsafe int SetWindowHitTest<T0, T1>(this Sdl thisApi, Span<Window> window, Span<T0> callback, Span<T1> callback_data) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.SetWindowHitTest(ref window.GetPinnableReference(), ref callback.GetPinnableReference(), ref callback_data.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -7337,44 +7289,10 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 154, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
         [ExcludeFromOverride(0)]
-        public static unsafe int WinRTRunApp<T0>(this Sdl thisApi, void* mainFunction, Span<T0> reserved) where T0 : unmanaged
+        public static unsafe int WinRTRunApp<T0>(this Sdl thisApi, PfnMainFunc mainFunction, Span<T0> reserved) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.WinRTRunApp(mainFunction, ref reserved.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 154, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        [ExcludeFromOverride(0)]
-        public static unsafe int WinRTRunApp<T0>(this Sdl thisApi, Span<T0> mainFunction, void* reserved) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.WinRTRunApp(ref mainFunction.GetPinnableReference(), reserved);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 154, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        [ExcludeFromOverride(0)]
-        public static unsafe int WinRTRunApp<T0, T1>(this Sdl thisApi, Span<T0> mainFunction, Span<T1> reserved) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.WinRTRunApp(ref mainFunction.GetPinnableReference(), ref reserved.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 168, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        public static unsafe int UIKitRunApp<T0>(this Sdl thisApi, int argc, byte** argv, Span<T0> mainFunction) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.UIKitRunApp(argc, argv, ref mainFunction.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 168, Column 29 in build/submodules/SDL-mirror/include\\SDL_main.h")]
-        public static unsafe int UIKitRunApp<T0>(this Sdl thisApi, int argc, ref byte* argv, Span<T0> mainFunction) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.UIKitRunApp(argc, ref argv, ref mainFunction.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -7491,26 +7409,10 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 211, Column 30 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
-        public static unsafe void SetAssertionHandler<T0>(this Sdl thisApi, void* handler, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void SetAssertionHandler<T0>(this Sdl thisApi, PfnAssertionHandler handler, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.SetAssertionHandler(handler, ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 211, Column 30 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
-        public static unsafe void SetAssertionHandler<T0>(this Sdl thisApi, Span<T0> handler, void* userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.SetAssertionHandler(ref handler.GetPinnableReference(), userdata);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 211, Column 30 in build/submodules/SDL-mirror/include\\SDL_assert.h")]
-        public static unsafe void SetAssertionHandler<T0, T1>(this Sdl thisApi, Span<T0> handler, Span<T1> userdata) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.SetAssertionHandler(ref handler.GetPinnableReference(), ref userdata.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -7787,31 +7689,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, void* fn, byte* name, void* data, void* pfnBeginThread, Span<T0> pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(fn, name, data, pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, void* fn, byte* name, void* data, Span<T0> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(fn, name, data, ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1>(this Sdl thisApi, void* fn, byte* name, void* data, Span<T0> pfnBeginThread, Span<T1> pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(fn, name, data, ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, void* fn, byte* name, Span<T0> data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged
+        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, PfnThreadFunction fn, byte* name, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateThread(fn, name, ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
@@ -7819,31 +7697,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1>(this Sdl thisApi, void* fn, byte* name, Span<T0> data, void* pfnBeginThread, Span<T1> pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(fn, name, ref data.GetPinnableReference(), pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1>(this Sdl thisApi, void* fn, byte* name, Span<T0> data, Span<T1> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(fn, name, ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1, T2>(this Sdl thisApi, void* fn, byte* name, Span<T0> data, Span<T1> pfnBeginThread, Span<T2> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(fn, name, ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread(this Sdl thisApi, void* fn, Span<byte> name, void* data, void* pfnBeginThread, void* pfnEndThread)
+        public static unsafe Thread* CreateThread(this Sdl thisApi, PfnThreadFunction fn, Span<byte> name, void* data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread)
         {
             // SpanOverloader
             return thisApi.CreateThread(fn, ref name.GetPinnableReference(), data, pfnBeginThread, pfnEndThread);
@@ -7851,31 +7705,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, void* fn, Span<byte> name, void* data, void* pfnBeginThread, Span<T0> pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(fn, ref name.GetPinnableReference(), data, pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, void* fn, Span<byte> name, void* data, Span<T0> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(fn, ref name.GetPinnableReference(), data, ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1>(this Sdl thisApi, void* fn, Span<byte> name, void* data, Span<T0> pfnBeginThread, Span<T1> pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(fn, ref name.GetPinnableReference(), data, ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, void* fn, Span<byte> name, Span<T0> data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged
+        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, PfnThreadFunction fn, Span<byte> name, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateThread(fn, ref name.GetPinnableReference(), ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
@@ -7883,303 +7713,15 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1>(this Sdl thisApi, void* fn, Span<byte> name, Span<T0> data, void* pfnBeginThread, Span<T1> pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(fn, ref name.GetPinnableReference(), ref data.GetPinnableReference(), pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1>(this Sdl thisApi, void* fn, Span<byte> name, Span<T0> data, Span<T1> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(fn, ref name.GetPinnableReference(), ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1, T2>(this Sdl thisApi, void* fn, Span<byte> name, Span<T0> data, Span<T1> pfnBeginThread, Span<T2> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(fn, ref name.GetPinnableReference(), ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, void* fn, string name, void* data, void* pfnBeginThread, Span<T0> pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(fn, name, data, pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, void* fn, string name, void* data, Span<T0> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(fn, name, data, ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1>(this Sdl thisApi, void* fn, string name, void* data, Span<T0> pfnBeginThread, Span<T1> pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(fn, name, data, ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, void* fn, string name, Span<T0> data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged
+        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, PfnThreadFunction fn, string name, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateThread(fn, name, ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1>(this Sdl thisApi, void* fn, string name, Span<T0> data, void* pfnBeginThread, Span<T1> pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(fn, name, ref data.GetPinnableReference(), pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1>(this Sdl thisApi, void* fn, string name, Span<T0> data, Span<T1> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(fn, name, ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1, T2>(this Sdl thisApi, void* fn, string name, Span<T0> data, Span<T1> pfnBeginThread, Span<T2> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(fn, name, ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, Span<T0> fn, byte* name, void* data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), name, data, pfnBeginThread, pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1>(this Sdl thisApi, Span<T0> fn, byte* name, void* data, void* pfnBeginThread, Span<T1> pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), name, data, pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1>(this Sdl thisApi, Span<T0> fn, byte* name, void* data, Span<T1> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), name, data, ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1, T2>(this Sdl thisApi, Span<T0> fn, byte* name, void* data, Span<T1> pfnBeginThread, Span<T2> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), name, data, ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1>(this Sdl thisApi, Span<T0> fn, byte* name, Span<T1> data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), name, ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1, T2>(this Sdl thisApi, Span<T0> fn, byte* name, Span<T1> data, void* pfnBeginThread, Span<T2> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), name, ref data.GetPinnableReference(), pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1, T2>(this Sdl thisApi, Span<T0> fn, byte* name, Span<T1> data, Span<T2> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), name, ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1, T2, T3>(this Sdl thisApi, Span<T0> fn, byte* name, Span<T1> data, Span<T2> pfnBeginThread, Span<T3> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged where T3 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), name, ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, Span<T0> fn, Span<byte> name, void* data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), ref name.GetPinnableReference(), data, pfnBeginThread, pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1>(this Sdl thisApi, Span<T0> fn, Span<byte> name, void* data, void* pfnBeginThread, Span<T1> pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), ref name.GetPinnableReference(), data, pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1>(this Sdl thisApi, Span<T0> fn, Span<byte> name, void* data, Span<T1> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), ref name.GetPinnableReference(), data, ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1, T2>(this Sdl thisApi, Span<T0> fn, Span<byte> name, void* data, Span<T1> pfnBeginThread, Span<T2> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), ref name.GetPinnableReference(), data, ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1>(this Sdl thisApi, Span<T0> fn, Span<byte> name, Span<T1> data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), ref name.GetPinnableReference(), ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1, T2>(this Sdl thisApi, Span<T0> fn, Span<byte> name, Span<T1> data, void* pfnBeginThread, Span<T2> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), ref name.GetPinnableReference(), ref data.GetPinnableReference(), pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1, T2>(this Sdl thisApi, Span<T0> fn, Span<byte> name, Span<T1> data, Span<T2> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), ref name.GetPinnableReference(), ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1, T2, T3>(this Sdl thisApi, Span<T0> fn, Span<byte> name, Span<T1> data, Span<T2> pfnBeginThread, Span<T3> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged where T3 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), ref name.GetPinnableReference(), ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0>(this Sdl thisApi, Span<T0> fn, string name, void* data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), name, data, pfnBeginThread, pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1>(this Sdl thisApi, Span<T0> fn, string name, void* data, void* pfnBeginThread, Span<T1> pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), name, data, pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1>(this Sdl thisApi, Span<T0> fn, string name, void* data, Span<T1> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), name, data, ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1, T2>(this Sdl thisApi, Span<T0> fn, string name, void* data, Span<T1> pfnBeginThread, Span<T2> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), name, data, ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1>(this Sdl thisApi, Span<T0> fn, string name, Span<T1> data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), name, ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1, T2>(this Sdl thisApi, Span<T0> fn, string name, Span<T1> data, void* pfnBeginThread, Span<T2> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), name, ref data.GetPinnableReference(), pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1, T2>(this Sdl thisApi, Span<T0> fn, string name, Span<T1> data, Span<T2> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), name, ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 112, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThread<T0, T1, T2, T3>(this Sdl thisApi, Span<T0> fn, string name, Span<T1> data, Span<T2> pfnBeginThread, Span<T3> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged where T3 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThread(ref fn.GetPinnableReference(), name, ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, void* fn, byte* name, uint stacksize, void* data, void* pfnBeginThread, Span<T0> pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, name, stacksize, data, pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, void* fn, byte* name, uint stacksize, void* data, Span<T0> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, name, stacksize, data, ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1>(this Sdl thisApi, void* fn, byte* name, uint stacksize, void* data, Span<T0> pfnBeginThread, Span<T1> pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, name, stacksize, data, ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, void* fn, byte* name, uint stacksize, Span<T0> data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged
+        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, PfnThreadFunction fn, byte* name, uint stacksize, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateThreadWithStackSize(fn, name, stacksize, ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
@@ -8187,31 +7729,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1>(this Sdl thisApi, void* fn, byte* name, uint stacksize, Span<T0> data, void* pfnBeginThread, Span<T1> pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, name, stacksize, ref data.GetPinnableReference(), pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1>(this Sdl thisApi, void* fn, byte* name, uint stacksize, Span<T0> data, Span<T1> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, name, stacksize, ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1, T2>(this Sdl thisApi, void* fn, byte* name, uint stacksize, Span<T0> data, Span<T1> pfnBeginThread, Span<T2> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, name, stacksize, ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize(this Sdl thisApi, void* fn, Span<byte> name, uint stacksize, void* data, void* pfnBeginThread, void* pfnEndThread)
+        public static unsafe Thread* CreateThreadWithStackSize(this Sdl thisApi, PfnThreadFunction fn, Span<byte> name, uint stacksize, void* data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread)
         {
             // SpanOverloader
             return thisApi.CreateThreadWithStackSize(fn, ref name.GetPinnableReference(), stacksize, data, pfnBeginThread, pfnEndThread);
@@ -8219,31 +7737,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, void* fn, Span<byte> name, uint stacksize, void* data, void* pfnBeginThread, Span<T0> pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, ref name.GetPinnableReference(), stacksize, data, pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, void* fn, Span<byte> name, uint stacksize, void* data, Span<T0> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, ref name.GetPinnableReference(), stacksize, data, ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1>(this Sdl thisApi, void* fn, Span<byte> name, uint stacksize, void* data, Span<T0> pfnBeginThread, Span<T1> pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, ref name.GetPinnableReference(), stacksize, data, ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, void* fn, Span<byte> name, uint stacksize, Span<T0> data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged
+        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, PfnThreadFunction fn, Span<byte> name, uint stacksize, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateThreadWithStackSize(fn, ref name.GetPinnableReference(), stacksize, ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
@@ -8251,274 +7745,10 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1>(this Sdl thisApi, void* fn, Span<byte> name, uint stacksize, Span<T0> data, void* pfnBeginThread, Span<T1> pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, ref name.GetPinnableReference(), stacksize, ref data.GetPinnableReference(), pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1>(this Sdl thisApi, void* fn, Span<byte> name, uint stacksize, Span<T0> data, Span<T1> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, ref name.GetPinnableReference(), stacksize, ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1, T2>(this Sdl thisApi, void* fn, Span<byte> name, uint stacksize, Span<T0> data, Span<T1> pfnBeginThread, Span<T2> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, ref name.GetPinnableReference(), stacksize, ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, void* fn, string name, uint stacksize, void* data, void* pfnBeginThread, Span<T0> pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, name, stacksize, data, pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, void* fn, string name, uint stacksize, void* data, Span<T0> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, name, stacksize, data, ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1>(this Sdl thisApi, void* fn, string name, uint stacksize, void* data, Span<T0> pfnBeginThread, Span<T1> pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, name, stacksize, data, ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, void* fn, string name, uint stacksize, Span<T0> data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged
+        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, PfnThreadFunction fn, string name, uint stacksize, Span<T0> data, PfnSDLCurrentBeginThread pfnBeginThread, PfnSDLCurrentEndThread pfnEndThread) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.CreateThreadWithStackSize(fn, name, stacksize, ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1>(this Sdl thisApi, void* fn, string name, uint stacksize, Span<T0> data, void* pfnBeginThread, Span<T1> pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, name, stacksize, ref data.GetPinnableReference(), pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1>(this Sdl thisApi, void* fn, string name, uint stacksize, Span<T0> data, Span<T1> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, name, stacksize, ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1, T2>(this Sdl thisApi, void* fn, string name, uint stacksize, Span<T0> data, Span<T1> pfnBeginThread, Span<T2> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(fn, name, stacksize, ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, Span<T0> fn, byte* name, uint stacksize, void* data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), name, stacksize, data, pfnBeginThread, pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1>(this Sdl thisApi, Span<T0> fn, byte* name, uint stacksize, void* data, void* pfnBeginThread, Span<T1> pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), name, stacksize, data, pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1>(this Sdl thisApi, Span<T0> fn, byte* name, uint stacksize, void* data, Span<T1> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), name, stacksize, data, ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1, T2>(this Sdl thisApi, Span<T0> fn, byte* name, uint stacksize, void* data, Span<T1> pfnBeginThread, Span<T2> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), name, stacksize, data, ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1>(this Sdl thisApi, Span<T0> fn, byte* name, uint stacksize, Span<T1> data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), name, stacksize, ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1, T2>(this Sdl thisApi, Span<T0> fn, byte* name, uint stacksize, Span<T1> data, void* pfnBeginThread, Span<T2> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), name, stacksize, ref data.GetPinnableReference(), pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1, T2>(this Sdl thisApi, Span<T0> fn, byte* name, uint stacksize, Span<T1> data, Span<T2> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), name, stacksize, ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1, T2, T3>(this Sdl thisApi, Span<T0> fn, byte* name, uint stacksize, Span<T1> data, Span<T2> pfnBeginThread, Span<T3> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged where T3 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), name, stacksize, ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, Span<T0> fn, Span<byte> name, uint stacksize, void* data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), ref name.GetPinnableReference(), stacksize, data, pfnBeginThread, pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1>(this Sdl thisApi, Span<T0> fn, Span<byte> name, uint stacksize, void* data, void* pfnBeginThread, Span<T1> pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), ref name.GetPinnableReference(), stacksize, data, pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1>(this Sdl thisApi, Span<T0> fn, Span<byte> name, uint stacksize, void* data, Span<T1> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), ref name.GetPinnableReference(), stacksize, data, ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1, T2>(this Sdl thisApi, Span<T0> fn, Span<byte> name, uint stacksize, void* data, Span<T1> pfnBeginThread, Span<T2> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), ref name.GetPinnableReference(), stacksize, data, ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1>(this Sdl thisApi, Span<T0> fn, Span<byte> name, uint stacksize, Span<T1> data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), ref name.GetPinnableReference(), stacksize, ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1, T2>(this Sdl thisApi, Span<T0> fn, Span<byte> name, uint stacksize, Span<T1> data, void* pfnBeginThread, Span<T2> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), ref name.GetPinnableReference(), stacksize, ref data.GetPinnableReference(), pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1, T2>(this Sdl thisApi, Span<T0> fn, Span<byte> name, uint stacksize, Span<T1> data, Span<T2> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), ref name.GetPinnableReference(), stacksize, ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1, T2, T3>(this Sdl thisApi, Span<T0> fn, Span<byte> name, uint stacksize, Span<T1> data, Span<T2> pfnBeginThread, Span<T3> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged where T3 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), ref name.GetPinnableReference(), stacksize, ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0>(this Sdl thisApi, Span<T0> fn, string name, uint stacksize, void* data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), name, stacksize, data, pfnBeginThread, pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1>(this Sdl thisApi, Span<T0> fn, string name, uint stacksize, void* data, void* pfnBeginThread, Span<T1> pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), name, stacksize, data, pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1>(this Sdl thisApi, Span<T0> fn, string name, uint stacksize, void* data, Span<T1> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), name, stacksize, data, ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1, T2>(this Sdl thisApi, Span<T0> fn, string name, uint stacksize, void* data, Span<T1> pfnBeginThread, Span<T2> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), name, stacksize, data, ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1>(this Sdl thisApi, Span<T0> fn, string name, uint stacksize, Span<T1> data, void* pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), name, stacksize, ref data.GetPinnableReference(), pfnBeginThread, pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1, T2>(this Sdl thisApi, Span<T0> fn, string name, uint stacksize, Span<T1> data, void* pfnBeginThread, Span<T2> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), name, stacksize, ref data.GetPinnableReference(), pfnBeginThread, ref pfnEndThread.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1, T2>(this Sdl thisApi, Span<T0> fn, string name, uint stacksize, Span<T1> data, Span<T2> pfnBeginThread, void* pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), name, stacksize, ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), pfnEndThread);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 117, Column 1 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe Thread* CreateThreadWithStackSize<T0, T1, T2, T3>(this Sdl thisApi, Span<T0> fn, string name, uint stacksize, Span<T1> data, Span<T2> pfnBeginThread, Span<T3> pfnEndThread) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged where T3 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.CreateThreadWithStackSize(ref fn.GetPinnableReference(), name, stacksize, ref data.GetPinnableReference(), ref pfnBeginThread.GetPinnableReference(), ref pfnEndThread.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -8571,26 +7801,10 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 350, Column 29 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe int TLSSet<T0>(this Sdl thisApi, uint id, void* value, Span<T0> destructor) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.TLSSet(id, value, ref destructor.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 350, Column 29 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe int TLSSet<T0>(this Sdl thisApi, uint id, Span<T0> value, void* destructor) where T0 : unmanaged
+        public static unsafe int TLSSet<T0>(this Sdl thisApi, uint id, Span<T0> value, PfnFreeFunc destructor) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.TLSSet(id, ref value.GetPinnableReference(), destructor);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 350, Column 29 in build/submodules/SDL-mirror/include\\SDL_thread.h")]
-        public static unsafe int TLSSet<T0, T1>(this Sdl thisApi, uint id, Span<T0> value, Span<T1> destructor) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.TLSSet(id, ref value.GetPinnableReference(), ref destructor.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -9699,98 +8913,50 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 727, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
-        public static unsafe void SetEventFilter<T0>(this Sdl thisApi, void* filter, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void SetEventFilter<T0>(this Sdl thisApi, PfnEventFilter filter, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.SetEventFilter(filter, ref userdata.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 727, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
-        public static unsafe void SetEventFilter<T0>(this Sdl thisApi, Span<T0> filter, void* userdata) where T0 : unmanaged
+        [NativeName("Src", "Line 734, Column 34 in build/submodules/SDL-mirror/include\\SDL_events.h")]
+        public static unsafe SdlBool GetEventFilter(this Sdl thisApi, Span<PfnEventFilter> filter, void** userdata)
         {
             // SpanOverloader
-            thisApi.SetEventFilter(ref filter.GetPinnableReference(), userdata);
+            return thisApi.GetEventFilter(ref filter.GetPinnableReference(), userdata);
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 727, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
-        public static unsafe void SetEventFilter<T0, T1>(this Sdl thisApi, Span<T0> filter, Span<T1> userdata) where T0 : unmanaged where T1 : unmanaged
+        [NativeName("Src", "Line 734, Column 34 in build/submodules/SDL-mirror/include\\SDL_events.h")]
+        public static unsafe SdlBool GetEventFilter(this Sdl thisApi, Span<PfnEventFilter> filter, ref void* userdata)
         {
             // SpanOverloader
-            thisApi.SetEventFilter(ref filter.GetPinnableReference(), ref userdata.GetPinnableReference());
+            return thisApi.GetEventFilter(ref filter.GetPinnableReference(), ref userdata);
         }
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 740, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
-        public static unsafe void AddEventWatch<T0>(this Sdl thisApi, void* filter, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void AddEventWatch<T0>(this Sdl thisApi, PfnEventFilter filter, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.AddEventWatch(filter, ref userdata.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 740, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
-        public static unsafe void AddEventWatch<T0>(this Sdl thisApi, Span<T0> filter, void* userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.AddEventWatch(ref filter.GetPinnableReference(), userdata);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 740, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
-        public static unsafe void AddEventWatch<T0, T1>(this Sdl thisApi, Span<T0> filter, Span<T1> userdata) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.AddEventWatch(ref filter.GetPinnableReference(), ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 746, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
-        public static unsafe void DelEventWatch<T0>(this Sdl thisApi, void* filter, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void DelEventWatch<T0>(this Sdl thisApi, PfnEventFilter filter, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.DelEventWatch(filter, ref userdata.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 746, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
-        public static unsafe void DelEventWatch<T0>(this Sdl thisApi, Span<T0> filter, void* userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.DelEventWatch(ref filter.GetPinnableReference(), userdata);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 746, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
-        public static unsafe void DelEventWatch<T0, T1>(this Sdl thisApi, Span<T0> filter, Span<T1> userdata) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.DelEventWatch(ref filter.GetPinnableReference(), ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 753, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
-        public static unsafe void FilterEvents<T0>(this Sdl thisApi, void* filter, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void FilterEvents<T0>(this Sdl thisApi, PfnEventFilter filter, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.FilterEvents(filter, ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 753, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
-        public static unsafe void FilterEvents<T0>(this Sdl thisApi, Span<T0> filter, void* userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.FilterEvents(ref filter.GetPinnableReference(), userdata);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 753, Column 30 in build/submodules/SDL-mirror/include\\SDL_events.h")]
-        public static unsafe void FilterEvents<T0, T1>(this Sdl thisApi, Span<T0> filter, Span<T1> userdata) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.FilterEvents(ref filter.GetPinnableReference(), ref userdata.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -10171,7 +9337,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, byte* name, void* callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, byte* name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.AddHintCallback(name, callback, ref userdata.GetPinnableReference());
@@ -10179,23 +9345,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, byte* name, Span<T0> callback, void* userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.AddHintCallback(name, ref callback.GetPinnableReference(), userdata);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void AddHintCallback<T0, T1>(this Sdl thisApi, byte* name, Span<T0> callback, Span<T1> userdata) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.AddHintCallback(name, ref callback.GetPinnableReference(), ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void AddHintCallback(this Sdl thisApi, Span<byte> name, void* callback, void* userdata)
+        public static unsafe void AddHintCallback(this Sdl thisApi, Span<byte> name, PfnHintCallback callback, void* userdata)
         {
             // SpanOverloader
             thisApi.AddHintCallback(ref name.GetPinnableReference(), callback, userdata);
@@ -10203,7 +9353,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, Span<byte> name, void* callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, Span<byte> name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.AddHintCallback(ref name.GetPinnableReference(), callback, ref userdata.GetPinnableReference());
@@ -10211,47 +9361,15 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, Span<byte> name, Span<T0> callback, void* userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.AddHintCallback(ref name.GetPinnableReference(), ref callback.GetPinnableReference(), userdata);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void AddHintCallback<T0, T1>(this Sdl thisApi, Span<byte> name, Span<T0> callback, Span<T1> userdata) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.AddHintCallback(ref name.GetPinnableReference(), ref callback.GetPinnableReference(), ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, string name, void* callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, string name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.AddHintCallback(name, callback, ref userdata.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void AddHintCallback<T0>(this Sdl thisApi, string name, Span<T0> callback, void* userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.AddHintCallback(name, ref callback.GetPinnableReference(), userdata);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1333, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void AddHintCallback<T0, T1>(this Sdl thisApi, string name, Span<T0> callback, Span<T1> userdata) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.AddHintCallback(name, ref callback.GetPinnableReference(), ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void DelHintCallback<T0>(this Sdl thisApi, byte* name, void* callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void DelHintCallback<T0>(this Sdl thisApi, byte* name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.DelHintCallback(name, callback, ref userdata.GetPinnableReference());
@@ -10259,23 +9377,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void DelHintCallback<T0>(this Sdl thisApi, byte* name, Span<T0> callback, void* userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.DelHintCallback(name, ref callback.GetPinnableReference(), userdata);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void DelHintCallback<T0, T1>(this Sdl thisApi, byte* name, Span<T0> callback, Span<T1> userdata) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.DelHintCallback(name, ref callback.GetPinnableReference(), ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void DelHintCallback(this Sdl thisApi, Span<byte> name, void* callback, void* userdata)
+        public static unsafe void DelHintCallback(this Sdl thisApi, Span<byte> name, PfnHintCallback callback, void* userdata)
         {
             // SpanOverloader
             thisApi.DelHintCallback(ref name.GetPinnableReference(), callback, userdata);
@@ -10283,7 +9385,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void DelHintCallback<T0>(this Sdl thisApi, Span<byte> name, void* callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void DelHintCallback<T0>(this Sdl thisApi, Span<byte> name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.DelHintCallback(ref name.GetPinnableReference(), callback, ref userdata.GetPinnableReference());
@@ -10291,42 +9393,10 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void DelHintCallback<T0>(this Sdl thisApi, Span<byte> name, Span<T0> callback, void* userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.DelHintCallback(ref name.GetPinnableReference(), ref callback.GetPinnableReference(), userdata);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void DelHintCallback<T0, T1>(this Sdl thisApi, Span<byte> name, Span<T0> callback, Span<T1> userdata) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.DelHintCallback(ref name.GetPinnableReference(), ref callback.GetPinnableReference(), ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void DelHintCallback<T0>(this Sdl thisApi, string name, void* callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void DelHintCallback<T0>(this Sdl thisApi, string name, PfnHintCallback callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.DelHintCallback(name, callback, ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void DelHintCallback<T0>(this Sdl thisApi, string name, Span<T0> callback, void* userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.DelHintCallback(name, ref callback.GetPinnableReference(), userdata);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 1344, Column 30 in build/submodules/SDL-mirror/include\\SDL_hints.h")]
-        public static unsafe void DelHintCallback<T0, T1>(this Sdl thisApi, string name, Span<T0> callback, Span<T1> userdata) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.DelHintCallback(name, ref callback.GetPinnableReference(), ref userdata.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -10482,27 +9552,27 @@ namespace Silk.NET.SDL
         }
 
         /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 194, Column 30 in build/submodules/SDL-mirror/include\\SDL_log.h")]
+        public static unsafe void LogGetOutputFunction(this Sdl thisApi, Span<PfnLogOutputFunction> callback, void** userdata)
+        {
+            // SpanOverloader
+            thisApi.LogGetOutputFunction(ref callback.GetPinnableReference(), userdata);
+        }
+
+        /// <summary>To be documented.</summary>
+        [NativeName("Src", "Line 194, Column 30 in build/submodules/SDL-mirror/include\\SDL_log.h")]
+        public static unsafe void LogGetOutputFunction(this Sdl thisApi, Span<PfnLogOutputFunction> callback, ref void* userdata)
+        {
+            // SpanOverloader
+            thisApi.LogGetOutputFunction(ref callback.GetPinnableReference(), ref userdata);
+        }
+
+        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 30 in build/submodules/SDL-mirror/include\\SDL_log.h")]
-        public static unsafe void LogSetOutputFunction<T0>(this Sdl thisApi, void* callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void LogSetOutputFunction<T0>(this Sdl thisApi, PfnLogOutputFunction callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.LogSetOutputFunction(callback, ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 200, Column 30 in build/submodules/SDL-mirror/include\\SDL_log.h")]
-        public static unsafe void LogSetOutputFunction<T0>(this Sdl thisApi, Span<T0> callback, void* userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.LogSetOutputFunction(ref callback.GetPinnableReference(), userdata);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 200, Column 30 in build/submodules/SDL-mirror/include\\SDL_log.h")]
-        public static unsafe void LogSetOutputFunction<T0, T1>(this Sdl thisApi, Span<T0> callback, Span<T1> userdata) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.LogSetOutputFunction(ref callback.GetPinnableReference(), ref userdata.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -15468,28 +14538,10 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 50, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
-        public static unsafe void SetWindowsMessageHook<T0>(this Sdl thisApi, void* callback, Span<T0> userdata) where T0 : unmanaged
+        public static unsafe void SetWindowsMessageHook<T0>(this Sdl thisApi, PfnWindowsMessageHook callback, Span<T0> userdata) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.SetWindowsMessageHook(callback, ref userdata.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 50, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        [ExcludeFromOverride(0)]
-        public static unsafe void SetWindowsMessageHook<T0>(this Sdl thisApi, Span<T0> callback, void* userdata) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.SetWindowsMessageHook(ref callback.GetPinnableReference(), userdata);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 50, Column 30 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        [ExcludeFromOverride(0)]
-        public static unsafe void SetWindowsMessageHook<T0, T1>(this Sdl thisApi, Span<T0> callback, Span<T1> userdata) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.SetWindowsMessageHook(ref callback.GetPinnableReference(), ref userdata.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
@@ -15530,7 +14582,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 95, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        public static unsafe int IPhoneSetAnimationCallback<T0>(this Sdl thisApi, Window* window, int interval, void* callback, Span<T0> callbackParam) where T0 : unmanaged
+        public static unsafe int IPhoneSetAnimationCallback<T0>(this Sdl thisApi, Window* window, int interval, PfnFreeFunc callback, Span<T0> callbackParam) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.IPhoneSetAnimationCallback(window, interval, callback, ref callbackParam.GetPinnableReference());
@@ -15538,23 +14590,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 95, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        public static unsafe int IPhoneSetAnimationCallback<T0>(this Sdl thisApi, Window* window, int interval, Span<T0> callback, void* callbackParam) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.IPhoneSetAnimationCallback(window, interval, ref callback.GetPinnableReference(), callbackParam);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 95, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        public static unsafe int IPhoneSetAnimationCallback<T0, T1>(this Sdl thisApi, Window* window, int interval, Span<T0> callback, Span<T1> callbackParam) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.IPhoneSetAnimationCallback(window, interval, ref callback.GetPinnableReference(), ref callbackParam.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 95, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        public static unsafe int IPhoneSetAnimationCallback(this Sdl thisApi, Span<Window> window, int interval, void* callback, void* callbackParam)
+        public static unsafe int IPhoneSetAnimationCallback(this Sdl thisApi, Span<Window> window, int interval, PfnFreeFunc callback, void* callbackParam)
         {
             // SpanOverloader
             return thisApi.IPhoneSetAnimationCallback(ref window.GetPinnableReference(), interval, callback, callbackParam);
@@ -15562,50 +14598,18 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 95, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        public static unsafe int IPhoneSetAnimationCallback<T0>(this Sdl thisApi, Span<Window> window, int interval, void* callback, Span<T0> callbackParam) where T0 : unmanaged
+        public static unsafe int IPhoneSetAnimationCallback<T0>(this Sdl thisApi, Span<Window> window, int interval, PfnFreeFunc callback, Span<T0> callbackParam) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.IPhoneSetAnimationCallback(ref window.GetPinnableReference(), interval, callback, ref callbackParam.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 95, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        public static unsafe int IPhoneSetAnimationCallback<T0>(this Sdl thisApi, Span<Window> window, int interval, Span<T0> callback, void* callbackParam) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.IPhoneSetAnimationCallback(ref window.GetPinnableReference(), interval, ref callback.GetPinnableReference(), callbackParam);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 95, Column 29 in build/submodules/SDL-mirror/include\\SDL_system.h")]
-        public static unsafe int IPhoneSetAnimationCallback<T0, T1>(this Sdl thisApi, Span<Window> window, int interval, Span<T0> callback, Span<T1> callbackParam) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.IPhoneSetAnimationCallback(ref window.GetPinnableReference(), interval, ref callback.GetPinnableReference(), ref callbackParam.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 93, Column 37 in build/submodules/SDL-mirror/include\\SDL_timer.h")]
-        public static unsafe int AddTimer<T0>(this Sdl thisApi, uint interval, void* callback, Span<T0> param) where T0 : unmanaged
+        public static unsafe int AddTimer<T0>(this Sdl thisApi, uint interval, PfnTimerCallback callback, Span<T0> param) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.AddTimer(interval, callback, ref param.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 93, Column 37 in build/submodules/SDL-mirror/include\\SDL_timer.h")]
-        public static unsafe int AddTimer<T0>(this Sdl thisApi, uint interval, Span<T0> callback, void* param) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.AddTimer(interval, ref callback.GetPinnableReference(), param);
-        }
-
-        /// <summary>To be documented.</summary>
-        [NativeName("Src", "Line 93, Column 37 in build/submodules/SDL-mirror/include\\SDL_timer.h")]
-        public static unsafe int AddTimer<T0, T1>(this Sdl thisApi, uint interval, Span<T0> callback, Span<T1> param) where T0 : unmanaged where T1 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.AddTimer(interval, ref callback.GetPinnableReference(), ref param.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>

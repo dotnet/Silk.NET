@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
 {
     [NativeName("Name", "GLenum")]
-    public enum ATI
+    public enum ATI : int
     {
         [NativeName("Name", "GL_MAX_DRAW_BUFFERS_ATI")]
         MaxDrawBuffersAti = 0x8824,

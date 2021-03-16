@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "ColorMaterialFace")]
-    public enum ColorMaterialFace
+    public enum ColorMaterialFace : int
     {
         [NativeName("Name", "GL_FRONT")]
         Front = 0x404,

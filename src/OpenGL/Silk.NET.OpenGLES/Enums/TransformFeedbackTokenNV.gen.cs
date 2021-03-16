@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "TransformFeedbackTokenNV")]
-    public enum TransformFeedbackTokenNV
+    public enum TransformFeedbackTokenNV : int
     {
         [NativeName("Name", "GL_NEXT_BUFFER_NV")]
         NextBufferNV = unchecked((int)0xFFFFFFFFFFFFFFFE),

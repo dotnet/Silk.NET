@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "TextureEnvMode")]
-    public enum TextureEnvMode
+    public enum TextureEnvMode : int
     {
         [NativeName("Name", "GL_BLEND")]
         Blend = 0xBE2,

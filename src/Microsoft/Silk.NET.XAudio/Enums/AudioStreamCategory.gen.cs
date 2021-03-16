@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.XAudio
 {
     [NativeName("Name", "_AUDIO_STREAM_CATEGORY")]
-    public enum AudioStreamCategory
+    public enum AudioStreamCategory : int
     {
         [NativeName("Name", "AudioCategory_Other")]
         AudioCategoryOther = 0x0,

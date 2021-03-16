@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_FILTER_TYPE")]
-    public enum FilterType
+    public enum FilterType : int
     {
         [NativeName("Name", "D3D12_FILTER_TYPE_POINT")]
         FilterTypePoint = 0x0,

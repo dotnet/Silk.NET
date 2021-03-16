@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_STATE_OBJECT_FLAGS")]
-    public enum StateObjectFlags
+    public enum StateObjectFlags : int
     {
         [NativeName("Name", "D3D12_STATE_OBJECT_FLAG_NONE")]
         StateObjectFlagNone = 0x0,

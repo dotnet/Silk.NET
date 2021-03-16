@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "CheckFramebufferStatusTarget")]
-    public enum CheckFramebufferStatusTarget
+    public enum CheckFramebufferStatusTarget : int
     {
         [NativeName("Name", "GL_READ_FRAMEBUFFER")]
         ReadFramebuffer = 0x8CA8,

@@ -23,7 +23,7 @@ namespace Silk.NET.OpenCL.Extensions.KHR
     {
         public const string ExtensionName = "KHR_terminate_context";
         [NativeApi(EntryPoint = "clTerminateContextKHR")]
-        public partial int TerminateContext([Flow(FlowDirection.In)] IntPtr context);
+        public partial int TerminateContext([Flow(FlowDirection.In)] nint context);
 
         public KhrTerminateContext(INativeContext ctx)
             : base(ctx)

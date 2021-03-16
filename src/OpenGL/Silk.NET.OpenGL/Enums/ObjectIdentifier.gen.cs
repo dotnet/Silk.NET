@@ -12,10 +12,12 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "ObjectIdentifier")]
-    public enum ObjectIdentifier
+    public enum ObjectIdentifier : int
     {
         [NativeName("Name", "GL_TEXTURE")]
         Texture = 0x1702,
+        [NativeName("Name", "GL_VERTEX_ARRAY")]
+        VertexArray = 0x8074,
         [NativeName("Name", "GL_BUFFER")]
         Buffer = 0x82E0,
         [NativeName("Name", "GL_SHADER")]

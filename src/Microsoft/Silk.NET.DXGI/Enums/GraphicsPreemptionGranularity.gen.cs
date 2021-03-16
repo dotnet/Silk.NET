@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_GRAPHICS_PREEMPTION_GRANULARITY")]
-    public enum GraphicsPreemptionGranularity
+    public enum GraphicsPreemptionGranularity : int
     {
         [NativeName("Name", "DXGI_GRAPHICS_PREEMPTION_DMA_BUFFER_BOUNDARY")]
         GraphicsPreemptionDmaBufferBoundary = 0x0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_VIEW_INSTANCING_FLAGS")]
-    public enum ViewInstancingFlags
+    public enum ViewInstancingFlags : int
     {
         [NativeName("Name", "D3D12_VIEW_INSTANCING_FLAG_NONE")]
         ViewInstancingFlagNone = 0x0,

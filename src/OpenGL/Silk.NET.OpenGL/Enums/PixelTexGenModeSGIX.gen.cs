@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "PixelTexGenModeSGIX")]
-    public enum PixelTexGenModeSGIX
+    public enum PixelTexGenModeSGIX : int
     {
         [NativeName("Name", "GL_PIXEL_TEX_GEN_Q_CEILING_SGIX")]
         PixelTexGenQCeilingSgix = 0x8184,

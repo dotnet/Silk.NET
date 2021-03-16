@@ -52,7 +52,7 @@ namespace Silk.NET.Core.Native
         /// <summary>
         /// Gets a handle to this block of global memory.
         /// </summary>
-        public unsafe IntPtr Handle => (IntPtr)Unsafe.AsPointer(ref GetPinnableReference());
+        public unsafe nint Handle => (nint)Unsafe.AsPointer(ref GetPinnableReference());
 
         /// <summary>
         /// Gets a span representing this block of global memory.
@@ -70,6 +70,28 @@ namespace Silk.NET.Core.Native
             => new Span<T>(Unsafe.AsPointer(ref GetPinnableReference()), Length / sizeof(T));
 
         /// <summary>
+        /// Gets a reference of the given type to a specific index within this block of global memory.
+        /// </summary>
+        /// <param name="index">
+        /// The index to get a reference to. This is in terms of the destination type, and is not a byte offset (i.e.
+        /// the index is multiplied by the size of the destination type to get the byte offset)
+        /// </param>
+        /// <typeparam name="T">The type of the reference to return.</typeparam>
+        /// <returns>A reference to global memory.</returns>
+        public ref T AsRef<T>(int index = 0) where T : unmanaged => ref AsSpan<T>()[index];
+        
+        /// <summary>
+        /// Gets a pointer of the given type to a specific index within this block of global memory.
+        /// </summary>
+        /// <param name="index">
+        /// The index to get a pointer to. This is in terms of the destination type, and is not a byte offset (i.e.
+        /// the index is multiplied by the size of the destination type to get the byte offset)
+        /// </param>
+        /// <typeparam name="T">The type of the pointer to return.</typeparam>
+        /// <returns>A pointer to global memory.</returns>
+        public unsafe T* AsPtr<T>(int index = 0) where T : unmanaged => (T*) Unsafe.AsPointer(ref AsRef<T>(index)); 
+
+        /// <summary>
         /// Gets a span representing this block of global memory.
         /// </summary>
         /// <returns>A span of global memory.</returns>
@@ -79,14 +101,14 @@ namespace Silk.NET.Core.Native
         /// Gets a handle to this block of global memory.
         /// </summary>
         /// <returns>A handle to this block of global memory.</returns>
-        public static unsafe implicit operator void*(GlobalMemory left) => left.Handle.ToPointer();
+        public static unsafe implicit operator void*(GlobalMemory left) => (void*) left.Handle;
 
 
         /// <summary>
         /// Gets a handle to this block of global memory.
         /// </summary>
         /// <returns>A handle to this block of global memory.</returns>
-        public static implicit operator IntPtr(GlobalMemory left) => left.Handle;
+        public static implicit operator nint(GlobalMemory left) => left.Handle;
 
         /// <summary>
         /// Gets a reference to the global memory. This reference is valid until this object is disposed or finalized.
@@ -139,53 +161,53 @@ namespace Silk.NET.Core.Native
         /// <returns>A block of global memory.</returns>
         public static GlobalMemory Allocate(int length) =>
 #if !NET5_0
-            new GlobalMemory(new GCHandleByteArray(length), length);
+            new GlobalMemory(new GCHandleByteArray(length), length > 0 ? length : 1);
 #else
-            new GlobalMemory(GC.AllocateUninitializedArray<byte>(length, true), length);
+            new GlobalMemory(GC.AllocateUninitializedArray<byte>(length > 0 ? length : 1, true), length);
 #endif
 
         // Encapsulations different kinds of memory
         private interface IGlobalMemory
         {
-            IntPtr Handle { get; }
+            nint Handle { get; }
         }
         
         private struct GCHandleByteArray : IGlobalMemory
         {
             public GCHandleByteArray(int length) => GCHandle = GCHandle.Alloc(new byte[length], GCHandleType.Pinned);
             public GCHandle GCHandle { get; }
-            public IntPtr Handle => GCHandle.AddrOfPinnedObject();
+            public nint Handle => GCHandle.AddrOfPinnedObject();
         }
 
         private struct HGlobal : IGlobalMemory
         {
             public HGlobal(int length) => Handle = Marshal.AllocHGlobal(length);
-            public HGlobal(IntPtr val) => Handle = val;
-            public IntPtr Handle { get; }
+            public HGlobal(nint val) => Handle = val;
+            public nint Handle { get; }
         }
 
         private struct BStr : IGlobalMemory
         {
             public BStr(int length) => Handle = SilkMarshal.AllocBStr(length);
-            public BStr(IntPtr val) => Handle = val;
-            public IntPtr Handle { get; }
+            public BStr(nint val) => Handle = val;
+            public nint Handle { get; }
         }
         
         private struct Other : IGlobalMemory
         {
             // used for "unsafe" marshalling of a pointer to our neat GlobalMemory class if that's your thing.
-            public Other(IntPtr val) => Handle = val;
-            public IntPtr Handle { get; }
+            public Other(nint val) => Handle = val;
+            public nint Handle { get; }
         }
         
         // "Unsafe" methods
-        internal static GlobalMemory FromHGlobal(IntPtr hGlobal, int len)
+        internal static GlobalMemory FromHGlobal(nint hGlobal, int len)
             => new GlobalMemory(new HGlobal(hGlobal), len);
         
-        internal static GlobalMemory FromBStr(IntPtr bStr, int len)
+        internal static GlobalMemory FromBStr(nint bStr, int len)
             => new GlobalMemory(new BStr(bStr), len);
         
-        internal static GlobalMemory FromAnyPtr(IntPtr val, int len)
+        internal static GlobalMemory FromAnyPtr(nint val, int len)
             => new GlobalMemory(new Other(val), len);
     }
 }

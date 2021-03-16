@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkBorderColor")]
-    public enum BorderColor
+    public enum BorderColor : int
     {
         [NativeName("Name", "VK_BORDER_COLOR_FLOAT_TRANSPARENT_BLACK")]
         FloatTransparentBlack = 0,

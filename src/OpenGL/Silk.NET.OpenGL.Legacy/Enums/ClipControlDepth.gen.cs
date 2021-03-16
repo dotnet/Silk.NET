@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "ClipControlDepth")]
-    public enum ClipControlDepth
+    public enum ClipControlDepth : int
     {
         [NativeName("Name", "GL_NEGATIVE_ONE_TO_ONE")]
         NegativeOneToOne = 0x935E,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "InterleavedArrayFormat")]
-    public enum InterleavedArrayFormat
+    public enum InterleavedArrayFormat : int
     {
         [NativeName("Name", "GL_V2F")]
         V2f = 0x2A20,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFrontFace")]
-    public enum FrontFace
+    public enum FrontFace : int
     {
         [NativeName("Name", "VK_FRONT_FACE_COUNTER_CLOCKWISE")]
         CounterClockwise = 0,

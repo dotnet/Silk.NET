@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "VertexAttribPropertyARB")]
-    public enum VertexAttribPropertyARB
+    public enum VertexAttribPropertyARB : int
     {
         [NativeName("Name", "GL_VERTEX_ATTRIB_BINDING")]
         VertexAttribBinding = 0x82D4,

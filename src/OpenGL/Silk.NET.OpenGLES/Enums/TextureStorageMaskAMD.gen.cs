@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "TextureStorageMaskAMD")]
-    public enum TextureStorageMaskAMD
+    public enum TextureStorageMaskAMD : int
     {
         [NativeName("Name", "GL_TEXTURE_STORAGE_SPARSE_BIT_AMD")]
         TextureStorageSparseBitAmd = 0x1,

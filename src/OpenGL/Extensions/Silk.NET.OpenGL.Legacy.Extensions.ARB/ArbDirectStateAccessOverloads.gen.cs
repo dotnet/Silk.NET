@@ -42,73 +42,73 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferData(buffer, internalformat, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] ARB internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void ClearNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.ClearNamedBufferSubData(buffer, internalformat, offset, size, format, type, in data.GetPinnableReference());
@@ -120,7 +120,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.ClearNamedFramebuffer(framebuffer, buffer, drawbuffer, in value.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedFramebuffer(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] ReadOnlySpan<int> value)
+        public static unsafe void ClearNamedFramebuffer(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] BufferKind buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] ReadOnlySpan<int> value)
         {
             // SpanOverloader
             thisApi.ClearNamedFramebuffer(framebuffer, buffer, drawbuffer, in value.GetPinnableReference());
@@ -132,7 +132,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.ClearNamedFramebuffer(framebuffer, buffer, drawbuffer, in value.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedFramebuffer(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
+        public static unsafe void ClearNamedFramebuffer(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] BufferKind buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // SpanOverloader
             thisApi.ClearNamedFramebuffer(framebuffer, buffer, drawbuffer, in value.GetPinnableReference());
@@ -144,7 +144,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.ClearNamedFramebuffer(framebuffer, buffer, drawbuffer, in value.GetPinnableReference());
         }
 
-        public static unsafe void ClearNamedFramebuffer(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] Buffer buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        public static unsafe void ClearNamedFramebuffer(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] BufferKind buffer, [Flow(FlowDirection.In)] int drawbuffer, [Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.ClearNamedFramebuffer(framebuffer, buffer, drawbuffer, in value.GetPinnableReference());
@@ -192,7 +192,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.CreateBuffers(n, out buffers.GetPinnableReference());
         }
 
+        public static unsafe void CreateBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Buffer> buffers)
+        {
+            // SpanOverloader
+            thisApi.CreateBuffers(n, out buffers.GetPinnableReference());
+        }
+
         public static unsafe void CreateFramebuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> framebuffers)
+        {
+            // SpanOverloader
+            thisApi.CreateFramebuffers(n, out framebuffers.GetPinnableReference());
+        }
+
+        public static unsafe void CreateFramebuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Framebuffer> framebuffers)
         {
             // SpanOverloader
             thisApi.CreateFramebuffers(n, out framebuffers.GetPinnableReference());
@@ -204,7 +216,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.CreateProgramPipelines(n, out pipelines.GetPinnableReference());
         }
 
+        public static unsafe void CreateProgramPipelines(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<ProgramPipeline> pipelines)
+        {
+            // SpanOverloader
+            thisApi.CreateProgramPipelines(n, out pipelines.GetPinnableReference());
+        }
+
         public static unsafe void CreateQueries(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+        {
+            // SpanOverloader
+            thisApi.CreateQueries(target, n, out ids.GetPinnableReference());
+        }
+
+        public static unsafe void CreateQueries(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Query> ids)
         {
             // SpanOverloader
             thisApi.CreateQueries(target, n, out ids.GetPinnableReference());
@@ -216,7 +240,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.CreateQueries(target, n, out ids.GetPinnableReference());
         }
 
+        public static unsafe void CreateQueries(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Query> ids)
+        {
+            // SpanOverloader
+            thisApi.CreateQueries(target, n, out ids.GetPinnableReference());
+        }
+
         public static unsafe void CreateRenderbuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> renderbuffers)
+        {
+            // SpanOverloader
+            thisApi.CreateRenderbuffers(n, out renderbuffers.GetPinnableReference());
+        }
+
+        public static unsafe void CreateRenderbuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Renderbuffer> renderbuffers)
         {
             // SpanOverloader
             thisApi.CreateRenderbuffers(n, out renderbuffers.GetPinnableReference());
@@ -228,7 +264,19 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.CreateSamplers(n, out samplers.GetPinnableReference());
         }
 
+        public static unsafe void CreateSamplers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Sampler> samplers)
+        {
+            // SpanOverloader
+            thisApi.CreateSamplers(n, out samplers.GetPinnableReference());
+        }
+
         public static unsafe void CreateTextures(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures)
+        {
+            // SpanOverloader
+            thisApi.CreateTextures(target, n, out textures.GetPinnableReference());
+        }
+
+        public static unsafe void CreateTextures(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Texture> textures)
         {
             // SpanOverloader
             thisApi.CreateTextures(target, n, out textures.GetPinnableReference());
@@ -240,13 +288,31 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.CreateTextures(target, n, out textures.GetPinnableReference());
         }
 
+        public static unsafe void CreateTextures(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Texture> textures)
+        {
+            // SpanOverloader
+            thisApi.CreateTextures(target, n, out textures.GetPinnableReference());
+        }
+
         public static unsafe void CreateTransformFeedbacks(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
         {
             // SpanOverloader
             thisApi.CreateTransformFeedbacks(n, out ids.GetPinnableReference());
         }
 
+        public static unsafe void CreateTransformFeedbacks(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<TransformFeedback> ids)
+        {
+            // SpanOverloader
+            thisApi.CreateTransformFeedbacks(n, out ids.GetPinnableReference());
+        }
+
         public static unsafe void CreateVertexArrays(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays)
+        {
+            // SpanOverloader
+            thisApi.CreateVertexArrays(n, out arrays.GetPinnableReference());
+        }
+
+        public static unsafe void CreateVertexArrays(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<VertexArray> arrays)
         {
             // SpanOverloader
             thisApi.CreateVertexArrays(n, out arrays.GetPinnableReference());
@@ -282,7 +348,7 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.GetNamedBufferParameter(buffer, pname, out @params.GetPinnableReference());
         }
 
-        public static unsafe void GetNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        public static unsafe void GetNamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetNamedBufferSubData(buffer, offset, size, out data.GetPinnableReference());
@@ -528,25 +594,25 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.InvalidateNamedFramebufferSubData(framebuffer, numAttachments, in attachments.GetPinnableReference(), x, y, width, height);
         }
 
-        public static unsafe void NamedBufferData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] ARB usage) where T0 : unmanaged
+        public static unsafe void NamedBufferData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] ARB usage) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.NamedBufferData(buffer, size, in data.GetPinnableReference(), usage);
         }
 
-        public static unsafe void NamedBufferData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] UIntPtr size, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] VertexBufferObjectUsage usage) where T0 : unmanaged
+        public static unsafe void NamedBufferData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] VertexBufferObjectUsage usage) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.NamedBufferData(buffer, size, in data.GetPinnableReference(), usage);
         }
 
-        public static unsafe void NamedBufferStorage<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] UIntPtr size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
+        public static unsafe void NamedBufferStorage<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.NamedBufferStorage(buffer, size, in data.GetPinnableReference(), flags);
         }
 
-        public static unsafe void NamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] IntPtr offset, [Flow(FlowDirection.In)] UIntPtr size, [Count(Computed = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        public static unsafe void NamedBufferSubData<T0>(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Computed = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.NamedBufferSubData(buffer, offset, size, in data.GetPinnableReference());
@@ -684,43 +750,85 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             thisApi.TextureSubImage3D(texture, level, xoffset, yoffset, zoffset, width, height, depth, format, type, in pixels.GetPinnableReference());
         }
 
-        public static unsafe void VertexArrayVertexBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] IntPtr* offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        public static unsafe void VertexArrayVertexBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] nint* offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
         {
             // SpanOverloader
             thisApi.VertexArrayVertexBuffers(vaobj, first, count, buffers, offsets, in strides.GetPinnableReference());
         }
 
-        public static unsafe void VertexArrayVertexBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Flow(FlowDirection.In)] uint* strides)
+        public static unsafe void VertexArrayVertexBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Flow(FlowDirection.In)] uint* strides)
         {
             // SpanOverloader
             thisApi.VertexArrayVertexBuffers(vaobj, first, count, buffers, in offsets.GetPinnableReference(), strides);
         }
 
-        public static unsafe void VertexArrayVertexBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        public static unsafe void VertexArrayVertexBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] uint* buffers, [Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
         {
             // SpanOverloader
             thisApi.VertexArrayVertexBuffers(vaobj, first, count, buffers, in offsets.GetPinnableReference(), in strides.GetPinnableReference());
         }
 
-        public static unsafe void VertexArrayVertexBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] IntPtr* offsets, [Flow(FlowDirection.In)] uint* strides)
+        public static unsafe void VertexArrayVertexBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] nint* offsets, [Flow(FlowDirection.In)] uint* strides)
         {
             // SpanOverloader
             thisApi.VertexArrayVertexBuffers(vaobj, first, count, in buffers.GetPinnableReference(), offsets, strides);
         }
 
-        public static unsafe void VertexArrayVertexBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] IntPtr* offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        public static unsafe void VertexArrayVertexBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] nint* offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
         {
             // SpanOverloader
             thisApi.VertexArrayVertexBuffers(vaobj, first, count, in buffers.GetPinnableReference(), offsets, in strides.GetPinnableReference());
         }
 
-        public static unsafe void VertexArrayVertexBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Flow(FlowDirection.In)] uint* strides)
+        public static unsafe void VertexArrayVertexBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Flow(FlowDirection.In)] uint* strides)
         {
             // SpanOverloader
             thisApi.VertexArrayVertexBuffers(vaobj, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), strides);
         }
 
-        public static unsafe void VertexArrayVertexBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] ReadOnlySpan<IntPtr> offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        public static unsafe void VertexArrayVertexBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // SpanOverloader
+            thisApi.VertexArrayVertexBuffers(vaobj, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in strides.GetPinnableReference());
+        }
+
+        public static unsafe void VertexArrayVertexBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] nint* offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // SpanOverloader
+            thisApi.VertexArrayVertexBuffers(vaobj, first, count, buffers, offsets, in strides.GetPinnableReference());
+        }
+
+        public static unsafe void VertexArrayVertexBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Flow(FlowDirection.In)] uint* strides)
+        {
+            // SpanOverloader
+            thisApi.VertexArrayVertexBuffers(vaobj, first, count, buffers, in offsets.GetPinnableReference(), strides);
+        }
+
+        public static unsafe void VertexArrayVertexBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Buffer* buffers, [Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // SpanOverloader
+            thisApi.VertexArrayVertexBuffers(vaobj, first, count, buffers, in offsets.GetPinnableReference(), in strides.GetPinnableReference());
+        }
+
+        public static unsafe void VertexArrayVertexBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] nint* offsets, [Flow(FlowDirection.In)] uint* strides)
+        {
+            // SpanOverloader
+            thisApi.VertexArrayVertexBuffers(vaobj, first, count, in buffers.GetPinnableReference(), offsets, strides);
+        }
+
+        public static unsafe void VertexArrayVertexBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] nint* offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // SpanOverloader
+            thisApi.VertexArrayVertexBuffers(vaobj, first, count, in buffers.GetPinnableReference(), offsets, in strides.GetPinnableReference());
+        }
+
+        public static unsafe void VertexArrayVertexBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Flow(FlowDirection.In)] uint* strides)
+        {
+            // SpanOverloader
+            thisApi.VertexArrayVertexBuffers(vaobj, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), strides);
+        }
+
+        public static unsafe void VertexArrayVertexBuffers(this ArbDirectStateAccess thisApi, [Flow(FlowDirection.In)] uint vaobj, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
         {
             // SpanOverloader
             thisApi.VertexArrayVertexBuffers(vaobj, first, count, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in strides.GetPinnableReference());

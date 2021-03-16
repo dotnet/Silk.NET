@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES.Extensions.DMP
 {
     [NativeName("Name", "GLenum")]
-    public enum DMP
+    public enum DMP : int
     {
         [NativeName("Name", "GL_SMAPHS30_PROGRAM_BINARY_DMP")]
         Smaphs30ProgramBinaryDmp = 0x9251,

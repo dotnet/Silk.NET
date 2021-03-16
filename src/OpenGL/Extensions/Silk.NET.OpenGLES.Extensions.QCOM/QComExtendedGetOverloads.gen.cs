@@ -36,6 +36,24 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
             thisApi.ExtGetBuffers(out buffers.GetPinnableReference(), maxBuffers, out numBuffers.GetPinnableReference());
         }
 
+        public static unsafe void ExtGetBuffers(this QComExtendedGet thisApi, [Count(Parameter = "maxBuffers"), Flow(FlowDirection.Out)] Buffer* buffers, [Flow(FlowDirection.In)] int maxBuffers, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> numBuffers)
+        {
+            // SpanOverloader
+            thisApi.ExtGetBuffers(buffers, maxBuffers, out numBuffers.GetPinnableReference());
+        }
+
+        public static unsafe void ExtGetBuffers(this QComExtendedGet thisApi, [Count(Parameter = "maxBuffers"), Flow(FlowDirection.Out)] Span<Buffer> buffers, [Flow(FlowDirection.In)] int maxBuffers, [Count(Count = 1), Flow(FlowDirection.Out)] int* numBuffers)
+        {
+            // SpanOverloader
+            thisApi.ExtGetBuffers(out buffers.GetPinnableReference(), maxBuffers, numBuffers);
+        }
+
+        public static unsafe void ExtGetBuffers(this QComExtendedGet thisApi, [Count(Parameter = "maxBuffers"), Flow(FlowDirection.Out)] Span<Buffer> buffers, [Flow(FlowDirection.In)] int maxBuffers, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> numBuffers)
+        {
+            // SpanOverloader
+            thisApi.ExtGetBuffers(out buffers.GetPinnableReference(), maxBuffers, out numBuffers.GetPinnableReference());
+        }
+
         public static unsafe void ExtGetFramebuffers(this QComExtendedGet thisApi, [Count(Parameter = "maxFramebuffers"), Flow(FlowDirection.Out)] uint* framebuffers, [Flow(FlowDirection.In)] int maxFramebuffers, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> numFramebuffers)
         {
             // SpanOverloader
@@ -54,6 +72,24 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
             thisApi.ExtGetFramebuffers(out framebuffers.GetPinnableReference(), maxFramebuffers, out numFramebuffers.GetPinnableReference());
         }
 
+        public static unsafe void ExtGetFramebuffers(this QComExtendedGet thisApi, [Count(Parameter = "maxFramebuffers"), Flow(FlowDirection.Out)] Framebuffer* framebuffers, [Flow(FlowDirection.In)] int maxFramebuffers, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> numFramebuffers)
+        {
+            // SpanOverloader
+            thisApi.ExtGetFramebuffers(framebuffers, maxFramebuffers, out numFramebuffers.GetPinnableReference());
+        }
+
+        public static unsafe void ExtGetFramebuffers(this QComExtendedGet thisApi, [Count(Parameter = "maxFramebuffers"), Flow(FlowDirection.Out)] Span<Framebuffer> framebuffers, [Flow(FlowDirection.In)] int maxFramebuffers, [Count(Count = 1), Flow(FlowDirection.Out)] int* numFramebuffers)
+        {
+            // SpanOverloader
+            thisApi.ExtGetFramebuffers(out framebuffers.GetPinnableReference(), maxFramebuffers, numFramebuffers);
+        }
+
+        public static unsafe void ExtGetFramebuffers(this QComExtendedGet thisApi, [Count(Parameter = "maxFramebuffers"), Flow(FlowDirection.Out)] Span<Framebuffer> framebuffers, [Flow(FlowDirection.In)] int maxFramebuffers, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> numFramebuffers)
+        {
+            // SpanOverloader
+            thisApi.ExtGetFramebuffers(out framebuffers.GetPinnableReference(), maxFramebuffers, out numFramebuffers.GetPinnableReference());
+        }
+
         public static unsafe void ExtGetRenderbuffers(this QComExtendedGet thisApi, [Count(Parameter = "maxRenderbuffers"), Flow(FlowDirection.Out)] uint* renderbuffers, [Flow(FlowDirection.In)] int maxRenderbuffers, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> numRenderbuffers)
         {
             // SpanOverloader
@@ -67,6 +103,24 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         }
 
         public static unsafe void ExtGetRenderbuffers(this QComExtendedGet thisApi, [Count(Parameter = "maxRenderbuffers"), Flow(FlowDirection.Out)] Span<uint> renderbuffers, [Flow(FlowDirection.In)] int maxRenderbuffers, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> numRenderbuffers)
+        {
+            // SpanOverloader
+            thisApi.ExtGetRenderbuffers(out renderbuffers.GetPinnableReference(), maxRenderbuffers, out numRenderbuffers.GetPinnableReference());
+        }
+
+        public static unsafe void ExtGetRenderbuffers(this QComExtendedGet thisApi, [Count(Parameter = "maxRenderbuffers"), Flow(FlowDirection.Out)] Renderbuffer* renderbuffers, [Flow(FlowDirection.In)] int maxRenderbuffers, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> numRenderbuffers)
+        {
+            // SpanOverloader
+            thisApi.ExtGetRenderbuffers(renderbuffers, maxRenderbuffers, out numRenderbuffers.GetPinnableReference());
+        }
+
+        public static unsafe void ExtGetRenderbuffers(this QComExtendedGet thisApi, [Count(Parameter = "maxRenderbuffers"), Flow(FlowDirection.Out)] Span<Renderbuffer> renderbuffers, [Flow(FlowDirection.In)] int maxRenderbuffers, [Count(Count = 1), Flow(FlowDirection.Out)] int* numRenderbuffers)
+        {
+            // SpanOverloader
+            thisApi.ExtGetRenderbuffers(out renderbuffers.GetPinnableReference(), maxRenderbuffers, numRenderbuffers);
+        }
+
+        public static unsafe void ExtGetRenderbuffers(this QComExtendedGet thisApi, [Count(Parameter = "maxRenderbuffers"), Flow(FlowDirection.Out)] Span<Renderbuffer> renderbuffers, [Flow(FlowDirection.In)] int maxRenderbuffers, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> numRenderbuffers)
         {
             // SpanOverloader
             thisApi.ExtGetRenderbuffers(out renderbuffers.GetPinnableReference(), maxRenderbuffers, out numRenderbuffers.GetPinnableReference());
@@ -115,6 +169,24 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         }
 
         public static unsafe void ExtGetTextures(this QComExtendedGet thisApi, [Flow(FlowDirection.Out)] Span<uint> textures, [Flow(FlowDirection.In)] int maxTextures, [Flow(FlowDirection.Out)] Span<int> numTextures)
+        {
+            // SpanOverloader
+            thisApi.ExtGetTextures(out textures.GetPinnableReference(), maxTextures, out numTextures.GetPinnableReference());
+        }
+
+        public static unsafe void ExtGetTextures(this QComExtendedGet thisApi, [Flow(FlowDirection.Out)] Texture* textures, [Flow(FlowDirection.In)] int maxTextures, [Flow(FlowDirection.Out)] Span<int> numTextures)
+        {
+            // SpanOverloader
+            thisApi.ExtGetTextures(textures, maxTextures, out numTextures.GetPinnableReference());
+        }
+
+        public static unsafe void ExtGetTextures(this QComExtendedGet thisApi, [Flow(FlowDirection.Out)] Span<Texture> textures, [Flow(FlowDirection.In)] int maxTextures, [Flow(FlowDirection.Out)] int* numTextures)
+        {
+            // SpanOverloader
+            thisApi.ExtGetTextures(out textures.GetPinnableReference(), maxTextures, numTextures);
+        }
+
+        public static unsafe void ExtGetTextures(this QComExtendedGet thisApi, [Flow(FlowDirection.Out)] Span<Texture> textures, [Flow(FlowDirection.In)] int maxTextures, [Flow(FlowDirection.Out)] Span<int> numTextures)
         {
             // SpanOverloader
             thisApi.ExtGetTextures(out textures.GetPinnableReference(), maxTextures, out numTextures.GetPinnableReference());

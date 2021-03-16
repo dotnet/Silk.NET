@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSharingMode")]
-    public enum SharingMode
+    public enum SharingMode : int
     {
         [NativeName("Name", "VK_SHARING_MODE_EXCLUSIVE")]
         Exclusive = 0,

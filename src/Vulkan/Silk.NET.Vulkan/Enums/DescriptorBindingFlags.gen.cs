@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkDescriptorBindingFlags")]
-    public enum DescriptorBindingFlags
+    public enum DescriptorBindingFlags : int
     {
         [NativeName("Name", "VK_DESCRIPTOR_BINDING_UPDATE_AFTER_BIND_BIT")]
         DescriptorBindingUpdateAfterBindBit = 1,
@@ -23,5 +23,7 @@ namespace Silk.NET.Vulkan
         DescriptorBindingPartiallyBoundBit = 4,
         [NativeName("Name", "VK_DESCRIPTOR_BINDING_VARIABLE_DESCRIPTOR_COUNT_BIT")]
         DescriptorBindingVariableDescriptorCountBit = 8,
+        [NativeName("Name", "VK_DESCRIPTOR_BINDING_RESERVED_4_BIT_QCOM")]
+        DescriptorBindingReserved4BitQCom = 16,
     }
 }

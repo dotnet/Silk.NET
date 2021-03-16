@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "BlendingFactor")]
-    public enum BlendingFactor
+    public enum BlendingFactor : int
     {
         [NativeName("Name", "GL_ZERO")]
         Zero = 0x0,

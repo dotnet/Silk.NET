@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_render_L91_C9")]
     [NativeName("Name", "SDL_ScaleMode")]
-    public enum ScaleMode
+    public enum ScaleMode : int
     {
         [NativeName("Name", "SDL_ScaleModeNearest")]
         ScaleModeNearest = 0x0,

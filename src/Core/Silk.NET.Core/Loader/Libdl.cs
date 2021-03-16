@@ -15,13 +15,13 @@ namespace Silk.NET.Core.Loader
         public const int RtldNow = 0x002;
 
         [DllImport(LibName)]
-        public static extern IntPtr dlopen(string fileName, int flags);
+        public static extern nint dlopen(string fileName, int flags);
 
         [DllImport(LibName)]
-        public static extern IntPtr dlsym(IntPtr handle, string name);
+        public static extern nint dlsym(nint handle, string name);
 
         [DllImport(LibName)]
-        public static extern int dlclose(IntPtr handle);
+        public static extern int dlclose(nint handle);
 
         [DllImport(LibName)]
         public static extern string dlerror();

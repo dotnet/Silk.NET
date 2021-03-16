@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "MapTarget")]
-    public enum MapTarget
+    public enum MapTarget : int
     {
         [NativeName("Name", "GL_MAP1_COLOR_4")]
         Map1Color4 = 0xD90,

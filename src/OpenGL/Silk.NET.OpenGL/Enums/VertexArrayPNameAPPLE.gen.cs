@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "VertexArrayPNameAPPLE")]
-    public enum VertexArrayPNameAPPLE
+    public enum VertexArrayPNameAPPLE : int
     {
         [NativeName("Name", "GL_STORAGE_CLIENT_APPLE")]
         StorageClientApple = 0x85B4,

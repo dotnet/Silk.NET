@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DTRANSFORMSTATETYPE")]
-    public enum Transformstatetype
+    public enum Transformstatetype : int
     {
         [NativeName("Name", "D3DTS_VIEW")]
         TSView = 0x2,

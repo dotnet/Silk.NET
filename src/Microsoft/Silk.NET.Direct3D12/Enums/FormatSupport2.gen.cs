@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_FORMAT_SUPPORT2")]
-    public enum FormatSupport2
+    public enum FormatSupport2 : int
     {
         [NativeName("Name", "D3D12_FORMAT_SUPPORT2_NONE")]
         FormatSupport2None = 0x0,

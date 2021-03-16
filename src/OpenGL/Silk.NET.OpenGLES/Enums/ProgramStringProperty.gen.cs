@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "ProgramStringProperty")]
-    public enum ProgramStringProperty
+    public enum ProgramStringProperty : int
     {
         [NativeName("Name", "GL_PROGRAM_STRING_ARB")]
         ProgramStringArb = 0x8628,

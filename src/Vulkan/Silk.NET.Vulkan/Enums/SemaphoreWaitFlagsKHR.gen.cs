@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkSemaphoreWaitFlagsKHR")]
-    public enum SemaphoreWaitFlagsKHR
+    public enum SemaphoreWaitFlagsKHR : int
     {
         [NativeName("Name", "VK_SEMAPHORE_WAIT_ANY_BIT")]
         SemaphoreWaitAnyBit = 1,

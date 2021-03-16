@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
 {
     [NativeName("Name", "GLenum")]
-    public enum SGIX
+    public enum SGIX : int
     {
         [NativeName("Name", "GL_ASYNC_MARKER_SGIX")]
         AsyncMarkerSgix = 0x8329,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "GetPointervPName")]
-    public enum GetPointervPName
+    public enum GetPointervPName : int
     {
         [NativeName("Name", "GL_VERTEX_ARRAY_POINTER_EXT")]
         VertexArrayPointerExt = 0x808E,

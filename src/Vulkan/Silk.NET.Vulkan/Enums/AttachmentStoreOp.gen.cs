@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkAttachmentStoreOp")]
-    public enum AttachmentStoreOp
+    public enum AttachmentStoreOp : int
     {
         [NativeName("Name", "VK_ATTACHMENT_STORE_OP_STORE")]
         Store = 0,

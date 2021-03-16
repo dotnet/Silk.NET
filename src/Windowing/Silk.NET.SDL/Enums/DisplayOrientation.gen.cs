@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L180_C9")]
     [NativeName("Name", "SDL_DisplayOrientation")]
-    public enum DisplayOrientation
+    public enum DisplayOrientation : int
     {
         [NativeName("Name", "SDL_ORIENTATION_UNKNOWN")]
         OrientationUnknown = 0x0,

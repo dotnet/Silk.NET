@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerReductionModeEXT")]
-    public enum SamplerReductionModeEXT
+    public enum SamplerReductionModeEXT : int
     {
         [NativeName("Name", "VK_SAMPLER_REDUCTION_MODE_WEIGHTED_AVERAGE")]
         SamplerReductionModeWeightedAverage = 0,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES.Extensions.AMD
 {
     [NativeName("Name", "GLenum")]
-    public enum AMD
+    public enum AMD : int
     {
         [NativeName("Name", "GL_3DC_X_AMD")]
         Gl3DCXAmd = 0x87F9,

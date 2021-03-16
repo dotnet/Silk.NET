@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "ColorTableParameterPName")]
-    public enum ColorTableParameterPName
+    public enum ColorTableParameterPName : int
     {
         [NativeName("Name", "GL_COLOR_TABLE_SCALE")]
         ColorTableScale = 0x80D6,

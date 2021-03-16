@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkCommandPoolCreateFlags")]
-    public enum CommandPoolCreateFlags
+    public enum CommandPoolCreateFlags : int
     {
         [NativeName("Name", "VK_COMMAND_POOL_CREATE_TRANSIENT_BIT")]
         CommandPoolCreateTransientBit = 1,

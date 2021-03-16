@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.DXGI
 {
     [NativeName("Name", "DXGI_FRAME_PRESENTATION_MODE")]
-    public enum FramePresentationMode
+    public enum FramePresentationMode : int
     {
         [NativeName("Name", "DXGI_FRAME_PRESENTATION_MODE_COMPOSED")]
         FramePresentationModeComposed = 0x0,

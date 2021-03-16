@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "ContextProfileMask")]
-    public enum ContextProfileMask
+    public enum ContextProfileMask : int
     {
         [NativeName("Name", "GL_CONTEXT_CORE_PROFILE_BIT")]
         ContextCoreProfileBit = 0x1,

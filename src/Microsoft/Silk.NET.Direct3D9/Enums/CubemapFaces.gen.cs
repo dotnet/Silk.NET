@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D9
 {
     [NativeName("Name", "_D3DCUBEMAP_FACES")]
-    public enum CubemapFaces
+    public enum CubemapFaces : int
     {
         [NativeName("Name", "D3DCUBEMAP_FACE_POSITIVE_X")]
         CubemapFacePositiveX = 0x0,

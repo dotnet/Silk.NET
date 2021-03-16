@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_VIDEO_PROCESSOR_FILTER_CAPS")]
-    public enum VideoProcessorFilterCaps
+    public enum VideoProcessorFilterCaps : int
     {
         [NativeName("Name", "D3D11_VIDEO_PROCESSOR_FILTER_CAPS_BRIGHTNESS")]
         VideoProcessorFilterCapsBrightness = 0x1,

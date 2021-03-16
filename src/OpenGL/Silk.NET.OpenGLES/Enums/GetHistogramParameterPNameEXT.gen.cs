@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "GetHistogramParameterPNameEXT")]
-    public enum GetHistogramParameterPNameEXT
+    public enum GetHistogramParameterPNameEXT : int
     {
         [NativeName("Name", "GL_HISTOGRAM_WIDTH")]
         HistogramWidth = 0x8026,

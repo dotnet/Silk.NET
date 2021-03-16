@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "CombinerParameterNV")]
-    public enum CombinerParameterNV
+    public enum CombinerParameterNV : int
     {
         [NativeName("Name", "GL_COMBINER_INPUT_NV")]
         CombinerInputNV = 0x8542,

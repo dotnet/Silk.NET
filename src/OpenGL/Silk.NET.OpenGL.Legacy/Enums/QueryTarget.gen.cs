@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "QueryTarget")]
-    public enum QueryTarget
+    public enum QueryTarget : int
     {
         [NativeName("Name", "GL_TRANSFORM_FEEDBACK_OVERFLOW")]
         TransformFeedbackOverflow = 0x82EC,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "ShaderParameterName")]
-    public enum ShaderParameterName
+    public enum ShaderParameterName : int
     {
         [NativeName("Name", "GL_SHADER_TYPE")]
         ShaderType = 0x8B4F,

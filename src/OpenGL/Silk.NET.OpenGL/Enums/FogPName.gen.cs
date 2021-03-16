@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "FogPName")]
-    public enum FogPName
+    public enum FogPName : int
     {
     }
 }

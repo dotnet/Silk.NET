@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkFullScreenExclusiveEXT")]
-    public enum FullScreenExclusiveEXT
+    public enum FullScreenExclusiveEXT : int
     {
         [NativeName("Name", "VK_FULL_SCREEN_EXCLUSIVE_DEFAULT_EXT")]
         FullScreenExclusiveDefaultExt = 0,

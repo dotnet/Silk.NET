@@ -23,7 +23,7 @@ namespace Silk.NET.Direct3D12
     {
         public CpuDescriptorHandle
         (
-            uint? ptr = null
+            nuint? ptr = null
         ) : this()
         {
             if (ptr is not null)
@@ -36,6 +36,6 @@ namespace Silk.NET.Direct3D12
         [NativeName("Type", "SIZE_T")]
         [NativeName("Type.Name", "SIZE_T")]
         [NativeName("Name", "ptr")]
-        public uint Ptr;
+        public nuint Ptr;
     }
 }

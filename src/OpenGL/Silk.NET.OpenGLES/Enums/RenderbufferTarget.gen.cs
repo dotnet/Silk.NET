@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "RenderbufferTarget")]
-    public enum RenderbufferTarget
+    public enum RenderbufferTarget : int
     {
         [NativeName("Name", "GL_RENDERBUFFER")]
         Renderbuffer = 0x8D41,

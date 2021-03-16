@@ -25,7 +25,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.SurfaceFullScreenExclusiveWin32InfoExt,
             void* pNext = null,
-            IntPtr? hmonitor = null
+            nint? hmonitor = null
         ) : this()
         {
             if (sType is not null)
@@ -58,6 +58,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "HMONITOR")]
         [NativeName("Type.Name", "HMONITOR")]
         [NativeName("Name", "hmonitor")]
-        public IntPtr Hmonitor;
+        public nint Hmonitor;
     }
 }

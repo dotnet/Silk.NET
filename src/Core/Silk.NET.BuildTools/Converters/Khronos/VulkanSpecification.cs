@@ -91,7 +91,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             var baseTypes = types.Elements("type").Where(typex => typex.HasCategoryAttribute("basetype"))
                 .ToDictionary(
                     typex => typex.GetNameElement(),
-                    typex => typex.Element("type")?.Value ?? "IntPtr");
+                    typex => typex.Element("type")?.Value ?? "nint");
             baseTypes["VkBool32"] = "Bool32";
 
             var extensions = registry.Element("extensions").Elements("extension")

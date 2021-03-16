@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_render_L101_C9")]
     [NativeName("Name", "SDL_TextureAccess")]
-    public enum TextureAccess
+    public enum TextureAccess : int
     {
         [NativeName("Name", "SDL_TEXTUREACCESS_STATIC")]
         TextureaccessStatic = 0x0,

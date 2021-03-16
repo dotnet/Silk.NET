@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "CommandOpcodesNV")]
-    public enum CommandOpcodesNV
+    public enum CommandOpcodesNV : int
     {
         [NativeName("Name", "GL_TERMINATE_SEQUENCE_COMMAND_NV")]
         TerminateSequenceCommandNV = 0x0,

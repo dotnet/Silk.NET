@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkSamplerYcbcrModelConversionKHR")]
-    public enum SamplerYcbcrModelConversionKHR
+    public enum SamplerYcbcrModelConversionKHR : int
     {
         [NativeName("Name", "VK_SAMPLER_YCBCR_MODEL_CONVERSION_RGB_IDENTITY")]
         SamplerYcbcrModelConversionRgbIdentity = 0,

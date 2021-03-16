@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES
 {
     [NativeName("Name", "MaterialParameter")]
-    public enum MaterialParameter
+    public enum MaterialParameter : int
     {
         [NativeName("Name", "GL_AMBIENT")]
         Ambient = 0x1200,

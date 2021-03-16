@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL
 {
     [NativeName("Name", "FramebufferParameterName")]
-    public enum FramebufferParameterName
+    public enum FramebufferParameterName : int
     {
         [NativeName("Name", "GL_FRAMEBUFFER_DEFAULT_WIDTH")]
         FramebufferDefaultWidth = 0x9310,

@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "ConvolutionBorderModeEXT")]
-    public enum ConvolutionBorderModeEXT
+    public enum ConvolutionBorderModeEXT : int
     {
         [NativeName("Name", "GL_REDUCE")]
         Reduce = 0x8016,

@@ -34,6 +34,18 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         [NativeApi(EntryPoint = "glExtGetProgramsQCOM")]
         public partial void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] out uint programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] out int numPrograms);
 
+        [NativeApi(EntryPoint = "glExtGetProgramsQCOM")]
+        public unsafe partial void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] Program* programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] int* numPrograms);
+
+        [NativeApi(EntryPoint = "glExtGetProgramsQCOM")]
+        public unsafe partial void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] Program* programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] out int numPrograms);
+
+        [NativeApi(EntryPoint = "glExtGetProgramsQCOM")]
+        public unsafe partial void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] out Program programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] int* numPrograms);
+
+        [NativeApi(EntryPoint = "glExtGetProgramsQCOM")]
+        public partial void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] out Program programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] out int numPrograms);
+
         [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
         public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Flow(FlowDirection.Out)] byte* source, [Flow(FlowDirection.Out)] int* length);
 
@@ -81,6 +93,18 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
 
         [NativeApi(EntryPoint = "glExtGetShadersQCOM")]
         public partial void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] out uint shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] out int numShaders);
+
+        [NativeApi(EntryPoint = "glExtGetShadersQCOM")]
+        public unsafe partial void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] Shader* shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] int* numShaders);
+
+        [NativeApi(EntryPoint = "glExtGetShadersQCOM")]
+        public unsafe partial void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] Shader* shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] out int numShaders);
+
+        [NativeApi(EntryPoint = "glExtGetShadersQCOM")]
+        public unsafe partial void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] out Shader shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] int* numShaders);
+
+        [NativeApi(EntryPoint = "glExtGetShadersQCOM")]
+        public partial void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] out Shader shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] out int numShaders);
 
         [NativeApi(EntryPoint = "glExtIsProgramBinaryQCOM")]
         public partial bool ExtIsProgramBinary([Flow(FlowDirection.In)] uint program);

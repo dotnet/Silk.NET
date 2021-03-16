@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "TextureParameterName")]
-    public enum TextureParameterName
+    public enum TextureParameterName : int
     {
         [NativeName("Name", "GL_TEXTURE_WIDTH")]
         TextureWidth = 0x1000,

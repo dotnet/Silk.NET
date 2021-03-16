@@ -26,7 +26,7 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         public partial void DispatchCompute([Flow(FlowDirection.In)] uint num_groups_x, [Flow(FlowDirection.In)] uint num_groups_y, [Flow(FlowDirection.In)] uint num_groups_z);
 
         [NativeApi(EntryPoint = "glDispatchComputeIndirect")]
-        public partial void DispatchComputeIndirect([Flow(FlowDirection.In)] IntPtr indirect);
+        public partial void DispatchComputeIndirect([Flow(FlowDirection.In)] nint indirect);
 
         public ArbComputeShader(INativeContext ctx)
             : base(ctx)

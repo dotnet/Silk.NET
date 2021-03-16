@@ -13,7 +13,7 @@ namespace Silk.NET.SDL
 {
     [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L145_C9")]
     [NativeName("Name", "SDL_WindowEventID")]
-    public enum WindowEventID
+    public enum WindowEventID : int
     {
         [NativeName("Name", "SDL_WINDOWEVENT_NONE")]
         WindoweventNone = 0x0,

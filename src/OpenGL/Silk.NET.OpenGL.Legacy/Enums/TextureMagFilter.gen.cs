@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "TextureMagFilter")]
-    public enum TextureMagFilter
+    public enum TextureMagFilter : int
     {
         [NativeName("Name", "GL_NEAREST")]
         Nearest = 0x2600,

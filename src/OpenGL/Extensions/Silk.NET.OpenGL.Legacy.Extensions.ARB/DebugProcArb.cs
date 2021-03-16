@@ -7,5 +7,5 @@ using System;
 
 namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 {
-    public delegate void DebugProcArb(ARB source, ARB type, int id, ARB severity, int length, IntPtr message, IntPtr userParam);
+    public delegate void DebugProcArb(ARB source, ARB type, int id, ARB severity, int length, nint message, nint userParam);
 }

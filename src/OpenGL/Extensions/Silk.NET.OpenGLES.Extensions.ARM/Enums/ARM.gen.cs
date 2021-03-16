@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES.Extensions.ARM
 {
     [NativeName("Name", "GLenum")]
-    public enum ARM
+    public enum ARM : int
     {
         [NativeName("Name", "GL_MALI_PROGRAM_BINARY_ARM")]
         MaliProgramBinaryArm = 0x8F61,

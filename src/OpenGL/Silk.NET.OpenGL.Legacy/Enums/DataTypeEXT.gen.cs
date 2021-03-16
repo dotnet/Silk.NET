@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "DataTypeEXT")]
-    public enum DataTypeEXT
+    public enum DataTypeEXT : int
     {
         [NativeName("Name", "GL_SCALAR_EXT")]
         ScalarExt = 0x87BE,

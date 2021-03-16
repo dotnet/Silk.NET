@@ -34,6 +34,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glDeleteQueriesARB")]
         public partial void DeleteQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in uint ids);
 
+        [NativeApi(EntryPoint = "glDeleteQueriesARB")]
+        public unsafe partial void DeleteQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] Query* ids);
+
+        [NativeApi(EntryPoint = "glDeleteQueriesARB")]
+        public partial void DeleteQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Query ids);
+
         [NativeApi(EntryPoint = "glEndQueryARB")]
         public partial void EndQuery([Flow(FlowDirection.In)] ARB target);
 
@@ -45,6 +51,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 
         [NativeApi(EntryPoint = "glGenQueriesARB")]
         public partial void GenQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out uint ids);
+
+        [NativeApi(EntryPoint = "glGenQueriesARB")]
+        public unsafe partial void GenQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Query* ids);
+
+        [NativeApi(EntryPoint = "glGenQueriesARB")]
+        public partial void GenQueries([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] out Query ids);
 
         [NativeApi(EntryPoint = "glGetQueryivARB")]
         public unsafe partial void GetQuery([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);

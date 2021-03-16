@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Assimp
 {
     [NativeName("Name", "aiMetadataType")]
-    public enum MetadataType
+    public enum MetadataType : int
     {
         [NativeName("Name", "AI_BOOL")]
         Bool = 0x0,

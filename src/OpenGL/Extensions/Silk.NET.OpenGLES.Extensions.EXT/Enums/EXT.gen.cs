@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGLES.Extensions.EXT
 {
     [NativeName("Name", "GLenum")]
-    public enum EXT
+    public enum EXT : int
     {
         [NativeName("Name", "GL_SRC1_COLOR_EXT")]
         Src1ColorExt = 0x88F9,

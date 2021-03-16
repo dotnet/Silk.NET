@@ -13,7 +13,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkExternalSemaphoreFeatureFlags")]
-    public enum ExternalSemaphoreFeatureFlags
+    public enum ExternalSemaphoreFeatureFlags : int
     {
         [NativeName("Name", "VK_EXTERNAL_SEMAPHORE_FEATURE_EXPORTABLE_BIT")]
         ExternalSemaphoreFeatureExportableBit = 1,

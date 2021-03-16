@@ -42,8 +42,8 @@ namespace Silk.NET.BuildTools.Overloading
                     (
                         $"var {parameter.Name} = ({parameter.Type}) SilkMarshal.StringArrayToPtr({parameter.Name}Sa);"
                     );
-                    ep.Add($"SilkMarshal.CopyPtrToStringArray((IntPtr) {parameter.Name}, {parameter.Name}Sa);");
-                    ep.Add($"SilkMarshal.Free((IntPtr) {parameter.Name});");
+                    ep.Add($"SilkMarshal.CopyPtrToStringArray((nint) {parameter.Name}, {parameter.Name}Sa);");
+                    ep.Add($"SilkMarshal.Free((nint) {parameter.Name});");
                 }
             }
 

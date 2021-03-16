@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D12
 {
     [NativeName("Name", "D3D12_META_COMMAND_PARAMETER_TYPE")]
-    public enum MetaCommandParameterType
+    public enum MetaCommandParameterType : int
     {
         [NativeName("Name", "D3D12_META_COMMAND_PARAMETER_TYPE_FLOAT")]
         MetaCommandParameterTypeFloat = 0x0,

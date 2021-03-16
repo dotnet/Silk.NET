@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [NativeName("Name", "VkStencilOp")]
-    public enum StencilOp
+    public enum StencilOp : int
     {
         [NativeName("Name", "VK_STENCIL_OP_KEEP")]
         Keep = 0,

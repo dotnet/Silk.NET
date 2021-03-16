@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Direct3D11
 {
     [NativeName("Name", "D3D11_DSV_DIMENSION")]
-    public enum DsvDimension
+    public enum DsvDimension : int
     {
         [NativeName("Name", "D3D11_DSV_DIMENSION_UNKNOWN")]
         DsvDimensionUnknown = 0x0,

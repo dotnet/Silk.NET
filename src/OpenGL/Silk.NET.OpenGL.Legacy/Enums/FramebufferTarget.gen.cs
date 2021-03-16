@@ -12,7 +12,7 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.OpenGL.Legacy
 {
     [NativeName("Name", "FramebufferTarget")]
-    public enum FramebufferTarget
+    public enum FramebufferTarget : int
     {
         [NativeName("Name", "GL_READ_FRAMEBUFFER")]
         ReadFramebuffer = 0x8CA8,
