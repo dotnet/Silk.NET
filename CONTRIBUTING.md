@@ -38,7 +38,7 @@ Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-
 If the core team are unable to champion an issue, they will mark it with a "help wanted" label. This indicates that any external contributor may pick up on this issue and implement it as part of a contribution. However, some "help wanted" issues may require intermediate knowledge of the codebase, area, and/or ecosystem; or may have uncertainty surrounding implementation details (if this is the case talk to us in the Discord or in a discussion issue). Because of this, we also mark some issues with the label "good first issue" which indicates that an issue is straightforward, and is a good place to start if you're interested in contributing but new to the codebase.
 
 ## Contributor License Agreement
-You must sign a Contributor License Agreement (CLA) before your PR will be merged. This is a one-time requirement for Ultz projects, and you'll only have to do this once. You can read more about [Contribution License Agreements (CLAs) on Wikipedia](https://en.wikipedia.org/wiki/Contributor_License_Agreement).
+You must sign a Contributor License Agreement (CLA) before your PR will be merged. This is a one-time requirement for all .NET Foundation projects, and you'll only have to do this once. You can read more about [Contribution License Agreements (CLAs) on Wikipedia](https://en.wikipedia.org/wiki/Contributor_License_Agreement).
 
 You don't have to do this up-front. You can simply clone, fork, and submit your pull-request as usual. When your pull-request is created, you'll be notified by the CLA bot of further instructions if necessary.
 

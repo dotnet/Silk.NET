@@ -12,7 +12,7 @@ namespace Silk.NET.NUKE.SshAgent
         static void Main(string[] args)
         {
             Console.WriteLine("Silk.NET SSH Build System");
-            Console.WriteLine($"Copyright (C) {DateTime.Now.Year} Ultz Limited");
+            Console.WriteLine($"Copyright (C) {DateTime.Now.Year} .NET Foundation");
             Console.WriteLine();
             // TODO | This will be a remote build agent used by our NUKE pipeline. It will be needed because some of our
             // TODO | workloads are operating-system specific. For example, you can only rebuild libSDL2.a on a Mac
