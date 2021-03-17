@@ -21,7 +21,7 @@ namespace Silk.NET.BuildTools
         private static int Main(string[] args)
         {
             Console.WriteLine("Silk.NET Build Tools");
-            Console.WriteLine("Copyright (C) .NET Foundation");
+            Console.WriteLine("Copyright (C) .NET Foundation and Contributors");
             Console.WriteLine();
             if (args.Length == 1 && args[0] == "jsonex")
             {
