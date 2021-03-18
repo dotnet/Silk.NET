@@ -1,0 +1,39 @@
+###############################################################################
+# Set default behavior to:
+#   treat as text and
+#   normalize to Unix-style line endings
+###############################################################################
+*           text        eol=lf
+
+###############################################################################
+# Set explicit file behavior to:
+#   treat as text and
+#   normalize to Unix-style line endings
+###############################################################################
+*.cmd       text        eol=lf
+*.config    text        eol=lf
+*.cs        text        eol=lf
+*.csproj    text        eol=lf
+*.hlsl      text        eol=lf
+*.json      text        eol=lf
+*.md        text        eol=lf
+*.props     text        eol=lf
+*.ps1       text        eol=lf
+*.resx      text        eol=lf
+*.sh        text        eol=lf
+*.sln       text        eol=lf
+*.targets   text        eol=lf
+*.yml       text        eol=lf
+
+###############################################################################
+# Set explicit file behavior to:
+#   treat as text and
+#   normalize to Windows-style line endings
+###############################################################################
+*.sln       text        eol=crlf
+
+###############################################################################
+# Set explicit file behavior to:
+#   treat as binary
+###############################################################################
+*.snk       binary
