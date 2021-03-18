@@ -1,7 +1,5 @@
-﻿// This file is part of Silk.NET.
-// 
-// You may modify and distribute Silk.NET under the terms
-// of the MIT license. See the LICENSE file for details.
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 using System.IO;
 using Silk.NET.BuildTools.Common;
@@ -21,7 +19,7 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="project">The project containing this enum.</param>
         public static void WriteEnum(this Enum @enum, string file, Profile profile, Project project, BindState task)
         {
-            var sw = new StreamWriter(file);
+            var sw = new StreamWriter(file) {NewLine = "\n"};
             sw.WriteLine(task.LicenseText());
             sw.WriteLine();
             var ns = project.IsRoot ? task.Task.Namespace : task.Task.ExtensionsNamespace;

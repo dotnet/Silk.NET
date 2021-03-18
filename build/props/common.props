@@ -4,7 +4,7 @@
         <PackageIconUrl>https://static.ultz.co.uk/img/SilkDotNet.png</PackageIconUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <LangVersion>preview</LangVersion>
-        <Authors>Ultz Limited</Authors>
+        <Authors>.NET Foundation</Authors>
         <PackageReleaseNotes>
             Silk.NET March 2021 Update
             

@@ -1,7 +1,5 @@
-﻿// This file is part of Silk.NET.
-// 
-// You may modify and distribute Silk.NET under the terms
-// of the MIT license. See the LICENSE file for details.
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
 using System.IO;
@@ -27,8 +25,8 @@ namespace Silk.NET.BuildTools.Bind
             {
                 return;
             }
-            
-            using var sw = new StreamWriter(file);
+
+            using var sw = new StreamWriter(file) {NewLine = "\n"};
             
             sw.WriteLine(task.LicenseText());
             sw.WriteLine("using Silk.NET.Core.Loader;");
@@ -82,7 +80,7 @@ namespace Silk.NET.BuildTools.Bind
             
                 if (project.IsRoot)
                 {
-                    var sw = new StreamWriter(Path.Combine(folder, $"{@class.ClassName}.gen.cs"));
+                    var sw = new StreamWriter(Path.Combine(folder, $"{@class.ClassName}.gen.cs")) {NewLine = "\n"};
                     StreamWriter? swOverloads = null;
                     sw.Write(task.LicenseText());
                     sw.WriteCoreUsings();
@@ -232,7 +230,7 @@ namespace Silk.NET.BuildTools.Bind
                     sw.Dispose();
                     if (!File.Exists(Path.Combine(folder, $"{@class.ClassName}.cs")))
                     {
-                        sw = new StreamWriter(Path.Combine(folder, $"{@class.ClassName}.cs"));
+                        sw = new StreamWriter(Path.Combine(folder, $"{@class.ClassName}.cs")) {NewLine = "\n"};
                         sw.WriteCoreUsings();
                         sw.WriteLine();
                         sw.WriteLine("#pragma warning disable 1591");
@@ -289,7 +287,7 @@ namespace Silk.NET.BuildTools.Bind
                     foreach (var (key, i) in @class.NativeApis)
                     {
                         var name = i.Name.Substring(1);
-                        var sw = new StreamWriter(Path.Combine(folder, $"{name}.gen.cs"));
+                        var sw = new StreamWriter(Path.Combine(folder, $"{name}.gen.cs")) {NewLine = "\n"};
                         StreamWriter? swOverloads = null;
                         sw.Write(task.LicenseText());
                         sw.WriteCoreUsings();
@@ -430,7 +428,7 @@ namespace Silk.NET.BuildTools.Bind
             StreamWriter CreateOverloadsFile(string folder, string @class, bool isExtension)
             {
                 var ns = isExtension ? task.Task.ExtensionsNamespace : task.Task.Namespace;
-                var swOverloads = new StreamWriter(Path.Combine(folder, $"{@class}Overloads.gen.cs"));
+                var swOverloads = new StreamWriter(Path.Combine(folder, $"{@class}Overloads.gen.cs")) {NewLine = "\n"};
                 swOverloads.Write(task.LicenseText());
                 swOverloads.WriteCoreUsings();
                 swOverloads.WriteLine();

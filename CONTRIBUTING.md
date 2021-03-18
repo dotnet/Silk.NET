@@ -30,7 +30,7 @@ Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-
 1. [Fork Silk.NET](https://github.com/Ultz/Silk.NET/fork)
 1. Create a branch on your fork.
 1. Add an empty commit to start your work off (and let you open a PR): `git commit --allow-empty -m "start of [thing you're working on]"`
-1. Open a Pull request with `[WIP]` in the title. Do this **before** you actually start working.
+1. Open a [**draft pull request**](https://github.blog/2019-02-14-introducing-draft-pull-requests/). Do this **before** you actually start working.
 1. Make your commits in small, incremental steps with clear descriptions.
 1. Tag a maintainer when you're done and ask for a review!
 
@@ -38,17 +38,15 @@ Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-
 If the core team are unable to champion an issue, they will mark it with a "help wanted" label. This indicates that any external contributor may pick up on this issue and implement it as part of a contribution. However, some "help wanted" issues may require intermediate knowledge of the codebase, area, and/or ecosystem; or may have uncertainty surrounding implementation details (if this is the case talk to us in the Discord or in a discussion issue). Because of this, we also mark some issues with the label "good first issue" which indicates that an issue is straightforward, and is a good place to start if you're interested in contributing but new to the codebase.
 
 ## Contributor License Agreement
-You must sign a Contributor License Agreement (CLA) before your PR will be merged. This is a one-time requirement for Ultz projects, and you'll only have to do this once. You can read more about [Contribution License Agreements (CLAs) on Wikipedia](https://en.wikipedia.org/wiki/Contributor_License_Agreement).
+You must sign a Contributor License Agreement (CLA) before your PR will be merged. This is a one-time requirement for all .NET Foundation projects, and you'll only have to do this once. You can read more about [Contribution License Agreements (CLAs) on Wikipedia](https://en.wikipedia.org/wiki/Contributor_License_Agreement).
 
 You don't have to do this up-front. You can simply clone, fork, and submit your pull-request as usual. When your pull-request is created, you'll be notified by the CLA bot of further instructions if necessary.
 
 ## File Headers
 The following file header is used for Silk.NET. Please use it for new files.
 ```cs
-// This file is part of Silk.NET.
-// 
-// You may modify and distribute Silk.NET under the terms
-// of the MIT license. See the LICENSE file for details.
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 ```
 
 ## Pull requests

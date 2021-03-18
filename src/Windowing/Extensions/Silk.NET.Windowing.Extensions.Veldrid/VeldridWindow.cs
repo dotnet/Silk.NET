@@ -1,9 +1,5 @@
-// This file is no-longer Ultz Confidential Information and is now deemed "Public Knowledge" as defined in section 1(j)
-// of the Ultz Non-Disclosure Agreement (OmegaNDA) as of 01/05/2020.
-//
-// Signed-off by Dylan Perks, Chief Executive.
-//
-// Released under the MIT license for Silk.NET. This file may have been modified from the original.
+// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
 using System.Runtime.InteropServices;

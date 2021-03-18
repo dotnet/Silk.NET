@@ -1,7 +1,5 @@
-﻿// This file is part of Silk.NET.
-// 
-// You may modify and distribute Silk.NET under the terms
-// of the MIT license. See the LICENSE file for details.
+﻿// Licensed to the .NET Foundation under one or more agreements.
+// The .NET Foundation licenses this file to you under the MIT license.
 
 using System.IO;
 using System.Linq;
@@ -67,7 +65,8 @@ namespace Silk.NET.BuildTools.Bind
                 return;
             }
 
-            var csproj = new StreamWriter(Path.Combine(folder, $"{project.GetProjectName(task.Task)}.csproj"));
+            var csproj = new StreamWriter(Path.Combine(folder, $"{project.GetProjectName(task.Task)}.csproj"))
+                {NewLine = "\n"};
             csproj.WriteLine("<Project Sdk=\"Microsoft.NET.Sdk\">");
             csproj.WriteLine();
             csproj.WriteLine("  <PropertyGroup>");
