@@ -17,7 +17,7 @@ namespace Silk.NET.OpenCL.Extensions.QCOM
         [NativeName("Name", "CL_MEM_ANDROID_NATIVE_BUFFER_HOST_PTR_QCOM")]
         MemAndroidNativeBufferHostPtrQCom = 0x40C6,
         [NativeName("Name", "CL_MEM_EXT_HOST_PTR_QCOM")]
-        MemExtHostPtrQCom = unchecked((int)0x536870912),
+        MemExtHostPtrQCom = 0x20000000,
         [NativeName("Name", "CL_DEVICE_EXT_MEM_PADDING_IN_BYTES_QCOM")]
         DeviceExtMemPaddingInBytesQCom = 0x40A0,
         [NativeName("Name", "CL_DEVICE_PAGE_SIZE_QCOM")]

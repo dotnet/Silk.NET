@@ -15,9 +15,9 @@ namespace Silk.NET.OpenCL.Extensions.IMG
     public enum IMG : int
     {
         [NativeName("Name", "CL_MEM_USE_UNCACHED_CPU_MEMORY_IMG")]
-        MemUseUncachedCpuMemoryImg = 0x67108864,
+        MemUseUncachedCpuMemoryImg = 0x4000000,
         [NativeName("Name", "CL_MEM_USE_CACHED_CPU_MEMORY_IMG")]
-        MemUseCachedCpuMemoryImg = unchecked((int)0x134217728),
+        MemUseCachedCpuMemoryImg = 0x8000000,
         [NativeName("Name", "CL_MIPMAP_FILTER_ANY_IMG")]
         MipmapFilterAnyImg = 0x0,
         [NativeName("Name", "CL_MIPMAP_FILTER_BOX_IMG")]
@@ -33,7 +33,7 @@ namespace Silk.NET.OpenCL.Extensions.IMG
         [NativeName("Name", "CL_INVALID_GRALLOC_OBJECT_IMG")]
         InvalidGrallocObjectImg = 0x40D5,
         [NativeName("Name", "CL_MEM_USE_GRALLOC_PTR_IMG")]
-        MemUseGrallocPtrImg = unchecked((int)0x268435456),
+        MemUseGrallocPtrImg = 0x10000000,
         [NativeName("Name", "CL_COMMAND_ACQUIRE_GRALLOC_OBJECTS_IMG")]
         CommandAcquireGrallocObjectsImg = 0x40D2,
         [NativeName("Name", "CL_COMMAND_RELEASE_GRALLOC_OBJECTS_IMG")]

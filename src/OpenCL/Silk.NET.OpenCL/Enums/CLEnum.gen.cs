@@ -237,9 +237,9 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_FP_ROUND_TO_ZERO")]
         FPRoundToZero = 0x8,
         [NativeName("Name", "CL_FP_ROUND_TO_INF")]
-        FPRoundToInf = 0x16,
+        FPRoundToInf = 0x10,
         [NativeName("Name", "CL_FP_FMA")]
-        FPFma = 0x32,
+        FPFma = 0x20,
         [NativeName("Name", "CL_NONE")]
         None = 0x0,
         [NativeName("Name", "CL_READ_ONLY_CACHE")]
@@ -283,9 +283,9 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_MEM_USE_HOST_PTR")]
         MemUseHostPtr = 0x8,
         [NativeName("Name", "CL_MEM_ALLOC_HOST_PTR")]
-        MemAllocHostPtr = 0x16,
+        MemAllocHostPtr = 0x10,
         [NativeName("Name", "CL_MEM_COPY_HOST_PTR")]
-        MemCopyHostPtr = 0x32,
+        MemCopyHostPtr = 0x20,
         [NativeName("Name", "CL_PROFILING_COMMAND_QUEUED")]
         ProfilingCommandQueued = 0x1280,
         [NativeName("Name", "CL_PROFILING_COMMAND_SUBMIT")]
@@ -529,7 +529,7 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_DEVICE_NATIVE_VECTOR_WIDTH_HALF")]
         DeviceNativeVectorWidthHalf = 0x103C,
         [NativeName("Name", "CL_FP_SOFT_FLOAT")]
-        FPSoftFloat = 0x64,
+        FPSoftFloat = 0x40,
         [NativeName("Name", "CL_CONTEXT_NUM_DEVICES")]
         ContextNumDevices = 0x1083,
         [NativeName("Name", "CL_Rx")]
@@ -591,7 +591,7 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_NON_BLOCKING")]
         NonBlocking = 0,
         [NativeName("Name", "CL_DEVICE_TYPE_CUSTOM")]
-        DeviceTypeCustom = 0x16,
+        DeviceTypeCustom = 0x10,
         [NativeName("Name", "CL_DEVICE_DOUBLE_FP_CONFIG")]
         DeviceDoubleFPConfig = 0x1032,
         [NativeName("Name", "CL_DEVICE_LINKER_AVAILABLE")]
@@ -619,7 +619,7 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_DEVICE_PRINTF_BUFFER_SIZE")]
         DevicePrintfBufferSize = 0x1049,
         [NativeName("Name", "CL_FP_CORRECTLY_ROUNDED_DIVIDE_SQRT")]
-        FPCorrectlyRoundedDivideSqrt = 0x128,
+        FPCorrectlyRoundedDivideSqrt = 0x80,
         [NativeName("Name", "CL_CONTEXT_INTEROP_USER_SYNC")]
         ContextInteropUserSync = 0x1085,
         [NativeName("Name", "CL_DEVICE_PARTITION_EQUALLY")]
@@ -637,15 +637,15 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_DEVICE_AFFINITY_DOMAIN_L2_CACHE")]
         DeviceAffinityDomainL2Cache = 0x8,
         [NativeName("Name", "CL_DEVICE_AFFINITY_DOMAIN_L1_CACHE")]
-        DeviceAffinityDomainL1Cache = 0x16,
+        DeviceAffinityDomainL1Cache = 0x10,
         [NativeName("Name", "CL_DEVICE_AFFINITY_DOMAIN_NEXT_PARTITIONABLE")]
-        DeviceAffinityDomainNextPartitionable = 0x32,
+        DeviceAffinityDomainNextPartitionable = 0x20,
         [NativeName("Name", "CL_MEM_HOST_WRITE_ONLY")]
-        MemHostWriteOnly = 0x128,
+        MemHostWriteOnly = 0x80,
         [NativeName("Name", "CL_MEM_HOST_READ_ONLY")]
-        MemHostReadOnly = 0x256,
+        MemHostReadOnly = 0x100,
         [NativeName("Name", "CL_MEM_HOST_NO_ACCESS")]
-        MemHostNoAccess = 0x512,
+        MemHostNoAccess = 0x200,
         [NativeName("Name", "CL_MIGRATE_MEM_OBJECT_HOST")]
         MigrateMemObjectHost = 0x1,
         [NativeName("Name", "CL_MIGRATE_MEM_OBJECT_CONTENT_UNDEFINED")]
@@ -775,11 +775,11 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_QUEUE_SIZE")]
         QueueSize = 0x1094,
         [NativeName("Name", "CL_MEM_SVM_FINE_GRAIN_BUFFER")]
-        MemSvmFineGrainBuffer = 0x1024,
+        MemSvmFineGrainBuffer = 0x400,
         [NativeName("Name", "CL_MEM_SVM_ATOMICS")]
-        MemSvmAtomics = 0x2048,
+        MemSvmAtomics = 0x800,
         [NativeName("Name", "CL_MEM_KERNEL_READ_AND_WRITE")]
-        MemKernelReadAndWrite = 0x4096,
+        MemKernelReadAndWrite = 0x1000,
         [NativeName("Name", "CL_DEPTH")]
         Depth = 0x10BD,
         [NativeName("Name", "CL_sRGB")]
@@ -867,11 +867,11 @@ namespace Silk.NET.OpenCL
         [NativeName("Name", "CL_DEVICE_ATOMIC_SCOPE_WORK_ITEM")]
         DeviceAtomicScopeWorkItem = 0x8,
         [NativeName("Name", "CL_DEVICE_ATOMIC_SCOPE_WORK_GROUP")]
-        DeviceAtomicScopeWorkGroup = 0x16,
+        DeviceAtomicScopeWorkGroup = 0x10,
         [NativeName("Name", "CL_DEVICE_ATOMIC_SCOPE_DEVICE")]
-        DeviceAtomicScopeDevice = 0x32,
+        DeviceAtomicScopeDevice = 0x20,
         [NativeName("Name", "CL_DEVICE_ATOMIC_SCOPE_ALL_DEVICES")]
-        DeviceAtomicScopeAllDevices = 0x64,
+        DeviceAtomicScopeAllDevices = 0x40,
         [NativeName("Name", "CL_DEVICE_QUEUE_SUPPORTED")]
         DeviceQueueSupported = 0x1,
         [NativeName("Name", "CL_DEVICE_QUEUE_REPLACEABLE_DEFAULT")]
