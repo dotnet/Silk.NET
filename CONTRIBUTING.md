@@ -30,7 +30,7 @@ Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-
 1. [Fork Silk.NET](https://github.com/Ultz/Silk.NET/fork)
 1. Create a branch on your fork.
 1. Add an empty commit to start your work off (and let you open a PR): `git commit --allow-empty -m "start of [thing you're working on]"`
-1. Open a Pull request with `[WIP]` in the title. Do this **before** you actually start working.
+1. Open a [**draft pull request**](https://github.blog/2019-02-14-introducing-draft-pull-requests/). Do this **before** you actually start working.
 1. Make your commits in small, incremental steps with clear descriptions.
 1. Tag a maintainer when you're done and ask for a review!
 

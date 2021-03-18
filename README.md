@@ -6,7 +6,7 @@
 
 [![NuGet Version](https://img.shields.io/nuget/v/Silk.NET)](https://nuget.org/packages/Silk.NET)
 [![Preview Feed](https://img.shields.io/badge/nuget-experimental%20feed-yellow)](https://dev.azure.com/UltzOS/Silk.NET/_packaging?_a=feed&feed=Experimental)
-[![CI Build](https://github.com/Ultz/Silk.NET/workflows/CI%20Build/badge.svg)](https://dev.azure.com/UltzOS/Silk.NET/_build/latest?definitionId=2&branchName=master)
+[![CI Build](https://github.com/Ultz/Silk.NET/workflows/CI%20Build/badge.svg)](https://github.com/dotnet/Silk.NET/actions/workflows/build.yml)
 [![Join our Discord](https://img.shields.io/badge/chat%20on-discord-7289DA)](https://discord.gg/DTHHXRt)
 
 </div>
@@ -67,7 +67,7 @@ Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-
 
 1. [Fork Silk.NET](https://github.com/Ultz/Silk.NET/fork)
 2. Add an empty commit to a new branch to start your work off: `git commit --allow-empty -m "start of [thing you're working on]"`
-3. Once you've pushed a commit, open a Pull Request with `[WIP]` in the title. Do this **before** you actually start working.
+3. Once you've pushed a commit, open a [**draft pull request**](https://github.blog/2019-02-14-introducing-draft-pull-requests/). Do this **before** you actually start working.
 4. Make your commits in small, incremental steps with clear descriptions.
 5. Tag a maintainer when you're done and ask for a review!
 
