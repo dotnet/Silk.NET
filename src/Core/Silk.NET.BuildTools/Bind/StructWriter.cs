@@ -32,8 +32,8 @@ namespace Silk.NET.BuildTools.Bind
                 WriteBuildToolsIntrinsic(@struct, file, profile, project, task, args);
                 return;
             }
-        
-            var sw = new StreamWriter(file);
+
+            var sw = new StreamWriter(file) {NewLine = "\n"};
             sw.WriteLine(task.LicenseText());
             sw.WriteLine();
             sw.WriteCoreUsings();
@@ -399,7 +399,7 @@ namespace Silk.NET.BuildTools.Bind
             };
 
             var fnPtrSig = type.FunctionPointerSignature.GetFunctionPointerSignature();
-            using var sw = new StreamWriter(file);
+            using var sw = new StreamWriter(file) {NewLine = "\n"};
             sw.WriteLine(state.LicenseText());
             sw.WriteLine();
             sw.WriteCoreUsings();

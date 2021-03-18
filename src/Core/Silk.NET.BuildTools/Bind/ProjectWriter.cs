@@ -65,7 +65,8 @@ namespace Silk.NET.BuildTools.Bind
                 return;
             }
 
-            var csproj = new StreamWriter(Path.Combine(folder, $"{project.GetProjectName(task.Task)}.csproj"));
+            var csproj = new StreamWriter(Path.Combine(folder, $"{project.GetProjectName(task.Task)}.csproj"))
+                {NewLine = "\n"};
             csproj.WriteLine("<Project Sdk=\"Microsoft.NET.Sdk\">");
             csproj.WriteLine();
             csproj.WriteLine("  <PropertyGroup>");

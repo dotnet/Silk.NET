@@ -19,7 +19,7 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="project">The project containing this enum.</param>
         public static void WriteEnum(this Enum @enum, string file, Profile profile, Project project, BindState task)
         {
-            var sw = new StreamWriter(file);
+            var sw = new StreamWriter(file) {NewLine = "\n"};
             sw.WriteLine(task.LicenseText());
             sw.WriteLine();
             var ns = project.IsRoot ? task.Task.Namespace : task.Task.ExtensionsNamespace;
