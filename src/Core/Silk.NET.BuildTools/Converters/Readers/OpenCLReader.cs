@@ -861,7 +861,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                     (
                         x.Attribute("value")?.Value ?? (x.Attribute("bitpos") is null
                             ? null
-                            : (1 << int.Parse(x.Attribute("bitpos")?.Value ?? throw new InvalidDataException())).ToString())
+                            : (1 << int.Parse(x.Attribute("bitpos")?.Value ?? throw new InvalidDataException())).ToString("X"))
                     )
                 );
             Debug.Assert(allEnums != null, nameof(allEnums) + " != null");

@@ -67,7 +67,7 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         [NativeName("Name", "CL_DEVICE_SCHEDULING_DEFERRED_FLUSH_ARM")]
         DeviceSchedulingDeferredFlushArm = 0x8,
         [NativeName("Name", "CL_DEVICE_SCHEDULING_REGISTER_ALLOCATION_ARM")]
-        DeviceSchedulingRegisterAllocationArm = 0x16,
+        DeviceSchedulingRegisterAllocationArm = 0x10,
         [NativeName("Name", "CL_DEVICE_SCHEDULING_CONTROLS_CAPABILITIES_ARM")]
         DeviceSchedulingControlsCapabilitiesArm = 0x41E4,
         [NativeName("Name", "CL_DEVICE_SUPPORTED_REGISTER_ALLOCATIONS_ARM")]
@@ -107,8 +107,8 @@ namespace Silk.NET.OpenCL.Extensions.ARM
         [NativeName("Name", "CL_DEVICE_SVM_ATOMICS_ARM")]
         DeviceSvmAtomicsArm = 0x8,
         [NativeName("Name", "CL_MEM_SVM_FINE_GRAIN_BUFFER_ARM")]
-        MemSvmFineGrainBufferArm = 0x1024,
+        MemSvmFineGrainBufferArm = 0x400,
         [NativeName("Name", "CL_MEM_SVM_ATOMICS_ARM")]
-        MemSvmAtomicsArm = 0x2048,
+        MemSvmAtomicsArm = 0x800,
     }
 }

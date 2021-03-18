@@ -125,29 +125,29 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         [NativeName("Name", "CL_QUEUE_CAPABILITY_CROSS_QUEUE_EVENT_WAIT_LIST_INTEL")]
         QueueCapabilityCrossQueueEventWaitListIntel = 0x8,
         [NativeName("Name", "CL_QUEUE_CAPABILITY_TRANSFER_BUFFER_INTEL")]
-        QueueCapabilityTransferBufferIntel = 0x256,
+        QueueCapabilityTransferBufferIntel = 0x100,
         [NativeName("Name", "CL_QUEUE_CAPABILITY_TRANSFER_BUFFER_RECT_INTEL")]
-        QueueCapabilityTransferBufferRectIntel = 0x512,
+        QueueCapabilityTransferBufferRectIntel = 0x200,
         [NativeName("Name", "CL_QUEUE_CAPABILITY_MAP_BUFFER_INTEL")]
-        QueueCapabilityMapBufferIntel = 0x1024,
+        QueueCapabilityMapBufferIntel = 0x400,
         [NativeName("Name", "CL_QUEUE_CAPABILITY_FILL_BUFFER_INTEL")]
-        QueueCapabilityFillBufferIntel = 0x2048,
+        QueueCapabilityFillBufferIntel = 0x800,
         [NativeName("Name", "CL_QUEUE_CAPABILITY_TRANSFER_IMAGE_INTEL")]
-        QueueCapabilityTransferImageIntel = 0x4096,
+        QueueCapabilityTransferImageIntel = 0x1000,
         [NativeName("Name", "CL_QUEUE_CAPABILITY_MAP_IMAGE_INTEL")]
-        QueueCapabilityMapImageIntel = 0x8192,
+        QueueCapabilityMapImageIntel = 0x2000,
         [NativeName("Name", "CL_QUEUE_CAPABILITY_FILL_IMAGE_INTEL")]
-        QueueCapabilityFillImageIntel = 0x16384,
+        QueueCapabilityFillImageIntel = 0x4000,
         [NativeName("Name", "CL_QUEUE_CAPABILITY_TRANSFER_BUFFER_IMAGE_INTEL")]
-        QueueCapabilityTransferBufferImageIntel = 0x32768,
+        QueueCapabilityTransferBufferImageIntel = 0x8000,
         [NativeName("Name", "CL_QUEUE_CAPABILITY_TRANSFER_IMAGE_BUFFER_INTEL")]
-        QueueCapabilityTransferImageBufferIntel = 0x65536,
+        QueueCapabilityTransferImageBufferIntel = 0x10000,
         [NativeName("Name", "CL_QUEUE_CAPABILITY_MARKER_INTEL")]
-        QueueCapabilityMarkerIntel = 0x16777216,
+        QueueCapabilityMarkerIntel = 0x1000000,
         [NativeName("Name", "CL_QUEUE_CAPABILITY_BARRIER_INTEL")]
-        QueueCapabilityBarrierIntel = 0x33554432,
+        QueueCapabilityBarrierIntel = 0x2000000,
         [NativeName("Name", "CL_QUEUE_CAPABILITY_KERNEL_INTEL")]
-        QueueCapabilityKernelIntel = 0x67108864,
+        QueueCapabilityKernelIntel = 0x4000000,
         [NativeName("Name", "CL_DEVICE_PARTITION_BY_NAMES_INTEL")]
         DevicePartitionByNamesIntel = 0x4052,
         [NativeName("Name", "CL_DEVICE_AVC_ME_VERSION_INTEL")]
@@ -407,7 +407,7 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         [NativeName("Name", "CL_MEM_CHANNEL_INTEL")]
         MemChannelIntel = 0x4213,
         [NativeName("Name", "CL_MEM_FORCE_HOST_MEMORY_INTEL")]
-        MemForceHostMemoryIntel = 0x1048576,
+        MemForceHostMemoryIntel = 0x100000,
         [NativeName("Name", "CL_ACCELERATOR_TYPE_MOTION_ESTIMATION_INTEL")]
         AcceleratorTypeMotionEstimationIntel = 0x0,
         [NativeName("Name", "CL_ME_MB_TYPE_16x16_INTEL")]
@@ -443,9 +443,9 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         [NativeName("Name", "CL_NV12_INTEL")]
         NV12Intel = 0x410E,
         [NativeName("Name", "CL_MEM_NO_ACCESS_INTEL")]
-        MemNoAccessIntel = 0x16777216,
+        MemNoAccessIntel = 0x1000000,
         [NativeName("Name", "CL_MEM_ACCESS_FLAGS_UNRESTRICTED_INTEL")]
-        MemAccessFlagsUnrestrictedIntel = 0x33554432,
+        MemAccessFlagsUnrestrictedIntel = 0x2000000,
         [NativeName("Name", "CL_DEVICE_PLANAR_YUV_MAX_WIDTH_INTEL")]
         DevicePlanarYuvMaxWidthIntel = 0x417E,
         [NativeName("Name", "CL_DEVICE_PLANAR_YUV_MAX_HEIGHT_INTEL")]
@@ -461,7 +461,7 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         [NativeName("Name", "CL_DEVICE_NUM_SIMULTANEOUS_INTEROPS_INTEL")]
         DeviceNumSimultaneousInteropsIntel = 0x4105,
         [NativeName("Name", "CL_QUEUE_THREAD_LOCAL_EXEC_ENABLE_INTEL")]
-        QueueThreadLocalExecEnableIntel = unchecked((int)0xFFFFFFFF80000000),
+        QueueThreadLocalExecEnableIntel = unchecked((int)0x80000000),
         [NativeName("Name", "CL_DEVICE_HOST_MEM_CAPABILITIES_INTEL")]
         DeviceHostMemCapabilitiesIntel = 0x4190,
         [NativeName("Name", "CL_DEVICE_DEVICE_MEM_CAPABILITIES_INTEL")]
