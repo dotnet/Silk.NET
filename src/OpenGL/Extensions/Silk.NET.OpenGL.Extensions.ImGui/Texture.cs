@@ -1,7 +1,6 @@
 ﻿using System;
-using Silk.NET.OpenGL;
 
-namespace Ultz.SilkExtensions.ImGui
+namespace Silk.NET.OpenGL.Extensions.ImGui
 {
     public enum TextureCoordinate
     {

@@ -3,13 +3,8 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Numerics;
 using System.Runtime.CompilerServices;
-using ImGuiNET;
-using Silk.NET.Input.Common;
-using Silk.NET.Input.Extensions;
-using Silk.NET.OpenGL;
-using Silk.NET.Windowing.Common;
 
-namespace Ultz.SilkExtensions.ImGui
+namespace Silk.NET.OpenGL.Extensions.ImGui
 {
     public class ImGuiController : IDisposable
     {

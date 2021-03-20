@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Ultz.SilkExtensions.ImGui
+namespace Silk.NET.OpenGL.Extensions.ImGui
 {
     public readonly struct ImGuiFontConfig
     {

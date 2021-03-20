@@ -2,9 +2,8 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
-using Silk.NET.OpenGL;
 
-namespace Ultz.SilkExtensions.ImGui
+namespace Silk.NET.OpenGL.Extensions.ImGui
 {
     struct UniformFieldInfo
     {

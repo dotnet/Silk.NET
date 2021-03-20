@@ -1,9 +1,8 @@
 ﻿using System.Diagnostics;
 using System.Diagnostics.Contracts;
 using System.Runtime.CompilerServices;
-using Silk.NET.OpenGL;
 
-namespace Ultz.SilkExtensions.ImGui
+namespace Silk.NET.OpenGL.Extensions.ImGui
 {
     static class Util
     {
