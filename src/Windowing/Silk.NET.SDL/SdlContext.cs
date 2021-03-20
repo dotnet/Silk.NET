@@ -3,6 +3,7 @@
 
 using System;
 using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 using Silk.NET.Maths;
 using Silk.NET.SDL;
 
@@ -102,7 +103,34 @@ namespace Silk.NET.SDL
         public nint GetProcAddress(string proc, int? slot = default)
         {
             AssertCreated();
-            return (nint) _sdl.GLGetProcAddress(proc);
+            _sdl.ClearError();
+            var ret = (nint) _sdl.GLGetProcAddress(proc);
+            _sdl.ThrowError();
+            if (ret == 0)
+            {
+                throw new SymbolLoadingException(proc);
+            }
+
+            return ret;
+        }
+
+        public bool TryGetProcAddress(string proc, out nint addr, int? slot = default)
+        {
+            addr = 0;
+            _sdl.ClearError();
+            if (_ctx is null)
+            {
+                return false;
+            }
+            
+            var ret = (nint) _sdl.GLGetProcAddress(proc);
+            if (!string.IsNullOrWhiteSpace(_sdl.GetErrorS()))
+            {
+                _sdl.ClearError();
+                return false;
+            }
+
+            return (addr = ret) != 0;
         }
 
         /// <inheritdoc cref="IGLContext" />

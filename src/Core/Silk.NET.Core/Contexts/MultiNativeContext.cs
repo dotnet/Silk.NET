@@ -45,6 +45,7 @@ namespace Silk.NET.Core.Contexts
         /// <inheritdoc />
         public bool TryGetProcAddress(string proc, out nint addr, int? slot = default)
         {
+            addr = 0;
             foreach (var nativeContext in Contexts)
             {
                 if (nativeContext?.TryGetProcAddress(proc, out addr, slot) ?? false)
