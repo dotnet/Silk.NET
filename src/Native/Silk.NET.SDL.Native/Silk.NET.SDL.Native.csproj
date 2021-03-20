@@ -1,5 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <Import Project="..\..\..\build\props\common.props" />
+
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net4.6.1</TargetFrameworks>
     <PackageId>Ultz.Native.SDL</PackageId> <!-- TODO change this in 3.0 -->

@@ -403,12 +403,20 @@ class Build : NukeBuild
             {
                 try
                 {
-                    await NuGetInterface.UploadPackageAsync(uploadResource, NugetNoServiceEndpoint, file, NugetApiKey, symbolsResource);
+                    await NuGetInterface.UploadPackageAsync
+                        (uploadResource, NugetNoServiceEndpoint, file, NugetApiKey, symbolsResource);
                     pushed++;
                 }
                 catch (Exception ex)
                 {
-                    exceptions.Add(new Exception($"Failed to push package \"{file}\"", ex));
+                    if (file.Contains(".Native.")) // native packages have their own update cycle
+                    {
+                        Logger.Warn(ex);
+                    }
+                    else
+                    {
+                        exceptions.Add(new Exception($"Failed to push package \"{file}\"", ex));
+                    }
                 }
             }
         }
