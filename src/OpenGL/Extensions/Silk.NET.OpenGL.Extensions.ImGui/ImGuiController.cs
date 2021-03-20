@@ -3,6 +3,11 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Numerics;
 using System.Runtime.CompilerServices;
+using ImGuiNET;
+using Silk.NET.Input;
+using Silk.NET.Input.Extensions;
+using Silk.NET.Maths;
+using Silk.NET.Windowing;
 
 namespace Silk.NET.OpenGL.Extensions.ImGui
 {
@@ -77,8 +82,8 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             _glVersion = new Version(gl.GetInteger(GLEnum.MajorVersion), gl.GetInteger(GLEnum.MinorVersion));
             _view = view;
             _input = input;
-            _windowWidth = view.Size.Width;
-            _windowHeight = view.Size.Height;
+            _windowWidth = view.Size.X;
+            _windowHeight = view.Size.Y;
 
             IntPtr context = ImGuiNET.ImGui.CreateContext();
             ImGuiNET.ImGui.SetCurrentContext(context);
@@ -98,10 +103,10 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             _pressedChars.Add(arg2);
         }
 
-        private void WindowResized(Size s)
+        private void WindowResized(Vector2D<int> s)
         {
-            _windowWidth = s.Width;
-            _windowHeight = s.Height;
+            _windowWidth = s.X;
+            _windowHeight = s.Y;
         }
 
         public void DestroyDeviceObjects()

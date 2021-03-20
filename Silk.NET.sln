@@ -374,6 +374,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.GLFW.Native", "src
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Assimp.Native", "src\Native\Silk.NET.Assimp.Native\Silk.NET.Assimp.Native.csproj", "{D3D9891B-88E6-46AD-919C-7EC4EABE5266}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Extensions.ImGui", "src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.ImGui\Silk.NET.OpenGL.Extensions.ImGui.csproj", "{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -2238,6 +2240,18 @@ Global
 		{D3D9891B-88E6-46AD-919C-7EC4EABE5266}.Release|x64.Build.0 = Release|Any CPU
 		{D3D9891B-88E6-46AD-919C-7EC4EABE5266}.Release|x86.ActiveCfg = Release|Any CPU
 		{D3D9891B-88E6-46AD-919C-7EC4EABE5266}.Release|x86.Build.0 = Release|Any CPU
+		{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}.Debug|x64.Build.0 = Debug|Any CPU
+		{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}.Debug|x86.Build.0 = Debug|Any CPU
+		{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}.Release|Any CPU.Build.0 = Release|Any CPU
+		{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}.Release|x64.ActiveCfg = Release|Any CPU
+		{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}.Release|x64.Build.0 = Release|Any CPU
+		{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}.Release|x86.ActiveCfg = Release|Any CPU
+		{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2406,6 +2420,7 @@ Global
 		{F9AA41B4-1C36-472B-A1A5-4A10EE0A79FC} = {72E7FA64-5B1E-477D-BD30-63B7F206B3C4}
 		{84F51960-D814-450D-80EB-D9E46A1D5187} = {72E7FA64-5B1E-477D-BD30-63B7F206B3C4}
 		{D3D9891B-88E6-46AD-919C-7EC4EABE5266} = {72E7FA64-5B1E-477D-BD30-63B7F206B3C4}
+		{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85} = {CF69D5C3-4ACE-4458-BA5A-0E9A3B294CDC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5273D7F-3334-48DF-94E3-41AE6816CD4D}
