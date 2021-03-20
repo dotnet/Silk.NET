@@ -20,8 +20,7 @@ namespace Silk.NET.GLFW
         {
             Kind |= NativeWindowFlags.Glfw;
             Glfw = (nint) window;
-            var getHwnd = api.Context.GetProcAddress("glfwGetWin32Window");
-            if (getHwnd != default)
+            if (api.Context.TryGetProcAddress("glfwGetWin32Window", out var getHwnd))
             {
                 var hwnd = ((delegate* unmanaged[Cdecl]<WindowHandle*, nint>) getHwnd)(window);
                 Kind |= NativeWindowFlags.Win32;
@@ -29,17 +28,15 @@ namespace Silk.NET.GLFW
                 return;
             }
 
-            var getCocoaId = api.Context.GetProcAddress("glfwGetCocoaWindow");
-            if (getCocoaId != default)
+            if (api.Context.TryGetProcAddress("glfwGetCocoaWindow", out var getCocoaId))
             {
                 Kind |= NativeWindowFlags.Cocoa;
                 Cocoa = (nint) ((delegate* unmanaged[Cdecl]<WindowHandle*, void*>)getCocoaId)(window);
                 return;
             }
 
-            var getX11Display = api.Context.GetProcAddress("glfwGetX11Display");
-            var getX11Window = api.Context.GetProcAddress("glfwGetX11Window");
-            if (getX11Display != default && getX11Window != default)
+            if (api.Context.TryGetProcAddress("glfwGetX11Display", out var getX11Display) && 
+                api.Context.TryGetProcAddress("glfwGetX11Window", out var getX11Window))
             {
                 Kind |= NativeWindowFlags.X11;
                 X11 = ((nint) ((delegate* unmanaged[Cdecl]<void*>) getX11Display)(),
@@ -47,9 +44,8 @@ namespace Silk.NET.GLFW
                 return;
             }
 
-            var getWaylandDisplay = api.Context.GetProcAddress("glfwGetWaylandDisplay");
-            var getWaylandWindow = api.Context.GetProcAddress("glfwGetWaylandWindow");
-            if (getWaylandDisplay != default && getWaylandWindow != default)
+            if (api.Context.TryGetProcAddress("glfwGetWaylandDisplay", out var getWaylandDisplay) && 
+                api.Context.TryGetProcAddress("glfwGetWaylandWindow", out var getWaylandWindow))
             {
                 Kind |= NativeWindowFlags.Wayland;
                 Wayland = ((nint) ((delegate* unmanaged[Cdecl]<void*>) getWaylandDisplay)(),

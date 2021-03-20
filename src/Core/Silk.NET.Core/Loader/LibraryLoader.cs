@@ -253,6 +253,32 @@ namespace Silk.NET.Core.Loader
             return ret;
         }
 
+        /// <summary>
+        ///     Attempts a function pointer out of the given library by name.
+        /// </summary>
+        /// <param name="handle">The operating system handle of the opened shared library.</param>
+        /// <param name="functionName">The name of the exported function to load.</param>
+        /// <param name="pfn">A pointer to the loaded function, or 0 if it failed to load.</param>
+        /// <returns>Whether the load was successful or not.</returns>
+        public bool TryLoadFunctionPointer(nint handle, string functionName, out nint pfn)
+        {
+            pfn = default;
+            if (string.IsNullOrEmpty(functionName))
+            {
+                ThrowParameterNotNullOrEmpty(nameof(functionName));
+                return false;
+            }
+
+            var ret = CoreLoadFunctionPointer(handle, functionName);
+            if (ret == 0)
+            {
+                return false;
+            }
+
+            pfn = ret;
+            return true;
+        }
+
         private static void ThrowSymbolLoading(string functionName)
         {
             throw new SymbolLoadingException(functionName);

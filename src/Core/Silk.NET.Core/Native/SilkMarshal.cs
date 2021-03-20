@@ -10,13 +10,14 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading;
+using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Core.Native
 {
     /// <summary>
     /// A helper class that marshals between native and managed types.
     /// </summary>
-    public static class SilkMarshal
+    public static partial class SilkMarshal
     {
         /// <summary>
         /// Allocate a new BStr pointer.
@@ -774,5 +775,12 @@ namespace Silk.NET.Core.Native
                 return CoreWaitObjects((uint) objects.Length, handles, waitAll ? 1 : 0, timeout, alertable ? 1 : 0);
             }
         }
+
+        [MethodImpl((MethodImplOptions) 768)]
+#if !NET5_0
+        public static unsafe ref T NullRef<T>() => ref Unsafe.AsRef<T>((void*) 0);
+#else
+        public static ref T NullRef<T>() => ref Unsafe.NullRef<T>();
+#endif
     }
 }

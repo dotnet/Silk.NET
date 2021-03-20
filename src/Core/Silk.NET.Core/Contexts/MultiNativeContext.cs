@@ -43,6 +43,20 @@ namespace Silk.NET.Core.Contexts
         }
 
         /// <inheritdoc />
+        public bool TryGetProcAddress(string proc, out nint addr, int? slot = default)
+        {
+            foreach (var nativeContext in Contexts)
+            {
+                if (nativeContext?.TryGetProcAddress(proc, out addr, slot) ?? false)
+                {
+                    return true;
+                }
+            }
+            
+            return false;
+        }
+
+        /// <inheritdoc />
         public void Dispose()
         {
             foreach (var context in Contexts)
