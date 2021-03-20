@@ -951,7 +951,11 @@ namespace Silk.NET.Vulkan
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetBlendConstants")]
-        public partial void CmdSetBlendConstants([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] float blendConstants);
+        public unsafe partial void CmdSetBlendConstants([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 4), Flow(FlowDirection.In)] float* blendConstants);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetBlendConstants")]
+        public partial void CmdSetBlendConstants([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 4), Flow(FlowDirection.In)] in float blendConstants);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetDepthBias")]

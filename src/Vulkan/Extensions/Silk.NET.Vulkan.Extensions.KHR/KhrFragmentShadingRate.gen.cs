@@ -22,11 +22,19 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public const string ExtensionName = "VK_KHR_fragment_shading_rate";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetFragmentShadingRateKHR")]
-        public unsafe partial void CmdSetFragmentShadingRate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] Extent2D* pFragmentSize, [Count(Count = 0)] FragmentShadingRateCombinerOpKHR combinerOps);
+        public unsafe partial void CmdSetFragmentShadingRate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] Extent2D* pFragmentSize, [Count(Count = 2), Flow(FlowDirection.In)] FragmentShadingRateCombinerOpKHR* combinerOps);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCmdSetFragmentShadingRateKHR")]
-        public partial void CmdSetFragmentShadingRate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in Extent2D pFragmentSize, [Count(Count = 0)] FragmentShadingRateCombinerOpKHR combinerOps);
+        public unsafe partial void CmdSetFragmentShadingRate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] Extent2D* pFragmentSize, [Count(Count = 2), Flow(FlowDirection.In)] in FragmentShadingRateCombinerOpKHR combinerOps);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetFragmentShadingRateKHR")]
+        public unsafe partial void CmdSetFragmentShadingRate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in Extent2D pFragmentSize, [Count(Count = 2), Flow(FlowDirection.In)] FragmentShadingRateCombinerOpKHR* combinerOps);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "vkCmdSetFragmentShadingRateKHR")]
+        public partial void CmdSetFragmentShadingRate([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] in Extent2D pFragmentSize, [Count(Count = 2), Flow(FlowDirection.In)] in FragmentShadingRateCombinerOpKHR combinerOps);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceFragmentShadingRatesKHR")]

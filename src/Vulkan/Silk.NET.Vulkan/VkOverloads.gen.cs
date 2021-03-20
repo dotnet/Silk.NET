@@ -955,6 +955,13 @@ namespace Silk.NET.Vulkan
         }
 
         /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetBlendConstants(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<float> blendConstants)
+        {
+            // SpanOverloader
+            thisApi.CmdSetBlendConstants(commandBuffer, in blendConstants.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
         public static unsafe void CmdSetScissor(this Vk thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstScissor, [Count(Count = 0)] uint scissorCount, [Count(Computed = "scissorCount"), Flow(FlowDirection.In)] ReadOnlySpan<Rect2D> pScissors)
         {
             // SpanOverloader
