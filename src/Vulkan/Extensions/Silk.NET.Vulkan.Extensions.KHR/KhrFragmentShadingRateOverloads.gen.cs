@@ -17,10 +17,24 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public static class KhrFragmentShadingRateOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdSetFragmentShadingRate(this KhrFragmentShadingRate thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<Extent2D> pFragmentSize, [Count(Count = 0)] FragmentShadingRateCombinerOpKHR combinerOps)
+        public static unsafe void CmdSetFragmentShadingRate(this KhrFragmentShadingRate thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] Extent2D* pFragmentSize, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<FragmentShadingRateCombinerOpKHR> combinerOps)
+        {
+            // SpanOverloader
+            thisApi.CmdSetFragmentShadingRate(commandBuffer, pFragmentSize, in combinerOps.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetFragmentShadingRate(this KhrFragmentShadingRate thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<Extent2D> pFragmentSize, [Count(Count = 2), Flow(FlowDirection.In)] FragmentShadingRateCombinerOpKHR* combinerOps)
         {
             // SpanOverloader
             thisApi.CmdSetFragmentShadingRate(commandBuffer, in pFragmentSize.GetPinnableReference(), combinerOps);
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe void CmdSetFragmentShadingRate(this KhrFragmentShadingRate thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<Extent2D> pFragmentSize, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<FragmentShadingRateCombinerOpKHR> combinerOps)
+        {
+            // SpanOverloader
+            thisApi.CmdSetFragmentShadingRate(commandBuffer, in pFragmentSize.GetPinnableReference(), in combinerOps.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>

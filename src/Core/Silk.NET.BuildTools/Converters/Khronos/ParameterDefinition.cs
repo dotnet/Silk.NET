@@ -102,6 +102,17 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 }
             }
 
+            if (count == 0 && xe.Value.EndsWith(']'))
+            {
+                var val = xe.Value;
+                var idx = val.LastIndexOf('[') + 1;
+                if (idx != -1 && int.TryParse(val.Substring(idx, val.Length - idx - 1), out count))
+                {
+                    // array parameters are pointers in disguise
+                    pointerLevel++;
+                }
+            }
+
             var type = new TypeSpec(typeName, pointerLevel);
 
             return new ParameterDefinition
