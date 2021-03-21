@@ -38,4 +38,8 @@
     <ItemGroup Condition="'$(SilkEnableSourceLink)' != '' And '$(SilkNativePackage)' == ''">
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
     </ItemGroup>
+    <PropertyGroup Condition="'$(SilkNativePackage)' == 'true'">
+        <IncludeSymbols>false</IncludeSymbols>
+        <SymbolPackageFormat></SymbolPackageFormat>
+    </PropertyGroup>
 </Project>
