@@ -29,13 +29,13 @@
         </Description>
     </PropertyGroup>
     <!-- SourceLink -->
-    <PropertyGroup Condition="'$(SilkEnableSourceLink)' == ''">
+    <PropertyGroup Condition="'$(SilkEnableSourceLink)' != '' And '$(SilkNativePackage)' == ''">
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     </PropertyGroup>
-    <ItemGroup Condition="'$(SilkEnableSourceLink)' == ''">
+    <ItemGroup Condition="'$(SilkEnableSourceLink)' != '' And '$(SilkNativePackage)' == ''">
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
     </ItemGroup>
 </Project>

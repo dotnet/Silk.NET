@@ -1,5 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <PropertyGroup>
+    <SilkNativePackage>true</SilkNativePackage>
+  </PropertyGroup>
+
   <Import Project="..\..\..\build\props\common.props" />
 
   <PropertyGroup>
