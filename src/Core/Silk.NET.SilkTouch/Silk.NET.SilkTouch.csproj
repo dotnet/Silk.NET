@@ -5,6 +5,7 @@
     <Nullable>enable</Nullable>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <SilkEnableSourceLink>false</SilkEnableSourceLink>
+    <SilkSourceLinkExempt>true</SilkSourceLinkExempt>
   </PropertyGroup>
 
     <PropertyGroup>

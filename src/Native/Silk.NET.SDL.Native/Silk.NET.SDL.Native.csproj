@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <SilkSourceLinkExempt>true</SilkSourceLinkExempt>
+  </PropertyGroup>
+
+  <Import Project="..\..\..\build\props\common.props" />
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;net4.6.1</TargetFrameworks>
+    <PackageId>Ultz.Native.SDL</PackageId> <!-- TODO change this in 3.0 -->
+    <PackageVersion>2.0.12</PackageVersion>
+    <Authors>.NET Foundation and Contributors</Authors>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseExpression>Zlib</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/dotnet/Silk.NET</PackageProjectUrl>
+    <Description>Multi-platform native library for SDL.</Description>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>https://github.com/libsdl-org/SDL</RepositoryUrl>
+    <IncludeBuildOutput>false</IncludeBuildOutput>
+    <IncludeContentInPack>true</IncludeContentInPack>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Include="build\net461\$(PackageId).props" PackagePath="build\net461\$(PackageId).props" />
+    <Content Include="runtimes\linux-x64\native\libSDL2-2.0.so" PackagePath="runtimes\linux-x64\native\libSDL2-2.0.so" />
+    <Content Include="runtimes\osx-x64\native\libSDL2-2.0.dylib" PackagePath="runtimes\osx-x64\native\libSDL2-2.0.dylib" />
+    <Content Include="runtimes\win-x64\native\SDL2.dll" PackagePath="runtimes\win-x64\native\SDL2.dll" />
+    <Content Include="runtimes\win-x86\native\SDL2.dll" PackagePath="runtimes\win-x86\native\SDL2.dll" />
+  </ItemGroup>
+
+</Project>

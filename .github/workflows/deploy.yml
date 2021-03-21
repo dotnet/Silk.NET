@@ -19,4 +19,4 @@ jobs:
     - name: Setup NUKE
       run: dotnet tool install Nuke.GlobalTool --global
     - name: Push to NuGet
-      run: nuke PushToNuGet --configuration Release --msbuild-properties ContinuousIntegrationBuild=true --feature-sets Android iOS --nuget-api-key ${{ secrets.NUGET_TOKEN }}
+      run: nuke PushToNuGet --configuration Release --msbuild-properties ContinuousIntegrationBuild=true SilkEnableSourceLink=true --feature-sets Android iOS --nuget-api-key ${{ secrets.NUGET_TOKEN }}

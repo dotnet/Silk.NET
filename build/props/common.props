@@ -4,7 +4,7 @@
         <PackageIconUrl>https://static.ultz.co.uk/img/SilkDotNet.png</PackageIconUrl>
         <PackageLicenseExpression>MIT</PackageLicenseExpression>
         <LangVersion>preview</LangVersion>
-        <Authors>.NET Foundation</Authors>
+        <Authors>.NET Foundation and Contributors</Authors>
         <PackageReleaseNotes>
             Silk.NET March 2021 Update
             
@@ -29,13 +29,17 @@
         </Description>
     </PropertyGroup>
     <!-- SourceLink -->
-    <PropertyGroup Condition="'$(SilkEnableSourceLink)' == ''">
+    <PropertyGroup Condition="'$(SilkEnableSourceLink)' != '' And '$(SilkSourceLinkExempt)' == ''">
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     </PropertyGroup>
-    <ItemGroup Condition="'$(SilkEnableSourceLink)' == ''">
+    <ItemGroup Condition="'$(SilkEnableSourceLink)' != '' And '$(SilkSourceLinkExempt)' == ''">
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
     </ItemGroup>
+    <PropertyGroup Condition="'$(SilkSourceLinkExempt)' != ''">
+        <IncludeSymbols>false</IncludeSymbols>
+        <SymbolPackageFormat></SymbolPackageFormat>
+    </PropertyGroup>
 </Project>
