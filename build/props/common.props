@@ -29,16 +29,16 @@
         </Description>
     </PropertyGroup>
     <!-- SourceLink -->
-    <PropertyGroup Condition="'$(SilkEnableSourceLink)' != '' And '$(SilkNativePackage)' == ''">
+    <PropertyGroup Condition="'$(SilkEnableSourceLink)' != '' And '$(SilkSourceLinkExempt)' == ''">
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
         <IncludeSymbols>true</IncludeSymbols>
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     </PropertyGroup>
-    <ItemGroup Condition="'$(SilkEnableSourceLink)' != '' And '$(SilkNativePackage)' == ''">
+    <ItemGroup Condition="'$(SilkEnableSourceLink)' != '' And '$(SilkSourceLinkExempt)' == ''">
         <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All"/>
     </ItemGroup>
-    <PropertyGroup Condition="'$(SilkNativePackage)' != ''">
+    <PropertyGroup Condition="'$(SilkSourceLinkExempt)' != ''">
         <IncludeSymbols>false</IncludeSymbols>
         <SymbolPackageFormat></SymbolPackageFormat>
     </PropertyGroup>
