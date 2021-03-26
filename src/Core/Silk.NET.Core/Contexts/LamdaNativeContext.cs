@@ -8,11 +8,10 @@ namespace Silk.NET.Core.Contexts
 {
     public struct LamdaNativeContext : INativeContext
     {
-        public delegate nint Loader(string proc);
         public delegate bool TryLoader(string proc, out nint pfn);
-        private readonly Loader _getProcAddress;
+        private readonly Func<string, nint> _getProcAddress;
 
-        public LamdaNativeContext(Loader getProcAddress)
+        public LamdaNativeContext(Func<string, nint> getProcAddress)
         {
             _getProcAddress = getProcAddress;
         }
