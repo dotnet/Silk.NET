@@ -44,7 +44,12 @@ namespace Silk.NET.GLFW
 
         /// <inheritdoc />
         public bool TryGetProcAddress(string proc, out nint addr, int? slot = default)
-            => (addr = _glfw.GetProcAddress(proc)) != 0;
+        {
+            var errorCallback = _glfw.SetErrorCallback(null);
+            var ret = (addr = _glfw.GetProcAddress(proc)) != 0;
+            _glfw.SetErrorCallback(errorCallback);
+            return ret;
+        }
 
         /// <inheritdoc />
         public unsafe nint Handle => (nint) _window;

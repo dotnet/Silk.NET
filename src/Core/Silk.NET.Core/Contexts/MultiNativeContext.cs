@@ -53,7 +53,8 @@ namespace Silk.NET.Core.Contexts
                     return true;
                 }
             }
-            
+
+            addr = default;
             return false;
         }
 

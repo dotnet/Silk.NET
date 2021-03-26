@@ -17,7 +17,7 @@ namespace Silk.NET.Core.Native
     /// <summary>
     /// A helper class that marshals between native and managed types.
     /// </summary>
-    public static partial class SilkMarshal
+    public static class SilkMarshal
     {
         /// <summary>
         /// Allocate a new BStr pointer.

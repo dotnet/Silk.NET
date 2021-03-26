@@ -108,10 +108,12 @@ namespace Silk.NET.SDL
             _sdl.ThrowError();
             if (ret == 0)
             {
-                throw new SymbolLoadingException(proc);
+                Throw(proc);
+                return 0;
             }
 
             return ret;
+            static void Throw(string proc) => throw new SymbolLoadingException(proc);
         }
 
         public bool TryGetProcAddress(string proc, out nint addr, int? slot = default)
