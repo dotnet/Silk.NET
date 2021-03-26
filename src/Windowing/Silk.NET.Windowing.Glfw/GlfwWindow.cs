@@ -6,6 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Silk.NET.Core;
 using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
 using Silk.NET.GLFW;
 using Silk.NET.Maths;
@@ -521,7 +522,26 @@ namespace Silk.NET.Windowing.Glfw
             GC.SuppressFinalize(this);
         }
 
-        public nint GetProcAddress(string proc, int? slot = default) => _glfw.GetProcAddress(proc);
+        public nint GetProcAddress(string proc, int? slot = default)
+        {
+            var ret = _glfw.GetProcAddress(proc);
+            GLFW.Glfw.ThrowExceptions();
+            if (ret == 0)
+            {
+                Throw(proc);
+            }
+
+            return ret;
+            static void Throw(string proc) => throw new SymbolLoadingException(proc);
+        }
+
+        public bool TryGetProcAddress(string proc, out nint addr, int? slot = default)
+        {
+            var errorCallback = _glfw.SetErrorCallback(null);
+            var ret = (addr = _glfw.GetProcAddress(proc)) != 0;
+            _glfw.SetErrorCallback(errorCallback);
+            return ret;
+        }
 
         public override void Close()
         {

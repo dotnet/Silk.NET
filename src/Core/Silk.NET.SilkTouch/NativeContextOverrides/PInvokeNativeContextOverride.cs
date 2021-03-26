@@ -18,67 +18,9 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
         {
             static BlockSyntax GetSlotSwitch(EntryPoint[] entrypoints, List<MemberDeclarationSyntax> members)
             {
-                var generatedThrowHelperInvalidSlot = NameGenerator.Name("GeneratedThrowHelperInvalidSlot");
-                members.Add
-                (
-                    MethodDeclaration
-                            (PredefinedType(Token(SyntaxKind.VoidKeyword)), generatedThrowHelperInvalidSlot)
-                        .WithParameterList(ParameterList())
-                        .WithModifiers(TokenList(Token(SyntaxKind.PrivateKeyword), Token(SyntaxKind.StaticKeyword)))
-                        .WithBody
-                        (
-                            Block
-                            (
-                                ThrowStatement
-                                (
-                                    ObjectCreationExpression
-                                        (
-                                            QualifiedName
-                                                (IdentifierName("System"), IdentifierName("InvalidOperationException"))
-                                        )
-                                        .WithArgumentList
-                                        (
-                                            ArgumentList
-                                            (
-                                                SingletonSeparatedList
-                                                (
-                                                    Argument
-                                                    (
-                                                        LiteralExpression
-                                                        (
-                                                            SyntaxKind.StringLiteralExpression, Literal("Invalid Slot")
-                                                        )
-                                                    )
-                                                )
-                                            )
-                                        )
-                                )
-                            )
-                        )
-#if !DEBUG
-                        .WithAttributeLists
-                        (
-                            SingletonList
-                            (
-                                AttributeList
-                                (
-                                    SingletonSeparatedList
-                                    (
-                                        Attribute
-                                        (
-                                            QualifiedName
-                                            (
-                                                QualifiedName(IdentifierName("System"), IdentifierName("Diagnostics")),
-                                                IdentifierName("DebuggerHidden")
-                                            )
-                                        )
-                                    )
-                                )
-                            )
-                        )
-#endif
-                );
-                
+                members.Add(NativeContextOverrideHelper.GetProcAddress);
+                members.Add(NativeContextOverrideHelper.TryGetProcAddress);
+
                 var dict = entrypoints.ToDictionary(x => x.Slot, x => x);
                 ReadOnlySpan<int> slots = entrypoints.Select(x => x.Slot).OrderBy(x => x).ToArray();
 
@@ -88,7 +30,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                     (
                         InvocationExpression
                         (
-                            BuildSubLoad(members, slots, dict, false, generatedThrowHelperInvalidSlot),
+                            BuildSubLoad(members, slots, dict, false),
                             ArgumentList
                             (
                                 SeparatedList
@@ -121,8 +63,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                     List<MemberDeclarationSyntax> methods,
                     ReadOnlySpan<int> keys,
                     Dictionary<int, EntryPoint> entryPoints,
-                    bool emitAssert,
-                    string generatedThrowHelperInvalidSlot
+                    bool emitAssert
                 )
                 {
                     var body = new List<StatementSyntax>();
@@ -159,7 +100,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                                 (
                                     InvocationExpression
                                     (
-                                        BuildSubLoad(methods, keys.Slice(1), entryPoints, emitAssert, generatedThrowHelperInvalidSlot),
+                                        BuildSubLoad(methods, keys.Slice(1), entryPoints, emitAssert),
                                         ArgumentList
                                         (
                                             SeparatedList
@@ -173,12 +114,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                         }
                         else
                         {
-                            // throw & return default
-                            body.Add
-                            (
-                                ExpressionStatement
-                                    (InvocationExpression(IdentifierName(generatedThrowHelperInvalidSlot)))
-                            );
+                            // return default
                             body.Add(ReturnStatement(DefaultExpression(IdentifierName("System.IntPtr"))));
                         }
                     }
@@ -199,7 +135,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                                 (
                                     InvocationExpression
                                     (
-                                        BuildSubLoad(methods, lower, entryPoints, emitAssert, generatedThrowHelperInvalidSlot),
+                                        BuildSubLoad(methods, lower, entryPoints, emitAssert),
                                         ArgumentList
                                         (
                                             SeparatedList
@@ -215,7 +151,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                                     (
                                         InvocationExpression
                                         (
-                                            BuildSubLoad(methods, upper, entryPoints, emitAssert, generatedThrowHelperInvalidSlot),
+                                            BuildSubLoad(methods, upper, entryPoints, emitAssert),
                                             ArgumentList
                                             (
                                                 SeparatedList
@@ -656,7 +592,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
             members.AddRange(entrypoints.Select(GetMethodFromEntrypoint));
             members.Add
             (
-                MethodDeclaration(IdentifierName("IntPtr"), Identifier("GetProcAddress"))
+                MethodDeclaration(IdentifierName("IntPtr"), Identifier("CoreGetProcAddress"))
                     .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
                     .WithParameterList
                     (

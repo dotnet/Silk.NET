@@ -107,14 +107,47 @@ namespace Silk.NET.Core.Loader
             return Marshal.GetDelegateForFunctionPointer<T>(functionPtr);
         }
 
+#nullable enable
+        /// <summary>
+        ///     Attempts to load a function whose signature matches the given delegate type's signature.
+        /// </summary>
+        /// <typeparam name="T">The type of delegate to return.</typeparam>
+        /// <param name="name">The name of the native export.</param>
+        /// <param name="pfn">A delegate wrapping the native function.</param>
+        /// <returns>Whether the load operation was successful or not.</returns>
+        public bool TryLoadFunction<T>(string name, out T? pfn) where T : Delegate
+        {
+            var functionPtr = _loader.LoadFunctionPointer(Handle, name);
+            if (functionPtr == 0)
+            {
+                pfn = null;
+                return false;
+            }
+
+            pfn = Marshal.GetDelegateForFunctionPointer<T>(functionPtr);
+            return true;
+        }
+#nullable disable
+
         /// <summary>
         ///     Loads a function pointer with the given name.
         /// </summary>
         /// <param name="name">The name of the native export.</param>
-        /// <returns>A function pointer for the given name, or 0 if no function with that name exists.</returns>
+        /// <returns>A function pointer for the given name.</returns>
         public nint LoadFunction(string name)
         {
             return _loader.LoadFunctionPointer(Handle, name);
+        }
+
+        /// <summary>
+        ///     Attempts to load a function pointer with the given name.
+        /// </summary>
+        /// <param name="name">The name of the native export.</param>
+        /// <param name="pfn">A function pointer for the given name, or 0 if no function with that name exists.</param>
+        /// <returns>Whether the load was successful or not.</returns>
+        public bool TryLoadFunction(string name, out nint pfn)
+        {
+            return _loader.TryLoadFunctionPointer(Handle, name, out pfn);
         }
     }
 }

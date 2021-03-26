@@ -8,5 +8,6 @@ namespace Silk.NET.Core.Contexts
     public interface INativeContext : IDisposable
     {
         nint GetProcAddress(string proc, int? slot = default);
+        bool TryGetProcAddress(string proc, out nint addr, int? slot = default);
     }
 }

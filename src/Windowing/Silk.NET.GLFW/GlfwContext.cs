@@ -3,6 +3,7 @@
 
 using System;
 using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 namespace Silk.NET.GLFW
 {
@@ -28,7 +29,27 @@ namespace Silk.NET.GLFW
         }
 
         /// <inheritdoc />
-        public nint GetProcAddress(string proc, int? slot = default) => _glfw.GetProcAddress(proc);
+        public nint GetProcAddress(string proc, int? slot = default)
+        {
+            var ret = _glfw.GetProcAddress(proc);
+            Glfw.ThrowExceptions();
+            if (ret == 0)
+            {
+                Throw(proc);
+            }
+
+            return ret;
+            static void Throw(string proc) => throw new SymbolLoadingException(proc);
+        }
+
+        /// <inheritdoc />
+        public bool TryGetProcAddress(string proc, out nint addr, int? slot = default)
+        {
+            var errorCallback = _glfw.SetErrorCallback(null);
+            var ret = (addr = _glfw.GetProcAddress(proc)) != 0;
+            _glfw.SetErrorCallback(errorCallback);
+            return ret;
+        }
 
         /// <inheritdoc />
         public unsafe nint Handle => (nint) _window;

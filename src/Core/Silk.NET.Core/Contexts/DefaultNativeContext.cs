@@ -88,6 +88,12 @@ namespace Silk.NET.Core.Contexts
         }
 
         /// <inheritdoc />
+        public bool TryGetProcAddress(string proc, out nint addr, int? slot = default)
+        {
+            return Library.TryLoadFunction(proc, out addr);
+        }
+
+        /// <inheritdoc />
         public void Dispose()
         {
             Library?.Dispose();
