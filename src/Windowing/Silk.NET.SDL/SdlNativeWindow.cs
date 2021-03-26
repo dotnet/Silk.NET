@@ -13,6 +13,7 @@ namespace Silk.NET.SDL
             Kind = NativeWindowFlags.Sdl;
             Sdl = (nint) window;
             SysWMInfo info;
+            api.GetVersion(&info.Version);
             api.GetWindowWMInfo(window, &info);
             // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
             switch (info.Subsystem)
