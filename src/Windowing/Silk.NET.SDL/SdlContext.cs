@@ -66,12 +66,17 @@ namespace Silk.NET.SDL
         {
             foreach (var (attribute, value) in attributes)
             {
-                _sdl.GLSetAttribute(attribute, value);
-                _sdl.ThrowError();
+                if (_sdl.GLSetAttribute(attribute, value) != 0)
+                {
+                    _sdl.ThrowError();
+                }
             }
 
             _ctx = _sdl.GLCreateContext(Window);
-            _sdl.ThrowError();
+            if (_ctx == null)
+            {
+                _sdl.ThrowError();
+            }
         }
 
         private void AssertCreated()

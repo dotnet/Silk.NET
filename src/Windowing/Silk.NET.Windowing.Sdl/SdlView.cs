@@ -154,7 +154,10 @@ namespace Silk.NET.Windowing.Sdl
                 h ?? 720,
                 (uint) flags
             );
-            Sdl.ThrowError();
+            if (SdlWindow == null)
+            {
+                Sdl.ThrowError();
+            }
             
             sharedContext?.MakeCurrent();
             (GLContext as SdlContext)?.Create
