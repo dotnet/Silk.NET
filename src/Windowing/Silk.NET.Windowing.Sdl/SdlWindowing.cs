@@ -58,6 +58,7 @@ namespace Silk.NET.Windowing.Sdl
             if (view is SdlView sdlView)
             {
                 SysWMInfo ret;
+                sdlView.Sdl.GetVersion(&ret.Version);
                 if (sdlView.Sdl.GetWindowWMInfo(sdlView.SdlWindow, &ret))
                 {
                     return ret;

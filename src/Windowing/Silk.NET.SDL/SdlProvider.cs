@@ -48,8 +48,10 @@ namespace Silk.NET.SDL
             #if DEBUG
             Console.WriteLine("SDL initialized.");
             #endif
-            sdl.Init(InitFlags);
-            sdl.ThrowError();
+            if (sdl.Init(InitFlags) != 0)
+            {
+                sdl.ThrowError();
+            }
 
             return sdl;
         }
