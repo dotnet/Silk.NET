@@ -19,10 +19,10 @@ namespace Silk.NET.SDL
     public unsafe readonly struct PfnSDLCurrentBeginThread : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<void*, uint, PfnVvUi, void*, uint, uint*, uint> Handle => (delegate* unmanaged[Cdecl]<void*, uint, PfnVvUi, void*, uint, uint*, uint>) _handle;
+        public delegate* unmanaged[Cdecl]<void*, uint, PfnVvUi, void*, uint, uint*, nuint> Handle => (delegate* unmanaged[Cdecl]<void*, uint, PfnVvUi, void*, uint, uint*, nuint>) _handle;
         public PfnSDLCurrentBeginThread
         (
-            delegate* unmanaged[Cdecl]<void*, uint, PfnVvUi, void*, uint, uint*, uint> ptr
+            delegate* unmanaged[Cdecl]<void*, uint, PfnVvUi, void*, uint, uint*, nuint> ptr
         ) => _handle = ptr;
 
         public PfnSDLCurrentBeginThread
@@ -35,7 +35,7 @@ namespace Silk.NET.SDL
 
         public static implicit operator nint(PfnSDLCurrentBeginThread pfn) => (nint) pfn.Handle;
         public static explicit operator PfnSDLCurrentBeginThread(nint pfn)
-            => new PfnSDLCurrentBeginThread((delegate* unmanaged[Cdecl]<void*, uint, PfnVvUi, void*, uint, uint*, uint>) pfn);
+            => new PfnSDLCurrentBeginThread((delegate* unmanaged[Cdecl]<void*, uint, PfnVvUi, void*, uint, uint*, nuint>) pfn);
 
         public static implicit operator PfnSDLCurrentBeginThread(SDLCurrentBeginThread proc)
             => new PfnSDLCurrentBeginThread(proc);
@@ -43,10 +43,10 @@ namespace Silk.NET.SDL
         public static explicit operator SDLCurrentBeginThread(PfnSDLCurrentBeginThread pfn)
             => SilkMarshal.PtrToDelegate<SDLCurrentBeginThread>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<void*, uint, PfnVvUi, void*, uint, uint*, uint>(PfnSDLCurrentBeginThread pfn) => pfn.Handle;
-        public static implicit operator PfnSDLCurrentBeginThread(delegate* unmanaged[Cdecl]<void*, uint, PfnVvUi, void*, uint, uint*, uint> ptr) => new PfnSDLCurrentBeginThread(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<void*, uint, PfnVvUi, void*, uint, uint*, nuint>(PfnSDLCurrentBeginThread pfn) => pfn.Handle;
+        public static implicit operator PfnSDLCurrentBeginThread(delegate* unmanaged[Cdecl]<void*, uint, PfnVvUi, void*, uint, uint*, nuint> ptr) => new PfnSDLCurrentBeginThread(ptr);
     }
 
-    public unsafe delegate uint SDLCurrentBeginThread(void* arg0, uint arg1, PfnVvUi arg2, void* arg3, uint arg4, uint* arg5);
+    public unsafe delegate nuint SDLCurrentBeginThread(void* arg0, uint arg1, PfnVvUi arg2, void* arg3, uint arg4, uint* arg5);
 }
 

@@ -29,6 +29,8 @@ namespace Silk.NET.SDL
         AppWillenterforeground = 0x105,
         [NativeName("Name", "SDL_APP_DIDENTERFOREGROUND")]
         AppDidenterforeground = 0x106,
+        [NativeName("Name", "SDL_LOCALECHANGED")]
+        Localechanged = 0x107,
         [NativeName("Name", "SDL_DISPLAYEVENT")]
         Displayevent = 0x150,
         [NativeName("Name", "SDL_WINDOWEVENT")]
@@ -79,6 +81,14 @@ namespace Silk.NET.SDL
         Controllerdeviceremoved = 0x654,
         [NativeName("Name", "SDL_CONTROLLERDEVICEREMAPPED")]
         Controllerdeviceremapped = 0x655,
+        [NativeName("Name", "SDL_CONTROLLERTOUCHPADDOWN")]
+        Controllertouchpaddown = 0x656,
+        [NativeName("Name", "SDL_CONTROLLERTOUCHPADMOTION")]
+        Controllertouchpadmotion = 0x657,
+        [NativeName("Name", "SDL_CONTROLLERTOUCHPADUP")]
+        Controllertouchpadup = 0x658,
+        [NativeName("Name", "SDL_CONTROLLERSENSORUPDATE")]
+        Controllersensorupdate = 0x659,
         [NativeName("Name", "SDL_FINGERDOWN")]
         Fingerdown = 0x700,
         [NativeName("Name", "SDL_FINGERUP")]

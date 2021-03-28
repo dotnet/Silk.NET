@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_joystick_L83_C9")]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_joystick_L85_C9")]
     [NativeName("Name", "SDL_JoystickType")]
     public enum JoystickType : int
     {

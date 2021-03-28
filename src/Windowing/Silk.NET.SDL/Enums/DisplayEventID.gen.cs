@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L174_C9")]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L182_C9")]
     [NativeName("Name", "SDL_DisplayEventID")]
     public enum DisplayEventID : int
     {
@@ -17,5 +17,9 @@ namespace Silk.NET.SDL
         DisplayeventNone = 0x0,
         [NativeName("Name", "SDL_DISPLAYEVENT_ORIENTATION")]
         DisplayeventOrientation = 0x1,
+        [NativeName("Name", "SDL_DISPLAYEVENT_CONNECTED")]
+        DisplayeventConnected = 0x2,
+        [NativeName("Name", "SDL_DISPLAYEVENT_DISCONNECTED")]
+        DisplayeventDisconnected = 0x3,
     }
 }

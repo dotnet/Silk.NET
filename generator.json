@@ -580,9 +580,7 @@
             "cacheDir": "build/cache",
             "cacheKey": "sdl",
             "controlDescriptors": [
-                "convert-windows-only",
-                "no-convert",
-                "no-bind"
+                "convert-windows-only"
             ],
             "converter": {},
             "prefix": "sdl",
@@ -590,7 +588,7 @@
                 "args": [
                     "--language=c++",
                     "--std=c++17",
-                    "-m32",
+                    "-m64",
                     "-Wno-expansion-to-defined",
                     "-Wno-ignored-attributes",
                     "-Wno-ignored-pragma-intrinsic",
@@ -620,6 +618,7 @@
             "exclude": [
                 "VkSurfaceKHR",
                 "VkInstance",
+                "ID3D11Device",
                 "SDL_main",
                 "SDL_SysWMmsg",
                 "SDL_Rect"
@@ -1039,7 +1038,7 @@
                 "args": [
                     "--language=c++",
                     "--std=c++17",
-                    "-m32",
+                    "-m64",
                     "-Wno-expansion-to-defined",
                     "-Wno-ignored-attributes",
                     "-Wno-ignored-pragma-intrinsic",

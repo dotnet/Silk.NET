@@ -19,10 +19,10 @@ namespace Silk.NET.SDL
     public unsafe readonly struct PfnCallocFunc : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<uint, uint, void*> Handle => (delegate* unmanaged[Cdecl]<uint, uint, void*>) _handle;
+        public delegate* unmanaged[Cdecl]<nuint, nuint, void*> Handle => (delegate* unmanaged[Cdecl]<nuint, nuint, void*>) _handle;
         public PfnCallocFunc
         (
-            delegate* unmanaged[Cdecl]<uint, uint, void*> ptr
+            delegate* unmanaged[Cdecl]<nuint, nuint, void*> ptr
         ) => _handle = ptr;
 
         public PfnCallocFunc
@@ -35,7 +35,7 @@ namespace Silk.NET.SDL
 
         public static implicit operator nint(PfnCallocFunc pfn) => (nint) pfn.Handle;
         public static explicit operator PfnCallocFunc(nint pfn)
-            => new PfnCallocFunc((delegate* unmanaged[Cdecl]<uint, uint, void*>) pfn);
+            => new PfnCallocFunc((delegate* unmanaged[Cdecl]<nuint, nuint, void*>) pfn);
 
         public static implicit operator PfnCallocFunc(CallocFunc proc)
             => new PfnCallocFunc(proc);
@@ -43,10 +43,10 @@ namespace Silk.NET.SDL
         public static explicit operator CallocFunc(PfnCallocFunc pfn)
             => SilkMarshal.PtrToDelegate<CallocFunc>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<uint, uint, void*>(PfnCallocFunc pfn) => pfn.Handle;
-        public static implicit operator PfnCallocFunc(delegate* unmanaged[Cdecl]<uint, uint, void*> ptr) => new PfnCallocFunc(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<nuint, nuint, void*>(PfnCallocFunc pfn) => pfn.Handle;
+        public static implicit operator PfnCallocFunc(delegate* unmanaged[Cdecl]<nuint, nuint, void*> ptr) => new PfnCallocFunc(ptr);
     }
 
-    public unsafe delegate void* CallocFunc(uint arg0, uint arg1);
+    public unsafe delegate void* CallocFunc(nuint arg0, nuint arg1);
 }
 

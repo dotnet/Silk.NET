@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_gamecontroller_L346_C9")]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_gamecontroller_L604_C9")]
     [NativeName("Name", "SDL_GameControllerButton")]
     public enum GameControllerButton : int
     {
@@ -45,7 +45,19 @@ namespace Silk.NET.SDL
         ControllerButtonDpadLeft = 0xD,
         [NativeName("Name", "SDL_CONTROLLER_BUTTON_DPAD_RIGHT")]
         ControllerButtonDpadRight = 0xE,
+        [NativeName("Name", "SDL_CONTROLLER_BUTTON_MISC1")]
+        ControllerButtonMisc1 = 0xF,
+        [NativeName("Name", "SDL_CONTROLLER_BUTTON_PADDLE1")]
+        ControllerButtonPaddle1 = 0x10,
+        [NativeName("Name", "SDL_CONTROLLER_BUTTON_PADDLE2")]
+        ControllerButtonPaddle2 = 0x11,
+        [NativeName("Name", "SDL_CONTROLLER_BUTTON_PADDLE3")]
+        ControllerButtonPaddle3 = 0x12,
+        [NativeName("Name", "SDL_CONTROLLER_BUTTON_PADDLE4")]
+        ControllerButtonPaddle4 = 0x13,
+        [NativeName("Name", "SDL_CONTROLLER_BUTTON_TOUCHPAD")]
+        ControllerButtonTouchpad = 0x14,
         [NativeName("Name", "SDL_CONTROLLER_BUTTON_MAX")]
-        ControllerButtonMax = 0xF,
+        ControllerButtonMax = 0x15,
     }
 }

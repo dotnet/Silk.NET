@@ -29,7 +29,7 @@ namespace Silk.NET.SDL
             void* pixels = null,
             void* userdata = null,
             int? locked = null,
-            void* lockData = null,
+            void* listBlitmap = null,
             Silk.NET.Maths.Rectangle<int>? clipRect = null,
             BlitMap* map = null,
             int? refcount = null
@@ -75,9 +75,9 @@ namespace Silk.NET.SDL
                 Locked = locked.Value;
             }
 
-            if (lockData is not null)
+            if (listBlitmap is not null)
             {
-                LockData = lockData;
+                ListBlitmap = listBlitmap;
             }
 
             if (clipRect is not null)
@@ -139,8 +139,8 @@ namespace Silk.NET.SDL
 
         [NativeName("Type", "void *")]
         [NativeName("Type.Name", "void *")]
-        [NativeName("Name", "lock_data")]
-        public void* LockData;
+        [NativeName("Name", "list_blitmap")]
+        public void* ListBlitmap;
 
         [NativeName("Type", "SDL_Rect")]
         [NativeName("Type.Name", "SDL_Rect")]

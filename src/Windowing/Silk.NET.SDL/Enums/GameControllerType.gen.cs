@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_gamecontroller_L60_C9")]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_gamecontroller_L61_C9")]
     [NativeName("Name", "SDL_GameControllerType")]
     public enum GameControllerType : int
     {
@@ -25,5 +25,9 @@ namespace Silk.NET.SDL
         ControllerTypePS4 = 0x4,
         [NativeName("Name", "SDL_CONTROLLER_TYPE_NINTENDO_SWITCH_PRO")]
         ControllerTypeNintendoSwitchPro = 0x5,
+        [NativeName("Name", "SDL_CONTROLLER_TYPE_VIRTUAL")]
+        ControllerTypeVirtual = 0x6,
+        [NativeName("Name", "SDL_CONTROLLER_TYPE_PS5")]
+        ControllerTypePS5 = 0x7,
     }
 }

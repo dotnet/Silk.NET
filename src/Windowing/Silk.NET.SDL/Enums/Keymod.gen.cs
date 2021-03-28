@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_keycode_L325_C9")]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_keycode_L327_C9")]
     [NativeName("Name", "SDL_Keymod")]
     public enum Keymod : int
     {
@@ -39,5 +39,13 @@ namespace Silk.NET.SDL
         KmodMode = 0x4000,
         [NativeName("Name", "KMOD_RESERVED")]
         KmodReserved = 0x8000,
+        [NativeName("Name", "KMOD_CTRL")]
+        KmodCtrl = 0xC0,
+        [NativeName("Name", "KMOD_SHIFT")]
+        KmodShift = 0x3,
+        [NativeName("Name", "KMOD_ALT")]
+        KmodAlt = 0x300,
+        [NativeName("Name", "KMOD_GUI")]
+        KmodGui = 0xC00,
     }
 }

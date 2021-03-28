@@ -27,12 +27,20 @@ namespace Silk.NET.SDL
         PixelformatIndex8 = 0x13000801,
         [NativeName("Name", "SDL_PIXELFORMAT_RGB332")]
         PixelformatRgb332 = 0x14110801,
+        [NativeName("Name", "SDL_PIXELFORMAT_XRGB4444")]
+        PixelformatXrgb4444 = 0x15120C02,
         [NativeName("Name", "SDL_PIXELFORMAT_RGB444")]
         PixelformatRgb444 = 0x15120C02,
+        [NativeName("Name", "SDL_PIXELFORMAT_XBGR4444")]
+        PixelformatXbgr4444 = 0x15520C02,
         [NativeName("Name", "SDL_PIXELFORMAT_BGR444")]
         PixelformatBgr444 = 0x15520C02,
+        [NativeName("Name", "SDL_PIXELFORMAT_XRGB1555")]
+        PixelformatXrgb1555 = 0x15130F02,
         [NativeName("Name", "SDL_PIXELFORMAT_RGB555")]
         PixelformatRgb555 = 0x15130F02,
+        [NativeName("Name", "SDL_PIXELFORMAT_XBGR1555")]
+        PixelformatXbgr1555 = 0x15530F02,
         [NativeName("Name", "SDL_PIXELFORMAT_BGR555")]
         PixelformatBgr555 = 0x15530F02,
         [NativeName("Name", "SDL_PIXELFORMAT_ARGB4444")]
@@ -59,10 +67,14 @@ namespace Silk.NET.SDL
         PixelformatRgb24 = 0x17101803,
         [NativeName("Name", "SDL_PIXELFORMAT_BGR24")]
         PixelformatBgr24 = 0x17401803,
+        [NativeName("Name", "SDL_PIXELFORMAT_XRGB8888")]
+        PixelformatXrgb8888 = 0x16161804,
         [NativeName("Name", "SDL_PIXELFORMAT_RGB888")]
         PixelformatRgb888 = 0x16161804,
         [NativeName("Name", "SDL_PIXELFORMAT_RGBX8888")]
         PixelformatRgbx8888 = 0x16261804,
+        [NativeName("Name", "SDL_PIXELFORMAT_XBGR8888")]
+        PixelformatXbgr8888 = 0x16561804,
         [NativeName("Name", "SDL_PIXELFORMAT_BGR888")]
         PixelformatBgr888 = 0x16561804,
         [NativeName("Name", "SDL_PIXELFORMAT_BGRX8888")]
