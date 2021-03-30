@@ -941,24 +941,29 @@ namespace Silk.NET.BuildTools.Cpp
                                 }
                             );
 
-                            if (firstNestedRecordField is null)
+                            var renameNestedName = !task.RenamedNativeNames.ContainsKey(nestedName);
+                            if (renameNestedName)
                             {
-                                firstNestedRecordField = ret;
-                                firstNestedRecord = nestedName;
-                                task.RenamedNativeNames[nestedName] = $"{nestedNameMapped}Union";
-                            }
-                            else
-                            {
-                                if (!rejiggedFirstNestedRecordField && task.RenamedNativeNames[firstNestedRecord!] ==
-                                    $"{nestedNameMapped}Union")
+                                if (firstNestedRecordField is null)
                                 {
-                                    rejiggedFirstNestedRecordField = true;
-                                    firstNestedRecordField.Name = "Anonymous1";
-                                    task.RenamedNativeNames[firstNestedRecord!] = $"{nestedNameMapped}Union1";
+                                    firstNestedRecordField = ret;
+                                    firstNestedRecord = nestedName;
+                                    task.RenamedNativeNames[nestedName] = $"{nestedNameMapped}Union";
                                 }
+                                else
+                                {
+                                    if (!rejiggedFirstNestedRecordField &&
+                                        task.RenamedNativeNames[firstNestedRecord!] ==
+                                        $"{nestedNameMapped}Union")
+                                    {
+                                        rejiggedFirstNestedRecordField = true;
+                                        firstNestedRecordField.Name = "Anonymous1";
+                                        task.RenamedNativeNames[firstNestedRecord!] = $"{nestedNameMapped}Union1";
+                                    }
 
-                                task.RenamedNativeNames[nestedName] =
-                                    $"{nestedNameMapped}Union{nestedRecordFieldCount}";
+                                    task.RenamedNativeNames[nestedName] =
+                                        $"{nestedNameMapped}Union{nestedRecordFieldCount}";
+                                }
                             }
 
                             var skip = false;
@@ -969,8 +974,12 @@ namespace Silk.NET.BuildTools.Cpp
                                     if (GetType(nestedFieldDecl.Type, out _, ref _f, out _).Name == ret.Type.Name)
                                     {
                                         skip = true;
-                                        task.RenamedNativeNames[nestedName] =
-                                            nestedNameMapped + nestedFieldDecl.Name.Pascalize();
+                                        if (renameNestedName)
+                                        {
+                                            task.RenamedNativeNames[nestedName] =
+                                                nestedNameMapped + nestedFieldDecl.Name.Pascalize();
+                                        }
+
                                         break;
                                     }
                                 }

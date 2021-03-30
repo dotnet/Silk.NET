@@ -18,13 +18,13 @@ namespace Silk.NET.SDL
 {
     [StructLayout(LayoutKind.Explicit)]
     [NativeName("Name", "__AnonymousRecord_SDL_gamecontroller_L87_C5")]
-    public unsafe partial struct GameControllerButtonBindValue
+    public unsafe partial struct GameControllerBindValue
     {
-        public GameControllerButtonBindValue
+        public GameControllerBindValue
         (
             int? button = null,
             int? axis = null,
-            GameControllerButtonBindValueHat? hat = null
+            GameControllerHatValue? hat = null
         ) : this()
         {
             if (button is not null)
@@ -60,6 +60,6 @@ namespace Silk.NET.SDL
         [NativeName("Type", "struct (anonymous struct at build/submodules/SDL/include\\SDL_gamecontroller.h:91:9)")]
         [NativeName("Type.Name", "struct (anonymous struct at build/submodules/SDL/include\\SDL_gamecontroller.h:91:9)")]
         [NativeName("Name", "hat")]
-        public GameControllerButtonBindValueHat Hat;
+        public GameControllerHatValue Hat;
     }
 }
