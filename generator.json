@@ -625,9 +625,10 @@
             ],
             "rename": {
                 "__AnonymousEnum_SDL_shape_L80_C9": "WindowShapeModeVal",
-                "__AnonymousEnum_SDL_stdinc_L161_C9": "SdlBool",
-                "__AnonymousRecord_SDL_gamecontroller_L84_C5": "GameControllerBindValue",
-                "__AnonymousRecord_SDL_gamecontroller_L88_C9": "GameControllerHatValue",
+                "__AnonymousEnum_SDL_stdinc_L167_C9": "SdlBool",
+                "_comment_0": "Remove this in 3.0, use native names",
+                "__AnonymousRecord_SDL_gamecontroller_L87_C5": "GameControllerBindValue",
+                "__AnonymousRecord_SDL_gamecontroller_L91_C9": "GameControllerHatValue",
                 "_SDL_Haptic": "Haptic",
                 "_SDL_GameController": "GameController",
                 "_SDL_Joystick": "Joystick",
@@ -679,12 +680,13 @@
                 {
                     "$typemapPrecedesInjections": "true",
                     "WindowShapeMode": "WindowShapeModeVal",
-                    "SDL_bool": "SdlBool",
                     "SDL_RWops": "RWops",
                     "VkInstance": "Silk.NET.Core.Native.VkHandle",
                     "VkSurfaceKHR": "Silk.NET.Core.Native.VkNonDispatchableHandle",
                     "SDL_SysWMmsg": "SysWMMsg",
-                    "SDL_Rect": "Silk.NET.Maths.Rectangle<int>"
+                    "SDL_Rect": "Silk.NET.Maths.Rectangle<int>",
+                    "SDL_bool": "SdlBool",
+                    "ID3D11Device": "Silk.NET.Core.Native.IUnknown"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"

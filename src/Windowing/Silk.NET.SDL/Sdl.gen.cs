@@ -44,6 +44,9 @@ namespace Silk.NET.SDL
         [NativeName("Name", "SDL_INIT_NOPARACHUTE")]
         public const uint InitNoparachute = unchecked((uint) 0x100000);
 
+        [NativeApi(EntryPoint = "SDL_GetWindowWMInfo")]
+        public unsafe partial bool GetWindowWMInfo(Window* window, SysWMInfo* info);
+
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 202, Column 38 in build/submodules/SDL/include/SDL_platform.h")]
         [NativeApi(EntryPoint = "SDL_GetPlatform")]
@@ -3042,162 +3045,162 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, int* bpp, uint* Rmask, uint* Gmask, uint* Bmask, uint* Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, int* bpp, uint* Rmask, uint* Gmask, uint* Bmask, uint* Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, int* bpp, uint* Rmask, uint* Gmask, uint* Bmask, ref uint Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, int* bpp, uint* Rmask, uint* Gmask, uint* Bmask, ref uint Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, int* bpp, uint* Rmask, uint* Gmask, ref uint Bmask, uint* Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, int* bpp, uint* Rmask, uint* Gmask, ref uint Bmask, uint* Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, int* bpp, uint* Rmask, uint* Gmask, ref uint Bmask, ref uint Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, int* bpp, uint* Rmask, uint* Gmask, ref uint Bmask, ref uint Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, int* bpp, uint* Rmask, ref uint Gmask, uint* Bmask, uint* Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, int* bpp, uint* Rmask, ref uint Gmask, uint* Bmask, uint* Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, int* bpp, uint* Rmask, ref uint Gmask, uint* Bmask, ref uint Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, int* bpp, uint* Rmask, ref uint Gmask, uint* Bmask, ref uint Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, int* bpp, uint* Rmask, ref uint Gmask, ref uint Bmask, uint* Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, int* bpp, uint* Rmask, ref uint Gmask, ref uint Bmask, uint* Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, int* bpp, uint* Rmask, ref uint Gmask, ref uint Bmask, ref uint Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, int* bpp, uint* Rmask, ref uint Gmask, ref uint Bmask, ref uint Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, int* bpp, ref uint Rmask, uint* Gmask, uint* Bmask, uint* Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, int* bpp, ref uint Rmask, uint* Gmask, uint* Bmask, uint* Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, int* bpp, ref uint Rmask, uint* Gmask, uint* Bmask, ref uint Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, int* bpp, ref uint Rmask, uint* Gmask, uint* Bmask, ref uint Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, int* bpp, ref uint Rmask, uint* Gmask, ref uint Bmask, uint* Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, int* bpp, ref uint Rmask, uint* Gmask, ref uint Bmask, uint* Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, int* bpp, ref uint Rmask, uint* Gmask, ref uint Bmask, ref uint Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, int* bpp, ref uint Rmask, uint* Gmask, ref uint Bmask, ref uint Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, int* bpp, ref uint Rmask, ref uint Gmask, uint* Bmask, uint* Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, int* bpp, ref uint Rmask, ref uint Gmask, uint* Bmask, uint* Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, int* bpp, ref uint Rmask, ref uint Gmask, uint* Bmask, ref uint Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, int* bpp, ref uint Rmask, ref uint Gmask, uint* Bmask, ref uint Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, int* bpp, ref uint Rmask, ref uint Gmask, ref uint Bmask, uint* Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, int* bpp, ref uint Rmask, ref uint Gmask, ref uint Bmask, uint* Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, int* bpp, ref uint Rmask, ref uint Gmask, ref uint Bmask, ref uint Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, int* bpp, ref uint Rmask, ref uint Gmask, ref uint Bmask, ref uint Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, ref int bpp, uint* Rmask, uint* Gmask, uint* Bmask, uint* Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, ref int bpp, uint* Rmask, uint* Gmask, uint* Bmask, uint* Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, ref int bpp, uint* Rmask, uint* Gmask, uint* Bmask, ref uint Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, ref int bpp, uint* Rmask, uint* Gmask, uint* Bmask, ref uint Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, ref int bpp, uint* Rmask, uint* Gmask, ref uint Bmask, uint* Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, ref int bpp, uint* Rmask, uint* Gmask, ref uint Bmask, uint* Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, ref int bpp, uint* Rmask, uint* Gmask, ref uint Bmask, ref uint Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, ref int bpp, uint* Rmask, uint* Gmask, ref uint Bmask, ref uint Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, ref int bpp, uint* Rmask, ref uint Gmask, uint* Bmask, uint* Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, ref int bpp, uint* Rmask, ref uint Gmask, uint* Bmask, uint* Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, ref int bpp, uint* Rmask, ref uint Gmask, uint* Bmask, ref uint Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, ref int bpp, uint* Rmask, ref uint Gmask, uint* Bmask, ref uint Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, ref int bpp, uint* Rmask, ref uint Gmask, ref uint Bmask, uint* Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, ref int bpp, uint* Rmask, ref uint Gmask, ref uint Bmask, uint* Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, ref int bpp, uint* Rmask, ref uint Gmask, ref uint Bmask, ref uint Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, ref int bpp, uint* Rmask, ref uint Gmask, ref uint Bmask, ref uint Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, ref int bpp, ref uint Rmask, uint* Gmask, uint* Bmask, uint* Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, ref int bpp, ref uint Rmask, uint* Gmask, uint* Bmask, uint* Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, ref int bpp, ref uint Rmask, uint* Gmask, uint* Bmask, ref uint Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, ref int bpp, ref uint Rmask, uint* Gmask, uint* Bmask, ref uint Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, ref int bpp, ref uint Rmask, uint* Gmask, ref uint Bmask, uint* Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, ref int bpp, ref uint Rmask, uint* Gmask, ref uint Bmask, uint* Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, ref int bpp, ref uint Rmask, uint* Gmask, ref uint Bmask, ref uint Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, ref int bpp, ref uint Rmask, uint* Gmask, ref uint Bmask, ref uint Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, ref int bpp, ref uint Rmask, ref uint Gmask, uint* Bmask, uint* Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, ref int bpp, ref uint Rmask, ref uint Gmask, uint* Bmask, uint* Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, ref int bpp, ref uint Rmask, ref uint Gmask, uint* Bmask, ref uint Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, ref int bpp, ref uint Rmask, ref uint Gmask, uint* Bmask, ref uint Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public unsafe partial bool PixelFormatEnumToMasks(uint format, ref int bpp, ref uint Rmask, ref uint Gmask, ref uint Bmask, uint* Amask);
+        public unsafe partial SdlBool PixelFormatEnumToMasks(uint format, ref int bpp, ref uint Rmask, ref uint Gmask, ref uint Bmask, uint* Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
         [NativeApi(EntryPoint = "SDL_PixelFormatEnumToMasks")]
-        public partial bool PixelFormatEnumToMasks(uint format, ref int bpp, ref uint Rmask, ref uint Gmask, ref uint Bmask, ref uint Amask);
+        public partial SdlBool PixelFormatEnumToMasks(uint format, ref int bpp, ref uint Rmask, ref uint Gmask, ref uint Bmask, ref uint Amask);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 394, Column 32 in build/submodules/SDL/include/SDL_pixels.h")]
@@ -4452,62 +4455,62 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_HasIntersection")]
-        public unsafe partial bool HasIntersection(Silk.NET.Maths.Rectangle<int>* A, Silk.NET.Maths.Rectangle<int>* B);
+        public unsafe partial SdlBool HasIntersection(Silk.NET.Maths.Rectangle<int>* A, Silk.NET.Maths.Rectangle<int>* B);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_HasIntersection")]
-        public unsafe partial bool HasIntersection(Silk.NET.Maths.Rectangle<int>* A, ref Silk.NET.Maths.Rectangle<int> B);
+        public unsafe partial SdlBool HasIntersection(Silk.NET.Maths.Rectangle<int>* A, ref Silk.NET.Maths.Rectangle<int> B);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_HasIntersection")]
-        public unsafe partial bool HasIntersection(ref Silk.NET.Maths.Rectangle<int> A, Silk.NET.Maths.Rectangle<int>* B);
+        public unsafe partial SdlBool HasIntersection(ref Silk.NET.Maths.Rectangle<int> A, Silk.NET.Maths.Rectangle<int>* B);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_HasIntersection")]
-        public partial bool HasIntersection(ref Silk.NET.Maths.Rectangle<int> A, ref Silk.NET.Maths.Rectangle<int> B);
+        public partial SdlBool HasIntersection(ref Silk.NET.Maths.Rectangle<int> A, ref Silk.NET.Maths.Rectangle<int> B);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 153, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public unsafe partial bool IntersectRect(Silk.NET.Maths.Rectangle<int>* A, Silk.NET.Maths.Rectangle<int>* B, Silk.NET.Maths.Rectangle<int>* result);
+        public unsafe partial SdlBool IntersectRect(Silk.NET.Maths.Rectangle<int>* A, Silk.NET.Maths.Rectangle<int>* B, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 153, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public unsafe partial bool IntersectRect(Silk.NET.Maths.Rectangle<int>* A, Silk.NET.Maths.Rectangle<int>* B, ref Silk.NET.Maths.Rectangle<int> result);
+        public unsafe partial SdlBool IntersectRect(Silk.NET.Maths.Rectangle<int>* A, Silk.NET.Maths.Rectangle<int>* B, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 153, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public unsafe partial bool IntersectRect(Silk.NET.Maths.Rectangle<int>* A, ref Silk.NET.Maths.Rectangle<int> B, Silk.NET.Maths.Rectangle<int>* result);
+        public unsafe partial SdlBool IntersectRect(Silk.NET.Maths.Rectangle<int>* A, ref Silk.NET.Maths.Rectangle<int> B, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 153, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public unsafe partial bool IntersectRect(Silk.NET.Maths.Rectangle<int>* A, ref Silk.NET.Maths.Rectangle<int> B, ref Silk.NET.Maths.Rectangle<int> result);
+        public unsafe partial SdlBool IntersectRect(Silk.NET.Maths.Rectangle<int>* A, ref Silk.NET.Maths.Rectangle<int> B, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 153, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public unsafe partial bool IntersectRect(ref Silk.NET.Maths.Rectangle<int> A, Silk.NET.Maths.Rectangle<int>* B, Silk.NET.Maths.Rectangle<int>* result);
+        public unsafe partial SdlBool IntersectRect(ref Silk.NET.Maths.Rectangle<int> A, Silk.NET.Maths.Rectangle<int>* B, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 153, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public unsafe partial bool IntersectRect(ref Silk.NET.Maths.Rectangle<int> A, Silk.NET.Maths.Rectangle<int>* B, ref Silk.NET.Maths.Rectangle<int> result);
+        public unsafe partial SdlBool IntersectRect(ref Silk.NET.Maths.Rectangle<int> A, Silk.NET.Maths.Rectangle<int>* B, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 153, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public unsafe partial bool IntersectRect(ref Silk.NET.Maths.Rectangle<int> A, ref Silk.NET.Maths.Rectangle<int> B, Silk.NET.Maths.Rectangle<int>* result);
+        public unsafe partial SdlBool IntersectRect(ref Silk.NET.Maths.Rectangle<int> A, ref Silk.NET.Maths.Rectangle<int> B, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 153, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRect")]
-        public partial bool IntersectRect(ref Silk.NET.Maths.Rectangle<int> A, ref Silk.NET.Maths.Rectangle<int> B, ref Silk.NET.Maths.Rectangle<int> result);
+        public partial SdlBool IntersectRect(ref Silk.NET.Maths.Rectangle<int> A, ref Silk.NET.Maths.Rectangle<int> B, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 165, Column 30 in build/submodules/SDL/include/SDL_rect.h")]
@@ -4552,202 +4555,202 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public unsafe partial bool EnclosePoints(Point* points, int count, Silk.NET.Maths.Rectangle<int>* clip, Silk.NET.Maths.Rectangle<int>* result);
+        public unsafe partial SdlBool EnclosePoints(Point* points, int count, Silk.NET.Maths.Rectangle<int>* clip, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public unsafe partial bool EnclosePoints(Point* points, int count, Silk.NET.Maths.Rectangle<int>* clip, ref Silk.NET.Maths.Rectangle<int> result);
+        public unsafe partial SdlBool EnclosePoints(Point* points, int count, Silk.NET.Maths.Rectangle<int>* clip, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public unsafe partial bool EnclosePoints(Point* points, int count, ref Silk.NET.Maths.Rectangle<int> clip, Silk.NET.Maths.Rectangle<int>* result);
+        public unsafe partial SdlBool EnclosePoints(Point* points, int count, ref Silk.NET.Maths.Rectangle<int> clip, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public unsafe partial bool EnclosePoints(Point* points, int count, ref Silk.NET.Maths.Rectangle<int> clip, ref Silk.NET.Maths.Rectangle<int> result);
+        public unsafe partial SdlBool EnclosePoints(Point* points, int count, ref Silk.NET.Maths.Rectangle<int> clip, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public unsafe partial bool EnclosePoints(ref Point points, int count, Silk.NET.Maths.Rectangle<int>* clip, Silk.NET.Maths.Rectangle<int>* result);
+        public unsafe partial SdlBool EnclosePoints(ref Point points, int count, Silk.NET.Maths.Rectangle<int>* clip, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public unsafe partial bool EnclosePoints(ref Point points, int count, Silk.NET.Maths.Rectangle<int>* clip, ref Silk.NET.Maths.Rectangle<int> result);
+        public unsafe partial SdlBool EnclosePoints(ref Point points, int count, Silk.NET.Maths.Rectangle<int>* clip, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public unsafe partial bool EnclosePoints(ref Point points, int count, ref Silk.NET.Maths.Rectangle<int> clip, Silk.NET.Maths.Rectangle<int>* result);
+        public unsafe partial SdlBool EnclosePoints(ref Point points, int count, ref Silk.NET.Maths.Rectangle<int> clip, Silk.NET.Maths.Rectangle<int>* result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_EnclosePoints")]
-        public partial bool EnclosePoints(ref Point points, int count, ref Silk.NET.Maths.Rectangle<int> clip, ref Silk.NET.Maths.Rectangle<int> result);
+        public partial SdlBool EnclosePoints(ref Point points, int count, ref Silk.NET.Maths.Rectangle<int> clip, ref Silk.NET.Maths.Rectangle<int> result);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, int* Y1, int* X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, int* Y1, int* X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, int* Y1, int* X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, int* Y1, int* X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, int* Y1, ref int X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, int* Y1, ref int X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, int* Y1, ref int X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, int* Y1, ref int X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, ref int Y1, int* X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, ref int Y1, int* X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, ref int Y1, int* X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, ref int Y1, int* X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, ref int Y1, ref int X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, ref int Y1, ref int X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, ref int Y1, ref int X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, int* X1, ref int Y1, ref int X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, int* Y1, int* X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, int* Y1, int* X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, int* Y1, int* X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, int* Y1, int* X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, int* Y1, ref int X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, int* Y1, ref int X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, int* Y1, ref int X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, int* Y1, ref int X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, ref int Y1, int* X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, ref int Y1, int* X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, ref int Y1, int* X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, ref int Y1, int* X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, ref int Y1, ref int X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, ref int Y1, ref int X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, ref int Y1, ref int X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(Silk.NET.Maths.Rectangle<int>* rect, ref int X1, ref int Y1, ref int X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, int* Y1, int* X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, int* Y1, int* X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, int* Y1, int* X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, int* Y1, int* X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, int* Y1, ref int X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, int* Y1, ref int X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, int* Y1, ref int X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, int* Y1, ref int X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, ref int Y1, int* X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, ref int Y1, int* X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, ref int Y1, int* X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, ref int Y1, int* X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, ref int Y1, ref int X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, ref int Y1, ref int X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, ref int Y1, ref int X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, int* X1, ref int Y1, ref int X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, int* Y1, int* X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, int* Y1, int* X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, int* Y1, int* X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, int* Y1, int* X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, int* Y1, ref int X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, int* Y1, ref int X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, int* Y1, ref int X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, int* Y1, ref int X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, ref int Y1, int* X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, ref int Y1, int* X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, ref int Y1, int* X2, ref int Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, ref int Y1, int* X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public unsafe partial bool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, ref int Y1, ref int X2, int* Y2);
+        public unsafe partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, ref int Y1, ref int X2, int* Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
         [NativeApi(EntryPoint = "SDL_IntersectRectAndLine")]
-        public partial bool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, ref int Y1, ref int X2, ref int Y2);
+        public partial SdlBool IntersectRectAndLine(ref Silk.NET.Maths.Rectangle<int> rect, ref int X1, ref int Y1, ref int X2, ref int Y2);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 185, Column 39 in build/submodules/SDL/include/SDL_blendmode.h")]
@@ -4877,12 +4880,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 386, Column 34 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_HasSurfaceRLE")]
-        public unsafe partial bool HasSurfaceRLE(Surface* surface);
+        public unsafe partial SdlBool HasSurfaceRLE(Surface* surface);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 386, Column 34 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_HasSurfaceRLE")]
-        public partial bool HasSurfaceRLE(ref Surface surface);
+        public partial SdlBool HasSurfaceRLE(ref Surface surface);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 407, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
@@ -4897,12 +4900,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 421, Column 34 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_HasColorKey")]
-        public unsafe partial bool HasColorKey(Surface* surface);
+        public unsafe partial SdlBool HasColorKey(Surface* surface);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 421, Column 34 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_HasColorKey")]
-        public partial bool HasColorKey(ref Surface surface);
+        public partial SdlBool HasColorKey(ref Surface surface);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 439, Column 29 in build/submodules/SDL/include/SDL_surface.h")]
@@ -5277,22 +5280,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 563, Column 34 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SetClipRect")]
-        public unsafe partial bool SetClipRect(Surface* surface, Silk.NET.Maths.Rectangle<int>* rect);
+        public unsafe partial SdlBool SetClipRect(Surface* surface, Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 563, Column 34 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SetClipRect")]
-        public unsafe partial bool SetClipRect(Surface* surface, ref Silk.NET.Maths.Rectangle<int> rect);
+        public unsafe partial SdlBool SetClipRect(Surface* surface, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 563, Column 34 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SetClipRect")]
-        public unsafe partial bool SetClipRect(ref Surface surface, Silk.NET.Maths.Rectangle<int>* rect);
+        public unsafe partial SdlBool SetClipRect(ref Surface surface, Silk.NET.Maths.Rectangle<int>* rect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 563, Column 34 in build/submodules/SDL/include/SDL_surface.h")]
         [NativeApi(EntryPoint = "SDL_SetClipRect")]
-        public partial bool SetClipRect(ref Surface surface, ref Silk.NET.Maths.Rectangle<int> rect);
+        public partial SdlBool SetClipRect(ref Surface surface, ref Silk.NET.Maths.Rectangle<int> rect);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 580, Column 30 in build/submodules/SDL/include/SDL_surface.h")]
@@ -6722,22 +6725,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 991, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowBordered")]
-        public unsafe partial void SetWindowBordered(Window* window, bool bordered);
+        public unsafe partial void SetWindowBordered(Window* window, SdlBool bordered);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 991, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowBordered")]
-        public partial void SetWindowBordered(ref Window window, bool bordered);
+        public partial void SetWindowBordered(ref Window window, SdlBool bordered);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1010, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowResizable")]
-        public unsafe partial void SetWindowResizable(Window* window, bool resizable);
+        public unsafe partial void SetWindowResizable(Window* window, SdlBool resizable);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1010, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowResizable")]
-        public partial void SetWindowResizable(ref Window window, bool resizable);
+        public partial void SetWindowResizable(ref Window window, SdlBool resizable);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1021, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
@@ -6852,62 +6855,62 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1165, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowGrab")]
-        public unsafe partial void SetWindowGrab(Window* window, bool grabbed);
+        public unsafe partial void SetWindowGrab(Window* window, SdlBool grabbed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1165, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowGrab")]
-        public partial void SetWindowGrab(ref Window window, bool grabbed);
+        public partial void SetWindowGrab(ref Window window, SdlBool grabbed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1181, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowKeyboardGrab")]
-        public unsafe partial void SetWindowKeyboardGrab(Window* window, bool grabbed);
+        public unsafe partial void SetWindowKeyboardGrab(Window* window, SdlBool grabbed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1181, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowKeyboardGrab")]
-        public partial void SetWindowKeyboardGrab(ref Window window, bool grabbed);
+        public partial void SetWindowKeyboardGrab(ref Window window, SdlBool grabbed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1197, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowMouseGrab")]
-        public unsafe partial void SetWindowMouseGrab(Window* window, bool grabbed);
+        public unsafe partial void SetWindowMouseGrab(Window* window, SdlBool grabbed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1197, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_SetWindowMouseGrab")]
-        public partial void SetWindowMouseGrab(ref Window window, bool grabbed);
+        public partial void SetWindowMouseGrab(ref Window window, SdlBool grabbed);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1208, Column 34 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetWindowGrab")]
-        public unsafe partial bool GetWindowGrab(Window* window);
+        public unsafe partial SdlBool GetWindowGrab(Window* window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1208, Column 34 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetWindowGrab")]
-        public partial bool GetWindowGrab(ref Window window);
+        public partial SdlBool GetWindowGrab(ref Window window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1219, Column 34 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetWindowKeyboardGrab")]
-        public unsafe partial bool GetWindowKeyboardGrab(Window* window);
+        public unsafe partial SdlBool GetWindowKeyboardGrab(Window* window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1219, Column 34 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetWindowKeyboardGrab")]
-        public partial bool GetWindowKeyboardGrab(ref Window window);
+        public partial SdlBool GetWindowKeyboardGrab(ref Window window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1230, Column 34 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetWindowMouseGrab")]
-        public unsafe partial bool GetWindowMouseGrab(Window* window);
+        public unsafe partial SdlBool GetWindowMouseGrab(Window* window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1230, Column 34 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GetWindowMouseGrab")]
-        public partial bool GetWindowMouseGrab(ref Window window);
+        public partial SdlBool GetWindowMouseGrab(ref Window window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1242, Column 38 in build/submodules/SDL/include\\SDL_video.h")]
@@ -7187,7 +7190,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1521, Column 34 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_IsScreenSaverEnabled")]
-        public partial bool IsScreenSaverEnabled();
+        public partial SdlBool IsScreenSaverEnabled();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1531, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
@@ -7237,17 +7240,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1649, Column 34 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GL_ExtensionSupported")]
-        public unsafe partial bool GLExtensionSupported(byte* extension);
+        public unsafe partial SdlBool GLExtensionSupported(byte* extension);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1649, Column 34 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GL_ExtensionSupported")]
-        public partial bool GLExtensionSupported(ref byte extension);
+        public partial SdlBool GLExtensionSupported(ref byte extension);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1649, Column 34 in build/submodules/SDL/include\\SDL_video.h")]
         [NativeApi(EntryPoint = "SDL_GL_ExtensionSupported")]
-        public partial bool GLExtensionSupported(string extension);
+        public partial SdlBool GLExtensionSupported(string extension);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1661, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
@@ -7407,62 +7410,62 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
         [NativeApi(EntryPoint = "SDL_Vulkan_GetInstanceExtensions")]
-        public unsafe partial bool VulkanGetInstanceExtensions(Window* window, uint* pCount, byte** pNames);
+        public unsafe partial SdlBool VulkanGetInstanceExtensions(Window* window, uint* pCount, byte** pNames);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
         [NativeApi(EntryPoint = "SDL_Vulkan_GetInstanceExtensions")]
-        public unsafe partial bool VulkanGetInstanceExtensions(Window* window, uint* pCount, ref byte* pNames);
+        public unsafe partial SdlBool VulkanGetInstanceExtensions(Window* window, uint* pCount, ref byte* pNames);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
         [NativeApi(EntryPoint = "SDL_Vulkan_GetInstanceExtensions")]
-        public unsafe partial bool VulkanGetInstanceExtensions(Window* window, ref uint pCount, byte** pNames);
+        public unsafe partial SdlBool VulkanGetInstanceExtensions(Window* window, ref uint pCount, byte** pNames);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
         [NativeApi(EntryPoint = "SDL_Vulkan_GetInstanceExtensions")]
-        public unsafe partial bool VulkanGetInstanceExtensions(Window* window, ref uint pCount, ref byte* pNames);
+        public unsafe partial SdlBool VulkanGetInstanceExtensions(Window* window, ref uint pCount, ref byte* pNames);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
         [NativeApi(EntryPoint = "SDL_Vulkan_GetInstanceExtensions")]
-        public unsafe partial bool VulkanGetInstanceExtensions(ref Window window, uint* pCount, byte** pNames);
+        public unsafe partial SdlBool VulkanGetInstanceExtensions(ref Window window, uint* pCount, byte** pNames);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
         [NativeApi(EntryPoint = "SDL_Vulkan_GetInstanceExtensions")]
-        public unsafe partial bool VulkanGetInstanceExtensions(ref Window window, uint* pCount, ref byte* pNames);
+        public unsafe partial SdlBool VulkanGetInstanceExtensions(ref Window window, uint* pCount, ref byte* pNames);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
         [NativeApi(EntryPoint = "SDL_Vulkan_GetInstanceExtensions")]
-        public unsafe partial bool VulkanGetInstanceExtensions(ref Window window, ref uint pCount, byte** pNames);
+        public unsafe partial SdlBool VulkanGetInstanceExtensions(ref Window window, ref uint pCount, byte** pNames);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
         [NativeApi(EntryPoint = "SDL_Vulkan_GetInstanceExtensions")]
-        public unsafe partial bool VulkanGetInstanceExtensions(ref Window window, ref uint pCount, ref byte* pNames);
+        public unsafe partial SdlBool VulkanGetInstanceExtensions(ref Window window, ref uint pCount, ref byte* pNames);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 34 in SDL_vulkan.h")]
         [NativeApi(EntryPoint = "SDL_Vulkan_CreateSurface")]
-        public unsafe partial bool VulkanCreateSurface(Window* window, Silk.NET.Core.Native.VkHandle instance, Silk.NET.Core.Native.VkNonDispatchableHandle* surface);
+        public unsafe partial SdlBool VulkanCreateSurface(Window* window, Silk.NET.Core.Native.VkHandle instance, Silk.NET.Core.Native.VkNonDispatchableHandle* surface);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 34 in SDL_vulkan.h")]
         [NativeApi(EntryPoint = "SDL_Vulkan_CreateSurface")]
-        public unsafe partial bool VulkanCreateSurface(Window* window, Silk.NET.Core.Native.VkHandle instance, ref Silk.NET.Core.Native.VkNonDispatchableHandle surface);
+        public unsafe partial SdlBool VulkanCreateSurface(Window* window, Silk.NET.Core.Native.VkHandle instance, ref Silk.NET.Core.Native.VkNonDispatchableHandle surface);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 34 in SDL_vulkan.h")]
         [NativeApi(EntryPoint = "SDL_Vulkan_CreateSurface")]
-        public unsafe partial bool VulkanCreateSurface(ref Window window, Silk.NET.Core.Native.VkHandle instance, Silk.NET.Core.Native.VkNonDispatchableHandle* surface);
+        public unsafe partial SdlBool VulkanCreateSurface(ref Window window, Silk.NET.Core.Native.VkHandle instance, Silk.NET.Core.Native.VkNonDispatchableHandle* surface);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 34 in SDL_vulkan.h")]
         [NativeApi(EntryPoint = "SDL_Vulkan_CreateSurface")]
-        public partial bool VulkanCreateSurface(ref Window window, Silk.NET.Core.Native.VkHandle instance, ref Silk.NET.Core.Native.VkNonDispatchableHandle surface);
+        public partial SdlBool VulkanCreateSurface(ref Window window, Silk.NET.Core.Native.VkHandle instance, ref Silk.NET.Core.Native.VkNonDispatchableHandle surface);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 204, Column 30 in SDL_vulkan.h")]
@@ -7707,12 +7710,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 104, Column 34 in build/submodules/SDL/include/SDL_atomic.h")]
         [NativeApi(EntryPoint = "SDL_AtomicTryLock")]
-        public unsafe partial bool AtomicTryLock(int* @lock);
+        public unsafe partial SdlBool AtomicTryLock(int* @lock);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 104, Column 34 in build/submodules/SDL/include/SDL_atomic.h")]
         [NativeApi(EntryPoint = "SDL_AtomicTryLock")]
-        public partial bool AtomicTryLock(ref int @lock);
+        public partial SdlBool AtomicTryLock(ref int @lock);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 117, Column 30 in build/submodules/SDL/include/SDL_atomic.h")]
@@ -7747,12 +7750,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 258, Column 34 in build/submodules/SDL/include/SDL_atomic.h")]
         [NativeApi(EntryPoint = "SDL_AtomicCAS")]
-        public unsafe partial bool AtomicCAS(AtomicT* a, int oldval, int newval);
+        public unsafe partial SdlBool AtomicCAS(AtomicT* a, int oldval, int newval);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 258, Column 34 in build/submodules/SDL/include/SDL_atomic.h")]
         [NativeApi(EntryPoint = "SDL_AtomicCAS")]
-        public partial bool AtomicCAS(ref AtomicT a, int oldval, int newval);
+        public partial SdlBool AtomicCAS(ref AtomicT a, int oldval, int newval);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 274, Column 29 in build/submodules/SDL/include/SDL_atomic.h")]
@@ -7787,42 +7790,42 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 341, Column 34 in build/submodules/SDL/include/SDL_atomic.h")]
         [NativeApi(EntryPoint = "SDL_AtomicCASPtr")]
-        public unsafe partial bool AtomicCASPtr(void** a, void* oldval, void* newval);
+        public unsafe partial SdlBool AtomicCASPtr(void** a, void* oldval, void* newval);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 341, Column 34 in build/submodules/SDL/include/SDL_atomic.h")]
         [NativeApi(EntryPoint = "SDL_AtomicCASPtr")]
-        public unsafe partial bool AtomicCASPtr<T0>(void** a, void* oldval, ref T0 newval) where T0 : unmanaged;
+        public unsafe partial SdlBool AtomicCASPtr<T0>(void** a, void* oldval, ref T0 newval) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 341, Column 34 in build/submodules/SDL/include/SDL_atomic.h")]
         [NativeApi(EntryPoint = "SDL_AtomicCASPtr")]
-        public unsafe partial bool AtomicCASPtr<T0>(void** a, ref T0 oldval, void* newval) where T0 : unmanaged;
+        public unsafe partial SdlBool AtomicCASPtr<T0>(void** a, ref T0 oldval, void* newval) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 341, Column 34 in build/submodules/SDL/include/SDL_atomic.h")]
         [NativeApi(EntryPoint = "SDL_AtomicCASPtr")]
-        public unsafe partial bool AtomicCASPtr<T0, T1>(void** a, ref T0 oldval, ref T1 newval) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial SdlBool AtomicCASPtr<T0, T1>(void** a, ref T0 oldval, ref T1 newval) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 341, Column 34 in build/submodules/SDL/include/SDL_atomic.h")]
         [NativeApi(EntryPoint = "SDL_AtomicCASPtr")]
-        public unsafe partial bool AtomicCASPtr(ref void* a, void* oldval, void* newval);
+        public unsafe partial SdlBool AtomicCASPtr(ref void* a, void* oldval, void* newval);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 341, Column 34 in build/submodules/SDL/include/SDL_atomic.h")]
         [NativeApi(EntryPoint = "SDL_AtomicCASPtr")]
-        public unsafe partial bool AtomicCASPtr<T0>(ref void* a, void* oldval, ref T0 newval) where T0 : unmanaged;
+        public unsafe partial SdlBool AtomicCASPtr<T0>(ref void* a, void* oldval, ref T0 newval) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 341, Column 34 in build/submodules/SDL/include/SDL_atomic.h")]
         [NativeApi(EntryPoint = "SDL_AtomicCASPtr")]
-        public unsafe partial bool AtomicCASPtr<T0>(ref void* a, ref T0 oldval, void* newval) where T0 : unmanaged;
+        public unsafe partial SdlBool AtomicCASPtr<T0>(ref void* a, ref T0 oldval, void* newval) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 341, Column 34 in build/submodules/SDL/include/SDL_atomic.h")]
         [NativeApi(EntryPoint = "SDL_AtomicCASPtr")]
-        public unsafe partial bool AtomicCASPtr<T0, T1>(ref void* a, ref T0 oldval, ref T1 newval) where T0 : unmanaged where T1 : unmanaged;
+        public unsafe partial SdlBool AtomicCASPtr<T0, T1>(ref void* a, ref T0 oldval, ref T1 newval) where T0 : unmanaged where T1 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 356, Column 31 in build/submodules/SDL/include/SDL_atomic.h")]
@@ -8737,7 +8740,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 78, Column 34 in build/submodules/SDL/include\\SDL_clipboard.h")]
         [NativeApi(EntryPoint = "SDL_HasClipboardText")]
-        public partial bool HasClipboardText();
+        public partial SdlBool HasClipboardText();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 128, Column 29 in build/submodules/SDL/include\\SDL_cpuinfo.h")]
@@ -8752,72 +8755,72 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in build/submodules/SDL/include\\SDL_cpuinfo.h")]
         [NativeApi(EntryPoint = "SDL_HasRDTSC")]
-        public partial bool HasRDTSC();
+        public partial SdlBool HasRDTSC();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 180, Column 34 in build/submodules/SDL/include\\SDL_cpuinfo.h")]
         [NativeApi(EntryPoint = "SDL_HasAltiVec")]
-        public partial bool HasAltiVec();
+        public partial SdlBool HasAltiVec();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 200, Column 34 in build/submodules/SDL/include\\SDL_cpuinfo.h")]
         [NativeApi(EntryPoint = "SDL_HasMMX")]
-        public partial bool HasMMX();
+        public partial SdlBool HasMMX();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 220, Column 34 in build/submodules/SDL/include\\SDL_cpuinfo.h")]
         [NativeApi(EntryPoint = "SDL_Has3DNow")]
-        public partial bool Has3DNow();
+        public partial SdlBool Has3DNow();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 240, Column 34 in build/submodules/SDL/include\\SDL_cpuinfo.h")]
         [NativeApi(EntryPoint = "SDL_HasSSE")]
-        public partial bool HasSSE();
+        public partial SdlBool HasSSE();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 260, Column 34 in build/submodules/SDL/include\\SDL_cpuinfo.h")]
         [NativeApi(EntryPoint = "SDL_HasSSE2")]
-        public partial bool HasSSE2();
+        public partial SdlBool HasSSE2();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 280, Column 34 in build/submodules/SDL/include\\SDL_cpuinfo.h")]
         [NativeApi(EntryPoint = "SDL_HasSSE3")]
-        public partial bool HasSSE3();
+        public partial SdlBool HasSSE3();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 300, Column 34 in build/submodules/SDL/include\\SDL_cpuinfo.h")]
         [NativeApi(EntryPoint = "SDL_HasSSE41")]
-        public partial bool HasSSE41();
+        public partial SdlBool HasSSE41();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 320, Column 34 in build/submodules/SDL/include\\SDL_cpuinfo.h")]
         [NativeApi(EntryPoint = "SDL_HasSSE42")]
-        public partial bool HasSSE42();
+        public partial SdlBool HasSSE42();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 342, Column 34 in build/submodules/SDL/include\\SDL_cpuinfo.h")]
         [NativeApi(EntryPoint = "SDL_HasAVX")]
-        public partial bool HasAVX();
+        public partial SdlBool HasAVX();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 364, Column 34 in build/submodules/SDL/include\\SDL_cpuinfo.h")]
         [NativeApi(EntryPoint = "SDL_HasAVX2")]
-        public partial bool HasAVX2();
+        public partial SdlBool HasAVX2();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 375, Column 34 in build/submodules/SDL/include\\SDL_cpuinfo.h")]
         [NativeApi(EntryPoint = "SDL_HasAVX512F")]
-        public partial bool HasAVX512F();
+        public partial SdlBool HasAVX512F();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 388, Column 34 in build/submodules/SDL/include\\SDL_cpuinfo.h")]
         [NativeApi(EntryPoint = "SDL_HasARMSIMD")]
-        public partial bool HasARMSIMD();
+        public partial SdlBool HasARMSIMD();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 397, Column 34 in build/submodules/SDL/include\\SDL_cpuinfo.h")]
         [NativeApi(EntryPoint = "SDL_HasNEON")]
-        public partial bool HasNEON();
+        public partial SdlBool HasNEON();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 406, Column 29 in build/submodules/SDL/include\\SDL_cpuinfo.h")]
@@ -8957,7 +8960,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 242, Column 34 in build/submodules/SDL/include/SDL_keyboard.h")]
         [NativeApi(EntryPoint = "SDL_IsTextInputActive")]
-        public partial bool IsTextInputActive();
+        public partial SdlBool IsTextInputActive();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 249, Column 30 in build/submodules/SDL/include/SDL_keyboard.h")]
@@ -8977,17 +8980,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 272, Column 34 in build/submodules/SDL/include/SDL_keyboard.h")]
         [NativeApi(EntryPoint = "SDL_HasScreenKeyboardSupport")]
-        public partial bool HasScreenKeyboardSupport();
+        public partial SdlBool HasScreenKeyboardSupport();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 284, Column 34 in build/submodules/SDL/include/SDL_keyboard.h")]
         [NativeApi(EntryPoint = "SDL_IsScreenKeyboardShown")]
-        public unsafe partial bool IsScreenKeyboardShown(Window* window);
+        public unsafe partial SdlBool IsScreenKeyboardShown(Window* window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 284, Column 34 in build/submodules/SDL/include/SDL_keyboard.h")]
         [NativeApi(EntryPoint = "SDL_IsScreenKeyboardShown")]
-        public partial bool IsScreenKeyboardShown(ref Window window);
+        public partial SdlBool IsScreenKeyboardShown(ref Window window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 79, Column 38 in build/submodules/SDL/include/SDL_mouse.h")]
@@ -9072,17 +9075,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 199, Column 29 in build/submodules/SDL/include/SDL_mouse.h")]
         [NativeApi(EntryPoint = "SDL_SetRelativeMouseMode")]
-        public partial int SetRelativeMouseMode(bool enabled);
+        public partial int SetRelativeMouseMode(SdlBool enabled);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 236, Column 29 in build/submodules/SDL/include/SDL_mouse.h")]
         [NativeApi(EntryPoint = "SDL_CaptureMouse")]
-        public partial int CaptureMouse(bool enabled);
+        public partial int CaptureMouse(SdlBool enabled);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 245, Column 34 in build/submodules/SDL/include/SDL_mouse.h")]
         [NativeApi(EntryPoint = "SDL_GetRelativeMouseMode")]
-        public partial bool GetRelativeMouseMode();
+        public partial SdlBool GetRelativeMouseMode();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 287, Column 37 in build/submodules/SDL/include/SDL_mouse.h")]
@@ -9267,7 +9270,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 320, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickIsVirtual")]
-        public partial bool JoystickIsVirtual(int device_index);
+        public partial SdlBool JoystickIsVirtual(int device_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 336, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
@@ -9442,12 +9445,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 504, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetAttached")]
-        public unsafe partial bool JoystickGetAttached(Joystick* joystick);
+        public unsafe partial SdlBool JoystickGetAttached(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 504, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetAttached")]
-        public partial bool JoystickGetAttached(ref Joystick joystick);
+        public partial SdlBool JoystickGetAttached(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 515, Column 40 in build/submodules/SDL/include\\SDL_joystick.h")]
@@ -9522,22 +9525,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 645, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetAxisInitialState")]
-        public unsafe partial bool JoystickGetAxisInitialState(Joystick* joystick, int axis, short* state);
+        public unsafe partial SdlBool JoystickGetAxisInitialState(Joystick* joystick, int axis, short* state);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 645, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetAxisInitialState")]
-        public unsafe partial bool JoystickGetAxisInitialState(Joystick* joystick, int axis, ref short state);
+        public unsafe partial SdlBool JoystickGetAxisInitialState(Joystick* joystick, int axis, ref short state);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 645, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetAxisInitialState")]
-        public unsafe partial bool JoystickGetAxisInitialState(ref Joystick joystick, int axis, short* state);
+        public unsafe partial SdlBool JoystickGetAxisInitialState(ref Joystick joystick, int axis, short* state);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 645, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickGetAxisInitialState")]
-        public partial bool JoystickGetAxisInitialState(ref Joystick joystick, int axis, ref short state);
+        public partial SdlBool JoystickGetAxisInitialState(ref Joystick joystick, int axis, ref short state);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 684, Column 31 in build/submodules/SDL/include\\SDL_joystick.h")]
@@ -9622,12 +9625,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 768, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickHasLED")]
-        public unsafe partial bool JoystickHasLED(Joystick* joystick);
+        public unsafe partial SdlBool JoystickHasLED(Joystick* joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 768, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
         [NativeApi(EntryPoint = "SDL_JoystickHasLED")]
-        public partial bool JoystickHasLED(ref Joystick joystick);
+        public partial SdlBool JoystickHasLED(ref Joystick joystick);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 783, Column 29 in build/submodules/SDL/include\\SDL_joystick.h")]
@@ -9867,7 +9870,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 254, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_IsGameController")]
-        public partial bool IsGameController(int joystick_index);
+        public partial SdlBool IsGameController(int joystick_index);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 276, Column 37 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
@@ -10012,12 +10015,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 449, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAttached")]
-        public unsafe partial bool GameControllerGetAttached(GameController* gamecontroller);
+        public unsafe partial SdlBool GameControllerGetAttached(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 449, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerGetAttached")]
-        public partial bool GameControllerGetAttached(ref GameController gamecontroller);
+        public partial SdlBool GameControllerGetAttached(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 468, Column 39 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
@@ -10077,12 +10080,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 579, Column 1 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerHasAxis")]
-        public unsafe partial bool GameControllerHasAxis(GameController* gamecontroller, GameControllerAxis axis);
+        public unsafe partial SdlBool GameControllerHasAxis(GameController* gamecontroller, GameControllerAxis axis);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 579, Column 1 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerHasAxis")]
-        public partial bool GameControllerHasAxis(ref GameController gamecontroller, GameControllerAxis axis);
+        public partial SdlBool GameControllerHasAxis(ref GameController gamecontroller, GameControllerAxis axis);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 599, Column 1 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
@@ -10132,12 +10135,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 689, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerHasButton")]
-        public unsafe partial bool GameControllerHasButton(GameController* gamecontroller, GameControllerButton button);
+        public unsafe partial SdlBool GameControllerHasButton(GameController* gamecontroller, GameControllerButton button);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 689, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerHasButton")]
-        public partial bool GameControllerHasButton(ref GameController gamecontroller, GameControllerButton button);
+        public partial SdlBool GameControllerHasButton(ref GameController gamecontroller, GameControllerButton button);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 704, Column 31 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
@@ -10412,32 +10415,32 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 730, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerHasSensor")]
-        public unsafe partial bool GameControllerHasSensor(GameController* gamecontroller, SensorType type);
+        public unsafe partial SdlBool GameControllerHasSensor(GameController* gamecontroller, SensorType type);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 730, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerHasSensor")]
-        public partial bool GameControllerHasSensor(ref GameController gamecontroller, SensorType type);
+        public partial SdlBool GameControllerHasSensor(ref GameController gamecontroller, SensorType type);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 741, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerSetSensorEnabled")]
-        public unsafe partial int GameControllerSetSensorEnabled(GameController* gamecontroller, SensorType type, bool enabled);
+        public unsafe partial int GameControllerSetSensorEnabled(GameController* gamecontroller, SensorType type, SdlBool enabled);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 741, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerSetSensorEnabled")]
-        public partial int GameControllerSetSensorEnabled(ref GameController gamecontroller, SensorType type, bool enabled);
+        public partial int GameControllerSetSensorEnabled(ref GameController gamecontroller, SensorType type, SdlBool enabled);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 751, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerIsSensorEnabled")]
-        public unsafe partial bool GameControllerIsSensorEnabled(GameController* gamecontroller, SensorType type);
+        public unsafe partial SdlBool GameControllerIsSensorEnabled(GameController* gamecontroller, SensorType type);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 751, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerIsSensorEnabled")]
-        public partial bool GameControllerIsSensorEnabled(ref GameController gamecontroller, SensorType type);
+        public partial SdlBool GameControllerIsSensorEnabled(ref GameController gamecontroller, SensorType type);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 765, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
@@ -10482,12 +10485,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 810, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerHasLED")]
-        public unsafe partial bool GameControllerHasLED(GameController* gamecontroller);
+        public unsafe partial SdlBool GameControllerHasLED(GameController* gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 810, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
         [NativeApi(EntryPoint = "SDL_GameControllerHasLED")]
-        public partial bool GameControllerHasLED(ref GameController gamecontroller);
+        public partial SdlBool GameControllerHasLED(ref GameController gamecontroller);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 821, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
@@ -10587,12 +10590,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 722, Column 34 in build/submodules/SDL/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_HasEvent")]
-        public partial bool HasEvent(uint type);
+        public partial SdlBool HasEvent(uint type);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 739, Column 34 in build/submodules/SDL/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_HasEvents")]
-        public partial bool HasEvents(uint minType, uint maxType);
+        public partial SdlBool HasEvents(uint minType, uint maxType);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 759, Column 30 in build/submodules/SDL/include\\SDL_events.h")]
@@ -10657,22 +10660,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 977, Column 34 in build/submodules/SDL/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_GetEventFilter")]
-        public unsafe partial bool GetEventFilter(PfnEventFilter* filter, void** userdata);
+        public unsafe partial SdlBool GetEventFilter(PfnEventFilter* filter, void** userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 977, Column 34 in build/submodules/SDL/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_GetEventFilter")]
-        public unsafe partial bool GetEventFilter(PfnEventFilter* filter, ref void* userdata);
+        public unsafe partial SdlBool GetEventFilter(PfnEventFilter* filter, ref void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 977, Column 34 in build/submodules/SDL/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_GetEventFilter")]
-        public unsafe partial bool GetEventFilter(ref PfnEventFilter filter, void** userdata);
+        public unsafe partial SdlBool GetEventFilter(ref PfnEventFilter filter, void** userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 977, Column 34 in build/submodules/SDL/include\\SDL_events.h")]
         [NativeApi(EntryPoint = "SDL_GetEventFilter")]
-        public unsafe partial bool GetEventFilter(ref PfnEventFilter filter, ref void* userdata);
+        public unsafe partial SdlBool GetEventFilter(ref PfnEventFilter filter, ref void* userdata);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1004, Column 30 in build/submodules/SDL/include\\SDL_events.h")]
@@ -11122,92 +11125,92 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
-        public unsafe partial bool SetHintWithPriority(byte* name, byte* value, HintPriority priority);
+        public unsafe partial SdlBool SetHintWithPriority(byte* name, byte* value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
-        public unsafe partial bool SetHintWithPriority(byte* name, ref byte value, HintPriority priority);
+        public unsafe partial SdlBool SetHintWithPriority(byte* name, ref byte value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
-        public unsafe partial bool SetHintWithPriority(byte* name, string value, HintPriority priority);
+        public unsafe partial SdlBool SetHintWithPriority(byte* name, string value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
-        public unsafe partial bool SetHintWithPriority(ref byte name, byte* value, HintPriority priority);
+        public unsafe partial SdlBool SetHintWithPriority(ref byte name, byte* value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
-        public partial bool SetHintWithPriority(ref byte name, ref byte value, HintPriority priority);
+        public partial SdlBool SetHintWithPriority(ref byte name, ref byte value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
-        public partial bool SetHintWithPriority(ref byte name, string value, HintPriority priority);
+        public partial SdlBool SetHintWithPriority(ref byte name, string value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
-        public unsafe partial bool SetHintWithPriority(string name, byte* value, HintPriority priority);
+        public unsafe partial SdlBool SetHintWithPriority(string name, byte* value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
-        public partial bool SetHintWithPriority(string name, ref byte value, HintPriority priority);
+        public partial SdlBool SetHintWithPriority(string name, ref byte value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHintWithPriority")]
-        public partial bool SetHintWithPriority(string name, string value, HintPriority priority);
+        public partial SdlBool SetHintWithPriority(string name, string value, HintPriority priority);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
-        public unsafe partial bool SetHint(byte* name, byte* value);
+        public unsafe partial SdlBool SetHint(byte* name, byte* value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
-        public unsafe partial bool SetHint(byte* name, ref byte value);
+        public unsafe partial SdlBool SetHint(byte* name, ref byte value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
-        public unsafe partial bool SetHint(byte* name, string value);
+        public unsafe partial SdlBool SetHint(byte* name, string value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
-        public unsafe partial bool SetHint(ref byte name, byte* value);
+        public unsafe partial SdlBool SetHint(ref byte name, byte* value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
-        public partial bool SetHint(ref byte name, ref byte value);
+        public partial SdlBool SetHint(ref byte name, ref byte value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
-        public partial bool SetHint(ref byte name, string value);
+        public partial SdlBool SetHint(ref byte name, string value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
-        public unsafe partial bool SetHint(string name, byte* value);
+        public unsafe partial SdlBool SetHint(string name, byte* value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
-        public partial bool SetHint(string name, ref byte value);
+        public partial SdlBool SetHint(string name, ref byte value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_SetHint")]
-        public partial bool SetHint(string name, string value);
+        public partial SdlBool SetHint(string name, string value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1719, Column 38 in build/submodules/SDL/include\\SDL_hints.h")]
@@ -11242,17 +11245,17 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1734, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_GetHintBoolean")]
-        public unsafe partial bool GetHintBoolean(byte* name, bool default_value);
+        public unsafe partial SdlBool GetHintBoolean(byte* name, SdlBool default_value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1734, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_GetHintBoolean")]
-        public partial bool GetHintBoolean(ref byte name, bool default_value);
+        public partial SdlBool GetHintBoolean(ref byte name, SdlBool default_value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1734, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
         [NativeApi(EntryPoint = "SDL_GetHintBoolean")]
-        public partial bool GetHintBoolean(string name, bool default_value);
+        public partial SdlBool GetHintBoolean(string name, SdlBool default_value);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1758, Column 30 in build/submodules/SDL/include\\SDL_hints.h")]
@@ -13377,12 +13380,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 660, Column 34 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderTargetSupported")]
-        public unsafe partial bool RenderTargetSupported(Renderer* renderer);
+        public unsafe partial SdlBool RenderTargetSupported(Renderer* renderer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 660, Column 34 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderTargetSupported")]
-        public partial bool RenderTargetSupported(ref Renderer renderer);
+        public partial SdlBool RenderTargetSupported(ref Renderer renderer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 684, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -13467,22 +13470,22 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 763, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderSetIntegerScale")]
-        public unsafe partial int RenderSetIntegerScale(Renderer* renderer, bool enable);
+        public unsafe partial int RenderSetIntegerScale(Renderer* renderer, SdlBool enable);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 763, Column 29 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderSetIntegerScale")]
-        public partial int RenderSetIntegerScale(ref Renderer renderer, bool enable);
+        public partial int RenderSetIntegerScale(ref Renderer renderer, SdlBool enable);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 777, Column 34 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGetIntegerScale")]
-        public unsafe partial bool RenderGetIntegerScale(Renderer* renderer);
+        public unsafe partial SdlBool RenderGetIntegerScale(Renderer* renderer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 777, Column 34 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderGetIntegerScale")]
-        public partial bool RenderGetIntegerScale(ref Renderer renderer);
+        public partial SdlBool RenderGetIntegerScale(ref Renderer renderer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 793, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -13567,12 +13570,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 849, Column 34 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderIsClipEnabled")]
-        public unsafe partial bool RenderIsClipEnabled(Renderer* renderer);
+        public unsafe partial SdlBool RenderIsClipEnabled(Renderer* renderer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 849, Column 34 in build/submodules/SDL/include/SDL_render.h")]
         [NativeApi(EntryPoint = "SDL_RenderIsClipEnabled")]
-        public partial bool RenderIsClipEnabled(ref Renderer renderer);
+        public partial SdlBool RenderIsClipEnabled(ref Renderer renderer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 874, Column 29 in build/submodules/SDL/include/SDL_render.h")]
@@ -15412,12 +15415,12 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 77, Column 34 in build/submodules/SDL/include\\SDL_shape.h")]
         [NativeApi(EntryPoint = "SDL_IsShapedWindow")]
-        public unsafe partial bool IsShapedWindow(Window* window);
+        public unsafe partial SdlBool IsShapedWindow(Window* window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 77, Column 34 in build/submodules/SDL/include\\SDL_shape.h")]
         [NativeApi(EntryPoint = "SDL_IsShapedWindow")]
-        public partial bool IsShapedWindow(ref Window window);
+        public partial SdlBool IsShapedWindow(ref Window window);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 121, Column 29 in build/submodules/SDL/include\\SDL_shape.h")]
@@ -15512,36 +15515,36 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 99, Column 39 in build/submodules/SDL/include\\SDL_system.h")]
         [NativeApi(EntryPoint = "SDL_RenderGetD3D11Device")]
-        public unsafe partial ID3D11Device* RenderGetD3D11Device(Renderer* renderer);
+        public unsafe partial Silk.NET.Core.Native.IUnknown* RenderGetD3D11Device(Renderer* renderer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 99, Column 39 in build/submodules/SDL/include\\SDL_system.h")]
         [NativeApi(EntryPoint = "SDL_RenderGetD3D11Device")]
-        public unsafe partial ID3D11Device* RenderGetD3D11Device(ref Renderer renderer);
+        public unsafe partial Silk.NET.Core.Native.IUnknown* RenderGetD3D11Device(ref Renderer renderer);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 119, Column 34 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_DXGIGetOutputInfo")]
-        public unsafe partial bool DXGIGetOutputInfo(int displayIndex, int* adapterIndex, int* outputIndex);
+        public unsafe partial SdlBool DXGIGetOutputInfo(int displayIndex, int* adapterIndex, int* outputIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 119, Column 34 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_DXGIGetOutputInfo")]
-        public unsafe partial bool DXGIGetOutputInfo(int displayIndex, int* adapterIndex, ref int outputIndex);
+        public unsafe partial SdlBool DXGIGetOutputInfo(int displayIndex, int* adapterIndex, ref int outputIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 119, Column 34 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_DXGIGetOutputInfo")]
-        public unsafe partial bool DXGIGetOutputInfo(int displayIndex, ref int adapterIndex, int* outputIndex);
+        public unsafe partial SdlBool DXGIGetOutputInfo(int displayIndex, ref int adapterIndex, int* outputIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 119, Column 34 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_DXGIGetOutputInfo")]
-        public partial bool DXGIGetOutputInfo(int displayIndex, ref int adapterIndex, ref int outputIndex);
+        public partial SdlBool DXGIGetOutputInfo(int displayIndex, ref int adapterIndex, ref int outputIndex);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 144, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
@@ -15566,7 +15569,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 147, Column 30 in build/submodules/SDL/include\\SDL_system.h")]
         [NativeApi(EntryPoint = "SDL_iPhoneSetEventPump")]
-        public partial void IPhoneSetEventPump(bool enabled);
+        public partial void IPhoneSetEventPump(SdlBool enabled);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 172, Column 32 in build/submodules/SDL/include\\SDL_system.h")]
@@ -15590,19 +15593,19 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 230, Column 34 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_IsAndroidTV")]
-        public partial bool IsAndroidTV();
+        public partial SdlBool IsAndroidTV();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 237, Column 34 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_IsChromebook")]
-        public partial bool IsChromebook();
+        public partial SdlBool IsChromebook();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 244, Column 34 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_IsDeXMode")]
-        public partial bool IsDeXMode();
+        public partial SdlBool IsDeXMode();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 249, Column 30 in build/submodules/SDL/include\\SDL_system.h")]
@@ -15644,19 +15647,19 @@ namespace Silk.NET.SDL
         [NativeName("Src", "Line 320, Column 34 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_AndroidRequestPermission")]
-        public unsafe partial bool AndroidRequestPermission(byte* permission);
+        public unsafe partial SdlBool AndroidRequestPermission(byte* permission);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 320, Column 34 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_AndroidRequestPermission")]
-        public partial bool AndroidRequestPermission(ref byte permission);
+        public partial SdlBool AndroidRequestPermission(ref byte permission);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 320, Column 34 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
         [NativeApi(EntryPoint = "SDL_AndroidRequestPermission")]
-        public partial bool AndroidRequestPermission(string permission);
+        public partial SdlBool AndroidRequestPermission(string permission);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 343, Column 29 in build/submodules/SDL/include\\SDL_system.h")]
@@ -15709,7 +15712,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 455, Column 34 in build/submodules/SDL/include\\SDL_system.h")]
         [NativeApi(EntryPoint = "SDL_IsTablet")]
-        public partial bool IsTablet();
+        public partial SdlBool IsTablet();
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 458, Column 30 in build/submodules/SDL/include\\SDL_system.h")]
@@ -15779,7 +15782,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 161, Column 34 in build/submodules/SDL/include\\SDL_timer.h")]
         [NativeApi(EntryPoint = "SDL_RemoveTimer")]
-        public partial bool RemoveTimer(int id);
+        public partial SdlBool RemoveTimer(int id);
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 123, Column 30 in build/submodules/SDL/include\\SDL_version.h")]
@@ -16561,7 +16564,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
-        public unsafe bool VulkanGetInstanceExtensions(Window* window, uint* pCount, string[] pNamesSa)
+        public unsafe SdlBool VulkanGetInstanceExtensions(Window* window, uint* pCount, string[] pNamesSa)
         {
             // StringArrayOverloader
             var pNames = (byte**) SilkMarshal.StringArrayToPtr(pNamesSa);
@@ -16573,7 +16576,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
-        public unsafe bool VulkanGetInstanceExtensions(Window* window, ref uint pCount, string[] pNamesSa)
+        public unsafe SdlBool VulkanGetInstanceExtensions(Window* window, ref uint pCount, string[] pNamesSa)
         {
             // StringArrayOverloader
             var pNames = (byte**) SilkMarshal.StringArrayToPtr(pNamesSa);
@@ -16585,7 +16588,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
-        public unsafe bool VulkanGetInstanceExtensions(ref Window window, uint* pCount, string[] pNamesSa)
+        public unsafe SdlBool VulkanGetInstanceExtensions(ref Window window, uint* pCount, string[] pNamesSa)
         {
             // StringArrayOverloader
             var pNames = (byte**) SilkMarshal.StringArrayToPtr(pNamesSa);
@@ -16597,7 +16600,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
-        public unsafe bool VulkanGetInstanceExtensions(ref Window window, ref uint pCount, string[] pNamesSa)
+        public unsafe SdlBool VulkanGetInstanceExtensions(ref Window window, ref uint pCount, string[] pNamesSa)
         {
             // StringArrayOverloader
             var pNames = (byte**) SilkMarshal.StringArrayToPtr(pNamesSa);

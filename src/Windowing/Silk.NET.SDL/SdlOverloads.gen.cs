@@ -2010,7 +2010,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, uint* Rmask, uint* Gmask, uint* Bmask, Span<uint> Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, uint* Rmask, uint* Gmask, uint* Bmask, Span<uint> Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, bpp, Rmask, Gmask, Bmask, ref Amask.GetPinnableReference());
@@ -2018,7 +2018,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, uint* Rmask, uint* Gmask, Span<uint> Bmask, uint* Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, uint* Rmask, uint* Gmask, Span<uint> Bmask, uint* Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, bpp, Rmask, Gmask, ref Bmask.GetPinnableReference(), Amask);
@@ -2026,7 +2026,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, uint* Rmask, uint* Gmask, Span<uint> Bmask, Span<uint> Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, uint* Rmask, uint* Gmask, Span<uint> Bmask, Span<uint> Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, bpp, Rmask, Gmask, ref Bmask.GetPinnableReference(), ref Amask.GetPinnableReference());
@@ -2034,7 +2034,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, uint* Rmask, Span<uint> Gmask, uint* Bmask, uint* Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, uint* Rmask, Span<uint> Gmask, uint* Bmask, uint* Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, bpp, Rmask, ref Gmask.GetPinnableReference(), Bmask, Amask);
@@ -2042,7 +2042,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, uint* Rmask, Span<uint> Gmask, uint* Bmask, Span<uint> Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, uint* Rmask, Span<uint> Gmask, uint* Bmask, Span<uint> Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, bpp, Rmask, ref Gmask.GetPinnableReference(), Bmask, ref Amask.GetPinnableReference());
@@ -2050,7 +2050,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, uint* Rmask, Span<uint> Gmask, Span<uint> Bmask, uint* Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, uint* Rmask, Span<uint> Gmask, Span<uint> Bmask, uint* Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, bpp, Rmask, ref Gmask.GetPinnableReference(), ref Bmask.GetPinnableReference(), Amask);
@@ -2058,7 +2058,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, uint* Rmask, Span<uint> Gmask, Span<uint> Bmask, Span<uint> Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, uint* Rmask, Span<uint> Gmask, Span<uint> Bmask, Span<uint> Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, bpp, Rmask, ref Gmask.GetPinnableReference(), ref Bmask.GetPinnableReference(), ref Amask.GetPinnableReference());
@@ -2066,7 +2066,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, Span<uint> Rmask, uint* Gmask, uint* Bmask, uint* Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, Span<uint> Rmask, uint* Gmask, uint* Bmask, uint* Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, bpp, ref Rmask.GetPinnableReference(), Gmask, Bmask, Amask);
@@ -2074,7 +2074,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, Span<uint> Rmask, uint* Gmask, uint* Bmask, Span<uint> Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, Span<uint> Rmask, uint* Gmask, uint* Bmask, Span<uint> Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, bpp, ref Rmask.GetPinnableReference(), Gmask, Bmask, ref Amask.GetPinnableReference());
@@ -2082,7 +2082,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, Span<uint> Rmask, uint* Gmask, Span<uint> Bmask, uint* Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, Span<uint> Rmask, uint* Gmask, Span<uint> Bmask, uint* Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, bpp, ref Rmask.GetPinnableReference(), Gmask, ref Bmask.GetPinnableReference(), Amask);
@@ -2090,7 +2090,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, Span<uint> Rmask, uint* Gmask, Span<uint> Bmask, Span<uint> Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, Span<uint> Rmask, uint* Gmask, Span<uint> Bmask, Span<uint> Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, bpp, ref Rmask.GetPinnableReference(), Gmask, ref Bmask.GetPinnableReference(), ref Amask.GetPinnableReference());
@@ -2098,7 +2098,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, Span<uint> Rmask, Span<uint> Gmask, uint* Bmask, uint* Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, Span<uint> Rmask, Span<uint> Gmask, uint* Bmask, uint* Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, bpp, ref Rmask.GetPinnableReference(), ref Gmask.GetPinnableReference(), Bmask, Amask);
@@ -2106,7 +2106,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, Span<uint> Rmask, Span<uint> Gmask, uint* Bmask, Span<uint> Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, Span<uint> Rmask, Span<uint> Gmask, uint* Bmask, Span<uint> Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, bpp, ref Rmask.GetPinnableReference(), ref Gmask.GetPinnableReference(), Bmask, ref Amask.GetPinnableReference());
@@ -2114,7 +2114,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, Span<uint> Rmask, Span<uint> Gmask, Span<uint> Bmask, uint* Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, Span<uint> Rmask, Span<uint> Gmask, Span<uint> Bmask, uint* Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, bpp, ref Rmask.GetPinnableReference(), ref Gmask.GetPinnableReference(), ref Bmask.GetPinnableReference(), Amask);
@@ -2122,7 +2122,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, Span<uint> Rmask, Span<uint> Gmask, Span<uint> Bmask, Span<uint> Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, int* bpp, Span<uint> Rmask, Span<uint> Gmask, Span<uint> Bmask, Span<uint> Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, bpp, ref Rmask.GetPinnableReference(), ref Gmask.GetPinnableReference(), ref Bmask.GetPinnableReference(), ref Amask.GetPinnableReference());
@@ -2130,7 +2130,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, uint* Rmask, uint* Gmask, uint* Bmask, uint* Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, uint* Rmask, uint* Gmask, uint* Bmask, uint* Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, ref bpp.GetPinnableReference(), Rmask, Gmask, Bmask, Amask);
@@ -2138,7 +2138,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, uint* Rmask, uint* Gmask, uint* Bmask, Span<uint> Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, uint* Rmask, uint* Gmask, uint* Bmask, Span<uint> Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, ref bpp.GetPinnableReference(), Rmask, Gmask, Bmask, ref Amask.GetPinnableReference());
@@ -2146,7 +2146,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, uint* Rmask, uint* Gmask, Span<uint> Bmask, uint* Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, uint* Rmask, uint* Gmask, Span<uint> Bmask, uint* Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, ref bpp.GetPinnableReference(), Rmask, Gmask, ref Bmask.GetPinnableReference(), Amask);
@@ -2154,7 +2154,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, uint* Rmask, uint* Gmask, Span<uint> Bmask, Span<uint> Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, uint* Rmask, uint* Gmask, Span<uint> Bmask, Span<uint> Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, ref bpp.GetPinnableReference(), Rmask, Gmask, ref Bmask.GetPinnableReference(), ref Amask.GetPinnableReference());
@@ -2162,7 +2162,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, uint* Rmask, Span<uint> Gmask, uint* Bmask, uint* Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, uint* Rmask, Span<uint> Gmask, uint* Bmask, uint* Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, ref bpp.GetPinnableReference(), Rmask, ref Gmask.GetPinnableReference(), Bmask, Amask);
@@ -2170,7 +2170,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, uint* Rmask, Span<uint> Gmask, uint* Bmask, Span<uint> Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, uint* Rmask, Span<uint> Gmask, uint* Bmask, Span<uint> Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, ref bpp.GetPinnableReference(), Rmask, ref Gmask.GetPinnableReference(), Bmask, ref Amask.GetPinnableReference());
@@ -2178,7 +2178,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, uint* Rmask, Span<uint> Gmask, Span<uint> Bmask, uint* Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, uint* Rmask, Span<uint> Gmask, Span<uint> Bmask, uint* Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, ref bpp.GetPinnableReference(), Rmask, ref Gmask.GetPinnableReference(), ref Bmask.GetPinnableReference(), Amask);
@@ -2186,7 +2186,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, uint* Rmask, Span<uint> Gmask, Span<uint> Bmask, Span<uint> Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, uint* Rmask, Span<uint> Gmask, Span<uint> Bmask, Span<uint> Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, ref bpp.GetPinnableReference(), Rmask, ref Gmask.GetPinnableReference(), ref Bmask.GetPinnableReference(), ref Amask.GetPinnableReference());
@@ -2194,7 +2194,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, Span<uint> Rmask, uint* Gmask, uint* Bmask, uint* Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, Span<uint> Rmask, uint* Gmask, uint* Bmask, uint* Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, ref bpp.GetPinnableReference(), ref Rmask.GetPinnableReference(), Gmask, Bmask, Amask);
@@ -2202,7 +2202,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, Span<uint> Rmask, uint* Gmask, uint* Bmask, Span<uint> Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, Span<uint> Rmask, uint* Gmask, uint* Bmask, Span<uint> Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, ref bpp.GetPinnableReference(), ref Rmask.GetPinnableReference(), Gmask, Bmask, ref Amask.GetPinnableReference());
@@ -2210,7 +2210,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, Span<uint> Rmask, uint* Gmask, Span<uint> Bmask, uint* Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, Span<uint> Rmask, uint* Gmask, Span<uint> Bmask, uint* Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, ref bpp.GetPinnableReference(), ref Rmask.GetPinnableReference(), Gmask, ref Bmask.GetPinnableReference(), Amask);
@@ -2218,7 +2218,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, Span<uint> Rmask, uint* Gmask, Span<uint> Bmask, Span<uint> Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, Span<uint> Rmask, uint* Gmask, Span<uint> Bmask, Span<uint> Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, ref bpp.GetPinnableReference(), ref Rmask.GetPinnableReference(), Gmask, ref Bmask.GetPinnableReference(), ref Amask.GetPinnableReference());
@@ -2226,7 +2226,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, Span<uint> Rmask, Span<uint> Gmask, uint* Bmask, uint* Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, Span<uint> Rmask, Span<uint> Gmask, uint* Bmask, uint* Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, ref bpp.GetPinnableReference(), ref Rmask.GetPinnableReference(), ref Gmask.GetPinnableReference(), Bmask, Amask);
@@ -2234,7 +2234,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, Span<uint> Rmask, Span<uint> Gmask, uint* Bmask, Span<uint> Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, Span<uint> Rmask, Span<uint> Gmask, uint* Bmask, Span<uint> Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, ref bpp.GetPinnableReference(), ref Rmask.GetPinnableReference(), ref Gmask.GetPinnableReference(), Bmask, ref Amask.GetPinnableReference());
@@ -2242,7 +2242,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, Span<uint> Rmask, Span<uint> Gmask, Span<uint> Bmask, uint* Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, Span<uint> Rmask, Span<uint> Gmask, Span<uint> Bmask, uint* Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, ref bpp.GetPinnableReference(), ref Rmask.GetPinnableReference(), ref Gmask.GetPinnableReference(), ref Bmask.GetPinnableReference(), Amask);
@@ -2250,7 +2250,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 372, Column 34 in build/submodules/SDL/include/SDL_pixels.h")]
-        public static unsafe bool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, Span<uint> Rmask, Span<uint> Gmask, Span<uint> Bmask, Span<uint> Amask)
+        public static unsafe SdlBool PixelFormatEnumToMasks(this Sdl thisApi, uint format, Span<int> bpp, Span<uint> Rmask, Span<uint> Gmask, Span<uint> Bmask, Span<uint> Amask)
         {
             // SpanOverloader
             return thisApi.PixelFormatEnumToMasks(format, ref bpp.GetPinnableReference(), ref Rmask.GetPinnableReference(), ref Gmask.GetPinnableReference(), ref Bmask.GetPinnableReference(), ref Amask.GetPinnableReference());
@@ -3898,7 +3898,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool HasIntersection(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* A, Span<Silk.NET.Maths.Rectangle<int>> B)
+        public static unsafe SdlBool HasIntersection(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* A, Span<Silk.NET.Maths.Rectangle<int>> B)
         {
             // SpanOverloader
             return thisApi.HasIntersection(A, ref B.GetPinnableReference());
@@ -3906,7 +3906,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool HasIntersection(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Silk.NET.Maths.Rectangle<int>* B)
+        public static unsafe SdlBool HasIntersection(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Silk.NET.Maths.Rectangle<int>* B)
         {
             // SpanOverloader
             return thisApi.HasIntersection(ref A.GetPinnableReference(), B);
@@ -3914,7 +3914,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 135, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool HasIntersection(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Span<Silk.NET.Maths.Rectangle<int>> B)
+        public static unsafe SdlBool HasIntersection(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Span<Silk.NET.Maths.Rectangle<int>> B)
         {
             // SpanOverloader
             return thisApi.HasIntersection(ref A.GetPinnableReference(), ref B.GetPinnableReference());
@@ -3922,7 +3922,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 153, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRect(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* A, Silk.NET.Maths.Rectangle<int>* B, Span<Silk.NET.Maths.Rectangle<int>> result)
+        public static unsafe SdlBool IntersectRect(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* A, Silk.NET.Maths.Rectangle<int>* B, Span<Silk.NET.Maths.Rectangle<int>> result)
         {
             // SpanOverloader
             return thisApi.IntersectRect(A, B, ref result.GetPinnableReference());
@@ -3930,7 +3930,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 153, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRect(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* A, Span<Silk.NET.Maths.Rectangle<int>> B, Silk.NET.Maths.Rectangle<int>* result)
+        public static unsafe SdlBool IntersectRect(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* A, Span<Silk.NET.Maths.Rectangle<int>> B, Silk.NET.Maths.Rectangle<int>* result)
         {
             // SpanOverloader
             return thisApi.IntersectRect(A, ref B.GetPinnableReference(), result);
@@ -3938,7 +3938,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 153, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRect(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* A, Span<Silk.NET.Maths.Rectangle<int>> B, Span<Silk.NET.Maths.Rectangle<int>> result)
+        public static unsafe SdlBool IntersectRect(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* A, Span<Silk.NET.Maths.Rectangle<int>> B, Span<Silk.NET.Maths.Rectangle<int>> result)
         {
             // SpanOverloader
             return thisApi.IntersectRect(A, ref B.GetPinnableReference(), ref result.GetPinnableReference());
@@ -3946,7 +3946,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 153, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRect(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Silk.NET.Maths.Rectangle<int>* B, Silk.NET.Maths.Rectangle<int>* result)
+        public static unsafe SdlBool IntersectRect(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Silk.NET.Maths.Rectangle<int>* B, Silk.NET.Maths.Rectangle<int>* result)
         {
             // SpanOverloader
             return thisApi.IntersectRect(ref A.GetPinnableReference(), B, result);
@@ -3954,7 +3954,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 153, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRect(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Silk.NET.Maths.Rectangle<int>* B, Span<Silk.NET.Maths.Rectangle<int>> result)
+        public static unsafe SdlBool IntersectRect(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Silk.NET.Maths.Rectangle<int>* B, Span<Silk.NET.Maths.Rectangle<int>> result)
         {
             // SpanOverloader
             return thisApi.IntersectRect(ref A.GetPinnableReference(), B, ref result.GetPinnableReference());
@@ -3962,7 +3962,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 153, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRect(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Span<Silk.NET.Maths.Rectangle<int>> B, Silk.NET.Maths.Rectangle<int>* result)
+        public static unsafe SdlBool IntersectRect(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Span<Silk.NET.Maths.Rectangle<int>> B, Silk.NET.Maths.Rectangle<int>* result)
         {
             // SpanOverloader
             return thisApi.IntersectRect(ref A.GetPinnableReference(), ref B.GetPinnableReference(), result);
@@ -3970,7 +3970,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 153, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRect(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Span<Silk.NET.Maths.Rectangle<int>> B, Span<Silk.NET.Maths.Rectangle<int>> result)
+        public static unsafe SdlBool IntersectRect(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> A, Span<Silk.NET.Maths.Rectangle<int>> B, Span<Silk.NET.Maths.Rectangle<int>> result)
         {
             // SpanOverloader
             return thisApi.IntersectRect(ref A.GetPinnableReference(), ref B.GetPinnableReference(), ref result.GetPinnableReference());
@@ -4034,7 +4034,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool EnclosePoints(this Sdl thisApi, Point* points, int count, Silk.NET.Maths.Rectangle<int>* clip, Span<Silk.NET.Maths.Rectangle<int>> result)
+        public static unsafe SdlBool EnclosePoints(this Sdl thisApi, Point* points, int count, Silk.NET.Maths.Rectangle<int>* clip, Span<Silk.NET.Maths.Rectangle<int>> result)
         {
             // SpanOverloader
             return thisApi.EnclosePoints(points, count, clip, ref result.GetPinnableReference());
@@ -4042,7 +4042,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool EnclosePoints(this Sdl thisApi, Point* points, int count, Span<Silk.NET.Maths.Rectangle<int>> clip, Silk.NET.Maths.Rectangle<int>* result)
+        public static unsafe SdlBool EnclosePoints(this Sdl thisApi, Point* points, int count, Span<Silk.NET.Maths.Rectangle<int>> clip, Silk.NET.Maths.Rectangle<int>* result)
         {
             // SpanOverloader
             return thisApi.EnclosePoints(points, count, ref clip.GetPinnableReference(), result);
@@ -4050,7 +4050,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool EnclosePoints(this Sdl thisApi, Point* points, int count, Span<Silk.NET.Maths.Rectangle<int>> clip, Span<Silk.NET.Maths.Rectangle<int>> result)
+        public static unsafe SdlBool EnclosePoints(this Sdl thisApi, Point* points, int count, Span<Silk.NET.Maths.Rectangle<int>> clip, Span<Silk.NET.Maths.Rectangle<int>> result)
         {
             // SpanOverloader
             return thisApi.EnclosePoints(points, count, ref clip.GetPinnableReference(), ref result.GetPinnableReference());
@@ -4058,7 +4058,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool EnclosePoints(this Sdl thisApi, Span<Point> points, int count, Silk.NET.Maths.Rectangle<int>* clip, Silk.NET.Maths.Rectangle<int>* result)
+        public static unsafe SdlBool EnclosePoints(this Sdl thisApi, Span<Point> points, int count, Silk.NET.Maths.Rectangle<int>* clip, Silk.NET.Maths.Rectangle<int>* result)
         {
             // SpanOverloader
             return thisApi.EnclosePoints(ref points.GetPinnableReference(), count, clip, result);
@@ -4066,7 +4066,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool EnclosePoints(this Sdl thisApi, Span<Point> points, int count, Silk.NET.Maths.Rectangle<int>* clip, Span<Silk.NET.Maths.Rectangle<int>> result)
+        public static unsafe SdlBool EnclosePoints(this Sdl thisApi, Span<Point> points, int count, Silk.NET.Maths.Rectangle<int>* clip, Span<Silk.NET.Maths.Rectangle<int>> result)
         {
             // SpanOverloader
             return thisApi.EnclosePoints(ref points.GetPinnableReference(), count, clip, ref result.GetPinnableReference());
@@ -4074,7 +4074,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool EnclosePoints(this Sdl thisApi, Span<Point> points, int count, Span<Silk.NET.Maths.Rectangle<int>> clip, Silk.NET.Maths.Rectangle<int>* result)
+        public static unsafe SdlBool EnclosePoints(this Sdl thisApi, Span<Point> points, int count, Span<Silk.NET.Maths.Rectangle<int>> clip, Silk.NET.Maths.Rectangle<int>* result)
         {
             // SpanOverloader
             return thisApi.EnclosePoints(ref points.GetPinnableReference(), count, ref clip.GetPinnableReference(), result);
@@ -4082,7 +4082,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 184, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool EnclosePoints(this Sdl thisApi, Span<Point> points, int count, Span<Silk.NET.Maths.Rectangle<int>> clip, Span<Silk.NET.Maths.Rectangle<int>> result)
+        public static unsafe SdlBool EnclosePoints(this Sdl thisApi, Span<Point> points, int count, Span<Silk.NET.Maths.Rectangle<int>> clip, Span<Silk.NET.Maths.Rectangle<int>> result)
         {
             // SpanOverloader
             return thisApi.EnclosePoints(ref points.GetPinnableReference(), count, ref clip.GetPinnableReference(), ref result.GetPinnableReference());
@@ -4090,7 +4090,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, int* X1, int* Y1, int* X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, int* X1, int* Y1, int* X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, X1, Y1, X2, ref Y2.GetPinnableReference());
@@ -4098,7 +4098,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, int* X1, int* Y1, Span<int> X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, int* X1, int* Y1, Span<int> X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, X1, Y1, ref X2.GetPinnableReference(), Y2);
@@ -4106,7 +4106,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, int* X1, int* Y1, Span<int> X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, int* X1, int* Y1, Span<int> X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, X1, Y1, ref X2.GetPinnableReference(), ref Y2.GetPinnableReference());
@@ -4114,7 +4114,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, int* X1, Span<int> Y1, int* X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, int* X1, Span<int> Y1, int* X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, X1, ref Y1.GetPinnableReference(), X2, Y2);
@@ -4122,7 +4122,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, int* X1, Span<int> Y1, int* X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, int* X1, Span<int> Y1, int* X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, X1, ref Y1.GetPinnableReference(), X2, ref Y2.GetPinnableReference());
@@ -4130,7 +4130,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, int* X1, Span<int> Y1, Span<int> X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, int* X1, Span<int> Y1, Span<int> X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, X1, ref Y1.GetPinnableReference(), ref X2.GetPinnableReference(), Y2);
@@ -4138,7 +4138,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, int* X1, Span<int> Y1, Span<int> X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, int* X1, Span<int> Y1, Span<int> X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, X1, ref Y1.GetPinnableReference(), ref X2.GetPinnableReference(), ref Y2.GetPinnableReference());
@@ -4146,7 +4146,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, int* Y1, int* X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, int* Y1, int* X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, ref X1.GetPinnableReference(), Y1, X2, Y2);
@@ -4154,7 +4154,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, int* Y1, int* X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, int* Y1, int* X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, ref X1.GetPinnableReference(), Y1, X2, ref Y2.GetPinnableReference());
@@ -4162,7 +4162,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, int* Y1, Span<int> X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, int* Y1, Span<int> X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, ref X1.GetPinnableReference(), Y1, ref X2.GetPinnableReference(), Y2);
@@ -4170,7 +4170,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, int* Y1, Span<int> X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, int* Y1, Span<int> X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, ref X1.GetPinnableReference(), Y1, ref X2.GetPinnableReference(), ref Y2.GetPinnableReference());
@@ -4178,7 +4178,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, Span<int> Y1, int* X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, Span<int> Y1, int* X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, ref X1.GetPinnableReference(), ref Y1.GetPinnableReference(), X2, Y2);
@@ -4186,7 +4186,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, Span<int> Y1, int* X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, Span<int> Y1, int* X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, ref X1.GetPinnableReference(), ref Y1.GetPinnableReference(), X2, ref Y2.GetPinnableReference());
@@ -4194,7 +4194,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, Span<int> Y1, Span<int> X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, Span<int> Y1, Span<int> X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, ref X1.GetPinnableReference(), ref Y1.GetPinnableReference(), ref X2.GetPinnableReference(), Y2);
@@ -4202,7 +4202,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, Span<int> Y1, Span<int> X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Silk.NET.Maths.Rectangle<int>* rect, Span<int> X1, Span<int> Y1, Span<int> X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(rect, ref X1.GetPinnableReference(), ref Y1.GetPinnableReference(), ref X2.GetPinnableReference(), ref Y2.GetPinnableReference());
@@ -4210,7 +4210,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, int* Y1, int* X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, int* Y1, int* X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), X1, Y1, X2, Y2);
@@ -4218,7 +4218,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, int* Y1, int* X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, int* Y1, int* X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), X1, Y1, X2, ref Y2.GetPinnableReference());
@@ -4226,7 +4226,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, int* Y1, Span<int> X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, int* Y1, Span<int> X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), X1, Y1, ref X2.GetPinnableReference(), Y2);
@@ -4234,7 +4234,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, int* Y1, Span<int> X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, int* Y1, Span<int> X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), X1, Y1, ref X2.GetPinnableReference(), ref Y2.GetPinnableReference());
@@ -4242,7 +4242,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, Span<int> Y1, int* X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, Span<int> Y1, int* X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), X1, ref Y1.GetPinnableReference(), X2, Y2);
@@ -4250,7 +4250,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, Span<int> Y1, int* X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, Span<int> Y1, int* X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), X1, ref Y1.GetPinnableReference(), X2, ref Y2.GetPinnableReference());
@@ -4258,7 +4258,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, Span<int> Y1, Span<int> X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, Span<int> Y1, Span<int> X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), X1, ref Y1.GetPinnableReference(), ref X2.GetPinnableReference(), Y2);
@@ -4266,7 +4266,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, Span<int> Y1, Span<int> X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, int* X1, Span<int> Y1, Span<int> X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), X1, ref Y1.GetPinnableReference(), ref X2.GetPinnableReference(), ref Y2.GetPinnableReference());
@@ -4274,7 +4274,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, int* Y1, int* X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, int* Y1, int* X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), ref X1.GetPinnableReference(), Y1, X2, Y2);
@@ -4282,7 +4282,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, int* Y1, int* X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, int* Y1, int* X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), ref X1.GetPinnableReference(), Y1, X2, ref Y2.GetPinnableReference());
@@ -4290,7 +4290,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, int* Y1, Span<int> X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, int* Y1, Span<int> X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), ref X1.GetPinnableReference(), Y1, ref X2.GetPinnableReference(), Y2);
@@ -4298,7 +4298,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, int* Y1, Span<int> X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, int* Y1, Span<int> X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), ref X1.GetPinnableReference(), Y1, ref X2.GetPinnableReference(), ref Y2.GetPinnableReference());
@@ -4306,7 +4306,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, Span<int> Y1, int* X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, Span<int> Y1, int* X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), ref X1.GetPinnableReference(), ref Y1.GetPinnableReference(), X2, Y2);
@@ -4314,7 +4314,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, Span<int> Y1, int* X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, Span<int> Y1, int* X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), ref X1.GetPinnableReference(), ref Y1.GetPinnableReference(), X2, ref Y2.GetPinnableReference());
@@ -4322,7 +4322,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, Span<int> Y1, Span<int> X2, int* Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, Span<int> Y1, Span<int> X2, int* Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), ref X1.GetPinnableReference(), ref Y1.GetPinnableReference(), ref X2.GetPinnableReference(), Y2);
@@ -4330,7 +4330,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 205, Column 34 in build/submodules/SDL/include/SDL_rect.h")]
-        public static unsafe bool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, Span<int> Y1, Span<int> X2, Span<int> Y2)
+        public static unsafe SdlBool IntersectRectAndLine(this Sdl thisApi, Span<Silk.NET.Maths.Rectangle<int>> rect, Span<int> X1, Span<int> Y1, Span<int> X2, Span<int> Y2)
         {
             // SpanOverloader
             return thisApi.IntersectRectAndLine(ref rect.GetPinnableReference(), ref X1.GetPinnableReference(), ref Y1.GetPinnableReference(), ref X2.GetPinnableReference(), ref Y2.GetPinnableReference());
@@ -4442,7 +4442,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 386, Column 34 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe bool HasSurfaceRLE(this Sdl thisApi, Span<Surface> surface)
+        public static unsafe SdlBool HasSurfaceRLE(this Sdl thisApi, Span<Surface> surface)
         {
             // SpanOverloader
             return thisApi.HasSurfaceRLE(ref surface.GetPinnableReference());
@@ -4458,7 +4458,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 421, Column 34 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe bool HasColorKey(this Sdl thisApi, Span<Surface> surface)
+        public static unsafe SdlBool HasColorKey(this Sdl thisApi, Span<Surface> surface)
         {
             // SpanOverloader
             return thisApi.HasColorKey(ref surface.GetPinnableReference());
@@ -4938,7 +4938,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 563, Column 34 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe bool SetClipRect(this Sdl thisApi, Surface* surface, Span<Silk.NET.Maths.Rectangle<int>> rect)
+        public static unsafe SdlBool SetClipRect(this Sdl thisApi, Surface* surface, Span<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             return thisApi.SetClipRect(surface, ref rect.GetPinnableReference());
@@ -4946,7 +4946,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 563, Column 34 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe bool SetClipRect(this Sdl thisApi, Span<Surface> surface, Silk.NET.Maths.Rectangle<int>* rect)
+        public static unsafe SdlBool SetClipRect(this Sdl thisApi, Span<Surface> surface, Silk.NET.Maths.Rectangle<int>* rect)
         {
             // SpanOverloader
             return thisApi.SetClipRect(ref surface.GetPinnableReference(), rect);
@@ -4954,7 +4954,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 563, Column 34 in build/submodules/SDL/include/SDL_surface.h")]
-        public static unsafe bool SetClipRect(this Sdl thisApi, Span<Surface> surface, Span<Silk.NET.Maths.Rectangle<int>> rect)
+        public static unsafe SdlBool SetClipRect(this Sdl thisApi, Span<Surface> surface, Span<Silk.NET.Maths.Rectangle<int>> rect)
         {
             // SpanOverloader
             return thisApi.SetClipRect(ref surface.GetPinnableReference(), ref rect.GetPinnableReference());
@@ -6722,7 +6722,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 991, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
-        public static unsafe void SetWindowBordered(this Sdl thisApi, Span<Window> window, bool bordered)
+        public static unsafe void SetWindowBordered(this Sdl thisApi, Span<Window> window, SdlBool bordered)
         {
             // SpanOverloader
             thisApi.SetWindowBordered(ref window.GetPinnableReference(), bordered);
@@ -6730,7 +6730,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1010, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
-        public static unsafe void SetWindowResizable(this Sdl thisApi, Span<Window> window, bool resizable)
+        public static unsafe void SetWindowResizable(this Sdl thisApi, Span<Window> window, SdlBool resizable)
         {
             // SpanOverloader
             thisApi.SetWindowResizable(ref window.GetPinnableReference(), resizable);
@@ -6834,7 +6834,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1165, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
-        public static unsafe void SetWindowGrab(this Sdl thisApi, Span<Window> window, bool grabbed)
+        public static unsafe void SetWindowGrab(this Sdl thisApi, Span<Window> window, SdlBool grabbed)
         {
             // SpanOverloader
             thisApi.SetWindowGrab(ref window.GetPinnableReference(), grabbed);
@@ -6842,7 +6842,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1181, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
-        public static unsafe void SetWindowKeyboardGrab(this Sdl thisApi, Span<Window> window, bool grabbed)
+        public static unsafe void SetWindowKeyboardGrab(this Sdl thisApi, Span<Window> window, SdlBool grabbed)
         {
             // SpanOverloader
             thisApi.SetWindowKeyboardGrab(ref window.GetPinnableReference(), grabbed);
@@ -6850,7 +6850,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1197, Column 30 in build/submodules/SDL/include\\SDL_video.h")]
-        public static unsafe void SetWindowMouseGrab(this Sdl thisApi, Span<Window> window, bool grabbed)
+        public static unsafe void SetWindowMouseGrab(this Sdl thisApi, Span<Window> window, SdlBool grabbed)
         {
             // SpanOverloader
             thisApi.SetWindowMouseGrab(ref window.GetPinnableReference(), grabbed);
@@ -6858,7 +6858,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1208, Column 34 in build/submodules/SDL/include\\SDL_video.h")]
-        public static unsafe bool GetWindowGrab(this Sdl thisApi, Span<Window> window)
+        public static unsafe SdlBool GetWindowGrab(this Sdl thisApi, Span<Window> window)
         {
             // SpanOverloader
             return thisApi.GetWindowGrab(ref window.GetPinnableReference());
@@ -6866,7 +6866,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1219, Column 34 in build/submodules/SDL/include\\SDL_video.h")]
-        public static unsafe bool GetWindowKeyboardGrab(this Sdl thisApi, Span<Window> window)
+        public static unsafe SdlBool GetWindowKeyboardGrab(this Sdl thisApi, Span<Window> window)
         {
             // SpanOverloader
             return thisApi.GetWindowKeyboardGrab(ref window.GetPinnableReference());
@@ -6874,7 +6874,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1230, Column 34 in build/submodules/SDL/include\\SDL_video.h")]
-        public static unsafe bool GetWindowMouseGrab(this Sdl thisApi, Span<Window> window)
+        public static unsafe SdlBool GetWindowMouseGrab(this Sdl thisApi, Span<Window> window)
         {
             // SpanOverloader
             return thisApi.GetWindowMouseGrab(ref window.GetPinnableReference());
@@ -7250,7 +7250,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1649, Column 34 in build/submodules/SDL/include\\SDL_video.h")]
-        public static unsafe bool GLExtensionSupported(this Sdl thisApi, Span<byte> extension)
+        public static unsafe SdlBool GLExtensionSupported(this Sdl thisApi, Span<byte> extension)
         {
             // SpanOverloader
             return thisApi.GLExtensionSupported(ref extension.GetPinnableReference());
@@ -7378,7 +7378,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
-        public static unsafe bool VulkanGetInstanceExtensions(this Sdl thisApi, Window* window, Span<uint> pCount, byte** pNames)
+        public static unsafe SdlBool VulkanGetInstanceExtensions(this Sdl thisApi, Window* window, Span<uint> pCount, byte** pNames)
         {
             // SpanOverloader
             return thisApi.VulkanGetInstanceExtensions(window, ref pCount.GetPinnableReference(), pNames);
@@ -7386,7 +7386,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
-        public static unsafe bool VulkanGetInstanceExtensions(this Sdl thisApi, Window* window, Span<uint> pCount, ref byte* pNames)
+        public static unsafe SdlBool VulkanGetInstanceExtensions(this Sdl thisApi, Window* window, Span<uint> pCount, ref byte* pNames)
         {
             // SpanOverloader
             return thisApi.VulkanGetInstanceExtensions(window, ref pCount.GetPinnableReference(), ref pNames);
@@ -7394,7 +7394,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
-        public static unsafe bool VulkanGetInstanceExtensions(this Sdl thisApi, Span<Window> window, uint* pCount, byte** pNames)
+        public static unsafe SdlBool VulkanGetInstanceExtensions(this Sdl thisApi, Span<Window> window, uint* pCount, byte** pNames)
         {
             // SpanOverloader
             return thisApi.VulkanGetInstanceExtensions(ref window.GetPinnableReference(), pCount, pNames);
@@ -7402,7 +7402,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
-        public static unsafe bool VulkanGetInstanceExtensions(this Sdl thisApi, Span<Window> window, uint* pCount, ref byte* pNames)
+        public static unsafe SdlBool VulkanGetInstanceExtensions(this Sdl thisApi, Span<Window> window, uint* pCount, ref byte* pNames)
         {
             // SpanOverloader
             return thisApi.VulkanGetInstanceExtensions(ref window.GetPinnableReference(), pCount, ref pNames);
@@ -7410,7 +7410,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
-        public static unsafe bool VulkanGetInstanceExtensions(this Sdl thisApi, Span<Window> window, Span<uint> pCount, byte** pNames)
+        public static unsafe SdlBool VulkanGetInstanceExtensions(this Sdl thisApi, Span<Window> window, Span<uint> pCount, byte** pNames)
         {
             // SpanOverloader
             return thisApi.VulkanGetInstanceExtensions(ref window.GetPinnableReference(), ref pCount.GetPinnableReference(), pNames);
@@ -7418,7 +7418,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 160, Column 34 in SDL_vulkan.h")]
-        public static unsafe bool VulkanGetInstanceExtensions(this Sdl thisApi, Span<Window> window, Span<uint> pCount, ref byte* pNames)
+        public static unsafe SdlBool VulkanGetInstanceExtensions(this Sdl thisApi, Span<Window> window, Span<uint> pCount, ref byte* pNames)
         {
             // SpanOverloader
             return thisApi.VulkanGetInstanceExtensions(ref window.GetPinnableReference(), ref pCount.GetPinnableReference(), ref pNames);
@@ -7426,7 +7426,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 34 in SDL_vulkan.h")]
-        public static unsafe bool VulkanCreateSurface(this Sdl thisApi, Window* window, Silk.NET.Core.Native.VkHandle instance, Span<Silk.NET.Core.Native.VkNonDispatchableHandle> surface)
+        public static unsafe SdlBool VulkanCreateSurface(this Sdl thisApi, Window* window, Silk.NET.Core.Native.VkHandle instance, Span<Silk.NET.Core.Native.VkNonDispatchableHandle> surface)
         {
             // SpanOverloader
             return thisApi.VulkanCreateSurface(window, instance, ref surface.GetPinnableReference());
@@ -7434,7 +7434,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 34 in SDL_vulkan.h")]
-        public static unsafe bool VulkanCreateSurface(this Sdl thisApi, Span<Window> window, Silk.NET.Core.Native.VkHandle instance, Silk.NET.Core.Native.VkNonDispatchableHandle* surface)
+        public static unsafe SdlBool VulkanCreateSurface(this Sdl thisApi, Span<Window> window, Silk.NET.Core.Native.VkHandle instance, Silk.NET.Core.Native.VkNonDispatchableHandle* surface)
         {
             // SpanOverloader
             return thisApi.VulkanCreateSurface(ref window.GetPinnableReference(), instance, surface);
@@ -7442,7 +7442,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 182, Column 34 in SDL_vulkan.h")]
-        public static unsafe bool VulkanCreateSurface(this Sdl thisApi, Span<Window> window, Silk.NET.Core.Native.VkHandle instance, Span<Silk.NET.Core.Native.VkNonDispatchableHandle> surface)
+        public static unsafe SdlBool VulkanCreateSurface(this Sdl thisApi, Span<Window> window, Silk.NET.Core.Native.VkHandle instance, Span<Silk.NET.Core.Native.VkNonDispatchableHandle> surface)
         {
             // SpanOverloader
             return thisApi.VulkanCreateSurface(ref window.GetPinnableReference(), instance, ref surface.GetPinnableReference());
@@ -7671,7 +7671,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 104, Column 34 in build/submodules/SDL/include/SDL_atomic.h")]
-        public static unsafe bool AtomicTryLock(this Sdl thisApi, Span<int> @lock)
+        public static unsafe SdlBool AtomicTryLock(this Sdl thisApi, Span<int> @lock)
         {
             // SpanOverloader
             return thisApi.AtomicTryLock(ref @lock.GetPinnableReference());
@@ -7695,7 +7695,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 258, Column 34 in build/submodules/SDL/include/SDL_atomic.h")]
-        public static unsafe bool AtomicCAS(this Sdl thisApi, Span<AtomicT> a, int oldval, int newval)
+        public static unsafe SdlBool AtomicCAS(this Sdl thisApi, Span<AtomicT> a, int oldval, int newval)
         {
             // SpanOverloader
             return thisApi.AtomicCAS(ref a.GetPinnableReference(), oldval, newval);
@@ -7727,7 +7727,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 341, Column 34 in build/submodules/SDL/include/SDL_atomic.h")]
-        public static unsafe bool AtomicCASPtr<T0>(this Sdl thisApi, void** a, void* oldval, Span<T0> newval) where T0 : unmanaged
+        public static unsafe SdlBool AtomicCASPtr<T0>(this Sdl thisApi, void** a, void* oldval, Span<T0> newval) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.AtomicCASPtr(a, oldval, ref newval.GetPinnableReference());
@@ -7735,7 +7735,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 341, Column 34 in build/submodules/SDL/include/SDL_atomic.h")]
-        public static unsafe bool AtomicCASPtr<T0>(this Sdl thisApi, void** a, Span<T0> oldval, void* newval) where T0 : unmanaged
+        public static unsafe SdlBool AtomicCASPtr<T0>(this Sdl thisApi, void** a, Span<T0> oldval, void* newval) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.AtomicCASPtr(a, ref oldval.GetPinnableReference(), newval);
@@ -7743,7 +7743,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 341, Column 34 in build/submodules/SDL/include/SDL_atomic.h")]
-        public static unsafe bool AtomicCASPtr<T0, T1>(this Sdl thisApi, void** a, Span<T0> oldval, Span<T1> newval) where T0 : unmanaged where T1 : unmanaged
+        public static unsafe SdlBool AtomicCASPtr<T0, T1>(this Sdl thisApi, void** a, Span<T0> oldval, Span<T1> newval) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
             return thisApi.AtomicCASPtr(a, ref oldval.GetPinnableReference(), ref newval.GetPinnableReference());
@@ -7751,7 +7751,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 341, Column 34 in build/submodules/SDL/include/SDL_atomic.h")]
-        public static unsafe bool AtomicCASPtr<T0>(this Sdl thisApi, ref void* a, void* oldval, Span<T0> newval) where T0 : unmanaged
+        public static unsafe SdlBool AtomicCASPtr<T0>(this Sdl thisApi, ref void* a, void* oldval, Span<T0> newval) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.AtomicCASPtr(ref a, oldval, ref newval.GetPinnableReference());
@@ -7759,7 +7759,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 341, Column 34 in build/submodules/SDL/include/SDL_atomic.h")]
-        public static unsafe bool AtomicCASPtr<T0>(this Sdl thisApi, ref void* a, Span<T0> oldval, void* newval) where T0 : unmanaged
+        public static unsafe SdlBool AtomicCASPtr<T0>(this Sdl thisApi, ref void* a, Span<T0> oldval, void* newval) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.AtomicCASPtr(ref a, ref oldval.GetPinnableReference(), newval);
@@ -7767,7 +7767,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 341, Column 34 in build/submodules/SDL/include/SDL_atomic.h")]
-        public static unsafe bool AtomicCASPtr<T0, T1>(this Sdl thisApi, ref void* a, Span<T0> oldval, Span<T1> newval) where T0 : unmanaged where T1 : unmanaged
+        public static unsafe SdlBool AtomicCASPtr<T0, T1>(this Sdl thisApi, ref void* a, Span<T0> oldval, Span<T1> newval) where T0 : unmanaged where T1 : unmanaged
         {
             // SpanOverloader
             return thisApi.AtomicCASPtr(ref a, ref oldval.GetPinnableReference(), ref newval.GetPinnableReference());
@@ -8551,7 +8551,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 284, Column 34 in build/submodules/SDL/include/SDL_keyboard.h")]
-        public static unsafe bool IsScreenKeyboardShown(this Sdl thisApi, Span<Window> window)
+        public static unsafe SdlBool IsScreenKeyboardShown(this Sdl thisApi, Span<Window> window)
         {
             // SpanOverloader
             return thisApi.IsScreenKeyboardShown(ref window.GetPinnableReference());
@@ -8815,7 +8815,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 504, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
-        public static unsafe bool JoystickGetAttached(this Sdl thisApi, Span<Joystick> joystick)
+        public static unsafe SdlBool JoystickGetAttached(this Sdl thisApi, Span<Joystick> joystick)
         {
             // SpanOverloader
             return thisApi.JoystickGetAttached(ref joystick.GetPinnableReference());
@@ -8871,7 +8871,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 645, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
-        public static unsafe bool JoystickGetAxisInitialState(this Sdl thisApi, Joystick* joystick, int axis, Span<short> state)
+        public static unsafe SdlBool JoystickGetAxisInitialState(this Sdl thisApi, Joystick* joystick, int axis, Span<short> state)
         {
             // SpanOverloader
             return thisApi.JoystickGetAxisInitialState(joystick, axis, ref state.GetPinnableReference());
@@ -8879,7 +8879,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 645, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
-        public static unsafe bool JoystickGetAxisInitialState(this Sdl thisApi, Span<Joystick> joystick, int axis, short* state)
+        public static unsafe SdlBool JoystickGetAxisInitialState(this Sdl thisApi, Span<Joystick> joystick, int axis, short* state)
         {
             // SpanOverloader
             return thisApi.JoystickGetAxisInitialState(ref joystick.GetPinnableReference(), axis, state);
@@ -8887,7 +8887,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 645, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
-        public static unsafe bool JoystickGetAxisInitialState(this Sdl thisApi, Span<Joystick> joystick, int axis, Span<short> state)
+        public static unsafe SdlBool JoystickGetAxisInitialState(this Sdl thisApi, Span<Joystick> joystick, int axis, Span<short> state)
         {
             // SpanOverloader
             return thisApi.JoystickGetAxisInitialState(ref joystick.GetPinnableReference(), axis, ref state.GetPinnableReference());
@@ -8983,7 +8983,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 768, Column 34 in build/submodules/SDL/include\\SDL_joystick.h")]
-        public static unsafe bool JoystickHasLED(this Sdl thisApi, Span<Joystick> joystick)
+        public static unsafe SdlBool JoystickHasLED(this Sdl thisApi, Span<Joystick> joystick)
         {
             // SpanOverloader
             return thisApi.JoystickHasLED(ref joystick.GetPinnableReference());
@@ -9167,7 +9167,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 449, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe bool GameControllerGetAttached(this Sdl thisApi, Span<GameController> gamecontroller)
+        public static unsafe SdlBool GameControllerGetAttached(this Sdl thisApi, Span<GameController> gamecontroller)
         {
             // SpanOverloader
             return thisApi.GameControllerGetAttached(ref gamecontroller.GetPinnableReference());
@@ -9199,7 +9199,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 579, Column 1 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe bool GameControllerHasAxis(this Sdl thisApi, Span<GameController> gamecontroller, GameControllerAxis axis)
+        public static unsafe SdlBool GameControllerHasAxis(this Sdl thisApi, Span<GameController> gamecontroller, GameControllerAxis axis)
         {
             // SpanOverloader
             return thisApi.GameControllerHasAxis(ref gamecontroller.GetPinnableReference(), axis);
@@ -9231,7 +9231,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 689, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe bool GameControllerHasButton(this Sdl thisApi, Span<GameController> gamecontroller, GameControllerButton button)
+        public static unsafe SdlBool GameControllerHasButton(this Sdl thisApi, Span<GameController> gamecontroller, GameControllerButton button)
         {
             // SpanOverloader
             return thisApi.GameControllerHasButton(ref gamecontroller.GetPinnableReference(), button);
@@ -9631,7 +9631,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 730, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe bool GameControllerHasSensor(this Sdl thisApi, Span<GameController> gamecontroller, SensorType type)
+        public static unsafe SdlBool GameControllerHasSensor(this Sdl thisApi, Span<GameController> gamecontroller, SensorType type)
         {
             // SpanOverloader
             return thisApi.GameControllerHasSensor(ref gamecontroller.GetPinnableReference(), type);
@@ -9639,7 +9639,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 741, Column 29 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe int GameControllerSetSensorEnabled(this Sdl thisApi, Span<GameController> gamecontroller, SensorType type, bool enabled)
+        public static unsafe int GameControllerSetSensorEnabled(this Sdl thisApi, Span<GameController> gamecontroller, SensorType type, SdlBool enabled)
         {
             // SpanOverloader
             return thisApi.GameControllerSetSensorEnabled(ref gamecontroller.GetPinnableReference(), type, enabled);
@@ -9647,7 +9647,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 751, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe bool GameControllerIsSensorEnabled(this Sdl thisApi, Span<GameController> gamecontroller, SensorType type)
+        public static unsafe SdlBool GameControllerIsSensorEnabled(this Sdl thisApi, Span<GameController> gamecontroller, SensorType type)
         {
             // SpanOverloader
             return thisApi.GameControllerIsSensorEnabled(ref gamecontroller.GetPinnableReference(), type);
@@ -9695,7 +9695,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 810, Column 34 in build/submodules/SDL/include\\SDL_gamecontroller.h")]
-        public static unsafe bool GameControllerHasLED(this Sdl thisApi, Span<GameController> gamecontroller)
+        public static unsafe SdlBool GameControllerHasLED(this Sdl thisApi, Span<GameController> gamecontroller)
         {
             // SpanOverloader
             return thisApi.GameControllerHasLED(ref gamecontroller.GetPinnableReference());
@@ -9791,7 +9791,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 977, Column 34 in build/submodules/SDL/include\\SDL_events.h")]
-        public static unsafe bool GetEventFilter(this Sdl thisApi, Span<PfnEventFilter> filter, void** userdata)
+        public static unsafe SdlBool GetEventFilter(this Sdl thisApi, Span<PfnEventFilter> filter, void** userdata)
         {
             // SpanOverloader
             return thisApi.GetEventFilter(ref filter.GetPinnableReference(), userdata);
@@ -9799,7 +9799,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 977, Column 34 in build/submodules/SDL/include\\SDL_events.h")]
-        public static unsafe bool GetEventFilter(this Sdl thisApi, Span<PfnEventFilter> filter, ref void* userdata)
+        public static unsafe SdlBool GetEventFilter(this Sdl thisApi, Span<PfnEventFilter> filter, ref void* userdata)
         {
             // SpanOverloader
             return thisApi.GetEventFilter(ref filter.GetPinnableReference(), ref userdata);
@@ -10111,7 +10111,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
-        public static unsafe bool SetHintWithPriority(this Sdl thisApi, byte* name, Span<byte> value, HintPriority priority)
+        public static unsafe SdlBool SetHintWithPriority(this Sdl thisApi, byte* name, Span<byte> value, HintPriority priority)
         {
             // SpanOverloader
             return thisApi.SetHintWithPriority(name, ref value.GetPinnableReference(), priority);
@@ -10119,7 +10119,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
-        public static unsafe bool SetHintWithPriority(this Sdl thisApi, Span<byte> name, byte* value, HintPriority priority)
+        public static unsafe SdlBool SetHintWithPriority(this Sdl thisApi, Span<byte> name, byte* value, HintPriority priority)
         {
             // SpanOverloader
             return thisApi.SetHintWithPriority(ref name.GetPinnableReference(), value, priority);
@@ -10127,7 +10127,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
-        public static unsafe bool SetHintWithPriority(this Sdl thisApi, Span<byte> name, Span<byte> value, HintPriority priority)
+        public static unsafe SdlBool SetHintWithPriority(this Sdl thisApi, Span<byte> name, Span<byte> value, HintPriority priority)
         {
             // SpanOverloader
             return thisApi.SetHintWithPriority(ref name.GetPinnableReference(), ref value.GetPinnableReference(), priority);
@@ -10135,7 +10135,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
-        public static unsafe bool SetHintWithPriority(this Sdl thisApi, Span<byte> name, string value, HintPriority priority)
+        public static unsafe SdlBool SetHintWithPriority(this Sdl thisApi, Span<byte> name, string value, HintPriority priority)
         {
             // SpanOverloader
             return thisApi.SetHintWithPriority(ref name.GetPinnableReference(), value, priority);
@@ -10143,7 +10143,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1689, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
-        public static unsafe bool SetHintWithPriority(this Sdl thisApi, string name, Span<byte> value, HintPriority priority)
+        public static unsafe SdlBool SetHintWithPriority(this Sdl thisApi, string name, Span<byte> value, HintPriority priority)
         {
             // SpanOverloader
             return thisApi.SetHintWithPriority(name, ref value.GetPinnableReference(), priority);
@@ -10151,7 +10151,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
-        public static unsafe bool SetHint(this Sdl thisApi, byte* name, Span<byte> value)
+        public static unsafe SdlBool SetHint(this Sdl thisApi, byte* name, Span<byte> value)
         {
             // SpanOverloader
             return thisApi.SetHint(name, ref value.GetPinnableReference());
@@ -10159,7 +10159,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
-        public static unsafe bool SetHint(this Sdl thisApi, Span<byte> name, byte* value)
+        public static unsafe SdlBool SetHint(this Sdl thisApi, Span<byte> name, byte* value)
         {
             // SpanOverloader
             return thisApi.SetHint(ref name.GetPinnableReference(), value);
@@ -10167,7 +10167,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
-        public static unsafe bool SetHint(this Sdl thisApi, Span<byte> name, Span<byte> value)
+        public static unsafe SdlBool SetHint(this Sdl thisApi, Span<byte> name, Span<byte> value)
         {
             // SpanOverloader
             return thisApi.SetHint(ref name.GetPinnableReference(), ref value.GetPinnableReference());
@@ -10175,7 +10175,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
-        public static unsafe bool SetHint(this Sdl thisApi, Span<byte> name, string value)
+        public static unsafe SdlBool SetHint(this Sdl thisApi, Span<byte> name, string value)
         {
             // SpanOverloader
             return thisApi.SetHint(ref name.GetPinnableReference(), value);
@@ -10183,7 +10183,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1707, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
-        public static unsafe bool SetHint(this Sdl thisApi, string name, Span<byte> value)
+        public static unsafe SdlBool SetHint(this Sdl thisApi, string name, Span<byte> value)
         {
             // SpanOverloader
             return thisApi.SetHint(name, ref value.GetPinnableReference());
@@ -10199,7 +10199,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 1734, Column 34 in build/submodules/SDL/include\\SDL_hints.h")]
-        public static unsafe bool GetHintBoolean(this Sdl thisApi, Span<byte> name, bool default_value)
+        public static unsafe SdlBool GetHintBoolean(this Sdl thisApi, Span<byte> name, SdlBool default_value)
         {
             // SpanOverloader
             return thisApi.GetHintBoolean(ref name.GetPinnableReference(), default_value);
@@ -12839,7 +12839,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 660, Column 34 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe bool RenderTargetSupported(this Sdl thisApi, Span<Renderer> renderer)
+        public static unsafe SdlBool RenderTargetSupported(this Sdl thisApi, Span<Renderer> renderer)
         {
             // SpanOverloader
             return thisApi.RenderTargetSupported(ref renderer.GetPinnableReference());
@@ -12943,7 +12943,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 763, Column 29 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe int RenderSetIntegerScale(this Sdl thisApi, Span<Renderer> renderer, bool enable)
+        public static unsafe int RenderSetIntegerScale(this Sdl thisApi, Span<Renderer> renderer, SdlBool enable)
         {
             // SpanOverloader
             return thisApi.RenderSetIntegerScale(ref renderer.GetPinnableReference(), enable);
@@ -12951,7 +12951,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 777, Column 34 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe bool RenderGetIntegerScale(this Sdl thisApi, Span<Renderer> renderer)
+        public static unsafe SdlBool RenderGetIntegerScale(this Sdl thisApi, Span<Renderer> renderer)
         {
             // SpanOverloader
             return thisApi.RenderGetIntegerScale(ref renderer.GetPinnableReference());
@@ -13055,7 +13055,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 849, Column 34 in build/submodules/SDL/include/SDL_render.h")]
-        public static unsafe bool RenderIsClipEnabled(this Sdl thisApi, Span<Renderer> renderer)
+        public static unsafe SdlBool RenderIsClipEnabled(this Sdl thisApi, Span<Renderer> renderer)
         {
             // SpanOverloader
             return thisApi.RenderIsClipEnabled(ref renderer.GetPinnableReference());
@@ -15575,7 +15575,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 77, Column 34 in build/submodules/SDL/include\\SDL_shape.h")]
-        public static unsafe bool IsShapedWindow(this Sdl thisApi, Span<Window> window)
+        public static unsafe SdlBool IsShapedWindow(this Sdl thisApi, Span<Window> window)
         {
             // SpanOverloader
             return thisApi.IsShapedWindow(ref window.GetPinnableReference());
@@ -15681,7 +15681,7 @@ namespace Silk.NET.SDL
 
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 99, Column 39 in build/submodules/SDL/include\\SDL_system.h")]
-        public static unsafe ID3D11Device* RenderGetD3D11Device(this Sdl thisApi, Span<Renderer> renderer)
+        public static unsafe Silk.NET.Core.Native.IUnknown* RenderGetD3D11Device(this Sdl thisApi, Span<Renderer> renderer)
         {
             // SpanOverloader
             return thisApi.RenderGetD3D11Device(ref renderer.GetPinnableReference());
@@ -15690,7 +15690,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 119, Column 34 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
-        public static unsafe bool DXGIGetOutputInfo(this Sdl thisApi, int displayIndex, int* adapterIndex, Span<int> outputIndex)
+        public static unsafe SdlBool DXGIGetOutputInfo(this Sdl thisApi, int displayIndex, int* adapterIndex, Span<int> outputIndex)
         {
             // SpanOverloader
             return thisApi.DXGIGetOutputInfo(displayIndex, adapterIndex, ref outputIndex.GetPinnableReference());
@@ -15699,7 +15699,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 119, Column 34 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
-        public static unsafe bool DXGIGetOutputInfo(this Sdl thisApi, int displayIndex, Span<int> adapterIndex, int* outputIndex)
+        public static unsafe SdlBool DXGIGetOutputInfo(this Sdl thisApi, int displayIndex, Span<int> adapterIndex, int* outputIndex)
         {
             // SpanOverloader
             return thisApi.DXGIGetOutputInfo(displayIndex, ref adapterIndex.GetPinnableReference(), outputIndex);
@@ -15708,7 +15708,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 119, Column 34 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
-        public static unsafe bool DXGIGetOutputInfo(this Sdl thisApi, int displayIndex, Span<int> adapterIndex, Span<int> outputIndex)
+        public static unsafe SdlBool DXGIGetOutputInfo(this Sdl thisApi, int displayIndex, Span<int> adapterIndex, Span<int> outputIndex)
         {
             // SpanOverloader
             return thisApi.DXGIGetOutputInfo(displayIndex, ref adapterIndex.GetPinnableReference(), ref outputIndex.GetPinnableReference());
@@ -15741,7 +15741,7 @@ namespace Silk.NET.SDL
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 320, Column 34 in build/submodules/SDL/include\\SDL_system.h")]
         [ExcludeFromOverride(0)]
-        public static unsafe bool AndroidRequestPermission(this Sdl thisApi, Span<byte> permission)
+        public static unsafe SdlBool AndroidRequestPermission(this Sdl thisApi, Span<byte> permission)
         {
             // SpanOverloader
             return thisApi.AndroidRequestPermission(ref permission.GetPinnableReference());
