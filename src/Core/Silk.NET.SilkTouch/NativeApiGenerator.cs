@@ -29,8 +29,8 @@ namespace Silk.NET.SilkTouch
 
         public void Execute(GeneratorExecutionContext context)
         {
-            MarshalBuilder marshalBuilder;
-
+            Debugger.Launch();
+            
             if (!context.Compilation.ReferencedAssemblyNames.Any
                 (ai => ai.Name.Equals("Silk.NET.Core", StringComparison.OrdinalIgnoreCase)))
             {
@@ -38,7 +38,7 @@ namespace Silk.NET.SilkTouch
                 return;
             }
 
-            if (!(context.SyntaxReceiver is SyntaxReceiver receiver))
+            if (context.SyntaxContextReceiver is not SyntaxReceiver receiver)
                 return;
 
             var nativeApiAttribute = context.Compilation.GetTypeByMetadataName
@@ -62,7 +62,7 @@ namespace Silk.NET.SilkTouch
                 (string) array[1].Value! /* first return is just the lib target */, new PInvokeNativeContextOverride());
 
 
-            marshalBuilder = new MarshalBuilder();
+            var marshalBuilder = new MarshalBuilder();
             
             // begin            |           end
             marshalBuilder.Use(Middlewares.InjectMiddleware);
@@ -79,22 +79,23 @@ namespace Silk.NET.SilkTouch
             // pre load         |           post load
 
             List<ITypeSymbol> processedSymbols = new List<ITypeSymbol>();
-            
 
-            foreach (var receiverClassDeclaration in receiver.ClassDeclarations)
+
+            foreach (var group in receiver.ClassDeclarations.Select(x => (x.Item1, x.Item2, x.Item2.GetDeclaredSymbol(x.Item1)))
+                .GroupBy(x => x.Item3, SymbolEqualityComparer.Default))
             {
                 try
                 {
                     var s = ProcessClassDeclaration
                     (
-                        receiverClassDeclaration, context, nativeApiAttribute, marshalBuilder, ref processedSymbols,
-                        excludeFromOverrideAttribute
+                        group.Select(x => (x.Item1, x.Item2)), context, nativeApiAttribute, marshalBuilder, ref processedSymbols,
+                        excludeFromOverrideAttribute, (INamedTypeSymbol)group.Key
                     );
 
                     if (s is null) continue;
 
                     var name =
-                        $"{receiverClassDeclaration.Identifier.Text}.{receiverClassDeclaration.GetHashCode()}.gen";
+                        $"{group.Key.Name}.{Guid.NewGuid()}.gen";
                     context.AddSource(name, SourceText.From(s, Encoding.UTF8));
                     // File.WriteAllText(@"C:\SILK.NET\src\Lab\" + name, s);
                 }
@@ -103,7 +104,7 @@ namespace Silk.NET.SilkTouch
                     context.ReportDiagnostic
                     (
                         Diagnostic.Create
-                            (Diagnostics.ProcessClassFailure, receiverClassDeclaration.GetLocation(), ex.ToString())
+                            (Diagnostics.ProcessClassFailure, group.First().Item1.GetLocation(), ex.ToString())
                     );
                 }
             }
@@ -111,40 +112,39 @@ namespace Silk.NET.SilkTouch
 
         private string ProcessClassDeclaration
         (
-            ClassDeclarationSyntax classDeclaration,
+            IEnumerable<(ClassDeclarationSyntax, SemanticModel)> classDeclarations,
             GeneratorExecutionContext sourceContext,
             INamedTypeSymbol nativeApiAttributeSymbol,
             MarshalBuilder rootMarshalBuilder,
             ref List<ITypeSymbol> processedSymbols,
-            INamedTypeSymbol excludeFromOverrideAttribute
+            INamedTypeSymbol excludeFromOverrideAttribute,
+            INamedTypeSymbol sharedClassSymbol
         )
         {
             var stopwatch = Stopwatch.StartNew();
             var compilation = sourceContext.Compilation;
-            if (!classDeclaration.Modifiers.Any(x => x.IsKind(SyntaxKind.PartialKeyword)))
+            if (!classDeclarations.First().Item1.Modifiers.Any(x => x.IsKind(SyntaxKind.PartialKeyword)))
                 return null;
 
-            if (!classDeclaration.Parent.IsKind(SyntaxKind.NamespaceDeclaration))
+            if (!classDeclarations.All(x => x.Item1.Parent.IsKind(SyntaxKind.NamespaceDeclaration)))
                 return null;
-            var namespaceDeclaration = (NamespaceDeclarationSyntax) classDeclaration.Parent;
+            
+            var namespaceDeclaration = (NamespaceDeclarationSyntax) classDeclarations.First().Item1.Parent;
 
             if (!namespaceDeclaration.Parent.IsKind(SyntaxKind.CompilationUnit))
                 return null;
 
             var compilationUnit = (CompilationUnitSyntax) namespaceDeclaration.Parent;
 
-            var classSymbol = ModelExtensions.GetDeclaredSymbol
-                (compilation.GetSemanticModel(classDeclaration.SyntaxTree), classDeclaration) as ITypeSymbol;
-
             if (!compilation.HasImplicitConversion
-                (classSymbol, compilation.GetTypeByMetadataName("Silk.NET.Core.Native.NativeApiContainer")))
+                (sharedClassSymbol, compilation.GetTypeByMetadataName("Silk.NET.Core.Native.NativeApiContainer")))
                 return null;
             
-            var classIsSealed = classDeclaration.Modifiers.Any(x => x.Text == "sealed");
+            var classIsSealed = classDeclarations.First().Item1.Modifiers.Any(x => x.Text == "sealed");
             var generateSeal = false;
 
             if (sourceContext.AnalyzerConfigOptions.GetOptions
-                    (classDeclaration.SyntaxTree)
+                    (classDeclarations.First().Item1.SyntaxTree)
                 .TryGetValue("silk_touch_sealed_vtable_creation", out var generateSealstr))
             {
                 if (bool.TryParse(generateSealstr, out var v))
@@ -155,7 +155,7 @@ namespace Silk.NET.SilkTouch
             var generateVTable = false;
 
             if (sourceContext.AnalyzerConfigOptions.GetOptions
-                    (classDeclaration.SyntaxTree)
+                    (classDeclarations.First().Item1.SyntaxTree)
                 .TryGetValue("silk_touch_vtable_generate", out var genvtablestr))
             {
                 if (bool.TryParse(genvtablestr, out var v))
@@ -165,7 +165,7 @@ namespace Silk.NET.SilkTouch
             var preloadVTable = false;
 
             if (sourceContext.AnalyzerConfigOptions.GetOptions
-                    (classDeclaration.SyntaxTree)
+                    (classDeclarations.First().Item1.SyntaxTree)
                 .TryGetValue("silk_touch_vtable_preload", out var vtablepreloadstr))
             {
                 if (bool.TryParse(vtablepreloadstr, out var v))
@@ -175,14 +175,14 @@ namespace Silk.NET.SilkTouch
             var emitAssert = false;
 
             if (sourceContext.AnalyzerConfigOptions.GetOptions
-                    (classDeclaration.SyntaxTree)
+                    (classDeclarations.First().Item1.SyntaxTree)
                 .TryGetValue("silk_touch_vtable_tree_emit_assert", out var emitAssertStr))
             {
                 if (bool.TryParse(emitAssertStr, out var v))
                     emitAssert = v;
             }
 
-            var classAttribute = classSymbol.GetAttributes()
+            var classAttribute = sharedClassSymbol.GetAttributes()
                 .FirstOrDefault(x => SymbolEqualityComparer.Default.Equals(x.AttributeClass, nativeApiAttributeSymbol));
 
             var classNativeApiAttribute = classAttribute == default
@@ -198,10 +198,10 @@ namespace Silk.NET.SilkTouch
             Dictionary<int, string> entryPoints = new Dictionary<int, string>();
             var processedEntrypoints = new List<EntryPoint>();
             foreach (var (declaration, symbol, entryPoint, callingConvention) in from declaration in
-                    from member in classDeclaration.Members
-                    where member.IsKind(SyntaxKind.MethodDeclaration)
-                    select (MethodDeclarationSyntax) member
-                let symbol = compilation.GetSemanticModel(declaration.SyntaxTree).GetDeclaredSymbol(declaration)
+                    from member in classDeclarations.SelectMany(x => x.Item1.Members.Select(x2 => (x2, x.Item2)))
+                    where member.x2.IsKind(SyntaxKind.MethodDeclaration)
+                    select ((MethodDeclarationSyntax) member.x2, member.Item2)
+                let symbol = declaration.Item2.GetDeclaredSymbol(declaration.Item1)
                 where symbol is not null
                 let attribute = ToNativeApiAttribute
                 (
@@ -209,7 +209,7 @@ namespace Silk.NET.SilkTouch
                         .FirstOrDefault
                             (att => SymbolEqualityComparer.Default.Equals(att.AttributeClass, nativeApiAttributeSymbol))
                 )
-                where declaration.Modifiers.Any
+                where declaration.Item1.Modifiers.Any
                     (modifier => modifier.IsKind(SyntaxKind.PartialKeyword)) && symbol.PartialImplementationPart is null
                 let entryPoint = NativeApiAttribute.GetEntryPoint(attribute, classNativeApiAttribute, symbol.Name)
                 let callingConvention = NativeApiAttribute.GetCallingConvention(attribute, classNativeApiAttribute)
@@ -220,14 +220,14 @@ namespace Silk.NET.SilkTouch
                 ProcessMethod
                 (
                     sourceContext, rootMarshalBuilder, callingConvention, entryPoints, entryPoint, classIsSealed,
-                    generateSeal, generateVTable, slot, compilation, symbol, declaration, newMembers,
+                    generateSeal, generateVTable, slot, compilation, symbol, declaration.Item1, newMembers,
                     ref gcCount, processedEntrypoints, generatedVTableName
                 );
             }
 
             if (slotCount > 0)
             {
-                if (!processedSymbols.Contains(classSymbol))
+                if (!processedSymbols.Contains(sharedClassSymbol))
                 {
                     newMembers.Add
                     (
@@ -283,7 +283,7 @@ namespace Silk.NET.SilkTouch
                     );
                 }
 
-                processedSymbols.Add(classSymbol);
+                processedSymbols.Add(sharedClassSymbol);
             }
 
             if (newMembers.Count == 0)
@@ -330,7 +330,7 @@ namespace Silk.NET.SilkTouch
                 );
             }
 
-            ProcessNativeContextOverrides(processedEntrypoints.ToArray(), ref newMembers, classSymbol, classDeclaration, sourceContext.Compilation, excludeFromOverrideAttribute);
+            ProcessNativeContextOverrides(processedEntrypoints.ToArray(), ref newMembers, sharedClassSymbol, excludeFromOverrideAttribute);
 
             var newNamespace = namespaceDeclaration.WithMembers
                 (
@@ -338,7 +338,7 @@ namespace Silk.NET.SilkTouch
                     (
                         new MemberDeclarationSyntax[]
                         {
-                            classDeclaration.WithMembers
+                            classDeclarations.First().Item1.WithMembers
                                 (List(newMembers))
                             .WithAttributeLists(List<AttributeListSyntax>())
                         }
@@ -358,7 +358,7 @@ namespace Silk.NET.SilkTouch
                 (
                     Diagnostic.Create
                     (
-                        Diagnostics.BuildInfo, classDeclaration.GetLocation(), slotCount, gcCount,
+                        Diagnostics.BuildInfo, classDeclarations.First().Item1.GetLocation(), slotCount, gcCount,
                         stopwatch.ElapsedMilliseconds + "ms"
                     )
                 );

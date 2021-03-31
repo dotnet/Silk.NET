@@ -26,10 +26,6 @@ namespace TestLib
         public partial int MessageBox(nint hwnd, string text, string caption, uint buttons);
 
         [NativeApi(EntryPoint = "MessageBoxA")]
-        public partial int MessageBox(nint hwnd, string text, string caption,
-            [UnmanagedType(UnmanagedType.U4)] bool buttons);
-        
-        [NativeApi(EntryPoint = "MessageBoxA")]
         public partial int MessageBox(nint hwnd, string text, Span<char> caption, uint buttons);
 
         [NativeApi(EntryPoint = "MessageBoxA")]
@@ -57,5 +53,13 @@ namespace TestLib
         // public partial int GetWindowTextA(IntPtr hwnd, [Count(Parameter = "hwnd")] ref string str, int maxCount);
 
         public TestClass2() : base(CreateDefaultContext("user32.dll")) { }
+    }
+    
+    public partial class TestClass2 : NativeApiContainer
+    {
+
+        [NativeApi(EntryPoint = "MessageBoxA")]
+        public partial int MessageBox(nint hwnd, string text, string caption,
+            [UnmanagedType(UnmanagedType.U4)] bool buttons);
     }
 }
