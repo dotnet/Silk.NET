@@ -29,8 +29,6 @@ namespace Silk.NET.SilkTouch
 
         public void Execute(GeneratorExecutionContext context)
         {
-            Debugger.Launch();
-            
             if (!context.Compilation.ReferencedAssemblyNames.Any
                 (ai => ai.Name.Equals("Silk.NET.Core", StringComparison.OrdinalIgnoreCase)))
             {
