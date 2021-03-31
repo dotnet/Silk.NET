@@ -6,7 +6,6 @@ using System.Runtime.InteropServices;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Native;
-using UnmanagedType = Silk.NET.Core.Native.UnmanagedType;
 
 namespace TestLib
 {
@@ -53,13 +52,5 @@ namespace TestLib
         // public partial int GetWindowTextA(IntPtr hwnd, [Count(Parameter = "hwnd")] ref string str, int maxCount);
 
         public TestClass2() : base(CreateDefaultContext("user32.dll")) { }
-    }
-    
-    public partial class TestClass2 : NativeApiContainer
-    {
-
-        [NativeApi(EntryPoint = "MessageBoxA")]
-        public partial int MessageBox(nint hwnd, string text, string caption,
-            [UnmanagedType(UnmanagedType.U4)] bool buttons);
     }
 }

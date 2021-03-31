@@ -329,7 +329,7 @@ namespace Silk.NET.SilkTouch
             }
 
             ProcessNativeContextOverrides(processedEntrypoints.ToArray(), ref newMembers, sharedClassSymbol, excludeFromOverrideAttribute);
-
+            
             var newNamespace = namespaceDeclaration.WithMembers
                 (
                     List
@@ -342,7 +342,7 @@ namespace Silk.NET.SilkTouch
                         }
                     )
                 )
-                .WithUsings(compilationUnit.Usings);
+                .WithUsings(compilationUnit.Usings.Add(UsingDirective(IdentifierName("Silk.NET.Core.Native"))).Add(UsingDirective(IdentifierName("Silk.NET.Core.Contexts"))));
 
             var result = newNamespace.NormalizeWhitespace().ToFullString();
             stopwatch.Stop();
