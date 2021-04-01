@@ -17,15 +17,13 @@ namespace Silk.NET.SilkTouch
     {
         private Dictionary<INamedTypeSymbol, Func<ImmutableArray<TypedConstant>, (int, string, INativeContextOverride)?>>
             _nativeContextAttributes =
-                new Dictionary<INamedTypeSymbol, Func<ImmutableArray<TypedConstant>, (int, string, INativeContextOverride)?>>();
+                new(SymbolEqualityComparer.Default);
     
         private void ProcessNativeContextOverrides
         (
             EntryPoint[] entrypoints,
             ref List<MemberDeclarationSyntax> members,
             ITypeSymbol classSymbol,
-            ClassDeclarationSyntax classDeclaration,
-            Compilation compilation,
             INamedTypeSymbol excludeFromOverrideAttribute
         )
         {

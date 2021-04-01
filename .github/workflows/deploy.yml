@@ -15,7 +15,7 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.100
+        dotnet-version: 5.0.201
     - name: Setup NUKE
       run: dotnet tool install Nuke.GlobalTool --global
     - name: Push to NuGet

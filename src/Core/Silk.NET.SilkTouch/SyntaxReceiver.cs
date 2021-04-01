@@ -9,13 +9,16 @@ namespace Silk.NET.SilkTouch
 {
     public partial class NativeApiGenerator
     {
-        public class SyntaxReceiver : ISyntaxReceiver
+        public class SyntaxReceiver : ISyntaxContextReceiver
         {
-            public List<ClassDeclarationSyntax> ClassDeclarations = new List<ClassDeclarationSyntax>();
-            
-            public void OnVisitSyntaxNode(SyntaxNode syntaxNode)
+            public List<(ClassDeclarationSyntax, SemanticModel)> ClassDeclarations = new();
+
+            public void OnVisitSyntaxNode(GeneratorSyntaxContext context)
             {
-                if (syntaxNode is ClassDeclarationSyntax cds) ClassDeclarations.Add(cds);
+                if (context.Node is ClassDeclarationSyntax cds)
+                {
+                    ClassDeclarations.Add((cds, context.SemanticModel));
+                }
             }
         }
     }
