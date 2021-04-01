@@ -6,7 +6,7 @@ on:
       - 'src/**/*'
       - 'build/nuke/*'
     branches:
-      - main
+      - 'main'
       - 'release/*'
   pull_request:
     paths:
