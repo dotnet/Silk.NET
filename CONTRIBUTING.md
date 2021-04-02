@@ -27,7 +27,7 @@ If your contribution affects binder output, let us know by commenting on the pul
 Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-blend/pull-request-first-f6bb667a9b6). Please don't wait until you're done to open a PR!
 
 1. Install [Git](https://git-scm.com/downloads) and the [.NET Core SDK](https://www.microsoft.com/net/download)
-1. [Fork Silk.NET](https://github.com/Ultz/Silk.NET/fork)
+1. [Fork Silk.NET](https://github.com/dotnet/Silk.NET/fork)
 1. Create a branch on your fork.
 1. Add an empty commit to start your work off (and let you open a PR): `git commit --allow-empty -m "start of [thing you're working on]"`
 1. Open a [**draft pull request**](https://github.blog/2019-02-14-introducing-draft-pull-requests/). Do this **before** you actually start working.
