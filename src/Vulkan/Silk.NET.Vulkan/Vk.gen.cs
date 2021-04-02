@@ -24,7 +24,7 @@ namespace Silk.NET.Vulkan
         public const uint False = unchecked((uint) 0);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_LOD_CLAMP_NONE")]
-        public const float LodClampNone = unchecked((float) 1000.0f);
+        public const uint LodClampNone = unchecked((uint) 1000.0F);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_LUID_SIZE")]
         public const uint LuidSize = unchecked((uint) 8);
@@ -66,13 +66,13 @@ namespace Silk.NET.Vulkan
         public const uint MaxPhysicalDeviceNameSize = unchecked((uint) 256);
         [NativeName("Type", "")]
         [NativeName("Name", "VK_QUEUE_FAMILY_EXTERNAL")]
-        public const uint QueueFamilyExternal = unchecked((uint) (~0U-1));
+        public const uint QueueFamilyExternal = unchecked((uint) (~1U));
         [NativeName("Type", "")]
         [NativeName("Name", "VK_QUEUE_FAMILY_EXTERNAL_KHR")]
-        public const uint QueueFamilyExternalKhr = unchecked((uint) (~0U-1));
+        public const uint QueueFamilyExternalKhr = unchecked((uint) (~1U));
         [NativeName("Type", "")]
         [NativeName("Name", "VK_QUEUE_FAMILY_FOREIGN_EXT")]
-        public const uint QueueFamilyForeignExt = unchecked((uint) (~0U-2));
+        public const uint QueueFamilyForeignExt = unchecked((uint) (~2U));
         [NativeName("Type", "")]
         [NativeName("Name", "VK_QUEUE_FAMILY_IGNORED")]
         public const uint QueueFamilyIgnored = unchecked((uint) (~0U));

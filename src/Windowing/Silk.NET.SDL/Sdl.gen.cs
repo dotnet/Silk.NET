@@ -44,9 +44,6 @@ namespace Silk.NET.SDL
         [NativeName("Name", "SDL_INIT_NOPARACHUTE")]
         public const uint InitNoparachute = unchecked((uint) 0x100000);
 
-        [NativeApi(EntryPoint = "SDL_GetWindowWMInfo")]
-        public unsafe partial bool GetWindowWMInfo(Window* window, SysWMInfo* info);
-
         /// <summary>To be documented.</summary>
         [NativeName("Src", "Line 202, Column 38 in build/submodules/SDL/include/SDL_platform.h")]
         [NativeApi(EntryPoint = "SDL_GetPlatform")]

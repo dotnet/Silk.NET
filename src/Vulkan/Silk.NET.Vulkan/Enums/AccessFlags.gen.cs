@@ -47,12 +47,6 @@ namespace Silk.NET.Vulkan
         AccessMemoryReadBit = 32768,
         [NativeName("Name", "VK_ACCESS_MEMORY_WRITE_BIT")]
         AccessMemoryWriteBit = 65536,
-        [NativeName("Name", "VK_ACCESS_RESERVED_30_BIT_KHR")]
-        AccessReserved30BitKhr = 1073741824,
-        [NativeName("Name", "VK_ACCESS_RESERVED_28_BIT_KHR")]
-        AccessReserved28BitKhr = 268435456,
-        [NativeName("Name", "VK_ACCESS_RESERVED_29_BIT_KHR")]
-        AccessReserved29BitKhr = 536870912,
         [NativeName("Name", "VK_ACCESS_TRANSFORM_FEEDBACK_WRITE_BIT_EXT")]
         AccessTransformFeedbackWriteBitExt = 33554432,
         [NativeName("Name", "VK_ACCESS_TRANSFORM_FEEDBACK_COUNTER_READ_BIT_EXT")]

@@ -65,6 +65,10 @@ namespace Silk.NET.Vulkan
         PipelineStage2VertexAttributeInputBitKhr = 32,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_PRE_RASTERIZATION_SHADERS_BIT_KHR")]
         PipelineStage2PreRasterizationShadersBitKhr = 64,
+        [NativeName("Name", "VK_PIPELINE_STAGE_2_RESERVED_26_BIT_KHR")]
+        PipelineStage2Reserved26BitKhr = 67108864,
+        [NativeName("Name", "VK_PIPELINE_STAGE_2_RESERVED_27_BIT_KHR")]
+        PipelineStage2Reserved27BitKhr = 134217728,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_TRANSFORM_FEEDBACK_BIT_EXT")]
         PipelineStage2TransformFeedbackBitExt = 16777216,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_CONDITIONAL_RENDERING_BIT_EXT")]
