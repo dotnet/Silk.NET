@@ -5,10 +5,13 @@ on:
     paths:
       - 'src/**/*'
       - 'build/nuke/*'
+    branches:
+      - 'main'
+      - 'release/*'
   pull_request:
     paths:
       - 'src/**/*'
-      # don't trust changes to the build system on external PRs
+      - 'build/nuke/*'
 
 jobs:
   Build:
@@ -20,7 +23,7 @@ jobs:
     - name: Setup .NET 5.0
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.100
+        dotnet-version: 5.0.201
     - name: Setup .NET Core 3.1
       uses: actions/setup-dotnet@v1
       with:

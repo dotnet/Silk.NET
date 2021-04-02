@@ -6,7 +6,6 @@ using System.Runtime.InteropServices;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Native;
-using UnmanagedType = Silk.NET.Core.Native.UnmanagedType;
 
 namespace TestLib
 {
@@ -25,10 +24,6 @@ namespace TestLib
         [NativeApi(EntryPoint = "MessageBoxA")]
         public partial int MessageBox(nint hwnd, string text, string caption, uint buttons);
 
-        [NativeApi(EntryPoint = "MessageBoxA")]
-        public partial int MessageBox(nint hwnd, string text, string caption,
-            [UnmanagedType(UnmanagedType.U4)] bool buttons);
-        
         [NativeApi(EntryPoint = "MessageBoxA")]
         public partial int MessageBox(nint hwnd, string text, Span<char> caption, uint buttons);
 
