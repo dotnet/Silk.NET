@@ -293,13 +293,13 @@ class Build : NukeBuild
                     return default;
                 }
                 
-                var sdlMirror = RootDirectory / "build" / "submodules" / "SDL-mirror";
+                var sdl = RootDirectory / "build" / "submodules" / "SDL";
                 var silkDroid = SourceDirectory / "Windowing" / "Android" / "SilkDroid";
                 var xcopy = new (string, string)[]
                 {
-                    (sdlMirror / "android-project" / "app" / "src" / "main" / "java",
+                    (sdl / "android-project" / "app" / "src" / "main" / "java",
                         silkDroid / "app" / "src" / "main" / "java"),
-                    (sdlMirror, silkDroid / "app" / "jni" / "SDL2")
+                    (sdl, silkDroid / "app" / "jni" / "SDL2")
                 };
 
                 foreach (var (from, to) in xcopy)
