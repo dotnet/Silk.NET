@@ -19,10 +19,10 @@ namespace Silk.NET.SDL
     public unsafe readonly struct PfnMallocFunc : IDisposable
     {
         private readonly void* _handle;
-        public delegate* unmanaged[Cdecl]<uint, void*> Handle => (delegate* unmanaged[Cdecl]<uint, void*>) _handle;
+        public delegate* unmanaged[Cdecl]<nuint, void*> Handle => (delegate* unmanaged[Cdecl]<nuint, void*>) _handle;
         public PfnMallocFunc
         (
-            delegate* unmanaged[Cdecl]<uint, void*> ptr
+            delegate* unmanaged[Cdecl]<nuint, void*> ptr
         ) => _handle = ptr;
 
         public PfnMallocFunc
@@ -35,7 +35,7 @@ namespace Silk.NET.SDL
 
         public static implicit operator nint(PfnMallocFunc pfn) => (nint) pfn.Handle;
         public static explicit operator PfnMallocFunc(nint pfn)
-            => new PfnMallocFunc((delegate* unmanaged[Cdecl]<uint, void*>) pfn);
+            => new PfnMallocFunc((delegate* unmanaged[Cdecl]<nuint, void*>) pfn);
 
         public static implicit operator PfnMallocFunc(MallocFunc proc)
             => new PfnMallocFunc(proc);
@@ -43,10 +43,10 @@ namespace Silk.NET.SDL
         public static explicit operator MallocFunc(PfnMallocFunc pfn)
             => SilkMarshal.PtrToDelegate<MallocFunc>(pfn);
 
-        public static implicit operator delegate* unmanaged[Cdecl]<uint, void*>(PfnMallocFunc pfn) => pfn.Handle;
-        public static implicit operator PfnMallocFunc(delegate* unmanaged[Cdecl]<uint, void*> ptr) => new PfnMallocFunc(ptr);
+        public static implicit operator delegate* unmanaged[Cdecl]<nuint, void*>(PfnMallocFunc pfn) => pfn.Handle;
+        public static implicit operator PfnMallocFunc(delegate* unmanaged[Cdecl]<nuint, void*> ptr) => new PfnMallocFunc(ptr);
     }
 
-    public unsafe delegate void* MallocFunc(uint arg0);
+    public unsafe delegate void* MallocFunc(nuint arg0);
 }
 

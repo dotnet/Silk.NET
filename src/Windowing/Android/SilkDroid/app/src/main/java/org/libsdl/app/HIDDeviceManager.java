@@ -7,6 +7,7 @@ import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothManager;
 import android.bluetooth.BluetoothProfile;
+import android.os.Build;
 import android.util.Log;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -275,6 +276,7 @@ public class HIDDeviceManager {
             0x15e4, // Numark
             0x162e, // Joytech
             0x1689, // Razer Onza
+            0x1949, // Lab126, Inc.
             0x1bad, // Harmonix
             0x24c6, // PowerA
         };
@@ -353,9 +355,18 @@ public class HIDDeviceManager {
 
     private void connectHIDDeviceUSB(UsbDevice usbDevice) {
         synchronized (this) {
+            int interface_mask = 0;
             for (int interface_index = 0; interface_index < usbDevice.getInterfaceCount(); interface_index++) {
                 UsbInterface usbInterface = usbDevice.getInterface(interface_index);
                 if (isHIDDeviceInterface(usbDevice, usbInterface)) {
+                    // Check to see if we've already added this interface
+                    // This happens with the Xbox Series X controller which has a duplicate interface 0, which is inactive
+                    int interface_id = usbInterface.getId();
+                    if ((interface_mask & (1 << interface_id)) != 0) {
+                        continue;
+                    }
+                    interface_mask |= (1 << interface_id);
+
                     HIDDeviceUSB device = new HIDDeviceUSB(this, usbDevice, interface_index);
                     int id = device.getId();
                     mDevicesById.put(id, device);
@@ -370,6 +381,11 @@ public class HIDDeviceManager {
 
         if (mContext.getPackageManager().checkPermission(android.Manifest.permission.BLUETOOTH, mContext.getPackageName()) != PackageManager.PERMISSION_GRANTED) {
             Log.d(TAG, "Couldn't initialize Bluetooth, missing android.permission.BLUETOOTH");
+            return;
+        }
+
+        if (!mContext.getPackageManager().hasSystemFeature(PackageManager.FEATURE_BLUETOOTH_LE) || (Build.VERSION.SDK_INT < 18)) {
+            Log.d(TAG, "Couldn't initialize Bluetooth, this version of Android does not support Bluetooth LE");
             return;
         }
 

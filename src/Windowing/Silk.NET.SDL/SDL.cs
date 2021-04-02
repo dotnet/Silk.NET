@@ -15,16 +15,6 @@ namespace Silk.NET.SDL
     [PInvokeOverride(0, "__Internal")]
     public partial class Sdl
     {
-        public const uint InitTimer = 0x00000001;
-        public const uint InitAudio = 0x00000010;
-        public const uint InitVideo = 0x00000020;
-        public const uint InitJoystick = 0x00000200;
-        public const uint InitHaptic = 0x00001000;
-        public const uint InitGamecontroller = 0x00002000;
-        public const uint InitEvents = 0x00004000;
-        public const uint InitSensor = 0x00008000;
-        public const uint InitNoparachute = 0x00100000;
-
         public const uint InitEverything = InitTimer | InitAudio | InitVideo |
                                            InitEvents | InitJoystick | InitHaptic |
                                            InitGamecontroller | InitSensor;

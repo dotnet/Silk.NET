@@ -173,9 +173,6 @@ namespace Silk.NET.SDL
         public unsafe void* Surface;
     }
 
-// TODO This is currently integrated in Sdl.gen.cs but it should not be because BuildTools will overwrite it in there.
-//      Because of a bug, SilkTouch currently can't handle multiple partials and is pending fixup
-#if false
     partial class Sdl
     {
         /* Function prototypes */
@@ -199,5 +196,4 @@ namespace Silk.NET.SDL
         [NativeApi(EntryPoint = "SDL_GetWindowWMInfo")]
         public unsafe partial bool GetWindowWMInfo(Window* window, SysWMInfo* info);
     }
-#endif
 }

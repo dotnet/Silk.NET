@@ -47,10 +47,6 @@ namespace Silk.NET.Vulkan
         PipelineStageAllGraphicsBit = 32768,
         [NativeName("Name", "VK_PIPELINE_STAGE_ALL_COMMANDS_BIT")]
         PipelineStageAllCommandsBit = 65536,
-        [NativeName("Name", "VK_PIPELINE_STAGE_RESERVED_27_BIT_KHR")]
-        PipelineStageReserved27BitKhr = 134217728,
-        [NativeName("Name", "VK_PIPELINE_STAGE_RESERVED_26_BIT_KHR")]
-        PipelineStageReserved26BitKhr = 67108864,
         [NativeName("Name", "VK_PIPELINE_STAGE_TRANSFORM_FEEDBACK_BIT_EXT")]
         PipelineStageTransformFeedbackBitExt = 16777216,
         [NativeName("Name", "VK_PIPELINE_STAGE_CONDITIONAL_RENDERING_BIT_EXT")]

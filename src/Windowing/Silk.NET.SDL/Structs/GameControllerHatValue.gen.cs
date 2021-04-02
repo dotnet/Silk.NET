@@ -16,7 +16,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("Name", "__AnonymousRecord_SDL_gamecontroller_L88_C9")]
+    [NativeName("Name", "__AnonymousRecord_SDL_gamecontroller_L91_C9")]
     public unsafe partial struct GameControllerHatValue
     {
         public GameControllerHatValue

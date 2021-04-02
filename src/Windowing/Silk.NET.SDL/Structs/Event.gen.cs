@@ -40,6 +40,8 @@ namespace Silk.NET.SDL
             ControllerAxisEvent? caxis = null,
             ControllerButtonEvent? cbutton = null,
             ControllerDeviceEvent? cdevice = null,
+            ControllerTouchpadEvent? ctouchpad = null,
+            ControllerSensorEvent? csensor = null,
             AudioDeviceEvent? adevice = null,
             SensorEvent? sensor = null,
             QuitEvent? quit = null,
@@ -139,6 +141,16 @@ namespace Silk.NET.SDL
             if (cdevice is not null)
             {
                 Cdevice = cdevice.Value;
+            }
+
+            if (ctouchpad is not null)
+            {
+                Ctouchpad = ctouchpad.Value;
+            }
+
+            if (csensor is not null)
+            {
+                Csensor = csensor.Value;
             }
 
             if (adevice is not null)
@@ -295,6 +307,18 @@ namespace Silk.NET.SDL
         [NativeName("Type.Name", "SDL_ControllerDeviceEvent")]
         [NativeName("Name", "cdevice")]
         public ControllerDeviceEvent Cdevice;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "SDL_ControllerTouchpadEvent")]
+        [NativeName("Type.Name", "SDL_ControllerTouchpadEvent")]
+        [NativeName("Name", "ctouchpad")]
+        public ControllerTouchpadEvent Ctouchpad;
+
+        [FieldOffset(0)]
+        [NativeName("Type", "SDL_ControllerSensorEvent")]
+        [NativeName("Type.Name", "SDL_ControllerSensorEvent")]
+        [NativeName("Name", "csensor")]
+        public ControllerSensorEvent Csensor;
 
         [FieldOffset(0)]
         [NativeName("Type", "SDL_AudioDeviceEvent")]

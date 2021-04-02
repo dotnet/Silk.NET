@@ -16,7 +16,6 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Direct3D9
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 4)]
     [NativeName("Name", "_D3DMEMORYPRESSURE")]
     public unsafe partial struct Memorypressure
     {

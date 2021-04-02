@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L97_C9")]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L101_C9")]
     [NativeName("Name", "SDL_WindowFlags")]
     public enum WindowFlags : int
     {
@@ -29,8 +29,8 @@ namespace Silk.NET.SDL
         WindowMinimized = 0x40,
         [NativeName("Name", "SDL_WINDOW_MAXIMIZED")]
         WindowMaximized = 0x80,
-        [NativeName("Name", "SDL_WINDOW_INPUT_GRABBED")]
-        WindowInputGrabbed = 0x100,
+        [NativeName("Name", "SDL_WINDOW_MOUSE_GRABBED")]
+        WindowMouseGrabbed = 0x100,
         [NativeName("Name", "SDL_WINDOW_INPUT_FOCUS")]
         WindowInputFocus = 0x200,
         [NativeName("Name", "SDL_WINDOW_MOUSE_FOCUS")]
@@ -53,7 +53,13 @@ namespace Silk.NET.SDL
         WindowTooltip = 0x40000,
         [NativeName("Name", "SDL_WINDOW_POPUP_MENU")]
         WindowPopupMenu = 0x80000,
+        [NativeName("Name", "SDL_WINDOW_KEYBOARD_GRABBED")]
+        WindowKeyboardGrabbed = 0x100000,
         [NativeName("Name", "SDL_WINDOW_VULKAN")]
         WindowVulkan = 0x10000000,
+        [NativeName("Name", "SDL_WINDOW_METAL")]
+        WindowMetal = 0x20000000,
+        [NativeName("Name", "SDL_WINDOW_INPUT_GRABBED")]
+        WindowInputGrabbed = 0x100,
     }
 }

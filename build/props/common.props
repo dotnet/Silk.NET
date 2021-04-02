@@ -6,23 +6,23 @@
         <LangVersion>preview</LangVersion>
         <Authors>.NET Foundation and Contributors</Authors>
         <PackageReleaseNotes>
-            Silk.NET March 2021 Update
-            
-            - Add memory pooling for Input State Capture extensions
-            - Add Input State Capture stability and robustness improvements
-            - Update to Vulkan 1.2.171
-            - Update to latest OpenGL as of 22nd February 2021
-            - Update to latest OpenCL as of 2nd March 2021
-            - Fix window disposal/reset bugs
-            - Fix a build toolchain issue where packages released in Debug mode (#416)
-            - Fix a string marshalling issue and OpenAL regression (#414)
+            Silk.NET April 2021 Update
+
+            - Add a new Silk.NET.OpenGL.Extensions.ImGui package, a first-party ImGui integration for Silk.NET.OpenGL
+            - Add support for native method definitions across multiple partial classes
+            - Add improved SDL exception throwing, only throwing when a function indicates an error
+            - Updated metadata to reference .NET Foundation and dotnet following our .NET Foundation onboarding
+            - Update to SDL 2.0.14
+            - Update to GLFW 3.3.3
+            - Miscellaneous build system related fixes
+            - Miscellaneous SourceLink related fixes
         </PackageReleaseNotes>
         <PackageTags Condition="'$(PackageTags)' == ''">OpenCL;OpenGL;OpenAL;OpenGLES;GLES;Vulkan;Assimp;DirectX;GLFW;SDL;Windowing;Input;Gamepad;Joystick;Keyboard;Mouse;SilkTouch;Source;Generator;C#;F#;.NET;DotNet;Mono;Vector;Math;Maths;Numerics;Game;Graphics;Compute;Audio;Sound;Engine;Silk;Silk.NET;Slim.NET;ElgarTK;GPU;Sharp;Science;Scientific;Visualization;Visual;Audiovisual;Windows;macOS;Linux;Android;Bindings;OSX;Wrapper;Native</PackageTags>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageOutputPath>$(MSBuildThisFileDirectory)/../output_packages</PackageOutputPath>
         <RepositoryUrl>https://github.com/dotnet/Silk.NET</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
-        <VersionPrefix>2.2.0</VersionPrefix>
+        <VersionPrefix>2.3.0</VersionPrefix>
         <VersionSuffix Condition="'$(VersionSuffix)' == ''"></VersionSuffix>
         <Description Condition="'$(Description)' == ''">
             Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, and DirectX.

@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L228_C9")]
+    [NativeName("AnonymousName", "__AnonymousEnum_SDL_video_L238_C9")]
     [NativeName("Name", "SDL_GLprofile")]
     public enum GLprofile : int
     {

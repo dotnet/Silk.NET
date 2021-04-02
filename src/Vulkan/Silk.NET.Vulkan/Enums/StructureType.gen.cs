@@ -982,6 +982,16 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceMutableDescriptorTypeFeaturesValve = 1000351000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_MUTABLE_DESCRIPTOR_TYPE_CREATE_INFO_VALVE")]
         MutableDescriptorTypeCreateInfoValve = 1000351002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMPORT_MEMORY_ZIRCON_HANDLE_INFO_FUCHSIA")]
+        ImportMemoryZirconHandleInfoFuchsia = 1000364000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_MEMORY_ZIRCON_HANDLE_PROPERTIES_FUCHSIA")]
+        MemoryZirconHandlePropertiesFuchsia = 1000364001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_MEMORY_GET_ZIRCON_HANDLE_INFO_FUCHSIA")]
+        MemoryGetZirconHandleInfoFuchsia = 1000364002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_IMPORT_SEMAPHORE_ZIRCON_HANDLE_INFO_FUCHSIA")]
+        ImportSemaphoreZirconHandleInfoFuchsia = 1000365000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_SEMAPHORE_GET_ZIRCON_HANDLE_INFO_FUCHSIA")]
+        SemaphoreGetZirconHandleInfoFuchsia = 1000365001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_SCREEN_SURFACE_CREATE_INFO_QNX")]
         ScreenSurfaceCreateInfoQnx = 1000378000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_PROPERTIES")]

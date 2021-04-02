@@ -573,16 +573,14 @@
         {
             "profileName": "SDL",
             "sources": [
-                "build/submodules/SDL-mirror/include/SDL.h",
-                "build/submodules/SDL-mirror/include/SDL_vulkan.h"
+                "build/submodules/SDL/include/SDL.h",
+                "build/submodules/SDL/include/SDL_vulkan.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
             "cacheKey": "sdl",
             "controlDescriptors": [
-                "convert-windows-only",
-                "no-convert",
-                "no-bind"
+                "convert-windows-only"
             ],
             "converter": {},
             "prefix": "sdl",
@@ -590,7 +588,7 @@
                 "args": [
                     "--language=c++",
                     "--std=c++17",
-                    "-m32",
+                    "-m64",
                     "-Wno-expansion-to-defined",
                     "-Wno-ignored-attributes",
                     "-Wno-ignored-pragma-intrinsic",
@@ -601,7 +599,7 @@
                     "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
                     "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
                     "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
-                    "-Ibuild/submodules/SDL-mirror/include",
+                    "-Ibuild/submodules/SDL/include",
                     "-D__IPHONEOS__",
                     "-D__ANDROID__",
                     "-D__WIN32__",
@@ -609,8 +607,8 @@
                     "-D__LINUX__"
                 ],
                 "traverse": [
-                    "!build/submodules/SDL-mirror/include/SDL_rwops.h",
-                    "build/submodules/SDL-mirror/include/*.h"
+                    "!build/submodules/SDL/include/SDL_rwops.h",
+                    "build/submodules/SDL/include/*.h"
                 ],
                 "classes": {
                     "SDL.h": "[Core]Sdl",
@@ -620,15 +618,17 @@
             "exclude": [
                 "VkSurfaceKHR",
                 "VkInstance",
+                "ID3D11Device",
                 "SDL_main",
                 "SDL_SysWMmsg",
                 "SDL_Rect"
             ],
             "rename": {
                 "__AnonymousEnum_SDL_shape_L80_C9": "WindowShapeModeVal",
-                "__AnonymousEnum_SDL_stdinc_L161_C9": "SdlBool",
-                "__AnonymousRecord_SDL_gamecontroller_L84_C5": "GameControllerBindValue",
-                "__AnonymousRecord_SDL_gamecontroller_L88_C9": "GameControllerHatValue",
+                "__AnonymousEnum_SDL_stdinc_L167_C9": "SdlBool",
+                "_comment_0": "Remove this in 3.0, use native names",
+                "__AnonymousRecord_SDL_gamecontroller_L87_C5": "GameControllerBindValue",
+                "__AnonymousRecord_SDL_gamecontroller_L91_C9": "GameControllerHatValue",
                 "_SDL_Haptic": "Haptic",
                 "_SDL_GameController": "GameController",
                 "_SDL_Joystick": "Joystick",
@@ -680,12 +680,13 @@
                 {
                     "$typemapPrecedesInjections": "true",
                     "WindowShapeMode": "WindowShapeModeVal",
-                    "SDL_bool": "SdlBool",
                     "SDL_RWops": "RWops",
                     "VkInstance": "Silk.NET.Core.Native.VkHandle",
                     "VkSurfaceKHR": "Silk.NET.Core.Native.VkNonDispatchableHandle",
                     "SDL_SysWMmsg": "SysWMMsg",
-                    "SDL_Rect": "Silk.NET.Maths.Rectangle<int>"
+                    "SDL_Rect": "Silk.NET.Maths.Rectangle<int>",
+                    "SDL_bool": "SdlBool",
+                    "ID3D11Device": "Silk.NET.Core.Native.IUnknown"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -1039,7 +1040,7 @@
                 "args": [
                     "--language=c++",
                     "--std=c++17",
-                    "-m32",
+                    "-m64",
                     "-Wno-expansion-to-defined",
                     "-Wno-ignored-attributes",
                     "-Wno-ignored-pragma-intrinsic",

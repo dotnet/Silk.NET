@@ -9,7 +9,7 @@ using Silk.NET.Core.Attributes;
 
 namespace Silk.NET.SDL
 {
-    [NativeName("Name", "__AnonymousEnum_SDL_stdinc_L161_C9")]
+    [NativeName("Name", "__AnonymousEnum_SDL_stdinc_L167_C9")]
     public enum SdlBool : int
     {
         [NativeName("Name", "SDL_FALSE")]
