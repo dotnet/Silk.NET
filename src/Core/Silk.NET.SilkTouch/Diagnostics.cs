@@ -8,7 +8,7 @@ namespace Silk.NET.SilkTouch
     internal static class Diagnostics
     {
         private const string IssueLink =
-            "https://github.com/Ultz/Silk.NET/issues/new?assignees=HurricanKai&labels=bug,area-SilkTouch";
+            "https://github.com/dotnet/Silk.NET/issues/new?assignees=HurricanKai&labels=bug,area-SilkTouch";
 
         public static DiagnosticDescriptor ProcessClassFailure { get; } = new DiagnosticDescriptor
         (
