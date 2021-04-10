@@ -230,9 +230,7 @@ namespace Silk.NET.SilkTouch
                     sourceContext, rootMarshalBuilder, callingConvention, entryPoints, entryPoint, classIsSealed,
                     generateSeal, generateVTable, compilation, symbol, declaration.Item1, newMembers, ref gcCount,
                     processedEntrypoints, generatedVTableName, namespaceDeclaration, classDeclarations.First().Item1,
-                    compilationUnit.Usings.Add
-                            (UsingDirective(IdentifierName("Silk.NET.Core.Native")))
-                        .Add(UsingDirective(IdentifierName("Silk.NET.Core.Contexts")))
+                    AddIfNotExists(compilationUnit.Usings, "Silk.NET.Core.Native", "Silk.NET.Core.Contexts")
                 );
             }
 
@@ -329,7 +327,7 @@ namespace Silk.NET.SilkTouch
                         }
                     )
                 )
-                .WithUsings(compilationUnit.Usings.Add(UsingDirective(IdentifierName("Silk.NET.Core.Native"))).Add(UsingDirective(IdentifierName("Silk.NET.Core.Contexts"))));
+                .WithUsings(AddIfNotExists(compilationUnit.Usings, "Silk.NET.Core.Native", "Silk.NET.Core.Contexts"));
 
             var result = newNamespace.NormalizeWhitespace().ToFullString();
             stopwatch.Stop();
@@ -348,6 +346,16 @@ namespace Silk.NET.SilkTouch
                     )
                 );
             return result;
+        }
+
+        private static SyntaxList<UsingDirectiveSyntax> AddIfNotExists
+            (SyntaxList<UsingDirectiveSyntax> list, params string[] usings)
+        {
+            foreach(var v in usings)
+                if (list.All(x => x.ToFullString() != $"using {usings};"))
+                    list = list.Add(UsingDirective(IdentifierName(v)));
+
+            return list;
         }
 
         private static void ProcessMethod
