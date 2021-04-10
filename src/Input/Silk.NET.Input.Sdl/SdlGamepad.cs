@@ -80,7 +80,10 @@ namespace Silk.NET.Input.Sdl
                                 Deadzone.Apply((float) @event.Caxis.Value / short.MaxValue), 
                                 Deadzone.Apply(_thumbsticks[0].Y));
 
-                            if(thumbstick0.X != _thumbsticks[0].X) _thumbsticksChanged[0] = true;
+                            if (thumbstick0.X != _thumbsticks[0].X)
+                            {
+                                _thumbsticksChanged[0] = true;
+                            }
                             _thumbsticks[0] = thumbstick0;
                             break;
                         }
@@ -90,7 +93,10 @@ namespace Silk.NET.Input.Sdl
                                 Deadzone.Apply(_thumbsticks[0].X),
                                 Deadzone.Apply((float) @event.Caxis.Value / short.MaxValue));
 
-                            if (thumbstick0.Y != _thumbsticks[0].Y) _thumbsticksChanged[0] = true;
+                            if (thumbstick0.Y != _thumbsticks[0].Y)
+                            {
+                                _thumbsticksChanged[0] = true;
+                            }
                             _thumbsticks[0] = thumbstick0;
                             break;
                         }
@@ -100,7 +106,10 @@ namespace Silk.NET.Input.Sdl
                                 Deadzone.Apply((float) @event.Caxis.Value / short.MaxValue),
                                 Deadzone.Apply(_thumbsticks[1].Y));
 
-                            if (thumbstick1.X != _thumbsticks[1].X) _thumbsticksChanged[1] = true;
+                            if (thumbstick1.X != _thumbsticks[1].X)
+                            {
+                                _thumbsticksChanged[1] = true;
+                            }
                             _thumbsticks[1] = thumbstick1;
                             break;
                         }
@@ -110,7 +119,10 @@ namespace Silk.NET.Input.Sdl
                                 Deadzone.Apply(_thumbsticks[1].X),
                                 Deadzone.Apply((float) @event.Caxis.Value / short.MaxValue));
 
-                            if (thumbstick1.Y != _thumbsticks[1].Y) _thumbsticksChanged[1] = true;
+                            if (thumbstick1.Y != _thumbsticks[1].Y)
+                            {
+                                _thumbsticksChanged[1] = true;
+                            }
                             _thumbsticks[1] = thumbstick1;
                             break;
                         }
