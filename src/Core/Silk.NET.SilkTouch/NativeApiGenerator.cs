@@ -433,12 +433,14 @@ namespace Silk.NET.SilkTouch
                         )
                     )
                 );
+                
+                // TODO: SLOTS
                 entryPoints[ctx.Slot] = entryPoint;
                 processedEntrypoints.Add
                 (
                     new EntryPoint
                     (
-                        entryPoint, ctx.Slot, callingConvention,
+                        entryPoint, callingConvention,
                         ctx.LoadTypes.Select
                             (
                                 x => (TypeSyntax) IdentifierName

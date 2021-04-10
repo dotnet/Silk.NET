@@ -72,7 +72,7 @@ namespace Silk.NET.Core.Native
             CurrentVTable.Purge();
         }
         
-        [Obsolete("use method without slot - this method will be removed in the future")]
+        [Obsolete("Use method without slot - this method will be removed in 3.0")]
         protected nint Load(int slot, string entryPoint)
         {
             return CurrentVTable.Load(entryPoint);

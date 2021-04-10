@@ -10,15 +10,13 @@ namespace Silk.NET.SilkTouch
     public readonly struct EntryPoint
     {
         public readonly string Name;
-        public readonly int Slot;
         public readonly CallingConvention CallingConvention;
         public readonly TypeSyntax[] LoadTypes;
         public readonly IMethodSymbol SourceSymbol;
         
-        public EntryPoint(string name, int slot, CallingConvention callingConvention, TypeSyntax[] loadTypes, IMethodSymbol sourceSymbol)
+        public EntryPoint(string name, CallingConvention callingConvention, TypeSyntax[] loadTypes, IMethodSymbol sourceSymbol)
         {
             Name = name;
-            Slot = slot;
             CallingConvention = callingConvention;
             LoadTypes = loadTypes;
             SourceSymbol = sourceSymbol;
