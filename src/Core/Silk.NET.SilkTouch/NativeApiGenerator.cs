@@ -22,6 +22,11 @@ namespace Silk.NET.SilkTouch
     [Generator]
     public partial class NativeApiGenerator : ISourceGenerator
     {
+#if DEBUG
+        private const bool _compactFileFormat = true;
+#else
+        private const bool _compactFileFormat = false;
+#endif
         public void Initialize(GeneratorInitializationContext context)
         {
             context.RegisterForSyntaxNotifications(() => new SyntaxReceiver());
@@ -90,12 +95,9 @@ namespace Silk.NET.SilkTouch
                         excludeFromOverrideAttribute, (INamedTypeSymbol)group.Key
                     );
 
-                    if (s is null) continue;
+                    if (s is not { Length: > 0 }) continue;
 
-                    var name =
-                        $"{group.Key.Name}.{Guid.NewGuid()}.gen";
-                    context.AddSource(name, SourceText.From(s, Encoding.UTF8));
-                    // File.WriteAllText(@"C:\SILK.NET\src\Lab\" + name, s);
+                    Output(context, group.Key.Name, s);
                 }
                 catch (Exception ex)
                 {
@@ -106,6 +108,14 @@ namespace Silk.NET.SilkTouch
                     );
                 }
             }
+        }
+
+        private static void Output(GeneratorExecutionContext context, string hintName, string s)
+        {
+            hintName = hintName.Select(x => char.IsLetterOrDigit(x) ? x : '_').ToArray().AsSpan().ToString();
+            var name = $"{hintName}.{Guid.NewGuid()}.gen";
+            context.AddSource(name, SourceText.From(s, Encoding.UTF8));
+            File.WriteAllText(@"C:\SILK.NET\src\Lab\" + name, s);
         }
 
         private string ProcessClassDeclaration
@@ -218,8 +228,11 @@ namespace Silk.NET.SilkTouch
                 ProcessMethod
                 (
                     sourceContext, rootMarshalBuilder, callingConvention, entryPoints, entryPoint, classIsSealed,
-                    generateSeal, generateVTable, slot, compilation, symbol, declaration.Item1, newMembers,
-                    ref gcCount, processedEntrypoints, generatedVTableName
+                    generateSeal, generateVTable, slot, compilation, symbol, declaration.Item1, newMembers, ref gcCount,
+                    processedEntrypoints, generatedVTableName, namespaceDeclaration, classDeclarations.First().Item1,
+                    compilationUnit.Usings.Add
+                            (UsingDirective(IdentifierName("Silk.NET.Core.Native")))
+                        .Add(UsingDirective(IdentifierName("Silk.NET.Core.Contexts")))
                 );
             }
 
@@ -295,7 +308,7 @@ namespace Silk.NET.SilkTouch
                     (
                         preloadVTable, entryPoints, emitAssert,
                         sourceContext.ParseOptions.PreprocessorSymbolNames.Any
-                            (x => x == "NETCOREAPP" || x == "NET5" /* SEE INativeContext.cs in Core */),
+                            (x => x is "NETCOREAPP" or "NET5" /* SEE INativeContext.cs in Core */),
                         generatedVTableName
                     )
                 );
@@ -380,7 +393,10 @@ namespace Silk.NET.SilkTouch
             List<MemberDeclarationSyntax> newMembers,
             ref int gcCount,
             List<EntryPoint> processedEntrypoints,
-            string generatedVTableName
+            string generatedVTableName,
+            NamespaceDeclarationSyntax generationns,
+            ClassDeclarationSyntax generationclass,
+            SyntaxList<UsingDirectiveSyntax> generationusings
         )
         {
             void BuildLoadInvoke(ref IMarshalContext ctx, Action next)
@@ -531,8 +547,31 @@ namespace Silk.NET.SilkTouch
                     .WithReturnType
                         (IdentifierName(symbol.ReturnType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)));
 
-                // append to members
-                newMembers.Add(method);
+                if (_compactFileFormat)
+                {
+                    // append to members
+                    newMembers.Add(method);
+                }
+                else
+                {
+                    // directly output
+                    var newNamespace = generationns.WithMembers
+                        (
+                            List
+                            (
+                                new MemberDeclarationSyntax[]
+                                {
+                                    generationclass.WithMembers
+                                        (List(new MemberDeclarationSyntax[] {method}))
+                                    .WithAttributeLists(List<AttributeListSyntax>())
+                                }
+                            )
+                        )
+                        .WithUsings(generationusings);
+        
+                    var result = newNamespace.NormalizeWhitespace().ToFullString();
+                    Output(sourceContext, symbol.ToDisplayString(), result);
+                }
             }
             catch (Exception ex)
             {
