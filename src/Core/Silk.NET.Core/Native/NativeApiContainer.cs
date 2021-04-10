@@ -37,7 +37,8 @@ namespace Silk.NET.Core.Native
         }
 
         protected virtual int CoreGcSlotCount() => 0;
-        protected abstract IVTable CreateVTable();
+        protected virtual IVTable CreateVTable()
+            => throw new NotImplementedException("Must be implemented by SilkTouch");
         protected IVTable SwapVTable() => SwapVTable(CreateVTable());
         protected IVTable SwapVTable(IVTable newVTable) => Interlocked.Exchange(ref _vTable, newVTable);
 
