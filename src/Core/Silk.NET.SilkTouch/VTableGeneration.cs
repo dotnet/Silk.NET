@@ -288,6 +288,7 @@ namespace Silk.NET.SilkTouch
                                                 IdentifierName(FirstLetterToUpper(s))
                                             )
                                         )
+                                        .Append(SwitchExpressionArm(DiscardPattern(), InvocationExpression(IdentifierName(generatedThrowHelperInvalidSlot))))
                                 )
                             )
                         )
