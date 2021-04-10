@@ -140,6 +140,78 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         [NativeApi(EntryPoint = "glUniformBlockBinding")]
         public partial void UniformBlockBinding([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Flow(FlowDirection.In)] uint uniformBlockBinding);
 
+        public unsafe void GetActiveUniformBlockName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> uniformBlockName)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniformBlockName(program, uniformBlockIndex, (uint) uniformBlockName.Length, length, out uniformBlockName.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniformBlockName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> uniformBlockName)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniformBlockName(program, uniformBlockIndex, (uint) uniformBlockName.Length, length, out uniformBlockName.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniformBlockName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> uniformBlockName)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniformBlockName(program, uniformBlockIndex, (uint) uniformBlockName.Length, out length, out uniformBlockName.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniformBlockName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformBlockIndex, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> uniformBlockName)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniformBlockName(program, uniformBlockIndex, (uint) uniformBlockName.Length, out length, out uniformBlockName.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformIndex, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> uniformName)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniformName(program, uniformIndex, (uint) uniformName.Length, length, out uniformName.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformIndex, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> uniformName)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniformName(program, uniformIndex, (uint) uniformName.Length, length, out uniformName.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformIndex, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> uniformName)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniformName(program, uniformIndex, (uint) uniformName.Length, out length, out uniformName.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformIndex, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> uniformName)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniformName(program, uniformIndex, (uint) uniformName.Length, out length, out uniformName.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> uniformIndices, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] int* @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniforms(program, (uint) uniformIndices.Length, in uniformIndices.GetPinnableReference(), pname, @params);
+        }
+
+        public unsafe void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> uniformIndices, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] out int @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniforms(program, (uint) uniformIndices.Length, in uniformIndices.GetPinnableReference(), pname, out @params);
+        }
+
+        public unsafe void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> uniformIndices, [Flow(FlowDirection.In)] UniformPName pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] int* @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniforms(program, (uint) uniformIndices.Length, in uniformIndices.GetPinnableReference(), pname, @params);
+        }
+
+        public unsafe void GetActiveUniforms([Flow(FlowDirection.In)] uint program, [Count(Parameter = "uniformCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> uniformIndices, [Flow(FlowDirection.In)] UniformPName pname, [Count(Computed = "uniformCount, pname"), Flow(FlowDirection.Out)] out int @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniforms(program, (uint) uniformIndices.Length, in uniformIndices.GetPinnableReference(), pname, out @params);
+        }
+
         public unsafe void GetUniformIndices([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint uniformCount, [Count(Computed = "uniformCount"), Flow(FlowDirection.In)] string[] uniformNamesSa, [Count(Computed = "uniformCount"), Flow(FlowDirection.Out)] uint* uniformIndices)
         {
             // StringArrayOverloader

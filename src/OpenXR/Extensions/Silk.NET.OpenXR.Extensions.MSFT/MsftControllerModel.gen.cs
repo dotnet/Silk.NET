@@ -68,6 +68,20 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
         [NativeApi(EntryPoint = "xrLoadControllerModelMSFT")]
         public partial Result LoadControllerModelMsft([Count(Count = 0)] Session session, [Count(Count = 0)] ulong modelKey, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] ref uint bufferCountOutput, string buffer);
 
+        /// <summary>To be documented.</summary>
+        public unsafe Result LoadControllerModelMsft([Count(Count = 0)] Session session, [Count(Count = 0)] ulong modelKey, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
+        {
+            // ImplicitCountSpanOverloader
+            return LoadControllerModelMsft(session, modelKey, (uint) buffer.Length, bufferCountOutput, ref buffer.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result LoadControllerModelMsft([Count(Count = 0)] Session session, [Count(Count = 0)] ulong modelKey, [Count(Count = 0)] ref uint bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
+        {
+            // ImplicitCountSpanOverloader
+            return LoadControllerModelMsft(session, modelKey, (uint) buffer.Length, ref bufferCountOutput, ref buffer.GetPinnableReference());
+        }
+
         public MsftControllerModel(INativeContext ctx)
             : base(ctx)
         {

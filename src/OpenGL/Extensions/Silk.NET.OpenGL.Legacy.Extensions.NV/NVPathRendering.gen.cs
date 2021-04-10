@@ -1604,6 +1604,138 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             return ret;
         }
 
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] NV programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Flow(FlowDirection.In)] NV* props, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, propCount, props, (uint) @params.Length, length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] NV programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Flow(FlowDirection.In)] NV* props, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, propCount, props, (uint) @params.Length, out length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] NV programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Flow(FlowDirection.In)] in NV props, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, propCount, in props, (uint) @params.Length, length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] NV programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Flow(FlowDirection.In)] in NV props, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, propCount, in props, (uint) @params.Length, out length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Flow(FlowDirection.In)] NV* props, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, propCount, props, (uint) @params.Length, length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Flow(FlowDirection.In)] NV* props, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, propCount, props, (uint) @params.Length, out length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Flow(FlowDirection.In)] in NV props, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, propCount, in props, (uint) @params.Length, length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Flow(FlowDirection.In)] in NV props, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, propCount, in props, (uint) @params.Length, out length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void PathCommands([Flow(FlowDirection.In)] uint path, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] ReadOnlySpan<byte> commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] void* coords)
+        {
+            // ImplicitCountSpanOverloader
+            PathCommands(path, (uint) commands.Length, in commands.GetPinnableReference(), numCoords, coordType, coords);
+        }
+
+        public unsafe void PathCommands<T0>([Flow(FlowDirection.In)] uint path, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] ReadOnlySpan<byte> commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] in T0 coords) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            PathCommands(path, (uint) commands.Length, in commands.GetPinnableReference(), numCoords, coordType, in coords);
+        }
+
+        public unsafe void PathCommands([Flow(FlowDirection.In)] uint path, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] ReadOnlySpan<byte> commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] void* coords)
+        {
+            // ImplicitCountSpanOverloader
+            PathCommands(path, (uint) commands.Length, in commands.GetPinnableReference(), numCoords, coordType, coords);
+        }
+
+        public unsafe void PathCommands<T0>([Flow(FlowDirection.In)] uint path, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] ReadOnlySpan<byte> commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] in T0 coords) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            PathCommands(path, (uint) commands.Length, in commands.GetPinnableReference(), numCoords, coordType, in coords);
+        }
+
+        public unsafe void PathDashArray([Flow(FlowDirection.In)] uint path, [Count(Parameter = "dashCount"), Flow(FlowDirection.In)] ReadOnlySpan<float> dashArray)
+        {
+            // ImplicitCountSpanOverloader
+            PathDashArray(path, (uint) dashArray.Length, in dashArray.GetPinnableReference());
+        }
+
+        public unsafe void PathString<T0>([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] NV format, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pathString) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            PathString(path, format, (uint) (pathString.Length * Unsafe.SizeOf<T0>()), in pathString.GetPinnableReference());
+        }
+
+        public unsafe void PathString<T0>([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] PathStringFormat format, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pathString) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            PathString(path, format, (uint) (pathString.Length * Unsafe.SizeOf<T0>()), in pathString.GetPinnableReference());
+        }
+
+        public unsafe void PathSubCommands([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint commandStart, [Flow(FlowDirection.In)] uint commandsToDelete, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] ReadOnlySpan<byte> commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] void* coords)
+        {
+            // ImplicitCountSpanOverloader
+            PathSubCommands(path, commandStart, commandsToDelete, (uint) commands.Length, in commands.GetPinnableReference(), numCoords, coordType, coords);
+        }
+
+        public unsafe void PathSubCommands<T0>([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint commandStart, [Flow(FlowDirection.In)] uint commandsToDelete, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] ReadOnlySpan<byte> commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] NV coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] in T0 coords) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            PathSubCommands(path, commandStart, commandsToDelete, (uint) commands.Length, in commands.GetPinnableReference(), numCoords, coordType, in coords);
+        }
+
+        public unsafe void PathSubCommands([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint commandStart, [Flow(FlowDirection.In)] uint commandsToDelete, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] ReadOnlySpan<byte> commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] void* coords)
+        {
+            // ImplicitCountSpanOverloader
+            PathSubCommands(path, commandStart, commandsToDelete, (uint) commands.Length, in commands.GetPinnableReference(), numCoords, coordType, coords);
+        }
+
+        public unsafe void PathSubCommands<T0>([Flow(FlowDirection.In)] uint path, [Flow(FlowDirection.In)] uint commandStart, [Flow(FlowDirection.In)] uint commandsToDelete, [Count(Parameter = "numCommands"), Flow(FlowDirection.In)] ReadOnlySpan<byte> commands, [Flow(FlowDirection.In)] uint numCoords, [Flow(FlowDirection.In)] PathCoordType coordType, [Count(Computed = "numCoords, coordType"), Flow(FlowDirection.In)] in T0 coords) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            PathSubCommands(path, commandStart, commandsToDelete, (uint) commands.Length, in commands.GetPinnableReference(), numCoords, coordType, in coords);
+        }
+
+        public unsafe void WeightPath([Flow(FlowDirection.In)] uint resultPath, [Count(Parameter = "numPaths"), Flow(FlowDirection.In)] uint* paths, [Count(Parameter = "numPaths"), Flow(FlowDirection.In)] ReadOnlySpan<float> weights)
+        {
+            // ImplicitCountSpanOverloader
+            WeightPath(resultPath, (uint) weights.Length, paths, in weights.GetPinnableReference());
+        }
+
+        public unsafe void WeightPath([Flow(FlowDirection.In)] uint resultPath, [Count(Parameter = "numPaths"), Flow(FlowDirection.In)] ReadOnlySpan<uint> paths, [Count(Parameter = "numPaths"), Flow(FlowDirection.In)] float* weights)
+        {
+            // ImplicitCountSpanOverloader
+            WeightPath(resultPath, (uint) paths.Length, in paths.GetPinnableReference(), weights);
+        }
+
+        public unsafe void WeightPath([Flow(FlowDirection.In)] uint resultPath, [Count(Parameter = "numPaths"), Flow(FlowDirection.In)] ReadOnlySpan<uint> paths, [Count(Parameter = "numPaths"), Flow(FlowDirection.In)] ReadOnlySpan<float> weights)
+        {
+            // ImplicitCountSpanOverloader
+            WeightPath(resultPath, (uint) weights.Length, in paths.GetPinnableReference(), in weights.GetPinnableReference());
+        }
+
         public NVPathRendering(INativeContext ctx)
             : base(ctx)
         {

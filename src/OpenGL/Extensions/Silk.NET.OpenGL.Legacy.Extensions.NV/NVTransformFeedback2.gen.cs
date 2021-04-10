@@ -71,6 +71,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             DeleteTransformFeedbacks(1, &ids);
         }
 
+        public unsafe void DeleteTransformFeedbacks([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteTransformFeedbacks((uint) ids.Length, in ids.GetPinnableReference());
+        }
+
+        public unsafe void DeleteTransformFeedbacks([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<TransformFeedback> ids)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteTransformFeedbacks((uint) ids.Length, in ids.GetPinnableReference());
+        }
+
         public unsafe uint GenTransformFeedback()
         {
             const uint n = 1;
@@ -78,6 +90,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             uint ret = default;
             GenTransformFeedbacks(n, &ret);
             return ret;
+        }
+
+        public unsafe void GenTransformFeedbacks([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+        {
+            // ImplicitCountSpanOverloader
+            GenTransformFeedbacks((uint) ids.Length, out ids.GetPinnableReference());
+        }
+
+        public unsafe void GenTransformFeedbacks([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<TransformFeedback> ids)
+        {
+            // ImplicitCountSpanOverloader
+            GenTransformFeedbacks((uint) ids.Length, out ids.GetPinnableReference());
         }
 
         public NVTransformFeedback2(INativeContext ctx)

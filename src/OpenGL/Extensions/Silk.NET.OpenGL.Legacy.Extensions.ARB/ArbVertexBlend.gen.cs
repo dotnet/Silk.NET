@@ -86,6 +86,54 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glWeightPointerARB")]
         public partial void WeightPointer<T0>([Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] WeightPointerTypeARB type, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "type, stride"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
 
+        public unsafe void Weight([Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<sbyte> weights)
+        {
+            // ImplicitCountSpanOverloader
+            Weight((int) weights.Length, in weights.GetPinnableReference());
+        }
+
+        public unsafe void Weight([Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<short> weights)
+        {
+            // ImplicitCountSpanOverloader
+            Weight((int) weights.Length, in weights.GetPinnableReference());
+        }
+
+        public unsafe void Weight([Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<int> weights)
+        {
+            // ImplicitCountSpanOverloader
+            Weight((int) weights.Length, in weights.GetPinnableReference());
+        }
+
+        public unsafe void Weight([Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<float> weights)
+        {
+            // ImplicitCountSpanOverloader
+            Weight((int) weights.Length, in weights.GetPinnableReference());
+        }
+
+        public unsafe void Weight([Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<double> weights)
+        {
+            // ImplicitCountSpanOverloader
+            Weight((int) weights.Length, in weights.GetPinnableReference());
+        }
+
+        public unsafe void Weight([Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<byte> weights)
+        {
+            // ImplicitCountSpanOverloader
+            Weight((int) weights.Length, in weights.GetPinnableReference());
+        }
+
+        public unsafe void Weight([Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<ushort> weights)
+        {
+            // ImplicitCountSpanOverloader
+            Weight((int) weights.Length, in weights.GetPinnableReference());
+        }
+
+        public unsafe void Weight([Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<uint> weights)
+        {
+            // ImplicitCountSpanOverloader
+            Weight((int) weights.Length, in weights.GetPinnableReference());
+        }
+
         public ArbVertexBlend(INativeContext ctx)
             : base(ctx)
         {

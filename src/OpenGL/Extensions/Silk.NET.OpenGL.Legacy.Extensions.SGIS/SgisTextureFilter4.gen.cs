@@ -68,6 +68,30 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         [NativeApi(EntryPoint = "glTexFilterFuncSGIS")]
         public partial void TexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float weights);
 
+        public unsafe void TexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] SGIS filter, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> weights)
+        {
+            // ImplicitCountSpanOverloader
+            TexFilterFunc(target, filter, (uint) weights.Length, in weights.GetPinnableReference());
+        }
+
+        public unsafe void TexFilterFunc([Flow(FlowDirection.In)] SGIS target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> weights)
+        {
+            // ImplicitCountSpanOverloader
+            TexFilterFunc(target, filter, (uint) weights.Length, in weights.GetPinnableReference());
+        }
+
+        public unsafe void TexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SGIS filter, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> weights)
+        {
+            // ImplicitCountSpanOverloader
+            TexFilterFunc(target, filter, (uint) weights.Length, in weights.GetPinnableReference());
+        }
+
+        public unsafe void TexFilterFunc([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] TextureFilterSGIS filter, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> weights)
+        {
+            // ImplicitCountSpanOverloader
+            TexFilterFunc(target, filter, (uint) weights.Length, in weights.GetPinnableReference());
+        }
+
         public SgisTextureFilter4(INativeContext ctx)
             : base(ctx)
         {

@@ -320,10 +320,34 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             DeleteFramebuffers(1, &framebuffers);
         }
 
+        public unsafe void DeleteFramebuffers([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> framebuffers)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteFramebuffers((uint) framebuffers.Length, in framebuffers.GetPinnableReference());
+        }
+
+        public unsafe void DeleteFramebuffers([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Framebuffer> framebuffers)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteFramebuffers((uint) framebuffers.Length, in framebuffers.GetPinnableReference());
+        }
+
         public unsafe void DeleteRenderbuffer([Count(Parameter = "n"), Flow(FlowDirection.In)] uint renderbuffers)
         {
             // ArrayParameterOverloader
             DeleteRenderbuffers(1, &renderbuffers);
+        }
+
+        public unsafe void DeleteRenderbuffers([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> renderbuffers)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteRenderbuffers((uint) renderbuffers.Length, in renderbuffers.GetPinnableReference());
+        }
+
+        public unsafe void DeleteRenderbuffers([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Renderbuffer> renderbuffers)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteRenderbuffers((uint) renderbuffers.Length, in renderbuffers.GetPinnableReference());
         }
 
         public unsafe uint GenFramebuffer()
@@ -335,6 +359,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             return ret;
         }
 
+        public unsafe void GenFramebuffers([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> framebuffers)
+        {
+            // ImplicitCountSpanOverloader
+            GenFramebuffers((uint) framebuffers.Length, out framebuffers.GetPinnableReference());
+        }
+
+        public unsafe void GenFramebuffers([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Framebuffer> framebuffers)
+        {
+            // ImplicitCountSpanOverloader
+            GenFramebuffers((uint) framebuffers.Length, out framebuffers.GetPinnableReference());
+        }
+
         public unsafe uint GenRenderbuffer()
         {
             const uint n = 1;
@@ -342,6 +378,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             uint ret = default;
             GenRenderbuffers(n, &ret);
             return ret;
+        }
+
+        public unsafe void GenRenderbuffers([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> renderbuffers)
+        {
+            // ImplicitCountSpanOverloader
+            GenRenderbuffers((uint) renderbuffers.Length, out renderbuffers.GetPinnableReference());
+        }
+
+        public unsafe void GenRenderbuffers([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Renderbuffer> renderbuffers)
+        {
+            // ImplicitCountSpanOverloader
+            GenRenderbuffers((uint) renderbuffers.Length, out renderbuffers.GetPinnableReference());
         }
 
         public ArbFramebufferObject(INativeContext ctx)

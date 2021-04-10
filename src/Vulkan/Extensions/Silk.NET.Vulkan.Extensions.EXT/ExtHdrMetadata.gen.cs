@@ -36,6 +36,27 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         [NativeApi(EntryPoint = "vkSetHdrMetadataEXT")]
         public partial void SetHdrMetadata([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] in SwapchainKHR pSwapchains, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] in HdrMetadataEXT pMetadata);
 
+        /// <summary>To be documented.</summary>
+        public unsafe void SetHdrMetadata([Count(Count = 0)] Device device, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] SwapchainKHR* pSwapchains, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] ReadOnlySpan<HdrMetadataEXT> pMetadata)
+        {
+            // ImplicitCountSpanOverloader
+            SetHdrMetadata(device, (uint) pMetadata.Length, pSwapchains, in pMetadata.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void SetHdrMetadata([Count(Count = 0)] Device device, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainKHR> pSwapchains, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] HdrMetadataEXT* pMetadata)
+        {
+            // ImplicitCountSpanOverloader
+            SetHdrMetadata(device, (uint) pSwapchains.Length, in pSwapchains.GetPinnableReference(), pMetadata);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void SetHdrMetadata([Count(Count = 0)] Device device, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainKHR> pSwapchains, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] ReadOnlySpan<HdrMetadataEXT> pMetadata)
+        {
+            // ImplicitCountSpanOverloader
+            SetHdrMetadata(device, (uint) pMetadata.Length, in pSwapchains.GetPinnableReference(), in pMetadata.GetPinnableReference());
+        }
+
         public ExtHdrMetadata(INativeContext ctx)
             : base(ctx)
         {

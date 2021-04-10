@@ -40,6 +40,20 @@ namespace Silk.NET.OpenXR.Extensions.FB
         [NativeApi(EntryPoint = "xrSetColorSpaceFB")]
         public partial Result SetColorSpaceFB([Count(Count = 0)] Session session, [Count(Count = 0)] ColorSpaceFB colorspace);
 
+        /// <summary>To be documented.</summary>
+        public unsafe Result EnumerateColorSpacesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint* colorSpaceCountOutput, [Count(Parameter = "colorSpaceCapacityInput")] Span<ColorSpaceFB> colorSpaces)
+        {
+            // ImplicitCountSpanOverloader
+            return EnumerateColorSpacesFB(session, (uint) colorSpaces.Length, colorSpaceCountOutput, ref colorSpaces.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result EnumerateColorSpacesFB([Count(Count = 0)] Session session, [Count(Count = 0)] ref uint colorSpaceCountOutput, [Count(Parameter = "colorSpaceCapacityInput")] Span<ColorSpaceFB> colorSpaces)
+        {
+            // ImplicitCountSpanOverloader
+            return EnumerateColorSpacesFB(session, (uint) colorSpaces.Length, ref colorSpaceCountOutput, ref colorSpaces.GetPinnableReference());
+        }
+
         public FBColorSpace(INativeContext ctx)
             : base(ctx)
         {

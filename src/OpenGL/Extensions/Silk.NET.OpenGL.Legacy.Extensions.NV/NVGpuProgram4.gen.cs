@@ -188,6 +188,54 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glProgramLocalParametersI4uivNV")]
         public partial void ProgramLocalParametersI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint @params);
 
+        public unsafe void ProgramEnvParametersI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramEnvParametersI4(target, index, (uint) @params.Length, in @params.GetPinnableReference());
+        }
+
+        public unsafe void ProgramEnvParametersI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramEnvParametersI4(target, index, (uint) @params.Length, in @params.GetPinnableReference());
+        }
+
+        public unsafe void ProgramEnvParametersI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramEnvParametersI4(target, index, (uint) @params.Length, in @params.GetPinnableReference());
+        }
+
+        public unsafe void ProgramEnvParametersI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramEnvParametersI4(target, index, (uint) @params.Length, in @params.GetPinnableReference());
+        }
+
+        public unsafe void ProgramLocalParametersI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramLocalParametersI4(target, index, (uint) @params.Length, in @params.GetPinnableReference());
+        }
+
+        public unsafe void ProgramLocalParametersI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramLocalParametersI4(target, index, (uint) @params.Length, in @params.GetPinnableReference());
+        }
+
+        public unsafe void ProgramLocalParametersI4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramLocalParametersI4(target, index, (uint) @params.Length, in @params.GetPinnableReference());
+        }
+
+        public unsafe void ProgramLocalParametersI4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramLocalParametersI4(target, index, (uint) @params.Length, in @params.GetPinnableReference());
+        }
+
         public NVGpuProgram4(INativeContext ctx)
             : base(ctx)
         {

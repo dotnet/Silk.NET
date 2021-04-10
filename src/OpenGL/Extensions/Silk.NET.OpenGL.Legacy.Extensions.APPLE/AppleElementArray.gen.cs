@@ -92,6 +92,78 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         [NativeApi(EntryPoint = "glMultiDrawRangeElementArrayAPPLE")]
         public partial void MultiDrawRangeElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in int first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in uint count, [Flow(FlowDirection.In)] uint primcount);
 
+        public unsafe void MultiDrawElementArray([Flow(FlowDirection.In)] APPLE mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count)
+        {
+            // ImplicitCountSpanOverloader
+            MultiDrawElementArray(mode, first, in count.GetPinnableReference(), (uint) count.Length);
+        }
+
+        public unsafe void MultiDrawElementArray([Flow(FlowDirection.In)] APPLE mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count)
+        {
+            // ImplicitCountSpanOverloader
+            MultiDrawElementArray(mode, in first.GetPinnableReference(), count, (uint) first.Length);
+        }
+
+        public unsafe void MultiDrawElementArray([Flow(FlowDirection.In)] APPLE mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count)
+        {
+            // ImplicitCountSpanOverloader
+            MultiDrawElementArray(mode, in first.GetPinnableReference(), in count.GetPinnableReference(), (uint) count.Length);
+        }
+
+        public unsafe void MultiDrawElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count)
+        {
+            // ImplicitCountSpanOverloader
+            MultiDrawElementArray(mode, first, in count.GetPinnableReference(), (uint) count.Length);
+        }
+
+        public unsafe void MultiDrawElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count)
+        {
+            // ImplicitCountSpanOverloader
+            MultiDrawElementArray(mode, in first.GetPinnableReference(), count, (uint) first.Length);
+        }
+
+        public unsafe void MultiDrawElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count)
+        {
+            // ImplicitCountSpanOverloader
+            MultiDrawElementArray(mode, in first.GetPinnableReference(), in count.GetPinnableReference(), (uint) count.Length);
+        }
+
+        public unsafe void MultiDrawRangeElementArray([Flow(FlowDirection.In)] APPLE mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count)
+        {
+            // ImplicitCountSpanOverloader
+            MultiDrawRangeElementArray(mode, start, end, first, in count.GetPinnableReference(), (uint) count.Length);
+        }
+
+        public unsafe void MultiDrawRangeElementArray([Flow(FlowDirection.In)] APPLE mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count)
+        {
+            // ImplicitCountSpanOverloader
+            MultiDrawRangeElementArray(mode, start, end, in first.GetPinnableReference(), count, (uint) first.Length);
+        }
+
+        public unsafe void MultiDrawRangeElementArray([Flow(FlowDirection.In)] APPLE mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count)
+        {
+            // ImplicitCountSpanOverloader
+            MultiDrawRangeElementArray(mode, start, end, in first.GetPinnableReference(), in count.GetPinnableReference(), (uint) count.Length);
+        }
+
+        public unsafe void MultiDrawRangeElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count)
+        {
+            // ImplicitCountSpanOverloader
+            MultiDrawRangeElementArray(mode, start, end, first, in count.GetPinnableReference(), (uint) count.Length);
+        }
+
+        public unsafe void MultiDrawRangeElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count)
+        {
+            // ImplicitCountSpanOverloader
+            MultiDrawRangeElementArray(mode, start, end, in first.GetPinnableReference(), count, (uint) first.Length);
+        }
+
+        public unsafe void MultiDrawRangeElementArray([Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint end, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count)
+        {
+            // ImplicitCountSpanOverloader
+            MultiDrawRangeElementArray(mode, start, end, in first.GetPinnableReference(), in count.GetPinnableReference(), (uint) count.Length);
+        }
+
         public AppleElementArray(INativeContext ctx)
             : base(ctx)
         {

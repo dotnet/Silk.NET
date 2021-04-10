@@ -155,6 +155,78 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         [NativeApi(EntryPoint = "glExtTexObjectStateOverrideiQCOM")]
         public partial void ExtTexObjectStateOverride([Flow(FlowDirection.In)] QCOM target, [Flow(FlowDirection.In)] QCOM pname, [Flow(FlowDirection.In)] int param);
 
+        public unsafe void ExtGetBuffers([Count(Parameter = "maxBuffers"), Flow(FlowDirection.Out)] Span<uint> buffers, [Count(Count = 1), Flow(FlowDirection.Out)] int* numBuffers)
+        {
+            // ImplicitCountSpanOverloader
+            ExtGetBuffers(out buffers.GetPinnableReference(), (int) buffers.Length, numBuffers);
+        }
+
+        public unsafe void ExtGetBuffers([Count(Parameter = "maxBuffers"), Flow(FlowDirection.Out)] Span<uint> buffers, [Count(Count = 1), Flow(FlowDirection.Out)] out int numBuffers)
+        {
+            // ImplicitCountSpanOverloader
+            ExtGetBuffers(out buffers.GetPinnableReference(), (int) buffers.Length, out numBuffers);
+        }
+
+        public unsafe void ExtGetBuffers([Count(Parameter = "maxBuffers"), Flow(FlowDirection.Out)] Span<Buffer> buffers, [Count(Count = 1), Flow(FlowDirection.Out)] int* numBuffers)
+        {
+            // ImplicitCountSpanOverloader
+            ExtGetBuffers(out buffers.GetPinnableReference(), (int) buffers.Length, numBuffers);
+        }
+
+        public unsafe void ExtGetBuffers([Count(Parameter = "maxBuffers"), Flow(FlowDirection.Out)] Span<Buffer> buffers, [Count(Count = 1), Flow(FlowDirection.Out)] out int numBuffers)
+        {
+            // ImplicitCountSpanOverloader
+            ExtGetBuffers(out buffers.GetPinnableReference(), (int) buffers.Length, out numBuffers);
+        }
+
+        public unsafe void ExtGetFramebuffers([Count(Parameter = "maxFramebuffers"), Flow(FlowDirection.Out)] Span<uint> framebuffers, [Count(Count = 1), Flow(FlowDirection.Out)] int* numFramebuffers)
+        {
+            // ImplicitCountSpanOverloader
+            ExtGetFramebuffers(out framebuffers.GetPinnableReference(), (int) framebuffers.Length, numFramebuffers);
+        }
+
+        public unsafe void ExtGetFramebuffers([Count(Parameter = "maxFramebuffers"), Flow(FlowDirection.Out)] Span<uint> framebuffers, [Count(Count = 1), Flow(FlowDirection.Out)] out int numFramebuffers)
+        {
+            // ImplicitCountSpanOverloader
+            ExtGetFramebuffers(out framebuffers.GetPinnableReference(), (int) framebuffers.Length, out numFramebuffers);
+        }
+
+        public unsafe void ExtGetFramebuffers([Count(Parameter = "maxFramebuffers"), Flow(FlowDirection.Out)] Span<Framebuffer> framebuffers, [Count(Count = 1), Flow(FlowDirection.Out)] int* numFramebuffers)
+        {
+            // ImplicitCountSpanOverloader
+            ExtGetFramebuffers(out framebuffers.GetPinnableReference(), (int) framebuffers.Length, numFramebuffers);
+        }
+
+        public unsafe void ExtGetFramebuffers([Count(Parameter = "maxFramebuffers"), Flow(FlowDirection.Out)] Span<Framebuffer> framebuffers, [Count(Count = 1), Flow(FlowDirection.Out)] out int numFramebuffers)
+        {
+            // ImplicitCountSpanOverloader
+            ExtGetFramebuffers(out framebuffers.GetPinnableReference(), (int) framebuffers.Length, out numFramebuffers);
+        }
+
+        public unsafe void ExtGetRenderbuffers([Count(Parameter = "maxRenderbuffers"), Flow(FlowDirection.Out)] Span<uint> renderbuffers, [Count(Count = 1), Flow(FlowDirection.Out)] int* numRenderbuffers)
+        {
+            // ImplicitCountSpanOverloader
+            ExtGetRenderbuffers(out renderbuffers.GetPinnableReference(), (int) renderbuffers.Length, numRenderbuffers);
+        }
+
+        public unsafe void ExtGetRenderbuffers([Count(Parameter = "maxRenderbuffers"), Flow(FlowDirection.Out)] Span<uint> renderbuffers, [Count(Count = 1), Flow(FlowDirection.Out)] out int numRenderbuffers)
+        {
+            // ImplicitCountSpanOverloader
+            ExtGetRenderbuffers(out renderbuffers.GetPinnableReference(), (int) renderbuffers.Length, out numRenderbuffers);
+        }
+
+        public unsafe void ExtGetRenderbuffers([Count(Parameter = "maxRenderbuffers"), Flow(FlowDirection.Out)] Span<Renderbuffer> renderbuffers, [Count(Count = 1), Flow(FlowDirection.Out)] int* numRenderbuffers)
+        {
+            // ImplicitCountSpanOverloader
+            ExtGetRenderbuffers(out renderbuffers.GetPinnableReference(), (int) renderbuffers.Length, numRenderbuffers);
+        }
+
+        public unsafe void ExtGetRenderbuffers([Count(Parameter = "maxRenderbuffers"), Flow(FlowDirection.Out)] Span<Renderbuffer> renderbuffers, [Count(Count = 1), Flow(FlowDirection.Out)] out int numRenderbuffers)
+        {
+            // ImplicitCountSpanOverloader
+            ExtGetRenderbuffers(out renderbuffers.GetPinnableReference(), (int) renderbuffers.Length, out numRenderbuffers);
+        }
+
         public QComExtendedGet(INativeContext ctx)
             : base(ctx)
         {

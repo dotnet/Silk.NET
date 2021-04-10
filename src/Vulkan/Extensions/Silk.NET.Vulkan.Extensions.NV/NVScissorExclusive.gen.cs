@@ -28,6 +28,13 @@ namespace Silk.NET.Vulkan.Extensions.NV
         [NativeApi(EntryPoint = "vkCmdSetExclusiveScissorNV")]
         public partial void CmdSetExclusiveScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstExclusiveScissor, [Count(Count = 0)] uint exclusiveScissorCount, [Count(Parameter = "exclusiveScissorCount"), Flow(FlowDirection.In)] in Rect2D pExclusiveScissors);
 
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdSetExclusiveScissor([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstExclusiveScissor, [Count(Parameter = "exclusiveScissorCount"), Flow(FlowDirection.In)] ReadOnlySpan<Rect2D> pExclusiveScissors)
+        {
+            // ImplicitCountSpanOverloader
+            CmdSetExclusiveScissor(commandBuffer, firstExclusiveScissor, (uint) pExclusiveScissors.Length, in pExclusiveScissors.GetPinnableReference());
+        }
+
         public NVScissorExclusive(INativeContext ctx)
             : base(ctx)
         {

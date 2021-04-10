@@ -35,6 +35,12 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glGetFramebufferPixelLocalStorageSizeEXT")]
         public partial uint GetFramebufferPixelLocalStorageSize([Flow(FlowDirection.In)] FramebufferTarget target);
 
+        public unsafe void ClearPixelLocalStorage([Flow(FlowDirection.In)] uint offset, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> values)
+        {
+            // ImplicitCountSpanOverloader
+            ClearPixelLocalStorage(offset, (uint) values.Length, in values.GetPinnableReference());
+        }
+
         public ExtShaderPixelLocalStorage2(INativeContext ctx)
             : base(ctx)
         {

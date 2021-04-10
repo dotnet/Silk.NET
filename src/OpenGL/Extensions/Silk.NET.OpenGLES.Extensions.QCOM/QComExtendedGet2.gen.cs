@@ -107,6 +107,54 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         [NativeApi(EntryPoint = "glExtIsProgramBinaryQCOM")]
         public partial bool ExtIsProgramBinary([Flow(FlowDirection.In)] uint program);
 
+        public unsafe void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] Span<uint> programs, [Count(Count = 1), Flow(FlowDirection.Out)] int* numPrograms)
+        {
+            // ImplicitCountSpanOverloader
+            ExtGetProgram(out programs.GetPinnableReference(), (int) programs.Length, numPrograms);
+        }
+
+        public unsafe void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] Span<uint> programs, [Count(Count = 1), Flow(FlowDirection.Out)] out int numPrograms)
+        {
+            // ImplicitCountSpanOverloader
+            ExtGetProgram(out programs.GetPinnableReference(), (int) programs.Length, out numPrograms);
+        }
+
+        public unsafe void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] Span<Program> programs, [Count(Count = 1), Flow(FlowDirection.Out)] int* numPrograms)
+        {
+            // ImplicitCountSpanOverloader
+            ExtGetProgram(out programs.GetPinnableReference(), (int) programs.Length, numPrograms);
+        }
+
+        public unsafe void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] Span<Program> programs, [Count(Count = 1), Flow(FlowDirection.Out)] out int numPrograms)
+        {
+            // ImplicitCountSpanOverloader
+            ExtGetProgram(out programs.GetPinnableReference(), (int) programs.Length, out numPrograms);
+        }
+
+        public unsafe void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] Span<uint> shaders, [Count(Count = 1), Flow(FlowDirection.Out)] int* numShaders)
+        {
+            // ImplicitCountSpanOverloader
+            ExtGetShaders(out shaders.GetPinnableReference(), (int) shaders.Length, numShaders);
+        }
+
+        public unsafe void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] Span<uint> shaders, [Count(Count = 1), Flow(FlowDirection.Out)] out int numShaders)
+        {
+            // ImplicitCountSpanOverloader
+            ExtGetShaders(out shaders.GetPinnableReference(), (int) shaders.Length, out numShaders);
+        }
+
+        public unsafe void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] Span<Shader> shaders, [Count(Count = 1), Flow(FlowDirection.Out)] int* numShaders)
+        {
+            // ImplicitCountSpanOverloader
+            ExtGetShaders(out shaders.GetPinnableReference(), (int) shaders.Length, numShaders);
+        }
+
+        public unsafe void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] Span<Shader> shaders, [Count(Count = 1), Flow(FlowDirection.Out)] out int numShaders)
+        {
+            // ImplicitCountSpanOverloader
+            ExtGetShaders(out shaders.GetPinnableReference(), (int) shaders.Length, out numShaders);
+        }
+
         public QComExtendedGet2(INativeContext ctx)
             : base(ctx)
         {

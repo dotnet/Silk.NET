@@ -1061,6 +1061,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             return ret;
         }
 
+        public unsafe void CreateBuffers([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> buffers)
+        {
+            // ImplicitCountSpanOverloader
+            CreateBuffers((uint) buffers.Length, out buffers.GetPinnableReference());
+        }
+
+        public unsafe void CreateBuffers([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Buffer> buffers)
+        {
+            // ImplicitCountSpanOverloader
+            CreateBuffers((uint) buffers.Length, out buffers.GetPinnableReference());
+        }
+
         public unsafe uint CreateFramebuffer()
         {
             const uint n = 1;
@@ -1068,6 +1080,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             uint ret = default;
             CreateFramebuffers(n, &ret);
             return ret;
+        }
+
+        public unsafe void CreateFramebuffers([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> framebuffers)
+        {
+            // ImplicitCountSpanOverloader
+            CreateFramebuffers((uint) framebuffers.Length, out framebuffers.GetPinnableReference());
+        }
+
+        public unsafe void CreateFramebuffers([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Framebuffer> framebuffers)
+        {
+            // ImplicitCountSpanOverloader
+            CreateFramebuffers((uint) framebuffers.Length, out framebuffers.GetPinnableReference());
         }
 
         public unsafe uint CreateProgramPipeline()
@@ -1079,6 +1103,42 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             return ret;
         }
 
+        public unsafe void CreateProgramPipelines([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> pipelines)
+        {
+            // ImplicitCountSpanOverloader
+            CreateProgramPipelines((uint) pipelines.Length, out pipelines.GetPinnableReference());
+        }
+
+        public unsafe void CreateProgramPipelines([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<ProgramPipeline> pipelines)
+        {
+            // ImplicitCountSpanOverloader
+            CreateProgramPipelines((uint) pipelines.Length, out pipelines.GetPinnableReference());
+        }
+
+        public unsafe void CreateQueries([Flow(FlowDirection.In)] ARB target, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+        {
+            // ImplicitCountSpanOverloader
+            CreateQueries(target, (uint) ids.Length, out ids.GetPinnableReference());
+        }
+
+        public unsafe void CreateQueries([Flow(FlowDirection.In)] ARB target, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Query> ids)
+        {
+            // ImplicitCountSpanOverloader
+            CreateQueries(target, (uint) ids.Length, out ids.GetPinnableReference());
+        }
+
+        public unsafe void CreateQueries([Flow(FlowDirection.In)] QueryTarget target, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+        {
+            // ImplicitCountSpanOverloader
+            CreateQueries(target, (uint) ids.Length, out ids.GetPinnableReference());
+        }
+
+        public unsafe void CreateQueries([Flow(FlowDirection.In)] QueryTarget target, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Query> ids)
+        {
+            // ImplicitCountSpanOverloader
+            CreateQueries(target, (uint) ids.Length, out ids.GetPinnableReference());
+        }
+
         public unsafe uint CreateRenderbuffer()
         {
             const uint n = 1;
@@ -1086,6 +1146,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             uint ret = default;
             CreateRenderbuffers(n, &ret);
             return ret;
+        }
+
+        public unsafe void CreateRenderbuffers([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> renderbuffers)
+        {
+            // ImplicitCountSpanOverloader
+            CreateRenderbuffers((uint) renderbuffers.Length, out renderbuffers.GetPinnableReference());
+        }
+
+        public unsafe void CreateRenderbuffers([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Renderbuffer> renderbuffers)
+        {
+            // ImplicitCountSpanOverloader
+            CreateRenderbuffers((uint) renderbuffers.Length, out renderbuffers.GetPinnableReference());
         }
 
         public unsafe uint CreateSampler()
@@ -1097,6 +1169,42 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             return ret;
         }
 
+        public unsafe void CreateSamplers([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> samplers)
+        {
+            // ImplicitCountSpanOverloader
+            CreateSamplers((uint) samplers.Length, out samplers.GetPinnableReference());
+        }
+
+        public unsafe void CreateSamplers([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Sampler> samplers)
+        {
+            // ImplicitCountSpanOverloader
+            CreateSamplers((uint) samplers.Length, out samplers.GetPinnableReference());
+        }
+
+        public unsafe void CreateTextures([Flow(FlowDirection.In)] ARB target, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures)
+        {
+            // ImplicitCountSpanOverloader
+            CreateTextures(target, (uint) textures.Length, out textures.GetPinnableReference());
+        }
+
+        public unsafe void CreateTextures([Flow(FlowDirection.In)] ARB target, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Texture> textures)
+        {
+            // ImplicitCountSpanOverloader
+            CreateTextures(target, (uint) textures.Length, out textures.GetPinnableReference());
+        }
+
+        public unsafe void CreateTextures([Flow(FlowDirection.In)] TextureTarget target, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures)
+        {
+            // ImplicitCountSpanOverloader
+            CreateTextures(target, (uint) textures.Length, out textures.GetPinnableReference());
+        }
+
+        public unsafe void CreateTextures([Flow(FlowDirection.In)] TextureTarget target, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Texture> textures)
+        {
+            // ImplicitCountSpanOverloader
+            CreateTextures(target, (uint) textures.Length, out textures.GetPinnableReference());
+        }
+
         public unsafe uint CreateTransformFeedback()
         {
             const uint n = 1;
@@ -1106,6 +1214,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             return ret;
         }
 
+        public unsafe void CreateTransformFeedbacks([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+        {
+            // ImplicitCountSpanOverloader
+            CreateTransformFeedbacks((uint) ids.Length, out ids.GetPinnableReference());
+        }
+
+        public unsafe void CreateTransformFeedbacks([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<TransformFeedback> ids)
+        {
+            // ImplicitCountSpanOverloader
+            CreateTransformFeedbacks((uint) ids.Length, out ids.GetPinnableReference());
+        }
+
         public unsafe uint CreateVertexArray()
         {
             const uint n = 1;
@@ -1113,6 +1233,30 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             uint ret = default;
             CreateVertexArrays(n, &ret);
             return ret;
+        }
+
+        public unsafe void CreateVertexArrays([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays)
+        {
+            // ImplicitCountSpanOverloader
+            CreateVertexArrays((uint) arrays.Length, out arrays.GetPinnableReference());
+        }
+
+        public unsafe void CreateVertexArrays([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<VertexArray> arrays)
+        {
+            // ImplicitCountSpanOverloader
+            CreateVertexArrays((uint) arrays.Length, out arrays.GetPinnableReference());
+        }
+
+        public unsafe void NamedBufferStorage<T0>([Flow(FlowDirection.In)] uint buffer, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            NamedBufferStorage(buffer, (nuint) (data.Length * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), flags);
+        }
+
+        public unsafe void NamedBufferStorage<T0>([Flow(FlowDirection.In)] uint buffer, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            NamedBufferStorage(buffer, (nuint) (data.Length * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), flags);
         }
 
         public ArbDirectStateAccess(INativeContext ctx)

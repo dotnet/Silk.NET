@@ -48,6 +48,20 @@ namespace Silk.NET.OpenXR.Extensions.FB
         [NativeApi(EntryPoint = "xrRequestDisplayRefreshRateFB")]
         public partial Result RequestDisplayRefreshRateFB([Count(Count = 0)] Session session, [Count(Count = 0)] float displayRefreshRate);
 
+        /// <summary>To be documented.</summary>
+        public unsafe Result EnumerateDisplayRefreshRatesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint* displayRefreshRateCountOutput, [Count(Parameter = "displayRefreshRateCapacityInput")] Span<float> displayRefreshRates)
+        {
+            // ImplicitCountSpanOverloader
+            return EnumerateDisplayRefreshRatesFB(session, (uint) displayRefreshRates.Length, displayRefreshRateCountOutput, ref displayRefreshRates.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result EnumerateDisplayRefreshRatesFB([Count(Count = 0)] Session session, [Count(Count = 0)] ref uint displayRefreshRateCountOutput, [Count(Parameter = "displayRefreshRateCapacityInput")] Span<float> displayRefreshRates)
+        {
+            // ImplicitCountSpanOverloader
+            return EnumerateDisplayRefreshRatesFB(session, (uint) displayRefreshRates.Length, ref displayRefreshRateCountOutput, ref displayRefreshRates.GetPinnableReference());
+        }
+
         public FBDisplayRefreshRate(INativeContext ctx)
             : base(ctx)
         {

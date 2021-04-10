@@ -92,6 +92,78 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         [NativeApi(EntryPoint = "glUniformMatrix4x3fvNV")]
         public partial void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
+        public unsafe void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformMatrix2x3(location, (uint) value.Length, transpose, in value.GetPinnableReference());
+        }
+
+        public unsafe void UniformMatrix2x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformMatrix2x3(location, (uint) value.Length, transpose, in value.GetPinnableReference());
+        }
+
+        public unsafe void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformMatrix2x4(location, (uint) value.Length, transpose, in value.GetPinnableReference());
+        }
+
+        public unsafe void UniformMatrix2x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformMatrix2x4(location, (uint) value.Length, transpose, in value.GetPinnableReference());
+        }
+
+        public unsafe void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformMatrix3x2(location, (uint) value.Length, transpose, in value.GetPinnableReference());
+        }
+
+        public unsafe void UniformMatrix3x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformMatrix3x2(location, (uint) value.Length, transpose, in value.GetPinnableReference());
+        }
+
+        public unsafe void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformMatrix3x4(location, (uint) value.Length, transpose, in value.GetPinnableReference());
+        }
+
+        public unsafe void UniformMatrix3x4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformMatrix3x4(location, (uint) value.Length, transpose, in value.GetPinnableReference());
+        }
+
+        public unsafe void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformMatrix4x2(location, (uint) value.Length, transpose, in value.GetPinnableReference());
+        }
+
+        public unsafe void UniformMatrix4x2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformMatrix4x2(location, (uint) value.Length, transpose, in value.GetPinnableReference());
+        }
+
+        public unsafe void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformMatrix4x3(location, (uint) value.Length, transpose, in value.GetPinnableReference());
+        }
+
+        public unsafe void UniformMatrix4x3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformMatrix4x3(location, (uint) value.Length, transpose, in value.GetPinnableReference());
+        }
+
         public NVNonSquareMatrices(INativeContext ctx)
             : base(ctx)
         {

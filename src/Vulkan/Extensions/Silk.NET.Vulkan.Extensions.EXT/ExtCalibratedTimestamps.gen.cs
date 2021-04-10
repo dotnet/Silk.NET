@@ -68,6 +68,48 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceCalibrateableTimeDomainsEXT")]
         public partial Result GetPhysicalDeviceCalibrateableTimeDomain([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pTimeDomainCount, [Count(Parameter = "pTimeDomainCount"), Flow(FlowDirection.Out)] out TimeDomainEXT pTimeDomains);
 
+        /// <summary>To be documented.</summary>
+        public unsafe Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Parameter = "timestampCount"), Flow(FlowDirection.In)] CalibratedTimestampInfoEXT* pTimestampInfos, [Count(Parameter = "timestampCount")] Span<ulong> pTimestamps, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pMaxDeviation)
+        {
+            // ImplicitCountSpanOverloader
+            return GetCalibratedTimestamp(device, (uint) pTimestamps.Length, pTimestampInfos, ref pTimestamps.GetPinnableReference(), pMaxDeviation);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Parameter = "timestampCount"), Flow(FlowDirection.In)] CalibratedTimestampInfoEXT* pTimestampInfos, [Count(Parameter = "timestampCount")] Span<ulong> pTimestamps, [Count(Count = 0), Flow(FlowDirection.Out)] out ulong pMaxDeviation)
+        {
+            // ImplicitCountSpanOverloader
+            return GetCalibratedTimestamp(device, (uint) pTimestamps.Length, pTimestampInfos, ref pTimestamps.GetPinnableReference(), out pMaxDeviation);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Parameter = "timestampCount"), Flow(FlowDirection.In)] ReadOnlySpan<CalibratedTimestampInfoEXT> pTimestampInfos, [Count(Parameter = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pMaxDeviation)
+        {
+            // ImplicitCountSpanOverloader
+            return GetCalibratedTimestamp(device, (uint) pTimestampInfos.Length, in pTimestampInfos.GetPinnableReference(), pTimestamps, pMaxDeviation);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Parameter = "timestampCount"), Flow(FlowDirection.In)] ReadOnlySpan<CalibratedTimestampInfoEXT> pTimestampInfos, [Count(Parameter = "timestampCount")] ulong* pTimestamps, [Count(Count = 0), Flow(FlowDirection.Out)] out ulong pMaxDeviation)
+        {
+            // ImplicitCountSpanOverloader
+            return GetCalibratedTimestamp(device, (uint) pTimestampInfos.Length, in pTimestampInfos.GetPinnableReference(), pTimestamps, out pMaxDeviation);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Parameter = "timestampCount"), Flow(FlowDirection.In)] ReadOnlySpan<CalibratedTimestampInfoEXT> pTimestampInfos, [Count(Parameter = "timestampCount")] Span<ulong> pTimestamps, [Count(Count = 0), Flow(FlowDirection.Out)] ulong* pMaxDeviation)
+        {
+            // ImplicitCountSpanOverloader
+            return GetCalibratedTimestamp(device, (uint) pTimestamps.Length, in pTimestampInfos.GetPinnableReference(), ref pTimestamps.GetPinnableReference(), pMaxDeviation);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result GetCalibratedTimestamp([Count(Count = 0)] Device device, [Count(Parameter = "timestampCount"), Flow(FlowDirection.In)] ReadOnlySpan<CalibratedTimestampInfoEXT> pTimestampInfos, [Count(Parameter = "timestampCount")] Span<ulong> pTimestamps, [Count(Count = 0), Flow(FlowDirection.Out)] out ulong pMaxDeviation)
+        {
+            // ImplicitCountSpanOverloader
+            return GetCalibratedTimestamp(device, (uint) pTimestamps.Length, in pTimestampInfos.GetPinnableReference(), ref pTimestamps.GetPinnableReference(), out pMaxDeviation);
+        }
+
         public ExtCalibratedTimestamps(INativeContext ctx)
             : base(ctx)
         {

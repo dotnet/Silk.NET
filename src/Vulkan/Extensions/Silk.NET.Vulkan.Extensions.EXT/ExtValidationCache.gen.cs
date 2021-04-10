@@ -84,6 +84,13 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         [NativeApi(EntryPoint = "vkMergeValidationCachesEXT")]
         public partial Result MergeValidationCaches([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Parameter = "srcCacheCount"), Flow(FlowDirection.In)] in ValidationCacheEXT pSrcCaches);
 
+        /// <summary>To be documented.</summary>
+        public unsafe Result MergeValidationCaches([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT dstCache, [Count(Parameter = "srcCacheCount"), Flow(FlowDirection.In)] ReadOnlySpan<ValidationCacheEXT> pSrcCaches)
+        {
+            // ImplicitCountSpanOverloader
+            return MergeValidationCaches(device, dstCache, (uint) pSrcCaches.Length, in pSrcCaches.GetPinnableReference());
+        }
+
         public ExtValidationCache(INativeContext ctx)
             : base(ctx)
         {

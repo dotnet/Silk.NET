@@ -94,6 +94,30 @@ namespace Silk.NET.OpenGLES.Extensions.APPLE
             return ret;
         }
 
+        public unsafe void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
+        {
+            // ImplicitCountSpanOverloader
+            GetSync(sync, pname, (uint) values.Length, length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
+        {
+            // ImplicitCountSpanOverloader
+            GetSync(sync, pname, (uint) values.Length, out length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
+        {
+            // ImplicitCountSpanOverloader
+            GetSync(sync, pname, (uint) values.Length, length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
+        {
+            // ImplicitCountSpanOverloader
+            GetSync(sync, pname, (uint) values.Length, out length, out values.GetPinnableReference());
+        }
+
         public AppleSync(INativeContext ctx)
             : base(ctx)
         {

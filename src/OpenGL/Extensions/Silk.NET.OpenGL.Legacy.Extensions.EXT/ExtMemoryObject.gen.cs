@@ -236,6 +236,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             DeleteMemoryObjects(1, &memoryObjects);
         }
 
+        public unsafe void DeleteMemoryObjects([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> memoryObjects)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteMemoryObjects((uint) memoryObjects.Length, in memoryObjects.GetPinnableReference());
+        }
+
         public unsafe byte GetUnsignedByte([Flow(FlowDirection.In)] EXT pname)
         {
             // ReturnTypeOverloader

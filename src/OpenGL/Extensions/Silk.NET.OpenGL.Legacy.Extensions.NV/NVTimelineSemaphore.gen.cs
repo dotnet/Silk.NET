@@ -59,6 +59,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             return ret;
         }
 
+        public unsafe void CreateSemaphores([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> semaphores)
+        {
+            // ImplicitCountSpanOverloader
+            CreateSemaphores((uint) semaphores.Length, out semaphores.GetPinnableReference());
+        }
+
         public NVTimelineSemaphore(INativeContext ctx)
             : base(ctx)
         {

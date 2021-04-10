@@ -224,6 +224,318 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glBindVertexBuffers")]
         public partial void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in Buffer buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] in nint offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint strides);
 
+        public unsafe void BindBuffersBase([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersBase(target, first, (uint) buffers.Length, in buffers.GetPinnableReference());
+        }
+
+        public unsafe void BindBuffersBase([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersBase(target, first, (uint) buffers.Length, in buffers.GetPinnableReference());
+        }
+
+        public unsafe void BindBuffersBase([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersBase(target, first, (uint) buffers.Length, in buffers.GetPinnableReference());
+        }
+
+        public unsafe void BindBuffersBase([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersBase(target, first, (uint) buffers.Length, in buffers.GetPinnableReference());
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) sizes.Length, buffers, offsets, in sizes.GetPinnableReference());
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) offsets.Length, buffers, in offsets.GetPinnableReference(), sizes);
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) sizes.Length, buffers, in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) buffers.Length, in buffers.GetPinnableReference(), offsets, sizes);
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) sizes.Length, in buffers.GetPinnableReference(), offsets, in sizes.GetPinnableReference());
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) offsets.Length, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), sizes);
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) sizes.Length, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) sizes.Length, buffers, offsets, in sizes.GetPinnableReference());
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) offsets.Length, buffers, in offsets.GetPinnableReference(), sizes);
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) sizes.Length, buffers, in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) buffers.Length, in buffers.GetPinnableReference(), offsets, sizes);
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) sizes.Length, in buffers.GetPinnableReference(), offsets, in sizes.GetPinnableReference());
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) offsets.Length, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), sizes);
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) sizes.Length, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) sizes.Length, buffers, offsets, in sizes.GetPinnableReference());
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) offsets.Length, buffers, in offsets.GetPinnableReference(), sizes);
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) sizes.Length, buffers, in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) buffers.Length, in buffers.GetPinnableReference(), offsets, sizes);
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) sizes.Length, in buffers.GetPinnableReference(), offsets, in sizes.GetPinnableReference());
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) offsets.Length, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), sizes);
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) sizes.Length, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) sizes.Length, buffers, offsets, in sizes.GetPinnableReference());
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) offsets.Length, buffers, in offsets.GetPinnableReference(), sizes);
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) sizes.Length, buffers, in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) buffers.Length, in buffers.GetPinnableReference(), offsets, sizes);
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) sizes.Length, in buffers.GetPinnableReference(), offsets, in sizes.GetPinnableReference());
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] nuint* sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) offsets.Length, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), sizes);
+        }
+
+        public unsafe void BindBuffersRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nuint> sizes)
+        {
+            // ImplicitCountSpanOverloader
+            BindBuffersRange(target, first, (uint) sizes.Length, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in sizes.GetPinnableReference());
+        }
+
+        public unsafe void BindImageTextures([Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures)
+        {
+            // ImplicitCountSpanOverloader
+            BindImageTextures(first, (uint) textures.Length, in textures.GetPinnableReference());
+        }
+
+        public unsafe void BindImageTextures([Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures)
+        {
+            // ImplicitCountSpanOverloader
+            BindImageTextures(first, (uint) textures.Length, in textures.GetPinnableReference());
+        }
+
+        public unsafe void BindSamplers([Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> samplers)
+        {
+            // ImplicitCountSpanOverloader
+            BindSamplers(first, (uint) samplers.Length, in samplers.GetPinnableReference());
+        }
+
+        public unsafe void BindSamplers([Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Sampler> samplers)
+        {
+            // ImplicitCountSpanOverloader
+            BindSamplers(first, (uint) samplers.Length, in samplers.GetPinnableReference());
+        }
+
+        public unsafe void BindTextures([Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures)
+        {
+            // ImplicitCountSpanOverloader
+            BindTextures(first, (uint) textures.Length, in textures.GetPinnableReference());
+        }
+
+        public unsafe void BindTextures([Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures)
+        {
+            // ImplicitCountSpanOverloader
+            BindTextures(first, (uint) textures.Length, in textures.GetPinnableReference());
+        }
+
+        public unsafe void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // ImplicitCountSpanOverloader
+            BindVertexBuffers(first, (uint) strides.Length, buffers, offsets, in strides.GetPinnableReference());
+        }
+
+        public unsafe void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides)
+        {
+            // ImplicitCountSpanOverloader
+            BindVertexBuffers(first, (uint) offsets.Length, buffers, in offsets.GetPinnableReference(), strides);
+        }
+
+        public unsafe void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // ImplicitCountSpanOverloader
+            BindVertexBuffers(first, (uint) strides.Length, buffers, in offsets.GetPinnableReference(), in strides.GetPinnableReference());
+        }
+
+        public unsafe void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides)
+        {
+            // ImplicitCountSpanOverloader
+            BindVertexBuffers(first, (uint) buffers.Length, in buffers.GetPinnableReference(), offsets, strides);
+        }
+
+        public unsafe void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // ImplicitCountSpanOverloader
+            BindVertexBuffers(first, (uint) strides.Length, in buffers.GetPinnableReference(), offsets, in strides.GetPinnableReference());
+        }
+
+        public unsafe void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides)
+        {
+            // ImplicitCountSpanOverloader
+            BindVertexBuffers(first, (uint) offsets.Length, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), strides);
+        }
+
+        public unsafe void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // ImplicitCountSpanOverloader
+            BindVertexBuffers(first, (uint) strides.Length, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in strides.GetPinnableReference());
+        }
+
+        public unsafe void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // ImplicitCountSpanOverloader
+            BindVertexBuffers(first, (uint) strides.Length, buffers, offsets, in strides.GetPinnableReference());
+        }
+
+        public unsafe void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides)
+        {
+            // ImplicitCountSpanOverloader
+            BindVertexBuffers(first, (uint) offsets.Length, buffers, in offsets.GetPinnableReference(), strides);
+        }
+
+        public unsafe void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] Buffer* buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // ImplicitCountSpanOverloader
+            BindVertexBuffers(first, (uint) strides.Length, buffers, in offsets.GetPinnableReference(), in strides.GetPinnableReference());
+        }
+
+        public unsafe void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides)
+        {
+            // ImplicitCountSpanOverloader
+            BindVertexBuffers(first, (uint) buffers.Length, in buffers.GetPinnableReference(), offsets, strides);
+        }
+
+        public unsafe void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] nint* offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // ImplicitCountSpanOverloader
+            BindVertexBuffers(first, (uint) strides.Length, in buffers.GetPinnableReference(), offsets, in strides.GetPinnableReference());
+        }
+
+        public unsafe void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* strides)
+        {
+            // ImplicitCountSpanOverloader
+            BindVertexBuffers(first, (uint) offsets.Length, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), strides);
+        }
+
+        public unsafe void BindVertexBuffers([Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<nint> offsets, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> strides)
+        {
+            // ImplicitCountSpanOverloader
+            BindVertexBuffers(first, (uint) strides.Length, in buffers.GetPinnableReference(), in offsets.GetPinnableReference(), in strides.GetPinnableReference());
+        }
+
         public ArbMultiBind(INativeContext ctx)
             : base(ctx)
         {

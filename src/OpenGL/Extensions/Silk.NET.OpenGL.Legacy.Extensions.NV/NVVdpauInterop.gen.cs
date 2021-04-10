@@ -92,6 +92,54 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glVDPAUUnregisterSurfaceNV")]
         public partial void VdpauunregisterSurface([Flow(FlowDirection.In)] nint surface);
 
+        public unsafe void VdpaugetSurface([Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
+        {
+            // ImplicitCountSpanOverloader
+            VdpaugetSurface(surface, pname, (uint) values.Length, length, out values.GetPinnableReference());
+        }
+
+        public unsafe void VdpaugetSurface([Flow(FlowDirection.In)] nint surface, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
+        {
+            // ImplicitCountSpanOverloader
+            VdpaugetSurface(surface, pname, (uint) values.Length, out length, out values.GetPinnableReference());
+        }
+
+        public unsafe void VdpaumapSurfaces([Count(Parameter = "numSurfaces"), Flow(FlowDirection.In)] ReadOnlySpan<nint> surfaces)
+        {
+            // ImplicitCountSpanOverloader
+            VdpaumapSurfaces((uint) surfaces.Length, in surfaces.GetPinnableReference());
+        }
+
+        public unsafe nint VdpauregisterOutputSurface([Flow(FlowDirection.In)] void* vdpSurface, [Flow(FlowDirection.In)] NV target, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textureNames)
+        {
+            // ImplicitCountSpanOverloader
+            return VdpauregisterOutputSurface(vdpSurface, target, (uint) textureNames.Length, in textureNames.GetPinnableReference());
+        }
+
+        public unsafe nint VdpauregisterOutputSurface<T0>([Flow(FlowDirection.In)] in T0 vdpSurface, [Flow(FlowDirection.In)] NV target, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textureNames) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            return VdpauregisterOutputSurface(in vdpSurface, target, (uint) textureNames.Length, in textureNames.GetPinnableReference());
+        }
+
+        public unsafe nint VdpauregisterVideoSurface([Flow(FlowDirection.In)] void* vdpSurface, [Flow(FlowDirection.In)] NV target, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textureNames)
+        {
+            // ImplicitCountSpanOverloader
+            return VdpauregisterVideoSurface(vdpSurface, target, (uint) textureNames.Length, in textureNames.GetPinnableReference());
+        }
+
+        public unsafe nint VdpauregisterVideoSurface<T0>([Flow(FlowDirection.In)] in T0 vdpSurface, [Flow(FlowDirection.In)] NV target, [Count(Parameter = "numTextureNames"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textureNames) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            return VdpauregisterVideoSurface(in vdpSurface, target, (uint) textureNames.Length, in textureNames.GetPinnableReference());
+        }
+
+        public unsafe void VdpauunmapSurfaces([Count(Parameter = "numSurface"), Flow(FlowDirection.In)] ReadOnlySpan<nint> surfaces)
+        {
+            // ImplicitCountSpanOverloader
+            VdpauunmapSurfaces((uint) surfaces.Length, in surfaces.GetPinnableReference());
+        }
+
         public NVVdpauInterop(INativeContext ctx)
             : base(ctx)
         {

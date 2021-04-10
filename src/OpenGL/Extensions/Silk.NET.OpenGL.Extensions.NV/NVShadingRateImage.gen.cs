@@ -56,6 +56,12 @@ namespace Silk.NET.OpenGL.Extensions.NV
         [NativeApi(EntryPoint = "glShadingRateSampleOrderCustomNV")]
         public partial void ShadingRateSampleOrderCustom([Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Count(Computed = "rate, samples"), Flow(FlowDirection.In)] in int locations);
 
+        public unsafe void ShadingRateImagePalette([Flow(FlowDirection.In)] uint viewport, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<NV> rates)
+        {
+            // ImplicitCountSpanOverloader
+            ShadingRateImagePalette(viewport, first, (uint) rates.Length, in rates.GetPinnableReference());
+        }
+
         public NVShadingRateImage(INativeContext ctx)
             : base(ctx)
         {

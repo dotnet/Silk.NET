@@ -164,6 +164,30 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         [NativeApi(EntryPoint = "glVariantArrayObjectATI")]
         public partial void VariantArrayObject([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ScalarType type, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
 
+        public unsafe uint NewObjectBuffer<T0>([Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(FlowDirection.In)] ATI usage) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            return NewObjectBuffer((uint) (pointer.Length * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference(), usage);
+        }
+
+        public unsafe uint NewObjectBuffer<T0>([Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(FlowDirection.In)] ArrayObjectUsageATI usage) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            return NewObjectBuffer((uint) (pointer.Length * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference(), usage);
+        }
+
+        public unsafe void UpdateObjectBuffer<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(FlowDirection.In)] ATI preserve) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            UpdateObjectBuffer(buffer, offset, (uint) (pointer.Length * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference(), preserve);
+        }
+
+        public unsafe void UpdateObjectBuffer<T0>([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer, [Flow(FlowDirection.In)] PreserveModeATI preserve) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            UpdateObjectBuffer(buffer, offset, (uint) (pointer.Length * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference(), preserve);
+        }
+
         public AtiVertexArrayObject(INativeContext ctx)
             : base(ctx)
         {

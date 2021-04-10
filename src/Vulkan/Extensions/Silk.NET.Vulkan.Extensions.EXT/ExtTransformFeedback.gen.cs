@@ -96,6 +96,97 @@ namespace Silk.NET.Vulkan.Extensions.EXT
         [NativeApi(EntryPoint = "vkCmdEndTransformFeedbackEXT")]
         public partial void CmdEndTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Count = 0)] uint counterBufferCount, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] in Buffer pCounterBuffers, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] in ulong pCounterBufferOffsets);
 
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBeginTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] Buffer* pCounterBuffers, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pCounterBufferOffsets)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBeginTransformFeedback(commandBuffer, firstCounterBuffer, (uint) pCounterBufferOffsets.Length, pCounterBuffers, in pCounterBufferOffsets.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBeginTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pCounterBuffers, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] ulong* pCounterBufferOffsets)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBeginTransformFeedback(commandBuffer, firstCounterBuffer, (uint) pCounterBuffers.Length, in pCounterBuffers.GetPinnableReference(), pCounterBufferOffsets);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBeginTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pCounterBuffers, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pCounterBufferOffsets)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBeginTransformFeedback(commandBuffer, firstCounterBuffer, (uint) pCounterBufferOffsets.Length, in pCounterBuffers.GetPinnableReference(), in pCounterBufferOffsets.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pSizes)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindTransformFeedbackBuffers(commandBuffer, firstBinding, (uint) pSizes.Length, pBuffers, pOffsets, in pSizes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindTransformFeedbackBuffers(commandBuffer, firstBinding, (uint) pOffsets.Length, pBuffers, in pOffsets.GetPinnableReference(), pSizes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] Buffer* pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pSizes)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindTransformFeedbackBuffers(commandBuffer, firstBinding, (uint) pSizes.Length, pBuffers, in pOffsets.GetPinnableReference(), in pSizes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindTransformFeedbackBuffers(commandBuffer, firstBinding, (uint) pBuffers.Length, in pBuffers.GetPinnableReference(), pOffsets, pSizes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pSizes)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindTransformFeedbackBuffers(commandBuffer, firstBinding, (uint) pSizes.Length, in pBuffers.GetPinnableReference(), pOffsets, in pSizes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ulong* pSizes)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindTransformFeedbackBuffers(commandBuffer, firstBinding, (uint) pOffsets.Length, in pBuffers.GetPinnableReference(), in pOffsets.GetPinnableReference(), pSizes);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdBindTransformFeedbackBuffers([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstBinding, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pBuffers, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pOffsets, [Count(Parameter = "bindingCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pSizes)
+        {
+            // ImplicitCountSpanOverloader
+            CmdBindTransformFeedbackBuffers(commandBuffer, firstBinding, (uint) pSizes.Length, in pBuffers.GetPinnableReference(), in pOffsets.GetPinnableReference(), in pSizes.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdEndTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] Buffer* pCounterBuffers, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pCounterBufferOffsets)
+        {
+            // ImplicitCountSpanOverloader
+            CmdEndTransformFeedback(commandBuffer, firstCounterBuffer, (uint) pCounterBufferOffsets.Length, pCounterBuffers, in pCounterBufferOffsets.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdEndTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pCounterBuffers, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] ulong* pCounterBufferOffsets)
+        {
+            // ImplicitCountSpanOverloader
+            CmdEndTransformFeedback(commandBuffer, firstCounterBuffer, (uint) pCounterBuffers.Length, in pCounterBuffers.GetPinnableReference(), pCounterBufferOffsets);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe void CmdEndTransformFeedback([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint firstCounterBuffer, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> pCounterBuffers, [Count(Parameter = "counterBufferCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pCounterBufferOffsets)
+        {
+            // ImplicitCountSpanOverloader
+            CmdEndTransformFeedback(commandBuffer, firstCounterBuffer, (uint) pCounterBufferOffsets.Length, in pCounterBuffers.GetPinnableReference(), in pCounterBufferOffsets.GetPinnableReference());
+        }
+
         public ExtTransformFeedback(INativeContext ctx)
             : base(ctx)
         {

@@ -80,6 +80,30 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glUniform4uivEXT")]
         public partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint value);
 
+        public unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
+        {
+            // ImplicitCountSpanOverloader
+            Uniform1(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void Uniform2([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
+        {
+            // ImplicitCountSpanOverloader
+            Uniform2(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void Uniform3([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
+        {
+            // ImplicitCountSpanOverloader
+            Uniform3(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void Uniform4([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
+        {
+            // ImplicitCountSpanOverloader
+            Uniform4(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
         public ExtGpuShader4(INativeContext ctx)
             : base(ctx)
         {

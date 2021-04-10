@@ -74,6 +74,18 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         [NativeApi(EntryPoint = "glUniformHandleui64vNV")]
         public partial void UniformHandle([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in ulong value);
 
+        public unsafe void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> values)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramUniformHandle(program, location, (uint) values.Length, in values.GetPinnableReference());
+        }
+
+        public unsafe void UniformHandle([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformHandle(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
         public NVBindlessTexture(INativeContext ctx)
             : base(ctx)
         {

@@ -95,6 +95,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glVertexAttribL1ui64vARB")]
         public partial void VertexAttribL1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] in ulong v);
 
+        public unsafe void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> values)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramUniformHandle(program, location, (uint) values.Length, in values.GetPinnableReference());
+        }
+
+        public unsafe void UniformHandle([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformHandle(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
         public ArbBindlessTexture(INativeContext ctx)
             : base(ctx)
         {
