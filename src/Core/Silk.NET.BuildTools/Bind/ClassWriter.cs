@@ -72,9 +72,11 @@ namespace Silk.NET.BuildTools.Bind
             // }
             foreach (var @class in project.Classes)
             {
-                if ((@class.NativeApis.Values.Sum(x => x.Functions.Count) + @class.Functions.Count) == 0)
+                if ((@class.NativeApis.Values.Sum
+                    (x => x.Functions.Count) + @class.Functions.Count + @class.Constants.Count) == 0)
                 {
-                    Console.WriteLine($"Warning: No functions, writing of class \"{@class.ClassName}\" skipped...");
+                    Console.WriteLine($"Warning: No functions or constants, writing of class \"{@class.ClassName}\" " +
+                                      $"skipped...");
                     continue;
                 }
             
