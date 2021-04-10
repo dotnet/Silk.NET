@@ -38,21 +38,21 @@ namespace Silk.NET.OpenXR.Extensions.MSFT
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LoadControllerModelMsft(this MsftControllerModel thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] ulong modelKey, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Computed = "bufferCapacityInput")] Span<byte> buffer)
+        public static unsafe Result LoadControllerModelMsft(this MsftControllerModel thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] ulong modelKey, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
         {
             // SpanOverloader
             return thisApi.LoadControllerModelMsft(session, modelKey, bufferCapacityInput, bufferCountOutput, ref buffer.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LoadControllerModelMsft(this MsftControllerModel thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] ulong modelKey, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Computed = "bufferCapacityInput")] byte* buffer)
+        public static unsafe Result LoadControllerModelMsft(this MsftControllerModel thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] ulong modelKey, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer)
         {
             // SpanOverloader
             return thisApi.LoadControllerModelMsft(session, modelKey, bufferCapacityInput, ref bufferCountOutput.GetPinnableReference(), buffer);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LoadControllerModelMsft(this MsftControllerModel thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] ulong modelKey, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Computed = "bufferCapacityInput")] Span<byte> buffer)
+        public static unsafe Result LoadControllerModelMsft(this MsftControllerModel thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] ulong modelKey, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
         {
             // SpanOverloader
             return thisApi.LoadControllerModelMsft(session, modelKey, bufferCapacityInput, ref bufferCountOutput.GetPinnableReference(), ref buffer.GetPinnableReference());

@@ -237,266 +237,266 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateApiLayerProperties(this XR thisApi, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Computed = "propertyCapacityInput")] Span<ApiLayerProperties> properties)
+        public static unsafe Result EnumerateApiLayerProperties(this XR thisApi, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ApiLayerProperties> properties)
         {
             // SpanOverloader
             return thisApi.EnumerateApiLayerProperties(propertyCapacityInput, propertyCountOutput, ref properties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateApiLayerProperties(this XR thisApi, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Computed = "propertyCapacityInput")] ApiLayerProperties* properties)
+        public static unsafe Result EnumerateApiLayerProperties(this XR thisApi, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ApiLayerProperties* properties)
         {
             // SpanOverloader
             return thisApi.EnumerateApiLayerProperties(propertyCapacityInput, ref propertyCountOutput.GetPinnableReference(), properties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateApiLayerProperties(this XR thisApi, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Computed = "propertyCapacityInput")] Span<ApiLayerProperties> properties)
+        public static unsafe Result EnumerateApiLayerProperties(this XR thisApi, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ApiLayerProperties> properties)
         {
             // SpanOverloader
             return thisApi.EnumerateApiLayerProperties(propertyCapacityInput, ref propertyCountOutput.GetPinnableReference(), ref properties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] BoundSourcesForActionEnumerateInfo* enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] uint* sourceCountOutput, [Count(Computed = "sourceCapacityInput")] Span<ulong> sources)
+        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] BoundSourcesForActionEnumerateInfo* enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] uint* sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] Span<ulong> sources)
         {
             // SpanOverloader
             return thisApi.EnumerateBoundSourcesForAction(session, enumerateInfo, sourceCapacityInput, sourceCountOutput, ref sources.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] BoundSourcesForActionEnumerateInfo* enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] Span<uint> sourceCountOutput, [Count(Computed = "sourceCapacityInput")] ulong* sources)
+        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] BoundSourcesForActionEnumerateInfo* enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] Span<uint> sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ulong* sources)
         {
             // SpanOverloader
             return thisApi.EnumerateBoundSourcesForAction(session, enumerateInfo, sourceCapacityInput, ref sourceCountOutput.GetPinnableReference(), sources);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] BoundSourcesForActionEnumerateInfo* enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] Span<uint> sourceCountOutput, [Count(Computed = "sourceCapacityInput")] Span<ulong> sources)
+        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] BoundSourcesForActionEnumerateInfo* enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] Span<uint> sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] Span<ulong> sources)
         {
             // SpanOverloader
             return thisApi.EnumerateBoundSourcesForAction(session, enumerateInfo, sourceCapacityInput, ref sourceCountOutput.GetPinnableReference(), ref sources.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BoundSourcesForActionEnumerateInfo> enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] uint* sourceCountOutput, [Count(Computed = "sourceCapacityInput")] ulong* sources)
+        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BoundSourcesForActionEnumerateInfo> enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] uint* sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ulong* sources)
         {
             // SpanOverloader
             return thisApi.EnumerateBoundSourcesForAction(session, in enumerateInfo.GetPinnableReference(), sourceCapacityInput, sourceCountOutput, sources);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BoundSourcesForActionEnumerateInfo> enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] uint* sourceCountOutput, [Count(Computed = "sourceCapacityInput")] Span<ulong> sources)
+        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BoundSourcesForActionEnumerateInfo> enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] uint* sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] Span<ulong> sources)
         {
             // SpanOverloader
             return thisApi.EnumerateBoundSourcesForAction(session, in enumerateInfo.GetPinnableReference(), sourceCapacityInput, sourceCountOutput, ref sources.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BoundSourcesForActionEnumerateInfo> enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] Span<uint> sourceCountOutput, [Count(Computed = "sourceCapacityInput")] ulong* sources)
+        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BoundSourcesForActionEnumerateInfo> enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] Span<uint> sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] ulong* sources)
         {
             // SpanOverloader
             return thisApi.EnumerateBoundSourcesForAction(session, in enumerateInfo.GetPinnableReference(), sourceCapacityInput, ref sourceCountOutput.GetPinnableReference(), sources);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BoundSourcesForActionEnumerateInfo> enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] Span<uint> sourceCountOutput, [Count(Computed = "sourceCapacityInput")] Span<ulong> sources)
+        public static unsafe Result EnumerateBoundSourcesForAction(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BoundSourcesForActionEnumerateInfo> enumerateInfo, [Count(Count = 0)] uint sourceCapacityInput, [Count(Count = 0)] Span<uint> sourceCountOutput, [Count(Parameter = "sourceCapacityInput")] Span<ulong> sources)
         {
             // SpanOverloader
             return thisApi.EnumerateBoundSourcesForAction(session, in enumerateInfo.GetPinnableReference(), sourceCapacityInput, ref sourceCountOutput.GetPinnableReference(), ref sources.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateEnvironmentBlendModes(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint environmentBlendModeCapacityInput, [Count(Count = 0)] uint* environmentBlendModeCountOutput, [Count(Computed = "environmentBlendModeCapacityInput")] Span<EnvironmentBlendMode> environmentBlendModes)
+        public static unsafe Result EnumerateEnvironmentBlendModes(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint environmentBlendModeCapacityInput, [Count(Count = 0)] uint* environmentBlendModeCountOutput, [Count(Parameter = "environmentBlendModeCapacityInput")] Span<EnvironmentBlendMode> environmentBlendModes)
         {
             // SpanOverloader
             return thisApi.EnumerateEnvironmentBlendModes(instance, systemId, viewConfigurationType, environmentBlendModeCapacityInput, environmentBlendModeCountOutput, ref environmentBlendModes.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateEnvironmentBlendModes(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint environmentBlendModeCapacityInput, [Count(Count = 0)] Span<uint> environmentBlendModeCountOutput, [Count(Computed = "environmentBlendModeCapacityInput")] EnvironmentBlendMode* environmentBlendModes)
+        public static unsafe Result EnumerateEnvironmentBlendModes(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint environmentBlendModeCapacityInput, [Count(Count = 0)] Span<uint> environmentBlendModeCountOutput, [Count(Parameter = "environmentBlendModeCapacityInput")] EnvironmentBlendMode* environmentBlendModes)
         {
             // SpanOverloader
             return thisApi.EnumerateEnvironmentBlendModes(instance, systemId, viewConfigurationType, environmentBlendModeCapacityInput, ref environmentBlendModeCountOutput.GetPinnableReference(), environmentBlendModes);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateEnvironmentBlendModes(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint environmentBlendModeCapacityInput, [Count(Count = 0)] Span<uint> environmentBlendModeCountOutput, [Count(Computed = "environmentBlendModeCapacityInput")] Span<EnvironmentBlendMode> environmentBlendModes)
+        public static unsafe Result EnumerateEnvironmentBlendModes(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint environmentBlendModeCapacityInput, [Count(Count = 0)] Span<uint> environmentBlendModeCountOutput, [Count(Parameter = "environmentBlendModeCapacityInput")] Span<EnvironmentBlendMode> environmentBlendModes)
         {
             // SpanOverloader
             return thisApi.EnumerateEnvironmentBlendModes(instance, systemId, viewConfigurationType, environmentBlendModeCapacityInput, ref environmentBlendModeCountOutput.GetPinnableReference(), ref environmentBlendModes.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] byte* layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Computed = "propertyCapacityInput")] Span<ExtensionProperties> properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] byte* layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(layerName, propertyCapacityInput, propertyCountOutput, ref properties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] byte* layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Computed = "propertyCapacityInput")] ExtensionProperties* properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] byte* layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(layerName, propertyCapacityInput, ref propertyCountOutput.GetPinnableReference(), properties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] byte* layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Computed = "propertyCapacityInput")] Span<ExtensionProperties> properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] byte* layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(layerName, propertyCapacityInput, ref propertyCountOutput.GetPinnableReference(), ref properties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Computed = "propertyCapacityInput")] ExtensionProperties* properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(in layerName.GetPinnableReference(), propertyCapacityInput, propertyCountOutput, properties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Computed = "propertyCapacityInput")] Span<ExtensionProperties> properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(in layerName.GetPinnableReference(), propertyCapacityInput, propertyCountOutput, ref properties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Computed = "propertyCapacityInput")] ExtensionProperties* properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(in layerName.GetPinnableReference(), propertyCapacityInput, ref propertyCountOutput.GetPinnableReference(), properties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Computed = "propertyCapacityInput")] Span<ExtensionProperties> properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<byte> layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(in layerName.GetPinnableReference(), propertyCapacityInput, ref propertyCountOutput.GetPinnableReference(), ref properties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Flow(FlowDirection.In)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Computed = "propertyCapacityInput")] Span<ExtensionProperties> properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Flow(FlowDirection.In)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] uint* propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(layerName, propertyCapacityInput, propertyCountOutput, ref properties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Flow(FlowDirection.In)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Computed = "propertyCapacityInput")] ExtensionProperties* properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Flow(FlowDirection.In)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] ExtensionProperties* properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(layerName, propertyCapacityInput, ref propertyCountOutput.GetPinnableReference(), properties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Flow(FlowDirection.In)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Computed = "propertyCapacityInput")] Span<ExtensionProperties> properties)
+        public static unsafe Result EnumerateInstanceExtensionProperties(this XR thisApi, [Flow(FlowDirection.In)] string layerName, [Count(Count = 0)] uint propertyCapacityInput, [Count(Count = 0)] Span<uint> propertyCountOutput, [Count(Parameter = "propertyCapacityInput")] Span<ExtensionProperties> properties)
         {
             // SpanOverloader
             return thisApi.EnumerateInstanceExtensionProperties(layerName, propertyCapacityInput, ref propertyCountOutput.GetPinnableReference(), ref properties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateReferenceSpaces(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint spaceCapacityInput, [Count(Count = 0)] uint* spaceCountOutput, [Count(Computed = "spaceCapacityInput")] Span<ReferenceSpaceType> spaces)
+        public static unsafe Result EnumerateReferenceSpaces(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint spaceCapacityInput, [Count(Count = 0)] uint* spaceCountOutput, [Count(Parameter = "spaceCapacityInput")] Span<ReferenceSpaceType> spaces)
         {
             // SpanOverloader
             return thisApi.EnumerateReferenceSpaces(session, spaceCapacityInput, spaceCountOutput, ref spaces.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateReferenceSpaces(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint spaceCapacityInput, [Count(Count = 0)] Span<uint> spaceCountOutput, [Count(Computed = "spaceCapacityInput")] ReferenceSpaceType* spaces)
+        public static unsafe Result EnumerateReferenceSpaces(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint spaceCapacityInput, [Count(Count = 0)] Span<uint> spaceCountOutput, [Count(Parameter = "spaceCapacityInput")] ReferenceSpaceType* spaces)
         {
             // SpanOverloader
             return thisApi.EnumerateReferenceSpaces(session, spaceCapacityInput, ref spaceCountOutput.GetPinnableReference(), spaces);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateReferenceSpaces(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint spaceCapacityInput, [Count(Count = 0)] Span<uint> spaceCountOutput, [Count(Computed = "spaceCapacityInput")] Span<ReferenceSpaceType> spaces)
+        public static unsafe Result EnumerateReferenceSpaces(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint spaceCapacityInput, [Count(Count = 0)] Span<uint> spaceCountOutput, [Count(Parameter = "spaceCapacityInput")] Span<ReferenceSpaceType> spaces)
         {
             // SpanOverloader
             return thisApi.EnumerateReferenceSpaces(session, spaceCapacityInput, ref spaceCountOutput.GetPinnableReference(), ref spaces.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateSwapchainFormats(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint formatCapacityInput, [Count(Count = 0)] uint* formatCountOutput, [Count(Computed = "formatCapacityInput")] Span<long> formats)
+        public static unsafe Result EnumerateSwapchainFormats(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint formatCapacityInput, [Count(Count = 0)] uint* formatCountOutput, [Count(Parameter = "formatCapacityInput")] Span<long> formats)
         {
             // SpanOverloader
             return thisApi.EnumerateSwapchainFormats(session, formatCapacityInput, formatCountOutput, ref formats.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateSwapchainFormats(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint formatCapacityInput, [Count(Count = 0)] Span<uint> formatCountOutput, [Count(Computed = "formatCapacityInput")] long* formats)
+        public static unsafe Result EnumerateSwapchainFormats(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint formatCapacityInput, [Count(Count = 0)] Span<uint> formatCountOutput, [Count(Parameter = "formatCapacityInput")] long* formats)
         {
             // SpanOverloader
             return thisApi.EnumerateSwapchainFormats(session, formatCapacityInput, ref formatCountOutput.GetPinnableReference(), formats);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateSwapchainFormats(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint formatCapacityInput, [Count(Count = 0)] Span<uint> formatCountOutput, [Count(Computed = "formatCapacityInput")] Span<long> formats)
+        public static unsafe Result EnumerateSwapchainFormats(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0)] uint formatCapacityInput, [Count(Count = 0)] Span<uint> formatCountOutput, [Count(Parameter = "formatCapacityInput")] Span<long> formats)
         {
             // SpanOverloader
             return thisApi.EnumerateSwapchainFormats(session, formatCapacityInput, ref formatCountOutput.GetPinnableReference(), ref formats.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateSwapchainImages(this XR thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] uint imageCapacityInput, [Count(Count = 0)] uint* imageCountOutput, [Count(Computed = "imageCapacityInput")] Span<SwapchainImageBaseHeader> images)
+        public static unsafe Result EnumerateSwapchainImages(this XR thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] uint imageCapacityInput, [Count(Count = 0)] uint* imageCountOutput, [Count(Parameter = "imageCapacityInput")] Span<SwapchainImageBaseHeader> images)
         {
             // SpanOverloader
             return thisApi.EnumerateSwapchainImages(swapchain, imageCapacityInput, imageCountOutput, ref images.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateSwapchainImages(this XR thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] uint imageCapacityInput, [Count(Count = 0)] Span<uint> imageCountOutput, [Count(Computed = "imageCapacityInput")] SwapchainImageBaseHeader* images)
+        public static unsafe Result EnumerateSwapchainImages(this XR thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] uint imageCapacityInput, [Count(Count = 0)] Span<uint> imageCountOutput, [Count(Parameter = "imageCapacityInput")] SwapchainImageBaseHeader* images)
         {
             // SpanOverloader
             return thisApi.EnumerateSwapchainImages(swapchain, imageCapacityInput, ref imageCountOutput.GetPinnableReference(), images);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateSwapchainImages(this XR thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] uint imageCapacityInput, [Count(Count = 0)] Span<uint> imageCountOutput, [Count(Computed = "imageCapacityInput")] Span<SwapchainImageBaseHeader> images)
+        public static unsafe Result EnumerateSwapchainImages(this XR thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] uint imageCapacityInput, [Count(Count = 0)] Span<uint> imageCountOutput, [Count(Parameter = "imageCapacityInput")] Span<SwapchainImageBaseHeader> images)
         {
             // SpanOverloader
             return thisApi.EnumerateSwapchainImages(swapchain, imageCapacityInput, ref imageCountOutput.GetPinnableReference(), ref images.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateViewConfiguration(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint viewConfigurationTypeCapacityInput, [Count(Count = 0)] uint* viewConfigurationTypeCountOutput, [Count(Computed = "viewConfigurationTypeCapacityInput")] Span<ViewConfigurationType> viewConfigurationTypes)
+        public static unsafe Result EnumerateViewConfiguration(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint viewConfigurationTypeCapacityInput, [Count(Count = 0)] uint* viewConfigurationTypeCountOutput, [Count(Parameter = "viewConfigurationTypeCapacityInput")] Span<ViewConfigurationType> viewConfigurationTypes)
         {
             // SpanOverloader
             return thisApi.EnumerateViewConfiguration(instance, systemId, viewConfigurationTypeCapacityInput, viewConfigurationTypeCountOutput, ref viewConfigurationTypes.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateViewConfiguration(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint viewConfigurationTypeCapacityInput, [Count(Count = 0)] Span<uint> viewConfigurationTypeCountOutput, [Count(Computed = "viewConfigurationTypeCapacityInput")] ViewConfigurationType* viewConfigurationTypes)
+        public static unsafe Result EnumerateViewConfiguration(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint viewConfigurationTypeCapacityInput, [Count(Count = 0)] Span<uint> viewConfigurationTypeCountOutput, [Count(Parameter = "viewConfigurationTypeCapacityInput")] ViewConfigurationType* viewConfigurationTypes)
         {
             // SpanOverloader
             return thisApi.EnumerateViewConfiguration(instance, systemId, viewConfigurationTypeCapacityInput, ref viewConfigurationTypeCountOutput.GetPinnableReference(), viewConfigurationTypes);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateViewConfiguration(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint viewConfigurationTypeCapacityInput, [Count(Count = 0)] Span<uint> viewConfigurationTypeCountOutput, [Count(Computed = "viewConfigurationTypeCapacityInput")] Span<ViewConfigurationType> viewConfigurationTypes)
+        public static unsafe Result EnumerateViewConfiguration(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] uint viewConfigurationTypeCapacityInput, [Count(Count = 0)] Span<uint> viewConfigurationTypeCountOutput, [Count(Parameter = "viewConfigurationTypeCapacityInput")] Span<ViewConfigurationType> viewConfigurationTypes)
         {
             // SpanOverloader
             return thisApi.EnumerateViewConfiguration(instance, systemId, viewConfigurationTypeCapacityInput, ref viewConfigurationTypeCountOutput.GetPinnableReference(), ref viewConfigurationTypes.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateViewConfigurationView(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Computed = "viewCapacityInput")] Span<ViewConfigurationView> views)
+        public static unsafe Result EnumerateViewConfigurationView(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<ViewConfigurationView> views)
         {
             // SpanOverloader
             return thisApi.EnumerateViewConfigurationView(instance, systemId, viewConfigurationType, viewCapacityInput, viewCountOutput, ref views.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateViewConfigurationView(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Computed = "viewCapacityInput")] ViewConfigurationView* views)
+        public static unsafe Result EnumerateViewConfigurationView(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] ViewConfigurationView* views)
         {
             // SpanOverloader
             return thisApi.EnumerateViewConfigurationView(instance, systemId, viewConfigurationType, viewCapacityInput, ref viewCountOutput.GetPinnableReference(), views);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumerateViewConfigurationView(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Computed = "viewCapacityInput")] Span<ViewConfigurationView> views)
+        public static unsafe Result EnumerateViewConfigurationView(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] ViewConfigurationType viewConfigurationType, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<ViewConfigurationView> views)
         {
             // SpanOverloader
             return thisApi.EnumerateViewConfigurationView(instance, systemId, viewConfigurationType, viewCapacityInput, ref viewCountOutput.GetPinnableReference(), ref views.GetPinnableReference());
@@ -594,21 +594,21 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Computed = "bufferCapacityInput")] Span<byte> buffer)
+        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
         {
             // SpanOverloader
             return thisApi.GetInputSourceLocalizedName(session, getInfo, bufferCapacityInput, bufferCountOutput, ref buffer.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Computed = "bufferCapacityInput")] byte* buffer)
+        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer)
         {
             // SpanOverloader
             return thisApi.GetInputSourceLocalizedName(session, getInfo, bufferCapacityInput, ref bufferCountOutput.GetPinnableReference(), buffer);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Computed = "bufferCapacityInput")] Span<byte> buffer)
+        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] InputSourceLocalizedNameGetInfo* getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
         {
             // SpanOverloader
             return thisApi.GetInputSourceLocalizedName(session, getInfo, bufferCapacityInput, ref bufferCountOutput.GetPinnableReference(), ref buffer.GetPinnableReference());
@@ -622,14 +622,14 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Computed = "bufferCapacityInput")] byte* buffer)
+        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer)
         {
             // SpanOverloader
             return thisApi.GetInputSourceLocalizedName(session, in getInfo.GetPinnableReference(), bufferCapacityInput, bufferCountOutput, buffer);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Computed = "bufferCapacityInput")] Span<byte> buffer)
+        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
         {
             // SpanOverloader
             return thisApi.GetInputSourceLocalizedName(session, in getInfo.GetPinnableReference(), bufferCapacityInput, bufferCountOutput, ref buffer.GetPinnableReference());
@@ -643,14 +643,14 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Computed = "bufferCapacityInput")] byte* buffer)
+        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer)
         {
             // SpanOverloader
             return thisApi.GetInputSourceLocalizedName(session, in getInfo.GetPinnableReference(), bufferCapacityInput, ref bufferCountOutput.GetPinnableReference(), buffer);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Computed = "bufferCapacityInput")] Span<byte> buffer)
+        public static unsafe Result GetInputSourceLocalizedName(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<InputSourceLocalizedNameGetInfo> getInfo, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
         {
             // SpanOverloader
             return thisApi.GetInputSourceLocalizedName(session, in getInfo.GetPinnableReference(), bufferCapacityInput, ref bufferCountOutput.GetPinnableReference(), ref buffer.GetPinnableReference());
@@ -748,126 +748,126 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Computed = "viewCapacityInput")] Span<View> views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, viewLocateInfo, viewState, viewCapacityInput, viewCountOutput, ref views.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Computed = "viewCapacityInput")] View* views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, viewLocateInfo, viewState, viewCapacityInput, ref viewCountOutput.GetPinnableReference(), views);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Computed = "viewCapacityInput")] Span<View> views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, viewLocateInfo, viewState, viewCapacityInput, ref viewCountOutput.GetPinnableReference(), ref views.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Computed = "viewCapacityInput")] View* views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, viewLocateInfo, ref viewState.GetPinnableReference(), viewCapacityInput, viewCountOutput, views);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Computed = "viewCapacityInput")] Span<View> views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, viewLocateInfo, ref viewState.GetPinnableReference(), viewCapacityInput, viewCountOutput, ref views.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Computed = "viewCapacityInput")] View* views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, viewLocateInfo, ref viewState.GetPinnableReference(), viewCapacityInput, ref viewCountOutput.GetPinnableReference(), views);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Computed = "viewCapacityInput")] Span<View> views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ViewLocateInfo* viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, viewLocateInfo, ref viewState.GetPinnableReference(), viewCapacityInput, ref viewCountOutput.GetPinnableReference(), ref views.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Computed = "viewCapacityInput")] View* views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, in viewLocateInfo.GetPinnableReference(), viewState, viewCapacityInput, viewCountOutput, views);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Computed = "viewCapacityInput")] Span<View> views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, in viewLocateInfo.GetPinnableReference(), viewState, viewCapacityInput, viewCountOutput, ref views.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Computed = "viewCapacityInput")] View* views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, in viewLocateInfo.GetPinnableReference(), viewState, viewCapacityInput, ref viewCountOutput.GetPinnableReference(), views);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Computed = "viewCapacityInput")] Span<View> views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] ViewState* viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, in viewLocateInfo.GetPinnableReference(), viewState, viewCapacityInput, ref viewCountOutput.GetPinnableReference(), ref views.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Computed = "viewCapacityInput")] View* views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, in viewLocateInfo.GetPinnableReference(), ref viewState.GetPinnableReference(), viewCapacityInput, viewCountOutput, views);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Computed = "viewCapacityInput")] Span<View> views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] uint* viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, in viewLocateInfo.GetPinnableReference(), ref viewState.GetPinnableReference(), viewCapacityInput, viewCountOutput, ref views.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Computed = "viewCapacityInput")] View* views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] View* views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, in viewLocateInfo.GetPinnableReference(), ref viewState.GetPinnableReference(), viewCapacityInput, ref viewCountOutput.GetPinnableReference(), views);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Computed = "viewCapacityInput")] Span<View> views)
+        public static unsafe Result LocateView(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<ViewLocateInfo> viewLocateInfo, [Count(Count = 0)] Span<ViewState> viewState, [Count(Count = 0)] uint viewCapacityInput, [Count(Count = 0)] Span<uint> viewCountOutput, [Count(Parameter = "viewCapacityInput")] Span<View> views)
         {
             // SpanOverloader
             return thisApi.LocateView(session, in viewLocateInfo.GetPinnableReference(), ref viewState.GetPinnableReference(), viewCapacityInput, ref viewCountOutput.GetPinnableReference(), ref views.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result PathToString(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Computed = "bufferCapacityInput")] Span<byte> buffer)
+        public static unsafe Result PathToString(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] uint* bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
         {
             // SpanOverloader
             return thisApi.PathToString(instance, path, bufferCapacityInput, bufferCountOutput, ref buffer.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result PathToString(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Computed = "bufferCapacityInput")] byte* buffer)
+        public static unsafe Result PathToString(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] byte* buffer)
         {
             // SpanOverloader
             return thisApi.PathToString(instance, path, bufferCapacityInput, ref bufferCountOutput.GetPinnableReference(), buffer);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result PathToString(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Computed = "bufferCapacityInput")] Span<byte> buffer)
+        public static unsafe Result PathToString(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong path, [Count(Count = 0)] uint bufferCapacityInput, [Count(Count = 0)] Span<uint> bufferCountOutput, [Count(Parameter = "bufferCapacityInput")] Span<byte> buffer)
         {
             // SpanOverloader
             return thisApi.PathToString(instance, path, bufferCapacityInput, ref bufferCountOutput.GetPinnableReference(), ref buffer.GetPinnableReference());

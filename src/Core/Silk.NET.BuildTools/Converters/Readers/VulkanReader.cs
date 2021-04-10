@@ -276,8 +276,11 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 x => new Parameter
                                 {
                                     Count = x.IsNullTerminated ? null :
-                                        x.ElementCountSymbolic != null ? new Count(x.ElementCountSymbolic.Split(',')) :
-                                        new Count(x.ElementCount),
+                                        x.ElementCountSymbolic != null ?
+                                            function.Parameters.Any(y => y.Name == x.ElementCountSymbolic)
+                                            ? new(x.ElementCountSymbolic)
+                                            : new(x.ElementCountSymbolic.Split(',')) :
+                                        new(x.ElementCount),
                                     Flow = ConvertFlow(x.Modifier), Name = x.Name, Type = ConvertType(x.Type)
                                 }
                             )

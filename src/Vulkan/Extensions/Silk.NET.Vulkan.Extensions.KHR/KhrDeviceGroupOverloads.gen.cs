@@ -59,21 +59,21 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDevicePresentRectangles(this KhrDeviceGroup thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] uint* pRectCount, [Count(Computed = "pRectCount"), Flow(FlowDirection.Out)] Span<Rect2D> pRects)
+        public static unsafe Result GetPhysicalDevicePresentRectangles(this KhrDeviceGroup thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] uint* pRectCount, [Count(Parameter = "pRectCount"), Flow(FlowDirection.Out)] Span<Rect2D> pRects)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDevicePresentRectangles(physicalDevice, surface, pRectCount, out pRects.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDevicePresentRectangles(this KhrDeviceGroup thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] Span<uint> pRectCount, [Count(Computed = "pRectCount"), Flow(FlowDirection.Out)] Rect2D* pRects)
+        public static unsafe Result GetPhysicalDevicePresentRectangles(this KhrDeviceGroup thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] Span<uint> pRectCount, [Count(Parameter = "pRectCount"), Flow(FlowDirection.Out)] Rect2D* pRects)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDevicePresentRectangles(physicalDevice, surface, ref pRectCount.GetPinnableReference(), pRects);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDevicePresentRectangles(this KhrDeviceGroup thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] Span<uint> pRectCount, [Count(Computed = "pRectCount"), Flow(FlowDirection.Out)] Span<Rect2D> pRects)
+        public static unsafe Result GetPhysicalDevicePresentRectangles(this KhrDeviceGroup thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] Span<uint> pRectCount, [Count(Parameter = "pRectCount"), Flow(FlowDirection.Out)] Span<Rect2D> pRects)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDevicePresentRectangles(physicalDevice, surface, ref pRectCount.GetPinnableReference(), out pRects.GetPinnableReference());
