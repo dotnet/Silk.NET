@@ -53,7 +53,7 @@ namespace Silk.NET.SilkTouch
         (
             id: "ST0004",
             title: "Build Info",
-            messageFormat: "SlotCount: '{0}', GCSlotCount: '{1}', Time: '{2}'",
+            messageFormat: "GCSlotCount: '{0}', Time: '{1}'",
             category: "SilkTouch.Internal",
             defaultSeverity: DiagnosticSeverity.Info, 
             isEnabledByDefault: true,

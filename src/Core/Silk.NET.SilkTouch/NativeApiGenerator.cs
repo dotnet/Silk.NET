@@ -115,7 +115,7 @@ namespace Silk.NET.SilkTouch
             hintName = hintName.Select(x => char.IsLetterOrDigit(x) ? x : '_').ToArray().AsSpan().ToString();
             var name = $"{hintName}.{Guid.NewGuid()}.gen";
             context.AddSource(name, SourceText.From(s, Encoding.UTF8));
-            File.WriteAllText(@"C:\SILK.NET\src\Lab\" + name, s);
+            // File.WriteAllText(@"C:\SILK.NET\src\Lab\" + name, s);
         }
 
         private string ProcessClassDeclaration
@@ -199,12 +199,12 @@ namespace Silk.NET.SilkTouch
 
             var newMembers = new List<MemberDeclarationSyntax>();
 
-            int slotCount = 0;
             int gcCount = 0;
             
             var generatedVTableName = NameGenerator.Name("GeneratedVTable");
-            Dictionary<int, string> entryPoints = new Dictionary<int, string>();
+            var entryPoints = new List<string>();
             var processedEntrypoints = new List<EntryPoint>();
+            bool any = false;
             foreach (var (declaration, symbol, entryPoint, callingConvention) in from declaration in
                     from member in classDeclarations.SelectMany(x => x.Item1.Members.Select(x2 => (x2, x.Item2)))
                     where member.x2.IsKind(SyntaxKind.MethodDeclaration)
@@ -223,12 +223,12 @@ namespace Silk.NET.SilkTouch
                 let callingConvention = NativeApiAttribute.GetCallingConvention(attribute, classNativeApiAttribute)
                 select (declaration, symbol, entryPoint, callingConvention))
             {
-                var slot = slotCount++; // even though technically that somehow makes slots defined behavior, THEY ARE NOT
-                // SLOTS ARE UNDEFINED BEHAVIOR
+                any = true;
+            
                 ProcessMethod
                 (
                     sourceContext, rootMarshalBuilder, callingConvention, entryPoints, entryPoint, classIsSealed,
-                    generateSeal, generateVTable, slot, compilation, symbol, declaration.Item1, newMembers, ref gcCount,
+                    generateSeal, generateVTable, compilation, symbol, declaration.Item1, newMembers, ref gcCount,
                     processedEntrypoints, generatedVTableName, namespaceDeclaration, classDeclarations.First().Item1,
                     compilationUnit.Usings.Add
                             (UsingDirective(IdentifierName("Silk.NET.Core.Native")))
@@ -236,36 +236,10 @@ namespace Silk.NET.SilkTouch
                 );
             }
 
-            if (slotCount > 0)
+            if (any)
             {
                 if (!processedSymbols.Contains(sharedClassSymbol))
                 {
-                    newMembers.Add
-                    (
-                        MethodDeclaration
-                        (
-                            List<AttributeListSyntax>(),
-                            TokenList(Token(SyntaxKind.ProtectedKeyword), Token(SyntaxKind.OverrideKeyword)),
-                            PredefinedType(Token(SyntaxKind.IntKeyword)), null, Identifier("CoreGetSlotCount"), null,
-                            ParameterList(), List<TypeParameterConstraintClauseSyntax>(), null,
-                            ArrowExpressionClause
-                            (
-                                BinaryExpression
-                                (
-                                    SyntaxKind.AddExpression,
-                                    LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(slotCount)),
-                                    InvocationExpression
-                                    (
-                                        MemberAccessExpression
-                                        (
-                                            SyntaxKind.SimpleMemberAccessExpression, BaseExpression(),
-                                            IdentifierName("CoreGetSlotCount")
-                                        )
-                                    )
-                                )
-                            ), Token(SyntaxKind.SemicolonToken)
-                        )
-                    );
                     newMembers.Add
                     (
                         MethodDeclaration
@@ -334,7 +308,7 @@ namespace Silk.NET.SilkTouch
                             (
                                 ObjectCreationExpression
                                     (IdentifierName(generatedVTableName))
-                                .WithArgumentList(ArgumentList())
+                                .WithArgumentList(ArgumentList(SingletonSeparatedList(Argument(IdentifierName("_ctx")))))
                             )
                         )
                         .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
@@ -369,7 +343,7 @@ namespace Silk.NET.SilkTouch
                 (
                     Diagnostic.Create
                     (
-                        Diagnostics.BuildInfo, classDeclarations.First().Item1.GetLocation(), slotCount, gcCount,
+                        Diagnostics.BuildInfo, classDeclarations.First().Item1.GetLocation(), gcCount,
                         stopwatch.ElapsedMilliseconds + "ms"
                     )
                 );
@@ -381,12 +355,11 @@ namespace Silk.NET.SilkTouch
             GeneratorExecutionContext sourceContext,
             MarshalBuilder rootMarshalBuilder,
             CallingConvention callingConvention,
-            Dictionary<int, string> entryPoints,
+            List<string> entryPoints,
             string entryPoint,
             bool classIsSealed,
             bool generateSeal,
             bool generateVTable,
-            int slot,
             Compilation compilation,
             IMethodSymbol symbol,
             MethodDeclarationSyntax declaration,
@@ -434,8 +407,7 @@ namespace Silk.NET.SilkTouch
                     )
                 );
                 
-                // TODO: SLOTS
-                entryPoints[ctx.Slot] = entryPoint;
+                entryPoints.Add(entryPoint);
                 processedEntrypoints.Add
                 (
                     new EntryPoint
@@ -506,7 +478,7 @@ namespace Silk.NET.SilkTouch
 
                 marshalBuilder.Use(BuildLoadInvoke);
 
-                var context = new MarshalContext(compilation, symbol, slot);
+                var context = new MarshalContext(compilation, symbol);
 
                 marshalBuilder.Run(context);
 

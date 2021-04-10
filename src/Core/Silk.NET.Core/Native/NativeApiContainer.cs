@@ -11,7 +11,7 @@ namespace Silk.NET.Core.Native
 {
     public abstract class NativeApiContainer : IDisposable
     {
-        private readonly INativeContext _ctx;
+        protected readonly INativeContext _ctx;
         private IVTable _vTable;
 
         protected NativeApiContainer(INativeContext ctx)
@@ -21,16 +21,6 @@ namespace Silk.NET.Core.Native
             // The only implementer of this function should be SilkTouch
             // ReSharper disable VirtualMemberCallInConstructor
             _vTable = CreateVTable();
-            var slotCount = CoreGetSlotCount();
-            if (slotCount == 0)
-            {
-                throw new InvalidOperationException
-                (
-                    "The derived class does not implement CoreGetSlotCount, or does not have any slots." +
-                    "This could be because of a SilkTouch bug, or because you're not using SilkTouch at all."
-                );
-            }
-            _vTable.Initialize(_ctx, slotCount);
             GcUtility = new GcUtility(1, CoreGcSlotCount());
             PostInit();
             // ReSharper restore VirtualMemberCallInConstructor
@@ -46,7 +36,6 @@ namespace Silk.NET.Core.Native
             CurrentVTable.Dispose();
         }
 
-        protected virtual int CoreGetSlotCount() => 0;
         protected virtual int CoreGcSlotCount() => 0;
         protected abstract IVTable CreateVTable();
         protected IVTable SwapVTable() => SwapVTable(CreateVTable());

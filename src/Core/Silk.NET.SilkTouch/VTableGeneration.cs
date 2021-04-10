@@ -12,11 +12,11 @@ namespace Silk.NET.SilkTouch
     public partial class NativeApiGenerator
     {
         private TypeDeclarationSyntax GenerateVTable
-            (bool preloadVTable, Dictionary<int, string> entryPoints, bool emitAssert, bool vNext, string generatedVTableName)
+            (bool preloadVTable, List<string> entryPoints, bool emitAssert, bool vNext, string generatedVTableName)
         {
             var vTableMembers = new List<MemberDeclarationSyntax>();
 
-            var initializeStatements = new List<StatementSyntax>();
+            var constructorStatements = new List<StatementSyntax>();
 
             if (!preloadVTable)
             {
@@ -34,7 +34,7 @@ namespace Silk.NET.SilkTouch
                     )
                 );
 
-                initializeStatements.Add
+                constructorStatements.Add
                 (
                     ExpressionStatement
                     (
@@ -48,9 +48,9 @@ namespace Silk.NET.SilkTouch
             }
             else
             {
-                initializeStatements.AddRange
+                constructorStatements.AddRange
                 (
-                    entryPoints.Values.Distinct()
+                    entryPoints.Distinct()
                         .Select
                         (
                             entryPoint => ExpressionStatement
@@ -90,8 +90,7 @@ namespace Silk.NET.SilkTouch
 
             vTableMembers.Add
             (
-                MethodDeclaration
-                        (PredefinedType(Token(SyntaxKind.VoidKeyword)), "Initialize")
+                ConstructorDeclaration("GeneratedVTable")
                     .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
                     .WithParameterList
                     (
@@ -104,20 +103,16 @@ namespace Silk.NET.SilkTouch
                                     Parameter
                                             (Identifier("ctx"))
                                         .WithType
-                                            (IdentifierName("Silk.NET.Core.Contexts.INativeContext")),
-                                    Parameter
-                                            (Identifier("maxSlots"))
-                                        .WithType
-                                            (PredefinedType(Token(SyntaxKind.IntKeyword)))
+                                            (IdentifierName("Silk.NET.Core.Contexts.INativeContext"))
                                 }
                             )
                         )
                     )
-                    .WithBody(Block(initializeStatements))
+                    .WithBody(Block(constructorStatements))
             );
 
             List<VariableDeclaratorSyntax> slotVars = new List<VariableDeclaratorSyntax>();
-            foreach (var entrypoint in entryPoints.Values.Distinct())
+            foreach (var entrypoint in entryPoints.Distinct())
             {
                 var name = $"_{entrypoint}";
                 slotVars.Add(VariableDeclarator(name));
@@ -283,7 +278,7 @@ namespace Silk.NET.SilkTouch
                                 IdentifierName("entryPoint"),
                                 SeparatedList
                                 (
-                                    entryPoints.Values.Distinct()
+                                    entryPoints.Distinct()
                                         .Select
                                         (
                                             s => SwitchExpressionArm
@@ -308,7 +303,7 @@ namespace Silk.NET.SilkTouch
              */
             vTableMembers.AddRange
             (
-                entryPoints.Values.Distinct().Select
+                entryPoints.Distinct().Select
                 (
                     s => PropertyDeclaration
                             (IdentifierName("nint"), FirstLetterToUpper(s))
@@ -362,7 +357,7 @@ namespace Silk.NET.SilkTouch
                     (
                         Block
                         (
-                            entryPoints.Values.Distinct()
+                            entryPoints.Distinct()
                                 .Select
                                 (
                                     x => ExpressionStatement
