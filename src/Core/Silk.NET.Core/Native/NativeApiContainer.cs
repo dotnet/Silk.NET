@@ -73,7 +73,9 @@ namespace Silk.NET.Core.Native
         {
             var result = CurrentVTable.Load(entryPoint);
             if (result == 0)
+            {
                 ThrowSymbolLoadingEx(entryPoint);
+            }
             return result;
         }
 
