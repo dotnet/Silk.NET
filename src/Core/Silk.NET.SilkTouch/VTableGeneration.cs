@@ -160,7 +160,7 @@ namespace Silk.NET.SilkTouch
                                                     LiteralExpression
                                                     (
                                                         SyntaxKind.StringLiteralExpression,
-                                                        Literal("Invalid Slot")
+                                                        Literal("Invalid Entrypoint")
                                                     )
                                                 )
                                             )
