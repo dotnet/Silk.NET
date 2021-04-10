@@ -55,7 +55,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                                             )
                                         )
                                     )
-                                )
+                                ).Append(SwitchExpressionArm(DiscardPattern(), DefaultExpression(IdentifierName("nint"))))
                             )
                         )
                     )

@@ -118,84 +118,6 @@ namespace Silk.NET.SilkTouch
                 slotVars.Add(VariableDeclarator(name));
             }
 
-            var generatedThrowHelperInvalidSlot = "GeneratedThrowHelperInvalidEntryPoint";
-            vTableMembers.Add
-            (
-                MethodDeclaration
-                    (
-                        IdentifierName("nint"),
-                        generatedThrowHelperInvalidSlot
-                    )
-                    .WithParameterList(ParameterList())
-                    .WithModifiers
-                    (
-                        TokenList
-                        (
-                            Token(SyntaxKind.PrivateKeyword),
-                            Token(SyntaxKind.StaticKeyword)
-                        )
-                    )
-                    .WithBody
-                    (
-                        Block
-                        (
-                            ThrowStatement
-                            (
-                                ObjectCreationExpression
-                                    (
-                                        QualifiedName
-                                        (
-                                            IdentifierName("System"),
-                                            IdentifierName("InvalidOperationException")
-                                        )
-                                    )
-                                    .WithArgumentList
-                                    (
-                                        ArgumentList
-                                        (
-                                            SingletonSeparatedList
-                                            (
-                                                Argument
-                                                (
-                                                    LiteralExpression
-                                                    (
-                                                        SyntaxKind.StringLiteralExpression,
-                                                        Literal("Invalid Entrypoint")
-                                                    )
-                                                )
-                                            )
-                                        )
-                                    )
-                            )
-                        )
-                    )
-#if !DEBUG
-                    .WithAttributeLists
-                    (
-                        SingletonList
-                        (
-                            AttributeList
-                            (
-                                SingletonSeparatedList
-                                (
-                                    Attribute
-                                    (
-                                        QualifiedName
-                                        (
-                                            QualifiedName
-                                            (
-                                                IdentifierName("System"),
-                                                IdentifierName("Diagnostics")
-                                            ), IdentifierName("DebuggerHidden")
-                                        )
-                                    )
-                                )
-                            )
-                        )
-                    )
-#endif
-            );
-
             vTableMembers.Add
             (
                 FieldDeclaration
@@ -288,7 +210,27 @@ namespace Silk.NET.SilkTouch
                                                 IdentifierName(FirstLetterToUpper(s))
                                             )
                                         )
-                                        .Append(SwitchExpressionArm(DiscardPattern(), InvocationExpression(IdentifierName(generatedThrowHelperInvalidSlot))))
+                                        .Append
+                                        (
+                                            SwitchExpressionArm
+                                            (
+                                                DiscardPattern(),
+                                                InvocationExpression
+                                                (
+                                                    IdentifierName("_ctx.GetProcAddress"),
+                                                    ArgumentList
+                                                    (
+                                                        SingletonSeparatedList
+                                                        (
+                                                            Argument
+                                                            (
+                                                                IdentifierName("entryPoint")
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        )
                                 )
                             )
                         )

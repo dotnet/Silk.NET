@@ -6,6 +6,7 @@ using System;
 using System.Diagnostics;
 using System.Threading;
 using Silk.NET.Core.Contexts;
+using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Core.Native
 {
@@ -65,13 +66,18 @@ namespace Silk.NET.Core.Native
         [Obsolete("Use method without slot - this method will be removed in 3.0")]
         protected nint Load(int slot, string entryPoint)
         {
-            return CurrentVTable.Load(entryPoint);
+            return Load(entryPoint);
         }
 
         protected nint Load(string entryPoint)
         {
-            return CurrentVTable.Load(entryPoint);
+            var result = CurrentVTable.Load(entryPoint);
+            if (result == 0)
+                ThrowSymbolLoadingEx(entryPoint);
+            return result;
         }
+
+        private static void ThrowSymbolLoadingEx(string symbol) => throw new SymbolLoadingException(symbol);
 
         protected virtual void PostInit()
         {
