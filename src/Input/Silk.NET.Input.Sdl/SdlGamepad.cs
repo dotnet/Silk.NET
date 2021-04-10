@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using Silk.NET.SDL;
 
@@ -76,30 +76,54 @@ namespace Silk.NET.Input.Sdl
                     {
                         case GameControllerAxis.ControllerAxisLeftx:
                         {
-                            _thumbsticksChanged[0] = true;
-                            _thumbsticks[0] = new Thumbstick
-                                (0, (float) @event.Caxis.Value / short.MaxValue, _thumbsticks[0].Y);
+                            var thumbstick0 = new Thumbstick(0, 
+                                Deadzone.Apply((float) @event.Caxis.Value / short.MaxValue), 
+                                Deadzone.Apply(_thumbsticks[0].Y));
+
+                            if (thumbstick0.X != _thumbsticks[0].X)
+                            {
+                                _thumbsticksChanged[0] = true;
+                            }
+                            _thumbsticks[0] = thumbstick0;
                             break;
                         }
                         case GameControllerAxis.ControllerAxisLefty:
                         {
-                            _thumbsticksChanged[0] = true;
-                            _thumbsticks[0] = new Thumbstick
-                                (0, _thumbsticks[0].X, (float) @event.Caxis.Value / short.MaxValue);
+                            var thumbstick0 = new Thumbstick(0,
+                                Deadzone.Apply(_thumbsticks[0].X),
+                                Deadzone.Apply((float) @event.Caxis.Value / short.MaxValue));
+
+                            if (thumbstick0.Y != _thumbsticks[0].Y)
+                            {
+                                _thumbsticksChanged[0] = true;
+                            }
+                            _thumbsticks[0] = thumbstick0;
                             break;
                         }
                         case GameControllerAxis.ControllerAxisRightx:
                         {
-                            _thumbsticksChanged[1] = true;
-                            _thumbsticks[1] = new Thumbstick
-                                (1, (float) @event.Caxis.Value / short.MaxValue, _thumbsticks[1].Y);
+                            var thumbstick1 = new Thumbstick(1,
+                                Deadzone.Apply((float) @event.Caxis.Value / short.MaxValue),
+                                Deadzone.Apply(_thumbsticks[1].Y));
+
+                            if (thumbstick1.X != _thumbsticks[1].X)
+                            {
+                                _thumbsticksChanged[1] = true;
+                            }
+                            _thumbsticks[1] = thumbstick1;
                             break;
                         }
                         case GameControllerAxis.ControllerAxisRighty:
                         {
-                            _thumbsticksChanged[1] = true;
-                            _thumbsticks[1] = new Thumbstick
-                                (1, _thumbsticks[1].X, (float) @event.Caxis.Value / short.MaxValue);
+                            var thumbstick1 = new Thumbstick(1,
+                                Deadzone.Apply(_thumbsticks[1].X),
+                                Deadzone.Apply((float) @event.Caxis.Value / short.MaxValue));
+
+                            if (thumbstick1.Y != _thumbsticks[1].Y)
+                            {
+                                _thumbsticksChanged[1] = true;
+                            }
+                            _thumbsticks[1] = thumbstick1;
                             break;
                         }
                         case GameControllerAxis.ControllerAxisTriggerleft:
