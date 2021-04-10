@@ -433,53 +433,36 @@ namespace Silk.NET.SilkTouch
                     )
                 );
 
-                ExpressionSyntax loadCallTarget;
+                Func<IMarshalContext, ExpressionSyntax> expression;
 
                 if ((classIsSealed || generateSeal) && generateVTable)
                 {
-                    loadCallTarget = MemberAccessExpression
+                    // build load + invocation
+                    expression = ctx => InvocationExpression
                     (
-                        SyntaxKind.SimpleMemberAccessExpression,
                         ParenthesizedExpression
                         (
-                            BinaryExpression
+                            CastExpression
                             (
-                                SyntaxKind.AsExpression, IdentifierName("CurrentVTable"), IdentifierName(generatedVTableName)
+                                fPtrType, MemberAccessExpression
+                                (
+                                    SyntaxKind.SimpleMemberAccessExpression,
+                                    ParenthesizedExpression
+                                    (
+                                        BinaryExpression
+                                        (
+                                            SyntaxKind.AsExpression, IdentifierName("CurrentVTable"), IdentifierName(generatedVTableName)
+                                        )
+                                    ), IdentifierName(FirstLetterToUpper(entryPoint))
+                                )
                             )
-                        ), IdentifierName("Load")
+                        ), ArgumentList(SeparatedList(parameters.Select(x => Argument(x.Value))))
                     );
                 }
                 else
                 {
-                    loadCallTarget = IdentifierName("Load");
+                    throw new Exception("FORCE-USE-VTABLE");
                 }
-
-                // build load + invocation
-                Func<IMarshalContext, ExpressionSyntax> expression = ctx => InvocationExpression
-                (
-                    ParenthesizedExpression
-                    (
-                        CastExpression
-                        (
-                            fPtrType, InvocationExpression
-                            (
-                                loadCallTarget, ArgumentList
-                                (
-                                    SeparatedList
-                                    (
-                                        new[]
-                                        {
-                                            Argument
-                                                (LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(ctx.Slot))),
-                                            Argument
-                                                (LiteralExpression(SyntaxKind.StringLiteralExpression, Literal(entryPoint)))
-                                        }
-                                    )
-                                )
-                            )
-                        )
-                    ), ArgumentList(SeparatedList(parameters.Select(x => Argument(x.Value))))
-                );
 
                 if (ctx.ReturnsVoid)
                 {

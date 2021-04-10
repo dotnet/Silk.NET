@@ -49,7 +49,7 @@ namespace Silk.NET.Core.Native
         protected virtual int CoreGetSlotCount() => 0;
         protected virtual int CoreGcSlotCount() => 0;
         protected abstract IVTable CreateVTable();
-        protected IVTable SwapVTable() => Interlocked.Exchange(ref _vTable, CreateVTable());
+        protected IVTable SwapVTable() => SwapVTable(CreateVTable());
         protected IVTable SwapVTable(IVTable newVTable) => Interlocked.Exchange(ref _vTable, newVTable);
 
         protected void Pin(object o, int slot = -1)
@@ -72,9 +72,15 @@ namespace Silk.NET.Core.Native
             CurrentVTable.Purge();
         }
         
+        [Obsolete("use method without slot - this method will be removed in the future")]
         protected nint Load(int slot, string entryPoint)
         {
-            return CurrentVTable.Load(slot, entryPoint);
+            return CurrentVTable.Load(entryPoint);
+        }
+
+        protected nint Load(string entryPoint)
+        {
+            return CurrentVTable.Load(entryPoint);
         }
 
         protected virtual void PostInit()

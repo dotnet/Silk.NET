@@ -16,6 +16,7 @@ namespace Silk.NET.Vulkan
     {
         private Instance? _currentInstance;
         private Device? _currentDevice;
+        // TODO: 3.0 remove this
         private ConcurrentDictionary<(Instance?, Device?), IVTable> _vTables = new();
         public Instance? CurrentInstance
         {
