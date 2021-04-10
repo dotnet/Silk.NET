@@ -23,6 +23,9 @@ namespace Silk.NET.OpenGL.Extensions.EXT
         [NativeApi(EntryPoint = "glRasterSamplesEXT")]
         public partial void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] bool fixedsamplelocations);
 
+        [NativeApi(EntryPoint = "glRasterSamplesEXT")]
+        public partial void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
+
         public ExtRasterMultisample(INativeContext ctx)
             : base(ctx)
         {

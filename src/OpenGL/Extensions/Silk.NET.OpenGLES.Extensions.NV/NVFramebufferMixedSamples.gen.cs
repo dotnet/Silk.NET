@@ -38,6 +38,9 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         [NativeApi(EntryPoint = "glRasterSamplesEXT")]
         public partial void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] bool fixedsamplelocations);
 
+        [NativeApi(EntryPoint = "glRasterSamplesEXT")]
+        public partial void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
+
         public unsafe float GetCoverageModulationTable()
         {
             const uint bufSize = 1;

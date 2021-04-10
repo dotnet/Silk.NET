@@ -134,6 +134,12 @@ namespace Silk.NET.OpenGLES.Extensions.AMD
         [NativeApi(EntryPoint = "glSelectPerfMonitorCountersAMD")]
         public partial void SelectPerfMonitorCounters([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] bool enable, [Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] int numCounters, [Count(Parameter = "numCounters"), Flow(FlowDirection.Out)] out uint counterList);
 
+        [NativeApi(EntryPoint = "glSelectPerfMonitorCountersAMD")]
+        public unsafe partial void SelectPerfMonitorCounters([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] Boolean enable, [Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] int numCounters, [Count(Parameter = "numCounters"), Flow(FlowDirection.Out)] uint* counterList);
+
+        [NativeApi(EntryPoint = "glSelectPerfMonitorCountersAMD")]
+        public partial void SelectPerfMonitorCounters([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] Boolean enable, [Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] int numCounters, [Count(Parameter = "numCounters"), Flow(FlowDirection.Out)] out uint counterList);
+
         public unsafe uint GenPerfMonitor()
         {
             const uint n = 1;

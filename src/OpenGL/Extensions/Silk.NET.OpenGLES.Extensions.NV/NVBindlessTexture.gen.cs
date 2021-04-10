@@ -26,6 +26,12 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         [NativeApi(EntryPoint = "glGetImageHandleNV")]
         public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] PixelFormat format);
 
+        [NativeApi(EntryPoint = "glGetImageHandleNV")]
+        public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] Boolean layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] NV format);
+
+        [NativeApi(EntryPoint = "glGetImageHandleNV")]
+        public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] Boolean layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] PixelFormat format);
+
         [NativeApi(EntryPoint = "glGetTextureHandleNV")]
         public partial ulong GetTextureHandle([Flow(FlowDirection.In)] uint texture);
 

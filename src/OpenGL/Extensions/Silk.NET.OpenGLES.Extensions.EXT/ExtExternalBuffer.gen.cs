@@ -23,8 +23,14 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glBufferStorageExternalEXT")]
         public partial void BufferStorageExternal([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] nint clientBuffer, [Flow(FlowDirection.In)] uint flags);
 
+        [NativeApi(EntryPoint = "glBufferStorageExternalEXT")]
+        public partial void BufferStorageExternal([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] nint clientBuffer, [Flow(FlowDirection.In)] BufferStorageMask flags);
+
         [NativeApi(EntryPoint = "glNamedBufferStorageExternalEXT")]
         public partial void NamedBufferStorageExternal([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] nint clientBuffer, [Flow(FlowDirection.In)] uint flags);
+
+        [NativeApi(EntryPoint = "glNamedBufferStorageExternalEXT")]
+        public partial void NamedBufferStorageExternal([Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] nint clientBuffer, [Flow(FlowDirection.In)] BufferStorageMask flags);
 
         public ExtExternalBuffer(INativeContext ctx)
             : base(ctx)

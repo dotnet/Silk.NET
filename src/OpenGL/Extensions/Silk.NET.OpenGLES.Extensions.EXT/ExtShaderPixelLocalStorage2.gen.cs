@@ -32,6 +32,9 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glGetFramebufferPixelLocalStorageSizeEXT")]
         public partial uint GetFramebufferPixelLocalStorageSize([Flow(FlowDirection.In)] uint target);
 
+        [NativeApi(EntryPoint = "glGetFramebufferPixelLocalStorageSizeEXT")]
+        public partial uint GetFramebufferPixelLocalStorageSize([Flow(FlowDirection.In)] FramebufferTarget target);
+
         public ExtShaderPixelLocalStorage2(INativeContext ctx)
             : base(ctx)
         {

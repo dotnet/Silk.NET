@@ -23,6 +23,9 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         [NativeApi(EntryPoint = "glCoverageMaskNV")]
         public partial void CoverageMask([Flow(FlowDirection.In)] bool mask);
 
+        [NativeApi(EntryPoint = "glCoverageMaskNV")]
+        public partial void CoverageMask([Flow(FlowDirection.In)] Boolean mask);
+
         [NativeApi(EntryPoint = "glCoverageOperationNV")]
         public partial void CoverageOperation([Flow(FlowDirection.In)] NV operation);
 

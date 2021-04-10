@@ -23,6 +23,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         [NativeApi(EntryPoint = "glSampleMaskSGIS")]
         public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
 
+        [NativeApi(EntryPoint = "glSampleMaskSGIS")]
+        public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] Boolean invert);
+
         [NativeApi(EntryPoint = "glSamplePatternSGIS")]
         public partial void SamplePattern([Flow(FlowDirection.In)] SGIS pattern);
 

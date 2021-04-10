@@ -23,6 +23,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glClientWaitSync")]
         public partial ARB ClientWaitSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] ulong timeout);
 
+        [NativeApi(EntryPoint = "glClientWaitSync")]
+        public partial ARB ClientWaitSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncObjectMask flags, [Flow(FlowDirection.In)] ulong timeout);
+
         [NativeApi(EntryPoint = "glDeleteSync")]
         public partial void DeleteSync([Flow(FlowDirection.In)] nint sync);
 
@@ -30,7 +33,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial nint FenceSync([Flow(FlowDirection.In)] ARB condition, [Flow(FlowDirection.In)] uint flags);
 
         [NativeApi(EntryPoint = "glFenceSync")]
+        public partial nint FenceSync([Flow(FlowDirection.In)] ARB condition, [Flow(FlowDirection.In)] SyncBehaviorFlags flags);
+
+        [NativeApi(EntryPoint = "glFenceSync")]
         public partial nint FenceSync([Flow(FlowDirection.In)] SyncCondition condition, [Flow(FlowDirection.In)] uint flags);
+
+        [NativeApi(EntryPoint = "glFenceSync")]
+        public partial nint FenceSync([Flow(FlowDirection.In)] SyncCondition condition, [Flow(FlowDirection.In)] SyncBehaviorFlags flags);
 
         [NativeApi(EntryPoint = "glGetInteger64v")]
         public unsafe partial void GetInteger64([Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] long* data);
@@ -73,6 +82,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 
         [NativeApi(EntryPoint = "glWaitSync")]
         public partial void WaitSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] ulong timeout);
+
+        [NativeApi(EntryPoint = "glWaitSync")]
+        public partial void WaitSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncBehaviorFlags flags, [Flow(FlowDirection.In)] ulong timeout);
 
         public unsafe long GetInteger64([Flow(FlowDirection.In)] ARB pname)
         {

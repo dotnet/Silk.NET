@@ -634,6 +634,30 @@ namespace Silk.NET.OpenGL
             thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
         }
 
+        public static unsafe void GetnHistogram<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
+        }
+
+        public static unsafe void GetnHistogram<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
+        }
+
+        public static unsafe void GetnHistogram<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
+        }
+
+        public static unsafe void GetnHistogram<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
+        }
+
         public static unsafe void GetnHistogram<T0>(this GL thisApi, [Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
@@ -653,6 +677,30 @@ namespace Silk.NET.OpenGL
         }
 
         public static unsafe void GetnHistogram<T0>(this GL thisApi, [Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
+        }
+
+        public static unsafe void GetnHistogram<T0>(this GL thisApi, [Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
+        }
+
+        public static unsafe void GetnHistogram<T0>(this GL thisApi, [Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
+        }
+
+        public static unsafe void GetnHistogram<T0>(this GL thisApi, [Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
+        }
+
+        public static unsafe void GetnHistogram<T0>(this GL thisApi, [Flow(FlowDirection.In)] HistogramTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnHistogram(target, reset, format, type, bufSize, out values.GetPinnableReference());
@@ -754,6 +802,30 @@ namespace Silk.NET.OpenGL
             thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
         }
 
+        public static unsafe void GetnMinmax<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
+        }
+
+        public static unsafe void GetnMinmax<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
+        }
+
+        public static unsafe void GetnMinmax<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
+        }
+
+        public static unsafe void GetnMinmax<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
+        }
+
         public static unsafe void GetnMinmax<T0>(this GL thisApi, [Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
@@ -773,6 +845,30 @@ namespace Silk.NET.OpenGL
         }
 
         public static unsafe void GetnMinmax<T0>(this GL thisApi, [Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
+        }
+
+        public static unsafe void GetnMinmax<T0>(this GL thisApi, [Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
+        }
+
+        public static unsafe void GetnMinmax<T0>(this GL thisApi, [Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
+        }
+
+        public static unsafe void GetnMinmax<T0>(this GL thisApi, [Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
+        }
+
+        public static unsafe void GetnMinmax<T0>(this GL thisApi, [Flow(FlowDirection.In)] MinmaxTarget target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.GetnMinmax(target, reset, format, type, bufSize, out values.GetPinnableReference());
@@ -1468,6 +1564,12 @@ namespace Silk.NET.OpenGL
             thisApi.NamedBufferStorage(buffer, size, in data.GetPinnableReference(), flags);
         }
 
+        public static unsafe void NamedBufferStorage<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.NamedBufferStorage(buffer, size, in data.GetPinnableReference(), flags);
+        }
+
         public static unsafe void NamedBufferSubData<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size, [Count(Computed = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
         {
             // SpanOverloader
@@ -2032,7 +2134,19 @@ namespace Silk.NET.OpenGL
             thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
         }
 
+        public static unsafe void BufferStorage<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
+        }
+
         public static unsafe void BufferStorage<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
+        }
+
+        public static unsafe void BufferStorage<T0>(this GL thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
@@ -2290,7 +2404,19 @@ namespace Silk.NET.OpenGL
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
         }
 
+        public static unsafe void DebugMessageControl(this GL thisApi, [Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
+        {
+            // SpanOverloader
+            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
+        }
+
         public static unsafe void DebugMessageControl(this GL thisApi, [Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
+        {
+            // SpanOverloader
+            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
+        }
+
+        public static unsafe void DebugMessageControl(this GL thisApi, [Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // SpanOverloader
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
@@ -2302,7 +2428,19 @@ namespace Silk.NET.OpenGL
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
         }
 
+        public static unsafe void DebugMessageControl(this GL thisApi, [Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
+        {
+            // SpanOverloader
+            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
+        }
+
         public static unsafe void DebugMessageControl(this GL thisApi, [Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
+        {
+            // SpanOverloader
+            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
+        }
+
+        public static unsafe void DebugMessageControl(this GL thisApi, [Flow(FlowDirection.In)] GLEnum source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // SpanOverloader
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
@@ -2314,7 +2452,19 @@ namespace Silk.NET.OpenGL
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
         }
 
+        public static unsafe void DebugMessageControl(this GL thisApi, [Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
+        {
+            // SpanOverloader
+            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
+        }
+
         public static unsafe void DebugMessageControl(this GL thisApi, [Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
+        {
+            // SpanOverloader
+            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
+        }
+
+        public static unsafe void DebugMessageControl(this GL thisApi, [Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // SpanOverloader
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
@@ -2326,7 +2476,19 @@ namespace Silk.NET.OpenGL
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
         }
 
+        public static unsafe void DebugMessageControl(this GL thisApi, [Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] GLEnum severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
+        {
+            // SpanOverloader
+            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
+        }
+
         public static unsafe void DebugMessageControl(this GL thisApi, [Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
+        {
+            // SpanOverloader
+            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
+        }
+
+        public static unsafe void DebugMessageControl(this GL thisApi, [Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // SpanOverloader
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
@@ -7996,7 +8158,19 @@ namespace Silk.NET.OpenGL
             thisApi.ProgramUniformMatrix2(program, location, count, transpose, in value.GetPinnableReference());
         }
 
+        public static unsafe void ProgramUniformMatrix2(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // SpanOverloader
+            thisApi.ProgramUniformMatrix2(program, location, count, transpose, in value.GetPinnableReference());
+        }
+
         public static unsafe void ProgramUniformMatrix2(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
+        {
+            // SpanOverloader
+            thisApi.ProgramUniformMatrix2(program, location, count, transpose, in value.GetPinnableReference());
+        }
+
+        public static unsafe void ProgramUniformMatrix2(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // SpanOverloader
             thisApi.ProgramUniformMatrix2(program, location, count, transpose, in value.GetPinnableReference());
@@ -8008,7 +8182,19 @@ namespace Silk.NET.OpenGL
             thisApi.ProgramUniformMatrix2x3(program, location, count, transpose, in value.GetPinnableReference());
         }
 
+        public static unsafe void ProgramUniformMatrix2x3(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // SpanOverloader
+            thisApi.ProgramUniformMatrix2x3(program, location, count, transpose, in value.GetPinnableReference());
+        }
+
         public static unsafe void ProgramUniformMatrix2x3(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
+        {
+            // SpanOverloader
+            thisApi.ProgramUniformMatrix2x3(program, location, count, transpose, in value.GetPinnableReference());
+        }
+
+        public static unsafe void ProgramUniformMatrix2x3(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // SpanOverloader
             thisApi.ProgramUniformMatrix2x3(program, location, count, transpose, in value.GetPinnableReference());
@@ -8020,7 +8206,19 @@ namespace Silk.NET.OpenGL
             thisApi.ProgramUniformMatrix2x4(program, location, count, transpose, in value.GetPinnableReference());
         }
 
+        public static unsafe void ProgramUniformMatrix2x4(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // SpanOverloader
+            thisApi.ProgramUniformMatrix2x4(program, location, count, transpose, in value.GetPinnableReference());
+        }
+
         public static unsafe void ProgramUniformMatrix2x4(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
+        {
+            // SpanOverloader
+            thisApi.ProgramUniformMatrix2x4(program, location, count, transpose, in value.GetPinnableReference());
+        }
+
+        public static unsafe void ProgramUniformMatrix2x4(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // SpanOverloader
             thisApi.ProgramUniformMatrix2x4(program, location, count, transpose, in value.GetPinnableReference());
@@ -8032,7 +8230,19 @@ namespace Silk.NET.OpenGL
             thisApi.ProgramUniformMatrix3(program, location, count, transpose, in value.GetPinnableReference());
         }
 
+        public static unsafe void ProgramUniformMatrix3(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // SpanOverloader
+            thisApi.ProgramUniformMatrix3(program, location, count, transpose, in value.GetPinnableReference());
+        }
+
         public static unsafe void ProgramUniformMatrix3(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
+        {
+            // SpanOverloader
+            thisApi.ProgramUniformMatrix3(program, location, count, transpose, in value.GetPinnableReference());
+        }
+
+        public static unsafe void ProgramUniformMatrix3(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // SpanOverloader
             thisApi.ProgramUniformMatrix3(program, location, count, transpose, in value.GetPinnableReference());
@@ -8044,7 +8254,19 @@ namespace Silk.NET.OpenGL
             thisApi.ProgramUniformMatrix3x2(program, location, count, transpose, in value.GetPinnableReference());
         }
 
+        public static unsafe void ProgramUniformMatrix3x2(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // SpanOverloader
+            thisApi.ProgramUniformMatrix3x2(program, location, count, transpose, in value.GetPinnableReference());
+        }
+
         public static unsafe void ProgramUniformMatrix3x2(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
+        {
+            // SpanOverloader
+            thisApi.ProgramUniformMatrix3x2(program, location, count, transpose, in value.GetPinnableReference());
+        }
+
+        public static unsafe void ProgramUniformMatrix3x2(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // SpanOverloader
             thisApi.ProgramUniformMatrix3x2(program, location, count, transpose, in value.GetPinnableReference());
@@ -8056,7 +8278,19 @@ namespace Silk.NET.OpenGL
             thisApi.ProgramUniformMatrix3x4(program, location, count, transpose, in value.GetPinnableReference());
         }
 
+        public static unsafe void ProgramUniformMatrix3x4(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // SpanOverloader
+            thisApi.ProgramUniformMatrix3x4(program, location, count, transpose, in value.GetPinnableReference());
+        }
+
         public static unsafe void ProgramUniformMatrix3x4(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
+        {
+            // SpanOverloader
+            thisApi.ProgramUniformMatrix3x4(program, location, count, transpose, in value.GetPinnableReference());
+        }
+
+        public static unsafe void ProgramUniformMatrix3x4(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // SpanOverloader
             thisApi.ProgramUniformMatrix3x4(program, location, count, transpose, in value.GetPinnableReference());
@@ -8068,7 +8302,19 @@ namespace Silk.NET.OpenGL
             thisApi.ProgramUniformMatrix4(program, location, count, transpose, in value.GetPinnableReference());
         }
 
+        public static unsafe void ProgramUniformMatrix4(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // SpanOverloader
+            thisApi.ProgramUniformMatrix4(program, location, count, transpose, in value.GetPinnableReference());
+        }
+
         public static unsafe void ProgramUniformMatrix4(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
+        {
+            // SpanOverloader
+            thisApi.ProgramUniformMatrix4(program, location, count, transpose, in value.GetPinnableReference());
+        }
+
+        public static unsafe void ProgramUniformMatrix4(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // SpanOverloader
             thisApi.ProgramUniformMatrix4(program, location, count, transpose, in value.GetPinnableReference());
@@ -8080,7 +8326,19 @@ namespace Silk.NET.OpenGL
             thisApi.ProgramUniformMatrix4x2(program, location, count, transpose, in value.GetPinnableReference());
         }
 
+        public static unsafe void ProgramUniformMatrix4x2(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // SpanOverloader
+            thisApi.ProgramUniformMatrix4x2(program, location, count, transpose, in value.GetPinnableReference());
+        }
+
         public static unsafe void ProgramUniformMatrix4x2(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
+        {
+            // SpanOverloader
+            thisApi.ProgramUniformMatrix4x2(program, location, count, transpose, in value.GetPinnableReference());
+        }
+
+        public static unsafe void ProgramUniformMatrix4x2(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // SpanOverloader
             thisApi.ProgramUniformMatrix4x2(program, location, count, transpose, in value.GetPinnableReference());
@@ -8092,7 +8350,19 @@ namespace Silk.NET.OpenGL
             thisApi.ProgramUniformMatrix4x3(program, location, count, transpose, in value.GetPinnableReference());
         }
 
+        public static unsafe void ProgramUniformMatrix4x3(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // SpanOverloader
+            thisApi.ProgramUniformMatrix4x3(program, location, count, transpose, in value.GetPinnableReference());
+        }
+
         public static unsafe void ProgramUniformMatrix4x3(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
+        {
+            // SpanOverloader
+            thisApi.ProgramUniformMatrix4x3(program, location, count, transpose, in value.GetPinnableReference());
+        }
+
+        public static unsafe void ProgramUniformMatrix4x3(this GL thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // SpanOverloader
             thisApi.ProgramUniformMatrix4x3(program, location, count, transpose, in value.GetPinnableReference());
@@ -8566,7 +8836,19 @@ namespace Silk.NET.OpenGL
             thisApi.UniformMatrix2(location, count, transpose, in value.GetPinnableReference());
         }
 
+        public static unsafe void UniformMatrix2(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
+        {
+            // SpanOverloader
+            thisApi.UniformMatrix2(location, count, transpose, in value.GetPinnableReference());
+        }
+
         public static unsafe void UniformMatrix2x3(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
+        {
+            // SpanOverloader
+            thisApi.UniformMatrix2x3(location, count, transpose, in value.GetPinnableReference());
+        }
+
+        public static unsafe void UniformMatrix2x3(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // SpanOverloader
             thisApi.UniformMatrix2x3(location, count, transpose, in value.GetPinnableReference());
@@ -8578,7 +8860,19 @@ namespace Silk.NET.OpenGL
             thisApi.UniformMatrix2x4(location, count, transpose, in value.GetPinnableReference());
         }
 
+        public static unsafe void UniformMatrix2x4(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
+        {
+            // SpanOverloader
+            thisApi.UniformMatrix2x4(location, count, transpose, in value.GetPinnableReference());
+        }
+
         public static unsafe void UniformMatrix3(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
+        {
+            // SpanOverloader
+            thisApi.UniformMatrix3(location, count, transpose, in value.GetPinnableReference());
+        }
+
+        public static unsafe void UniformMatrix3(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // SpanOverloader
             thisApi.UniformMatrix3(location, count, transpose, in value.GetPinnableReference());
@@ -8590,7 +8884,19 @@ namespace Silk.NET.OpenGL
             thisApi.UniformMatrix3x2(location, count, transpose, in value.GetPinnableReference());
         }
 
+        public static unsafe void UniformMatrix3x2(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
+        {
+            // SpanOverloader
+            thisApi.UniformMatrix3x2(location, count, transpose, in value.GetPinnableReference());
+        }
+
         public static unsafe void UniformMatrix3x4(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
+        {
+            // SpanOverloader
+            thisApi.UniformMatrix3x4(location, count, transpose, in value.GetPinnableReference());
+        }
+
+        public static unsafe void UniformMatrix3x4(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // SpanOverloader
             thisApi.UniformMatrix3x4(location, count, transpose, in value.GetPinnableReference());
@@ -8602,13 +8908,31 @@ namespace Silk.NET.OpenGL
             thisApi.UniformMatrix4(location, count, transpose, in value.GetPinnableReference());
         }
 
+        public static unsafe void UniformMatrix4(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
+        {
+            // SpanOverloader
+            thisApi.UniformMatrix4(location, count, transpose, in value.GetPinnableReference());
+        }
+
         public static unsafe void UniformMatrix4x2(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // SpanOverloader
             thisApi.UniformMatrix4x2(location, count, transpose, in value.GetPinnableReference());
         }
 
+        public static unsafe void UniformMatrix4x2(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
+        {
+            // SpanOverloader
+            thisApi.UniformMatrix4x2(location, count, transpose, in value.GetPinnableReference());
+        }
+
         public static unsafe void UniformMatrix4x3(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
+        {
+            // SpanOverloader
+            thisApi.UniformMatrix4x3(location, count, transpose, in value.GetPinnableReference());
+        }
+
+        public static unsafe void UniformMatrix4x3(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> value)
         {
             // SpanOverloader
             thisApi.UniformMatrix4x3(location, count, transpose, in value.GetPinnableReference());
@@ -8980,7 +9304,19 @@ namespace Silk.NET.OpenGL
             thisApi.VertexAttribP1(index, type, normalized, in value.GetPinnableReference());
         }
 
+        public static unsafe void VertexAttribP1(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
+        {
+            // SpanOverloader
+            thisApi.VertexAttribP1(index, type, normalized, in value.GetPinnableReference());
+        }
+
         public static unsafe void VertexAttribP1(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
+        {
+            // SpanOverloader
+            thisApi.VertexAttribP1(index, type, normalized, in value.GetPinnableReference());
+        }
+
+        public static unsafe void VertexAttribP1(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // SpanOverloader
             thisApi.VertexAttribP1(index, type, normalized, in value.GetPinnableReference());
@@ -8992,7 +9328,19 @@ namespace Silk.NET.OpenGL
             thisApi.VertexAttribP2(index, type, normalized, in value.GetPinnableReference());
         }
 
+        public static unsafe void VertexAttribP2(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
+        {
+            // SpanOverloader
+            thisApi.VertexAttribP2(index, type, normalized, in value.GetPinnableReference());
+        }
+
         public static unsafe void VertexAttribP2(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
+        {
+            // SpanOverloader
+            thisApi.VertexAttribP2(index, type, normalized, in value.GetPinnableReference());
+        }
+
+        public static unsafe void VertexAttribP2(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // SpanOverloader
             thisApi.VertexAttribP2(index, type, normalized, in value.GetPinnableReference());
@@ -9004,7 +9352,19 @@ namespace Silk.NET.OpenGL
             thisApi.VertexAttribP3(index, type, normalized, in value.GetPinnableReference());
         }
 
+        public static unsafe void VertexAttribP3(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
+        {
+            // SpanOverloader
+            thisApi.VertexAttribP3(index, type, normalized, in value.GetPinnableReference());
+        }
+
         public static unsafe void VertexAttribP3(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
+        {
+            // SpanOverloader
+            thisApi.VertexAttribP3(index, type, normalized, in value.GetPinnableReference());
+        }
+
+        public static unsafe void VertexAttribP3(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // SpanOverloader
             thisApi.VertexAttribP3(index, type, normalized, in value.GetPinnableReference());
@@ -9016,7 +9376,19 @@ namespace Silk.NET.OpenGL
             thisApi.VertexAttribP4(index, type, normalized, in value.GetPinnableReference());
         }
 
+        public static unsafe void VertexAttribP4(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
+        {
+            // SpanOverloader
+            thisApi.VertexAttribP4(index, type, normalized, in value.GetPinnableReference());
+        }
+
         public static unsafe void VertexAttribP4(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
+        {
+            // SpanOverloader
+            thisApi.VertexAttribP4(index, type, normalized, in value.GetPinnableReference());
+        }
+
+        public static unsafe void VertexAttribP4(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Count(Count = 1), Flow(FlowDirection.In)] ReadOnlySpan<uint> value)
         {
             // SpanOverloader
             thisApi.VertexAttribP4(index, type, normalized, in value.GetPinnableReference());
@@ -10264,7 +10636,19 @@ namespace Silk.NET.OpenGL
             thisApi.UniformMatrix2x3(location, count, transpose, in value.GetPinnableReference());
         }
 
+        public static unsafe void UniformMatrix2x3(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // SpanOverloader
+            thisApi.UniformMatrix2x3(location, count, transpose, in value.GetPinnableReference());
+        }
+
         public static unsafe void UniformMatrix2x4(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // SpanOverloader
+            thisApi.UniformMatrix2x4(location, count, transpose, in value.GetPinnableReference());
+        }
+
+        public static unsafe void UniformMatrix2x4(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.UniformMatrix2x4(location, count, transpose, in value.GetPinnableReference());
@@ -10276,7 +10660,19 @@ namespace Silk.NET.OpenGL
             thisApi.UniformMatrix3x2(location, count, transpose, in value.GetPinnableReference());
         }
 
+        public static unsafe void UniformMatrix3x2(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // SpanOverloader
+            thisApi.UniformMatrix3x2(location, count, transpose, in value.GetPinnableReference());
+        }
+
         public static unsafe void UniformMatrix3x4(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // SpanOverloader
+            thisApi.UniformMatrix3x4(location, count, transpose, in value.GetPinnableReference());
+        }
+
+        public static unsafe void UniformMatrix3x4(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.UniformMatrix3x4(location, count, transpose, in value.GetPinnableReference());
@@ -10288,7 +10684,19 @@ namespace Silk.NET.OpenGL
             thisApi.UniformMatrix4x2(location, count, transpose, in value.GetPinnableReference());
         }
 
+        public static unsafe void UniformMatrix4x2(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // SpanOverloader
+            thisApi.UniformMatrix4x2(location, count, transpose, in value.GetPinnableReference());
+        }
+
         public static unsafe void UniformMatrix4x3(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // SpanOverloader
+            thisApi.UniformMatrix4x3(location, count, transpose, in value.GetPinnableReference());
+        }
+
+        public static unsafe void UniformMatrix4x3(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.UniformMatrix4x3(location, count, transpose, in value.GetPinnableReference());
@@ -11140,13 +11548,31 @@ namespace Silk.NET.OpenGL
             thisApi.UniformMatrix2(location, count, transpose, in value.GetPinnableReference());
         }
 
+        public static unsafe void UniformMatrix2(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // SpanOverloader
+            thisApi.UniformMatrix2(location, count, transpose, in value.GetPinnableReference());
+        }
+
         public static unsafe void UniformMatrix3(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.UniformMatrix3(location, count, transpose, in value.GetPinnableReference());
         }
 
+        public static unsafe void UniformMatrix3(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // SpanOverloader
+            thisApi.UniformMatrix3(location, count, transpose, in value.GetPinnableReference());
+        }
+
         public static unsafe void UniformMatrix4(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // SpanOverloader
+            thisApi.UniformMatrix4(location, count, transpose, in value.GetPinnableReference());
+        }
+
+        public static unsafe void UniformMatrix4(this GL thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
         {
             // SpanOverloader
             thisApi.UniformMatrix4(location, count, transpose, in value.GetPinnableReference());
@@ -11296,7 +11722,19 @@ namespace Silk.NET.OpenGL
             thisApi.VertexAttribPointer(index, size, type, normalized, stride, in pointer.GetPinnableReference());
         }
 
+        public static unsafe void VertexAttribPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] GLEnum type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.VertexAttribPointer(index, size, type, normalized, stride, in pointer.GetPinnableReference());
+        }
+
         public static unsafe void VertexAttribPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.VertexAttribPointer(index, size, type, normalized, stride, in pointer.GetPinnableReference());
+        }
+
+        public static unsafe void VertexAttribPointer<T0>(this GL thisApi, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "size, type, stride"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.VertexAttribPointer(index, size, type, normalized, stride, in pointer.GetPinnableReference());
@@ -11782,6 +12220,30 @@ namespace Silk.NET.OpenGL
             thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
         }
 
+        public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+        }
+
         public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
@@ -11801,6 +12263,30 @@ namespace Silk.NET.OpenGL
         }
 
         public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexImage3D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height, depth"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.TexImage3D(target, level, internalformat, width, height, depth, border, format, type, in pixels.GetPinnableReference());
@@ -12250,6 +12736,30 @@ namespace Silk.NET.OpenGL
             thisApi.TexImage1D(target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
         }
 
+        public static unsafe void TexImage1D<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage1D(target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexImage1D<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage1D(target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexImage1D<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage1D(target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexImage1D<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage1D(target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+        }
+
         public static unsafe void TexImage1D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
@@ -12269,6 +12779,30 @@ namespace Silk.NET.OpenGL
         }
 
         public static unsafe void TexImage1D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage1D(target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexImage1D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage1D(target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexImage1D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage1D(target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexImage1D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage1D(target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexImage1D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.TexImage1D(target, level, internalformat, width, border, format, type, in pixels.GetPinnableReference());
@@ -12298,6 +12832,30 @@ namespace Silk.NET.OpenGL
             thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
         }
 
+        public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(FlowDirection.In)] GLEnum target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+        }
+
         public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
@@ -12317,6 +12875,30 @@ namespace Silk.NET.OpenGL
         }
 
         public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] GLEnum format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] GLEnum type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
+        }
+
+        public static unsafe void TexImage2D<T0>(this GL thisApi, [Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] int border, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Computed = "format, type, width, height"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pixels) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.TexImage2D(target, level, internalformat, width, height, border, format, type, in pixels.GetPinnableReference());
