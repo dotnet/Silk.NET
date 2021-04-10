@@ -14,7 +14,7 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Core.Native
 {
-    public unsafe partial class D3DCommon : NativeAPI
+    public unsafe partial class D3DCommon
     {
         [NativeName("Type", "int")]
         [NativeName("Name", "__REQUIRED_RPCNDR_H_VERSION__")]
@@ -80,11 +80,6 @@ namespace Silk.NET.Core.Native
         [NativeName("Name", "D3D_COMPONENT_MASK_W")]
         public const int D3DComponentMaskW = unchecked((int) 0x8);
 
-
-        public D3DCommon(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 
