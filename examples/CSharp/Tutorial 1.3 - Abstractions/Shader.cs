@@ -73,7 +73,7 @@ namespace Tutorial
 
         private uint LoadShader(ShaderType type, string path)
         {
-            //To load a single shader we need to load
+            //To load a single shader we need to:
             //1) Load the shader from a file.
             //2) Create the handle.
             //3) Upload the source to opengl.

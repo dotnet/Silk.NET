@@ -21,7 +21,7 @@ namespace Tutorial
         private static Texture Texture;
         private static Shader Shader;
 
-        //Setup the cameras location, and relative up and right directions
+        //Setup the camera's location, and relative up and right directions
         private static Vector3 CameraPosition = new Vector3(0.0f, 0.0f, 3.0f);
         private static Vector3 CameraTarget = Vector3.Zero;
         private static Vector3 CameraDirection = Vector3.Normalize(CameraPosition - CameraTarget);
