@@ -21,12 +21,12 @@ namespace Silk.NET.Vulkan
         public Instance? CurrentInstance
         {
             get => _currentInstance;
-            set => SwapVTable(_vTables.GetOrAdd((_currentInstance = value, _currentDevice), _ => VulkanCreateVTable()));
+            set => SwapVTable(_vTables.GetOrAdd((_currentInstance = value, _currentDevice), _ => CreateVTable()));
         }
         public Device? CurrentDevice
         {
             get => _currentDevice;
-            set => SwapVTable(_vTables.GetOrAdd((_currentInstance, _currentDevice = value), _ => VulkanCreateVTable()));
+            set => SwapVTable(_vTables.GetOrAdd((_currentInstance, _currentDevice = value), _ => CreateVTable()));
         }
         public static Version32 Version10 => new Version32(1, 0, 0);
         public static Version32 Version11 => new Version32(1, 1, 0);
@@ -51,13 +51,13 @@ namespace Silk.NET.Vulkan
                     }
 
                     nint ptr = default;
-                    ptr = ret.GetInstanceProcAddr(ret.CurrentInstance.GetValueOrDefault(), x);
+                    ptr = ret.GetDeviceProcAddr(ret.CurrentDevice.GetValueOrDefault(), x);
                     if (ptr != default)
                     {
                         return ptr;
                     }
 
-                    ptr = ret.GetDeviceProcAddr(ret.CurrentDevice.GetValueOrDefault(), x);
+                    ptr = ret.GetInstanceProcAddr(ret.CurrentInstance.GetValueOrDefault(), x);
                     return ptr;
                 }
             );
@@ -68,67 +68,15 @@ namespace Silk.NET.Vulkan
 
         public static unsafe Vk GetApi(ref InstanceCreateInfo info, out Instance instance)
         {
-            var ctx = new MultiNativeContext
-                (CreateDefaultContext(new VulkanLibraryNameContainer().GetLibraryName()), null);
-            var ret = new Vk(ctx);
-            ctx.Contexts[1] = new LamdaNativeContext
-            (
-                x =>
-                {
-                    if (x.EndsWith("ProcAddr"))
-                    {
-                        return default;
-                    }
-
-                    nint ptr = default;
-                    ptr = ret.GetInstanceProcAddr(ret.CurrentInstance.GetValueOrDefault(), x);
-                    if (ptr != default)
-                    {
-                        return ptr;
-                    }
-
-                    ptr = ret.GetDeviceProcAddr(ret.CurrentDevice.GetValueOrDefault(), x);
-                    return ptr;
-                }
-            );
-
-            fixed (InstanceCreateInfo* infoPtr = &info)
-            {
-                fixed (Instance* instancePtr = &instance)
-                {
-                    ret.CreateInstance(infoPtr, null, instancePtr);
-                }
-            }
-
+            var ret = GetApi();
+            instance = default;
+            ret.CreateInstance(in info, null, out instance);
             return ret;
         }
 
         public static Vk GetApi(ref InstanceCreateInfo info, ref AllocationCallbacks callbacks, out Instance instance)
         {
-            var ctx = new MultiNativeContext
-                (CreateDefaultContext(new VulkanLibraryNameContainer().GetLibraryName()), null);
-            var ret = new Vk(ctx);
-            ctx.Contexts[1] = new LamdaNativeContext
-            (
-                x =>
-                {
-                    if (x.EndsWith("ProcAddr"))
-                    {
-                        return default;
-                    }
-
-                    nint ptr = default;
-                    ptr = ret.GetInstanceProcAddr(ret.CurrentInstance.GetValueOrDefault(), x);
-                    if (ptr != default)
-                    {
-                        return ptr;
-                    }
-
-                    ptr = ret.GetDeviceProcAddr(ret.CurrentDevice.GetValueOrDefault(), x);
-                    return ptr;
-                }
-            );
-
+            var ret = GetApi();
             instance = default;
             ret.CreateInstance(in info, in callbacks, out instance);
             return ret;
@@ -362,13 +310,6 @@ namespace Silk.NET.Vulkan
             {
                 _cachedDeviceExtensionsLock.ExitWriteLock();
             }
-        }
-
-        private IVTable VulkanCreateVTable()
-        {
-            var ret = CreateVTable();
-            ret.Initialize(Context, CoreGetSlotCount());
-            return ret;
         }
     }
 }
