@@ -69,7 +69,6 @@ namespace Silk.NET.Vulkan
         public static unsafe Vk GetApi(ref InstanceCreateInfo info, out Instance instance)
         {
             var ret = GetApi();
-            instance = default;
             ret.CreateInstance(in info, null, out instance);
             return ret;
         }
@@ -77,7 +76,6 @@ namespace Silk.NET.Vulkan
         public static Vk GetApi(ref InstanceCreateInfo info, ref AllocationCallbacks callbacks, out Instance instance)
         {
             var ret = GetApi();
-            instance = default;
             ret.CreateInstance(in info, in callbacks, out instance);
             return ret;
         }
