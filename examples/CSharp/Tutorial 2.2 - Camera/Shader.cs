@@ -43,7 +43,6 @@ namespace Tutorial
             {
                 throw new Exception($"{name} uniform not found on shader.");
             }
-            Use();
             _gl.Uniform1(location, value);
         }
 
@@ -55,7 +54,6 @@ namespace Tutorial
             {
                 throw new Exception($"{name} uniform not found on shader.");
             }
-            Use();
             _gl.UniformMatrix4(location, 1, false, (float*) &value);
         }
 
@@ -66,7 +64,6 @@ namespace Tutorial
             {
                 throw new Exception($"{name} uniform not found on shader.");
             }
-            Use();
             _gl.Uniform1(location, value);
         }
 

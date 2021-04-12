@@ -52,7 +52,6 @@ namespace Tutorial
             {
                 throw new Exception($"{name} uniform not found on shader.");
             }
-            Use();
             _gl.Uniform1(location, value);
         }
 
@@ -63,7 +62,6 @@ namespace Tutorial
             {
                 throw new Exception($"{name} uniform not found on shader.");
             }
-            Use();
             _gl.Uniform1(location, value);
         }
 
@@ -75,7 +73,7 @@ namespace Tutorial
 
         private uint LoadShader(ShaderType type, string path)
         {
-            //To load a single shader we need to load
+            //To load a single shader we need to:
             //1) Load the shader from a file.
             //2) Create the handle.
             //3) Upload the source to opengl.

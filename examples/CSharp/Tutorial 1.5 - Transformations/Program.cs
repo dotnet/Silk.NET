@@ -72,7 +72,7 @@ namespace Tutorial
 
             Texture = new Texture(Gl, "silk.png");
 
-            //Unlike in the transformation, because of our abstraction order dosent matter here.
+            //Unlike in the transformation, because of our abstraction, order doesn't matter here.
             //Translation.
             Transforms[0] = new Transform();
             Transforms[0].Position = new Vector3(0.5f, 0.5f, 0f);
