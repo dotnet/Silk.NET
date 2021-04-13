@@ -332,10 +332,10 @@ namespace Silk.NET.SilkTouch
             var result = newNamespace.NormalizeWhitespace().ToFullString();
             stopwatch.Stop();
             var reportTelemetry = true;
-#if !DEBUG
-            reportTelemetry = sourceContext.AnalyzerConfigOptions.GlobalOptions.TryGetValue
+
+            reportTelemetry = sourceContext.AnalyzerConfigOptions.GetOptions(classDeclarations.First().Item1.SyntaxTree).TryGetValue
                 ("silk_touch_telemetry", out var telstr) && bool.Parse(telstr);
-#endif
+
             if (reportTelemetry)
                 sourceContext.ReportDiagnostic
                 (
