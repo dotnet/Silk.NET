@@ -55,7 +55,7 @@ namespace Silk.NET.SilkTouch
             title: "Build Info",
             messageFormat: "GCSlotCount: '{0}', Time: '{1}'",
             category: "SilkTouch.Internal",
-            defaultSeverity: DiagnosticSeverity.Info, 
+            defaultSeverity: DiagnosticSeverity.Warning, 
             isEnabledByDefault: true,
             description: null,
             helpLinkUri: null,
