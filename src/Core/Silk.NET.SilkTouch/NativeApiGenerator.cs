@@ -352,7 +352,7 @@ namespace Silk.NET.SilkTouch
             (SyntaxList<UsingDirectiveSyntax> list, params string[] usings)
         {
             foreach(var v in usings)
-                if (list.All(x => x.ToFullString() != $"using {usings};"))
+                if (!list.Any(x => x.Name is IdentifierNameSyntax a && a.Identifier.Text == v))
                     list = list.Add(UsingDirective(IdentifierName(v)));
 
             return list;

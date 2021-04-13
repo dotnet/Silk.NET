@@ -91,7 +91,7 @@ namespace Silk.NET.SilkTouch
             vTableMembers.Add
             (
                 ConstructorDeclaration("GeneratedVTable")
-                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                    .WithModifiers(TokenList(Token(SyntaxKind.InternalKeyword)))
                     .WithParameterList
                     (
                         ParameterList
