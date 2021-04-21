@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Drawing;
 using System.Numerics;
 using ImGuiNET;
@@ -17,23 +16,24 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
         private IView _view;
         private IInputContext _input;
         private Version _glVersion;
-        private int _windowWidth;
-        private int _windowHeight;
         private bool _frameBegun;
         private readonly List<char> _pressedChars = new List<char>();
         private IKeyboard _keyboard;
 
-        private static uint _shaderHandle;
-        private static uint _vertHandle;
-        private static uint _fragHandle;
-        private static int _attribLocationTex;
-        private static int _attribLocationProjMtx;
-        private static int _attribLocationVtxPos;
-        private static int _attribLocationVtxUV;
-        private static int _attribLocationVtxColor;
-        private static uint _vboHandle;
-        private static uint _elementsHandle;
-        private static uint _fontTexture;
+        private int _attribLocationTex;
+        private int _attribLocationProjMtx;
+        private int _attribLocationVtxPos;
+        private int _attribLocationVtxUV;
+        private int _attribLocationVtxColor;
+        private uint _vboHandle;
+        private uint _elementsHandle;
+        private uint _vertexArrayObject;
+
+        private Texture _fontTexture;
+        private Shader _shader;
+
+        private int _windowWidth;
+        private int _windowHeight;
 
         /// <summary>
         /// Constructs a new ImGuiController.
@@ -46,7 +46,7 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             io.Fonts.AddFontDefault();
             io.BackendFlags |= ImGuiBackendFlags.RendererHasVtxOffset;
 
-            CreateDeviceObjects();
+            CreateDeviceResources();
             SetKeyMappings();
 
             SetPerFrameImGuiData(1f / 60f);
@@ -65,7 +65,7 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             io.Fonts.AddFontFromFileTTF(imGuiFontConfig.FontPath, imGuiFontConfig.FontSize);
             io.BackendFlags |= ImGuiBackendFlags.RendererHasVtxOffset;
 
-            CreateDeviceObjects();
+            CreateDeviceResources();
             SetKeyMappings();
 
             SetPerFrameImGuiData(1f / 60f);
@@ -119,7 +119,7 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             {
                 _frameBegun = false;
                 ImGuiNET.ImGui.Render();
-                RenderDrawData(ImGuiNET.ImGui.GetDrawData());
+                RenderImDrawData(ImGuiNET.ImGui.GetDrawData());
             }
         }
 
@@ -148,8 +148,13 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
         {
             var io = ImGuiNET.ImGui.GetIO();
             io.DisplaySize = new Vector2(_windowWidth, _windowHeight);
-            io.DisplayFramebufferScale = new Vector2(_view.FramebufferSize.X / _windowWidth,
-                _view.FramebufferSize.Y / _windowHeight);
+
+            if (_windowWidth > 0 && _windowHeight > 0)
+            {
+                io.DisplayFramebufferScale = new Vector2(_view.FramebufferSize.X / _windowWidth,
+                    _view.FramebufferSize.Y / _windowHeight);
+            }
+
             io.DeltaTime = deltaSeconds; // DeltaTime is in seconds.
         }
 
@@ -222,7 +227,7 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             io.KeyMap[(int) ImGuiKey.Z] = (int) Key.Z;
         }
 
-        unsafe private void SetupRenderState(ImDrawDataPtr drawDataPtr, int fbWidth, int fbHeight, uint vertexArrayObject)
+        private unsafe void SetupRenderState(ImDrawDataPtr drawDataPtr, int fbWidth, int fbHeight)
         {
             // Setup render state: alpha-blending enabled, no face culling, no depth testing, scissor enabled, polygon fill
             _gl.Enable(GLEnum.Blend);
@@ -250,13 +255,19 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
                 (R + L) / (L - R), (T + B) / (B - T), 0.0f, 1.0f,
             };
 
-            _gl.UseProgram(_shaderHandle);
+            _shader.UseShader();
             _gl.Uniform1(_attribLocationTex, 0);
             _gl.UniformMatrix4(_attribLocationProjMtx, 1, false, orthoProjection);
+            _gl.CheckGlError("Projection");
 
             _gl.BindSampler(0, 0);
 
-            _gl.BindVertexArray(vertexArrayObject);
+            // Setup desired GL state
+            // Recreate the VAO every time (this is to easily allow multiple GL contexts to be rendered to. VAO are not shared among GL contexts)
+            // The renderer would actually work without any VAO bound, but then our VertexAttrib calls would overwrite the default one currently bound.
+            _vertexArrayObject = _gl.GenVertexArray();
+            _gl.BindVertexArray(_vertexArrayObject);
+            _gl.CheckGlError("VAO");
 
             // Bind vertex/index buffers and setup attributes for ImDrawVert
             _gl.BindBuffer(GLEnum.ArrayBuffer, _vboHandle);
@@ -269,7 +280,7 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             _gl.VertexAttribPointer((uint) _attribLocationVtxColor, 4, GLEnum.UnsignedByte, true, (uint) sizeof(ImDrawVert), (void*) 16);
         }
 
-        unsafe private void RenderDrawData(ImDrawDataPtr drawDataPtr)
+        private unsafe void RenderImDrawData(ImDrawDataPtr drawDataPtr)
         {
             int fbWidth = (int) (drawDataPtr.DisplaySize.X * drawDataPtr.FramebufferScale.X);
             int fbHeight = (int) (drawDataPtr.DisplaySize.Y * drawDataPtr.FramebufferScale.Y);
@@ -314,12 +325,7 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
 
             bool lastEnablePrimitiveRestart = _gl.IsEnabled(GLEnum.PrimitiveRestart);
 
-            // Setup desired GL state
-            // Recreate the VAO every time (this is to easily allow multiple GL contexts to be rendered to. VAO are not shared among GL contexts)
-            // The renderer would actually work without any VAO bound, but then our VertexAttrib calls would overwrite the default one currently bound.
-            uint vertexArrayObject = _gl.GenVertexArray();
-
-            SetupRenderState(drawDataPtr, fbWidth, fbHeight, vertexArrayObject);
+            SetupRenderState(drawDataPtr, fbWidth, fbHeight);
 
             // Will project scissor/clipping rectangles into framebuffer space
             Vector2 clipOff = drawDataPtr.DisplayPos;         // (0,0) unless using multi-viewports
@@ -333,7 +339,9 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
                 // Upload vertex/index buffers
 
                 _gl.BufferData(GLEnum.ArrayBuffer, (nuint) (cmdListPtr.VtxBuffer.Size * sizeof(ImDrawVert)), (void*) cmdListPtr.VtxBuffer.Data, GLEnum.StreamDraw);
+                _gl.CheckGlError($"Data Vert {n}");
                 _gl.BufferData(GLEnum.ElementArrayBuffer, (nuint) (cmdListPtr.IdxBuffer.Size * sizeof(ushort)), (void*) cmdListPtr.IdxBuffer.Data, GLEnum.StreamDraw);
+                _gl.CheckGlError($"Data Idx {n}");
 
                 for (int cmd_i = 0; cmd_i < cmdListPtr.CmdBuffer.Size; cmd_i++)
                 {
@@ -355,18 +363,22 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
                         {
                             // Apply scissor/clipping rectangle
                             _gl.Scissor((int) clipRect.X, (int) (fbHeight - clipRect.W), (uint) (clipRect.Z - clipRect.X), (uint) (clipRect.W - clipRect.Y));
+                            _gl.CheckGlError("Scissor");
 
                             // Bind texture, Draw
                             _gl.BindTexture(GLEnum.Texture2D, (uint) cmdPtr.TextureId);
+                            _gl.CheckGlError("Texture");
 
                             _gl.DrawElementsBaseVertex(GLEnum.Triangles, cmdPtr.ElemCount, GLEnum.UnsignedShort, (void*) (cmdPtr.IdxOffset * sizeof(ushort)), (int) cmdPtr.VtxOffset);
+                            _gl.CheckGlError("Draw");
                         }
                     }
                 }
             }
 
             // Destroy the temporary VAO
-            _gl.DeleteVertexArray(vertexArrayObject);
+            _gl.DeleteVertexArray(_vertexArrayObject); 
+            _vertexArrayObject = 0;
 
             // Restore modified GL state
             _gl.UseProgram((uint) lastProgram);
@@ -442,7 +454,7 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             _gl.Scissor(lastScissorBox[0], lastScissorBox[1], (uint) lastScissorBox[2], (uint) lastScissorBox[3]);
         }
 
-        private void CreateDeviceObjects()
+        private void CreateDeviceResources()
         {
             // Backup GL state
 
@@ -450,7 +462,7 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             _gl.GetInteger(GLEnum.ArrayBufferBinding, out int lastArrayBuffer);
             _gl.GetInteger(GLEnum.VertexArrayBinding, out int lastVertexArray);
 
-            string vertexShader = @"#version 330
+            string vertexSource = @"#version 330
         layout (location = 0) in vec2 Position;
         layout (location = 1) in vec2 UV;
         layout (location = 2) in vec4 Color;
@@ -465,7 +477,7 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
         }";
 
 
-            string fragmentShader = @"#version 330
+            string fragmentSource = @"#version 330
         in vec2 Frag_UV;
         in vec4 Frag_Color;
         uniform sampler2D Texture;
@@ -475,44 +487,32 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             Out_Color = Frag_Color * texture(Texture, Frag_UV.st);
         }";
 
-            _vertHandle = _gl.CreateShader(GLEnum.VertexShader);
-            _gl.ShaderSource(_vertHandle, vertexShader);
-            _gl.CompileShader(_vertHandle);
-            CheckShader(_vertHandle, "vertex shader");
+            _shader = new Shader(_gl, vertexSource, fragmentSource);
 
-            _fragHandle = _gl.CreateShader(GLEnum.FragmentShader);
-            _gl.ShaderSource(_fragHandle, fragmentShader);
-            _gl.CompileShader(_fragHandle);
-            CheckShader(_fragHandle, "fragment shader");
-
-            _shaderHandle = _gl.CreateProgram();
-            _gl.AttachShader(_shaderHandle, _vertHandle);
-            _gl.AttachShader(_shaderHandle, _fragHandle);
-            _gl.LinkProgram(_shaderHandle);
-            CheckProgram(_shaderHandle, "shader program");
-
-            _attribLocationTex = _gl.GetUniformLocation(_shaderHandle, "Texture");
-            _attribLocationProjMtx = _gl.GetUniformLocation(_shaderHandle, "ProjMtx");
-            _attribLocationVtxPos = _gl.GetAttribLocation(_shaderHandle, "Position");
-            _attribLocationVtxUV = _gl.GetAttribLocation(_shaderHandle, "UV");
-            _attribLocationVtxColor = _gl.GetAttribLocation(_shaderHandle, "Color");
+            _attribLocationTex = _shader.GetUniformLocation("Texture");
+            _attribLocationProjMtx = _shader.GetUniformLocation("ProjMtx");
+            _attribLocationVtxPos = _shader.GetAttribLocation("Position");
+            _attribLocationVtxUV = _shader.GetAttribLocation("UV");
+            _attribLocationVtxColor = _shader.GetAttribLocation("Color");
 
             _vboHandle = _gl.GenBuffer();
             _elementsHandle = _gl.GenBuffer();
 
-            CreateFontsTexture();
+            RecreateFontDeviceTexture();
 
             // Restore modified GL state
             _gl.BindTexture(GLEnum.Texture2D, (uint) lastTexture);
             _gl.BindBuffer(GLEnum.ArrayBuffer, (uint) lastArrayBuffer);
 
             _gl.BindVertexArray((uint) lastVertexArray);
+
+            _gl.CheckGlError("End of ImGui setup");
         }
 
         /// <summary>
         /// Creates the texture used to render text.
         /// </summary>
-        unsafe private void CreateFontsTexture()
+        private unsafe void RecreateFontDeviceTexture()
         {
             // Build texture atlas
             var io = ImGuiNET.ImGui.GetIO();
@@ -520,100 +520,16 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
 
             // Upload texture to graphics system
             _gl.GetInteger(GLEnum.Texture2D, out int lastTexture);
-            _fontTexture = _gl.GenTexture();
-            _gl.BindTexture(GLEnum.Texture2D, _fontTexture);
-            _gl.TexParameterI(GLEnum.Texture2D, GLEnum.TextureMinFilter, (int) GLEnum.Linear);
-            _gl.TexParameterI(GLEnum.Texture2D, GLEnum.TextureMagFilter, (int) GLEnum.Linear);
-
-            _gl.TexImage2D(GLEnum.Texture2D, 0, (int) GLEnum.Rgba, (uint) width, (uint) height, 0, GLEnum.Rgba, GLEnum.UnsignedByte, (void*) pixels);
+         
+            _fontTexture = new Texture(_gl, width, height, pixels);
+            _fontTexture.SetMagFilter(TextureMagFilter.Linear);
+            _fontTexture.SetMinFilter(TextureMinFilter.Linear);
 
             // Store our identifier
-            io.Fonts.SetTexID((IntPtr) _fontTexture);
+            io.Fonts.SetTexID((IntPtr) _fontTexture.GlTexture);
 
             // Restore state
             _gl.BindTexture(GLEnum.Texture2D, (uint) lastTexture);
-        }
-
-        /// <summary>
-        /// Frees OpenGL objects.
-        /// </summary>
-        private void DestroyDeviceObjects()
-        {
-            if (_vboHandle != 0)
-            {
-                _gl.DeleteBuffer(_vboHandle);
-                _vboHandle = 0;
-            }
-            if (_elementsHandle != 0)
-            {
-                _gl.DeleteBuffer(_elementsHandle);
-                _elementsHandle = 0;
-            }
-            if (_shaderHandle != 0 && _vertHandle != 0)
-            {
-                _gl.DetachShader(_shaderHandle, _vertHandle);
-            }
-            if (_shaderHandle != 0 && _fragHandle != 0)
-            {
-                _gl.DetachShader(_shaderHandle, _fragHandle);
-            }
-            if (_vertHandle != 0)
-            {
-                _gl.DeleteShader(_vertHandle);
-                _vertHandle = 0;
-            }
-            if (_fragHandle != 0)
-            {
-                _gl.DeleteShader(_fragHandle);
-                _fragHandle = 0;
-            }
-            if (_shaderHandle != 0)
-            {
-                _gl.DeleteProgram(_shaderHandle);
-                _shaderHandle = 0;
-            }
-
-            DestroyFontsTexture();
-        }
-
-        /// <summary>
-        /// Frees ImGui Font texture.
-        /// </summary>
-        private void DestroyFontsTexture()
-        {
-            if (_fontTexture != 0)
-            {
-                var io = ImGuiNET.ImGui.GetIO();
-                _gl.DeleteTexture(_fontTexture);
-                io.Fonts.SetTexID((IntPtr) 0);
-                _fontTexture = 0;
-            }
-        }
-
-        private bool CheckShader(uint handle, string desc)
-        {
-            _gl.GetShader(handle, GLEnum.CompileStatus, out int status);
-
-            if (status == 0)
-            {
-                string info = _gl.GetShaderInfoLog(handle);
-                Debug.WriteLine($"GL.CompileShader for shader '{desc}' had info log:\n{info}");
-            }
-
-            return status == 1;
-        }
-
-        private bool CheckProgram(uint handle, string desc)
-        {
-            _gl.GetProgram(handle, GLEnum.LinkStatus, out int status);
-
-            if (status == 0)
-            {
-                string info = _gl.GetProgramInfoLog(handle);
-                Debug.WriteLine($"GL.LinkProgram had info log [{desc}]:\n{info}");
-            }
-
-            return status == 1;
         }
 
         /// <summary>
@@ -624,7 +540,12 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             _view.Resize -= WindowResized;
             _keyboard.KeyChar -= OnKeyChar;
 
-            DestroyDeviceObjects();
+            _gl.DeleteBuffer(_vboHandle);
+            _gl.DeleteBuffer(_elementsHandle);
+            _gl.DeleteVertexArray(_vertexArrayObject);
+
+            _fontTexture.Dispose();
+            _shader.Dispose();
         }
     }
 }
