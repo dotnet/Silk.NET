@@ -99,9 +99,11 @@ namespace Silk.NET.SDL
         /// <inheritdoc cref="IGLContext" />
         public void Dispose()
         {
-            AssertCreated();
-            _sdl.GLDeleteContext(_ctx);
-            _ctx = null;
+            if (_ctx != null)
+            {
+                _sdl.GLDeleteContext(_ctx);
+                _ctx = null;
+            }
         }
 
         /// <inheritdoc cref="IGLContext" />

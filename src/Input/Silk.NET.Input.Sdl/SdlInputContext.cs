@@ -270,7 +270,8 @@ namespace Silk.NET.Input.Sdl
                 gp.Update();
             }
 
-            Sdl.ThrowError();
+            // There's actually nowhere here that will raise an SDL error that we cause.
+            // Sdl.ThrowError();
         }
 
         private void RefreshJoysticksAndGamepads()

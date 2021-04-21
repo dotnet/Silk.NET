@@ -62,7 +62,7 @@ namespace Silk.NET.Windowing.Sdl
         internal SDL.Sdl Sdl { get; }
         internal SDL.Window* SdlWindow { get; private set; }
         internal bool IsClosingVal { get; set; }
-        public override bool IsClosing => IsClosingVal;
+        protected override bool CoreIsClosing => IsClosingVal;
         public override bool IsEventDriven { get; set; }
         public List<Event> Events { get; } = new List<Event>();
         protected SdlView? ParentView { get; }
@@ -272,12 +272,6 @@ namespace Silk.NET.Windowing.Sdl
 
                 Events.RemoveAt(0);
             }
-        }
-
-        public override void Dispose()
-        {
-            Reset();
-            GC.SuppressFinalize(this);
         }
 
         ~SdlView()
