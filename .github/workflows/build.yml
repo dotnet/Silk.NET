@@ -1,20 +1,11 @@
 name: CI Build
-
 on:
   push:
-    paths:
-      - 'src/**/*'
-      - 'build/nuke/*'
-      - 'examples/**/*'
     branches:
       - 'main'
       - 'release/*'
   pull_request:
-    paths:
-      - 'src/**/*'
-      - 'build/nuke/*'
-      - 'examples/**/*'
-
+    # none
 jobs:
   Build:
     runs-on: windows-latest
@@ -42,3 +33,6 @@ jobs:
     - name: Push to NuGet
       if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request' }}
       run: nuke PushToNuGet --skip Clean Restore Compile Pack --nuget-feed https://pkgs.dev.azure.com/UltzOS/Silk.NET/_packaging/Experimental/nuget/v3/index.json --nuget-username ${{ secrets.AZDO_ARTIFACTS_USERNAME }} --nuget-password ${{ secrets.AZDO_ARTIFACTS_TOKEN }} --nuget-api-key az
+    - name: Push to GitHub Packages
+      if: ${{ github.repository == 'dotnet/Silk.NET' && github.event_name != 'pull_request' }}
+      run: nuke PushToNuGet --skip Clean Restore Compile Pack --nuget-feed https://nuget.pkg.github.com/dotnet/index.json --nuget-api-key ${{ secrets.GITHUB_TOKEN }}
