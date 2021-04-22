@@ -97,7 +97,7 @@ namespace Silk.NET.Windowing.Internals
 
         bool IWindow.IsClosing
         {
-            get => IsClosing;
+            get => CoreIsClosing;
             set => IsClosingSettable = value;
         }
 

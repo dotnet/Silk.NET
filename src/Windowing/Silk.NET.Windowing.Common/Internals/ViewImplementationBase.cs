@@ -54,6 +54,7 @@ namespace Silk.NET.Windowing.Internals
         // Property bases - these have extra functionality baked into their getters and setters
         protected abstract Vector2D<int> CoreSize { get; }
         protected abstract nint CoreHandle { get; }
+        protected abstract bool CoreIsClosing { get; }
 
         // Function bases - again extra functionality on top
         protected abstract void CoreInitialize(ViewOptions opts);
@@ -62,13 +63,11 @@ namespace Silk.NET.Windowing.Internals
         // Other APIs implemented abstractly
         public abstract IGLContext? GLContext { get; }
         public abstract IVkSurface? VkSurface { get; }
-        public abstract bool IsClosing { get; }
         public abstract VideoMode VideoMode { get; }
         public abstract bool IsEventDriven { get; set; }
         public abstract Vector2D<int> FramebufferSize { get; }
         public abstract void DoEvents();
         public abstract void ContinueEvents();
-        public abstract void Dispose();
         public abstract Vector2D<int> PointToClient(Vector2D<int> point);
         public abstract Vector2D<int> PointToScreen(Vector2D<int> point);
         public abstract void Close();
@@ -113,14 +112,14 @@ namespace Silk.NET.Windowing.Internals
             {
                 return;
             }
-            
+
+            IsInitialized = false;
             _renderStopwatch.Reset();
             _updateStopwatch.Reset();
             _lifetimeStopwatch.Reset();
             CoreReset();
             UnregisterCallbacks();
             Native = null;
-            IsInitialized = false;
         }
 
         // Game loop controls
@@ -197,6 +196,7 @@ namespace Silk.NET.Windowing.Internals
         public INativeWindow? Native { get; private set; }
         public Vector2D<int> Size => IsInitialized ? CoreSize : default;
         public nint Handle => IsInitialized ? CoreHandle : 0;
+        public bool IsClosing => !IsInitialized || CoreIsClosing; // IsClosing = true if window is reset halts game loop
         public GraphicsAPI API => _optionsCache.API;
         public double Time => _lifetimeStopwatch.Elapsed.TotalSeconds;
         public int? PreferredDepthBufferBits => _optionsCache.PreferredDepthBufferBits;
@@ -253,6 +253,12 @@ namespace Silk.NET.Windowing.Internals
                 X = point.X * (fSize.X / aSize.X),
                 Y = point.Y * (fSize.Y / aSize.Y)
             };
+        }
+        
+        public virtual void Dispose()
+        {
+            Reset();
+            GC.SuppressFinalize(this);
         }
 
         // Invoke system

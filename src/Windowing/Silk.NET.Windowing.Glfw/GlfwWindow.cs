@@ -14,13 +14,10 @@ using Silk.NET.Windowing.Internals;
 
 namespace Silk.NET.Windowing.Glfw
 {
-    internal unsafe class GlfwWindow : WindowImplementationBase, IGLContext, IVkSurface
+    internal unsafe class GlfwWindow : WindowImplementationBase, IVkSurface
     {
         internal readonly GLFW.Glfw _glfw;
         internal WindowHandle* _glfwWindow;
-        private string _localTitleCache; // glfw doesn't let us get the window title.
-        private readonly GlfwWindow? _parent;
-        private readonly GlfwMonitor? _initialMonitor;
 
         // Callbacks
         private GlfwCallbacks.WindowPosCallback? _onMove;
@@ -31,8 +28,14 @@ namespace Silk.NET.Windowing.Glfw
         private GlfwCallbacks.WindowFocusCallback? _onFocusChanged;
         private GlfwCallbacks.WindowIconifyCallback? _onMinimized;
         private GlfwCallbacks.WindowMaximizeCallback? _onMaximized;
+        
+        // Other variables
+        private readonly GlfwWindow? _parent;
+        private readonly GlfwMonitor? _initialMonitor;
         private Vector2D<int> _nonFullscreenPosition;
         private Vector2D<int> _nonFullscreenSize;
+        private string _localTitleCache; // glfw doesn't let us get the window title.
+        private GlfwContext? _glContext;
 
         public GlfwWindow(WindowOptions optionsCache, GlfwWindow? parent, GlfwMonitor? monitor) : base(optionsCache)
         {
@@ -48,11 +51,11 @@ namespace Silk.NET.Windowing.Glfw
             get
             {
                 _glfw.GetWindowSize(_glfwWindow, out var width, out var height);
-                return new Vector2D<int>(width, height);
+                return new(width, height);
             }
         }
         
-        protected override unsafe Rectangle<int> CoreBorderSize
+        protected override Rectangle<int> CoreBorderSize
         {
             get
             {
@@ -84,7 +87,9 @@ namespace Silk.NET.Windowing.Glfw
         }
 
         public override IGLContext? GLContext
-            => API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES ? this : null;
+            => API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES
+                ? _glContext ??= new(_glfw, _glfwWindow, this)
+                : null;
 
         public override IVkSurface? VkSurface => API.API == ContextAPI.Vulkan && _glfw.VulkanSupported() ? this : null;
 
@@ -109,7 +114,7 @@ namespace Silk.NET.Windowing.Glfw
             get
             {
                 _glfw.GetWindowPos(_glfwWindow, out var x, out var y);
-                return new Vector2D<int>(x, y);
+                return new(x, y);
             }
             set => _glfw.SetWindowPos(_glfwWindow, value.X, value.Y);
         }
@@ -326,7 +331,6 @@ namespace Silk.NET.Windowing.Glfw
                 {
                     null => null,
                     _ when share is GlfwContext glfwContext => (WindowHandle*) glfwContext.Handle,
-                    _ when share is GlfwWindow glfwWindow => glfwWindow._glfwWindow,
                     _ => throw new ArgumentException("The given shared context should be a GlfwContext or GlfwWindow")
                 }
             );
@@ -373,7 +377,7 @@ namespace Silk.NET.Windowing.Glfw
                     var icon = icons[i];
                     // ReSharper disable once StackAllocInsideLoop
                     Span<byte> iconMemory = stackalloc byte[icon.Pixels.Length];
-                    images[i] = new Image
+                    images[i] = new()
                     {
                         Width = icon.Width, Height = icon.Height,
                         Pixels = (byte*) Unsafe.AsPointer(ref iconMemory[0])
@@ -390,7 +394,6 @@ namespace Silk.NET.Windowing.Glfw
         public override IWindow CreateWindow(WindowOptions opts) => new GlfwWindow(opts, this, null);
 
         public override IWindowHost? Parent => (IWindowHost?) _parent ?? Monitor;
-        public IGLContextSource? Source => (IGLContextSource?) GLContext;
         public override IGLContext? SharedContext { get; }
 
 
@@ -486,7 +489,7 @@ namespace Silk.NET.Windowing.Glfw
             return -1;
         }
 
-        public override bool IsClosing => _glfw.WindowShouldClose(_glfwWindow);
+        protected override bool CoreIsClosing => _glfw.WindowShouldClose(_glfwWindow);
 
         public override VideoMode VideoMode
             => IsInitialized ? CachedVideoMode = Monitor?.VideoMode ?? CachedVideoMode : CachedVideoMode;
@@ -498,7 +501,7 @@ namespace Silk.NET.Windowing.Glfw
             get
             {
                 _glfw.GetFramebufferSize(_glfwWindow, out var width, out var height);
-                return new Vector2D<int>(width, height);
+                return new(width, height);
             }
         }
 
@@ -515,12 +518,6 @@ namespace Silk.NET.Windowing.Glfw
         }
 
         public override void ContinueEvents() => _glfw.PostEmptyEvent();
-
-        public override void Dispose()
-        {
-            Reset();
-            GC.SuppressFinalize(this);
-        }
 
         public nint GetProcAddress(string proc, int? slot = default)
         {
@@ -567,7 +564,7 @@ namespace Silk.NET.Windowing.Glfw
 
             _onFramebufferResize = (window, width, height) =>
             {
-                FramebufferResize?.Invoke(new Vector2D<int>(width, height));
+                FramebufferResize?.Invoke(new(width, height));
             };
 
             _onClosing = window => Closing?.Invoke();
@@ -689,12 +686,6 @@ namespace Silk.NET.Windowing.Glfw
         {
             Reset();
         }
-
-        public bool IsCurrent => _glfw.GetCurrentContext() == _glfwWindow;
-        public void SwapInterval(int interval) => _glfw.SwapInterval(interval);
-        public void SwapBuffers() => _glfw.SwapBuffers(_glfwWindow);
-        public void MakeCurrent() => _glfw.MakeContextCurrent(_glfwWindow);
-        public void Clear() => _glfw.MakeContextCurrent(null);
 
         public VkNonDispatchableHandle Create<T>(VkHandle instance, T* allocator) where T : unmanaged
         {
