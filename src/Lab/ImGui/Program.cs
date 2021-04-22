@@ -34,7 +34,7 @@ namespace ImGui
             };
 
             // Handle resizes
-            window.Resize += s =>
+            window.FramebufferResize += s =>
             {
                 // Adjust the viewport to the new window size
                 gl.Viewport(s);

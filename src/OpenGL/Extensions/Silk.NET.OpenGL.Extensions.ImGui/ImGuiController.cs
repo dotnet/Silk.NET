@@ -227,7 +227,7 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             io.KeyMap[(int) ImGuiKey.Z] = (int) Key.Z;
         }
 
-        private unsafe void SetupRenderState(ImDrawDataPtr drawDataPtr, int fbWidth, int fbHeight)
+        private unsafe void SetupRenderState(ImDrawDataPtr drawDataPtr, int framebufferWidth, int framebufferHeight)
         {
             // Setup render state: alpha-blending enabled, no face culling, no depth testing, scissor enabled, polygon fill
             _gl.Enable(GLEnum.Blend);
@@ -240,15 +240,12 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             _gl.Disable(GLEnum.PrimitiveRestart);
             _gl.PolygonMode(GLEnum.FrontAndBack, GLEnum.Fill);
 
-            // Setup viewport, orthographic projection matrix
-            // Our visible imgui space lies from draw_data->DisplayPos (top left) to draw_data->DisplayPos+data_data->DisplaySize (bottom right). DisplayPos is (0,0) for single viewport apps.
-            _gl.Viewport(0, 0, (uint) fbWidth, (uint) fbHeight);
             float L = drawDataPtr.DisplayPos.X;
             float R = drawDataPtr.DisplayPos.X + drawDataPtr.DisplaySize.X;
             float T = drawDataPtr.DisplayPos.Y;
             float B = drawDataPtr.DisplayPos.Y + drawDataPtr.DisplaySize.Y;
 
-            float[] orthoProjection = new float[] {
+            Span<float> orthoProjection = stackalloc float[] {
                 2.0f / (R - L), 0.0f, 0.0f, 0.0f,
                 0.0f, 2.0f / (T - B), 0.0f, 0.0f,
                 0.0f, 0.0f, -1.0f, 0.0f,
@@ -282,9 +279,9 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
 
         private unsafe void RenderImDrawData(ImDrawDataPtr drawDataPtr)
         {
-            int fbWidth = (int) (drawDataPtr.DisplaySize.X * drawDataPtr.FramebufferScale.X);
-            int fbHeight = (int) (drawDataPtr.DisplaySize.Y * drawDataPtr.FramebufferScale.Y);
-            if (fbWidth <= 0 || fbHeight <= 0)
+            int framebufferWidth = (int) (drawDataPtr.DisplaySize.X * drawDataPtr.FramebufferScale.X);
+            int framebufferHeight = (int) (drawDataPtr.DisplaySize.Y * drawDataPtr.FramebufferScale.Y);
+            if (framebufferWidth <= 0 || framebufferHeight <= 0)
                 return;
 
             // Backup GL state
@@ -299,14 +296,11 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             _gl.GetInteger(GLEnum.ArrayBufferBinding, out int lastArrayBuffer);
             _gl.GetInteger(GLEnum.VertexArrayBinding, out int lastVertexArrayObject);
 
-            int[] lastPolygonMode = new int[2];
+            Span<int> lastPolygonMode = stackalloc int[2];
             _gl.GetInteger(GLEnum.PolygonMode, lastPolygonMode);
 
-            int[] lastViewport = new int[4];
-            _gl.GetInteger(GLEnum.Viewport, lastViewport);
-
-            int[] lastScissorBox = new int[4];
-            _gl.GetInteger(GLEnum.Viewport, lastScissorBox);
+            Span<int> lastScissorBox = stackalloc int[4];
+            _gl.GetInteger(GLEnum.ScissorBox, lastScissorBox);
 
             _gl.GetInteger(GLEnum.BlendSrcRgb, out int lastBlendSrcRgb);
             _gl.GetInteger(GLEnum.BlendDstRgb, out int lastBlendDstRgb);
@@ -325,7 +319,7 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
 
             bool lastEnablePrimitiveRestart = _gl.IsEnabled(GLEnum.PrimitiveRestart);
 
-            SetupRenderState(drawDataPtr, fbWidth, fbHeight);
+            SetupRenderState(drawDataPtr, framebufferWidth, framebufferHeight);
 
             // Will project scissor/clipping rectangles into framebuffer space
             Vector2 clipOff = drawDataPtr.DisplayPos;         // (0,0) unless using multi-viewports
@@ -359,10 +353,10 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
                         clipRect.Z = (cmdPtr.ClipRect.Z - clipOff.X) * clipScale.X;
                         clipRect.W = (cmdPtr.ClipRect.W - clipOff.Y) * clipScale.Y;
 
-                        if (clipRect.X < fbWidth && clipRect.Y < fbHeight && clipRect.Z >= 0.0f && clipRect.W >= 0.0f)
+                        if (clipRect.X < framebufferWidth && clipRect.Y < framebufferHeight && clipRect.Z >= 0.0f && clipRect.W >= 0.0f)
                         {
                             // Apply scissor/clipping rectangle
-                            _gl.Scissor((int) clipRect.X, (int) (fbHeight - clipRect.W), (uint) (clipRect.Z - clipRect.X), (uint) (clipRect.W - clipRect.Y));
+                            _gl.Scissor((int) clipRect.X, (int) (framebufferHeight - clipRect.W), (uint) (clipRect.Z - clipRect.X), (uint) (clipRect.W - clipRect.Y));
                             _gl.CheckGlError("Scissor");
 
                             // Bind texture, Draw
@@ -448,8 +442,6 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             }
 
             _gl.PolygonMode(GLEnum.FrontAndBack, (GLEnum) lastPolygonMode[0]);
-
-            _gl.Viewport(lastViewport[0], lastViewport[1], (uint) lastViewport[2], (uint) lastViewport[3]);
 
             _gl.Scissor(lastScissorBox[0], lastScissorBox[1], (uint) lastScissorBox[2], (uint) lastScissorBox[3]);
         }
