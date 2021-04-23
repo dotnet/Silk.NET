@@ -54,26 +54,22 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
 
         public void SetMinFilter(TextureMinFilter filter)
         {
-            Bind();
             _gl.TexParameterI(GLEnum.Texture2D, TextureParameterName.TextureMinFilter, (int)filter);
         }
 
         public void SetMagFilter(TextureMagFilter filter)
         {
-            Bind();
             _gl.TexParameterI(GLEnum.Texture2D, TextureParameterName.TextureMagFilter, (int)filter);
         }
 
         public void SetAnisotropy(float level)
         {
-            Bind();
             const TextureParameterName textureMaxAnisotropy = (TextureParameterName)0x84FE;
             _gl.TexParameter(GLEnum.Texture2D, (GLEnum)textureMaxAnisotropy, Util.Clamp(level, 1, MaxAniso.GetValueOrDefault()));
         }
 
         public void SetLod(int @base, int min, int max)
         {
-            Bind();
             _gl.TexParameterI(GLEnum.Texture2D, TextureParameterName.TextureLodBias, @base);
             _gl.TexParameterI(GLEnum.Texture2D, TextureParameterName.TextureMinLod, min);
             _gl.TexParameterI(GLEnum.Texture2D, TextureParameterName.TextureMaxLod, max);
@@ -81,7 +77,6 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
         
         public void SetWrap(TextureCoordinate coord, TextureWrapMode mode)
         {
-            Bind();
             _gl.TexParameterI(GLEnum.Texture2D, (TextureParameterName)coord, (int)mode);
         }
 

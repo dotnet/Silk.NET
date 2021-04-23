@@ -514,6 +514,7 @@ namespace Silk.NET.OpenGL.Extensions.ImGui
             _gl.GetInteger(GLEnum.Texture2D, out int lastTexture);
          
             _fontTexture = new Texture(_gl, width, height, pixels);
+            _fontTexture.Bind();
             _fontTexture.SetMagFilter(TextureMagFilter.Linear);
             _fontTexture.SetMinFilter(TextureMinFilter.Linear);
 
