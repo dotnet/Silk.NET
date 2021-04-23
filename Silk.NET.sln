@@ -18,9 +18,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Windowing.Common", "src\Windowing\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj", "{956F722C-DFD3-435E-9D2E-A0549C4D8BC0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{E1F91563-7277-4E9B-A3B7-8D5FD9802A4A}"
-ProjectSection(SolutionItems) = preProject
-	examples\Directory.Build.props = examples\Directory.Build.props
-EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		examples\Directory.Build.props = examples\Directory.Build.props
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "OpenAL", "OpenAL", "{081E7761-B200-4DBF-8950-941464DECACE}"
 EndProject
@@ -44,7 +44,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Build Properties", "Build P
 		build\csharp_typemap.json = build\csharp_typemap.json
 		generator.json = generator.json
 		build\gl_typemap.json = build\gl_typemap.json
-					build\dx_typemap.json = build\dx_typemap.json
+		build\dx_typemap.json = build\dx_typemap.json
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Input.Common", "src\Input\Silk.NET.Input.Common\Silk.NET.Input.Common.csproj", "{8FFF49D6-B029-400B-8510-1A088868DFA6}"
@@ -346,9 +346,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.XInput", "src\Microsoft\Silk.NET.XInput\Silk.NET.XInput.csproj", "{E8DE9BA0-8391-4278-926D-DD931C4172AF}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Maths", "Maths", "{41EEBDB3-75C4-4A60-B4D5-673FBCA791E7}"
-ProjectSection(SolutionItems) = preProject
-	src\Maths\.editorconfig = src\Maths\.editorconfig
-EndProjectSection
+	ProjectSection(SolutionItems) = preProject
+		src\Maths\.editorconfig = src\Maths\.editorconfig
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Maths", "src\Maths\Silk.NET.Maths\Silk.NET.Maths.csproj", "{BD86AB4D-74FD-429D-9AEE-79B0C429BB3A}"
 EndProject
@@ -373,6 +373,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Assimp.Native", "src\Native\Silk.NET.Assimp.Native\Silk.NET.Assimp.Native.csproj", "{D3D9891B-88E6-46AD-919C-7EC4EABE5266}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Extensions.ImGui", "src\OpenGL\Extensions\Silk.NET.OpenGL.Extensions.ImGui\Silk.NET.OpenGL.Extensions.ImGui.csproj", "{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImGui", "src\Lab\ImGui\ImGui.csproj", "{BBCE3663-B0A6-4198-A2DB-4A64B0530449}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -2238,6 +2240,18 @@ Global
 		{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}.Release|x64.Build.0 = Release|Any CPU
 		{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}.Release|x86.ActiveCfg = Release|Any CPU
 		{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85}.Release|x86.Build.0 = Release|Any CPU
+		{BBCE3663-B0A6-4198-A2DB-4A64B0530449}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBCE3663-B0A6-4198-A2DB-4A64B0530449}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBCE3663-B0A6-4198-A2DB-4A64B0530449}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{BBCE3663-B0A6-4198-A2DB-4A64B0530449}.Debug|x64.Build.0 = Debug|Any CPU
+		{BBCE3663-B0A6-4198-A2DB-4A64B0530449}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{BBCE3663-B0A6-4198-A2DB-4A64B0530449}.Debug|x86.Build.0 = Debug|Any CPU
+		{BBCE3663-B0A6-4198-A2DB-4A64B0530449}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBCE3663-B0A6-4198-A2DB-4A64B0530449}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBCE3663-B0A6-4198-A2DB-4A64B0530449}.Release|x64.ActiveCfg = Release|Any CPU
+		{BBCE3663-B0A6-4198-A2DB-4A64B0530449}.Release|x64.Build.0 = Release|Any CPU
+		{BBCE3663-B0A6-4198-A2DB-4A64B0530449}.Release|x86.ActiveCfg = Release|Any CPU
+		{BBCE3663-B0A6-4198-A2DB-4A64B0530449}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2406,6 +2420,7 @@ Global
 		{84F51960-D814-450D-80EB-D9E46A1D5187} = {72E7FA64-5B1E-477D-BD30-63B7F206B3C4}
 		{D3D9891B-88E6-46AD-919C-7EC4EABE5266} = {72E7FA64-5B1E-477D-BD30-63B7F206B3C4}
 		{462A4DDB-3B81-46C7-BFC8-3AD9269BCF85} = {CF69D5C3-4ACE-4458-BA5A-0E9A3B294CDC}
+		{BBCE3663-B0A6-4198-A2DB-4A64B0530449} = {DFA0E841-33E5-4533-AF00-964E21A141B8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5273D7F-3334-48DF-94E3-41AE6816CD4D}
