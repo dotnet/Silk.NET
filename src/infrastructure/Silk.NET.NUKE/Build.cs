@@ -376,7 +376,7 @@ class Build : NukeBuild
     {
         const int rateLimit = 300;
         var allFiles = Directory.GetFiles(RootDirectory / "build" / "output_packages", "*.nupkg")
-            .Where(x => Path.GetFileName(x).StartsWith("Silk.NET"))
+            .Where(x => Path.GetFileName(x).StartsWith("Silk.NET") || Path.GetFileName(x).StartsWith("Ultz.Native"))
             .Select((x, i) => new {Index = i, Value = x})
             .GroupBy(x => x.Index / rateLimit)
             .Select(x => x.Select(v => v.Value).ToList())
