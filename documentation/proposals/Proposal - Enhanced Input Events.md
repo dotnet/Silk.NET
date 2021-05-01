@@ -18,31 +18,6 @@ The only API changes will be to the events presented by IMouse, IKeyboard and po
 
 ## Enums
 
-#### KeyAction
-```cs
-/// <summary>
-/// Defines actions for keyboard keys.
-/// </summary>
-public enum KeyAction
-{
-    Pressed,
-    Repeat,
-    Released
-}
-```
-
-#### ButtonAction
-```cs
-/// <summary>
-/// Defines actions for mouse buttons.
-/// </summary>
-public enum ButtonAction
-{
-    Pressed,
-    Released
-}
-```
-
 #### KeyModifiers
 Based on [the modifier keys flag from GLFW](https://www.glfw.org/docs/latest/group__mods.html).
 ```cs
@@ -60,14 +35,25 @@ public enum KeyModifiers
 
 ## Structs
 
-#### KeyEvent
+#### KeyDownEvent
 ```cs
-public readonly struct KeyEvent
+public readonly struct KeyDownEvent
 {
     public IKeyboard Keyboard { get; }
     public Key Key { get; }
     public int KeyCode { get; }
-    public KeyAction Action { get; }
+    public KeyModifiers Modifiers { get; }
+    public boolean IsRepeat { get; }
+}
+```
+
+#### KeyUpEvent
+```cs
+public readonly struct KeyUpEvent
+{
+    public IKeyboard Keyboard { get; }
+    public Key Key { get; }
+    public int KeyCode { get; }
     public KeyModifiers Modifiers { get; }
 }
 ```
@@ -78,6 +64,7 @@ public readonly struct KeyCharEvent
 {
     public IKeyboard Keyboard { get; }
     public char Character { get; }
+    public int KeyCode { get; }
 }
 ```
 
@@ -87,8 +74,7 @@ public readonly struct MouseMoveEvent
 {
     public IMouse Mouse { get; }
     public Vector2 Position { get; }
-    // We can also add to get the difference between Position and the Position in the last move mouse invocation:
-    // public Vector2 Delta { get; }
+    public Vector2 Delta { get; }
 }
 ```
 
@@ -99,7 +85,6 @@ public readonly struct MouseButtonEvent
     public IMouse Mouse { get; }
     public Vector2 Position { get; }
     public MouseButton Button { get; }
-    public ButtonAction Action { get; }
     public KeyModifiers Modifiers { get; }
 }
 ```
@@ -112,7 +97,7 @@ public readonly struct MouseScrollEvent
     public IMouse Mouse { get; }
     public Vector2 Position { get; }
     public Vector2 WheelPosition { get; }
-    // public Vector2 Delta { get; }
+    public Vector2 Delta { get; }
 }
 ```
 
@@ -138,8 +123,9 @@ public interface IKeyboard : IInputDevice
     // event Action<IKeyboard, Key> KeyUp;
     // event Action<IKeyboard, char> KeyChar;
     
-    // Reports all key events, KeyAction.Press, KeyAction.Repeat and KeyAction.Release
-    event Action<KeyEvent> KeyAction;
+    // KeyDown reports key down and key repeats
+    event Action<KeyDownEvent> KeyDown;
+    event Action<KeyUpEvent> KeyUp;
     
     event Action<KeyCharEvent> KeyChar;
 }
