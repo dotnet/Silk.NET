@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkPipelineStageFlags2KHR")]
-    public enum PipelineStageFlags2KHR : int
+    public enum PipelineStageFlags2KHR : long
     {
         [NativeName("Name", "VK_PIPELINE_STAGE_2_NONE_KHR")]
         PipelineStage2NoneKhr = 0,

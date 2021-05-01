@@ -314,7 +314,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         NativeName = e.NativeName.Replace("FlagBits", "Flags"),
                         ProfileName = feature,
                         ProfileVersion = null,
-                        Tokens = e.Tokens
+                        Tokens = e.Tokens,
+                        EnumBaseType = e.EnumBaseType
                     };
                 }
             }
@@ -433,7 +434,12 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             .ToList(),
                         Attributes = e.Type == EnumType.Bitmask
                             ? new List<Attribute> {new Attribute {Name = "Flags"}}
-                            : new List<Attribute>()
+                            : new List<Attribute>(),
+                        EnumBaseType = e.BitWidth switch
+                        {
+                            64 => new(){Name = "long"},
+                            _ => new(){Name = "int"}
+                        }
                     }
                 );
             }
