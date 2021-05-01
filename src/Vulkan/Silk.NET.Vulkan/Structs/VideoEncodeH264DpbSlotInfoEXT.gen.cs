@@ -23,8 +23,8 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoEncodeH264DpbSlotInfoExt,
             void* pNext = null,
-            int8_t? slotIndex = null,
-            StdVideoEncodeH264PictureInfo* pStdPictureInfo = null
+            sbyte? slotIndex = null,
+            Video.StdVideoEncodeH264PictureInfo* pStdPictureInfo = null
         ) : this()
         {
             if (sType is not null)
@@ -62,11 +62,11 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "slotIndex")]
-        public int8_t SlotIndex;
+        public sbyte SlotIndex;
 /// <summary></summary>
         [NativeName("Type", "StdVideoEncodeH264PictureInfo*")]
         [NativeName("Type.Name", "StdVideoEncodeH264PictureInfo")]
         [NativeName("Name", "pStdPictureInfo")]
-        public StdVideoEncodeH264PictureInfo* PStdPictureInfo;
+        public Video.StdVideoEncodeH264PictureInfo* PStdPictureInfo;
     }
 }

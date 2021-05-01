@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoDecodeH265DpbSlotInfoExt,
             void* pNext = null,
-            StdVideoDecodeH265ReferenceInfo* pStdReferenceInfo = null
+            Video.StdVideoDecodeH265ReferenceInfo* pStdReferenceInfo = null
         ) : this()
         {
             if (sType is not null)
@@ -56,6 +56,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "StdVideoDecodeH265ReferenceInfo*")]
         [NativeName("Type.Name", "StdVideoDecodeH265ReferenceInfo")]
         [NativeName("Name", "pStdReferenceInfo")]
-        public StdVideoDecodeH265ReferenceInfo* PStdReferenceInfo;
+        public Video.StdVideoDecodeH265ReferenceInfo* PStdReferenceInfo;
     }
 }

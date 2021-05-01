@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoEncodeH264NaluSliceExt,
             void* pNext = null,
-            StdVideoEncodeH264SliceHeader* pSliceHeaderStd = null,
+            Video.StdVideoEncodeH264SliceHeader* pSliceHeaderStd = null,
             uint? mbCount = null,
             byte? refFinalList0EntryCount = null,
             VideoEncodeH264DpbSlotInfoEXT* pRefFinalList0Entries = null,
@@ -104,7 +104,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "StdVideoEncodeH264SliceHeader*")]
         [NativeName("Type.Name", "StdVideoEncodeH264SliceHeader")]
         [NativeName("Name", "pSliceHeaderStd")]
-        public StdVideoEncodeH264SliceHeader* PSliceHeaderStd;
+        public Video.StdVideoEncodeH264SliceHeader* PSliceHeaderStd;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]

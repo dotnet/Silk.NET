@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoDecodeH265ProfileExt,
             void* pNext = null,
-            StdVideoH265ProfileIdc? stdProfileIdc = null
+            Video.StdVideoH265ProfileIdc? stdProfileIdc = null
         ) : this()
         {
             if (sType is not null)
@@ -56,6 +56,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "StdVideoH265ProfileIdc")]
         [NativeName("Type.Name", "StdVideoH265ProfileIdc")]
         [NativeName("Name", "stdProfileIdc")]
-        public StdVideoH265ProfileIdc StdProfileIdc;
+        public Video.StdVideoH265ProfileIdc StdProfileIdc;
     }
 }

@@ -24,9 +24,9 @@ namespace Silk.NET.Vulkan
             StructureType? sType = StructureType.VideoDecodeH265SessionParametersAddInfoExt,
             void* pNext = null,
             uint? spsStdCount = null,
-            StdVideoH265SequenceParameterSet* pSpsStd = null,
+            Video.StdVideoH265SequenceParameterSet* pSpsStd = null,
             uint? ppsStdCount = null,
-            StdVideoH265PictureParameterSet* pPpsStd = null
+            Video.StdVideoH265PictureParameterSet* pPpsStd = null
         ) : this()
         {
             if (sType is not null)
@@ -79,7 +79,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "StdVideoH265SequenceParameterSet*")]
         [NativeName("Type.Name", "StdVideoH265SequenceParameterSet")]
         [NativeName("Name", "pSpsStd")]
-        public StdVideoH265SequenceParameterSet* PSpsStd;
+        public Video.StdVideoH265SequenceParameterSet* PSpsStd;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
@@ -89,6 +89,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "StdVideoH265PictureParameterSet*")]
         [NativeName("Type.Name", "StdVideoH265PictureParameterSet")]
         [NativeName("Name", "pPpsStd")]
-        public StdVideoH265PictureParameterSet* PPpsStd;
+        public Video.StdVideoH265PictureParameterSet* PPpsStd;
     }
 }

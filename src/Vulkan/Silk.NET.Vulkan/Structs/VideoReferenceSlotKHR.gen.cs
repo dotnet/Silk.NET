@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoReferenceSlotKhr,
             void* pNext = null,
-            int8_t? slotIndex = null,
+            sbyte? slotIndex = null,
             VideoPictureResourceKHR* pPictureResource = null
         ) : this()
         {
@@ -62,7 +62,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "int8_t")]
         [NativeName("Type.Name", "int8_t")]
         [NativeName("Name", "slotIndex")]
-        public int8_t SlotIndex;
+        public sbyte SlotIndex;
 /// <summary></summary>
         [NativeName("Type", "VkVideoPictureResourceKHR*")]
         [NativeName("Type.Name", "VkVideoPictureResourceKHR")]

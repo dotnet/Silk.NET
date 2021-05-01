@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoDecodeH264PictureInfoExt,
             void* pNext = null,
-            StdVideoDecodeH264PictureInfo* pStdPictureInfo = null,
+            Video.StdVideoDecodeH264PictureInfo* pStdPictureInfo = null,
             uint? slicesCount = null,
             uint* pSlicesDataOffsets = null
         ) : this()
@@ -68,7 +68,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "StdVideoDecodeH264PictureInfo*")]
         [NativeName("Type.Name", "StdVideoDecodeH264PictureInfo")]
         [NativeName("Name", "pStdPictureInfo")]
-        public StdVideoDecodeH264PictureInfo* PStdPictureInfo;
+        public Video.StdVideoDecodeH264PictureInfo* PStdPictureInfo;
 /// <summary></summary>
         [NativeName("Type", "uint32_t")]
         [NativeName("Type.Name", "uint32_t")]
