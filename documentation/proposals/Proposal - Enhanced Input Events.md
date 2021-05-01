@@ -6,7 +6,7 @@ Proposal for adding important missing functionality to input, as well as other e
 
 # Current Status
 - [x] Proposed
-- [ ] Discussed with API Review Board (ARB)
+- [x] Discussed with API Review Board (ARB)
 - [ ] Approved
 - [ ] Implemented
 
@@ -25,9 +25,9 @@ The only API changes will be to the events presented by IMouse, IKeyboard and po
 /// </summary>
 public enum KeyAction
 {
-    Press,
+    Pressed,
     Repeat,
-    Release
+    Released
 }
 ```
 
@@ -38,8 +38,8 @@ public enum KeyAction
 /// </summary>
 public enum ButtonAction
 {
-    Press,
-    Release
+    Pressed,
+    Released
 }
 ```
 
@@ -49,20 +49,20 @@ Based on [the modifier keys flag from GLFW](https://www.glfw.org/docs/latest/gro
 [Flags]
 public enum KeyModifiers
 {
-    Shift = 1,
-    Control = 2,
-    Alt = 4,
-    Super = 8,
-    CapsLock = 16,
-    NumLock = 32
+    Shift = 1 << 1,
+    Control = 1 << 2,
+    Alt = 1 << 3,
+    Super = 1 << 4,
+    CapsLock = 1 << 5,
+    NumLock = 1 << 6
 }
 ```
 
 ## Structs
 
-#### KeyEventArgs
+#### KeyEvent
 ```cs
-public readonly struct KeyEventArgs
+public readonly struct KeyEvent
 {
     public IKeyboard Keyboard { get; }
     public Key Key { get; }
@@ -72,18 +72,18 @@ public readonly struct KeyEventArgs
 }
 ```
 
-#### CharacterTypedEventArgs
+#### KeyCharEvent
 ```cs
-public readonly struct CharacterTypedEventArgs
+public readonly struct KeyCharEvent
 {
     public IKeyboard Keyboard { get; }
     public char Character { get; }
 }
 ```
 
-#### MouseMoveEventArgs
+#### MouseMoveEvent
 ```cs
-public readonly struct MouseMoveEventArgs
+public readonly struct MouseMoveEvent
 {
     public IMouse Mouse { get; }
     public Vector2 Position { get; }
@@ -92,9 +92,9 @@ public readonly struct MouseMoveEventArgs
 }
 ```
 
-#### MouseButtonEventArgs
+#### MouseButtonEvent
 ```cs
-public readonly struct MouseButtonEventArgs
+public readonly struct MouseButtonEvent
 {
     public IMouse Mouse { get; }
     public Vector2 Position { get; }
@@ -104,14 +104,26 @@ public readonly struct MouseButtonEventArgs
 }
 ```
 
-#### MouseScrollEventArgs
+#### MouseScrollEvent
 This would replace the current ScrollWheel struct.
 ```cs
-public readonly struct MouseScrollEventArgs
+public readonly struct MouseScrollEvent
 {
     public IMouse Mouse { get; }
     public Vector2 Position { get; }
     public Vector2 WheelPosition { get; }
+    // public Vector2 Delta { get; }
+}
+```
+
+#### MouseClickEvent
+```cs
+public readonly struct MouseClickEvent
+{
+    public IMouse Mouse { get; }
+    public Vector2 Position { get; }
+    public MouseButton Button { get; }
+    public KeyModifier Modifiers { get; }
 }
 ```
 
@@ -121,16 +133,15 @@ public readonly struct MouseScrollEventArgs
 ```cs
 public interface IKeyboard : IInputDevice
 {
+    // The old events get removed:
     // event Action<IKeyboard, Key> KeyDown;
     // event Action<IKeyboard, Key> KeyUp;
     // event Action<IKeyboard, char> KeyChar;
     
-    event Action<KeyEventArgs> KeyDown;
-    event Action<KeyEventArgs> KeyUp;
-    // The KeyAction.Press and Repeat are reported through KeyDown. KeyAction.Release is reported through KeyUp.
-    // Another possibility is to report KeyAction.Repeat on a separate event, or to pack the three into a single KeyAction event.
+    // Reports all key events, KeyAction.Press, KeyAction.Repeat and KeyAction.Release
+    event Action<KeyEvent> KeyAction;
     
-    event Action<CharacterTypedEventArgs> CharacterTyped;
+    event Action<KeyCharEvent> KeyChar;
 }
 ```
 
@@ -138,6 +149,7 @@ public interface IKeyboard : IInputDevice
 ```cs
 public interface IMouse : IInputDevice
 {
+    // The old events get removed:
     // event Action<IMouse, Vector2> MouseMove;
     // event Action<IMouse, MouseButton> MouseDown;
     // event Action<IMouse, MouseButton> MouseUp;
@@ -145,12 +157,12 @@ public interface IMouse : IInputDevice
     // event Action<IMouse, MouseButton, Vector2> Click;
     // event Action<IMouse, MouseButton, Vector2> DoubleClick;
     
-    event Action<MouseMoveEventArgs> MouseMove;
-    event Action<MouseButtonEventArgs> MouseDown;
-    event Action<MouseButtonEventArgs> MouseUp;
-    event Action<MouseScrollEventArgs> Scroll;
-    event Action<MouseButtonEventArgs> Click;
-    event Action<MouseButtonEventArgs> DoubleClick;
+    event Action<MouseMoveEvent> MouseMove;
+    event Action<MouseButtonEvent> MouseDown;
+    event Action<MouseButtonEvent> MouseUp;
+    event Action<MouseScrollEvent> Scroll;
+    event Action<MouseClickEvent> Click;
+    event Action<MouseClickEvent> DoubleClick;
 }
 ```
 
