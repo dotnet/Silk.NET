@@ -41,14 +41,14 @@ namespace Silk.NET.Vulkan
         FormatFeatureSampledImageFilterLinearBit = 4096,
         [NativeName("Name", "VK_FORMAT_FEATURE_SAMPLED_IMAGE_FILTER_CUBIC_BIT_IMG")]
         FormatFeatureSampledImageFilterCubicBitImg = 8192,
-        [NativeName("Name", "VK_FORMAT_FEATURE_RESERVED_27_BIT_KHR")]
-        FormatFeatureReserved27BitKhr = 134217728,
-        [NativeName("Name", "VK_FORMAT_FEATURE_RESERVED_28_BIT_KHR")]
-        FormatFeatureReserved28BitKhr = 268435456,
-        [NativeName("Name", "VK_FORMAT_FEATURE_RESERVED_25_BIT_KHR")]
-        FormatFeatureReserved25BitKhr = 33554432,
-        [NativeName("Name", "VK_FORMAT_FEATURE_RESERVED_26_BIT_KHR")]
-        FormatFeatureReserved26BitKhr = 67108864,
+        [NativeName("Name", "VK_FORMAT_FEATURE_VIDEO_DECODE_OUTPUT_BIT_KHR")]
+        FormatFeatureVideoDecodeOutputBitKhr = 33554432,
+        [NativeName("Name", "VK_FORMAT_FEATURE_VIDEO_DECODE_DPB_BIT_KHR")]
+        FormatFeatureVideoDecodeDpbBitKhr = 67108864,
+        [NativeName("Name", "VK_FORMAT_FEATURE_VIDEO_ENCODE_INPUT_BIT_KHR")]
+        FormatFeatureVideoEncodeInputBitKhr = 134217728,
+        [NativeName("Name", "VK_FORMAT_FEATURE_VIDEO_ENCODE_DPB_BIT_KHR")]
+        FormatFeatureVideoEncodeDpbBitKhr = 268435456,
         [NativeName("Name", "VK_FORMAT_FEATURE_TRANSFER_SRC_BIT_KHR")]
         FormatFeatureTransferSrcBitKhr = 16384,
         [NativeName("Name", "VK_FORMAT_FEATURE_TRANSFER_DST_BIT_KHR")]

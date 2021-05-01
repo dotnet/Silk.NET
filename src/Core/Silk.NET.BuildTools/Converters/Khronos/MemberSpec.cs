@@ -43,7 +43,20 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             string elementCountSymbolic = null;
             for (var i = 2; i < 10; i++)
             {
-                if (xeValue.Contains($"{name}[{i}]"))
+                if (xeValue.Contains($"{name}[{i}]["))
+                {
+                    for (var j = 2; j < 10; j++)
+                    {
+                        // not future proof, but works fine for now. we'll have something more elegant in 3.0
+                        if (xeValue.Contains($"{name}[{i}][{j}]"))
+                        {
+                            elementCount = i * j;
+                            foundConstantElementCount = true;
+                            break;
+                        }
+                    }
+                }
+                else if (xeValue.Contains($"{name}[{i}]"))
                 {
                     elementCount = i;
                     foundConstantElementCount = true;

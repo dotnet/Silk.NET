@@ -31,14 +31,14 @@ namespace Silk.NET.Vulkan
         BufferUsageVertexBufferBit = 128,
         [NativeName("Name", "VK_BUFFER_USAGE_INDIRECT_BUFFER_BIT")]
         BufferUsageIndirectBufferBit = 256,
-        [NativeName("Name", "VK_BUFFER_USAGE_RESERVED_15_BIT_KHR")]
-        BufferUsageReserved15BitKhr = 32768,
-        [NativeName("Name", "VK_BUFFER_USAGE_RESERVED_16_BIT_KHR")]
-        BufferUsageReserved16BitKhr = 65536,
-        [NativeName("Name", "VK_BUFFER_USAGE_RESERVED_13_BIT_KHR")]
-        BufferUsageReserved13BitKhr = 8192,
-        [NativeName("Name", "VK_BUFFER_USAGE_RESERVED_14_BIT_KHR")]
-        BufferUsageReserved14BitKhr = 16384,
+        [NativeName("Name", "VK_BUFFER_USAGE_VIDEO_DECODE_SRC_BIT_KHR")]
+        BufferUsageVideoDecodeSrcBitKhr = 8192,
+        [NativeName("Name", "VK_BUFFER_USAGE_VIDEO_DECODE_DST_BIT_KHR")]
+        BufferUsageVideoDecodeDstBitKhr = 16384,
+        [NativeName("Name", "VK_BUFFER_USAGE_VIDEO_ENCODE_DST_BIT_KHR")]
+        BufferUsageVideoEncodeDstBitKhr = 32768,
+        [NativeName("Name", "VK_BUFFER_USAGE_VIDEO_ENCODE_SRC_BIT_KHR")]
+        BufferUsageVideoEncodeSrcBitKhr = 65536,
         [NativeName("Name", "VK_BUFFER_USAGE_TRANSFORM_FEEDBACK_BUFFER_BIT_EXT")]
         BufferUsageTransformFeedbackBufferBitExt = 2048,
         [NativeName("Name", "VK_BUFFER_USAGE_TRANSFORM_FEEDBACK_COUNTER_BUFFER_BIT_EXT")]
