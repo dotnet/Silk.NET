@@ -46,8 +46,8 @@ Silk.NET caters for anything you could need in swift development of multimedia, 
 <h1 align="center">The team</h1>
 
 We currently have the following maintainers:
-- [Dylan P.](https://github.com/Perksey) from [Ultz](https://github.com/Ultz)
-- [Kai J.](https://github.com/HurricanKai) from the open-source community
+- [Dylan Perks](https://github.com/Perksey) [<img src="https://about.twitter.com/etc/designs/about2-twitter/public/img/favicon.ico" alt="Follow Dylan Perks on Twitter" width="16" />](https://twitter.com/intent/follow?screen_name=Dylan_Perks)
+- [Kai Jellinghaus](https://github.com/HurricanKai)
 
 In addition, the Silk.NET working group help drive larger user-facing changes providing key consultation from the perspective of dedicated users and professionals.
 
