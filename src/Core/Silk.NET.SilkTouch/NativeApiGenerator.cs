@@ -22,11 +22,6 @@ namespace Silk.NET.SilkTouch
     [Generator]
     public partial class NativeApiGenerator : ISourceGenerator
     {
-#if DEBUG
-        private const bool _compactFileFormat = true;
-#else
-        private const bool _compactFileFormat = false;
-#endif
         public void Initialize(GeneratorInitializationContext context)
         {
             context.RegisterForSyntaxNotifications(() => new SyntaxReceiver());
@@ -159,6 +154,22 @@ namespace Silk.NET.SilkTouch
                     generateSeal = v;
             }
             
+            bool compactFileFormat;
+
+            #if DEBUG
+            compactFileFormat = true;
+            #else
+            compactFileFormat = false;
+            #endif
+            
+            if (sourceContext.AnalyzerConfigOptions.GetOptions
+                    (classDeclarations.First().Item1.SyntaxTree)
+                .TryGetValue("silk_touch_compact_file_format", out var compactFileFormatStr))
+            {
+                if (bool.TryParse(compactFileFormatStr, out var v))
+                    compactFileFormat = v;
+            }
+            
             
             var generateVTable = false;
 
@@ -228,7 +239,7 @@ namespace Silk.NET.SilkTouch
                 ProcessMethod
                 (
                     sourceContext, rootMarshalBuilder, callingConvention, entryPoints, entryPoint, classIsSealed,
-                    generateSeal, generateVTable, compilation, symbol, declaration.Item1, newMembers, ref gcCount,
+                    generateSeal, generateVTable, compactFileFormat, compilation, symbol, declaration.Item1, newMembers, ref gcCount,
                     processedEntrypoints, generatedVTableName, namespaceDeclaration, classDeclarations.First().Item1,
                     AddIfNotExists(compilationUnit.Usings, "Silk.NET.Core.Native", "Silk.NET.Core.Contexts")
                 );
@@ -368,6 +379,7 @@ namespace Silk.NET.SilkTouch
             bool classIsSealed,
             bool generateSeal,
             bool generateVTable,
+            bool compactFileFormat,
             Compilation compilation,
             IMethodSymbol symbol,
             MethodDeclarationSyntax declaration,
@@ -528,8 +540,8 @@ namespace Silk.NET.SilkTouch
                     )
                     .WithReturnType
                         (IdentifierName(symbol.ReturnType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)));
-
-                if (_compactFileFormat)
+                
+                if (compactFileFormat)
                 {
                     // append to members
                     newMembers.Add(method);
