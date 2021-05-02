@@ -10,6 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Silk.NET.Core;
 using Silk.NET.Core.Native;
+using Silk.NET.Maths;
 using Silk.NET.Vulkan;
 using Silk.NET.Vulkan.Extensions.EXT;
 using Silk.NET.Vulkan.Extensions.KHR;
@@ -22,6 +23,7 @@ namespace VulkanTriangle
     {
         public const bool EnableValidationLayers = true;
         public const int MaxFramesInFlight = 8;
+        public const bool EventBasedRendering = false;
 
         public void Run()
         {
@@ -63,6 +65,8 @@ namespace VulkanTriangle
         private Fence[] _imagesInFlight;
         private uint _currentFrame;
 
+        private bool _framebufferResized = false;
+
         private Vk _vk;
         private KhrSurface _vkSurface;
         private KhrSwapchain _vkSwapchain;
@@ -74,6 +78,7 @@ namespace VulkanTriangle
         private void InitWindow()
         {
             var opts = WindowOptions.DefaultVulkan;
+            opts.IsEventDriven = EventBasedRendering;
             _window = Window.Create(opts);
             if (_window?.VkSurface is null)
             {
@@ -81,6 +86,14 @@ namespace VulkanTriangle
             }
 
             _window.Initialize();
+            _window.FramebufferResize += OnFramebufferResize;
+        }
+
+        private void OnFramebufferResize(Vector2D<int> size)
+        {
+            _framebufferResized = true;
+            RecreateSwapChain();
+            _window.DoRender();
         }
 
         private void InitVulkan()
@@ -113,8 +126,18 @@ namespace VulkanTriangle
             _vk.WaitForFences(_device, 1, in fence, Vk.True, ulong.MaxValue);
 
             uint imageIndex;
-            _vkSwapchain.AcquireNextImage
+            Result result =_vkSwapchain.AcquireNextImage
                 (_device, _swapchain, ulong.MaxValue, _imageAvailableSemaphores[_currentFrame], default, &imageIndex);
+
+            if (result == Result.ErrorOutOfDateKhr)
+            {
+                RecreateSwapChain();
+                return;
+            }
+            else if (result != Result.Success && result != Result.SuboptimalKhr)
+            {
+                throw new Exception("failed to acquire swap chain image!");
+            }
 
             if (_imagesInFlight[imageIndex].Handle != 0)
             {
@@ -165,7 +188,17 @@ namespace VulkanTriangle
                     PImageIndices = &imageIndex
                 };
 
-                _vkSwapchain.QueuePresent(_presentQueue, &presentInfo);
+                result = _vkSwapchain.QueuePresent(_presentQueue, &presentInfo);
+            }
+
+            if (result == Result.ErrorOutOfDateKhr || result == Result.SuboptimalKhr || _framebufferResized)
+            {
+                _framebufferResized = false;
+                RecreateSwapChain();
+            }
+            else if (result != Result.Success)
+            {
+                throw new Exception("failed to present swap chain image!");
             }
 
             _currentFrame = (_currentFrame + 1) % MaxFramesInFlight;
@@ -173,6 +206,8 @@ namespace VulkanTriangle
 
         private unsafe void Cleanup()
         {
+            CleanupSwapchain();
+
             for (var i = 0; i < MaxFramesInFlight; i++)
             {
                 _vk.DestroySemaphore(_device, _renderFinishedSemaphores[i], null);
@@ -182,9 +217,27 @@ namespace VulkanTriangle
 
             _vk.DestroyCommandPool(_device, _commandPool, null);
 
+            _vk.DestroyDevice(_device, null);
+
+            if (EnableValidationLayers)
+            {
+                _debugUtils.DestroyDebugUtilsMessenger(_instance, _debugMessenger, null);
+            }
+
+            _vkSurface.DestroySurface(_instance, _surface, null);
+            _vk.DestroyInstance(_instance, null);
+        }
+
+        private unsafe void CleanupSwapchain()
+        {
             foreach (var framebuffer in _swapchainFramebuffers)
             {
                 _vk.DestroyFramebuffer(_device, framebuffer, null);
+            }
+
+            fixed (CommandBuffer* buffers = _commandBuffers)
+            {
+                _vk.FreeCommandBuffers(_device, _commandPool, (uint) _commandBuffers.Length, buffers);
             }
 
             _vk.DestroyPipeline(_device, _graphicsPipeline, null);
@@ -197,15 +250,6 @@ namespace VulkanTriangle
             }
 
             _vkSwapchain.DestroySwapchain(_device, _swapchain, null);
-            _vk.DestroyDevice(_device, null);
-
-            if (EnableValidationLayers)
-            {
-                _debugUtils.DestroyDebugUtilsMessenger(_instance, _debugMessenger, null);
-            }
-
-            _vkSurface.DestroySurface(_instance, _surface, null);
-            _vk.DestroyInstance(_instance, null);
         }
 
         private unsafe void CreateInstance()
@@ -324,8 +368,13 @@ namespace VulkanTriangle
             void* pUserData
         )
         {
-            Console.WriteLine
-                ($"{messageSeverity} {messageTypes}" + Marshal.PtrToStringAnsi((nint) pCallbackData->PMessage));
+            if (messageSeverity > DebugUtilsMessageSeverityFlagsEXT.DebugUtilsMessageSeverityVerboseBitExt)
+            {
+                Console.WriteLine
+                    ($"{messageSeverity} {messageTypes}" + Marshal.PtrToStringAnsi((nint) pCallbackData->PMessage));
+
+            }
+
             return Vk.False;
         }
 
@@ -363,54 +412,50 @@ namespace VulkanTriangle
                 throw new Exception("No suitable device.");
         }
 
-        private static readonly ConcurrentDictionary<PhysicalDevice, SwapChainSupportDetails> _swapChainSupportDetailsCache
-            = new ConcurrentDictionary<PhysicalDevice, SwapChainSupportDetails>();
+        // Caching the returned values breaks the ability for resizing the window
         private unsafe SwapChainSupportDetails QuerySwapChainSupport(PhysicalDevice device)
         {
-            return _swapChainSupportDetailsCache.GetOrAdd(device, d =>
+            var details = new SwapChainSupportDetails();
+            _vkSurface.GetPhysicalDeviceSurfaceCapabilities(device, _surface, out var surfaceCapabilities);
+            details.Capabilities = surfaceCapabilities;
+
+            var formatCount = 0u;
+            _vkSurface.GetPhysicalDeviceSurfaceFormats(device, _surface, &formatCount, null);
+
+            if (formatCount != 0)
             {
-                var details = new SwapChainSupportDetails();
-                _vkSurface.GetPhysicalDeviceSurfaceCapabilities(d, _surface, out var surfaceCapabilities);
-                details.Capabilities = surfaceCapabilities;
+                details.Formats = new SurfaceFormatKHR[formatCount];
 
-                var formatCount = 0u;
-                _vkSurface.GetPhysicalDeviceSurfaceFormats(d, _surface, &formatCount, null);
+                using var mem = GlobalMemory.Allocate((int) formatCount * sizeof(SurfaceFormatKHR));
+                var formats = (SurfaceFormatKHR*) Unsafe.AsPointer(ref mem.GetPinnableReference());
 
-                if (formatCount != 0)
+                _vkSurface.GetPhysicalDeviceSurfaceFormats(device, _surface, &formatCount, formats);
+
+                for (var i = 0; i < formatCount; i++)
                 {
-                    details.Formats = new SurfaceFormatKHR[formatCount];
-
-                    using var mem = GlobalMemory.Allocate((int) formatCount * sizeof(SurfaceFormatKHR));
-                    var formats = (SurfaceFormatKHR*) Unsafe.AsPointer(ref mem.GetPinnableReference());
-
-                    _vkSurface.GetPhysicalDeviceSurfaceFormats(d, _surface, &formatCount, formats);
-
-                    for (var i = 0; i < formatCount; i++)
-                    {
-                        details.Formats[i] = formats[i];
-                    }
+                    details.Formats[i] = formats[i];
                 }
+            }
 
-                var presentModeCount = 0u;
-                _vkSurface.GetPhysicalDeviceSurfacePresentModes(d, _surface, &presentModeCount, null);
+            var presentModeCount = 0u;
+            _vkSurface.GetPhysicalDeviceSurfacePresentModes(device, _surface, &presentModeCount, null);
 
-                if (presentModeCount != 0)
+            if (presentModeCount != 0)
+            {
+                details.PresentModes = new PresentModeKHR[presentModeCount];
+
+                using var mem = GlobalMemory.Allocate((int) presentModeCount * sizeof(PresentModeKHR));
+                var modes = (PresentModeKHR*) Unsafe.AsPointer(ref mem.GetPinnableReference());
+
+                _vkSurface.GetPhysicalDeviceSurfacePresentModes(device, _surface, &presentModeCount, modes);
+
+                for (var i = 0; i < presentModeCount; i++)
                 {
-                    details.PresentModes = new PresentModeKHR[presentModeCount];
-
-                    using var mem = GlobalMemory.Allocate((int) presentModeCount * sizeof(PresentModeKHR));
-                    var modes = (PresentModeKHR*) Unsafe.AsPointer(ref mem.GetPinnableReference());
-
-                    _vkSurface.GetPhysicalDeviceSurfacePresentModes(d, _surface, &presentModeCount, modes);
-
-                    for (var i = 0; i < presentModeCount; i++)
-                    {
-                        details.PresentModes[i] = modes[i];
-                    }
+                    details.PresentModes[i] = modes[i];
                 }
+            }
 
-                return details;
-            });
+            return details;
         }
 
         private unsafe bool CheckDeviceExtensionSupport(PhysicalDevice device)
@@ -418,46 +463,42 @@ namespace VulkanTriangle
             return _deviceExtensions.All(ext => _vk.IsDeviceExtensionPresent(device, ext));
         }
 
-        private static readonly ConcurrentDictionary<PhysicalDevice, QueueFamilyIndices> _queueFamilyIndicesCache
-            = new ConcurrentDictionary<PhysicalDevice, QueueFamilyIndices>();
+        // Caching these values might have unintended side effects
         private unsafe QueueFamilyIndices FindQueueFamilies(PhysicalDevice device)
         {
-            return _queueFamilyIndicesCache.GetOrAdd(device, d =>
+            var indices = new QueueFamilyIndices();
+
+            uint queryFamilyCount = 0;
+            _vk.GetPhysicalDeviceQueueFamilyProperties(device, &queryFamilyCount, null);
+
+            using var mem = GlobalMemory.Allocate((int) queryFamilyCount * sizeof(QueueFamilyProperties));
+            var queueFamilies = (QueueFamilyProperties*) Unsafe.AsPointer(ref mem.GetPinnableReference());
+
+            _vk.GetPhysicalDeviceQueueFamilyProperties(device, &queryFamilyCount, queueFamilies);
+            for (var i = 0u; i < queryFamilyCount; i++)
             {
-                var indices = new QueueFamilyIndices();
-
-                uint queryFamilyCount = 0;
-                _vk.GetPhysicalDeviceQueueFamilyProperties(d, &queryFamilyCount, null);
-
-                using var mem = GlobalMemory.Allocate((int) queryFamilyCount * sizeof(QueueFamilyProperties));
-                var queueFamilies = (QueueFamilyProperties*) Unsafe.AsPointer(ref mem.GetPinnableReference());
-
-                _vk.GetPhysicalDeviceQueueFamilyProperties(d, &queryFamilyCount, queueFamilies);
-                for (var i = 0u; i < queryFamilyCount; i++)
+                var queueFamily = queueFamilies[i];
+                // note: HasFlag is slow on .NET Core 2.1 and below.
+                // if you're targeting these versions, use ((queueFamily.QueueFlags & QueueFlags.QueueGraphicsBit) != 0)
+                if (queueFamily.QueueFlags.HasFlag(QueueFlags.QueueGraphicsBit))
                 {
-                    var queueFamily = queueFamilies[i];
-                    // note: HasFlag is slow on .NET Core 2.1 and below.
-                    // if you're targeting these versions, use ((queueFamily.QueueFlags & QueueFlags.QueueGraphicsBit) != 0)
-                    if (queueFamily.QueueFlags.HasFlag(QueueFlags.QueueGraphicsBit))
-                    {
-                        indices.GraphicsFamily = i;
-                    }
-
-                    _vkSurface.GetPhysicalDeviceSurfaceSupport(d, i, _surface, out var presentSupport);
-
-                    if (presentSupport == Vk.True)
-                    {
-                        indices.PresentFamily = i;
-                    }
-
-                    if (indices.IsComplete())
-                    {
-                        break;
-                    }
+                    indices.GraphicsFamily = i;
                 }
 
-                return indices;
-            });
+                _vkSurface.GetPhysicalDeviceSurfaceSupport(device, i, _surface, out var presentSupport);
+
+                if (presentSupport == Vk.True)
+                {
+                    indices.PresentFamily = i;
+                }
+
+                if (indices.IsComplete())
+                {
+                    break;
+                }
+            }
+
+            return indices;
         }
 
         public struct QueueFamilyIndices
@@ -481,7 +522,9 @@ namespace VulkanTriangle
         private unsafe void CreateLogicalDevice()
         {
             var indices = FindQueueFamilies(_physicalDevice);
-            var uniqueQueueFamilies = new[] { indices.GraphicsFamily.Value, indices.PresentFamily.Value };
+            var uniqueQueueFamilies = indices.GraphicsFamily.Value == indices.PresentFamily.Value
+                ? new[] { indices.GraphicsFamily.Value }
+                : new[] { indices.GraphicsFamily.Value, indices.PresentFamily.Value };
 
             using var mem = GlobalMemory.Allocate((int) uniqueQueueFamilies.Length * sizeof(DeviceQueueCreateInfo));
             var queueCreateInfos = (DeviceQueueCreateInfo*) Unsafe.AsPointer(ref mem.GetPinnableReference());
@@ -624,6 +667,30 @@ namespace VulkanTriangle
             _swapchainExtent = extent;
         }
 
+        private unsafe void RecreateSwapChain()
+        {
+            Vector2D<int> framebufferSize = _window.FramebufferSize;
+
+            while (framebufferSize.X == 0 || framebufferSize.Y == 0)
+            {
+                framebufferSize = _window.FramebufferSize;
+                _window.DoEvents();
+            }
+
+            _ = _vk.DeviceWaitIdle(_device);
+
+            CleanupSwapchain();
+
+            CreateSwapChain();
+            CreateImageViews();
+            CreateRenderPass();
+            CreateGraphicsPipeline();
+            CreateFramebuffers();
+            CreateCommandBuffers();
+
+            _imagesInFlight = new Fence[_swapchainImages.Length];
+        }
+
         private Extent2D ChooseSwapExtent(SurfaceCapabilitiesKHR capabilities)
         {
             if (capabilities.CurrentExtent.Width != uint.MaxValue)
@@ -632,7 +699,7 @@ namespace VulkanTriangle
             }
 
             var actualExtent = new Extent2D
-            { Height = (uint) _window.Size.Y, Width = (uint) _window.Size.X };
+            { Height = (uint) _window.FramebufferSize.Y, Width = (uint) _window.FramebufferSize.X };
             actualExtent.Width = new[]
             {
                 capabilities.MinImageExtent.Width,
