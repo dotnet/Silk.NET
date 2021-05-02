@@ -23,6 +23,7 @@ namespace VulkanTriangle
     {
         public const bool EnableValidationLayers = true;
         public const int MaxFramesInFlight = 8;
+        public const bool EventBasedRendering = false;
 
         public void Run()
         {
@@ -77,6 +78,7 @@ namespace VulkanTriangle
         private void InitWindow()
         {
             var opts = WindowOptions.DefaultVulkan;
+            opts.IsEventDriven = EventBasedRendering;
             _window = Window.Create(opts);
             if (_window?.VkSurface is null)
             {
