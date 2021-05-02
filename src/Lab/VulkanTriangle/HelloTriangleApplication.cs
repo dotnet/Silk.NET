@@ -230,7 +230,7 @@ namespace VulkanTriangle
 
         private unsafe void CleanupSwapchain()
         {
-            foreach (Framebuffer framebuffer in _swapchainFramebuffers)
+            foreach (var framebuffer in _swapchainFramebuffers)
             {
                 _vk.DestroyFramebuffer(_device, framebuffer, null);
             }
@@ -244,7 +244,7 @@ namespace VulkanTriangle
             _vk.DestroyPipelineLayout(_device, _pipelineLayout, null);
             _vk.DestroyRenderPass(_device, _renderPass, null);
 
-            foreach (ImageView imageView in _swapchainImageViews)
+            foreach (var imageView in _swapchainImageViews)
             {
                 _vk.DestroyImageView(_device, imageView, null);
             }
