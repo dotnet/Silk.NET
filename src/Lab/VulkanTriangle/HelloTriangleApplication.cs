@@ -324,8 +324,13 @@ namespace VulkanTriangle
             void* pUserData
         )
         {
-            Console.WriteLine
-                ($"{messageSeverity} {messageTypes}" + Marshal.PtrToStringAnsi((nint) pCallbackData->PMessage));
+            if (messageSeverity > DebugUtilsMessageSeverityFlagsEXT.DebugUtilsMessageSeverityVerboseBitExt)
+            {
+                Console.WriteLine
+                    ($"{messageSeverity} {messageTypes}" + Marshal.PtrToStringAnsi((nint) pCallbackData->PMessage));
+
+            }
+
             return Vk.False;
         }
 
