@@ -486,7 +486,9 @@ namespace VulkanTriangle
         private unsafe void CreateLogicalDevice()
         {
             var indices = FindQueueFamilies(_physicalDevice);
-            var uniqueQueueFamilies = new[] { indices.GraphicsFamily.Value, indices.PresentFamily.Value };
+            var uniqueQueueFamilies = indices.GraphicsFamily.Value == indices.PresentFamily.Value
+                ? new[] { indices.GraphicsFamily.Value }
+                : new[] { indices.GraphicsFamily.Value, indices.PresentFamily.Value };
 
             using var mem = GlobalMemory.Allocate((int) uniqueQueueFamilies.Length * sizeof(DeviceQueueCreateInfo));
             var queueCreateInfos = (DeviceQueueCreateInfo*) Unsafe.AsPointer(ref mem.GetPinnableReference());
