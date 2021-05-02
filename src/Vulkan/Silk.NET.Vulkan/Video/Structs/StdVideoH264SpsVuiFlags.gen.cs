@@ -97,64 +97,102 @@ namespace Silk.NET.Vulkan.Video
         }
 
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "aspect_ratio_info_present_flag")]
-        public uint AspectRatioInfoPresentFlag;
+        private uint _bitfield1;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "overscan_info_present_flag")]
-        public uint OverscanInfoPresentFlag;
+        public uint AspectRatioInfoPresentFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)(_bitfield1 & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "overscan_appropriate_flag")]
-        public uint OverscanAppropriateFlag;
+        public uint OverscanInfoPresentFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 1) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "video_signal_type_present_flag")]
-        public uint VideoSignalTypePresentFlag;
+        public uint OverscanAppropriateFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 2) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "video_full_range_flag")]
-        public uint VideoFullRangeFlag;
+        public uint VideoSignalTypePresentFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 3) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "color_description_present_flag")]
-        public uint ColorDescriptionPresentFlag;
+        public uint VideoFullRangeFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 4) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "chroma_loc_info_present_flag")]
-        public uint ChromaLocInfoPresentFlag;
+        public uint ColorDescriptionPresentFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 5) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 5)) | (uint)(((uint)(value) & 0x1u) << 5));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "timing_info_present_flag")]
-        public uint TimingInfoPresentFlag;
+        public uint ChromaLocInfoPresentFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 6) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 6)) | (uint)(((uint)(value) & 0x1u) << 6));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "fixed_frame_rate_flag")]
-        public uint FixedFrameRateFlag;
+        public uint TimingInfoPresentFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 7) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 7)) | (uint)(((uint)(value) & 0x1u) << 7));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "bitstream_restriction_flag")]
-        public uint BitstreamRestrictionFlag;
+        public uint FixedFrameRateFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 8) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 8)) | (uint)(((uint)(value) & 0x1u) << 8));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "nal_hrd_parameters_present_flag")]
-        public uint NalHrdParametersPresentFlag;
+        public uint BitstreamRestrictionFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 9) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 9)) | (uint)(((uint)(value) & 0x1u) << 9));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "vcl_hrd_parameters_present_flag")]
-        public uint VclHrdParametersPresentFlag;
+        public uint NalHrdParametersPresentFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 10) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 10)) | (uint)(((uint)(value) & 0x1u) << 10));
+        }
+
+        public uint VclHrdParametersPresentFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 11) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 11)) | (uint)(((uint)(value) & 0x1u) << 11));
+        }
     }
 }

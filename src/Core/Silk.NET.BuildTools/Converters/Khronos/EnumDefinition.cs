@@ -124,7 +124,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// <summary>
         /// The value of the EnumValue.
         /// </summary>
-        public int Value { get; }
+        public long Value { get; }
         
         /// <summary>
         /// The comment of the EnumValue.
@@ -137,7 +137,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// <param name="name">The name of the value.</param>
         /// <param name="value">The value of the enum value.</param>
         /// <param name="comment">The comment of the EnumValue.</param>
-        public EnumValue(string name, int value, string comment)
+        public EnumValue(string name, long value, string comment)
         {
             Name = name;
             Value = value;
@@ -171,24 +171,24 @@ namespace Silk.NET.BuildTools.Converters.Khronos
 
             var name = xe.Attribute("name")?.Value;
 
-            int value;
+            long value;
             var valueStr = xe.Attribute("value")?.Value;
             if (valueStr != null)
             {
                 if (valueStr.StartsWith("0x"))
                 {
                     valueStr = valueStr.Substring(2);
-                    value = int.Parse(valueStr, NumberStyles.HexNumber);
+                    value = long.Parse(valueStr, NumberStyles.HexNumber);
                 }
                 else
                 {
-                    value = int.Parse(valueStr);
+                    value = long.Parse(valueStr);
                 }
             }
             else
             {
                 var bitposStr = xe.Attribute("bitpos")?.Value;
-                value = 1 << int.Parse(bitposStr ?? throw new InvalidDataException());
+                value = 1L << int.Parse(bitposStr ?? throw new InvalidDataException());
             }
 
             var commentAttr = xe.Attribute("comment");

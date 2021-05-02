@@ -211,159 +211,254 @@ namespace Silk.NET.Vulkan.Video
         }
 
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "dependent_slice_segments_enabled_flag")]
-        public uint DependentSliceSegmentsEnabledFlag;
+        private uint _bitfield1;
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "output_flag_present_flag")]
-        public uint OutputFlagPresentFlag;
+        public uint DependentSliceSegmentsEnabledFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)(_bitfield1 & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "sign_data_hiding_enabled_flag")]
-        public uint SignDataHidingEnabledFlag;
+        public uint OutputFlagPresentFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 1) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "cabac_init_present_flag")]
-        public uint CabacInitPresentFlag;
+        public uint SignDataHidingEnabledFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 2) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "constrained_intra_pred_flag")]
-        public uint ConstrainedIntraPredFlag;
+        public uint CabacInitPresentFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 3) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "transform_skip_enabled_flag")]
-        public uint TransformSkipEnabledFlag;
+        public uint ConstrainedIntraPredFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 4) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "cu_qp_delta_enabled_flag")]
-        public uint CuQpDeltaEnabledFlag;
+        public uint TransformSkipEnabledFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 5) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 5)) | (uint)(((uint)(value) & 0x1u) << 5));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "pps_slice_chroma_qp_offsets_present_flag")]
-        public uint PpsSliceChromaQpOffsetsPresentFlag;
+        public uint CuQpDeltaEnabledFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 6) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 6)) | (uint)(((uint)(value) & 0x1u) << 6));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "weighted_pred_flag")]
-        public uint WeightedPredFlag;
+        public uint PpsSliceChromaQpOffsetsPresentFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 7) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 7)) | (uint)(((uint)(value) & 0x1u) << 7));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "weighted_bipred_flag")]
-        public uint WeightedBipredFlag;
+        public uint WeightedPredFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 8) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 8)) | (uint)(((uint)(value) & 0x1u) << 8));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "transquant_bypass_enabled_flag")]
-        public uint TransquantBypassEnabledFlag;
+        public uint WeightedBipredFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 9) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 9)) | (uint)(((uint)(value) & 0x1u) << 9));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "tiles_enabled_flag")]
-        public uint TilesEnabledFlag;
+        public uint TransquantBypassEnabledFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 10) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 10)) | (uint)(((uint)(value) & 0x1u) << 10));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "entropy_coding_sync_enabled_flag")]
-        public uint EntropyCodingSyncEnabledFlag;
+        public uint TilesEnabledFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 11) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 11)) | (uint)(((uint)(value) & 0x1u) << 11));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "uniform_spacing_flag")]
-        public uint UniformSpacingFlag;
+        public uint EntropyCodingSyncEnabledFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 12) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 12)) | (uint)(((uint)(value) & 0x1u) << 12));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "loop_filter_across_tiles_enabled_flag")]
-        public uint LoopFilterAcrossTilesEnabledFlag;
+        public uint UniformSpacingFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 13) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 13)) | (uint)(((uint)(value) & 0x1u) << 13));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "pps_loop_filter_across_slices_enabled_flag")]
-        public uint PpsLoopFilterAcrossSlicesEnabledFlag;
+        public uint LoopFilterAcrossTilesEnabledFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 14) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 14)) | (uint)(((uint)(value) & 0x1u) << 14));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "deblocking_filter_control_present_flag")]
-        public uint DeblockingFilterControlPresentFlag;
+        public uint PpsLoopFilterAcrossSlicesEnabledFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 15) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 15)) | (uint)(((uint)(value) & 0x1u) << 15));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "deblocking_filter_override_enabled_flag")]
-        public uint DeblockingFilterOverrideEnabledFlag;
+        public uint DeblockingFilterControlPresentFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 16) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 16)) | (uint)(((uint)(value) & 0x1u) << 16));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "pps_deblocking_filter_disabled_flag")]
-        public uint PpsDeblockingFilterDisabledFlag;
+        public uint DeblockingFilterOverrideEnabledFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 17) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 17)) | (uint)(((uint)(value) & 0x1u) << 17));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "pps_scaling_list_data_present_flag")]
-        public uint PpsScalingListDataPresentFlag;
+        public uint PpsDeblockingFilterDisabledFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 18) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 18)) | (uint)(((uint)(value) & 0x1u) << 18));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "lists_modification_present_flag")]
-        public uint ListsModificationPresentFlag;
+        public uint PpsScalingListDataPresentFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 19) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 19)) | (uint)(((uint)(value) & 0x1u) << 19));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "slice_segment_header_extension_present_flag")]
-        public uint SliceSegmentHeaderExtensionPresentFlag;
+        public uint ListsModificationPresentFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 20) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 20)) | (uint)(((uint)(value) & 0x1u) << 20));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "pps_extension_present_flag")]
-        public uint PpsExtensionPresentFlag;
+        public uint SliceSegmentHeaderExtensionPresentFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 21) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 21)) | (uint)(((uint)(value) & 0x1u) << 21));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "cross_component_prediction_enabled_flag")]
-        public uint CrossComponentPredictionEnabledFlag;
+        public uint PpsExtensionPresentFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 22) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 22)) | (uint)(((uint)(value) & 0x1u) << 22));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "chroma_qp_offset_list_enabled_flag")]
-        public uint ChromaQpOffsetListEnabledFlag;
+        public uint CrossComponentPredictionEnabledFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 23) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 23)) | (uint)(((uint)(value) & 0x1u) << 23));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "pps_curr_pic_ref_enabled_flag")]
-        public uint PpsCurrPicRefEnabledFlag;
+        public uint ChromaQpOffsetListEnabledFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 24) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 24)) | (uint)(((uint)(value) & 0x1u) << 24));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "residual_adaptive_colour_transform_enabled_flag")]
-        public uint ResidualAdaptiveColourTransformEnabledFlag;
+        public uint PpsCurrPicRefEnabledFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 25) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 25)) | (uint)(((uint)(value) & 0x1u) << 25));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "pps_slice_act_qp_offsets_present_flag")]
-        public uint PpsSliceActQpOffsetsPresentFlag;
+        public uint ResidualAdaptiveColourTransformEnabledFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 26) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 26)) | (uint)(((uint)(value) & 0x1u) << 26));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "pps_palette_predictor_initializer_present_flag")]
-        public uint PpsPalettePredictorInitializerPresentFlag;
+        public uint PpsSliceActQpOffsetsPresentFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 27) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 27)) | (uint)(((uint)(value) & 0x1u) << 27));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "monochrome_palette_flag")]
-        public uint MonochromePaletteFlag;
+        public uint PpsPalettePredictorInitializerPresentFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 28) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 28)) | (uint)(((uint)(value) & 0x1u) << 28));
+        }
 
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "pps_range_extension_flag")]
-        public uint PpsRangeExtensionFlag;
+        public uint MonochromePaletteFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 29) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 29)) | (uint)(((uint)(value) & 0x1u) << 29));
+        }
+
+        public uint PpsRangeExtensionFlag
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 30) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 30)) | (uint)(((uint)(value) & 0x1u) << 30));
+        }
     }
 }

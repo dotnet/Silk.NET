@@ -410,5 +410,14 @@ namespace Silk.NET.BuildTools.Common
             CX_CXXAccessSpecifier.CX_CXXPrivate => Accessibility.Private,
             _ => Accessibility.Internal
         };
+
+        public static string MapAccessibility(this Accessibility access, bool s = false) => access switch
+        {
+            Accessibility.Public => "public" + (s ? " " : string.Empty),
+            Accessibility.Protected => "protected" + (s ? " " : string.Empty),
+            Accessibility.Internal => "internal" + (s ? " " : string.Empty),
+            Accessibility.Private => "private" + (s ? " " : string.Empty),
+            _ => string.Empty
+        };
     }
 }

@@ -85,7 +85,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                                 ),
                                                 Naming.TranslateLite(TrimName("VkStructureType", task), task.FunctionPrefix)
                                             )
-                                            : null
+                                            : null,
+                                    NumBits = x.NumBits
                                 }.WithFixedFieldFixup09072020()
                             )
                             .ToList(),
@@ -143,6 +144,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             NativeName = x.Name,
                             NativeType = x.Type.ToString(),
                             Type = ConvertType(x.Type),
+                            NumBits = x.NumBits
                         };
                     }
                 }
@@ -158,7 +160,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         Doc = $"/// <summary>{x.Comment}</summary>",
                         NativeName = x.Name,
                         NativeType = x.Type.ToString(),
-                        Type = ConvertType(x.Type)
+                        Type = ConvertType(x.Type),
+                        NumBits = x.NumBits
                     };
                 }
             }

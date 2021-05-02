@@ -52,19 +52,19 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "VK_PIPELINE_STAGE_2_ALL_COMMANDS_BIT_KHR")]
         PipelineStage2AllCommandsBitKhr = 65536,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_COPY_BIT_KHR")]
-        PipelineStage2CopyBitKhr = 1,
+        PipelineStage2CopyBitKhr = 4294967296,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_RESOLVE_BIT_KHR")]
-        PipelineStage2ResolveBitKhr = 2,
+        PipelineStage2ResolveBitKhr = 8589934592,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_BLIT_BIT_KHR")]
-        PipelineStage2BlitBitKhr = 4,
+        PipelineStage2BlitBitKhr = 17179869184,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_CLEAR_BIT_KHR")]
-        PipelineStage2ClearBitKhr = 8,
+        PipelineStage2ClearBitKhr = 34359738368,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_INDEX_INPUT_BIT_KHR")]
-        PipelineStage2IndexInputBitKhr = 16,
+        PipelineStage2IndexInputBitKhr = 68719476736,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_VERTEX_ATTRIBUTE_INPUT_BIT_KHR")]
-        PipelineStage2VertexAttributeInputBitKhr = 32,
+        PipelineStage2VertexAttributeInputBitKhr = 137438953472,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_PRE_RASTERIZATION_SHADERS_BIT_KHR")]
-        PipelineStage2PreRasterizationShadersBitKhr = 64,
+        PipelineStage2PreRasterizationShadersBitKhr = 274877906944,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_VIDEO_DECODE_BIT_KHR")]
         PipelineStage2VideoDecodeBitKhr = 67108864,
         [NativeName("Name", "VK_PIPELINE_STAGE_2_VIDEO_ENCODE_BIT_KHR")]
