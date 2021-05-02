@@ -90,6 +90,8 @@ namespace VulkanTriangle
         private void OnFramebufferResize(Vector2D<int> size)
         {
             _framebufferResized = true;
+            RecreateSwapChain();
+            _window.DoRender();
         }
 
         private void InitVulkan()
