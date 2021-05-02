@@ -23,11 +23,6 @@ namespace Silk.NET.SilkTouch
         Compilation Compilation { get; }
 
         /// <summary>
-        /// Indicates the method slot
-        /// </summary>
-        int Slot { get; }
-
-        /// <summary>
         /// All Load types in order, last is the return type
         /// </summary>
         ITypeSymbol[] LoadTypes { get; }
@@ -164,9 +159,6 @@ namespace Silk.NET.SilkTouch
     {
         /// <inheritdoc />
         public Compilation Compilation { get; }
-
-        /// <inheritdoc />
-        public int Slot { get; }
 
         /// <inheritdoc />
         public ITypeSymbol[] LoadTypes { get; }
@@ -498,11 +490,10 @@ namespace Silk.NET.SilkTouch
             CurrentStage = stage;
         }
 
-        public MarshalContext(Compilation compilation, IMethodSymbol methodSymbol, int slot)
+        public MarshalContext(Compilation compilation, IMethodSymbol methodSymbol)
         {
             Compilation = compilation;
             MethodSymbol = methodSymbol;
-            Slot = slot;
             ParameterVariables = new int[MethodSymbol.Parameters.Length];
 
             LoadTypes = MethodSymbol.Parameters.Select
