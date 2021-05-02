@@ -190,6 +190,7 @@ namespace Silk.NET.BuildTools.Bind
 
             var bitfieldIdx = 0;
             long bitfieldPsz = 0, bitfieldRbs = 0;
+            string bitfieldLbt = null;
             foreach (var structField in @struct.Fields)
             {
                 if (structField.Attributes.IsBuildToolsIntrinsic(out var intrinsic) && intrinsic[0] == "$FUSEFLD")
@@ -198,7 +199,7 @@ namespace Silk.NET.BuildTools.Bind
                 }
                 else if (structField.NumBits is not null)
                 {
-                    WriteBitfield(structField, ref bitfieldIdx, ref bitfieldPsz, ref bitfieldRbs, sw, profile);
+                    WriteBitfield(structField, ref bitfieldIdx, ref bitfieldPsz, ref bitfieldRbs, ref bitfieldLbt, sw, profile);
                 }
                 else if (!(structField.Count is null))
                 {
@@ -498,6 +499,7 @@ namespace Silk.NET.BuildTools.Bind
             ref int index,
             ref long previousSize,
             ref long remainingBits,
+            ref string currentBitfieldType,
             StreamWriter sw,
             Profile profile
         )
@@ -544,7 +546,7 @@ namespace Silk.NET.BuildTools.Bind
                 remainingBits = currentSize * 8;
                 previousSize = 0;
                 sw.Write("        private ");
-                sw.Write(type);
+                sw.Write(currentBitfieldType = typeNameBacking);
                 sw.Write(' ');
                 sw.Write(bitfieldName);
                 sw.Write(';');
@@ -603,13 +605,14 @@ namespace Silk.NET.BuildTools.Bind
             sw.Write(')');
             sw.WriteLine(';');
             sw.WriteLine("            [MethodImpl(MethodImplOptions.AggressiveInlining)]");
-            sw.Write("            set =>");
+            sw.Write("            set => ");
             sw.Write(bitfieldName);
             sw.Write(" = ");
             sw.Write('(');
+            sw.Write(currentBitfieldType);
+            sw.Write(")((");
             sw.Write(typeName);
             sw.Write(")(");
-            sw.Write('(');
             sw.Write(bitfieldName);
             sw.Write(" & ~");
             if (bitfieldOffset != 0)
@@ -637,7 +640,7 @@ namespace Silk.NET.BuildTools.Bind
             }
 
             sw.Write('(');
-            sw.Write(typeName);
+            sw.Write(typeNameBacking);
             sw.Write(")(value)");
             sw.Write(" & 0x");
             sw.Write(bitwidthHexString);

@@ -73,7 +73,7 @@ namespace Silk.NET.Vulkan
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)(_bitfield1 & 0xFFFFFFu);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set =>_bitfield1 = (uint)((_bitfield1 & ~0xFFFFFFu) | (uint)((uint)(value) & 0xFFFFFFu));
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0xFFFFFFu) | (uint)((uint)(value) & 0xFFFFFFu));
         }
 
         public uint Mask
@@ -81,7 +81,7 @@ namespace Silk.NET.Vulkan
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 24) & 0xFFu);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set =>_bitfield1 = (uint)((_bitfield1 & ~(0xFFu << 24)) | (uint)(((uint)(value) & 0xFFu) << 24));
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0xFFu << 24)) | (uint)(((uint)(value) & 0xFFu) << 24));
         }
 
         private uint _bitfield2;
@@ -91,7 +91,7 @@ namespace Silk.NET.Vulkan
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)(_bitfield2 & 0xFFFFFFu);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set =>_bitfield2 = (uint)((_bitfield2 & ~0xFFFFFFu) | (uint)((uint)(value) & 0xFFFFFFu));
+            set => _bitfield2 = (uint)((uint)(_bitfield2 & ~0xFFFFFFu) | (uint)((uint)(value) & 0xFFFFFFu));
         }
 
         public GeometryInstanceFlagsKHR Flags
@@ -99,7 +99,7 @@ namespace Silk.NET.Vulkan
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (GeometryInstanceFlagsKHR)((_bitfield2 >> 24) & 0xFF);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set =>_bitfield2 = (GeometryInstanceFlagsKHR)((_bitfield2 & ~(0xFF << 24)) | (GeometryInstanceFlagsKHR)(((GeometryInstanceFlagsKHR)(value) & 0xFF) << 24));
+            set => _bitfield2 = (uint)((GeometryInstanceFlagsKHR)(_bitfield2 & ~(0xFF << 24)) | (GeometryInstanceFlagsKHR)(((int)(value) & 0xFF) << 24));
         }
 /// <summary></summary>
         [NativeName("Type", "uint64_t")]

@@ -74,7 +74,7 @@ namespace Silk.NET.Vulkan.Video
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)(_bitfield1 & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set =>_bitfield1 = (uint)((_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
         }
 
         public uint IsReferenceFlag
@@ -82,7 +82,7 @@ namespace Silk.NET.Vulkan.Video
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 1) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
         }
 
         public uint NumRefIdxActiveOverrideFlag
@@ -90,7 +90,7 @@ namespace Silk.NET.Vulkan.Video
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 2) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
         }
 
         public uint NoOutputOfPriorPicsFlag
@@ -98,7 +98,7 @@ namespace Silk.NET.Vulkan.Video
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 3) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
         }
 
         public uint LongTermReferenceFlag
@@ -106,7 +106,7 @@ namespace Silk.NET.Vulkan.Video
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 4) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
         }
 
         public uint AdaptiveRefPicMarkingModeFlag
@@ -114,7 +114,7 @@ namespace Silk.NET.Vulkan.Video
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 5) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 5)) | (uint)(((uint)(value) & 0x1u) << 5));
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 5)) | (uint)(((uint)(value) & 0x1u) << 5));
         }
 
         public uint NoPriorReferencesAvailableFlag
@@ -122,7 +122,7 @@ namespace Silk.NET.Vulkan.Video
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 6) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 6)) | (uint)(((uint)(value) & 0x1u) << 6));
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 6)) | (uint)(((uint)(value) & 0x1u) << 6));
         }
     }
 }

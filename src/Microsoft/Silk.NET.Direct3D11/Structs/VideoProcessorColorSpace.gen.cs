@@ -68,7 +68,7 @@ namespace Silk.NET.Direct3D11
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)(_bitfield1 & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set =>_bitfield1 = (uint)((_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
         }
 
         public uint RGBRange
@@ -76,7 +76,7 @@ namespace Silk.NET.Direct3D11
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 1) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
         }
 
         public uint YCbCrMatrix
@@ -84,7 +84,7 @@ namespace Silk.NET.Direct3D11
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 2) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
         }
 
         public uint YCbCrXvYCC
@@ -92,7 +92,7 @@ namespace Silk.NET.Direct3D11
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 3) & 0x1u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
         }
 
         public uint NominalRange
@@ -100,7 +100,7 @@ namespace Silk.NET.Direct3D11
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 4) & 0x3u);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x3u << 4)) | (uint)(((uint)(value) & 0x3u) << 4));
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x3u << 4)) | (uint)(((uint)(value) & 0x3u) << 4));
         }
 
         public uint Reserved
@@ -108,7 +108,7 @@ namespace Silk.NET.Direct3D11
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
             get => (uint)((_bitfield1 >> 6) & 0x3FFFFFFu);
             [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set =>_bitfield1 = (uint)((_bitfield1 & ~(0x3FFFFFFu << 6)) | (uint)(((uint)(value) & 0x3FFFFFFu) << 6));
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x3FFFFFFu << 6)) | (uint)(((uint)(value) & 0x3FFFFFFu) << 6));
         }
     }
 }
