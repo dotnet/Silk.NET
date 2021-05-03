@@ -308,6 +308,11 @@ namespace Silk.NET.Maths
                 Pi = (T) (object) (ulong) FloatPi;
                 Tau = (T) (object) (ulong) FloatTau;
             }
+            else
+            {
+                // if it's none of these cases, don't do the general cases.
+                return;
+            }
 
             PiOver2 = Scalar.Divide(Pi, Two);
         }
