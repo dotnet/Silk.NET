@@ -19,12 +19,17 @@ namespace InvokeBenchmarks
             
         [NativeApi(EntryPoint = "Test2")]
         public partial int WithReturn();
-            
+
         [NativeApi(EntryPoint = "Test3")]
-        public partial int WithReturnAndStringMarshal(string s);
-        
-        [NativeApi(EntryPoint = "Test4")]
-        public partial int WithReturnAndMultiStringMarshal(string s, string s2);
+        public partial int WithReturnAndLPStrMarshal([MarshalAs(UnmanagedType.LPStr)] string s);
+        [NativeApi(EntryPoint = "Test3")]
+        public partial int WithReturnAndLPTStrMarshal([MarshalAs(UnmanagedType.LPTStr)] string s);
+        [NativeApi(EntryPoint = "Test3")]
+        public partial int WithReturnAndLPUTF8StrMarshal([MarshalAs(UnmanagedType.LPUTF8Str)] string s);
+        [NativeApi(EntryPoint = "Test3")]
+        public partial int WithReturnAndLPWStrMarshal([MarshalAs(UnmanagedType.LPWStr)] string s);
+        [NativeApi(EntryPoint = "Test3")]
+        public partial int WithReturnAndBStrMarshal([MarshalAs(UnmanagedType.BStr)] string s);
 
         [NativeApi(EntryPoint = "Test5")]
         public partial int WithReturnAndSpanMarshal(Span<byte> span);

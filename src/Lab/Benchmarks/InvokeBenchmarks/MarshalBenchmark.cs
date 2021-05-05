@@ -36,15 +36,33 @@ namespace InvokeBenchmarks
         }
         
         [Benchmark]
-        public int WithReturnAndStringMarshal()
+        public int WithReturnAndBStrMarshal()
         {
-            return _rawAPI.WithReturnAndStringMarshal("Hello World!");
+            return _rawAPI.WithReturnAndBStrMarshal("Hello World!");
         }
         
         [Benchmark]
-        public int WithReturnAndMultiStringMarshal()
+        public int WithReturnAndLPStrMarshal()
         {
-            return _rawAPI.WithReturnAndMultiStringMarshal("Hello ", "World!");
+            return _rawAPI.WithReturnAndLPStrMarshal("Hello World!");
+        }
+        
+        [Benchmark]
+        public int WithReturnAndLPTStrMarshal()
+        {
+            return _rawAPI.WithReturnAndLPTStrMarshal("Hello World!");
+        }
+        
+        [Benchmark]
+        public int WithReturnAndLPWStrMarshal()
+        {
+            return _rawAPI.WithReturnAndLPWStrMarshal("Hello World!");
+        }
+        
+        [Benchmark]
+        public int WithReturnAndLPUTF8StrMarshal()
+        {
+            return _rawAPI.WithReturnAndLPUTF8StrMarshal("Hello World!");
         }
 
         [Benchmark]
