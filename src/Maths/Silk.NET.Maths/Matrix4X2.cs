@@ -606,5 +606,15 @@ namespace Silk.NET.Maths
                 Scalar.As<T, long>(from.M31), Scalar.As<T, long>(from.M32),
                 Scalar.As<T, long>(from.M41), Scalar.As<T, long>(from.M42)
             );
+        
+        /// <summary>
+        /// Returns this matrix casted to <typeparamref name="TOther"></typeparamref>
+        /// </summary>
+        /// <typeparam name="TOther">The type to cast to</typeparam>
+        /// <returns>The casted matrix</returns>
+        public Matrix4X2<TOther> As<TOther>() where TOther : unmanaged, IFormattable, IEquatable<TOther>, IComparable<TOther>
+        {
+            return new(Row1.As<TOther>(), Row2.As<TOther>(), Row3.As<TOther>(), Row4.As<TOther>());
+        }
     }
 }

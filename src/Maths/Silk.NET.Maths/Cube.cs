@@ -173,5 +173,15 @@ namespace Silk.NET.Maths
         {
             return !value1.Equals(value2);
         }
+        
+        /// <summary>
+        /// Returns this circle casted to <typeparamref name="TOther"></typeparamref>
+        /// </summary>
+        /// <typeparam name="TOther">The type to cast to</typeparam>
+        /// <returns>The casted cube</returns>
+        public Cube<TOther> As<TOther>() where TOther : unmanaged, IFormattable, IEquatable<TOther>, IComparable<TOther>
+        {
+            return new(Origin.As<TOther>(), Max.As<TOther>());
+        }
     }
 }

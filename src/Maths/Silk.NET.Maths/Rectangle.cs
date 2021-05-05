@@ -169,5 +169,15 @@ namespace Silk.NET.Maths
         {
             return !value1.Equals(value2);
         }
+        
+        /// <summary>
+        /// Returns this rectangle casted to <typeparamref name="TOther"></typeparamref>
+        /// </summary>
+        /// <typeparam name="TOther">The type to cast to</typeparam>
+        /// <returns>The casted rectangle</returns>
+        public Rectangle<TOther> As<TOther>() where TOther : unmanaged, IFormattable, IEquatable<TOther>, IComparable<TOther>
+        {
+            return new(Origin.As<TOther>(), Size.As<TOther>());
+        }
     }
 }
