@@ -405,5 +405,15 @@ namespace Silk.NET.Maths
         public static explicit operator Matrix2X2<long>(Matrix2X2<T> from)
             => new(Scalar.As<T, long>(from.M11), Scalar.As<T, long>(from.M12), Scalar.As<T, long>(from.M21),
                 Scalar.As<T, long>(from.M22));
+        
+        /// <summary>
+        /// Returns this matrix casted to <typeparamref name="TOther"></typeparamref>
+        /// </summary>
+        /// <typeparam name="TOther">The type to cast to</typeparam>
+        /// <returns>The casted matrix</returns>
+        public Matrix2X2<TOther> As<TOther>() where TOther : unmanaged, IFormattable, IEquatable<TOther>, IComparable<TOther>
+        {
+            return new(Row1.As<TOther>(), Row2.As<TOther>());
+        }
     }
 }

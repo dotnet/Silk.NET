@@ -158,5 +158,15 @@ namespace Silk.NET.Maths
         {
             return !value1.Equals(value2);
         }
+        
+        /// <summary>
+        /// Returns this box casted to <typeparamref name="TOther"></typeparamref>
+        /// </summary>
+        /// <typeparam name="TOther">The type to cast to</typeparam>
+        /// <returns>The casted box</returns>
+        public Box3D<TOther> As<TOther>() where TOther : unmanaged, IFormattable, IEquatable<TOther>, IComparable<TOther>
+        {
+            return new(Min.As<TOther>(), Max.As<TOther>());
+        }
     }
 }
