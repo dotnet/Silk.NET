@@ -366,5 +366,15 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="long"/> matrix</returns>
         public static explicit operator Vector3D<long>(Vector3D<T> from)
             => new(Scalar.As<T, long>(from.X), Scalar.As<T, long>(from.Y), Scalar.As<T, long>(from.Z));
+        
+        /// <summary>
+        /// Returns this vector casted to <typeparamref name="TOther"></typeparamref>
+        /// </summary>
+        /// <typeparam name="TOther">The type to cast to</typeparam>
+        /// <returns>The casted vector</returns>
+        public Vector3D<TOther> As<TOther>() where TOther : unmanaged, IFormattable, IEquatable<TOther>, IComparable<TOther>
+        {
+            return new(Scalar.As<T, TOther>(X), Scalar.As<T, TOther>(Y), Scalar.As<T, TOther>(Z));
+        }
     }
 }

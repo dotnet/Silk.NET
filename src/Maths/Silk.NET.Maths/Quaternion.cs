@@ -776,5 +776,15 @@ namespace Silk.NET.Maths
         public static explicit operator Quaternion<long>(Quaternion<T> from)
             => new(Scalar.As<T, long>(from.X), Scalar.As<T, long>(from.Y), Scalar.As<T, long>(from.Z),
                 Scalar.As<T, long>(from.W));
+        
+        /// <summary>
+        /// Returns this quaternion casted to <typeparamref name="TOther"></typeparamref>
+        /// </summary>
+        /// <typeparam name="TOther">The type to cast to</typeparam>
+        /// <returns>The casted quaternion</returns>
+        public Quaternion<TOther> As<TOther>() where TOther : unmanaged, IFormattable, IEquatable<TOther>, IComparable<TOther>
+        {
+            return new(Scalar.As<T, TOther>(X), Scalar.As<T, TOther>(Y), Scalar.As<T, TOther>(Z), Scalar.As<T, TOther>(W));
+        }
     }
 }
