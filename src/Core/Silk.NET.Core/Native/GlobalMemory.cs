@@ -15,7 +15,7 @@ namespace Silk.NET.Core.Native
         // Actual object
         private readonly object _memoryObject;
 
-        internal GlobalMemory(object memoryObject, int length)
+        private GlobalMemory(object memoryObject, int length)
         {
             _memoryObject = memoryObject;
             Length = length;
@@ -177,21 +177,21 @@ namespace Silk.NET.Core.Native
             public nint Handle => GCHandle.AddrOfPinnedObject();
         }
 
-        private struct HGlobal : IGlobalMemory
+        private readonly struct HGlobal : IGlobalMemory
         {
             public HGlobal(int length) => Handle = Marshal.AllocHGlobal(length);
             public HGlobal(nint val) => Handle = val;
             public nint Handle { get; }
         }
 
-        private struct BStr : IGlobalMemory
+        private readonly struct BStr : IGlobalMemory
         {
             public BStr(int length) => Handle = SilkMarshal.AllocBStr(length);
             public BStr(nint val) => Handle = val;
             public nint Handle { get; }
         }
         
-        private struct Other : IGlobalMemory
+        private readonly struct Other : IGlobalMemory
         {
             // used for "unsafe" marshalling of a pointer to our neat GlobalMemory class if that's your thing.
             public Other(nint val) => Handle = val;

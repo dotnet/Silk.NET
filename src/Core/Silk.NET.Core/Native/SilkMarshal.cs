@@ -464,7 +464,7 @@ namespace Silk.NET.Core.Native
         /// <param name="length">The length of this BStr in bytes.</param>
         /// <returns>An object representing this BStr.</returns>
         public static GlobalMemory BStrToMemory(nint bStr, int length)
-            => GlobalMemory.FromHGlobal(bStr, length);
+            => GlobalMemory.FromBStr(bStr, length);
 
         /// <summary>
         /// Gets a <see cref="GlobalMemory"/> object representing this pointer.
