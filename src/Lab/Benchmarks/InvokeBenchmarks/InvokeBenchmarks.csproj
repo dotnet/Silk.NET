@@ -16,4 +16,10 @@
       <ProjectReference Include="..\..\..\Core\Silk.NET.SilkTouch\Silk.NET.SilkTouch.csproj" OutputItemType="Analyzer" ReferenceOutputAssembly="false" />
     </ItemGroup>
 
+    <ItemGroup>
+      <None Update="TestLib.dll">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
 </Project>
