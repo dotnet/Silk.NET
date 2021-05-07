@@ -12,7 +12,7 @@ namespace Silk.NET.Input.Glfw
     {
         private static readonly Key[] _keys = ((Keys[]) Enum.GetValues(typeof(Keys))).Select
                 (ConvertKey)
-            .Where(x => x != Key.Unknown)
+            .Where(static x => x != Key.Unknown)
             .Distinct()
             .ToArray();
         private unsafe WindowHandle* _handle;

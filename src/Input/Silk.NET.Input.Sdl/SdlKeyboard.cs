@@ -21,7 +21,7 @@ namespace Silk.NET.Input.Sdl
         public bool IsConnected { get; } = true;
 
         public IReadOnlyList<Key> SupportedKeys { get; } =
-            _keyMap.Values.Where(x => x != Key.Unknown).Distinct().ToArray();
+            _keyMap.Values.Where(static x => x != Key.Unknown).Distinct().ToArray();
         public bool IsKeyPressed(Key key) => _keysDown.Contains(key);
         public event Action<IKeyboard, Key, int>? KeyDown;
         public event Action<IKeyboard, Key, int>? KeyUp;
