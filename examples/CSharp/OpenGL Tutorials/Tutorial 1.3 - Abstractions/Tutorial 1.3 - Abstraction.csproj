@@ -8,7 +8,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\src\Core\Silk.NET\Silk.NET.csproj" />
+      <ProjectReference Include="..\..\..\..\src\Core\Silk.NET\Silk.NET.csproj" />
     </ItemGroup>
 
     <ItemGroup>

@@ -12,17 +12,17 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\..\src\Core\Silk.NET\Silk.NET.csproj" />
+      <ProjectReference Include="..\..\..\..\src\Core\Silk.NET\Silk.NET.csproj" />
     </ItemGroup>
 
     <ItemGroup>
+      <None Update="lighting.frag">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </None>
       <None Update="Shader.frag">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
       <None Update="Shader.vert">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </None>
-      <None Update="silk.png">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       </None>
     </ItemGroup>
