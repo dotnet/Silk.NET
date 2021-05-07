@@ -98,8 +98,8 @@ namespace Silk.NET.Maths
         /// <returns>The calculated box.</returns>
         public Box2D<T> GetScaled(Vector2D<T> scale, Vector2D<T> anchor)
         {
-            var min = (scale * (Min - anchor)) + Min;
-            var max = (scale * (Max - anchor)) + Max;
+            var min = (scale * (Min - anchor)) + anchor;
+            var max = (scale * (Max - anchor)) + anchor;
             return new(min, max);
         }
 

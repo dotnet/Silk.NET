@@ -115,9 +115,8 @@ namespace Silk.NET.Maths
         /// <returns>The calculated cube.</returns>
         public Cube<T> GetScaled(Vector3D<T> scale, Vector3D<T> anchor)
         {
-            var origMax = Max;
-            var min = (scale * (Origin - anchor)) + Origin;
-            var max = (scale * (origMax - anchor)) + origMax;
+            var min = (scale * (Origin - anchor)) + anchor;
+            var max = (scale * (Max - anchor)) + anchor;
             return new(min, max - min);
         }
 

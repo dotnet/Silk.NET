@@ -111,9 +111,8 @@ namespace Silk.NET.Maths
         /// <returns>The calculated rectangle.</returns>
         public Rectangle<T> GetScaled(Vector2D<T> scale, Vector2D<T> anchor)
         {
-            var origMax = Max;
-            var min = (scale * (Origin - anchor)) + Origin;
-            var max = (scale * (origMax - anchor)) + origMax;
+            var min = (scale * (Origin - anchor)) + anchor;
+            var max = (scale * (Max - anchor)) + anchor;
             return new(min, max - min);
         }
 
