@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Silk.NET.Input.Internals;
 using Silk.NET.SDL;
 
@@ -18,7 +19,9 @@ namespace Silk.NET.Input.Sdl
         public string Name { get; } = "Silk.NET Keyboard (via SDL)";
         public int Index { get; } = 0;
         public bool IsConnected { get; } = true;
-        public IReadOnlyList<Key> SupportedKeys { get; } = new ReadOnlyCollectionListAdapter<Key>(_keyMap.Values);
+
+        public IReadOnlyList<Key> SupportedKeys { get; } =
+            _keyMap.Values.Where(static x => x != Key.Unknown).Distinct().ToArray();
         public bool IsKeyPressed(Key key) => _keysDown.Contains(key);
         public event Action<IKeyboard, Key, int>? KeyDown;
         public event Action<IKeyboard, Key, int>? KeyUp;
