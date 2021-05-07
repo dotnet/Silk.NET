@@ -340,43 +340,43 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenGL.Extensions.
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Experiments", "Experiments", "{39B598E9-44BA-4A61-A1BB-7C543734DBA6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankWindow", "src\Lab\experiments\BlankWindow\BlankWindow.csproj", "{29792F05-EFB9-4323-94FC-01309B44BAF9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlankWindow", "src\Lab\Experiments\BlankWindow\BlankWindow.csproj", "{29792F05-EFB9-4323-94FC-01309B44BAF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLMultiplication", "src\Lab\experiments\CLMultiplication\CLMultiplication.csproj", "{FAC2B206-8A11-4387-A7B4-645671641339}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CLMultiplication", "src\Lab\Experiments\CLMultiplication\CLMultiplication.csproj", "{FAC2B206-8A11-4387-A7B4-645671641339}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreRTTest", "src\Lab\experiments\CoreRTTest\CoreRTTest.csproj", "{2C22A70C-12B3-4BCF-A273-1B0A1BD432BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreRTTest", "src\Lab\Experiments\CoreRTTest\CoreRTTest.csproj", "{2C22A70C-12B3-4BCF-A273-1B0A1BD432BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D3D12Triangle", "src\Lab\experiments\D3D12Triangle\D3D12Triangle.csproj", "{1431D746-63CC-4498-BCD4-7A68E225ACF1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "D3D12Triangle", "src\Lab\Experiments\D3D12Triangle\D3D12Triangle.csproj", "{1431D746-63CC-4498-BCD4-7A68E225ACF1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FramebufferResized", "src\Lab\experiments\FramebufferResized\FramebufferResized.csproj", "{C7E1C064-DF0A-4809-A3E7-3A20E8995DE1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FramebufferResized", "src\Lab\Experiments\FramebufferResized\FramebufferResized.csproj", "{C7E1C064-DF0A-4809-A3E7-3A20E8995DE1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImGui", "src\Lab\experiments\ImGui\ImGui.csproj", "{58E7EE89-B67C-482D-9605-04B3BCC5CFBB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImGui", "src\Lab\Experiments\ImGui\ImGui.csproj", "{58E7EE89-B67C-482D-9605-04B3BCC5CFBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputTest", "src\Lab\experiments\InputTest\InputTest.csproj", "{D16B9145-C5CB-4E2A-A325-07E9FC89F3EA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InputTest", "src\Lab\Experiments\InputTest\InputTest.csproj", "{D16B9145-C5CB-4E2A-A325-07E9FC89F3EA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JITTesting", "src\Lab\experiments\JITTesting\JITTesting.csproj", "{4001CDD7-6F73-4C18-966C-27E3BB1208F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JITTesting", "src\Lab\Experiments\JITTesting\JITTesting.csproj", "{4001CDD7-6F73-4C18-966C-27E3BB1208F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitorPlayground", "src\Lab\experiments\MonitorPlayground\MonitorPlayground.csproj", "{1C687F7A-54A8-4BC8-82FB-0424AEA537FB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonitorPlayground", "src\Lab\Experiments\MonitorPlayground\MonitorPlayground.csproj", "{1C687F7A-54A8-4BC8-82FB-0424AEA537FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleBase", "src\Lab\experiments\SampleBase\SampleBase.csproj", "{6F7769EF-F89C-46AA-9EB1-2828CC2AA089}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleBase", "src\Lab\Experiments\SampleBase\SampleBase.csproj", "{6F7769EF-F89C-46AA-9EB1-2828CC2AA089}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperInvokeDiagnostics", "src\Lab\experiments\SuperInvokeDiagnostics\SuperInvokeDiagnostics.csproj", "{A87F77B1-D38E-46E5-822A-097F0370D1D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperInvokeDiagnostics", "src\Lab\Experiments\SuperInvokeDiagnostics\SuperInvokeDiagnostics.csproj", "{A87F77B1-D38E-46E5-822A-097F0370D1D0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLib", "src\Lab\experiments\TestLib\TestLib.csproj", "{0BD1088B-D0DB-4080-B2BE-1CF5A97EB518}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestLib", "src\Lab\Experiments\TestLib\TestLib.csproj", "{0BD1088B-D0DB-4080-B2BE-1CF5A97EB518}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangle", "src\Lab\experiments\Triangle\Triangle.csproj", "{6E61C442-66B0-429E-BE5D-4ACD0045F0A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Triangle", "src\Lab\Experiments\Triangle\Triangle.csproj", "{6E61C442-66B0-429E-BE5D-4ACD0045F0A5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriangleDroid", "src\Lab\experiments\TriangleDroid\TriangleDroid.csproj", "{7715CA80-4305-456B-9F66-2CED43E30AEF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriangleDroid", "src\Lab\Experiments\TriangleDroid\TriangleDroid.csproj", "{7715CA80-4305-456B-9F66-2CED43E30AEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriangleDroidUvExperiment", "src\Lab\experiments\TriangleDroidUvExperiment\TriangleDroidUvExperiment.csproj", "{CE0516F7-78D2-474F-A4A1-6ED97EB7CD9D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriangleDroidUvExperiment", "src\Lab\Experiments\TriangleDroidUvExperiment\TriangleDroidUvExperiment.csproj", "{CE0516F7-78D2-474F-A4A1-6ED97EB7CD9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriangleIOS", "src\Lab\experiments\TriangleIOS\TriangleIOS.csproj", "{8669819B-654F-4E41-9030-1CCA56D64E88}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TriangleIOS", "src\Lab\Experiments\TriangleIOS\TriangleIOS.csproj", "{8669819B-654F-4E41-9030-1CCA56D64E88}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utf8Test", "src\Lab\experiments\Utf8Test\Utf8Test.csproj", "{70B06D00-CEA9-47CD-8781-10CA48376046}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Utf8Test", "src\Lab\Experiments\Utf8Test\Utf8Test.csproj", "{70B06D00-CEA9-47CD-8781-10CA48376046}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeldridTriangle", "src\Lab\experiments\VeldridTriangle\VeldridTriangle.csproj", "{28760ABB-EB0F-4216-97B0-0DAC5FC27533}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VeldridTriangle", "src\Lab\Experiments\VeldridTriangle\VeldridTriangle.csproj", "{28760ABB-EB0F-4216-97B0-0DAC5FC27533}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VulkanTriangle", "src\Lab\experiments\VulkanTriangle\VulkanTriangle.csproj", "{5E5433D4-0285-48AC-82EA-FA0F8C227707}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VulkanTriangle", "src\Lab\Experiments\VulkanTriangle\VulkanTriangle.csproj", "{5E5433D4-0285-48AC-82EA-FA0F8C227707}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Benchmarks", "Benchmarks", "{BDADD4AA-80D5-439E-8CFE-2744395BD4F8}"
 EndProject
