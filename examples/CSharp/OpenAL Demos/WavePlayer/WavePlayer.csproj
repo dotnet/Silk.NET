@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Silk.NET.OpenAL" Version="2.3.0" />
+      <ProjectReference Include="..\..\..\..\src\OpenAL\Silk.NET.OpenAL\Silk.NET.OpenAL.csproj" />
     </ItemGroup>
 
 </Project>
