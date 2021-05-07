@@ -103,9 +103,25 @@ namespace Silk.NET.Maths
         /// <returns>The calculated box.</returns>
         public Box3D<T> GetScaled(Vector3D<T> scale, Vector3D<T> anchor)
         {
-            var min = (scale * (Min - anchor)) + Min;
-            var max = (scale * (Max - anchor)) + Max;
+            var min = (scale * (Min - anchor)) + anchor;
+            var max = (scale * (Max - anchor)) + anchor;
             return new(min, max);
+        }
+        
+        /// <summary>
+        /// Calculates a new box scaled by the given scale around the given anchor.
+        /// </summary>
+        /// <typeparam name="TScale">The type of the scale.</typeparam>
+        /// <param name="scale">The scale.</param>
+        /// <param name="anchor">The anchor.</param>
+        /// <returns>The calculated box.</returns>
+        public Box3D<T> GetScaled<TScale>(Vector3D<TScale> scale, Vector3D<T> anchor)
+            where TScale : unmanaged, IFormattable, IEquatable<TScale>, IComparable<TScale>
+        {
+            var convertedAnchor = anchor.As<TScale>();
+            var min = (scale * (Min.As<TScale>() - convertedAnchor)) + convertedAnchor;
+            var max = (scale * (Max.As<TScale>() - convertedAnchor)) + convertedAnchor;
+            return new Box3D<T>(min.As<T>(), max.As<T>());
         }
 
         /// <summary>

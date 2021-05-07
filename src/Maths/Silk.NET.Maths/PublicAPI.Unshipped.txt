@@ -21,3 +21,7 @@ Silk.NET.Maths.Sphere<T>.As<TOther>() -> Silk.NET.Maths.Sphere<TOther>
 Silk.NET.Maths.Vector2D<T>.As<TOther>() -> Silk.NET.Maths.Vector2D<TOther>
 Silk.NET.Maths.Vector3D<T>.As<TOther>() -> Silk.NET.Maths.Vector3D<TOther>
 Silk.NET.Maths.Vector4D<T>.As<TOther>() -> Silk.NET.Maths.Vector4D<TOther>
+Silk.NET.Maths.Box2D<T>.GetScaled<TScale>(Silk.NET.Maths.Vector2D<TScale> scale, Silk.NET.Maths.Vector2D<T> anchor) -> Silk.NET.Maths.Box2D<T>
+Silk.NET.Maths.Box3D<T>.GetScaled<TScale>(Silk.NET.Maths.Vector3D<TScale> scale, Silk.NET.Maths.Vector3D<T> anchor) -> Silk.NET.Maths.Box3D<T>
+Silk.NET.Maths.Rectangle<T>.GetScaled<TScale>(Silk.NET.Maths.Vector2D<TScale> scale, Silk.NET.Maths.Vector2D<T> anchor) -> Silk.NET.Maths.Rectangle<T>
+Silk.NET.Maths.Cube<T>.GetScaled<TScale>(Silk.NET.Maths.Vector3D<TScale> scale, Silk.NET.Maths.Vector3D<T> anchor) -> Silk.NET.Maths.Cube<T>
