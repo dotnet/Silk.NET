@@ -197,7 +197,7 @@ namespace InputTest
                     mouse.MouseMove -= MouseOnMouseMove;
                 }
 
-                mouse.Cursor.IsConfined = true;
+                // mouse.Cursor.IsConfined = true;
 
                 Console.Write("    Buttons: ");
                 Console.WriteLine(string.Join(", ", mouse.SupportedButtons.Select(x => x)));
