@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 
 namespace Silk.NET.Core.Loader
 {
@@ -25,20 +26,12 @@ namespace Silk.NET.Core.Loader
         /// <returns>The operating system handle for the shared library.</returns>
         public nint LoadNativeLibrary(string name)
         {
-            var success = TryLoadNativeLibrary(name, out var result);
-
-            if (!success)
-            {
-                ThrowLibNotFound(name);
-                return default;
-            }
-
-            return result;
+            return LoadNativeLibrary(name, PathResolver.Default);
         }
 
-        private static void ThrowLibNotFound(string name)
+        private static void ThrowLibNotFound(string name, PathResolver resolver)
         {
-            throw new FileNotFoundException("Could not find or load the native library: " + name);
+            throw new FileNotFoundException($"Could not find or load the native library: {name} Attempted: {string.Join(", ", resolver.EnumeratePossibleLibraryLoadTargets(name).Select(x => "\"" + x + "\""))}");
         }
 
         /// <summary>
@@ -49,9 +42,7 @@ namespace Silk.NET.Core.Loader
         /// <returns>The operating system handle for the shared library.</returns>
         public bool TryLoadNativeLibrary(string name, out nint result)
         {
-            var success = TryLoadNativeLibrary(new[] {name}, PathResolver.Default, out result);
-
-            return success;
+            return TryLoadNativeLibrary(new[] {name}, PathResolver.Default, out result);
         }
 
         /// <summary>
@@ -63,21 +54,13 @@ namespace Silk.NET.Core.Loader
         /// <returns>The operating system handle for the shared library.</returns>
         public nint LoadNativeLibrary(string[] names)
         {
-            var success = TryLoadNativeLibrary(names, out var result);
-
-            if (!success)
-            {
-                ThrowLibNotFoundAny(names);
-                return default;
-            }
-
-            return result;
+            return LoadNativeLibrary(names, PathResolver.Default);
         }
 
-        private static void ThrowLibNotFoundAny(string[] names)
+        private static void ThrowLibNotFoundAny(string[] names, PathResolver pathResolver)
         {
             throw new FileNotFoundException
-                ($"Could not find or load the native library from any name: [ {string.Join(", ", names)} ]");
+                ($"Could not find or load the native library from any name: [ {string.Join(", ", names.Select(x => x + " Attempted: (" + string.Join(", ", pathResolver.EnumeratePossibleLibraryLoadTargets(x).Select(x2 => "\"" + x2 + "\"")) + ")"))} ]");
         }
 
         /// <summary>
@@ -90,10 +73,7 @@ namespace Silk.NET.Core.Loader
         /// <returns>The operating system handle for the shared library.</returns>
         public bool TryLoadNativeLibrary(string[] names, out nint result)
         {
-            var success = TryLoadNativeLibrary(names, PathResolver.Default, out var libPtr);
-            result = libPtr;
-
-            return success;
+            return TryLoadNativeLibrary(names, PathResolver.Default, out result);
         }
 
         /// <summary>
@@ -114,7 +94,7 @@ namespace Silk.NET.Core.Loader
 
             if (!success)
             {
-                ThrowLibNotFound(name);
+                ThrowLibNotFound(name, pathResolver);
                 return default;
             }
 
@@ -161,7 +141,7 @@ namespace Silk.NET.Core.Loader
 
             if (!success)
             {
-                ThrowLibNotFoundAny(names);
+                ThrowLibNotFoundAny(names, pathResolver);
                 return default;
             }
 
