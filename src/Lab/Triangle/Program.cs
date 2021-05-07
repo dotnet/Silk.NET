@@ -31,7 +31,7 @@ namespace Triangle
 
         public static void Main(string[] args)
         {
-            Silk.NET.Windowing.Sdl.SdlWindowing.Use();
+            //Silk.NET.Windowing.Sdl.SdlWindowing.Use();
             //SdlProvider.SetMainReady = true;
             var opts = ViewOptions.Default;
             opts.FramesPerSecond = 90;
