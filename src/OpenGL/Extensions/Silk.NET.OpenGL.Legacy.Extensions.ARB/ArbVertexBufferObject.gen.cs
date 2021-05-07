@@ -167,10 +167,58 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glUnmapBufferARB")]
         public partial bool UnmapBuffer([Flow(FlowDirection.In)] BufferTargetARB target);
 
+        public unsafe void BufferData<T0>([Flow(FlowDirection.In)] ARB target, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] ARB usage) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            BufferData(target, (nuint) (data.Length * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), usage);
+        }
+
+        public unsafe void BufferData<T0>([Flow(FlowDirection.In)] ARB target, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            BufferData(target, (nuint) (data.Length * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), usage);
+        }
+
+        public unsafe void BufferData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] ARB usage) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            BufferData(target, (nuint) (data.Length * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), usage);
+        }
+
+        public unsafe void BufferData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferUsageARB usage) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            BufferData(target, (nuint) (data.Length * Unsafe.SizeOf<T0>()), in data.GetPinnableReference(), usage);
+        }
+
+        public unsafe void BufferSubData<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] nint offset, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            BufferSubData(target, offset, (nuint) (data.Length * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
+        }
+
+        public unsafe void BufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            BufferSubData(target, offset, (nuint) (data.Length * Unsafe.SizeOf<T0>()), in data.GetPinnableReference());
+        }
+
         public unsafe void DeleteBuffer([Count(Parameter = "n"), Flow(FlowDirection.In)] uint buffers)
         {
             // ArrayParameterOverloader
             DeleteBuffers(1, &buffers);
+        }
+
+        public unsafe void DeleteBuffers([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> buffers)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteBuffers((uint) buffers.Length, in buffers.GetPinnableReference());
+        }
+
+        public unsafe void DeleteBuffers([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Buffer> buffers)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteBuffers((uint) buffers.Length, in buffers.GetPinnableReference());
         }
 
         public unsafe uint GenBuffer()
@@ -180,6 +228,30 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             uint ret = default;
             GenBuffers(n, &ret);
             return ret;
+        }
+
+        public unsafe void GenBuffers([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> buffers)
+        {
+            // ImplicitCountSpanOverloader
+            GenBuffers((uint) buffers.Length, out buffers.GetPinnableReference());
+        }
+
+        public unsafe void GenBuffers([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Buffer> buffers)
+        {
+            // ImplicitCountSpanOverloader
+            GenBuffers((uint) buffers.Length, out buffers.GetPinnableReference());
+        }
+
+        public unsafe void GetBufferSubData<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] nint offset, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetBufferSubData(target, offset, (nuint) (data.Length * Unsafe.SizeOf<T0>()), out data.GetPinnableReference());
+        }
+
+        public unsafe void GetBufferSubData<T0>([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetBufferSubData(target, offset, (nuint) (data.Length * Unsafe.SizeOf<T0>()), out data.GetPinnableReference());
         }
 
         public ArbVertexBufferObject(INativeContext ctx)

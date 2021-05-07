@@ -50,6 +50,24 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glReadBufferIndexedEXT")]
         public partial void ReadBufferIndexed([Flow(FlowDirection.In)] ReadBufferMode src, [Flow(FlowDirection.In)] int index);
 
+        public unsafe void DrawBuffersIndexed([Count(Parameter = "n"), Flow(FlowDirection.In)] EXT* location, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<int> indices)
+        {
+            // ImplicitCountSpanOverloader
+            DrawBuffersIndexed((int) indices.Length, location, in indices.GetPinnableReference());
+        }
+
+        public unsafe void DrawBuffersIndexed([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> location, [Count(Parameter = "n"), Flow(FlowDirection.In)] int* indices)
+        {
+            // ImplicitCountSpanOverloader
+            DrawBuffersIndexed((int) location.Length, in location.GetPinnableReference(), indices);
+        }
+
+        public unsafe void DrawBuffersIndexed([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> location, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<int> indices)
+        {
+            // ImplicitCountSpanOverloader
+            DrawBuffersIndexed((int) indices.Length, in location.GetPinnableReference(), in indices.GetPinnableReference());
+        }
+
         public ExtMultiviewDrawBuffers(INativeContext ctx)
             : base(ctx)
         {

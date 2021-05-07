@@ -62,5 +62,15 @@ namespace Silk.NET.BuildTools.Common.Structs
         /// The default value of this field.
         /// </summary>
         public string DefaultAssignment { get; set; }
+
+        /// <summary>
+        /// The number of bits this field occupies. If null, this field is not a bitfield.
+        /// </summary>
+        public int? NumBits { get; set; }
+
+        /// <summary>
+        /// The access of this field.
+        /// </summary>
+        public Accessibility Accessibility { get; set; }
     }
 }

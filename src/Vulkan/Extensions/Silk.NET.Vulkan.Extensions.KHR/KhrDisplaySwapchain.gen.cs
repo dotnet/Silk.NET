@@ -22,35 +22,77 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public const string ExtensionName = "VK_KHR_display_swapchain";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSharedSwapchainsKHR")]
-        public unsafe partial Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Computed = "swapchainCount"), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchains);
+        public unsafe partial Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchains);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSharedSwapchainsKHR")]
-        public unsafe partial Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Computed = "swapchainCount"), Flow(FlowDirection.Out)] out SwapchainKHR pSwapchains);
+        public unsafe partial Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] out SwapchainKHR pSwapchains);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSharedSwapchainsKHR")]
-        public unsafe partial Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Computed = "swapchainCount"), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchains);
+        public unsafe partial Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchains);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSharedSwapchainsKHR")]
-        public unsafe partial Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Computed = "swapchainCount"), Flow(FlowDirection.Out)] out SwapchainKHR pSwapchains);
+        public unsafe partial Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] out SwapchainKHR pSwapchains);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSharedSwapchainsKHR")]
-        public unsafe partial Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] in SwapchainCreateInfoKHR pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Computed = "swapchainCount"), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchains);
+        public unsafe partial Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] in SwapchainCreateInfoKHR pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchains);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSharedSwapchainsKHR")]
-        public unsafe partial Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] in SwapchainCreateInfoKHR pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Computed = "swapchainCount"), Flow(FlowDirection.Out)] out SwapchainKHR pSwapchains);
+        public unsafe partial Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] in SwapchainCreateInfoKHR pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] out SwapchainKHR pSwapchains);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSharedSwapchainsKHR")]
-        public unsafe partial Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] in SwapchainCreateInfoKHR pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Computed = "swapchainCount"), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchains);
+        public unsafe partial Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] in SwapchainCreateInfoKHR pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchains);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkCreateSharedSwapchainsKHR")]
-        public partial Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Computed = "swapchainCount"), Flow(FlowDirection.In)] in SwapchainCreateInfoKHR pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Computed = "swapchainCount"), Flow(FlowDirection.Out)] out SwapchainKHR pSwapchains);
+        public partial Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Count = 0)] uint swapchainCount, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] in SwapchainCreateInfoKHR pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] out SwapchainKHR pSwapchains);
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] Span<SwapchainKHR> pSwapchains)
+        {
+            // ImplicitCountSpanOverloader
+            return CreateSharedSwapchain(device, (uint) pSwapchains.Length, pCreateInfos, pAllocator, out pSwapchains.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] SwapchainCreateInfoKHR* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] Span<SwapchainKHR> pSwapchains)
+        {
+            // ImplicitCountSpanOverloader
+            return CreateSharedSwapchain(device, (uint) pSwapchains.Length, pCreateInfos, in pAllocator, out pSwapchains.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainCreateInfoKHR> pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchains)
+        {
+            // ImplicitCountSpanOverloader
+            return CreateSharedSwapchain(device, (uint) pCreateInfos.Length, in pCreateInfos.GetPinnableReference(), pAllocator, pSwapchains);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainCreateInfoKHR> pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] Span<SwapchainKHR> pSwapchains)
+        {
+            // ImplicitCountSpanOverloader
+            return CreateSharedSwapchain(device, (uint) pSwapchains.Length, in pCreateInfos.GetPinnableReference(), pAllocator, out pSwapchains.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainCreateInfoKHR> pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] SwapchainKHR* pSwapchains)
+        {
+            // ImplicitCountSpanOverloader
+            return CreateSharedSwapchain(device, (uint) pCreateInfos.Length, in pCreateInfos.GetPinnableReference(), in pAllocator, pSwapchains);
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result CreateSharedSwapchain([Count(Count = 0)] Device device, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainCreateInfoKHR> pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] in AllocationCallbacks pAllocator, [Count(Parameter = "swapchainCount"), Flow(FlowDirection.Out)] Span<SwapchainKHR> pSwapchains)
+        {
+            // ImplicitCountSpanOverloader
+            return CreateSharedSwapchain(device, (uint) pSwapchains.Length, in pCreateInfos.GetPinnableReference(), in pAllocator, out pSwapchains.GetPinnableReference());
+        }
 
         public KhrDisplaySwapchain(INativeContext ctx)
             : base(ctx)

@@ -85,7 +85,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                                 ),
                                                 Naming.TranslateLite(TrimName("VkStructureType", task), task.FunctionPrefix)
                                             )
-                                            : null
+                                            : null,
+                                    NumBits = x.NumBits
                                 }.WithFixedFieldFixup09072020()
                             )
                             .ToList(),
@@ -143,6 +144,7 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             NativeName = x.Name,
                             NativeType = x.Type.ToString(),
                             Type = ConvertType(x.Type),
+                            NumBits = x.NumBits
                         };
                     }
                 }
@@ -158,7 +160,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         Doc = $"/// <summary>{x.Comment}</summary>",
                         NativeName = x.Name,
                         NativeType = x.Type.ToString(),
-                        Type = ConvertType(x.Type)
+                        Type = ConvertType(x.Type),
+                        NumBits = x.NumBits
                     };
                 }
             }
@@ -276,8 +279,11 @@ namespace Silk.NET.BuildTools.Converters.Readers
                                 x => new Parameter
                                 {
                                     Count = x.IsNullTerminated ? null :
-                                        x.ElementCountSymbolic != null ? new Count(x.ElementCountSymbolic.Split(',')) :
-                                        new Count(x.ElementCount),
+                                        x.ElementCountSymbolic != null ?
+                                            function.Parameters.Any(y => y.Name == x.ElementCountSymbolic)
+                                            ? new(x.ElementCountSymbolic)
+                                            : new(x.ElementCountSymbolic.Split(',')) :
+                                        new(x.ElementCount),
                                     Flow = ConvertFlow(x.Modifier), Name = x.Name, Type = ConvertType(x.Type)
                                 }
                             )
@@ -311,7 +317,8 @@ namespace Silk.NET.BuildTools.Converters.Readers
                         NativeName = e.NativeName.Replace("FlagBits", "Flags"),
                         ProfileName = feature,
                         ProfileVersion = null,
-                        Tokens = e.Tokens
+                        Tokens = e.Tokens,
+                        EnumBaseType = e.EnumBaseType
                     };
                 }
             }
@@ -430,7 +437,12 @@ namespace Silk.NET.BuildTools.Converters.Readers
                             .ToList(),
                         Attributes = e.Type == EnumType.Bitmask
                             ? new List<Attribute> {new Attribute {Name = "Flags"}}
-                            : new List<Attribute>()
+                            : new List<Attribute>(),
+                        EnumBaseType = e.BitWidth switch
+                        {
+                            64 => new(){Name = "long"},
+                            _ => new(){Name = "int"}
+                        }
                     }
                 );
             }

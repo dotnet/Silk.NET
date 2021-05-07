@@ -32,6 +32,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         [NativeApi(EntryPoint = "glTextureRangeAPPLE")]
         public partial void TextureRange<T0>([Flow(FlowDirection.In)] APPLE target, [Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
 
+        public unsafe void TextureRange<T0>([Flow(FlowDirection.In)] APPLE target, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            TextureRange(target, (uint) (pointer.Length * Unsafe.SizeOf<T0>()), in pointer.GetPinnableReference());
+        }
+
         public AppleTextureRange(INativeContext ctx)
             : base(ctx)
         {

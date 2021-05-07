@@ -266,5 +266,13 @@ namespace Silk.NET.OpenXR
         TypeSystemColorSpacePropertiesFB = 1000108000,
         [NativeName("Name", "XR_TYPE_BINDING_MODIFICATIONS_KHR")]
         TypeBindingModificationsKhr = 1000120000,
+        [NativeName("Name", "XR_TYPE_VIEW_LOCATE_FOVEATED_RENDERING_VARJO")]
+        TypeViewLocateFoveatedRenderingVarjo = 1000121000,
+        [NativeName("Name", "XR_TYPE_FOVEATED_VIEW_CONFIGURATION_VIEW_VARJO")]
+        TypeFoveatedViewConfigurationViewVarjo = 1000121001,
+        [NativeName("Name", "XR_TYPE_SYSTEM_FOVEATED_RENDERING_PROPERTIES_VARJO")]
+        TypeSystemFoveatedRenderingPropertiesVarjo = 1000121002,
+        [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_DEPTH_TEST_VARJO")]
+        TypeCompositionLayerDepthTestVarjo = 1000122000,
     }
 }

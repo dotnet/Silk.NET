@@ -115,21 +115,21 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetDisplayModeProperties(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayModePropertiesKHR> pProperties)
+        public static unsafe Result GetDisplayModeProperties(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayModePropertiesKHR> pProperties)
         {
             // SpanOverloader
             return thisApi.GetDisplayModeProperties(physicalDevice, display, pPropertyCount, out pProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetDisplayModeProperties(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayModePropertiesKHR* pProperties)
+        public static unsafe Result GetDisplayModeProperties(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayModePropertiesKHR* pProperties)
         {
             // SpanOverloader
             return thisApi.GetDisplayModeProperties(physicalDevice, display, ref pPropertyCount.GetPinnableReference(), pProperties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetDisplayModeProperties(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayModePropertiesKHR> pProperties)
+        public static unsafe Result GetDisplayModeProperties(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayModePropertiesKHR> pProperties)
         {
             // SpanOverloader
             return thisApi.GetDisplayModeProperties(physicalDevice, display, ref pPropertyCount.GetPinnableReference(), out pProperties.GetPinnableReference());
@@ -143,63 +143,63 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetDisplayPlaneSupportedDisplays(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint planeIndex, [Count(Count = 0)] uint* pDisplayCount, [Count(Computed = "pDisplayCount"), Flow(FlowDirection.Out)] Span<DisplayKHR> pDisplays)
+        public static unsafe Result GetDisplayPlaneSupportedDisplays(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint planeIndex, [Count(Count = 0)] uint* pDisplayCount, [Count(Parameter = "pDisplayCount"), Flow(FlowDirection.Out)] Span<DisplayKHR> pDisplays)
         {
             // SpanOverloader
             return thisApi.GetDisplayPlaneSupportedDisplays(physicalDevice, planeIndex, pDisplayCount, out pDisplays.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetDisplayPlaneSupportedDisplays(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint planeIndex, [Count(Count = 0)] Span<uint> pDisplayCount, [Count(Computed = "pDisplayCount"), Flow(FlowDirection.Out)] DisplayKHR* pDisplays)
+        public static unsafe Result GetDisplayPlaneSupportedDisplays(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint planeIndex, [Count(Count = 0)] Span<uint> pDisplayCount, [Count(Parameter = "pDisplayCount"), Flow(FlowDirection.Out)] DisplayKHR* pDisplays)
         {
             // SpanOverloader
             return thisApi.GetDisplayPlaneSupportedDisplays(physicalDevice, planeIndex, ref pDisplayCount.GetPinnableReference(), pDisplays);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetDisplayPlaneSupportedDisplays(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint planeIndex, [Count(Count = 0)] Span<uint> pDisplayCount, [Count(Computed = "pDisplayCount"), Flow(FlowDirection.Out)] Span<DisplayKHR> pDisplays)
+        public static unsafe Result GetDisplayPlaneSupportedDisplays(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint planeIndex, [Count(Count = 0)] Span<uint> pDisplayCount, [Count(Parameter = "pDisplayCount"), Flow(FlowDirection.Out)] Span<DisplayKHR> pDisplays)
         {
             // SpanOverloader
             return thisApi.GetDisplayPlaneSupportedDisplays(physicalDevice, planeIndex, ref pDisplayCount.GetPinnableReference(), out pDisplays.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceDisplayPlaneProperties(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayPlanePropertiesKHR> pProperties)
+        public static unsafe Result GetPhysicalDeviceDisplayPlaneProperties(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayPlanePropertiesKHR> pProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceDisplayPlaneProperties(physicalDevice, pPropertyCount, out pProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceDisplayPlaneProperties(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayPlanePropertiesKHR* pProperties)
+        public static unsafe Result GetPhysicalDeviceDisplayPlaneProperties(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayPlanePropertiesKHR* pProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceDisplayPlaneProperties(physicalDevice, ref pPropertyCount.GetPinnableReference(), pProperties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceDisplayPlaneProperties(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayPlanePropertiesKHR> pProperties)
+        public static unsafe Result GetPhysicalDeviceDisplayPlaneProperties(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayPlanePropertiesKHR> pProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceDisplayPlaneProperties(physicalDevice, ref pPropertyCount.GetPinnableReference(), out pProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceDisplayProperties(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayPropertiesKHR> pProperties)
+        public static unsafe Result GetPhysicalDeviceDisplayProperties(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayPropertiesKHR> pProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceDisplayProperties(physicalDevice, pPropertyCount, out pProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceDisplayProperties(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayPropertiesKHR* pProperties)
+        public static unsafe Result GetPhysicalDeviceDisplayProperties(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayPropertiesKHR* pProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceDisplayProperties(physicalDevice, ref pPropertyCount.GetPinnableReference(), pProperties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceDisplayProperties(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayPropertiesKHR> pProperties)
+        public static unsafe Result GetPhysicalDeviceDisplayProperties(this KhrDisplay thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<DisplayPropertiesKHR> pProperties)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceDisplayProperties(physicalDevice, ref pPropertyCount.GetPinnableReference(), out pProperties.GetPinnableReference());

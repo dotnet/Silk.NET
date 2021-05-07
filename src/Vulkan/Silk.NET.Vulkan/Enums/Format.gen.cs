@@ -554,6 +554,14 @@ namespace Silk.NET.Vulkan
         Astc6x6x6SrgbBlockExt = 1000288028,
         [NativeName("Name", "VK_FORMAT_ASTC_6x6x6_SFLOAT_BLOCK_EXT")]
         Astc6x6x6SfloatBlockExt = 1000288029,
+        [NativeName("Name", "VK_FORMAT_G8_B8R8_2PLANE_444_UNORM_EXT")]
+        G8B8R82Plane444UnormExt = 1000330000,
+        [NativeName("Name", "VK_FORMAT_G10X6_B10X6R10X6_2PLANE_444_UNORM_3PACK16_EXT")]
+        G10X6B10X6R10X62Plane444Unorm3Pack16Ext = 1000330001,
+        [NativeName("Name", "VK_FORMAT_G12X4_B12X4R12X4_2PLANE_444_UNORM_3PACK16_EXT")]
+        G12X4B12X4R12X42Plane444Unorm3Pack16Ext = 1000330002,
+        [NativeName("Name", "VK_FORMAT_G16_B16R16_2PLANE_444_UNORM_EXT")]
+        G16B16R162Plane444UnormExt = 1000330003,
         [NativeName("Name", "VK_FORMAT_A4R4G4B4_UNORM_PACK16_EXT")]
         A4R4G4B4UnormPack16Ext = 1000340000,
         [NativeName("Name", "VK_FORMAT_A4B4G4R4_UNORM_PACK16_EXT")]

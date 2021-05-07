@@ -170,6 +170,102 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glUniform4ui64vNV")]
         public partial void Uniform4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in ulong value);
 
+        public unsafe void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<long> value)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramUniform1(program, location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void ProgramUniform1([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramUniform1(program, location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<long> value)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramUniform2(program, location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void ProgramUniform2([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramUniform2(program, location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<long> value)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramUniform3(program, location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void ProgramUniform3([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramUniform3(program, location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<long> value)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramUniform4(program, location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void ProgramUniform4([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramUniform4(program, location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<long> value)
+        {
+            // ImplicitCountSpanOverloader
+            Uniform1(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
+        {
+            // ImplicitCountSpanOverloader
+            Uniform1(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void Uniform2([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<long> value)
+        {
+            // ImplicitCountSpanOverloader
+            Uniform2(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void Uniform2([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
+        {
+            // ImplicitCountSpanOverloader
+            Uniform2(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void Uniform3([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<long> value)
+        {
+            // ImplicitCountSpanOverloader
+            Uniform3(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void Uniform3([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
+        {
+            // ImplicitCountSpanOverloader
+            Uniform3(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void Uniform4([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<long> value)
+        {
+            // ImplicitCountSpanOverloader
+            Uniform4(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void Uniform4([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
+        {
+            // ImplicitCountSpanOverloader
+            Uniform4(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
         public NVGpuShader5(INativeContext ctx)
             : base(ctx)
         {

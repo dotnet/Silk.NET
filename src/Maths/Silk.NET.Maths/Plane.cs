@@ -203,5 +203,15 @@ namespace Silk.NET.Maths
         /// <returns>The <see cref="long"/> matrix</returns>
         public static explicit operator Plane<long>(Plane<T> from)
             => new((Vector3D<long>) from.Normal, Scalar.As<T, long>(from.Distance));
+        
+        /// <summary>
+        /// Returns this plane casted to <typeparamref name="TOther"></typeparamref>
+        /// </summary>
+        /// <typeparam name="TOther">The type to cast to</typeparam>
+        /// <returns>The casted plane</returns>
+        public Plane<TOther> As<TOther>() where TOther : unmanaged, IFormattable, IEquatable<TOther>, IComparable<TOther>
+        {
+            return new(Normal.As<TOther>(), Scalar.As<T, TOther>(Distance));
+        }
     }
 }

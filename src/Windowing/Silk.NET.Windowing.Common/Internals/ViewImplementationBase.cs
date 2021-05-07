@@ -55,14 +55,14 @@ namespace Silk.NET.Windowing.Internals
         protected abstract Vector2D<int> CoreSize { get; }
         protected abstract nint CoreHandle { get; }
         protected abstract bool CoreIsClosing { get; }
+        protected abstract IGLContext? CoreGLContext { get; }
+        protected abstract IVkSurface? CoreVkSurface { get; }
 
         // Function bases - again extra functionality on top
         protected abstract void CoreInitialize(ViewOptions opts);
         protected abstract void CoreReset();
 
         // Other APIs implemented abstractly
-        public abstract IGLContext? GLContext { get; }
-        public abstract IVkSurface? VkSurface { get; }
         public abstract VideoMode VideoMode { get; }
         public abstract bool IsEventDriven { get; set; }
         public abstract Vector2D<int> FramebufferSize { get; }
@@ -210,6 +210,52 @@ namespace Silk.NET.Windowing.Internals
             {
                 _swapIntervalChanged = true;
                 _optionsCache.VSync = value;
+            }
+        }
+
+        public IGLContext? GLContext
+        {
+            get
+            {
+                if (!IsInitialized && (API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES))
+                {
+                    static void Throw() => throw new InvalidOperationException
+                    (
+                        "OpenGL functions can only be used after initialization (just before the Load callback is " +
+                        "executed)"
+                    );
+
+                    Throw();
+                }
+                else if (API.API != ContextAPI.OpenGL && API.API != ContextAPI.OpenGLES)
+                {
+                    return null;
+                }
+
+                return CoreGLContext;
+            }
+        }
+
+        public IVkSurface? VkSurface
+        {
+            get
+            {
+                if (!IsInitialized && API.API == ContextAPI.Vulkan)
+                {
+                    static void Throw() => throw new InvalidOperationException
+                    (
+                        "Vulkan functions can only be used after initialization (just before the Load callback is " +
+                        "executed)"
+                    );
+
+                    Throw();
+                }
+                else if (API.API != ContextAPI.Vulkan)
+                {
+                    return null;
+                }
+
+                return CoreVkSurface;
             }
         }
 

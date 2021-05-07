@@ -167,10 +167,160 @@ namespace Silk.NET.OpenGL.Extensions.ARB
             SilkMarshal.Free((nint) path);
         }
 
+        public unsafe void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** path, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> length)
+        {
+            // ImplicitCountSpanOverloader
+            CompileShaderInclude(shader, (uint) length.Length, path, in length.GetPinnableReference());
+        }
+
+        public unsafe void CompileShaderInclude([Flow(FlowDirection.In)] uint shader, [Count(Parameter = "count"), Flow(FlowDirection.In)] in byte* path, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> length)
+        {
+            // ImplicitCountSpanOverloader
+            CompileShaderInclude(shader, (uint) length.Length, in path, in length.GetPinnableReference());
+        }
+
         public unsafe void DeleteNamedString([Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte name)
         {
             // ArrayParameterOverloader
             DeleteNamedString(1, &name);
+        }
+
+        public unsafe void DeleteNamedString([Count(Parameter = "namelen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteNamedString((int) name.Length, in name.GetPinnableReference());
+        }
+
+        public unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> @string)
+        {
+            // ImplicitCountSpanOverloader
+            GetNamedString(namelen, name, (uint) @string.Length, stringlen, out @string.GetPinnableReference());
+        }
+
+        public unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> @string)
+        {
+            // ImplicitCountSpanOverloader
+            GetNamedString(namelen, name, (uint) @string.Length, stringlen, out @string.GetPinnableReference());
+        }
+
+        public unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> @string)
+        {
+            // ImplicitCountSpanOverloader
+            GetNamedString(namelen, name, (uint) @string.Length, out stringlen, out @string.GetPinnableReference());
+        }
+
+        public unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> @string)
+        {
+            // ImplicitCountSpanOverloader
+            GetNamedString(namelen, name, (uint) @string.Length, out stringlen, out @string.GetPinnableReference());
+        }
+
+        public unsafe void GetNamedString([Count(Parameter = "namelen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* @string)
+        {
+            // ImplicitCountSpanOverloader
+            GetNamedString((int) name.Length, in name.GetPinnableReference(), bufSize, stringlen, @string);
+        }
+
+        public unsafe void GetNamedString([Count(Parameter = "namelen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> @string)
+        {
+            // ImplicitCountSpanOverloader
+            GetNamedString((int) name.Length, in name.GetPinnableReference(), (uint) @string.Length, stringlen, out @string.GetPinnableReference());
+        }
+
+        public unsafe void GetNamedString([Count(Parameter = "namelen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> @string)
+        {
+            // ImplicitCountSpanOverloader
+            GetNamedString((int) name.Length, in name.GetPinnableReference(), (uint) @string.Length, stringlen, out @string.GetPinnableReference());
+        }
+
+        public unsafe void GetNamedString([Count(Parameter = "namelen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* @string)
+        {
+            // ImplicitCountSpanOverloader
+            GetNamedString((int) name.Length, in name.GetPinnableReference(), bufSize, out stringlen, @string);
+        }
+
+        public unsafe void GetNamedString([Count(Parameter = "namelen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> @string)
+        {
+            // ImplicitCountSpanOverloader
+            GetNamedString((int) name.Length, in name.GetPinnableReference(), (uint) @string.Length, out stringlen, out @string.GetPinnableReference());
+        }
+
+        public unsafe void GetNamedString([Count(Parameter = "namelen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> @string)
+        {
+            // ImplicitCountSpanOverloader
+            GetNamedString((int) name.Length, in name.GetPinnableReference(), (uint) @string.Length, out stringlen, out @string.GetPinnableReference());
+        }
+
+        public unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> @string)
+        {
+            // ImplicitCountSpanOverloader
+            GetNamedString(namelen, name, (uint) @string.Length, stringlen, out @string.GetPinnableReference());
+        }
+
+        public unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Count(Count = 1), Flow(FlowDirection.Out)] int* stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> @string)
+        {
+            // ImplicitCountSpanOverloader
+            GetNamedString(namelen, name, (uint) @string.Length, stringlen, out @string.GetPinnableReference());
+        }
+
+        public unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> @string)
+        {
+            // ImplicitCountSpanOverloader
+            GetNamedString(namelen, name, (uint) @string.Length, out stringlen, out @string.GetPinnableReference());
+        }
+
+        public unsafe void GetNamedString([Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Count(Count = 1), Flow(FlowDirection.Out)] out int stringlen, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> @string)
+        {
+            // ImplicitCountSpanOverloader
+            GetNamedString(namelen, name, (uint) @string.Length, out stringlen, out @string.GetPinnableReference());
+        }
+
+        public unsafe void GetNamedString([Count(Parameter = "namelen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetNamedString((int) name.Length, in name.GetPinnableReference(), pname, @params);
+        }
+
+        public unsafe void GetNamedString([Count(Parameter = "namelen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetNamedString((int) name.Length, in name.GetPinnableReference(), pname, out @params);
+        }
+
+        public unsafe bool IsNamedString([Count(Parameter = "namelen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            return IsNamedString((int) name.Length, in name.GetPinnableReference());
+        }
+
+        public unsafe void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] byte* name, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> @string)
+        {
+            // ImplicitCountSpanOverloader
+            NamedString(type, namelen, name, (int) @string.Length, in @string.GetPinnableReference());
+        }
+
+        public unsafe void NamedString([Flow(FlowDirection.In)] ARB type, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Flow(FlowDirection.In)] int stringlen, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] byte* @string)
+        {
+            // ImplicitCountSpanOverloader
+            NamedString(type, (int) name.Length, in name.GetPinnableReference(), stringlen, @string);
+        }
+
+        public unsafe void NamedString([Flow(FlowDirection.In)] ARB type, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> @string)
+        {
+            // ImplicitCountSpanOverloader
+            NamedString(type, (int) name.Length, in name.GetPinnableReference(), (int) @string.Length, in @string.GetPinnableReference());
+        }
+
+        public unsafe void NamedString([Flow(FlowDirection.In)] ARB type, [Count(Parameter = "namelen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> name, [Flow(FlowDirection.In)] int stringlen, [Flow(FlowDirection.In)] string @string)
+        {
+            // ImplicitCountSpanOverloader
+            NamedString(type, (int) name.Length, in name.GetPinnableReference(), stringlen, @string);
+        }
+
+        public unsafe void NamedString([Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] int namelen, [Flow(FlowDirection.In)] string name, [Count(Parameter = "stringlen"), Flow(FlowDirection.In)] ReadOnlySpan<byte> @string)
+        {
+            // ImplicitCountSpanOverloader
+            NamedString(type, namelen, name, (int) @string.Length, in @string.GetPinnableReference());
         }
 
         public ArbShadingLanguageInclude(INativeContext ctx)

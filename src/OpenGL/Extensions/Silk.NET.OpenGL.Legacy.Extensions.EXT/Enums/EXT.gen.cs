@@ -370,8 +370,6 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         FramebufferAttachmentTextureLayerExt = 0x8CD4,
         [NativeName("Name", "GL_PROGRAM_POINT_SIZE_EXT")]
         ProgramPointSizeExt = 0x8642,
-        [NativeName("Name", "GL_VERTEX_ATTRIB_ARRAY_INTEGER_EXT")]
-        VertexAttribArrayIntegerExt = 0x88FD,
         [NativeName("Name", "GL_SAMPLER_1D_ARRAY_EXT")]
         Sampler1DArrayExt = 0x8DC0,
         [NativeName("Name", "GL_SAMPLER_2D_ARRAY_EXT")]
@@ -426,6 +424,8 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         MinProgramTexelOffsetExt = 0x8904,
         [NativeName("Name", "GL_MAX_PROGRAM_TEXEL_OFFSET_EXT")]
         MaxProgramTexelOffsetExt = 0x8905,
+        [NativeName("Name", "GL_VERTEX_ATTRIB_ARRAY_INTEGER_EXT")]
+        VertexAttribArrayIntegerExt = 0x88FD,
         [NativeName("Name", "GL_HISTOGRAM_EXT")]
         HistogramExt = 0x8024,
         [NativeName("Name", "GL_PROXY_HISTOGRAM_EXT")]

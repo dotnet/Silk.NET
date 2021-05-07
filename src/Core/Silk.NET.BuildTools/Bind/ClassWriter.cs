@@ -72,14 +72,20 @@ namespace Silk.NET.BuildTools.Bind
             // }
             foreach (var @class in project.Classes)
             {
-                if ((@class.NativeApis.Values.Sum(x => x.Functions.Count) + @class.Functions.Count) == 0)
+                if ((@class.NativeApis.Values.Sum
+                    (x => x.Functions.Count) + @class.Functions.Count + @class.Constants.Count) == 0)
                 {
-                    Console.WriteLine($"Warning: No functions, writing of class \"{@class.ClassName}\" skipped...");
+                    Console.WriteLine($"Warning: No functions or constants, writing of class \"{@class.ClassName}\" " +
+                                      $"skipped...");
                     continue;
                 }
             
                 if (project.IsRoot)
                 {
+                    var allFunctions = @class.NativeApis.SelectMany
+                            (x => x.Value.Functions)
+                        .RemoveDuplicates()
+                        .ToArray();
                     var sw = new StreamWriter(Path.Combine(folder, $"{@class.ClassName}.gen.cs")) {NewLine = "\n"};
                     StreamWriter? swOverloads = null;
                     sw.Write(task.LicenseText());
@@ -89,8 +95,16 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine();
                     sw.WriteLine($"namespace {task.Task.Namespace}{project.Namespace}");
                     sw.WriteLine("{");
-                    sw.WriteLine
-                        ($"    public unsafe partial class {@class.ClassName} : NativeAPI");
+                    sw.Write($"    public unsafe partial class {@class.ClassName}");
+                    if (allFunctions.Any())
+                    {
+                        sw.WriteLine(" : NativeAPI");
+                    }
+                    else
+                    {
+                        sw.WriteLine();
+                    }
+
                     sw.WriteLine("    {");
                     foreach (var constant in @class.Constants)
                     {
@@ -104,11 +118,6 @@ namespace Silk.NET.BuildTools.Bind
                     }
 
                     sw.WriteLine();
-
-                    var allFunctions = @class.NativeApis.SelectMany
-                            (x => x.Value.Functions)
-                        .RemoveDuplicates()
-                        .ToArray();
                     foreach (var function in allFunctions)
                     {
                         AddInjectionAttributes(function, task);
@@ -217,21 +226,26 @@ namespace Silk.NET.BuildTools.Bind
                         sw2u.WriteLine();
                     }
 
-                    sw.WriteLine();
-                    sw.WriteLine($"        public {@class.ClassName}(INativeContext ctx)");
-                    sw.WriteLine("            : base(ctx)");
-                    sw.WriteLine("        {");
-                    sw.WriteLine("        }");
+                    if (allFunctions.Any())
+                    {
+                        sw.WriteLine();
+                        sw.WriteLine($"        public {@class.ClassName}(INativeContext ctx)");
+                        sw.WriteLine("            : base(ctx)");
+                        sw.WriteLine("        {");
+                        sw.WriteLine("        }");
+                    }
+
                     sw.WriteLine("    }");
                     sw.WriteLine("}");
                     sw.WriteLine();
                     FinishOverloadsFile(swOverloads);
                     sw.Flush();
                     sw.Dispose();
-                    if (!File.Exists(Path.Combine(folder, $"{@class.ClassName}.cs")))
+                    if (!File.Exists(Path.Combine(folder, $"{@class.ClassName}.cs")) && allFunctions.Any())
                     {
                         sw = new StreamWriter(Path.Combine(folder, $"{@class.ClassName}.cs")) {NewLine = "\n"};
                         sw.WriteCoreUsings();
+                        sw.WriteLine("using static Silk.NET.Core.Attributes.ExtensionAttribute;");
                         sw.WriteLine();
                         sw.WriteLine("#pragma warning disable 1591");
                         sw.WriteLine();
@@ -245,7 +259,7 @@ namespace Silk.NET.BuildTools.Bind
                         {
                             sw.WriteLine
                             (
-                                $"             return new {@class.ClassName}(CreateDefaultContext" +
+                                $"             return new(CreateDefaultContext" +
                                 $"(new {task.Task.NameContainer.ClassName}().GetLibraryName()));"
                             );
                         }
@@ -258,8 +272,7 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine("        public bool TryGetExtension<T>(out T ext)");
                         sw.WriteLine($"            where T:NativeExtension<{@class.ClassName}>");
                         sw.WriteLine("        {");
-                        sw.WriteLine("             ext = IsExtensionPresent(" +
-                                     "ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)");
+                        sw.WriteLine("             ext = IsExtensionPresent(GetExtensionAttribute(typeof(T)).Name)");
                         sw.WriteLine("                 ? (T) Activator.CreateInstance(typeof(T), Context)");
                         sw.WriteLine("                 : null;");
                         sw.WriteLine("             return ext is not null;");
@@ -299,10 +312,16 @@ namespace Silk.NET.BuildTools.Bind
                         sw.WriteLine($"namespace {task.Task.ExtensionsNamespace}{project.Namespace}");
                         sw.WriteLine("{");
                         sw.WriteLine($"    [Extension(\"{key}\")]");
-                        sw.WriteLine
-                        (
-                            $"    public unsafe partial class {name} : NativeExtension<{@class.ClassName}>"
-                        );
+                        sw.Write($"    public unsafe partial class {name}");
+                        if (i.Functions.Any())
+                        {
+                            sw.WriteLine($" : NativeExtension<{@class.ClassName}>");
+                        }
+                        else
+                        {
+                            sw.WriteLine();
+                        }
+
                         sw.WriteLine("    {");
                         sw.WriteLine($"        public const string ExtensionName = \"{key}\";");
                         foreach (var function in i.Functions)
@@ -412,10 +431,14 @@ namespace Silk.NET.BuildTools.Bind
                             sw2u.WriteLine();
                         }
 
-                        sw.WriteLine($"        public {name}(INativeContext ctx)");
-                        sw.WriteLine("            : base(ctx)");
-                        sw.WriteLine("        {");
-                        sw.WriteLine("        }");
+                        if (i.Functions.Any())
+                        {
+                            sw.WriteLine($"        public {name}(INativeContext ctx)");
+                            sw.WriteLine("            : base(ctx)");
+                            sw.WriteLine("        {");
+                            sw.WriteLine("        }");
+                        }
+
                         sw.WriteLine("    }");
                         sw.WriteLine("}");
                         sw.WriteLine();

@@ -44,6 +44,30 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glProgramLocalParameters4fvEXT")]
         public partial void ProgramLocalParameters4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float @params);
 
+        public unsafe void ProgramEnvParameters4([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramEnvParameters4(target, index, (uint) @params.Length, in @params.GetPinnableReference());
+        }
+
+        public unsafe void ProgramEnvParameters4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramEnvParameters4(target, index, (uint) @params.Length, in @params.GetPinnableReference());
+        }
+
+        public unsafe void ProgramLocalParameters4([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramLocalParameters4(target, index, (uint) @params.Length, in @params.GetPinnableReference());
+        }
+
+        public unsafe void ProgramLocalParameters4([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramLocalParameters4(target, index, (uint) @params.Length, in @params.GetPinnableReference());
+        }
+
         public ExtGpuProgramParameters(INativeContext ctx)
             : base(ctx)
         {

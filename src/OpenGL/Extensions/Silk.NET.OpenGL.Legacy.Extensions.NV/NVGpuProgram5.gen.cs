@@ -32,6 +32,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glProgramSubroutineParametersuivNV")]
         public partial void ProgramSubroutineParameters([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint @params);
 
+        public unsafe void ProgramSubroutineParameters([Flow(FlowDirection.In)] NV target, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> @params)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramSubroutineParameters(target, (uint) @params.Length, in @params.GetPinnableReference());
+        }
+
         public NVGpuProgram5(INativeContext ctx)
             : base(ctx)
         {

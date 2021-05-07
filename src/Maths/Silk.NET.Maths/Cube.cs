@@ -115,10 +115,25 @@ namespace Silk.NET.Maths
         /// <returns>The calculated cube.</returns>
         public Cube<T> GetScaled(Vector3D<T> scale, Vector3D<T> anchor)
         {
-            var origMax = Max;
-            var min = (scale * (Origin - anchor)) + Origin;
-            var max = (scale * (origMax - anchor)) + origMax;
+            var min = (scale * (Origin - anchor)) + anchor;
+            var max = (scale * (Max - anchor)) + anchor;
             return new(min, max - min);
+        }
+        
+        /// <summary>
+        /// Calculates a new cube scaled by the given scale around the given anchor.
+        /// </summary>
+        /// <typeparam name="TScale">The type of the scale.</typeparam>
+        /// <param name="scale">The scale.</param>
+        /// <param name="anchor">The anchor.</param>
+        /// <returns>The calculated cube.</returns>
+        public Cube<T> GetScaled<TScale>(Vector3D<TScale> scale, Vector3D<T> anchor)
+            where TScale : unmanaged, IFormattable, IEquatable<TScale>, IComparable<TScale>
+        {
+            var convertedAnchor = anchor.As<TScale>();
+            var min = (scale * (Origin.As<TScale>() - convertedAnchor)) + convertedAnchor;
+            var max = (scale * (Max.As<TScale>() - convertedAnchor)) + convertedAnchor;
+            return new(min.As<T>(), (max - min).As<T>());
         }
 
         /// <summary>
@@ -172,6 +187,16 @@ namespace Silk.NET.Maths
         public static bool operator !=(Cube<T> value1, Cube<T> value2)
         {
             return !value1.Equals(value2);
+        }
+        
+        /// <summary>
+        /// Returns this circle casted to <typeparamref name="TOther"></typeparamref>
+        /// </summary>
+        /// <typeparam name="TOther">The type to cast to</typeparam>
+        /// <returns>The casted cube</returns>
+        public Cube<TOther> As<TOther>() where TOther : unmanaged, IFormattable, IEquatable<TOther>, IComparable<TOther>
+        {
+            return new(Origin.As<TOther>(), Max.As<TOther>());
         }
     }
 }

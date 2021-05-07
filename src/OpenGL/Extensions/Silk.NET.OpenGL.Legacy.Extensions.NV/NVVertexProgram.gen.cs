@@ -590,10 +590,94 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glVertexAttribs4ubvNV")]
         public partial void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] string v);
 
+        public unsafe bool AreProgramsResident([Count(Parameter = "n"), Flow(FlowDirection.In)] uint* programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreProgramsResident((uint) residences.Length, programs, out residences.GetPinnableReference());
+        }
+
+        public unsafe bool AreProgramsResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreProgramsResident((uint) programs.Length, in programs.GetPinnableReference(), residences);
+        }
+
+        public unsafe bool AreProgramsResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreProgramsResident((uint) residences.Length, in programs.GetPinnableReference(), out residences.GetPinnableReference());
+        }
+
+        public unsafe bool AreProgramsResident([Count(Parameter = "n"), Flow(FlowDirection.In)] uint* programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreProgramsResident((uint) residences.Length, programs, out residences.GetPinnableReference());
+        }
+
+        public unsafe bool AreProgramsResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreProgramsResident((uint) programs.Length, in programs.GetPinnableReference(), residences);
+        }
+
+        public unsafe bool AreProgramsResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreProgramsResident((uint) residences.Length, in programs.GetPinnableReference(), out residences.GetPinnableReference());
+        }
+
+        public unsafe bool AreProgramsResident([Count(Parameter = "n"), Flow(FlowDirection.In)] Program* programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreProgramsResident((uint) residences.Length, programs, out residences.GetPinnableReference());
+        }
+
+        public unsafe bool AreProgramsResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Program> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreProgramsResident((uint) programs.Length, in programs.GetPinnableReference(), residences);
+        }
+
+        public unsafe bool AreProgramsResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Program> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreProgramsResident((uint) residences.Length, in programs.GetPinnableReference(), out residences.GetPinnableReference());
+        }
+
+        public unsafe bool AreProgramsResident([Count(Parameter = "n"), Flow(FlowDirection.In)] Program* programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreProgramsResident((uint) residences.Length, programs, out residences.GetPinnableReference());
+        }
+
+        public unsafe bool AreProgramsResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Program> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreProgramsResident((uint) programs.Length, in programs.GetPinnableReference(), residences);
+        }
+
+        public unsafe bool AreProgramsResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Program> programs, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreProgramsResident((uint) residences.Length, in programs.GetPinnableReference(), out residences.GetPinnableReference());
+        }
+
         public unsafe void DeleteProgram([Count(Parameter = "n"), Flow(FlowDirection.In)] uint programs)
         {
             // ArrayParameterOverloader
             DeleteProgram(1, &programs);
+        }
+
+        public unsafe void DeleteProgram([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> programs)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteProgram((uint) programs.Length, in programs.GetPinnableReference());
+        }
+
+        public unsafe void DeleteProgram([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Program> programs)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteProgram((uint) programs.Length, in programs.GetPinnableReference());
         }
 
         public unsafe uint GenProgram()
@@ -603,6 +687,144 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             uint ret = default;
             GenProgram(n, &ret);
             return ret;
+        }
+
+        public unsafe void GenProgram([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> programs)
+        {
+            // ImplicitCountSpanOverloader
+            GenProgram((uint) programs.Length, out programs.GetPinnableReference());
+        }
+
+        public unsafe void GenProgram([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Program> programs)
+        {
+            // ImplicitCountSpanOverloader
+            GenProgram((uint) programs.Length, out programs.GetPinnableReference());
+        }
+
+        public unsafe void LoadProgram([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint id, [Count(Parameter = "len"), Flow(FlowDirection.In)] ReadOnlySpan<byte> program)
+        {
+            // ImplicitCountSpanOverloader
+            LoadProgram(target, id, (uint) program.Length, in program.GetPinnableReference());
+        }
+
+        public unsafe void LoadProgram([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint id, [Count(Parameter = "len"), Flow(FlowDirection.In)] ReadOnlySpan<byte> program)
+        {
+            // ImplicitCountSpanOverloader
+            LoadProgram(target, id, (uint) program.Length, in program.GetPinnableReference());
+        }
+
+        public unsafe void ProgramParameters4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramParameters4(target, index, (uint) v.Length, in v.GetPinnableReference());
+        }
+
+        public unsafe void ProgramParameters4([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramParameters4(target, index, (uint) v.Length, in v.GetPinnableReference());
+        }
+
+        public unsafe void ProgramParameters4([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramParameters4(target, index, (uint) v.Length, in v.GetPinnableReference());
+        }
+
+        public unsafe void ProgramParameters4([Flow(FlowDirection.In)] VertexAttribEnumNV target, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramParameters4(target, index, (uint) v.Length, in v.GetPinnableReference());
+        }
+
+        public unsafe void RequestResidentProgram([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> programs)
+        {
+            // ImplicitCountSpanOverloader
+            RequestResidentProgram((uint) programs.Length, in programs.GetPinnableReference());
+        }
+
+        public unsafe void RequestResidentProgram([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Program> programs)
+        {
+            // ImplicitCountSpanOverloader
+            RequestResidentProgram((uint) programs.Length, in programs.GetPinnableReference());
+        }
+
+        public unsafe void VertexAttribs1([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        {
+            // ImplicitCountSpanOverloader
+            VertexAttribs1(index, (uint) v.Length, in v.GetPinnableReference());
+        }
+
+        public unsafe void VertexAttribs1([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // ImplicitCountSpanOverloader
+            VertexAttribs1(index, (uint) v.Length, in v.GetPinnableReference());
+        }
+
+        public unsafe void VertexAttribs1([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
+        {
+            // ImplicitCountSpanOverloader
+            VertexAttribs1(index, (uint) v.Length, in v.GetPinnableReference());
+        }
+
+        public unsafe void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        {
+            // ImplicitCountSpanOverloader
+            VertexAttribs2(index, (uint) v.Length, in v.GetPinnableReference());
+        }
+
+        public unsafe void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // ImplicitCountSpanOverloader
+            VertexAttribs2(index, (uint) v.Length, in v.GetPinnableReference());
+        }
+
+        public unsafe void VertexAttribs2([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
+        {
+            // ImplicitCountSpanOverloader
+            VertexAttribs2(index, (uint) v.Length, in v.GetPinnableReference());
+        }
+
+        public unsafe void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        {
+            // ImplicitCountSpanOverloader
+            VertexAttribs3(index, (uint) v.Length, in v.GetPinnableReference());
+        }
+
+        public unsafe void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // ImplicitCountSpanOverloader
+            VertexAttribs3(index, (uint) v.Length, in v.GetPinnableReference());
+        }
+
+        public unsafe void VertexAttribs3([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
+        {
+            // ImplicitCountSpanOverloader
+            VertexAttribs3(index, (uint) v.Length, in v.GetPinnableReference());
+        }
+
+        public unsafe void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<double> v)
+        {
+            // ImplicitCountSpanOverloader
+            VertexAttribs4(index, (uint) v.Length, in v.GetPinnableReference());
+        }
+
+        public unsafe void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+        {
+            // ImplicitCountSpanOverloader
+            VertexAttribs4(index, (uint) v.Length, in v.GetPinnableReference());
+        }
+
+        public unsafe void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<short> v)
+        {
+            // ImplicitCountSpanOverloader
+            VertexAttribs4(index, (uint) v.Length, in v.GetPinnableReference());
+        }
+
+        public unsafe void VertexAttribs4([Flow(FlowDirection.In)] uint index, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<byte> v)
+        {
+            // ImplicitCountSpanOverloader
+            VertexAttribs4(index, (uint) v.Length, in v.GetPinnableReference());
         }
 
         public NVVertexProgram(INativeContext ctx)

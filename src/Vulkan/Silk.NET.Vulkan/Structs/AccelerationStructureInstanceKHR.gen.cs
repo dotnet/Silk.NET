@@ -65,26 +65,42 @@ namespace Silk.NET.Vulkan
         [NativeName("Type.Name", "VkTransformMatrixKHR")]
         [NativeName("Name", "transform")]
         public TransformMatrixKHR Transform;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "instanceCustomIndex")]
-        public uint InstanceCustomIndex;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "mask")]
-        public uint Mask;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "instanceShaderBindingTableRecordOffset")]
-        public uint InstanceShaderBindingTableRecordOffset;
-/// <summary></summary>
-        [NativeName("Type", "VkGeometryInstanceFlagsKHR")]
-        [NativeName("Type.Name", "VkGeometryInstanceFlagsKHR")]
-        [NativeName("Name", "flags")]
-        public GeometryInstanceFlagsKHR Flags;
+
+        private uint _bitfield1;
+
+        public uint InstanceCustomIndex
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)(_bitfield1 & 0xFFFFFFu);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0xFFFFFFu) | (uint)((uint)(value) & 0xFFFFFFu));
+        }
+
+        public uint Mask
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 24) & 0xFFu);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0xFFu << 24)) | (uint)(((uint)(value) & 0xFFu) << 24));
+        }
+
+        private uint _bitfield2;
+
+        public uint InstanceShaderBindingTableRecordOffset
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)(_bitfield2 & 0xFFFFFFu);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield2 = (uint)((uint)(_bitfield2 & ~0xFFFFFFu) | (uint)((uint)(value) & 0xFFFFFFu));
+        }
+
+        public GeometryInstanceFlagsKHR Flags
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (GeometryInstanceFlagsKHR)((_bitfield2 >> 24) & 0xFF);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield2 = (uint)((GeometryInstanceFlagsKHR)(_bitfield2 & ~(0xFF << 24)) | (GeometryInstanceFlagsKHR)(((int)(value) & 0xFF) << 24));
+        }
 /// <summary></summary>
         [NativeName("Type", "uint64_t")]
         [NativeName("Type.Name", "uint64_t")]

@@ -65,6 +65,12 @@ namespace Silk.NET.OpenGLES.Extensions.NV
             DeleteFences(1, &fences);
         }
 
+        public unsafe void DeleteFences([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fences)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteFences((uint) fences.Length, in fences.GetPinnableReference());
+        }
+
         public unsafe uint GenFence()
         {
             const uint n = 1;
@@ -72,6 +78,12 @@ namespace Silk.NET.OpenGLES.Extensions.NV
             uint ret = default;
             GenFences(n, &ret);
             return ret;
+        }
+
+        public unsafe void GenFences([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> fences)
+        {
+            // ImplicitCountSpanOverloader
+            GenFences((uint) fences.Length, out fences.GetPinnableReference());
         }
 
         public NVFence(INativeContext ctx)

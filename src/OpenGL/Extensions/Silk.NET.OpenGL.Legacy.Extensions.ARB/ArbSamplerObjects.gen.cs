@@ -164,6 +164,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             DeleteSamplers(1, &samplers);
         }
 
+        public unsafe void DeleteSamplers([Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> samplers)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteSamplers((uint) samplers.Length, in samplers.GetPinnableReference());
+        }
+
+        public unsafe void DeleteSamplers([Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<Sampler> samplers)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteSamplers((uint) samplers.Length, in samplers.GetPinnableReference());
+        }
+
         public unsafe uint GenSampler()
         {
             const uint count = 1;
@@ -171,6 +183,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             uint ret = default;
             GenSamplers(count, &ret);
             return ret;
+        }
+
+        public unsafe void GenSamplers([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> samplers)
+        {
+            // ImplicitCountSpanOverloader
+            GenSamplers((uint) samplers.Length, out samplers.GetPinnableReference());
+        }
+
+        public unsafe void GenSamplers([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<Sampler> samplers)
+        {
+            // ImplicitCountSpanOverloader
+            GenSamplers((uint) samplers.Length, out samplers.GetPinnableReference());
         }
 
         public ArbSamplerObjects(INativeContext ctx)

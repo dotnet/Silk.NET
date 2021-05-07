@@ -24,7 +24,12 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// <summary>
         /// The values of the enum.
         /// </summary>
-        public EnumValue[] Values { get; set;  }
+        public EnumValue[] Values { get; set; }
+        
+        /// <summary>
+        /// The number of bits this enum's values occupy.
+        /// </summary>
+        public int BitWidth { get; set; }
 
         /// <summary>
         /// The enum definition.
@@ -32,7 +37,8 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// <param name="name">The name of the enum.</param>
         /// <param name="type">The type of the enum.</param>
         /// <param name="values">The values of the enum.</param>
-        public EnumDefinition(string name, EnumType type, EnumValue[] values)
+        /// <param name="bitWidth">The bit width of the enum.</param>
+        public EnumDefinition(string name, EnumType type, EnumValue[] values, int bitWidth)
         {
             Require.NotNullOrEmpty(name);
             Require.NotNull(values);
@@ -40,6 +46,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             Name = name;
             Type = type;
             Values = values;
+            BitWidth = bitWidth;
         }
         
         /// <summary>
@@ -47,7 +54,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// </summary>
         /// <param name="newName">The new name.</param>
         /// <returns>A clone of the enum.</returns>
-        public EnumDefinition Clone(string newName) => new EnumDefinition(newName, Type, Values);
+        public EnumDefinition Clone(string newName) => new(newName, Type, Values, BitWidth);
 
         /// <summary>
         /// Creates an EnumDefinition from an XML document.
@@ -72,7 +79,8 @@ namespace Silk.NET.BuildTools.Converters.Khronos
 
             var name = xe.Attribute("name")?.Value;
             var values = xe.Elements("enum").Select(EnumValue.CreateFromXml).ToArray();
-            return new EnumDefinition(name, type, values);
+            var bitWidth = xe.Attribute("bitwidth")?.Value;
+            return new(name, type, values, bitWidth is null ? 32 : int.Parse(bitWidth));
         }
 
         /// <inheritdoc />
@@ -116,7 +124,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// <summary>
         /// The value of the EnumValue.
         /// </summary>
-        public int Value { get; }
+        public long Value { get; }
         
         /// <summary>
         /// The comment of the EnumValue.
@@ -129,7 +137,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         /// <param name="name">The name of the value.</param>
         /// <param name="value">The value of the enum value.</param>
         /// <param name="comment">The comment of the EnumValue.</param>
-        public EnumValue(string name, int value, string comment)
+        public EnumValue(string name, long value, string comment)
         {
             Name = name;
             Value = value;
@@ -163,24 +171,24 @@ namespace Silk.NET.BuildTools.Converters.Khronos
 
             var name = xe.Attribute("name")?.Value;
 
-            int value;
+            long value;
             var valueStr = xe.Attribute("value")?.Value;
             if (valueStr != null)
             {
                 if (valueStr.StartsWith("0x"))
                 {
                     valueStr = valueStr.Substring(2);
-                    value = int.Parse(valueStr, NumberStyles.HexNumber);
+                    value = long.Parse(valueStr, NumberStyles.HexNumber);
                 }
                 else
                 {
-                    value = int.Parse(valueStr);
+                    value = long.Parse(valueStr);
                 }
             }
             else
             {
                 var bitposStr = xe.Attribute("bitpos")?.Value;
-                value = 1 << int.Parse(bitposStr ?? throw new InvalidDataException());
+                value = 1L << int.Parse(bitposStr ?? throw new InvalidDataException());
             }
 
             var commentAttr = xe.Attribute("comment");

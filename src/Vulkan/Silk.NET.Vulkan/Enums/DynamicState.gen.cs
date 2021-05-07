@@ -72,5 +72,19 @@ namespace Silk.NET.Vulkan
         StencilTestEnableExt = 1000267010,
         [NativeName("Name", "VK_DYNAMIC_STATE_STENCIL_OP_EXT")]
         StencilOpExt = 1000267011,
+        [NativeName("Name", "VK_DYNAMIC_STATE_VERTEX_INPUT_EXT")]
+        VertexInputExt = 1000352000,
+        [NativeName("Name", "VK_DYNAMIC_STATE_PATCH_CONTROL_POINTS_EXT")]
+        PatchControlPointsExt = 1000377000,
+        [NativeName("Name", "VK_DYNAMIC_STATE_RASTERIZER_DISCARD_ENABLE_EXT")]
+        RasterizerDiscardEnableExt = 1000377001,
+        [NativeName("Name", "VK_DYNAMIC_STATE_DEPTH_BIAS_ENABLE_EXT")]
+        DepthBiasEnableExt = 1000377002,
+        [NativeName("Name", "VK_DYNAMIC_STATE_LOGIC_OP_EXT")]
+        LogicOpExt = 1000377003,
+        [NativeName("Name", "VK_DYNAMIC_STATE_PRIMITIVE_RESTART_ENABLE_EXT")]
+        PrimitiveRestartEnableExt = 1000377004,
+        [NativeName("Name", "VK_DYNAMIC_STATE_COLOR_WRITE_ENABLE_EXT")]
+        ColorWriteEnableExt = 1000381000,
     }
 }

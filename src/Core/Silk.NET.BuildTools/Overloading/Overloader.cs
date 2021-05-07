@@ -36,7 +36,8 @@ namespace Silk.NET.BuildTools.Overloading
             new ReturnTypeOverloader(),
             new ArrayParameterOverloader(),
             new StringArrayOverloader(),
-            new SpanOverloader()
+            new SpanOverloader(),
+            new ImplicitCountSpanOverloader()
         };
 
 

@@ -21,5 +21,7 @@ namespace Silk.NET.Vulkan
         QueryResultWithAvailabilityBit = 4,
         [NativeName("Name", "VK_QUERY_RESULT_PARTIAL_BIT")]
         QueryResultPartialBit = 8,
+        [NativeName("Name", "VK_QUERY_RESULT_WITH_STATUS_BIT_KHR")]
+        QueryResultWithStatusBitKhr = 16,
     }
 }

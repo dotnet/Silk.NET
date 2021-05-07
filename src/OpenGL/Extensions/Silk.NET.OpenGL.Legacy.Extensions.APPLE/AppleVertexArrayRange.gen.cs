@@ -38,6 +38,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
         [NativeApi(EntryPoint = "glVertexArrayRangeAPPLE")]
         public partial void VertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Parameter = "length"), Flow(FlowDirection.Out)] out T0 pointer) where T0 : unmanaged;
 
+        public unsafe void FlushVertexArrayRange<T0>([Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            FlushVertexArrayRange((uint) (pointer.Length * Unsafe.SizeOf<T0>()), out pointer.GetPinnableReference());
+        }
+
+        public unsafe void VertexArrayRange<T0>([Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<T0> pointer) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            VertexArrayRange((uint) (pointer.Length * Unsafe.SizeOf<T0>()), out pointer.GetPinnableReference());
+        }
+
         public AppleVertexArrayRange(INativeContext ctx)
             : base(ctx)
         {
