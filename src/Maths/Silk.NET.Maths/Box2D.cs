@@ -104,6 +104,19 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>
+        /// Calculates a new box scaled by the given scale around the given anchor.
+        /// </summary>
+        /// <param name="scale">The scale.</param>
+        /// <param name="anchor">The anchor.</param>
+        /// <typeparam name="TScale">The type of the scale.</typeparam>
+        /// <returns>The calculated box.</returns>
+        public Box2D<T> GetScaled<TScale>(Vector2D<TScale> scale, Vector2D<T> anchor)
+            where TScale : unmanaged, IFormattable, IEquatable<TScale>, IComparable<TScale>
+        {
+            return this.As<TScale>().GetScaled(scale, anchor.As<TScale>()).As<T>();
+        }
+
+        /// <summary>
         /// Calculates a box inflated to contain the given point.
         /// </summary>
         /// <param name="point">The point.</param>
