@@ -17,7 +17,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
     public static class NVRayTracingOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result BindAccelerationStructureMemory(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Computed = "bindInfoCount"), Flow(FlowDirection.In)] ReadOnlySpan<BindAccelerationStructureMemoryInfoNV> pBindInfos)
+        public static unsafe Result BindAccelerationStructureMemory(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint bindInfoCount, [Count(Parameter = "bindInfoCount"), Flow(FlowDirection.In)] ReadOnlySpan<BindAccelerationStructureMemoryInfoNV> pBindInfos)
         {
             // SpanOverloader
             return thisApi.BindAccelerationStructureMemory(device, bindInfoCount, in pBindInfos.GetPinnableReference());
@@ -31,7 +31,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdWriteAccelerationStructuresProperties(this NVRayTracing thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint accelerationStructureCount, [Count(Computed = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureNV> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery)
+        public static unsafe void CmdWriteAccelerationStructuresProperties(this NVRayTracing thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureNV> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery)
         {
             // SpanOverloader
             thisApi.CmdWriteAccelerationStructuresProperties(commandBuffer, accelerationStructureCount, in pAccelerationStructures.GetPinnableReference(), queryType, queryPool, firstQuery);
@@ -87,49 +87,49 @@ namespace Silk.NET.Vulkan.Extensions.NV
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateRayTracingPipelines(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Computed = "createInfoCount"), Flow(FlowDirection.In)] RayTracingPipelineCreateInfoNV* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Computed = "createInfoCount"), Flow(FlowDirection.Out)] Span<Pipeline> pPipelines)
+        public static unsafe Result CreateRayTracingPipelines(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] RayTracingPipelineCreateInfoNV* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] Span<Pipeline> pPipelines)
         {
             // SpanOverloader
             return thisApi.CreateRayTracingPipelines(device, pipelineCache, createInfoCount, pCreateInfos, pAllocator, out pPipelines.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateRayTracingPipelines(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Computed = "createInfoCount"), Flow(FlowDirection.In)] RayTracingPipelineCreateInfoNV* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Computed = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines)
+        public static unsafe Result CreateRayTracingPipelines(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] RayTracingPipelineCreateInfoNV* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines)
         {
             // SpanOverloader
             return thisApi.CreateRayTracingPipelines(device, pipelineCache, createInfoCount, pCreateInfos, in pAllocator.GetPinnableReference(), pPipelines);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateRayTracingPipelines(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Computed = "createInfoCount"), Flow(FlowDirection.In)] RayTracingPipelineCreateInfoNV* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Computed = "createInfoCount"), Flow(FlowDirection.Out)] Span<Pipeline> pPipelines)
+        public static unsafe Result CreateRayTracingPipelines(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] RayTracingPipelineCreateInfoNV* pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] Span<Pipeline> pPipelines)
         {
             // SpanOverloader
             return thisApi.CreateRayTracingPipelines(device, pipelineCache, createInfoCount, pCreateInfos, in pAllocator.GetPinnableReference(), out pPipelines.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateRayTracingPipelines(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Computed = "createInfoCount"), Flow(FlowDirection.In)] ReadOnlySpan<RayTracingPipelineCreateInfoNV> pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Computed = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines)
+        public static unsafe Result CreateRayTracingPipelines(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] ReadOnlySpan<RayTracingPipelineCreateInfoNV> pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines)
         {
             // SpanOverloader
             return thisApi.CreateRayTracingPipelines(device, pipelineCache, createInfoCount, in pCreateInfos.GetPinnableReference(), pAllocator, pPipelines);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateRayTracingPipelines(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Computed = "createInfoCount"), Flow(FlowDirection.In)] ReadOnlySpan<RayTracingPipelineCreateInfoNV> pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Computed = "createInfoCount"), Flow(FlowDirection.Out)] Span<Pipeline> pPipelines)
+        public static unsafe Result CreateRayTracingPipelines(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] ReadOnlySpan<RayTracingPipelineCreateInfoNV> pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] Span<Pipeline> pPipelines)
         {
             // SpanOverloader
             return thisApi.CreateRayTracingPipelines(device, pipelineCache, createInfoCount, in pCreateInfos.GetPinnableReference(), pAllocator, out pPipelines.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateRayTracingPipelines(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Computed = "createInfoCount"), Flow(FlowDirection.In)] ReadOnlySpan<RayTracingPipelineCreateInfoNV> pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Computed = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines)
+        public static unsafe Result CreateRayTracingPipelines(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] ReadOnlySpan<RayTracingPipelineCreateInfoNV> pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] Pipeline* pPipelines)
         {
             // SpanOverloader
             return thisApi.CreateRayTracingPipelines(device, pipelineCache, createInfoCount, in pCreateInfos.GetPinnableReference(), in pAllocator.GetPinnableReference(), pPipelines);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result CreateRayTracingPipelines(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Computed = "createInfoCount"), Flow(FlowDirection.In)] ReadOnlySpan<RayTracingPipelineCreateInfoNV> pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Computed = "createInfoCount"), Flow(FlowDirection.Out)] Span<Pipeline> pPipelines)
+        public static unsafe Result CreateRayTracingPipelines(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] PipelineCache pipelineCache, [Count(Count = 0)] uint createInfoCount, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.In)] ReadOnlySpan<RayTracingPipelineCreateInfoNV> pCreateInfos, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Parameter = "createInfoCount"), Flow(FlowDirection.Out)] Span<Pipeline> pPipelines)
         {
             // SpanOverloader
             return thisApi.CreateRayTracingPipelines(device, pipelineCache, createInfoCount, in pCreateInfos.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pPipelines.GetPinnableReference());
@@ -143,7 +143,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetAccelerationStructureHandle<T0>(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureNV accelerationStructure, [Count(Count = 0)] nuint dataSize, [Count(Computed = "dataSize")] Span<T0> pData) where T0 : unmanaged
+        public static unsafe Result GetAccelerationStructureHandle<T0>(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] AccelerationStructureNV accelerationStructure, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] Span<T0> pData) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.GetAccelerationStructureHandle(device, accelerationStructure, dataSize, ref pData.GetPinnableReference());
@@ -171,7 +171,7 @@ namespace Silk.NET.Vulkan.Extensions.NV
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetRayTracingShaderGroupHandles<T0>(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint firstGroup, [Count(Count = 0)] uint groupCount, [Count(Count = 0)] nuint dataSize, [Count(Computed = "dataSize")] Span<T0> pData) where T0 : unmanaged
+        public static unsafe Result GetRayTracingShaderGroupHandles<T0>(this NVRayTracing thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] Pipeline pipeline, [Count(Count = 0)] uint firstGroup, [Count(Count = 0)] uint groupCount, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] Span<T0> pData) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.GetRayTracingShaderGroupHandles(device, pipeline, firstGroup, groupCount, dataSize, ref pData.GetPinnableReference());

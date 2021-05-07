@@ -24,49 +24,49 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCounters(this KhrPerformanceQuery thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] uint* pCounterCount, [Count(Computed = "pCounterCount")] PerformanceCounterKHR* pCounters, [Count(Computed = "pCounterCount")] Span<PerformanceCounterDescriptionKHR> pCounterDescriptions)
+        public static unsafe Result EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCounters(this KhrPerformanceQuery thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] uint* pCounterCount, [Count(Parameter = "pCounterCount")] PerformanceCounterKHR* pCounters, [Count(Parameter = "pCounterCount")] Span<PerformanceCounterDescriptionKHR> pCounterDescriptions)
         {
             // SpanOverloader
             return thisApi.EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCounters(physicalDevice, queueFamilyIndex, pCounterCount, pCounters, ref pCounterDescriptions.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCounters(this KhrPerformanceQuery thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] uint* pCounterCount, [Count(Computed = "pCounterCount")] Span<PerformanceCounterKHR> pCounters, [Count(Computed = "pCounterCount")] PerformanceCounterDescriptionKHR* pCounterDescriptions)
+        public static unsafe Result EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCounters(this KhrPerformanceQuery thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] uint* pCounterCount, [Count(Parameter = "pCounterCount")] Span<PerformanceCounterKHR> pCounters, [Count(Parameter = "pCounterCount")] PerformanceCounterDescriptionKHR* pCounterDescriptions)
         {
             // SpanOverloader
             return thisApi.EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCounters(physicalDevice, queueFamilyIndex, pCounterCount, ref pCounters.GetPinnableReference(), pCounterDescriptions);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCounters(this KhrPerformanceQuery thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] uint* pCounterCount, [Count(Computed = "pCounterCount")] Span<PerformanceCounterKHR> pCounters, [Count(Computed = "pCounterCount")] Span<PerformanceCounterDescriptionKHR> pCounterDescriptions)
+        public static unsafe Result EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCounters(this KhrPerformanceQuery thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] uint* pCounterCount, [Count(Parameter = "pCounterCount")] Span<PerformanceCounterKHR> pCounters, [Count(Parameter = "pCounterCount")] Span<PerformanceCounterDescriptionKHR> pCounterDescriptions)
         {
             // SpanOverloader
             return thisApi.EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCounters(physicalDevice, queueFamilyIndex, pCounterCount, ref pCounters.GetPinnableReference(), ref pCounterDescriptions.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCounters(this KhrPerformanceQuery thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] Span<uint> pCounterCount, [Count(Computed = "pCounterCount")] PerformanceCounterKHR* pCounters, [Count(Computed = "pCounterCount")] PerformanceCounterDescriptionKHR* pCounterDescriptions)
+        public static unsafe Result EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCounters(this KhrPerformanceQuery thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] Span<uint> pCounterCount, [Count(Parameter = "pCounterCount")] PerformanceCounterKHR* pCounters, [Count(Parameter = "pCounterCount")] PerformanceCounterDescriptionKHR* pCounterDescriptions)
         {
             // SpanOverloader
             return thisApi.EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCounters(physicalDevice, queueFamilyIndex, ref pCounterCount.GetPinnableReference(), pCounters, pCounterDescriptions);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCounters(this KhrPerformanceQuery thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] Span<uint> pCounterCount, [Count(Computed = "pCounterCount")] PerformanceCounterKHR* pCounters, [Count(Computed = "pCounterCount")] Span<PerformanceCounterDescriptionKHR> pCounterDescriptions)
+        public static unsafe Result EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCounters(this KhrPerformanceQuery thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] Span<uint> pCounterCount, [Count(Parameter = "pCounterCount")] PerformanceCounterKHR* pCounters, [Count(Parameter = "pCounterCount")] Span<PerformanceCounterDescriptionKHR> pCounterDescriptions)
         {
             // SpanOverloader
             return thisApi.EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCounters(physicalDevice, queueFamilyIndex, ref pCounterCount.GetPinnableReference(), pCounters, ref pCounterDescriptions.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCounters(this KhrPerformanceQuery thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] Span<uint> pCounterCount, [Count(Computed = "pCounterCount")] Span<PerformanceCounterKHR> pCounters, [Count(Computed = "pCounterCount")] PerformanceCounterDescriptionKHR* pCounterDescriptions)
+        public static unsafe Result EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCounters(this KhrPerformanceQuery thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] Span<uint> pCounterCount, [Count(Parameter = "pCounterCount")] Span<PerformanceCounterKHR> pCounters, [Count(Parameter = "pCounterCount")] PerformanceCounterDescriptionKHR* pCounterDescriptions)
         {
             // SpanOverloader
             return thisApi.EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCounters(physicalDevice, queueFamilyIndex, ref pCounterCount.GetPinnableReference(), ref pCounters.GetPinnableReference(), pCounterDescriptions);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCounters(this KhrPerformanceQuery thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] Span<uint> pCounterCount, [Count(Computed = "pCounterCount")] Span<PerformanceCounterKHR> pCounters, [Count(Computed = "pCounterCount")] Span<PerformanceCounterDescriptionKHR> pCounterDescriptions)
+        public static unsafe Result EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCounters(this KhrPerformanceQuery thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint queueFamilyIndex, [Count(Count = 0)] Span<uint> pCounterCount, [Count(Parameter = "pCounterCount")] Span<PerformanceCounterKHR> pCounters, [Count(Parameter = "pCounterCount")] Span<PerformanceCounterDescriptionKHR> pCounterDescriptions)
         {
             // SpanOverloader
             return thisApi.EnumeratePhysicalDeviceQueueFamilyPerformanceQueryCounters(physicalDevice, queueFamilyIndex, ref pCounterCount.GetPinnableReference(), ref pCounters.GetPinnableReference(), ref pCounterDescriptions.GetPinnableReference());

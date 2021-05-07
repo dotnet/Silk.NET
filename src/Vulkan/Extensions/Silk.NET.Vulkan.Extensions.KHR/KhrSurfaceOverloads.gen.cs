@@ -31,42 +31,42 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceSurfaceFormats(this KhrSurface thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] uint* pSurfaceFormatCount, [Count(Computed = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] Span<SurfaceFormatKHR> pSurfaceFormats)
+        public static unsafe Result GetPhysicalDeviceSurfaceFormats(this KhrSurface thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] uint* pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] Span<SurfaceFormatKHR> pSurfaceFormats)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceSurfaceFormats(physicalDevice, surface, pSurfaceFormatCount, out pSurfaceFormats.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceSurfaceFormats(this KhrSurface thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] Span<uint> pSurfaceFormatCount, [Count(Computed = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] SurfaceFormatKHR* pSurfaceFormats)
+        public static unsafe Result GetPhysicalDeviceSurfaceFormats(this KhrSurface thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] Span<uint> pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] SurfaceFormatKHR* pSurfaceFormats)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceSurfaceFormats(physicalDevice, surface, ref pSurfaceFormatCount.GetPinnableReference(), pSurfaceFormats);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceSurfaceFormats(this KhrSurface thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] Span<uint> pSurfaceFormatCount, [Count(Computed = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] Span<SurfaceFormatKHR> pSurfaceFormats)
+        public static unsafe Result GetPhysicalDeviceSurfaceFormats(this KhrSurface thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] Span<uint> pSurfaceFormatCount, [Count(Parameter = "pSurfaceFormatCount"), Flow(FlowDirection.Out)] Span<SurfaceFormatKHR> pSurfaceFormats)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceSurfaceFormats(physicalDevice, surface, ref pSurfaceFormatCount.GetPinnableReference(), out pSurfaceFormats.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceSurfacePresentModes(this KhrSurface thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] uint* pPresentModeCount, [Count(Computed = "pPresentModeCount"), Flow(FlowDirection.Out)] Span<PresentModeKHR> pPresentModes)
+        public static unsafe Result GetPhysicalDeviceSurfacePresentModes(this KhrSurface thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] uint* pPresentModeCount, [Count(Parameter = "pPresentModeCount"), Flow(FlowDirection.Out)] Span<PresentModeKHR> pPresentModes)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceSurfacePresentModes(physicalDevice, surface, pPresentModeCount, out pPresentModes.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceSurfacePresentModes(this KhrSurface thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] Span<uint> pPresentModeCount, [Count(Computed = "pPresentModeCount"), Flow(FlowDirection.Out)] PresentModeKHR* pPresentModes)
+        public static unsafe Result GetPhysicalDeviceSurfacePresentModes(this KhrSurface thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] Span<uint> pPresentModeCount, [Count(Parameter = "pPresentModeCount"), Flow(FlowDirection.Out)] PresentModeKHR* pPresentModes)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceSurfacePresentModes(physicalDevice, surface, ref pPresentModeCount.GetPinnableReference(), pPresentModes);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceSurfacePresentModes(this KhrSurface thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] Span<uint> pPresentModeCount, [Count(Computed = "pPresentModeCount"), Flow(FlowDirection.Out)] Span<PresentModeKHR> pPresentModes)
+        public static unsafe Result GetPhysicalDeviceSurfacePresentModes(this KhrSurface thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] Span<uint> pPresentModeCount, [Count(Parameter = "pPresentModeCount"), Flow(FlowDirection.Out)] Span<PresentModeKHR> pPresentModes)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceSurfacePresentModes(physicalDevice, surface, ref pPresentModeCount.GetPinnableReference(), out pPresentModes.GetPinnableReference());

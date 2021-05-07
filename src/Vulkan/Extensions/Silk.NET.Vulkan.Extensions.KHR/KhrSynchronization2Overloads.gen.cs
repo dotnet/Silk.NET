@@ -31,49 +31,49 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdWaitEvents2(this KhrSynchronization2 thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Computed = "eventCount"), Flow(FlowDirection.In)] Event* pEvents, [Count(Computed = "eventCount"), Flow(FlowDirection.In)] ReadOnlySpan<DependencyInfoKHR> pDependencyInfos)
+        public static unsafe void CmdWaitEvents2(this KhrSynchronization2 thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] Event* pEvents, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] ReadOnlySpan<DependencyInfoKHR> pDependencyInfos)
         {
             // SpanOverloader
             thisApi.CmdWaitEvents2(commandBuffer, eventCount, pEvents, in pDependencyInfos.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdWaitEvents2(this KhrSynchronization2 thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Computed = "eventCount"), Flow(FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Computed = "eventCount"), Flow(FlowDirection.In)] DependencyInfoKHR* pDependencyInfos)
+        public static unsafe void CmdWaitEvents2(this KhrSynchronization2 thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] DependencyInfoKHR* pDependencyInfos)
         {
             // SpanOverloader
             thisApi.CmdWaitEvents2(commandBuffer, eventCount, in pEvents.GetPinnableReference(), pDependencyInfos);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdWaitEvents2(this KhrSynchronization2 thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Computed = "eventCount"), Flow(FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Computed = "eventCount"), Flow(FlowDirection.In)] ReadOnlySpan<DependencyInfoKHR> pDependencyInfos)
+        public static unsafe void CmdWaitEvents2(this KhrSynchronization2 thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint eventCount, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] ReadOnlySpan<Event> pEvents, [Count(Parameter = "eventCount"), Flow(FlowDirection.In)] ReadOnlySpan<DependencyInfoKHR> pDependencyInfos)
         {
             // SpanOverloader
             thisApi.CmdWaitEvents2(commandBuffer, eventCount, in pEvents.GetPinnableReference(), in pDependencyInfos.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetQueueCheckpointData2(this KhrSynchronization2 thisApi, [Count(Count = 0)] Queue queue, [Count(Count = 0)] uint* pCheckpointDataCount, [Count(Computed = "pCheckpointDataCount"), Flow(FlowDirection.Out)] Span<CheckpointData2NV> pCheckpointData)
+        public static unsafe void GetQueueCheckpointData2(this KhrSynchronization2 thisApi, [Count(Count = 0)] Queue queue, [Count(Count = 0)] uint* pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(FlowDirection.Out)] Span<CheckpointData2NV> pCheckpointData)
         {
             // SpanOverloader
             thisApi.GetQueueCheckpointData2(queue, pCheckpointDataCount, out pCheckpointData.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetQueueCheckpointData2(this KhrSynchronization2 thisApi, [Count(Count = 0)] Queue queue, [Count(Count = 0)] Span<uint> pCheckpointDataCount, [Count(Computed = "pCheckpointDataCount"), Flow(FlowDirection.Out)] CheckpointData2NV* pCheckpointData)
+        public static unsafe void GetQueueCheckpointData2(this KhrSynchronization2 thisApi, [Count(Count = 0)] Queue queue, [Count(Count = 0)] Span<uint> pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(FlowDirection.Out)] CheckpointData2NV* pCheckpointData)
         {
             // SpanOverloader
             thisApi.GetQueueCheckpointData2(queue, ref pCheckpointDataCount.GetPinnableReference(), pCheckpointData);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetQueueCheckpointData2(this KhrSynchronization2 thisApi, [Count(Count = 0)] Queue queue, [Count(Count = 0)] Span<uint> pCheckpointDataCount, [Count(Computed = "pCheckpointDataCount"), Flow(FlowDirection.Out)] Span<CheckpointData2NV> pCheckpointData)
+        public static unsafe void GetQueueCheckpointData2(this KhrSynchronization2 thisApi, [Count(Count = 0)] Queue queue, [Count(Count = 0)] Span<uint> pCheckpointDataCount, [Count(Parameter = "pCheckpointDataCount"), Flow(FlowDirection.Out)] Span<CheckpointData2NV> pCheckpointData)
         {
             // SpanOverloader
             thisApi.GetQueueCheckpointData2(queue, ref pCheckpointDataCount.GetPinnableReference(), out pCheckpointData.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result QueueSubmit2(this KhrSynchronization2 thisApi, [Count(Count = 0)] Queue queue, [Count(Count = 0)] uint submitCount, [Count(Computed = "submitCount"), Flow(FlowDirection.In)] ReadOnlySpan<SubmitInfo2KHR> pSubmits, [Count(Count = 0)] Fence fence)
+        public static unsafe Result QueueSubmit2(this KhrSynchronization2 thisApi, [Count(Count = 0)] Queue queue, [Count(Count = 0)] uint submitCount, [Count(Parameter = "submitCount"), Flow(FlowDirection.In)] ReadOnlySpan<SubmitInfo2KHR> pSubmits, [Count(Count = 0)] Fence fence)
         {
             // SpanOverloader
             return thisApi.QueueSubmit2(queue, submitCount, in pSubmits.GetPinnableReference(), fence);

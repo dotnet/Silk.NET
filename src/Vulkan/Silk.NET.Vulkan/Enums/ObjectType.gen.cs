@@ -74,6 +74,10 @@ namespace Silk.NET.Vulkan
         DisplayModeKhr = 1000002001,
         [NativeName("Name", "VK_OBJECT_TYPE_DEBUG_REPORT_CALLBACK_EXT")]
         DebugReportCallbackExt = 1000011000,
+        [NativeName("Name", "VK_OBJECT_TYPE_VIDEO_SESSION_KHR")]
+        VideoSessionKhr = 1000023000,
+        [NativeName("Name", "VK_OBJECT_TYPE_VIDEO_SESSION_PARAMETERS_KHR")]
+        VideoSessionParametersKhr = 1000023001,
         [NativeName("Name", "VK_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_KHR")]
         DescriptorUpdateTemplateKhr = 1000085000,
         [NativeName("Name", "VK_OBJECT_TYPE_DEBUG_UTILS_MESSENGER_EXT")]

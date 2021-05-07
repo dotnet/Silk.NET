@@ -40,5 +40,7 @@ namespace Silk.NET.Vulkan
         DriverIDMesaLlvmpipe = 13,
         [NativeName("Name", "VK_DRIVER_ID_MOLTENVK")]
         DriverIDMoltenvk = 14,
+        [NativeName("Name", "VK_DRIVER_ID_COREAVI_PROPRIETARY")]
+        DriverIDCoreaviProprietary = 15,
     }
 }

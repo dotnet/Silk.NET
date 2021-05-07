@@ -32,6 +32,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
         [NativeApi(EntryPoint = "glDrawBuffersATI")]
         public partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in DrawBufferMode bufs);
 
+        public unsafe void DrawBuffers([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<ATI> bufs)
+        {
+            // ImplicitCountSpanOverloader
+            DrawBuffers((uint) bufs.Length, in bufs.GetPinnableReference());
+        }
+
+        public unsafe void DrawBuffers([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<DrawBufferMode> bufs)
+        {
+            // ImplicitCountSpanOverloader
+            DrawBuffers((uint) bufs.Length, in bufs.GetPinnableReference());
+        }
+
         public AtiDrawBuffers(INativeContext ctx)
             : base(ctx)
         {

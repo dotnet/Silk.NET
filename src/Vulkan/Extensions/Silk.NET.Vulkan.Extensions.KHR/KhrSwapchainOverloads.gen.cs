@@ -115,42 +115,42 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDevicePresentRectangles(this KhrSwapchain thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] uint* pRectCount, [Count(Computed = "pRectCount"), Flow(FlowDirection.Out)] Span<Rect2D> pRects)
+        public static unsafe Result GetPhysicalDevicePresentRectangles(this KhrSwapchain thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] uint* pRectCount, [Count(Parameter = "pRectCount"), Flow(FlowDirection.Out)] Span<Rect2D> pRects)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDevicePresentRectangles(physicalDevice, surface, pRectCount, out pRects.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDevicePresentRectangles(this KhrSwapchain thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] Span<uint> pRectCount, [Count(Computed = "pRectCount"), Flow(FlowDirection.Out)] Rect2D* pRects)
+        public static unsafe Result GetPhysicalDevicePresentRectangles(this KhrSwapchain thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] Span<uint> pRectCount, [Count(Parameter = "pRectCount"), Flow(FlowDirection.Out)] Rect2D* pRects)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDevicePresentRectangles(physicalDevice, surface, ref pRectCount.GetPinnableReference(), pRects);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDevicePresentRectangles(this KhrSwapchain thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] Span<uint> pRectCount, [Count(Computed = "pRectCount"), Flow(FlowDirection.Out)] Span<Rect2D> pRects)
+        public static unsafe Result GetPhysicalDevicePresentRectangles(this KhrSwapchain thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] SurfaceKHR surface, [Count(Count = 0)] Span<uint> pRectCount, [Count(Parameter = "pRectCount"), Flow(FlowDirection.Out)] Span<Rect2D> pRects)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDevicePresentRectangles(physicalDevice, surface, ref pRectCount.GetPinnableReference(), out pRects.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetSwapchainImages(this KhrSwapchain thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] uint* pSwapchainImageCount, [Count(Computed = "pSwapchainImageCount"), Flow(FlowDirection.Out)] Span<Image> pSwapchainImages)
+        public static unsafe Result GetSwapchainImages(this KhrSwapchain thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] uint* pSwapchainImageCount, [Count(Parameter = "pSwapchainImageCount"), Flow(FlowDirection.Out)] Span<Image> pSwapchainImages)
         {
             // SpanOverloader
             return thisApi.GetSwapchainImages(device, swapchain, pSwapchainImageCount, out pSwapchainImages.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetSwapchainImages(this KhrSwapchain thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] Span<uint> pSwapchainImageCount, [Count(Computed = "pSwapchainImageCount"), Flow(FlowDirection.Out)] Image* pSwapchainImages)
+        public static unsafe Result GetSwapchainImages(this KhrSwapchain thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] Span<uint> pSwapchainImageCount, [Count(Parameter = "pSwapchainImageCount"), Flow(FlowDirection.Out)] Image* pSwapchainImages)
         {
             // SpanOverloader
             return thisApi.GetSwapchainImages(device, swapchain, ref pSwapchainImageCount.GetPinnableReference(), pSwapchainImages);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetSwapchainImages(this KhrSwapchain thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] Span<uint> pSwapchainImageCount, [Count(Computed = "pSwapchainImageCount"), Flow(FlowDirection.Out)] Span<Image> pSwapchainImages)
+        public static unsafe Result GetSwapchainImages(this KhrSwapchain thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapchain, [Count(Count = 0)] Span<uint> pSwapchainImageCount, [Count(Parameter = "pSwapchainImageCount"), Flow(FlowDirection.Out)] Span<Image> pSwapchainImages)
         {
             // SpanOverloader
             return thisApi.GetSwapchainImages(device, swapchain, ref pSwapchainImageCount.GetPinnableReference(), out pSwapchainImages.GetPinnableReference());

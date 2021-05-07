@@ -13,7 +13,5 @@ namespace Silk.NET.OpenXR
     [NativeName("Name", "XrOverlaySessionCreateFlagsEXTX")]
     public enum OverlaySessionCreateFlagsEXTX : int
     {
-        [NativeName("Name", "XR_OVERLAY_SESSION_CREATE_RELAXED_DISPLAY_TIME_BIT_EXTX")]
-        OverlaySessionCreateRelaxedDisplayTimeBitExtx = 1,
     }
 }

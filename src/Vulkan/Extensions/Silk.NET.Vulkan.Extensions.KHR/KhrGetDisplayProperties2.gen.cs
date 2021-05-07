@@ -22,19 +22,19 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         public const string ExtensionName = "VK_KHR_get_display_properties2";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDisplayModeProperties2KHR")]
-        public unsafe partial Result GetDisplayModeProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayModeProperties2KHR* pProperties);
+        public unsafe partial Result GetDisplayModeProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayModeProperties2KHR* pProperties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDisplayModeProperties2KHR")]
-        public unsafe partial Result GetDisplayModeProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayModeProperties2KHR pProperties);
+        public unsafe partial Result GetDisplayModeProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayModeProperties2KHR pProperties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDisplayModeProperties2KHR")]
-        public unsafe partial Result GetDisplayModeProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] ref uint pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayModeProperties2KHR* pProperties);
+        public unsafe partial Result GetDisplayModeProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayModeProperties2KHR* pProperties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDisplayModeProperties2KHR")]
-        public partial Result GetDisplayModeProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] ref uint pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayModeProperties2KHR pProperties);
+        public partial Result GetDisplayModeProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayModeProperties2KHR pProperties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetDisplayPlaneCapabilities2KHR")]
@@ -54,35 +54,35 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayPlaneProperties2KHR")]
-        public unsafe partial Result GetPhysicalDeviceDisplayPlaneProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayPlaneProperties2KHR* pProperties);
+        public unsafe partial Result GetPhysicalDeviceDisplayPlaneProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayPlaneProperties2KHR* pProperties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayPlaneProperties2KHR")]
-        public unsafe partial Result GetPhysicalDeviceDisplayPlaneProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayPlaneProperties2KHR pProperties);
+        public unsafe partial Result GetPhysicalDeviceDisplayPlaneProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayPlaneProperties2KHR pProperties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayPlaneProperties2KHR")]
-        public unsafe partial Result GetPhysicalDeviceDisplayPlaneProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayPlaneProperties2KHR* pProperties);
+        public unsafe partial Result GetPhysicalDeviceDisplayPlaneProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayPlaneProperties2KHR* pProperties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayPlaneProperties2KHR")]
-        public partial Result GetPhysicalDeviceDisplayPlaneProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayPlaneProperties2KHR pProperties);
+        public partial Result GetPhysicalDeviceDisplayPlaneProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayPlaneProperties2KHR pProperties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayProperties2KHR")]
-        public unsafe partial Result GetPhysicalDeviceDisplayProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayProperties2KHR* pProperties);
+        public unsafe partial Result GetPhysicalDeviceDisplayProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayProperties2KHR* pProperties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayProperties2KHR")]
-        public unsafe partial Result GetPhysicalDeviceDisplayProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayProperties2KHR pProperties);
+        public unsafe partial Result GetPhysicalDeviceDisplayProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayProperties2KHR pProperties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayProperties2KHR")]
-        public unsafe partial Result GetPhysicalDeviceDisplayProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayProperties2KHR* pProperties);
+        public unsafe partial Result GetPhysicalDeviceDisplayProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] DisplayProperties2KHR* pProperties);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceDisplayProperties2KHR")]
-        public partial Result GetPhysicalDeviceDisplayProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayProperties2KHR pProperties);
+        public partial Result GetPhysicalDeviceDisplayProperties2([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] out DisplayProperties2KHR pProperties);
 
         public KhrGetDisplayProperties2(INativeContext ctx)
             : base(ctx)

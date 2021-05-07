@@ -61,34 +61,54 @@ namespace Silk.NET.Direct3D11
         }
 
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Usage")]
-        public uint Usage;
+        private uint _bitfield1;
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "RGB_Range")]
-        public uint RGBRange;
+        public uint Usage
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)(_bitfield1 & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "YCbCr_Matrix")]
-        public uint YCbCrMatrix;
+        public uint RGBRange
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 1) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "YCbCr_xvYCC")]
-        public uint YCbCrXvYCC;
+        public uint YCbCrMatrix
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 2) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Nominal_Range")]
-        public uint NominalRange;
+        public uint YCbCrXvYCC
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 3) & 0x1u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Reserved")]
-        public uint Reserved;
+        public uint NominalRange
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 4) & 0x3u);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x3u << 4)) | (uint)(((uint)(value) & 0x3u) << 4));
+        }
+
+        public uint Reserved
+        {
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            get => (uint)((_bitfield1 >> 6) & 0x3FFFFFFu);
+            [MethodImpl(MethodImplOptions.AggressiveInlining)]
+            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x3FFFFFFu << 6)) | (uint)(((uint)(value) & 0x3FFFFFFu) << 6));
+        }
     }
 }

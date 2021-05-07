@@ -23,6 +23,6 @@ namespace Silk.NET.Vulkan
         [NativeName("Type", "float")]
         [NativeName("Type.Name", "float")]
         [NativeName("Name", "matrix")]
-        public fixed float Matrix[3];
+        public fixed float Matrix[12];
     }
 }

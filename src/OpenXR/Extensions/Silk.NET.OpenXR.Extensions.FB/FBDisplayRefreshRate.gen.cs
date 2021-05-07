@@ -22,19 +22,19 @@ namespace Silk.NET.OpenXR.Extensions.FB
         public const string ExtensionName = "XR_FB_display_refresh_rate";
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateDisplayRefreshRatesFB")]
-        public unsafe partial Result EnumerateDisplayRefreshRatesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint displayRefreshRateCapacityInput, [Count(Count = 0)] uint* displayRefreshRateCountOutput, [Count(Computed = "displayRefreshRateCapacityInput")] float* displayRefreshRates);
+        public unsafe partial Result EnumerateDisplayRefreshRatesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint displayRefreshRateCapacityInput, [Count(Count = 0)] uint* displayRefreshRateCountOutput, [Count(Parameter = "displayRefreshRateCapacityInput")] float* displayRefreshRates);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateDisplayRefreshRatesFB")]
-        public unsafe partial Result EnumerateDisplayRefreshRatesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint displayRefreshRateCapacityInput, [Count(Count = 0)] uint* displayRefreshRateCountOutput, [Count(Computed = "displayRefreshRateCapacityInput")] ref float displayRefreshRates);
+        public unsafe partial Result EnumerateDisplayRefreshRatesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint displayRefreshRateCapacityInput, [Count(Count = 0)] uint* displayRefreshRateCountOutput, [Count(Parameter = "displayRefreshRateCapacityInput")] ref float displayRefreshRates);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateDisplayRefreshRatesFB")]
-        public unsafe partial Result EnumerateDisplayRefreshRatesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint displayRefreshRateCapacityInput, [Count(Count = 0)] ref uint displayRefreshRateCountOutput, [Count(Computed = "displayRefreshRateCapacityInput")] float* displayRefreshRates);
+        public unsafe partial Result EnumerateDisplayRefreshRatesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint displayRefreshRateCapacityInput, [Count(Count = 0)] ref uint displayRefreshRateCountOutput, [Count(Parameter = "displayRefreshRateCapacityInput")] float* displayRefreshRates);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrEnumerateDisplayRefreshRatesFB")]
-        public partial Result EnumerateDisplayRefreshRatesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint displayRefreshRateCapacityInput, [Count(Count = 0)] ref uint displayRefreshRateCountOutput, [Count(Computed = "displayRefreshRateCapacityInput")] ref float displayRefreshRates);
+        public partial Result EnumerateDisplayRefreshRatesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint displayRefreshRateCapacityInput, [Count(Count = 0)] ref uint displayRefreshRateCountOutput, [Count(Parameter = "displayRefreshRateCapacityInput")] ref float displayRefreshRates);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrGetDisplayRefreshRateFB")]
@@ -47,6 +47,20 @@ namespace Silk.NET.OpenXR.Extensions.FB
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrRequestDisplayRefreshRateFB")]
         public partial Result RequestDisplayRefreshRateFB([Count(Count = 0)] Session session, [Count(Count = 0)] float displayRefreshRate);
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result EnumerateDisplayRefreshRatesFB([Count(Count = 0)] Session session, [Count(Count = 0)] uint* displayRefreshRateCountOutput, [Count(Parameter = "displayRefreshRateCapacityInput")] Span<float> displayRefreshRates)
+        {
+            // ImplicitCountSpanOverloader
+            return EnumerateDisplayRefreshRatesFB(session, (uint) displayRefreshRates.Length, displayRefreshRateCountOutput, ref displayRefreshRates.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result EnumerateDisplayRefreshRatesFB([Count(Count = 0)] Session session, [Count(Count = 0)] ref uint displayRefreshRateCountOutput, [Count(Parameter = "displayRefreshRateCapacityInput")] Span<float> displayRefreshRates)
+        {
+            // ImplicitCountSpanOverloader
+            return EnumerateDisplayRefreshRatesFB(session, (uint) displayRefreshRates.Length, ref displayRefreshRateCountOutput, ref displayRefreshRates.GetPinnableReference());
+        }
 
         public FBDisplayRefreshRate(INativeContext ctx)
             : base(ctx)

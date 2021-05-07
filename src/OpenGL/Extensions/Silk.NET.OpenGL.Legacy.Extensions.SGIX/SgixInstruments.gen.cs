@@ -44,6 +44,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
         [NativeApi(EntryPoint = "glStopInstrumentsSGIX")]
         public partial void StopInstruments([Flow(FlowDirection.In)] int marker);
 
+        public unsafe void InstrumentsBuffer([Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<int> buffer)
+        {
+            // ImplicitCountSpanOverloader
+            InstrumentsBuffer((uint) buffer.Length, out buffer.GetPinnableReference());
+        }
+
         public SgixInstruments(INativeContext ctx)
             : base(ctx)
         {

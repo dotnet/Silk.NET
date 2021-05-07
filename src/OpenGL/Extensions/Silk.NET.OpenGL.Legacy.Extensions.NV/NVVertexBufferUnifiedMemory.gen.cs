@@ -57,7 +57,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         public partial void VertexAttribFormat([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glVertexAttribFormatNV")]
+        public partial void VertexAttribFormat([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint stride);
+
+        [NativeApi(EntryPoint = "glVertexAttribFormatNV")]
         public partial void VertexAttribFormat([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride);
+
+        [NativeApi(EntryPoint = "glVertexAttribFormatNV")]
+        public partial void VertexAttribFormat([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribType type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint stride);
 
         [NativeApi(EntryPoint = "glVertexAttribIFormatNV")]
         public partial void VertexAttribIFormat([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] NV type, [Flow(FlowDirection.In)] uint stride);

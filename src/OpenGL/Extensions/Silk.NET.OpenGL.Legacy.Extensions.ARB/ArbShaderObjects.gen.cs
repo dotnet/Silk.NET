@@ -362,11 +362,23 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glUniformMatrix2fvARB")]
         public partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
+        [NativeApi(EntryPoint = "glUniformMatrix2fvARB")]
+        public unsafe partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+
+        [NativeApi(EntryPoint = "glUniformMatrix2fvARB")]
+        public partial void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
+
         [NativeApi(EntryPoint = "glUniformMatrix3fvARB")]
         public unsafe partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
 
         [NativeApi(EntryPoint = "glUniformMatrix3fvARB")]
         public partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
+
+        [NativeApi(EntryPoint = "glUniformMatrix3fvARB")]
+        public unsafe partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+
+        [NativeApi(EntryPoint = "glUniformMatrix3fvARB")]
+        public partial void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
         [NativeApi(EntryPoint = "glUniformMatrix4fvARB")]
         public unsafe partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
@@ -374,11 +386,269 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glUniformMatrix4fvARB")]
         public partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
 
+        [NativeApi(EntryPoint = "glUniformMatrix4fvARB")]
+        public unsafe partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] float* value);
+
+        [NativeApi(EntryPoint = "glUniformMatrix4fvARB")]
+        public partial void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] in float value);
+
         [NativeApi(EntryPoint = "glUseProgramObjectARB")]
         public partial void UseProgramObject([Flow(FlowDirection.In)] uint programObj);
 
         [NativeApi(EntryPoint = "glValidateProgramARB")]
         public partial void ValidateProgram([Flow(FlowDirection.In)] uint programObj);
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, length, size, type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, length, size, type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, length, size, out type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, length, size, out type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, length, out size, type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, length, out size, type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, length, out size, out type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, length, out size, out type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, out length, size, type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, out length, size, type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, out length, size, out type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, out length, size, out type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, out length, out size, type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, out length, out size, type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, out length, out size, out type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, out length, out size, out type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, length, size, type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, length, size, type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, length, size, out type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, length, size, out type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, length, out size, type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, length, out size, type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, length, out size, out type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, length, out size, out type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, out length, size, type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, out length, size, type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, out length, size, out type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] int* size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, out length, size, out type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, out length, out size, type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] UniformType* type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, out length, out size, type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, out length, out size, out type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveUniform([Flow(FlowDirection.In)] uint programObj, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out int size, [Count(Count = 1), Flow(FlowDirection.Out)] out UniformType type, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveUniform(programObj, index, (uint) name.Length, out length, out size, out type, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetAttachedObjects([Flow(FlowDirection.In)] uint containerObj, [Count(Count = 1), Flow(FlowDirection.Out)] uint* count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] Span<uint> obj)
+        {
+            // ImplicitCountSpanOverloader
+            GetAttachedObjects(containerObj, (uint) obj.Length, count, out obj.GetPinnableReference());
+        }
+
+        public unsafe void GetAttachedObjects([Flow(FlowDirection.In)] uint containerObj, [Count(Count = 1), Flow(FlowDirection.Out)] out uint count, [Count(Parameter = "maxCount"), Flow(FlowDirection.Out)] Span<uint> obj)
+        {
+            // ImplicitCountSpanOverloader
+            GetAttachedObjects(containerObj, (uint) obj.Length, out count, out obj.GetPinnableReference());
+        }
+
+        public unsafe void GetInfoLog([Flow(FlowDirection.In)] uint obj, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> infoLog)
+        {
+            // ImplicitCountSpanOverloader
+            GetInfoLog(obj, (uint) infoLog.Length, length, out infoLog.GetPinnableReference());
+        }
+
+        public unsafe void GetInfoLog([Flow(FlowDirection.In)] uint obj, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<string> infoLog)
+        {
+            // ImplicitCountSpanOverloader
+            GetInfoLog(obj, (uint) infoLog.Length, length, out infoLog.GetPinnableReference());
+        }
+
+        public unsafe void GetInfoLog([Flow(FlowDirection.In)] uint obj, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> infoLog)
+        {
+            // ImplicitCountSpanOverloader
+            GetInfoLog(obj, (uint) infoLog.Length, out length, out infoLog.GetPinnableReference());
+        }
+
+        public unsafe void GetInfoLog([Flow(FlowDirection.In)] uint obj, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<string> infoLog)
+        {
+            // ImplicitCountSpanOverloader
+            GetInfoLog(obj, (uint) infoLog.Length, out length, out infoLog.GetPinnableReference());
+        }
+
+        public unsafe void GetShaderSource([Flow(FlowDirection.In)] uint obj, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> source)
+        {
+            // ImplicitCountSpanOverloader
+            GetShaderSource(obj, (uint) source.Length, length, out source.GetPinnableReference());
+        }
+
+        public unsafe void GetShaderSource([Flow(FlowDirection.In)] uint obj, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<string> source)
+        {
+            // ImplicitCountSpanOverloader
+            GetShaderSource(obj, (uint) source.Length, length, out source.GetPinnableReference());
+        }
+
+        public unsafe void GetShaderSource([Flow(FlowDirection.In)] uint obj, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<byte> source)
+        {
+            // ImplicitCountSpanOverloader
+            GetShaderSource(obj, (uint) source.Length, out length, out source.GetPinnableReference());
+        }
+
+        public unsafe void GetShaderSource([Flow(FlowDirection.In)] uint obj, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "maxLength"), Flow(FlowDirection.Out)] Span<string> source)
+        {
+            // ImplicitCountSpanOverloader
+            GetShaderSource(obj, (uint) source.Length, out length, out source.GetPinnableReference());
+        }
 
         public unsafe void ShaderSource([Flow(FlowDirection.In)] uint shaderObj, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] string[] @stringSa, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* length)
         {
@@ -396,6 +666,102 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             ShaderSource(shaderObj, count, @string, in length);
             SilkMarshal.CopyPtrToStringArray((nint) @string, @stringSa);
             SilkMarshal.Free((nint) @string);
+        }
+
+        public unsafe void ShaderSource([Flow(FlowDirection.In)] uint shaderObj, [Count(Parameter = "count"), Flow(FlowDirection.In)] byte** @string, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> length)
+        {
+            // ImplicitCountSpanOverloader
+            ShaderSource(shaderObj, (uint) length.Length, @string, in length.GetPinnableReference());
+        }
+
+        public unsafe void ShaderSource([Flow(FlowDirection.In)] uint shaderObj, [Count(Parameter = "count"), Flow(FlowDirection.In)] in byte* @string, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> length)
+        {
+            // ImplicitCountSpanOverloader
+            ShaderSource(shaderObj, (uint) length.Length, in @string, in length.GetPinnableReference());
+        }
+
+        public unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            Uniform1(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void Uniform1([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
+        {
+            // ImplicitCountSpanOverloader
+            Uniform1(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void Uniform2([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            Uniform2(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void Uniform2([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
+        {
+            // ImplicitCountSpanOverloader
+            Uniform2(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void Uniform3([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            Uniform3(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void Uniform3([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
+        {
+            // ImplicitCountSpanOverloader
+            Uniform3(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void Uniform4([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            Uniform4(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void Uniform4([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> value)
+        {
+            // ImplicitCountSpanOverloader
+            Uniform4(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformMatrix2(location, (uint) value.Length, transpose, in value.GetPinnableReference());
+        }
+
+        public unsafe void UniformMatrix2([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformMatrix2(location, (uint) value.Length, transpose, in value.GetPinnableReference());
+        }
+
+        public unsafe void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformMatrix3(location, (uint) value.Length, transpose, in value.GetPinnableReference());
+        }
+
+        public unsafe void UniformMatrix3([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformMatrix3(location, (uint) value.Length, transpose, in value.GetPinnableReference());
+        }
+
+        public unsafe void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformMatrix4(location, (uint) value.Length, transpose, in value.GetPinnableReference());
+        }
+
+        public unsafe void UniformMatrix4([Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformMatrix4(location, (uint) value.Length, transpose, in value.GetPinnableReference());
         }
 
         public ArbShaderObjects(INativeContext ctx)

@@ -224,6 +224,8 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         SamplerLodMinKhr = 0x1156,
         [NativeName("Name", "CL_SAMPLER_LOD_MAX_KHR")]
         SamplerLodMaxKhr = 0x1157,
+        [NativeName("Name", "CL_DEVICE_PCI_BUS_INFO_KHR")]
+        DevicePciBusInfoKhr = 0x410F,
         [NativeName("Name", "CL_QUEUE_PRIORITY_KHR")]
         QueuePriorityKhr = 0x1096,
         [NativeName("Name", "CL_QUEUE_PRIORITY_HIGH_KHR")]

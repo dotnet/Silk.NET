@@ -230,6 +230,198 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glGetProgramResourceName")]
         public partial void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string name);
 
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ARB* props, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, propCount, props, (uint) @params.Length, length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ARB* props, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, propCount, props, (uint) @params.Length, out length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ReadOnlySpan<ARB> props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, (uint) props.Length, in props.GetPinnableReference(), count, length, @params);
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ReadOnlySpan<ARB> props, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, (uint) props.Length, in props.GetPinnableReference(), (uint) @params.Length, length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ReadOnlySpan<ARB> props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, (uint) props.Length, in props.GetPinnableReference(), count, out length, @params);
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ReadOnlySpan<ARB> props, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, (uint) props.Length, in props.GetPinnableReference(), (uint) @params.Length, out length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ProgramResourceProperty* props, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, propCount, props, (uint) @params.Length, length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ProgramResourceProperty* props, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, propCount, props, (uint) @params.Length, out length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ReadOnlySpan<ProgramResourceProperty> props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, (uint) props.Length, in props.GetPinnableReference(), count, length, @params);
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ReadOnlySpan<ProgramResourceProperty> props, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, (uint) props.Length, in props.GetPinnableReference(), (uint) @params.Length, length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ReadOnlySpan<ProgramResourceProperty> props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, (uint) props.Length, in props.GetPinnableReference(), count, out length, @params);
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ReadOnlySpan<ProgramResourceProperty> props, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, (uint) props.Length, in props.GetPinnableReference(), (uint) @params.Length, out length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ARB* props, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, propCount, props, (uint) @params.Length, length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ARB* props, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, propCount, props, (uint) @params.Length, out length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ReadOnlySpan<ARB> props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, (uint) props.Length, in props.GetPinnableReference(), count, length, @params);
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ReadOnlySpan<ARB> props, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, (uint) props.Length, in props.GetPinnableReference(), (uint) @params.Length, length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ReadOnlySpan<ARB> props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, (uint) props.Length, in props.GetPinnableReference(), count, out length, @params);
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ReadOnlySpan<ARB> props, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, (uint) props.Length, in props.GetPinnableReference(), (uint) @params.Length, out length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ProgramResourceProperty* props, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, propCount, props, (uint) @params.Length, length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint propCount, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ProgramResourceProperty* props, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, propCount, props, (uint) @params.Length, out length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ReadOnlySpan<ProgramResourceProperty> props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, (uint) props.Length, in props.GetPinnableReference(), count, length, @params);
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ReadOnlySpan<ProgramResourceProperty> props, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, (uint) props.Length, in props.GetPinnableReference(), (uint) @params.Length, length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ReadOnlySpan<ProgramResourceProperty> props, [Flow(FlowDirection.In)] uint count, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, (uint) props.Length, in props.GetPinnableReference(), count, out length, @params);
+        }
+
+        public unsafe void GetProgramResource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Count(Parameter = "propCount"), Flow(FlowDirection.In)] ReadOnlySpan<ProgramResourceProperty> props, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResource(program, programInterface, index, (uint) props.Length, in props.GetPinnableReference(), (uint) @params.Length, out length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResourceName(program, programInterface, index, (uint) name.Length, length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResourceName(program, programInterface, index, (uint) name.Length, length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResourceName(program, programInterface, index, (uint) name.Length, out length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB programInterface, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResourceName(program, programInterface, index, (uint) name.Length, out length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResourceName(program, programInterface, index, (uint) name.Length, length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResourceName(program, programInterface, index, (uint) name.Length, length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResourceName(program, programInterface, index, (uint) name.Length, out length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramResourceName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramInterface programInterface, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramResourceName(program, programInterface, index, (uint) name.Length, out length, out name.GetPinnableReference());
+        }
+
         public ArbProgramInterfaceQuery(INativeContext ctx)
             : base(ctx)
         {

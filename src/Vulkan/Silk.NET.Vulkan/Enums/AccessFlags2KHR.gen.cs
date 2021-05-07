@@ -11,7 +11,7 @@ namespace Silk.NET.Vulkan
 {
     [Flags()]
     [NativeName("Name", "VkAccessFlags2KHR")]
-    public enum AccessFlags2KHR : int
+    public enum AccessFlags2KHR : long
     {
         [NativeName("Name", "VK_ACCESS_2_NONE_KHR")]
         Access2NoneKhr = 0,
@@ -50,19 +50,19 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "VK_ACCESS_2_MEMORY_WRITE_BIT_KHR")]
         Access2MemoryWriteBitKhr = 65536,
         [NativeName("Name", "VK_ACCESS_2_SHADER_SAMPLED_READ_BIT_KHR")]
-        Access2ShaderSampledReadBitKhr = 1,
+        Access2ShaderSampledReadBitKhr = 4294967296,
         [NativeName("Name", "VK_ACCESS_2_SHADER_STORAGE_READ_BIT_KHR")]
-        Access2ShaderStorageReadBitKhr = 2,
+        Access2ShaderStorageReadBitKhr = 8589934592,
         [NativeName("Name", "VK_ACCESS_2_SHADER_STORAGE_WRITE_BIT_KHR")]
-        Access2ShaderStorageWriteBitKhr = 4,
-        [NativeName("Name", "VK_ACCESS_2_RESERVED_READ_35_BIT_KHR")]
-        Access2ReservedRead35BitKhr = 8,
-        [NativeName("Name", "VK_ACCESS_2_RESERVED_WRITE_36_BIT_KHR")]
-        Access2ReservedWrite36BitKhr = 16,
-        [NativeName("Name", "VK_ACCESS_2_RESERVED_READ_37_BIT_KHR")]
-        Access2ReservedRead37BitKhr = 32,
-        [NativeName("Name", "VK_ACCESS_2_RESERVED_WRITE_38_BIT_KHR")]
-        Access2ReservedWrite38BitKhr = 64,
+        Access2ShaderStorageWriteBitKhr = 17179869184,
+        [NativeName("Name", "VK_ACCESS_2_VIDEO_DECODE_READ_BIT_KHR")]
+        Access2VideoDecodeReadBitKhr = 8,
+        [NativeName("Name", "VK_ACCESS_2_VIDEO_DECODE_WRITE_BIT_KHR")]
+        Access2VideoDecodeWriteBitKhr = 16,
+        [NativeName("Name", "VK_ACCESS_2_VIDEO_ENCODE_READ_BIT_KHR")]
+        Access2VideoEncodeReadBitKhr = 32,
+        [NativeName("Name", "VK_ACCESS_2_VIDEO_ENCODE_WRITE_BIT_KHR")]
+        Access2VideoEncodeWriteBitKhr = 64,
         [NativeName("Name", "VK_ACCESS_2_TRANSFORM_FEEDBACK_WRITE_BIT_EXT")]
         Access2TransformFeedbackWriteBitExt = 33554432,
         [NativeName("Name", "VK_ACCESS_2_TRANSFORM_FEEDBACK_COUNTER_READ_BIT_EXT")]

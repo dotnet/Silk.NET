@@ -33,10 +33,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl")]
+        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
+
+        [NativeApi(EntryPoint = "glDebugMessageControl")]
+        public partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
+
+        [NativeApi(EntryPoint = "glDebugMessageControl")]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl")]
         public partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
+
+        [NativeApi(EntryPoint = "glDebugMessageControl")]
+        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
+
+        [NativeApi(EntryPoint = "glDebugMessageControl")]
+        public partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl")]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
@@ -45,10 +57,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl")]
+        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
+
+        [NativeApi(EntryPoint = "glDebugMessageControl")]
+        public partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
+
+        [NativeApi(EntryPoint = "glDebugMessageControl")]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl")]
         public partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
+
+        [NativeApi(EntryPoint = "glDebugMessageControl")]
+        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
+
+        [NativeApi(EntryPoint = "glDebugMessageControl")]
+        public partial void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl")]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
@@ -57,10 +81,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl")]
+        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
+
+        [NativeApi(EntryPoint = "glDebugMessageControl")]
+        public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
+
+        [NativeApi(EntryPoint = "glDebugMessageControl")]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl")]
         public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
+
+        [NativeApi(EntryPoint = "glDebugMessageControl")]
+        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
+
+        [NativeApi(EntryPoint = "glDebugMessageControl")]
+        public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl")]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
@@ -69,10 +105,22 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
         public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl")]
+        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
+
+        [NativeApi(EntryPoint = "glDebugMessageControl")]
+        public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
+
+        [NativeApi(EntryPoint = "glDebugMessageControl")]
         public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] bool enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageControl")]
         public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] bool enabled);
+
+        [NativeApi(EntryPoint = "glDebugMessageControl")]
+        public unsafe partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* ids, [Flow(FlowDirection.In)] Boolean enabled);
+
+        [NativeApi(EntryPoint = "glDebugMessageControl")]
+        public partial void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint ids, [Flow(FlowDirection.In)] Boolean enabled);
 
         [NativeApi(EntryPoint = "glDebugMessageInsert")]
         public unsafe partial void DebugMessageInsert([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint length, [Count(Computed = "buf, length"), Flow(FlowDirection.In)] byte* buf);
@@ -2594,6 +2642,4758 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
 
         [NativeApi(EntryPoint = "glPushDebugGroup")]
         public partial void PushDebugGroup([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string message);
+
+        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
+        {
+            // ImplicitCountSpanOverloader
+            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
+        }
+
+        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
+        {
+            // ImplicitCountSpanOverloader
+            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
+        }
+
+        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
+        {
+            // ImplicitCountSpanOverloader
+            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
+        }
+
+        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
+        {
+            // ImplicitCountSpanOverloader
+            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
+        }
+
+        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
+        {
+            // ImplicitCountSpanOverloader
+            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
+        }
+
+        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
+        {
+            // ImplicitCountSpanOverloader
+            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
+        }
+
+        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
+        {
+            // ImplicitCountSpanOverloader
+            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
+        }
+
+        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
+        {
+            // ImplicitCountSpanOverloader
+            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
+        }
+
+        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
+        {
+            // ImplicitCountSpanOverloader
+            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
+        }
+
+        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
+        {
+            // ImplicitCountSpanOverloader
+            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
+        }
+
+        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
+        {
+            // ImplicitCountSpanOverloader
+            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
+        }
+
+        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
+        {
+            // ImplicitCountSpanOverloader
+            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
+        }
+
+        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
+        {
+            // ImplicitCountSpanOverloader
+            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
+        }
+
+        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
+        {
+            // ImplicitCountSpanOverloader
+            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
+        }
+
+        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
+        {
+            // ImplicitCountSpanOverloader
+            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
+        }
+
+        public unsafe void DebugMessageControl([Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
+        {
+            // ImplicitCountSpanOverloader
+            DebugMessageControl(source, type, severity, (uint) ids.Length, in ids.GetPinnableReference(), enabled);
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog(count, (uint) messageLog.Length, sources, types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog(count, (uint) messageLog.Length, sources, types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, types, ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, sources, types, out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, bufSize, sources, out types.GetPinnableReference(), ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, bufSize, out sources.GetPinnableReference(), types, ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog(count, (uint) messageLog.Length, sources, types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog(count, (uint) messageLog.Length, sources, types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, types, ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, sources, types, out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, bufSize, sources, out types.GetPinnableReference(), ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, bufSize, out sources.GetPinnableReference(), types, ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog(count, (uint) messageLog.Length, sources, types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog(count, (uint) messageLog.Length, sources, types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, types, ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, sources, types, out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, bufSize, sources, out types.GetPinnableReference(), ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, bufSize, out sources.GetPinnableReference(), types, ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog(count, (uint) messageLog.Length, sources, types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog(count, (uint) messageLog.Length, sources, types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, types, ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, sources, types, out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, bufSize, sources, out types.GetPinnableReference(), ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, bufSize, out sources.GetPinnableReference(), types, ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog(count, (uint) messageLog.Length, sources, types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog(count, (uint) messageLog.Length, sources, types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, types, ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, sources, types, out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, bufSize, sources, out types.GetPinnableReference(), ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, bufSize, out sources.GetPinnableReference(), types, ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog(count, (uint) messageLog.Length, sources, types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog(count, (uint) messageLog.Length, sources, types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, types, ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, sources, types, out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, bufSize, sources, out types.GetPinnableReference(), ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, bufSize, out sources.GetPinnableReference(), types, ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog(count, (uint) messageLog.Length, sources, types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog(count, (uint) messageLog.Length, sources, types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, types, ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, sources, types, out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, bufSize, sources, out types.GetPinnableReference(), ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, bufSize, out sources.GetPinnableReference(), types, ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] KHR* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<KHR> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog(count, (uint) messageLog.Length, sources, types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog(count, (uint) messageLog.Length, sources, types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, types, ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, sources, types, out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, bufSize, sources, out types.GetPinnableReference(), ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSource* sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, sources, out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, bufSize, out sources.GetPinnableReference(), types, ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) sources.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugType* types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), types, out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) types.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), ids, out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) ids.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] DebugSeverity* severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), severities, out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] uint* lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) severities.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), lengths, out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, bufSize, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), messageLog);
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe uint GetDebugMessageLog([Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSource> sources, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugType> types, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> ids, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<DebugSeverity> severities, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<uint> lengths, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> messageLog)
+        {
+            // ImplicitCountSpanOverloader
+            return GetDebugMessageLog((uint) lengths.Length, (uint) messageLog.Length, out sources.GetPinnableReference(), out types.GetPinnableReference(), out ids.GetPinnableReference(), out severities.GetPinnableReference(), out lengths.GetPinnableReference(), out messageLog.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label)
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectLabel(identifier, name, (uint) label.Length, length, out label.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label)
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectLabel(identifier, name, (uint) label.Length, length, out label.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label)
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectLabel(identifier, name, (uint) label.Length, out length, out label.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectLabel([Flow(FlowDirection.In)] KHR identifier, [Flow(FlowDirection.In)] uint name, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label)
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectLabel(identifier, name, (uint) label.Length, out length, out label.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectLabel([Flow(FlowDirection.In)] ObjectIdentifier identifier, [Flow(FlowDirection.In)] uint name, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label)
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectLabel(identifier, name, (uint) label.Length, length, out label.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectLabel([Flow(FlowDirection.In)] ObjectIdentifier identifier, [Flow(FlowDirection.In)] uint name, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label)
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectLabel(identifier, name, (uint) label.Length, length, out label.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectLabel([Flow(FlowDirection.In)] ObjectIdentifier identifier, [Flow(FlowDirection.In)] uint name, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label)
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectLabel(identifier, name, (uint) label.Length, out length, out label.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectLabel([Flow(FlowDirection.In)] ObjectIdentifier identifier, [Flow(FlowDirection.In)] uint name, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label)
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectLabel(identifier, name, (uint) label.Length, out length, out label.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label)
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectPtrLabel(ptr, (uint) label.Length, length, out label.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label)
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectPtrLabel(ptr, (uint) label.Length, length, out label.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label)
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectPtrLabel(ptr, (uint) label.Length, out length, out label.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectPtrLabel([Flow(FlowDirection.In)] void* ptr, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label)
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectPtrLabel(ptr, (uint) label.Length, out length, out label.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectPtrLabel(in ptr, (uint) label.Length, length, out label.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectPtrLabel(in ptr, (uint) label.Length, length, out label.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectPtrLabel(in ptr, (uint) label.Length, out length, out label.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectPtrLabel<T0>([Flow(FlowDirection.In)] in T0 ptr, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectPtrLabel(in ptr, (uint) label.Length, out length, out label.GetPinnableReference());
+        }
 
         [System.Obsolete("Deprecated in version ")]
         public unsafe void* GetPointer([Flow(FlowDirection.In)] KHR pname)

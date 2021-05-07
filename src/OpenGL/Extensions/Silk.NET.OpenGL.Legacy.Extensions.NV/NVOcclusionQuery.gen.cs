@@ -71,6 +71,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             DeleteOcclusionQueries(1, &ids);
         }
 
+        public unsafe void DeleteOcclusionQueries([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteOcclusionQueries((uint) ids.Length, in ids.GetPinnableReference());
+        }
+
         public unsafe uint GenOcclusionQuery()
         {
             const uint n = 1;
@@ -78,6 +84,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             uint ret = default;
             GenOcclusionQueries(n, &ret);
             return ret;
+        }
+
+        public unsafe void GenOcclusionQueries([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+        {
+            // ImplicitCountSpanOverloader
+            GenOcclusionQueries((uint) ids.Length, out ids.GetPinnableReference());
         }
 
         public NVOcclusionQuery(INativeContext ctx)

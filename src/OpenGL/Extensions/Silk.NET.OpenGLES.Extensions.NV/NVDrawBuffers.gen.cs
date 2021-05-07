@@ -26,6 +26,12 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         [NativeApi(EntryPoint = "glDrawBuffersNV")]
         public partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in NV bufs);
 
+        public unsafe void DrawBuffers([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<NV> bufs)
+        {
+            // ImplicitCountSpanOverloader
+            DrawBuffers((uint) bufs.Length, in bufs.GetPinnableReference());
+        }
+
         public NVDrawBuffers(INativeContext ctx)
             : base(ctx)
         {

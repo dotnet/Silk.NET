@@ -363,6 +363,84 @@
                     "VkAabbPositionsNV": "Silk.NET.Maths.Box3D<float>"
                 },
                 {
+                    "StdVideoDecodeH264PictureInfo": "Video.StdVideoDecodeH264PictureInfo",
+                    "StdVideoDecodeH264ReferenceInfo": "Video.StdVideoDecodeH264ReferenceInfo",
+                    "StdVideoDecodeH264Mvc":  "Video.StdVideoDecodeH264Mvc",
+                    "StdVideoH264ProfileIdc":  "Video.StdVideoH264ProfileIdc",
+                    "StdVideoH264SequenceParameterSet": "Video.StdVideoH264SequenceParameterSet",
+                    "StdVideoH264PictureParameterSet": "Video.StdVideoH264PictureParameterSet",
+                    "StdVideoEncodeH264PictureInfo": "Video.StdVideoEncodeH264PictureInfo",
+                    "StdVideoEncodeH264SliceHeader": "Video.StdVideoEncodeH264SliceHeader",
+                    "StdVideoDecodeH265ReferenceInfo": "Video.StdVideoDecodeH265ReferenceInfo",
+                    "StdVideoDecodeH265PictureInfo": "Video.StdVideoDecodeH265PictureInfo",
+                    "StdVideoH265ProfileIdc": "Video.StdVideoH265ProfileIdc",
+                    "StdVideoH265SequenceParameterSet": "Video.StdVideoH265SequenceParameterSet",
+                    "StdVideoH265PictureParameterSet": "Video.StdVideoH265PictureParameterSet"
+                    
+                },
+                {
+                    "$include.commonTypeMap": "build/csharp_typemap.json"
+                }
+            ]
+        },
+        {
+            "profileName": "Vulkan Video",
+            "sources": [
+                "src/Vulkan/vk_video.h"
+            ],
+            "mode": "Clang",
+            "cacheDir": "build/cache",
+            "cacheKey": "vulkan_video",
+            "controlDescriptors": [
+                "convert-windows-only",
+                "no-csproj",
+                "no-extra-dir",
+                "no-name-container"
+            ],
+            "prefix": "",
+            "clang": {
+                "args": [
+                    "--language=c++",
+                    "--std=c++17",
+                    "-m32",
+                    "-Wno-expansion-to-defined",
+                    "-Wno-ignored-attributes",
+                    "-Wno-ignored-pragma-intrinsic",
+                    "-Wno-nonportable-include-path",
+                    "-Wno-pragma-pack",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um",
+                    "-IC:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/ucrt",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Enterprise/VC/Tools/MSVC/14.28.29333/include",
+                    "-IC:/Program Files (x86)/Microsoft Visual Studio/2019/Community/VC/Tools/MSVC/14.28.29333/include",
+                    "-Ibuild/submodules/Vulkan-Headers/include"
+                ],
+                "traverse": [
+                    "build/submodules/Vulkan-Headers/include/vk_video/*.h"
+                ],
+                "classes": {
+                    "vk_video.h": "[Core]VkVideo"
+                }
+            },
+            "exclude": [
+            ],
+            "rename": {
+            },
+            "bakery": {
+                "profileNames": [
+                    "vk_video"
+                ]
+            },
+            "output": {
+                "mode": "Default",
+                "path": "src/Vulkan/Silk.NET.Vulkan/Video",
+                "licenseFile": "build/LICENSE_HEADER.txt",
+                "props": "build/props/bindings.props"
+            },
+            "namespace": "Silk.NET.Vulkan.Video",
+            "extensionsNamespace": "Silk.NET.Vulkan.Video.Extensions",
+            "typeMaps": [
+                {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
                 }
             ]

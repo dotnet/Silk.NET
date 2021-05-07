@@ -35,6 +35,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
         [NativeApi(EntryPoint = "glIsNameAMD")]
         public partial bool IsName([Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint name);
 
+        public unsafe void DeleteNames([Flow(FlowDirection.In)] AMD identifier, [Count(Parameter = "num"), Flow(FlowDirection.In)] ReadOnlySpan<uint> names)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteNames(identifier, (uint) names.Length, in names.GetPinnableReference());
+        }
+
+        public unsafe void GenNames([Flow(FlowDirection.In)] AMD identifier, [Count(Parameter = "num"), Flow(FlowDirection.Out)] Span<uint> names)
+        {
+            // ImplicitCountSpanOverloader
+            GenNames(identifier, (uint) names.Length, out names.GetPinnableReference());
+        }
+
         public AmdNameGenDelete(INativeContext ctx)
             : base(ctx)
         {

@@ -908,12 +908,78 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.OES
         [NativeApi(EntryPoint = "glVertex4xvOES")]
         public partial void Vertex4x([Count(Count = 4), Flow(FlowDirection.In)] in int coords);
 
+        public unsafe void FeedbackBufferx([Flow(FlowDirection.In)] OES type, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<int> buffer)
+        {
+            // ImplicitCountSpanOverloader
+            FeedbackBufferx((uint) buffer.Length, type, in buffer.GetPinnableReference());
+        }
+
         public unsafe int GetFixed([Flow(FlowDirection.In)] OES pname)
         {
             // ReturnTypeOverloader
             int ret = default;
             GetFixed(pname, &ret);
             return ret;
+        }
+
+        public unsafe void GetPixelMapx([Flow(FlowDirection.In)] OES map, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<int> values)
+        {
+            // ImplicitCountSpanOverloader
+            GetPixelMapx(map, (int) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetPixelMapx([Flow(FlowDirection.In)] PixelMap map, [Count(Parameter = "size"), Flow(FlowDirection.Out)] Span<int> values)
+        {
+            // ImplicitCountSpanOverloader
+            GetPixelMapx(map, (int) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void PixelMapx([Flow(FlowDirection.In)] OES map, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<int> values)
+        {
+            // ImplicitCountSpanOverloader
+            PixelMapx(map, (int) values.Length, in values.GetPinnableReference());
+        }
+
+        public unsafe void PixelMapx([Flow(FlowDirection.In)] PixelMap map, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<int> values)
+        {
+            // ImplicitCountSpanOverloader
+            PixelMapx(map, (int) values.Length, in values.GetPinnableReference());
+        }
+
+        public unsafe void PrioritizeTexturesx([Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<int> priorities)
+        {
+            // ImplicitCountSpanOverloader
+            PrioritizeTexturesx((uint) priorities.Length, textures, in priorities.GetPinnableReference());
+        }
+
+        public unsafe void PrioritizeTexturesx([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] int* priorities)
+        {
+            // ImplicitCountSpanOverloader
+            PrioritizeTexturesx((uint) textures.Length, in textures.GetPinnableReference(), priorities);
+        }
+
+        public unsafe void PrioritizeTexturesx([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<int> priorities)
+        {
+            // ImplicitCountSpanOverloader
+            PrioritizeTexturesx((uint) priorities.Length, in textures.GetPinnableReference(), in priorities.GetPinnableReference());
+        }
+
+        public unsafe void PrioritizeTexturesx([Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<int> priorities)
+        {
+            // ImplicitCountSpanOverloader
+            PrioritizeTexturesx((uint) priorities.Length, textures, in priorities.GetPinnableReference());
+        }
+
+        public unsafe void PrioritizeTexturesx([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] int* priorities)
+        {
+            // ImplicitCountSpanOverloader
+            PrioritizeTexturesx((uint) textures.Length, in textures.GetPinnableReference(), priorities);
+        }
+
+        public unsafe void PrioritizeTexturesx([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<int> priorities)
+        {
+            // ImplicitCountSpanOverloader
+            PrioritizeTexturesx((uint) priorities.Length, in textures.GetPinnableReference(), in priorities.GetPinnableReference());
         }
 
         public OesFixedPoint(INativeContext ctx)

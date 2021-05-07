@@ -23,6 +23,9 @@ namespace Silk.NET.OpenGLES.Extensions.APPLE
         [NativeApi(EntryPoint = "glClientWaitSyncAPPLE")]
         public partial APPLE ClientWaitSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] ulong timeout);
 
+        [NativeApi(EntryPoint = "glClientWaitSyncAPPLE")]
+        public partial APPLE ClientWaitSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncObjectMask flags, [Flow(FlowDirection.In)] ulong timeout);
+
         [NativeApi(EntryPoint = "glDeleteSyncAPPLE")]
         public partial void DeleteSync([Flow(FlowDirection.In)] nint sync);
 
@@ -30,7 +33,13 @@ namespace Silk.NET.OpenGLES.Extensions.APPLE
         public partial nint FenceSync([Flow(FlowDirection.In)] APPLE condition, [Flow(FlowDirection.In)] uint flags);
 
         [NativeApi(EntryPoint = "glFenceSyncAPPLE")]
+        public partial nint FenceSync([Flow(FlowDirection.In)] APPLE condition, [Flow(FlowDirection.In)] SyncBehaviorFlags flags);
+
+        [NativeApi(EntryPoint = "glFenceSyncAPPLE")]
         public partial nint FenceSync([Flow(FlowDirection.In)] SyncCondition condition, [Flow(FlowDirection.In)] uint flags);
+
+        [NativeApi(EntryPoint = "glFenceSyncAPPLE")]
+        public partial nint FenceSync([Flow(FlowDirection.In)] SyncCondition condition, [Flow(FlowDirection.In)] SyncBehaviorFlags flags);
 
         [NativeApi(EntryPoint = "glGetInteger64vAPPLE")]
         public unsafe partial void GetInteger64([Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.Out)] long* @params);
@@ -74,12 +83,39 @@ namespace Silk.NET.OpenGLES.Extensions.APPLE
         [NativeApi(EntryPoint = "glWaitSyncAPPLE")]
         public partial void WaitSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] uint flags, [Flow(FlowDirection.In)] ulong timeout);
 
+        [NativeApi(EntryPoint = "glWaitSyncAPPLE")]
+        public partial void WaitSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncBehaviorFlags flags, [Flow(FlowDirection.In)] ulong timeout);
+
         public unsafe long GetInteger64([Flow(FlowDirection.In)] APPLE pname)
         {
             // ReturnTypeOverloader
             long ret = default;
             GetInteger64(pname, &ret);
             return ret;
+        }
+
+        public unsafe void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
+        {
+            // ImplicitCountSpanOverloader
+            GetSync(sync, pname, (uint) values.Length, length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] APPLE pname, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
+        {
+            // ImplicitCountSpanOverloader
+            GetSync(sync, pname, (uint) values.Length, out length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
+        {
+            // ImplicitCountSpanOverloader
+            GetSync(sync, pname, (uint) values.Length, length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetSync([Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.In)] SyncParameterName pname, [Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> values)
+        {
+            // ImplicitCountSpanOverloader
+            GetSync(sync, pname, (uint) values.Length, out length, out values.GetPinnableReference());
         }
 
         public AppleSync(INativeContext ctx)

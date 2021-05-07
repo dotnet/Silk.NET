@@ -32,6 +32,18 @@ namespace Silk.NET.Vulkan
         Preinitialized = 8,
         [NativeName("Name", "VK_IMAGE_LAYOUT_PRESENT_SRC_KHR")]
         PresentSrcKhr = 1000001002,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_VIDEO_DECODE_DST_KHR")]
+        VideoDecodeDstKhr = 1000024000,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_VIDEO_DECODE_SRC_KHR")]
+        VideoDecodeSrcKhr = 1000024001,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_VIDEO_DECODE_DPB_KHR")]
+        VideoDecodeDpbKhr = 1000024002,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_VIDEO_ENCODE_DST_KHR")]
+        VideoEncodeDstKhr = 1000299000,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_VIDEO_ENCODE_SRC_KHR")]
+        VideoEncodeSrcKhr = 1000299001,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_VIDEO_ENCODE_DPB_KHR")]
+        VideoEncodeDpbKhr = 1000299002,
         [NativeName("Name", "VK_IMAGE_LAYOUT_SHARED_PRESENT_KHR")]
         SharedPresentKhr = 1000111000,
         [NativeName("Name", "VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_OPTIMAL_KHR")]

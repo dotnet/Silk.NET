@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using System;
+using System.Text.RegularExpressions;
 using System.Xml.Linq;
 
 namespace Silk.NET.BuildTools.Converters.Khronos
@@ -12,8 +13,9 @@ namespace Silk.NET.BuildTools.Converters.Khronos
         public string ElementCountSymbolic { get; }
         public string Comment { get; }
         public string LegalValues { get; }
+        public int? NumBits { get; }
 
-        public MemberSpec(string name, TypeSpec type, bool isOptional, int elementCount, string elementCountSymbolic, string comment, string legalValues)
+        public MemberSpec(string name, TypeSpec type, bool isOptional, int elementCount, string elementCountSymbolic, string comment, string legalValues, int? numBits = null)
         {
             Name = name;
             Type = type;
@@ -22,6 +24,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             ElementCountSymbolic = elementCountSymbolic;
             Comment = comment;
             LegalValues = legalValues;
+            NumBits = numBits;
         }
 
         public static MemberSpec CreateFromXml(XElement xe)
@@ -43,7 +46,20 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             string elementCountSymbolic = null;
             for (var i = 2; i < 10; i++)
             {
-                if (xeValue.Contains($"{name}[{i}]"))
+                if (xeValue.Contains($"{name}[{i}]["))
+                {
+                    for (var j = 2; j < 10; j++)
+                    {
+                        // not future proof, but works fine for now. we'll have something more elegant in 3.0
+                        if (xeValue.Contains($"{name}[{i}][{j}]"))
+                        {
+                            elementCount = i * j;
+                            foundConstantElementCount = true;
+                            break;
+                        }
+                    }
+                }
+                else if (xeValue.Contains($"{name}[{i}]"))
                 {
                     elementCount = i;
                     foundConstantElementCount = true;
@@ -80,7 +96,18 @@ namespace Silk.NET.BuildTools.Converters.Khronos
 
             string value = xe.Attribute("values")?.Value;
 
-            return new MemberSpec(name, type, isOptional, elementCount, elementCountSymbolic, string.Empty, value);
+            var sNumBits = xeValue.Contains(":") ? xeValue[xeValue.LastIndexOf(":", StringComparison.Ordinal)..] : null;
+            for (var i = 1; i < (sNumBits?.Length ?? 0); i++)
+            {
+                if (!"0123456789 ".Contains(sNumBits![i]))
+                {
+                    sNumBits = sNumBits[..i];
+                }
+            }
+
+            int? numBits = sNumBits is not null ? int.Parse(sNumBits[1..]) : null;
+
+            return new MemberSpec(name, type, isOptional, elementCount, elementCountSymbolic, string.Empty, value, numBits);
         }
 
         public override string ToString()
