@@ -14,10 +14,13 @@ namespace InvokeBenchmarks
 {
     [CategoriesColumn]
     [GroupBenchmarksBy(BenchmarkLogicalGroupRule.ByCategory)]
-    public class StringBenchmark
+    public class SmallStringBenchmark
     {
         private TestContext _testContext;
         private SilkAPI _silkAPI;
+
+        [Params("AAAA", "®®®®", "𝄞𝄞𝄞𝄞")]
+        public string Param;
         
         [GlobalSetup]
         public void GlobalSetup()
@@ -37,70 +40,70 @@ namespace InvokeBenchmarks
         [BenchmarkCategory("BStr")]
         public int WithReturnAndBStrMarshalSilk()
         {
-            return _silkAPI.WithReturnAndBStrMarshal("Hello World!");
+            return _silkAPI.WithReturnAndBStrMarshal(Param);
         }
         
         [Benchmark]
         [BenchmarkCategory("LPStr")]
         public int WithReturnAndLPStrMarshalSilk()
         {
-            return _silkAPI.WithReturnAndLPStrMarshal("Hello World!");
+            return _silkAPI.WithReturnAndLPStrMarshal(Param);
         }
         
         [Benchmark]
         [BenchmarkCategory("LPTStr")]
         public int WithReturnAndLPTStrMarshalSilk()
         {
-            return _silkAPI.WithReturnAndLPTStrMarshal("Hello World!");
+            return _silkAPI.WithReturnAndLPTStrMarshal(Param);
         }
         
         [Benchmark]
         [BenchmarkCategory("LPWStr")]
         public int WithReturnAndLPWStrMarshalSilk()
         {
-            return _silkAPI.WithReturnAndLPWStrMarshal("Hello World!");
+            return _silkAPI.WithReturnAndLPWStrMarshal(Param);
         }
         
         [Benchmark]
         [BenchmarkCategory("LPUTF8Str")]
         public int WithReturnAndLPUTF8StrMarshalSilk()
         {
-            return _silkAPI.WithReturnAndLPUTF8StrMarshal("Hello World!");
+            return _silkAPI.WithReturnAndLPUTF8StrMarshal(Param);
         }
         
         [Benchmark(Baseline = true)]
         [BenchmarkCategory("BStr")]
         public int WithReturnAndBStrMarshalPInvoke()
         {
-            return PInvoke.WithReturnAndBStrMarshal("Hello World!");
+            return PInvoke.WithReturnAndBStrMarshal(Param);
         }
         
         [Benchmark(Baseline = true)]
         [BenchmarkCategory("LPStr")]
         public int WithReturnAndLPStrMarshalPInvoke()
         {
-            return PInvoke.WithReturnAndLPStrMarshal("Hello World!");
+            return PInvoke.WithReturnAndLPStrMarshal(Param);
         }
         
         [Benchmark(Baseline = true)]
         [BenchmarkCategory("LPTStr")]
         public int WithReturnAndLPTStrMarshalPInvoke()
         {
-            return PInvoke.WithReturnAndLPTStrMarshal("Hello World!");
+            return PInvoke.WithReturnAndLPTStrMarshal(Param);
         }
         
         [Benchmark(Baseline = true)]
         [BenchmarkCategory("LPWStr")]
         public int WithReturnAndLPWStrMarshalPInvoke()
         {
-            return PInvoke.WithReturnAndLPWStrMarshal("Hello World!");
+            return PInvoke.WithReturnAndLPWStrMarshal(Param);
         }
         
         [Benchmark(Baseline = true)]
         [BenchmarkCategory("LPUTF8Str")]
         public int WithReturnAndLPUTF8StrMarshalPInvoke()
         {
-            return PInvoke.WithReturnAndLPUTF8StrMarshal("Hello World!");
+            return PInvoke.WithReturnAndLPUTF8StrMarshal(Param);
         }
     }
 }
