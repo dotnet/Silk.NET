@@ -56,13 +56,13 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "VK_ACCESS_2_SHADER_STORAGE_WRITE_BIT_KHR")]
         Access2ShaderStorageWriteBitKhr = 17179869184,
         [NativeName("Name", "VK_ACCESS_2_VIDEO_DECODE_READ_BIT_KHR")]
-        Access2VideoDecodeReadBitKhr = 8,
+        Access2VideoDecodeReadBitKhr = 34359738368,
         [NativeName("Name", "VK_ACCESS_2_VIDEO_DECODE_WRITE_BIT_KHR")]
-        Access2VideoDecodeWriteBitKhr = 16,
+        Access2VideoDecodeWriteBitKhr = 68719476736,
         [NativeName("Name", "VK_ACCESS_2_VIDEO_ENCODE_READ_BIT_KHR")]
-        Access2VideoEncodeReadBitKhr = 32,
+        Access2VideoEncodeReadBitKhr = 137438953472,
         [NativeName("Name", "VK_ACCESS_2_VIDEO_ENCODE_WRITE_BIT_KHR")]
-        Access2VideoEncodeWriteBitKhr = 64,
+        Access2VideoEncodeWriteBitKhr = 274877906944,
         [NativeName("Name", "VK_ACCESS_2_TRANSFORM_FEEDBACK_WRITE_BIT_EXT")]
         Access2TransformFeedbackWriteBitExt = 33554432,
         [NativeName("Name", "VK_ACCESS_2_TRANSFORM_FEEDBACK_COUNTER_READ_BIT_EXT")]
