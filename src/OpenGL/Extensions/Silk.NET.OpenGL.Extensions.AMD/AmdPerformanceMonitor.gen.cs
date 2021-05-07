@@ -134,6 +134,18 @@ namespace Silk.NET.OpenGL.Extensions.AMD
         [NativeApi(EntryPoint = "glSelectPerfMonitorCountersAMD")]
         public partial void SelectPerfMonitorCounters([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] bool enable, [Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] int numCounters, [Count(Parameter = "numCounters"), Flow(FlowDirection.Out)] out uint counterList);
 
+        [NativeApi(EntryPoint = "glSelectPerfMonitorCountersAMD")]
+        public unsafe partial void SelectPerfMonitorCounters([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] Boolean enable, [Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] int numCounters, [Count(Parameter = "numCounters"), Flow(FlowDirection.Out)] uint* counterList);
+
+        [NativeApi(EntryPoint = "glSelectPerfMonitorCountersAMD")]
+        public partial void SelectPerfMonitorCounters([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] Boolean enable, [Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] int numCounters, [Count(Parameter = "numCounters"), Flow(FlowDirection.Out)] out uint counterList);
+
+        public unsafe void DeletePerfMonitors([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> monitors)
+        {
+            // ImplicitCountSpanOverloader
+            DeletePerfMonitors((uint) monitors.Length, out monitors.GetPinnableReference());
+        }
+
         public unsafe uint GenPerfMonitor()
         {
             const uint n = 1;
@@ -141,6 +153,120 @@ namespace Silk.NET.OpenGL.Extensions.AMD
             uint ret = default;
             GenPerfMonitors(n, &ret);
             return ret;
+        }
+
+        public unsafe void GenPerfMonitors([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> monitors)
+        {
+            // ImplicitCountSpanOverloader
+            GenPerfMonitors((uint) monitors.Length, out monitors.GetPinnableReference());
+        }
+
+        public unsafe void GetPerfMonitorCounterData([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] AMD pname, [Count(Parameter = "dataSize"), Flow(FlowDirection.Out)] Span<uint> data, [Count(Count = 1), Flow(FlowDirection.Out)] int* bytesWritten)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfMonitorCounterData(monitor, pname, (uint) data.Length, out data.GetPinnableReference(), bytesWritten);
+        }
+
+        public unsafe void GetPerfMonitorCounterData([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] AMD pname, [Count(Parameter = "dataSize"), Flow(FlowDirection.Out)] Span<uint> data, [Count(Count = 1), Flow(FlowDirection.Out)] out int bytesWritten)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfMonitorCounterData(monitor, pname, (uint) data.Length, out data.GetPinnableReference(), out bytesWritten);
+        }
+
+        public unsafe void GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] int* numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] int* maxActiveCounters, [Count(Parameter = "counterSize"), Flow(FlowDirection.Out)] Span<uint> counters)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfMonitorCounters(group, numCounters, maxActiveCounters, (uint) counters.Length, out counters.GetPinnableReference());
+        }
+
+        public unsafe void GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] int* numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] out int maxActiveCounters, [Count(Parameter = "counterSize"), Flow(FlowDirection.Out)] Span<uint> counters)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfMonitorCounters(group, numCounters, out maxActiveCounters, (uint) counters.Length, out counters.GetPinnableReference());
+        }
+
+        public unsafe void GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] out int numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] int* maxActiveCounters, [Count(Parameter = "counterSize"), Flow(FlowDirection.Out)] Span<uint> counters)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfMonitorCounters(group, out numCounters, maxActiveCounters, (uint) counters.Length, out counters.GetPinnableReference());
+        }
+
+        public unsafe void GetPerfMonitorCounters([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] out int numCounters, [Count(Count = 1), Flow(FlowDirection.Out)] out int maxActiveCounters, [Count(Parameter = "counterSize"), Flow(FlowDirection.Out)] Span<uint> counters)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfMonitorCounters(group, out numCounters, out maxActiveCounters, (uint) counters.Length, out counters.GetPinnableReference());
+        }
+
+        public unsafe void GetPerfMonitorCounterString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> counterString)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfMonitorCounterString(group, counter, (uint) counterString.Length, length, out counterString.GetPinnableReference());
+        }
+
+        public unsafe void GetPerfMonitorCounterString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> counterString)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfMonitorCounterString(group, counter, (uint) counterString.Length, length, out counterString.GetPinnableReference());
+        }
+
+        public unsafe void GetPerfMonitorCounterString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> counterString)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfMonitorCounterString(group, counter, (uint) counterString.Length, out length, out counterString.GetPinnableReference());
+        }
+
+        public unsafe void GetPerfMonitorCounterString([Flow(FlowDirection.In)] uint group, [Flow(FlowDirection.In)] uint counter, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> counterString)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfMonitorCounterString(group, counter, (uint) counterString.Length, out length, out counterString.GetPinnableReference());
+        }
+
+        public unsafe void GetPerfMonitorGroups([Count(Count = 1), Flow(FlowDirection.Out)] int* numGroups, [Count(Parameter = "groupsSize"), Flow(FlowDirection.Out)] Span<uint> groups)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfMonitorGroups(numGroups, (uint) groups.Length, out groups.GetPinnableReference());
+        }
+
+        public unsafe void GetPerfMonitorGroups([Count(Count = 1), Flow(FlowDirection.Out)] out int numGroups, [Count(Parameter = "groupsSize"), Flow(FlowDirection.Out)] Span<uint> groups)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfMonitorGroups(out numGroups, (uint) groups.Length, out groups.GetPinnableReference());
+        }
+
+        public unsafe void GetPerfMonitorGroupString([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> groupString)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfMonitorGroupString(group, (uint) groupString.Length, length, out groupString.GetPinnableReference());
+        }
+
+        public unsafe void GetPerfMonitorGroupString([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> groupString)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfMonitorGroupString(group, (uint) groupString.Length, length, out groupString.GetPinnableReference());
+        }
+
+        public unsafe void GetPerfMonitorGroupString([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> groupString)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfMonitorGroupString(group, (uint) groupString.Length, out length, out groupString.GetPinnableReference());
+        }
+
+        public unsafe void GetPerfMonitorGroupString([Flow(FlowDirection.In)] uint group, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> groupString)
+        {
+            // ImplicitCountSpanOverloader
+            GetPerfMonitorGroupString(group, (uint) groupString.Length, out length, out groupString.GetPinnableReference());
+        }
+
+        public unsafe void SelectPerfMonitorCounters([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] bool enable, [Flow(FlowDirection.In)] uint group, [Count(Parameter = "numCounters"), Flow(FlowDirection.Out)] Span<uint> counterList)
+        {
+            // ImplicitCountSpanOverloader
+            SelectPerfMonitorCounters(monitor, enable, group, (int) counterList.Length, out counterList.GetPinnableReference());
+        }
+
+        public unsafe void SelectPerfMonitorCounters([Flow(FlowDirection.In)] uint monitor, [Flow(FlowDirection.In)] Boolean enable, [Flow(FlowDirection.In)] uint group, [Count(Parameter = "numCounters"), Flow(FlowDirection.Out)] Span<uint> counterList)
+        {
+            // ImplicitCountSpanOverloader
+            SelectPerfMonitorCounters(monitor, enable, group, (int) counterList.Length, out counterList.GetPinnableReference());
         }
 
         public AmdPerformanceMonitor(INativeContext ctx)

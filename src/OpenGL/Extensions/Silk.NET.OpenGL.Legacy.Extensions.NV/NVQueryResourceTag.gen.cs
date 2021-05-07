@@ -47,6 +47,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             DeleteQueryResourceTag(1, &tagIds);
         }
 
+        public unsafe void DeleteQueryResourceTag([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<int> tagIds)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteQueryResourceTag((uint) tagIds.Length, in tagIds.GetPinnableReference());
+        }
+
         public unsafe int GenQueryResourceTag()
         {
             const uint n = 1;
@@ -54,6 +60,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             int ret = default;
             GenQueryResourceTag(n, &ret);
             return ret;
+        }
+
+        public unsafe void GenQueryResourceTag([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<int> tagIds)
+        {
+            // ImplicitCountSpanOverloader
+            GenQueryResourceTag((uint) tagIds.Length, out tagIds.GetPinnableReference());
         }
 
         public NVQueryResourceTag(INativeContext ctx)

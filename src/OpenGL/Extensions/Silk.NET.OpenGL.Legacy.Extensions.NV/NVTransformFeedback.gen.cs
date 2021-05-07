@@ -167,6 +167,30 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glTransformFeedbackVaryingsNV")]
         public partial void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in int locations, [Flow(FlowDirection.In)] NV bufferMode);
 
+        public unsafe void TransformFeedbackStreamAttrib([Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] int* attribs, [Count(Parameter = "nbuffers"), Flow(FlowDirection.In)] ReadOnlySpan<int> bufstreams, [Flow(FlowDirection.In)] NV bufferMode)
+        {
+            // ImplicitCountSpanOverloader
+            TransformFeedbackStreamAttrib(count, attribs, (uint) bufstreams.Length, in bufstreams.GetPinnableReference(), bufferMode);
+        }
+
+        public unsafe void TransformFeedbackStreamAttrib([Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> attribs, [Flow(FlowDirection.In)] uint nbuffers, [Count(Parameter = "nbuffers"), Flow(FlowDirection.In)] int* bufstreams, [Flow(FlowDirection.In)] NV bufferMode)
+        {
+            // ImplicitCountSpanOverloader
+            TransformFeedbackStreamAttrib((uint) attribs.Length, in attribs.GetPinnableReference(), nbuffers, bufstreams, bufferMode);
+        }
+
+        public unsafe void TransformFeedbackStreamAttrib([Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> attribs, [Count(Parameter = "nbuffers"), Flow(FlowDirection.In)] ReadOnlySpan<int> bufstreams, [Flow(FlowDirection.In)] NV bufferMode)
+        {
+            // ImplicitCountSpanOverloader
+            TransformFeedbackStreamAttrib((uint) attribs.Length, in attribs.GetPinnableReference(), (uint) bufstreams.Length, in bufstreams.GetPinnableReference(), bufferMode);
+        }
+
+        public unsafe void TransformFeedbackVaryings([Flow(FlowDirection.In)] uint program, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> locations, [Flow(FlowDirection.In)] NV bufferMode)
+        {
+            // ImplicitCountSpanOverloader
+            TransformFeedbackVaryings(program, (uint) locations.Length, in locations.GetPinnableReference(), bufferMode);
+        }
+
         public NVTransformFeedback(INativeContext ctx)
             : base(ctx)
         {

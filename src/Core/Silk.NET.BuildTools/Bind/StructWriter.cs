@@ -3,9 +3,11 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
+using ClangSharp.Interop;
 using Humanizer;
 using Silk.NET.BuildTools.Common;
 using Silk.NET.BuildTools.Common.Builders;
@@ -25,7 +27,8 @@ namespace Silk.NET.BuildTools.Bind
         /// <param name="file">The file to write to.</param>
         /// <param name="profile">The subsystem containing this enum.</param>
         /// <param name="project">The project containing this enum.</param>
-        public static void WriteStruct(this Struct @struct, string file, Profile profile, Project project, BindState task)
+        public static void WriteStruct
+            (this Struct @struct, string file, Profile profile, Project project, BindState task)
         {
             if (@struct.Attributes.IsBuildToolsIntrinsic(out var args))
             {
@@ -55,7 +58,7 @@ namespace Silk.NET.BuildTools.Bind
                 {
                     guid = string.Join(", ", attr.Arguments);
                 }
-                
+
                 sw.WriteLine($"    {attr}");
             }
 
@@ -67,16 +70,16 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine($"        public static readonly Guid Guid = new({guid});");
                 sw.WriteLine();
             }
-            
+
             foreach (var comBase in @struct.ComBases)
             {
                 var asSuffix = comBase.Split('.').Last();
-                asSuffix = (asSuffix.StartsWith('I') ? asSuffix.Substring(1) : comBase);
+                asSuffix = asSuffix.StartsWith('I') ? asSuffix.Substring(1) : comBase;
                 asSuffix = asSuffix.StartsWith(task.Task.FunctionPrefix)
                     ? asSuffix.Substring(task.Task.FunctionPrefix.Length)
                     : asSuffix;
                 var fromSuffix = @struct.Name.Split('.').Last();
-                fromSuffix = (fromSuffix.StartsWith('I') ? fromSuffix.Substring(1) : comBase);
+                fromSuffix = fromSuffix.StartsWith('I') ? fromSuffix.Substring(1) : comBase;
                 fromSuffix = fromSuffix.StartsWith(task.Task.FunctionPrefix)
                     ? fromSuffix.Substring(task.Task.FunctionPrefix.Length)
                     : fromSuffix;
@@ -129,11 +132,11 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine();
                 }
             }
-            
+
             if (@struct.Fields.Any(x => x.Count is null))
             {
                 sw.WriteLine($"        public {@struct.Name}");
-                sw.WriteLine( "        (");
+                sw.WriteLine("        (");
                 var first = true;
                 foreach (var field in @struct.Fields)
                 {
@@ -185,11 +188,18 @@ namespace Silk.NET.BuildTools.Bind
                 sw.WriteLine();
             }
 
+            var bitfieldIdx = 0;
+            long bitfieldPsz = 0, bitfieldRbs = 0;
+            string bitfieldLbt = null;
             foreach (var structField in @struct.Fields)
             {
                 if (structField.Attributes.IsBuildToolsIntrinsic(out var intrinsic) && intrinsic[0] == "$FUSEFLD")
                 {
                     WriteFusedField(structField, intrinsic, sw);
+                }
+                else if (structField.NumBits is not null)
+                {
+                    WriteBitfield(structField, ref bitfieldIdx, ref bitfieldPsz, ref bitfieldRbs, ref bitfieldLbt, sw, profile);
                 }
                 else if (!(structField.Count is null))
                 {
@@ -207,7 +217,8 @@ namespace Silk.NET.BuildTools.Bind
                                 ? structField.Count.StaticCount
                                 : 1;
                         var typeFixup09072020 = new TypeSignatureBuilder(structField.Type).WithIndirectionLevel
-                            (structField.Type.IndirectionLevels - 1).Build();
+                                (structField.Type.IndirectionLevels - 1)
+                            .Build();
                         sw.WriteLine($"        {structField.Doc}");
                         foreach (var attr in structField.Attributes)
                         {
@@ -225,7 +236,7 @@ namespace Silk.NET.BuildTools.Bind
                         {
                             sw.WriteLine($"            public {typeFixup09072020} Element{i};");
                         }
-                        
+
                         sw.WriteLine($"            public ref {typeFixup09072020} this[int index]");
                         sw.WriteLine("            {");
                         sw.WriteLine("                get");
@@ -264,18 +275,21 @@ namespace Silk.NET.BuildTools.Bind
                             ? Utilities.ParseInt
                             (
                                 profile.Projects.SelectMany(x => x.Value.Classes.SelectMany(y => y.Constants))
-                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)?
+                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)
+                                    ?
                                     .Value ??
                                 profile.Projects.SelectMany(x => x.Value.Enums.SelectMany(y => y.Tokens))
-                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)?
+                                    .FirstOrDefault(x => x.NativeName == structField.Count.ConstantName)
+                                    ?
                                     .Value ?? throw new InvalidDataException("Couldn't find constant referenced")
                             )
                             : structField.Count.IsStatic
                                 ? structField.Count.StaticCount
                                 : 1;
                         var typeFixup09072020 = new TypeSignatureBuilder(structField.Type).WithIndirectionLevel
-                            //(structField.Type.IndirectionLevels - 1).Build();
-                            (0).Build();
+                                //(structField.Type.IndirectionLevels - 1).Build();
+                                (0)
+                            .Build();
 
                         foreach (var attr in structField.Attributes)
                         {
@@ -334,7 +348,8 @@ namespace Silk.NET.BuildTools.Bind
                     sw.WriteLine($"        [{attr.Name}({string.Join(", ", attr.Arguments)})]");
                 }
 
-                using (var sr = new StringReader(function.Signature.ToString(null, accessibility: true, semicolon: false)))
+                using (var sr = new StringReader
+                    (function.Signature.ToString(null, accessibility: true, semicolon: false)))
                 {
                     string line;
                     while ((line = sr.ReadLine()) != null)
@@ -359,7 +374,8 @@ namespace Silk.NET.BuildTools.Bind
             sw.Dispose();
         }
 
-        public static void WriteBuildToolsIntrinsic(Struct @struct, string file, Profile profile, Project project, BindState task, List<string> args)
+        public static void WriteBuildToolsIntrinsic
+            (Struct @struct, string file, Profile profile, Project project, BindState task, List<string> args)
         {
             if (args[0] == "$PFN")
             {
@@ -390,10 +406,11 @@ namespace Silk.NET.BuildTools.Bind
                 FunctionPointerSignature = new Function
                 {
                     Name = delegateName, NativeName = pfnName.Substring(3),
-                    Parameters = @struct.Fields.SkipLast(1).Select
+                    Parameters = @struct.Fields.SkipLast(1)
+                        .Select
                             ((x, i) => new Parameter {Name = $"arg{i}", Type = x.Type})
                         .ToList(),
-                    ReturnType = @struct.Fields.LastOrDefault()?.Type ?? new Type{Name = "void"},
+                    ReturnType = @struct.Fields.LastOrDefault()?.Type ?? new Type {Name = "void"},
                     Convention = conv
                 }
             };
@@ -457,7 +474,7 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine();
             sw.Flush();
         }
-      
+
         public static void WriteFusedField(Field field, List<string> args, StreamWriter sw)
         {
             sw.WriteLine("#if NETSTANDARD2_1");
@@ -474,6 +491,171 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine("        }");
             sw.WriteLine("#endif");
             sw.WriteLine();
+        }
+
+        public static void WriteBitfield
+        (
+            Field fieldDecl,
+            ref int index,
+            ref long previousSize,
+            ref long remainingBits,
+            ref string currentBitfieldType,
+            StreamWriter sw,
+            Profile profile
+        )
+        {
+            Debug.Assert(fieldDecl.NumBits is not null);
+            sw.WriteLine();
+            var type = fieldDecl.Type;
+            var typeName = type.Name;
+            var typeNameBacking = typeName;
+            if (string.IsNullOrWhiteSpace(fieldDecl.NativeType))
+            {
+                fieldDecl.NativeType = typeName;
+            }
+
+            var @enum = profile.Projects.Values.SelectMany(x => x.Enums).FirstOrDefault(x => x.Name == typeName);
+            if (@enum is not null)
+            {
+                typeNameBacking = @enum.EnumBaseType.Name;
+            }
+
+            fieldDecl.NativeType += $" : {fieldDecl.NumBits.Value}";
+            // TODO union handling? don't have enough metadata atm...
+            var bitfieldName = "_bitfield";
+            var currentSize = typeNameBacking switch
+            {
+                "byte" => 1L,
+                "sbyte" => 1L,
+                "short" => 2L,
+                "ushort" => 2L,
+                "int" => 4L,
+                "uint" => 4L,
+                "long" => 8L,
+                "ulong" => 8L,
+                _ => throw new ArgumentException("Unsupported bitfield type.")
+            };
+            if (fieldDecl.NumBits > remainingBits)
+            {
+                if (index >= 0)
+                {
+                    index++;
+                    bitfieldName += index.ToString();
+                }
+
+                remainingBits = currentSize * 8;
+                previousSize = 0;
+                sw.Write("        private ");
+                sw.Write(currentBitfieldType = typeNameBacking);
+                sw.Write(' ');
+                sw.Write(bitfieldName);
+                sw.Write(';');
+                sw.WriteLine();
+                sw.WriteLine();
+            }
+            else
+            {
+                currentSize = Math.Max(previousSize, currentSize);
+                if (index >= 0)
+                {
+                    bitfieldName += index.ToString();
+                }
+            }
+
+            var bitfieldOffset = currentSize * 8 - remainingBits;
+            var bitwidthHexStringBacking = ((1 << fieldDecl.NumBits.Value) - 1).ToString("X") + typeNameBacking switch
+            {
+                "byte" => string.Empty,
+                "sbyte" => string.Empty,
+                "short" => string.Empty,
+                "ushort" => "u",
+                "int" => string.Empty,
+                "uint" => "u",
+                "long" => "L",
+                "ulong" => "UL",
+                _ => throw new ArgumentException("Unsupported bitfield type.")
+            };
+            var bitwidthHexString = bitwidthHexStringBacking;
+            sw.Write("        public");
+            sw.Write(' ');
+            sw.Write(typeName);
+            sw.Write(' ');
+            sw.WriteLine(fieldDecl.Name);
+            sw.WriteLine("        {");
+            sw.WriteLine("            [MethodImpl(MethodImplOptions.AggressiveInlining)]");
+            sw.Write("            get => ");
+            sw.Write('(');
+            sw.Write(typeName);
+            sw.Write(")(");
+            if (bitfieldOffset != 0)
+            {
+                sw.Write('(');
+            }
+
+            sw.Write(bitfieldName);
+            if (bitfieldOffset != 0)
+            {
+                sw.Write(" >> ");
+                sw.Write(bitfieldOffset);
+                sw.Write(')');
+            }
+
+            sw.Write(" & 0x");
+            sw.Write(bitwidthHexStringBacking);
+            sw.Write(')');
+            sw.WriteLine(';');
+            sw.WriteLine("            [MethodImpl(MethodImplOptions.AggressiveInlining)]");
+            sw.Write("            set => ");
+            sw.Write(bitfieldName);
+            sw.Write(" = ");
+            sw.Write('(');
+            sw.Write(currentBitfieldType);
+            sw.Write(")((");
+            sw.Write(typeName);
+            sw.Write(")(");
+            sw.Write(bitfieldName);
+            sw.Write(" & ~");
+            if (bitfieldOffset != 0)
+            {
+                sw.Write('(');
+            }
+
+            sw.Write("0x");
+            sw.Write(bitwidthHexStringBacking);
+            if (bitfieldOffset != 0)
+            {
+                sw.Write(" << ");
+                sw.Write(bitfieldOffset);
+                sw.Write(')');
+            }
+
+            sw.Write(") | ");
+            sw.Write('(');
+            sw.Write(typeName);
+            sw.Write(')');
+            sw.Write('(');
+            if (bitfieldOffset != 0)
+            {
+                sw.Write('(');
+            }
+
+            sw.Write('(');
+            sw.Write(typeNameBacking);
+            sw.Write(")(value)");
+            sw.Write(" & 0x");
+            sw.Write(bitwidthHexString);
+            if (bitfieldOffset != 0)
+            {
+                sw.Write(") << ");
+                sw.Write(bitfieldOffset);
+            }
+
+            sw.Write(')');
+            sw.Write(')');
+            sw.WriteLine(";");
+            sw.WriteLine("        }");
+            remainingBits -= fieldDecl.NumBits.Value;
+            previousSize = Math.Max(previousSize, currentSize);
         }
     }
 }

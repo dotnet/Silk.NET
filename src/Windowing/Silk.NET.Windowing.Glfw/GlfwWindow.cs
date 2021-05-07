@@ -77,21 +77,35 @@ namespace Silk.NET.Windowing.Glfw
             {
                 _glfw.DestroyWindow(_glfwWindow);
                 GLFW.Glfw.ThrowExceptions();
-                _glfwWindow = null;
             }
             catch (GlfwException)
             {
                 // If the window is already destroyed, it throws an exception,
                 // but we want the window destroyed anyways, so just ignore it
             }
+            finally
+            {
+                _glfwWindow = null;
+                _glContext = null;
+            }
         }
 
-        public override IGLContext? GLContext
-            => API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES
-                ? _glContext ??= new(_glfw, _glfwWindow, this)
-                : null;
+        protected override IGLContext? CoreGLContext => _glContext ??= new(_glfw, _glfwWindow, this);
 
-        public override IVkSurface? VkSurface => API.API == ContextAPI.Vulkan && _glfw.VulkanSupported() ? this : null;
+        protected override IVkSurface? CoreVkSurface
+        {
+            get
+            {
+                if (!_glfw.VulkanSupported())
+                {
+                    static void Throw()
+                        => throw new PlatformNotSupportedException("GLFW does not support Vulkan on this platform.");
+                    Throw();
+                }
+                
+                return this;
+            }
+        }
 
         protected override bool CoreIsVisible
         {

@@ -100,6 +100,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
             return ret;
         }
 
+        public unsafe void ProgramUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramUniform(program, location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
+        public unsafe void Uniform([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
+        {
+            // ImplicitCountSpanOverloader
+            Uniform(location, (uint) value.Length, in value.GetPinnableReference());
+        }
+
         public NVShaderBufferLoad(INativeContext ctx)
             : base(ctx)
         {

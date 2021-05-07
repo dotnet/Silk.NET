@@ -358,7 +358,49 @@ namespace Silk.NET.OpenGLES.Extensions.NV
             thisApi.GetPathMetric(metricQueryMask, numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, stride, out metrics.GetPinnableReference());
         }
 
+        public static unsafe void GetPathMetric(this NVPathRendering thisApi, [Flow(FlowDirection.In)] PathMetricMask metricQueryMask, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "metricQueryMask, numPaths, stride"), Flow(FlowDirection.Out)] Span<float> metrics)
+        {
+            // SpanOverloader
+            thisApi.GetPathMetric(metricQueryMask, numPaths, pathNameType, paths, pathBase, stride, out metrics.GetPinnableReference());
+        }
+
+        public static unsafe void GetPathMetric<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] PathMetricMask metricQueryMask, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "metricQueryMask, numPaths, stride"), Flow(FlowDirection.Out)] float* metrics) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetPathMetric(metricQueryMask, numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, stride, metrics);
+        }
+
+        public static unsafe void GetPathMetric<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] PathMetricMask metricQueryMask, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] NV pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "metricQueryMask, numPaths, stride"), Flow(FlowDirection.Out)] Span<float> metrics) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetPathMetric(metricQueryMask, numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, stride, out metrics.GetPinnableReference());
+        }
+
+        public static unsafe void GetPathMetric(this NVPathRendering thisApi, [Flow(FlowDirection.In)] PathMetricMask metricQueryMask, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] void* paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "metricQueryMask, numPaths, stride"), Flow(FlowDirection.Out)] Span<float> metrics)
+        {
+            // SpanOverloader
+            thisApi.GetPathMetric(metricQueryMask, numPaths, pathNameType, paths, pathBase, stride, out metrics.GetPinnableReference());
+        }
+
+        public static unsafe void GetPathMetric<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] PathMetricMask metricQueryMask, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "metricQueryMask, numPaths, stride"), Flow(FlowDirection.Out)] float* metrics) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetPathMetric(metricQueryMask, numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, stride, metrics);
+        }
+
+        public static unsafe void GetPathMetric<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] PathMetricMask metricQueryMask, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] PathElementType pathNameType, [Count(Computed = "numPaths, pathNameType, paths"), Flow(FlowDirection.In)] ReadOnlySpan<T0> paths, [Flow(FlowDirection.In)] uint pathBase, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "metricQueryMask, numPaths, stride"), Flow(FlowDirection.Out)] Span<float> metrics) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.GetPathMetric(metricQueryMask, numPaths, pathNameType, in paths.GetPinnableReference(), pathBase, stride, out metrics.GetPinnableReference());
+        }
+
         public static unsafe void GetPathMetricRange(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint metricQueryMask, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "metricQueryMask, numPaths, stride"), Flow(FlowDirection.Out)] Span<float> metrics)
+        {
+            // SpanOverloader
+            thisApi.GetPathMetricRange(metricQueryMask, firstPathName, numPaths, stride, out metrics.GetPinnableReference());
+        }
+
+        public static unsafe void GetPathMetricRange(this NVPathRendering thisApi, [Flow(FlowDirection.In)] PathMetricMask metricQueryMask, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] uint numPaths, [Flow(FlowDirection.In)] uint stride, [Count(Computed = "metricQueryMask, numPaths, stride"), Flow(FlowDirection.Out)] Span<float> metrics)
         {
             // SpanOverloader
             thisApi.GetPathMetricRange(metricQueryMask, firstPathName, numPaths, stride, out metrics.GetPinnableReference());
@@ -886,6 +928,78 @@ namespace Silk.NET.OpenGLES.Extensions.NV
             thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
+        public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] void* fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] ReadOnlySpan<T0> charcodes, [Flow(FlowDirection.In)] NV handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] void* charcodes, [Flow(FlowDirection.In)] NV handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0, T1>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] ReadOnlySpan<T1> charcodes, [Flow(FlowDirection.In)] NV handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] void* fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] ReadOnlySpan<T0> charcodes, [Flow(FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] void* charcodes, [Flow(FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0, T1>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] ReadOnlySpan<T1> charcodes, [Flow(FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] void* fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] ReadOnlySpan<T0> charcodes, [Flow(FlowDirection.In)] NV handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] void* charcodes, [Flow(FlowDirection.In)] NV handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0, T1>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] ReadOnlySpan<T1> charcodes, [Flow(FlowDirection.In)] NV handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] void* fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] ReadOnlySpan<T0> charcodes, [Flow(FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] void* charcodes, [Flow(FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0, T1>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] ReadOnlySpan<T1> charcodes, [Flow(FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
         public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] PathFontTarget fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] void* fontName, [Flow(FlowDirection.In)] uint fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] ReadOnlySpan<T0> charcodes, [Flow(FlowDirection.In)] NV handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
@@ -958,7 +1072,85 @@ namespace Silk.NET.OpenGLES.Extensions.NV
             thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
+        public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] PathFontTarget fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] void* fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] ReadOnlySpan<T0> charcodes, [Flow(FlowDirection.In)] NV handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] PathFontTarget fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] void* charcodes, [Flow(FlowDirection.In)] NV handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0, T1>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] PathFontTarget fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] ReadOnlySpan<T1> charcodes, [Flow(FlowDirection.In)] NV handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] PathFontTarget fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] void* fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] ReadOnlySpan<T0> charcodes, [Flow(FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] PathFontTarget fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] void* charcodes, [Flow(FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0, T1>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] PathFontTarget fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] NV type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] ReadOnlySpan<T1> charcodes, [Flow(FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] PathFontTarget fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] void* fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] ReadOnlySpan<T0> charcodes, [Flow(FlowDirection.In)] NV handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] PathFontTarget fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] void* charcodes, [Flow(FlowDirection.In)] NV handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0, T1>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] PathFontTarget fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] ReadOnlySpan<T1> charcodes, [Flow(FlowDirection.In)] NV handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] PathFontTarget fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] void* fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] ReadOnlySpan<T0> charcodes, [Flow(FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, fontName, fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] PathFontTarget fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] void* charcodes, [Flow(FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, charcodes, handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyph<T0, T1>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] PathFontTarget fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] PathElementType type, [Count(Computed = "numGlyphs, type, charcodes"), Flow(FlowDirection.In)] ReadOnlySpan<T1> charcodes, [Flow(FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged where T1 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyph(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, numGlyphs, type, in charcodes.GetPinnableReference(), handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
         public static unsafe NV PathGlyphIndexArray<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] NV fontTarget, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] uint fontStyle, [Flow(FlowDirection.In)] uint firstGlyphIndex, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.PathGlyphIndexArray(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, firstGlyphIndex, numGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe NV PathGlyphIndexArray<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] NV fontTarget, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint firstGlyphIndex, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.PathGlyphIndexArray(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, firstGlyphIndex, numGlyphs, pathParameterTemplate, emScale);
@@ -982,6 +1174,24 @@ namespace Silk.NET.OpenGLES.Extensions.NV
             return thisApi.PathGlyphIndexRange(fontTarget, in fontName.GetPinnableReference(), fontStyle, pathParameterTemplate, emScale, out baseAndCount.GetPinnableReference());
         }
 
+        public static unsafe NV PathGlyphIndexRange(this NVPathRendering thisApi, [Flow(FlowDirection.In)] NV fontTarget, [Flow(FlowDirection.In)] void* fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale, [Count(Count = 2), Flow(FlowDirection.Out)] Span<uint> baseAndCount)
+        {
+            // SpanOverloader
+            return thisApi.PathGlyphIndexRange(fontTarget, fontName, fontStyle, pathParameterTemplate, emScale, out baseAndCount.GetPinnableReference());
+        }
+
+        public static unsafe NV PathGlyphIndexRange<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] NV fontTarget, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale, [Count(Count = 2), Flow(FlowDirection.Out)] uint* baseAndCount) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.PathGlyphIndexRange(fontTarget, in fontName.GetPinnableReference(), fontStyle, pathParameterTemplate, emScale, baseAndCount);
+        }
+
+        public static unsafe NV PathGlyphIndexRange<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] NV fontTarget, [Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale, [Count(Count = 2), Flow(FlowDirection.Out)] Span<uint> baseAndCount) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.PathGlyphIndexRange(fontTarget, in fontName.GetPinnableReference(), fontStyle, pathParameterTemplate, emScale, out baseAndCount.GetPinnableReference());
+        }
+
         public static unsafe void PathGlyphRange<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] uint fontStyle, [Flow(FlowDirection.In)] uint firstGlyph, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] NV handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
@@ -994,6 +1204,18 @@ namespace Silk.NET.OpenGLES.Extensions.NV
             thisApi.PathGlyphRange(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, firstGlyph, numGlyphs, handleMissingGlyphs, pathParameterTemplate, emScale);
         }
 
+        public static unsafe void PathGlyphRange<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint firstGlyph, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] NV handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyphRange(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, firstGlyph, numGlyphs, handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyphRange<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] NV fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint firstGlyph, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyphRange(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, firstGlyph, numGlyphs, handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
         public static unsafe void PathGlyphRange<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] PathFontTarget fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] uint fontStyle, [Flow(FlowDirection.In)] uint firstGlyph, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] NV handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
@@ -1001,6 +1223,18 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         }
 
         public static unsafe void PathGlyphRange<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] PathFontTarget fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] uint fontStyle, [Flow(FlowDirection.In)] uint firstGlyph, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyphRange(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, firstGlyph, numGlyphs, handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyphRange<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] PathFontTarget fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint firstGlyph, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] NV handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
+        {
+            // SpanOverloader
+            thisApi.PathGlyphRange(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, firstGlyph, numGlyphs, handleMissingGlyphs, pathParameterTemplate, emScale);
+        }
+
+        public static unsafe void PathGlyphRange<T0>(this NVPathRendering thisApi, [Flow(FlowDirection.In)] uint firstPathName, [Flow(FlowDirection.In)] PathFontTarget fontTarget, [Count(Computed = "fontTarget, fontName"), Flow(FlowDirection.In)] ReadOnlySpan<T0> fontName, [Flow(FlowDirection.In)] PathFontStyle fontStyle, [Flow(FlowDirection.In)] uint firstGlyph, [Flow(FlowDirection.In)] uint numGlyphs, [Flow(FlowDirection.In)] PathHandleMissingGlyphs handleMissingGlyphs, [Flow(FlowDirection.In)] uint pathParameterTemplate, [Flow(FlowDirection.In)] float emScale) where T0 : unmanaged
         {
             // SpanOverloader
             thisApi.PathGlyphRange(firstPathName, fontTarget, in fontName.GetPinnableReference(), fontStyle, firstGlyph, numGlyphs, handleMissingGlyphs, pathParameterTemplate, emScale);

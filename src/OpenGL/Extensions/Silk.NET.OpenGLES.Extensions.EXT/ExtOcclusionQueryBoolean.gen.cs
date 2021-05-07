@@ -101,6 +101,18 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
             DeleteQueries(1, &ids);
         }
 
+        public unsafe void DeleteQueries([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> ids)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteQueries((uint) ids.Length, in ids.GetPinnableReference());
+        }
+
+        public unsafe void DeleteQueries([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Query> ids)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteQueries((uint) ids.Length, in ids.GetPinnableReference());
+        }
+
         public unsafe uint GenQuery()
         {
             const uint n = 1;
@@ -108,6 +120,18 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
             uint ret = default;
             GenQueries(n, &ret);
             return ret;
+        }
+
+        public unsafe void GenQueries([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> ids)
+        {
+            // ImplicitCountSpanOverloader
+            GenQueries((uint) ids.Length, out ids.GetPinnableReference());
+        }
+
+        public unsafe void GenQueries([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Query> ids)
+        {
+            // ImplicitCountSpanOverloader
+            GenQueries((uint) ids.Length, out ids.GetPinnableReference());
         }
 
         public ExtOcclusionQueryBoolean(INativeContext ctx)

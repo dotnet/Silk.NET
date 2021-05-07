@@ -56,6 +56,18 @@ namespace Silk.NET.OpenGLES.Extensions.OES
             DeleteVertexArrays(1, &arrays);
         }
 
+        public unsafe void DeleteVertexArrays([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> arrays)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteVertexArrays((uint) arrays.Length, in arrays.GetPinnableReference());
+        }
+
+        public unsafe void DeleteVertexArrays([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<VertexArray> arrays)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteVertexArrays((uint) arrays.Length, in arrays.GetPinnableReference());
+        }
+
         public unsafe uint GenVertexArray()
         {
             const uint n = 1;
@@ -63,6 +75,18 @@ namespace Silk.NET.OpenGLES.Extensions.OES
             uint ret = default;
             GenVertexArrays(n, &ret);
             return ret;
+        }
+
+        public unsafe void GenVertexArrays([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> arrays)
+        {
+            // ImplicitCountSpanOverloader
+            GenVertexArrays((uint) arrays.Length, out arrays.GetPinnableReference());
+        }
+
+        public unsafe void GenVertexArrays([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<VertexArray> arrays)
+        {
+            // ImplicitCountSpanOverloader
+            GenVertexArrays((uint) arrays.Length, out arrays.GetPinnableReference());
         }
 
         public OesVertexArrayObject(INativeContext ctx)

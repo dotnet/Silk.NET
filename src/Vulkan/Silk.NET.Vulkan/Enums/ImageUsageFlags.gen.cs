@@ -29,18 +29,18 @@ namespace Silk.NET.Vulkan
         ImageUsageTransientAttachmentBit = 64,
         [NativeName("Name", "VK_IMAGE_USAGE_INPUT_ATTACHMENT_BIT")]
         ImageUsageInputAttachmentBit = 128,
-        [NativeName("Name", "VK_IMAGE_USAGE_RESERVED_13_BIT_KHR")]
-        ImageUsageReserved13BitKhr = 8192,
-        [NativeName("Name", "VK_IMAGE_USAGE_RESERVED_14_BIT_KHR")]
-        ImageUsageReserved14BitKhr = 16384,
-        [NativeName("Name", "VK_IMAGE_USAGE_RESERVED_15_BIT_KHR")]
-        ImageUsageReserved15BitKhr = 32768,
-        [NativeName("Name", "VK_IMAGE_USAGE_RESERVED_10_BIT_KHR")]
-        ImageUsageReserved10BitKhr = 1024,
-        [NativeName("Name", "VK_IMAGE_USAGE_RESERVED_11_BIT_KHR")]
-        ImageUsageReserved11BitKhr = 2048,
-        [NativeName("Name", "VK_IMAGE_USAGE_RESERVED_12_BIT_KHR")]
-        ImageUsageReserved12BitKhr = 4096,
+        [NativeName("Name", "VK_IMAGE_USAGE_VIDEO_DECODE_DST_BIT_KHR")]
+        ImageUsageVideoDecodeDstBitKhr = 1024,
+        [NativeName("Name", "VK_IMAGE_USAGE_VIDEO_DECODE_SRC_BIT_KHR")]
+        ImageUsageVideoDecodeSrcBitKhr = 2048,
+        [NativeName("Name", "VK_IMAGE_USAGE_VIDEO_DECODE_DPB_BIT_KHR")]
+        ImageUsageVideoDecodeDpbBitKhr = 4096,
+        [NativeName("Name", "VK_IMAGE_USAGE_VIDEO_ENCODE_DST_BIT_KHR")]
+        ImageUsageVideoEncodeDstBitKhr = 8192,
+        [NativeName("Name", "VK_IMAGE_USAGE_VIDEO_ENCODE_SRC_BIT_KHR")]
+        ImageUsageVideoEncodeSrcBitKhr = 16384,
+        [NativeName("Name", "VK_IMAGE_USAGE_VIDEO_ENCODE_DPB_BIT_KHR")]
+        ImageUsageVideoEncodeDpbBitKhr = 32768,
         [NativeName("Name", "VK_IMAGE_USAGE_SHADING_RATE_IMAGE_BIT_NV")]
         ImageUsageShadingRateImageBitNV = 256,
         [NativeName("Name", "VK_IMAGE_USAGE_RESERVED_16_BIT_QCOM")]

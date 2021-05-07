@@ -47,6 +47,30 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glLabelObjectEXT")]
         public partial void LabelObject([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label);
 
+        public unsafe void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label)
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectLabel(type, @object, (uint) label.Length, length, out label.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label)
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectLabel(type, @object, (uint) label.Length, length, out label.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label)
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectLabel(type, @object, (uint) label.Length, out length, out label.GetPinnableReference());
+        }
+
+        public unsafe void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label)
+        {
+            // ImplicitCountSpanOverloader
+            GetObjectLabel(type, @object, (uint) label.Length, out length, out label.GetPinnableReference());
+        }
+
         public ExtDebugLabel(INativeContext ctx)
             : base(ctx)
         {

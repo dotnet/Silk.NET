@@ -476,6 +476,12 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
             DeleteSemaphores(1, &semaphores);
         }
 
+        public unsafe void DeleteSemaphores([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> semaphores)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteSemaphores((uint) semaphores.Length, in semaphores.GetPinnableReference());
+        }
+
         public unsafe uint GenSemaphore()
         {
             const uint n = 1;
@@ -483,6 +489,12 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
             uint ret = default;
             GenSemaphores(n, &ret);
             return ret;
+        }
+
+        public unsafe void GenSemaphores([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> semaphores)
+        {
+            // ImplicitCountSpanOverloader
+            GenSemaphores((uint) semaphores.Length, out semaphores.GetPinnableReference());
         }
 
         public unsafe byte GetUnsignedByte([Flow(FlowDirection.In)] EXT pname)

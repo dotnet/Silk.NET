@@ -198,7 +198,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                     if (bitPosString != null)
                     {
                         var shift = int.Parse(bitPosString);
-                        valueString = (1 << shift).ToString();
+                        valueString = (1L << shift).ToString();
                     }
                     else
                     {

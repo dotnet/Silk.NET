@@ -125,10 +125,94 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
         [NativeApi(EntryPoint = "glPrioritizeTexturesEXT")]
         public partial void PrioritizeTextures([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in Texture textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] in float priorities);
 
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) residences.Length, textures, out residences.GetPinnableReference());
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) textures.Length, in textures.GetPinnableReference(), residences);
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) residences.Length, in textures.GetPinnableReference(), out residences.GetPinnableReference());
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) residences.Length, textures, out residences.GetPinnableReference());
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) textures.Length, in textures.GetPinnableReference(), residences);
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) residences.Length, in textures.GetPinnableReference(), out residences.GetPinnableReference());
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) residences.Length, textures, out residences.GetPinnableReference());
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] bool* residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) textures.Length, in textures.GetPinnableReference(), residences);
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<bool> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) residences.Length, in textures.GetPinnableReference(), out residences.GetPinnableReference());
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) residences.Length, textures, out residences.GetPinnableReference());
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Boolean* residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) textures.Length, in textures.GetPinnableReference(), residences);
+        }
+
+        public unsafe bool AreTexturesResident([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Boolean> residences)
+        {
+            // ImplicitCountSpanOverloader
+            return AreTexturesResident((uint) residences.Length, in textures.GetPinnableReference(), out residences.GetPinnableReference());
+        }
+
         public unsafe void DeleteTexture([Count(Parameter = "n"), Flow(FlowDirection.In)] uint textures)
         {
             // ArrayParameterOverloader
             DeleteTextures(1, &textures);
+        }
+
+        public unsafe void DeleteTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteTextures((uint) textures.Length, in textures.GetPinnableReference());
+        }
+
+        public unsafe void DeleteTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteTextures((uint) textures.Length, in textures.GetPinnableReference());
         }
 
         public unsafe uint GenTexture()
@@ -138,6 +222,54 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
             uint ret = default;
             GenTextures(n, &ret);
             return ret;
+        }
+
+        public unsafe void GenTextures([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> textures)
+        {
+            // ImplicitCountSpanOverloader
+            GenTextures((uint) textures.Length, out textures.GetPinnableReference());
+        }
+
+        public unsafe void GenTextures([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Texture> textures)
+        {
+            // ImplicitCountSpanOverloader
+            GenTextures((uint) textures.Length, out textures.GetPinnableReference());
+        }
+
+        public unsafe void PrioritizeTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] uint* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> priorities)
+        {
+            // ImplicitCountSpanOverloader
+            PrioritizeTextures((uint) priorities.Length, textures, in priorities.GetPinnableReference());
+        }
+
+        public unsafe void PrioritizeTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities)
+        {
+            // ImplicitCountSpanOverloader
+            PrioritizeTextures((uint) textures.Length, in textures.GetPinnableReference(), priorities);
+        }
+
+        public unsafe void PrioritizeTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> priorities)
+        {
+            // ImplicitCountSpanOverloader
+            PrioritizeTextures((uint) priorities.Length, in textures.GetPinnableReference(), in priorities.GetPinnableReference());
+        }
+
+        public unsafe void PrioritizeTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] Texture* textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> priorities)
+        {
+            // ImplicitCountSpanOverloader
+            PrioritizeTextures((uint) priorities.Length, textures, in priorities.GetPinnableReference());
+        }
+
+        public unsafe void PrioritizeTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] float* priorities)
+        {
+            // ImplicitCountSpanOverloader
+            PrioritizeTextures((uint) textures.Length, in textures.GetPinnableReference(), priorities);
+        }
+
+        public unsafe void PrioritizeTextures([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Texture> textures, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> priorities)
+        {
+            // ImplicitCountSpanOverloader
+            PrioritizeTextures((uint) priorities.Length, in textures.GetPinnableReference(), in priorities.GetPinnableReference());
         }
 
         public ExtTextureObject(INativeContext ctx)

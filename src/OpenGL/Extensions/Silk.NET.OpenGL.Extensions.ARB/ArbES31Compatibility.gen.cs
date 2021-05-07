@@ -23,6 +23,9 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         [NativeApi(EntryPoint = "glMemoryBarrierByRegion")]
         public partial void MemoryBarrierByRegion([Flow(FlowDirection.In)] uint barriers);
 
+        [NativeApi(EntryPoint = "glMemoryBarrierByRegion")]
+        public partial void MemoryBarrierByRegion([Flow(FlowDirection.In)] MemoryBarrierMask barriers);
+
         public ArbES31Compatibility(INativeContext ctx)
             : base(ctx)
         {

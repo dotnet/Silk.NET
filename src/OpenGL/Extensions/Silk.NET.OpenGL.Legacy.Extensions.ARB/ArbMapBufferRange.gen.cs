@@ -30,7 +30,13 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public unsafe partial void* MapBufferRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.In)] uint access);
 
         [NativeApi(EntryPoint = "glMapBufferRange")]
+        public unsafe partial void* MapBufferRange([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.In)] MapBufferAccessMask access);
+
+        [NativeApi(EntryPoint = "glMapBufferRange")]
         public unsafe partial void* MapBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.In)] uint access);
+
+        [NativeApi(EntryPoint = "glMapBufferRange")]
+        public unsafe partial void* MapBufferRange([Flow(FlowDirection.In)] BufferTargetARB target, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint length, [Flow(FlowDirection.In)] MapBufferAccessMask access);
 
         public ArbMapBufferRange(INativeContext ctx)
             : base(ctx)

@@ -62,27 +62,34 @@ namespace Silk.NET.Vulkan.Extensions.EXT
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetValidationCacheDataEXT")]
-        public unsafe partial Result GetValidationCacheData([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] nuint* pDataSize, [Count(Computed = "pDataSize")] void* pData);
+        public unsafe partial Result GetValidationCacheData([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] void* pData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetValidationCacheDataEXT")]
-        public unsafe partial Result GetValidationCacheData<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] nuint* pDataSize, [Count(Computed = "pDataSize")] ref T0 pData) where T0 : unmanaged;
+        public unsafe partial Result GetValidationCacheData<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] nuint* pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetValidationCacheDataEXT")]
-        public unsafe partial Result GetValidationCacheData([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] ref nuint pDataSize, [Count(Computed = "pDataSize")] void* pData);
+        public unsafe partial Result GetValidationCacheData([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] void* pData);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetValidationCacheDataEXT")]
-        public partial Result GetValidationCacheData<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] ref nuint pDataSize, [Count(Computed = "pDataSize")] ref T0 pData) where T0 : unmanaged;
+        public partial Result GetValidationCacheData<T0>([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT validationCache, [Count(Count = 0)] ref nuint pDataSize, [Count(Parameter = "pDataSize")] ref T0 pData) where T0 : unmanaged;
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkMergeValidationCachesEXT")]
-        public unsafe partial Result MergeValidationCaches([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Computed = "srcCacheCount"), Flow(FlowDirection.In)] ValidationCacheEXT* pSrcCaches);
+        public unsafe partial Result MergeValidationCaches([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Parameter = "srcCacheCount"), Flow(FlowDirection.In)] ValidationCacheEXT* pSrcCaches);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkMergeValidationCachesEXT")]
-        public partial Result MergeValidationCaches([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Computed = "srcCacheCount"), Flow(FlowDirection.In)] in ValidationCacheEXT pSrcCaches);
+        public partial Result MergeValidationCaches([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT dstCache, [Count(Count = 0)] uint srcCacheCount, [Count(Parameter = "srcCacheCount"), Flow(FlowDirection.In)] in ValidationCacheEXT pSrcCaches);
+
+        /// <summary>To be documented.</summary>
+        public unsafe Result MergeValidationCaches([Count(Count = 0)] Device device, [Count(Count = 0)] ValidationCacheEXT dstCache, [Count(Parameter = "srcCacheCount"), Flow(FlowDirection.In)] ReadOnlySpan<ValidationCacheEXT> pSrcCaches)
+        {
+            // ImplicitCountSpanOverloader
+            return MergeValidationCaches(device, dstCache, (uint) pSrcCaches.Length, in pSrcCaches.GetPinnableReference());
+        }
 
         public ExtValidationCache(INativeContext ctx)
             : base(ctx)

@@ -17,126 +17,126 @@ namespace Silk.NET.Vulkan.Extensions.KHR
     public static class KhrAccelerationStructureOverloads
     {
         /// <summary>To be documented.</summary>
-        public static unsafe Result BuildAccelerationStructures(this KhrAccelerationStructure thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] uint infoCount, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos)
+        public static unsafe Result BuildAccelerationStructures(this KhrAccelerationStructure thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos)
         {
             // SpanOverloader
             return thisApi.BuildAccelerationStructures(device, deferredOperation, infoCount, in pInfos.GetPinnableReference(), ppBuildRangeInfos);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result BuildAccelerationStructures(this KhrAccelerationStructure thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] uint infoCount, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos)
+        public static unsafe Result BuildAccelerationStructures(this KhrAccelerationStructure thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] DeferredOperationKHR deferredOperation, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos)
         {
             // SpanOverloader
             return thisApi.BuildAccelerationStructures(device, deferredOperation, infoCount, in pInfos.GetPinnableReference(), in ppBuildRangeInfos);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructures(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos)
+        public static unsafe void CmdBuildAccelerationStructures(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildRangeInfoKHR** ppBuildRangeInfos)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructures(commandBuffer, infoCount, in pInfos.GetPinnableReference(), ppBuildRangeInfos);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructures(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos)
+        public static unsafe void CmdBuildAccelerationStructures(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in AccelerationStructureBuildRangeInfoKHR* ppBuildRangeInfos)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructures(commandBuffer, infoCount, in pInfos.GetPinnableReference(), in ppBuildRangeInfos);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts)
+        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructuresIndirect(commandBuffer, infoCount, pInfos, pIndirectDeviceAddresses, in pIndirectStrides.GetPinnableReference(), ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
+        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructuresIndirect(commandBuffer, infoCount, pInfos, pIndirectDeviceAddresses, in pIndirectStrides.GetPinnableReference(), in ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts)
+        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructuresIndirect(commandBuffer, infoCount, pInfos, in pIndirectDeviceAddresses.GetPinnableReference(), pIndirectStrides, ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
+        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructuresIndirect(commandBuffer, infoCount, pInfos, in pIndirectDeviceAddresses.GetPinnableReference(), pIndirectStrides, in ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts)
+        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructuresIndirect(commandBuffer, infoCount, pInfos, in pIndirectDeviceAddresses.GetPinnableReference(), in pIndirectStrides.GetPinnableReference(), ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
+        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] AccelerationStructureBuildGeometryInfoKHR* pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructuresIndirect(commandBuffer, infoCount, pInfos, in pIndirectDeviceAddresses.GetPinnableReference(), in pIndirectStrides.GetPinnableReference(), in ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts)
+        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructuresIndirect(commandBuffer, infoCount, in pInfos.GetPinnableReference(), pIndirectDeviceAddresses, pIndirectStrides, ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
+        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructuresIndirect(commandBuffer, infoCount, in pInfos.GetPinnableReference(), pIndirectDeviceAddresses, pIndirectStrides, in ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts)
+        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructuresIndirect(commandBuffer, infoCount, in pInfos.GetPinnableReference(), pIndirectDeviceAddresses, in pIndirectStrides.GetPinnableReference(), ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
+        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ulong* pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructuresIndirect(commandBuffer, infoCount, in pInfos.GetPinnableReference(), pIndirectDeviceAddresses, in pIndirectStrides.GetPinnableReference(), in ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts)
+        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructuresIndirect(commandBuffer, infoCount, in pInfos.GetPinnableReference(), in pIndirectDeviceAddresses.GetPinnableReference(), pIndirectStrides, ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
+        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint* pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructuresIndirect(commandBuffer, infoCount, in pInfos.GetPinnableReference(), in pIndirectDeviceAddresses.GetPinnableReference(), pIndirectStrides, in ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts)
+        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] uint** ppMaxPrimitiveCounts)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructuresIndirect(commandBuffer, infoCount, in pInfos.GetPinnableReference(), in pIndirectDeviceAddresses.GetPinnableReference(), in pIndirectStrides.GetPinnableReference(), ppMaxPrimitiveCounts);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Computed = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
+        public static unsafe void CmdBuildAccelerationStructuresIndirect(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint infoCount, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureBuildGeometryInfoKHR> pInfos, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> pIndirectDeviceAddresses, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> pIndirectStrides, [Count(Parameter = "infoCount"), Flow(FlowDirection.In)] in uint* ppMaxPrimitiveCounts)
         {
             // SpanOverloader
             thisApi.CmdBuildAccelerationStructuresIndirect(commandBuffer, infoCount, in pInfos.GetPinnableReference(), in pIndirectDeviceAddresses.GetPinnableReference(), in pIndirectStrides.GetPinnableReference(), in ppMaxPrimitiveCounts);
@@ -164,7 +164,7 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void CmdWriteAccelerationStructuresProperties(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint accelerationStructureCount, [Count(Computed = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery)
+        public static unsafe void CmdWriteAccelerationStructuresProperties(this KhrAccelerationStructure thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] QueryPool queryPool, [Count(Count = 0)] uint firstQuery)
         {
             // SpanOverloader
             thisApi.CmdWriteAccelerationStructuresProperties(commandBuffer, accelerationStructureCount, in pAccelerationStructures.GetPinnableReference(), queryType, queryPool, firstQuery);
@@ -325,21 +325,21 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result WriteAccelerationStructuresProperties<T0>(this KhrAccelerationStructure thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Computed = "accelerationStructureCount"), Flow(FlowDirection.In)] AccelerationStructureKHR* pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Computed = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged
+        public static unsafe Result WriteAccelerationStructuresProperties<T0>(this KhrAccelerationStructure thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] AccelerationStructureKHR* pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.WriteAccelerationStructuresProperties(device, accelerationStructureCount, pAccelerationStructures, queryType, dataSize, ref pData.GetPinnableReference(), stride);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result WriteAccelerationStructuresProperties(this KhrAccelerationStructure thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Computed = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Computed = "dataSize")] void* pData, [Count(Count = 0)] nuint stride)
+        public static unsafe Result WriteAccelerationStructuresProperties(this KhrAccelerationStructure thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] void* pData, [Count(Count = 0)] nuint stride)
         {
             // SpanOverloader
             return thisApi.WriteAccelerationStructuresProperties(device, accelerationStructureCount, in pAccelerationStructures.GetPinnableReference(), queryType, dataSize, pData, stride);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result WriteAccelerationStructuresProperties<T0>(this KhrAccelerationStructure thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Computed = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Computed = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged
+        public static unsafe Result WriteAccelerationStructuresProperties<T0>(this KhrAccelerationStructure thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] uint accelerationStructureCount, [Count(Parameter = "accelerationStructureCount"), Flow(FlowDirection.In)] ReadOnlySpan<AccelerationStructureKHR> pAccelerationStructures, [Count(Count = 0)] QueryType queryType, [Count(Count = 0)] nuint dataSize, [Count(Parameter = "dataSize")] Span<T0> pData, [Count(Count = 0)] nuint stride) where T0 : unmanaged
         {
             // SpanOverloader
             return thisApi.WriteAccelerationStructuresProperties(device, accelerationStructureCount, in pAccelerationStructures.GetPinnableReference(), queryType, dataSize, ref pData.GetPinnableReference(), stride);

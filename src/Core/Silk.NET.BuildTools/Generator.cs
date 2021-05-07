@@ -54,7 +54,7 @@ namespace Silk.NET.BuildTools
                 {
                     Console.WriteLine
                     (
-                        (i++).Ordinalize() +
+                        (i + 1).Ordinalize() +
                         $" attempt to remove generated files failed with " +
                         $"{ex.GetType().Name}: {ex.Message}"
                     );

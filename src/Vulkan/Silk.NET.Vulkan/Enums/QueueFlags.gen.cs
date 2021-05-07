@@ -21,10 +21,10 @@ namespace Silk.NET.Vulkan
         QueueTransferBit = 4,
         [NativeName("Name", "VK_QUEUE_SPARSE_BINDING_BIT")]
         QueueSparseBindingBit = 8,
-        [NativeName("Name", "VK_QUEUE_RESERVED_6_BIT_KHR")]
-        QueueReserved6BitKhr = 64,
-        [NativeName("Name", "VK_QUEUE_RESERVED_5_BIT_KHR")]
-        QueueReserved5BitKhr = 32,
+        [NativeName("Name", "VK_QUEUE_VIDEO_DECODE_BIT_KHR")]
+        QueueVideoDecodeBitKhr = 32,
+        [NativeName("Name", "VK_QUEUE_VIDEO_ENCODE_BIT_KHR")]
+        QueueVideoEncodeBitKhr = 64,
         [NativeName("Name", "VK_QUEUE_PROTECTED_BIT")]
         QueueProtectedBit = 16,
     }

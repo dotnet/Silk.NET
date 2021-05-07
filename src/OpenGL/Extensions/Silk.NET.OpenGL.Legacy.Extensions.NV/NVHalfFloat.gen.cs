@@ -269,6 +269,30 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glVertexWeighthvNV")]
         public partial void VertexWeighth([Count(Count = 1), Flow(FlowDirection.In)] in System.Half weight);
 
+        public unsafe void VertexAttribs1h([Flow(FlowDirection.In)] uint index, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<System.Half> v)
+        {
+            // ImplicitCountSpanOverloader
+            VertexAttribs1h(index, (uint) v.Length, in v.GetPinnableReference());
+        }
+
+        public unsafe void VertexAttribs2h([Flow(FlowDirection.In)] uint index, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<System.Half> v)
+        {
+            // ImplicitCountSpanOverloader
+            VertexAttribs2h(index, (uint) v.Length, in v.GetPinnableReference());
+        }
+
+        public unsafe void VertexAttribs3h([Flow(FlowDirection.In)] uint index, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<System.Half> v)
+        {
+            // ImplicitCountSpanOverloader
+            VertexAttribs3h(index, (uint) v.Length, in v.GetPinnableReference());
+        }
+
+        public unsafe void VertexAttribs4h([Flow(FlowDirection.In)] uint index, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<System.Half> v)
+        {
+            // ImplicitCountSpanOverloader
+            VertexAttribs4h(index, (uint) v.Length, in v.GetPinnableReference());
+        }
+
         public NVHalfFloat(INativeContext ctx)
             : base(ctx)
         {

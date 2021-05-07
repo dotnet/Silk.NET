@@ -20,7 +20,7 @@ namespace Silk.NET.OpenXR
         public Instance? CurrentInstance
         {
             get => _currentInstance;
-            set => SwapVTable(_vTables.GetOrAdd(_currentInstance = value, _ => XrCreateVTable()));
+            set => SwapVTable(_vTables.GetOrAdd(_currentInstance = value, _ => CreateVTable()));
         }
         public static XR GetApi()
         {
@@ -121,13 +121,6 @@ namespace Silk.NET.OpenXR
 
             _cachedInstanceExtensionsLock.ExitUpgradeableReadLock();
             return result;
-        }
-
-        private IVTable XrCreateVTable()
-        {
-            var ret = CreateVTable();
-            ret.Initialize(Context, CoreGetSlotCount());
-            return ret;
         }
 
         protected override void PostInit() => _vTables.TryAdd(null, CurrentVTable);

@@ -56,6 +56,36 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         [NativeApi(EntryPoint = "glProgramParameteri")]
         public partial void ProgramParameter([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ProgramParameterPName pname, [Flow(FlowDirection.In)] int value);
 
+        public unsafe void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramBinary(program, (uint) (binary.Length * Unsafe.SizeOf<T0>()), length, binaryFormat, out binary.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramBinary(program, (uint) (binary.Length * Unsafe.SizeOf<T0>()), length, out binaryFormat, out binary.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] ARB* binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramBinary(program, (uint) (binary.Length * Unsafe.SizeOf<T0>()), out length, binaryFormat, out binary.GetPinnableReference());
+        }
+
+        public unsafe void GetProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Count = 1), Flow(FlowDirection.Out)] out ARB binaryFormat, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetProgramBinary(program, (uint) (binary.Length * Unsafe.SizeOf<T0>()), out length, out binaryFormat, out binary.GetPinnableReference());
+        }
+
+        public unsafe void ProgramBinary<T0>([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB binaryFormat, [Count(Parameter = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> binary) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ProgramBinary(program, binaryFormat, in binary.GetPinnableReference(), (uint) (binary.Length * Unsafe.SizeOf<T0>()));
+        }
+
         public ArbGetProgramBinary(INativeContext ctx)
             : base(ctx)
         {

@@ -23,6 +23,9 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glSampleCoverageARB")]
         public partial void SampleCoverage([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
 
+        [NativeApi(EntryPoint = "glSampleCoverageARB")]
+        public partial void SampleCoverage([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] Boolean invert);
+
         public ArbMultisample(INativeContext ctx)
             : base(ctx)
         {

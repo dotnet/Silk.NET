@@ -28,7 +28,19 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
         }
 
+        public static unsafe void DebugMessageControl(this KhrDebug thisApi, [Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
+        {
+            // SpanOverloader
+            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
+        }
+
         public static unsafe void DebugMessageControl(this KhrDebug thisApi, [Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
+        {
+            // SpanOverloader
+            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
+        }
+
+        public static unsafe void DebugMessageControl(this KhrDebug thisApi, [Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // SpanOverloader
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
@@ -40,7 +52,19 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
         }
 
+        public static unsafe void DebugMessageControl(this KhrDebug thisApi, [Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
+        {
+            // SpanOverloader
+            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
+        }
+
         public static unsafe void DebugMessageControl(this KhrDebug thisApi, [Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
+        {
+            // SpanOverloader
+            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
+        }
+
+        public static unsafe void DebugMessageControl(this KhrDebug thisApi, [Flow(FlowDirection.In)] KHR source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // SpanOverloader
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
@@ -52,7 +76,19 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
         }
 
+        public static unsafe void DebugMessageControl(this KhrDebug thisApi, [Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
+        {
+            // SpanOverloader
+            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
+        }
+
         public static unsafe void DebugMessageControl(this KhrDebug thisApi, [Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
+        {
+            // SpanOverloader
+            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
+        }
+
+        public static unsafe void DebugMessageControl(this KhrDebug thisApi, [Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] KHR type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // SpanOverloader
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
@@ -64,7 +100,19 @@ namespace Silk.NET.OpenGLES.Extensions.KHR
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
         }
 
+        public static unsafe void DebugMessageControl(this KhrDebug thisApi, [Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] KHR severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
+        {
+            // SpanOverloader
+            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
+        }
+
         public static unsafe void DebugMessageControl(this KhrDebug thisApi, [Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] bool enabled)
+        {
+            // SpanOverloader
+            thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);
+        }
+
+        public static unsafe void DebugMessageControl(this KhrDebug thisApi, [Flow(FlowDirection.In)] DebugSource source, [Flow(FlowDirection.In)] DebugType type, [Flow(FlowDirection.In)] DebugSeverity severity, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<uint> ids, [Flow(FlowDirection.In)] Boolean enabled)
         {
             // SpanOverloader
             thisApi.DebugMessageControl(source, type, severity, count, in ids.GetPinnableReference(), enabled);

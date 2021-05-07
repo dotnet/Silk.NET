@@ -38,19 +38,19 @@ namespace Silk.NET.Vulkan.Extensions.KHR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceFragmentShadingRatesKHR")]
-        public unsafe partial Result GetPhysicalDeviceFragmentShadingRates([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pFragmentShadingRateCount, [Count(Computed = "pFragmentShadingRateCount"), Flow(FlowDirection.Out)] PhysicalDeviceFragmentShadingRateKHR* pFragmentShadingRates);
+        public unsafe partial Result GetPhysicalDeviceFragmentShadingRates([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pFragmentShadingRateCount, [Count(Parameter = "pFragmentShadingRateCount"), Flow(FlowDirection.Out)] PhysicalDeviceFragmentShadingRateKHR* pFragmentShadingRates);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceFragmentShadingRatesKHR")]
-        public unsafe partial Result GetPhysicalDeviceFragmentShadingRates([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pFragmentShadingRateCount, [Count(Computed = "pFragmentShadingRateCount"), Flow(FlowDirection.Out)] out PhysicalDeviceFragmentShadingRateKHR pFragmentShadingRates);
+        public unsafe partial Result GetPhysicalDeviceFragmentShadingRates([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pFragmentShadingRateCount, [Count(Parameter = "pFragmentShadingRateCount"), Flow(FlowDirection.Out)] out PhysicalDeviceFragmentShadingRateKHR pFragmentShadingRates);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceFragmentShadingRatesKHR")]
-        public unsafe partial Result GetPhysicalDeviceFragmentShadingRates([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pFragmentShadingRateCount, [Count(Computed = "pFragmentShadingRateCount"), Flow(FlowDirection.Out)] PhysicalDeviceFragmentShadingRateKHR* pFragmentShadingRates);
+        public unsafe partial Result GetPhysicalDeviceFragmentShadingRates([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pFragmentShadingRateCount, [Count(Parameter = "pFragmentShadingRateCount"), Flow(FlowDirection.Out)] PhysicalDeviceFragmentShadingRateKHR* pFragmentShadingRates);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "vkGetPhysicalDeviceFragmentShadingRatesKHR")]
-        public partial Result GetPhysicalDeviceFragmentShadingRates([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pFragmentShadingRateCount, [Count(Computed = "pFragmentShadingRateCount"), Flow(FlowDirection.Out)] out PhysicalDeviceFragmentShadingRateKHR pFragmentShadingRates);
+        public partial Result GetPhysicalDeviceFragmentShadingRates([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] ref uint pFragmentShadingRateCount, [Count(Parameter = "pFragmentShadingRateCount"), Flow(FlowDirection.Out)] out PhysicalDeviceFragmentShadingRateKHR pFragmentShadingRates);
 
         public KhrFragmentShadingRate(INativeContext ctx)
             : base(ctx)

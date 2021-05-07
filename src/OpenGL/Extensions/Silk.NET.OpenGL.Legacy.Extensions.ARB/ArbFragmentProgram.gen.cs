@@ -251,6 +251,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             DeleteProgram(1, &programs);
         }
 
+        public unsafe void DeleteProgram([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> programs)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteProgram((uint) programs.Length, in programs.GetPinnableReference());
+        }
+
+        public unsafe void DeleteProgram([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<Program> programs)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteProgram((uint) programs.Length, in programs.GetPinnableReference());
+        }
+
         public unsafe uint GenProgram()
         {
             const uint n = 1;
@@ -258,6 +270,42 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             uint ret = default;
             GenProgram(n, &ret);
             return ret;
+        }
+
+        public unsafe void GenProgram([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> programs)
+        {
+            // ImplicitCountSpanOverloader
+            GenProgram((uint) programs.Length, out programs.GetPinnableReference());
+        }
+
+        public unsafe void GenProgram([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<Program> programs)
+        {
+            // ImplicitCountSpanOverloader
+            GenProgram((uint) programs.Length, out programs.GetPinnableReference());
+        }
+
+        public unsafe void ProgramString<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Count(Parameter = "len"), Flow(FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ProgramString(target, format, (uint) (@string.Length * Unsafe.SizeOf<T0>()), in @string.GetPinnableReference());
+        }
+
+        public unsafe void ProgramString<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ProgramFormat format, [Count(Parameter = "len"), Flow(FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ProgramString(target, format, (uint) (@string.Length * Unsafe.SizeOf<T0>()), in @string.GetPinnableReference());
+        }
+
+        public unsafe void ProgramString<T0>([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ARB format, [Count(Parameter = "len"), Flow(FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ProgramString(target, format, (uint) (@string.Length * Unsafe.SizeOf<T0>()), in @string.GetPinnableReference());
+        }
+
+        public unsafe void ProgramString<T0>([Flow(FlowDirection.In)] ProgramTarget target, [Flow(FlowDirection.In)] ProgramFormat format, [Count(Parameter = "len"), Flow(FlowDirection.In)] ReadOnlySpan<T0> @string) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ProgramString(target, format, (uint) (@string.Length * Unsafe.SizeOf<T0>()), in @string.GetPinnableReference());
         }
 
         public ArbFragmentProgram(INativeContext ctx)

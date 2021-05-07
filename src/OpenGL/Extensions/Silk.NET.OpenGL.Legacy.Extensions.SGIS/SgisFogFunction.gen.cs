@@ -32,6 +32,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         [NativeApi(EntryPoint = "glGetFogFuncSGIS")]
         public partial void GetFogFunc([Count(Count = 0), Flow(FlowDirection.Out)] out float points);
 
+        public unsafe void FogFunc([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)
+        {
+            // ImplicitCountSpanOverloader
+            FogFunc((uint) points.Length, in points.GetPinnableReference());
+        }
+
         public unsafe float GetFogFunc()
         {
             // ReturnTypeOverloader

@@ -66,70 +66,70 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetPhysicalDeviceQueueFamilyProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pQueueFamilyPropertyCount, [Count(Computed = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] Span<QueueFamilyProperties2> pQueueFamilyProperties)
+        public static unsafe void GetPhysicalDeviceQueueFamilyProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pQueueFamilyPropertyCount, [Count(Parameter = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] Span<QueueFamilyProperties2> pQueueFamilyProperties)
         {
             // SpanOverloader
             thisApi.GetPhysicalDeviceQueueFamilyProperties2(physicalDevice, pQueueFamilyPropertyCount, out pQueueFamilyProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetPhysicalDeviceQueueFamilyProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pQueueFamilyPropertyCount, [Count(Computed = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] QueueFamilyProperties2* pQueueFamilyProperties)
+        public static unsafe void GetPhysicalDeviceQueueFamilyProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pQueueFamilyPropertyCount, [Count(Parameter = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] QueueFamilyProperties2* pQueueFamilyProperties)
         {
             // SpanOverloader
             thisApi.GetPhysicalDeviceQueueFamilyProperties2(physicalDevice, ref pQueueFamilyPropertyCount.GetPinnableReference(), pQueueFamilyProperties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetPhysicalDeviceQueueFamilyProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pQueueFamilyPropertyCount, [Count(Computed = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] Span<QueueFamilyProperties2> pQueueFamilyProperties)
+        public static unsafe void GetPhysicalDeviceQueueFamilyProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pQueueFamilyPropertyCount, [Count(Parameter = "pQueueFamilyPropertyCount"), Flow(FlowDirection.Out)] Span<QueueFamilyProperties2> pQueueFamilyProperties)
         {
             // SpanOverloader
             thisApi.GetPhysicalDeviceQueueFamilyProperties2(physicalDevice, ref pQueueFamilyPropertyCount.GetPinnableReference(), out pQueueFamilyProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] Span<SparseImageFormatProperties2> pProperties)
+        public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<SparseImageFormatProperties2> pProperties)
         {
             // SpanOverloader
             thisApi.GetPhysicalDeviceSparseImageFormatProperties2(physicalDevice, pFormatInfo, pPropertyCount, out pProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] SparseImageFormatProperties2* pProperties)
+        public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] SparseImageFormatProperties2* pProperties)
         {
             // SpanOverloader
             thisApi.GetPhysicalDeviceSparseImageFormatProperties2(physicalDevice, pFormatInfo, ref pPropertyCount.GetPinnableReference(), pProperties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] Span<SparseImageFormatProperties2> pProperties)
+        public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceSparseImageFormatInfo2* pFormatInfo, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<SparseImageFormatProperties2> pProperties)
         {
             // SpanOverloader
             thisApi.GetPhysicalDeviceSparseImageFormatProperties2(physicalDevice, pFormatInfo, ref pPropertyCount.GetPinnableReference(), out pProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSparseImageFormatInfo2> pFormatInfo, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] SparseImageFormatProperties2* pProperties)
+        public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSparseImageFormatInfo2> pFormatInfo, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] SparseImageFormatProperties2* pProperties)
         {
             // SpanOverloader
             thisApi.GetPhysicalDeviceSparseImageFormatProperties2(physicalDevice, in pFormatInfo.GetPinnableReference(), pPropertyCount, pProperties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSparseImageFormatInfo2> pFormatInfo, [Count(Count = 0)] uint* pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] Span<SparseImageFormatProperties2> pProperties)
+        public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSparseImageFormatInfo2> pFormatInfo, [Count(Count = 0)] uint* pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<SparseImageFormatProperties2> pProperties)
         {
             // SpanOverloader
             thisApi.GetPhysicalDeviceSparseImageFormatProperties2(physicalDevice, in pFormatInfo.GetPinnableReference(), pPropertyCount, out pProperties.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSparseImageFormatInfo2> pFormatInfo, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] SparseImageFormatProperties2* pProperties)
+        public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSparseImageFormatInfo2> pFormatInfo, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] SparseImageFormatProperties2* pProperties)
         {
             // SpanOverloader
             thisApi.GetPhysicalDeviceSparseImageFormatProperties2(physicalDevice, in pFormatInfo.GetPinnableReference(), ref pPropertyCount.GetPinnableReference(), pProperties);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSparseImageFormatInfo2> pFormatInfo, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Computed = "pPropertyCount"), Flow(FlowDirection.Out)] Span<SparseImageFormatProperties2> pProperties)
+        public static unsafe void GetPhysicalDeviceSparseImageFormatProperties2(this KhrGetPhysicalDeviceProperties2 thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceSparseImageFormatInfo2> pFormatInfo, [Count(Count = 0)] Span<uint> pPropertyCount, [Count(Parameter = "pPropertyCount"), Flow(FlowDirection.Out)] Span<SparseImageFormatProperties2> pProperties)
         {
             // SpanOverloader
             thisApi.GetPhysicalDeviceSparseImageFormatProperties2(physicalDevice, in pFormatInfo.GetPinnableReference(), ref pPropertyCount.GetPinnableReference(), out pProperties.GetPinnableReference());

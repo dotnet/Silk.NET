@@ -26,6 +26,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.NV
         [NativeApi(EntryPoint = "glQueryResourceNV")]
         public partial int QueryResource([Flow(FlowDirection.In)] NV queryType, [Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int buffer);
 
+        public unsafe int QueryResource([Flow(FlowDirection.In)] NV queryType, [Flow(FlowDirection.In)] int tagId, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> buffer)
+        {
+            // ImplicitCountSpanOverloader
+            return QueryResource(queryType, tagId, (uint) buffer.Length, out buffer.GetPinnableReference());
+        }
+
         public NVQueryResource(INativeContext ctx)
             : base(ctx)
         {

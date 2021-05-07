@@ -44,6 +44,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
         [NativeApi(EntryPoint = "glGetDetailTexFuncSGIS")]
         public partial void GetDetailTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Computed = "target"), Flow(FlowDirection.Out)] out float points);
 
+        public unsafe void DetailTexFunc([Flow(FlowDirection.In)] SGIS target, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)
+        {
+            // ImplicitCountSpanOverloader
+            DetailTexFunc(target, (uint) points.Length, in points.GetPinnableReference());
+        }
+
+        public unsafe void DetailTexFunc([Flow(FlowDirection.In)] TextureTarget target, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<float> points)
+        {
+            // ImplicitCountSpanOverloader
+            DetailTexFunc(target, (uint) points.Length, in points.GetPinnableReference());
+        }
+
         public unsafe float GetDetailTexFunc([Flow(FlowDirection.In)] SGIS target)
         {
             // ReturnTypeOverloader

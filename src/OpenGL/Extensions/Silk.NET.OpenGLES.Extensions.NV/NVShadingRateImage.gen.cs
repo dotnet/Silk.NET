@@ -38,6 +38,9 @@ namespace Silk.NET.OpenGLES.Extensions.NV
         [NativeApi(EntryPoint = "glShadingRateImageBarrierNV")]
         public partial void ShadingRateImageBarrier([Flow(FlowDirection.In)] bool synchronize);
 
+        [NativeApi(EntryPoint = "glShadingRateImageBarrierNV")]
+        public partial void ShadingRateImageBarrier([Flow(FlowDirection.In)] Boolean synchronize);
+
         [NativeApi(EntryPoint = "glShadingRateImagePaletteNV")]
         public unsafe partial void ShadingRateImagePalette([Flow(FlowDirection.In)] uint viewport, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] NV* rates);
 
@@ -52,6 +55,12 @@ namespace Silk.NET.OpenGLES.Extensions.NV
 
         [NativeApi(EntryPoint = "glShadingRateSampleOrderCustomNV")]
         public partial void ShadingRateSampleOrderCustom([Flow(FlowDirection.In)] NV rate, [Flow(FlowDirection.In)] uint samples, [Count(Computed = "rate, samples"), Flow(FlowDirection.In)] in int locations);
+
+        public unsafe void ShadingRateImagePalette([Flow(FlowDirection.In)] uint viewport, [Flow(FlowDirection.In)] uint first, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<NV> rates)
+        {
+            // ImplicitCountSpanOverloader
+            ShadingRateImagePalette(viewport, first, (uint) rates.Length, in rates.GetPinnableReference());
+        }
 
         public NVShadingRateImage(INativeContext ctx)
             : base(ctx)

@@ -200,6 +200,114 @@ namespace Silk.NET.OpenGL.Extensions.ARB
         [NativeApi(EntryPoint = "glUniformSubroutinesuiv")]
         public partial void UniformSubroutines([Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.In)] in uint indices);
 
+        public unsafe void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveSubroutineName(program, shadertype, index, (uint) name.Length, length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveSubroutineName(program, shadertype, index, (uint) name.Length, length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveSubroutineName(program, shadertype, index, (uint) name.Length, out length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveSubroutineName(program, shadertype, index, (uint) name.Length, out length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveSubroutineName(program, shadertype, index, (uint) name.Length, length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveSubroutineName(program, shadertype, index, (uint) name.Length, length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveSubroutineName(program, shadertype, index, (uint) name.Length, out length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveSubroutineName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveSubroutineName(program, shadertype, index, (uint) name.Length, out length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveSubroutineUniformName(program, shadertype, index, (uint) name.Length, length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveSubroutineUniformName(program, shadertype, index, (uint) name.Length, length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveSubroutineUniformName(program, shadertype, index, (uint) name.Length, out length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ARB shadertype, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveSubroutineUniformName(program, shadertype, index, (uint) name.Length, out length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveSubroutineUniformName(program, shadertype, index, (uint) name.Length, length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveSubroutineUniformName(program, shadertype, index, (uint) name.Length, length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveSubroutineUniformName(program, shadertype, index, (uint) name.Length, out length, out name.GetPinnableReference());
+        }
+
+        public unsafe void GetActiveSubroutineUniformName([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.In)] uint index, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> name)
+        {
+            // ImplicitCountSpanOverloader
+            GetActiveSubroutineUniformName(program, shadertype, index, (uint) name.Length, out length, out name.GetPinnableReference());
+        }
+
+        public unsafe void UniformSubroutines([Flow(FlowDirection.In)] ARB shadertype, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> indices)
+        {
+            // ImplicitCountSpanOverloader
+            UniformSubroutines(shadertype, (uint) indices.Length, in indices.GetPinnableReference());
+        }
+
+        public unsafe void UniformSubroutines([Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> indices)
+        {
+            // ImplicitCountSpanOverloader
+            UniformSubroutines(shadertype, (uint) indices.Length, in indices.GetPinnableReference());
+        }
+
         public ArbShaderSubroutine(INativeContext ctx)
             : base(ctx)
         {

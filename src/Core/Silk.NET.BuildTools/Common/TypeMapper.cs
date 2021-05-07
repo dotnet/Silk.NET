@@ -60,7 +60,7 @@ namespace Silk.NET.BuildTools.Common
             {
                 type = ParseTypeSignature
                 (
-                    map[type.ToString()], type.OriginalName
+                    map[type.ToString()], type.OriginalName, type.OriginalGroup
                 );
             }
             else if (map.ContainsKey(type.Name))
@@ -190,7 +190,7 @@ namespace Silk.NET.BuildTools.Common
                 .Concat(project.Enums.ToDictionary(x => x.NativeName, x => x.Name))
                 .ToDictionary();
 
-        private static Type ParseTypeSignature([NotNull] string type, string original = null)
+        private static Type ParseTypeSignature([NotNull] string type, string original = null, string group = null)
         {
             if (type.Contains('*') && (type.Contains('[') || type.Contains(']')))
             {
@@ -251,6 +251,7 @@ namespace Silk.NET.BuildTools.Common
             {
                 Name = typeName,
                 OriginalName = original ?? typeName,
+                OriginalGroup = group,
                 IndirectionLevels = pointerLevel,
                 ArrayDimensions = arrayLevel
             };

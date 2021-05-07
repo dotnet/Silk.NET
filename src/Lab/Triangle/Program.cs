@@ -1,4 +1,4 @@
-#define MINIMAL
+#define REOPEN_EXPERIMENT
 
 using System;
 using System.Drawing;
@@ -24,32 +24,29 @@ namespace Triangle
         private static uint _vertexBufferObject;
         private static uint _vertexArrayObject;
         private static GL _gl;
-#if MINIMAL
         private static IView _window;
-#else
-        private static IWindow _window;
-#endif
         private static Shader _shader;
         
         public static GraphicsAPI API { get; set; } = GraphicsAPI.Default;
 
         public static void Main(string[] args)
         {
+            //Silk.NET.Windowing.Sdl.SdlWindowing.Use();
             //SdlProvider.SetMainReady = true;
-#if MINIMAL
             var opts = ViewOptions.Default;
             opts.FramesPerSecond = 90;
             opts.UpdatesPerSecond = 90;
             opts.API = API;
             opts.VSync = false;
-            _window = Window.GetView(opts);
-#else
-            var opts = WindowOptions.Default;
-            opts.FramesPerSecond = 90;
-            opts.API = API;
-            opts.UpdatesPerSecond = 90;
-            _window = Window.Create(opts);
-#endif
+            if (Window.IsViewOnly)
+            {
+                _window = Window.GetView(opts);
+            }
+            else
+            {
+                _window = Window.Create(new(opts));
+            }
+
             _window.Load += Load;
             _window.Load += InputTest.Program.OnLoad(_window);
             _window.Render += RenderFrame;
@@ -57,6 +54,20 @@ namespace Triangle
             _window.FramebufferResize += Resize;
             _window.Closing += End;
             _window.Run();
+#if REOPEN_EXPERIMENT
+            // Experiment notes:
+            // - This is something we're meant to support, but we've never tested it!
+            // - GLFW worked fine, bar input which for some reason didn't work when the window reloaded.
+            // - SDL worked flawlessly.
+            // - Right now the Closing event can actually cancel window closure using IsClosing.
+            //     - We need to test this too.
+            //     - We need to add an Unload event that is only called once the window is guaranteed to be terminated.
+            // - TODO for 3.0 (to add the Unload event, by all means fix bugs before then)
+            if (_window is IWindow)
+            {
+                _window.Run();
+            }
+#endif
         }
 
         private static unsafe void Load()

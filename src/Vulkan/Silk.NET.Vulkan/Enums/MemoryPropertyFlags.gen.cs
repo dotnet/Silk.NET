@@ -27,6 +27,8 @@ namespace Silk.NET.Vulkan
         MemoryPropertyDeviceCoherentBitAmd = 64,
         [NativeName("Name", "VK_MEMORY_PROPERTY_DEVICE_UNCACHED_BIT_AMD")]
         MemoryPropertyDeviceUncachedBitAmd = 128,
+        [NativeName("Name", "VK_MEMORY_PROPERTY_RESERVED_8_BIT_NV")]
+        MemoryPropertyReserved8BitNV = 256,
         [NativeName("Name", "VK_MEMORY_PROPERTY_PROTECTED_BIT")]
         MemoryPropertyProtectedBit = 32,
     }

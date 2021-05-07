@@ -8,8 +8,9 @@ namespace Silk.NET.Core.Native
 {
     public interface IVTable : IDisposable
     {
-        void Initialize(INativeContext ctx, int maxSlots);
+        [Obsolete("Use method without slot - this method will be removed in 3.0")]
         nint Load(int slot, string entryPoint);
+        nint Load(string entryPoint);
         void Purge();
     }
 }

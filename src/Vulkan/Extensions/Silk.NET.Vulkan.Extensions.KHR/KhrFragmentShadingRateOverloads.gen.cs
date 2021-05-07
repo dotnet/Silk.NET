@@ -38,21 +38,21 @@ namespace Silk.NET.Vulkan.Extensions.KHR
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceFragmentShadingRates(this KhrFragmentShadingRate thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pFragmentShadingRateCount, [Count(Computed = "pFragmentShadingRateCount"), Flow(FlowDirection.Out)] Span<PhysicalDeviceFragmentShadingRateKHR> pFragmentShadingRates)
+        public static unsafe Result GetPhysicalDeviceFragmentShadingRates(this KhrFragmentShadingRate thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pFragmentShadingRateCount, [Count(Parameter = "pFragmentShadingRateCount"), Flow(FlowDirection.Out)] Span<PhysicalDeviceFragmentShadingRateKHR> pFragmentShadingRates)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceFragmentShadingRates(physicalDevice, pFragmentShadingRateCount, out pFragmentShadingRates.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceFragmentShadingRates(this KhrFragmentShadingRate thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pFragmentShadingRateCount, [Count(Computed = "pFragmentShadingRateCount"), Flow(FlowDirection.Out)] PhysicalDeviceFragmentShadingRateKHR* pFragmentShadingRates)
+        public static unsafe Result GetPhysicalDeviceFragmentShadingRates(this KhrFragmentShadingRate thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pFragmentShadingRateCount, [Count(Parameter = "pFragmentShadingRateCount"), Flow(FlowDirection.Out)] PhysicalDeviceFragmentShadingRateKHR* pFragmentShadingRates)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceFragmentShadingRates(physicalDevice, ref pFragmentShadingRateCount.GetPinnableReference(), pFragmentShadingRates);
         }
 
         /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceFragmentShadingRates(this KhrFragmentShadingRate thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pFragmentShadingRateCount, [Count(Computed = "pFragmentShadingRateCount"), Flow(FlowDirection.Out)] Span<PhysicalDeviceFragmentShadingRateKHR> pFragmentShadingRates)
+        public static unsafe Result GetPhysicalDeviceFragmentShadingRates(this KhrFragmentShadingRate thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pFragmentShadingRateCount, [Count(Parameter = "pFragmentShadingRateCount"), Flow(FlowDirection.Out)] Span<PhysicalDeviceFragmentShadingRateKHR> pFragmentShadingRates)
         {
             // SpanOverloader
             return thisApi.GetPhysicalDeviceFragmentShadingRates(physicalDevice, ref pFragmentShadingRateCount.GetPinnableReference(), out pFragmentShadingRates.GetPinnableReference());

@@ -26,6 +26,12 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glGetImageHandleARB")]
         public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] bool layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] PixelFormat format);
 
+        [NativeApi(EntryPoint = "glGetImageHandleARB")]
+        public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] Boolean layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] ARB format);
+
+        [NativeApi(EntryPoint = "glGetImageHandleARB")]
+        public partial ulong GetImageHandle([Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] Boolean layered, [Flow(FlowDirection.In)] int layer, [Flow(FlowDirection.In)] PixelFormat format);
+
         [NativeApi(EntryPoint = "glGetTextureHandleARB")]
         public partial ulong GetTextureHandle([Flow(FlowDirection.In)] uint texture);
 
@@ -88,6 +94,18 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 
         [NativeApi(EntryPoint = "glVertexAttribL1ui64vARB")]
         public partial void VertexAttribL1([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] in ulong v);
+
+        public unsafe void ProgramUniformHandle([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> values)
+        {
+            // ImplicitCountSpanOverloader
+            ProgramUniformHandle(program, location, (uint) values.Length, in values.GetPinnableReference());
+        }
+
+        public unsafe void UniformHandle([Flow(FlowDirection.In)] int location, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<ulong> value)
+        {
+            // ImplicitCountSpanOverloader
+            UniformHandle(location, (uint) value.Length, in value.GetPinnableReference());
+        }
 
         public ArbBindlessTexture(INativeContext ctx)
             : base(ctx)

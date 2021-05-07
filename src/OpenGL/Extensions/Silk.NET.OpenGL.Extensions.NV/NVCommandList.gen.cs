@@ -248,6 +248,12 @@ namespace Silk.NET.OpenGL.Extensions.NV
             return ret;
         }
 
+        public unsafe void CreateCommandLists([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> lists)
+        {
+            // ImplicitCountSpanOverloader
+            CreateCommandLists((uint) lists.Length, out lists.GetPinnableReference());
+        }
+
         public unsafe uint CreateState()
         {
             const uint n = 1;
@@ -257,16 +263,118 @@ namespace Silk.NET.OpenGL.Extensions.NV
             return ret;
         }
 
+        public unsafe void CreateStates([Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> states)
+        {
+            // ImplicitCountSpanOverloader
+            CreateStates((uint) states.Length, out states.GetPinnableReference());
+        }
+
         public unsafe void DeleteCommandList([Count(Parameter = "n"), Flow(FlowDirection.In)] uint lists)
         {
             // ArrayParameterOverloader
             DeleteCommandLists(1, &lists);
         }
 
+        public unsafe void DeleteCommandLists([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> lists)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteCommandLists((uint) lists.Length, in lists.GetPinnableReference());
+        }
+
         public unsafe void DeleteState([Count(Parameter = "n"), Flow(FlowDirection.In)] uint states)
         {
             // ArrayParameterOverloader
             DeleteStates(1, &states);
+        }
+
+        public unsafe void DeleteStates([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> states)
+        {
+            // ImplicitCountSpanOverloader
+            DeleteStates((uint) states.Length, in states.GetPinnableReference());
+        }
+
+        public unsafe void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* states, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos)
+        {
+            // ImplicitCountSpanOverloader
+            ListDrawCommandsStatesClient(list, segment, indirects, sizes, states, in fbos.GetPinnableReference(), (uint) fbos.Length);
+        }
+
+        public unsafe void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* fbos)
+        {
+            // ImplicitCountSpanOverloader
+            ListDrawCommandsStatesClient(list, segment, indirects, sizes, in states.GetPinnableReference(), fbos, (uint) states.Length);
+        }
+
+        public unsafe void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos)
+        {
+            // ImplicitCountSpanOverloader
+            ListDrawCommandsStatesClient(list, segment, indirects, sizes, in states.GetPinnableReference(), in fbos.GetPinnableReference(), (uint) fbos.Length);
+        }
+
+        public unsafe void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* states, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* fbos)
+        {
+            // ImplicitCountSpanOverloader
+            ListDrawCommandsStatesClient(list, segment, indirects, in sizes.GetPinnableReference(), states, fbos, (uint) sizes.Length);
+        }
+
+        public unsafe void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* states, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos)
+        {
+            // ImplicitCountSpanOverloader
+            ListDrawCommandsStatesClient(list, segment, indirects, in sizes.GetPinnableReference(), states, in fbos.GetPinnableReference(), (uint) fbos.Length);
+        }
+
+        public unsafe void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* fbos)
+        {
+            // ImplicitCountSpanOverloader
+            ListDrawCommandsStatesClient(list, segment, indirects, in sizes.GetPinnableReference(), in states.GetPinnableReference(), fbos, (uint) states.Length);
+        }
+
+        public unsafe void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] void** indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos)
+        {
+            // ImplicitCountSpanOverloader
+            ListDrawCommandsStatesClient(list, segment, indirects, in sizes.GetPinnableReference(), in states.GetPinnableReference(), in fbos.GetPinnableReference(), (uint) fbos.Length);
+        }
+
+        public unsafe void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* states, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos)
+        {
+            // ImplicitCountSpanOverloader
+            ListDrawCommandsStatesClient(list, segment, in indirects, sizes, states, in fbos.GetPinnableReference(), (uint) fbos.Length);
+        }
+
+        public unsafe void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* fbos)
+        {
+            // ImplicitCountSpanOverloader
+            ListDrawCommandsStatesClient(list, segment, in indirects, sizes, in states.GetPinnableReference(), fbos, (uint) states.Length);
+        }
+
+        public unsafe void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos)
+        {
+            // ImplicitCountSpanOverloader
+            ListDrawCommandsStatesClient(list, segment, in indirects, sizes, in states.GetPinnableReference(), in fbos.GetPinnableReference(), (uint) fbos.Length);
+        }
+
+        public unsafe void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* states, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* fbos)
+        {
+            // ImplicitCountSpanOverloader
+            ListDrawCommandsStatesClient(list, segment, in indirects, in sizes.GetPinnableReference(), states, fbos, (uint) sizes.Length);
+        }
+
+        public unsafe void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* states, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos)
+        {
+            // ImplicitCountSpanOverloader
+            ListDrawCommandsStatesClient(list, segment, in indirects, in sizes.GetPinnableReference(), states, in fbos.GetPinnableReference(), (uint) fbos.Length);
+        }
+
+        public unsafe void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Count(Parameter = "count"), Flow(FlowDirection.In)] uint* fbos)
+        {
+            // ImplicitCountSpanOverloader
+            ListDrawCommandsStatesClient(list, segment, in indirects, in sizes.GetPinnableReference(), in states.GetPinnableReference(), fbos, (uint) states.Length);
+        }
+
+        public unsafe void ListDrawCommandsStatesClient([Flow(FlowDirection.In)] uint list, [Flow(FlowDirection.In)] uint segment, [Count(Parameter = "count"), Flow(FlowDirection.In)] in void* indirects, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> sizes, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> states, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fbos)
+        {
+            // ImplicitCountSpanOverloader
+            ListDrawCommandsStatesClient(list, segment, in indirects, in sizes.GetPinnableReference(), in states.GetPinnableReference(), in fbos.GetPinnableReference(), (uint) fbos.Length);
         }
 
         public NVCommandList(INativeContext ctx)

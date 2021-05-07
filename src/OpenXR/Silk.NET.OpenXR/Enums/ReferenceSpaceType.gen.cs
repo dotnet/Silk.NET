@@ -20,5 +20,7 @@ namespace Silk.NET.OpenXR
         Stage = 3,
         [NativeName("Name", "XR_REFERENCE_SPACE_TYPE_UNBOUNDED_MSFT")]
         UnboundedMsft = 1000038000,
+        [NativeName("Name", "XR_REFERENCE_SPACE_TYPE_COMBINED_EYE_VARJO")]
+        CombinedEyeVarjo = 1000121000,
     }
 }

@@ -44,6 +44,30 @@ namespace Silk.NET.OpenGLES.Extensions.EXT
         [NativeApi(EntryPoint = "glDiscardFramebufferEXT")]
         public partial void DiscardFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint numAttachments, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] in InvalidateFramebufferAttachment attachments);
 
+        public unsafe void DiscardFramebuffer([Flow(FlowDirection.In)] EXT target, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> attachments)
+        {
+            // ImplicitCountSpanOverloader
+            DiscardFramebuffer(target, (uint) attachments.Length, in attachments.GetPinnableReference());
+        }
+
+        public unsafe void DiscardFramebuffer([Flow(FlowDirection.In)] EXT target, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ReadOnlySpan<InvalidateFramebufferAttachment> attachments)
+        {
+            // ImplicitCountSpanOverloader
+            DiscardFramebuffer(target, (uint) attachments.Length, in attachments.GetPinnableReference());
+        }
+
+        public unsafe void DiscardFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> attachments)
+        {
+            // ImplicitCountSpanOverloader
+            DiscardFramebuffer(target, (uint) attachments.Length, in attachments.GetPinnableReference());
+        }
+
+        public unsafe void DiscardFramebuffer([Flow(FlowDirection.In)] FramebufferTarget target, [Count(Parameter = "numAttachments"), Flow(FlowDirection.In)] ReadOnlySpan<InvalidateFramebufferAttachment> attachments)
+        {
+            // ImplicitCountSpanOverloader
+            DiscardFramebuffer(target, (uint) attachments.Length, in attachments.GetPinnableReference());
+        }
+
         public ExtDiscardFramebuffer(INativeContext ctx)
             : base(ctx)
         {

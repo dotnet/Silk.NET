@@ -126,7 +126,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 foreach (var enumEx in exDef.EnumExtensions)
                 {
                     var enumDef = GetEnumDef(enums, enumEx.ExtendedType);
-                    var value = int.Parse(enumEx.Value);
+                    var value = long.Parse(enumEx.Value);
                     enumDef.Values = enumDef.Values.Append(new EnumValue(enumEx.Name, value, null)).ToArray();
                 }
             }
@@ -139,7 +139,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 foreach (var enumEx in exDef.EnumExtensions)
                 {
                     var enumDef = GetEnumDef(enums, enumEx.ExtendedType);
-                    var value = int.Parse(enumEx.Value);
+                    var value = long.Parse(enumEx.Value);
                     enumDef.Values = enumDef.Values.Append(new EnumValue(enumEx.Name, value, null)).ToArray();
                 }
             }

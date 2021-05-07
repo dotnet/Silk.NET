@@ -90,12 +90,9 @@ namespace Silk.NET.SilkTouch
                         excludeFromOverrideAttribute, (INamedTypeSymbol)group.Key
                     );
 
-                    if (s is null) continue;
+                    if (s is not { Length: > 0 }) continue;
 
-                    var name =
-                        $"{group.Key.Name}.{Guid.NewGuid()}.gen";
-                    context.AddSource(name, SourceText.From(s, Encoding.UTF8));
-                    // File.WriteAllText(@"C:\SILK.NET\src\Lab\" + name, s);
+                    Output(context, group.Key.Name, s);
                 }
                 catch (Exception ex)
                 {
@@ -106,6 +103,14 @@ namespace Silk.NET.SilkTouch
                     );
                 }
             }
+        }
+
+        private static void Output(GeneratorExecutionContext context, string hintName, string s)
+        {
+            hintName = hintName.Select(x => char.IsLetterOrDigit(x) ? x : '_').ToArray().AsSpan().ToString();
+            var name = $"{hintName}.{Guid.NewGuid()}.gen";
+            context.AddSource(name, SourceText.From(s, Encoding.UTF8));
+            // File.WriteAllText(@"C:\SILK.NET\src\Lab\" + name, s);
         }
 
         private string ProcessClassDeclaration
@@ -149,6 +154,22 @@ namespace Silk.NET.SilkTouch
                     generateSeal = v;
             }
             
+            bool compactFileFormat;
+
+            #if DEBUG
+            compactFileFormat = true;
+            #else
+            compactFileFormat = false;
+            #endif
+            
+            if (sourceContext.AnalyzerConfigOptions.GetOptions
+                    (classDeclarations.First().Item1.SyntaxTree)
+                .TryGetValue("silk_touch_compact_file_format", out var compactFileFormatStr))
+            {
+                if (bool.TryParse(compactFileFormatStr, out var v))
+                    compactFileFormat = v;
+            }
+            
             
             var generateVTable = false;
 
@@ -189,12 +210,12 @@ namespace Silk.NET.SilkTouch
 
             var newMembers = new List<MemberDeclarationSyntax>();
 
-            int slotCount = 0;
             int gcCount = 0;
             
             var generatedVTableName = NameGenerator.Name("GeneratedVTable");
-            Dictionary<int, string> entryPoints = new Dictionary<int, string>();
+            var entryPoints = new List<string>();
             var processedEntrypoints = new List<EntryPoint>();
+            bool any = false;
             foreach (var (declaration, symbol, entryPoint, callingConvention) in from declaration in
                     from member in classDeclarations.SelectMany(x => x.Item1.Members.Select(x2 => (x2, x.Item2)))
                     where member.x2.IsKind(SyntaxKind.MethodDeclaration)
@@ -213,46 +234,21 @@ namespace Silk.NET.SilkTouch
                 let callingConvention = NativeApiAttribute.GetCallingConvention(attribute, classNativeApiAttribute)
                 select (declaration, symbol, entryPoint, callingConvention))
             {
-                var slot = slotCount++; // even though technically that somehow makes slots defined behavior, THEY ARE NOT
-                // SLOTS ARE UNDEFINED BEHAVIOR
+                any = true;
+            
                 ProcessMethod
                 (
                     sourceContext, rootMarshalBuilder, callingConvention, entryPoints, entryPoint, classIsSealed,
-                    generateSeal, generateVTable, slot, compilation, symbol, declaration.Item1, newMembers,
-                    ref gcCount, processedEntrypoints, generatedVTableName
+                    generateSeal, generateVTable, compactFileFormat, compilation, symbol, declaration.Item1, newMembers, ref gcCount,
+                    processedEntrypoints, generatedVTableName, namespaceDeclaration, classDeclarations.First().Item1,
+                    AddIfNotExists(compilationUnit.Usings, "Silk.NET.Core.Native", "Silk.NET.Core.Contexts")
                 );
             }
 
-            if (slotCount > 0)
+            if (any)
             {
                 if (!processedSymbols.Contains(sharedClassSymbol))
                 {
-                    newMembers.Add
-                    (
-                        MethodDeclaration
-                        (
-                            List<AttributeListSyntax>(),
-                            TokenList(Token(SyntaxKind.ProtectedKeyword), Token(SyntaxKind.OverrideKeyword)),
-                            PredefinedType(Token(SyntaxKind.IntKeyword)), null, Identifier("CoreGetSlotCount"), null,
-                            ParameterList(), List<TypeParameterConstraintClauseSyntax>(), null,
-                            ArrowExpressionClause
-                            (
-                                BinaryExpression
-                                (
-                                    SyntaxKind.AddExpression,
-                                    LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(slotCount)),
-                                    InvocationExpression
-                                    (
-                                        MemberAccessExpression
-                                        (
-                                            SyntaxKind.SimpleMemberAccessExpression, BaseExpression(),
-                                            IdentifierName("CoreGetSlotCount")
-                                        )
-                                    )
-                                )
-                            ), Token(SyntaxKind.SemicolonToken)
-                        )
-                    );
                     newMembers.Add
                     (
                         MethodDeclaration
@@ -295,7 +291,7 @@ namespace Silk.NET.SilkTouch
                     (
                         preloadVTable, entryPoints, emitAssert,
                         sourceContext.ParseOptions.PreprocessorSymbolNames.Any
-                            (x => x == "NETCOREAPP" || x == "NET5" /* SEE INativeContext.cs in Core */),
+                            (x => x is "NETCOREAPP" or "NET5" /* SEE INativeContext.cs in Core */),
                         generatedVTableName
                     )
                 );
@@ -321,7 +317,7 @@ namespace Silk.NET.SilkTouch
                             (
                                 ObjectCreationExpression
                                     (IdentifierName(generatedVTableName))
-                                .WithArgumentList(ArgumentList())
+                                .WithArgumentList(ArgumentList(SingletonSeparatedList(Argument(IdentifierName("_ctx")))))
                             )
                         )
                         .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
@@ -342,25 +338,35 @@ namespace Silk.NET.SilkTouch
                         }
                     )
                 )
-                .WithUsings(compilationUnit.Usings.Add(UsingDirective(IdentifierName("Silk.NET.Core.Native"))).Add(UsingDirective(IdentifierName("Silk.NET.Core.Contexts"))));
+                .WithUsings(AddIfNotExists(compilationUnit.Usings, "Silk.NET.Core.Native", "Silk.NET.Core.Contexts"));
 
             var result = newNamespace.NormalizeWhitespace().ToFullString();
             stopwatch.Stop();
             var reportTelemetry = true;
-#if !DEBUG
-            reportTelemetry = sourceContext.AnalyzerConfigOptions.GlobalOptions.TryGetValue
+
+            reportTelemetry = sourceContext.AnalyzerConfigOptions.GetOptions(classDeclarations.First().Item1.SyntaxTree).TryGetValue
                 ("silk_touch_telemetry", out var telstr) && bool.Parse(telstr);
-#endif
+
             if (reportTelemetry)
                 sourceContext.ReportDiagnostic
                 (
                     Diagnostic.Create
                     (
-                        Diagnostics.BuildInfo, classDeclarations.First().Item1.GetLocation(), slotCount, gcCount,
+                        Diagnostics.BuildInfo, classDeclarations.First().Item1.GetLocation(), gcCount,
                         stopwatch.ElapsedMilliseconds + "ms"
                     )
                 );
             return result;
+        }
+
+        private static SyntaxList<UsingDirectiveSyntax> AddIfNotExists
+            (SyntaxList<UsingDirectiveSyntax> list, params string[] usings)
+        {
+            foreach(var v in usings)
+                if (!list.Any(x => x.Name is IdentifierNameSyntax a && a.Identifier.Text == v))
+                    list = list.Add(UsingDirective(IdentifierName(v)));
+
+            return list;
         }
 
         private static void ProcessMethod
@@ -368,19 +374,22 @@ namespace Silk.NET.SilkTouch
             GeneratorExecutionContext sourceContext,
             MarshalBuilder rootMarshalBuilder,
             CallingConvention callingConvention,
-            Dictionary<int, string> entryPoints,
+            List<string> entryPoints,
             string entryPoint,
             bool classIsSealed,
             bool generateSeal,
             bool generateVTable,
-            int slot,
+            bool compactFileFormat,
             Compilation compilation,
             IMethodSymbol symbol,
             MethodDeclarationSyntax declaration,
             List<MemberDeclarationSyntax> newMembers,
             ref int gcCount,
             List<EntryPoint> processedEntrypoints,
-            string generatedVTableName
+            string generatedVTableName,
+            NamespaceDeclarationSyntax generationns,
+            ClassDeclarationSyntax generationclass,
+            SyntaxList<UsingDirectiveSyntax> generationusings
         )
         {
             void BuildLoadInvoke(ref IMarshalContext ctx, Action next)
@@ -417,12 +426,13 @@ namespace Silk.NET.SilkTouch
                         )
                     )
                 );
-                entryPoints[ctx.Slot] = entryPoint;
+                
+                entryPoints.Add(entryPoint);
                 processedEntrypoints.Add
                 (
                     new EntryPoint
                     (
-                        entryPoint, ctx.Slot, callingConvention,
+                        entryPoint, callingConvention,
                         ctx.LoadTypes.Select
                             (
                                 x => (TypeSyntax) IdentifierName
@@ -433,53 +443,36 @@ namespace Silk.NET.SilkTouch
                     )
                 );
 
-                ExpressionSyntax loadCallTarget;
+                Func<IMarshalContext, ExpressionSyntax> expression;
 
                 if ((classIsSealed || generateSeal) && generateVTable)
                 {
-                    loadCallTarget = MemberAccessExpression
+                    // build load + invocation
+                    expression = ctx => InvocationExpression
                     (
-                        SyntaxKind.SimpleMemberAccessExpression,
                         ParenthesizedExpression
                         (
-                            BinaryExpression
+                            CastExpression
                             (
-                                SyntaxKind.AsExpression, IdentifierName("CurrentVTable"), IdentifierName(generatedVTableName)
+                                fPtrType, MemberAccessExpression
+                                (
+                                    SyntaxKind.SimpleMemberAccessExpression,
+                                    ParenthesizedExpression
+                                    (
+                                        BinaryExpression
+                                        (
+                                            SyntaxKind.AsExpression, IdentifierName("CurrentVTable"), IdentifierName(generatedVTableName)
+                                        )
+                                    ), IdentifierName(FirstLetterToUpper(entryPoint))
+                                )
                             )
-                        ), IdentifierName("Load")
+                        ), ArgumentList(SeparatedList(parameters.Select(x => Argument(x.Value))))
                     );
                 }
                 else
                 {
-                    loadCallTarget = IdentifierName("Load");
+                    throw new Exception("FORCE-USE-VTABLE");
                 }
-
-                // build load + invocation
-                Func<IMarshalContext, ExpressionSyntax> expression = ctx => InvocationExpression
-                (
-                    ParenthesizedExpression
-                    (
-                        CastExpression
-                        (
-                            fPtrType, InvocationExpression
-                            (
-                                loadCallTarget, ArgumentList
-                                (
-                                    SeparatedList
-                                    (
-                                        new[]
-                                        {
-                                            Argument
-                                                (LiteralExpression(SyntaxKind.NumericLiteralExpression, Literal(ctx.Slot))),
-                                            Argument
-                                                (LiteralExpression(SyntaxKind.StringLiteralExpression, Literal(entryPoint)))
-                                        }
-                                    )
-                                )
-                            )
-                        )
-                    ), ArgumentList(SeparatedList(parameters.Select(x => Argument(x.Value))))
-                );
 
                 if (ctx.ReturnsVoid)
                 {
@@ -505,7 +498,7 @@ namespace Silk.NET.SilkTouch
 
                 marshalBuilder.Use(BuildLoadInvoke);
 
-                var context = new MarshalContext(compilation, symbol, slot);
+                var context = new MarshalContext(compilation, symbol);
 
                 marshalBuilder.Run(context);
 
@@ -547,9 +540,32 @@ namespace Silk.NET.SilkTouch
                     )
                     .WithReturnType
                         (IdentifierName(symbol.ReturnType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)));
-
-                // append to members
-                newMembers.Add(method);
+                
+                if (compactFileFormat)
+                {
+                    // append to members
+                    newMembers.Add(method);
+                }
+                else
+                {
+                    // directly output
+                    var newNamespace = generationns.WithMembers
+                        (
+                            List
+                            (
+                                new MemberDeclarationSyntax[]
+                                {
+                                    generationclass.WithMembers
+                                        (List(new MemberDeclarationSyntax[] {method}))
+                                    .WithAttributeLists(List<AttributeListSyntax>())
+                                }
+                            )
+                        )
+                        .WithUsings(generationusings);
+        
+                    var result = newNamespace.NormalizeWhitespace().ToFullString();
+                    Output(sourceContext, symbol.ToDisplayString(), result);
+                }
             }
             catch (Exception ex)
             {

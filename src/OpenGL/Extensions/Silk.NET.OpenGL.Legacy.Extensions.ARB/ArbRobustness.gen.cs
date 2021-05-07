@@ -156,6 +156,30 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnHistogramARB")]
+        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnHistogramARB")]
+        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnHistogramARB")]
+        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnHistogramARB")]
+        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnHistogramARB")]
+        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnHistogramARB")]
+        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnHistogramARB")]
+        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnHistogramARB")]
+        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnHistogramARB")]
         public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnHistogramARB")]
@@ -178,6 +202,30 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 
         [NativeApi(EntryPoint = "glGetnHistogramARB")]
         public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnHistogramARB")]
+        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnHistogramARB")]
+        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnHistogramARB")]
+        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnHistogramARB")]
+        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnHistogramARB")]
+        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnHistogramARB")]
+        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnHistogramARB")]
+        public unsafe partial void GetnHistogram([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnHistogramARB")]
+        public partial void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnMapdvARB")]
         public unsafe partial void GetnMap([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB query, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] double* v);
@@ -276,6 +324,30 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnMinmaxARB")]
+        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnMinmaxARB")]
+        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnMinmaxARB")]
+        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnMinmaxARB")]
+        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnMinmaxARB")]
+        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnMinmaxARB")]
+        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnMinmaxARB")]
+        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnMinmaxARB")]
+        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnMinmaxARB")]
         public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
 
         [NativeApi(EntryPoint = "glGetnMinmaxARB")]
@@ -298,6 +370,30 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
 
         [NativeApi(EntryPoint = "glGetnMinmaxARB")]
         public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnMinmaxARB")]
+        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnMinmaxARB")]
+        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnMinmaxARB")]
+        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnMinmaxARB")]
+        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnMinmaxARB")]
+        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnMinmaxARB")]
+        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
+
+        [NativeApi(EntryPoint = "glGetnMinmaxARB")]
+        public unsafe partial void GetnMinmax([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] void* values);
+
+        [NativeApi(EntryPoint = "glGetnMinmaxARB")]
+        public partial void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 values) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "glGetnPixelMapfvARB")]
         public unsafe partial void GetnPixelMap([Flow(FlowDirection.In)] ARB map, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] float* values);
@@ -632,6 +728,414 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
         [NativeApi(EntryPoint = "glReadnPixelsARB")]
         public partial void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint bufSize, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out T0 data) where T0 : unmanaged;
 
+        public unsafe void GetnColorTable<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnColorTable(target, format, type, (uint) (table.Length * Unsafe.SizeOf<T0>()), out table.GetPinnableReference());
+        }
+
+        public unsafe void GetnColorTable<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnColorTable(target, format, type, (uint) (table.Length * Unsafe.SizeOf<T0>()), out table.GetPinnableReference());
+        }
+
+        public unsafe void GetnColorTable<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnColorTable(target, format, type, (uint) (table.Length * Unsafe.SizeOf<T0>()), out table.GetPinnableReference());
+        }
+
+        public unsafe void GetnColorTable<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnColorTable(target, format, type, (uint) (table.Length * Unsafe.SizeOf<T0>()), out table.GetPinnableReference());
+        }
+
+        public unsafe void GetnColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnColorTable(target, format, type, (uint) (table.Length * Unsafe.SizeOf<T0>()), out table.GetPinnableReference());
+        }
+
+        public unsafe void GetnColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnColorTable(target, format, type, (uint) (table.Length * Unsafe.SizeOf<T0>()), out table.GetPinnableReference());
+        }
+
+        public unsafe void GetnColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnColorTable(target, format, type, (uint) (table.Length * Unsafe.SizeOf<T0>()), out table.GetPinnableReference());
+        }
+
+        public unsafe void GetnColorTable<T0>([Flow(FlowDirection.In)] ColorTableTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> table) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnColorTable(target, format, type, (uint) (table.Length * Unsafe.SizeOf<T0>()), out table.GetPinnableReference());
+        }
+
+        public unsafe void GetnCompressedTexImage<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int lod, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnCompressedTexImage(target, lod, (uint) (img.Length * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
+        }
+
+        public unsafe void GetnCompressedTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int lod, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnCompressedTexImage(target, lod, (uint) (img.Length * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
+        }
+
+        public unsafe void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnConvolutionFilter(target, format, type, (uint) (image.Length * Unsafe.SizeOf<T0>()), out image.GetPinnableReference());
+        }
+
+        public unsafe void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnConvolutionFilter(target, format, type, (uint) (image.Length * Unsafe.SizeOf<T0>()), out image.GetPinnableReference());
+        }
+
+        public unsafe void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnConvolutionFilter(target, format, type, (uint) (image.Length * Unsafe.SizeOf<T0>()), out image.GetPinnableReference());
+        }
+
+        public unsafe void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnConvolutionFilter(target, format, type, (uint) (image.Length * Unsafe.SizeOf<T0>()), out image.GetPinnableReference());
+        }
+
+        public unsafe void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnConvolutionFilter(target, format, type, (uint) (image.Length * Unsafe.SizeOf<T0>()), out image.GetPinnableReference());
+        }
+
+        public unsafe void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnConvolutionFilter(target, format, type, (uint) (image.Length * Unsafe.SizeOf<T0>()), out image.GetPinnableReference());
+        }
+
+        public unsafe void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnConvolutionFilter(target, format, type, (uint) (image.Length * Unsafe.SizeOf<T0>()), out image.GetPinnableReference());
+        }
+
+        public unsafe void GetnConvolutionFilter<T0>([Flow(FlowDirection.In)] ConvolutionTarget target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> image) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnConvolutionFilter(target, format, type, (uint) (image.Length * Unsafe.SizeOf<T0>()), out image.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnHistogram<T0>([Flow(FlowDirection.In)] HistogramTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnHistogram(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMap([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB query, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<double> v)
+        {
+            // ImplicitCountSpanOverloader
+            GetnMap(target, query, (uint) v.Length, out v.GetPinnableReference());
+        }
+
+        public unsafe void GetnMap([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] MapQuery query, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<double> v)
+        {
+            // ImplicitCountSpanOverloader
+            GetnMap(target, query, (uint) v.Length, out v.GetPinnableReference());
+        }
+
+        public unsafe void GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] ARB query, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<double> v)
+        {
+            // ImplicitCountSpanOverloader
+            GetnMap(target, query, (uint) v.Length, out v.GetPinnableReference());
+        }
+
+        public unsafe void GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] MapQuery query, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<double> v)
+        {
+            // ImplicitCountSpanOverloader
+            GetnMap(target, query, (uint) v.Length, out v.GetPinnableReference());
+        }
+
+        public unsafe void GetnMap([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB query, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> v)
+        {
+            // ImplicitCountSpanOverloader
+            GetnMap(target, query, (uint) v.Length, out v.GetPinnableReference());
+        }
+
+        public unsafe void GetnMap([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] MapQuery query, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> v)
+        {
+            // ImplicitCountSpanOverloader
+            GetnMap(target, query, (uint) v.Length, out v.GetPinnableReference());
+        }
+
+        public unsafe void GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] ARB query, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> v)
+        {
+            // ImplicitCountSpanOverloader
+            GetnMap(target, query, (uint) v.Length, out v.GetPinnableReference());
+        }
+
+        public unsafe void GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] MapQuery query, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> v)
+        {
+            // ImplicitCountSpanOverloader
+            GetnMap(target, query, (uint) v.Length, out v.GetPinnableReference());
+        }
+
+        public unsafe void GetnMap([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB query, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<int> v)
+        {
+            // ImplicitCountSpanOverloader
+            GetnMap(target, query, (uint) v.Length, out v.GetPinnableReference());
+        }
+
+        public unsafe void GetnMap([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] MapQuery query, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<int> v)
+        {
+            // ImplicitCountSpanOverloader
+            GetnMap(target, query, (uint) v.Length, out v.GetPinnableReference());
+        }
+
+        public unsafe void GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] ARB query, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<int> v)
+        {
+            // ImplicitCountSpanOverloader
+            GetnMap(target, query, (uint) v.Length, out v.GetPinnableReference());
+        }
+
+        public unsafe void GetnMap([Flow(FlowDirection.In)] MapTarget target, [Flow(FlowDirection.In)] MapQuery query, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<int> v)
+        {
+            // ImplicitCountSpanOverloader
+            GetnMap(target, query, (uint) v.Length, out v.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] bool reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnMinmax<T0>([Flow(FlowDirection.In)] MinmaxTargetEXT target, [Flow(FlowDirection.In)] Boolean reset, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> values) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnMinmax(target, reset, format, type, (uint) (values.Length * Unsafe.SizeOf<T0>()), out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnPixelMap([Flow(FlowDirection.In)] ARB map, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> values)
+        {
+            // ImplicitCountSpanOverloader
+            GetnPixelMap(map, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnPixelMap([Flow(FlowDirection.In)] PixelMap map, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> values)
+        {
+            // ImplicitCountSpanOverloader
+            GetnPixelMap(map, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnPixelMap([Flow(FlowDirection.In)] ARB map, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<uint> values)
+        {
+            // ImplicitCountSpanOverloader
+            GetnPixelMap(map, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnPixelMap([Flow(FlowDirection.In)] PixelMap map, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<uint> values)
+        {
+            // ImplicitCountSpanOverloader
+            GetnPixelMap(map, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnPixelMap([Flow(FlowDirection.In)] ARB map, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<ushort> values)
+        {
+            // ImplicitCountSpanOverloader
+            GetnPixelMap(map, (uint) values.Length, out values.GetPinnableReference());
+        }
+
+        public unsafe void GetnPixelMap([Flow(FlowDirection.In)] PixelMap map, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<ushort> values)
+        {
+            // ImplicitCountSpanOverloader
+            GetnPixelMap(map, (uint) values.Length, out values.GetPinnableReference());
+        }
+
         public unsafe byte GetnPolygonStipple()
         {
             const uint bufSize = 1;
@@ -639,6 +1143,402 @@ namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
             byte ret = default;
             GetnPolygonStipple(bufSize, &ret);
             return ret;
+        }
+
+        public unsafe void GetnPolygonStipple([Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> pattern)
+        {
+            // ImplicitCountSpanOverloader
+            GetnPolygonStipple((uint) pattern.Length, out pattern.GetPinnableReference());
+        }
+
+        public unsafe void GetnPolygonStipple([Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> pattern)
+        {
+            // ImplicitCountSpanOverloader
+            GetnPolygonStipple((uint) pattern.Length, out pattern.GetPinnableReference());
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) (column.Length * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) (column.Length * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) (column.Length * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) (column.Length * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) (column.Length * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) (column.Length * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) (column.Length * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) (column.Length * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) (column.Length * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) (column.Length * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) (column.Length * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) (column.Length * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) (column.Length * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) (column.Length * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) (column.Length * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) (column.Length * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) (column.Length * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) (column.Length * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) (column.Length * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) (column.Length * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) (column.Length * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) (column.Length * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) (column.Length * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) (column.Length * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) (column.Length * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) (column.Length * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) (column.Length * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) (column.Length * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) (column.Length * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Flow(FlowDirection.In)] uint rowBufSize, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] void* row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T0> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, rowBufSize, row, (uint) (column.Length * Unsafe.SizeOf<T0>()), out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Flow(FlowDirection.In)] uint columnBufSize, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] void* column, [Count(Count = 0), Flow(FlowDirection.Out)] out T1 span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), columnBufSize, column, out span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] void* span) where T0 : unmanaged where T1 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) (column.Length * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), span);
+        }
+
+        public unsafe void GetnSeparableFilter<T0, T1, T2>([Flow(FlowDirection.In)] SeparableTargetEXT target, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "rowBufSize"), Flow(FlowDirection.Out)] Span<T0> row, [Count(Parameter = "columnBufSize"), Flow(FlowDirection.Out)] Span<T1> column, [Count(Count = 0), Flow(FlowDirection.Out)] out T2 span) where T0 : unmanaged where T1 : unmanaged where T2 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnSeparableFilter(target, format, type, (uint) (row.Length * Unsafe.SizeOf<T0>()), out row.GetPinnableReference(), (uint) (column.Length * Unsafe.SizeOf<T1>()), out column.GetPinnableReference(), out span);
+        }
+
+        public unsafe void GetnTexImage<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnTexImage(target, level, format, type, (uint) (img.Length * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
+        }
+
+        public unsafe void GetnTexImage<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnTexImage(target, level, format, type, (uint) (img.Length * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
+        }
+
+        public unsafe void GetnTexImage<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnTexImage(target, level, format, type, (uint) (img.Length * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
+        }
+
+        public unsafe void GetnTexImage<T0>([Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnTexImage(target, level, format, type, (uint) (img.Length * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
+        }
+
+        public unsafe void GetnTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnTexImage(target, level, format, type, (uint) (img.Length * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
+        }
+
+        public unsafe void GetnTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnTexImage(target, level, format, type, (uint) (img.Length * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
+        }
+
+        public unsafe void GetnTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnTexImage(target, level, format, type, (uint) (img.Length * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
+        }
+
+        public unsafe void GetnTexImage<T0>([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> img) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            GetnTexImage(target, level, format, type, (uint) (img.Length * Unsafe.SizeOf<T0>()), out img.GetPinnableReference());
+        }
+
+        public unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<float> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetnUniform(program, location, (uint) @params.Length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<int> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetnUniform(program, location, (uint) @params.Length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<uint> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetnUniform(program, location, (uint) @params.Length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void GetnUniform([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<double> @params)
+        {
+            // ImplicitCountSpanOverloader
+            GetnUniform(program, location, (uint) @params.Length, out @params.GetPinnableReference());
+        }
+
+        public unsafe void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ReadnPixels(x, y, width, height, format, type, (uint) (data.Length * Unsafe.SizeOf<T0>()), out data.GetPinnableReference());
+        }
+
+        public unsafe void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] ARB format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ReadnPixels(x, y, width, height, format, type, (uint) (data.Length * Unsafe.SizeOf<T0>()), out data.GetPinnableReference());
+        }
+
+        public unsafe void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] ARB type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ReadnPixels(x, y, width, height, format, type, (uint) (data.Length * Unsafe.SizeOf<T0>()), out data.GetPinnableReference());
+        }
+
+        public unsafe void ReadnPixels<T0>([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] PixelFormat format, [Flow(FlowDirection.In)] PixelType type, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<T0> data) where T0 : unmanaged
+        {
+            // ImplicitCountSpanOverloader
+            ReadnPixels(x, y, width, height, format, type, (uint) (data.Length * Unsafe.SizeOf<T0>()), out data.GetPinnableReference());
         }
 
         public ArbRobustness(INativeContext ctx)

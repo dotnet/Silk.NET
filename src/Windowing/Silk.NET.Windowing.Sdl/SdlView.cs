@@ -53,11 +53,8 @@ namespace Silk.NET.Windowing.Sdl
         public override event Action<bool>? FocusChanged;
 
         // Properties
-        public override IGLContext? GLContext => _ctx ??= API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES
-            ? new SdlContext(Sdl, SdlWindow, this)
-            : null;
-
-        public override IVkSurface? VkSurface => _vk ??= API.API == ContextAPI.Vulkan ? new SdlVkSurface(this) : null;
+        protected override IGLContext? CoreGLContext => _ctx ??= new SdlContext(Sdl, SdlWindow, this);
+        protected override IVkSurface? CoreVkSurface => _vk ??= new SdlVkSurface(this);
         protected override nint CoreHandle => (nint) SdlWindow;
         internal SDL.Sdl Sdl { get; }
         internal SDL.Window* SdlWindow { get; private set; }
@@ -160,7 +157,7 @@ namespace Silk.NET.Windowing.Sdl
             }
             
             sharedContext?.MakeCurrent();
-            (GLContext as SdlContext)?.Create
+            (CoreGLContext as SdlContext)?.Create
             (
                 (GLattr.GLContextMajorVersion, opts.API.Version.MajorVersion),
                 (GLattr.GLContextMinorVersion, opts.API.Version.MinorVersion),
@@ -244,8 +241,12 @@ namespace Silk.NET.Windowing.Sdl
                 return;
             }
 
-            GLContext?.Dispose();
+            CoreGLContext?.Dispose();
             Sdl.DestroyWindow(SdlWindow);
+
+            SdlWindow = null;
+            _ctx = null;
+            _vk = null;
         }
 
         public override void DoEvents()

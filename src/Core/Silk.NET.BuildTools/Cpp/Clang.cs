@@ -899,8 +899,10 @@ namespace Silk.NET.BuildTools.Cpp
                                             Arguments = new List<string> {field.Handle.OffsetOfField.ToString()}
                                         }
                                     }
-                                    : new List<Attribute>()
+                                    : new List<Attribute>(),
+                                NumBits = field.IsBitField ? field.BitWidthValue : null
                             };
+
                             break;
                         }
                         case RecordDecl nestedRecordDecl:
