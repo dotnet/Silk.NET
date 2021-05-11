@@ -53,8 +53,12 @@ namespace Silk.NET.Windowing.Sdl
         public override event Action<bool>? FocusChanged;
 
         // Properties
-        protected override IGLContext? CoreGLContext => _ctx ??= new SdlContext(Sdl, SdlWindow, this);
-        protected override IVkSurface? CoreVkSurface => _vk ??= new SdlVkSurface(this);
+        protected override IGLContext? CoreGLContext => API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES
+            ? _ctx ??= new SdlContext(Sdl, SdlWindow, this)
+            : null;
+        protected override IVkSurface? CoreVkSurface => API.API == ContextAPI.Vulkan
+            ? _vk ??= new SdlVkSurface(this)
+            : null;
         protected override nint CoreHandle => (nint) SdlWindow;
         internal SDL.Sdl Sdl { get; }
         internal SDL.Window* SdlWindow { get; private set; }
