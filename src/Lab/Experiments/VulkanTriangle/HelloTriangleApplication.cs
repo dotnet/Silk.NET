@@ -79,13 +79,18 @@ namespace VulkanTriangle
         {
             var opts = WindowOptions.DefaultVulkan;
             opts.IsEventDriven = EventBasedRendering;
+
+            // Uncomment the line below to use SDL
+            // Window.PrioritizeSdl();
+
             _window = Window.Create(opts);
+            _window.Initialize(); // For safety the window should be initialized before querying the VkSurface
+
             if (_window?.VkSurface is null)
             {
                 throw new NotSupportedException("Windowing platform doesn't support Vulkan.");
             }
 
-            _window.Initialize();
             _window.FramebufferResize += OnFramebufferResize;
         }
 
@@ -592,13 +597,18 @@ namespace VulkanTriangle
             Console.WriteLine($"{_vk.CurrentInstance?.Handle} {_vk.CurrentDevice?.Handle}");
         }
 
-        private unsafe void CreateSwapChain()
+        private unsafe bool CreateSwapChain()
         {
             var swapChainSupport = QuerySwapChainSupport(_physicalDevice);
 
             var surfaceFormat = ChooseSwapSurfaceFormat(swapChainSupport.Formats);
             var presentMode = ChooseSwapPresentMode(swapChainSupport.PresentModes);
             var extent = ChooseSwapExtent(swapChainSupport.Capabilities);
+
+            // TODO: On SDL minimizing the window does not affect the frameBufferSize.
+            // This check can be removed if it does
+            if (extent.Width == 0 || extent.Height == 0)
+                return false;
 
             var imageCount = swapChainSupport.Capabilities.MinImageCount + 1;
             if (swapChainSupport.Capabilities.MaxImageCount > 0 &&
@@ -665,6 +675,8 @@ namespace VulkanTriangle
 
             _swapchainImageFormat = surfaceFormat.Format;
             _swapchainExtent = extent;
+
+            return true;
         }
 
         private unsafe void RecreateSwapChain()
@@ -681,7 +693,13 @@ namespace VulkanTriangle
 
             CleanupSwapchain();
 
-            CreateSwapChain();
+            // TODO: On SDL it is possible to get an invalid swap chain when the window is minimized.
+            // This check can be removed when the above frameBufferSize check catches it.
+            while (!CreateSwapChain())
+            {
+                _window.DoEvents();
+            }
+
             CreateImageViews();
             CreateRenderPass();
             CreateGraphicsPipeline();
