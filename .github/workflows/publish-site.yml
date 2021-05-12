@@ -1,0 +1,30 @@
+name: Website Build
+on:
+  push:
+    branches:
+      - 'feature/heavy-wip-website'
+  pull_request:
+    # none
+jobs:
+  Build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        submodules: 'true'
+    - name: Setup .NET 5.0
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.201
+    - name: Setup .NET Core 3.1
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.404
+    - name: Run Raisin
+      run: dotnet run -c Release -f net5.0 -p build/submodules/Raisin/Raisin/Raisin.csproj -- website/raisin.csx
+    - name: Push to Website Branch
+      run: |
+        git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
+        git config --local user.name "The Silk.NET DevOps Automaton"
+        git commit -am "Push latest built in-development GitHub Pages site"
+        git push -f

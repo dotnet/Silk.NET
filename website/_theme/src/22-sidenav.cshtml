@@ -1,0 +1,61 @@
+@using Raisin.Plugins.TableOfContents;
+@using System.Linq;
+@if (Model is TableOfContentsModel tocModel)
+{
+    var chosenParent = (tocModel.Node.Children?.Any() ?? false)
+        ? tocModel.Node
+        : tocModel.Node?.Parent;
+    if (chosenParent is not null)
+    {
+        <div class="col-12 col-md-3 col-xl-2 ct-sidebar">
+            <nav class="collapse ct-links" id="ct-docs-nav">
+                <div class="ct-toc-item active">
+                    @if (chosenParent.Parent?.Children?.Any(x => x != chosenParent) ?? false)
+                    {
+                        <div class="dropdown">
+                            <a class="dropdown-toggle ct-toc-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                @chosenParent.Name
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                @foreach (var sibling in chosenParent.Parent.Children)
+                                {
+                                    if (sibling != chosenParent)
+                                    {
+                                        <a class="dropdown-item" href="@Raw(Model.MakeRelativeToCurrentOutput(sibling.FullUrl))">@sibling.Name</a>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    }
+                    else if (chosenParent is not null)
+                    {
+                        <a class="ct-toc-link" href="@Raw(Model.MakeRelativeToCurrentOutput(chosenParent.FullUrl))">
+                            @chosenParent.Name
+                        </a>
+                    }
+                    <ul class="nav ct-sidenav">
+                        @foreach (var child in chosenParent?.Children ?? Enumerable.Empty<TableOfContentsElement>())
+                        {
+                            @if (child == tocModel.Node)
+                            {
+                                <li class="active ct-sidenav-active">
+                                    <a href="@Raw(Model.MakeRelativeToCurrentOutput(child.FullUrl))">
+                                        @child.Name
+                                    </a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li>
+                                    <a href="@Raw(Model.MakeRelativeToCurrentOutput(child.FullUrl))">
+                                        @child.Name
+                                    </a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    }
+}

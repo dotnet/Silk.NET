@@ -1,0 +1,17 @@
+@using Raisin.Plugins.TableOfContents;
+@{var isRawContent = "false";}
+@if (Model is TableOfContentsModel tocModel)
+{
+    @if (tocModel.Node.Metadata?.TryGetValue("theme.silk.raw_content", out isRawContent) ?? false)
+    {
+        @await Model.IncludeAsync(this, "_theme/src/25-actualcontent.cshtml");
+    }
+    else
+    {
+        @await Model.IncludeAsync(this, "_theme/src/21-sidenavcontent.cshtml");
+    }
+}
+else
+{
+    @await Model.IncludeAsync(this, "_theme/src/24-nosidenavcontent.cshtml");
+}

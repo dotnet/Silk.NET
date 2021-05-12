@@ -1,0 +1,23 @@
+@using Raisin.Plugins.TableOfContents;
+<div class="container-fluid">
+    <div class="row flex-xl-nowrap">
+        @await Model.IncludeAsync(this, "_theme/src/22-sidenav.cshtml")
+        @await Model.IncludeAsync(this, "_theme/src/23-contentnavigation.cshtml")
+        <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 ct-content" role="main">
+            @if (Model is TableOfContentsModel tocModel)
+            {
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        @foreach (var ancestor in tocModel.Node.Ancestors)
+                        {
+                            <li class="breadcrumb-item"><a href="@Raw(Model.MakeRelativeToCurrentOutput(ancestor.FullUrl))">@ancestor.Name</a></li>
+                        }
+
+                        <li class="breadcrumb-item active" aria-current="page">@tocModel.Node.Name</li>
+                    </ol>
+                </nav>
+            }
+            @await Model.IncludeAsync(this, "_theme/src/25-actualcontent.cshtml")
+        </main>
+    </div>
+</div>

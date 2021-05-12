@@ -1,0 +1,72 @@
+@using Raisin.Plugins.TableOfContents;
+@using Raisin.Core;
+
+@{
+    TableOfContentsElement? tocModelRoot = null;
+    TableOfContentsElement? tocModelNode = null;
+}
+
+@if (Model is TableOfContentsModel tocModel)
+{
+    tocModelRoot = tocModel.Root;
+    tocModelNode = tocModel.Node;
+    Model = tocModel.BaseModel;
+}
+else
+{
+    <br />
+}
+
+@{
+    if (tocModelRoot is null && TableOfContentsExtensions.TryFindAnyTableOfContents(Model, out tocModelRoot))
+    {
+        // do nothing, the if has done all the talking for us
+    }
+
+    var isWip = "false";
+    var copyrightHolder = string.Empty;
+    var copyrightHolderUrl = string.Empty;
+    var footNote = string.Empty;
+}
+
+@if ((tocModelRoot?.Metadata?.TryGetValue("theme.silk.wip", out isWip) ?? false) && bool.Parse(isWip) &&
+     !((tocModelNode?.Metadata?.TryGetValue("theme.silk.raw_content", out isWip) ?? false) && bool.Parse(isWip)))
+{
+    <div class="alert alert-danger" role="alert">
+        This site is a work in progress!
+    </div>
+}
+
+@if (Model is HtmlModel htmlModel)
+{
+    @Raw(htmlModel.Html)
+}
+
+@if (tocModelRoot?.Metadata?.TryGetValue("theme.silk.footer.copyright", out copyrightHolder) ?? false)
+{
+    <hr class="silk-last-hr">
+    <div>
+      <div class="col-md-6">
+        <div class="copyright">
+            &copy; @DateTime.Now.Year
+            @if (tocModelRoot?.Metadata?.TryGetValue("theme.silk.footer.copyright.url", out copyrightHolderUrl) ?? false)
+            {
+                <a href="@Raw(copyrightHolderUrl)" target="_blank">@copyrightHolder</a>
+            }
+            else
+            {
+                <a target="_blank">@copyrightHolder</a>
+            }
+        </div>
+      </div>
+    </div>
+}
+
+@if (tocModelRoot?.Metadata?.TryGetValue("theme.silk.footer.note", out footNote) ?? false)
+{
+    <div class="container-fluid">
+        <p class="silk-disclaimer">
+            <small>@footNote</small>
+        </p>
+    </div>
+}

@@ -1,0 +1,39 @@
+{
+    "Name": "Home",
+    "Url": "index.html",
+    "Children": [
+        {
+            "Name": "Documentation",
+            "Url": "::docs/toc.json"
+        },
+        {
+            "Name": "FAQ",
+            "Url": ">>docs/silk.net/faq.html"
+        }
+    ],
+    "Metadata": {
+        "_comment0": "Theme-global navbar URLs",
+        "theme.silk.nav.discord": "https://discord.gg/DTHHXRt",
+        "theme.silk.nav.github": "https://github.com/dotnet/Silk.NET",
+
+        "_comment1": "Theme-global navbar config",
+        "theme.silk.nav.btn": "btn btn-outline-primary",
+        "theme.silk.nav.btn.txt": "Getting Started",
+        "theme.silk.nav.btn.href": "docs/",
+        "theme.silk.nav.img": "images/wordmark.png",
+
+        "_comment2": "Page-specific navbar config.",
+        "theme.silk.nav.headroom": "true",
+
+        "_comment3": "Page-specific: 'raw_content' means 'don't add any containers or stuff'",
+        "theme.silk.raw_content": "true",
+
+        "_comment4": "Theme-global: show 'WIP' warnings everywhere!",
+        "theme.silk.wip": "true",
+
+        "_comment5": "Theme-global: footer configuration.",
+        "theme.silk.footer.copyright": ".NET Foundation and Contributors",
+        "theme.silk.footer.copyright.url": "https://dotnetfoundation.org",
+        "theme.silk.footer.note": "Khronos®, Vulkan® are registered trademarks, and OpenXR™ is a trademark of The Khronos Group Inc. and is registered as a trademark in China, the European Union, Japan and the United Kingdom. OpenCL™, OpenGL®, and the OpenGL ES™ logos are registered trademarks or trademarks used under license by Khronos. Microsoft® and DirectX® are registered trademarks of Microsoft Corporation, used solely for identification. All other product names, trademarks, and/or company names are also used solely for identification and belong to their respective owners. Use of external images, trademarks, and/or resources are not endorsements, and no information in or regarding any of these external resources has been endorsed or approved by Silk.NET or the .NET Foundation."
+    }
+}

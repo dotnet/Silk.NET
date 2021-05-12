@@ -1,0 +1,55 @@
+
+/* Silk.NET Additions */
+.headroom--not-top, .navbar-dark, .section-shaped .shape-style-1.shape-dark {
+    background: #0e2244 !important;
+}
+
+.silk-dnf-logo {
+    height: 48px;
+    margin-bottom: 2px;
+}
+
+.silk-buzzcards > div > .card {
+    height: 100%;
+}
+
+.silk-supported-logo {
+    max-height: 48px;
+    max-width:100%;
+}
+
+.navbar-silk {
+    width: 100%;
+    height: 96px;
+}
+
+.navbar.navbar-main {
+    z-index: 1069;
+}
+
+.docs {
+    background: white;
+}
+
+.ct-sidebar {
+    top: 0rem;
+    height: calc(100vh);
+}
+
+.ct-links {
+    height: 100%;
+    max-height: calc(100vh);
+    overflow-y: auto;
+}
+
+.silk-disclaimer > small {
+    font-size: 60%;
+}
+
+.silk-disclaimer {
+    line-height: 1;
+}
+
+.silk-last-hr {
+    margin-bottom: 1rem;
+}

@@ -1,0 +1,28 @@
+@using Raisin.Plugins.TableOfContents
+@if (Model is TableOfContentsModel tocModel)
+{
+  <header class="header-global">
+    @{var usesHeadroom = "false";}
+    @if ((tocModel.Node.Metadata?.TryGetValue("theme.silk.nav.headroom", out usesHeadroom) ?? false) && bool.Parse(usesHeadroom))
+    {
+        <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-silk headroom">
+        @await Model.IncludeAsync(this, "_theme/src/11-navcontent.cshtml")
+        </nav>
+    }
+    else
+    {
+        <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-horizontal navbar-dark">
+        @await Model.IncludeAsync(this, "_theme/src/11-navcontent.cshtml") 
+        </nav>
+    }
+  </header>
+}
+else if (TableOfContentsExtensions.TryFindAnyTableOfContents(Model, out TableOfContentsElement _))
+{
+  <!-- CODEGEN NOTE: Have we generated the wrong navbar? Try adding your page to a toc file! -->
+  <header class="header-global">
+    <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-horizontal navbar-dark">
+    @await Model.IncludeAsync(this, "_theme/src/11-navcontent.cshtml") 
+    </nav>
+  </header>
+}
