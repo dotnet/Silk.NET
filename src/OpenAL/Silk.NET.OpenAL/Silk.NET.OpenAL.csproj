@@ -11,9 +11,5 @@
     <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
   </ItemGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\..\Native\Silk.NET.OpenAL.Native\Silk.NET.OpenAL.Native.csproj" />
-  </ItemGroup>
-  
   <Import Project="..\..\..\build\props\bindings.props" />
 </Project>

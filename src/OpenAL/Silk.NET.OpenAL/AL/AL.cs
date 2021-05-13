@@ -330,11 +330,13 @@ namespace Silk.NET.OpenAL
         /// <summary>
         /// Gets an instance of the API.
         /// </summary>
+        /// <param name="soft">Use OpenAL Soft libraries.</param>
         /// <returns>The instance.</returns>
-        public static AL GetApi()
+        public static AL GetApi(bool soft = false)
         {
+            SearchPathContainer container = soft ? new OpenALSoftLibraryNameContainer() : new OpenALLibraryNameContainer();
             var ctx = new MultiNativeContext
-                (CreateDefaultContext(new OpenALLibraryNameContainer().GetLibraryName()), null);
+                (CreateDefaultContext(container.GetLibraryName()), null);
             var ret = new AL(ctx);
             ctx.Contexts[1] = new LamdaNativeContext
                 (x => x.EndsWith("GetProcAddress") ? default : ret.GetProcAddress(x));
