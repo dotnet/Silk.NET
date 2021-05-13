@@ -179,7 +179,7 @@ namespace Tutorial
             Shader.SetUniform("uView", view);
             Shader.SetUniform("uProjection", projection);
 
-            //We're drawing with just vertices and no indicies, and it takes 36 verticies to have a six-sided textured cube
+            //We're drawing with just vertices and no indices, and it takes 36 vertices to have a six-sided textured cube
             Gl.DrawArrays(PrimitiveType.Triangles, 0, 36);
         }
 
