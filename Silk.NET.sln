@@ -392,7 +392,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WavePlayer", "examples\CSha
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImGuiVulkan", "src\Lab\Experiments\ImGuiVulkan\ImGuiVulkan.csproj", "{89B03DDB-EBCA-4E6A-80AB-9FFD48110097}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenAL.Native", "src\Native\Silk.NET.OpenAL.Native\Silk.NET.OpenAL.Native.csproj", "{0DF430D1-39E6-46F5-AE58-B6DE0BD3F72B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.OpenAL.Soft.Native", "src\Native\Silk.NET.OpenAL.Soft.Native\Silk.NET.OpenAL.Soft.Native.csproj", "{0DF430D1-39E6-46F5-AE58-B6DE0BD3F72B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
