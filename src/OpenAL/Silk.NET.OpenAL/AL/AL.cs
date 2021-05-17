@@ -17,6 +17,9 @@ namespace Silk.NET.OpenAL
     [NativeApi(Prefix = "al")]
     public partial class AL : NativeAPI
     {
+        private bool _soft;
+        private SearchPathContainer? _searchPaths;
+
         /// <inheritdoc cref="NativeLibraryBase" />
         protected AL(INativeContext ctx)
             : base(ctx)
@@ -27,7 +30,8 @@ namespace Silk.NET.OpenAL
         public override partial bool IsExtensionPresent(string name);
 
         /// <inheritdoc />
-        public SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
+        public SearchPathContainer SearchPaths => _searchPaths ??= (_soft
+             ? new OpenALSoftLibraryNameContainer() : new OpenALLibraryNameContainer());
 
         /// <inheritdoc />
         public partial nint GetProcAddress(string name);
@@ -330,12 +334,17 @@ namespace Silk.NET.OpenAL
         /// <summary>
         /// Gets an instance of the API.
         /// </summary>
+        /// <param name="soft">Use OpenAL Soft libraries.</param>
         /// <returns>The instance.</returns>
-        public static AL GetApi()
+        public static AL GetApi(bool soft = false)
         {
+            SearchPathContainer searchPaths = soft ? new OpenALSoftLibraryNameContainer() : new OpenALLibraryNameContainer();
             var ctx = new MultiNativeContext
-                (CreateDefaultContext(new OpenALLibraryNameContainer().GetLibraryName()), null);
+                (CreateDefaultContext(searchPaths.GetLibraryName()), null);
             var ret = new AL(ctx);
+            ret._soft = soft;
+            ret._searchPaths = searchPaths;
+
             ctx.Contexts[1] = new LamdaNativeContext
                 (x => x.EndsWith("GetProcAddress") ? default : ret.GetProcAddress(x));
             return ret;
