@@ -8,14 +8,14 @@ buildscript {
     }
 
     dependencies {
-        classpath("com.jetbrains.rd:rd-gen:0.201.57") // https://www.myget.org/feed/rd-snapshots/package/maven/com.jetbrains.rd/rd-gen
+        classpath("com.jetbrains.rd:rd-gen:0.211.243") // https://www.myget.org/feed/rd-snapshots/package/maven/com.jetbrains.rd/rd-gen
     }
 }
 
 plugins {
     id 'java'
     id 'org.jetbrains.kotlin.jvm' version '1.3.61'
-    id 'org.jetbrains.intellij' version '0.4.19' // https://github.com/JetBrains/gradle-intellij-plugin/releases
+    id 'org.jetbrains.intellij' version '0.7.3' // https://github.com/JetBrains/gradle-intellij-plugin/releases
 }
 
 ext {

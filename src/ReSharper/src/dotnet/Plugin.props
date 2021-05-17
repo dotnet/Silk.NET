@@ -1,7 +1,7 @@
-<Project>
+﻿<Project>
 
   <PropertyGroup>
-    <SdkVersion>2020.2.0</SdkVersion>
+    <SdkVersion>2021.1.2</SdkVersion>
 
     <Title>SilkDotNet</Title>
     <Description>Description</Description>

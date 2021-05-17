@@ -17,6 +17,8 @@ EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReSharperPlugin.SilkDotNet.DataGenerator", "src\dotnet\ReSharperPlugin.SilkDotNet.DataGenerator\ReSharperPlugin.SilkDotNet.DataGenerator.csproj", "{2A2E0150-507A-4BEE-A62D-602B717D089D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoProject", "DemoProject\DemoProject.csproj", "{4175CAB2-8BA1-4A06-9B42-9C0E4C04BC82}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,5 +41,9 @@ Global
 		{2A2E0150-507A-4BEE-A62D-602B717D089D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A2E0150-507A-4BEE-A62D-602B717D089D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A2E0150-507A-4BEE-A62D-602B717D089D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4175CAB2-8BA1-4A06-9B42-9C0E4C04BC82}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4175CAB2-8BA1-4A06-9B42-9C0E4C04BC82}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4175CAB2-8BA1-4A06-9B42-9C0E4C04BC82}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4175CAB2-8BA1-4A06-9B42-9C0E4C04BC82}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
