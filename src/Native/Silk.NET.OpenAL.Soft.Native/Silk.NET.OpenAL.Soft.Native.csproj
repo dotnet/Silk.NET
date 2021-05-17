@@ -8,7 +8,6 @@
 
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0;net4.6.1</TargetFrameworks>
-    <PackageId>Silk.NET.OpenAL.Soft.Native</PackageId> 
     <PackageVersion>1.21.1</PackageVersion>
     <Authors>.NET Foundation and Contributors</Authors>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
