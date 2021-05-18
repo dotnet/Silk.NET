@@ -19,10 +19,8 @@ using JetBrains.ReSharper.Psi.CSharp.Tree;
 using JetBrains.ReSharper.Psi.CSharp.Util;
 using JetBrains.ReSharper.Psi.Tree;
 using JetBrains.ReSharper.Psi.Util;
-using JetBrains.RiderTutorials.Utils;
 using JetBrains.TextControl;
 using JetBrains.Util;
-using JetBrains.Util.PaternMatching;
 
 namespace ReSharperPlugin.SilkDotNet
 {
@@ -44,13 +42,29 @@ namespace ReSharperPlugin.SilkDotNet
             var pointerDeclaration = element.PointerDeclarationsEnumerable.First();
             var pointerType = pointerDeclaration.Type;
             if (!pointerType.IsPointerType() ||
-                !pointerType.GetScalarType().IsFloat())
+                !pointerType.GetScalarType().IsInt())
                 return;
 
-            var statement = block.Statements.SingleItem as IExpressionStatement;
-            if (statement?.Expression is not IInvocationExpression invocationExpression)
+            IInvocationExpression invocationExpression;
+            if (block.Statements.SingleItem is IExpressionStatement expressionStatement)
+            {
+                switch (expressionStatement.Expression)
+                {
+                    case IInvocationExpression e:
+                        invocationExpression = e;
+                        break;
+                    case IAssignmentExpression {Source: IInvocationExpression e}:
+                        invocationExpression = e;
+                        break;
+                    default:
+                        return;
+                }
+            }
+            else
+            {
                 return;
-
+            }
+            
             if (invocationExpression.Reference.Resolve().DeclaredElement is not IMethod method)
                 return;
 
@@ -71,7 +85,7 @@ namespace ReSharperPlugin.SilkDotNet
                 return;
 
             var pointerArgumentIndex = method.Parameters.IndexOf(pointerArgument.MatchingParameter?.Element);
-            var candidateMethods = method.ContainingType?.GetAllMethods()
+            var candidateMethods = method.ContainingType?.GetMembers().OfType<IMethod>()
                 .Where(x => x.ShortName == method.ShortName)
                 .Where(x => x.Parameters.Count == method.Parameters.Count)
                 .Where(x => x.ReturnType.Equals(method.ReturnType))
@@ -96,7 +110,7 @@ namespace ReSharperPlugin.SilkDotNet
 
             consumer.AddHighlighting
             (
-                new UnnecessaryExplicitPinningHighlighting(element, invocationExpression, pointerArgument, candidateMethods.SingleItem())
+                new UnnecessaryExplicitPinningHighlighting(element, invocationExpression, pointerArgument, candidateMethods.SingleItem(), block.Statements.SingleItem)
             );
         }
     }
@@ -129,19 +143,22 @@ namespace ReSharperPlugin.SilkDotNet
             IUnsafeCodeFixedStatement fixedStatement,
             IInvocationExpression invocationExpression,
             ICSharpArgument pointerArgument,
-            IMethod replacementMethod
+            IMethod replacementMethod,
+            IStatement originalStatement
         )
         {
             FixedStatement = fixedStatement;
             InvocationExpression = invocationExpression;
             PointerArgument = pointerArgument;
             ReplacementMethod = replacementMethod;
+            OriginalStatement = originalStatement;
         }
 
         public IUnsafeCodeFixedStatement FixedStatement { get; }
         public IInvocationExpression InvocationExpression { get; }
         public ICSharpArgument PointerArgument { get; }
         public IMethod ReplacementMethod { get; }
+        public IStatement OriginalStatement { get; }
 
         public bool IsValid()
         {
@@ -166,12 +183,14 @@ namespace ReSharperPlugin.SilkDotNet
             InvocationExpression = warning.InvocationExpression;
             PointerArgument = warning.PointerArgument;
             ReplacementMethod = warning.ReplacementMethod;
+            OriginalStatement = warning.OriginalStatement;
         }
 
         public IUnsafeCodeFixedStatement FixedStatement { get; set; }
         public IInvocationExpression InvocationExpression { get; set; }
         public ICSharpArgument PointerArgument { get; set; }
         public IMethod ReplacementMethod { get; set; }
+        public IStatement OriginalStatement { get; set; }
 
         public override string Text => $"Use appropriate overload";
     
@@ -185,12 +204,11 @@ namespace ReSharperPlugin.SilkDotNet
             var elementFactory = CSharpElementFactory.GetInstance(FixedStatement);
             var data = (IExpressionInitializer) FixedStatement.PointerDeclarationsEnumerable.First().Initializer;
             var dataExpressions = elementFactory.CreateArgument
-                (ParameterKind.INPUT, elementFactory.CreateExpression("$0[0]", data.Value));
+                (ParameterKind.VALUE, elementFactory.CreateExpression("$0", data.Value));
             PointerArgument.Expression.ReplaceBy(dataExpressions.Expression);
-            PointerArgument.SetKind(ParameterKind.INPUT);
+            PointerArgument.SetKind(ParameterKind.VALUE);
             InvocationExpression.Reference.BindTo(ReplacementMethod);
-            var newStatement = elementFactory.CreateStatement("$0;", InvocationExpression);
-            FixedStatement.ReplaceBy(newStatement);
+            FixedStatement.ReplaceBy(OriginalStatement);
 
             return null;
         }
