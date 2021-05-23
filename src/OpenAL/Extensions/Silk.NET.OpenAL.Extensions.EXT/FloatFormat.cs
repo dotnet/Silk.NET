@@ -10,7 +10,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     /// <summary>
     /// Exposes the multi-channel buffers extension by Creative Labs.
     /// </summary>
-    [Extension("AL_EXT_float")]
+    [Extension("AL_EXT_float32")]
     [NativeApi(Prefix = "al")]
     public partial class FloatFormat : FormatExtensionBase<FloatBufferFormat>
     {
