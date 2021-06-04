@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>OpenGL_VR_Demo</RootNamespace>
+        <Nullable>enable</Nullable>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\..\..\src\OpenGL\Silk.NET.OpenGL\Silk.NET.OpenGL.csproj" />
+      <ProjectReference Include="..\..\..\..\src\OpenXR\Extensions\Silk.NET.OpenXR.Extensions.EXT\Silk.NET.OpenXR.Extensions.EXT.csproj" />
+      <ProjectReference Include="..\..\..\..\src\OpenXR\Extensions\Silk.NET.OpenXR.Extensions.KHR\Silk.NET.OpenXR.Extensions.KHR.csproj" />
+      <ProjectReference Include="..\..\..\..\src\OpenXR\Silk.NET.OpenXR\Silk.NET.OpenXR.csproj" />
+      <ProjectReference Include="..\..\..\..\src\Windowing\Silk.NET.Windowing\Silk.NET.Windowing.csproj" />
+    </ItemGroup>
+
+</Project>

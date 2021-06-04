@@ -61,7 +61,7 @@ namespace Silk.NET.Windowing
         public int? PreferredStencilBufferBits { get; set; }
 
         /// <inheritdoc />
-        public Vector4D<int>? PreferredBitDepth { get; }
+        public Vector4D<int>? PreferredBitDepth { get; set; }
 
         /// <inheritdoc />
         public Vector2D<int> Position { get; set; }
