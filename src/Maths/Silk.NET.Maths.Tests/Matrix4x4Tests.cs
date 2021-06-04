@@ -955,17 +955,6 @@ namespace Silk.NET.Maths.Tests
             });
         }
 
-        // A test for CreatePerspective (float, float, float, float)
-        // CreatePerspective test where near plane is beyond far plane
-        [Fact]
-        public void Matrix4x4CreatePerspectiveTest4()
-        {
-            Assert.Throws<ArgumentOutOfRangeException>(() =>
-            {
-                Matrix4X4<float> actual = Matrix4X4.CreatePerspective<float>(10, 10, 10, 1);
-            });
-        }
-
         // A test for CreatePerspectiveFieldOfView (float, float, float, float)
         [Fact]
         public void Matrix4x4CreatePerspectiveFieldOfViewTest()
@@ -1031,17 +1020,6 @@ namespace Silk.NET.Maths.Tests
             });
         }
 
-        // A test for CreatePerspectiveFieldOfView (float, float, float, float)
-        // CreatePerspectiveFieldOfView test where nearPlaneDistance is larger than farPlaneDistance.
-        [Fact]
-        public void Matrix4x4CreatePerspectiveFieldOfViewTest5()
-        {
-            Assert.Throws<ArgumentOutOfRangeException>(() =>
-            {
-                Matrix4X4<float> mtx = Matrix4X4.CreatePerspectiveFieldOfView(MathHelper.PiOver4, 1, 10, 1);
-            });
-        }
-
         // A test for CreatePerspectiveOffCenter (float, float, float, float, float, float)
         [Fact]
         public void Matrix4x4CreatePerspectiveOffCenterTest()
@@ -1088,18 +1066,6 @@ namespace Silk.NET.Maths.Tests
             {
                 float left = 10.0f, right = 90.0f, bottom = 20.0f, top = 180.0f;
                 Matrix4X4<float> actual = Matrix4X4.CreatePerspectiveOffCenter(left, right, bottom, top, 1, -10);
-            });
-        }
-
-        // A test for CreatePerspectiveOffCenter (float, float, float, float, float, float)
-        // CreatePerspectiveOffCenter test where test where nearPlaneDistance is larger than farPlaneDistance.
-        [Fact]
-        public void Matrix4x4CreatePerspectiveOffCenterTest3()
-        {
-            Assert.Throws<ArgumentOutOfRangeException>(() =>
-            {
-                float left = 10.0f, right = 90.0f, bottom = 20.0f, top = 180.0f;
-                Matrix4X4<float> actual = Matrix4X4.CreatePerspectiveOffCenter(left, right, bottom, top, 10, 1);
             });
         }
 
