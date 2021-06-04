@@ -324,9 +324,8 @@ namespace Silk.NET.Maths
         /// <param name="height">Height of the view volume at the near view plane.</param>
         /// <param name="nearPlaneDistance">Distance to the near view plane.</param>
         /// <param name="farPlaneDistance">Distance to the far view plane.</param>
-        /// <param name="reverseZ">Swaps near and far plane distance in order to produce a reversed Z projection matrix.</param>
         /// <returns>The perspective projection matrix.</returns>
-        public static Matrix4X4<T> CreatePerspective<T>(T width, T height, T nearPlaneDistance, T farPlaneDistance, bool reverseZ = false)
+        public static Matrix4X4<T> CreatePerspective<T>(T width, T height, T nearPlaneDistance, T farPlaneDistance)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             if (!Scalar.GreaterThan(nearPlaneDistance, Scalar<T>.Zero))
@@ -337,14 +336,6 @@ namespace Silk.NET.Maths
 
             if (Scalar.GreaterThanOrEqual(nearPlaneDistance, farPlaneDistance))
                 throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
-
-            if (reverseZ)
-            {
-                var temp = nearPlaneDistance;
-
-                nearPlaneDistance = farPlaneDistance;
-                farPlaneDistance = temp;
-            }
 
             Matrix4X4<T> result = default;
 
@@ -372,9 +363,8 @@ namespace Silk.NET.Maths
         /// <param name="aspectRatio">Aspect ratio, defined as view space width divided by height.</param>
         /// <param name="nearPlaneDistance">Distance to the near view plane.</param>
         /// <param name="farPlaneDistance">Distance to the far view plane.</param>
-        /// <param name="reverseZ">Swaps near and far plane distance in order to produce a reversed Z projection matrix.</param>
         /// <returns>The perspective projection matrix.</returns>
-        public static Matrix4X4<T> CreatePerspectiveFieldOfView<T>(T fieldOfView, T aspectRatio, T nearPlaneDistance, T farPlaneDistance, bool reverseZ = false)
+        public static Matrix4X4<T> CreatePerspectiveFieldOfView<T>(T fieldOfView, T aspectRatio, T nearPlaneDistance, T farPlaneDistance)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             if (!Scalar.GreaterThan(fieldOfView, Scalar<T>.Zero) || Scalar.GreaterThanOrEqual(fieldOfView, Scalar<T>.Pi))
@@ -388,14 +378,6 @@ namespace Silk.NET.Maths
 
             if (Scalar.GreaterThanOrEqual(nearPlaneDistance, farPlaneDistance))
                 throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
-
-            if (reverseZ)
-            {
-                var temp = nearPlaneDistance;
-
-                nearPlaneDistance = farPlaneDistance;
-                farPlaneDistance = temp;
-            }
 
             T yScale = Scalar.Reciprocal(Scalar.Tan(Scalar.Divide(fieldOfView, Scalar<T>.Two)));
             T xScale = Scalar.Divide(yScale, aspectRatio);
@@ -426,9 +408,8 @@ namespace Silk.NET.Maths
         /// <param name="top">Maximum y-value of the view volume at the near view plane.</param>
         /// <param name="nearPlaneDistance">Distance to the near view plane.</param>
         /// <param name="farPlaneDistance">Distance to of the far view plane.</param>
-        /// <param name="reverseZ">Swaps near and far plane distance in order to produce a reversed Z projection matrix.</param>
         /// <returns>The perspective projection matrix.</returns>
-        public static Matrix4X4<T> CreatePerspectiveOffCenter<T>(T left, T right, T bottom, T top, T nearPlaneDistance, T farPlaneDistance, bool reverseZ = false)
+        public static Matrix4X4<T> CreatePerspectiveOffCenter<T>(T left, T right, T bottom, T top, T nearPlaneDistance, T farPlaneDistance)
             where T : unmanaged, IFormattable, IEquatable<T>, IComparable<T>
         {
             if (!Scalar.GreaterThan(nearPlaneDistance, Scalar<T>.Zero))
@@ -439,14 +420,6 @@ namespace Silk.NET.Maths
 
             if (Scalar.GreaterThanOrEqual(nearPlaneDistance, farPlaneDistance))
                 throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
-
-            if (reverseZ)
-            {
-                var temp = nearPlaneDistance;
-
-                nearPlaneDistance = farPlaneDistance;
-                farPlaneDistance = temp;
-            }
 
             Matrix4X4<T> result = default;
 
