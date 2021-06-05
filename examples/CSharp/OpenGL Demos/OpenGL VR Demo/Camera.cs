@@ -55,15 +55,7 @@ namespace OpenGL_VR_Demo
 
         public Matrix4x4 GetViewMatrix()
         {
-            //return Matrix4x4.CreateLookAt(Position, Position + Front, Up);
-            var s = Matrix4x4.Invert
-                (Matrix4x4.CreateFromQuaternion(_quat) * Matrix4x4.CreateTranslation(Position), out var ret);
-            if (!s)
-            {
-                throw new();
-            }
-
-            return ret;
+            return Matrix4x4.CreateLookAt(Position, Position + Front, Up);
         }
 
         public Matrix4x4 GetProjectionMatrix()

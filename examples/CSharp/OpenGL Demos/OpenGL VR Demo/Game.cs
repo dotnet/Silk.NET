@@ -114,15 +114,7 @@ namespace OpenGL_VR_Demo
             var orientation = Unsafe.As<Quaternionf, Quaternion>(ref Renderer.ViewStates[0].Pose.Orientation);
             Camera.ModifyDirection(orientation);
             
-            var cameraPosBefore = Camera.Position;
-            Camera.Position += position * Camera.Front;
-            
             Gl.Enable(EnableCap.DepthTest);
-            
-            //Gl.ClearColor(eye, 0, 1 - eye, 0);
-            var projection = Camera.GetViewMatrix();
-            var xrprojection = Renderer.Projections[eye];
-            
             Gl.Clear((uint) (ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit));
 
             VaoCube.Bind();
@@ -130,9 +122,8 @@ namespace OpenGL_VR_Demo
 
             //Slightly rotate the cube to give it an angled face to look at
             LightingShader.SetUniform("uModel", Matrix4x4.CreateRotationY(MathHelper.DegreesToRadians(25f)));
-            LightingShader.SetUniform("uView", Camera.GetViewMatrix());
-            //LightingShader.SetUniform("uProjection", Camera.GetProjectionMatrix());
-            LightingShader.SetUniform("uProjection", xrprojection);
+            LightingShader.SetUniform("uView", Renderer.Views[eye]);
+            LightingShader.SetUniform("uProjection", Renderer.Projections[eye]);
             LightingShader.SetUniform("objectColor", new Vector3(1.0f, 0.5f, 0.31f));
             LightingShader.SetUniform("lightColor", Vector3.One);
             LightingShader.SetUniform("lightPos", LampPosition);
@@ -149,12 +140,10 @@ namespace OpenGL_VR_Demo
             lampMatrix *= Matrix4x4.CreateTranslation(LampPosition);
 
             LampShader.SetUniform("uModel", lampMatrix);
-            LampShader.SetUniform("uView", Camera.GetViewMatrix());
-            LampShader.SetUniform("uProjection", xrprojection);
+            LampShader.SetUniform("uView", Renderer.Views[eye]);
+            LampShader.SetUniform("uProjection", Renderer.Projections[eye]);
 
             Gl.DrawArrays(PrimitiveType.Triangles, 0, 36);
-            
-            Camera.Position = cameraPosBefore;
         }
 
         protected override void Unload()

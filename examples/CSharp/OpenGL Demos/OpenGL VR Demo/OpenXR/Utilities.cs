@@ -14,43 +14,87 @@ namespace OpenGL_VR_Demo.OpenXR
         public const float DefaultFarZ = 100.0f;
         public const float DefaultOffset = 0f;
 
-        public static Vector4 FovfToTanFovVector(this Fovf fovf) => new
-        (
-            MathF.Tan(fovf.AngleLeft),
-            MathF.Tan(fovf.AngleRight),
-            MathF.Tan(fovf.AngleUp),
-            MathF.Tan(fovf.AngleDown)
-        );
-
-        public static Matrix4x4 FovfToMatrix
-        (
-            this Fovf fovf,
-            float nearZ = DefaultNearZ,
-            float farZ = DefaultFarZ,
-            float offsetZ = DefaultOffset
-        )
-        {
-            var tanFov = fovf.FovfToTanFovVector();
-            var tanAngleWidth = tanFov.Y - tanFov.X;
-            var tanAngleHeight = tanFov.W - tanFov.Z;
-            return new
-            (
-                2 / tanAngleWidth, 0, (tanFov.Y + tanFov.X) / tanAngleWidth, 0,
-                0, 2 / tanAngleHeight, (tanFov.Z + tanFov.W) / tanAngleHeight, 0,
-                0, 0, -(farZ + offsetZ) / (farZ - nearZ), -(farZ * (nearZ + offsetZ)) / (farZ - nearZ),
-                0, 0, -1, 0
-            );
-        }
-
-        public static Quaternion QuaternionfToQuaternion(this Quaternionf quat)
-            => Unsafe.As<Quaternionf, Quaternion>(ref quat);
-
-        public static Vector3 Vector3fToVector3(this Vector3f vec)
-            => Unsafe.As<Vector3f, Vector3>(ref vec);
-
-        public static Matrix4x4 PosefToMatrix(this Posef pose)
+        public static Matrix4x4 ToView(this Posef pose)
             => Matrix4x4.Identity
-               * Matrix4x4.CreateTranslation(pose.Position.Vector3fToVector3())
-               * Matrix4x4.CreateFromQuaternion(pose.Orientation.QuaternionfToQuaternion());
+               * Matrix4x4.CreateTranslation(Unsafe.As<Vector3f, Vector3>(ref pose.Position))
+               * Matrix4x4.CreateFromQuaternion(Unsafe.As<Quaternionf, Quaternion>(ref pose.Orientation));
+
+        public static Matrix4x4
+            ToProjection
+            (
+                this Fovf fov,
+                bool isGlSpace = true,
+                float nearZ = DefaultNearZ,
+                float farZ = DefaultFarZ
+            )
+        {
+            Matrix4x4 result = default;
+
+            var tanAngleLeft = MathF.Tan(fov.AngleLeft);
+            var tanAngleRight = MathF.Tan(fov.AngleRight);
+
+            var tanAngleDown = MathF.Tan(fov.AngleDown);
+            var tanAngleUp = MathF.Tan(fov.AngleUp);
+
+            var tanAngleWidth = tanAngleRight - tanAngleLeft;
+
+            // Set to tanAngleDown - tanAngleUp for a clip space with positive Y
+            // down (Vulkan). Set to tanAngleUp - tanAngleDown for a clip space with
+            // positive Y up (OpenGL / D3D / Metal).
+            var tanAngleHeight = !isGlSpace ? tanAngleDown - tanAngleUp : tanAngleUp - tanAngleDown;
+
+            // Set to nearZ for a [-1,1] Z clip space (OpenGL / OpenGL ES).
+            // Set to zero for a [0,1] Z clip space (Vulkan / D3D / Metal).
+            var offsetZ = isGlSpace ? nearZ : 0;
+
+            if (farZ <= nearZ)
+            {
+                // place the far plane at infinity
+                result.M11 = 2 / tanAngleWidth;
+                result.M21 = 0;
+                result.M31 = (tanAngleRight + tanAngleLeft) / tanAngleWidth;
+                result.M41 = 0;
+
+                result.M11 = 0;
+                result.M21 = 2 / tanAngleHeight;
+                result.M31 = (tanAngleUp + tanAngleDown) / tanAngleHeight;
+                result.M41 = 0;
+
+                result.M13 = 0;
+                result.M23 = 0;
+                result.M33 = -1;
+                result.M43 = -(nearZ + offsetZ);
+
+                result.M14 = 0;
+                result.M24 = 0;
+                result.M34 = -1;
+                result.M44 = 0;
+            }
+            else
+            {
+                // normal projection
+                result.M11 = 2 / tanAngleWidth;
+                result.M21 = 0;
+                result.M31 = (tanAngleRight + tanAngleLeft) / tanAngleWidth;
+                result.M41 = 0;
+
+                result.M12 = 0;
+                result.M22 = 2 / tanAngleHeight;
+                result.M32 = (tanAngleUp + tanAngleDown) / tanAngleHeight;
+                result.M42 = 0;
+
+                result.M13 = 0;
+                result.M23 = 0;
+                result.M33 = -(farZ + offsetZ) / (farZ - nearZ);
+                result.M43 = -(farZ * (nearZ + offsetZ)) / (farZ - nearZ);
+
+                result.M14 = 0;
+                result.M24 = 0;
+                result.M34 = -1;
+                result.M44 = 0;
+            }
+
+            return result;
+        }
     }
 }

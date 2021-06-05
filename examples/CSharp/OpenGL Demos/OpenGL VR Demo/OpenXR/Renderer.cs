@@ -488,8 +488,8 @@ namespace OpenGL_VR_Demo.OpenXR
             for (var eye = 0; eye < 2; eye++)
             {
                 var view = ViewStates[eye];
-                Projections[eye] = view.Fov.FovfToMatrix();
-                if (!Matrix4x4.Invert(view.Pose.PosefToMatrix(), out var inverse))
+                Projections[eye] = view.Fov.ToProjection();
+                if (!Matrix4x4.Invert(view.Pose.ToView(), out var inverse))
                 {
                     throw new("Couldn't create inverse pose view matrix.");
                 }
