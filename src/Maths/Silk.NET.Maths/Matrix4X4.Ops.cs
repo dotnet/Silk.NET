@@ -334,9 +334,6 @@ namespace Silk.NET.Maths
             if (!Scalar.GreaterThan(farPlaneDistance, Scalar<T>.Zero))
                 throw new ArgumentOutOfRangeException(nameof(farPlaneDistance));
 
-            if (Scalar.GreaterThanOrEqual(nearPlaneDistance, farPlaneDistance))
-                throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
-
             Matrix4X4<T> result = default;
 
             result.M11 = Scalar.Divide(Scalar.Multiply(Scalar<T>.Two, nearPlaneDistance), width);
@@ -376,9 +373,6 @@ namespace Silk.NET.Maths
             if (!Scalar.GreaterThan(farPlaneDistance, Scalar<T>.Zero))
                 throw new ArgumentOutOfRangeException(nameof(farPlaneDistance));
 
-            if (Scalar.GreaterThanOrEqual(nearPlaneDistance, farPlaneDistance))
-                throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
-
             T yScale = Scalar.Reciprocal(Scalar.Tan(Scalar.Divide(fieldOfView, Scalar<T>.Two)));
             T xScale = Scalar.Divide(yScale, aspectRatio);
 
@@ -417,9 +411,6 @@ namespace Silk.NET.Maths
 
             if (!Scalar.GreaterThan(farPlaneDistance, Scalar<T>.Zero))
                 throw new ArgumentOutOfRangeException(nameof(farPlaneDistance));
-
-            if (Scalar.GreaterThanOrEqual(nearPlaneDistance, farPlaneDistance))
-                throw new ArgumentOutOfRangeException(nameof(nearPlaneDistance));
 
             Matrix4X4<T> result = default;
 
