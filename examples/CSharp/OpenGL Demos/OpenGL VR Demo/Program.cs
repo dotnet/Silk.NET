@@ -4,9 +4,6 @@ namespace OpenGL_VR_Demo
 {
     class Program
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+        static void Main(string[] args) => new Game().Run();
     }
 }

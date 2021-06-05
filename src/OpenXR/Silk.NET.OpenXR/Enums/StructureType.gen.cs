@@ -242,8 +242,14 @@ namespace Silk.NET.OpenXR
         TypeHolographicWindowAttachmentMsft = 1000063000,
         [NativeName("Name", "XR_TYPE_ANDROID_SURFACE_SWAPCHAIN_CREATE_INFO_FB")]
         TypeAndroidSurfaceSwapchainCreateInfoFB = 1000070000,
+        [NativeName("Name", "XR_TYPE_SWAPCHAIN_STATE_ANDROID_SURFACE_DIMENSIONS_FB")]
+        TypeSwapchainStateAndroidSurfaceDimensionsFB = 1000071000,
+        [NativeName("Name", "XR_TYPE_SWAPCHAIN_STATE_SAMPLER_OPENGL_ES_FB")]
+        TypeSwapchainStateSamplerOpenglESFB = 1000071001,
         [NativeName("Name", "XR_TYPE_INTERACTION_PROFILE_ANALOG_THRESHOLD_VALVE")]
         TypeInteractionProfileAnalogThresholdValve = 1000079000,
+        [NativeName("Name", "XR_TYPE_HAND_JOINTS_MOTION_RANGE_INFO_EXT")]
+        TypeHandJointsMotionRangeInfoExt = 1000080000,
         [NativeName("Name", "XR_TYPE_LOADER_INIT_INFO_ANDROID_KHR")]
         TypeLoaderInitInfoAndroidKhr = 1000089000,
         [NativeName("Name", "XR_TYPE_VULKAN_INSTANCE_CREATE_INFO_KHR")]

@@ -11,7 +11,7 @@ namespace Silk.NET.OpenXR
 {
     [Flags()]
     [NativeName("Name", "XrAndroidSurfaceSwapchainFlagsFB")]
-    public enum AndroidSurfaceSwapchainFlagsFB : int
+    public enum AndroidSurfaceSwapchainFlagsFB : long
     {
         [NativeName("Name", "XR_ANDROID_SURFACE_SWAPCHAIN_SYNCHRONOUS_BIT_FB")]
         AndroidSurfaceSwapchainSynchronousBitFB = 1,

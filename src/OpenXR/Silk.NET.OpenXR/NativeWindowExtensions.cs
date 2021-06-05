@@ -119,7 +119,7 @@ namespace Silk.NET.OpenXR
                     getConfigs(dpy, configPtr, numConfigs, &numConfigs);
                 }
 
-                nint theConfig;
+                nint theConfig = 0;
                 for (var i = 0; i < numConfigs; i++)
                 {
                     int thisConfig;

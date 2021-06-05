@@ -7,12 +7,9 @@ using System.Diagnostics;
 using System.Runtime.InteropServices;
 using Silk.NET.Core;
 using Silk.NET.Core.Native;
-using Silk.NET.Maths;
-using Silk.NET.OpenGL;
 using Silk.NET.OpenXR;
 using Silk.NET.OpenXR.Extensions.EXT;
 using Silk.NET.OpenXR.Extensions.KHR;
-using Silk.NET.Windowing;
 
 namespace OpenGL_VR_Demo.OpenXR
 {
@@ -20,7 +17,6 @@ namespace OpenGL_VR_Demo.OpenXR
     {
         // API Objects for accessing OpenXR and OpenGL
         public XR Xr;
-        public GL Gl;
 
         // ExtDebugUtils is a handy OpenXR debugging extension which we'll enable if available unless told otherwise.
         public bool? IsDebugUtilsSupported;
@@ -37,14 +33,21 @@ namespace OpenGL_VR_Demo.OpenXR
         // the instance.
         protected List<string> Extensions = new();
 
-        // Our windowing objects! We're using IView so we can potentially expand into mobile later.
-        public IView View;
-        public string Name;
-
         // OpenXR handles
         public Instance Instance;
         public DebugUtilsMessengerEXT MessengerExt;
+        
+        // Our abstractions
         public System System;
+        public Renderer? Renderer;
+        
+        // Ease-of-use properties
+        public uint EyeWidth => System.RenderTargetSize.X / 2;
+        public uint EyeHeight => System.RenderTargetSize.Y;
+        
+        // Misc
+        public string Name;
+        private bool _unmanagedResourcesFreed;
 
         protected OpenGLXRGame(string name, bool forceNoDebug = false, bool useMinimumVersion = false)
         {
@@ -59,6 +62,8 @@ namespace OpenGL_VR_Demo.OpenXR
 
         public void Run()
         {
+            Prepare();
+            Renderer?.Run();
         }
 
         /// <summary>
@@ -69,6 +74,8 @@ namespace OpenGL_VR_Demo.OpenXR
         /// The same result passed in, just in case it's meaningful and we just want to use this to filter out errors.
         /// </returns>
         /// <exception cref="Exception">An exception for the given result if it indicates an error.</exception>
+        [DebuggerHidden]
+        [DebuggerStepThrough]
         internal static Result CheckResult(Result result)
         {
             if ((int) result < 0)
@@ -91,15 +98,17 @@ namespace OpenGL_VR_Demo.OpenXR
             if (Xr.IsInstanceExtensionPresent(null, name))
             {
                 // It does! Add it to our list of requested extensions, for use when creating the instance later...
+                Console.WriteLine($"[INFO] Application: Using extension {name}");
                 Extensions.Add(name);
                 return true;
             }
 
             // Oh dear! Not supported.
+            Console.WriteLine($"[WARNING] Application: {name} is not supported.");
             return false;
         }
 
-        private unsafe void PrepareOpenXR()
+        private unsafe void Prepare()
         {
             // Create our API object for OpenXR.
             Xr = XR.GetApi();
@@ -142,11 +151,9 @@ namespace OpenGL_VR_Demo.OpenXR
                 enabledExtensionNames: (byte**) requestedExtensions
             );
 
-            // Now we're ready to make our instance!
-            CheckResult(Xr.CreateInstance(in instanceCreateInfo, ref Instance));
-
             // If debug utils is supported, enable it!
-            if (IsDebugUtilsSupported.Value && Xr.TryGetInstanceExtension(null, Instance, out ExtDebugUtils))
+            DebugUtilsMessengerCreateInfoEXT debugUtilsCreateInfo = default;
+            if (IsDebugUtilsSupported.Value)
             {
                 // This local function is called by OpenXR. There are a lot of advanced things you can do with the data
                 // you get in DebugUtilsMessengerCallbackDataEXT, such as inspecting objects, but for now we're just
@@ -174,7 +181,7 @@ namespace OpenGL_VR_Demo.OpenXR
                 }
 
                 // Now that we've defined the callback, let's tell OpenXR about it and create our messenger!
-                var debugUtilsCreateInfo = new DebugUtilsMessengerCreateInfoEXT
+                debugUtilsCreateInfo = new DebugUtilsMessengerCreateInfoEXT
                 (
                     messageSeverities: DebugUtilsMessageSeverityFlagsEXT.DebugUtilsMessageSeverityErrorBitExt |
                                        DebugUtilsMessageSeverityFlagsEXT.DebugUtilsMessageSeverityWarningBitExt |
@@ -186,13 +193,24 @@ namespace OpenGL_VR_Demo.OpenXR
                     userCallback: (DebugUtilsMessengerCallbackFunctionEXT) OnDebug
                 );
 
-                if (ExtDebugUtils!.CreateDebugUtilsMessenger(Instance, in debugUtilsCreateInfo, ref MessengerExt)
-                    != Result.Success)
-                {
-                    Console.WriteLine("[WARNING] Application: Failed to create OpenXR debug messenger!");
-                }
+                instanceCreateInfo.Next = &debugUtilsCreateInfo;
             }
+
+            // Now we're ready to make our instance!
+            CheckResult(Xr.CreateInstance(in instanceCreateInfo, ref Instance));
             
+            // Turn on debug logging
+            if (IsDebugUtilsSupported.Value && Xr.TryGetInstanceExtension(null, Instance, out ExtDebugUtils))
+            {
+                Console.WriteLine
+                (
+                    ExtDebugUtils!.CreateDebugUtilsMessenger(Instance, in debugUtilsCreateInfo, ref MessengerExt)
+                    != Result.Success
+                        ? "[WARNING] Application: Failed to create OpenXR debug messenger!"
+                        : "[INFO] Application: Debug messenger active."
+                );
+            }
+
             // For our benefit, let's log some information about the instance we've just created.
             InstanceProperties properties = new();
             CheckResult(Xr.GetInstanceProperties(Instance, ref properties));
@@ -208,12 +226,64 @@ namespace OpenGL_VR_Demo.OpenXR
             var getInfo = new SystemGetInfo(formFactor: FormFactor.HeadMountedDisplay);
             CheckResult(Xr.GetSystem(Instance, in getInfo, ref systemId));
             
-            // Let our System abstraction take it from here!
+            // Get the appropriate enabling extension, or fail if we can't.
+            if (IsGles && !Xr.TryGetInstanceExtension(null, Instance, out GlesEnable) ||
+                !IsGles && !Xr.TryGetInstanceExtension(null, Instance, out GlEnable))
+            {
+                throw new("Failed to get the graphics binding extension!");
+            }
+            
+            // Let our abstractions take it from here!
             System = new(this, systemId);
+            Renderer = new(this);
+            
+            // Subscribe to our renderer's callbacks
+            Renderer.Load += Load;
+            Renderer.Update += Update;
+            Renderer.Render += Render;
+            Renderer.Unload += Unload;
         }
 
-        private void PrepareView()
+        // These methods will be implemented by the game.
+        protected abstract void Load();
+        protected abstract void Update(double delta);
+        protected abstract void Render(int eye, double delta);
+        protected abstract void Unload();
+
+        private void ReleaseUnmanagedResources()
         {
+            if (_unmanagedResourcesFreed)
+            {
+                return;
+            }
+
+            CheckResult(Xr.DestroyInstance(Instance));
+            CheckResult(ExtDebugUtils?.DestroyDebugUtilsMessenger(MessengerExt) ?? Result.Success);
+            _unmanagedResourcesFreed = true;
+        }
+
+        private void Dispose(bool disposing)
+        {
+            ReleaseUnmanagedResources();
+            if (disposing)
+            {
+                Xr.Dispose();
+                ExtDebugUtils?.Dispose();
+                GlEnable?.Dispose();
+                GlesEnable?.Dispose();
+                Renderer?.Dispose();
+            }
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        ~OpenGLXRGame()
+        {
+            Dispose(false);
         }
     }
 }

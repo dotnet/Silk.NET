@@ -16,11 +16,11 @@ namespace Silk.NET.OpenXR
     public partial class XR
     {
         private Instance? _currentInstance;
-        private ConcurrentDictionary<Instance?, IVTable> _vTables = new();
+        private ConcurrentDictionary<Instance, IVTable> _vTables = new();
         public Instance? CurrentInstance
         {
             get => _currentInstance;
-            set => SwapVTable(_vTables.GetOrAdd(_currentInstance = value, _ => CreateVTable()));
+            set => SwapVTable(_vTables.GetOrAdd((_currentInstance = value).GetValueOrDefault(), _ => CreateVTable()));
         }
         public static XR GetApi()
         {
@@ -126,7 +126,7 @@ namespace Silk.NET.OpenXR
             return result;
         }
 
-        protected override void PostInit() => _vTables.TryAdd(null, CurrentVTable);
+        protected override void PostInit() => _vTables.TryAdd(default, CurrentVTable);
     }
 }
 

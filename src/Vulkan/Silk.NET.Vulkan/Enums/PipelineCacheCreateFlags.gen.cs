@@ -17,7 +17,9 @@ namespace Silk.NET.Vulkan
         PipelineCacheCreateReserved1BitExt = 2,
         [NativeName("Name", "VK_PIPELINE_CACHE_CREATE_EXTERNALLY_SYNCHRONIZED_BIT_EXT")]
         PipelineCacheCreateExternallySynchronizedBitExt = 1,
-        [NativeName("Name", "VK_PIPELINE_CACHE_CREATE_RESERVED_2_BIT_EXT")]
-        PipelineCacheCreateReserved2BitExt = 4,
+        [NativeName("Name", "VK_PIPELINE_CACHE_CREATE_RESERVED_1_BIT_KHR")]
+        PipelineCacheCreateReserved1BitKhr = 2,
+        [NativeName("Name", "VK_PIPELINE_CACHE_CREATE_RESERVED_2_BIT_KHR")]
+        PipelineCacheCreateReserved2BitKhr = 4,
     }
 }

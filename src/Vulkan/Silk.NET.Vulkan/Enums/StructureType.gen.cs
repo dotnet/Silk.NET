@@ -194,10 +194,6 @@ namespace Silk.NET.Vulkan
         VideoFormatPropertiesKhr = 1000023015,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_DECODE_INFO_KHR")]
         VideoDecodeInfoKhr = 1000024000,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_INFO_KHR")]
-        VideoEncodeInfoKhr = 1000299000,
-        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_RATE_CONTROL_INFO_KHR")]
-        VideoEncodeRateControlInfoKhr = 1000299001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEDICATED_ALLOCATION_IMAGE_CREATE_INFO_NV")]
         DedicatedAllocationImageCreateInfoNV = 1000026000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEDICATED_ALLOCATION_BUFFER_CREATE_INFO_NV")]
@@ -210,6 +206,12 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceTransformFeedbackPropertiesExt = 1000028001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_RASTERIZATION_STATE_STREAM_CREATE_INFO_EXT")]
         PipelineRasterizationStateStreamCreateInfoExt = 1000028002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_CU_MODULE_CREATE_INFO_NVX")]
+        CUModuleCreateInfoNvx = 1000029000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_CU_FUNCTION_CREATE_INFO_NVX")]
+        CUFunctionCreateInfoNvx = 1000029001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_CU_LAUNCH_INFO_NVX")]
+        CULaunchInfoNvx = 1000029002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGE_VIEW_HANDLE_INFO_NVX")]
         ImageViewHandleInfoNvx = 1000030000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_IMAGE_VIEW_ADDRESS_PROPERTIES_NVX")]
@@ -1004,6 +1006,10 @@ namespace Silk.NET.Vulkan
         PrivateDataSlotCreateInfoExt = 1000295002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PIPELINE_CREATION_CACHE_CONTROL_FEATURES_EXT")]
         PhysicalDevicePipelineCreationCacheControlFeaturesExt = 1000297000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_INFO_KHR")]
+        VideoEncodeInfoKhr = 1000299000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_VIDEO_ENCODE_RATE_CONTROL_INFO_KHR")]
+        VideoEncodeRateControlInfoKhr = 1000299001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DIAGNOSTICS_CONFIG_FEATURES_NV")]
         PhysicalDeviceDiagnosticsConfigFeaturesNV = 1000300000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEVICE_DIAGNOSTICS_CONFIG_CREATE_INFO_NV")]

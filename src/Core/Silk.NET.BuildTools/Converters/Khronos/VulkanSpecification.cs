@@ -42,6 +42,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             Features = features;
             AddExtensionEnums(Enums, Extensions);
             AddExtensionEnums(Enums, Features);
+            MixinEnumTypeFixups(Enums, Typedefs);
         }
 
         public static VulkanSpecification LoadFromXmlStream(Stream specFileStream)
@@ -141,6 +142,30 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                     var enumDef = GetEnumDef(enums, enumEx.ExtendedType);
                     var value = long.Parse(enumEx.Value);
                     enumDef.Values = enumDef.Values.Append(new EnumValue(enumEx.Name, value, null)).ToArray();
+                }
+            }
+        }
+        
+        private void MixinEnumTypeFixups(EnumDefinition[] enums, TypedefDefinition[] typedefs)
+        {
+            foreach (var typedefDefinition in typedefs)
+            {
+                if (typedefDefinition.BitValues is not null)
+                {
+                    foreach (var enumDefinition in enums)
+                    {
+                        // if the bit width is default and we have a typedef for this enum
+                        if ((enumDefinition.Name == typedefDefinition.Name ||
+                            enumDefinition.Name == typedefDefinition.BitValues) &&
+                            enumDefinition.BitWidth == 32)
+                        {
+                            enumDefinition.BitWidth = typedefDefinition.Type switch
+                            {
+                                "XrFlags64" => 64,
+                                _ => 32
+                            };
+                        }
+                    }
                 }
             }
         }
