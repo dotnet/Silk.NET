@@ -15,9 +15,9 @@ namespace OpenGL_VR_Demo.OpenXR
         public const float DefaultOffset = 0f;
 
         public static Matrix4x4 ToView(this Posef pose, Vector3 offset = default)
-            => Matrix4x4.Transpose(Matrix4x4.Identity
+            => Matrix4x4.Identity
                * Matrix4x4.CreateTranslation(Unsafe.As<Vector3f, Vector3>(ref pose.Position) + offset)
-               * Matrix4x4.CreateFromQuaternion(Unsafe.As<Quaternionf, Quaternion>(ref pose.Orientation)));
+               * Matrix4x4.CreateFromQuaternion(Unsafe.As<Quaternionf, Quaternion>(ref pose.Orientation));
 
         public static Matrix4x4
             ToProjection
@@ -37,6 +37,8 @@ namespace OpenGL_VR_Demo.OpenXR
             var tanAngleUp = MathF.Tan(fov.AngleUp);
 
             var tanAngleWidth = tanAngleRight - tanAngleLeft;
+            var angleWidth = fov.AngleRight - fov.AngleLeft;
+            var angleHeight = !isGlSpace ? fov.AngleDown - fov.AngleUp : fov.AngleUp - fov.AngleDown;
 
             // Set to tanAngleDown - tanAngleUp for a clip space with positive Y
             // down (Vulkan). Set to tanAngleUp - tanAngleDown for a clip space with
@@ -55,10 +57,10 @@ namespace OpenGL_VR_Demo.OpenXR
                 result.M31 = (tanAngleRight + tanAngleLeft) / tanAngleWidth;
                 result.M41 = 0;
 
-                result.M11 = 0;
-                result.M21 = 2 / tanAngleHeight;
-                result.M31 = (tanAngleUp + tanAngleDown) / tanAngleHeight;
-                result.M41 = 0;
+                result.M12 = 0;
+                result.M22 = 2 / tanAngleHeight;
+                result.M32 = (tanAngleUp + tanAngleDown) / tanAngleHeight;
+                result.M42 = 0;
 
                 result.M13 = 0;
                 result.M23 = 0;
@@ -94,7 +96,7 @@ namespace OpenGL_VR_Demo.OpenXR
                 result.M44 = 0;
             }
 
-            return result;
+            return Matrix4x4.Transpose(result);
         }
     }
 }

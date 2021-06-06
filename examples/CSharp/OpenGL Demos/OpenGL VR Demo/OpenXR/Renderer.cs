@@ -40,7 +40,7 @@ namespace OpenGL_VR_Demo.OpenXR
         public View[] ViewStates { get; private set; } = new View[2];
         public Matrix4x4 GetViewMatrix(int eye, Vector3 offset = default)
         {
-            if (!Matrix4x4.Invert(RawViews[eye].ToView(), out var inverse))
+            if (!Matrix4x4.Invert(RawViews[eye].ToView(offset), out var inverse))
             {
                 throw new("Couldn't create inverse pose view matrix.");
             }

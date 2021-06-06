@@ -18,11 +18,7 @@ namespace OpenGL_VR_Demo
         private static BufferObject<float> Vbo;
         private static BufferObject<uint> Ebo;
         private static VertexArrayObject<float, uint> VaoCube;
-        private static Shader LightingShader;
-        private static Shader LampShader;
-        private static Vector3 CubePosition = new(0.2f, 0.0f, 1.0f);
-        private static Vector3 LampPosition = new(1.2f, 1.0f, 2.0f);
-
+        private static Shader CubesShader;
         private static Camera Camera;
         private static Vector2 LastOrientation;
 
@@ -95,13 +91,10 @@ namespace OpenGL_VR_Demo
             VaoCube.VertexAttributePointer(0, 3, VertexAttribPointerType.Float, 6, 0);
             VaoCube.VertexAttributePointer(1, 3, VertexAttribPointerType.Float, 6, 3);
 
-            //The lighting shader will give our main cube it's colour multiplied by the light's intensity
-            LightingShader = new(Gl, "shader.vert", "lighting.frag");
-            //The Lamp shader uses a fragment shader that just colours it solid white so that we know it is the light source
-            LampShader = new(Gl, "shader.vert", "shader.frag");
+            CubesShader = new(Gl, "cubes.vert", "cubes.frag");
 
             //Start a camera at position 3 on the Z axis, looking at position -1 on the Z axis
-            Camera = new(Vector3.UnitZ * 6 * 6, Renderer);
+            Camera = new(Vector3.One + Vector3.One, Renderer);
         }
 
         protected override void Update(double delta)
@@ -116,39 +109,31 @@ namespace OpenGL_VR_Demo
             Gl.Clear((uint) (ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit));
 
             VaoCube.Bind();
-            LightingShader.Use();
+            CubesShader.Use();
             
-            // Define the matrix for our cube
-            var cubeMatrix = Matrix4x4.Identity;
-            cubeMatrix *= Matrix4x4.CreateTranslation(CubePosition);
+            CubesShader.SetUniform("uniformColor", Vector3.Zero);
+            CubesShader.SetUniform("view", Matrix4x4.Transpose(Camera.GetViewMatrix(eye)));
+            CubesShader.SetUniform("proj", Matrix4x4.Transpose(Camera.GetProjectionMatrix(eye)));
 
-            // Slightly rotate the cube to give it an angled face to look at
-            cubeMatrix *= Matrix4x4.CreateRotationY(Scalar.DegreesToRadians(25f));
-            
-            //LightingShader.SetUniform("uModel", Matrix4x4.CreateRotationY(MathHelper.DegreesToRadians(25f)));
-            LightingShader.SetUniform("uModel", cubeMatrix);
-            LightingShader.SetUniform("uView", Camera.GetViewMatrix(eye));
-            LightingShader.SetUniform("uProjection", Camera.GetProjectionMatrix(eye));
-            LightingShader.SetUniform("objectColor", new Vector3(1.0f, 0.5f, 0.31f));
-            LightingShader.SetUniform("lightColor", Vector3.One);
-            LightingShader.SetUniform("lightPos", LampPosition);
-            LightingShader.SetUniform("viewPos", Camera.Position);
+            const float rotations_per_sec = .25f;
 
-            // We're drawing with just vertices and no indicies, and it takes 36 verticies to have a six-sided textured cube
-            Gl.DrawArrays(PrimitiveType.Triangles, 0, 36);
+            float angle = ((long)(delta * 360f * rotations_per_sec)) % 360f;
 
-            LampShader.Use();
+            float dist = 1.5f;
+            float height = 0.5f;
+            DrawRotatedCube(new(0, height, -dist), .33f, angle);
+            DrawRotatedCube(new(0, height, dist), .33f, angle);
+            DrawRotatedCube(new(dist, height, 0), .33f, angle);
+            DrawRotatedCube(new(-dist, height, 0), .33f, angle);
+        }
 
-            //The Lamp cube is going to be a scaled down version of the normal cubes verticies moved to a different screen location
-            var lampMatrix = Matrix4x4.Identity;
-            lampMatrix *= Matrix4x4.CreateScale(0.2f);
-            lampMatrix *= Matrix4x4.CreateTranslation(LampPosition);
-
-            LampShader.SetUniform("uModel", lampMatrix);
-            LampShader.SetUniform("uView", Camera.GetViewMatrix(eye));
-            LampShader.SetUniform("uProjection", Camera.GetProjectionMatrix(eye));
-
-            Gl.DrawArrays(PrimitiveType.Triangles, 0, 36);
+        private void DrawRotatedCube(Vector3 position, float cube_size, float rotation)
+        {
+	        var modelmatrix = Matrix4x4.CreateTranslation(position)
+                              * Matrix4x4.CreateScale(new Vector3(cube_size / 2f, cube_size / 2f, cube_size / 2f));
+	        modelmatrix *= Matrix4x4.CreateRotationY(Scalar.DegreesToRadians(rotation));
+            CubesShader.SetUniform("model", Matrix4x4.Transpose(modelmatrix));  
+	        Gl.DrawArrays(GLEnum.Triangles, 0, 36);
         }
 
         protected override void Unload()
@@ -156,7 +141,7 @@ namespace OpenGL_VR_Demo
             Vbo.Dispose();
             Ebo.Dispose();
             VaoCube.Dispose();
-            LightingShader.Dispose();
+            CubesShader.Dispose();
         }
     }
 }
