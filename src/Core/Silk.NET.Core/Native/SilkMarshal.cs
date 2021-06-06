@@ -314,6 +314,33 @@ namespace Silk.NET.Core.Native
         public static string MemoryToString(GlobalMemory input, NativeStringEncoding e = NativeStringEncoding.Ansi)
             => PtrToString(input.Handle, e)!; // TODO tolerate a GlobalMemory.Null if we introduce one in the future?
 
+        /// <summary>
+        /// Reads a null-terminated string from the given span, with the given native encoding.
+        /// </summary>
+        /// <param name="input">A span containing a null-terminated string.</param>
+        /// <param name="pin">
+        /// Whether to pin the span such that pointers taken from it are not subject to GC movement.
+        /// </param>
+        /// <param name="e">The encoding of the string in memory.</param>
+        /// <returns>The string read from memory.</returns>
+        public static unsafe string SpanToString
+        (
+            Span<byte> input,
+            bool pin = false,
+            NativeStringEncoding e = NativeStringEncoding.Ansi
+        )
+        {
+            if (pin) // "should" be optimized away if constant
+            {
+                fixed (byte* ptr = input)
+                {
+                    return PtrToString((nint) ptr, e)!;
+                }
+            }
+
+            return PtrToString((nint) Unsafe.AsPointer(ref input.GetPinnableReference()), e)!;
+        }
+        
 #nullable disable
 
         /// <summary>
