@@ -14,10 +14,10 @@ namespace OpenGL_VR_Demo.OpenXR
         public const float DefaultFarZ = 100.0f;
         public const float DefaultOffset = 0f;
 
-        public static Matrix4x4 ToView(this Posef pose)
-            => Matrix4x4.Identity
-               * Matrix4x4.CreateTranslation(Unsafe.As<Vector3f, Vector3>(ref pose.Position))
-               * Matrix4x4.CreateFromQuaternion(Unsafe.As<Quaternionf, Quaternion>(ref pose.Orientation));
+        public static Matrix4x4 ToView(this Posef pose, Vector3 offset = default)
+            => Matrix4x4.Transpose(Matrix4x4.Identity
+               * Matrix4x4.CreateTranslation(Unsafe.As<Vector3f, Vector3>(ref pose.Position) + offset)
+               * Matrix4x4.CreateFromQuaternion(Unsafe.As<Quaternionf, Quaternion>(ref pose.Orientation)));
 
         public static Matrix4x4
             ToProjection

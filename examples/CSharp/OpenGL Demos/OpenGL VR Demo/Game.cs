@@ -4,6 +4,7 @@
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using OpenGL_VR_Demo.OpenXR;
+using Silk.NET.Maths;
 using Silk.NET.OpenGL;
 using Silk.NET.OpenXR;
 using Shader = Silk.NET.OpenGL.Shader;
@@ -19,6 +20,7 @@ namespace OpenGL_VR_Demo
         private static VertexArrayObject<float, uint> VaoCube;
         private static Shader LightingShader;
         private static Shader LampShader;
+        private static Vector3 CubePosition = new(0.2f, 0.0f, 1.0f);
         private static Vector3 LampPosition = new(1.2f, 1.0f, 2.0f);
 
         private static Camera Camera;
@@ -84,7 +86,7 @@ namespace OpenGL_VR_Demo
 
         protected override void Load()
         {
-            Gl = Renderer.Gl;
+            Gl = Renderer!.Gl;
             
             Ebo = new(Gl, Indices, BufferTargetARB.ElementArrayBuffer);
             Vbo = new(Gl, Vertices, BufferTargetARB.ArrayBuffer);
@@ -99,7 +101,7 @@ namespace OpenGL_VR_Demo
             LampShader = new(Gl, "shader.vert", "shader.frag");
 
             //Start a camera at position 3 on the Z axis, looking at position -1 on the Z axis
-            Camera = new(Vector3.UnitZ * 6, Vector3.UnitZ * -1, Vector3.UnitY, (float)EyeWidth / EyeHeight);
+            Camera = new(Vector3.UnitZ * 6 * 6, Renderer);
         }
 
         protected override void Update(double delta)
@@ -110,26 +112,29 @@ namespace OpenGL_VR_Demo
 
         protected override void Render(int eye, double delta)
         {
-            var position = Unsafe.As<Vector3f, Vector3>(ref Renderer.ViewStates[0].Pose.Position);
-            var orientation = Unsafe.As<Quaternionf, Quaternion>(ref Renderer.ViewStates[0].Pose.Orientation);
-            Camera.ModifyDirection(orientation);
-            
             Gl.Enable(EnableCap.DepthTest);
             Gl.Clear((uint) (ClearBufferMask.ColorBufferBit | ClearBufferMask.DepthBufferBit));
 
             VaoCube.Bind();
             LightingShader.Use();
+            
+            // Define the matrix for our cube
+            var cubeMatrix = Matrix4x4.Identity;
+            cubeMatrix *= Matrix4x4.CreateTranslation(CubePosition);
 
-            //Slightly rotate the cube to give it an angled face to look at
-            LightingShader.SetUniform("uModel", Matrix4x4.CreateRotationY(MathHelper.DegreesToRadians(25f)));
-            LightingShader.SetUniform("uView", Renderer.Views[eye]);
-            LightingShader.SetUniform("uProjection", Renderer.Projections[eye]);
+            // Slightly rotate the cube to give it an angled face to look at
+            cubeMatrix *= Matrix4x4.CreateRotationY(Scalar.DegreesToRadians(25f));
+            
+            //LightingShader.SetUniform("uModel", Matrix4x4.CreateRotationY(MathHelper.DegreesToRadians(25f)));
+            LightingShader.SetUniform("uModel", cubeMatrix);
+            LightingShader.SetUniform("uView", Camera.GetViewMatrix(eye));
+            LightingShader.SetUniform("uProjection", Camera.GetProjectionMatrix(eye));
             LightingShader.SetUniform("objectColor", new Vector3(1.0f, 0.5f, 0.31f));
             LightingShader.SetUniform("lightColor", Vector3.One);
             LightingShader.SetUniform("lightPos", LampPosition);
             LightingShader.SetUniform("viewPos", Camera.Position);
 
-            //We're drawing with just vertices and no indicies, and it takes 36 verticies to have a six-sided textured cube
+            // We're drawing with just vertices and no indicies, and it takes 36 verticies to have a six-sided textured cube
             Gl.DrawArrays(PrimitiveType.Triangles, 0, 36);
 
             LampShader.Use();
@@ -140,8 +145,8 @@ namespace OpenGL_VR_Demo
             lampMatrix *= Matrix4x4.CreateTranslation(LampPosition);
 
             LampShader.SetUniform("uModel", lampMatrix);
-            LampShader.SetUniform("uView", Renderer.Views[eye]);
-            LampShader.SetUniform("uProjection", Renderer.Projections[eye]);
+            LampShader.SetUniform("uView", Camera.GetViewMatrix(eye));
+            LampShader.SetUniform("uProjection", Camera.GetProjectionMatrix(eye));
 
             Gl.DrawArrays(PrimitiveType.Triangles, 0, 36);
         }

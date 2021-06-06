@@ -87,6 +87,22 @@ namespace Silk.NET.Maths
         /// </summary>
         public static readonly T Tau;
 
+        /// <summary>
+        /// Represents the number of degrees in a single radian.
+        /// </summary>
+        /// <remarks>
+        /// This is equivalent to <c>180 / MathF.Pi</c>
+        /// </remarks>
+        public static readonly T DegreesPerRadian;
+
+        /// <summary>
+        /// Represents the number of radians in a single degree.
+        /// </summary>
+        /// <remarks>
+        /// This is equivalent to <c>MathF.Pi / 180</c>.
+        /// </remarks>
+        public static readonly T RadiansPerDegree;
+
         internal static readonly bool IntrinsicsApplicable = typeof(T) == typeof(byte)
                                                             || typeof(T) == typeof(sbyte)
                                                             || typeof(T) == typeof(ushort)
@@ -315,6 +331,8 @@ namespace Silk.NET.Maths
             }
 
             PiOver2 = Scalar.Divide(Pi, Two);
+            DegreesPerRadian = Scalar.Divide(Scalar.As<float, T>(180), Pi);
+            RadiansPerDegree = Scalar.Divide(Pi, Scalar.As<float, T>(180));
         }
     }
 }

@@ -35,9 +35,20 @@ namespace OpenGL_VR_Demo.OpenXR
         public uint[] SwapchainImages;
         
         // Eye Info - for use in games!
+        private Posef[] RawViews { get; set; } = new Posef[2];
+        private Matrix4x4[] Projections { get; set; } = new Matrix4x4[2];
         public View[] ViewStates { get; private set; } = new View[2];
-        public Matrix4x4[] Views { get; private set; } = new Matrix4x4[2];
-        public Matrix4x4[] Projections { get; private set; } = new Matrix4x4[2];
+        public Matrix4x4 GetViewMatrix(int eye, Vector3 offset = default)
+        {
+            if (!Matrix4x4.Invert(RawViews[eye].ToView(), out var inverse))
+            {
+                throw new("Couldn't create inverse pose view matrix.");
+            }
+
+            return inverse;
+        }
+
+        public Matrix4x4 GetProjectionMatrix(int eye) => Projections[eye];
 
         // Misc
         private IView _view;
@@ -489,12 +500,7 @@ namespace OpenGL_VR_Demo.OpenXR
             {
                 var view = ViewStates[eye];
                 Projections[eye] = view.Fov.ToProjection();
-                if (!Matrix4x4.Invert(view.Pose.ToView(), out var inverse))
-                {
-                    throw new("Couldn't create inverse pose view matrix.");
-                }
-
-                Views[eye] = inverse;
+                RawViews[eye] = view.Pose;
             }
         }
 
