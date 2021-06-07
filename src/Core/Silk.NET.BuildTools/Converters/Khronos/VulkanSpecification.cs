@@ -33,16 +33,19 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             Commands = commands;
             Constants = constants;
             Typedefs = typedefs;
-            Enums = enums;
             Structures = structures;
             Unions = unions;
             Handles = handles;
             BaseTypes = baseTypes;
             Extensions = extensions;
             Features = features;
-            AddExtensionEnums(Enums, Extensions);
-            AddExtensionEnums(Enums, Features);
-            MixinEnumTypeFixups(Enums, Typedefs);
+
+            var wipEnums = enums.ToList();
+            AddExtensionEnums(wipEnums, Extensions);
+            AddExtensionEnums(wipEnums, Features);
+            MixinEnumTypeFixups(wipEnums, Typedefs);
+            
+            Enums = enums.ToArray();
         }
 
         public static VulkanSpecification LoadFromXmlStream(Stream specFileStream)
@@ -115,7 +118,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
                 features);
         }
 
-        private void AddExtensionEnums(EnumDefinition[] enums, ExtensionDefinition[] extensions)
+        private void AddExtensionEnums(List<EnumDefinition> enums, ExtensionDefinition[] extensions)
         {
             foreach (var exDef in extensions)
             {
@@ -133,7 +136,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             }
         }
 
-        private void AddExtensionEnums(EnumDefinition[] enums, FeatureDefinition[] extensions)
+        private void AddExtensionEnums(List<EnumDefinition> enums, FeatureDefinition[] extensions)
         {
             foreach (var exDef in extensions)
             {
@@ -146,7 +149,7 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             }
         }
         
-        private void MixinEnumTypeFixups(EnumDefinition[] enums, TypedefDefinition[] typedefs)
+        private void MixinEnumTypeFixups(List<EnumDefinition> enums, TypedefDefinition[] typedefs)
         {
             foreach (var typedefDefinition in typedefs)
             {
@@ -170,9 +173,17 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             }
         }
 
-        private EnumDefinition GetEnumDef(EnumDefinition[] enums, string name)
+        private EnumDefinition GetEnumDef(List<EnumDefinition> enums, string name)
         {
-            return enums.Single(ed => ed.Name == name);
+            var ret = enums.SingleOrDefault(ed => ed.Name == name);
+            if (ret == default)
+            {
+                // bandage around the fact that khronos always slip up on their xml specs
+                ret = EnumDefinition.CreateFromXml(XElement.Parse($"<enums name=\"{name}\" type=\"bitmask\" />"));
+                enums.Add(ret);
+            }
+
+            return ret;
         }
     }
 }

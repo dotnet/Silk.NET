@@ -16,12 +16,12 @@
             - Add more helper APIs in Silk.NET.Core and Silk.NET.Maths
             - Update to latest OpenGL and OpenGLES specifications
             - Update to OpenXR 1.0.16
-            - Update to Vulkan 1.2.169
+            - Update to Vulkan 1.2.180
             - Fix SDL OpenGL context issues when not using OpenGL
             - Fix GLFW native window issues on 32-bit Windows
             - Fix OpenXR loading issues
             - Fix incorrect bindings in OpenXR
-            - Miscellaneous windowing &amp;amp; input bugfixes &amp; improvements
+            - Miscellaneous windowing &amp; input bugfixes &amp; improvements
         </PackageReleaseNotes>
         <PackageTags Condition="'$(PackageTags)' == ''">OpenCL;OpenGL;OpenAL;OpenGLES;GLES;Vulkan;Assimp;DirectX;GLFW;SDL;Windowing;Input;Gamepad;Joystick;Keyboard;Mouse;SilkTouch;Source;Generator;C#;F#;.NET;DotNet;Mono;Vector;Math;Maths;Numerics;Game;Graphics;Compute;Audio;Sound;Engine;Silk;Silk.NET;Slim.NET;ElgarTK;GPU;Sharp;Science;Scientific;Visualization;Visual;Audiovisual;Windows;macOS;Linux;Android;Bindings;OSX;Wrapper;Native</PackageTags>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
