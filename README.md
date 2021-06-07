@@ -73,7 +73,6 @@ Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-
     
 <h2 align="center">Funding</h2>
 We greatly appreciate any donations made, as it allows us to spend more time developing Silk.NET.<br>
-See the sidebar on the left, or <a href="./.github/FUNDING.yml">the funding file</a>!
 
 <h1 align="center">Further resources</h1>
 
