@@ -70,6 +70,10 @@ Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-
 3. Once you've pushed a commit, open a [**draft pull request**](https://github.blog/2019-02-14-introducing-draft-pull-requests/). Do this **before** you actually start working.
 4. Make your commits in small, incremental steps with clear descriptions.
 5. Tag a maintainer when you're done and ask for a review!
+    
+<h1 align="center">Funding</h1>
+We greatly appreciate any donations made, as it allows us to spend more time developing Silk.NET.<br>
+See the sidebar on the left, or <a href="./.github/FUNDING.yml">the funding file</a>!
 
 <h1 align="center">Further resources</h1>
 
