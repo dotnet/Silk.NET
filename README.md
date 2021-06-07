@@ -72,7 +72,9 @@ Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-
 5. Tag a maintainer when you're done and ask for a review!
     
 <h2 align="center">Funding</h2>
-We greatly appreciate any donations made, as it allows us to spend more time developing Silk.NET.<br>
+Silk.NET requires significant effort to maintain, as such we greatly appreciate any financial support you are able to provide!
+
+This helps ensure Silk.NET's long term viability, and to help support the developers who maintain Silk.NET in their free time. [Dylan](https://github.com/sponsors/Perksey) and [Kai](https://github.com/sponsors/HurricanKai) are accepting GitHub Sponsorships.
 
 <h1 align="center">Further resources</h1>
 
