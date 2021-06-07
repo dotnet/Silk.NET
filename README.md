@@ -70,6 +70,11 @@ Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-
 3. Once you've pushed a commit, open a [**draft pull request**](https://github.blog/2019-02-14-introducing-draft-pull-requests/). Do this **before** you actually start working.
 4. Make your commits in small, incremental steps with clear descriptions.
 5. Tag a maintainer when you're done and ask for a review!
+    
+<h2 align="center">Funding</h2>
+Silk.NET requires significant effort to maintain, as such we greatly appreciate any financial support you are able to provide!
+
+This helps ensure Silk.NET's long term viability, and to help support the developers who maintain Silk.NET in their free time. [Dylan](https://github.com/sponsors/Perksey) and [Kai](https://github.com/sponsors/HurricanKai) are accepting GitHub Sponsorships.
 
 <h1 align="center">Further resources</h1>
 
@@ -90,4 +95,3 @@ Silk.NET is a [.NET Foundation](https://www.dotnetfoundation.org/projects) proje
         
 Special thanks to [JetBrains](https://www.jetbrains.com/?from=Silk.NET) for supporting us with open-source licenses for their IDEs. </a>
 </div>
-
