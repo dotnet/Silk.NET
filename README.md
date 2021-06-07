@@ -71,7 +71,7 @@ Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-
 4. Make your commits in small, incremental steps with clear descriptions.
 5. Tag a maintainer when you're done and ask for a review!
     
-<h1 align="center">Funding</h1>
+<h2 align="center">Funding</h2>
 We greatly appreciate any donations made, as it allows us to spend more time developing Silk.NET.<br>
 See the sidebar on the left, or <a href="./.github/FUNDING.yml">the funding file</a>!
 
@@ -94,4 +94,3 @@ Silk.NET is a [.NET Foundation](https://www.dotnetfoundation.org/projects) proje
         
 Special thanks to [JetBrains](https://www.jetbrains.com/?from=Silk.NET) for supporting us with open-source licenses for their IDEs. </a>
 </div>
-
