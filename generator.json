@@ -281,7 +281,9 @@
                     "cl_version": "cl_uint",
                     "cl_mem_properties": "CLenum",
                     "cl_mipmap_filter_mode_img": "CLenum",
-                    "cl_command_queue_capabilities_intel": "CLenum"
+                    "cl_command_queue_capabilities_intel": "CLenum",
+                    "cl_icd_dispatch": "void",
+                    "cl_layer_info": "uint"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
@@ -641,7 +643,8 @@
                     "EGLConfig": "nint",
                     "EGLContext": "nint",
                     "GLXFBConfig": "nint",
-                    "VkFormat": "uint"
+                    "VkFormat": "uint",
+                    "EGLenum":  "uint"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"

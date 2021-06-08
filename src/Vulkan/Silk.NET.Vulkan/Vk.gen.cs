@@ -56,6 +56,9 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "VK_MAX_EXTENSION_NAME_SIZE")]
         public const uint MaxExtensionNameSize = unchecked((uint) 256);
         [NativeName("Type", "")]
+        [NativeName("Name", "VK_MAX_GLOBAL_PRIORITY_SIZE_EXT")]
+        public const uint MaxGlobalPrioritySizeExt = unchecked((uint) 16);
+        [NativeName("Type", "")]
         [NativeName("Name", "VK_MAX_MEMORY_HEAPS")]
         public const uint MaxMemoryHeaps = unchecked((uint) 16);
         [NativeName("Type", "")]

@@ -45,10 +45,6 @@ namespace Silk.NET.Vulkan
         FormatFeatureVideoDecodeOutputBitKhr = 33554432,
         [NativeName("Name", "VK_FORMAT_FEATURE_VIDEO_DECODE_DPB_BIT_KHR")]
         FormatFeatureVideoDecodeDpbBitKhr = 67108864,
-        [NativeName("Name", "VK_FORMAT_FEATURE_VIDEO_ENCODE_INPUT_BIT_KHR")]
-        FormatFeatureVideoEncodeInputBitKhr = 134217728,
-        [NativeName("Name", "VK_FORMAT_FEATURE_VIDEO_ENCODE_DPB_BIT_KHR")]
-        FormatFeatureVideoEncodeDpbBitKhr = 268435456,
         [NativeName("Name", "VK_FORMAT_FEATURE_TRANSFER_SRC_BIT_KHR")]
         FormatFeatureTransferSrcBitKhr = 16384,
         [NativeName("Name", "VK_FORMAT_FEATURE_TRANSFER_DST_BIT_KHR")]
@@ -77,6 +73,10 @@ namespace Silk.NET.Vulkan
         FormatFeatureFragmentDensityMapBitExt = 16777216,
         [NativeName("Name", "VK_FORMAT_FEATURE_FRAGMENT_SHADING_RATE_ATTACHMENT_BIT_KHR")]
         FormatFeatureFragmentShadingRateAttachmentBitKhr = 1073741824,
+        [NativeName("Name", "VK_FORMAT_FEATURE_VIDEO_ENCODE_INPUT_BIT_KHR")]
+        FormatFeatureVideoEncodeInputBitKhr = 134217728,
+        [NativeName("Name", "VK_FORMAT_FEATURE_VIDEO_ENCODE_DPB_BIT_KHR")]
+        FormatFeatureVideoEncodeDpbBitKhr = 268435456,
         [NativeName("Name", "VK_FORMAT_FEATURE_TRANSFER_SRC_BIT")]
         FormatFeatureTransferSrcBit = 16384,
         [NativeName("Name", "VK_FORMAT_FEATURE_TRANSFER_DST_BIT")]

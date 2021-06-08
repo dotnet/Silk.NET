@@ -120,6 +120,8 @@ namespace Silk.NET.OpenXR
         ErrorLocalizedNameInvalid = -49,
         [NativeName("Name", "XR_ERROR_GRAPHICS_REQUIREMENTS_CALL_MISSING")]
         ErrorGraphicsRequirementsCallMissing = -50,
+        [NativeName("Name", "XR_ERROR_RUNTIME_UNAVAILABLE")]
+        ErrorRuntimeUnavailable = -51,
         [NativeName("Name", "XR_ERROR_ANDROID_THREAD_SETTINGS_ID_INVALID_KHR")]
         ErrorAndroidThreadSettingsIDInvalidKhr = -1000003000,
         [NativeName("Name", "XR_ERROR_ANDROID_THREAD_SETTINGS_FAILURE_KHR")]

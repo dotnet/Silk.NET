@@ -19,6 +19,10 @@ namespace Silk.NET.Vulkan
         PipelineCreateAllowDerivativesBit = 2,
         [NativeName("Name", "VK_PIPELINE_CREATE_DERIVATIVE_BIT")]
         PipelineCreateDerivativeBit = 4,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_21_BIT_AMD")]
+        PipelineCreateReserved21BitAmd = 2097152,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_22_BIT_AMD")]
+        PipelineCreateReserved22BitAmd = 4194304,
         [NativeName("Name", "VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT_KHR")]
         PipelineCreateViewIndexFromDeviceIndexBitKhr = 8,
         [NativeName("Name", "VK_PIPELINE_CREATE_DISPATCH_BASE_KHR")]
@@ -51,6 +55,10 @@ namespace Silk.NET.Vulkan
         PipelineCreateFailOnPipelineCompileRequiredBitExt = 256,
         [NativeName("Name", "VK_PIPELINE_CREATE_EARLY_RETURN_ON_FAILURE_BIT_EXT")]
         PipelineCreateEarlyReturnOnFailureBitExt = 512,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_23_BIT_AMD")]
+        PipelineCreateReserved23BitAmd = 8388608,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_10_BIT_AMD")]
+        PipelineCreateReserved10BitAmd = 1024,
         [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_BIT_20_NV")]
         PipelineCreateReservedBit20NV = 1048576,
         [NativeName("Name", "VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT")]

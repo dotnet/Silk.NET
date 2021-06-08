@@ -112,60 +112,110 @@ namespace Silk.NET.Core.Native
             NativeStringEncoding encoding = NativeStringEncoding.Ansi
         )
         {
-            return encoding switch
+            if (encoding == NativeStringEncoding.BStr)
             {
-                NativeStringEncoding.BStr => BStrToMemory(Marshal.StringToBSTR(input), input.Length),
-                NativeStringEncoding.LPStr => AnsiToMemory(input),
-                NativeStringEncoding.LPTStr => Utf8ToMemory(input),
-                NativeStringEncoding.LPUTF8Str => Utf8ToMemory(input),
-                NativeStringEncoding.LPWStr => WideToMemory(input),
-                _ => ThrowInvalidEncoding<GlobalMemory>()
+                return BStrToMemory(Marshal.StringToBSTR(input), input.Length);
+            }
+            
+            var memory = GlobalMemory.Allocate(GetMaxSizeOf(input));
+            StringIntoSpan(input, memory.AsSpan<byte>(), encoding);
+            return memory;
+        }
+
+#nullable enable
+
+        /// <summary>
+        /// Gets the maximum bytes this string can consume in memory once marshalled using the given native
+        /// encoding (including any null terminators)
+        /// </summary>
+        /// <param name="input">The string to get the maximum potential byte consumption of.</param>
+        /// <param name="encoding">The native string encoding in question.</param>
+        /// <returns>
+        /// The number of bytes this string can consume in memory when marshalled, or <c>-1</c> if the given
+        /// <paramref name="encoding"/> is not supported.
+        /// </returns>
+        public static int GetMaxSizeOf(string? input, NativeStringEncoding encoding = NativeStringEncoding.Ansi)
+            => encoding switch
+            {
+                NativeStringEncoding.BStr => -1,
+                NativeStringEncoding.LPStr => ((input?.Length ?? 0) + 1) * Marshal.SystemMaxDBCSCharSize,
+                NativeStringEncoding.LPTStr => (input is null ? 0 : Encoding.UTF8.GetMaxByteCount(input.Length)) + 1,
+                NativeStringEncoding.LPUTF8Str => (input is null ? 0 : Encoding.UTF8.GetMaxByteCount(input.Length)) + 1,
+                NativeStringEncoding.LPWStr => ((input?.Length ?? 0) + 1) * 2,
+                _ => -1
             };
 
-            static unsafe GlobalMemory Utf8ToMemory(string input)
+        /// <summary>
+        /// Marshals the input string per the specified native string encoding, and stores the marshalled bytes into
+        /// the given span
+        /// </summary>
+        /// <param name="input">The string to marshal.</param>
+        /// <param name="span">The span to marshal the string into.</param>
+        /// <param name="encoding">The target native string encoding.</param>
+        /// <returns>The number of bytes copied into the span including the null terminator.</returns>
+        public static unsafe int StringIntoSpan
+        (
+            string? input,
+            Span<byte> span,
+            NativeStringEncoding encoding = NativeStringEncoding.Ansi
+        )
+        {
+            if (input is null)
             {
-                var memory = GlobalMemory.Allocate(Encoding.UTF8.GetMaxByteCount(input.Length) + 1);
-                int convertedBytes;
-                fixed (char* firstChar = input)
-                {
-                    fixed (byte* bytes = memory)
-                    {
-                        convertedBytes = Encoding.UTF8.GetBytes(firstChar, input.Length, bytes, memory.Length - 1);
-                    }
-                }
-
-                memory[convertedBytes] = 0;
-                return memory;
+                span[0] = 0;
+                return 1;
             }
-
-            static unsafe GlobalMemory AnsiToMemory(string input)
+            
+            switch (encoding)
             {
-                var memory = GlobalMemory.Allocate((input.Length + 1) * Marshal.SystemMaxDBCSCharSize);
-                int convertedBytes;
-
-                fixed (char* firstChar = input)
+                case NativeStringEncoding.BStr:
                 {
-                    fixed (byte* bytes = memory)
+                    static void ThrowNoBStr() => throw new InvalidOperationException
+                    (
+                        "BSTR encoded strings can only be marshalled into known BSTR memory."
+                    );
+                    
+                    ThrowNoBStr();
+                    return -1;
+                }
+                case NativeStringEncoding.LPStr:
+                case NativeStringEncoding.LPTStr:
+                case NativeStringEncoding.LPUTF8Str:
+                {
+                    int convertedBytes;
+
+                    fixed (char* firstChar = input)
                     {
-                        convertedBytes = Encoding.UTF8.GetBytes(firstChar, input.Length, bytes, memory.Length);
+                        fixed (byte* bytes = span)
+                        {
+                            convertedBytes = Encoding.UTF8.GetBytes(firstChar, input.Length, bytes, span.Length - 1);
+                        }
                     }
+
+                    span[convertedBytes] = 0;
+                    return ++convertedBytes;
                 }
-
-                memory[convertedBytes] = 0;
-                return memory;
-            }
-
-            static unsafe GlobalMemory WideToMemory(string input)
-            {
-                var memory = GlobalMemory.Allocate((input.Length + 1) * 2);
-                fixed (char* firstChar = input)
+                case NativeStringEncoding.LPWStr:
                 {
-                    Buffer.MemoryCopy(firstChar, (void*) memory.Handle, memory.Length, input.Length + 1);
-                }
+                    fixed (char* firstChar = input)
+                    {
+                        fixed (byte* bytes = span)
+                        {
+                            Buffer.MemoryCopy(firstChar, bytes, span.Length, input.Length + 1);
+                        }
+                    }
 
-                return memory;
+                    return input.Length + 1;
+                }
+                default:
+                {
+                    ThrowInvalidEncoding<GlobalMemory>();
+                    return -1;
+                }
             }
         }
+
+#nullable disable
 
         /// <summary>
         /// Allocates a string pointer
@@ -264,6 +314,24 @@ namespace Silk.NET.Core.Native
         public static string MemoryToString(GlobalMemory input, NativeStringEncoding e = NativeStringEncoding.Ansi)
             => PtrToString(input.Handle, e)!; // TODO tolerate a GlobalMemory.Null if we introduce one in the future?
 
+        /// <summary>
+        /// Reads a null-terminated string from the given span, with the given native encoding.
+        /// </summary>
+        /// <param name="input">A span containing a null-terminated string.</param>
+        /// <param name="encoding">The encoding of the string in memory.</param>
+        /// <returns>The string read from memory.</returns>
+        public static unsafe string SpanToString
+        (
+            Span<byte> input,
+            NativeStringEncoding encoding = NativeStringEncoding.Ansi
+        )
+        {
+            fixed (byte* ptr = input)
+            {
+                return PtrToString((nint) ptr, encoding)!;
+            }
+        }
+        
 #nullable disable
 
         /// <summary>

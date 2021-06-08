@@ -27,6 +27,8 @@ jobs:
       # skip Clean, Restore, and Compile as this will build the affect the whole solution.
       # dotnet test will compile the necessary projects for testing only.
       run: nuke Test --skip Clean Restore Compile
+    - name: Validation Checks
+      run: nuke ValidateSolution
     - name: Pack
       # TODO build native mixins such as BuildLibSilkDroid
       run: nuke Pack --configuration Release --msbuild-properties VersionSuffix=build${{ github.run_number }}.0 ContinuousIntegrationBuild=true --feature-sets Android iOS

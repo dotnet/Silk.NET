@@ -20,8 +20,6 @@ namespace Silk.NET.Vulkan
         Timestamp = 2,
         [NativeName("Name", "VK_QUERY_TYPE_RESULT_STATUS_ONLY_KHR")]
         ResultStatusOnlyKhr = 1000023000,
-        [NativeName("Name", "VK_QUERY_TYPE_VIDEO_ENCODE_BITSTREAM_BUFFER_RANGE_KHR")]
-        VideoEncodeBitstreamBufferRangeKhr = 1000299000,
         [NativeName("Name", "VK_QUERY_TYPE_TRANSFORM_FEEDBACK_STREAM_EXT")]
         TransformFeedbackStreamExt = 1000028004,
         [NativeName("Name", "VK_QUERY_TYPE_PERFORMANCE_QUERY_KHR")]
@@ -34,5 +32,7 @@ namespace Silk.NET.Vulkan
         AccelerationStructureCompactedSizeNV = 1000165000,
         [NativeName("Name", "VK_QUERY_TYPE_PERFORMANCE_QUERY_INTEL")]
         PerformanceQueryIntel = 1000210000,
+        [NativeName("Name", "VK_QUERY_TYPE_VIDEO_ENCODE_BITSTREAM_BUFFER_RANGE_KHR")]
+        VideoEncodeBitstreamBufferRangeKhr = 1000299000,
     }
 }

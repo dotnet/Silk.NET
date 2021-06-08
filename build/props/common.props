@@ -6,30 +6,29 @@
         <LangVersion>preview</LangVersion>
         <Authors>.NET Foundation and Contributors</Authors>
         <PackageReleaseNotes>
-            Silk.NET May 2021 Update
+            Silk.NET June 2021 Update
 
-            - Add As methods to all Maths types &amp; other miscellaneous API additions
-            - Add support for provisional Vulkan Video encoding &amp; decoding extensions
-            - Update to latest OpenGL specification
-            - Update to latest OpenCL specification
-            - Update to Vulkan 1.2.177
-            - Update to OpenXR 1.0.15
-            - Fix ImGui robustness
-            - Fix disposal and reset robustness
-            - Fix SDL input backend not respecting deadzones
-            - Fix GLFW input backend not respecting start-up state
-            - Fix Vulkan device function pointer loader bugs
-            - Fix BSTR GlobalMemory issues
-            - Fix Vulkan codegen issues
-            - Fix bitfield codegen for Vulkan &amp; clang-generated bindings
-            - Miscellaneous windowing &amp; input bugfixes
+            - OpenXR bindings are now production-ready &amp; no longer experimental!
+            - Add (optional) native binaries for OpenAL Soft
+            - Add support for reversed-z projection matrices in Silk.NET.Maths
+            - Add bindings for a number of missing Vulkan and OpenCL extensions
+            - Add OpenGL-OpenXR interoperability helper APIs
+            - Add more helper APIs in Silk.NET.Core and Silk.NET.Maths
+            - Update to latest OpenGL and OpenGLES specifications
+            - Update to OpenXR 1.0.16
+            - Update to Vulkan 1.2.180
+            - Fix SDL OpenGL context issues when not using OpenGL
+            - Fix GLFW native window issues on 32-bit Windows
+            - Fix OpenXR loading issues
+            - Fix incorrect bindings in OpenXR
+            - Miscellaneous windowing &amp; input bugfixes &amp; improvements
         </PackageReleaseNotes>
         <PackageTags Condition="'$(PackageTags)' == ''">OpenCL;OpenGL;OpenAL;OpenGLES;GLES;Vulkan;Assimp;DirectX;GLFW;SDL;Windowing;Input;Gamepad;Joystick;Keyboard;Mouse;SilkTouch;Source;Generator;C#;F#;.NET;DotNet;Mono;Vector;Math;Maths;Numerics;Game;Graphics;Compute;Audio;Sound;Engine;Silk;Silk.NET;Slim.NET;ElgarTK;GPU;Sharp;Science;Scientific;Visualization;Visual;Audiovisual;Windows;macOS;Linux;Android;Bindings;OSX;Wrapper;Native</PackageTags>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageOutputPath>$(MSBuildThisFileDirectory)/../output_packages</PackageOutputPath>
         <RepositoryUrl>https://github.com/dotnet/Silk.NET</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
-        <VersionPrefix>2.4.0</VersionPrefix>
+        <VersionPrefix>2.5.0</VersionPrefix>
         <VersionSuffix Condition="'$(VersionSuffix)' == ''"></VersionSuffix>
         <Description Condition="'$(Description)' == ''">
             Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, and DirectX.
