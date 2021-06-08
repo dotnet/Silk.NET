@@ -1,4 +1,4 @@
-﻿
+
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30517.126
@@ -441,6 +441,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Vulkan.Extensions.VALVE", "src\Vulkan\Extensions\Silk.NET.Vulkan.Extensions.VALVE\Silk.NET.Vulkan.Extensions.VALVE.csproj", "{AB59F09A-9BD9-4CBB-8497-87B768C7C949}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Vulkan.Extensions.JUICE", "src\Vulkan\Extensions\Silk.NET.Vulkan.Extensions.JUICE\Silk.NET.Vulkan.Extensions.JUICE.csproj", "{86B6B40E-EA8F-47F0-9D1F-FDBAFBE2842C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Vulkan.Extensions.FB", "src\Vulkan\Extensions\Silk.NET.Vulkan.Extensions.FB\Silk.NET.Vulkan.Extensions.FB.csproj", "{D1DD841D-9F34-47A6-91EB-A8632D577BD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -2647,6 +2649,18 @@ Global
 		{86B6B40E-EA8F-47F0-9D1F-FDBAFBE2842C}.Release|x64.Build.0 = Release|Any CPU
 		{86B6B40E-EA8F-47F0-9D1F-FDBAFBE2842C}.Release|x86.ActiveCfg = Release|Any CPU
 		{86B6B40E-EA8F-47F0-9D1F-FDBAFBE2842C}.Release|x86.Build.0 = Release|Any CPU
+		{D1DD841D-9F34-47A6-91EB-A8632D577BD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1DD841D-9F34-47A6-91EB-A8632D577BD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1DD841D-9F34-47A6-91EB-A8632D577BD7}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D1DD841D-9F34-47A6-91EB-A8632D577BD7}.Debug|x64.Build.0 = Debug|Any CPU
+		{D1DD841D-9F34-47A6-91EB-A8632D577BD7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D1DD841D-9F34-47A6-91EB-A8632D577BD7}.Debug|x86.Build.0 = Debug|Any CPU
+		{D1DD841D-9F34-47A6-91EB-A8632D577BD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1DD841D-9F34-47A6-91EB-A8632D577BD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1DD841D-9F34-47A6-91EB-A8632D577BD7}.Release|x64.ActiveCfg = Release|Any CPU
+		{D1DD841D-9F34-47A6-91EB-A8632D577BD7}.Release|x64.Build.0 = Release|Any CPU
+		{D1DD841D-9F34-47A6-91EB-A8632D577BD7}.Release|x86.ActiveCfg = Release|Any CPU
+		{D1DD841D-9F34-47A6-91EB-A8632D577BD7}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -2849,6 +2863,7 @@ Global
 		{F16B4AE5-F68F-42A2-8AB5-029282032CE0} = {49BC383A-D7E6-4013-93C7-371479B984CC}
 		{AB59F09A-9BD9-4CBB-8497-87B768C7C949} = {49BC383A-D7E6-4013-93C7-371479B984CC}
 		{23172004-FF6B-45D8-9653-944CECE741E1} = {757F2B10-B69D-4C19-BFE0-D99070A00AD9}
+		{D1DD841D-9F34-47A6-91EB-A8632D577BD7} = {49BC383A-D7E6-4013-93C7-371479B984CC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5273D7F-3334-48DF-94E3-41AE6816CD4D}
