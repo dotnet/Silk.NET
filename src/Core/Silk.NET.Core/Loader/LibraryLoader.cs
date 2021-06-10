@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 #if NETCOREAPP3_1 || NET5_0
@@ -31,7 +31,8 @@ namespace Silk.NET.Core.Loader
 
         private static void ThrowLibNotFound(string name, PathResolver resolver)
         {
-            throw new FileNotFoundException($"Could not find or load the native library: {name} Attempted: {string.Join(", ", resolver.EnumeratePossibleLibraryLoadTargets(name).Select(x => "\"" + x + "\""))}");
+            throw new FileNotFoundException($"Could not find or load the native library: {name} Attempted: {string.Join(", ", resolver.EnumeratePossibleLibraryLoadTargets(name).Select(x => "\"" + x + "\""))}",
+                name);
         }
 
         /// <summary>
@@ -60,7 +61,8 @@ namespace Silk.NET.Core.Loader
         private static void ThrowLibNotFoundAny(string[] names, PathResolver pathResolver)
         {
             throw new FileNotFoundException
-                ($"Could not find or load the native library from any name: [ {string.Join(", ", names.Select(x => x + " Attempted: (" + string.Join(", ", pathResolver.EnumeratePossibleLibraryLoadTargets(x).Select(x2 => "\"" + x2 + "\"")) + ")"))} ]");
+                ($"Could not find or load the native library from any name: [ {string.Join(", ", names.Select(x => x + " Attempted: (" + string.Join(", ", pathResolver.EnumeratePossibleLibraryLoadTargets(x).Select(x2 => "\"" + x2 + "\"")) + ")"))} ]",
+                names[0]);
         }
 
         /// <summary>
