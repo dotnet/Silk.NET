@@ -431,7 +431,7 @@ namespace Silk.NET.SilkTouch
 
                 var expr = ResolveVariable(ResultVariable.Value).Value;
                 
-                _statements.Add(ReturnStatement(expr));
+                _statements.Add(ReturnStatement(expr.AddLeadingSpace()));
             }
 
             // apply blocks

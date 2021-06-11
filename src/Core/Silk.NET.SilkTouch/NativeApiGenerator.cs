@@ -344,10 +344,12 @@ namespace Silk.NET.SilkTouch
                     )
                 )
                 .WithUsings(AddIfNotExists(compilationUnit.Usings, "Silk.NET.Core.Native", "Silk.NET.Core.Contexts"));
+            
+#if DEBUG
+            newNamespace = newNamespace.NormalizeWhitespace();
+#endif
 
-            var result = newNamespace
-                //.NormalizeWhitespace()
-                .ToFullString();
+            var result = newNamespace.ToFullString();
             stopwatch.Stop();
             var reportTelemetry = true;
 
