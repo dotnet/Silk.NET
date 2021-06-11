@@ -1659,48 +1659,48 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSharedResourceAdapterLuid(void* hResource, ValueTuple<ulong, long>* pLuid)
+        public readonly unsafe int GetSharedResourceAdapterLuid(void* hResource, Luid* pLuid)
         {
             var @this = (IDXGIFactory7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, void*, ValueTuple<ulong, long>*, int>)LpVtbl[17])(@this, hResource, pLuid);
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, void*, Luid*, int>)LpVtbl[17])(@this, hResource, pLuid);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSharedResourceAdapterLuid(void* hResource, ref ValueTuple<ulong, long> pLuid)
+        public readonly unsafe int GetSharedResourceAdapterLuid(void* hResource, ref Luid pLuid)
         {
             var @this = (IDXGIFactory7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (ValueTuple<ulong, long>* pLuidPtr = &pLuid)
+            fixed (Luid* pLuidPtr = &pLuid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, void*, ValueTuple<ulong, long>*, int>)LpVtbl[17])(@this, hResource, pLuidPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, void*, Luid*, int>)LpVtbl[17])(@this, hResource, pLuidPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSharedResourceAdapterLuid<T0>(ref T0 hResource, ValueTuple<ulong, long>* pLuid) where T0 : unmanaged
+        public readonly unsafe int GetSharedResourceAdapterLuid<T0>(ref T0 hResource, Luid* pLuid) where T0 : unmanaged
         {
             var @this = (IDXGIFactory7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (T0* hResourcePtr = &hResource)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, T0*, ValueTuple<ulong, long>*, int>)LpVtbl[17])(@this, hResourcePtr, pLuid);
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, T0*, Luid*, int>)LpVtbl[17])(@this, hResourcePtr, pLuid);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetSharedResourceAdapterLuid<T0>(ref T0 hResource, ref ValueTuple<ulong, long> pLuid) where T0 : unmanaged
+        public readonly int GetSharedResourceAdapterLuid<T0>(ref T0 hResource, ref Luid pLuid) where T0 : unmanaged
         {
             var @this = (IDXGIFactory7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (T0* hResourcePtr = &hResource)
             {
-                fixed (ValueTuple<ulong, long>* pLuidPtr = &pLuid)
+                fixed (Luid* pLuidPtr = &pLuid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, T0*, ValueTuple<ulong, long>*, int>)LpVtbl[17])(@this, hResourcePtr, pLuidPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, T0*, Luid*, int>)LpVtbl[17])(@this, hResourcePtr, pLuidPtr);
                 }
             }
             return ret;
@@ -2108,40 +2108,40 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int EnumAdapterByLuid(ValueTuple<ulong,long> AdapterLuid, Guid* riid, void** ppvAdapter)
+        public readonly unsafe int EnumAdapterByLuid(Luid AdapterLuid, Guid* riid, void** ppvAdapter)
         {
             var @this = (IDXGIFactory7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, ValueTuple<ulong,long>, Guid*, void**, int>)LpVtbl[26])(@this, AdapterLuid, riid, ppvAdapter);
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, Luid, Guid*, void**, int>)LpVtbl[26])(@this, AdapterLuid, riid, ppvAdapter);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int EnumAdapterByLuid(ValueTuple<ulong,long> AdapterLuid, Guid* riid, ref void* ppvAdapter)
+        public readonly unsafe int EnumAdapterByLuid(Luid AdapterLuid, Guid* riid, ref void* ppvAdapter)
         {
             var @this = (IDXGIFactory7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (void** ppvAdapterPtr = &ppvAdapter)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, ValueTuple<ulong,long>, Guid*, void**, int>)LpVtbl[26])(@this, AdapterLuid, riid, ppvAdapterPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, Luid, Guid*, void**, int>)LpVtbl[26])(@this, AdapterLuid, riid, ppvAdapterPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int EnumAdapterByLuid(ValueTuple<ulong,long> AdapterLuid, ref Guid riid, void** ppvAdapter)
+        public readonly unsafe int EnumAdapterByLuid(Luid AdapterLuid, ref Guid riid, void** ppvAdapter)
         {
             var @this = (IDXGIFactory7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (Guid* riidPtr = &riid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, ValueTuple<ulong,long>, Guid*, void**, int>)LpVtbl[26])(@this, AdapterLuid, riidPtr, ppvAdapter);
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, Luid, Guid*, void**, int>)LpVtbl[26])(@this, AdapterLuid, riidPtr, ppvAdapter);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int EnumAdapterByLuid(ValueTuple<ulong,long> AdapterLuid, ref Guid riid, ref void* ppvAdapter)
+        public readonly unsafe int EnumAdapterByLuid(Luid AdapterLuid, ref Guid riid, ref void* ppvAdapter)
         {
             var @this = (IDXGIFactory7*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
@@ -2149,7 +2149,7 @@ namespace Silk.NET.DXGI
             {
                 fixed (void** ppvAdapterPtr = &ppvAdapter)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, ValueTuple<ulong,long>, Guid*, void**, int>)LpVtbl[26])(@this, AdapterLuid, riidPtr, ppvAdapterPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory7*, Luid, Guid*, void**, int>)LpVtbl[26])(@this, AdapterLuid, riidPtr, ppvAdapterPtr);
                 }
             }
             return ret;
