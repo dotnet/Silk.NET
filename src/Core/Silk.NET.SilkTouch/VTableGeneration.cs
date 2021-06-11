@@ -25,10 +25,10 @@ namespace Silk.NET.SilkTouch
                     FieldDeclaration
                     (
                         List<AttributeListSyntax>(),
-                        TokenList(Token(SyntaxKind.PrivateKeyword)),
+                        TokenList(Token(SyntaxKind.PrivateKeyword).AddTrailingSpace()),
                         VariableDeclaration
                         (
-                            IdentifierName("Silk.NET.Core.Contexts.INativeContext"),
+                            IdentifierName("Silk.NET.Core.Contexts.INativeContext").AddTrailingSpace(),
                             SingletonSeparatedList(VariableDeclarator("_ctx"))
                         )
                     )
@@ -91,7 +91,7 @@ namespace Silk.NET.SilkTouch
             vTableMembers.Add
             (
                 ConstructorDeclaration("GeneratedVTable")
-                    .WithModifiers(TokenList(Token(SyntaxKind.InternalKeyword)))
+                    .WithModifiers(TokenList(Token(SyntaxKind.InternalKeyword).AddTrailingSpace()))
                     .WithParameterList
                     (
                         ParameterList
@@ -103,7 +103,7 @@ namespace Silk.NET.SilkTouch
                                     Parameter
                                             (Identifier("ctx"))
                                         .WithType
-                                            (IdentifierName("Silk.NET.Core.Contexts.INativeContext"))
+                                            (IdentifierName("Silk.NET.Core.Contexts.INativeContext").AddTrailingSpace())
                                 }
                             )
                         )
@@ -123,9 +123,9 @@ namespace Silk.NET.SilkTouch
                 FieldDeclaration
                 (
                     List<AttributeListSyntax>(),
-                    TokenList(Token(SyntaxKind.PrivateKeyword)),
+                    TokenList(Token(SyntaxKind.PrivateKeyword).AddTrailingSpace()),
                     VariableDeclaration
-                        (IdentifierName("System.IntPtr"), SeparatedList(slotVars))
+                        (IdentifierName("System.IntPtr").AddTrailingSpace(), SeparatedList(slotVars))
                 )
             );
 
@@ -136,7 +136,7 @@ namespace Silk.NET.SilkTouch
              */
             vTableMembers.Add
             (
-                MethodDeclaration(IdentifierName("nint"), "Load")
+                MethodDeclaration(IdentifierName("nint").AddTrailingSpace(), "Load")
                     .WithParameterList
                     (
                         ParameterList
@@ -148,12 +148,12 @@ namespace Silk.NET.SilkTouch
                                     Parameter
                                             (Identifier("slot"))
                                         .WithType
-                                            (PredefinedType(Token(SyntaxKind.IntKeyword))),
+                                            (PredefinedType(Token(SyntaxKind.IntKeyword)).AddTrailingSpace()),
                                     Parameter
                                             (Identifier("entryPoint"))
                                         .WithType
                                         (
-                                            PredefinedType(Token(SyntaxKind.StringKeyword))
+                                            PredefinedType(Token(SyntaxKind.StringKeyword).AddTrailingSpace())
                                         )
                                 }
                             )
@@ -162,7 +162,7 @@ namespace Silk.NET.SilkTouch
                     .WithExpressionBody(ArrowExpressionClause(InvocationExpression(IdentifierName("Load"), ArgumentList(SingletonSeparatedList(Argument(IdentifierName("entryPoint")))))))
                     .WithBody(null)
                     .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
-                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword).AddTrailingSpace()))
             );
 
             /*
@@ -175,7 +175,7 @@ namespace Silk.NET.SilkTouch
              */
             vTableMembers.Add
             (
-                MethodDeclaration(IdentifierName("nint"), "Load")
+                MethodDeclaration(IdentifierName("nint").AddTrailingSpace(), "Load")
                     .WithParameterList
                     (
                         ParameterList
@@ -186,7 +186,7 @@ namespace Silk.NET.SilkTouch
                                 {
                                     Parameter
                                             (Identifier("entryPoint"))
-                                        .WithType(PredefinedType(Token(SyntaxKind.StringKeyword)))
+                                        .WithType(PredefinedType(Token(SyntaxKind.StringKeyword).AddTrailingSpace()))
                                 }
                             )
                         )
@@ -197,7 +197,7 @@ namespace Silk.NET.SilkTouch
                         (
                             SwitchExpression
                             (
-                                IdentifierName("entryPoint"),
+                                IdentifierName("entryPoint").AddTrailingSpace(),
                                 SeparatedList
                                 (
                                     entryPoints.Distinct()
@@ -237,7 +237,7 @@ namespace Silk.NET.SilkTouch
                     )
                     .WithBody(null)
                     .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
-                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword).AddTrailingSpace()))
             );
             
             /*
@@ -249,7 +249,7 @@ namespace Silk.NET.SilkTouch
                 entryPoints.Distinct().Select
                 (
                     s => PropertyDeclaration
-                            (IdentifierName("nint"), FirstLetterToUpper(s))
+                            (IdentifierName("nint").AddTrailingSpace(), FirstLetterToUpper(s))
                         .WithExpressionBody
                         (
                             ArrowExpressionClause
@@ -286,7 +286,7 @@ namespace Silk.NET.SilkTouch
                                 )
                             )
                         )
-                        .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                        .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword).AddTrailingSpace()))
                         .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
                 )
             );
@@ -294,7 +294,7 @@ namespace Silk.NET.SilkTouch
             vTableMembers.Add
             (
                 MethodDeclaration
-                        (PredefinedType(Token(SyntaxKind.VoidKeyword)), "Purge")
+                        (PredefinedType(Token(SyntaxKind.VoidKeyword).AddTrailingSpace()), "Purge")
                     .WithParameterList(ParameterList(SeparatedList<ParameterSyntax>()))
                     .WithBody
                     (
@@ -316,24 +316,27 @@ namespace Silk.NET.SilkTouch
                                 )
                         )
                     )
-                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword).AddTrailingSpace()))
             );
 
             vTableMembers.Add
             (
                 MethodDeclaration
-                        (PredefinedType(Token(SyntaxKind.VoidKeyword)), "Dispose")
+                        (PredefinedType(Token(SyntaxKind.VoidKeyword).AddTrailingSpace()), "Dispose")
                     .WithParameterList(ParameterList(SeparatedList<ParameterSyntax>()))
                     .WithBody(Block())
-                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword).AddTrailingSpace()))
             );
 
             return ClassDeclaration
             (
                 List<AttributeListSyntax>(),
                 TokenList
-                    (Token(SyntaxKind.PrivateKeyword), Token(SyntaxKind.SealedKeyword)),
-                Identifier(generatedVTableName), null,
+                (
+                    Token(SyntaxKind.PrivateKeyword).AddTrailingSpace(),
+                    Token(SyntaxKind.SealedKeyword).AddTrailingSpace()
+                ),
+                Identifier(generatedVTableName).AddLeadingSpace(), null,
                 BaseList
                 (
                     SingletonSeparatedList

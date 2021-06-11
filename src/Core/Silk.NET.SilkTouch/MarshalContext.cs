@@ -331,8 +331,8 @@ namespace Silk.NET.SilkTouch
                 (
                     SyntaxTrivia
                     (
-                        SyntaxKind.SingleLineCommentTrivia,
-                        $"// ALREADY RESOLVED {id}"
+                        SyntaxKind.MultiLineCommentTrivia,
+                        $"/* ALREADY RESOLVED {id} */"
                     )
                 );
                 return _variables[id].AccessExpression;
@@ -342,8 +342,8 @@ namespace Silk.NET.SilkTouch
             (
                 SyntaxTrivia
                 (
-                    SyntaxKind.SingleLineCommentTrivia,
-                    $"// BEGIN RESOLVE {id} | READCOUNT: {_variables[id].ReadCount} | ALLOW_INLINE: {_variables[id].AllowInline} | FORCE_INLINE: {_variables[id].ForceInline} | CACHED: {!(_variables[id].AccessExpression is null)}"
+                    SyntaxKind.MultiLineCommentTrivia,
+                    $"/* BEGIN RESOLVE {id} | READCOUNT: {_variables[id].ReadCount} | ALLOW_INLINE: {_variables[id].AllowInline} | FORCE_INLINE: {_variables[id].ForceInline} | CACHED: {!(_variables[id].AccessExpression is null)} */"
                 )
             );
             if (_variables[id].IsResolving)
@@ -357,11 +357,11 @@ namespace Silk.NET.SilkTouch
             {
                 // declare a variable & assign it
                 var name = $"n{id}";
-                AppendTrivia(SyntaxTrivia(SyntaxKind.SingleLineCommentTrivia, $"// RESOLVED {id} TO VARIABLE {name}"));
+                AppendTrivia(SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, $"/* RESOLVED {id} TO VARIABLE {name} */"));
                 var identifier = IdentifierName(name);
 
                 if (_variables[id].Declare)
-                    _statements.Insert(0, LocalDeclarationStatement(VariableDeclaration(IdentifierName(_variables[id].Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)), SingletonSeparatedList(
+                    _statements.Insert(0, LocalDeclarationStatement(VariableDeclaration(IdentifierName(_variables[id].Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)).AddTrailingSpace(), SingletonSeparatedList(
                         VariableDeclarator(name)))));
                 
                 _statements.Add
@@ -373,7 +373,7 @@ namespace Silk.NET.SilkTouch
             else
             {
                 // do not declare a variable. inline.
-                AppendTrivia(SyntaxTrivia(SyntaxKind.SingleLineCommentTrivia, $"// RESOLVED {id} INLINED"));
+                AppendTrivia(SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, $"/* RESOLVED {id} INLINED */"));
                 _variables[id].AccessExpression = value;
             }
             
@@ -388,7 +388,7 @@ namespace Silk.NET.SilkTouch
 #endif
             
             _variables[id].IsResolving = false;
-            AppendTrivia(SyntaxTrivia(SyntaxKind.SingleLineCommentTrivia, $"// END RESOLVE {id}"));
+            AppendTrivia(SyntaxTrivia(SyntaxKind.MultiLineCommentTrivia, $"/* END RESOLVE {id} */"));
             return ParenthesizedExpression(_variables[id].AccessExpression);
         }
 

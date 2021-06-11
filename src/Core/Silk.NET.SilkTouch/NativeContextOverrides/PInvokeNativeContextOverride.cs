@@ -27,7 +27,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                     (
                         SwitchExpression
                         (
-                            IdentifierName("p"),
+                            IdentifierName("p").AddLeadingSpace().AddTrailingSpace(),
                             SeparatedList
                             (
                                 entrypoints.Select
@@ -63,7 +63,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
             }
 
             MethodDeclarationSyntax GetMethodFromEntrypoint(EntryPoint entrypoint)
-                => MethodDeclaration(entrypoint.LoadTypes.Last(), Identifier($"I_{entrypoint.Name}"))
+                => MethodDeclaration(entrypoint.LoadTypes.Last().AddTrailingSpace(), Identifier($"I_{entrypoint.Name}"))
                     .WithAttributeLists
                     (
                         SingletonList
@@ -143,8 +143,9 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                     (
                         TokenList
                         (
-                            Token(SyntaxKind.PrivateKeyword), Token(SyntaxKind.StaticKeyword),
-                            Token(SyntaxKind.ExternKeyword)
+                            Token(SyntaxKind.PrivateKeyword).AddTrailingSpace(),
+                            Token(SyntaxKind.StaticKeyword).AddTrailingSpace(),
+                            Token(SyntaxKind.ExternKeyword).AddTrailingSpace()
                         )
                     )
                     .WithParameterList
@@ -155,7 +156,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                             (
                                 entrypoint.LoadTypes.Take
                                         (entrypoint.LoadTypes.Length - 1)
-                                    .Select((x, i) => Parameter(default, default, x, Identifier($"p_{i}"), default))
+                                    .Select((x, i) => Parameter(default, default, x, Identifier($"p_{i}").AddLeadingSpace(), default))
                             )
                         )
                     )
@@ -166,8 +167,8 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
             members.AddRange(v.Select(GetMethodFromEntrypoint));
             members.Add
             (
-                MethodDeclaration(IdentifierName("IntPtr"), Identifier("CoreGetProcAddress"))
-                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                MethodDeclaration(IdentifierName("IntPtr"), Identifier("CoreGetProcAddress").AddLeadingSpace())
+                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword).AddTrailingSpace()))
                     .WithParameterList
                     (
                         ParameterList
@@ -178,10 +179,10 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                                 {
                                     Parameter
                                         (Identifier("p"))
-                                    .WithType(PredefinedType(Token(SyntaxKind.StringKeyword))),
+                                    .WithType(PredefinedType(Token(SyntaxKind.StringKeyword).AddTrailingSpace())),
                                     Parameter
                                             (Identifier("s"))
-                                        .WithType(NullableType(PredefinedType(Token(SyntaxKind.IntKeyword))))
+                                        .WithType(NullableType(PredefinedType(Token(SyntaxKind.IntKeyword).AddTrailingSpace())))
                                         .WithDefault
                                         (
                                             EqualsValueClause
@@ -202,11 +203,11 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
             members.Add
             (
                 MethodDeclaration
-                        (PredefinedType(Token(SyntaxKind.VoidKeyword)), Identifier("Dispose"))
-                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
+                        (PredefinedType(Token(SyntaxKind.VoidKeyword).AddTrailingSpace()), Identifier("Dispose"))
+                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword).AddTrailingSpace()))
                     .WithBody(Block())
             );
-            return ClassDeclaration(name)
+            return ClassDeclaration(Identifier(name).AddLeadingSpace())
                 .WithBaseList
                 (
                     BaseList
@@ -234,8 +235,9 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                 (
                     TokenList
                     (
-                        Token(SyntaxKind.PrivateKeyword), Token(SyntaxKind.SealedKeyword),
-                        Token(SyntaxKind.UnsafeKeyword)
+                        Token(SyntaxKind.PrivateKeyword).AddTrailingSpace(),
+                        Token(SyntaxKind.SealedKeyword).AddTrailingSpace(),
+                        Token(SyntaxKind.UnsafeKeyword).AddTrailingSpace()
                     )
                 )
                 .WithMembers

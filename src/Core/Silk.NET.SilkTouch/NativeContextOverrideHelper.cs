@@ -20,14 +20,14 @@ namespace Silk.NET.SilkTouch
             (
                 MethodDeclaration
                     (
-                        IdentifierName("System.IntPtr"),
+                        IdentifierName("System.IntPtr").AddTrailingSpace(),
                         Identifier("GetProcAddress")
                     )
                     .WithModifiers
                     (
                         TokenList
                         (
-                            Token(SyntaxKind.PublicKeyword)
+                            Token(SyntaxKind.PublicKeyword).AddTrailingSpace()
                         )
                     )
                     .WithParameterList
@@ -40,7 +40,7 @@ namespace Silk.NET.SilkTouch
                                 {
                                     Parameter
                                         (
-                                            Identifier("proc")
+                                            Identifier("proc").AddLeadingSpace()
                                         )
                                         .WithType
                                         (
@@ -52,7 +52,7 @@ namespace Silk.NET.SilkTouch
                                     Token(SyntaxKind.CommaToken),
                                     Parameter
                                         (
-                                            Identifier("slot")
+                                            Identifier("slot").AddLeadingSpace()
                                         )
                                         .WithType
                                         (
@@ -95,7 +95,7 @@ namespace Silk.NET.SilkTouch
                                         (
                                             VariableDeclarator
                                                 (
-                                                    Identifier("pfn")
+                                                    Identifier("pfn").AddLeadingSpace()
                                                 )
                                                 .WithInitializer
                                                 (
@@ -169,8 +169,9 @@ namespace Silk.NET.SilkTouch
                                             ObjectCreationExpression
                                                 (
                                                     IdentifierName
-                                                        ("InvalidOperationException")
+                                                        ("InvalidOperationException").AddLeadingSpace()
                                                 )
+                                                .AddLeadingSpace()
                                                 .WithArgumentList
                                                 (
                                                     ArgumentList
@@ -194,16 +195,16 @@ namespace Silk.NET.SilkTouch
                                     )
                                 )
                             ),
-                            ReturnStatement(IdentifierName("pfn"))
+                            ReturnStatement(IdentifierName("pfn").AddLeadingSpace())
                         )
                     ),
                 MethodDeclaration
                     (
                         PredefinedType
                         (
-                            Token(SyntaxKind.BoolKeyword)
+                            Token(SyntaxKind.BoolKeyword).AddLeadingSpace()
                         ),
-                        Identifier("TryGetProcAddress")
+                        Identifier("TryGetProcAddress").AddLeadingSpace()
                     )
                     .WithModifiers
                     (
@@ -222,7 +223,7 @@ namespace Silk.NET.SilkTouch
                                 {
                                     Parameter
                                         (
-                                            Identifier("proc")
+                                            Identifier("proc").AddLeadingSpace()
                                         )
                                         .WithType
                                         (
@@ -234,7 +235,7 @@ namespace Silk.NET.SilkTouch
                                     Token(SyntaxKind.CommaToken),
                                     Parameter
                                         (
-                                            Identifier("pfn")
+                                            Identifier("pfn").AddLeadingSpace()
                                         )
                                         .WithModifiers
                                         (
@@ -245,12 +246,12 @@ namespace Silk.NET.SilkTouch
                                         )
                                         .WithType
                                         (
-                                            IdentifierName("System.IntPtr")
+                                            IdentifierName("System.IntPtr").AddLeadingSpace()
                                         ),
                                     Token(SyntaxKind.CommaToken),
                                     Parameter
                                         (
-                                            Identifier("slot")
+                                            Identifier("slot").AddLeadingSpace()
                                         )
                                         .WithType
                                         (
@@ -292,7 +293,7 @@ namespace Silk.NET.SilkTouch
                                         IdentifierName("pfn"),
                                         InvocationExpression
                                             (
-                                                IdentifierName("CoreGetProcAddress")
+                                                IdentifierName("CoreGetProcAddress").AddLeadingSpace()
                                             )
                                             .WithArgumentList
                                             (

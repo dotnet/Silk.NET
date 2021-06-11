@@ -254,8 +254,8 @@ namespace Silk.NET.SilkTouch
                         MethodDeclaration
                         (
                             List<AttributeListSyntax>(),
-                            TokenList(Token(SyntaxKind.ProtectedKeyword), Token(SyntaxKind.OverrideKeyword)),
-                            PredefinedType(Token(SyntaxKind.IntKeyword)), null, Identifier("CoreGcSlotCount"), null,
+                            TokenList(Token(SyntaxKind.ProtectedKeyword).AddTrailingSpace(), Token(SyntaxKind.OverrideKeyword).AddTrailingSpace()),
+                            PredefinedType(Token(SyntaxKind.IntKeyword).AddTrailingSpace()), null, Identifier("CoreGcSlotCount"), null,
                             ParameterList(), List<TypeParameterConstraintClauseSyntax>(), null,
                             ArrowExpressionClause
                             (
@@ -297,7 +297,7 @@ namespace Silk.NET.SilkTouch
                 );
                 newMembers.Add
                 (
-                    MethodDeclaration(IdentifierName("IVTable"), Identifier("CreateVTable"))
+                    MethodDeclaration(IdentifierName("IVTable").AddTrailingSpace(), Identifier("CreateVTable"))
                         .WithModifiers
                         (
                             TokenList
@@ -305,10 +305,15 @@ namespace Silk.NET.SilkTouch
                                 generateSeal
                                     ? new[]
                                     {
-                                        Token(SyntaxKind.ProtectedKeyword), Token(SyntaxKind.SealedKeyword),
-                                        Token(SyntaxKind.OverrideKeyword)
+                                        Token(SyntaxKind.ProtectedKeyword).AddTrailingSpace(),
+                                        Token(SyntaxKind.SealedKeyword).AddTrailingSpace(),
+                                        Token(SyntaxKind.OverrideKeyword).AddTrailingSpace()
                                     }
-                                    : new[] {Token(SyntaxKind.ProtectedKeyword), Token(SyntaxKind.OverrideKeyword)}
+                                    : new[]
+                                    {
+                                        Token(SyntaxKind.ProtectedKeyword).AddTrailingSpace(),
+                                        Token(SyntaxKind.OverrideKeyword).AddTrailingSpace()
+                                    }
                             )
                         )
                         .WithExpressionBody
@@ -316,7 +321,7 @@ namespace Silk.NET.SilkTouch
                             ArrowExpressionClause
                             (
                                 ObjectCreationExpression
-                                    (IdentifierName(generatedVTableName))
+                                    (IdentifierName(generatedVTableName).AddLeadingSpace())
                                 .WithArgumentList(ArgumentList(SingletonSeparatedList(Argument(IdentifierName("_ctx")))))
                             )
                         )
@@ -340,7 +345,9 @@ namespace Silk.NET.SilkTouch
                 )
                 .WithUsings(AddIfNotExists(compilationUnit.Usings, "Silk.NET.Core.Native", "Silk.NET.Core.Contexts"));
 
-            var result = newNamespace.NormalizeWhitespace().ToFullString();
+            var result = newNamespace
+                //.NormalizeWhitespace()
+                .ToFullString();
             stopwatch.Stop();
             var reportTelemetry = true;
 
@@ -364,7 +371,7 @@ namespace Silk.NET.SilkTouch
         {
             foreach(var v in usings)
                 if (!list.Any(x => x.Name is IdentifierNameSyntax a && a.Identifier.Text == v))
-                    list = list.Add(UsingDirective(IdentifierName(v)));
+                    list = list.Add(UsingDirective(IdentifierName(v).AddLeadingSpace()));
 
             return list;
         }
@@ -461,7 +468,7 @@ namespace Silk.NET.SilkTouch
                                     (
                                         BinaryExpression
                                         (
-                                            SyntaxKind.AsExpression, IdentifierName("CurrentVTable"), IdentifierName(generatedVTableName)
+                                            SyntaxKind.AsExpression, IdentifierName("CurrentVTable").AddTrailingSpace(), IdentifierName(generatedVTableName).AddLeadingSpace()
                                         )
                                     ), IdentifierName(FirstLetterToUpper(entryPoint))
                                 )
@@ -532,14 +539,14 @@ namespace Silk.NET.SilkTouch
                                             (
                                                 symbol.Parameters[i]
                                                     .Type.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)
-                                            )
+                                            ).AddTrailingSpace()
                                         )
                                 )
                             )
                         )
                     )
                     .WithReturnType
-                        (IdentifierName(symbol.ReturnType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)));
+                        (IdentifierName(symbol.ReturnType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)).AddTrailingSpace());
                 
                 if (compactFileFormat)
                 {

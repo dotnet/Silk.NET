@@ -40,12 +40,12 @@ namespace Silk.NET.SilkTouch
                                         IdentifierName("NET")),
                                     IdentifierName("Core")),
                                 IdentifierName("Contexts")),
-                            IdentifierName("DefaultNativeContext")))
+                            IdentifierName("DefaultNativeContext")).AddLeadingSpace()).AddLeadingSpace()
                     .WithArgumentList(
                         ArgumentList(
                             SingletonSeparatedList(
                                 Argument(
-                                    IdentifierName("n")))))
+                                    IdentifierName("n").AddLeadingSpace()))))
             );
 
             foreach (var (attSymbol, attId, lib, @override) in overrides.OrderBy(x => x.Item2))
@@ -66,21 +66,21 @@ namespace Silk.NET.SilkTouch
                     (
                         SyntaxKind.EqualsExpression, IdentifierName("n"),
                         LiteralExpression(SyntaxKind.StringLiteralExpression, Literal(lib))
-                    ), ReturnStatement(ObjectCreationExpression(IdentifierName(name), ArgumentList(), null)),
-                    ElseClause(last)
+                    ), ReturnStatement(ObjectCreationExpression(IdentifierName(name).AddLeadingSpace(), ArgumentList(), null).AddLeadingSpace()),
+                    ElseClause(last.AddLeadingSpace())
                 );
             }
 
             members.Add
             (
-                MethodDeclaration(IdentifierName("INativeContext"), Identifier("CreateDefaultContext"))
-                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword), Token(SyntaxKind.StaticKeyword)))
+                MethodDeclaration(IdentifierName("INativeContext").AddTrailingSpace(), Identifier("CreateDefaultContext"))
+                    .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword).AddTrailingSpace(), Token(SyntaxKind.StaticKeyword).AddTrailingSpace()))
                     .WithParameterList
                     (
                         ParameterList
                         (
                             SingletonSeparatedList
-                                (Parameter(Identifier("n")).WithType(PredefinedType(Token(SyntaxKind.StringKeyword))))
+                                (Parameter(Identifier("n")).WithType(PredefinedType(Token(SyntaxKind.StringKeyword)).AddTrailingSpace()))
                         )
                     )
                     .WithBody(Block(last))
