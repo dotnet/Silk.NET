@@ -21,6 +21,14 @@ namespace Silk.NET.OpenXR.Extensions.FB
     {
         public const string ExtensionName = "XR_FB_swapchain_update_state";
         /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrGetSwapchainStateFB")]
+        public unsafe partial Result GetSwapchainStateFB([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] SwapchainStateBaseHeaderFB* state);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrGetSwapchainStateFB")]
+        public partial Result GetSwapchainStateFB([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] ref SwapchainStateBaseHeaderFB state);
+
+        /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrUpdateSwapchainFB")]
         public unsafe partial Result UpdateSwapchainFB([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainStateBaseHeaderFB* state);
 

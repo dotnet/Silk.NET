@@ -83,6 +83,7 @@
     "uint32_t": "uint",
     "uint64_t": "ulong",
     "size_t": "nuint",
+    "wchar_t": "char",
     "ANativeWindow": "nint",
     "MirConnection": "nint",
     "MirSurface": "nint",

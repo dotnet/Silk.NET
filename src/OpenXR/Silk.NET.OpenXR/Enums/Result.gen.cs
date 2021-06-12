@@ -132,6 +132,20 @@ namespace Silk.NET.OpenXR
         ErrorSecondaryViewConfigurationTypeNotEnabledMsft = -1000053000,
         [NativeName("Name", "XR_ERROR_CONTROLLER_MODEL_KEY_INVALID_MSFT")]
         ErrorControllerModelKeyInvalidMsft = -1000055000,
+        [NativeName("Name", "XR_ERROR_REPROJECTION_MODE_UNSUPPORTED_MSFT")]
+        ErrorReprojectionModeUnsupportedMsft = -1000066000,
+        [NativeName("Name", "XR_ERROR_COMPUTE_NEW_SCENE_NOT_COMPLETED_MSFT")]
+        ErrorComputeNewSceneNotCompletedMsft = -1000097000,
+        [NativeName("Name", "XR_ERROR_SCENE_COMPONENT_ID_INVALID_MSFT")]
+        ErrorSceneComponentIDInvalidMsft = -1000097001,
+        [NativeName("Name", "XR_ERROR_SCENE_COMPONENT_TYPE_MISMATCH_MSFT")]
+        ErrorSceneComponentTypeMismatchMsft = -1000097002,
+        [NativeName("Name", "XR_ERROR_SCENE_MESH_BUFFER_ID_INVALID_MSFT")]
+        ErrorSceneMeshBufferIDInvalidMsft = -1000097003,
+        [NativeName("Name", "XR_ERROR_SCENE_COMPUTE_FEATURE_INCOMPATIBLE_MSFT")]
+        ErrorSceneComputeFeatureIncompatibleMsft = -1000097004,
+        [NativeName("Name", "XR_ERROR_SCENE_COMPUTE_CONSISTENCY_MISMATCH_MSFT")]
+        ErrorSceneComputeConsistencyMismatchMsft = -1000097005,
         [NativeName("Name", "XR_ERROR_DISPLAY_REFRESH_RATE_UNSUPPORTED_FB")]
         ErrorDisplayRefreshRateUnsupportedFB = -1000101000,
         [NativeName("Name", "XR_ERROR_COLOR_SPACE_UNSUPPORTED_FB")]
