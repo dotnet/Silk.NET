@@ -3,7 +3,7 @@ name: 3.0 Rewrite Merger
 on:
   push:
     branches:
-      - "feature/develop-3.0-infrastructure"
+      - "main"
 
 jobs:
   update_develop:
