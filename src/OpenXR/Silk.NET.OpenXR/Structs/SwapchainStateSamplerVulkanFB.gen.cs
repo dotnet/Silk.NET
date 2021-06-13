@@ -23,8 +23,8 @@ namespace Silk.NET.OpenXR
         (
             StructureType? type = StructureType.TypeSwapchainStateSamplerVulkanFB,
             void* next = null,
-            VkFilter? minFilter = null,
-            VkFilter? magFilter = null,
+            uint? minFilter = null,
+            uint? magFilter = null,
             uint? mipmapMode = null,
             uint? wrapModeS = null,
             uint? wrapModeT = null,
@@ -116,12 +116,12 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "VkFilter")]
         [NativeName("Type.Name", "VkFilter")]
         [NativeName("Name", "minFilter")]
-        public VkFilter MinFilter;
+        public uint MinFilter;
 /// <summary></summary>
         [NativeName("Type", "VkFilter")]
         [NativeName("Type.Name", "VkFilter")]
         [NativeName("Name", "magFilter")]
-        public VkFilter MagFilter;
+        public uint MagFilter;
 /// <summary></summary>
         [NativeName("Type", "VkSamplerMipmapMode")]
         [NativeName("Type.Name", "VkSamplerMipmapMode")]

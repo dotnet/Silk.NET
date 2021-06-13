@@ -653,7 +653,8 @@
                     "XrSceneSphereBoundMSFT": "Silk.NET.Maths.Sphere<float>",
                     "VkSamplerMipmapMode": "uint",
                     "VkComponentSwizzle": "uint",
-                    "VkSamplerAddressMode": "uint"
+                    "VkSamplerAddressMode": "uint",
+                    "VkFilter": "uint"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
