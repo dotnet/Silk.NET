@@ -28,7 +28,7 @@ namespace Silk.NET.DXGI
             nuint? dedicatedVideoMemory = null,
             nuint? dedicatedSystemMemory = null,
             nuint? sharedSystemMemory = null,
-            ValueTuple<ulong,long>? adapterLuid = null,
+            Luid? adapterLuid = null,
             AdapterFlag3? flags = null,
             GraphicsPreemptionGranularity? graphicsPreemptionGranularity = null,
             ComputePreemptionGranularity? computePreemptionGranularity = null
@@ -133,7 +133,7 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "LUID")]
         [NativeName("Type.Name", "LUID")]
         [NativeName("Name", "AdapterLuid")]
-        public ValueTuple<ulong,long> AdapterLuid;
+        public Luid AdapterLuid;
 
         [NativeName("Type", "DXGI_ADAPTER_FLAG3")]
         [NativeName("Type.Name", "DXGI_ADAPTER_FLAG3")]

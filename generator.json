@@ -611,6 +611,10 @@
                 "iOS": "__Internal",
                 "className": "OpenXRLibraryNameContainer"
             },
+            "exclude": [
+                "XrUuidMSFT",
+                "XrSceneSphereBoundMSFT"
+            ],
             "typeMaps": [
                 {
                     "char": "byte",
@@ -644,7 +648,13 @@
                     "EGLContext": "nint",
                     "GLXFBConfig": "nint",
                     "VkFormat": "uint",
-                    "EGLenum":  "uint"
+                    "EGLenum":  "uint",
+                    "XrUuidMSFT": "Guid",
+                    "XrSceneSphereBoundMSFT": "Silk.NET.Maths.Sphere<float>",
+                    "VkSamplerMipmapMode": "uint",
+                    "VkComponentSwizzle": "uint",
+                    "VkSamplerAddressMode": "uint",
+                    "VkFilter": "uint"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
