@@ -17,7 +17,7 @@ jobs:
         git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
         git config --local user.name "The Silk.NET Automaton"
         git fetch --all
-        git checkout develop/3.0
+        git checkout origin/develop/3.0 -b develop/3.0
         git pull
-        git merge -s ours origin/main
+        git merge -s ours origin/main --commit
         git push
