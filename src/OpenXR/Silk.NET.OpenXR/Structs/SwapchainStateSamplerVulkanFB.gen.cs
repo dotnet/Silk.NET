@@ -25,13 +25,13 @@ namespace Silk.NET.OpenXR
             void* next = null,
             VkFilter? minFilter = null,
             VkFilter? magFilter = null,
-            VkSamplerMipmapMode? mipmapMode = null,
-            VkSamplerAddressMode? wrapModeS = null,
-            VkSamplerAddressMode? wrapModeT = null,
-            VkComponentSwizzle? swizzleRed = null,
-            VkComponentSwizzle? swizzleGreen = null,
-            VkComponentSwizzle? swizzleBlue = null,
-            VkComponentSwizzle? swizzleAlpha = null,
+            uint? mipmapMode = null,
+            uint? wrapModeS = null,
+            uint? wrapModeT = null,
+            uint? swizzleRed = null,
+            uint? swizzleGreen = null,
+            uint? swizzleBlue = null,
+            uint? swizzleAlpha = null,
             float? maxAnisotropy = null,
             Color4f? borderColor = null
         ) : this()
@@ -126,37 +126,37 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "VkSamplerMipmapMode")]
         [NativeName("Type.Name", "VkSamplerMipmapMode")]
         [NativeName("Name", "mipmapMode")]
-        public VkSamplerMipmapMode MipmapMode;
+        public uint MipmapMode;
 /// <summary></summary>
         [NativeName("Type", "VkSamplerAddressMode")]
         [NativeName("Type.Name", "VkSamplerAddressMode")]
         [NativeName("Name", "wrapModeS")]
-        public VkSamplerAddressMode WrapModeS;
+        public uint WrapModeS;
 /// <summary></summary>
         [NativeName("Type", "VkSamplerAddressMode")]
         [NativeName("Type.Name", "VkSamplerAddressMode")]
         [NativeName("Name", "wrapModeT")]
-        public VkSamplerAddressMode WrapModeT;
+        public uint WrapModeT;
 /// <summary></summary>
         [NativeName("Type", "VkComponentSwizzle")]
         [NativeName("Type.Name", "VkComponentSwizzle")]
         [NativeName("Name", "swizzleRed")]
-        public VkComponentSwizzle SwizzleRed;
+        public uint SwizzleRed;
 /// <summary></summary>
         [NativeName("Type", "VkComponentSwizzle")]
         [NativeName("Type.Name", "VkComponentSwizzle")]
         [NativeName("Name", "swizzleGreen")]
-        public VkComponentSwizzle SwizzleGreen;
+        public uint SwizzleGreen;
 /// <summary></summary>
         [NativeName("Type", "VkComponentSwizzle")]
         [NativeName("Type.Name", "VkComponentSwizzle")]
         [NativeName("Name", "swizzleBlue")]
-        public VkComponentSwizzle SwizzleBlue;
+        public uint SwizzleBlue;
 /// <summary></summary>
         [NativeName("Type", "VkComponentSwizzle")]
         [NativeName("Type.Name", "VkComponentSwizzle")]
         [NativeName("Name", "swizzleAlpha")]
-        public VkComponentSwizzle SwizzleAlpha;
+        public uint SwizzleAlpha;
 /// <summary></summary>
         [NativeName("Type", "float")]
         [NativeName("Type.Name", "float")]

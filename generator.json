@@ -650,7 +650,10 @@
                     "VkFormat": "uint",
                     "EGLenum":  "uint",
                     "XrUuidMSFT": "Guid",
-                    "XrSceneSphereBoundMSFT": "Silk.NET.Maths.Sphere<float>"
+                    "XrSceneSphereBoundMSFT": "Silk.NET.Maths.Sphere<float>",
+                    "VkSamplerMipmapMode": "uint",
+                    "VkComponentSwizzle": "uint",
+                    "VkSamplerAddressMode": "uint"
                 },
                 {
                     "$include.commonTypeMap": "build/csharp_typemap.json"
