@@ -13,6 +13,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: 'true'
+        token: ${{ secrets.PUSHABLE_GITHUB_TOKEN }}
     - run: |
         git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
         git config --local user.name "The Silk.NET Automaton"
