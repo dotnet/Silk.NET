@@ -153,7 +153,7 @@
             "namespace": "Silk.NET.OpenCL",
             "extensionsNamespace": "Silk.NET.OpenCL.Extensions",
             "nameContainer": {
-                "linux-x64": "libOpenCL.so",
+                "linux-x64": "libOpenCL.so.1",
                 "win-x64": "opencl.dll",
                 "win-x86": "opencl.dll",
                 "osx-x64": "/System/Library/Frameworks/OpenCL.framework/OpenCL",
