@@ -65,11 +65,14 @@ Some projects may not build properly without being configured to use Desktop MSB
 
 Silk.NET uses and encourages [Early Pull Requests](https://medium.com/practical-blend/pull-request-first-f6bb667a9b6). Please don't wait until you're done to open a PR!
 
-1. [Fork Silk.NET](https://github.com/dotnet/Silk.NET/fork)
-2. Add an empty commit to a new branch to start your work off: `git commit --allow-empty -m "start of [thing you're working on]"`
-3. Once you've pushed a commit, open a [**draft pull request**](https://github.blog/2019-02-14-introducing-draft-pull-requests/). Do this **before** you actually start working.
-4. Make your commits in small, incremental steps with clear descriptions.
-5. Tag a maintainer when you're done and ask for a review!
+1. Install [Git](https://git-scm.com/downloads) and the [.NET Core SDK](https://www.microsoft.com/net/download)
+2. [Fork Silk.NET](https://github.com/dotnet/Silk.NET/fork)
+3. Create a branch on your fork.
+4. Make your first set of changes, keeping your first commit small.
+5. Having made your first small set of changes, make a commit: `git commit -m "start of [thing you're working on]"`
+6. If your PR is only small &amp; you're done already, open a [**pull request**](https://github.com/dotnet/Silk.NET/compare) and skip to step 8. Otherwise, open a [**draft pull request**](https://github.blog/2019-02-14-introducing-draft-pull-requests/) **BEFORE** you continue working!
+7. Make your commits in small, incremental steps with clear descriptions.
+8. Tag a maintainer when you're done and ask for a review!
     
 <h2 align="center">Funding</h2>
 Silk.NET requires significant effort to maintain, as such we greatly appreciate any financial support you are able to provide!
