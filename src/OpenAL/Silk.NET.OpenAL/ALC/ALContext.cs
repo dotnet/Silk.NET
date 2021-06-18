@@ -15,13 +15,17 @@ namespace Silk.NET.OpenAL
     [NativeApi(Prefix = "alc")]
     public partial class ALContext : NativeAPI
     {
+        private bool _soft;
+        private SearchPathContainer? _searchPaths;
+
         /// <inheritdoc cref="NativeLibraryBase" />
         protected ALContext(INativeContext ctx)
             : base(ctx)
         {
         }
 
-        public SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
+        public SearchPathContainer SearchPaths => _searchPaths ??= (_soft
+             ? new OpenALSoftLibraryNameContainer() : new OpenALLibraryNameContainer());
 
         public override unsafe bool IsExtensionPresent(string name)
             => IsExtensionPresent(GetContextsDevice(GetCurrentContext()), name);
@@ -80,12 +84,17 @@ namespace Silk.NET.OpenAL
         /// <summary>
         /// Gets an instance of the API.
         /// </summary>
+        /// <param name="soft">Use OpenAL Soft libraries.</param>
         /// <returns>The instance.</returns>
-        public static unsafe ALContext GetApi()
+        public static unsafe ALContext GetApi(bool soft = false)
         {
+            SearchPathContainer searchPaths = soft ? new OpenALSoftLibraryNameContainer() : new OpenALLibraryNameContainer();
             var ctx = new MultiNativeContext
-                (CreateDefaultContext(new OpenALLibraryNameContainer().GetLibraryName()), null);
+                (CreateDefaultContext(searchPaths.GetLibraryName()), null);
             var ret = new ALContext(ctx);
+            ret._soft = soft;
+            ret._searchPaths = searchPaths;
+
             ctx.Contexts[1] = new LamdaNativeContext(
                 x =>
                 {

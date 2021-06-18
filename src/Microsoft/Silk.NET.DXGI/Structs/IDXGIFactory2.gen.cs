@@ -1644,48 +1644,48 @@ namespace Silk.NET.DXGI
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSharedResourceAdapterLuid(void* hResource, ValueTuple<ulong, long>* pLuid)
+        public readonly unsafe int GetSharedResourceAdapterLuid(void* hResource, Luid* pLuid)
         {
             var @this = (IDXGIFactory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory2*, void*, ValueTuple<ulong, long>*, int>)LpVtbl[17])(@this, hResource, pLuid);
+            ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory2*, void*, Luid*, int>)LpVtbl[17])(@this, hResource, pLuid);
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSharedResourceAdapterLuid(void* hResource, ref ValueTuple<ulong, long> pLuid)
+        public readonly unsafe int GetSharedResourceAdapterLuid(void* hResource, ref Luid pLuid)
         {
             var @this = (IDXGIFactory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
-            fixed (ValueTuple<ulong, long>* pLuidPtr = &pLuid)
+            fixed (Luid* pLuidPtr = &pLuid)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory2*, void*, ValueTuple<ulong, long>*, int>)LpVtbl[17])(@this, hResource, pLuidPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory2*, void*, Luid*, int>)LpVtbl[17])(@this, hResource, pLuidPtr);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly unsafe int GetSharedResourceAdapterLuid<T0>(ref T0 hResource, ValueTuple<ulong, long>* pLuid) where T0 : unmanaged
+        public readonly unsafe int GetSharedResourceAdapterLuid<T0>(ref T0 hResource, Luid* pLuid) where T0 : unmanaged
         {
             var @this = (IDXGIFactory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (T0* hResourcePtr = &hResource)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory2*, T0*, ValueTuple<ulong, long>*, int>)LpVtbl[17])(@this, hResourcePtr, pLuid);
+                ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory2*, T0*, Luid*, int>)LpVtbl[17])(@this, hResourcePtr, pLuid);
             }
             return ret;
         }
 
         /// <summary>To be documented.</summary>
-        public readonly int GetSharedResourceAdapterLuid<T0>(ref T0 hResource, ref ValueTuple<ulong, long> pLuid) where T0 : unmanaged
+        public readonly int GetSharedResourceAdapterLuid<T0>(ref T0 hResource, ref Luid pLuid) where T0 : unmanaged
         {
             var @this = (IDXGIFactory2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
             int ret = default;
             fixed (T0* hResourcePtr = &hResource)
             {
-                fixed (ValueTuple<ulong, long>* pLuidPtr = &pLuid)
+                fixed (Luid* pLuidPtr = &pLuid)
                 {
-                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory2*, T0*, ValueTuple<ulong, long>*, int>)LpVtbl[17])(@this, hResourcePtr, pLuidPtr);
+                    ret = ((delegate* unmanaged[Cdecl]<IDXGIFactory2*, T0*, Luid*, int>)LpVtbl[17])(@this, hResourcePtr, pLuidPtr);
                 }
             }
             return ret;

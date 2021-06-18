@@ -84,6 +84,10 @@ namespace Silk.NET.Vulkan
         DebugReportObjectTypeSamplerYcbcrConversionExt = 1000156000,
         [NativeName("Name", "VK_DEBUG_REPORT_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_EXT")]
         DebugReportObjectTypeDescriptorUpdateTemplateExt = 1000085000,
+        [NativeName("Name", "VK_DEBUG_REPORT_OBJECT_TYPE_CU_MODULE_NVX_EXT")]
+        DebugReportObjectTypeCUModuleNvxExt = 1000029000,
+        [NativeName("Name", "VK_DEBUG_REPORT_OBJECT_TYPE_CU_FUNCTION_NVX_EXT")]
+        DebugReportObjectTypeCUFunctionNvxExt = 1000029001,
         [NativeName("Name", "VK_DEBUG_REPORT_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_KHR_EXT")]
         DebugReportObjectTypeDescriptorUpdateTemplateKhrExt = 1000085000,
         [NativeName("Name", "VK_DEBUG_REPORT_OBJECT_TYPE_ACCELERATION_STRUCTURE_KHR_EXT")]

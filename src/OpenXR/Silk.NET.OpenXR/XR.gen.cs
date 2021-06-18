@@ -781,7 +781,15 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrResultToString")]
-        public partial Result ResultToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] Result value, [Count(Count = 0)] byte buffer);
+        public unsafe partial Result ResultToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] Result value, [Count(Computed = "XR_MAX_RESULT_STRING_SIZE")] byte* buffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrResultToString")]
+        public partial Result ResultToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] Result value, [Count(Computed = "XR_MAX_RESULT_STRING_SIZE")] ref byte buffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrResultToString")]
+        public partial Result ResultToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] Result value, string buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrStopHapticFeedback")]
@@ -817,7 +825,15 @@ namespace Silk.NET.OpenXR
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrStructureTypeToString")]
-        public partial Result StructureTypeToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] StructureType value, [Count(Count = 0)] byte buffer);
+        public unsafe partial Result StructureTypeToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] StructureType value, [Count(Computed = "XR_MAX_STRUCTURE_NAME_SIZE")] byte* buffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrStructureTypeToString")]
+        public partial Result StructureTypeToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] StructureType value, [Count(Computed = "XR_MAX_STRUCTURE_NAME_SIZE")] ref byte buffer);
+
+        /// <summary>To be documented.</summary>
+        [NativeApi(EntryPoint = "xrStructureTypeToString")]
+        public partial Result StructureTypeToString([Count(Count = 0)] Instance instance, [Count(Count = 0)] StructureType value, string buffer);
 
         /// <summary>To be documented.</summary>
         [NativeApi(EntryPoint = "xrSuggestInteractionProfileBindings")]

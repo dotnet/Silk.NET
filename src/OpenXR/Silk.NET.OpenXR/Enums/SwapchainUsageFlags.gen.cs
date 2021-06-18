@@ -11,7 +11,7 @@ namespace Silk.NET.OpenXR
 {
     [Flags()]
     [NativeName("Name", "XrSwapchainUsageFlags")]
-    public enum SwapchainUsageFlags : int
+    public enum SwapchainUsageFlags : long
     {
         [NativeName("Name", "XR_SWAPCHAIN_USAGE_COLOR_ATTACHMENT_BIT")]
         SwapchainUsageColorAttachmentBit = 1,

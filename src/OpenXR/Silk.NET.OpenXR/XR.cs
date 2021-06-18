@@ -16,11 +16,11 @@ namespace Silk.NET.OpenXR
     public partial class XR
     {
         private Instance? _currentInstance;
-        private ConcurrentDictionary<Instance?, IVTable> _vTables = new();
+        private ConcurrentDictionary<Instance, IVTable> _vTables = new();
         public Instance? CurrentInstance
         {
             get => _currentInstance;
-            set => SwapVTable(_vTables.GetOrAdd(_currentInstance = value, _ => CreateVTable()));
+            set => SwapVTable(_vTables.GetOrAdd((_currentInstance = value).GetValueOrDefault(), _ => CreateVTable()));
         }
         public static XR GetApi()
         {
@@ -44,7 +44,7 @@ namespace Silk.NET.OpenXR
         /// to call an extension function from an extension that isn't loaded.
         /// </remarks>
         /// <returns>Whether the extension is available and loaded.</returns>
-        public bool TryGetInstanceExtension<T>(string layer, Instance instance, out T ext) where T : NativeExtension<XR> =>
+        public bool TryGetInstanceExtension<T>(string? layer, Instance instance, out T ext) where T : NativeExtension<XR> =>
             !((ext = IsInstanceExtensionPresent(layer, ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
                 ? (T) Activator.CreateInstance
                     (typeof(T), new LamdaNativeContext(
@@ -67,10 +67,9 @@ namespace Silk.NET.OpenXR
         /// <param name="layer">The layer name.</param>
         /// <param name="extension">The instance extension name.</param>
         /// <returns>Whether the instance extension is available.</returns>
-        public unsafe bool IsInstanceExtensionPresent(string layer, string extension)
+        public unsafe bool IsInstanceExtensionPresent(string? layer, string extension)
         {
             // For a detailed explanation of the logic see Silk.Net.Vulkan.Vk.IsDeviceExtensionPresent
-            layer ??= string.Empty;
             var layerSep = layer + '\0';
             var fullKey = layerSep + extension;
             var result = false;
@@ -86,21 +85,21 @@ namespace Silk.NET.OpenXR
                 // The lack of the device handle indicates we've not been previously initialised.  We now need a write lock.
                 _cachedInstanceExtensionsLock.EnterWriteLock();
                 GlobalMemory mem = null;
-                var layerName = SilkMarshal.StringToPtr(layer);
+                var layerName = (byte*) SilkMarshal.StringToPtr(layer);
                 try
                 {
                     var extensionCount = 0u;
-                    EnumerateInstanceExtensionProperties((byte*) layerName, extensionCount, &extensionCount, null);
+                    EnumerateInstanceExtensionProperties(layerName, extensionCount, &extensionCount, null);
 
                     mem = GlobalMemory.Allocate((int) extensionCount * sizeof(ExtensionProperties));
-                    var exts = (ExtensionProperties*) Unsafe.AsPointer(ref mem.GetPinnableReference());
+                    var exts = mem.AsPtr<ExtensionProperties>();
 
-                    for (int i = 0; i < extensionCount; i++)
+                    for (var i = 0; i < extensionCount; i++)
                     {
-                        exts[i] = new ExtensionProperties(StructureType.TypeExtensionProperties);
+                        exts[i] = new(StructureType.TypeExtensionProperties);
                     }
 
-                    EnumerateInstanceExtensionProperties((byte*) layerName, extensionCount, &extensionCount, exts);
+                    EnumerateInstanceExtensionProperties(layerName, extensionCount, &extensionCount, exts);
                     for (var i = 0; i < extensionCount; i++)
                     {
                         var newKey = layerSep + Marshal.PtrToStringAnsi((nint) exts[i].ExtensionName);
@@ -114,7 +113,11 @@ namespace Silk.NET.OpenXR
                 finally
                 {
                     _cachedInstanceExtensionsLock.ExitWriteLock();
-                    SilkMarshal.Free(layerName);
+                    if (layerName != null)
+                    {
+                        SilkMarshal.Free((nint) layerName);
+                    }
+
                     mem?.Dispose();
                 }
             }
@@ -123,7 +126,7 @@ namespace Silk.NET.OpenXR
             return result;
         }
 
-        protected override void PostInit() => _vTables.TryAdd(null, CurrentVTable);
+        protected override void PostInit() => _vTables.TryAdd(default, CurrentVTable);
     }
 }
 

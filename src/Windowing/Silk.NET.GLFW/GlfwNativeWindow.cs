@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Runtime.InteropServices;
@@ -13,9 +13,23 @@ namespace Silk.NET.GLFW
         [DllImport("user32", EntryPoint = "GetDC")]
         private static extern nint Win32GetDC(nint hwnd);
 
-        [DllImport("user32", EntryPoint = "GetWindowLongPtrA")]
-        private static extern nint Win32GetWindowLongPtr(nint hwnd, int index);
-    
+
+        [DllImport("user32.dll", EntryPoint = "GetWindowLong")]
+        private static extern nint GetWindowLongPtr32(nint hWnd, int nIndex);
+
+        [DllImport("user32.dll", EntryPoint = "GetWindowLongPtr")]
+        private static extern nint GetWindowLongPtr64(nint hWnd, int nIndex);
+
+        // This static method is required because Win32 does not support
+        // GetWindowLongPtr directly
+        private static unsafe nint GetWindowLongPtr(nint hWnd, int nIndex)
+        {
+            if (sizeof(nint) == 8)
+                return GetWindowLongPtr64(hWnd, nIndex);
+            else
+                return GetWindowLongPtr32(hWnd, nIndex);
+        }
+
         public unsafe GlfwNativeWindow(Glfw api, WindowHandle* window) : this()
         {
             Kind |= NativeWindowFlags.Glfw;
@@ -24,7 +38,7 @@ namespace Silk.NET.GLFW
             {
                 var hwnd = ((delegate* unmanaged[Cdecl]<WindowHandle*, nint>) getHwnd)(window);
                 Kind |= NativeWindowFlags.Win32;
-                Win32 = (hwnd, Win32GetDC(hwnd), Win32GetWindowLongPtr(hwnd, GwlpHInstance));
+                Win32 = (hwnd, Win32GetDC(hwnd), GetWindowLongPtr(hwnd, GwlpHInstance));
                 return;
             }
 

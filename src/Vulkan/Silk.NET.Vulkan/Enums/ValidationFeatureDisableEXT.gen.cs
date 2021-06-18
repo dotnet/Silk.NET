@@ -26,5 +26,7 @@ namespace Silk.NET.Vulkan
         ValidationFeatureDisableCoreChecksExt = 5,
         [NativeName("Name", "VK_VALIDATION_FEATURE_DISABLE_UNIQUE_HANDLES_EXT")]
         ValidationFeatureDisableUniqueHandlesExt = 6,
+        [NativeName("Name", "VK_VALIDATION_FEATURE_DISABLE_SHADER_VALIDATION_CACHE_EXT")]
+        ValidationFeatureDisableShaderValidationCacheExt = 7,
     }
 }

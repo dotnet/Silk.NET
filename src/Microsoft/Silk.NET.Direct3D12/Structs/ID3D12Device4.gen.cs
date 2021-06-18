@@ -5616,13 +5616,13 @@ namespace Silk.NET.Direct3D12
         }
 
         /// <summary>To be documented.</summary>
-        public readonly ValueTuple<ulong,long> GetAdapterLuid()
+        public readonly Luid GetAdapterLuid()
         {
-            ValueTuple<ulong,long> silkDotNetReturnFixupResult;
+            Luid silkDotNetReturnFixupResult;
             var pSilkDotNetReturnFixupResult = &silkDotNetReturnFixupResult;
             var @this = (ID3D12Device4*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ValueTuple<ulong,long>* ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, ValueTuple<ulong,long>*, ValueTuple<ulong,long>*>)LpVtbl[43])(@this, pSilkDotNetReturnFixupResult);
+            Luid* ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Device4*, Luid*, Luid*>)LpVtbl[43])(@this, pSilkDotNetReturnFixupResult);
             return *ret;
         }
 
