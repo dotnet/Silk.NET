@@ -358,8 +358,7 @@ namespace Silk.NET.OpenAL
         public TExtension GetExtension<TExtension>()
             where TExtension : NativeExtension<AL>
         {
-            var extAttr = ExtensionAttribute.GetExtensionAttribute(typeof(TExtension));
-            return (extAttr is null || IsExtensionPresent(extAttr.Name))
+            return IsExtensionPresent(extAttr.Name)
                 ? (TExtension)Activator.CreateInstance(typeof(TExtension), Context)
                 : null;
         }
