@@ -20,5 +20,5 @@ jobs:
         git fetch --all
         git checkout origin/develop/3.0 -b develop/3.0
         git pull
-        git merge -s ours origin/main
+        git merge -s ours origin/main --allow-unrelated-histories
         git push
