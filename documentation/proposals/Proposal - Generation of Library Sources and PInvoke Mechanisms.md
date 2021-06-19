@@ -33,6 +33,8 @@ The Emitter operates on partial methods, the behaviour of the implementations of
 
 All attributes **MUST** be name matched only, to allow the user to define these themselves and not create a hard dependency on a specific Silk.NET library such as the Silk.NET Core. 
 
+Candidate methods for implementation by the Emitter **MUST** be partial and not have an implementation part yet. Their containing types **MUST** also be partial and have at least one FTable source specified.
+
 ### Function Tables (FTables)
 
 The Emitter's primary purpose is to load and use function pointers in a native library sourced from an operating system's kernel. This logic will be emitted by the Emitter itself, and will not require an external dependency like the Silk.NET Core. However, this logic will no longer be implicit.
@@ -45,11 +47,11 @@ Multiple FTable sources **MUST NOT** be allowed i.e. don't allow pairing of `Use
 
 Indices (formerly known as "slots") give each method a specific ID. These may be assigned by the Emitter in an undefined way, or may be overridden using an attribute:
 ```cs
-[Index(1)]
+[NativeApi(Index = 1)]
 public partial void Init();
 ```
 
-#### Built-in FTable Sources: Native Library
+#### Built-in FTable Source: Native Library
 
 Consider the following example:
 ```cs
@@ -101,7 +103,7 @@ Consider the following example:
 [UseAsFunctionTable("LpVtbl")]
 public struct IUnknown
 {
-    [Index(1)]
+    [NativeApi(Index = 1)]
     public partial uint AddRef();
 }
 ```
@@ -112,7 +114,7 @@ public struct IUnknown
 public struct IUnknownNullableContainer
 {
     public IUnknownPtr? Value;
-    [Index(1)]
+    [NativeApi(Index = 1)]
     public partial uint AddRef();
 }
 
@@ -123,12 +125,40 @@ public struct IUnknownPtr
 
 public struct IUnknown
 {
+    public void** LpVtbl;
 }
 ```
 
 The Emitter **SHOULD** implicitly parenthesise the expression given in the attribute.
 
-If a custom FTable source is used, the Emitter **SHOULD** mandate that every function has an explicit `Index` attribute specified for safety.
+If a custom FTable source is used, the Emitter **SHOULD** mandate that every function has a `NativeApi` attribute with an explicit `Index` specified for safety.
+
+### Function pointers
+For the most part, the function pointer signature used by the Emitter is matched 1:1 with the method signature. For example:
+```cs
+public partial int MyThing(int a);
+```
+
+will generate an implementation similar to:
+```cs
+public partial int MyThing(int a) => ((delegate* unmanaged<int, int>) (<ftable access expression>)[<index>])(a);
+```
+
+However there are certain modifications you can apply. Namely, the `NativeApi` attribute will allow specification of specific calling conventions. For example:
+
+```cs
+[NativeApi(Modifiers = CallModifiers.MemberFunction)]
+public partial D3D12_HEAP_PROPERTIES GetCustomHeapProperties(uint nodeMask, D3D12_HEAP_TYPE heapType);
+```
+
+This will generate:
+```cs
+public partial D3D12_HEAP_PROPERTIES GetCustomHeapProperties(uint nodeMask, D3D12_HEAP_TYPE heapType) => ((delegate* unmanaged[MemberFunction]<uint, D3D12_HEAP_TYPE, D3D12_HEAP_PROPERTIES>) (<ftable access expression>)[<index>])(a);
+```
+
+`CallModifiers` will be used as the primary bitmask for customizing the behaviour of generation, just as `NativeApi` will be used as the primary attribute for this as well. The behaviour of each bit will be described in documentation comments in the Proposed API section.
+
+The Emitter does not do any marshalling. As such, the Emitter **MUST** mandate that every parameter and return type of every function fits the `unmanaged` constraint. For the readers benefit, this can be done using a property on `ITypeSymbol` in Roslyn.
 
 # Proposed API
 - Here you do some code blocks, this is the heart and soul of the proposal. DON'T DO ANY IMPLEMENTATIONS! Just declarations.
