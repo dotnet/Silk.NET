@@ -37,7 +37,7 @@ All attributes **MUST** be name matched only, to allow the user to define these 
 
 Candidate methods for implementation by the Emitter **MUST** be partial and not have an implementation part yet. Their containing types **MUST** also be partial and have at least one FTable source specified.
 
-The Emitter **MUST** be able to be invoked as either a Roslyn Source Generator, which runs embedded in the Roslyn compiler; or via the SilkTouch CLI, which runs outside of the usual compilation process. If invoked as a Roslyn Source Generator, it **MUST** run in parallel with other SilkTouch source generators.
+The Emitter **MUST** be able to be invoked via the SilkTouch CLI, which runs outside of the usual compilation process.
 
 ### Function Tables (FTables)
 
@@ -171,7 +171,7 @@ The Overloader **MUST** be activated using an `OverloadAttribute` applied to the
 
 The Overloader **MUST** be able to be used on any function and not be tied to any of the Emitter's constraints.
 
-The Overloader **MUST** be able to be invoked as either a Roslyn Source Generator, which runs embedded in the Roslyn compiler; or via the SilkTouch CLI, which runs outside of the usual compilation process. If invoked as a Roslyn Source Generator, it **MUST** run in parallel with other SilkTouch source generators.
+The Overloader **MUST** be able to be invoked via the SilkTouch CLI, which runs outside of the usual compilation process.
 
 The Overloader **MUST** generate all possible permutations of overloads.
 
