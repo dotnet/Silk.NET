@@ -12,7 +12,7 @@ Proposal design for a platform invoke (P/Invoke) mechanism for Silk.NET 3.0.
 
 # Design Decisions
 - This proposal builds on the foundations laid out by Silk.NET's move to source generators in 2.0, and the introduction of the SilkTouch source generator as a result of this.
-- This proposal assumes no knowledge of Silk.NET 2.0. 
+- This proposal assumes no knowledge of Silk.NET 2.0's SilkTouch. 
 - This takes the knowledge and insight gained during development of SilkTouch, and uses it to create a new set of generators which incorporate lessons learnt.
 - This proposal breaks down the generator process into three distinct stages:
 
@@ -24,7 +24,9 @@ The generation process of the proposed Scraper will be entirely different. Silk.
 
 This also naturally makes us entirely dependent on an external dependency, but I propose we work with Microsoft as much as possible to add the functionality we need in the least breaking way possible, and in a way that satisfies both us and Microsoft. All designs for such modifications will be formalized in the ClangSharp repo. Should we fail to do this, we'll maintain a fork so we can still benefit from improvements made upstream, while giving ourselves the freedom to add the functionality we need.
 
-Microsoft have already stated that they're happy to work with us to get Silk.NET using ClangSharp, one maintainer even saying they're happy to add a CI test stage into the ClangSharp repo to ensure no incoming changes break Silk.NET's generation process. 
+Microsoft have already stated that they're happy to work with us to get Silk.NET using ClangSharp, one maintainer even saying they're happy to add a CI test stage into the ClangSharp repo to ensure no incoming changes break Silk.NET's generation process.
+
+There is no required behaviour for the Scraper (due to a lot of unknowns at the moment) other than it **MUST** invoke ClangSharp to generate C# Emitter-compatible classes, and it **MUST** add appropriate attributes to invoke the Overloader stage according to any metadata available from Khronos XML if applicable.
 
 ## SilkTouch Emitter
 The Emitter, one of the two final stages which should run in parallel and be entirely independent of eachother, is responsible for generating the actual indirect calls for performing the P/Invoke. This will use C# 9's Function Pointer system.
@@ -34,6 +36,8 @@ The Emitter operates on partial methods, the behaviour of the implementations of
 All attributes **MUST** be name matched only, to allow the user to define these themselves and not create a hard dependency on a specific Silk.NET library such as the Silk.NET Core. 
 
 Candidate methods for implementation by the Emitter **MUST** be partial and not have an implementation part yet. Their containing types **MUST** also be partial and have at least one FTable source specified.
+
+The Emitter **MUST** be able to be invoked as either a Roslyn Source Generator, which runs embedded in the Roslyn compiler; or via the SilkTouch CLI, which runs outside of the usual compilation process. If invoked as a Roslyn Source Generator, it **MUST** run in parallel with other SilkTouch source generators.
 
 ### Function Tables (FTables)
 
@@ -159,6 +163,32 @@ public partial D3D12_HEAP_PROPERTIES GetCustomHeapProperties(uint nodeMask, D3D1
 `CallModifiers` will be used as the primary bitmask for customizing the behaviour of generation, just as `NativeApi` will be used as the primary attribute for this as well. The behaviour of each bit will be described in documentation comments in the Proposed API section.
 
 The Emitter does not do any marshalling. As such, the Emitter **MUST** mandate that every parameter and return type of every function fits the `unmanaged` constraint. For the readers benefit, this can be done using a property on `ITypeSymbol` in Roslyn.
+
+## SilkTouch Overloader
+The Overloader creates overloads of functions that expose a more user-friendly interface than the function it overloads, and do appropriate marshalling to lower the parameter types used down to the original function's types.
+
+The Overloader **MUST** be activated using an `OverloadAttribute` applied to the assembly, type, and/or function contianing the method.
+
+The Overloader **MUST** be able to be used on any function and not be tied to any of the Emitter's constraints.
+
+The Overloader **MUST** be able to be invoked as either a Roslyn Source Generator, which runs embedded in the Roslyn compiler; or via the SilkTouch CLI, which runs outside of the usual compilation process. If invoked as a Roslyn Source Generator, it **MUST** run in parallel with other SilkTouch source generators.
+
+The Overloader **MUST** generate all possible permutations of overloads.
+
+The Overloader does not care about existing methods. If the Overloader generates an overload that also happens to exist manually, it is the user's repsonsibility to disable the relevant overloads for these cases.
+
+However, if the Overloader thinks that the overload it's generating may conflict with another overload or the original function, it **SHOULD** output the overload as an extension method rather than a method within the containing type, unless the original method is static in which case it **MUST** discard the overload and generate a warning. It **SHOULD** also do this if the containing type is not partial.
+
+### Overloads
+#### StringOverloader
+#### StringReadOnlyListOverloader
+#### StringSpanOverloader
+#### AlternativeTypeOverloader
+#### RefOverloader
+#### SpanOverloader
+#### ImplicitCountSpanOverloader
+#### OpenGLDeleteOverloader
+#### OpenGLObjectCreationOverloader
 
 # Proposed API
 - Here you do some code blocks, this is the heart and soul of the proposal. DON'T DO ANY IMPLEMENTATIONS! Just declarations.
