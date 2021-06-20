@@ -35,27 +35,17 @@ The Emitter operates on partial methods, the behaviour of the implementations of
 
 All attributes **MUST** be name matched only, to allow the user to define these themselves and not create a hard dependency on a specific Silk.NET library such as the Silk.NET Core. 
 
-Candidate methods for implementation by the Emitter **MUST** be partial and not have an implementation part yet. Their containing types **MUST** also be partial and have at least one FTable source specified.
+Candidate methods for implementation by the Emitter **MUST** be partial and not have an implementation part yet. Their containing types **MUST** also be partial.
 
 The Emitter **MUST** be able to be invoked via the SilkTouch CLI and **MAY** be able to be invoked via an incremental Roslyn source generator.
 
-### Function Tables (FTables)
+### Procedure Address Expressions
 
 The Emitter's primary purpose is to load and use function pointers in a native library sourced from an operating system's kernel. This logic will be emitted by the Emitter itself, and will not require an external dependency like the Silk.NET Core. However, this logic will no longer be implicit.
 
-The Emitter **MUST** require a field on the containing type which can be indexed using an `int` and returns a `void*` upon being indexed. This field may be added by the Emitter, but is not implicitly added. You must tell the Emitter about the field, or whether the Emitter should add it. This field will be referred to as the "FTable source" herein.
+Procedure Address Expressions are C# expressions that **MUST** evaluate to a `void*`, `nint`, or `IntPtr`. This is the actual address in memory of the function being invoked. Procedure Address Expressions can be added by the Emitter or manually specified.
 
-Multiple FTable sources **MUST NOT** be allowed i.e. don't allow pairing of `UseNativeLibrary` and `UseAsFunctionTable`
-
-#### Indices
-
-Indices (formerly known as "slots") give each method a specific ID. These may be assigned by the Emitter in an undefined way, or may be overridden using an attribute:
-```cs
-[NativeApi(Index = 1)]
-public partial void Init();
-```
-
-#### Built-in FTable Source: Native Library
+#### Built-in: Native Library
 
 Consider the following example:
 ```cs
@@ -66,13 +56,9 @@ public class Glfw
 }
 ```
 
-The `UseNativeLibrary` attribute instructs the Emitter that it:
-- **MUST** add a field with an undefined name of an undefined type to the class
-- **MUST** use this field as the FTable source, and implement the required indexer.
+The `UseNativeLibrary` attribute instructs the Emitter that it **MUST** add a Procedure Address Expression which **MUST** use [**NativeLibrary**](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.nativelibrary) and enact appropriate loading logic through the Procedure Address Expression. For the entry point, the function name **MUST** be used unless a `NativeApi` attribute is provided, in which case the entry point indicated by that attribute **MUST** be used.
 
-For `UseNativeLibrary`, the field's indexer **MUST** use [**NativeLibrary**](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.nativelibrary) and enact appropriate loading logic for each function's index. For the entry point, the function **MUST** be used unless an `NativeApi` attribute is provided, in which case the entrypoint indicated by that attribute **MUST** be used.
-
-Given `UseNativeLibrary` instructs the Emitter to add a field, it **MUST** only be used on a `class`.
+`UseNativeLibrary` **MUST** only be used on a `class` to allow an implementation to modify the class layout as it sees fit.
 
 `UseNativeLibrary` **MUST** allow multiple usages, because a user **MUST** be able to use it to specify a library name to use if there's a preprocessor constant defined or if we're on a specific operating system.
 
@@ -99,26 +85,26 @@ The `__Internal` library name **MUST** be paired with a preprocessor constraint 
 
 No other library names are defined to use `DllImport` at this time, as this shouldn't be required given we're using NativeLibrary now.
 
-#### Custom FTable Source
-Custom code may be used to get a FTable source. This is useful in scenarios such as COM interop.
+#### Custom
+
+Custom code may be used as a Procedure Address Expression. This is useful in scenarios such as COM interop.
 
 Consider the following example:
 ```cs
-[UseAsFunctionTable("LpVtbl")]
 public struct IUnknown
 {
-    [NativeApi(Index = 1)]
+    public void** LpVtbl;
+    [NativeApi(GetProcAddress = "LpVtbl[1]")]
     public partial uint AddRef();
 }
 ```
 
-`UseAsFunctionTable` indicates that the C# code `LpVtbl` **MUST** preceded any indexer operations generated. Any arbritrary code can be inserted into this attribute, so long as the result of the code evaluates to something that can be indexed as described above. For example, this is valid:
+`GetProcAddress` indicates that the C# code `LpVtbl[1]` **MUST** be used as the Procedure Address Expression to retrieve the function address to call. Any arbritrary code can be inserted into this attribute, so long as the result of the code once evaluated meets the Procedure Address Expression definition. For example, this is valid:
 ```cs
-[UseAsFunctionTable("Value.GetValueOrDefault().InnerValue->LpVtbl")]
 public struct IUnknownNullableContainer
 {
     public IUnknownPtr? Value;
-    [NativeApi(Index = 1)]
+    [NativeApi(GetProcAddress = "Value.GetValueOrDefault().InnerValue->LpVtbl[1]")]
     public partial uint AddRef();
 }
 
@@ -135,7 +121,7 @@ public struct IUnknown
 
 The Emitter **SHOULD** implicitly parenthesise the expression given in the attribute.
 
-If a custom FTable source is used, the Emitter **SHOULD** mandate that every function has a `NativeApi` attribute with an explicit `Index` specified for safety.
+Unless a `UseNativeLibrary` attribute is used on the containing type, the Emitter **MUST** mandate that every function has a `NativeApi` attribute with an explicit `GetProcAddress` (Procedure Address Expression) specified.
 
 ### Function pointers
 For the most part, the function pointer signature used by the Emitter is matched 1:1 with the method signature. For example:
@@ -145,7 +131,7 @@ public partial int MyThing(int a);
 
 will generate an implementation similar to:
 ```cs
-public partial int MyThing(int a) => ((delegate* unmanaged<int, int>) (<ftable access expression>)[<index>])(a);
+public partial int MyThing(int a) => ((delegate* unmanaged<int, int>) (<proc addr expression>))(a);
 ```
 
 However there are certain modifications you can apply. Namely, the `NativeApi` attribute will allow specification of specific calling conventions. For example:
@@ -157,7 +143,7 @@ public partial D3D12_HEAP_PROPERTIES GetCustomHeapProperties(uint nodeMask, D3D1
 
 This will generate:
 ```cs
-public partial D3D12_HEAP_PROPERTIES GetCustomHeapProperties(uint nodeMask, D3D12_HEAP_TYPE heapType) => ((delegate* unmanaged[MemberFunction]<uint, D3D12_HEAP_TYPE, D3D12_HEAP_PROPERTIES>) (<ftable access expression>)[<index>])(a);
+public partial D3D12_HEAP_PROPERTIES GetCustomHeapProperties(uint nodeMask, D3D12_HEAP_TYPE heapType) => ((delegate* unmanaged[MemberFunction]<uint, D3D12_HEAP_TYPE, D3D12_HEAP_PROPERTIES>) (<get expression>))(a);
 ```
 
 `CallModifiers` will be used as the primary bitmask for customizing the behaviour of generation, just as `NativeApi` will be used as the primary attribute for this as well. The behaviour of each bit will be described in documentation comments in the Proposed API section.
