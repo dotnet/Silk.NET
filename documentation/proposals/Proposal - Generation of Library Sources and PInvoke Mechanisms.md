@@ -124,27 +124,21 @@ The Emitter **SHOULD** implicitly parenthesise the expression given in the attri
 Unless a `UseNativeLibrary` attribute is used on the containing type, the Emitter **MUST** mandate that every function has a `NativeApi` attribute with an explicit `GetProcAddress` (Procedure Address Expression) specified.
 
 ### Function pointers
-For the most part, the function pointer signature used by the Emitter is matched 1:1 with the method signature. For example:
-```cs
-public partial int MyThing(int a);
-```
-
-will generate an implementation similar to:
-```cs
-public partial int MyThing(int a) => ((delegate* unmanaged<int, int>) (<proc addr expression>))(a);
-```
-
-However there are certain modifications you can apply. Namely, the `NativeApi` attribute will allow specification of specific calling conventions. For example:
+For the most part, the function pointer signature used by the Emitter is matched 1:1 with the method signature. However there are certain modifications you can apply. Namely, the `NativeApi` attribute will allow specification of specific calling conventions. For example:
 
 ```cs
-[NativeApi(Modifiers = CallModifiers.MemberFunction)]
+[NativeApi(Modifiers = CallModifiers.MemberFunction | CallModifiers.SuppressGCTransition | CallModifiers.WinapiConvention)]
 public partial D3D12_HEAP_PROPERTIES GetCustomHeapProperties(uint nodeMask, D3D12_HEAP_TYPE heapType);
 ```
 
-This will generate:
-```cs
-public partial D3D12_HEAP_PROPERTIES GetCustomHeapProperties(uint nodeMask, D3D12_HEAP_TYPE heapType) => ((delegate* unmanaged[MemberFunction]<uint, D3D12_HEAP_TYPE, D3D12_HEAP_PROPERTIES>) (<get expression>))(a);
-```
+- CallModifiers **MUST** be a bitmask with each modifier having its own unique bit.
+- **MemberFunction**: If this modifier is specified, the Emitter **MUST** modify the function pointer call to use the Windows C++ instance member function calling style.
+- **SuppressGCTransition**: If this modifier is specified, the Emitter **SHOULD** prevent the .NET garbage collector from transitioning between co-operative and pre-emptive mode during the call.
+- **WinapiConvention**: If this modifier is specified, the Emitter **MUST** use the platform default calling convention. This convention **MUST** also be used if no other calling convention bits are set.
+- **CdeclConvention**: If this modifier is specified, the Emitter **MUST** use the C `__cdecl` calling convention.
+- **StdcallConvention**: If this modifier is specified, the Emitter **MUST** use the C `__stdcall` calling convention.
+- **FastcallConvention**: If this modifier is specified, the Emitter **MUST** use the C `__fastcall` calling convention.
+- **ThiscallConvention**: If this modifier is specified, the Emitter **MUST** use the C `__thiscall` calling convention.
 
 `CallModifiers` will be used as the primary bitmask for customizing the behaviour of generation, just as `NativeApi` will be used as the primary attribute for this as well. The behaviour of each bit will be described in documentation comments in the Proposed API section.
 
