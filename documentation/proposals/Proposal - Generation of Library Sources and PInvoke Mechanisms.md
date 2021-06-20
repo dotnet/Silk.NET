@@ -83,6 +83,8 @@ If `__Internal` is used as a library name, the Emitter **MUST** use `DllImport` 
 
 The `__Internal` library name **MUST** be paired with a preprocessor constraint and **MUST NOT** use an operating system constraint.
 
+The Emitter **MUST** allow multiple candidate library names and cycle through each candidate until one loads successfully, unless `__Internal` is used in which case this **MUST** be the only candidate name in use.
+
 No other library names are defined to use `DllImport` at this time, as this shouldn't be required given we're using NativeLibrary now.
 
 #### Custom
