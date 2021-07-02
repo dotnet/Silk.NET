@@ -30,7 +30,7 @@ Microsoft have already stated that they're happy to work with us to get Silk.NET
 There is no required behaviour for the Scraper (due to a lot of unknowns at the moment) other than it **MUST** invoke ClangSharp to generate C# Emitter-compatible classes, and it **MUST** add appropriate attributes to invoke the Overloader stage according to any metadata available from Khronos XML if applicable.
 
 ## SilkTouch Emitter
-The Emitter, one of the two final stages which **SHOULD** run in parallel where possible and **MUST** be entirely independent of eachother, is responsible for generating the actual indirect calls for performing the P/Invoke.
+The Emitter, one of the two final stages whose resources **MUST** be entirely independent of eachother, is responsible for generating the actual indirect calls for performing the P/Invoke.
 
 The Emitter operates on partial methods, the behaviour of the implementations of which depending on the context in which it's used.
 
@@ -199,7 +199,7 @@ public partial D3D12_HEAP_PROPERTIES GetCustomHeapProperties(uint nodeMask, D3D1
 The Emitter does not do any marshalling. As such, the Emitter **MUST** mandate that every parameter and return type of every function fits the `unmanaged` constraint. For the readers benefit, this can be done using a property on `ITypeSymbol` in Roslyn.
 
 ## SilkTouch Overloader
-The Overloader, one of the two final stages which **MUST** be entirely independent of eachother, creates overloads of functions that expose a more user-friendly interface than the function it overloads, and do appropriate marshalling to lower the parameter types used down to the original function's types.
+The Overloader, one of the two final stages whose resources **MUST** be entirely independent of eachother, creates overloads of functions that expose a more user-friendly interface than the function it overloads, and do appropriate marshalling to lower the parameter types used down to the original function's types.
 
 The Overloader **MUST** be activated using an `OverloadAttribute` applied to the assembly, type, and/or function contianing the method.
 
