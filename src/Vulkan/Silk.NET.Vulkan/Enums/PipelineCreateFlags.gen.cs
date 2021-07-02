@@ -59,8 +59,8 @@ namespace Silk.NET.Vulkan
         PipelineCreateReserved23BitAmd = 8388608,
         [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_10_BIT_AMD")]
         PipelineCreateReserved10BitAmd = 1024,
-        [NativeName("Name", "VK_PIPELINE_CREATE_RESERVED_BIT_20_NV")]
-        PipelineCreateReservedBit20NV = 1048576,
+        [NativeName("Name", "VK_PIPELINE_CREATE_RAY_TRACING_ALLOW_MOTION_BIT_NV")]
+        PipelineCreateRayTracingAllowMotionBitNV = 1048576,
         [NativeName("Name", "VK_PIPELINE_CREATE_VIEW_INDEX_FROM_DEVICE_INDEX_BIT")]
         PipelineCreateViewIndexFromDeviceIndexBit = 8,
         [NativeName("Name", "VK_PIPELINE_CREATE_DISPATCH_BASE_BIT")]

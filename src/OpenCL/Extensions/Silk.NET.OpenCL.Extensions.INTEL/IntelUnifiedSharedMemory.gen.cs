@@ -236,6 +236,12 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
         [NativeApi(EntryPoint = "clHostMemAllocINTEL")]
         public unsafe partial void* HostMemAlloc([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] in INTEL properties, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.In)] uint alignment, [Flow(FlowDirection.Out)] out int errcode_ret);
 
+        [NativeApi(EntryPoint = "clMemBlockingFreeINTEL")]
+        public unsafe partial int MemBlockingFree([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.Out)] void* ptr);
+
+        [NativeApi(EntryPoint = "clMemBlockingFreeINTEL")]
+        public partial int MemBlockingFree<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.Out)] out T0 ptr) where T0 : unmanaged;
+
         [NativeApi(EntryPoint = "clMemFreeINTEL")]
         public unsafe partial int MemFree([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.Out)] void* ptr);
 

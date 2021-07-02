@@ -5872,12 +5872,6 @@ namespace Silk.NET.OpenCL
             return thisApi.SetKernelArg(kernel, arg_index, arg_size, in arg_value.GetPinnableReference());
         }
 
-        public static unsafe int UnloadCompiler<T0>(this CL thisApi, [Flow(FlowDirection.In)] ReadOnlySpan<T0> unnamedParameter0) where T0 : unmanaged
-        {
-            // SpanOverloader
-            return thisApi.UnloadCompiler(in unnamedParameter0.GetPinnableReference());
-        }
-
         public static unsafe int WaitForEvents(this CL thisApi, [Flow(FlowDirection.In)] uint num_events, [Flow(FlowDirection.In)] ReadOnlySpan<nint> event_list)
         {
             // SpanOverloader
