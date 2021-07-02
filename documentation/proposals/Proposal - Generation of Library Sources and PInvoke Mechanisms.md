@@ -299,3 +299,8 @@ public class SilkGrenade
     public bool Disarmed { get; set; }
 }
 ```
+
+# Requirements Summary
+
+| Number | Concerned Party (User, Implementation, or Both) | Summary                                                                                                |
+|--------|-------------------------------------------------|--------------------------------------------------------------------------------------------------------|
