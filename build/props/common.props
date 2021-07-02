@@ -9,6 +9,8 @@
             Silk.NET July 2021 Update
 
             - Add support for OpenAL Soft native libraries for ALContext
+            - Update to Vulkan 1.2.183
+            - Update to latest OpenCL specifications
             - Fix struct layout issues in DirectX and OpenXR bindings
             - Fix OpenCL library name resolution on Linux
             - Fix NU5127, NU5128, and NU1701 native package NuGet errors on .NET Framework
