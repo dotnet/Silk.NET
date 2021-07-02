@@ -212,8 +212,37 @@ The Overloader does not care about existing methods. If the Overloader generates
 
 However, if the Overloader thinks that the overload it's generating may conflict with another overload or the original function, it **SHOULD** output the overload as an extension method rather than a method within the containing type, unless the original method is static in which case it **MUST** discard the overload and generate a warning. It **SHOULD** also do this if the containing type is not partial.
 
-### Overloads
+### Parameter Overloads
+
+NB: the activation of all overloaders defined in this section are defined as should level requirements only to grant an implementation the responsibility to refuse to output an overload if there's some other consideration(s) not specified here that would make it unable, illogical, or inapplicable to do so.
+
+The actual functionality of the overloaders are defined as must level requirements, so if the implementation does decide it's safe to output a particular overload, it must follow the functionality of that overload exactly.
+
 #### StringOverloader
+Consider the following example:
+
+```cs
+[Overload(Overloads.String)]
+public void MethodOne(byte* str);
+
+[Overload(Overloads.String)]
+public void MethodTwo(char* str);
+
+[Overload(Overloads.String)]
+public void MethodThree([OverloadArgument(NativeString = NativeStringEncoding.Ansi)] void* str);
+```
+
+If the string overloader is selected using the `Overload` attribute (i.e. its bit is set in the `Overloads` bitmask), the Overloader **SHOULD** overload any parameters recognised to be pointers to a native string to expose a .NET `string` parameter variant.
+
+If this overloader is used:
+- This overloader **MUST NOT** overload any parameters that are not of types `byte*`, `char*`, or `sbyte*`. An implementation **MAY** still allow overloading using this overload if the `NativeString` property is explicitly set on an `OverloadArgument` attribute defined on a parameter.
+- If the `NativeString` property is explicitly set on an `OverloadArgument` attribute defined on a parameter, the parameter **MUST** be castable from (or define an operator allowing conversion from) a `void*`. If the implementation is unable to guarantee this, it **MUST NOT** overload. (NB: this requirement was written with "if it's not a pointer type, don't consider it safe" in mind but this requirement is intentionally left vague and this requirement may supersede the one prior)
+- The native string created from the `string` parameter in the overload **MUST** use the `NativeStringEncoding` specified in the `OverloadArgument` attribute for a given parameter:
+    - If `Ansi` or `LPStr` is used, the native string **MUST** be encoded as a single byte, null-terminated ANSI character string.
+    - If `Auto` or `LPTStr` is used, the native string is encoded in an implementation-defined way.
+    - If `Uni` or `LPWStr` is used, the native string **MUST** be encoded as a 2-byte, null-terminated Unicode character string.
+    - If `UTF8` or `LPUTF8Str` is used, the native string **MUST** be encoded as a null-terminated UTF8 character string.
+
 #### StringReadOnlyListOverloader
 #### StringSpanOverloader
 #### AlternativeTypeOverloader
