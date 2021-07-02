@@ -393,5 +393,10 @@ public class SilkGrenade
 
 # Requirements Summary
 
-| Number | Concerned Party (User, Implementation, or Both) | Summary                                                                                                |
-|--------|-------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| Number | Concerned Party | Summary                                                                                                |
+|--------|-----------------|--------------------------------------------------------------------------------------------------------|
+
+NB: the "Concerned Party" column can either be:
+- **Implementor**: This is a requirement the implementation has to conform to
+- **User**: This is a requirement the user has to conform to, but the implementation has no logic to ensure that user code conforms to it.
+- **Both**: This is a requirement the user has to conform to, otherwise the implementation will handle things differently.
