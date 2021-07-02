@@ -223,25 +223,49 @@ Consider the following example:
 
 ```cs
 [Overload(Overloads.String)]
-public void MethodOne(byte* str);
+public void MethodOne(byte* str); // must-level
 
 [Overload(Overloads.String)]
-public void MethodTwo(char* str);
+public void MethodTwo(char* str); // must-level
 
 [Overload(Overloads.String)]
-public void MethodThree([OverloadArgument(NativeString = NativeStringEncoding.Ansi)] void* str);
+public void MethodThree([OverloadArgument(NativeString = NativeStringEncoding.Ansi)] void* str); // may-level
+
+[Overload(Overloads.String)]
+public void MethodFour([In] byte* str); // must-level
+
+[Overload(Overloads.String)]
+public void MethodFive([In, Out] byte* str); // must-level
+
+[Overload(Overloads.String)]
+public void MethodSix([Out] byte* str); // must-level
 ```
 
-If the string overloader is selected using the `Overload` attribute (i.e. its bit is set in the `Overloads` bitmask), the Overloader **SHOULD** overload any parameters recognised to be pointers to a native string to expose a .NET `string` parameter variant.
+If the string overloader is selected using the `Overload` attribute (i.e. its bit is set in the `Overloads` bitmask), the Overloader **SHOULD** overload any parameters recognised to be pointers to a native string to expose a .NET `string` parameter variant as defined below.
 
 If this overloader is used:
-- This overloader **MUST NOT** overload any parameters that are not of types `byte*`, `char*`, or `sbyte*`. An implementation **MAY** still allow overloading using this overload if the `NativeString` property is explicitly set on an `OverloadArgument` attribute defined on a parameter.
-- If the `NativeString` property is explicitly set on an `OverloadArgument` attribute defined on a parameter, the parameter **MUST** be castable from (or define an operator allowing conversion from) a `void*`. If the implementation is unable to guarantee this, it **MUST NOT** overload. (NB: this requirement was written with "if it's not a pointer type, don't consider it safe" in mind but this requirement is intentionally left vague and this requirement may supersede the one prior)
+- This overloader **MUST NOT** overload any parameters that are not of types `byte*`, `char*`, or `sbyte*`. An implementation **MAY** still allow overloading using this overload if the `NativeString` property is explicitly set on an `OverloadArgument` attribute defined on a parameter. If this is the case, the parameter **MUST** be castable from (or define an operator allowing conversion from) a `void*`. If the implementation is unable to guarantee this, it **MUST NOT** overload. (NB: this requirement was written with "if it's not a pointer type, don't consider it safe" in mind but this requirement is intentionally left vague and this requirement may supersede the one prior)
 - The native string created from the `string` parameter in the overload **MUST** use the `NativeStringEncoding` specified in the `OverloadArgument` attribute for a given parameter:
     - If `Ansi` or `LPStr` is used, the native string **MUST** be encoded as a single byte, null-terminated ANSI character string.
     - If `Auto` or `LPTStr` is used, the native string is encoded in an implementation-defined way.
     - If `Uni` or `LPWStr` is used, the native string **MUST** be encoded as a 2-byte, null-terminated Unicode character string.
     - If `UTF8` or `LPUTF8Str` is used, the native string **MUST** be encoded as a null-terminated UTF8 character string.
+- The flow of the string can also be specified, reusing the attributes from `System.Runtime.CompilerServices`:
+    - If neither `In` nor `Out` are specified, the string **MUST** be assumed to be `In`.
+    - If only `In` is specified, the parameter **MUST** be overloaded as `string`.
+    - If `In` and `Out` are specified, the parameter **MUST** be overloaded as `ref string`. The string will be marshalled to the native representation, the underlying method might do some modifications to the buffer created by the Overloader, and then it **MUST** be marshalled back to a C# string, the result being stored in the ref parameter.
+    - If only `Out` is specified, the parameter **MUST** be overloaded as `out string`. A buffer of length + 1 **MUST** be allocated and passed to the underlying method, where length is replaced with the expression defined in the `Count` property on `OverloadArgument`
+
+Example of resultant signatures:
+
+```cs
+public void MethodOne(string str); // must-level
+public void MethodTwo(string str); // must-level
+public void MethodThree(string str); // may-level
+public void MethodFour(string str); // must-level
+public void MethodFive(ref string str); // must-level
+public void MethodSix(out string str); // must-level
+```
 
 #### StringReadOnlyListOverloader
 #### StringSpanOverloader
