@@ -259,6 +259,8 @@ namespace Silk.NET.Windowing
 ## `IDesktopSurface`
 
 ### TODO: ADD MORE STUFF FROM IWINDOWPROPERTIES AND MAKE THIS LESS WINDOW SPECIFIC
+### TODO: SPECIALIZE DELEGATES
+### TODO: FIX ISCLOSING
 
 ```cs
 namespace Silk.NET.Windowing
