@@ -128,14 +128,14 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         InvalidEglObjectKhr = unchecked((int)0xFFFFFFFFFFFFFBBB),
         [NativeName("Name", "CL_EGL_RESOURCE_NOT_ACQUIRED_KHR")]
         EglResourceNotAcquiredKhr = unchecked((int)0xFFFFFFFFFFFFFBBC),
-        [NativeName("Name", "CL_NAME_VERSION_MAX_NAME_SIZE_KHR")]
-        NameVersionMaxNameSizeKhr = 0x64,
         [NativeName("Name", "CL_VERSION_MAJOR_BITS_KHR")]
         VersionMajorBitsKhr = 0x10,
         [NativeName("Name", "CL_VERSION_MINOR_BITS_KHR")]
         VersionMinorBitsKhr = 0x10,
         [NativeName("Name", "CL_VERSION_PATCH_BITS_KHR")]
         VersionPatchBitsKhr = 0x12,
+        [NativeName("Name", "CL_NAME_VERSION_MAX_NAME_SIZE_KHR")]
+        NameVersionMaxNameSizeKhr = 0x64,
         [NativeName("Name", "CL_PLATFORM_NUMERIC_VERSION_KHR")]
         PlatformNumericVersionKhr = 0x906,
         [NativeName("Name", "CL_PLATFORM_EXTENSIONS_WITH_VERSION_KHR")]
@@ -158,8 +158,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         DepthStencil = 0x10BE,
         [NativeName("Name", "CL_UNORM_INT24")]
         UnormInt24 = 0x10DF,
-        [NativeName("Name", "CL_FLOAT")]
-        Float = 0x10DE,
         [NativeName("Name", "CL_COMMAND_GL_FENCE_SYNC_OBJECT_KHR")]
         CommandGLFenceSyncObjectKhr = 0x200D,
         [NativeName("Name", "CL_GL_NUM_SAMPLES")]
@@ -200,10 +198,6 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         GLTextureTarget = 0x2004,
         [NativeName("Name", "CL_GL_MIPMAP_LEVEL")]
         GLMipmapLevel = 0x2005,
-        [NativeName("Name", "CL_INVALID_GL_OBJECT")]
-        InvalidGLObject = unchecked((int)0xFFFFFFFFFFFFFFC4),
-        [NativeName("Name", "CL_INVALID_MIP_LEVEL")]
-        InvalidMipLevel = unchecked((int)0xFFFFFFFFFFFFFFC2),
         [NativeName("Name", "CL_PLATFORM_ICD_SUFFIX_KHR")]
         PlatformIcdSuffixKhr = 0x920,
         [NativeName("Name", "CL_PLATFORM_NOT_FOUND_KHR")]
@@ -218,6 +212,12 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         DeviceImageBaseAddressAlignmentKhr = 0x104B,
         [NativeName("Name", "CL_CONTEXT_MEMORY_INITIALIZE_KHR")]
         ContextMemoryInitializeKhr = 0x2030,
+        [NativeName("Name", "CL_DEVICE_INTEGER_DOT_PRODUCT_INPUT_4x8BIT_KHR")]
+        DeviceIntegerDotProductInput4x8BitKhr = 0x2,
+        [NativeName("Name", "CL_DEVICE_INTEGER_DOT_PRODUCT_INPUT_4x8BIT_PACKED_KHR")]
+        DeviceIntegerDotProductInput4x8BitPackedKhr = 0x1,
+        [NativeName("Name", "CL_DEVICE_INTEGER_DOT_PRODUCT_CAPABILITIES_KHR")]
+        DeviceIntegerDotProductCapabilitiesKhr = 0x1073,
         [NativeName("Name", "CL_SAMPLER_MIP_FILTER_MODE_KHR")]
         SamplerMipFilterModeKhr = 0x1155,
         [NativeName("Name", "CL_SAMPLER_LOD_MIN_KHR")]

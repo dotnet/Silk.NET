@@ -91,5 +91,7 @@ namespace Silk.NET.Vulkan
         Access2FragmentDensityMapReadBitExt = 16777216,
         [NativeName("Name", "VK_ACCESS_2_COLOR_ATTACHMENT_READ_NONCOHERENT_BIT_EXT")]
         Access2ColorAttachmentReadNoncoherentBitExt = 524288,
+        [NativeName("Name", "VK_ACCESS_2_RESERVED_39_BIT_HUAWEI")]
+        Access2Reserved39BitHuawei = 549755813888,
     }
 }

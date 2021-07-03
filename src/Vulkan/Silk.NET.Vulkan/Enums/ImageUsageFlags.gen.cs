@@ -51,5 +51,7 @@ namespace Silk.NET.Vulkan
         ImageUsageVideoEncodeSrcBitKhr = 16384,
         [NativeName("Name", "VK_IMAGE_USAGE_VIDEO_ENCODE_DPB_BIT_KHR")]
         ImageUsageVideoEncodeDpbBitKhr = 32768,
+        [NativeName("Name", "VK_IMAGE_USAGE_RESERVED_18_BIT_HUAWEI")]
+        ImageUsageReserved18BitHuawei = 262144,
     }
 }
