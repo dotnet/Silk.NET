@@ -72,6 +72,7 @@ The **Gluer** **MUST** be distributed in package/namespace `Silk.NET.Windowing.R
 
 The Gluer operates on **User** methods that:
 - **MUST** be static
+- **MUST** return `void`
 - **MUST** have a single parameter of type `ISurface` or a type that inherits from `ISurface`. If the latter, the Glue **MUST** assert that the `ISurface` created is assignable to the parameter type or throw an exception if this is not the case. This allows applications to use `IDesktopSurface` only if that's their jam.
 - **MUST** have the attribute `SilkEntryPoint`
 
@@ -87,6 +88,19 @@ The method **MAY** be called multiple times throughout the lifetime of an applic
 
 The Glue is purposely left undefined as this is operating system &amp; platform specific, and would not reflect any future platforms we decide to add.
 
+A model example of what this looks like:
+```cs
+public class MyGame
+{
+    [SilkEntryPoint]
+    public static void RunGame(ISurface surface)
+    {
+        // do things with your surface
+        surface.Run();
+    }
+}
+```
+
 # Defined Extensions
 ## `IDesktopSurface`
 ## `IGLSurface`
@@ -99,23 +113,155 @@ NB: We've been discussing `IWebGLSurface` a lot recently, but this is left out o
 # Proposed API
 - Here you do some code blocks, this is the heart and soul of the proposal. DON'T DO ANY IMPLEMENTATIONS! Just declarations.
 
+## `ISurface`
 ```cs
-/// <summary>
-/// Represents a grenade.
-/// </summary>
-public class SilkGrenade
+namespace Silk.NET.Windowing
 {
-    /// <summary>
-    /// What does this do?!?
-    /// </summary>
-    public void RedButton();
-    /// <summary>
-    /// Detonates the grenade.
-    /// </summary>
-    protected void Kaboom();
-    /// <summary>
-    /// Gets or sets whether this grenade is disarmed or not.
-    /// </summary>
-    public bool Disarmed { get; set; }
+    public interface ISurface : IGameLoopRunnable
+    {
+        /// <summary>
+        /// Determines whether the surface is being destroyed by the platform.
+        /// </summary>
+        bool IsTerminating { get; }
+        
+        /// <summary>
+        /// Determines whether the surface is being paused by the platform.
+        /// </summary>
+        bool IsPausing { get; }
+
+        /// <summary>
+        /// Elapsed time in seconds since the Run method last started.
+        /// </summary>
+        double Time { get; }
+
+        /// <summary>
+        /// The size of the surface's inner framebuffer. May differ from the surface size.
+        /// </summary>
+        // NB: This is not OpenGL specific and is valid in any case where there's a high DPI monitor.
+        Vector2D<int> FramebufferSize { get; }
+
+        /// <summary>
+        /// The size of the surface.
+        /// </summary>
+        Vector2D<int> Size { get; }
+
+        /// <summary>
+        /// The number of rendering operations to run every second.
+        /// </summary>
+        double FramesPerSecond { get; set; }
+
+        /// <summary>
+        /// The number of update operations to run every second.
+        /// </summary>
+        double UpdatesPerSecond { get; set; }
+
+        /// <summary>
+        /// Raised when the surface is resized.
+        /// </summary>
+        event Action<Vector2D<int>>? Resize;
+
+        /// <summary>
+        /// Raised when the surface's framebuffer is resized.
+        /// </summary>
+        event Action<Vector2D<int>>? FramebufferResize;
+
+        /// <summary>
+        /// Raised when the surface is being terminated.
+        /// </summary>
+        event Action? Terminating;
+
+        /// <summary>
+        /// Raised when the surface is running low on memory.
+        /// </summary>
+        event Action? LowMemory;
+
+        /// <summary>
+        /// Raised when the surface is about to pause. This is a good indicator that the Run method is about to exit, though this may not necessarily be the case, but the surface isn't terminating yet.
+        /// </summary>
+        event Action? Pausing;
+
+        /// <summary>
+        /// Raised when the surface is about to resume. This is a good indicator to expect the entry point to be called again, though this may not necessarily be the case. 
+        /// </summary>
+        event Action? Resuming;
+
+        /// <summary>
+        /// Raised when the surface is initialized for the first time.
+        /// </summary>
+        event Action? Created;
+
+        /// <summary>
+        /// Raised when an update should be run.
+        /// </summary>
+        event Action<double>? Update;
+
+        /// <summary>
+        /// Raised when a frame should be rendered.
+        /// </summary>
+        event Action<double>? Render;
+
+        /// <summary>
+        /// Creates the surface on the underlying platform.
+        /// </summary>
+        void Initialize();
+
+        /// <summary>
+        /// Calls the Render event.
+        /// </summary>
+        void DoRender();
+
+        /// <summary>
+        /// Calls the Update event.
+        /// </summary>
+        void DoUpdate();
+
+        /// <summary>
+        /// Polls the underlying platform for events.
+        /// </summary>
+        void DoEvents();
+
+        /// <summary>
+        /// Unloads the surface on the underlying platform.
+        /// </summary>
+        void Reset();
+
+        /// <summary>
+        /// Terminates this surface.
+        /// </summary>
+        void Terminate();
+
+        /// <summary>
+        /// Converts this point to framebuffer coordinates.
+        /// </summary>
+        /// <param name="point">The point to transform.</param>
+        /// <returns>The transformed point.</returns>
+        /// <remarks>Expects client coordinates as input.</remarks>
+        Vector2D<int> PointToFramebuffer(Vector2D<int> point);
+
+        /// <summary>
+        /// Initiates a render loop in which the given callback is called as fast as the underlying platform can manage.
+        /// </summary>
+        /// <param name="onFrame">The callback to run each frame.</param>
+        void Run(Action onFrame);
+    }
 }
 ```
+
+## CLEAN THE BELOW UP, SORT IT OUT!
+
+
+        /// <summary>
+        /// Converts this point to client coordinates.
+        /// </summary>
+        /// <param name="point">The point to transform.</param>
+        /// <returns>The transformed point.</returns>
+        /// <remarks>Expects screen coordinates as input.</remarks>
+        Vector2D<int> PointToClient(Vector2D<int> point);
+
+        /// <summary>
+        /// Converts this point to screen coordinates.
+        /// </summary>
+        /// <param name="point">The point to transform.</param>
+        /// <returns>The transformed point.</returns>
+        /// <remarks>Expects client coordinates as input.</remarks>
+        Vector2D<int> PointToScreen(Vector2D<int> point);
