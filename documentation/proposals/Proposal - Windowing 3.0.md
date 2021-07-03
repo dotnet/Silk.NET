@@ -113,6 +113,15 @@ NB: We've been discussing `IWebGLSurface` a lot recently, but this is left out o
 # Proposed API
 - Here you do some code blocks, this is the heart and soul of the proposal. DON'T DO ANY IMPLEMENTATIONS! Just declarations.
 
+## Delegates
+
+NB: instead of generic delegates like we've used in previous iterations, we use named delegates instead so the parameter names are auto-filled out by IDEs with indicative names, instead of `obj` or `argN`.
+
+```cs
+public delegate void ResizeAction(Vector2D<int> newSize);
+public delegate void DeltaAction(double deltaTime);
+```
+
 ## `ISurface`
 ```cs
 namespace Silk.NET.Windowing
@@ -158,12 +167,12 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// Raised when the surface is resized.
         /// </summary>
-        event Action<Vector2D<int>>? Resize;
+        event ResizeAction? Resize;
 
         /// <summary>
         /// Raised when the surface's framebuffer is resized.
         /// </summary>
-        event Action<Vector2D<int>>? FramebufferResize;
+        event ResizeAction? FramebufferResize;
 
         /// <summary>
         /// Raised when the surface is being terminated.
@@ -193,12 +202,12 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// Raised when an update should be run.
         /// </summary>
-        event Action<double>? Update;
+        event DeltaAction? Update;
 
         /// <summary>
         /// Raised when a frame should be rendered.
         /// </summary>
-        event Action<double>? Render;
+        event DeltaAction? Render;
 
         /// <summary>
         /// Creates the surface on the underlying platform.
