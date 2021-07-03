@@ -101,7 +101,7 @@ public class MyGame
 }
 ```
 
-# Defined Extensions
+# Optional Features
 ## Desktop Surface
 ## OpenGL Surface
 ## OpenGLES Surface
