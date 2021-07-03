@@ -126,7 +126,7 @@ public delegate void DeltaAction(double deltaTime);
 ```cs
 namespace Silk.NET.Windowing
 {
-    public interface ISurface : IGameLoopRunnable
+    public interface ISurface
     {
         /// <summary>
         /// Determines whether the surface is being destroyed by the platform.
