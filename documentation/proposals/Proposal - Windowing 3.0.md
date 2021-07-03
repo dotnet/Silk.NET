@@ -66,7 +66,35 @@ For the reader's benefit, this `Surface` class isn't really intended for general
 
 # Windowing Entry Points
 
-Even with the platform selection mechanism, there is a lot of plumbing required to get to the stage of acquiring a surface on the various platforms.
+Even with the platform selection mechanism, there is a lot of plumbing required to get to the stage of acquiring a surface on the various platforms. In Silk.NET 3.0, the **Library** **MAY** decide to expose a Roslyn source generator (the "**Gluer**" as used herein) to assist with this. If it doesn't, this section and its requirements can be discarded.
+
+The **Gluer** **MUST** be distributed in package/namespace `Silk.NET.Windowing.Roslyn`.
+
+The Gluer operates on **User** methods that:
+- **MUST** be static
+- **MUST** have a single parameter of type `ISurface` or a type that inherits from `ISurface`. If the latter, the Glue **MUST** assert that the `ISurface` created is assignable to the parameter type or throw an exception if this is not the case. This allows applications to use `IDesktopSurface` only if that's their jam.
+- **MUST** have the attribute `SilkEntryPoint`
+
+The idea is the Gluer will generate `Main` methods on .NET, `Activity`s on .NET for Android, etc... The **Gluer**, if generating **MUST** generate the necessary APIs to ensure that the method in question is called on application start-up (the "Glue"). If any of the above User requirements aren't met, the **Gluer** **MUST NOT** generate Glue. If a method is found with the `SilkEntryPoint` attribute but fails to meet one of the other requirements, the **Gluer** **MUST** generate a compiler error; otherwise it **MUST NOT** impact the compilation whatsoever.
+
+If multiple methods are found with `SilkEntryPoint`, the **Gluer** **MUST** generate a compiler error. All attributes **MUST** only be name matched by the **Gluer**.
+
+The Gluer **MUST NOT** modify the original type (i.e. all Glue must be defined in its own self-contained type)
+
+The **User** **MUST NOT** define their own application entry point (such as a static `Main` method in the case of regular .NET) if they are using the Gluer, though the Gluer does not have to enforce this.
+
+The method **MAY** be called multiple times throughout the lifetime of an application. This is because of operating system restrictions - the only way to definitively know whether this method is being called for the last time is the `IsTerminating` property or `Terminating` event on `ISurface`.
+
+The Glue is purposely left undefined as this is operating system &amp; platform specific, and would not reflect any future platforms we decide to add.
+
+# Defined Extensions
+## `IDesktopSurface`
+## `IGLSurface`
+## `IGlesSurface`
+## `IVkSurface`
+## `IGLTransparentFramebufferSurface`
+
+NB: We've been discussing `IWebGLSurface` a lot recently, but this is left out of this proposal as this is a target for Silk.NET 3.X.
 
 # Proposed API
 - Here you do some code blocks, this is the heart and soul of the proposal. DON'T DO ANY IMPLEMENTATIONS! Just declarations.
