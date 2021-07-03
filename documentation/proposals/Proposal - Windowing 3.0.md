@@ -102,11 +102,11 @@ public class MyGame
 ```
 
 # Defined Extensions
-## `IDesktopSurface`
-## `IGLSurface`
-## `IGlesSurface`
-## `IVkSurface`
-## `IGLTransparentFramebufferSurface`
+## Desktop Surface
+## OpenGL Surface
+## OpenGLES Surface
+## Vulkan Surface
+## OpenGL Surface with Framebuffer Transparency
 
 NB: We've been discussing `IWebGLSurface` a lot recently, but this is left out of this proposal as this is a target for Silk.NET 3.X.
 
@@ -256,8 +256,55 @@ namespace Silk.NET.Windowing
 }
 ```
 
-## CLEAN THE BELOW UP, SORT IT OUT!
+## `IDesktopSurface`
 
+### TODO: ADD MORE STUFF FROM IWINDOWPROPERTIES AND MAKE THIS LESS WINDOW SPECIFIC
+
+```cs
+namespace Silk.NET.Windowing
+{
+    public interface IDesktopSurface : ISurface
+    {
+        /// <summary>
+        /// Gets the screen on which this window is active.
+        /// </summary>
+        IScreen? Screen { get; set; }
+
+        /// <summary>
+        /// Gets or sets whether the window has been requested to close.
+        /// </summary>
+        new bool IsClosing { get; set; }
+
+        /// <summary>
+        /// Gets the distances in screen coordinates from the edges of the content area to the corresponding edges of
+        /// the full window.
+        /// </summary>
+        /// <remarks>
+        /// Because these are distances and not coordinates, they are always zero or positive.
+        /// </remarks>
+        /// <seealso cref="WindowExtensions.GetFullSize"/>
+        Rectangle<int> BorderSize { get; }
+
+        /// <summary>
+        /// Raised when the window is moved.
+        /// </summary>
+        event Action<Vector2D<int>>? Move;
+
+        /// <summary>
+        /// Raised when the window state is changed.
+        /// </summary>
+        event Action<WindowState>? StateChanged;
+
+        /// <summary>
+        /// Raised when the user drops files onto the window.
+        /// </summary>
+        event Action<string[]>? FileDrop;
+
+        /// <summary>
+        /// Sets the window icons.
+        /// </summary>
+        /// <param name="icons">Either a collection of window icons, or null to set to the default icon.</param>
+        void SetWindowIcon(ReadOnlySpan<RawImage> icons);
 
         /// <summary>
         /// Converts this point to client coordinates.
@@ -274,3 +321,12 @@ namespace Silk.NET.Windowing
         /// <returns>The transformed point.</returns>
         /// <remarks>Expects client coordinates as input.</remarks>
         Vector2D<int> PointToScreen(Vector2D<int> point);
+    }
+}
+```
+
+## `IGLSurface`
+## `IGlesSurface`
+## `IVkSurface`
+## `IGLTransparentFramebufferSurface`
+
