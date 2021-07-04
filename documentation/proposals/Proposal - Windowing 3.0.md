@@ -123,7 +123,7 @@ public delegate void DeltaAction(double deltaTime);
 ```cs
 namespace Silk.NET.Windowing
 {
-    public interface ISurface
+    public interface ISurface : IDisposable
     {
         /// <summary>
         /// Determines whether the surface is being destroyed by the platform.
@@ -255,15 +255,48 @@ namespace Silk.NET.Windowing
 
 ## `IDesktopSurface`
 
+**OPEN QUESTION:** Do we want to have `IGLDesktopSurface` and friends as well? I can see this being a common need for users who for some reason want to use desktop surfaces only.
+
 ### TODO: ADD MORE STUFF FROM IWINDOWPROPERTIES AND MAKE THIS LESS WINDOW SPECIFIC
 ### TODO: SPECIALIZE DELEGATES
 ### TODO: FIX ISCLOSING
+### TODO: FIX GET ONLYS
 
 ```cs
 namespace Silk.NET.Windowing
 {
     public interface IDesktopSurface : ISurface
     {
+        /// <summary>
+        /// Whether or not the window is visible.
+        /// </summary>
+        bool IsVisible { get; set; }
+
+        /// <summary>
+        /// The position of the window. If set to -1, use the backend default.
+        /// </summary>
+        Vector2D<int> Position { get; set; }
+
+        /// <summary>
+        /// The size of the window in pixels.
+        /// </summary>
+        new Vector2D<int> Size { get; set; }
+
+        /// <summary>
+        /// The window title.
+        /// </summary>
+        string Title { get; set; }
+
+        /// <summary>
+        /// The window state.
+        /// </summary>
+        WindowState WindowState { get; set; }
+
+        /// <summary>
+        /// The window border.
+        /// </summary>
+        WindowBorder WindowBorder { get; set; }
+    
         /// <summary>
         /// Gets the screen on which this window is active.
         /// </summary>
@@ -324,8 +357,114 @@ namespace Silk.NET.Windowing
 }
 ```
 
+## `IAnyGLSurface`
+
+```cs
+namespace Silk.NET.Windowing
+{
+    public interface IAnyGLSurface : ISurface
+    {
+        nint Handle { get; }
+        bool IsContextCurrent { get; }
+        
+        /// <summary>
+        /// The video mode.
+        /// </summary>
+        VideoMode VideoMode { get; }
+
+        /// <summary>
+        /// Preferred depth buffer bits of the window's framebuffer.
+        /// </summary>
+        /// <remarks>
+        /// Pass <c>null</c> or <c>-1</c> to use the system default. 
+        /// </remarks>
+        int? PreferredDepthBufferBits { get; }
+
+        /// <summary>
+        /// Preferred stencil buffer bits of the window's framebuffer.
+        /// </summary>
+        /// <remarks>
+        /// Pass <c>null</c> or <c>-1</c> to use the system default. 
+        /// </remarks>
+        int? PreferredStencilBufferBits { get; }
+        
+        /// <summary>
+        /// Preferred red, green, blue, and alpha bits of the window's framebuffer.
+        /// </summary>
+        /// <remarks>
+        /// Pass <c>null</c> or <c>-1</c> for any of the axes to use the system default. 
+        /// </remarks>
+        Vector4D<int>? PreferredBitDepth { get; }
+        
+        nint? GetProcAddress(string proc);
+        void SwapInterval(int interval);
+        void SwapBuffers();
+        void MakeCurrent();
+        void ClearCurrent();
+    }
+}
+```
+
 ## `IGLSurface`
+
+```cs
+namespace Silk.NET.Windowing
+{
+    public interface IGLSurface : IAnyGLSurface
+    {
+        bool TryEnableOpenGL();
+    }
+}
+```
+
 ## `IGlesSurface`
+
+```cs
+namespace Silk.NET.Windowing
+{
+    public interface IGlesSurface : IAnyGLSurface
+    {
+        bool TryEnableOpenGLES();
+    }
+}
+```
+
 ## `IVkSurface`
+
+```cs
+namespace Silk.NET.Windowing
+{
+    public interface IVkSurface : ISurface
+    {
+        /// <summary>Enables Vulkan support for this surface.</summary>
+        bool TryEnableVulkan();
+
+        /// <summary>
+        /// Create a Vulkan surface.
+        /// </summary>
+        /// <param name="instance">The Vulkan instance to create a surface for.</param>
+        /// <param name="allocator">A custom Vulkan allocator. Can be omitted by passing null.</param>
+        /// <returns>A handle to the Vulkan surface created</returns>
+        unsafe ulong Create(nint instance, void* allocator) where T : unmanaged;
+
+        /// <summary>
+        /// Get the extensions required for Vulkan to work on this platform.
+        /// </summary>
+        /// <param name="count">The number of extensions in the returned array</param>
+        /// <returns>An array of strings, containing names for all required extensions</returns>
+        unsafe byte** GetRequiredExtensions(out uint count);
+    }
+}
+```
+
 ## `IGLTransparentFramebufferSurface`
 
+```cs
+namespace Silk.NET.Windowing
+{
+    public interface IGLTransparentFramebuffer : ISurface
+    {
+        bool TransparentFramebuffer { get; set; }
+    }
+}
+```
