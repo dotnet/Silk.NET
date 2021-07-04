@@ -357,12 +357,12 @@ namespace Silk.NET.Windowing
 }
 ```
 
-## `IAnyGLSurface`
+## `INativeGLSurface`
 
 ```cs
 namespace Silk.NET.Windowing
 {
-    public interface IAnyGLSurface : ISurface
+    public interface INativeGLSurfaceBase : ISurface
     {
         nint Handle { get; }
         bool IsContextCurrent { get; }
@@ -410,7 +410,7 @@ namespace Silk.NET.Windowing
 ```cs
 namespace Silk.NET.Windowing
 {
-    public interface IGLSurface : IAnyGLSurface
+    public interface IGLSurface : INativeGLSurfaceBase
     {
         bool TryEnableOpenGL();
     }
@@ -422,7 +422,7 @@ namespace Silk.NET.Windowing
 ```cs
 namespace Silk.NET.Windowing
 {
-    public interface IGlesSurface : IAnyGLSurface
+    public interface IGlesSurface : INativeGLSurfaceBase
     {
         bool TryEnableOpenGLES();
     }
