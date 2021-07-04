@@ -40,6 +40,14 @@ All of the above is informative text, however, and no reference implementations 
 
 Unlike previous iterations, one reference implementation **MUST** be bundled with the main Silk.NET.Windowing assembly. Given that we can easily use platform-specific TFMs there's no reason to keep the fragmentation of different implentations across different assemblies.
 
+The reference implementation will be accessed through the static `Surface` class.
+- `IsPlatformSupported` **MAY** return false if there is no reference implementation available for the given environment.
+- `GetOrCreate` **MUST NOT** return `null`. It **MUST** always return a valid `ISurface` if `IsPlatformSupported` is true and no exceptions or errors ocurred during surface creation. This method **MUST** always return the same `ISurface` instance.
+- `CreateNew` **MUST NOT** return the same `ISurface` object, and **MUST NOT** return `null`. It **MUST** always return a valid `ISurface` if `IsPlatformSupported` is true and no exceptions or errors ocurred during surface creation.
+- `ClearCurrentContexts` **MUST** call `ClearCurrent` on all `IGLSurface` or `IGlesSurface` instances this reference implementation has created. 
+
+For the reader's benefit, this `Surface` class isn't really intended for general consumption though it must be public for those applications don't fit into the model defined in the "Windowing Entry Points" section.
+
 # Surface
 
 In this proposal, a plane upon which graphics can be rendered on is represented by an `ISurface`. `ISurface` defines a minimal subset of basic APIs which **MUST** all be present on an **Platform Implementation**. The idea is `ISurface` just provides the bare necessities for rendering a game or application without knowing too much about the form factor, better encouraging cross-platform/"write once run everywhere" code. Bare necessities such as:
@@ -51,18 +59,7 @@ In this proposal, a plane upon which graphics can be rendered on is represented 
 
 `ISurface` **Platform Implementations** **SHOULD** also implement any extension interfaces that it can support for a given platform. Through these extension interfaces, if user code needs to access APIs which are more specific to certain form factors or platforms, they should use casts to get a more specific surface.
 
-# Global Platform Selection Mechanism
-
-The static `Surface` class is the non-contextual way for getting access to a `ISurface` object you can use for your game or application. This is not a requirement, as there will be of course other ways to retrieve a surface in the case of integrations into UI frameworks, but a **Platform** **MAY** implement `ISurfaceBackend` if the surface(s) it creates aren't bound to any other particular construct (i.e. it's using an operating system's window management APIs to create brand new windows, and doesn't require a window or whatever else to already exist). This will allow it to be used by the global selection mechanism.
-
-If it does implement `ISurfaceBackend`:
-- words
-- more words
-- even more words
-- The quick brown fox jumps over the lazy dog.
-- Fill this with words after the API is nailed out.
-
-For the reader's benefit, this `Surface` class isn't really intended for general consumption though it must be public for those applications don't fit into the model defined below, which should be preferred:
+The "core `ISurface` API" is as minimalistic as possible to allow easy use in integrations into UI frameworks or other environments. For example, at some point in the future we'd like to make `ISurface` implementations atop WPF, MAUI, Avalonia, and more; as well as atop Blazor WASM (and by extension HTML5 and WebGL)
 
 # Windowing Entry Points
 
