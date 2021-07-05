@@ -318,6 +318,11 @@ namespace Silk.NET.Windowing
         IEnumerable<IScreen>? AvailableScreens { get; }
 
         /// <summary>
+        /// Gets or sets whether the window waits for an event to be posted before existing <see cref="DoEvents" />.
+        /// </summary>
+        bool IsEventDriven { get; set; }
+
+        /// <summary>
         /// Gets or sets whether the window has been requested to close.
         /// </summary>
         bool IsCloseRequested { get; set; }
@@ -367,6 +372,12 @@ namespace Silk.NET.Windowing
         /// </summary>
         /// <param name="icons">Either a collection of window icons, or null to set to the default icon.</param>
         void SetWindowIcon(ReadOnlySpan<RawImage> icons);
+
+        /// <summary>
+        /// When using <see cref="WindowOptions.IsEventDriven"/> = true, wakes the main thread from
+        /// its blocking wait on incoming events.  Can be called from any thread.
+        /// </summary>
+        void ContinueEvents();
 
         /// <summary>
         /// Converts this point to client coordinates.
