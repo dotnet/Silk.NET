@@ -691,3 +691,191 @@ namespace Silk.NET.Windowing
     }
 }
 ```
+
+## `SurfaceExtensions`
+
+```cs
+namespace Silk.NET.Windowing
+{
+    /// <summary>
+    /// Extensions for ISurface
+    /// </summary>
+    public static class SurfaceExtensions
+    {
+        /// <summary>
+        /// Start the default event loop on this surface.
+        /// </summary>
+        /// <param name="view">The surface to begin the loop on.</param>
+        public static void Run(this ISurface surface);
+        
+        /// <summary>
+        /// Gets the full size of the given window including its borders.
+        /// </summary>
+        /// <param name="window">The window to get size information from.</param>
+        /// <returns>The full size of the window (including both content area and borders)</returns>
+        public static Vector2D<int> GetFullSize(this IDesktopSurface window);
+        
+        /// <summary>
+        /// Centers this window to the given monitor or, if null, the current monitor the window's on.
+        /// </summary>
+        /// <param name="window">The window to center.</param>
+        /// <param name="screen">The specific screen to center the window to, if any.</param>
+        public static void Center(this IDesktopSurface window, IScreen? screen = null);
+        
+        /// <summary>
+        /// Sets the window icon to default on the given window.
+        /// </summary>
+        /// <param name="window">The window.</param>
+        public static void SetDefaultIcon(this IDesktopWindow window);
+
+        /// <summary>
+        /// Sets a single window icon on the given window.
+        /// </summary>
+        /// <param name="window">The window.</param>
+        /// <param name="icon">The icon to set.</param>
+        public static void SetWindowIcon(this IDesktopSurface window, ref RawImage icon);
+    }
+}
+```
+
+## `Version32`
+
+```cs
+namespace Silk.NET.Core
+{
+    /// <summary>
+    /// A 32-bit version structure.
+    /// </summary>
+    public readonly struct Version32
+    {
+        /// <summary>
+        /// The underlying Vulkan-compatible 32-bit version integer.
+        /// </summary>
+        public uint Value { get; }
+        /// <summary>
+        /// Creates a Vulkan version structure from the given major, minor, and patch values.
+        /// </summary>
+        /// <param name="major">The major value.</param>
+        /// <param name="minor">The minor value.</param>
+        /// <param name="patch">The patch value.</param>
+        public Version32(uint major, uint minor, uint patch);
+        /// <summary>
+        /// Creates a Vulkan version structure from the given Vulkan-compatible value.
+        /// </summary>
+        /// <param name="value">The value.</param>
+        private Version32(uint value);
+        /// <summary>
+        /// Gets the major component of this version structure.
+        /// </summary>
+        public uint Major { get; }
+        /// <summary>
+        /// Gets the minor component of this version structure.
+        /// </summary>
+        public uint Minor { get; }
+        /// <summary>
+        /// Gets the patch component of this version structure.
+        /// </summary>
+        public uint Patch { get; }
+        /// <summary>
+        /// Creates a 32-bit version structure from the given 32-bit unsigned integer.
+        /// </summary>
+        /// <param name="val">The uint value.</param>
+        /// <returns>The 32-bit version structure.</returns>
+        public static explicit operator Version32(uint val);
+
+        /// <summary>
+        /// Creates a 32-bit version structure from the given managed version class.
+        /// </summary>
+        /// <param name="version">The version instance.</param>
+        /// <returns>The 32-bit version structure.</returns>
+        public static implicit operator Version32(Version version);
+
+        /// <summary>
+        /// Gets the 32-bit unsigned integer representation for this 32-bit version structure.
+        /// </summary>
+        /// <param name="version">The 32-bit version structure.</param>
+        /// <returns>The 32-bit unsigned integer.</returns>
+        public static implicit operator uint(Version32 version);
+
+        /// <summary>
+        /// Converts this 32-bit version structure to a managed version class.
+        /// </summary>
+        /// <param name="version">The 32-bit version structure.</param>
+        /// <returns>The managed representation.</returns>
+        public static implicit operator Version(Version32 version);
+    }
+}
+```
+
+## `RawImage`
+
+```cs
+namespace Silk.NET.Core
+{
+    /// <summary>
+    /// Represents loaded, uncompressed, processed image data.
+    /// </summary>
+    public readonly struct RawImage : IEquatable<RawImage>
+    {
+        /// <summary>
+        /// Creates a <see cref="RawImage"/> given pixel data and pixel dimensions.
+        /// </summary>
+        /// <param name="width">The width of the image.</param>
+        /// <param name="height">The height of the image.</param>
+        /// <param name="rgbaPixels">The image daqta.</param>
+        public RawImage(int width, int height, Memory<byte> rgbaPixels);
+
+        /// <summary>
+        /// The width of the image in pixels
+        /// </summary>
+        public int Width { get; }
+        /// <summary>
+        /// The height of the image in pixels.
+        /// </summary>
+        public int Height { get; }
+
+        /// <summary>
+        /// The image data.
+        /// </summary>
+        public Memory<byte> Pixels { get; }
+
+        /// <summary>
+        /// Checks whether the two given <see cref="RawImage"/>s are equal.
+        /// </summary>
+        /// <param name="left">The first raw image.</param>
+        /// <param name="right">The second raw image to compare the first against.</param>
+        /// <returns>True if they are equal, false otherwise.</returns>
+        /// <remarks>
+        /// This does not check whether the byte arrays are equal, only whether their references are the same.
+        /// </remarks>  
+        public static bool operator ==(RawImage left, RawImage right);
+
+        /// <summary>
+        /// Checks whether the two given <see cref="RawImage"/>s are not equal.
+        /// </summary>
+        /// <param name="left">The first raw image.</param>
+        /// <param name="right">The second raw image to compare the first against.</param>
+        /// <returns>True if they are not equal, false otherwise.</returns>
+        /// <remarks>
+        /// This does not check whether the byte arrays are equal, only whether their references are the same.
+        /// </remarks>
+        public static bool operator !=(RawImage left, RawImage right);
+
+        /// <summary>
+        /// Checks whether the given <see cref="RawImage"/> is equal to this one.
+        /// </summary>
+        /// <param name="other">The raw image to compare this raw image against.</param>
+        /// <returns>True if they are equal, false otherwise.</returns>
+        /// <remarks>
+        /// This does not check whether the byte arrays have equal, only whether their references are the same.
+        /// </remarks>  
+        public bool Equals(RawImage other);
+
+        /// <inheritdoc />
+        public override bool Equals(object obj);
+
+        /// <inheritdoc />
+        public override int GetHashCode();
+    }
+}
+```
