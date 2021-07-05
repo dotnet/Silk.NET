@@ -663,16 +663,8 @@ namespace Silk.NET.Windowing
 {
     public struct VideoMode
     {
-        public VideoMode(Vector2D<int>? resolution = null, int? refreshRate = null)
-        {
-            Resolution = resolution;
-            RefreshRate = refreshRate;
-        }
-
-        public VideoMode(int refreshRate)
-            : this(null, refreshRate)
-        {
-        }
+        public VideoMode(Vector2D<int>? resolution = null, int? refreshRate = null);
+        public VideoMode(int refreshRate);
 
         /// <summary>
         /// Resolution of the full screen window.
@@ -687,7 +679,7 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// The default video mode. This uses the window size for resolution and doesn't care about other values.
         /// </summary>
-        public static VideoMode Default => new VideoMode();
+        public static VideoMode Default { get; }
     }
 }
 ```
@@ -876,6 +868,25 @@ namespace Silk.NET.Core
 
         /// <inheritdoc />
         public override int GetHashCode();
+    }
+}
+```
+
+## `NativeWindowKind`
+
+```cs
+```
+
+## `NativeWindowHandles`
+
+```cs
+namespace Silk.NET.Core
+{
+    public struct NativeWindowHandles
+    { // WIP
+        public NativeWindowKind Kind;
+        public fixed nint Data1[4];
+        public fixed ulong Data2[4];
     }
 }
 ```
