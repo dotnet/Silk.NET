@@ -407,6 +407,7 @@ namespace Silk.NET.Windowing
     {
         nint Handle { get; }
         bool IsContextCurrent { get; set; }
+        bool ShouldSwapAutomatically { get; set; }
         
         /// <summary>
         /// Sets the number of vertical blanks to wait between calling <see cref="SwapBuffers" /> and presenting the image,
