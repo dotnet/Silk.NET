@@ -323,6 +323,11 @@ namespace Silk.NET.Windowing
         bool IsCloseRequested { get; set; }
 
         /// <summary>
+        /// Gets whether the window is focused or not.
+        /// </summary>
+        bool IsFocused { get; }
+
+        /// <summary>
         /// Gets the distances in screen coordinates from the edges of the content area to the corresponding edges of
         /// the full window.
         /// </summary>
@@ -351,6 +356,11 @@ namespace Silk.NET.Windowing
         /// Raised when the user drops files onto the window.
         /// </summary>
         event FilePathsAction? FileDrop;
+
+        /// <summary>
+        /// Raised when the window focus changes.
+        /// </summary>
+        event Action<bool>? FocusChanged;
 
         /// <summary>
         /// Sets the window icons.
@@ -424,7 +434,7 @@ namespace Silk.NET.Windowing
         /// The API version to use.
         /// </summary>
         Version32? ApiVersion { get; set; }
-        
+
         nint? GetProcAddress(string proc);
         void SwapBuffers();
     }
