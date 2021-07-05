@@ -115,8 +115,10 @@ NB: We've been discussing `IWebGLSurface` a lot recently, but this is left out o
 NB: instead of generic delegates like we've used in previous iterations, we use named delegates instead so the parameter names are auto-filled out by IDEs with indicative names, instead of `obj` or `argN`.
 
 ```cs
-public delegate void ResizeAction(Vector2D<int> newSize);
+public delegate void Vector2DAction(Vector2D<int> newValue);
 public delegate void DeltaAction(double deltaTime);
+public delegate void WindowStateAction(WindowState newState);
+public delegate void FilePathsAction(string[] filePaths);
 ```
 
 ## `ISurface`
@@ -164,12 +166,12 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// Raised when the surface is resized.
         /// </summary>
-        event ResizeAction? Resize;
+        event Vector2DAction? Resize;
 
         /// <summary>
         /// Raised when the surface's framebuffer is resized.
         /// </summary>
-        event ResizeAction? FramebufferResize;
+        event Vector2DAction? FramebufferResize;
 
         /// <summary>
         /// Raised when the surface is being terminated.
@@ -265,6 +267,9 @@ namespace Silk.NET.Windowing
 ```cs
 namespace Silk.NET.Windowing
 {
+    /// <summary>
+    /// A surface which wraps a Desktop Window.
+    /// </summary>
     public interface IDesktopSurface : ISurface
     {
         /// <summary>
@@ -296,16 +301,26 @@ namespace Silk.NET.Windowing
         /// The window border.
         /// </summary>
         WindowBorder WindowBorder { get; set; }
+
+        /// <summary>
+        /// The video mode.
+        /// </summary>
+        VideoMode VideoMode { get; set; }
     
         /// <summary>
         /// Gets the screen on which this window is active.
         /// </summary>
-        IScreen? Screen { get; set; }
+        IScreen? CurrentScreen { get; set; }
+
+        /// <summary>
+        /// Gets the available screens for this surface.
+        /// </summary>
+        IEnumerable<IScreen>? AvailableScreens { get; }
 
         /// <summary>
         /// Gets or sets whether the window has been requested to close.
         /// </summary>
-        new bool IsClosing { get; set; }
+        bool IsCloseRequested { get; set; }
 
         /// <summary>
         /// Gets the distances in screen coordinates from the edges of the content area to the corresponding edges of
@@ -316,21 +331,26 @@ namespace Silk.NET.Windowing
         /// </remarks>
         /// <seealso cref="WindowExtensions.GetFullSize"/>
         Rectangle<int> BorderSize { get; }
+        
+        /// <summary>
+        /// Raised when the window has been requested to close.
+        /// </summary>
+        event Action CloseRequested;
 
         /// <summary>
         /// Raised when the window is moved.
         /// </summary>
-        event Action<Vector2D<int>>? Move;
+        event Vector2DAction? Move;
 
         /// <summary>
         /// Raised when the window state is changed.
         /// </summary>
-        event Action<WindowState>? StateChanged;
+        event WindowStateAction? StateChanged;
 
         /// <summary>
         /// Raised when the user drops files onto the window.
         /// </summary>
-        event Action<string[]>? FileDrop;
+        event FilePathsAction? FileDrop;
 
         /// <summary>
         /// Sets the window icons.
@@ -365,12 +385,16 @@ namespace Silk.NET.Windowing
     public interface INativeGLSurfaceBase : ISurface
     {
         nint Handle { get; }
-        bool IsContextCurrent { get; }
+        bool IsContextCurrent { get; set; }
         
         /// <summary>
-        /// The video mode.
+        /// Sets the number of vertical blanks to wait between calling <see cref="SwapBuffers" /> and presenting the image,
+        /// a.k.a vertical synchronization (V-Sync). Set to <c>1</c> to enable V-Sync.
         /// </summary>
-        VideoMode VideoMode { get; }
+        /// <remarks>
+        /// Due to platform restrictions, this value can only be set and not retrieved.
+        /// </remarks>
+        int SwapInterval { set; }
 
         /// <summary>
         /// Preferred depth buffer bits of the window's framebuffer.
@@ -378,7 +402,7 @@ namespace Silk.NET.Windowing
         /// <remarks>
         /// Pass <c>null</c> or <c>-1</c> to use the system default. 
         /// </remarks>
-        int? PreferredDepthBufferBits { get; }
+        int? PreferredDepthBufferBits { get; set; }
 
         /// <summary>
         /// Preferred stencil buffer bits of the window's framebuffer.
@@ -386,21 +410,23 @@ namespace Silk.NET.Windowing
         /// <remarks>
         /// Pass <c>null</c> or <c>-1</c> to use the system default. 
         /// </remarks>
-        int? PreferredStencilBufferBits { get; }
+        int? PreferredStencilBufferBits { get; set; }
         
         /// <summary>
         /// Preferred red, green, blue, and alpha bits of the window's framebuffer.
         /// </summary>
         /// <remarks>
-        /// Pass <c>null</c> or <c>-1</c> for any of the axes to use the system default. 
+        /// Pass <c>null</c> or <c>-1</c> for any of the channels to use the system default. 
         /// </remarks>
-        Vector4D<int>? PreferredBitDepth { get; }
+        Vector4D<int>? PreferredBitDepth { get; set; }
+        
+        /// <summary>
+        /// The API version to use.
+        /// </summary>
+        Version32? ApiVersion { get; set; }
         
         nint? GetProcAddress(string proc);
-        void SwapInterval(int interval);
         void SwapBuffers();
-        void MakeCurrent();
-        void ClearCurrent();
     }
 }
 ```
@@ -412,6 +438,12 @@ namespace Silk.NET.Windowing
 {
     public interface IGLSurface : INativeGLSurfaceBase
     {
+        ContextFlags ContextFlags { get; set; }
+        ContextProfile ContextProfile { get; set; }
+    
+        /// <summary>
+        /// Enables OpenGL support for this surface. This will create a surface upon initialization.
+        /// </summary>
         bool TryEnableOpenGL();
     }
 }
@@ -424,6 +456,9 @@ namespace Silk.NET.Windowing
 {
     public interface IGlesSurface : INativeGLSurfaceBase
     {
+        /// <summary>
+        /// Enables OpenGLES support for this surface. This will create a surface upon initialization.
+        /// </summary>
         bool TryEnableOpenGLES();
     }
 }
@@ -445,7 +480,7 @@ namespace Silk.NET.Windowing
         /// <param name="instance">The Vulkan instance to create a surface for.</param>
         /// <param name="allocator">A custom Vulkan allocator. Can be omitted by passing null.</param>
         /// <returns>A handle to the Vulkan surface created</returns>
-        unsafe ulong Create(nint instance, void* allocator) where T : unmanaged;
+        unsafe ulong Create(nint instance, void* allocator);
 
         /// <summary>
         /// Get the extensions required for Vulkan to work on this platform.
@@ -465,6 +500,172 @@ namespace Silk.NET.Windowing
     public interface IGLTransparentFramebuffer : ISurface
     {
         bool TransparentFramebuffer { get; set; }
+    }
+}
+```
+
+## `ContextFlags`
+
+```cs
+namespace Silk.NET.Windowing
+{
+    /// <summary>
+    /// Represents flags related to the OpenGL context.
+    /// </summary>
+    [Flags]
+    public enum ContextFlags
+    {
+        /// <summary>
+        /// No flags enabled.
+        /// </summary>
+        Default = 0,
+
+        /// <summary>
+        /// Enables debug context; debug contexts provide more debugging info, but can run slower.
+        /// </summary>
+        Debug = 1,
+
+        /// <summary>
+        /// Enables forward compatability; this context won't support anything marked as deprecated in the current
+        /// version.
+        /// </summary>
+        /// <remarks>On OpenGL contexts older than 3.0, this flag does nothing.</remarks>
+        ForwardCompatible = 2
+    }
+}
+```
+
+## `ContextProfile`
+
+```cs
+namespace Silk.NET.Windowing
+{
+    /// <summary>
+    /// Represents the context profile OpenGL should use.
+    /// </summary>
+    public enum ContextProfile
+    {
+        /// <summary>
+        /// Uses a core OpenGL context, which removes some deprecated functionality.
+        /// </summary>
+        Core = 0,
+
+        /// <summary>
+        /// Uses a compatability OpenGL context, allowing for some deprecated functionality. This should only ever be
+        /// used for maintaining legacy code; no newly-written software should use this.
+        /// </summary>
+        Compatability
+    }
+}
+```
+
+## `WindowBorder`
+
+```cs
+namespace Silk.NET.Windowing
+{
+    /// <summary>
+    /// Represents the window border.
+    /// </summary>
+    public enum WindowBorder
+    {
+        /// <summary>
+        /// The window can be resized by clicking and dragging its border.
+        /// </summary>
+        Resizable = 0,
+
+        /// <summary>
+        /// The window border is visible, but cannot be resized. All window-resizings must happen solely in the code.
+        /// </summary>
+        Fixed,
+
+        /// <summary>
+        /// The window border is hidden.
+        /// </summary>
+        Hidden
+    }
+}
+```
+
+## `IScreen`
+
+```cs
+namespace Silk.NET.Windowing
+{
+    /// <summary>
+    /// An interface representing a screen.
+    /// </summary>
+    public interface IScreen
+    {
+        /// <summary>
+        /// The name of this screen.
+        /// </summary>
+        string Name { get; }
+
+        /// <summary>
+        /// The index of this screen.
+        /// </summary>
+        int Index { get; }
+
+        /// <summary>
+        /// The workarea of this screen.
+        /// </summary>
+        Rectangle<int> WorkArea { get; }
+
+        /// <summary>
+        /// The current video mode of this monitor.
+        /// </summary>
+        VideoMode VideoMode { get; }
+
+        /// <summary>
+        /// This screen's gamma correction.
+        /// </summary>
+        /// <remarks>
+        /// Only supported by GLFW, has no effect on SDL.
+        /// </remarks>
+        float Gamma { get; set; }
+
+        /// <summary>
+        /// Get all video modes that this screen supports.
+        /// </summary>
+        /// <returns>An array of all video modes.</returns>
+        IEnumerable<VideoMode> GetAllVideoModes();
+    }
+}
+```
+
+## `VideoMode`
+
+```cs
+namespace Silk.NET.Windowing
+{
+    public struct VideoMode
+    {
+        public VideoMode(Vector2D<int>? resolution = null, int? refreshRate = null)
+        {
+            Resolution = resolution;
+            RefreshRate = refreshRate;
+        }
+
+        public VideoMode(int refreshRate)
+            : this(null, refreshRate)
+        {
+        }
+
+        /// <summary>
+        /// Resolution of the full screen window.
+        /// </summary>
+        public Vector2D<int>? Resolution { get; }
+
+        /// <summary>
+        /// Refresh rate of the full screen window in Hz.
+        /// </summary>
+        public int? RefreshRate { get; }
+
+        /// <summary>
+        /// The default video mode. This uses the window size for resolution and doesn't care about other values.
+        /// </summary>
+        public static VideoMode Default => new VideoMode();
     }
 }
 ```
