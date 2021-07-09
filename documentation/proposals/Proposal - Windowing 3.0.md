@@ -920,19 +920,19 @@ namespace Silk.NET.Core
 ```cs
 namespace Silk.NET.Windowing
 {
-    public interface INativeInfo
+    public interface INativePlatformData
     {
-        string Platform { get; }
+        string PlatformName { get; }
     }
 }
 ```
 
-## `IWin32Info`
+## `IWin32PlatformData`
 
 ```cs
 namespace Silk.NET.Windowing
 {
-    public interface IWin32Info : INativeInfo
+    public interface IWin32PlatformData : INativePlatformData
     {
         nint Hwnd { get; }
         nint HDC { get; }
@@ -941,12 +941,12 @@ namespace Silk.NET.Windowing
 }
 ```
 
-## `IX11Info`
+## `IX11PlatformData`
 
 ```cs
 namespace Silk.NET.Windowing
 {
-    public interface IX11Info : INativeInfo
+    public interface IX11PlatformData : INativePlatformData
     {
         nint Display { get; }
         nint Window { get; }
@@ -954,24 +954,24 @@ namespace Silk.NET.Windowing
 }
 ```
 
-## `ICocoaInfo`
+## `ICocoaPlatformData`
 
 ```cs
 namespace Silk.NET.Windowing
 {
-    public interface ICocoaInfo : INativeInfo
+    public interface ICocoaPlatformData : INativePlatformData
     {
         nint Window { get; }
     }
 }
 ```
 
-## `IWaylandInfo`
+## `IWaylandPlatformData`
 
 ```cs
 namespace Silk.NET.Windowing
 {
-    public interface IWaylandInfo : INativeInfo
+    public interface IWaylandPlatformData : INativePlatformData
     {
         nint Display { get; }
         nint Surface { get; }
@@ -979,37 +979,23 @@ namespace Silk.NET.Windowing
 }
 ```
 
-## `IWin32Info`
-
-```cs
-namespace Silk.NET.Windowing
-{
-    public interface IWin32Info : INativeInfo
-    {
-        nint Hwnd { get; }
-        nint HDC { get; }
-        nint HInstance { get; }
-    }
-}
-```
-
-## `IUIKitInfo`
+## `IUIKitPlatformData`
 
 Will be defined in a future proposal closer to implementation time, as we don't know what this entails yet (we may not do the same things SDL did)
 
-## `IGlfwInfo`
+## `IGlfwPlatformData`
 
 ```cs
 namespace Silk.NET.Windowing
 {
-    public interface IGlfwInfo : INativeInfo
+    public interface IGlfwPlatformData : INativePlatformData
     {
         nint Window { get; }
     }
 }
 ```
 
-## `IAndroidInfo`
+## `IAndroidPlatformData`
 
 Will be defined in a future proposal closer to implementation time, as we don't know what this entails yet (we may not do the same things SDL did)
 
