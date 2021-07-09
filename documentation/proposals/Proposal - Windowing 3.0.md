@@ -119,6 +119,7 @@ public delegate void Vector2DAction(Vector2D<int> newValue);
 public delegate void DeltaAction(double deltaTime);
 public delegate void WindowStateAction(WindowState newState);
 public delegate void FilePathsAction(string[] filePaths);
+public delegate void ToggleAction(bool newValue);
 ```
 
 ## `ISurface`
@@ -141,6 +142,11 @@ namespace Silk.NET.Windowing
         /// Elapsed time in seconds since the Run method last started.
         /// </summary>
         double Time { get; }
+
+        /// <summary>
+        /// Gets the native platform the surface is running on.
+        /// </summary>
+        INativePlatform Native { get; }
 
         /// <summary>
         /// The size of the surface's inner framebuffer. May differ from the surface size.
@@ -259,11 +265,6 @@ namespace Silk.NET.Windowing
 
 **OPEN QUESTION:** Do we want to have `IGLDesktopSurface` and friends as well? I can see this being a common need for users who for some reason want to use desktop surfaces only.
 
-### TODO: ADD MORE STUFF FROM IWINDOWPROPERTIES AND MAKE THIS LESS WINDOW SPECIFIC
-### TODO: SPECIALIZE DELEGATES
-### TODO: FIX ISCLOSING
-### TODO: FIX GET ONLYS
-
 ```cs
 namespace Silk.NET.Windowing
 {
@@ -365,7 +366,7 @@ namespace Silk.NET.Windowing
         /// <summary>
         /// Raised when the window focus changes.
         /// </summary>
-        event Action<bool>? FocusChanged;
+        event ToggleAction? FocusChanged;
 
         /// <summary>
         /// Sets the window icons.
@@ -744,6 +745,7 @@ namespace Silk.NET.Core
         /// The underlying Vulkan-compatible 32-bit version integer.
         /// </summary>
         public uint Value { get; }
+        
         /// <summary>
         /// Creates a Vulkan version structure from the given major, minor, and patch values.
         /// </summary>
@@ -751,23 +753,28 @@ namespace Silk.NET.Core
         /// <param name="minor">The minor value.</param>
         /// <param name="patch">The patch value.</param>
         public Version32(uint major, uint minor, uint patch);
+        
         /// <summary>
         /// Creates a Vulkan version structure from the given Vulkan-compatible value.
         /// </summary>
         /// <param name="value">The value.</param>
         private Version32(uint value);
+        
         /// <summary>
         /// Gets the major component of this version structure.
         /// </summary>
         public uint Major { get; }
+        
         /// <summary>
         /// Gets the minor component of this version structure.
         /// </summary>
         public uint Minor { get; }
+        
         /// <summary>
         /// Gets the patch component of this version structure.
         /// </summary>
         public uint Patch { get; }
+        
         /// <summary>
         /// Creates a 32-bit version structure from the given 32-bit unsigned integer.
         /// </summary>
@@ -821,6 +828,7 @@ namespace Silk.NET.Core
         /// The width of the image in pixels
         /// </summary>
         public int Width { get; }
+
         /// <summary>
         /// The height of the image in pixels.
         /// </summary>
@@ -872,21 +880,102 @@ namespace Silk.NET.Core
 }
 ```
 
-## `NativeWindowKind`
+## `INativeInfo`
 
 ```cs
-```
-
-## `NativeWindowHandles`
-
-```cs
-namespace Silk.NET.Core
+namespace Silk.NET.Windowing
 {
-    public struct NativeWindowHandles
-    { // WIP
-        public NativeWindowKind Kind;
-        public fixed nint Data1[4];
-        public fixed ulong Data2[4];
+    public interface INativeInfo
+    {
+        string Platform { get; }
     }
 }
 ```
+
+## `IWin32Info`
+
+```cs
+namespace Silk.NET.Windowing
+{
+    public interface IWin32Info : INativeInfo
+    {
+        nint Hwnd { get; }
+        nint HDC { get; }
+        nint HInstance { get; }
+    }
+}
+```
+
+## `IX11Info`
+
+```cs
+namespace Silk.NET.Windowing
+{
+    public interface IX11Info : INativeInfo
+    {
+        nint Display { get; }
+        nint Window { get; }
+    }
+}
+```
+
+## `ICocoaInfo`
+
+```cs
+namespace Silk.NET.Windowing
+{
+    public interface ICocoaInfo : INativeInfo
+    {
+        nint Window { get; }
+    }
+}
+```
+
+## `IWaylandInfo`
+
+```cs
+namespace Silk.NET.Windowing
+{
+    public interface IWaylandInfo : INativeInfo
+    {
+        nint Display { get; }
+        nint Surface { get; }
+    }
+}
+```
+
+## `IWin32Info`
+
+```cs
+namespace Silk.NET.Windowing
+{
+    public interface IWin32Info : INativeInfo
+    {
+        nint Hwnd { get; }
+        nint HDC { get; }
+        nint HInstance { get; }
+    }
+}
+```
+
+## `IUIKitInfo`
+
+Will be defined in a future proposal closer to implementation time, as we don't know what this entails yet (we may not do the same things SDL did)
+
+## `IGlfwInfo`
+
+```cs
+namespace Silk.NET.Windowing
+{
+    public interface IGlfwInfo : INativeInfo
+    {
+        nint Window { get; }
+    }
+}
+```
+
+## `IAndroidInfo`
+
+Will be defined in a future proposal closer to implementation time, as we don't know what this entails yet (we may not do the same things SDL did)
+
+**NOTE:** Vivante handles have not been revived for 3.0, this is a niche platform that we can't commit to having first-party support for.
