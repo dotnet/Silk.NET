@@ -44,45 +44,59 @@ The Emitter **MUST** be able to be invoked via the SilkTouch CLI and **MAY** be 
 
 The Emitter's primary purpose is to load and use function pointers in a native library sourced from an operating system's kernel, though this doesn't necessarily have to be the case. This logic will be emitted by the Emitter itself, and will not require an external dependency like the Silk.NET Core. However, this logic will no longer be implicit.
 
-#### Built-in: Native Library Call Style
+#### Built-in: Dynamic-Link Library Call Style
 
 Consider the following example:
 ```cs
-[UseNativeLibrary("glfw3.dll")]
+[UseDynamicLibrary("glfw3.dll")]
 public partial class Glfw
 {
     public partial void glfwInit();
 }
 ```
 
-The `UseNativeLibrary` attribute instructs the Emitter that it **MUST** use [`DllImport`](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.dllimportattribute?view=net-5.0) to access native functions. [`NativeLibrary`](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.nativelibrary?view=net-5.0) can be used to modify the libsuperrary loading process per other requirements defined below. For the entry point, the function name **MUST** be used unless a `NativeApi` attribute is provided, in which case the `EntryPoint` indicated by that attribute **MUST** be used.
-
-`UseNativeLibrary` **MUST** allow multiple usages, because a user **MUST** be able to use it to specify a library name to use if there's a preprocessor constant defined or if we're on a specific operating system.
+The `UseDynamicLibrary` attribute instructs the Emitter that it **MUST** use [`DllImport`](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.dllimportattribute?view=net-5.0) to access native functions. [`NativeLibrary`](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.nativelibrary?view=net-5.0) can be used to modify the libsuperrary loading process per other requirements defined below. For the entry point, the function name **MUST** be used unless a `NativeApi` attribute is provided, in which case the `EntryPoint` indicated by that attribute **MUST** be used.
 
 Consider the following example:
 ```cs
-[UseNativeLibrary(OperatingSystemName.MacOS, "libglfw3.dylib")]
-[UseNativeLibrary("IOS", "__Internal")]
-[UseNativeLibrary(OperatingSystemName.MacOS, "MY_COOL_PREPROCESSOR_DEFINE", "__Internal")]
-[UseNativeLibrary("glfw3.dll")]
+[UseDynamicLibrary("glfw3.dll", "libglfw3.dylib")]
 public partial class Glfw { /* ... */ }
 ```
 
-The order of evaluation of these attributes **MUST** be in the order of most specific to the least. This means that:
-- MacOS and MY_COOL_PREPROCESSOR_DEFINE is tested first
-- then MacOS and libglfw3.dylib
-- then IOS and \_\_Internal
-- then glfw3.dll
+`UseDynamicLibrary` **MUST** be able to be specified on either a function or type.
 
-If there are two attributes with the same level of specificity, the order in which the attributes are specified **SHOULD** be respected.
+The Emitter **MUST** allow multiple candidate library names and cycle through each candidate until one loads successfully.
 
-The `__Internal` library name **MUST** be paired with a preprocessor constraint and **MUST NOT** use an operating system constraint.
+#### Built-in: Static-Link Library Call Style
 
-The Emitter **MUST** allow multiple candidate library names and cycle through each candidate until one loads successfully, unless `__Internal` is used in which case this **MUST** be the only candidate name in use.
+Consider the following example:
+```cs
+[UseStaticLibrary]
+public partial class Glfw
+{
+    public partial void glfwInit();
+}
+```
 
-All preprocessor conditions **MUST** be applied to the generated `DllImport` methods.
+The `UseStaticLibrary` attribute instructs the Emitter that it **MUST** use [`DllImport`](https://docs.microsoft.com/en-us/dotnet/api/system.runtime.interopservices.dllimportattribute?view=net-5.0) to access native functions. `__Internal` **MUST** be used for the library name. For the entry point, the function name **MUST** be used unless a `NativeApi` attribute is provided, in which case the `EntryPoint` indicated by that attribute **MUST** be used.
 
-Unlike the Procedure Address Method call style, this call style always requires attributes on the containing type and this is by design: there's no way we can specify operating system dependent or preprocessor dependent library names within a single attribute and it actually look good. 
+`UseStaticLibrary` **MUST** be able to be specified on either a function or type.
+
+Consider the following example:
+```cs
+#if __IOS__
+[UseStaticLibrary]
+#endif
+[UseDynamicLibrary("glfw3.dll")]
+public partial class Glfw
+{
+    public partial void glfwInit();
+}
+```
+
+The Emitter **MUST** only generate code if all preprocessor directives guarding the `UseStaticLibrary` attribute evaluate to true. If the attribute is defined on both the function and the containing type, the preprocessor directives surrounding the function's attribute **MUST** be used instead of the preprocessor directives surrounding the type.
+
+Note to the reader: Given preprocessor directives are processed at parse time in Roslyn, both of those last requirements are basically benign.
 
 #### Custom Call Style: Procedure Address Expressions
 
@@ -100,7 +114,7 @@ public partial struct IUnknown
 }
 ```
 
-`GetProcAddress` indicates that the C# code `LpVtbl[1]` **MUST** be used as the Procedure Address Expression to retrieve the function address to call. Any arbritrary code can be inserted into this attribute, so long as the result of the code once evaluated meets the Procedure Address Expression definition. For example, this is valid:
+`GetProcAddress` indicates that the C# code given **MUST** be used as the Procedure Address Expression to retrieve the function address to call. Any arbritrary code can be inserted into this attribute, so long as the result of the code once evaluated meets the Procedure Address Expression definition. For example, this is valid:
 ```cs
 public partial struct IUnknownNullableContainer
 {
@@ -124,27 +138,7 @@ The Emitter **SHOULD** implicitly parenthesise the expression given in the attri
 
 Unless another call style is applicable, the Emitter **MUST** mandate that every function has a `NativeApi` attribute with an explicit `GetProcAddress` (Procedure Address Expression) specified.
 
-If there are no `UseNativeLibrary` attributes specified at the type-level, this call style **MUST NOT** be used even if requested in a function-level `NativeApi` attribute.
-
 The Emitter **MUST** call the function pointer returned by the Procedure Address Expression as part of this call style.
-
-#### Overriding Call Styles
-
-Consider the following example:
-
-```cs
-[UseNativeLibrary("glfw3.dll")]
-public partial class Glfw
-{
-    public partial nint glfwGetProcAddress(byte* str);
-    [NativeApi(GetProcAddress = "glfwGetProcAddress((byte*)Unsafe.AsPointer(ref Unsafe.AsRef(0x006e696765426c67)))")]
-    public partial void glBegin(uint mode);
-}
-```
-
-Here, a class using the Native Library call style has a method which does not follow the call style defined at the class level, and is overridden using a `NativeApi` attribute.
-
-If a `NativeApi` attribute is present with `GetProcAddress` specified, the Procedure Address Expressions call style **MUST** be used instead of any other call style defined herein.
 
 #### Custom Call Style: Procedure Address Methods
 
@@ -153,11 +147,10 @@ A level more abstracted than Procedure Address Expressions, which allows any cus
 The aim of this call style is to provide flexibility without comprimising code readability. Consider the following example:
 
 ```cs
-[UseNativeLibrary("glfw3.dll")]
 [UseMethod(nameof(GetProcAddressShim))]
 public partial class Glfw
 {
-    [NativeApi(CallStyle = CallStyles.NativeLibrary)]
+    [UseDynamicLibrary("glfw3.dll")]
     public partial nint glfwGetProcAddress(byte* str);
 
     // shim to convert the string, which SilkTouch needs to use, to a byte pointer - THIS IS NOT A MODEL EXAMPLE!
@@ -169,13 +162,33 @@ public partial class Glfw
 
 Procedure Address Methods are C# methods that **MUST** return a `void*`, `nint`, or `IntPtr`. This is the actual address in memory of the function being invoked.
 
-This call style, if multiple call styles can be used for a given type, **MUST** be preferred over Native Library unless explicitly specified otherwise by the `NativeApi`'s `CallStyle` property, in which case the specified call style **MUST** be used. `NativeApi`'s `GetProcAddress` continues to be preferred over anything in any case as previously defined.
-
-If there are no `UseMethod` attributes specified at the type-level, this call style **MUST NOT** be used even if requested in a function-level `NativeApi` attribute unless that attribute also specifies the `Method` property. Once again, as previously defined prefer `GetProcAddress` over `Method` if both are specified on the `NativeApi` attribute.   
-
 For the parameter passed into the method referenced by the attribute, the function name **MUST** be used unless the `EntryPoint` property in the `NativeApi` attribute is provided, in which case the `EntryPoint` indicated by the attribute **MUST** be used.
 
 The Emitter **MUST** call the function pointer returned by the Procedure Address Method as part of this call style.
+
+#### Overriding Call Styles
+
+Consider the following example:
+
+```cs
+[UseDynamicLibrary("glfw3.dll")]
+public partial class Glfw
+{
+    public partial nint glfwGetProcAddress(byte* str);
+    [NativeApi(GetProcAddress = "glfwGetProcAddress((byte*)Unsafe.AsPointer(ref Unsafe.AsRef(0x006e696765426c67)))")]
+    public partial void glBegin(uint mode);
+}
+```
+
+Here, a class using the Native Library call style has a method which does not follow the call style defined at the class level, and is overridden using a `NativeApi` attribute.
+
+If multiple call styles are applicable, the following order of preference **MUST** be respected:
+- Procedure Address Expressions
+- Procedure Address Methods
+- Static-Link Library
+- Dynamic-Link Library
+
+Function-level attributes **MUST** be preferred over type-level ones, and follow the same order of preference.
 
 ### Native Calls
 For the most part, the resultant native signature used by the Emitter is matched 1:1 with the method signature. However there are certain modifications you can apply. Namely, the `NativeApi` attribute will allow specification of specific calling conventions. For example:
@@ -223,30 +236,32 @@ The actual functionality of the overloaders are defined as must level requiremen
 Consider the following example:
 
 ```cs
-[Overload(Overloads.String)]
+[StringOverloads]
 public void MethodOne(byte* str);
 
-[Overload(Overloads.String)]
+[StringOverloads]
 public void MethodTwo(char* str);
 
-[Overload(Overloads.String)]
-public void MethodThree([OverloadArgument(NativeString = NativeStringEncoding.Ansi)] void* str);
+[StringOverloads]
+public void MethodThree([UnmanagedType(NativeStringEncoding.Ansi)] void* str);
 
-[Overload(Overloads.String)]
+[StringOverloads]
 public void MethodFour([In] byte* str);
 
-[Overload(Overloads.String)]
+[StringOverloads]
 public void MethodFive([In, Out] byte* str); 
 
-[Overload(Overloads.String)]
+[StringOverloads]
 public void MethodSix(int bufSize, [Out, Count("bufSize")] byte* str);
 ```
 
-If the string overloader is selected using the `Overload` attribute (i.e. its bit is set in the `Overloads` bitmask), the Overloader **SHOULD** overload any parameters recognised to be pointers to a native string to expose a .NET `string` parameter variant as defined below.
+If the string overloader is selected using the `StringOverloads` attribute, the Overloader **SHOULD** overload any parameters recognised to be pointers to a native string to expose a .NET `string` parameter variant as defined below.
+
+`StringOverloads` **MUST** take one optional boolean parameter (defaulting to `true`) where `true` enables the overload, and `false` disables it. `StringOverloads` **MUST** be able to be specified at the function, type, module, or assembly level. If not specifed on the function directly, the value **MUST** be inherited from one of its containers if the attribute is specified on them.
 
 If this overloader is used:
-- This overloader **MUST NOT** overload any parameters that are not of types `byte*`, `char*`, or `sbyte*`unless the `NativeString` property is explicitly set on an `OverloadArgument` attribute defined on a parameter. If this is the case, the parameter **MUST** be a single-dimensional pointer to any type (i.e. `void*`, `T*`, etc)
-- The native string created from the `string` parameter in the overload **MUST** use the `NativeStringEncoding` specified in the `OverloadArgument` attribute for a given parameter:
+- This overloader **MUST NOT** overload any parameters that are not of types `byte*`, `char*`, or `sbyte*` unless the `NativeStringEncoding` is set using an `UnmanagedType` attribute on a parameter. If this is the case, the parameter **MUST** be a single-dimensional pointer to any type (i.e. `void*`, `T*`, etc)
+- The native string created from the `string` parameter in the overload **MUST** use the `NativeStringEncoding` specified in the `UnmanagedType` attribute for a given parameter:
     - If `Ansi` or `LPStr` is used, the native string **MUST** be encoded as a single byte, null-terminated ANSI character string.
     - If `Auto` or `LPTStr` is used, the native string is encoded in an implementation-defined way.
     - If `Uni` or `LPWStr` is used, the native string **MUST** be encoded as a 2-byte, null-terminated Unicode character string.
@@ -256,7 +271,7 @@ If this overloader is used:
     - If neither `In` nor `Out` are specified, the string **MUST** be assumed to be `In`.
     - If only `In` is specified, the parameter **MUST** be overloaded as `string`.
     - If `In` and `Out` are specified, the parameter **MUST** be overloaded as `ref string`. The string will be marshalled to the native representation, the underlying method might do some modifications to the buffer created by the Overloader, and then it **MUST** be marshalled back to a C# string, the result being stored in the ref parameter.
-    - If only `Out` is specified, the parameter **MUST** be overloaded as `out string`. A buffer of length + 1 **MUST** be allocated and passed to the underlying method, where length is replaced with the expression defined in the `Count` property on `OverloadArgument`
+    - If only `Out` is specified, the parameter **MUST** be overloaded as `out string`. A buffer of length + 1 **MUST** be allocated and passed to the underlying method, where length is replaced with the expression defined in the `Count` attribute
 
 Example of resultant signatures:
 
@@ -273,36 +288,38 @@ public void MethodSix(int bufSize, out string str);
 Consider the following example:
 
 ```cs
-[Overload(Overloads.StringList)]
+[StringListOverloads]
 public void MethodOne(byte** strings);
 
-[Overload(Overloads.StringList)]
+[StringListOverloads]
 public void MethodTwo(char** strings);
 
-[Overload(Overloads.StringList)]
-public void MethodThree([OverloadArgument(NativeString = NativeStringEncoding.Ansi)] void** strings);
+[StringListOverloads]
+public void MethodThree([UnmanagedType(NativeStringEncoding.Ansi)] void** strings);
 
-[Overload(Overloads.StringList)]
+[StringListOverloads]
 public void MethodFour([In] byte** strings);
 
-[Overload(Overloads.StringList)]
+[StringListOverloads]
 public void MethodFive([In, Out] byte** strings);
 
-[Overload(Overloads.StringList)]
+[StringListOverloads]
 public void MethodSix(int numStrings, [Out, Count("numStrings")] byte** strings);
 ```
 
-If the string list overloader is selected using the `Overload` attribute (i.e. its bit is set in the `Overloads` bitmask), the Overloader **SHOULD** overload any parameters recognised to be pointers to pointers of native strings to expose a .NET string list parameter variant as defined below.
+If the string list overloader is selected using the `StringListOverloads` attribute, the Overloader **SHOULD** overload any parameters recognised to be pointers to a native string to expose a .NET `string` parameter variant as defined below.
+
+`StringListOverloads` **MUST** take one optional boolean parameter (defaulting to `true`) where `true` enables the overload, and `false` disables it. `StringListOverloads` **MUST** be able to be specified at the function, type, module, or assembly level. If not specifed on the function directly, the value **MUST** be inherited from one of its containers if the attribute is specified on them.
 
 If this overloader is used:
-- This overloader **MUST NOT** overload any parameters that are not of types `byte**`, `char**`, or `sbyte**` unless the `NativeString` property is explicitly set on an `OverloadArgument` attribute defined on a parameter. If this is the case, the parameter **MUST** be a two-dimensional pointer to any type (i.e. `void**`, `T**`, etc)
+- This overloader **MUST NOT** overload any parameters that are not of types `byte**`, `char**`, or `sbyte**` unless the `NativeStringEncoding` is set using an `UnmanagedType` attribute on a parameter. If this is the case, the parameter **MUST** be a two-dimensional pointer to any type (i.e. `void**`, `T**`, etc)
 - The overloader **MUST** allocate a buffer large enough to contain the same number of pointers as elements in the string list parameter. 
 - For each string contained in the string list, the string **MUST** be marshalled per the `NativeStringEncoding` rules defined in the StringOverloader section.
 - The flow of the string list can also be specified, reusing the attributes from `System.Runtime.CompilerServices`:
     - If neither `In` nor `Out` are specified, the string list **MUST** be assumed to be `In`.
     - If only `In` is specified, the parameter **MUST** be overloaded as `IReadOnlyList<string>`.
     - If `In` and `Out` are specified, the parameter **MUST** be overloaded as `IList<string>`. Each string will be marshalled to the native representation, the underlying method might do some modifications to the buffer created by the Overloader, and then each string **MUST** be marshalled back to a C# string, the results being stored back in the original list.
-    - If only `Out` is specified, the parameter **MUST** be overloaded as `out string[]`. A buffer of length pointers **MUST** be allocated and passed to the underlying method, where length is replaced with the expression defined in the `Count` property on `OverloadArgument`.
+    - If only `Out` is specified, the parameter **MUST** be overloaded as `out string[]`. A buffer of length pointers **MUST** be allocated and passed to the underlying method, where length is replaced with the expression defined in the `Count` attribute.
 
 
 Example of resultant signatures:
@@ -320,30 +337,32 @@ public void MethodSix(int numStrings, out string[] strings);
 Consider the following example:
 
 ```cs
-[Overload(Overloads.StringSpan)]
+[StringSpanOverloads]
 public void MethodOne(byte** strings);
 
-[Overload(Overloads.StringSpan)]
+[StringSpanOverloads]
 public void MethodTwo(char** strings);
 
-[Overload(Overloads.StringSpan)]
-public void MethodThree([OverloadArgument(NativeString = NativeStringEncoding.Ansi)] void** strings);
+[StringSpanOverloads]
+public void MethodThree([UnmanagedType(NativeStringEncoding.Ansi)] void** strings);
 
-[Overload(Overloads.StringSpan)]
+[StringSpanOverloads]
 public void MethodFour([In] byte** strings);
 
-[Overload(Overloads.StringSpan)]
+[StringSpanOverloads]
 public void MethodFive([In, Out] byte** strings);
 ```
 
-If the string span overloader is selected using the `Overload` attribute (i.e. its bit is set in the `Overloads` bitmask), the Overloader **SHOULD** overload any parameters recognised to be pointers to pointers of native strings to expose a .NET string span parameter variant as defined below.
+If the string span overloader is selected using the `StringSpanOverloads` attribute, the Overloader **SHOULD** overload any parameters recognised to be pointers to a native string to expose a .NET `string` parameter variant as defined below.
+
+`StringSpanOverloads` **MUST** take one optional boolean parameter (defaulting to `true`) where `true` enables the overload, and `false` disables it. `StringSpanOverloads` **MUST** be able to be specified at the function, type, module, or assembly level. If not specifed on the function directly, the value **MUST** be inherited from one of its containers if the attribute is specified on them.
 
 If this overloader is used:
-- This overloader **MUST NOT** overload any parameters that are not of types `byte**`, `char**`, or `sbyte**` unless the `NativeString` property is explicitly set on an `OverloadArgument` attribute defined on a parameter. If this is the case, the parameter **MUST** be a two-dimensional pointer to any type (i.e. `void**`, `T**`, etc)
+- This overloader **MUST NOT** overload any parameters that are not of types `byte**`, `char**`, or `sbyte**` unless the `NativeStringEncoding` is set using an `UnmanagedType` attribute on a parameter. If this is the case, the parameter **MUST** be a two-dimensional pointer to any type (i.e. `void**`, `T**`, etc)
 - The overloader **MUST** allocate a buffer large enough to contain the same number of pointers as elements in the string span parameter. 
-- For each string contained in the string list, the string **MUST** be marshalled per the `NativeStringEncoding` rules defined in the StringOverloader section.
-- The flow of the string list can also be specified, reusing the attributes from `System.Runtime.CompilerServices`:
-    - If neither `In` nor `Out` are specified, the string list **MUST** be assumed to be `In`.
+- For each string contained in the string span, the string **MUST** be marshalled per the `NativeStringEncoding` rules defined in the StringOverloader section.
+- The flow of the string span can also be specified, reusing the attributes from `System.Runtime.CompilerServices`:
+    - If neither `In` nor `Out` are specified, the string span **MUST** be assumed to be `In`.
     - If only `In` is specified, the parameter **MUST** be overloaded as `ReadOnlySpan<string>`.
     - If `In` and `Out` are specified, the parameter **MUST** be overloaded as `Span<string>`. Each string will be marshalled to the native representation, the underlying method might do some modifications to the buffer created by the Overloader, and then each string **MUST** be marshalled back to a C# string, the results being stored back in the original span.
     - If only `Out` is specified, the Overloader **MUST NOT** overload this parameter as this is illegal.
@@ -359,12 +378,277 @@ public void MethodFour(ReadOnlySpan<string> strings);
 public void MethodFive(Span<string> strings);
 ```
 
-#### AlternativeTypeOverloader
+#### CastableAlternativeTypeOverloader
+
+Consider the following example:
+```cs
+public void MethodOne([AlternativeType(nameof(MyOtherEnum))] MyEnum value); // good
+public void MethodTwo([AlternativeType(nameof(string))] MyEnum value); // will end up generating a compiler error 
+public void MethodThree([AlternativeType(nameof(MyOtherEnum)), AlternativeType(nameof(MyOtherOtherEnum))] MyEnum value); // good
+public void MethodFour([AlternativeType(nameof(MyOtherEnum))] MyEnum val1, [AlternativeType(nameof(MyOtherOtherEnum))] MyEnum val2); // good
+```
+
+The Overloader **SHOULD** overload any parameters annotated with an `AlternativeType` attribute to expose a parameter of the type specified in the attribute.
+
+`AlternativeType` **MUST** allow multiple usages on a single parameter, and usage on multiple parameters in a single function; generating all applicable combinations accordingly.
+
+If this overloader is used, the Overloader **MUST** generate a regular C# cast to the given alternative type(s), which will allow both static casts and operator-based casts.
+
+The Overloader **MAY NOT** check whether the cast is valid at generation time.
+
+Example of resultant signatures:
+
+```cs
+public void MethodOne(MyOtherEnum value);
+// MethodTwo has a compiler error...
+public void MethodThree(MyOtherEnum value);
+public void MethodThree(MyOtherOtherEnum value);
+public void MethodFour(MyEnum val1, MyOtherOtherEnum val2);
+public void MethodFour(MyOtherEnum val1, MyEnum val2);
+public void MethodFour(MyOtherEnum val1, MyOtherOtherEnum val2);
+```
+
 #### RefOverloader
+
+Consider the following example:
+
+```cs
+[RefOverloads]
+public void MethodOne(int* whatever);
+
+[RefOverloads]
+public void MethodTwo([In] int* whatever);
+
+[RefOverloads]
+public void MethodThree([In, Out] int* whatever);
+
+[RefOverloads]
+public void MethodFour([Out] int* whatever);
+
+[RefOverloads]
+public void MethodFive<T>([Out] T* whatever) where T : unmanaged;
+
+[RefOverloads]
+public void MethodFive(void* whatever);
+```
+
+If the ref overloader is selected using the `RefOverloads` attribute, the Overloader **SHOULD** overload any parameters recognised to be pointers to expose a `in`, `out`, or `ref` parameter variant as defined below.
+
+`RefOverloads` **MUST** take one optional boolean parameter (defaulting to `true`) where `true` enables the overload, and `false` disables it. `RefOverloads` **MUST** be able to be specified at the function, type, module, or assembly level. If not specifed on the function directly, the value **MUST** be inherited from one of its containers if the attribute is specified on them.
+
+If this overloader is used:
+- The overloaded parameter **MUST** have one less pointer dimension than the original.
+- The flow of the reference may be specified, reusing the attributes from `System.Runtime.CompilerServices`:
+    - If neither `In` nor `Out` are specified, the ref **MUST** be assumed to be `In`.
+    - If only `In` is specified, the parameter **MUST** be overloaded as `in`.
+    - If `In` and `Out` are specified, the parameter **MUST** be overloaded as `ref`.
+    - If only `Out` is specified, the parameter **MUST** be overloaded as `out`.
+- A pinned pointer **MUST** be taken from the overloaded parameter to use as the value passed to the original function.
+- Generic types **MUST** be allowed.
+- `void*` **MUST** overload with a generic type parameter.
+
+Example of resultant signatures:
+
+```cs
+public void MethodOne(in int whatever);
+public void MethodTwo(in int whatever);
+public void MethodThree(ref int whatever);
+public void MethodFour(out int whatever);
+public void MethodFive<T>(out T whatever) where T : unmanaged;
+```
+
 #### SpanOverloader
+
+Consider the following example:
+
+```cs
+[SpanOverloads]
+public void MethodOne(int* whatever);
+
+[SpanOverloads]
+public void MethodTwo([In] int* whatever);
+
+[SpanOverloads]
+public void MethodThree([In, Out] int* whatever);
+
+[SpanOverloads]
+public void MethodFour<T>([In, Out] T* whatever) where T : unmanaged;
+
+[SpanOverloads]
+public void MethodFive([In, Out] void* whatever);
+```
+
+If the ref overloader is selected using the `SpanOverloads` attribute, the Overloader **SHOULD** overload any parameters recognised to be pointers to expose a span parameter variant as defined below.
+
+`SpanOverloads` **MUST** take one optional boolean parameter (defaulting to `true`) where `true` enables the overload, and `false` disables it. `SpanOverloads` **MUST** be able to be specified at the function, type, module, or assembly level. If not specifed on the function directly, the value **MUST** be inherited from one of its containers if the attribute is specified on them.
+
+If this overloader is used:
+- This overloader **MUST NOT** overload any parameters that not single-dimensional pointers to any type (i.e. `void*`, `T*`, etc)
+- The flow of the span may be specified, reusing the attributes from `System.Runtime.CompilerServices`:
+    - If neither `In` nor `Out` are specified, the span **MUST** be assumed to be `In`.
+    - If only `In` is specified, the parameter **MUST** be overloaded as `ReadOnlySpan<T>` where `T` is the pointee type.
+    - If `In` and `Out` are specified, the parameter **MUST** be overloaded as `Span<T>` where `T` is the pointee type.
+    - If only `Out` is specified, the Overloader **MUST NOT** overload this parameter as this is illegal.
+- A pinned pointer **MUST** be taken from the overloaded parameter's pinnable reference to use as the value passed to the original function.
+- Generic types **MUST** be allowed.
+- The original type **MUST NOT** be byref or byref-like.
+- `void*` **MUST** overload with a generic type parameter in place of the pointee type.
+
+Example of resultant signatures:
+
+```cs
+public void MethodOne(ReadOnlySpan<int> whatever);
+public void MethodTwo(ReadOnlySpan<int> whatever);
+public void MethodThree(Span<int> whatever);
+public void MethodFour<T>(Span<T> whatever) where T : unmanaged;
+public void MethodFive<T>(Span<T> whatever) where T : unmanaged;
+```
+
 #### ArrayOverloader
+
+Consider the following example:
+
+```cs
+[ArrayOverloads]
+public void MethodOne(int* whatever);
+
+[ArrayOverloads]
+public void MethodTwo<T>(T* whatever) where T : unmanaged;
+
+[ArrayOverloads]
+public void MethodThree(void* whatever);
+```
+
+If the ref overloader is selected using the `ArrayOverloads` attribute, the Overloader **SHOULD** overload any parameters recognised to be pointers to expose a span parameter variant as defined below.
+
+`ArrayOverloads` **MUST** take one optional boolean parameter (defaulting to `true`) where `true` enables the overload, and `false` disables it. `ArrayOverloads` **MUST** be able to be specified at the function, type, module, or assembly level. If not specifed on the function directly, the value **MUST** be inherited from one of its containers if the attribute is specified on them.
+
+If this overloader is used:
+- This overloader **MUST NOT** overload any parameters that not single-dimensional pointers to any type (i.e. `void*`, `T*`, etc)
+- The parameter **MUST** be overloaded as `T[]`, `T[,]`, and `T[,,]` where `T` is the pointee type.
+- A pinned pointer **MUST** be taken from the overloaded parameter's pinnable reference to use as the value passed to the original function.
+- Generic types **MUST** be allowed.
+- The original type **MUST NOT** be byref or byref-like.
+- `void*` **MUST** overload with a generic type parameter in place of the pointee type.
+
+Example of resultant signatures:
+
+```cs
+public void MethodOne(int[] whatever);
+public void MethodOne(int[,] whatever);
+public void MethodOne(int[,,] whatever);
+public void MethodTwo<T>(T[] whatever) where T : unmanaged;
+public void MethodTwo<T>(T[,] whatever) where T : unmanaged;
+public void MethodTwo<T>(T[,,] whatever) where T : unmanaged;
+public void MethodThree<T>(T[] whatever) where T : unmanaged;
+public void MethodThree<T>(T[,] whatever) where T : unmanaged;
+public void MethodThree<T>(T[,,] whatever) where T : unmanaged;
+```
+
 #### ImplicitCountSpanOverloader
+
+Consider the following example:
+
+```cs
+[ImplicitCountSpanOverloader]
+public void MethodOne(int n, [Count("n")] int* whatever);
+
+[ImplicitCountSpanOverloader]
+public void MethodTwo<T>(int n, [Count("n")] T* whatever) where T : unmanaged;
+
+[ImplicitCountSpanOverloader]
+public void MethodThree<T>(int n, [Count("n")] void* whatever) where T : unmanaged;
+
+[ImplicitCountSpanOverloader]
+public void MethodFour<T>(int n, [Count("n*4")] void* whatever) where T : unmanaged;
+```
+
+If the ref overloader is selected using the `ImplicitCountSpanOverloader` attribute, the Overloader **SHOULD** overload any parameters recognised to be pointers to expose a span parameter variant as defined below.
+
+`ImplicitCountSpanOverloader` **MUST** take one optional boolean parameter (defaulting to `true`) where `true` enables the overload, and `false` disables it. `ImplicitCountSpanOverloader` **MUST** be able to be specified at the function, type, module, or assembly level. If not specifed on the function directly, the value **MUST** be inherited from one of its containers if the attribute is specified on them.
+
+If this overloader is used:
+- This overloader **MUST NOT** overload any parameters that not single-dimensional pointers to any type (i.e. `void*`, `T*`, etc)
+- The flow of the span may be specified, reusing the attributes from `System.Runtime.CompilerServices`:
+    - If neither `In` nor `Out` are specified, the span **MUST** be assumed to be `In`.
+    - If only `In` is specified, the parameter **MUST** be overloaded as `ReadOnlySpan<T>` where `T` is the pointee type.
+    - If `In` and `Out` are specified, the parameter **MUST** be overloaded as `Span<T>` where `T` is the pointee type.
+    - If only `Out` is specified, the Overloader **MUST NOT** overload this parameter as this is illegal.
+- A pinned pointer **MUST** be taken from the overloaded parameter's pinnable reference to use as the value passed to the original function.
+- Generic types **MUST** be allowed.
+- The count parameter **MUST** be removed.
+- The original type **MUST NOT** be byref or byref-like.
+- The span's length **MUST** be used as the value for the parameter referenced by the `Count` attribute.
+    - Any expression **MUST** be allowed in the `Count` attribute so long as it evaluates to the type of the count parameter.
+    - The type of the referenced parameter **MUST** be a primitive type (i.e. not a pointer)
+    - If multiple parameter names are identified in the count expression, the Overloader **SHOULD NOT** overload.
+        - Suppose that there is a function with three parameters: `n`, `size`, and `buffer`. If the expression `n*sizeof(int)` is used for the count of the `buffer`, `n` should still be identified as the only parameter name in the expression. The Overloader **SHOULD** make every attempt possible to identify just one parameter name.
+
+
+Example of resultant signatures:
+
+```cs
+public void MethodOne(Span<int> whatever);
+public void MethodTwo<T>(Span<T> whatever) where T : unmanaged;
+public void MethodThree<T>(Span<T> whatever) where T : unmanaged;
+public void MethodFour<T>(Span<T> whatever) where T : unmanaged;
+```
+
+#### ImplicitCountArrayOverloader
+
+Consider the following example:
+
+```cs
+[ImplicitCountArrayOverloader]
+public void MethodOne(int n, [Count("n")] int* whatever);
+
+[ImplicitCountArrayOverloader]
+public void MethodTwo<T>(int n, [Count("n")] T* whatever) where T : unmanaged;
+
+[ImplicitCountArrayOverloader]
+public void MethodThree<T>(int n, [Count("n")] void* whatever) where T : unmanaged;
+
+[ImplicitCountArrayOverloader]
+public void MethodFour<T>(int n, [Count("n*4")] void* whatever) where T : unmanaged;
+```
+
+If the ref overloader is selected using the `ImplicitCountArrayOverloader` attribute, the Overloader **SHOULD** overload any parameters recognised to be pointers to expose a span parameter variant as defined below.
+
+`ImplicitCountArrayOverloader` **MUST** take one optional boolean parameter (defaulting to `true`) where `true` enables the overload, and `false` disables it. `ImplicitCountArrayOverloader` **MUST** be able to be specified at the function, type, module, or assembly level. If not specifed on the function directly, the value **MUST** be inherited from one of its containers if the attribute is specified on them.
+
+If this overloader is used:
+- This overloader **MUST NOT** overload any parameters that not single-dimensional pointers to any type (i.e. `void*`, `T*`, etc)
+- The parameter **MUST** be overloaded as `T[]`, `T[,]`, and `T[,,]` where `T` is the pointee type.
+- A pinned pointer **MUST** be taken from the overloaded parameter's pinnable reference to use as the value passed to the original function.
+- Generic types **MUST** be allowed.
+- The original type **MUST NOT** be byref or byref-like.
+- The count parameter **MUST** be removed.
+- The span's length **MUST** be used as the value for the parameter referenced by the `Count` attribute.
+    - Any expression **MUST** be allowed in the `Count` attribute so long as it evaluates to the type of the count parameter.
+    - The type of the referenced parameter **MUST** be a primitive type (i.e. not a pointer)
+    - If multiple parameter names are identified in the count expression, the Overloader **SHOULD NOT** overload.
+        - Suppose that there is a function with three parameters: `n`, `size`, and `buffer`. If the expression `n*sizeof(int)` is used for the count of the `buffer`, `n` should still be identified as the only parameter name in the expression. The Overloader **SHOULD** make every attempt possible to identify just one parameter name.
+
+
+Example of resultant signatures:
+
+```cs
+public void MethodOne(int[] whatever);
+public void MethodOne(int[,] whatever);
+public void MethodOne(int[,,] whatever);
+public void MethodTwo<T>(T[] whatever) where T : unmanaged;
+public void MethodTwo<T>(T[,] whatever) where T : unmanaged;
+public void MethodTwo<T>(T[,,] whatever) where T : unmanaged;
+public void MethodThree<T>(T[] whatever) where T : unmanaged;
+public void MethodThree<T>(T[,] whatever) where T : unmanaged;
+public void MethodThree<T>(T[,,] whatever) where T : unmanaged;
+public void MethodFour<T>(T[] whatever) where T : unmanaged;
+public void MethodFour<T>(T[,] whatever) where T : unmanaged;
+public void MethodFour<T>(T[,,] whatever) where T : unmanaged;
+```
+
 #### OpenGLDeleteOverloader
+
 #### OpenGLObjectCreationOverloader
 
 # Proposed API
