@@ -404,7 +404,7 @@ namespace Silk.NET.Windowing
 ```cs
 namespace Silk.NET.Windowing
 {
-    public interface INativeGLSurfaceBase : ISurface
+    public interface INativeGLSurface : ISurface
     {
         nint Handle { get; }
         bool IsContextCurrent { get; set; }
@@ -463,6 +463,7 @@ namespace Silk.NET.Windowing
     {
         ContextFlags ContextFlags { get; set; }
         ContextProfile ContextProfile { get; set; }
+        IGLSurface? SharedContext { get; set; }
     
         /// <summary>
         /// Enables OpenGL support for this surface. This will create a surface upon initialization.
@@ -479,6 +480,7 @@ namespace Silk.NET.Windowing
 {
     public interface IGlesSurface : INativeGLSurfaceBase
     {
+        IGlesSurface? SharedContext { get; set; }
         /// <summary>
         /// Enables OpenGLES support for this surface. This will create a surface upon initialization.
         /// </summary>
@@ -606,6 +608,39 @@ namespace Silk.NET.Windowing
         /// The window border is hidden.
         /// </summary>
         Hidden
+    }
+}
+```
+
+## `WindowState`
+
+```cs
+namespace Silk.NET.Windowing
+{
+    /// <summary>
+    /// Represents the current state of the window.
+    /// </summary>
+    public enum WindowState
+    {
+        /// <summary>
+        /// The window is in its regular configuration.
+        /// </summary>
+        Normal = 0,
+
+        /// <summary>
+        /// The window has been minimized to the task bar.
+        /// </summary>
+        Minimized,
+
+        /// <summary>
+        /// The window has been maximized, covering the entire desktop, but not the taskbar.
+        /// </summary>
+        Maximized,
+
+        /// <summary>
+        /// The window has been fullscreened, covering the entire surface of the monitor.
+        /// </summary>
+        Fullscreen
     }
 }
 ```
