@@ -32,7 +32,8 @@ There will be a number of "reference" implementations for the APIs laid out in t
 
 The decision has been made to drop SDL due to complications and the fact that all non-desktop targets are distinctly unique in their own right. We believe that in creating platform-specific code for each of these will result in significantly more robust support for each of these platforms. 
 
-**OPEN QUESTION:** Should we drop our SDL bindings too?
+**QUESTION:** Should we drop our SDL bindings too?
+**MAINTAINERS' ANSWER:** Yes, it's no longer used by us and a library such as SDL is a large amount of maintenance weight to carry. Akin to us dropping EGL in the 1.X-2.0 transition, we will be dropping our SDL answer.
 
 All of the above is informative text, however, and no reference implementations are required or guaranteed to use these APIs under-the-hood.
 
@@ -260,8 +261,6 @@ namespace Silk.NET.Windowing
 ```
 
 ## `IDesktopSurface`
-
-**OPEN QUESTION:** Do we want to have `IGLDesktopSurface` and friends as well? I can see this being a common need for users who for some reason want to use desktop surfaces only.
 
 ```cs
 namespace Silk.NET.Windowing
@@ -512,6 +511,34 @@ namespace Silk.NET.Windowing
         /// <returns>An array of strings, containing names for all required extensions</returns>
         unsafe byte** GetRequiredExtensions(out uint count);
     }
+}
+```
+
+## `IGLDesktopSurface`
+
+```cs
+namespace Silk.NET.Windowing
+{
+    public interface IGLDesktopSurface : IDesktopSurface, IGLSurface { }
+}
+```
+
+
+## `IGlesDesktopSurface`
+
+```cs
+namespace Silk.NET.Windowing
+{
+    public interface IGlesDesktopSurface : IDesktopSurface, IGlesSurface { }
+}
+```
+
+## `IVkDesktopSurface`
+
+```cs
+namespace Silk.NET.Windowing
+{
+    public interface IVkDesktopSurface : IDesktopSurface, IVkSurface { }
 }
 ```
 
