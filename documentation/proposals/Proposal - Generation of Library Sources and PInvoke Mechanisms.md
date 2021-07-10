@@ -109,7 +109,7 @@ Consider the following example:
 public partial struct IUnknown
 {
     public void** LpVtbl;
-    [NativeApi(GetProcAddress = "LpVtbl[1]")]
+    [UseExpression("LpVtbl[1]")]
     public partial uint AddRef();
 }
 ```
@@ -119,7 +119,7 @@ public partial struct IUnknown
 public partial struct IUnknownNullableContainer
 {
     public IUnknownPtr? Value;
-    [NativeApi(GetProcAddress = "Value.GetValueOrDefault().InnerValue->LpVtbl[1]")]
+    [UseExpression("Value.GetValueOrDefault().InnerValue->LpVtbl[1]")]
     public partial uint AddRef();
 }
 
@@ -136,7 +136,7 @@ public struct IUnknown
 
 The Emitter **SHOULD** implicitly parenthesise the expression given in the attribute.
 
-Unless another call style is applicable, the Emitter **MUST** mandate that every function has a `NativeApi` attribute with an explicit `GetProcAddress` (Procedure Address Expression) specified.
+Unless another call style is applicable, the Emitter **MUST** mandate that every function has a `UseExpression` (Procedure Address Expression) specified.
 
 The Emitter **MUST** call the function pointer returned by the Procedure Address Expression as part of this call style.
 
@@ -160,9 +160,11 @@ public partial class Glfw
 }
 ```
 
-Procedure Address Methods are C# methods that **MUST** return a `void*`, `nint`, or `IntPtr`. This is the actual address in memory of the function being invoked.
+Procedure Address Methods are method groups (or an otherwise callable expression) within the scope of the method that **MUST** return a `void*`, `nint`, or `IntPtr` when invoked. This is the actual address in memory of the function being invoked.
 
-For the parameter passed into the method referenced by the attribute, the function name **MUST** be used unless the `EntryPoint` property in the `NativeApi` attribute is provided, in which case the `EntryPoint` indicated by the attribute **MUST** be used.
+Procedure Address Methods **MUST** take one parameter of type `string`.
+
+For the parameter passed into the callable specified in the attribute, the function name **MUST** be used unless the `EntryPoint` property in the `NativeApi` attribute is provided, in which case the `EntryPoint` indicated by the attribute **MUST** be used.
 
 The Emitter **MUST** call the function pointer returned by the Procedure Address Method as part of this call style.
 
@@ -175,12 +177,12 @@ Consider the following example:
 public partial class Glfw
 {
     public partial nint glfwGetProcAddress(byte* str);
-    [NativeApi(GetProcAddress = "glfwGetProcAddress((byte*)Unsafe.AsPointer(ref Unsafe.AsRef(0x006e696765426c67)))")]
+    [UseExpression("glfwGetProcAddress((byte*)Unsafe.AsPointer(ref Unsafe.AsRef(0x006e696765426c67)))")]
     public partial void glBegin(uint mode);
 }
 ```
 
-Here, a class using the Dynamic Library call style has a method which does not follow the call style defined at the class level, and is overridden using a `NativeApi` attribute.
+Here, a class using the Dynamic Library call style has a method which does not follow the call style defined at the class level, and is overridden using a `UseExpression` attribute.
 
 If multiple call styles are applicable, the following order of preference **MUST** be respected:
 - Procedure Address Expressions
@@ -199,7 +201,7 @@ public partial D3D12_HEAP_PROPERTIES GetCustomHeapProperties(uint nodeMask, D3D1
 ```
 
 - CallModifiers **MUST** be a bitmask with each modifier having its own unique bit.
-- **MemberFunction**: If this modifier is specified, the Emitter **MUST** modify the function pointer call to use the Windows C++ instance member function calling style.
+- **MemberFunction**: If this modifier is specified, the Emitter **MUST** modify the function pointer call to use the Windows C++ instance member function calling style. This modifier **MUST** only be used with the Procedure Address Method or Procedure Address Expression call styles.
 - **SuppressGCTransition**: If this modifier is specified, the Emitter **SHOULD** prevent the .NET garbage collector from transitioning between co-operative and pre-emptive mode during the call.
 - **WinapiConvention**: If this modifier is specified, the Emitter **MUST** use the platform default calling convention. This convention **MUST** also be used if no other calling convention bits are set.
 - **CdeclConvention**: If this modifier is specified, the Emitter **MUST** use the C `__cdecl` calling convention.
