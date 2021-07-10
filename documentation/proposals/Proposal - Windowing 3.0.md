@@ -13,7 +13,6 @@ Cross-platform windowing for Silk.NET rebuilt from the ground-up.
 - [ ] Implemented
 
 # Design Decisions
-- This proposal builds on the foundations laid out by Silk.NET's move to source generators in 2.0, and the introduction of the SilkTouch source generator as a result of this.
 - This proposal assumes no knowledge of any previous iterations of Silk.NET Windowing.
 - This is a complete rethink of Silk.NET Windowing built from the ground up to account for our goal of "write once run everywhere" for .NET 6 and Silk.NET 3.0.
 - In this proposal, there are three parties:
