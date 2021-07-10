@@ -1,7 +1,6 @@
 # Summary
-- Summary of the thing you want this API to achieve
-    
-Example: Proposal API for Input via keyboards, mice, and controllers.
+
+Cross-platform windowing for Silk.NET rebuilt from the ground-up.
 
 # Contributors
 - Dylan Perks (@Perksey)
@@ -459,7 +458,7 @@ namespace Silk.NET.Windowing
 ```cs
 namespace Silk.NET.Windowing
 {
-    public interface IGLSurface : INativeGLSurfaceBase
+    public interface IGLSurface : INativeGLSurface
     {
         ContextFlags ContextFlags { get; set; }
         ContextProfile ContextProfile { get; set; }
@@ -478,7 +477,7 @@ namespace Silk.NET.Windowing
 ```cs
 namespace Silk.NET.Windowing
 {
-    public interface IGlesSurface : INativeGLSurfaceBase
+    public interface IGlesSurface : INativeGLSurface
     {
         IGlesSurface? SharedContext { get; set; }
         /// <summary>
@@ -522,7 +521,7 @@ namespace Silk.NET.Windowing
 ```cs
 namespace Silk.NET.Windowing
 {
-    public interface IGLTransparentFramebuffer : ISurface
+    public interface IGLTransparentFramebuffer : INativeGLSurface
     {
         bool TransparentFramebuffer { get; set; }
     }
