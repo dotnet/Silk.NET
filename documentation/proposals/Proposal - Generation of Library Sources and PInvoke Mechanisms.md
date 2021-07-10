@@ -654,23 +654,184 @@ public void MethodFour<T>(T[,,] whatever) where T : unmanaged;
 # Proposed API
 - Here you do some code blocks, this is the heart and soul of the proposal. DON'T DO ANY IMPLEMENTATIONS! Just declarations.
 
+## `UseDynamicLibrary`
 ```cs
-/// <summary>
-/// Represents a grenade.
-/// </summary>
-public class SilkGrenade
+namespace Silk.NET.Core
 {
-    /// <summary>
-    /// What does this do?!?
-    /// </summary>
-    public void RedButton();
-    /// <summary>
-    /// Detonates the grenade.
-    /// </summary>
-    protected void Kaboom();
-    /// <summary>
-    /// Gets or sets whether this grenade is disarmed or not.
-    /// </summary>
-    public bool Disarmed { get; set; }
+    [AttributeUsage(AttributeTargets.Function | AttributeTargets.Class)]
+    public class UseDynamicLibraryAttribute : Attribute
+    {
+        public UseDynamicLibrary(string libraryName, params string[] alternativeNames);
+        public string LibraryName { get; }
+        public string[] AlternativeNames { get; }
+    }
+}
+```
+
+## `UseStaticLibrary`
+```cs
+namespace Silk.NET.Core
+{
+    [AttributeUsage(AttributeTargets.Function | AttributeTargets.Class)]
+    public class UseStaticLibraryAttribute : Attribute
+    {
+    }
+}
+```
+
+## `UseExpression`
+```cs
+namespace Silk.NET.Core
+{
+    [AttributeUsage(AttributeTargets.Function | AttributeTargets.Class)]
+    public class UseExpressionAttribute : Attribute
+    {
+        public UseExpressionAttribute(string expr);
+        public string Expression { get; }
+    }
+}
+```
+
+## `UseMethod`
+```cs
+namespace Silk.NET.Core
+{
+    [AttributeUsage(AttributeTargets.Function | AttributeTargets.Class)]
+    public class UseMethodAttribute : Attribute
+    {
+        public UseMethodAttribute(string expr);
+        public string Expression { get; }
+    }
+}
+```
+
+## `NativeApi`
+```cs
+namespace Silk.NET.Core
+{
+    public class NativeApiAttribute : Attribute
+    {
+        public string EntryPoint { get; set; }
+        public CallModifiers Modifiers { get; set; }
+    }
+}
+```
+
+## `CallModifiers`
+```cs
+namespace Silk.NET.Core
+{
+    [Flags]
+    public enum CallModifiers
+    {
+        None = 0,
+        MemberFunction = 1 << 0,
+        SuppressGCTransition = 1 << 1,
+        WinapiConvention = 1 << 2,
+        CdeclConvention = 1 << 3,
+        StdcallConvention = 1 << 4,
+        FastcallConvention = 1 << 5,
+        ThiscallConvention = 1 << 6
+    }
+}
+```
+
+## `StringOverloads`
+```cs
+namespace Silk.NET.Core { public class StringOverloadsAttribute : Attribute { } }
+```
+
+## `StringListOverloads`
+```cs
+namespace Silk.NET.Core { public class StringListOverloadsAttribute : Attribute { } }
+```
+
+## `StringSpanOverloads`
+```cs
+namespace Silk.NET.Core { public class StringSpanOverloadsAttribute : Attribute { } }
+```
+
+## `RefOverloads`
+```cs
+namespace Silk.NET.Core { public class RefOverloadsAttribute : Attribute { } }
+```
+
+## `SpanOverloads`
+```cs
+namespace Silk.NET.Core { public class SpanOverloadsAttribute : Attribute { } }
+```
+
+## `ArrayOverloads`
+```cs
+namespace Silk.NET.Core { public class ArrayOverloadsAttribute : Attribute { } }
+```
+
+## `Count`
+```cs
+namespace Silk.NET.Core
+{
+    public class CountAttribute : Attribute
+    {
+        public CountAttribute(string expr);
+        public string Expression { get; }
+    }
+}
+```
+## `UnmanagedType`
+```cs
+namespace Silk.NET.Core
+{
+    public class UnmanagedTypeAttribute : Attribute
+    {
+        public UnmanagedTypeAttribute(NativeStringEncoding encoding);
+        public NativeStringEncoding NativeStringEncoding { get; }
+    }
+}
+```
+## `NativeStringEncoding`
+```cs
+namespace Silk.NET.Core
+{
+    public enum NativeStringEncoding
+    {
+        BStr = UnmanagedType.BStr,
+        LPStr = UnmanagedType.LPStr,
+        LPTStr = UnmanagedType.LPTStr,
+        LPUTF8Str = UnmanagedType.LPUTF8Str,
+        LPWStr = UnmanagedType.LPWStr,
+        Ansi = LPStr,
+        Auto = LPTStr,
+        Uni = LPWStr,
+        UTF8 = LPUTF8Str
+    }
+}
+```
+## `AlternativeType`
+```cs
+namespace Silk.NET.Core
+{
+    public class AlternativeTypeAttribute : Attribute
+    {
+        public AlternativeTypeAttribute(string syntax);
+        public string Syntax { get; }
+    }
+}
+```
+## `ImplicitCountSpanOverloader`
+```cs
+namespace Silk.NET.Core
+{
+    public class ImplicitCountSpanOverloaderAttribute : Attribute
+    {
+    }
+}
+```
+## `ImplicitCountArrayOverloader`
+```cs
+namespace Silk.NET.Core
+{
+    public class ImplicitCountArrayOverloaderAttribute : Attribute
+    {
+    }
 }
 ```
