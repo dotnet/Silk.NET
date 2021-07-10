@@ -49,12 +49,7 @@ For the reader's benefit, this `Surface` class isn't really intended for general
 
 # Surface
 
-In this proposal, a plane upon which graphics can be rendered on is represented by an `ISurface`. `ISurface` defines a minimal subset of basic APIs which **MUST** all be present on an **Platform Implementation**. The idea is `ISurface` just provides the bare necessities for rendering a game or application without knowing too much about the form factor, better encouraging cross-platform/"write once run everywhere" code. Bare necessities such as:
-- words
-- more words
-- even more words
-- The quick brown fox jumps over the lazy dog.
-- Fill this with words after the API is nailed out.
+In this proposal, a plane upon which graphics can be rendered on is represented by an `ISurface`. `ISurface` defines a minimal subset of basic APIs which **MUST** all be present on an **Platform Implementation**. The idea is `ISurface` just provides the bare necessities for rendering a game or application without knowing too much about the form factor, better encouraging cross-platform/"write once run everywhere" code. For a description of what this entials, see the defined API and the documentation comments therein.
 
 `ISurface` **Platform Implementations** **SHOULD** also implement any extension interfaces that it can support for a given platform. Through these extension interfaces, if user code needs to access APIs which are more specific to certain form factors or platforms, they should use casts to get a more specific surface.
 
@@ -99,10 +94,24 @@ public class MyGame
 
 # Optional Features
 ## Desktop Surface
+
+A more rich set of APIs intended for use on desktop-style window management systems. For a description of what this entials, see the defined API and the documentation comments therein.
+
 ## OpenGL Surface
+
+Enables OpenGL context creation atop a native surface. For a description of what this entials, see the defined API and the documentation comments therein.
+
 ## OpenGLES Surface
+
+Enables OpenGLES context creation atop a native surface. For a description of what this entials, see the defined API and the documentation comments therein.
+
 ## Vulkan Surface
+
+Enables Vulkan surface creation atop a native surface. For a description of what this entials, see the defined API and the documentation comments therein.
+
 ## OpenGL Surface with Framebuffer Transparency
+
+Framebuffer transparency is an optional feature, and therefore has its own interface. This allows the a window to be created where the content area is transparent. For a description of what this entials, see the defined API and the documentation comments therein.
 
 NB: We've been discussing `IWebGLSurface` a lot recently, but this is left out of this proposal as this is a target for Silk.NET 3.X.
 
@@ -741,6 +750,21 @@ namespace Silk.NET.Windowing
         /// The default video mode. This uses the window size for resolution and doesn't care about other values.
         /// </summary>
         public static VideoMode Default { get; }
+    }
+}
+```
+
+## `Surface`
+
+```cs
+namespace Silk.NET.Windowing
+{
+    public static class Surface
+    {
+        public static bool IsPlatformSupported { get; }
+        public static ISurface GetOrCreate();
+        public static ISurface CreateNew();
+        public static void ClearCurrentContexts();
     }
 }
 ```
