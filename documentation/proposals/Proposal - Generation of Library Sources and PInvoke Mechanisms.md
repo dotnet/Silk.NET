@@ -216,8 +216,6 @@ The Emitter does not do any marshalling. As such, the Emitter **MUST** mandate t
 ## SilkTouch Overloader
 The Overloader, one of the two final stages whose resources **MUST** be entirely independent of eachother, creates overloads of functions that expose a more user-friendly interface than the function it overloads, and do appropriate marshalling to lower the parameter types used down to the original function's types.
 
-The Overloader **MUST** be activated using an `OverloadAttribute` applied to the assembly, type, and/or function contianing the method.
-
 The Overloader **MUST** be able to be used on any function and not be tied to any of the Emitter's constraints.
 
 The Overloader **MUST** be able to be invoked via the SilkTouch CLI and **MAY** be able to be invoked via an incremental Roslyn source generator.
