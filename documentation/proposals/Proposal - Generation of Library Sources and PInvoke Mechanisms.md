@@ -166,7 +166,7 @@ For the parameter passed into the method referenced by the attribute, the functi
 
 The Emitter **MUST** call the function pointer returned by the Procedure Address Method as part of this call style.
 
-#### Overriding Call Styles
+#### Call Style Priority
 
 Consider the following example:
 
@@ -180,7 +180,7 @@ public partial class Glfw
 }
 ```
 
-Here, a class using the Native Library call style has a method which does not follow the call style defined at the class level, and is overridden using a `NativeApi` attribute.
+Here, a class using the Dynamic Library call style has a method which does not follow the call style defined at the class level, and is overridden using a `NativeApi` attribute.
 
 If multiple call styles are applicable, the following order of preference **MUST** be respected:
 - Procedure Address Expressions
