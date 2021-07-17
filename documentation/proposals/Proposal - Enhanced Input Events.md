@@ -43,7 +43,9 @@ public readonly struct KeyDownEvent
     public Key Key { get; }
     public int KeyCode { get; }
     public KeyModifiers Modifiers { get; }
-    public boolean IsRepeat { get; }
+    public bool IsRepeat { get; }
+    
+    public KeyDownEvent(IKeyboard keyboard, Key key, int keyCode, KeyModifiers modifiers, bool isRepeat)
 }
 ```
 
@@ -55,6 +57,8 @@ public readonly struct KeyUpEvent
     public Key Key { get; }
     public int KeyCode { get; }
     public KeyModifiers Modifiers { get; }
+    
+    public KeyUpEvent(IKeyboard keyboard, Key key, int keyCode, KeyModifiers modifiers)
 }
 ```
 
@@ -65,6 +69,8 @@ public readonly struct KeyCharEvent
     public IKeyboard Keyboard { get; }
     public char Character { get; }
     public int KeyCode { get; }
+    
+    public KeyCharEvent(IKeyboard keyboard, char character, int keyCode)
 }
 ```
 
@@ -75,6 +81,8 @@ public readonly struct MouseMoveEvent
     public IMouse Mouse { get; }
     public Vector2 Position { get; }
     public Vector2 Delta { get; }
+    
+    public MouseMoveEvent(IMouse mouse, Vector2 position, Vector2 delta)
 }
 ```
 
@@ -86,6 +94,8 @@ public readonly struct MouseButtonEvent
     public Vector2 Position { get; }
     public MouseButton Button { get; }
     public KeyModifiers Modifiers { get; }
+    
+    public MouseButtonEvent(IMouse mouse, Vector2 position, MouseButton button, KeyModifiers modifiers)
 }
 ```
 
@@ -98,6 +108,8 @@ public readonly struct MouseScrollEvent
     public Vector2 Position { get; }
     public Vector2 WheelPosition { get; }
     public Vector2 Delta { get; }
+    
+    public MouseScrollEvent(IMouse mouse, Vector2 position, Vector2 wheelPosition, Vector2 delta)
 }
 ```
 
@@ -108,7 +120,9 @@ public readonly struct MouseClickEvent
     public IMouse Mouse { get; }
     public Vector2 Position { get; }
     public MouseButton Button { get; }
-    public KeyModifier Modifiers { get; }
+    public KeyModifiers Modifiers { get; }
+    
+    public MouseClickEvent(IMouse mouse, Vector2 position, MouseButton button, KeyModifiers modifiers)
 }
 ```
 
