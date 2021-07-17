@@ -19,59 +19,69 @@ Proposal API for backend-agnostic, refactored Input via keyboards, mice, and con
     - Enhanced Input Events
 - This proposal also assumes knowledge of 2.0's Input APIs as it is only a refactor and not a complete redesign of the API as in other proposals. The most noticable differences between the design of Input 2.0 and Input 3.0 are:
     - Input no longer has a hard bond to Windowing. The integration will remain the same to the end user but will use Source Generators, more on that later. 
-    - Input contexts and the devices therein are no longer interfaces. They are instead structures containing a handle and a backend object. See the proposed API for details.
-    - They may now only be one mouse and one keyboard. This is because no supported operating system actually allows multiple mice or keyboards to be reported individually.
-    - There is now another layer to input: the LLAPI.
+    - Input contexts are no longer interfaces, they are instead classes which contain input backends.
 
-## Input Low-Level API (LLAPI)
+## Reference Implementation
 
-In order to faciliate the goal of allowing multiple backends, we needed to remove the close tie between the platform and the high-level input API. To do this, this proposal adds a low-level API to be stored in the `Silk.NET.Input.Internals` namespace.
+Similar to Windowing 3.0, a reference implementation will be included in the main `Silk.NET.Input` package which uses the same API or family of APIs as Windowing.
+**TODO:** define how this is exposed.
 
-**OPEN QUESTION:** what should we call this namespace? `Silk.NET.Input.Internals` is used as a placeholder.
+## Source Generator
 
-### Device Handles
+Alongside the input package there will be a source generator (shipped in a `Silk.NET.Input.Roslyn` NuGet package, which is referenced by the main input package). This source generator will be very small, but it allows us to create a link between windowing and input at compile time without a hard reference.
 
-Each kind of device which allows multiple instances (i.e. everything but keyboard and mouse as discussed earlier) will have a handle specific to that backend. For example, there will be:
-- `JoystickHandle`
-- `GamepadHandle`
-
-Both of which containing a `ulong` handle allocated by the backend.
-
-
+If the source generator detects that both `Silk.NET.Input` and `Silk.NET.Windowing` are referenced, 
+**TODO: ** carry on
 # Proposed API
-- Here you do some code blocks, this is the heart and soul of the proposal. DON'T DO ANY IMPLEMENTATIONS! Just declarations.
 
-```cs
-namespace Silk.NET.Inout.Internals
+```diff
+namespace Silk.NET.Input
 {
-    public interface IInputBackend
+-   public interface IInputPlatform
+-   {
+-       bool IsApplicable(IView view);
+-       IInputContext CreateInput(IView view);
+-   }
+}
+```
+
+```diff
+namespace Silk.NET.Input
+{
+-   public interface IInputContext : IDisposable
++   public class InputContext : IDisposable
     {
-        void QueryDevices<TDeviceHandle>(out int numDevices) where TDeviceHandle : unmanaged;
-        void QueryDevices<TDeviceHandle>(Span<TDeviceHandle> deviceHandles) where TDeviceHandle : unmanaged;
-        void QueryDevice<TDeviceHandle, TDataType>(TDeviceHandle device, DeviceDataKind key, out TDataType value) where TDeviceHandle : unmanaged where TDataType : unmanaged;
-        void QueryGlobal<TDataType>(GlobalDataKind key, out TDataType value) where TDataType : unmanaged;
-        void Update();
+-       nint Handle { get; }
+        IReadOnlyList<IGamepad> Gamepads { get; }
+        IReadOnlyList<IJoystick> Joysticks { get; }
+        IReadOnlyList<IKeyboard> Keyboards { get; }
+        IReadOnlyList<IMouse> Mice { get; }
+        IReadOnlyList<IInputDevice> OtherDevices { get; }
++       IReadOnlyList<IInputBackend> Backends { get; }
++       void AddBackend(IInputBackend backend);
++       void RemoveBackend(IInputBackend backend);
+        event Action<IInputDevice, bool>? ConnectionChanged;
     }
 }
 ```
 
 ```cs
-/// <summary>
-/// Represents a grenade.
-/// </summary>
-public class SilkGrenade
+namespace Silk.NET.Input
 {
-    /// <summary>
-    /// What does this do?!?
-    /// </summary>
-    public void RedButton();
-    /// <summary>
-    /// Detonates the grenade.
-    /// </summary>
-    protected void Kaboom();
-    /// <summary>
-    /// Gets or sets whether this grenade is disarmed or not.
-    /// </summary>
-    public bool Disarmed { get; set; }
+    public interface IInputBackend
+    {
+        IReadOnlyList<IInputDevice> ConnectedDevices { get; }
+        event Action<IInputDevice, bool>? ConnectionChanged;
+    }
 }
+```
+
+```diff
+-namespace Silk.NET.Input
+-{
+-    public static class InputWindowExtensions
+-    {
+-        // ...
+-    }
+-}
 ```
