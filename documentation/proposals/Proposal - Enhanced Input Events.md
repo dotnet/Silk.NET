@@ -24,12 +24,12 @@ Based on [the modifier keys flag from GLFW](https://www.glfw.org/docs/latest/gro
 [Flags]
 public enum KeyModifiers
 {
-    Shift = 1 << 1,
-    Control = 1 << 2,
-    Alt = 1 << 3,
-    Super = 1 << 4,
-    CapsLock = 1 << 5,
-    NumLock = 1 << 6
+    Shift = 1 << 0,
+    Control = 1 << 1,
+    Alt = 1 << 2,
+    Super = 1 << 3,
+    CapsLock = 1 << 4,
+    NumLock = 1 << 5
 }
 ```
 
@@ -45,7 +45,7 @@ public readonly struct KeyDownEvent
     public KeyModifiers Modifiers { get; }
     public bool IsRepeat { get; }
     
-    public KeyDownEvent(IKeyboard keyboard, Key key, int keyCode, KeyModifiers modifiers, bool isRepeat)
+    public KeyDownEvent(IKeyboard keyboard, Key key, int keyCode, KeyModifiers modifiers, bool isRepeat);
 }
 ```
 
@@ -58,7 +58,7 @@ public readonly struct KeyUpEvent
     public int KeyCode { get; }
     public KeyModifiers Modifiers { get; }
     
-    public KeyUpEvent(IKeyboard keyboard, Key key, int keyCode, KeyModifiers modifiers)
+    public KeyUpEvent(IKeyboard keyboard, Key key, int keyCode, KeyModifiers modifiers);
 }
 ```
 
@@ -70,7 +70,7 @@ public readonly struct KeyCharEvent
     public char Character { get; }
     public int KeyCode { get; }
     
-    public KeyCharEvent(IKeyboard keyboard, char character, int keyCode)
+    public KeyCharEvent(IKeyboard keyboard, char character, int keyCode);
 }
 ```
 
@@ -82,7 +82,7 @@ public readonly struct MouseMoveEvent
     public Vector2 Position { get; }
     public Vector2 Delta { get; }
     
-    public MouseMoveEvent(IMouse mouse, Vector2 position, Vector2 delta)
+    public MouseMoveEvent(IMouse mouse, Vector2 position, Vector2 delta);
 }
 ```
 
@@ -95,12 +95,11 @@ public readonly struct MouseButtonEvent
     public MouseButton Button { get; }
     public KeyModifiers Modifiers { get; }
     
-    public MouseButtonEvent(IMouse mouse, Vector2 position, MouseButton button, KeyModifiers modifiers)
+    public MouseButtonEvent(IMouse mouse, Vector2 position, MouseButton button, KeyModifiers modifiers);
 }
 ```
 
 #### MouseScrollEvent
-This would replace the current ScrollWheel struct.
 ```cs
 public readonly struct MouseScrollEvent
 {
@@ -109,7 +108,7 @@ public readonly struct MouseScrollEvent
     public Vector2 WheelPosition { get; }
     public Vector2 Delta { get; }
     
-    public MouseScrollEvent(IMouse mouse, Vector2 position, Vector2 wheelPosition, Vector2 delta)
+    public MouseScrollEvent(IMouse mouse, Vector2 position, Vector2 wheelPosition, Vector2 delta);
 }
 ```
 
