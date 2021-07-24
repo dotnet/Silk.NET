@@ -1,0 +1,2 @@
+**/Silk.NET*
+**/Ultz.Native*
