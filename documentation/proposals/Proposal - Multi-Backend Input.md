@@ -46,6 +46,8 @@ The `CreateInput` method will use the surface, obtain its platform data (i.e. by
 - These delegates must be called by the reference implementation in its `IInputBackend.Activate` and `IInputBackend.Deactivate` methods (respectively)
 - The `IInputBackend.Activate` and `IInputBackend.Deactivate` methods must be called by the `InputContext.Add` and `InputContext.Remove` methods (respectively)
 
+The API surface for this is defined later in the Proposed API section.
+
 **KEY POINT FOR WORKING GROUP**: The Windowing-Input integration mandates the use of source generators. Is this ok?
 
 # Proposed API
@@ -176,7 +178,7 @@ namespace Silk.NET.Input
 +       /// <param name="onDeactivate">A delegate to be called when the context is deactivated. May be null.</param>
 +       /// <remarks>
 +       /// This method is implicitly called by the Windowing-Input integration. <br />
-+       /// On desktop, this uses GLFW.
++       /// On desktop, this uses GLFW. The handle refers to a <c>GLFWwindow*</c> if GLFW is in use.
 +       /// </remarks>
 +       public static unsafe IInputBackend Create(void* handle, Action? onActivate = null, Action? onDeactivate = null);
 +   }
