@@ -48,6 +48,8 @@ The `CreateInput` method will use the surface, obtain its platform data (i.e. by
 
 The API surface for this is defined later in the Proposed API section.
 
+One instance of an `IInputBackend` can only belong to one input context at a time. If multiple input contexts are in use, multiple backend instances should also be used. An input context is set as active/in use by a context using the `Activate` and `Deactivate` methods. `Activate` should throw an exception if already activated, and `Deactivate` should throw an exception if not already activated.
+
 **KEY POINT FOR WORKING GROUP**: The Windowing-Input integration mandates the use of source generators. Is this ok?
 
 # Proposed API
