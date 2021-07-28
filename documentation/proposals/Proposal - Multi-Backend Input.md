@@ -48,7 +48,7 @@ The `CreateInput` method will use the surface, obtain its platform data (i.e. by
 
 The API surface for this is defined later in the Proposed API section.
 
-One instance of an `IInputBackend` can only belong to one input context at a time. If multiple input contexts are in use, multiple backend instances should also be used. An input context is set as active/in use by a context using the `Activate` and `Deactivate` methods. `Activate` should throw an exception if already activated, and `Deactivate` should throw an exception if not already activated.
+One instance of an `IInputBackend` can only belong to one input context at a time. If multiple input contexts are in use, multiple backend instances should also be used. An input context is set as active/in use by a context using the `Activate` and `Deactivate` methods. `Activate` should throw an exception if already activated, and `Deactivate` should throw an exception if not already activated. Once deactivated, an input backend can be reactivated.
 
 **KEY POINT FOR WORKING GROUP**: The Windowing-Input integration mandates the use of source generators. Is this ok?
 
@@ -132,7 +132,7 @@ namespace Silk.NET.Input
 +       void Update();
 +
 +       /// <summary>
-+       /// Activates this input backend and runs any necessary prerequisites.
++       /// Activates this input backend and runs any necessary prerequisites to collecting input data.
 +       /// </summary>
 +       /// <remarks>
 +       /// Called by <see cref="InputContext.Add" />
@@ -140,7 +140,7 @@ namespace Silk.NET.Input
 +       void Activate();
 +
 +       /// <summary>
-+       /// Deactivates this input backend and tears down any resources created.
++       /// Deactivates this input backend and destroys/disables any resources responsible for collecting input data.
 +       /// </summary>
 +       /// <remarks>
 +       /// Called by <see cref="InputContext.Remove" />
