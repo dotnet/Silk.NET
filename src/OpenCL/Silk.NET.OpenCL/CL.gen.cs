@@ -3576,10 +3576,7 @@ namespace Silk.NET.OpenCL
         public partial int SetKernelArg<T0>([Flow(FlowDirection.In)] nint kernel, [Flow(FlowDirection.In)] uint arg_index, [Flow(FlowDirection.In)] nuint arg_size, [Flow(FlowDirection.In)] in T0 arg_value) where T0 : unmanaged;
 
         [NativeApi(EntryPoint = "clUnloadCompiler")]
-        public unsafe partial int UnloadCompiler([Flow(FlowDirection.In)] void* unnamedParameter0);
-
-        [NativeApi(EntryPoint = "clUnloadCompiler")]
-        public partial int UnloadCompiler<T0>([Flow(FlowDirection.In)] in T0 unnamedParameter0) where T0 : unmanaged;
+        public partial int UnloadCompiler();
 
         [NativeApi(EntryPoint = "clWaitForEvents")]
         public unsafe partial int WaitForEvents([Flow(FlowDirection.In)] uint num_events, [Flow(FlowDirection.In)] nint* event_list);

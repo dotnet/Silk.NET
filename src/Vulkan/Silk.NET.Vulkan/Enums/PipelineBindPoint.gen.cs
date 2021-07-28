@@ -20,5 +20,7 @@ namespace Silk.NET.Vulkan
         RayTracingKhr = 1000165000,
         [NativeName("Name", "VK_PIPELINE_BIND_POINT_RAY_TRACING_NV")]
         RayTracingNV = 1000165000,
+        [NativeName("Name", "VK_PIPELINE_BIND_POINT_SUBPASS_SHADING_HUAWEI")]
+        SubpassShadingHuawei = 1000369003,
     }
 }

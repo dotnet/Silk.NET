@@ -1046,6 +1046,12 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceFragmentShadingRateEnumsFeaturesNV = 1000326001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_FRAGMENT_SHADING_RATE_ENUM_STATE_CREATE_INFO_NV")]
         PipelineFragmentShadingRateEnumStateCreateInfoNV = 1000326002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_GEOMETRY_MOTION_TRIANGLES_DATA_NV")]
+        AccelerationStructureGeometryMotionTrianglesDataNV = 1000327000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_RAY_TRACING_MOTION_BLUR_FEATURES_NV")]
+        PhysicalDeviceRayTracingMotionBlurFeaturesNV = 1000327001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_ACCELERATION_STRUCTURE_MOTION_INFO_NV")]
+        AccelerationStructureMotionInfoNV = 1000327002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_YCBCR_2_PLANE_444_FORMATS_FEATURES_EXT")]
         PhysicalDeviceYcbcr2Plane444FormatsFeaturesExt = 1000330000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_FRAGMENT_DENSITY_MAP_2_FEATURES_EXT")]
@@ -1094,6 +1100,8 @@ namespace Silk.NET.Vulkan
         VertexInputBindingDescription2Ext = 1000352001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VERTEX_INPUT_ATTRIBUTE_DESCRIPTION_2_EXT")]
         VertexInputAttributeDescription2Ext = 1000352002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DRM_PROPERTIES_EXT")]
+        PhysicalDeviceDrmPropertiesExt = 1000353000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_IMPORT_MEMORY_ZIRCON_HANDLE_INFO_FUCHSIA")]
         ImportMemoryZirconHandleInfoFuchsia = 1000364000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_MEMORY_ZIRCON_HANDLE_PROPERTIES_FUCHSIA")]
@@ -1104,6 +1112,12 @@ namespace Silk.NET.Vulkan
         ImportSemaphoreZirconHandleInfoFuchsia = 1000365000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_SEMAPHORE_GET_ZIRCON_HANDLE_INFO_FUCHSIA")]
         SemaphoreGetZirconHandleInfoFuchsia = 1000365001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_SUBPASS_SHADING_PIPELINE_CREATE_INFO_HUAWEI")]
+        SubpassShadingPipelineCreateInfoHuawei = 1000369000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBPASS_SHADING_FEATURES_HUAWEI")]
+        PhysicalDeviceSubpassShadingFeaturesHuawei = 1000369001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBPASS_SHADING_PROPERTIES_HUAWEI")]
+        PhysicalDeviceSubpassShadingPropertiesHuawei = 1000369002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_DYNAMIC_STATE_2_FEATURES_EXT")]
         PhysicalDeviceExtendedDynamicState2FeaturesExt = 1000377000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_SCREEN_SURFACE_CREATE_INFO_QNX")]
@@ -1116,6 +1130,10 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceGlobalPriorityQueryFeaturesExt = 1000388000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_QUEUE_FAMILY_GLOBAL_PRIORITY_PROPERTIES_EXT")]
         QueueFamilyGlobalPriorityPropertiesExt = 1000388001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTI_DRAW_FEATURES_EXT")]
+        PhysicalDeviceMultiDrawFeaturesExt = 1000392000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_MULTI_DRAW_PROPERTIES_EXT")]
+        PhysicalDeviceMultiDrawPropertiesExt = 1000392001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBGROUP_PROPERTIES")]
         PhysicalDeviceSubgroupProperties = 1000094000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_BIND_BUFFER_MEMORY_INFO")]

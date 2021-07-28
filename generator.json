@@ -174,7 +174,10 @@
                     "ID3D12Device*": "void*",
                     "ID3D12Resource*": "void*",
                     "ID3D12CommandQueue*": "void*",
-                    "IDirect3DSurface9*": "void*"
+                    "IDirect3DSurface9*": "void*",
+                    "DXGI_FORMAT": "uint",
+                    "VAImageFormat*": "void*",
+                    "D3DFORMAT": "uint"
                 },
                 {
                     "cl_GLsync": "intptr_t",
