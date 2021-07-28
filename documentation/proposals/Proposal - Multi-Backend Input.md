@@ -23,15 +23,31 @@ Proposal API for backend-agnostic, refactored Input via keyboards, mice, and con
 
 ## Reference Implementation
 
-Similar to Windowing 3.0, a reference implementation will be included in the main `Silk.NET.Input` package which uses the same API or family of APIs as Windowing.
-**TODO:** define how this is exposed.
+Similar to Windowing 3.0, a reference implementation will be included in the main `Silk.NET.Input` package which uses the same API or family of APIs as Windowing. This will be exposed via the `InputBackend` class. The `InputBackend` class contains a static `Create` method which accepts the native handle for the input context on the particular underlying API i.e. on GLFW this handle represents a `GLFWwindow*`. This may be subject to change.
 
 ## Source Generator
 
 Alongside the input package there will be a source generator (shipped in a `Silk.NET.Input.Roslyn` NuGet package, which is referenced by the main input package). This source generator will be very small, but it allows us to create a link between windowing and input at compile time without a hard reference.
 
-If the source generator detects that both `Silk.NET.Input` and `Silk.NET.Windowing` are referenced, 
-**TODO: ** carry on
+If the source generator detects that both `Silk.NET.Input` and `Silk.NET.Windowing` are referenced, code with the following API surface will be injected into the assembly:
+```cs
+namespace Silk.NET.Input
+{
+    internal static class InputSurfaceExtensions // internal to avoid conflicts with other assemblies
+    {
+         public static InputContext CreateInput(this ISurface surface);
+    }
+}
+```
+
+The `CreateInput` method will use the surface, obtain its platform data (i.e. by using something like `IGlfwPlatformData`), and then feed that into `InputBackend.Create`. The returned `InputContext` will be configured to have the returned `IInputBackend` as a backend. This method will also appropriately bind the `ISurface.Update` callback:
+- The delegate passed in the `onActivated` parameter of `InputBackend.Create` will bind the `IInputBackend.Update` method to run in the `ISurface.Update` callback.
+- The delegate passed in the `onDeactivated` parameter of `InputBackend.Create` will unbind the `ISurface.Update` callback.
+- These delegates must be called by the reference implementation in its `IInputBackend.Activate` and `IInputBackend.Deactivate` methods (respectively)
+- The `IInputBackend.Activate` and `IInputBackend.Deactivate` methods must be called by the `InputContext.Add` and `InputContext.Remove` methods (respectively)
+
+**KEY POINT FOR WORKING GROUP**: The Windowing-Input integration mandates the use of source generators. Is this ok?
+
 # Proposed API
 
 ```diff
@@ -58,30 +74,72 @@ namespace Silk.NET.Input
         IReadOnlyList<IMouse> Mice { get; }
         IReadOnlyList<IInputDevice> OtherDevices { get; }
 +       IReadOnlyList<IInputBackend> Backends { get; }
-+       void AddBackend(IInputBackend backend);
-+       void RemoveBackend(IInputBackend backend);
         event Action<IInputDevice, bool>? ConnectionChanged;
-    }
-}
-```
-
-```cs
-namespace Silk.NET.Input
-{
-    public interface IInputBackend
-    {
-        IReadOnlyList<IInputDevice> ConnectedDevices { get; }
-        event Action<IInputDevice, bool>? ConnectionChanged;
++       void Add(IInputBackend backend);
++       void Remove(IInputBackend backend);
++       void Update();
     }
 }
 ```
 
 ```diff
--namespace Silk.NET.Input
--{
--    public static class InputWindowExtensions
--    {
--        // ...
--    }
--}
+namespace Silk.NET.Input
+{
++   public interface IInputBackend
++   {
++       /// <summary>
++       /// Gets all connected devices recognised by this backend.
++       /// </summary>
++       IReadOnlyList<IInputDevice> ConnectedDevices { get; }
++
++       /// <summary>
++       /// Raised when an input device is connected or disconnected.
++       /// </summary>
++       event Action<IInputDevice, bool>? ConnectionChanged;
++
++       /// <summary>
++       /// Updates this backend's input data.
++       /// </summary>
++       /// <remarks>
++       /// Input events and changes are permitted to occur outside of this method.
++       /// </remarks>
++       void Update();
++
++       /// <summary>
++       /// Activates this input backend and runs any necessary prerequisites.
++       /// </summary>
++       /// <remarks>
++       /// Called by <see cref="InputContext.Add" />
++       /// </remarks>
++       void Activate();
++
++       /// <summary>
++       /// Deactivates this input backend and tears down any resources created.
++       /// </summary>
++       /// <remarks>
++       /// Called by <see cref="InputContext.Remove" />
++       /// </remarks>
++       void Deactivate();
++   }
+}
+```
+
+```diff
+namespace Silk.NET.Input
+{
+-   public static class InputWindowExtensions
+-   {
+-       // ...
+-   }
+}
+```
+
+```diff
+namespace Silk.NET.Input
+{
++   public static class InputBackend
++   {
++       public static IInputBackend Create(void* handle, Action? onActivate = null, Action? onDeactivate = null);
++   }
+}
 ```
