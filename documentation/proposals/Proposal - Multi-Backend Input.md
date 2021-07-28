@@ -68,7 +68,7 @@ namespace Silk.NET.Input
 +   /// Encapsulates input devices sourced from input backends.
 +   /// </summary>
 -   public interface IInputContext : IDisposable
-+   public class InputContext : IDisposable
++   public sealed class InputContext : IDisposable
     {
 -       nint Handle { get; }
         IReadOnlyList<IGamepad> Gamepads { get; }
