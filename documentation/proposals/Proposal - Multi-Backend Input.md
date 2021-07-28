@@ -133,6 +133,7 @@ namespace Silk.NET.Input
 +
 +       /// <summary>
 +       /// Activates this input backend and runs any necessary prerequisites to collecting input data.
++       /// Once activated, <see cref="Deactivate" /> must be used before the backend can be activated again.
 +       /// </summary>
 +       /// <remarks>
 +       /// Called by <see cref="InputContext.Add" />
@@ -141,9 +142,10 @@ namespace Silk.NET.Input
 +
 +       /// <summary>
 +       /// Deactivates this input backend and destroys/disables any resources responsible for collecting input data.
++       /// Once deactivated, <see cref="Activate" /> can be used to activate the backend again.
 +       /// </summary>
 +       /// <remarks>
-+       /// Called by <see cref="InputContext.Remove" />
++       /// Called by <see cref="InputContext.Remove" />.
 +       /// </remarks>
 +       void Deactivate();
 +   }
