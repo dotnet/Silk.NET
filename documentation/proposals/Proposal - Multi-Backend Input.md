@@ -64,6 +64,9 @@ namespace Silk.NET.Input
 ```diff
 namespace Silk.NET.Input
 {
++   /// <summary>
++   /// Encapsulates input devices sourced from input backends.
++   /// </summary>
 -   public interface IInputContext : IDisposable
 +   public class InputContext : IDisposable
     {
@@ -73,10 +76,26 @@ namespace Silk.NET.Input
         IReadOnlyList<IKeyboard> Keyboards { get; }
         IReadOnlyList<IMouse> Mice { get; }
         IReadOnlyList<IInputDevice> OtherDevices { get; }
++
++       /// <summary>
++       /// Gets a list of backends from which all input devices on this input context are sourced.
++       /// </summary>
 +       IReadOnlyList<IInputBackend> Backends { get; }
         event Action<IInputDevice, bool>? ConnectionChanged;
++
++       /// <summary>
++       /// Adds the given backend to the list of <see cref="Backends" />.
++       /// </summary>
 +       void Add(IInputBackend backend);
++
++       /// <summary>
++       /// Removes the given backend from the list of <see cref="Backends" />.
++       /// </summary>
 +       void Remove(IInputBackend backend);
++
++       /// <summary>
++       /// Updates all input data on all backends.
++       /// </summary>
 +       void Update();
     }
 }
@@ -85,6 +104,9 @@ namespace Silk.NET.Input
 ```diff
 namespace Silk.NET.Input
 {
++   /// <summary>
++   /// Represents an input backend from which input devices can be retrieved.
++   /// </summary>
 +   public interface IInputBackend
 +   {
 +       /// <summary>
@@ -137,9 +159,26 @@ namespace Silk.NET.Input
 ```diff
 namespace Silk.NET.Input
 {
++   /// <summary>
++   /// Represents the out-of-the-box input backend, which uses a native API to retrieve input backends using a native handle.
++   /// </summary>
++   /// <remarks>
++   /// On desktop, this uses GLFW.
++   /// </remarks>
 +   public static class InputBackend
 +   {
-+       public static IInputBackend Create(void* handle, Action? onActivate = null, Action? onDeactivate = null);
++       /// <summary>
++       /// Creates an instance of the out-of-the-box input backend, which uses a native API to retrieve input backends using
++       /// the given native handle, optionally calling the given delegates when the input backend is activated and deactivated.
++       /// </summary>
++       /// <param name="handle">The native handle created/sourced from the underlying native API used by this input backend.</param>
++       /// <param name="onActivate">A delegate to be called when the context is activated. May be null.</param>
++       /// <param name="onDeactivate">A delegate to be called when the context is deactivated. May be null.</param>
++       /// <remarks>
++       /// This method is implicitly called by the Windowing-Input integration. <br />
++       /// On desktop, this uses GLFW.
++       /// </remarks>
++       public static unsafe IInputBackend Create(void* handle, Action? onActivate = null, Action? onDeactivate = null);
 +   }
 }
 ```
