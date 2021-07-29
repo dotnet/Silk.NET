@@ -107,6 +107,9 @@ This is the last preview and is primarily a bugfix release. All breaking changes
     - We should at least consider introducing something like stylecop to ensure code is readable and easy to navigate.
     - We should look to make a general repo "orientation guide" teaching prospective contributors where they can find to expect what codebases.
     - Hopefully we can pick up some external contributors along the way so _they_ can tell _us_ how to improve?
+- Our level of correctness is inconsistent
+    - We should use .NET 5 enhanced warnings to help combat this.
+    - Our adoption of C# 8 nullability should be at a much greater extent than it is today, and not using nullability should require great justification.
 
 # Silk.NET 3.X
 
@@ -130,7 +133,7 @@ Any post-3.0, pre-4.0 release will be versioned as follows:
 - The patch version will always be 0, unless it is an emergency patch in which case it'll be the number of the emergency patch i.e. if an emergency patch is required after the first monthly update the version will be 3.1.1, if another one is required (heaven forbid) in this same cycle it'll be 3.1.2 etc...
 - The revision version will always be 0.
 
-Users are expected to keep all of the versions of all Silk.NET packages they are using in-sync.
+Users are expected to keep all of the versions of all Silk.NET packages they are using in-sync. We could write a Roslyn analyser or MSBuild target to help push users to this.
 
 ### Breaking Changes
 
