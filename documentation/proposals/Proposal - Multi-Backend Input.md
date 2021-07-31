@@ -41,8 +41,8 @@ namespace Silk.NET.Input
 ```
 
 The `CreateInput` method will use the surface, obtain its platform data (i.e. by using something like `IGlfwPlatformData`), and then feed that into `InputBackend.Create`. The returned `InputContext` will be configured to have the returned `IInputBackend` as a backend. This method will also appropriately bind the `ISurface.Update` callback:
-- The delegate passed in the `onActivated` parameter of `InputBackend.Create` will bind the `IInputBackend.Update` method to run in the `ISurface.Update` callback.
-- The delegate passed in the `onDeactivated` parameter of `InputBackend.Create` will unbind the `ISurface.Update` callback.
+- The `IInputBackend.Activated` event will be bound such that the `IInputBackend.Update` method is configured to run in the `ISurface.Update` callback.
+- The `IInputBackend.Deactivated` event will be bound such that the `IInputBackend.Update` is unbound from `ISurface.Update`.
 - These delegates must be called by the reference implementation in its `IInputBackend.Activate` and `IInputBackend.Deactivate` methods (respectively)
 - The `IInputBackend.Activate` and `IInputBackend.Deactivate` methods must be called by the `InputContext.Add` and `InputContext.Remove` methods (respectively)
 
@@ -185,16 +185,14 @@ namespace Silk.NET.Input
 +   {
 +       /// <summary>
 +       /// Creates an instance of the out-of-the-box input backend, which uses a native API to retrieve input backends using
-+       /// the given native handle, optionally calling the given delegates when the input backend is activated and deactivated.
++       /// the given native handle.
 +       /// </summary>
 +       /// <param name="handle">The native handle created/sourced from the underlying native API used by this input backend.</param>
-+       /// <param name="onActivate">A delegate to be called when the context is activated. May be null.</param>
-+       /// <param name="onDeactivate">A delegate to be called when the context is deactivated. May be null.</param>
 +       /// <remarks>
 +       /// This method is implicitly called by the Windowing-Input integration. <br />
 +       /// On desktop, this uses GLFW. The handle refers to a <c>GLFWwindow*</c> if GLFW is in use.
 +       /// </remarks>
-+       public static unsafe IInputBackend Create(void* handle, Action? onActivate = null, Action? onDeactivate = null);
++       public static unsafe IInputBackend Create(void* handle);
 +   }
 }
 ```
