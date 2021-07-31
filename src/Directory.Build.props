@@ -5,6 +5,7 @@
         <!-- Target Framework - kept in sync with .NET LTS releases -->
         <SilkTargetFramework>net6.0</SilkTargetFramework>
         <!-- Set the TFM -->
+        <!--suppress MsbuildTargetFrameworkTagInspection -->
         <TargetFrameworks Condition="'$(TargetFramework)' == '' And '$(TargetFrameworks)' == ''">$(SilkTargetFramework)</TargetFrameworks>
         <!-- If TargetFrameworks is SilkTargetFramework, set TargetFramework as well to stop "multiple TFM" errors -->
         <TargetFramework Condition="'$(TargetFrameworks)' == '$(SilkTargetFramework)'">$(SilkTargetFramework)</TargetFramework>
@@ -16,7 +17,7 @@
         <SilkInfrastructureDir>$(MSBuildThisFileDirectory)infrastructure</SilkInfrastructureDir>
         <SilkLibrariesDir>$(MSBuildThisFileDirectory)libraries</SilkLibrariesDir>
         <SilkDocumentationDir>$(MSBuildThisFileDirectory)../documentation</SilkDocumentationDir>
-        <SilkTestsDir>$(MSBuildThisFileDirectory)../documentation</SilkTestsDir>
+        <SilkTestsDir>$(MSBuildThisFileDirectory)../tests</SilkTestsDir>
     </PropertyGroup>
     <!-- NuGet -->
     <PropertyGroup>
