@@ -43,12 +43,10 @@ namespace Silk.NET.Input
 The `CreateInput` method will use the surface, obtain its platform data (i.e. by using something like `IGlfwPlatformData`), and then feed that into `InputBackend.Create`. The returned `InputContext` will be configured to have the returned `IInputBackend` as a backend. This method will also appropriately bind the `ISurface.Update` callback:
 - The `IInputBackend.Update` method is configured to run in the `ISurface.Update` callback.
 - The `IInputBackend.Disposing` event will be bound such that the `IInputBackend.Update` method is unbound from `ISurface.Update` event callback.
-- Once a `IInputBackend` is `Add`ed to an `InputContext`, the `InputContext` takes full ownership of the `IInputBackend` and, as a result, will `Dispose` the `IInputBackend` when it is `Remove`d or the context itself is `Dispose`d.
-    - This essentially means that you can count on `Disposing` being fired as an indicator that the `IInputBackend` will never be relevant again. 
 
 The API surface for this is defined later in the Proposed API section.
 
-One instance of an `IInputBackend` can only belong to one input context at a time. If multiple input contexts are in use, multiple backend instances should also be used. An input context is set as active/in use by a context using the `Activate` and `Deactivate` methods. `Activate` should throw an exception if already activated, and `Deactivate` should throw an exception if not already activated. Once deactivated, an input backend can be reactivated.
+One instance of an `IInputBackend` can only belong to one `InputContext` throughout the entirety of the `IInputBackend`'s lifetime. Once a `IInputBackend` is `Add`ed to an `InputContext`, the `InputContext` takes full ownership of the `IInputBackend` and, as a result, will `Dispose` the `IInputBackend` when it is `Remove`d or the context itself is `Dispose`d. If multiple `InputContext`s are in use, multiple `IInputBackend` instances must also be used. `IInputBackend` should throw an exception if its APIs are used after the backend has been disposed.
 
 **KEY POINT FOR WORKING GROUP**: The Windowing-Input integration mandates the use of source generators. Is this ok?
 
