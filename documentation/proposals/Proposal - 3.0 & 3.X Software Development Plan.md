@@ -19,7 +19,7 @@ The key tenets of 3.0 are **portability**, **maintainability**, **usability**, a
 - Use .NET 6 - the first version of modern .NET to run on the majority of our desired target platforms
     - (tenet: portability) 
 - Allow Silk.NET's rich abstractions to be integrated into other frameworks rather than being completely standalone.
-    - In order of priority: WPF, WinForms, MAUI, Avalonia (based on demand). (tenet: usability) 
+    - WPF, WinForms, MAUI, Avalonia (tenet: usability) 
 - Rewrite windowing to be more portable and facilitate true write-once-run-everywhere.
     - For more information, see [the Windowing 3.0 proposal](Proposal - Windowing 3.0.md). (tenet: portability)
 - Remove the bulk of our bindings generation code in favour of more mature alternatives
