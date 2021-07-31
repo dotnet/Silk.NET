@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <PropertyGroup>
+    <TargetFramework>$(SilkTargetFramework)</TargetFramework>
     <VersionPrefix>1.21.1.2</VersionPrefix>
     <Authors>.NET Foundation and Contributors</Authors>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>

@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <TargetFramework>$(SilkTargetFramework)</TargetFramework>
     <OutputType>Exe</OutputType>
     <RootNamespace></RootNamespace>
     <NoWarn>CS0649;CS0169</NoWarn>
