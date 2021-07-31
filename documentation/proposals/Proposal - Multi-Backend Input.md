@@ -41,10 +41,10 @@ namespace Silk.NET.Input
 ```
 
 The `CreateInput` method will use the surface, obtain its platform data (i.e. by using something like `IGlfwPlatformData`), and then feed that into `InputBackend.Create`. The returned `InputContext` will be configured to have the returned `IInputBackend` as a backend. This method will also appropriately bind the `ISurface.Update` callback:
-- The `IInputBackend.Activated` event will be bound such that the `IInputBackend.Update` method is configured to run in the `ISurface.Update` callback.
-- The `IInputBackend.Deactivated` event will be bound such that the `IInputBackend.Update` is unbound from `ISurface.Update`.
-- These delegates must be called by the reference implementation in its `IInputBackend.Activate` and `IInputBackend.Deactivate` methods (respectively)
-- The `IInputBackend.Activate` and `IInputBackend.Deactivate` methods must be called by the `InputContext.Add` and `InputContext.Remove` methods (respectively)
+- The `IInputBackend.Update` method is configured to run in the `ISurface.Update` callback.
+- The `IInputBackend.Disposing` event will be bound such that the `IInputBackend.Update` method is unbound from `ISurface.Update` event callback.
+- Once a `IInputBackend` is `Add`ed to an `InputContext`, the `InputContext` takes full ownership of the `IInputBackend` and, as a result, will `Dispose` the `IInputBackend` when it is `Remove`d or the context itself is `Dispose`d.
+    - This essentially means that you can count on `Disposing` being fired as an indicator that the `IInputBackend` will never be relevant again. 
 
 The API surface for this is defined later in the Proposed API section.
 
@@ -90,11 +90,20 @@ namespace Silk.NET.Input
 +       /// <summary>
 +       /// Adds the given backend to the list of <see cref="Backends" />.
 +       /// </summary>
++       /// <remarks>
++       /// Note that because input contexts take ownership of input backends once added, this will dispose the input backend when
++       /// <see cref="Remove" /> is called or this input context is <see cref="Dispose" />d.
++       /// As such, the input backend will not be usable in subsequent contexts - you will need to instantiate a new one instead.
++       /// </remarks>
 +       void Add(IInputBackend backend);
 +
 +       /// <summary>
 +       /// Removes the given backend from the list of <see cref="Backends" />.
 +       /// </summary>
++       /// <remarks>
++       /// Note that because input contexts take ownership of input backends once added, this will dispose the input backend.
++       /// As such, the input backend will not be usable in subsequent contexts - you will need to instantiate a new one instead.
++       /// </remarks>
 +       void Remove(IInputBackend backend);
 +
 +       /// <summary>
@@ -111,7 +120,7 @@ namespace Silk.NET.Input
 +   /// <summary>
 +   /// Represents an input backend from which input devices can be retrieved.
 +   /// </summary>
-+   public interface IInputBackend
++   public interface IInputBackend : IDisposable
 +   {
 +       /// <summary>
 +       /// Gets all connected devices recognised by this backend.
@@ -124,14 +133,9 @@ namespace Silk.NET.Input
 +       event Action<IInputDevice, bool>? ConnectionChanged;
 +
 +       /// <summary>
-+       /// Occurs when the backend is <see cref="Activate" />d.
++       /// Occurs when the backend is disposing. This can be used as a good indicator that this backend is being removed from an input context.
 +       /// </summary>
-+       event Action Activated;
-+
-+       /// <summary>
-+       /// Occurs when the backend is <see cref="Deactivate" />d.
-+       /// </summary>
-+       event Action Deactivated;
++       event Action Disposing;
 +
 +       /// <summary>
 +       /// Updates this backend's input data.
@@ -140,24 +144,6 @@ namespace Silk.NET.Input
 +       /// Input events and changes are permitted to occur outside of this method.
 +       /// </remarks>
 +       void Update();
-+
-+       /// <summary>
-+       /// Activates this input backend and runs any necessary prerequisites to collecting input data.
-+       /// Once activated, <see cref="Deactivate" /> must be used before the backend can be activated again.
-+       /// </summary>
-+       /// <remarks>
-+       /// Called by <see cref="InputContext.Add" />
-+       /// </remarks>
-+       void Activate();
-+
-+       /// <summary>
-+       /// Deactivates this input backend and destroys/disables any resources responsible for collecting input data.
-+       /// Once deactivated, <see cref="Activate" /> can be used to activate the backend again.
-+       /// </summary>
-+       /// <remarks>
-+       /// Called by <see cref="InputContext.Remove" />.
-+       /// </remarks>
-+       void Deactivate();
 +   }
 }
 ```
