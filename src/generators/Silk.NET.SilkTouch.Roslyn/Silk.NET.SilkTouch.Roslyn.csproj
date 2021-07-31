@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Nullable>enable</Nullable>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Silk.NET.SilkTouch.Emitter\Silk.NET.SilkTouch.Emitter.csproj" />
+      <ProjectReference Include="..\Silk.NET.SilkTouch.Overloader\Silk.NET.SilkTouch.Overloader.csproj" />
+    </ItemGroup>
+
+</Project>
