@@ -32,7 +32,6 @@ The key tenets of 3.0 are **portability**, **maintainability**, **usability**, a
     - For more information, see [the Multi-Backend Input proposal](Proposal - Multi-Backend Input.md). (tenet: usability)
 
 Silk.NET 3.0 presents us with an opportunity to rethink the entire library taking into account everything we've learnt over the past 2 years of the project's development.
-
 ## Development Roadmap
 
 Note that this development roadmap does not take into account unit tests, only functional tests such as experiments. The team should of course stride to add as many tests as possible where possible.
@@ -110,6 +109,46 @@ This is the last preview and is primarily a bugfix release. All breaking changes
 - Our level of correctness is inconsistent
     - We should use .NET 5 enhanced warnings to help combat this.
     - Our adoption of C# 8 nullability should be at a much greater extent than it is today, and not using nullability should require great justification.
+
+## Documentation Regime
+
+Documentation on how to use the surface API we expose for our High Level Utilities should be plentiful, and include examples for all of the common usecases of our libraries, if not more. The `documentation` folder will be structured as follows:
+
+```
+documentation
+    assets
+        branding
+    deprecation-notices
+    for-contributors
+        generators
+        input
+        maths
+        proposals
+            1.0
+            1.x
+            2.0
+            2.x
+            3.0
+            3.x
+            rejected
+        windowing
+    generators
+    input
+    maths
+        windowing
+```
+
+The `documentation/for-contributors` folder will be used to document the implementation specifics, such as structure and implementation design philosophy, to help prospective contributors understand the library internals.
+
+The `documentation/assets` folder just contains images and other assets for the front page README.md. This folder was renamed from `documentation/readme`.
+
+The `documentation/branding` folder is a new folder containing all branding images for Silk.NET.
+
+The `documentation/deprecation-notices` is as it is today.
+
+The `documentation/for-contributors/proposals` folder, once the 3.0 proposals have been reviewed and signed-off by the Working Group, is as the `documentation/proposals` folder is today but slightly refactored to better organise the proposals and make it more clear which proposals concern which versions.
+
+All other folders will contain documentation targeted at users for using specific areas of the library. This can include surface API explanations, minimal code examples, and more: basically anything to make the usage of our library clearer to our users.
 
 # Silk.NET 3.X
 
