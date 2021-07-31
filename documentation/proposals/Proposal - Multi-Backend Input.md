@@ -124,6 +124,16 @@ namespace Silk.NET.Input
 +       event Action<IInputDevice, bool>? ConnectionChanged;
 +
 +       /// <summary>
++       /// Occurs when the backend is <see cref="Activate" />d.
++       /// </summary>
++       event Action Activated;
++
++       /// <summary>
++       /// Occurs when the backend is <see cref="Deactivate" />d.
++       /// </summary>
++       event Action Deactivated;
++
++       /// <summary>
 +       /// Updates this backend's input data.
 +       /// </summary>
 +       /// <remarks>
