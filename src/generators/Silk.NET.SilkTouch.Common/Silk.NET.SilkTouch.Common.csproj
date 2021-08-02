@@ -10,6 +10,7 @@
     <ItemGroup>
       <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.0.0-2.final" />
       <PackageReference Include="System.Text.Json" Version="6.0.0-preview.6.21352.12" />
+      <PackageReference Include="Ultz.Extensions.Logging" Version="4.1.2" />
     </ItemGroup>
 
 </Project>

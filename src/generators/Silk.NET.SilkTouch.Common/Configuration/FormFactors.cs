@@ -10,6 +10,6 @@ namespace Silk.NET.SilkTouch.Configuration
     {
         Any = 0,
         Roslyn = 1 << 0,
-        CommandLine = 1 << 1
+        CLI = 1 << 1
      }
 }

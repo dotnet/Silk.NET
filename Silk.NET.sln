@@ -63,6 +63,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.SilkTouch.Emitter"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.SilkTouch.Overloader", "src\generators\Silk.NET.SilkTouch.Overloader\Silk.NET.SilkTouch.Overloader.csproj", "{46A89F89-77B3-4679-A82F-04A552545B16}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Silk.NET.Core", "src\libraries\Silk.NET.Core\Silk.NET.Core.csproj", "{69CF4437-59F7-4304-9AE1-4B58E1A93367}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -229,6 +231,18 @@ Global
 		{46A89F89-77B3-4679-A82F-04A552545B16}.Release|x64.Build.0 = Release|Any CPU
 		{46A89F89-77B3-4679-A82F-04A552545B16}.Release|x86.ActiveCfg = Release|Any CPU
 		{46A89F89-77B3-4679-A82F-04A552545B16}.Release|x86.Build.0 = Release|Any CPU
+		{69CF4437-59F7-4304-9AE1-4B58E1A93367}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69CF4437-59F7-4304-9AE1-4B58E1A93367}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69CF4437-59F7-4304-9AE1-4B58E1A93367}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{69CF4437-59F7-4304-9AE1-4B58E1A93367}.Debug|x64.Build.0 = Debug|Any CPU
+		{69CF4437-59F7-4304-9AE1-4B58E1A93367}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{69CF4437-59F7-4304-9AE1-4B58E1A93367}.Debug|x86.Build.0 = Debug|Any CPU
+		{69CF4437-59F7-4304-9AE1-4B58E1A93367}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69CF4437-59F7-4304-9AE1-4B58E1A93367}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69CF4437-59F7-4304-9AE1-4B58E1A93367}.Release|x64.ActiveCfg = Release|Any CPU
+		{69CF4437-59F7-4304-9AE1-4B58E1A93367}.Release|x64.Build.0 = Release|Any CPU
+		{69CF4437-59F7-4304-9AE1-4B58E1A93367}.Release|x86.ActiveCfg = Release|Any CPU
+		{69CF4437-59F7-4304-9AE1-4B58E1A93367}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -254,6 +268,7 @@ Global
 		{CD47A2B9-D3D6-40CF-AE0A-B571EF9F7793} = {8238D9F3-E158-4633-8017-B29AA3AD61F7}
 		{50F26B27-32B6-4D66-ADD5-CC9C38373B19} = {8238D9F3-E158-4633-8017-B29AA3AD61F7}
 		{46A89F89-77B3-4679-A82F-04A552545B16} = {8238D9F3-E158-4633-8017-B29AA3AD61F7}
+		{69CF4437-59F7-4304-9AE1-4B58E1A93367} = {C9718C94-2F21-4E8D-B55D-8F0B1A131346}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5273D7F-3334-48DF-94E3-41AE6816CD4D}

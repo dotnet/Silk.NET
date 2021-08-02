@@ -12,6 +12,7 @@ using Silk.NET.SilkTouch.Configuration;
 using Silk.NET.SilkTouch.Emitter;
 using Silk.NET.SilkTouch.Generation;
 using Silk.NET.SilkTouch.Overloader;
+using Ultz.Extensions.Logging;
 
 namespace Silk.NET.SilkTouch.Roslyn
 {
@@ -24,6 +25,7 @@ namespace Silk.NET.SilkTouch.Roslyn
 
         public void Execute(GeneratorExecutionContext context)
         {
+            // Get the config file name. Uses silktouch.json unless overridden in .editorconfig.
             var configFileName = "silktouch.json";
             if (context.AnalyzerConfigOptions.GlobalOptions.TryGetValue
                 (Constants.ConfigFileEditorconfigOption, out var file))
@@ -31,6 +33,7 @@ namespace Silk.NET.SilkTouch.Roslyn
                 configFileName = file;
             }
 
+            // Try and find an AdditionalFiles entry for the SilkTouch config.
             string? configFilePath = null;
             foreach (var additionalFile in context.AdditionalFiles)
             {
@@ -43,35 +46,74 @@ namespace Silk.NET.SilkTouch.Roslyn
                             Diagnostic.Create
                             (
                                 Diagnostics.MultipleConfigFiles,
-                                Location.Create(additionalFile.Path, TextSpan.FromBounds(0, 0), default)
+                                Location.Create(additionalFile.Path, TextSpan.FromBounds(0, 0), default),
+                                configFilePath,
+                                additionalFile.Path
                             )
                         );
+
+                        continue;
                     }
 
                     configFilePath = additionalFile.Path;
                 }
             }
+            
+            // Prevent debug logs from being output by forcing the LoggerProvider to null - we don't want this in Roslyn
+            Log.LoggerProvider = null;
 
             if (configFilePath is null)
             {
-                // TODO report diagnostic that this isn't found.
+                context.ReportDiagnostic(Diagnostic.Create(Diagnostics.NoConfigFile, Location.None));
+                return;
             }
 
-            // TODO fix all the warnings in the morning because i'm tired and just wanna commit something.
+            if (context.Compilation.AssemblyName is null)
+            {
+                context.ReportDiagnostic(Diagnostic.Create(Diagnostics.NoAssemblyName, Location.None));
+                return;
+            }
+
+            // prepare our context data
             var syntaxTrees = context.Compilation.SyntaxTrees.OfType<CSharpSyntaxTree>().ToArray();
             var projectConfig = Config.Load(configFilePath)[context.Compilation.AssemblyName];
 
-            var ctx = new SilkTouchContext { SyntaxTrees = syntaxTrees, Configuration = projectConfig };
+            // run the emitter if the config indicates we should.
+            if (((projectConfig.Emitter.FormFactors ?? EmitterGenerator.DefaultFormFactors) & FormFactors.Roslyn) != 0)
+            {
+                var ctx = new SilkTouchContext(syntaxTrees, projectConfig);
+                EmitterGenerator.Run(ctx);
+                var (outputs, diagnostics) = ctx.GetResult();
+                Copy(context, outputs, diagnostics);
+            }
 
-            EmitterGenerator.Run(ctx);
-            var (emitterOutputs, emitterDiagnostics) = ctx.GetResult();
+            // run the overloader if the config indicates we should.
+            if (((projectConfig.Overloader.FormFactors ?? OverloaderGenerator.DefaultFormFactors) & FormFactors.Roslyn)
+                != 0)
+            {
+                var ctx = new SilkTouchContext(syntaxTrees, projectConfig);
+                OverloaderGenerator.Run(ctx);
+                var (outputs, diagnostics) = ctx.GetResult();
+                Copy(context, outputs, diagnostics);
+            }
+        }
 
-            ctx = new() { SyntaxTrees = syntaxTrees, Configuration = projectConfig };
+        private static void Copy
+        (
+            GeneratorExecutionContext context,
+            IEnumerable<(string FileNameHint, string Content)> outputs,
+            IEnumerable<Diagnostic> diagnostics
+        )
+        {
+            foreach (var (fileNameHint, content) in outputs)
+            {
+                context.AddSource(fileNameHint, content);
+            }
 
-            OverloaderGenerator.Run(ctx);
-            var (overloaderOutputs, overloaderDiagnostics) = ctx.GetResult();
-            
-            // TODO add the outputs and the diagnostics to roslyn. seriously i'm tired and cba to finish the job.
+            foreach (var diagnostic in diagnostics)
+            {
+                context.ReportDiagnostic(diagnostic);
+            }
         }
     }
 }

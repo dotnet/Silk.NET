@@ -6,7 +6,12 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <PackageReference Include="ClangSharp.PInvokeGenerator" Version="12.0.0-beta1" />
       <ProjectReference Include="..\Silk.NET.SilkTouch.Common\Silk.NET.SilkTouch.Common.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Mods" />
     </ItemGroup>
 
 </Project>
