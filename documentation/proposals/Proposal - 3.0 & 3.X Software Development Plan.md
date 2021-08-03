@@ -176,7 +176,7 @@ Users are expected to keep all of the versions of all Silk.NET packages they are
 
 ### Breaking Changes
 
-If an API is determined (agreed upon by the majority of maintainers to be causing massive disruption or widespread confusion among a considerable proportion of the userbase, the Silk.NET team may reserve the right to make a breaking change in a post-3.0, pre-4.0 update as part of a monthly update cycle. This class of breaking changes shouldn't be done in an emergency patch unless the API issue in question was introduced in the then-current monthly update cycle (e.g. we need to quickly remove an API because it's super problematic for lots of people)
+If an API is determined (agreed upon by the majority of maintainers) to be causing massive disruption or widespread confusion among a considerable proportion of the userbase, the Silk.NET team may reserve the right to make a breaking change in a post-3.0, pre-4.0 update as part of a monthly update cycle. This class of breaking changes shouldn't be done in an emergency patch unless the API issue in question was introduced in the then-current monthly update cycle (e.g. we need to quickly remove an API because it's super problematic for lots of people)
 
 Breaking changes in generated sources caused by changes in a third-party/external source the generated sources are generated from are allowed.
 
