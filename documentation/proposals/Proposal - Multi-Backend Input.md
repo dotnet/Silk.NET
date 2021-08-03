@@ -20,6 +20,7 @@ Proposal API for backend-agnostic, refactored Input via keyboards, mice, and con
 - This proposal also assumes knowledge of 2.0's Input APIs as it is only a refactor and not a complete redesign of the API as in other proposals. The most noticable differences between the design of Input 2.0 and Input 3.0 are:
     - Input no longer has a hard bond to Windowing. The integration will remain the same to the end user but will use Source Generators, more on that later. 
     - Input contexts are no longer interfaces, they are instead classes which contain input backends.
+- Unlike 1.0 and 2.0, all device lists (including those on `InputContext`) will return both connected and disconnected devices when indexed or iterated.
 
 ## Reference Implementation
 
@@ -51,6 +52,26 @@ One instance of an `IInputBackend` can only belong to one `InputContext` through
 **KEY POINT FOR WORKING GROUP**: The Windowing-Input integration mandates the use of source generators. Is this ok?
 
 # Proposed API
+
+```diff
+namespace Silk.NET.Input
+{
+    public interface IInputDevice
+    {
+-       int Index { get; }
++       /// <summary>
++       /// The backend-specific, device-type-specific identifier for this device.
++       /// </summary>
++       /// <remarks>
++       /// For example, no gamepad may share a DeviceId with another gamepad (same applies for all other device types) on that individual backend.
++       /// This property should not be used as a globally unique identifier.
++       /// </remarks>
++       int DeviceId { get; }
+     }
+}
+```
+
+Index has been removed in favour of DeviceId, as Index implies its globally unique and also tied to the index of the device in the list in which it's contained. The reason why this is not globally unique is primarily to allow users to do their own interop with the native backend using our high-level representations of the devices (i.e. DeviceId will be the GLFW joystick ID)
 
 ```diff
 namespace Silk.NET.Input
@@ -121,9 +142,9 @@ namespace Silk.NET.Input
 +   public interface IInputBackend : IDisposable
 +   {
 +       /// <summary>
-+       /// Gets all connected devices recognised by this backend.
++       /// Gets all devices of the given type recognised by this backend.
 +       /// </summary>
-+       IReadOnlyList<IInputDevice> ConnectedDevices { get; }
++       IReadOnlyList<IInputDevice> GetDevices<T>() where T : IInputDevice;
 +
 +       /// <summary>
 +       /// Raised when an input device is connected or disconnected.
