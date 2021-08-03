@@ -16,7 +16,8 @@ namespace Silk.NET.SilkTouch.Scraper
         {
             var subagentSpawner = new T();
             var error = false;
-            if ((ctx.Configuration.Scraper.LibraryNames?.Length ?? 0) == 0)
+            var libraryNames = ctx.Configuration.Scraper?.LibraryNames;
+            if ((libraryNames?.Length ?? 0) == 0)
             {
                 ctx.EmitDiagnostic(Diagnostic.Create(Diagnostics.NoLibraryName, Location.None, ctx.AssemblyName));
                 error = true;
@@ -30,7 +31,7 @@ namespace Silk.NET.SilkTouch.Scraper
             var workFolder = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
             Directory.CreateDirectory(workFolder);
 
-            var includes = ctx.Configuration.Scraper.IncludeDirectories?.ToList() ?? new();
+            var includes = ctx.Configuration.Scraper?.IncludeDirectories?.ToList() ?? new();
             for (int i = 0; i < includes.Count; i++)
             {
                 var include = includes[i];
@@ -44,11 +45,11 @@ namespace Silk.NET.SilkTouch.Scraper
                 }
             }
 
-            Log.Information($"Processing \"{ctx.AssemblyName}\"...");
+            Log.Information($"Starting ClangSharp subagent for \"{ctx.AssemblyName}\"...");
             var options = new SubagentOptions
             (
-                ctx.Configuration.Scraper.LibraryNames[0],
-                ctx.Configuration.Scraper.Namespace ?? ctx.AssemblyName,
+                libraryNames![0], // we know libraryNames isn't null here, but the compiler disagrees.
+                ctx.Configuration.Scraper?.Namespace ?? ctx.AssemblyName,
                 workFolder,
                 workFolder,
             );

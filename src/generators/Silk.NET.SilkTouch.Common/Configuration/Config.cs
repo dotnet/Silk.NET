@@ -13,20 +13,20 @@ namespace Silk.NET.SilkTouch.Configuration
     public static class Config
     {
         /// <summary>
-        /// Loads the given SilkTouch JSON Configuration into a dictionary of per-project configurations.
+        /// Loads the given SilkTouch JSON Configuration as a <see cref="RootConfiguration"/> record.
         /// </summary>
         /// <param name="json">The SilkTouch JSON Configuration.</param>
-        /// <returns>A dictionary containing project-specific configuration.</returns>
+        /// <returns>The <see cref="RootConfiguration"/> record representation of the JSON.</returns>
         /// <exception cref="DataException">If the data yielded a null configuration.</exception>
-        public static Dictionary<string, ProjectConfiguration> Load(string json)
-            => JsonSerializer.Deserialize<Dictionary<string, ProjectConfiguration>>(json) ??
+        public static RootConfiguration Load(string json)
+            => JsonSerializer.Deserialize<RootConfiguration>(json) ??
                throw new DataException("JSON deserialization of SilkTouch Configuration yielded null.");
 
         /// <summary>
-        /// Saves the given per-project configuration dictionary into JSON.
+        /// Saves the given <see cref="RootConfiguration"/> record into JSON.
         /// </summary>
-        /// <param name="projects">A dictionary containing per-project configuration.</param>
-        /// <returns></returns>
+        /// <param name="projects">The <see cref="RootConfiguration"/> record representation of the configuration.</param>
+        /// <returns>The JSON representation of the projects.</returns>
         public static string Save(Dictionary<string, ProjectConfiguration> projects)
             => JsonSerializer.Serialize(projects);
     }
@@ -34,7 +34,7 @@ namespace Silk.NET.SilkTouch.Configuration
     public record RootConfiguration
     (
         [property: JsonPropertyName("fileHeader")] string[]? FileHeaderLines,
-        [property: JsonPropertyName("projects")] Dictionary<string, ProjectConfiguration> Projects
+        [property: JsonPropertyName("projects")] Dictionary<string, ProjectConfiguration>? Projects
     );
 
     /// <summary>
@@ -45,9 +45,9 @@ namespace Silk.NET.SilkTouch.Configuration
     /// <param name="Scraper">SilkTouch Scraper specific configuration for this project.</param>
     public record ProjectConfiguration
     (
-        [property: JsonPropertyName("emitter")] EmitterConfiguration Emitter,
-        [property: JsonPropertyName("overloader")] OverloaderConfiguration Overloader,
-        [property: JsonPropertyName("scraper")] ScraperConfiguration Scraper
+        [property: JsonPropertyName("emitter")] EmitterConfiguration? Emitter,
+        [property: JsonPropertyName("overloader")] OverloaderConfiguration? Overloader,
+        [property: JsonPropertyName("scraper")] ScraperConfiguration? Scraper
     );
 
     /// <summary>

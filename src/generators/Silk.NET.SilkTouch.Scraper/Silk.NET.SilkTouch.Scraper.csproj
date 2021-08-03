@@ -7,11 +7,18 @@
 
     <ItemGroup>
       <PackageReference Include="ClangSharp.PInvokeGenerator" Version="12.0.0-beta1" />
+      <PackageReference Include="Microsoft.Win32.Registry" Version="6.0.0-preview.5.21301.5" />
+      <PackageReference Include="System.Management" Version="6.0.0-preview.6.21352.12" />
       <ProjectReference Include="..\Silk.NET.SilkTouch.Common\Silk.NET.SilkTouch.Common.csproj" />
     </ItemGroup>
 
     <ItemGroup>
       <Folder Include="Mods" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Subagent\VisualStudioVarPrint.bat" />
+      <EmbeddedResource Include="Subagent\VisualStudioVarPrint.bat" />
     </ItemGroup>
 
 </Project>
