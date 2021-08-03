@@ -46,7 +46,7 @@ The `CreateInput` method will use the surface, obtain its platform data (i.e. by
 
 The API surface for this is defined later in the Proposed API section.
 
-One instance of an `IInputBackend` can only belong to one `InputContext` throughout the entirety of the `IInputBackend`'s lifetime. Once a `IInputBackend` is `Add`ed to an `InputContext`, the `InputContext` takes full ownership of the `IInputBackend` and, as a result, will `Dispose` the `IInputBackend` when it is `Remove`d or the context itself is `Dispose`d. If multiple `InputContext`s are in use, multiple `IInputBackend` instances must also be used. `IInputBackend` should throw an exception if its APIs are used after the backend has been disposed.
+One instance of an `IInputBackend` can only belong to one `InputContext` throughout the entirety of the `IInputBackend`'s lifetime. Once a `IInputBackend` is `Add`ed to an `InputContext`, the `InputContext` takes full ownership of the `IInputBackend` and, as a result, will `Dispose` the `IInputBackend` when it is `Remove`d or the context itself is `Dispose`d. If multiple `InputContext`s are in use, multiple `IInputBackend` instances must also be used. `IInputBackend` will throw an exception if its APIs are used after the backend has been disposed.
 
 **KEY POINT FOR WORKING GROUP**: The Windowing-Input integration mandates the use of source generators. Is this ok?
 
