@@ -139,11 +139,21 @@ namespace Silk.NET.Input
 +   /// <summary>
 +   /// Represents an input backend from which input devices can be retrieved.
 +   /// </summary>
++   /// <remarks>
++   /// This interface is not intended for general consumption. Consider <see cref="InputContext" /> instead.
++   /// </remarks>
 +   public interface IInputBackend : IDisposable
 +   {
 +       /// <summary>
 +       /// Gets all devices of the given type recognised by this backend.
 +       /// </summary>
++       /// <remarks>
++       /// The <typeparamref name="T" /> type parameter must be the last interface in the inheritance heirarchy (the "device type")
++       /// i.e. it must be a device type like <see cref="IJoystick" /> and not something like <see cref="IInputDevice" />.
++       /// The behaviour of using a T that isn't a device type recognised by the backend is undefined.<br />
++       /// <br />
++       /// This method is not intended for general consumption. Consider <see cref="InputContext" /> instead.
++       /// </remarks>
 +       IReadOnlyList<IInputDevice> GetDevices<T>() where T : IInputDevice;
 +
 +       /// <summary>
