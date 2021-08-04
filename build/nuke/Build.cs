@@ -14,6 +14,7 @@ using Nuke.Common.Tools.MSBuild;
 using static Nuke.Common.Tools.MSBuild.MSBuildTasks;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 using static Nuke.Common.IO.FileSystemTasks;
+using static Nuke.Common.Tooling.ProcessTasks;
 
 [CheckBuildProjectConfigurations]
 [UnsetVisualStudioEnvironmentVariables]
@@ -77,6 +78,8 @@ class Build : NukeBuild
     [Parameter("NuGet feed")] readonly string NugetFeed = "https://api.nuget.org/v3/index.json";
     [Parameter("NuGet username")] readonly string NugetUsername;
     [Parameter("NuGet password")] readonly string NugetPassword;
+    [Parameter("Code-signing service username")] readonly string SignUsername;
+    [Parameter("Code-signing service password")] readonly string SignPassword;
     [Parameter("Extra properties passed to MSBuild commands")]
     readonly string[] MsbuildProperties = Array.Empty<string>(); 
 
@@ -223,8 +226,8 @@ class Build : NukeBuild
             {
                 var silkDroid = SourceDirectory / "Windowing" / "Android" / "SilkDroid";
                 using var process = RuntimeInformation.IsOSPlatform(OSPlatform.Linux)
-                    ? ProcessTasks.StartProcess("bash", "-c \"./gradlew clean\"", silkDroid)
-                    : ProcessTasks.StartProcess("cmd", "/c \".\\gradlew clean\"", silkDroid);
+                    ? StartProcess("bash", "-c \"./gradlew clean\"", silkDroid)
+                    : StartProcess("cmd", "/c \".\\gradlew clean\"", silkDroid);
                 process.AssertZeroExitCode();
                 return process.Output;
             }
@@ -365,8 +368,8 @@ class Build : NukeBuild
                 }
 
                 using var process = RuntimeInformation.IsOSPlatform(OSPlatform.Linux)
-                    ? ProcessTasks.StartProcess("bash", "-c \"./gradlew build\"", silkDroid)
-                    : ProcessTasks.StartProcess("cmd", "/c \".\\gradlew build\"", silkDroid);
+                    ? StartProcess("bash", "-c \"./gradlew build\"", silkDroid)
+                    : StartProcess("cmd", "/c \".\\gradlew build\"", silkDroid);
                 process.AssertZeroExitCode();
                 var ret = process.Output;
                 CopyFile
@@ -417,19 +420,46 @@ class Build : NukeBuild
     Target FullPack => _ => _
         .DependsOn(BuildLibSilkDroid, RegenerateBindings, Pack);
 
-    Target PushToNuGet => _ => _
+    Target PushToNuGet => _ => _    
         .DependsOn(Pack)
         .Executes(PushPackages);
 
     Target FullPushToNuGet => _ => _
         .DependsOn(FullPack, PushToNuGet);
 
+    static string PackageDirectory => RootDirectory / "build" / "output_packages";
+    static IEnumerable<string> Packages => Directory.GetFiles(PackageDirectory, "*.nupkg")
+        .Where(x => Path.GetFileName(x).StartsWith("Silk.NET") || Path.GetFileName(x).StartsWith("Ultz.Native"));
+
     async Task PushPackages()
     {
         const int rateLimit = 300;
-        var allFiles = Directory.GetFiles(RootDirectory / "build" / "output_packages", "*.nupkg")
-            .Where(x => Path.GetFileName(x).StartsWith("Silk.NET") || Path.GetFileName(x).StartsWith("Ultz.Native"))
-            .Select((x, i) => new {Index = i, Value = x})
+        if (!string.IsNullOrWhiteSpace(SignUsername) && !string.IsNullOrWhiteSpace(SignPassword))
+        {
+            var basePath = RootDirectory / "build" / "codesigning";
+            var execPath = basePath / "tool" / (OperatingSystem.IsWindows() ? "SignClient.exe" : "SignClient");
+            if (!File.Exists(execPath))
+            {
+                DotNetToolInstall(s => s.SetToolInstallationPath(basePath / "tool").SetPackageName("SignClient"));
+            }
+
+            StartProcess
+            (
+                execPath,
+                "sign " +
+                $"--baseDirectory {PackageDirectory} " +
+                "--input \"**/*.nupkg\" " +
+                $"--config \"{basePath / "config.json"}\" " +
+                $"--filelist \"{basePath / "filelist.txt"}\" " +
+                $"--user \"{SignUsername}\" " +
+                $"--secret \"{SignPassword}\" " +
+                "--name \"Silk.NET\" " +
+                "--description \"Silk.NET\" " +
+                "--descriptionUrl \"https://github.com/dotnet/Silk.NET\""
+            ).AssertZeroExitCode();
+        }
+
+        var allFiles = Packages.Select((x, i) => new {Index = i, Value = x})
             .GroupBy(x => x.Index / rateLimit)
             .Select(x => x.Select(v => v.Value).ToList())
             .ToList();
