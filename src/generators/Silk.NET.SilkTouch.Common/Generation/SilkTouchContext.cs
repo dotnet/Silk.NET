@@ -8,41 +8,23 @@ using Silk.NET.SilkTouch.Configuration;
 
 namespace Silk.NET.SilkTouch.Generation
 {
-    public sealed class SilkTouchContext
+    public sealed record SilkTouchContext
+    (
+        string AssemblyName,
+        IEnumerable<CSharpSyntaxTree> SyntaxTrees,
+        ProjectConfiguration Configuration,
+        GlobalConfiguration? GlobalConfiguration,
+        string BaseDirectory
+    )
     {
-        /// <summary>
-        /// Creates a <see cref="SilkTouchContext"/> with the given parameters.
-        /// </summary>
-        /// <param name="assemblyName">The assembly name for this compilation.</param>
-        /// <param name="syntaxTrees">The syntax trees in the compilation.</param>
-        /// <param name="config"></param>
-        public SilkTouchContext(string assemblyName, IEnumerable<CSharpSyntaxTree> syntaxTrees, ProjectConfiguration config)
-            => (AssemblyName, SyntaxTrees, Configuration) = (assemblyName, syntaxTrees, config);
-        
-        // Public Properties
-        /// <summary>
-        /// The assembly name for the project represented by this context.
-        /// </summary>
-        public string AssemblyName { get; }
-        
-        /// <summary>
-        /// The syntax trees contained within the current project.
-        /// </summary>
-        public IEnumerable<CSharpSyntaxTree> SyntaxTrees { get; }
-        
-        /// <summary>
-        /// The SilkTouch Configuration for this project.
-        /// </summary>
-        public ProjectConfiguration Configuration { get; }
-        
         // Internal Properties
         internal List<(string FileNameHint, string Content)> Outputs { get; } = new();
         internal List<Diagnostic> Diagnostics { get; } = new();
-        
+
         // Public Methods
         public void EmitOutput(string fileNameHint, string content)
             => Outputs.Add((fileNameHint, content));
-        
+
         public void EmitDiagnostic(Diagnostic diagnostic) => Diagnostics.Add(diagnostic);
 
         /// <summary>

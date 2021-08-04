@@ -2,7 +2,9 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
 using System.Management;
@@ -10,6 +12,7 @@ using System.Net;
 using System.Runtime.Versioning;
 using System.Text.Json;
 using System.Text.Json.Serialization;
+using Microsoft.Build.Locator;
 using Microsoft.Extensions.Logging;
 using Ultz.Extensions.Logging;
 
@@ -23,21 +26,14 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
         string[] UcrtIncludes,
         Version UcrtVersion,
         string MsvcToolsFolder,
-        string[] MsvcToolsIncludes
+        string[] MsvcToolsIncludes,
+        Version Version,
+        Dictionary<string, string> Variables,
+        string MSBuildPath
     );
 
-    internal record VisualStudioCandidate
-    (
-        string Name,
-        string InstallationPath
-    );
-
-    [SupportedOSPlatform("windows")]
     public static class VisualStudioResolver
     {
-        internal static readonly string VarPrintScriptNamespace =
-            $"{typeof(VisualStudioResolver).Namespace}.VisualStudioVarPrint.bat";
-        
         internal const string MsvcInstallDirVar = "VCToolsInstallDir";
         internal static readonly string[] MsvcIncludeSubDirs = { "include" };
 
@@ -50,116 +46,86 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
             "Include/{0}/shared"
         };
 
-        public static bool TryGetVisualStudioInfo(bool allowPrerelease, out VisualStudioInfo? info)
+        private static VisualStudioInfo? _cachedInfo;
+        private static VisualStudioInstance? _cachedInstance;
+
+        public static bool TryGetMSBuildInfo
+        (
+            [NotNullWhen(true)] out VisualStudioInstance? instance
+        )
         {
-            ManagementObjectCollection mcCollection;
-
-            try
+            if (TryGetVisualStudioInfo(out _))
             {
-                using ManagementClass mc = new("MSFT_VSInstance");
-                mcCollection = mc.GetInstances();
+                instance = _cachedInstance;
+                return instance is not null;
             }
-            catch (Exception e)
+
+            var use = MSBuildLocator.QueryVisualStudioInstances()
+                .OrderBy(x => x.DiscoveryType)
+                .ThenBy(x => x.Version)
+                .FirstOrDefault();
+
+            if (use is null)
             {
-                Log.Debug($"Failed to get \"MSFT_VSInstance\" info with exception {e}");
+                instance = null;
+                return false;
+            }
+
+            Log.Information($"Using MSBuild at \"{use.MSBuildPath}\" (from \"{use.Name}\" v{use.Version.ToString(3)}");
+            instance = use;
+            return true;
+        }
+
+        public static bool TryGetVisualStudioInfo([NotNullWhen(true)] out VisualStudioInfo? info)
+        {
+            // if we're not on windows, this is never gonna work
+            if (!OperatingSystem.IsWindowsVersionAtLeast(10))
+            {
                 info = null;
                 return false;
             }
 
-            //We want to buildtools if they have it installec, we'll use VS installs if needed
-            var visualStudios = new VisualStudioCandidate[mcCollection.Count];
-            var i = 0;
-            foreach (var result in mcCollection)
+            // if we've cached some info
+            if (_cachedInfo is not null)
             {
-                var name = Convert.ToString(result["Name"]);
-                var path = Convert.ToString(result["InstallLocation"]);
-                if (name is null || path is null)
-                {
-                    continue;
-                }
-
-                visualStudios[i++] = new(name, path);
+                info = _cachedInfo;
+                return true;
             }
-
-            // extract the varprint script
-            var varPrint = Path.Combine(Path.GetTempPath(), $"{Path.GetRandomFileName()}.bat");
-            using var varPrintRes = typeof(VisualStudioResolver).Assembly
-                .GetManifestResourceStream(VarPrintScriptNamespace);
-            if (varPrintRes is null)
-            {
-                Log.Debug($"Couldn't extract \"{VarPrintScriptNamespace}\" from assembly.");
-                Log.Warning("Internal error.");
-                info = null;
-                return false;
-            }
-
-            using var varPrintOut = File.OpenWrite(varPrint);
-            varPrintRes.CopyTo(varPrintOut);
+            
+            // use MSBuildLocator to find Visual Studio instances
+            var visualStudios = MSBuildLocator
+                .QueryVisualStudioInstances()
+                .Where(x => (x.DiscoveryType & (DiscoveryType.DeveloperConsole | DiscoveryType.VisualStudioSetup)) != 0)
+                .OrderBy(x => x.DiscoveryType)
+                .ThenBy(x => x.Version);
             
             // cycle through candidate installations, try and find everything we're looking for.
-            string? msvcInstallDir = null;
-            string? winSdkUcrtSdkDir = null;
-            string? winSdkUcrtVersion = null;
-            var listening = true;
-            foreach (var (name, installationPath) in visualStudios)
+            foreach (var visualStudio in visualStudios)
             {
-                Log.Debug($"Testing \"{name}\" at \"{installationPath}\"...");
-                using var varPrintProc = new Process 
+                Log.Debug
+                (
+                    $"Testing \"{visualStudio.Name}\" v{visualStudio.Version.ToString(3)} at " +
+                    $"\"{visualStudio.VisualStudioRootPath}\"..."
+                );
+
+                if (!VisualStudioVarPrint.TryRun(visualStudio.VisualStudioRootPath, out var vars))
                 {
-                    StartInfo = new()
-                    {
-                        FileName = "cmd",
-                        Arguments = $"/c \"{varPrint}\"",
-                        UseShellExecute = false,
-                        RedirectStandardOutput = true,
-                        CreateNoWindow = true
-                    }
-                };
-            
-                varPrintProc.Start();
-                while (!varPrintProc.StandardOutput.EndOfStream)
+                    Log.Warning("Internal error");
+                    info = null;
+                    return false;
+                }
+                
+                if (!vars.TryGetValue(MsvcInstallDirVar, out var msvcInstallDir) ||
+                    !vars.TryGetValue(WinSdkUcrtSdkDirVar, out var winSdkUcrtSdkDir) ||
+                    !vars.TryGetValue(WinSdkUcrtVersionVar, out var winSdkUcrtVersion))
                 {
-                    var line = varPrintProc.StandardOutput.ReadLine();
-                    if (line is null)
-                    {
-                        break;
-                    }
-
-                    Log.Debug(line);
-
-                    if (line == "***VARSTART***")
-                    {
-                        listening = true;
-                        continue;
-                    }
-
-                    if (line == "***VAREND***")
-                    {
-                        listening = false;
-                        break;
-                    }
-
-                    if (listening)
-                    {
-                        var split = line.Split('=');
-                        var _ = split[0] switch
-                        {
-                            MsvcInstallDirVar => msvcInstallDir = split[1],
-                            WinSdkUcrtSdkDirVar => winSdkUcrtSdkDir = split[1],
-                            WinSdkUcrtVersionVar => winSdkUcrtVersion = split[1],
-                            _ => string.Empty
-                        };
-                    }
+                    Log.Trace($"\"{visualStudio.Name}\" is not a viable candidate.");
+                    continue;
                 }
                 
                 Log.Debug($"msvcInstallDir = \"{msvcInstallDir}\"");
                 Log.Debug($"winSdkUcrtSdkDir = \"{winSdkUcrtSdkDir}\"");
                 Log.Debug($"winSdkUcrtVersion = \"{winSdkUcrtVersion}\"");
-                if (msvcInstallDir is null || winSdkUcrtSdkDir is null || winSdkUcrtVersion is null)
-                {
-                    Log.Trace($"\"{name}\" is not a viable candidate.");
-                    continue;
-                }
 
                 var ucrtDirs = WinSdkUcrtIncludeSubDirs
                     .Select(x => Path.Combine(winSdkUcrtSdkDir, string.Format(x, winSdkUcrtVersion)))
@@ -171,20 +137,25 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
                     .Where(Directory.Exists)
                     .ToArray();
 
-                info = new
+                _cachedInstance = visualStudio;
+                _cachedInfo = info = new
                 (
-                    name,
-                    installationPath,
+                    visualStudio.Name,
+                    visualStudio.VisualStudioRootPath,
                     winSdkUcrtSdkDir,
                     ucrtDirs,
                     Version.Parse(winSdkUcrtVersion),
                     msvcInstallDir,
-                    msvcDirs
+                    msvcDirs,
+                    visualStudio.Version,
+                    vars,
+                    visualStudio.MSBuildPath
                 );
 
                 Log.Information
                 (
-                    $"Using \"{name}\" (in \"{installationPath}\") with Windows SDK v{info.UcrtVersion.ToString(4)} " +
+                    $"Using \"{visualStudio.Name}\" v{visualStudio.Version.ToString(3)} " +
+                    $"(in \"{visualStudio.VisualStudioRootPath}\") with Windows SDK v{info.UcrtVersion.ToString(4)} " +
                     $"({ucrtDirs.Length} include(s)) and MSVC ({msvcDirs.Length} include(s))"
                 );
 
@@ -195,7 +166,8 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
             Log.Warning
             (
                 "Couldn't find a viable Visual Studio installation - ensure you have the Windows 10 SDK and C++ " +
-                "tools installed."
+                "tools installed. SilkTouch Scraper may not function correctly without Visual Studio or Visual " +
+                "Studio Build Tools with these workloads."
             );
 
             info = null;

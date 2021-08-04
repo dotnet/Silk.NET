@@ -34,7 +34,7 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
     /// <param name="ExcludedNames">
     /// The <see cref="PInvokeGeneratorConfiguration.ExcludedNames"/> for ClangSharp to use in XML generation.
     /// </param>
-    /// <param name="HeaderFile">
+    /// <param name="LicenseHeaderFile">
     /// The file containing the <see cref="PInvokeGeneratorConfiguration.HeaderText"/> for ClangSharp to use in XML generation.
     /// </param>
     /// <param name="MethodClassName">
@@ -69,6 +69,7 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
     /// </param>
     public record SubagentOptions
     (
+        string HeaderFile,
         string LibraryPath,
         string NamespaceName,
         string OutputLocation,
@@ -81,7 +82,7 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
         string[]? AdditionalArgs = null,
         string[]? DefineMacros = null,
         string[]? ExcludedNames = null,
-        string? HeaderFile = null,
+        string? LicenseHeaderFile = null,
         string? MethodClassName = null,
         string? MethodPrefixToStrip = null,
         IReadOnlyDictionary<string, string>? RemappedNames = null,
@@ -109,7 +110,7 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
             opts.OutputMode,
             opts.Options,
             opts.ExcludedNames,
-            opts.HeaderFile,
+            opts.LicenseHeaderFile,
             opts.MethodClassName,
             opts.MethodPrefixToStrip,
             opts.RemappedNames,

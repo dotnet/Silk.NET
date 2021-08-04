@@ -19,6 +19,8 @@ namespace Silk.NET.SilkTouch.Configuration
         AggressiveInlining = 1 << 7,
         CppAttributes = 1 << 8,
         MacroBindings = 1 << 9,
-        NativeInheritanceAttribute = 1 << 10
+        NativeInheritanceAttribute = 1 << 10,
+        TemplateBindings = 1 << 11,
+        VTableIndexAttribute = 1 << 12
     }
 }

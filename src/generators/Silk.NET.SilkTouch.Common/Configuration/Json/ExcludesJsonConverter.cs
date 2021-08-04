@@ -19,7 +19,7 @@ namespace Silk.NET.SilkTouch.Configuration.Json
                 return null;
             }
 
-            var identifiers = new HashSet<string>();
+            var identifiers = new List<string>(list.Length);
             var hints = ExclusionHint.None;
             foreach (var exclusion in list)
             {
@@ -56,7 +56,7 @@ namespace Silk.NET.SilkTouch.Configuration.Json
                 }
             }
 
-            return new(identifiers, hints);
+            return new(identifiers.ToArray(), hints);
         }
 
         public override void Write(Utf8JsonWriter writer, Excludes? value, JsonSerializerOptions options)

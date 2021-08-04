@@ -8,7 +8,7 @@ namespace Silk.NET.SilkTouch.Configuration
     [Flags]
     public enum FormFactors
     {
-        Any = 0,
+        None = 0,
         Roslyn = 1 << 0,
         CLI = 1 << 1
      }

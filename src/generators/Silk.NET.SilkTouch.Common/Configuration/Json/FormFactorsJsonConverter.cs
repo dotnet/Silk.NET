@@ -15,29 +15,25 @@ namespace Silk.NET.SilkTouch.Configuration.Json
     {
         /// <inheritdoc />
         public override FormFactors? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
-            => StringToFormFactors(reader.GetString());
+            => JsonSerializer.Deserialize<string[]>(ref reader)?.Aggregate(FormFactors.None, ParseFormFactorString);
+
+        private static FormFactors ParseFormFactorString(FormFactors existing, string incoming)
+            => existing |= incoming.ToLower().Trim() switch
+            {
+                "roslyn" => FormFactors.Roslyn,
+                "cli" => FormFactors.CLI,
+                _ => FormFactors.None
+            };
 
         /// <inheritdoc />
         public override void Write(Utf8JsonWriter writer, FormFactors? value, JsonSerializerOptions options)
-            => writer.WriteStringValue(value is not null ? FormFactorsToString(value.Value) : null);
-
-        private static string FormFactorsToString(FormFactors ff)
-            => (((ff & FormFactors.Roslyn) == FormFactors.Roslyn ? "Roslyn;" : string.Empty) +
-                ((ff & FormFactors.CLI) == FormFactors.CLI ? "CLI;" : string.Empty))
-                .TrimEnd(';');
-
-        private static FormFactors? StringToFormFactors(string? str)
-            => str?
-                .Split(Constants.SemicolonDelimited, StringSplitOptions.RemoveEmptyEntries)
-                .Aggregate
-                (
-                    FormFactors.Any, static(current, ff) => current | ff.Trim().ToLower() switch
-                    {
-                        "roslyn" => FormFactors.Roslyn,
-                        "cli" => FormFactors.CLI,
-                        "commandline" => FormFactors.CLI,
-                        _ => FormFactors.Any
-                    }
-                );
+            => JsonSerializer.Serialize
+            (
+                writer,
+                Enum.GetValues(typeof(FormFactors))
+                    .OfType<FormFactors>()
+                    .Where(x => (x & value) != 0)
+                    .Select(static x => Enum.GetName(typeof(FormFactors), x))
+            );
     }
 }

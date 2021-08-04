@@ -8,10 +8,14 @@
     </PropertyGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Silk.NET.SilkTouch.Emitter\Silk.NET.SilkTouch.Emitter.csproj" />
+      <ProjectReference Include="..\Silk.NET.SilkTouch.Overloader\Silk.NET.SilkTouch.Overloader.csproj" />
       <ProjectReference Include="..\Silk.NET.SilkTouch.Scraper\Silk.NET.SilkTouch.Scraper.csproj" />
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.0.0-2.final" />
+      <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.0.0-2.final" />
       <PackageReference Include="System.CommandLine" Version="2.0.0-beta1.21308.1" />
     </ItemGroup>
 
