@@ -34,7 +34,7 @@ The key tenets of 3.0 are **portability**, **maintainability**, **usability**, a
 Silk.NET 3.0 presents us with an opportunity to rethink the entire library taking into account everything we've learnt over the past 2 years of the project's development.
 ## Development Roadmap
 
-Note that this development roadmap does not take into account unit tests, only functional tests such as experiments. The team should of course stride to add as many tests as possible where possible.
+Note that this development roadmap does not take into account unit tests, only functional tests such as experiments. The team should of course strive to add as many tests as possible where possible.
 
 ### 3.0 Preview 1
 
