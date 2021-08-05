@@ -14,6 +14,7 @@
     </ItemGroup>
 
     <ItemGroup>
+      <PackageReference Include="Microsoft.Build.Framework" Version="16.10.0" ExcludeAssets="runtime" />
       <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.0.0-2.final" />
       <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.0.0-2.final" />
       <PackageReference Include="System.CommandLine" Version="2.0.0-beta1.21308.1" />

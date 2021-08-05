@@ -1,5 +1,4 @@
-﻿using System;
-using Silk.NET.SilkTouch.Configuration;
+﻿using Silk.NET.SilkTouch.Configuration;
 using Silk.NET.SilkTouch.Generation;
 
 namespace Silk.NET.SilkTouch.Overloader

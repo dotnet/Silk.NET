@@ -4,10 +4,7 @@ using System.CommandLine.Invocation;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text.Json;
-using System.Threading;
 using System.Threading.Tasks;
-using Microsoft.Build.Evaluation;
 using Microsoft.Build.Locator;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.MSBuild;
@@ -29,41 +26,39 @@ namespace SilkTouch
                 return ClangSharpHandoff.RunClangSharp(args);
             }
 
-            Console.WriteLine
-            (
-                "Silk.NET SilkTouch - " +
-                $"v{typeof(Program).Assembly.GetName().Version?.ToString(3)} - " +
-                "Copyright (c) .NET Foundation and Contributors"
-            );
-
             var slnOrProjInCwd = ResolveProjectOrSolutionInCwd();
             var rootCommand = new RootCommand
             {
-                slnOrProjInCwd is null ? new Option<FileInfo>
-                (
-                    new[] { "--project", "-p" },
-                    "The input solution or project file to generate for."
-                ) : new
-                (
-                    new[] { "--project", "-p" },
-                    () => slnOrProjInCwd, // add a default value factory if we've found an individual project or solution
-                    "The input solution or project file to generate for."
-                ),
+                slnOrProjInCwd is null
+                    ? new Option<FileInfo>
+                    (
+                        new[] { "--project", "-p" },
+                        "The input solution or project file to generate for."
+                    )
+                    {
+                        IsRequired = true
+                    }
+                    : new
+                    (
+                        new[] { "--project", "-p" },
+                        () => slnOrProjInCwd, // add a default value factory if we've found an individual project or solution
+                        "The input solution or project file to generate for."
+                    ),
                 new Option<LogMode>
                 (
-                    new[] {"--logging", "-l"},
-                    () => LogMode.Standard,
+                    new[] { "--logging", "-l" },
+                    () => Debugger.IsAttached ? LogMode.VVerbose : LogMode.Standard,
                     "The debug logging verbosity."
                 )
             };
-
+            
             rootCommand.Handler = CommandHandler.Create<FileInfo, LogMode>(RunSilkTouchAsync);
             return await rootCommand.InvokeAsync(args);
         }
 
-        private static async Task<int> RunSilkTouchAsync(FileInfo projectOrSolution, LogMode logMode)
+        private static async Task<int> RunSilkTouchAsync(FileInfo project, LogMode logging)
         {
-            if (logMode != LogMode.Silent)
+            if (logging != LogMode.Silent)
             {
                 Console.WriteLine
                 (
@@ -73,14 +68,14 @@ namespace SilkTouch
                 );
             }
 
-            var sw = new Stopwatch();
-
             // Configure the logger
             var loggerProvider = new UltzLoggerProvider();
             loggerProvider.LogLevels.Clear();
-            
+
+            var sw = Stopwatch.StartNew();
+
             // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
-            switch (logMode)
+            switch (logging)
             {
                 case LogMode.Silent:
                 {
@@ -92,22 +87,22 @@ namespace SilkTouch
                 {
                     loggerProvider.LogLevels.Add(LogLevel.Information);
                     loggerProvider.LogLevels.Add(LogLevel.Warning);
-                    break;
+                    goto case LogMode.Silent;
                 }
                 case LogMode.Verbose:
                 {
                     loggerProvider.LogLevels.Add(LogLevel.Trace);
-                    break;
+                    goto case LogMode.Standard;
                 }
                 case LogMode.VVerbose:
                 {
                     loggerProvider.LogLevels.Add(LogLevel.Debug);
-                    break;
+                    goto case LogMode.Verbose;
                 }
             }
-            
+
             Log.LoggerProvider = loggerProvider;
-            
+
             // Select MSBuild
             if (!VisualStudioResolver.TryGetMSBuildInfo(out var instance))
             {
@@ -116,10 +111,10 @@ namespace SilkTouch
             }
 
             MSBuildLocator.RegisterInstance(instance);
-            
+
             // Create Workspace
             using var workspace = MSBuildWorkspace.Create();
-            using var projectOrSolutionReader = projectOrSolution.OpenText();
+            using var projectOrSolutionReader = project.OpenText();
             string? line;
             var isSolution = false;
             while ((line = await projectOrSolutionReader.ReadLineAsync()) is not null)
@@ -145,24 +140,29 @@ namespace SilkTouch
             // Load the workspace and handoff to the generators
             if (isSolution)
             {
-                var sln = await workspace.OpenSolutionAsync(projectOrSolution.FullName);
-                await Parallel.ForEachAsync(sln.Projects, GeneratorHandoff.HandleProjectAsync);
+                var sln = await workspace.OpenSolutionAsync(project.FullName);
+                await Parallel.ForEachAsync(sln.Projects, (x, _) => GeneratorHandoff.HandleProjectAsync(workspace, x));
             }
             else
             {
                 await GeneratorHandoff.HandleProjectAsync
                 (
-                    await workspace.OpenProjectAsync(projectOrSolution.FullName),
-                    CancellationToken.None
+                    workspace,
+                    await workspace.OpenProjectAsync(project.FullName)
                 );
             }
 
-            sw.Stop();
-            Log.Information($"Concluded after {sw.Elapsed.TotalSeconds} seconds.");
+            Log.Information
+            (
+                GeneratorHandoff.ExitCode == 0
+                    ? $"Finished after {sw.Elapsed.TotalSeconds} seconds."
+                    : $"Failed after {sw.Elapsed.TotalSeconds} seconds."
+            );
+
             return GeneratorHandoff.ExitCode;
         }
 
-        private static void LogWorkspaceFailure(object? sender, WorkspaceDiagnosticEventArgs e)
+        private static void LogWorkspaceFailure(object? s, WorkspaceDiagnosticEventArgs e)
         {
             // ReSharper disable once SwitchStatementHandlesSomeKnownEnumValuesWithDefault
             switch (e.Diagnostic.Kind)

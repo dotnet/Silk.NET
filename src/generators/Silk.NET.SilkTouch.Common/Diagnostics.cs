@@ -1,7 +1,6 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
 using System.Runtime.InteropServices;
 using Microsoft.CodeAnalysis;
 
@@ -27,7 +26,7 @@ namespace Silk.NET.SilkTouch
         (
             id: "ST0006",
             title: "No Configuration File",
-            messageFormat: "No configuration file, SilkTouch will not run.. To configure a path to a SilkTouch JSON " +
+            messageFormat: "No configuration file, SilkTouch will not run. To configure a path to a SilkTouch JSON " +
                            $"Configuration file, use the \"{Constants.ConfigFileEditorconfigOption}\" editorconfig " +
                            "option.",
             category: "SilkTouch",
@@ -100,11 +99,11 @@ namespace Silk.NET.SilkTouch
         (
             id: "ST0011",
             title: "No Configuration For This Project",
-            messageFormat: "\"{0}\" does not contain any configuration for project \"{1}\" (\"projects\" > " +
-                           "\"{1}\": {...})",
+            messageFormat: "\"{0}\" does not contain any configuration for project \"{1}\", SilkTouch will not run " +
+                           "(\"projects\" > \"{1}\": {{...}})",
             category: "SilkTouch",
             defaultSeverity: DiagnosticSeverity.Info,
-            isEnabledByDefault: true,
+            isEnabledByDefault: false,
             description: null,
             helpLinkUri: null,
             customTags: WellKnownDiagnosticTags.AnalyzerException

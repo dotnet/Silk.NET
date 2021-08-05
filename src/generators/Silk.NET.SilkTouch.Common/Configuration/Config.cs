@@ -3,7 +3,6 @@
 
 using System.Collections.Generic;
 using System.Collections.Immutable;
-using System.ComponentModel;
 using System.Data;
 using System.IO;
 using System.Text.Json;
@@ -12,6 +11,7 @@ using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.CodeAnalysis.Text;
 using Silk.NET.SilkTouch.Configuration.Json;
+using Ultz.Extensions.Logging;
 
 namespace Silk.NET.SilkTouch.Configuration
 {
@@ -40,6 +40,7 @@ namespace Silk.NET.SilkTouch.Configuration
             if (provider.GlobalOptions
                 .TryGetValue(Constants.ConfigFileEditorconfigOption, out var file))
             {
+                Log.Debug($"User has overriden \"{configFileName}\" to \"{file}\"");
                 configFileName = file;
             }
 
@@ -47,10 +48,13 @@ namespace Silk.NET.SilkTouch.Configuration
             usedText = null;
             foreach (var additionalFile in additionalFiles)
             {
+                Log.Debug($"Testing \"{additionalFile.Path}\" (expecting \"{configFileName}\")...");
                 if (additionalFile.Path == configFileName || Path.GetFileName(additionalFile.Path) == configFileName)
                 {
+                    Log.Debug($"\"{additionalFile.Path}\" is a good match.");
                     if (usedText is not null)
                     {
+                        Log.Debug($"We've already found \"{usedText.Path}\" though!");
                         config = null;
                         var ret = Diagnostic.Create
                         (
@@ -70,11 +74,13 @@ namespace Silk.NET.SilkTouch.Configuration
             
             if (usedText is null)
             {
+                Log.Debug("No config.");
                 config = null;
                 usedText = null;
                 return Diagnostic.Create(Diagnostics.NoConfigFile, Location.None);
             }
 
+            Log.Debug("Good config.");
             config = Load(File.ReadAllText(usedText.Path)); // was gonna use usedText.GetText() until I saw their code.
             return null;
         }

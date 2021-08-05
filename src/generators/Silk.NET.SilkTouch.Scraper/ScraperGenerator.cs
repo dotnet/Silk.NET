@@ -19,6 +19,7 @@ namespace Silk.NET.SilkTouch.Scraper
         public const FormFactors DefaultFormFactors = FormFactors.CLI;
         public static async Task RunAsync<T>(SilkTouchContext ctx) where T:ISubagent, new()
         {
+            Log.Information("Scraper started.");
             var subagentSpawner = new T();
             var error = false;
             var libraryNames = ctx.Configuration.Scraper?.LibraryNames;

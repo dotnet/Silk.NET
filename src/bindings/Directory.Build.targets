@@ -1,0 +1,6 @@
+﻿<Project>
+    <ItemGroup>
+        <AdditionalFiles Include="$(MSBuildThisFileDirectory)silktouch.json" />
+    </ItemGroup>
+    <Import Project="$(MSBuildThisFileDirectory)../Directory.Build.targets" />
+</Project>

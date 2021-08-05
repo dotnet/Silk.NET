@@ -7,11 +7,7 @@
 
     <ItemGroup>
       <PackageReference Include="ClangSharp.PInvokeGenerator" Version="12.0.0-beta1" />
-      <PackageReference Include="Microsoft.Build" Version="16.10.0" />
       <PackageReference Include="Microsoft.Build.Locator" Version="1.4.1" />
-      <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.0.0-2.final" />
-      <PackageReference Include="Microsoft.Win32.Registry" Version="6.0.0-preview.5.21301.5" />
-      <PackageReference Include="System.Management" Version="6.0.0-preview.6.21352.12" />
       <ProjectReference Include="..\Silk.NET.SilkTouch.Common\Silk.NET.SilkTouch.Common.csproj" />
     </ItemGroup>
 

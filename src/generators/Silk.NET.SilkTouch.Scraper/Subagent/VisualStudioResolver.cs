@@ -3,17 +3,10 @@
 
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.IO;
 using System.Linq;
-using System.Management;
-using System.Net;
-using System.Runtime.Versioning;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 using Microsoft.Build.Locator;
-using Microsoft.Extensions.Logging;
 using Ultz.Extensions.Logging;
 
 namespace Silk.NET.SilkTouch.Scraper.Subagent
@@ -62,7 +55,7 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
 
             var use = MSBuildLocator.QueryVisualStudioInstances()
                 .OrderBy(x => x.DiscoveryType)
-                .ThenBy(x => x.Version)
+                .ThenByDescending(x => x.Version)
                 .FirstOrDefault();
 
             if (use is null)
@@ -71,7 +64,7 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
                 return false;
             }
 
-            Log.Information($"Using MSBuild at \"{use.MSBuildPath}\" (from \"{use.Name}\" v{use.Version.ToString(3)}");
+            Log.Information($"Using MSBuild at \"{use.MSBuildPath}\" (from \"{use.Name}\" v{use.Version.ToString(3)})");
             instance = use;
             return true;
         }
@@ -97,11 +90,13 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
                 .QueryVisualStudioInstances()
                 .Where(x => (x.DiscoveryType & (DiscoveryType.DeveloperConsole | DiscoveryType.VisualStudioSetup)) != 0)
                 .OrderBy(x => x.DiscoveryType)
-                .ThenBy(x => x.Version);
+                .ThenByDescending(x => x.Version);
             
             // cycle through candidate installations, try and find everything we're looking for.
+            var hasVs = false;
             foreach (var visualStudio in visualStudios)
             {
+                hasVs = true;
                 Log.Debug
                 (
                     $"Testing \"{visualStudio.Name}\" v{visualStudio.Version.ToString(3)} at " +
@@ -160,6 +155,11 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
                 );
 
                 return true;
+            }
+
+            if (!hasVs)
+            {
+                Log.Trace("No instance of Visual Studio found whatsoever.");
             }
             
             // if any of it's still null, we couldn't find a candidate.
