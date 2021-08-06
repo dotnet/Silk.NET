@@ -1,4 +1,5 @@
 using System;
+using System.Runtime.InteropServices;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
@@ -7,6 +8,7 @@ using Silk.NET.Core.Native;
 
 namespace Silk.NET.Assimp
 {
+    [NativeApi(Convention = CallingConvention.Winapi)]
     public partial class Assimp
     {
         public static Assimp GetApi()

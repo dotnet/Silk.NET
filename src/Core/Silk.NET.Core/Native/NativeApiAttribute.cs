@@ -45,7 +45,7 @@ namespace Silk.NET.Core.Native
 
         public static CallingConvention GetCallingConvention(NativeApiAttribute attr, NativeApiAttribute parent)
         {
-            return attr?._actualConvention ?? parent?._actualConvention ?? CallingConvention.Winapi;
+            return attr?._actualConvention ?? parent?._actualConvention ?? CallingConvention.Cdecl;
         }
     }
 }
