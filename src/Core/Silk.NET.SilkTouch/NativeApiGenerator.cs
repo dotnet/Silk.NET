@@ -392,6 +392,58 @@ namespace Silk.NET.SilkTouch
             SyntaxList<UsingDirectiveSyntax> generationusings
         )
         {
+            const string invocationShimName = "StCall";
+            static FunctionPointerTypeSyntax GetFuncPtrType
+            (
+                CallingConvention callingConvention,
+                ITypeSymbol[] loadTypes
+            ) => FunctionPointerType
+            (
+                callingConvention == CallingConvention.Winapi ? FunctionPointerCallingConvention
+                (
+                    Token(SyntaxKind.UnmanagedKeyword)
+                ) : FunctionPointerCallingConvention
+                (
+                    Token(SyntaxKind.UnmanagedKeyword),
+                    FunctionPointerUnmanagedCallingConventionList
+                    (
+                        SingletonSeparatedList
+                        (
+                            FunctionPointerUnmanagedCallingConvention
+                                (Identifier(GetCallingConvention(callingConvention)))
+                        )
+                    )
+                ),
+                FunctionPointerParameterList
+                (
+                    SeparatedList
+                    (
+                        loadTypes.Select
+                        (
+                            x => FunctionPointerParameter
+                                (IdentifierName(x.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)))
+                        )
+                    )
+                )
+            );
+
+            static MemberAccessExpressionSyntax GetFuncPtrExpr
+            (
+                string generatedVTableName,
+                string entryPoint
+            ) => MemberAccessExpression
+            (
+                SyntaxKind.SimpleMemberAccessExpression,
+                ParenthesizedExpression
+                (
+                    BinaryExpression
+                    (
+                        SyntaxKind.AsExpression, IdentifierName("CurrentVTable"),
+                        IdentifierName(generatedVTableName)
+                    )
+                ), IdentifierName(FirstLetterToUpper(entryPoint))
+            );
+
             void BuildLoadInvoke(ref IMarshalContext ctx, Action next)
             {
                 ctx.TransitionTo(SilkTouchStage.PreLoad);
@@ -400,32 +452,6 @@ namespace Silk.NET.SilkTouch
 
                 var parameters = ctx.ResolveAllLoadParameters();
 
-                var fPtrType = FunctionPointerType
-                (
-                    FunctionPointerCallingConvention
-                    (
-                        Token(SyntaxKind.UnmanagedKeyword),
-                        FunctionPointerUnmanagedCallingConventionList
-                        (
-                            SingletonSeparatedList
-                            (
-                                FunctionPointerUnmanagedCallingConvention
-                                    (Identifier(GetCallingConvention(callingConvention)))
-                            )
-                        )
-                    ),
-                    FunctionPointerParameterList
-                    (
-                        SeparatedList
-                        (
-                            ctx.LoadTypes.Select
-                            (
-                                x => FunctionPointerParameter
-                                    (IdentifierName(x.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)))
-                            )
-                        )
-                    )
-                );
                 
                 entryPoints.Add(entryPoint);
                 processedEntrypoints.Add
@@ -445,33 +471,44 @@ namespace Silk.NET.SilkTouch
 
                 Func<IMarshalContext, ExpressionSyntax> expression;
 
+                var defs = declaration.SyntaxTree.Options.PreprocessorSymbolNames;
+
+                // ReSharper disable PossibleMultipleEnumeration - just not an issue
+                var hasFastWinapi = defs.Contains("NET5_0") ||
+                                    defs.Contains("NET6_0") ||
+                                    defs.Contains("NET5_0_OR_GREATER"); // newer SDKs (circa .NET 6) have _OR_GREATER
+                // ReSharper restore PossibleMultipleEnumeration
+
+                var needsInvocationShim = callingConvention == CallingConvention.Winapi && !hasFastWinapi;
+
                 if ((classIsSealed || generateSeal) && generateVTable)
                 {
                     // build load + invocation
-                    expression = ctx => InvocationExpression
-                    (
-                        ParenthesizedExpression
+                    expression = ctx =>
+                    {
+                        var fPtrType = GetFuncPtrType(callingConvention, ctx.LoadTypes);
+                        return InvocationExpression
                         (
-                            CastExpression
+                            needsInvocationShim ? IdentifierName(invocationShimName) : ParenthesizedExpression
                             (
-                                fPtrType, MemberAccessExpression
+                                CastExpression
                                 (
-                                    SyntaxKind.SimpleMemberAccessExpression,
-                                    ParenthesizedExpression
-                                    (
-                                        BinaryExpression
-                                        (
-                                            SyntaxKind.AsExpression, IdentifierName("CurrentVTable"), IdentifierName(generatedVTableName)
-                                        )
-                                    ), IdentifierName(FirstLetterToUpper(entryPoint))
+                                    fPtrType,
+                                    GetFuncPtrExpr(generatedVTableName, entryPoint)
                                 )
-                            )
-                        ), ArgumentList(SeparatedList(parameters.Select(x => Argument(x.Value))))
-                    );
+                            ), ArgumentList(SeparatedList(parameters.Select(x => Argument(x.Value))))
+                        );
+                    };
                 }
                 else
                 {
                     throw new Exception("FORCE-USE-VTABLE");
+                }
+                
+
+                if (needsInvocationShim)
+                {
+                    ctx.AddSideEffect(ManualWinapiInvokeShim);
                 }
 
                 if (ctx.ReturnsVoid)
@@ -512,8 +549,7 @@ namespace Silk.NET.SilkTouch
                     block = Block(UnsafeStatement(Token(SyntaxKind.UnsafeKeyword), block));
                 }
 
-                var method = declaration.WithBody
-                        (block)
+                var method = declaration.WithBody(block)
                     .WithAttributeLists(default)
                     .WithSemicolonToken(default)
                     .WithParameterList
@@ -571,6 +607,109 @@ namespace Silk.NET.SilkTouch
             {
                 sourceContext.ReportDiagnostic
                     (Diagnostic.Create(Diagnostics.MethodClassFailure, declaration.GetLocation(), ex.ToString()));
+            }
+
+            InvocationExpressionSyntax ManualWinapiInvokeInnerExpr
+            (
+                IMarshalContext ctx,
+                CallingConvention callingConvention
+            ) => InvocationExpression
+            (
+                ParenthesizedExpression
+                (
+                    CastExpression
+                    (
+                        GetFuncPtrType(callingConvention, ctx.LoadTypes),
+                        GetFuncPtrExpr(generatedVTableName, entryPoint)
+                    )
+                ),
+                ArgumentList
+                (
+                    SeparatedList
+                    (
+                        Enumerable.Range
+                                (0, ctx.LoadTypes.Length - 1)
+                            .Select(x => Argument(IdentifierName($"arg{x}")))
+                    )
+                )
+            );
+            
+            StatementSyntax ManualWinapiInvokeShim(IMarshalContext ctx)
+            {
+                var stdCallStmt = ManualWinapiInvokeInnerExpr(ctx, CallingConvention.StdCall);
+                var cdeclStmt = ManualWinapiInvokeInnerExpr(ctx, CallingConvention.Cdecl);
+                return LocalFunctionStatement
+                    (
+                        IdentifierName(ctx.ReturnLoadType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)),
+                        invocationShimName
+                    )
+                    .WithParameterList
+                    (
+                        ParameterList
+                        (
+                            SeparatedList
+                            (
+                                new ArraySegment<ITypeSymbol>(ctx.LoadTypes, 0, ctx.LoadTypes.Length - 1).Select
+                                (
+                                    (x, i) => Parameter(Identifier($"arg{i}"))
+                                        .WithType
+                                        (
+                                            IdentifierName(x.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat))
+                                        )
+                                )
+                            )
+                        )
+                    )
+                    .WithBody
+                    (
+                        Block
+                        (
+                            IfStatement
+                            (
+                                MemberAccessExpression
+                                (
+                                    SyntaxKind.SimpleMemberAccessExpression,
+                                    MemberAccessExpression
+                                    (
+                                        SyntaxKind.SimpleMemberAccessExpression,
+                                        MemberAccessExpression
+                                        (
+                                            SyntaxKind.SimpleMemberAccessExpression,
+                                            MemberAccessExpression
+                                            (
+                                                SyntaxKind.SimpleMemberAccessExpression,
+                                                MemberAccessExpression
+                                                (
+                                                    SyntaxKind.SimpleMemberAccessExpression, IdentifierName("Silk"),
+                                                    IdentifierName("NET")
+                                                ), IdentifierName("Core")
+                                            ), IdentifierName("Native")
+                                        ), IdentifierName("SilkMarshal")
+                                    ), IdentifierName("IsWinapiStdcall")
+                                ),
+                                Block
+                                (
+                                    ctx.ReturnsVoid
+                                        ? ExpressionStatement(stdCallStmt)
+                                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                                        : ReturnStatement(stdCallStmt)
+                                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                                ),
+                                ElseClause
+                                (
+                                    Block
+                                    (
+                                        ctx.ReturnsVoid
+                                            ? ExpressionStatement(cdeclStmt)
+                                                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                                            : ReturnStatement(cdeclStmt)
+                                                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                                    )
+                                )
+                            )
+                        )
+                    )
+                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
             }
         }
 

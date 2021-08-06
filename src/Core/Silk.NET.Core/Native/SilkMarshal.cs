@@ -9,8 +9,6 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Text;
-using System.Threading;
-using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Core.Native
 {
@@ -19,6 +17,25 @@ namespace Silk.NET.Core.Native
     /// </summary>
     public static class SilkMarshal
     {
+        /// <summary>
+        /// Gets a value indicating whether <see cref="CallingConvention.Winapi"/> is equivalent to
+        /// <see cref="CallingConvention.StdCall"/>.
+        /// </summary>
+        /// <remarks>
+        /// If false, <see cref="CallingConvention.Winapi"/> can be generally assumed to be equivalent to
+        /// <see cref="CallingConvention.Cdecl"/>.
+        /// </remarks>
+        public static readonly bool IsWinapiStdcall;
+
+        static SilkMarshal()
+        {
+#if NET5_0
+            IsWinapiStdcall = OperatingSystem.IsWindows();
+#else
+            IsWinapiStdcall = RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
+#endif
+        }
+    
         /// <summary>
         /// Allocate a new BStr pointer.
         /// </summary>
