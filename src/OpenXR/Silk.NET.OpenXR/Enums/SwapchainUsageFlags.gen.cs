@@ -29,5 +29,7 @@ namespace Silk.NET.OpenXR
         SwapchainUsageMutableFormatBit = 64,
         [NativeName("Name", "XR_SWAPCHAIN_USAGE_INPUT_ATTACHMENT_BIT_MND")]
         SwapchainUsageInputAttachmentBitMnd = 128,
+        [NativeName("Name", "XR_SWAPCHAIN_USAGE_INPUT_ATTACHMENT_BIT_KHR")]
+        SwapchainUsageInputAttachmentBitKhr = 128,
     }
 }

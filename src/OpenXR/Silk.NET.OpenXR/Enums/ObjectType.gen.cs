@@ -36,5 +36,9 @@ namespace Silk.NET.OpenXR
         SceneObserverMsft = 1000097000,
         [NativeName("Name", "XR_OBJECT_TYPE_SCENE_MSFT")]
         SceneMsft = 1000097001,
+        [NativeName("Name", "XR_OBJECT_TYPE_FOVEATION_PROFILE_FB")]
+        FoveationProfileFB = 1000114000,
+        [NativeName("Name", "XR_OBJECT_TYPE_SPATIAL_ANCHOR_STORE_CONNECTION_MSFT")]
+        SpatialAnchorStoreConnectionMsft = 1000142000,
     }
 }

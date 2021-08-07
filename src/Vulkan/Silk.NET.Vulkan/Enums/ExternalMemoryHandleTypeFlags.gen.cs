@@ -37,8 +37,8 @@ namespace Silk.NET.Vulkan
         ExternalMemoryHandleTypeHostMappedForeignMemoryBitExt = 256,
         [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_ZIRCON_VMO_BIT_FUCHSIA")]
         ExternalMemoryHandleTypeZirconVmoBitFuchsia = 2048,
-        [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_RESERVED_12_BIT_NV")]
-        ExternalMemoryHandleTypeReserved12BitNV = 4096,
+        [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_RDMA_ADDRESS_BIT_NV")]
+        ExternalMemoryHandleTypeRdmaAddressBitNV = 4096,
         [NativeName("Name", "VK_EXTERNAL_MEMORY_HANDLE_TYPE_RESERVED_13_BIT_NV")]
         ExternalMemoryHandleTypeReserved13BitNV = 8192,
     }

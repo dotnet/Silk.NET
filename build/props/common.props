@@ -6,23 +6,21 @@
         <LangVersion>preview</LangVersion>
         <Authors>.NET Foundation and Contributors</Authors>
         <PackageReleaseNotes>
-            Silk.NET July 2021 Update
+            Silk.NET August 2021 Update
 
-            - Add support for OpenAL Soft native libraries for ALContext
-            - Update to Vulkan 1.2.183
-            - Update to latest OpenCL specifications
-            - Fix struct layout issues in DirectX and OpenXR bindings
-            - Fix OpenCL library name resolution on Linux
-            - Fix NU5127, NU5128, and NU1701 native package NuGet errors on .NET Framework
-            - Improve FileNotFoundExceptions when native library loading fails
-            - Improve GlobalMemory call chains by removing unnecessary usage of Span&lt;T&gt;
+            - Add code signing to all Silk.NET binaries
+            - Add support for platform-default calling conventions
+            - Update to latest OpenGL specifications
+            - Update to Vulkan 1.2.187
+            - Update to OpenXR 1.0.18
+            - Fix loading some OpenAL extensions
         </PackageReleaseNotes>
         <PackageTags Condition="'$(PackageTags)' == ''">OpenCL;OpenGL;OpenAL;OpenGLES;GLES;Vulkan;Assimp;DirectX;GLFW;SDL;Windowing;Input;Gamepad;Joystick;Keyboard;Mouse;SilkTouch;Source;Generator;C#;F#;.NET;DotNet;Mono;Vector;Math;Maths;Numerics;Game;Graphics;Compute;Audio;Sound;Engine;Silk;Silk.NET;Slim.NET;ElgarTK;GPU;Sharp;Science;Scientific;Visualization;Visual;Audiovisual;Windows;macOS;Linux;Android;Bindings;OSX;Wrapper;Native</PackageTags>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <PackageOutputPath>$(MSBuildThisFileDirectory)/../output_packages</PackageOutputPath>
         <RepositoryUrl>https://github.com/dotnet/Silk.NET</RepositoryUrl>
         <RepositoryType>Git</RepositoryType>
-        <VersionPrefix>2.6.0</VersionPrefix>
+        <VersionPrefix>2.7.0</VersionPrefix>
         <VersionSuffix Condition="'$(VersionSuffix)' == ''"></VersionSuffix>
         <Description Condition="'$(Description)' == ''">
             Silk.NET is a high-speed, advanced library, providing bindings to popular low-level APIs such as OpenGL, OpenCL, OpenAL, OpenXR, GLFW, SDL, Vulkan, Assimp, and DirectX.

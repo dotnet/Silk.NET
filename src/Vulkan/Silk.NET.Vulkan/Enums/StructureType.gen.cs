@@ -882,6 +882,8 @@ namespace Silk.NET.Vulkan
         ImageStencilUsageCreateInfoExt = 1000246000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_VALIDATION_FEATURES_EXT")]
         ValidationFeaturesExt = 1000247000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_WAIT_FEATURES_KHR")]
+        PhysicalDevicePresentWaitFeaturesKhr = 1000248000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_COOPERATIVE_MATRIX_FEATURES_NV")]
         PhysicalDeviceCooperativeMatrixFeaturesNV = 1000249000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_COOPERATIVE_MATRIX_PROPERTIES_NV")]
@@ -950,6 +952,8 @@ namespace Silk.NET.Vulkan
         PipelineExecutableStatisticKhr = 1000269004,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_EXECUTABLE_INTERNAL_REPRESENTATION_KHR")]
         PipelineExecutableInternalRepresentationKhr = 1000269005,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_ATOMIC_FLOAT_2_FEATURES_EXT")]
+        PhysicalDeviceShaderAtomicFloat2FeaturesExt = 1000273000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_DEMOTE_TO_HELPER_INVOCATION_FEATURES_EXT")]
         PhysicalDeviceShaderDemoteToHelperInvocationFeaturesExt = 1000276000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DEVICE_GENERATED_COMMANDS_PROPERTIES_NV")]
@@ -998,6 +1002,10 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceCustomBorderColorFeaturesExt = 1000287002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PIPELINE_LIBRARY_CREATE_INFO_KHR")]
         PipelineLibraryCreateInfoKhr = 1000290000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PRESENT_ID_KHR")]
+        PresentIDKhr = 1000294000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRESENT_ID_FEATURES_KHR")]
+        PhysicalDevicePresentIDFeaturesKhr = 1000294001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRIVATE_DATA_FEATURES_EXT")]
         PhysicalDevicePrivateDataFeaturesExt = 1000295000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_DEVICE_PRIVATE_DATA_CREATE_INFO_EXT")]
@@ -1118,6 +1126,12 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceSubpassShadingFeaturesHuawei = 1000369001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SUBPASS_SHADING_PROPERTIES_HUAWEI")]
         PhysicalDeviceSubpassShadingPropertiesHuawei = 1000369002,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_INVOCATION_MASK_FEATURES_HUAWEI")]
+        PhysicalDeviceInvocationMaskFeaturesHuawei = 1000370000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_MEMORY_GET_REMOTE_ADDRESS_INFO_NV")]
+        MemoryGetRemoteAddressInfoNV = 1000371000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTERNAL_MEMORY_RDMA_FEATURES_NV")]
+        PhysicalDeviceExternalMemoryRdmaFeaturesNV = 1000371001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_EXTENDED_DYNAMIC_STATE_2_FEATURES_EXT")]
         PhysicalDeviceExtendedDynamicState2FeaturesExt = 1000377000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_SCREEN_SURFACE_CREATE_INFO_QNX")]
