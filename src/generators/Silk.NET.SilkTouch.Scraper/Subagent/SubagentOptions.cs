@@ -92,7 +92,8 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
         IReadOnlyDictionary<string, string>? WithLibraryPaths = null,
         string[]? WithSetLastErrors = null,
         IReadOnlyDictionary<string, string>? WithTypes = null,
-        IReadOnlyDictionary<string, IReadOnlyList<string>>? WithUsings = null
+        IReadOnlyDictionary<string, IReadOnlyList<string>>? WithUsings = null,
+        bool DebugAttach = false
     )
     {
         /// <summary>

@@ -38,9 +38,11 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
             "Include/{0}/ucrt",
             "Include/{0}/shared"
         };
-
+        
         private static VisualStudioInfo? _cachedInfo;
         private static VisualStudioInstance? _cachedInstance;
+        
+        private static bool _vsInfoKnownError;
 
         public static bool TryGetMSBuildInfo
         (
@@ -79,10 +81,10 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
             }
 
             // if we've cached some info
-            if (_cachedInfo is not null)
+            if (_cachedInfo is not null || _vsInfoKnownError)
             {
                 info = _cachedInfo;
-                return true;
+                return !_vsInfoKnownError;
             }
             
             // use MSBuildLocator to find Visual Studio instances
@@ -171,6 +173,7 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
             );
 
             info = null;
+            _vsInfoKnownError = true;
             return false;
         }
     }

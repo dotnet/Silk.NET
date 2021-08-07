@@ -84,6 +84,8 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
                 opts |= PInvokeGeneratorConfigurationOptions.GenerateUnixTypes;
             }
 
+            opts |= PInvokeGeneratorConfigurationOptions.LogExclusions;
+            opts |= PInvokeGeneratorConfigurationOptions.LogVisitedFiles;
             return opts;
         }
     }

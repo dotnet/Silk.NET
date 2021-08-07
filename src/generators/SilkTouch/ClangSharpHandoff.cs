@@ -3,6 +3,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text.Json;
@@ -29,6 +30,13 @@ namespace SilkTouch
                 return (int) ExitCodes.SubagentBadArgs;
             }
 
+            if (options.DebugAttach && Environment.GetEnvironmentVariable("SilkTouch_NoNestedDebug") != "1")
+            {
+                Debugger.Launch();
+            }
+            
+            Console.WriteLine($"T:Clang Version: {clang.getClangVersion()}");
+
             // the code below is based off ClangSharp
             // Copyright (c) Microsoft and Contributors. All rights reserved.
             // Licensed under the University of Illinois/NCSA Open Source License.
@@ -46,7 +54,7 @@ namespace SilkTouch
             };
 
             clangCommandLineArgs.AddRange(options.IncludeDirectories.Select(x => "--include-directory=" + x));
-            clangCommandLineArgs.AddRange(options.IncludeDirectories.Select(x => "--define-macro=" + x));
+            clangCommandLineArgs.AddRange(options.DefineMacros?.Select(x => "--define-macro=" + x) ?? Enumerable.Empty<string>());
             clangCommandLineArgs.AddRange(options.AdditionalArgs ?? Enumerable.Empty<string>());
 
             var translationFlags = CXTranslationUnit_Flags.CXTranslationUnit_None;

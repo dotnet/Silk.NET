@@ -5,7 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="ClangSharp.PInvokeGenerator" Version="12.0.0-beta1" />
+      <PackageReference Include="ClangSharp.PInvokeGenerator" Version="12.0.0-beta2" />
       <PackageReference Include="Microsoft.Build.Locator" Version="1.4.1" />
       <PackageReference Include="Microsoft.Extensions.FileSystemGlobbing" Version="6.0.0-preview.6.21352.12" />
       <ProjectReference Include="..\Silk.NET.SilkTouch.Common\Silk.NET.SilkTouch.Common.csproj" />

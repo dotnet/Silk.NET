@@ -57,7 +57,7 @@ namespace SilkTouch
             };
             
             // get the env vars of a developer command prompt if we can
-            if (VisualStudioResolver.TryGetVisualStudioInfo(out var vsInfo))
+            if (!Program.NoEnvironmentEmulation && VisualStudioResolver.TryGetVisualStudioInfo(out var vsInfo))
             {
                 foreach (var (k, v) in vsInfo.Variables)
                 {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text.Json;
@@ -116,7 +117,7 @@ namespace Silk.NET.SilkTouch.Scraper
             }
 
             var traversals = globber.Execute(new DirectoryInfoWrapper(new(ctx.BaseDirectory))).Files
-                .Select(x => x.Path)
+                .Select(x => Path.GetFullPath(x.Path.Replace('\\', '/'), ctx.BaseDirectory))
                 .ToArray();
 
             Log.Debug($"Using work folder \"{workFolder}\" job {jobNumber}");
@@ -124,7 +125,7 @@ namespace Silk.NET.SilkTouch.Scraper
             var options = new SubagentOptions
             (
                 @in,
-                "__SILKTOUCH", // TODO replace this in transformation, our library path logic will be more lenient
+                "__SILKTOUCH", // TODO replace this in transformation
                 job.Namespace ?? ctx.AssemblyName,
                 @out,
                 workFolder,
@@ -150,7 +151,8 @@ namespace Silk.NET.SilkTouch.Scraper
                 WithLibraryPaths: null, // again, library path stuff is done in transformation
                 WithSetLastErrors: null, // the current design of SilkTouch doesn't support SetLastError
                 null, // currently no need to support enum type overrides
-                null // the scraper will add predefined using directives during transformation
+                null, // the scraper will add predefined using directives during transformation
+                Debugger.IsAttached
             );
 
             var clangSharpErrors = new List<string>();

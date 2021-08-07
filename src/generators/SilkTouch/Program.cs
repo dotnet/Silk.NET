@@ -5,6 +5,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using ClangSharp.Interop;
 using Microsoft.Build.Locator;
 using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.MSBuild;
@@ -17,6 +18,7 @@ namespace SilkTouch
     internal class Program
     {
         public static string[] Args { get; internal set; }
+        public static bool NoEnvironmentEmulation { get; internal set; }
 
         static async Task<int> Main(string[] args)
         {
@@ -49,15 +51,24 @@ namespace SilkTouch
                     new[] { "--logging", "-l" },
                     () => Debugger.IsAttached ? LogMode.VVerbose : LogMode.Standard,
                     "The debug logging verbosity."
+                ),
+                new Option<bool>
+                (
+                    new[] { "--no-environment-emulation", "-E" },
+                    () => false,
+                    "Disables environment emulation for subagents i.e. does not run subagents in a Visual Studio " +
+                    "Developer Command Prompt. Disabling this is useful if your Visual Studio instance does not have " +
+                    $"clang {typeof(clang).Assembly.GetName().Version?.Major} installed."
                 )
             };
             
-            rootCommand.Handler = CommandHandler.Create<FileInfo, LogMode>(RunSilkTouchAsync);
+            rootCommand.Handler = CommandHandler.Create<FileInfo, LogMode, bool>(RunSilkTouchAsync);
             return await rootCommand.InvokeAsync(args);
         }
 
-        private static async Task<int> RunSilkTouchAsync(FileInfo project, LogMode logging)
+        private static async Task<int> RunSilkTouchAsync(FileInfo project, LogMode logging, bool noEnvironmentEmulation)
         {
+            NoEnvironmentEmulation = noEnvironmentEmulation;
             if (logging != LogMode.Silent)
             {
                 Console.WriteLine
