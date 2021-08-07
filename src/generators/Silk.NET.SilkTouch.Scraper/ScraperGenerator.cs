@@ -6,6 +6,8 @@ using System.Text.Json;
 using System.Threading.Tasks;
 using ClangSharp;
 using Microsoft.CodeAnalysis;
+using Microsoft.Extensions.FileSystemGlobbing;
+using Microsoft.Extensions.FileSystemGlobbing.Abstractions;
 using Silk.NET.SilkTouch.Configuration;
 using Silk.NET.SilkTouch.Generation;
 using Silk.NET.SilkTouch.Scraper.Subagent;
@@ -19,43 +21,61 @@ namespace Silk.NET.SilkTouch.Scraper
         public const FormFactors DefaultFormFactors = FormFactors.CLI;
         public static async Task RunAsync<T>(SilkTouchContext ctx) where T:ISubagent, new()
         {
-            Log.Information("Scraper started.");
             var subagentSpawner = new T();
+            await Parallel.ForEachAsync
+            (
+                ctx.Configuration.Scraper?.Jobs?.Select((x, i) => (x, i))
+                    ?? Enumerable.Empty<(ScraperJobConfiguration, int)>(),
+                async (x, _) => await RunAsync(ctx, subagentSpawner, x.x, x.i)
+            );
+        }
+
+        public static async Task RunAsync
+        (
+            SilkTouchContext ctx,
+            ISubagent subagent,
+            ScraperJobConfiguration job,
+            int jobNumber
+        )
+        {
+            // initial validation
             var error = false;
-            var libraryNames = ctx.Configuration.Scraper?.LibraryNames;
+            var libraryNames = job.LibraryNames;
             if ((libraryNames?.Length ?? 0) == 0)
             {
-                ctx.EmitDiagnostic(Diagnostic.Create(Diagnostics.NoLibraryName, Location.None, ctx.AssemblyName));
+                ctx.EmitDiagnostic(Diagnostic.Create(Diagnostics.NoLibraryName, Location.None, jobNumber));
                 error = true;
             }
 
-            if (ctx.Configuration.Scraper?.HeaderText is null)
+            if (job.HeaderText is null)
             {
-                ctx.EmitDiagnostic(Diagnostic.Create(Diagnostics.NoHeaderText, Location.None, ctx.AssemblyName));
+                ctx.EmitDiagnostic(Diagnostic.Create(Diagnostics.NoHeaderText, Location.None, jobNumber));
                 error = true;
             }
 
+            // if the config is bad, quit now.
             if (error)
             {
                 return;
             }
 
+            // write some data to the disk for the subagent to see
             var workFolder = Path.Combine(Path.GetTempPath(), Path.GetRandomFileName());
             var @in = Path.Combine(workFolder, "in.h");
             var @out = Path.Combine(workFolder, "out.xml");
             string? licenseHeaderFile = null;
             Directory.CreateDirectory(workFolder);
-            File.WriteAllLines(@in, ctx.Configuration.Scraper?.HeaderText ?? Array.Empty<string>());
-
+            File.WriteAllLines(@in, job.HeaderText ?? Array.Empty<string>());
             if (ctx.GlobalConfiguration?.FileHeaderLines is not null)
             {
                 licenseHeaderFile = Path.Combine(workFolder, "licenseHeader.txt");
                 await File.WriteAllTextAsync(licenseHeaderFile, licenseHeaderFile);
             }
             
+            // format our includes. this allows both relative paths like "../" which resolve relative to the
+            // "base directory" i.e. the directory in which the config JSON is stored, and SDK names like "win-sdk"
             VisualStudioResolver.TryGetVisualStudioInfo(out var vs);
-
-            var includes = ctx.Configuration.Scraper?.IncludeDirectories?.ToList() ?? new();
+            var includes = job.IncludeDirectories?.ToList() ?? new();
             for (var i = 0; i < includes.Count; i++)
             {
                 var include = includes[i];
@@ -66,7 +86,7 @@ namespace Silk.NET.SilkTouch.Scraper
                     {
                         ctx.EmitDiagnostic
                         (
-                            Diagnostic.Create(Diagnostics.NoWindowsSdk, Location.None, "win-sdk", ctx.AssemblyName)
+                            Diagnostic.Create(Diagnostics.NoWindowsSdk, Location.None, "win-sdk", jobNumber)
                         );
 
                         continue;
@@ -74,36 +94,59 @@ namespace Silk.NET.SilkTouch.Scraper
 
                     includes.InsertRange(i, vs.UcrtIncludes);
                 }
+                else
+                {
+                    includes[i] = Path.GetFullPath(include, ctx.BaseDirectory);
+                }
+            }
+            
+            // format our traversals. this will allow globbing relative to the "base directory".
+            var globber = new Matcher();
+            for (var i = 0; i < (job.Traverse?.Length ?? 0); i++)
+            {
+                var traversal = job.Traverse![i];
+                if (traversal[0] == '!')
+                {
+                    globber.AddExclude(traversal[1..]);
+                }
+                else
+                {
+                    globber.AddInclude(traversal);
+                }
             }
 
-            Log.Debug($"Using work folder \"{workFolder}\"");
-            Log.Information($"Starting ClangSharp subagent for \"{ctx.AssemblyName}\"...");
+            var traversals = globber.Execute(new DirectoryInfoWrapper(new(ctx.BaseDirectory))).Files
+                .Select(x => x.Path)
+                .ToArray();
+
+            Log.Debug($"Using work folder \"{workFolder}\" job {jobNumber}");
+            Log.Information($"Starting ClangSharp subagent for \"{ctx.AssemblyName}\" job {jobNumber}...");
             var options = new SubagentOptions
             (
                 @in,
                 "__SILKTOUCH", // TODO replace this in transformation, our library path logic will be more lenient
-                ctx.Configuration.Scraper?.Namespace ?? ctx.AssemblyName,
+                job.Namespace ?? ctx.AssemblyName,
                 @out,
                 workFolder,
                 includes.ToArray(),
                 PInvokeGeneratorOutputMode.Xml,
                 SubagentUtils.GetOptions
                 (
-                    ctx.Configuration.Scraper?.Exclude?.Hints ?? ExclusionHint.None,
-                    ctx.Configuration.Scraper?.UnixMode ?? !OperatingSystem.IsWindows()
+                    job.Exclude?.Hints ?? ExclusionHint.None,
+                    job.UnixMode ?? !OperatingSystem.IsWindows()
                 ),
-                ctx.Configuration.Scraper?.Language ?? "c++",
-                ctx.Configuration.Scraper?.Standard ?? "c++17",
-                ctx.Configuration.Scraper?.AdditionalClangArguments,
-                ctx.Configuration.Scraper?.DefineMacros,
-                ctx.Configuration.Scraper?.Exclude?.Identifiers,
+                job.Language ?? "c++",
+                job.Standard ?? "c++17",
+                job.AdditionalClangArguments,
+                job.DefineMacros,
+                job.Exclude?.Identifiers,
                 licenseHeaderFile,
-                ctx.Configuration.Scraper?.ClassName ?? "Interop",
-                ctx.Configuration.Scraper?.MethodPrefixToStrip,
-                await OpenRemappingFilesAsync(ctx.Configuration.Scraper?.RemappingFiles, ctx.BaseDirectory),
-                ctx.Configuration.Scraper?.Traverse,
+                job.ClassName ?? "Interop",
+                job.MethodPrefixToStrip,
+                await OpenRemappingFilesAsync(job.RemappingFiles, ctx.BaseDirectory),
+                traversals,
                 WithAttributes: null, // will be done by mods TODO do attributes in the mods
-                ctx.Configuration.Scraper?.CallingConventions,
+                job.CallingConventions,
                 WithLibraryPaths: null, // again, library path stuff is done in transformation
                 WithSetLastErrors: null, // the current design of SilkTouch doesn't support SetLastError
                 null, // currently no need to support enum type overrides
@@ -111,7 +154,7 @@ namespace Silk.NET.SilkTouch.Scraper
             );
 
             var clangSharpErrors = new List<string>();
-            var exitCode = await subagentSpawner.RunClangSharpAsync(options, clangSharpErrors);
+            var exitCode = await subagent.RunClangSharpAsync(options, clangSharpErrors);
 
             if (exitCode != 0)
             {

@@ -12,7 +12,7 @@ namespace Silk.NET.SilkTouch.Overloader
         {
             if (!generator.IsActive ||
                 generator.AssemblyName is null ||
-                generator.SyntaxTrees is null ||
+                generator.Compilation is null ||
                 generator.ThisConfiguration is null ||
                 generator.BaseDirectory is null)
             {
@@ -33,9 +33,9 @@ namespace Silk.NET.SilkTouch.Overloader
             var ctx = new SilkTouchContext
             (
                 generator.AssemblyName,
-                generator.SyntaxTrees,
+                generator.Compilation,
                 generator.ThisConfiguration!,
-                generator.AllConfiguration?.Global,
+                generator.GlobalConfiguration,
                 generator.BaseDirectory
             );
 

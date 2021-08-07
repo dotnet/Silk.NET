@@ -11,7 +11,7 @@ namespace Silk.NET.SilkTouch.Generation
     public sealed record SilkTouchContext
     (
         string AssemblyName,
-        IEnumerable<CSharpSyntaxTree> SyntaxTrees,
+        Compilation Compilation,
         ProjectConfiguration Configuration,
         GlobalConfiguration? GlobalConfiguration,
         string BaseDirectory

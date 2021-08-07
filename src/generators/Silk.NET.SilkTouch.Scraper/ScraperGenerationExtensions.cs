@@ -10,12 +10,12 @@ namespace Silk.NET.SilkTouch.Scraper
 {
     public static class ScraperGenerationExtensions
     {
-        public static async ValueTask<bool> RunScraperAsync<T>(this SilkTouchGenerator generator)
+        public static async Task<bool> RunScraperAsync<T>(this SilkTouchGenerator generator)
             where T : ISubagent, new()
         {
             if (!generator.IsActive ||
                 generator.AssemblyName is null ||
-                generator.SyntaxTrees is null ||
+                generator.Compilation is null ||
                 generator.ThisConfiguration is null ||
                 generator.BaseDirectory is null)
             {
@@ -35,9 +35,9 @@ namespace Silk.NET.SilkTouch.Scraper
             var ctx = new SilkTouchContext
             (
                 generator.AssemblyName,
-                generator.SyntaxTrees,
+                generator.Compilation,
                 generator.ThisConfiguration!,
-                generator.AllConfiguration?.Global,
+                generator.GlobalConfiguration,
                 generator.BaseDirectory
             );
 

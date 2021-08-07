@@ -69,7 +69,7 @@ namespace SilkTouch
             using var pinvokeGenerator = new PInvokeGenerator(config);
             var translationUnitError = CXTranslationUnit.TryParse
             (
-                pinvokeGenerator.IndexHandle, options.LicenseHeaderFile, finishedCommandLineArgs,
+                pinvokeGenerator.IndexHandle, options.HeaderFile, finishedCommandLineArgs,
                 Array.Empty<CXUnsavedFile>(), translationFlags, out var handle
             );
             var skipProcessing = false;
@@ -117,7 +117,7 @@ namespace SilkTouch
                 Console.WriteLine("I:Processing...");
 
                 pinvokeGenerator.GenerateBindings
-                    (translationUnit, options.LicenseHeaderFile, finishedCommandLineArgs, translationFlags);
+                    (translationUnit, options.HeaderFile, finishedCommandLineArgs, translationFlags);
             }
             catch (Exception e)
             {

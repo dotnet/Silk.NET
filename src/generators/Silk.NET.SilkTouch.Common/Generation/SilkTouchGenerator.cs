@@ -22,10 +22,9 @@ namespace Silk.NET.SilkTouch.Generation
         public bool IsActive { get; private set; }
         public Compilation? Compilation { get; private set; }
         public string? AssemblyName { get; private set; }
-        public RootConfiguration? AllConfiguration { get; private set; }
+        public GlobalConfiguration? GlobalConfiguration { get; private set; }
         public ProjectConfiguration? ThisConfiguration { get; private set; }
         public string? BaseDirectory { get; private set; }
-        public ImmutableArray<CSharpSyntaxTree>? SyntaxTrees { get; private set; }
 
         // Public Events
         public event Action<Diagnostic>? DiagnosticRaised;
@@ -40,17 +39,23 @@ namespace Silk.NET.SilkTouch.Generation
             string? assemblyName = null
         )
         {
-            var loadDiag = Config.Load
+            var configLoadSuccess = Config.TryLoad
             (
                 editorConfig,
                 additionalFiles,
-                out var config,
-                out var usedText
+                out var projectConfig,
+                out var usedText,
+                out var loadDiag
             );
 
             if (loadDiag is not null)
             {
                 DiagnosticRaised?.Invoke(loadDiag);
+                return false;
+            }
+
+            if (!configLoadSuccess)
+            {
                 return false;
             }
 
@@ -62,31 +67,6 @@ namespace Silk.NET.SilkTouch.Generation
             }
 
             // prepare our context data
-            ProjectConfiguration? projectConfig = null;
-            var (_, projects) = config!;
-            if ((!projects?.TryGetValue(assemblyName, out projectConfig) ?? false) ||
-                projectConfig is null)
-            {
-                Log.Trace
-                (
-                    $"No project-specific config for \"{assemblyName}\" found - this is treated as \"don't run " +
-                    "SilkTouch\""
-                );
-
-                DiagnosticRaised?.Invoke
-                (
-                    Diagnostic.Create
-                    (
-                        Diagnostics.NoProjectConfigInFile,
-                        Location.None,
-                        usedText!.Path,
-                        assemblyName
-                    )
-                );
-
-                return false;
-            }
-
             if (compilation is null)
             {
                 // we can't proceed further without a compilation.
@@ -94,7 +74,6 @@ namespace Silk.NET.SilkTouch.Generation
                 return false;
             }
             
-            var syntaxTrees = compilation.SyntaxTrees.OfType<CSharpSyntaxTree>().ToImmutableArray();
             var baseDir = Path.GetDirectoryName(usedText!.Path);
             if (baseDir is null)
             {
@@ -114,10 +93,9 @@ namespace Silk.NET.SilkTouch.Generation
             IsActive = true;
             Compilation = compilation;
             AssemblyName = assemblyName;
-            AllConfiguration = config;
+            GlobalConfiguration = projectConfig?.GetGlobalConfiguration(baseDir);
             ThisConfiguration = projectConfig;
             BaseDirectory = baseDir;
-            SyntaxTrees = syntaxTrees;
             return true;
         }
 
@@ -140,10 +118,9 @@ namespace Silk.NET.SilkTouch.Generation
             IsActive = false;
             Compilation = null;
             AssemblyName = null;
-            AllConfiguration = null;
+            GlobalConfiguration = null;
             ThisConfiguration = null;
             BaseDirectory = null;
-            SyntaxTrees = null;
         }
     }
 }

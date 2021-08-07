@@ -1,6 +1,7 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System;
 using System.Collections.Generic;
 using System.Collections.Immutable;
 using System.Data;
@@ -18,21 +19,22 @@ namespace Silk.NET.SilkTouch.Configuration
     public static class Config
     {
         /// <summary>
-        /// Loads the given SilkTouch JSON Configuration as a <see cref="RootConfiguration"/> record.
+        /// Loads the given SilkTouch JSON Configuration as a <see cref="ProjectConfiguration"/> record.
         /// </summary>
         /// <param name="json">The SilkTouch JSON Configuration.</param>
-        /// <returns>The <see cref="RootConfiguration"/> record representation of the JSON.</returns>
+        /// <returns>The <see cref="ProjectConfiguration"/> record representation of the JSON.</returns>
         /// <exception cref="DataException">If the data yielded a null configuration.</exception>
-        public static RootConfiguration Load(string json)
-            => JsonSerializer.Deserialize<RootConfiguration>(json) ??
+        public static ProjectConfiguration Load(string json)
+            => JsonSerializer.Deserialize<ProjectConfiguration>(json) ??
                throw new DataException("JSON deserialization of SilkTouch Configuration yielded null.");
 
-        public static Diagnostic? Load
+        public static bool TryLoad
         (
             AnalyzerConfigOptionsProvider provider,
             ImmutableArray<AdditionalText> additionalFiles,
-            out RootConfiguration? config,
-            out AdditionalText? usedText
+            out ProjectConfiguration? config,
+            out AdditionalText? usedText,
+            out Diagnostic? diagnostic
         )
         {
             // Get the config file name. Uses silktouch.json unless overridden in .editorconfig.
@@ -54,18 +56,17 @@ namespace Silk.NET.SilkTouch.Configuration
                     Log.Debug($"\"{additionalFile.Path}\" is a good match.");
                     if (usedText is not null)
                     {
-                        Log.Debug($"We've already found \"{usedText.Path}\" though!");
+                        Log.Debug($"We've already found \"{usedText.Path}\" though - using that instead!");
                         config = null;
-                        var ret = Diagnostic.Create
+                        diagnostic = Diagnostic.Create
                         (
                             Diagnostics.MultipleConfigFiles,
                             Location.Create(additionalFile.Path, TextSpan.FromBounds(0, 0), default),
                             usedText.Path,
                             additionalFile.Path
                         );
-
-                        usedText = null;
-                        return ret;
+                        
+                        continue;
                     }
 
                     usedText = additionalFile;
@@ -77,33 +78,24 @@ namespace Silk.NET.SilkTouch.Configuration
                 Log.Debug("No config.");
                 config = null;
                 usedText = null;
-                return Diagnostic.Create(Diagnostics.NoConfigFile, Location.None);
+                diagnostic = Diagnostic.Create(Diagnostics.NoConfigFile, Location.None);
+                return false;
             }
 
             Log.Debug("Good config.");
             config = Load(File.ReadAllText(usedText.Path)); // was gonna use usedText.GetText() until I saw their code.
-            return null;
+            diagnostic = null;
+            return true;
         }
 
         /// <summary>
-        /// Saves the given <see cref="RootConfiguration"/> record into JSON.
+        /// Saves the given <see cref="ProjectConfiguration"/> record into JSON.
         /// </summary>
-        /// <param name="config">The <see cref="RootConfiguration"/> record representation of the configuration.</param>
+        /// <param name="config">The <see cref="ProjectConfiguration"/> record representation of the configuration.</param>
         /// <returns>The JSON representation of the projects.</returns>
-        public static string Save(RootConfiguration config)
+        public static string Save(ProjectConfiguration config)
             => JsonSerializer.Serialize(config);
     }
-
-    /// <summary>
-    /// The root configuration structure.
-    /// </summary>
-    /// <param name="Global"></param>
-    /// <param name="Projects"></param>
-    public record RootConfiguration
-    (
-        [property: JsonPropertyName("global")] GlobalConfiguration Global,
-        [property: JsonPropertyName("projects")] Dictionary<string, ProjectConfiguration>? Projects
-    );
 
     /// <summary>
     /// Common configuration across all projects.
@@ -122,11 +114,33 @@ namespace Silk.NET.SilkTouch.Configuration
     /// <param name="Scraper">SilkTouch Scraper specific configuration for this project.</param>
     public record ProjectConfiguration
     (
+        [property: JsonPropertyName("globalFile")] string? GlobalConfigFile,
         [property: JsonPropertyName("emitter")] EmitterConfiguration? Emitter,
         [property: JsonPropertyName("overloader")] OverloaderConfiguration? Overloader,
         [property: JsonPropertyName("scraper")] ScraperConfiguration? Scraper,
-        [property: JsonPropertyName("skipIf")] string[]? SkipIf
-    );
+        [property: JsonPropertyName("cliSkipIf")] string[]? CommandLineSkipIf
+    )
+    {
+        /// <summary>Gets the global config stored in <see cref="GlobalConfigFile"/> if provided.</summary>
+        /// <param name="baseDir">The base directory to search for files from.</param>
+        /// <returns>The global config.</returns>
+        public GlobalConfiguration? GetGlobalConfiguration(string baseDir)
+        {
+            if (GlobalConfigFile is null)
+            {
+                return null;
+            } 
+            
+            var path = GlobalConfigFile;
+            // Poor man's way of doing Path.GetFullPath(a, b) which is unavailable on NS20
+            if (Path.GetFullPath(GlobalConfigFile) != GlobalConfigFile)
+            {
+                path = Path.Combine(baseDir, GlobalConfigFile);
+            }
+
+            return JsonSerializer.Deserialize<GlobalConfiguration>(File.ReadAllText(path));
+        }
+    }
 
     /// <summary>
     /// SilkTouch Emitter specific configuration.
@@ -156,6 +170,11 @@ namespace Silk.NET.SilkTouch.Configuration
     /// SilkTouch Scraper specific configuration.
     /// </summary>
     public record ScraperConfiguration
+    (
+        [property: JsonPropertyName("jobs")] ScraperJobConfiguration[]? Jobs
+    );
+
+    public record ScraperJobConfiguration
     (
         [property: JsonPropertyName("headerText")] string[]? HeaderText,
         [property: JsonPropertyName("include")] string[]? IncludeDirectories,

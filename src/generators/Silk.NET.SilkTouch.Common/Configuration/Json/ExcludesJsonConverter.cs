@@ -32,7 +32,7 @@ namespace Silk.NET.SilkTouch.Configuration.Json
                 // the performance is horrible but it's not too much a cause for concern as it is a "fixed cost".
                 // definitely improve it in the future though as we do have access to new string(char*), meaning we can
                 // come up with a Span-based solution it'll just be very very very verbose.
-                if (kvp[0].ToLower().Trim() == "hint" && Enum.TryParse
+                if (string.Equals(kvp[0].Trim(), "hint", StringComparison.OrdinalIgnoreCase) && Enum.TryParse
                 (
                     string.Join
                     (
@@ -46,7 +46,7 @@ namespace Silk.NET.SilkTouch.Configuration.Json
                 {
                     hints |= hint;
                 }
-                else if (kvp[0].ToLower().Trim() == "name")
+                else if (string.Equals(kvp[0].Trim(), "name", StringComparison.OrdinalIgnoreCase))
                 {
                     identifiers.Add(string.Join(":", kvp.Skip(1)));
                 }

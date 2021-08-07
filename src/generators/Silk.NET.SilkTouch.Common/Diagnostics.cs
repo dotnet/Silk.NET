@@ -8,9 +8,22 @@ namespace Silk.NET.SilkTouch
 {
     public class Diagnostics
     {
-        public static DiagnosticDescriptor MultipleConfigFiles { get; } = new
+        public static DiagnosticDescriptor GeneralError { get; } = new
         (
             id: "ST0005",
+            title: "General SilkTouch Error",
+            messageFormat: "SilkTouch failed to execute due to a general error: \"{0}\"",
+            category: "SilkTouch",
+            defaultSeverity: DiagnosticSeverity.Error,
+            isEnabledByDefault: true,
+            description: null,
+            helpLinkUri: null,
+            customTags: WellKnownDiagnosticTags.AnalyzerException
+        );
+
+        public static DiagnosticDescriptor MultipleConfigFiles { get; } = new
+        (
+            id: "ST0006",
             title: "Multiple Configuration Files Detected",
             messageFormat: "Multiple configuration files detected. Using \"{0}\", to use \"{1}\" instead configure " +
                            $"the \"{Constants.ConfigFileEditorconfigOption}\" editorconfig option.",
@@ -24,7 +37,7 @@ namespace Silk.NET.SilkTouch
 
         public static DiagnosticDescriptor NoConfigFile { get; } = new
         (
-            id: "ST0006",
+            id: "ST0007",
             title: "No Configuration File",
             messageFormat: "No configuration file, SilkTouch will not run. To configure a path to a SilkTouch JSON " +
                            $"Configuration file, use the \"{Constants.ConfigFileEditorconfigOption}\" editorconfig " +
@@ -39,7 +52,7 @@ namespace Silk.NET.SilkTouch
 
         public static DiagnosticDescriptor NoAssemblyName { get; } = new
         (
-            id: "ST0007",
+            id: "ST0008",
             title: "Couldn't Determine Assembly Name",
             messageFormat: "Couldn't determine \"AssemblyName\", SilkTouch will not run.",
             category: "SilkTouch",
@@ -52,10 +65,10 @@ namespace Silk.NET.SilkTouch
 
         public static DiagnosticDescriptor NoLibraryName { get; } = new
         (
-            id: "ST0008",
+            id: "ST0009",
             title: "No Library Name",
             messageFormat: "Specify at least one library name " +
-                           "(\"projects\" > \"{0}\" > \"scraper\" > \"libraryNames\")",
+                           "(\"scraper\" > \"jobs\" > [{0}] > \"libraryNames\": [\"MyLibrary.dll\"])",
             category: "SilkTouch",
             defaultSeverity: DiagnosticSeverity.Error,
             isEnabledByDefault: true,
@@ -66,12 +79,12 @@ namespace Silk.NET.SilkTouch
 
         public static DiagnosticDescriptor NoWindowsSdk { get; } = new
         (
-            id: "ST0009",
+            id: "ST0010",
             title: "Windows-Specific SDK Not Found",
             messageFormat: !RuntimeInformation.IsOSPlatform(OSPlatform.Windows)
                 ? "Include \"{0}\" could not be resolved, generation may fail. Consider " +
                   "adding a skipIf condition to prevent generation on non-Windows platforms " +
-                  "(\"projects\" > \"{1}\" > \"skipIf\": [\"linux\", \"macos\"])"
+                  "(\"cliSkipIf\": [\"linux\", \"macos\"])"
                 : "Include \"{0}\" could not be resolved, generation may fail.",
             category: "SilkTouch",
             defaultSeverity: DiagnosticSeverity.Warning,
@@ -83,27 +96,13 @@ namespace Silk.NET.SilkTouch
 
         public static DiagnosticDescriptor NoHeaderText { get; } = new
         (
-            id: "ST0010",
+            id: "ST0011",
             title: "No Input Header Text",
-            messageFormat: "Input C/C++ header source code is required to use SilkTouch Scraper. (\"projects\" > " +
-                            "\"{0}\" > \"scraper\" > \"headerText\": [\"#include \\\"example.h\\\"\"]",
+            messageFormat: "Input C/C++ header source code is required to use SilkTouch Scraper. " +
+                           "(\"scraper\" > \"jobs\" > [{0}] > \"headerText\": [\"#include \\\"example.h\\\"\"])",
             category: "SilkTouch",
             defaultSeverity: DiagnosticSeverity.Error,
             isEnabledByDefault: true,
-            description: null,
-            helpLinkUri: null,
-            customTags: WellKnownDiagnosticTags.AnalyzerException
-        );
-
-        public static DiagnosticDescriptor NoProjectConfigInFile { get; } = new
-        (
-            id: "ST0011",
-            title: "No Configuration For This Project",
-            messageFormat: "\"{0}\" does not contain any configuration for project \"{1}\", SilkTouch will not run " +
-                           "(\"projects\" > \"{1}\": {{...}})",
-            category: "SilkTouch",
-            defaultSeverity: DiagnosticSeverity.Info,
-            isEnabledByDefault: false,
             description: null,
             helpLinkUri: null,
             customTags: WellKnownDiagnosticTags.AnalyzerException
@@ -127,19 +126,6 @@ namespace Silk.NET.SilkTouch
             id: "ST0013",
             title: "ClangSharp Subagent Error Diagnostic",
             messageFormat: "{0}",
-            category: "SilkTouch",
-            defaultSeverity: DiagnosticSeverity.Error,
-            isEnabledByDefault: true,
-            description: null,
-            helpLinkUri: null,
-            customTags: WellKnownDiagnosticTags.AnalyzerException
-        );
-
-        public static DiagnosticDescriptor GeneralError { get; } = new
-        (
-            id: "ST0014",
-            title: "General SilkTouch Error",
-            messageFormat: "SilkTouch failed to execute due to a general error: \"{0}\"",
             category: "SilkTouch",
             defaultSeverity: DiagnosticSeverity.Error,
             isEnabledByDefault: true,

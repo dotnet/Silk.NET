@@ -4,6 +4,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -22,10 +23,17 @@ namespace SilkTouch
         {
             // get the command line arguments this process was started with
             // using ArraySegment (lesser span) here instead of Span because it's enumerable.
-            ArraySegment<string> args = Environment.GetCommandLineArgs();
+            var execPath = typeof(ClangSharpHandoff).Assembly.Location;
+            string candidate;
             
-            // trim off the arguments *we* received
-            args = args[..^Program.Args.Length];
+            // use the executable (.exe on windows, no extension on unix) if available, otherwise just launch dotnet
+            execPath = Path.GetExtension(execPath) != ".dll"
+                ? execPath
+                : File.Exists(candidate = Path.GetFileNameWithoutExtension(execPath) + ".exe")
+                    ? candidate
+                    : File.Exists(candidate = candidate[..^4])
+                        ? candidate
+                        : "dotnet";
 
             // serialize the options and escape the quotes to send on the command line.
             var optsStr = JsonSerializer.Serialize(opts).Replace("\"", "\\\"");
@@ -35,8 +43,10 @@ namespace SilkTouch
             {
                 StartInfo = new
                 (
-                    args[0],
-                    $"\"{string.Join("\" \"", args[1..].Select(x => x.Replace("\"", "\\\"")))}\" \"{optsStr}\""
+                    execPath,
+                    execPath == "dotnet"
+                        ? $"\"{typeof(ClangSharpHandoff).Assembly.Location}\" clangsharp \"{optsStr}\""
+                        : $"clangsharp \"{optsStr}\""
                 )
                 {
                     WorkingDirectory = Environment.CurrentDirectory,
@@ -45,6 +55,17 @@ namespace SilkTouch
                     CreateNoWindow = true
                 }
             };
+            
+            // get the env vars of a developer command prompt if we can
+            if (VisualStudioResolver.TryGetVisualStudioInfo(out var vsInfo))
+            {
+                foreach (var (k, v) in vsInfo.Variables)
+                {
+                    proc.StartInfo.Environment[k] = v;
+                }
+            }
+            
+            Log.Trace($"Running command \"{proc.StartInfo.FileName}\" {proc.StartInfo.Arguments}");
 
             // run the subprocess.
             if (!proc.Start())
