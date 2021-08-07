@@ -45,40 +45,40 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
         public partial void ExtGetProgram([Count(Parameter = "maxPrograms"), Flow(FlowDirection.Out)] out Program programs, [Flow(FlowDirection.In)] int maxPrograms, [Count(Count = 1), Flow(FlowDirection.Out)] out int numPrograms);
 
         [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
-        public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Flow(FlowDirection.Out)] byte* source, [Flow(FlowDirection.Out)] int* length);
+        public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] byte* source, [Flow(FlowDirection.Out)] int* length);
 
         [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
-        public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Flow(FlowDirection.Out)] byte* source, [Flow(FlowDirection.Out)] out int length);
+        public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] byte* source, [Flow(FlowDirection.Out)] out int length);
 
         [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
-        public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Flow(FlowDirection.Out)] out byte source, [Flow(FlowDirection.Out)] int* length);
+        public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] out byte source, [Flow(FlowDirection.Out)] int* length);
 
         [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
-        public partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Flow(FlowDirection.Out)] out byte source, [Flow(FlowDirection.Out)] out int length);
+        public partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] out byte source, [Flow(FlowDirection.Out)] out int length);
 
         [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
-        public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Flow(FlowDirection.Out)] string source, [Flow(FlowDirection.Out)] int* length);
+        public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] out string source, [Flow(FlowDirection.Out)] int* length);
 
         [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
-        public partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Flow(FlowDirection.Out)] string source, [Flow(FlowDirection.Out)] out int length);
+        public partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] out string source, [Flow(FlowDirection.Out)] out int length);
 
         [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
-        public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.Out)] byte* source, [Flow(FlowDirection.Out)] int* length);
+        public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] byte* source, [Flow(FlowDirection.Out)] int* length);
 
         [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
-        public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.Out)] byte* source, [Flow(FlowDirection.Out)] out int length);
+        public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] byte* source, [Flow(FlowDirection.Out)] out int length);
 
         [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
-        public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.Out)] out byte source, [Flow(FlowDirection.Out)] int* length);
+        public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] out byte source, [Flow(FlowDirection.Out)] int* length);
 
         [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
-        public partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.Out)] out byte source, [Flow(FlowDirection.Out)] out int length);
+        public partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] out byte source, [Flow(FlowDirection.Out)] out int length);
 
         [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
-        public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.Out)] string source, [Flow(FlowDirection.Out)] int* length);
+        public unsafe partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] out string source, [Flow(FlowDirection.Out)] int* length);
 
         [NativeApi(EntryPoint = "glExtGetProgramBinarySourceQCOM")]
-        public partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.Out)] string source, [Flow(FlowDirection.Out)] out int length);
+        public partial void ExtGetProgramBinarySource([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] out string source, [Flow(FlowDirection.Out)] out int length);
 
         [NativeApi(EntryPoint = "glExtGetShadersQCOM")]
         public unsafe partial void ExtGetShaders([Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] uint* shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] int* numShaders);

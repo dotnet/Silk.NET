@@ -188,6 +188,10 @@ namespace Silk.NET.OpenXR
         TypeSpatialAnchorCreateInfoMsft = 1000039000,
         [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_SPACE_CREATE_INFO_MSFT")]
         TypeSpatialAnchorSpaceCreateInfoMsft = 1000039001,
+        [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_IMAGE_LAYOUT_FB")]
+        TypeCompositionLayerImageLayoutFB = 1000040000,
+        [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_ALPHA_BLEND_FB")]
+        TypeCompositionLayerAlphaBlendFB = 1000041001,
         [NativeName("Name", "XR_TYPE_VIEW_CONFIGURATION_DEPTH_RANGE_EXT")]
         TypeViewConfigurationDepthRangeExt = 1000046000,
         [NativeName("Name", "XR_TYPE_GRAPHICS_BINDING_EGL_MNDX")]
@@ -246,6 +250,8 @@ namespace Silk.NET.OpenXR
         TypeCompositionLayerReprojectionPlaneOverrideMsft = 1000066001,
         [NativeName("Name", "XR_TYPE_ANDROID_SURFACE_SWAPCHAIN_CREATE_INFO_FB")]
         TypeAndroidSurfaceSwapchainCreateInfoFB = 1000070000,
+        [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_SECURE_CONTENT_FB")]
+        TypeCompositionLayerSecureContentFB = 1000072000,
         [NativeName("Name", "XR_TYPE_INTERACTION_PROFILE_ANALOG_THRESHOLD_VALVE")]
         TypeInteractionProfileAnalogThresholdValve = 1000079000,
         [NativeName("Name", "XR_TYPE_HAND_JOINTS_MOTION_RANGE_INFO_EXT")]
@@ -312,6 +318,14 @@ namespace Silk.NET.OpenXR
         TypeEventDataDisplayRefreshRateChangedFB = 1000101000,
         [NativeName("Name", "XR_TYPE_SYSTEM_COLOR_SPACE_PROPERTIES_FB")]
         TypeSystemColorSpacePropertiesFB = 1000108000,
+        [NativeName("Name", "XR_TYPE_FOVEATION_PROFILE_CREATE_INFO_FB")]
+        TypeFoveationProfileCreateInfoFB = 1000114000,
+        [NativeName("Name", "XR_TYPE_SWAPCHAIN_CREATE_INFO_FOVEATION_FB")]
+        TypeSwapchainCreateInfoFoveationFB = 1000114001,
+        [NativeName("Name", "XR_TYPE_SWAPCHAIN_STATE_FOVEATION_FB")]
+        TypeSwapchainStateFoveationFB = 1000114002,
+        [NativeName("Name", "XR_TYPE_FOVEATION_LEVEL_PROFILE_CREATE_INFO_FB")]
+        TypeFoveationLevelProfileCreateInfoFB = 1000115000,
         [NativeName("Name", "XR_TYPE_BINDING_MODIFICATIONS_KHR")]
         TypeBindingModificationsKhr = 1000120000,
         [NativeName("Name", "XR_TYPE_VIEW_LOCATE_FOVEATED_RENDERING_VARJO")]
@@ -322,6 +336,12 @@ namespace Silk.NET.OpenXR
         TypeSystemFoveatedRenderingPropertiesVarjo = 1000121002,
         [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_DEPTH_TEST_VARJO")]
         TypeCompositionLayerDepthTestVarjo = 1000122000,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_PERSISTENCE_INFO_MSFT")]
+        TypeSpatialAnchorPersistenceInfoMsft = 1000142000,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_FROM_PERSISTED_ANCHOR_CREATE_INFO_MSFT")]
+        TypeSpatialAnchorFromPersistedAnchorCreateInfoMsft = 1000142001,
+        [NativeName("Name", "XR_TYPE_SWAPCHAIN_IMAGE_FOVEATION_VULKAN_FB")]
+        TypeSwapchainImageFoveationVulkanFB = 1000160000,
         [NativeName("Name", "XR_TYPE_SWAPCHAIN_STATE_ANDROID_SURFACE_DIMENSIONS_FB")]
         TypeSwapchainStateAndroidSurfaceDimensionsFB = 1000161000,
         [NativeName("Name", "XR_TYPE_SWAPCHAIN_STATE_SAMPLER_OPENGL_ES_FB")]

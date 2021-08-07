@@ -150,5 +150,9 @@ namespace Silk.NET.OpenXR
         ErrorDisplayRefreshRateUnsupportedFB = -1000101000,
         [NativeName("Name", "XR_ERROR_COLOR_SPACE_UNSUPPORTED_FB")]
         ErrorColorSpaceUnsupportedFB = -1000108000,
+        [NativeName("Name", "XR_ERROR_SPATIAL_ANCHOR_NAME_NOT_FOUND_MSFT")]
+        ErrorSpatialAnchorNameNotFoundMsft = -1000142001,
+        [NativeName("Name", "XR_ERROR_SPATIAL_ANCHOR_NAME_INVALID_MSFT")]
+        ErrorSpatialAnchorNameInvalidMsft = -1000142002,
     }
 }

@@ -10,8 +10,8 @@ using Silk.NET.Core.Attributes;
 namespace Silk.NET.Vulkan
 {
     [Flags()]
-    [NativeName("Name", "VkVideoEncodeH264CapabilitiesFlagsEXT")]
-    public enum VideoEncodeH264CapabilitiesFlagsEXT : int
+    [NativeName("Name", "VkVideoEncodeH264CapabilityFlagsEXT")]
+    public enum VideoEncodeH264CapabilityFlagsEXT : int
     {
         [NativeName("Name", "VK_VIDEO_ENCODE_H264_CAPABILITY_CABAC_BIT_EXT")]
         VideoEncodeH264CapabilityCabacBitExt = 1,

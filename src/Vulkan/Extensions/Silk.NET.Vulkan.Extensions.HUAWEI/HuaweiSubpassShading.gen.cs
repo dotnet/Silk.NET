@@ -25,12 +25,12 @@ namespace Silk.NET.Vulkan.Extensions.HUAWEI
         public partial void CmdSubpassShadingHuawei([Count(Count = 0)] CommandBuffer commandBuffer);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetSubpassShadingMaxWorkgroupSizeHUAWEI")]
-        public unsafe partial Result GetSubpassShadingMaxWorkgroupSizeHuawei([Count(Count = 0)] RenderPass renderpass, [Count(Count = 0), Flow(FlowDirection.Out)] Extent2D* pMaxWorkgroupSize);
+        [NativeApi(EntryPoint = "vkGetDeviceSubpassShadingMaxWorkgroupSizeHUAWEI")]
+        public unsafe partial Result GetDeviceSubpassShadingMaxWorkgroupSizeHuawei([Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderpass, [Count(Count = 0), Flow(FlowDirection.Out)] Extent2D* pMaxWorkgroupSize);
 
         /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetSubpassShadingMaxWorkgroupSizeHUAWEI")]
-        public partial Result GetSubpassShadingMaxWorkgroupSizeHuawei([Count(Count = 0)] RenderPass renderpass, [Count(Count = 0), Flow(FlowDirection.Out)] out Extent2D pMaxWorkgroupSize);
+        [NativeApi(EntryPoint = "vkGetDeviceSubpassShadingMaxWorkgroupSizeHUAWEI")]
+        public partial Result GetDeviceSubpassShadingMaxWorkgroupSizeHuawei([Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderpass, [Count(Count = 0), Flow(FlowDirection.Out)] out Extent2D pMaxWorkgroupSize);
 
         public HuaweiSubpassShading(INativeContext ctx)
             : base(ctx)

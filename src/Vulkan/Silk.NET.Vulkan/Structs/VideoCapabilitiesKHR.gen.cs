@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoCapabilitiesKhr,
             void* pNext = null,
-            VideoCapabilitiesFlagsKHR? capabilityFlags = null,
+            VideoCapabilityFlagsKHR? capabilityFlags = null,
             ulong? minBitstreamBufferOffsetAlignment = null,
             ulong? minBitstreamBufferSizeAlignment = null,
             Extent2D? videoPictureExtentGranularity = null,
@@ -95,10 +95,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoCapabilitiesFlagsKHR")]
-        [NativeName("Type.Name", "VkVideoCapabilitiesFlagsKHR")]
+        [NativeName("Type", "VkVideoCapabilityFlagsKHR")]
+        [NativeName("Type.Name", "VkVideoCapabilityFlagsKHR")]
         [NativeName("Name", "capabilityFlags")]
-        public VideoCapabilitiesFlagsKHR CapabilityFlags;
+        public VideoCapabilityFlagsKHR CapabilityFlags;
 /// <summary></summary>
         [NativeName("Type", "VkDeviceSize")]
         [NativeName("Type.Name", "VkDeviceSize")]

@@ -23,7 +23,7 @@ namespace Silk.NET.Vulkan
         (
             StructureType? sType = StructureType.VideoEncodeH264CapabilitiesExt,
             void* pNext = null,
-            VideoEncodeH264CapabilitiesFlagsEXT? flags = null,
+            VideoEncodeH264CapabilityFlagsEXT? flags = null,
             VideoEncodeH264InputModeFlagsEXT? inputModeFlags = null,
             VideoEncodeH264OutputModeFlagsEXT? outputModeFlags = null,
             Extent2D? minPictureSizeInMbs = null,
@@ -113,10 +113,10 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH264CapabilitiesFlagsEXT")]
-        [NativeName("Type.Name", "VkVideoEncodeH264CapabilitiesFlagsEXT")]
+        [NativeName("Type", "VkVideoEncodeH264CapabilityFlagsEXT")]
+        [NativeName("Type.Name", "VkVideoEncodeH264CapabilityFlagsEXT")]
         [NativeName("Name", "flags")]
-        public VideoEncodeH264CapabilitiesFlagsEXT Flags;
+        public VideoEncodeH264CapabilityFlagsEXT Flags;
 /// <summary></summary>
         [NativeName("Type", "VkVideoEncodeH264InputModeFlagsEXT")]
         [NativeName("Type.Name", "VkVideoEncodeH264InputModeFlagsEXT")]
