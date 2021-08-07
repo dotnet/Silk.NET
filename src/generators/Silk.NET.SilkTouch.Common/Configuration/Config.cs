@@ -16,6 +16,10 @@ using Ultz.Extensions.Logging;
 
 namespace Silk.NET.SilkTouch.Configuration
 {
+    /// <summary>
+    /// A helper class for loading and saving configuration files. Basically just a thin wrapper around
+    /// <see cref="JsonSerializer"/> to make your code neater.
+    /// </summary>
     public static class Config
     {
         /// <summary>
@@ -28,13 +32,24 @@ namespace Silk.NET.SilkTouch.Configuration
             => JsonSerializer.Deserialize<ProjectConfiguration>(json) ??
                throw new DataException("JSON deserialization of SilkTouch Configuration yielded null.");
 
+        /// <summary>
+        /// Attempts to load a configuration file from Roslyn AdditionalFiles.
+        /// </summary>
+        /// <param name="provider">The editorconfig options provider.</param>
+        /// <param name="additionalFiles">The AdditionalFiles.</param>
+        /// <param name="config">The project-specific SilkTouch configuration loaded, or null if none loaded.</param>
+        /// <param name="usedText">The <see cref="AdditionalText"/> used to load the config.</param>
+        /// <param name="reportDiagnostic">
+        /// An action which, when called, handles diagnostics generated as part of loading.
+        /// </param>
+        /// <returns>Whether the overall configuration load was successful or not.</returns>
         public static bool TryLoad
         (
             AnalyzerConfigOptionsProvider provider,
             ImmutableArray<AdditionalText> additionalFiles,
             out ProjectConfiguration? config,
             out AdditionalText? usedText,
-            out Diagnostic? diagnostic
+            Action<Diagnostic>? reportDiagnostic
         )
         {
             // Get the config file name. Uses silktouch.json unless overridden in .editorconfig.
@@ -58,13 +73,13 @@ namespace Silk.NET.SilkTouch.Configuration
                     {
                         Log.Debug($"We've already found \"{usedText.Path}\" though - using that instead!");
                         config = null;
-                        diagnostic = Diagnostic.Create
+                        reportDiagnostic?.Invoke(Diagnostic.Create
                         (
                             Diagnostics.MultipleConfigFiles,
                             Location.Create(additionalFile.Path, TextSpan.FromBounds(0, 0), default),
                             usedText.Path,
                             additionalFile.Path
-                        );
+                        ));
                         
                         continue;
                     }
@@ -78,13 +93,12 @@ namespace Silk.NET.SilkTouch.Configuration
                 Log.Debug("No config.");
                 config = null;
                 usedText = null;
-                diagnostic = Diagnostic.Create(Diagnostics.NoConfigFile, Location.None);
+                reportDiagnostic?.Invoke(Diagnostic.Create(Diagnostics.NoConfigFile, Location.None));
                 return false;
             }
 
             Log.Debug("Good config.");
             config = Load(File.ReadAllText(usedText.Path)); // was gonna use usedText.GetText() until I saw their code.
-            diagnostic = null;
             return true;
         }
 

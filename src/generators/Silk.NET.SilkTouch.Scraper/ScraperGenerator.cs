@@ -69,7 +69,7 @@ namespace Silk.NET.SilkTouch.Scraper
             if (ctx.GlobalConfiguration?.FileHeaderLines is not null)
             {
                 licenseHeaderFile = Path.Combine(workFolder, "licenseHeader.txt");
-                await File.WriteAllTextAsync(licenseHeaderFile, licenseHeaderFile);
+                await File.WriteAllLinesAsync(licenseHeaderFile, ctx.GlobalConfiguration.FileHeaderLines);
             }
             
             // format our includes. this allows both relative paths like "../" which resolve relative to the

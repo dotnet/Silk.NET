@@ -39,22 +39,14 @@ namespace Silk.NET.SilkTouch.Generation
             string? assemblyName = null
         )
         {
-            var configLoadSuccess = Config.TryLoad
+            if (!Config.TryLoad
             (
                 editorConfig,
                 additionalFiles,
                 out var projectConfig,
                 out var usedText,
-                out var loadDiag
-            );
-
-            if (loadDiag is not null)
-            {
-                DiagnosticRaised?.Invoke(loadDiag);
-                return false;
-            }
-
-            if (!configLoadSuccess)
+                DiagnosticRaised
+            ))
             {
                 return false;
             }
