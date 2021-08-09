@@ -32,6 +32,6 @@ jobs:
     - name: Upload Signed Artifacts to Actions
       uses: actions/upload-artifact@v2.2.4
       with:
-        name: unsigned_nupkgs
+        name: signed_nupkgs
         path: "build/output_packages/*.nupkg"
         if-no-files-found: warn
