@@ -18,5 +18,20 @@ jobs:
         dotnet-version: 5.0.201
     - name: Setup NUKE
       run: dotnet tool install Nuke.GlobalTool --global
+    - name: Pack
+      run: nuke Pack --msbuild-properties ContinuousIntegrationBuild=true SilkEnableSourceLink=true --feature-sets Android iOS
+    - name: Upload Unsigned Artifacts to Actions
+      uses: actions/upload-artifact@v2.2.4
+      with:
+        name: unsigned_nupkgs
+        path: "build/output_packages/*.nupkg"
+        if-no-files-found: warn
+        retention-days: 1
     - name: Push to NuGet
-      run: nuke PushToNuGet --configuration Release --msbuild-properties ContinuousIntegrationBuild=true SilkEnableSourceLink=true --feature-sets Android iOS --nuget-api-key ${{ secrets.NUGET_TOKEN }} --sign-username "${{ secrets.SIGN_USERNAME }}" --sign-password "${{ secrets.SIGN_PASSWORD }}"
+      run: nuke PushToNuGet --skip Clean Restore Pack --configuration Release --msbuild-properties ContinuousIntegrationBuild=true SilkEnableSourceLink=true --feature-sets Android iOS --nuget-api-key ${{ secrets.NUGET_TOKEN }} --sign-username "${{ secrets.SIGN_USERNAME }}" --sign-password "${{ secrets.SIGN_PASSWORD }}"
+    - name: Upload Signed Artifacts to Actions
+      uses: actions/upload-artifact@v2.2.4
+      with:
+        name: unsigned_nupkgs
+        path: "build/output_packages/*.nupkg"
+        if-no-files-found: warn
