@@ -443,20 +443,23 @@ class Build : NukeBuild
                 DotNetToolInstall(s => s.SetToolInstallationPath(basePath / "tool").SetPackageName("SignClient"));
             }
 
-            StartProcess
-            (
-                execPath,
-                "sign " +
-                $"--baseDirectory {PackageDirectory} " +
-                "--input \"**/*.nupkg\" " +
-                $"--config \"{basePath / "config.json"}\" " +
-                $"--filelist \"{basePath / "filelist.txt"}\" " +
-                $"--user \"{SignUsername}\" " +
-                $"--secret \"{SignPassword}\" " +
-                "--name \"Silk.NET\" " +
-                "--description \"Silk.NET\" " +
-                "--descriptionUrl \"https://github.com/dotnet/Silk.NET\""
-            ).AssertZeroExitCode();
+            foreach (var pkg in Packages)
+            {
+                StartProcess
+                (
+                    execPath,
+                    "sign " +
+                    $"--baseDirectory {PackageDirectory} " +
+                    $"--input \"{pkg}\" " +
+                    $"--config \"{basePath / "config.json"}\" " +
+                    $"--filelist \"{basePath / "filelist.txt"}\" " +
+                    $"--user \"{SignUsername}\" " +
+                    $"--secret \"{SignPassword}\" " +
+                    "--name \"Silk.NET\" " +
+                    "--description \"Silk.NET\" " +
+                    "--descriptionUrl \"https://github.com/dotnet/Silk.NET\""
+                ).AssertZeroExitCode();
+            }
         }
 
         var allFiles = Packages.Select((x, i) => new {Index = i, Value = x})
