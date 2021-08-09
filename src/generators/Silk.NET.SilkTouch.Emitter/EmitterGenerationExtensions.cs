@@ -6,8 +6,17 @@ using Ultz.Extensions.Logging;
 
 namespace Silk.NET.SilkTouch.Emitter
 {
+    /// <summary>
+    /// Contains a helper method for launching the SilkTouch Overloader given a <see cref="SilkTouchGenerator"/>
+    /// instance.
+    /// </summary>
     public static class EmitterGenerationExtensions
     {
+        /// <summary>
+        /// Runs the emitter.
+        /// </summary>
+        /// <param name="generator">The generator to generate into.</param>
+        /// <returns>Whether the overloader was started successfully.</returns>
         public static bool RunEmitter(this SilkTouchGenerator generator)
         {
             if (!generator.IsActive ||

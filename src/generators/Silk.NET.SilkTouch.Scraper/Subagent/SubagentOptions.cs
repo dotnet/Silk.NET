@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Collections.Generic;
+using System.Diagnostics;
 using ClangSharp;
 
 namespace Silk.NET.SilkTouch.Scraper.Subagent
@@ -13,6 +14,7 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
     /// The only reason this exists is because <see cref="PInvokeGeneratorConfiguration"/> doesn't play nicely with JSON
     /// serialization, and we use JSON serialization to communicate the options to the subprocesses.
     /// </remarks>
+    /// <param name="HeaderFile">The C/C++ header file location to use as a source for bindings generation.</param>
     /// <param name="LibraryPath">
     /// The <see cref="PInvokeGeneratorConfiguration.LibraryPath"/> for ClangSharp to use in XML generation.
     /// </param>
@@ -25,11 +27,20 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
     /// <param name="TestOutputLocation">
     /// The <see cref="PInvokeGeneratorConfiguration.TestOutputLocation"/> for ClangSharp to use in XML generation.
     /// </param>
+    /// <param name="IncludeDirectories">The extra include directories to add to the Clang arguments.</param>
     /// <param name="OutputMode">
     /// The <see cref="PInvokeGeneratorConfiguration.OutputMode"/> for ClangSharp to use in XML generation.
     /// </param>
     /// <param name="Options">
     /// The <see cref="PInvokeGeneratorConfigurationOptions"/> for ClangSharp to use in XML generation.
+    /// </param>
+    /// <param name="Language">The source language to use for clang compilation. Defaults to C++.</param>
+    /// <param name="Standard">The source language standard to use for clang compilation. Defaults to C++17.</param>
+    /// <param name="AdditionalArgs">
+    /// The additional clang command line arguments to use in creating a translation unit.
+    /// </param>
+    /// <param name="DefineMacros">
+    /// Additional macros to define ahead of evaluation of the <paramref name="HeaderFile"/>.
     /// </param>
     /// <param name="ExcludedNames">
     /// The <see cref="PInvokeGeneratorConfiguration.ExcludedNames"/> for ClangSharp to use in XML generation.
@@ -66,6 +77,12 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
     /// </param>
     /// <param name="WithUsings">
     /// The <see cref="PInvokeGeneratorConfiguration.WithUsings"/> for ClangSharp to use in XML generation.
+    /// </param>
+    /// <param name="DebugAttach">
+    /// Whether to make the launched subagent also launch the debugger. By default, this only happens if a
+    /// <see cref="Debugger"/> <see cref="Debugger.IsAttached"/> on the parent process but can be overridden by setting
+    /// the <c>SilkTouch_NoNestedDebug</c> environment variable to <c>1</c>. Because this is a debug-only parameter,
+    /// it does not have a command line argument.
     /// </param>
     public record SubagentOptions
     (

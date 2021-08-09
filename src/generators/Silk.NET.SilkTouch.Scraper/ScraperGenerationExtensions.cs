@@ -8,8 +8,17 @@ using Ultz.Extensions.Logging;
 
 namespace Silk.NET.SilkTouch.Scraper
 {
+    /// <summary>
+    /// Contains a helper method for running the SilkTouch Scraper given a <see cref="SilkTouchGenerator"/> instnace.
+    /// </summary>
     public static class ScraperGenerationExtensions
     {
+        /// <summary>
+        /// Runs the SilkTouch Scraper.
+        /// </summary>
+        /// <param name="generator">The generator instance to run the scraper on.</param>
+        /// <typeparam name="T">The type of the subagent spawner to use.</typeparam>
+        /// <returns>An asynchronous task encapsulating whether the generator was successfully started.</returns>
         public static async Task<bool> RunScraperAsync<T>(this SilkTouchGenerator generator)
             where T : ISubagent, new()
         {

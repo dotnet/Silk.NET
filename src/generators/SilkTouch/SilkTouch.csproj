@@ -3,8 +3,8 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net6.0</TargetFramework>
-        <!--<PackAsTool>true</PackAsTool>
-        <ToolCommandName>silktouch</ToolCommandName>-->
+        <PackAsTool Condition="'$(Configuration)' != 'Debug'">true</PackAsTool>
+        <ToolCommandName>silktouch</ToolCommandName>
         <!-- Workaround for issue https://github.com/microsoft/ClangSharp/issues/129 -->
         <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == '' AND '$(PackAsTool)' != 'true'">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
     </PropertyGroup>

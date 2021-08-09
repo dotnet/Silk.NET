@@ -43,11 +43,6 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
                 opts |= PInvokeGeneratorConfigurationOptions.ExcludeFunctionsWithBody;
             }
 
-            if ((hints & ExclusionHint.UsingStaticForEnums) != 0)
-            {
-                opts |= PInvokeGeneratorConfigurationOptions.DontUseUsingStaticsForEnums;
-            }
-
             // If these hints are not defined, define the corresponding ClangSharp inclusion option.
             if ((hints & ExclusionHint.MacroBindings) == 0)
             {
@@ -86,6 +81,7 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
 
             opts |= PInvokeGeneratorConfigurationOptions.LogExclusions;
             opts |= PInvokeGeneratorConfigurationOptions.LogVisitedFiles;
+            opts |= PInvokeGeneratorConfigurationOptions.DontUseUsingStaticsForEnums;
             return opts;
         }
     }

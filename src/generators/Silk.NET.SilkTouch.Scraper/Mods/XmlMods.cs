@@ -3,6 +3,9 @@
 
 namespace Silk.NET.SilkTouch.Scraper.Mods
 {
+    /// <summary>
+    /// Contains logic for applying XML modifications ("mods") to a parsed tree.
+    /// </summary>
     public class XmlMods
     {
         

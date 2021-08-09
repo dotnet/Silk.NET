@@ -3,6 +3,9 @@
 
 namespace Silk.NET.SilkTouch.ClangSharp.Xml
 {
+    /// <summary>
+    /// A visitor for the XML bindings tree.
+    /// </summary>
     public class XmlBindingsVisitor
     {
         

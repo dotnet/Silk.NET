@@ -3,6 +3,9 @@
 
 namespace Silk.NET.Vulkan
 {
+    /// <summary>
+    /// Vulkan bindings.
+    /// </summary>
     public partial class Vk
     {
         

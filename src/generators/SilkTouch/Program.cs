@@ -17,12 +17,9 @@ namespace SilkTouch
 {
     internal class Program
     {
-        public static string[] Args { get; internal set; }
         public static bool NoEnvironmentEmulation { get; internal set; }
-
         static async Task<int> Main(string[] args)
         {
-            Args = args;
             if (args.Length > 0 && args[0].ToLower() == "clangsharp")
             {
                 return ClangSharpHandoff.RunClangSharp(args);

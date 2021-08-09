@@ -3,6 +3,9 @@
 
 namespace Silk.NET.SilkTouch.ClangSharp.Xml
 {
+    /// <summary>
+    /// The root of the XML bindings tree.
+    /// </summary>
     public class XmlBindings
     {
         

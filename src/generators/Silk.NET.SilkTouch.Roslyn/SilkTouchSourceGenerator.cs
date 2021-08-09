@@ -11,13 +11,18 @@ using Ultz.Extensions.Logging;
 
 namespace Silk.NET.SilkTouch.Roslyn
 {
+    /// <summary>
+    /// The Source Generator form factor for SilkTouch.
+    /// </summary>
     public class SilkTouchSourceGenerator : ISourceGenerator
     {
+        /// <inheritdoc />
         public void Initialize(GeneratorInitializationContext context)
         {
             // TODO do we need to do initialization downstream?
         }
 
+        /// <inheritdoc />
         public void Execute(GeneratorExecutionContext context)
         {
             // Prevent debug logs from being output by forcing the LoggerProvider to null - we don't want this in Roslyn

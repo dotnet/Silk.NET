@@ -17,9 +17,21 @@ using Diagnostic = Microsoft.CodeAnalysis.Diagnostic;
 
 namespace Silk.NET.SilkTouch.Scraper
 {
+    /// <summary>
+    /// The SilkTouch Scraper.
+    /// </summary>
     public static class ScraperGenerator
     {
+        /// <summary>
+        /// The form factors that the SilkTouch Scraper runs in by default.
+        /// </summary>
         public const FormFactors DefaultFormFactors = FormFactors.CLI;
+
+        /// <summary>
+        /// Runs the scraper.
+        /// </summary>
+        /// <param name="ctx">The SilkTouch Context to generate into.</param>
+        /// <typeparam name="T">The subagent spawner to use.</typeparam>
         public static async Task RunAsync<T>(SilkTouchContext ctx) where T:ISubagent, new()
         {
             var subagentSpawner = new T();
@@ -31,7 +43,7 @@ namespace Silk.NET.SilkTouch.Scraper
             );
         }
 
-        public static async Task RunAsync
+        private static async Task RunAsync
         (
             SilkTouchContext ctx,
             ISubagent subagent,

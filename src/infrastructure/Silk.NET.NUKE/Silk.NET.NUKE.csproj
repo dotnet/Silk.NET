@@ -5,6 +5,7 @@
     <OutputType>Exe</OutputType>
     <RootNamespace></RootNamespace>
     <NoWarn>CS0649;CS0169</NoWarn>
+    <SilkDocumentationExempt>true</SilkDocumentationExempt>
     <NukeRootDirectory>..\..</NukeRootDirectory>
     <NukeScriptDirectory>..\..</NukeScriptDirectory>
     <LangVersion>preview</LangVersion>

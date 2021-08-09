@@ -3,6 +3,9 @@
 
 namespace Silk.NET.SilkTouch.Scraper.Transformation
 {
+    /// <summary>
+    /// Contains logic for transforming XML bindings trees into C# code. 
+    /// </summary>
     public class XmlToCSharpTransformer
     {
         

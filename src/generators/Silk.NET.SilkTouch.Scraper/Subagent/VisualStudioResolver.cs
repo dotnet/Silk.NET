@@ -11,6 +11,25 @@ using Ultz.Extensions.Logging;
 
 namespace Silk.NET.SilkTouch.Scraper.Subagent
 {
+    /// <summary>
+    /// Encapsulations information regarding installed versions of Visual Studio.
+    /// </summary>
+    /// <param name="Name">The name of this installation.</param>
+    /// <param name="InstallationBaseFolder">The base folder of this installation.</param>
+    /// <param name="UcrtSdkDir">The path to the Universal Common Runtime SDK (Windows SDK).</param>
+    /// <param name="UcrtIncludes">The extra include directories to be added to include the Universal CRT.</param>
+    /// <param name="UcrtVersion">
+    /// The version of the Universal Common Runtime. Typically synced with the Windows SDK version.
+    /// </param>
+    /// <param name="MsvcToolsFolder">The path to the folder containing the MSVC toolset.</param>
+    /// <param name="MsvcToolsIncludes">
+    /// The extra include directories to be added to include the MSVC (standard C++) headers.
+    /// </param>
+    /// <param name="Version">The version of this installation.</param>
+    /// <param name="Variables">
+    /// The environment variables captured within a Developer Command Prompt for this installation.
+    /// </param>
+    /// <param name="MSBuildPath">The path to MSBuild for this installation.</param>
     public record VisualStudioInfo
     (
         string Name,
@@ -25,14 +44,17 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
         string MSBuildPath
     );
 
+    /// <summary>
+    /// Contains logic for resolving <see cref="VisualStudioInfo"/> for all Visual Studio installations.
+    /// </summary>
     public static class VisualStudioResolver
     {
-        internal const string MsvcInstallDirVar = "VCToolsInstallDir";
-        internal static readonly string[] MsvcIncludeSubDirs = { "include" };
+        private const string MsvcInstallDirVar = "VCToolsInstallDir";
+        private static readonly string[] _msvcIncludeSubDirs = { "include" };
 
-        internal const string WinSdkUcrtSdkDirVar = "UniversalCRTSdkDir";
-        internal const string WinSdkUcrtVersionVar = "UCRTVersion";
-        internal static readonly string[] WinSdkUcrtIncludeSubDirs =
+        private const string WinSdkUcrtSdkDirVar = "UniversalCRTSdkDir";
+        private const string WinSdkUcrtVersionVar = "UCRTVersion";
+        private static readonly string[] _winSdkUcrtIncludeSubDirs =
         {
             "Include/{0}/um",
             "Include/{0}/ucrt",
@@ -44,6 +66,13 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
         
         private static bool _vsInfoKnownError;
 
+        /// <summary>
+        /// Gets information regarding the <see cref="VisualStudioInstance"/> instance to use.
+        /// Unlike <see cref="TryGetVisualStudioInfo"/>, this will return <c>true</c> even if the MSBuild located is a
+        /// .NET SDK MSBuild and not a desktop MSBuild instance.
+        /// </summary>
+        /// <param name="instance">The <see cref="VisualStudioInfo"/> resolved.</param>
+        /// <returns>Whether the operation was successful.</returns>
         public static bool TryGetMSBuildInfo
         (
             [NotNullWhen(true)] out VisualStudioInstance? instance
@@ -71,6 +100,12 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
             return true;
         }
 
+        /// <summary>
+        /// Gets the <see cref="VisualStudioInfo"/> for the most well-equipped installation of Visual Studio on this
+        /// system to handle Scraper workloads.
+        /// </summary>
+        /// <param name="info">The resolved info.</param>
+        /// <returns>Whether the operation was successful.</returns>
         public static bool TryGetVisualStudioInfo([NotNullWhen(true)] out VisualStudioInfo? info)
         {
             // if we're not on windows, this is never gonna work
@@ -124,12 +159,12 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
                 Log.Debug($"winSdkUcrtSdkDir = \"{winSdkUcrtSdkDir}\"");
                 Log.Debug($"winSdkUcrtVersion = \"{winSdkUcrtVersion}\"");
 
-                var ucrtDirs = WinSdkUcrtIncludeSubDirs
+                var ucrtDirs = _winSdkUcrtIncludeSubDirs
                     .Select(x => Path.Combine(winSdkUcrtSdkDir, string.Format(x, winSdkUcrtVersion)))
                     .Where(Directory.Exists)
                     .ToArray();
 
-                var msvcDirs = MsvcIncludeSubDirs
+                var msvcDirs = _msvcIncludeSubDirs
                     .Select(x => Path.Combine(msvcInstallDir, x))
                     .Where(Directory.Exists)
                     .ToArray();

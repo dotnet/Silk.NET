@@ -82,6 +82,7 @@ namespace Silk.NET.SilkTouch.Scraper.Subagent
                     }
                     case "***VAREND***":
                     {
+                        vars ??= new(); // CS8762
                         return true;
                     }
                     default:

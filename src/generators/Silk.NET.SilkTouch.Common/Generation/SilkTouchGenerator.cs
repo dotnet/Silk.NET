@@ -4,33 +4,81 @@
 using System;
 using System.Collections.Immutable;
 using System.IO;
-using System.Linq;
 using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Silk.NET.SilkTouch.Configuration;
-using Ultz.Extensions.Logging;
 
 namespace Silk.NET.SilkTouch.Generation
 {
+    /// <summary>
+    /// Represents generic, form factor agnostic SilkTouch generator infrastructure. This aims to provide a common
+    /// interface by which all form factors can bootstrap the generation process.
+    /// </summary>
     public sealed class SilkTouchGenerator
     {
+        /// <summary>
+        /// Creates a <see cref="SilkTouchGenerator"/> for the given <see cref="FormFactor"/>.
+        /// </summary>
+        /// <param name="formFactor">The form factor this generator is running within.</param>
         public SilkTouchGenerator(FormFactors formFactor) => FormFactor = formFactor;
         
         // Public Properties
+        /// <summary>
+        /// The form factor this generator is running within.
+        /// </summary>
         public FormFactors FormFactor { get; }
+
+        /// <summary>
+        /// Whether the generator is "active" and is ready for generation to occur against it i.e. whether
+        /// <see cref="Begin"/> has been called, but <see cref="End" /> hasn't.
+        /// </summary>
         public bool IsActive { get; private set; }
+
+        /// <summary>
+        /// The Roslyn <see cref="Microsoft.CodeAnalysis.Compilation"/> for this C# project.
+        /// </summary>
         public Compilation? Compilation { get; private set; }
+
+        /// <summary>
+        /// The assembly name for this C# project.
+        /// </summary>
         public string? AssemblyName { get; private set; }
+
+        /// <summary>
+        /// The common/global configuration variables.
+        /// </summary>
         public GlobalConfiguration? GlobalConfiguration { get; private set; }
+
+        /// <summary>
+        /// The project-specific configuration for this project.
+        /// </summary>
         public ProjectConfiguration? ThisConfiguration { get; private set; }
+
+        /// <summary>
+        /// The "base directory" of this project, used as the root of all relative paths referenced in the
+        /// <see cref="ProjectConfiguration"/>.
+        /// </summary>
         public string? BaseDirectory { get; private set; }
 
         // Public Events
+        /// <summary>
+        /// Raised when a diagnostic is raised.
+        /// </summary>
         public event Action<Diagnostic>? DiagnosticRaised;
+        
+        /// <summary>
+        /// Raise when generated output is added.
+        /// </summary>
         public event Action<(string FileNameHint, string Content)>? OutputGenerated;
 
-        // TODO remove duplicate code between SilkTouchSourceGenerator and GeneratorHandoff in this class
+        /// <summary>
+        /// Activates this generator, preparing it for receiving diagnostics and generated code.
+        /// </summary>
+        /// <param name="compilation">The compilation to use for generation.</param>
+        /// <param name="editorConfig">The analyzer options (editorconfig) to use for generation.</param>
+        /// <param name="additionalFiles">The analyzer additional files to use for generation.</param>
+        /// <param name="assemblyName">The assembly name of the project being generated.</param>
+        /// <returns>Whether the operation was successful or not.</returns>
         public bool Begin
         (
             Compilation? compilation,
@@ -54,7 +102,7 @@ namespace Silk.NET.SilkTouch.Generation
             assemblyName ??= compilation?.AssemblyName;
             if (assemblyName is null)
             {
-                DiagnosticRaised?.Invoke(Diagnostic.Create(Diagnostics.NoAssemblyName, Location.None));
+                DiagnosticRaised?.Invoke(Diagnostic.Create(Diagnostics.GeneralError, Location.None, "No AssemblyName"));
                 return false;
             }
 
@@ -91,6 +139,10 @@ namespace Silk.NET.SilkTouch.Generation
             return true;
         }
 
+        /// <summary>
+        /// After its use, copies the results of the <see cref="SilkTouchContext"/> and raises events accordingly.
+        /// </summary>
+        /// <param name="ctx">The context to ingest.</param>
         public void IngestContext(SilkTouchContext ctx)
         {
             var (outputs, diagnostics) = ctx.GetResult();
@@ -105,6 +157,9 @@ namespace Silk.NET.SilkTouch.Generation
             }
         }
 
+        /// <summary>
+        /// Cleans this generator instance.
+        /// </summary>
         public void End()
         {
             IsActive = false;

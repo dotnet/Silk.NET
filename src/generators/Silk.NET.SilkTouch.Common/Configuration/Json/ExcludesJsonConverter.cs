@@ -9,8 +9,12 @@ using System.Text.Json.Serialization;
 
 namespace Silk.NET.SilkTouch.Configuration.Json
 {
+    /// <summary>
+    /// A <see cref="JsonConverter{T}"/> for converting a JSON string array to an <see cref="Excludes"/> record.
+    /// </summary>
     public class ExcludesJsonConverter : JsonConverter<Excludes>
     {
+        /// <inheritdoc />
         public override Excludes? Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
             var list = JsonSerializer.Deserialize<string[]>(ref reader);
@@ -59,6 +63,7 @@ namespace Silk.NET.SilkTouch.Configuration.Json
             return new(identifiers.ToArray(), hints);
         }
 
+        /// <inheritdoc />
         public override void Write(Utf8JsonWriter writer, Excludes? value, JsonSerializerOptions options)
         {
             throw new NotImplementedException();
