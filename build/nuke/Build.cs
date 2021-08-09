@@ -443,12 +443,13 @@ class Build : NukeBuild
                 DotNetToolInstall(s => s.SetToolInstallationPath(basePath / "tool").SetPackageName("SignClient"));
             }
 
+            foreach (var pkg in Packages)
             StartProcess
             (
                 execPath,
                 "sign " +
                 $"--baseDirectory {PackageDirectory} " +
-                "--input \"**/*.nupkg\" " +
+                $"--input \"{pkg}\" " +
                 $"--config \"{basePath / "config.json"}\" " +
                 $"--filelist \"{basePath / "filelist.txt"}\" " +
                 $"--user \"{SignUsername}\" " +
