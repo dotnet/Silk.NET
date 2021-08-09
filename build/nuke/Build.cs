@@ -444,20 +444,22 @@ class Build : NukeBuild
             }
 
             foreach (var pkg in Packages)
-            StartProcess
-            (
-                execPath,
-                "sign " +
-                $"--baseDirectory {PackageDirectory} " +
-                $"--input \"{pkg}\" " +
-                $"--config \"{basePath / "config.json"}\" " +
-                $"--filelist \"{basePath / "filelist.txt"}\" " +
-                $"--user \"{SignUsername}\" " +
-                $"--secret \"{SignPassword}\" " +
-                "--name \"Silk.NET\" " +
-                "--description \"Silk.NET\" " +
-                "--descriptionUrl \"https://github.com/dotnet/Silk.NET\""
-            ).AssertZeroExitCode();
+            {
+                StartProcess
+                (
+                    execPath,
+                    "sign " +
+                    $"--baseDirectory {PackageDirectory} " +
+                    $"--input \"{pkg}\" " +
+                    $"--config \"{basePath / "config.json"}\" " +
+                    $"--filelist \"{basePath / "filelist.txt"}\" " +
+                    $"--user \"{SignUsername}\" " +
+                    $"--secret \"{SignPassword}\" " +
+                    "--name \"Silk.NET\" " +
+                    "--description \"Silk.NET\" " +
+                    "--descriptionUrl \"https://github.com/dotnet/Silk.NET\""
+                ).AssertZeroExitCode();
+            }
         }
 
         var allFiles = Packages.Select((x, i) => new {Index = i, Value = x})
