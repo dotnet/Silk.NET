@@ -66,7 +66,7 @@ namespace Silk.NET.Windowing
         /// <inheritdoc />
         public Vector2D<int> Position { get; set; }
 
-        /// <inheritdoc cref="IWindowProperties" />
+        /// <inheritdoc />
         public Vector2D<int> Size { get; set; }
 
         /// <inheritdoc />
@@ -93,7 +93,7 @@ namespace Silk.NET.Windowing
         /// <inheritdoc />
         public bool TransparentFramebuffer { get; set; }
 
-        /// <inheritdoc cref="IWindowProperties" />
+        /// <inheritdoc />
         public IGLContext? SharedContext { get; }
 
         /// <summary>
