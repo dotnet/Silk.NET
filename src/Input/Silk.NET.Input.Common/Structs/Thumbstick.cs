@@ -31,7 +31,7 @@ namespace Silk.NET.Input
         public float Position => (float) Math.Sqrt(X * X + Y * Y);
 
         /// <summary>
-        /// The current direction of the stick, from 0.0 to 360.0.
+        /// The current direction of the stick, from -π to π.
         /// </summary>
         public float Direction => (float) Math.Atan2(Y, X);
 
