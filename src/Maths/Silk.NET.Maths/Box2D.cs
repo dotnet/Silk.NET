@@ -39,7 +39,7 @@ namespace Silk.NET.Maths
         /// The center of this box.
         /// </summary>
         [IgnoreDataMember]
-        public Vector2D<T> Center => Min + Max / Scalar<T>.Two;
+        public Vector2D<T> Center => (Min + Max) / Scalar<T>.Two;
 
         /// <summary>
         /// The size of this box.
