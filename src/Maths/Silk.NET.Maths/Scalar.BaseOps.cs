@@ -154,7 +154,7 @@ namespace Silk.NET.Maths
                     || typeof(T) == typeof(long)
                     || typeof(T) == typeof(decimal)
                 )
-                    return true;
+                    return false;
 
                 ThrowOpUnsupportedType();
                 return false;
@@ -212,7 +212,7 @@ namespace Silk.NET.Maths
                     || typeof(T) == typeof(long)
                     || typeof(T) == typeof(decimal)
                 )
-                    return true;
+                    return false;
 
                 ThrowOpUnsupportedType();
                 return false;
