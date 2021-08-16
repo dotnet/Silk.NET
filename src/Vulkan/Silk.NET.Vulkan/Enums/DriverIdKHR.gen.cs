@@ -44,5 +44,7 @@ namespace Silk.NET.Vulkan
         DriverIDCoreaviProprietary = 15,
         [NativeName("Name", "VK_DRIVER_ID_JUICE_PROPRIETARY")]
         DriverIDJuiceProprietary = 16,
+        [NativeName("Name", "VK_DRIVER_ID_VERISILICON_PROPRIETARY")]
+        DriverIDVerisiliconProprietary = 17,
     }
 }

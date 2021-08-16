@@ -47,6 +47,7 @@ namespace Silk.NET.SDL
         public static implicit operator PfnSDLCurrentBeginThread(delegate* unmanaged[Cdecl]<void*, uint, PfnVvUi, void*, uint, uint*, nuint> ptr) => new PfnSDLCurrentBeginThread(ptr);
     }
 
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate nuint SDLCurrentBeginThread(void* arg0, uint arg1, PfnVvUi arg2, void* arg3, uint arg4, uint* arg5);
 }
 

@@ -47,6 +47,7 @@ namespace Silk.NET.SDL
         public static implicit operator PfnLogOutputFunction(delegate* unmanaged[Cdecl]<void*, int, LogPriority, byte*, void> ptr) => new PfnLogOutputFunction(ptr);
     }
 
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void LogOutputFunction(void* arg0, int arg1, LogPriority arg2, byte* arg3);
 }
 

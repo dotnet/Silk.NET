@@ -18,5 +18,7 @@ namespace Silk.NET.Vulkan
         Clear = 1,
         [NativeName("Name", "VK_ATTACHMENT_LOAD_OP_DONT_CARE")]
         DontCare = 2,
+        [NativeName("Name", "VK_ATTACHMENT_LOAD_OP_NONE_EXT")]
+        NoneExt = 1000400000,
     }
 }
