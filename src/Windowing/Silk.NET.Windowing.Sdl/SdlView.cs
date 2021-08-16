@@ -180,13 +180,13 @@ namespace Silk.NET.Windowing.Sdl
                 (
                     GLattr.GLDepthSize,
                     opts.PreferredDepthBufferBits is null || opts.PreferredDepthBufferBits == -1 
-                        ? 16
+                        ? 24
                         : opts.PreferredDepthBufferBits.Value
                 ),
                 (
                     GLattr.GLStencilSize,
                     opts.PreferredStencilBufferBits is null || opts.PreferredStencilBufferBits == -1 
-                        ? 0
+                        ? 8
                         : opts.PreferredStencilBufferBits.Value
                 ),
                 (
