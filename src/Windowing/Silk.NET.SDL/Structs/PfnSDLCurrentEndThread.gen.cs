@@ -47,6 +47,7 @@ namespace Silk.NET.SDL
         public static implicit operator PfnSDLCurrentEndThread(delegate* unmanaged[Cdecl]<uint, void> ptr) => new PfnSDLCurrentEndThread(ptr);
     }
 
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void SDLCurrentEndThread(uint arg0);
 }
 

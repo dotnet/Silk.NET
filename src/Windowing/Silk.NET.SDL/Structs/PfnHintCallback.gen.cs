@@ -47,6 +47,7 @@ namespace Silk.NET.SDL
         public static implicit operator PfnHintCallback(delegate* unmanaged[Cdecl]<void*, byte*, byte*, byte*, void> ptr) => new PfnHintCallback(ptr);
     }
 
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void HintCallback(void* arg0, byte* arg1, byte* arg2, byte* arg3);
 }
 

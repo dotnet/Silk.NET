@@ -123,6 +123,11 @@ namespace Silk.NET.BuildTools.Common.Functions
         {
             var sb = new StringBuilder();
 
+            if (@delegate && Convention != CallingConvention.Winapi)
+            {
+                sb.AppendLine($"[UnmanagedFunctionPointer(CallingConvention.{Convention})]");
+            }
+
             GetDeclarationString(sb, @unsafe, partial, accessibility, @static, @delegate);
 
             sb.Append("(");

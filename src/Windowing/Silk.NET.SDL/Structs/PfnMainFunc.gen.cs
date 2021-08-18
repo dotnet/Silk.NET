@@ -47,6 +47,7 @@ namespace Silk.NET.SDL
         public static implicit operator PfnMainFunc(delegate* unmanaged[Cdecl]<int, byte**, int> ptr) => new PfnMainFunc(ptr);
     }
 
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate int MainFunc(int arg0, byte** arg1);
 }
 
