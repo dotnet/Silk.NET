@@ -71,7 +71,7 @@ namespace VulkanTriangle
         private KhrSurface _vkSurface;
         private KhrSwapchain _vkSwapchain;
         private ExtDebugUtils _debugUtils;
-        private string[] _validationLayers = { "VK_LAYER_KHRONOS_validation" };
+        private string[] _validationLayers = { "VK_LAYER_LUNARG_standard_validation" };
         private string[] _instanceExtensions = { ExtDebugUtils.ExtensionName };
         private string[] _deviceExtensions = { KhrSwapchain.ExtensionName };
 
