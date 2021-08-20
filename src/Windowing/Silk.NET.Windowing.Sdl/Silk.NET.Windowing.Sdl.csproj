@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0;net6.0;net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
@@ -35,8 +35,8 @@
                        Link="Android/EnumFields.xml" />
         <TransformFile Include="..\Android\Silk.NET.Windowing.Sdl.Android\Transforms\EnumMethods.xml"
                        Link="Android/EnumMethods.xml" />
-        <LibraryProjectZip Include="..\Android\Silk.NET.Windowing.Sdl.Android\Jars\app-release.aar"
-                           Link="Android/app-release.aar" />
+        <Compile Include="..\Android\Silk.NET.Windowing.Sdl.Android\Additions\SilkActivity.cs" />
+        <AndroidLibrary Include="..\Android\Silk.NET.Windowing.Sdl.Android\Jars\app-release.aar" Link="Android/app-release.aar" Bind="true" />
     </ItemGroup>
     
     <!-- Closest things to documentation on what the hell this voodoo does:
@@ -69,16 +69,14 @@
         </ItemGroup>
         <!-- Android Specific Bundled Files -->
         <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
+            <!-- https://github.com/xamarin/xamarin-android/issues/5957 
+                 https://github.com/xamarin/xamarin-android/blob/main/Documentation/guides/OneDotNetEmbeddedResources.md -->
             <TfmSpecificPackageFile Include="..\Android\Silk.NET.Windowing.Sdl.Android\Jars\app-release.aar"
+                                    Link="lib/$(_NuGetShortFolderName)/Silk.NET.Windowing.Sdl.aar"
                                     Pack="true"
-                                    PackagePath="build/$(_NuGetShortFolderName)"
-                                    CopyToOutputDirectory="PreserveNewest" />
-
-            <TfmSpecificPackageFile Include="..\Android\Silk.NET.Windowing.Sdl.Android\Silk.NET.Windowing.Sdl.Android.targets"
-                                    Pack="true"
-                                    PackagePath="build/$(_NuGetShortFolderName)/Silk.NET.Windowing.Sdl.targets"
-                                    CopyToOutputDirectory="PreserveNewest" />
+                                    PackagePath="lib/$(_NuGetShortFolderName)/Silk.NET.Windowing.Sdl.aar" />
         </ItemGroup>
+        <Error Text="$(AndroidSupportedAbis)" />
     </Target>
 
     <Import Project="..\..\..\build\props\common.props" />

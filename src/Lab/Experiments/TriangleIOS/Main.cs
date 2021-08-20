@@ -1,3 +1,4 @@
+#if __IOS__
 using System;
 using Silk.NET.Input.Sdl;
 using Silk.NET.SDL;
@@ -26,3 +27,4 @@ namespace TriangleIOS
         }
     }
 }
+#endif

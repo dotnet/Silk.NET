@@ -29,7 +29,14 @@ namespace Triangle
         
         public static GraphicsAPI API { get; set; } = GraphicsAPI.Default;
 
-        public static void Main(string[] args)
+#if !NET6_0
+        // Exclude the entry point if we're running in .NET 6, as this file is
+        // compiled into the TriangleNET6 project too which has its own
+        // entrypoint.
+        public static void Main() => Run();
+#endif
+
+        public static void Run()
         {
             //Silk.NET.Windowing.Sdl.SdlWindowing.Use();
             //SdlProvider.SetMainReady = true;
