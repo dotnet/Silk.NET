@@ -300,7 +300,7 @@ namespace VulkanTriangle
             if (EnableValidationLayers)
             {
                 _validationLayers = GetOptimalValidationLayers();
-                if (_validationLayers == null)
+                if (_validationLayers is null)
                 {
                     throw new NotSupportedException("Validation layers requested, but not available!");
                 }
