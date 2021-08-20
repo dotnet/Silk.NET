@@ -76,7 +76,6 @@
                                     Pack="true"
                                     PackagePath="lib/$(_NuGetShortFolderName)/Silk.NET.Windowing.Sdl.aar" />
         </ItemGroup>
-        <Error Text="$(AndroidSupportedAbis)" />
     </Target>
 
     <Import Project="..\..\..\build\props\common.props" />
