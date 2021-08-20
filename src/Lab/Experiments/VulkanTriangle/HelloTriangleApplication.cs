@@ -270,7 +270,7 @@ namespace VulkanTriangle
             _vkSwapchain.DestroySwapchain(_device, _swapchain, null);
         }
 
-        private unsafe string[] GetOptimalValidationLayers()
+        private unsafe string[]? GetOptimalValidationLayers()
         {
             var layerCount = 0u;
             _vk.EnumerateInstanceLayerProperties(&layerCount, (LayerProperties*)0);
