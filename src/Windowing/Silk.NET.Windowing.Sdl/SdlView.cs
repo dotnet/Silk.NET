@@ -114,10 +114,13 @@ namespace Silk.NET.Windowing.Sdl
         {
             var flags = WindowFlags.WindowAllowHighdpi |
                         WindowFlags.WindowShown;
-
             if (additionalFlags is null)
             {
-                flags |= WindowFlags.WindowResizable;
+                flags |= _platform.IsViewOnly switch
+                {
+                    true => WindowFlags.WindowBorderless | WindowFlags.WindowFullscreen,
+                    false => WindowFlags.WindowResizable
+                };
             }
             else
             {

@@ -11,7 +11,9 @@ namespace TriangleDroid
     (
         Label = "@string/app_name",
         MainLauncher = true,
-        ConfigurationChanges = ConfigChangesFlags
+        ConfigurationChanges = ConfigChangesFlags,
+        ScreenOrientation = ScreenOrientation.Landscape,
+        Theme = "@android:style/Theme.Black.NoTitleBar.Fullscreen"
     )]
     public class MainActivity : SilkActivity
     {

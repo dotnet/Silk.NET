@@ -29,12 +29,9 @@
 
     <!-- Android Specific Files -->
     <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
-        <TransformFile Include="..\Android\Silk.NET.Windowing.Sdl.Android\Transforms\Metadata.xml"
-                       Link="Android/Metadata.xml" />
-        <TransformFile Include="..\Android\Silk.NET.Windowing.Sdl.Android\Transforms\EnumFields.xml"
-                       Link="Android/EnumFields.xml" />
-        <TransformFile Include="..\Android\Silk.NET.Windowing.Sdl.Android\Transforms\EnumMethods.xml"
-                       Link="Android/EnumMethods.xml" />
+        <TransformFile Include="..\Android\Silk.NET.Windowing.Sdl.Android\Transforms\Metadata.xml" Link="Android/Metadata.xml" />
+        <TransformFile Include="..\Android\Silk.NET.Windowing.Sdl.Android\Transforms\EnumFields.xml" Link="Android/EnumFields.xml" />
+        <TransformFile Include="..\Android\Silk.NET.Windowing.Sdl.Android\Transforms\EnumMethods.xml" Link="Android/EnumMethods.xml" />
         <Compile Include="..\Android\Silk.NET.Windowing.Sdl.Android\Additions\SilkActivity.cs" />
         <AndroidLibrary Include="..\Android\Silk.NET.Windowing.Sdl.Android\Jars\app-release.aar" Link="Android/app-release.aar" Bind="true" />
     </ItemGroup>
@@ -50,31 +47,19 @@
     </PropertyGroup>
 
     <Target Name="_SdlTfmSpecific">
-        <GetNuGetShortFolderName
-            TargetFrameworkMoniker="$(TargetFrameworkMoniker)"
-            TargetPlatformMoniker="$(TargetPlatformMoniker)">
+        <GetNuGetShortFolderName TargetFrameworkMoniker="$(TargetFrameworkMoniker)" TargetPlatformMoniker="$(TargetPlatformMoniker)">
             <Output TaskParameter="NuGetShortFolderName" PropertyName="_NuGetShortFolderName" />
         </GetNuGetShortFolderName>
         <!-- iOS Specific Bundled Files -->
         <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-ios' Or '$(TargetFramework)' == 'net6.0-maccatalyst'">
-            <TfmSpecificPackageFile Include="..\iOS\Silk.NET.Windowing.Sdl.iOS\libSDL2.a"
-                                    Pack="true"
-                                    Link="build/$(_NuGetShortFolderName)/libSDL2.a"
-                                    PackagePath="build/$(_NuGetShortFolderName)/native/libSDL2.a"
-                                    CopyToOutputDirectory="PreserveNewest" />
-            <TfmSpecificPackageFile Include="..\iOS\Silk.NET.Windowing.Sdl.iOS\Silk.NET.Windowing.Sdl.iOS.targets"
-                                    Link="build/$(_NuGetShortFolderName)/Silk.NET.Windowing.Sdl.targets"
-                                    Pack="true"
-                                    PackagePath="build/$(_NuGetShortFolderName)/Silk.NET.Windowing.Sdl.targets" />
+            <TfmSpecificPackageFile Include="..\iOS\Silk.NET.Windowing.Sdl.iOS\libSDL2.a" Pack="true" Link="build/$(_NuGetShortFolderName)/libSDL2.a" PackagePath="build/$(_NuGetShortFolderName)/native/libSDL2.a" CopyToOutputDirectory="PreserveNewest" />
+            <TfmSpecificPackageFile Include="..\iOS\Silk.NET.Windowing.Sdl.iOS\Silk.NET.Windowing.Sdl.iOS.targets" Link="build/$(_NuGetShortFolderName)/Silk.NET.Windowing.Sdl.targets" Pack="true" PackagePath="build/$(_NuGetShortFolderName)/Silk.NET.Windowing.Sdl.targets" />
         </ItemGroup>
         <!-- Android Specific Bundled Files -->
         <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
             <!-- https://github.com/xamarin/xamarin-android/issues/5957 
                  https://github.com/xamarin/xamarin-android/blob/main/Documentation/guides/OneDotNetEmbeddedResources.md -->
-            <TfmSpecificPackageFile Include="..\Android\Silk.NET.Windowing.Sdl.Android\Jars\app-release.aar"
-                                    Link="lib/$(_NuGetShortFolderName)/Silk.NET.Windowing.Sdl.aar"
-                                    Pack="true"
-                                    PackagePath="lib/$(_NuGetShortFolderName)/Silk.NET.Windowing.Sdl.aar" />
+            <TfmSpecificPackageFile Include="..\Android\Silk.NET.Windowing.Sdl.Android\Jars\app-release.aar" Link="lib/$(_NuGetShortFolderName)/Silk.NET.Windowing.Sdl.aar" Pack="true" PackagePath="lib/$(_NuGetShortFolderName)/Silk.NET.Windowing.Sdl.aar" />
         </ItemGroup>
     </Target>
 
