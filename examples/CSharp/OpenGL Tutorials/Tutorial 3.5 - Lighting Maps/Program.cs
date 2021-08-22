@@ -177,7 +177,7 @@ namespace Tutorial
 
             //Bind the diffuse map and and set to use texture0.
             DiffuseMap.Bind(TextureUnit.Texture0);
-            //Bind the diffuse map and and set to use texture10.
+            //Bind the diffuse map and and set to use texture1.
             SpecularMap.Bind(TextureUnit.Texture1);
 
             //Setup the coordinate systems for our view
@@ -245,6 +245,7 @@ namespace Tutorial
             LightingShader.Dispose();
             LampShader.Dispose();
             DiffuseMap.Dispose();
+            SpecularMap.Dispose();
         }
 
         private static void KeyDown(IKeyboard keyboard, Key key, int arg3)
