@@ -15,9 +15,9 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
     public sealed class PInvokeNativeContextOverride : INativeContextOverride
     {
         /// <inheritdoc />
-        public TypeDeclarationSyntax Type(string name, string lib, EntryPoint[] entrypoints, Compilation comp)
+        public TypeDeclarationSyntax Type(OverrideContext ctx)
         {
-            var canUseCorrectCallConv = comp.SyntaxTrees.FirstOrDefault()?.IsNet5OrGreater() ?? false;
+            var canUseCorrectCallConv = ctx.IsNet5OrGreater;
             static BlockSyntax GetSlotSwitch(EntryPoint[] entrypoints, List<MemberDeclarationSyntax> members, bool canUseCorrectCallConv)
             {
                 members.Add(NativeContextOverrideHelper.GetProcAddress);
@@ -169,7 +169,10 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                                                         AttributeArgument
                                                         (
                                                             LiteralExpression
-                                                                (SyntaxKind.StringLiteralExpression, Literal(lib))
+                                                            (
+                                                                SyntaxKind.StringLiteralExpression,
+                                                                Literal(ctx.Library)
+                                                            )
                                                         ),
                                                         Token(SyntaxKind.CommaToken),
                                                         AttributeArgument
@@ -264,7 +267,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                 return ret.WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
             }
 
-            var v = entrypoints.Distinct(new NameComparer()).ToArray();
+            var v = ctx.EntryPoints.Distinct(new NameComparer()).ToArray();
             var members = new List<MemberDeclarationSyntax>();
             members.AddRange(v.Select(x => GetMethodFromEntrypoint(x)));
             if (canUseCorrectCallConv)
@@ -314,7 +317,7 @@ namespace Silk.NET.SilkTouch.NativeContextOverrides
                     .WithModifiers(TokenList(Token(SyntaxKind.PublicKeyword)))
                     .WithBody(Block())
             );
-            return ClassDeclaration(name)
+            return ClassDeclaration(ctx.Name)
                 .WithBaseList
                 (
                     BaseList

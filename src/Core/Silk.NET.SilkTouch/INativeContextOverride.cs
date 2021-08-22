@@ -10,6 +10,6 @@ namespace Silk.NET.SilkTouch
 {
     public interface INativeContextOverride
     {
-        TypeDeclarationSyntax Type(string name, string lib, EntryPoint[] entrypoints, Compilation comp);
+        TypeDeclarationSyntax Type(OverrideContext ctx);
     }
 }

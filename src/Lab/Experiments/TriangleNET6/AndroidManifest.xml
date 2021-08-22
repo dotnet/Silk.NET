@@ -11,5 +11,4 @@
                android:roundIcon="@mipmap/ic_launcher_round"
                android:supportsRtl="true">
   </application>
-  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 </manifest>
