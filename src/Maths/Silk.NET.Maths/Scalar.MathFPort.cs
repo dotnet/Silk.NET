@@ -124,8 +124,8 @@ namespace Silk.NET.Maths
                     else
 #endif
                     {
-                        var v = *(uint*) &x;
-                        v &= 0x7FFF_FFFF;
+                        var v = *(ulong*) &x;
+                        v &= 0x7FFF_FFFF_FFFF_FFFF;
                         return *(T*) &v;
                     }
                 }
