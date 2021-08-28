@@ -130,7 +130,7 @@ namespace Silk.NET.Maths
             }
         }
 
-        /// <summary>Constructs a Matrix2X3 from the given components.</summary>
+        /// <summary>Constructs a <see cref="Matrix2X3{T}"/> from the given components.</summary>
         public Matrix2X3(T m11, T m12, T m13,
                          T m21, T m22, T m23)
         {
@@ -139,7 +139,7 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>
-        /// Constructs a Matrix2X3 from the given rows.
+        /// Constructs a <see cref="Matrix2X3{T}"/> from the given rows.
         /// </summary>
         public Matrix2X3(Vector3D<T> row1, Vector3D<T> row2)
         {
@@ -147,40 +147,40 @@ namespace Silk.NET.Maths
             Row2 = row2;
         }
 
-        /// <summary>Constructs a Matrix2X3 from the given Matrix3X2.</summary>
-        /// <param name="value">The source Matrix3X2.</param>
+        /// <summary>Constructs a <see cref="Matrix2X3{T}"/> from the given <see cref="Matrix3X2{T}"/>.</summary>
+        /// <param name="value">The source <see cref="Matrix3X2{T}"/>.</param>
         public Matrix2X3(Matrix3X2<T> value)
         {
             Row1 = new(value.M11, value.M12, default);
             Row2 = new(value.M21, value.M22, default);
         }
 
-        /// <summary>Constructs a Matrix2X3 from the given Matrix4X3.</summary>
-        /// <param name="value">The source Matrix4X3.</param>
+        /// <summary>Constructs a <see cref="Matrix2X3{T}"/> from the given <see cref="Matrix4X3{T}"/>.</summary>
+        /// <param name="value">The source <see cref="Matrix4X3{T}"/>.</param>
         public Matrix2X3(Matrix4X3<T> value)
         {
             Row1 = new Vector3D<T>(value.M11, value.M12, value.M13);
             Row2 = new Vector3D<T>(value.M21, value.M22, value.M23);
         }
 
-        /// <summary>Constructs a Matrix2X3 from the given Matrix3X4.</summary>
-        /// <param name="value">The source Matrix3X4.</param>
+        /// <summary>Constructs a <see cref="Matrix2X3{T}"/> from the given <see cref="Matrix3X4{T}"/>.</summary>
+        /// <param name="value">The source <see cref="Matrix3X4{T}"/>.</param>
         public Matrix2X3(Matrix3X4<T> value)
         {
             Row1 = new Vector3D<T>(value.M11, value.M12, value.M13);
             Row2 = new Vector3D<T>(value.M21, value.M22, value.M23);
         }
 
-        /// <summary>Constructs a Matrix2X3 from the given Matrix2X4.</summary>
-        /// <param name="value">The source Matrix2X4.</param>
+        /// <summary>Constructs a <see cref="Matrix2X3{T}"/> from the given <see cref="Matrix2X4{T}"/>.</summary>
+        /// <param name="value">The source <see cref="Matrix2X4{T}"/>.</param>
         public Matrix2X3(Matrix2X4<T> value)
         {
             Row1 = new Vector3D<T>(value.M11, value.M12, value.M13);
             Row2 = new Vector3D<T>(value.M21, value.M22, value.M23);
         }
 
-        /// <summary>Constructs a Matrix2X3 from the given Matrix4X2.</summary>
-        /// <param name="value">The source Matrix4X2.</param>
+        /// <summary>Constructs a <see cref="Matrix2X3{T}"/> from the given <see cref="Matrix4X2{T}"/>.</summary>
+        /// <param name="value">The source <see cref="Matrix4X2{T}"/>.</param>
         public Matrix2X3(Matrix4X2<T> value)
         {
             Row1 = new Vector3D<T>(value.M11, value.M12, default);
