@@ -1,10 +1,11 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0</TargetFrameworks>
+        <TargetFrameworks>netstandard2.0;netstandard2.1;netcoreapp3.1;net5.0;net6.0;net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
         <LangVersion>8</LangVersion>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
         <Nullable>enable</Nullable>
+        <DisableImplicitNamespaceImports>true</DisableImplicitNamespaceImports>
     </PropertyGroup>
     
     <ItemGroup>
@@ -20,6 +21,47 @@
       <ProjectReference Include="..\Silk.NET.SDL\Silk.NET.SDL.csproj" />
       <ProjectReference Include="..\Silk.NET.Windowing.Common\Silk.NET.Windowing.Common.csproj" />
     </ItemGroup>
+    
+    <!-- iOS Specific Files -->
+    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-ios' Or '$(TargetFramework)' == 'net6.0-maccatalyst'">
+        <Compile Include="..\iOS\Silk.NET.Windowing.Sdl.iOS\SilkMobile.cs" Link="iOS/SilkMobile.cs" />
+    </ItemGroup>
+
+    <!-- Android Specific Files -->
+    <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
+        <TransformFile Include="..\Android\Silk.NET.Windowing.Sdl.Android\Transforms\Metadata.xml" Link="Android/Metadata.xml" />
+        <TransformFile Include="..\Android\Silk.NET.Windowing.Sdl.Android\Transforms\EnumFields.xml" Link="Android/EnumFields.xml" />
+        <TransformFile Include="..\Android\Silk.NET.Windowing.Sdl.Android\Transforms\EnumMethods.xml" Link="Android/EnumMethods.xml" />
+        <Compile Include="..\Android\Silk.NET.Windowing.Sdl.Android\Additions\SilkActivity.cs" />
+        <AndroidLibrary Include="..\Android\Silk.NET.Windowing.Sdl.Android\Jars\app-release.aar" Link="Android/app-release.aar" Bind="true" />
+    </ItemGroup>
+    
+    <!-- Closest things to documentation on what the hell this voodoo does:
+         https://github.com/NuGet/Home/issues/10063#issuecomment-713083004
+         https://github.com/xamarin/xamarin-android/pull/5242
+         https://github.com/dotnet/sdk/issues/14042 
+         https://github.com/dotnet/sdk/blob/main/src/Tasks/Microsoft.NET.Build.Tasks/targets/Microsoft.NET.PackTool.targets#L54 -->
+    
+    <PropertyGroup>
+        <TargetsForTfmSpecificContentInPackage>$(TargetsForTfmSpecificContentInPackage);_SdlTfmSpecific</TargetsForTfmSpecificContentInPackage>
+    </PropertyGroup>
+
+    <Target Name="_SdlTfmSpecific">
+        <GetNuGetShortFolderName TargetFrameworkMoniker="$(TargetFrameworkMoniker)" TargetPlatformMoniker="$(TargetPlatformMoniker)">
+            <Output TaskParameter="NuGetShortFolderName" PropertyName="_NuGetShortFolderName" />
+        </GetNuGetShortFolderName>
+        <!-- iOS Specific Bundled Files -->
+        <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-ios' Or '$(TargetFramework)' == 'net6.0-maccatalyst'">
+            <TfmSpecificPackageFile Include="..\iOS\Silk.NET.Windowing.Sdl.iOS\libSDL2.a" Pack="true" Link="build/$(_NuGetShortFolderName)/libSDL2.a" PackagePath="build/$(_NuGetShortFolderName)/native/libSDL2.a" CopyToOutputDirectory="PreserveNewest" />
+            <TfmSpecificPackageFile Include="..\iOS\Silk.NET.Windowing.Sdl.iOS\Silk.NET.Windowing.Sdl.iOS.targets" Link="build/$(_NuGetShortFolderName)/Silk.NET.Windowing.Sdl.targets" Pack="true" PackagePath="build/$(_NuGetShortFolderName)/Silk.NET.Windowing.Sdl.targets" />
+        </ItemGroup>
+        <!-- Android Specific Bundled Files -->
+        <ItemGroup Condition="'$(TargetFramework)' == 'net6.0-android'">
+            <!-- https://github.com/xamarin/xamarin-android/issues/5957 
+                 https://github.com/xamarin/xamarin-android/blob/main/Documentation/guides/OneDotNetEmbeddedResources.md -->
+            <TfmSpecificPackageFile Include="..\Android\Silk.NET.Windowing.Sdl.Android\Jars\app-release.aar" Link="lib/$(_NuGetShortFolderName)/Silk.NET.Windowing.Sdl.aar" Pack="true" PackagePath="lib/$(_NuGetShortFolderName)/Silk.NET.Windowing.Sdl.aar" />
+        </ItemGroup>
+    </Target>
 
     <Import Project="..\..\..\build\props\common.props" />
 

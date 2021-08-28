@@ -24,7 +24,8 @@ namespace Silk.NET.SilkTouch
             EntryPoint[] entrypoints,
             ref List<MemberDeclarationSyntax> members,
             ITypeSymbol classSymbol,
-            INamedTypeSymbol excludeFromOverrideAttribute
+            INamedTypeSymbol excludeFromOverrideAttribute,
+            Compilation comp
         )
         {
             var overrides = FindNativeContextOverrides(classSymbol);
@@ -50,8 +51,8 @@ namespace Silk.NET.SilkTouch
 
             foreach (var (attSymbol, attId, lib, @override) in overrides.OrderBy(x => x.Item2))
             {
-                var name = $"OVERRIDE_{attId}";
-                members.Add(@override.Type(name, lib, entrypoints.Where(x => x.SourceSymbol.GetAttributes()
+                var name = NameGenerator.Name($"OVERRIDE_{attId}");
+                members.Add(@override.Type(new(name, lib, entrypoints.Where(x => x.SourceSymbol.GetAttributes()
                     .All(x2 =>
                     {
                         if (!SymbolEqualityComparer.Default.Equals(x2.AttributeClass, excludeFromOverrideAttribute))
@@ -59,7 +60,7 @@ namespace Silk.NET.SilkTouch
 
                         var matchId = (int) x2.ConstructorArguments[0].Value!;
                         return matchId != attId;
-                    })).ToArray()));
+                    })).ToArray(), comp.SyntaxTrees?.FirstOrDefault()?.IsNet5OrGreater() ?? false)));
                 last = IfStatement
                 (
                     BinaryExpression

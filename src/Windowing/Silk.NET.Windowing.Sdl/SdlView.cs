@@ -1,7 +1,6 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
-using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
@@ -11,7 +10,9 @@ using Silk.NET.Core.Contexts;
 using Silk.NET.Maths;
 using Silk.NET.SDL;
 using Silk.NET.Windowing.Internals;
-using Point = System.Drawing.Point;
+
+// We can't import System because System has a type called nint on iOS and Mac Catalyst.
+// As such, throughout this file System is fully qualified.
 
 // ReSharper disable BitwiseOperatorOnEnumWithoutFlags
 
@@ -47,10 +48,10 @@ namespace Silk.NET.Windowing.Sdl
         }
 
         // Events
-        public override event Action<Vector2D<int>>? Resize;
-        public override event Action<Vector2D<int>>? FramebufferResize;
-        public override event Action? Closing;
-        public override event Action<bool>? FocusChanged;
+        public override event System.Action<Vector2D<int>>? Resize;
+        public override event System.Action<Vector2D<int>>? FramebufferResize;
+        public override event System.Action? Closing;
+        public override event System.Action<bool>? FocusChanged;
 
         // Properties
         protected override IGLContext? CoreGLContext => API.API == ContextAPI.OpenGL || API.API == ContextAPI.OpenGLES
@@ -113,10 +114,13 @@ namespace Silk.NET.Windowing.Sdl
         {
             var flags = WindowFlags.WindowAllowHighdpi |
                         WindowFlags.WindowShown;
-
             if (additionalFlags is null)
             {
-                flags |= WindowFlags.WindowResizable;
+                flags |= _platform.IsViewOnly switch
+                {
+                    true => WindowFlags.WindowBorderless | WindowFlags.WindowFullscreen,
+                    false => WindowFlags.WindowResizable
+                };
             }
             else
             {
@@ -173,7 +177,7 @@ namespace Silk.NET.Windowing.Sdl
                         {
                             ContextProfile.Core => GLprofile.GLContextProfileCore,
                             ContextProfile.Compatability => GLprofile.GLContextProfileCompatibility,
-                            _ => throw new ArgumentOutOfRangeException(nameof(opts), "Bad ContextProfile")
+                            _ => throw new System.ArgumentOutOfRangeException(nameof(opts), "Bad ContextProfile")
                         })
                 ),
                 (GLattr.GLContextFlags, (int) opts.API.Flags),

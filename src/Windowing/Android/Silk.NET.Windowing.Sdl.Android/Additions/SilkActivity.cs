@@ -2,9 +2,11 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Android.App;
 using Android.Content.PM;
+using Android.Provider;
 using Org.Libsdl.App;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
@@ -47,13 +49,18 @@ namespace Silk.NET.Windowing.Sdl.Android
         public override unsafe void LoadLibraries()
         {
             base.LoadLibraries();
-            if (!(Instance is null))
+            if (Instance is not null)
             {
                 throw new InvalidOperationException("Only one SilkActivity may be present throughout the whole application.");
             }
 
             Instance = this;
             SetupMain(SilkMarshal.DelegateToPtr(CurrentMain));
+        }
+
+        public override void SetOrientationBis(int w, int h, bool resizable, string hint)
+        {
+            // do nothing, Silk.NET respects the OS and doesn't want to do any meddling the consumer can't control.
         }
 
         protected abstract void OnRun();

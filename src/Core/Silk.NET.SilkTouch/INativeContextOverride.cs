@@ -3,12 +3,13 @@
 
 using System;
 using System.Collections.Generic;
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace Silk.NET.SilkTouch
 {
     public interface INativeContextOverride
     {
-        TypeDeclarationSyntax Type(string name, string lib, EntryPoint[] entrypoints);
+        TypeDeclarationSyntax Type(OverrideContext ctx);
     }
 }

@@ -16,6 +16,7 @@ using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Native;
 using Silk.NET.SilkTouch.NativeContextOverrides;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
+using static Silk.NET.SilkTouch.NameGenerator;
 
 namespace Silk.NET.SilkTouch
 {
@@ -324,7 +325,14 @@ namespace Silk.NET.SilkTouch
                 );
             }
 
-            ProcessNativeContextOverrides(processedEntrypoints.ToArray(), ref newMembers, sharedClassSymbol, excludeFromOverrideAttribute);
+            ProcessNativeContextOverrides
+            (
+                processedEntrypoints.ToArray(),
+                ref newMembers,
+                sharedClassSymbol,
+                excludeFromOverrideAttribute,
+                compilation
+            );
             
             var newNamespace = namespaceDeclaration.WithMembers
                 (
@@ -393,39 +401,6 @@ namespace Silk.NET.SilkTouch
         )
         {
             const string invocationShimName = "StCall";
-            static FunctionPointerTypeSyntax GetFuncPtrType
-            (
-                CallingConvention callingConvention,
-                ITypeSymbol[] loadTypes
-            ) => FunctionPointerType
-            (
-                callingConvention == CallingConvention.Winapi ? FunctionPointerCallingConvention
-                (
-                    Token(SyntaxKind.UnmanagedKeyword)
-                ) : FunctionPointerCallingConvention
-                (
-                    Token(SyntaxKind.UnmanagedKeyword),
-                    FunctionPointerUnmanagedCallingConventionList
-                    (
-                        SingletonSeparatedList
-                        (
-                            FunctionPointerUnmanagedCallingConvention
-                                (Identifier(GetCallingConvention(callingConvention)))
-                        )
-                    )
-                ),
-                FunctionPointerParameterList
-                (
-                    SeparatedList
-                    (
-                        loadTypes.Select
-                        (
-                            x => FunctionPointerParameter
-                                (IdentifierName(x.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)))
-                        )
-                    )
-                )
-            );
 
             static MemberAccessExpressionSyntax GetFuncPtrExpr
             (
@@ -441,7 +416,7 @@ namespace Silk.NET.SilkTouch
                         SyntaxKind.AsExpression, IdentifierName("CurrentVTable"),
                         IdentifierName(generatedVTableName)
                     )
-                ), IdentifierName(FirstLetterToUpper(entryPoint))
+                ), IdentifierSilk(entryPoint)
             );
 
             void BuildLoadInvoke(ref IMarshalContext ctx, Action next)
@@ -471,14 +446,7 @@ namespace Silk.NET.SilkTouch
 
                 Func<IMarshalContext, ExpressionSyntax> expression;
 
-                var defs = declaration.SyntaxTree.Options.PreprocessorSymbolNames;
-
-                // ReSharper disable PossibleMultipleEnumeration - just not an issue
-                var hasFastWinapi = defs.Contains("NET5_0") ||
-                                    defs.Contains("NET6_0") ||
-                                    defs.Contains("NET5_0_OR_GREATER"); // newer SDKs (circa .NET 6) have _OR_GREATER
-                // ReSharper restore PossibleMultipleEnumeration
-
+                var hasFastWinapi = declaration.SyntaxTree.IsNet5OrGreater();
                 var needsInvocationShim = callingConvention == CallingConvention.Winapi && !hasFastWinapi;
 
                 if ((classIsSealed || generateSeal) && generateVTable)
@@ -486,7 +454,7 @@ namespace Silk.NET.SilkTouch
                     // build load + invocation
                     expression = ctx =>
                     {
-                        var fPtrType = GetFuncPtrType(callingConvention, ctx.LoadTypes);
+                        var fPtrType = ctx.LoadTypes.GetFuncPtrType(callingConvention);
                         return InvocationExpression
                         (
                             needsInvocationShim ? IdentifierName(invocationShimName) : ParenthesizedExpression
@@ -619,7 +587,7 @@ namespace Silk.NET.SilkTouch
                 (
                     CastExpression
                     (
-                        GetFuncPtrType(callingConvention, ctx.LoadTypes),
+                        ctx.LoadTypes.GetFuncPtrType(callingConvention),
                         GetFuncPtrExpr(generatedVTableName, entryPoint)
                     )
                 ),
@@ -712,17 +680,6 @@ namespace Silk.NET.SilkTouch
                     .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
             }
         }
-
-        private static string GetCallingConvention(CallingConvention convention)
-            => convention switch
-            {
-                // CallingConvention.Winapi => "", netstandard2.0 doesn't allow this
-                CallingConvention.Cdecl => "Cdecl",
-                CallingConvention.ThisCall => "Thiscall",
-                CallingConvention.StdCall => "Stdcall",
-                CallingConvention.FastCall => "Fastcall",
-                _ => throw new ArgumentException("convention is invalid", nameof(convention))
-            };
 
         private static NativeApiAttribute? ToNativeApiAttribute(AttributeData? attributeData)
         {

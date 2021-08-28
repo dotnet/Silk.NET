@@ -1,3 +1,4 @@
+#if __ANDROID__
 using Android.App;
 using Android.Content.PM;
 using Silk.NET.Windowing;
@@ -8,8 +9,11 @@ namespace TriangleDroid
 {
     [Activity
     (
-        Label = "@string/app_name", Theme = "@style/AppTheme", MainLauncher = true,
-        ConfigurationChanges = ConfigChangesFlags
+        Label = "@string/app_name",
+        MainLauncher = true,
+        ConfigurationChanges = ConfigChangesFlags,
+        ScreenOrientation = ScreenOrientation.Landscape,
+        Theme = "@android:style/Theme.Black.NoTitleBar.Fullscreen"
     )]
     public class MainActivity : SilkActivity
     {
@@ -17,7 +21,8 @@ namespace TriangleDroid
         {
             Program.API = new GraphicsAPI
                 (ContextAPI.OpenGLES, ContextProfile.Compatability, ContextFlags.Default, new APIVersion(3, 0));
-            Program.Main(null!);
+            Program.Run();
         }
     }
 }
+#endif
