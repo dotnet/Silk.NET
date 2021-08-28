@@ -309,7 +309,7 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>Constructs a Matrix4X4 from the given Matrix2X4.</summary>
-        /// <param name="value">The source Matrix3X4.</param>
+        /// <param name="value">The source Matrix2X4.</param>
         public Matrix4X4(Matrix2X4<T> value)
         {
             Row1 = new(value.M11, value.M12, value.M13, value.M14);
@@ -319,7 +319,7 @@ namespace Silk.NET.Maths
         }
 
         /// <summary>Constructs a Matrix4X4 from the given Matrix4X2.</summary>
-        /// <param name="value">The source Matrix3X4.</param>
+        /// <param name="value">The source Matrix4X2.</param>
         public Matrix4X4(Matrix4X2<T> value)
         {
             Row1 = new(value.M11, value.M12, default, default);

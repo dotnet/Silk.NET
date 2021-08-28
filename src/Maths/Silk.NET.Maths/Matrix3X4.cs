@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
 {
-    /// <summary>A structure encapsulating a 4x4 matrix.</summary>
+    /// <summary>A structure encapsulating a 3x4 matrix.</summary>
     [Serializable]
     [DataContract]
     public struct Matrix3X4<T> : IEquatable<Matrix3X4<T>>
@@ -239,7 +239,7 @@ namespace Silk.NET.Maths
             Row3 = new(value.M31, value.M32, value.M33, value.M34);
         }
 
-        /// <summary>Constructs a Matrix4X4 from the given Matrix3X3.</summary>
+        /// <summary>Constructs a Matrix3X4 from the given Matrix3X3.</summary>
         /// <param name="value">The source Matrix3X3.</param>
         public Matrix3X4(Matrix3X3<T> value)
         {
@@ -248,8 +248,8 @@ namespace Silk.NET.Maths
             Row3 = new(value.M31, value.M32, value.M33, default);
         }
 
-        /// <summary>Constructs a Matrix4X4 from the given Matrix2X4.</summary>
-        /// <param name="value">The source Matrix3X4.</param>
+        /// <summary>Constructs a Matrix3X4 from the given Matrix2X4.</summary>
+        /// <param name="value">The source Matrix2X4.</param>
         public Matrix3X4(Matrix2X4<T> value)
         {
             Row1 = new(value.M11, value.M12, value.M13, value.M14);
@@ -257,8 +257,8 @@ namespace Silk.NET.Maths
             Row3 = Vector4D<T>.UnitZ;
         }
 
-        /// <summary>Constructs a Matrix4X4 from the given Matrix4X2.</summary>
-        /// <param name="value">The source Matrix3X4.</param>
+        /// <summary>Constructs a Matrix3X4 from the given Matrix4X2.</summary>
+        /// <param name="value">The source Matrix4X2.</param>
         public Matrix3X4(Matrix4X2<T> value)
         {
             Row1 = new(value.M11, value.M12, default, default);

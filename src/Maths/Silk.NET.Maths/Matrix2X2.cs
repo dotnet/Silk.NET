@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 
 namespace Silk.NET.Maths
 {
-    /// <summary>A structure encapsulating a 4x4 matrix.</summary>
+    /// <summary>A structure encapsulating a 2x2 matrix.</summary>
     [Serializable]
     [DataContract]
     public struct Matrix2X2<T> : IEquatable<Matrix2X2<T>>
@@ -143,16 +143,16 @@ namespace Silk.NET.Maths
             Row2 = new(value.M21, value.M22);
         }
 
-        /// <summary>Constructs a Matrix4x4 from the given Matrix3X4.</summary>
-        /// <param name="value">The source Matrix3X4.</param>
+        /// <summary>Constructs a Matrix2x2 from the given Matrix2X4.</summary>
+        /// <param name="value">The source Matrix2X4.</param>
         public Matrix2X2(Matrix2X4<T> value)
         {
             Row1 = new(value.M11, value.M12);
             Row2 = new(value.M21, value.M22);
         }
 
-        /// <summary>Constructs a Matrix4x4 from the given Matrix3X4.</summary>
-        /// <param name="value">The source Matrix3X4.</param>
+        /// <summary>Constructs a Matrix2x2 from the given Matrix4X2.</summary>
+        /// <param name="value">The source Matrix4X2.</param>
         public Matrix2X2(Matrix4X2<T> value)
         {
             Row1 = new(value.M11, value.M12);

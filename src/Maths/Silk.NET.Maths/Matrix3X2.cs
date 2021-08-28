@@ -178,8 +178,8 @@ namespace Silk.NET.Maths
             Row3 = new(value.M31, value.M32);
         }
 
-        /// <summary>Constructs a Matrix4X4 from the given Matrix3X4.</summary>
-        /// <param name="value">The source Matrix3X4.</param>
+        /// <summary>Constructs a Matrix3X2 from the given Matrix2X4.</summary>
+        /// <param name="value">The source Matrix2X4.</param>
         public Matrix3X2(Matrix2X4<T> value)
         {
             Row1 = new(value.M11, value.M12);
@@ -187,8 +187,8 @@ namespace Silk.NET.Maths
             Row3 = Vector2D<T>.Zero;
         }
 
-        /// <summary>Constructs a Matrix4X4 from the given Matrix3X4.</summary>
-        /// <param name="value">The source Matrix3X4.</param>
+        /// <summary>Constructs a Matrix3X2 from the given Matrix4X2.</summary>
+        /// <param name="value">The source Matrix4X2.</param>
         public Matrix3X2(Matrix4X2<T> value)
         {
             Row1 = new(value.M11, value.M12);
