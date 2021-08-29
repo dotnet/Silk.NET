@@ -17,7 +17,7 @@ namespace VMASharp.Metadata
       int frameInUseCount,
       ref AllocationRequest request);
     int MakeAllocationsLost(int currentFrame, int frameInUseCount);
-    void CheckCorruption([NativeInteger] UIntPtr blockDataPointer);
+    void CheckCorruption(nuint blockDataPointer);
     void Alloc(
       in AllocationRequest request,
       SuballocationType type,
