@@ -35,6 +35,11 @@ namespace Silk.NET.Windowing
         Vector2D<int> FramebufferSize { get; }
 
         /// <summary>
+        /// Determines if the window is initialized.
+        /// </summary>
+        bool IsInitialized {  get; }
+
+        /// <summary>
         /// Raised when the window is resized.
         /// </summary>
         event Action<Vector2D<int>>? Resize;
