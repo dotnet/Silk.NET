@@ -63,7 +63,9 @@ namespace Silk.NET.Input
         public static IInputContext CreateInput(this IView view)
         {
             if (!view.IsInitialized)
+            {
                 throw new InvalidOperationException("Couldn't create input context as the view was not initialized.");
+            }
 
             foreach (var inputPlatform in Platforms)
             {
