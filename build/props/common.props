@@ -10,7 +10,12 @@
 
             - Add TryGetExtension methods to AL &amp; ALContext
             - Add support for .NET 6 Android
+            - Udpate to Vulkan 1.2.190
+            - Update to OpenXR 1.0.19
+            - Update to latest OpenGL specifications
+            - Update to latest OpenCL specifications
             - Fix calling CreateInput on an uninitialized IView resulting in a AccessViolationException
+            - Fix calling Close on an uninitialized IView resulting in an AccessViolationException
             - Fix Silk.NET (and by extension SDL) taking full control of orientation on Android
             - Fix DoRender being called if Window.Close was called during DoUpdate
             - Fix Scalar.Abs for double values
@@ -19,7 +24,6 @@
             - Fix Box2D.Center returning bogus values
             - Fix incorrect documentation in Thumbstick.Direction
             - Fix incorrect documentation in WindowOptions
-            - Fix calling SetWindowShouldClose even though the underlying window pointer is null
         </PackageReleaseNotes>
         <PackageTags Condition="'$(PackageTags)' == ''">OpenCL;OpenGL;OpenAL;OpenGLES;GLES;Vulkan;Assimp;DirectX;GLFW;SDL;Windowing;Input;Gamepad;Joystick;Keyboard;Mouse;SilkTouch;Source;Generator;C#;F#;.NET;DotNet;Mono;Vector;Math;Maths;Numerics;Game;Graphics;Compute;Audio;Sound;Engine;Silk;Silk.NET;Slim.NET;ElgarTK;GPU;Sharp;Science;Scientific;Visualization;Visual;Audiovisual;Windows;macOS;Linux;Android;Bindings;OSX;Wrapper;Native</PackageTags>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
