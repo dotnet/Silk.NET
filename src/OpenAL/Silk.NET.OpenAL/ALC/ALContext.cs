@@ -111,9 +111,20 @@ namespace Silk.NET.OpenAL
             return ret;
         }
 
-        public bool TryGetExtension<T>
-            (out T ext) where T : NativeExtension<ALContext> => 
-            !((ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
+        /// <summary>
+        /// Attempts to load the given extension.
+        /// </summary>
+        /// <typeparam name="T">The extension type.</typeparam>
+        /// <param name="device">The device the context is on.</param>
+        /// <param name="ext">The extension to check for.</param>
+        /// <remarks>
+        /// This function doesn't check that the extension is enabled - you will get an error later on if you attempt
+        /// to call an extension function from an extension that isn't loaded.
+        /// </remarks>
+        /// <returns>Whether the extension is available.</returns>
+        public unsafe bool TryGetExtension<T>
+            (Device* device, out T ext) where T : NativeExtension<ALContext> => 
+            !((ext = IsExtensionPresent(device, ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
                 ? (T) Activator.CreateInstance(typeof(T), Context)
                 : null) is null);
 
