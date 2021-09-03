@@ -15,7 +15,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     public partial class ALAWFormat : FormatExtensionBase<ALAWBufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected ALAWFormat(INativeContext ctx)
+        public ALAWFormat(INativeContext ctx)
             : base(ctx)
         {
         }

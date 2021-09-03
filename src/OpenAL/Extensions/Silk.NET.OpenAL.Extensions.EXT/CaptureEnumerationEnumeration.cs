@@ -19,7 +19,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     public partial class CaptureEnumerationEnumeration : ContextExtensionBase
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected CaptureEnumerationEnumeration(INativeContext ctx)
+        public CaptureEnumerationEnumeration(INativeContext ctx)
             : base(ctx)
         {
         }

@@ -7,7 +7,7 @@ namespace Silk.NET.OpenAL.Extensions.Soft
     /// A list of valid <see cref="double" /> <see cref="IStateSoft.GetDouble" /> parameters. These enumeration members
     /// are defined as extensions in the OpenAL Soft library.
     /// </summary>
-    public enum SoftStateDouble
+    public enum SoftGainClampDouble
     {
         /// <summary>
         /// Gets the gain limit of the context.

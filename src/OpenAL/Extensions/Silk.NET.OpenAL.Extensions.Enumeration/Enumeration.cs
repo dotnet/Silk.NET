@@ -18,7 +18,7 @@ namespace Silk.NET.OpenAL.Extensions.Enumeration
     public partial class Enumeration : ContextExtensionBase
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected Enumeration(INativeContext ctx)
+        public Enumeration(INativeContext ctx)
             : base(ctx)
         {
         }

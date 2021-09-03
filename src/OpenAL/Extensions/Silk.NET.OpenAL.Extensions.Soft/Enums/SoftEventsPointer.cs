@@ -8,7 +8,7 @@ namespace Silk.NET.OpenAL.Extensions.Soft
     /// <summary>
     /// A list of valid <see cref="IntPtr" /> <see cref="IStateSoft.GetPointer" /> parameters.
     /// </summary>
-    public enum StatePointer
+    public enum SoftEventsPointer
     {
         /// <summary>
         /// Gets a pointer to the set event callback function.

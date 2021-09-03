@@ -6,7 +6,7 @@ namespace Silk.NET.OpenAL.Extensions.Soft
     /// <summary>
     /// A list of valid <see cref="int" /> <see cref="IStateSoft.GetInteger" /> parameters.
     /// </summary>
-    public enum SoftStateInteger
+    public enum SoftSourceResamplerInteger
     {
         /// <summary>
         /// Gets the number of available resamplers.
