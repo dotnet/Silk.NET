@@ -20,7 +20,7 @@ namespace Silk.NET.OpenAL
         private SearchPathContainer? _searchPaths;
 
         /// <inheritdoc cref="NativeLibraryBase" />
-        protected AL(INativeContext ctx)
+        public AL(INativeContext ctx)
             : base(ctx)
         {
         }

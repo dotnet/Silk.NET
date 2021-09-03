@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Native;
 
@@ -11,27 +12,19 @@ namespace Silk.NET.OpenAL.Extensions.Soft
     /// Exposes the public API of functions added by OpenAL Soft.
     /// </summary>
     [NativeApi(Prefix = "al")]
-    public partial class Soft : NativeExtension<AL>
+    [Extension("AL_SOFT_gain_clamp_ex")]
+    public partial class SoftGainClamp : NativeExtension<AL>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected Soft(INativeContext ctx)
+        public SoftGainClamp(INativeContext ctx)
             : base(ctx)
         {
         }
 
         /// <inheritdoc />
-        public partial bool GetBoolean(SoftStateBoolean param);
+        public partial double GetDouble(SoftGainClampDouble param);
 
         /// <inheritdoc />
-        public partial double GetDouble(SoftStateDouble param);
-
-        /// <inheritdoc />
-        public partial float GetFloat(SoftStateFloat param);
-
-        /// <inheritdoc />
-        public partial int GetInteger(SoftStateInteger param);
-
-        /// <inheritdoc />
-        public partial nint GetPointer(StatePointer param);
+        public partial float GetFloat(SoftGainClampFloat param);
     }
 }
