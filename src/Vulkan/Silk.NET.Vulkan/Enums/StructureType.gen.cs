@@ -976,6 +976,10 @@ namespace Silk.NET.Vulkan
         PhysicalDeviceInheritedViewportScissorFeaturesNV = 1000278000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_COMMAND_BUFFER_INHERITANCE_VIEWPORT_SCISSOR_INFO_NV")]
         CommandBufferInheritanceViewportScissorInfoNV = 1000278001,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_INTEGER_DOT_PRODUCT_FEATURES_KHR")]
+        PhysicalDeviceShaderIntegerDotProductFeaturesKhr = 1000280000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_SHADER_INTEGER_DOT_PRODUCT_PROPERTIES_KHR")]
+        PhysicalDeviceShaderIntegerDotProductPropertiesKhr = 1000280001,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TEXEL_BUFFER_ALIGNMENT_FEATURES_EXT")]
         PhysicalDeviceTexelBufferAlignmentFeaturesExt = 1000281000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_TEXEL_BUFFER_ALIGNMENT_PROPERTIES_EXT")]
@@ -1110,6 +1114,8 @@ namespace Silk.NET.Vulkan
         VertexInputAttributeDescription2Ext = 1000352002,
         [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_DRM_PROPERTIES_EXT")]
         PhysicalDeviceDrmPropertiesExt = 1000353000,
+        [NativeName("Name", "VK_STRUCTURE_TYPE_PHYSICAL_DEVICE_PRIMITIVE_TOPOLOGY_LIST_RESTART_FEATURES_EXT")]
+        PhysicalDevicePrimitiveTopologyListRestartFeaturesExt = 1000356000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_IMPORT_MEMORY_ZIRCON_HANDLE_INFO_FUCHSIA")]
         ImportMemoryZirconHandleInfoFuchsia = 1000364000,
         [NativeName("Name", "VK_STRUCTURE_TYPE_MEMORY_ZIRCON_HANDLE_PROPERTIES_FUCHSIA")]

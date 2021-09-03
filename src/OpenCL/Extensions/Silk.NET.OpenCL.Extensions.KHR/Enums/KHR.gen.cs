@@ -218,6 +218,10 @@ namespace Silk.NET.OpenCL.Extensions.KHR
         DeviceIntegerDotProductInput4x8BitPackedKhr = 0x1,
         [NativeName("Name", "CL_DEVICE_INTEGER_DOT_PRODUCT_CAPABILITIES_KHR")]
         DeviceIntegerDotProductCapabilitiesKhr = 0x1073,
+        [NativeName("Name", "CL_DEVICE_INTEGER_DOT_PRODUCT_ACCELERATION_PROPERTIES_8BIT_KHR")]
+        DeviceIntegerDotProductAccelerationProperties8BitKhr = 0x1074,
+        [NativeName("Name", "CL_DEVICE_INTEGER_DOT_PRODUCT_ACCELERATION_PROPERTIES_4x8BIT_PACKED_KHR")]
+        DeviceIntegerDotProductAccelerationProperties4x8BitPackedKhr = 0x1075,
         [NativeName("Name", "CL_SAMPLER_MIP_FILTER_MODE_KHR")]
         SamplerMipFilterModeKhr = 0x1155,
         [NativeName("Name", "CL_SAMPLER_LOD_MIN_KHR")]
