@@ -7,13 +7,8 @@ namespace Silk.NET.OpenAL.Extensions.Soft
     /// A list of valid <see cref="bool" /> parameters for <see cref="IStateSoft.GetBoolean" />. These enumeration members
     /// are defined as extensions in the OpenAL Soft library.
     /// </summary>
-    public enum SoftStateBoolean
+    public enum SoftSourceResamplerBoolean
     {
-        /// <summary>
-        /// Determines whether or not the state has a gain limit set.
-        /// </summary>
-        HasGainLimit = 0x200E,
-
         /// <summary>
         /// Determines whether or not the context has resamplers. Typically, this is always true.
         /// </summary>

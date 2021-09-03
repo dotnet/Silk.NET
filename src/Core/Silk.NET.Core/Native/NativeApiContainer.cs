@@ -15,7 +15,7 @@ namespace Silk.NET.Core.Native
         protected readonly INativeContext _ctx;
         private IVTable _vTable;
 
-        protected NativeApiContainer(INativeContext ctx)
+        public NativeApiContainer(INativeContext ctx)
         {
             _ctx = ctx;
             // Virtual member call should be fine unless we have a rogue implementer

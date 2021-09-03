@@ -26,7 +26,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         private readonly int _ramSize;
 
         /// <inheritdoc cref="NativeLibraryBase" />
-        protected XRam(INativeContext ctx)
+        public XRam(INativeContext ctx)
             : base(ctx)
         {
             _bufferStorageModeAutomatic = GetEnumValue("AL_STORAGE_AUTOMATIC");
@@ -38,6 +38,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         }
 
         /// <inheritdoc />
+        [NativeApi(Prefix = "al")]
         public partial int GetInteger(int param);
 
         /// <inheritdoc />
@@ -199,8 +200,11 @@ namespace Silk.NET.OpenAL.Extensions.Creative
         }
 
         [return: UnmanagedType(UnmanagedType.I4)]
+        [NativeApi(Prefix = "al")]
         public partial bool IsExtensionPresent(string name);
+        [NativeApi(Prefix = "al")]
         public partial nint GetProcAddress(string name);
+        [NativeApi(Prefix = "al")]
         public partial int GetEnumValue(string name);
     }
 }

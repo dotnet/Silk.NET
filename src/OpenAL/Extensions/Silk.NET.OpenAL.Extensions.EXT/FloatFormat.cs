@@ -15,7 +15,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     public partial class FloatFormat : FormatExtensionBase<FloatBufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected FloatFormat(INativeContext ctx)
+        public FloatFormat(INativeContext ctx)
             : base(ctx)
         {
         }
