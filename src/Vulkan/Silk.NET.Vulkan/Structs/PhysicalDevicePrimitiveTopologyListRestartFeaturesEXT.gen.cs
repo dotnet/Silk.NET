@@ -16,16 +16,15 @@ using Silk.NET.Core.Loader;
 
 namespace Silk.NET.Vulkan
 {
-    [NativeName("Name", "VkShaderModuleCreateInfo")]
-    public unsafe partial struct ShaderModuleCreateInfo
+    [NativeName("Name", "VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT")]
+    public unsafe partial struct PhysicalDevicePrimitiveTopologyListRestartFeaturesEXT
     {
-        public ShaderModuleCreateInfo
+        public PhysicalDevicePrimitiveTopologyListRestartFeaturesEXT
         (
-            StructureType? sType = StructureType.ShaderModuleCreateInfo,
+            StructureType? sType = StructureType.PhysicalDevicePrimitiveTopologyListRestartFeaturesExt,
             void* pNext = null,
-            uint? flags = null,
-            nuint? codeSize = null,
-            uint* pCode = null
+            Bool32? primitiveTopologyListRestart = null,
+            Bool32? primitiveTopologyPatchListRestart = null
         ) : this()
         {
             if (sType is not null)
@@ -38,19 +37,14 @@ namespace Silk.NET.Vulkan
                 PNext = pNext;
             }
 
-            if (flags is not null)
+            if (primitiveTopologyListRestart is not null)
             {
-                Flags = flags.Value;
+                PrimitiveTopologyListRestart = primitiveTopologyListRestart.Value;
             }
 
-            if (codeSize is not null)
+            if (primitiveTopologyPatchListRestart is not null)
             {
-                CodeSize = codeSize.Value;
-            }
-
-            if (pCode is not null)
-            {
-                PCode = pCode;
+                PrimitiveTopologyPatchListRestart = primitiveTopologyPatchListRestart.Value;
             }
         }
 
@@ -65,19 +59,14 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "pNext")]
         public void* PNext;
 /// <summary></summary>
-        [NativeName("Type", "VkShaderModuleCreateFlags")]
-        [NativeName("Type.Name", "VkShaderModuleCreateFlags")]
-        [NativeName("Name", "flags")]
-        public uint Flags;
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "primitiveTopologyListRestart")]
+        public Bool32 PrimitiveTopologyListRestart;
 /// <summary></summary>
-        [NativeName("Type", "size_t")]
-        [NativeName("Type.Name", "size_t")]
-        [NativeName("Name", "codeSize")]
-        public nuint CodeSize;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t*")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "pCode")]
-        public uint* PCode;
+        [NativeName("Type", "VkBool32")]
+        [NativeName("Type.Name", "VkBool32")]
+        [NativeName("Name", "primitiveTopologyPatchListRestart")]
+        public Bool32 PrimitiveTopologyPatchListRestart;
     }
 }

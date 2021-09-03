@@ -170,6 +170,8 @@ namespace Silk.NET.OpenGL
         FramebufferSrgb = 0x8DB9,
         [NativeName("Name", "GL_SAMPLE_MASK")]
         SampleMask = 0x8E51,
+        [NativeName("Name", "GL_FETCH_PER_SAMPLE_ARM")]
+        FetchPerSampleArm = 0x8F65,
         [NativeName("Name", "GL_PRIMITIVE_RESTART")]
         PrimitiveRestart = 0x8F9D,
         [NativeName("Name", "GL_DEBUG_OUTPUT")]
