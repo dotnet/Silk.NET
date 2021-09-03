@@ -33,7 +33,7 @@ namespace Silk.NET.OpenXR
             Vector3f* vertexPositions = null,
             Vector3f* vertexNormals = null,
             Vector2f* vertexUVs = null,
-            Silk.NET.Maths.Vector4<short>* vertexBlendIndices = null,
+            Silk.NET.Maths.Vector4D<short>* vertexBlendIndices = null,
             Vector4f* vertexBlendWeights = null,
             uint? indexCapacityInput = null,
             uint? indexCountOutput = null,
@@ -190,7 +190,7 @@ namespace Silk.NET.OpenXR
         [NativeName("Type", "XrVector4sFB*")]
         [NativeName("Type.Name", "XrVector4sFB")]
         [NativeName("Name", "vertexBlendIndices")]
-        public Silk.NET.Maths.Vector4<short>* VertexBlendIndices;
+        public Silk.NET.Maths.Vector4D<short>* VertexBlendIndices;
 /// <summary></summary>
         [NativeName("Type", "XrVector4f*")]
         [NativeName("Type.Name", "XrVector4f")]
