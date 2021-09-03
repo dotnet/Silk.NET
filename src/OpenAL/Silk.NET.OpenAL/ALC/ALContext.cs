@@ -118,9 +118,8 @@ namespace Silk.NET.OpenAL
         /// <param name="device">The device the context is on.</param>
         /// <param name="ext">The extension to check for.</param>
         /// <returns>Whether the extension is available.</returns>
-        public unsafe bool TryGetExtension<T>
-            (Device* device, out T ext) where T : NativeExtension<ALContext> => 
-            !((ext = IsExtensionPresent(device, ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
+        public unsafe bool TryGetExtension<T>(Device* device, out T ext) where T : NativeExtension<ALContext>
+            => !((ext = IsExtensionPresent(device, ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
                 ? (T) Activator.CreateInstance(typeof(T), Context)
                 : null) is null);
 
@@ -130,7 +129,11 @@ namespace Silk.NET.OpenAL
         /// <typeparam name="TContextExtension">The extension type.</typeparam>
         /// <param name="device">The device the context is on.</param>
         /// <returns>The extension.</returns>
-        [Obsolete("This method has been deprecated and will be removed in Silk.NET 3.0. Please use TryGetExtension instead.")]
+        [Obsolete
+        (
+            "This method has been deprecated and will be removed in Silk.NET 3.0. " +
+            "Please use TryGetExtension instead."
+        )]
         public unsafe TContextExtension GetExtension<TContextExtension>(Device* device)
             where TContextExtension : ContextExtensionBase
         {

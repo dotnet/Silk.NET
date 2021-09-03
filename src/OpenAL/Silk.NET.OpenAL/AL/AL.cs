@@ -350,24 +350,18 @@ namespace Silk.NET.OpenAL
         }
 
         /// <summary>
-        ///     Attempts to load a native OpenAL extension of type <typeparamref name="T" />.
+        /// Attempts to load a native OpenAL extension of type <typeparamref name="T" />.
         /// </summary>
-        /// <param name="ext">
-        ///     The loaded extension.
-        /// </param>
-        /// <typeparam name="T">
-        ///     Type of <see cref="NativeExtension{T}" /> to load.
-        /// </typeparam>
-        /// <returns>
-        ///     <c>True</c> if the extension was loaded, otherwise <c>False</c>.
-        /// </returns>
+        /// <param name="ext">The loaded extension.</param>
+        /// <typeparam name="T">Type of <see cref="NativeExtension{T}" /> to load.</typeparam>
+        /// <returns><c>true</c> if the extension was loaded, otherwise <c>false</c>.</returns>
         public bool TryGetExtension<T>(out T ext)
             where T : NativeExtension<AL>
         {
             ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
                 ? (T) Activator.CreateInstance(typeof(T), Context)
                 : null;
-            return ext != null;
+            return ext is not null;
         }
 
         /// <summary>
@@ -375,7 +369,11 @@ namespace Silk.NET.OpenAL
         /// </summary>
         /// <typeparam name="TExtension">The extension type.</typeparam>
         /// <returns>The extension.</returns>
-        [Obsolete("This method has been deprecated and will be removed in Silk.NET 3.0. Please use TryGetExtension instead.")]
+        [Obsolete
+        (
+            "This method has been deprecated and will be removed in Silk.NET 3.0. " +
+            "Please use TryGetExtension instead."
+        )]
         public TExtension GetExtension<TExtension>()
             where TExtension : NativeExtension<AL>
         {
