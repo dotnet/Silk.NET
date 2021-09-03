@@ -10,7 +10,7 @@
 
             - Add TryGetExtension methods to AL &amp; ALContext
             - Add support for .NET 6 Android
-            - Udpate to Vulkan 1.2.190
+            - Update to Vulkan 1.2.190
             - Update to OpenXR 1.0.19
             - Update to latest OpenGL specifications
             - Update to latest OpenCL specifications
