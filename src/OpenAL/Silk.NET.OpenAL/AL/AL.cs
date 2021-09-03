@@ -375,6 +375,7 @@ namespace Silk.NET.OpenAL
         /// </summary>
         /// <typeparam name="TExtension">The extension type.</typeparam>
         /// <returns>The extension.</returns>
+        [Obsolete("This method has been deprecated and will be removed in Silk.NET 3.0. Please use TryGetExtension instead.")]
         public TExtension GetExtension<TExtension>()
             where TExtension : NativeExtension<AL>
         {
