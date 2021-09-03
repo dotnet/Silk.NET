@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
+using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
 using Silk.NET.Core.Native;
@@ -109,6 +110,12 @@ namespace Silk.NET.OpenAL
                 });
             return ret;
         }
+
+        public bool TryGetExtension<T>
+            (out T ext) where T : NativeExtension<ALContext> => 
+            !((ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
+                ? (T) Activator.CreateInstance(typeof(T), Context)
+                : null) is null);
 
         /// <summary>
         /// Gets an instance of the API of an extension to the API.
