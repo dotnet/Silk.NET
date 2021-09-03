@@ -117,10 +117,6 @@ namespace Silk.NET.OpenAL
         /// <typeparam name="T">The extension type.</typeparam>
         /// <param name="device">The device the context is on.</param>
         /// <param name="ext">The extension to check for.</param>
-        /// <remarks>
-        /// This function doesn't check that the extension is enabled - you will get an error later on if you attempt
-        /// to call an extension function from an extension that isn't loaded.
-        /// </remarks>
         /// <returns>Whether the extension is available.</returns>
         public unsafe bool TryGetExtension<T>
             (Device* device, out T ext) where T : NativeExtension<ALContext> => 
