@@ -16,7 +16,7 @@ namespace Silk.NET.OpenAL.Extensions
         where TExtendedBufferFormat : struct, Enum
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected FormatExtensionBase(INativeContext ctx)
+        public FormatExtensionBase(INativeContext ctx)
             : base(ctx)
         {
         }

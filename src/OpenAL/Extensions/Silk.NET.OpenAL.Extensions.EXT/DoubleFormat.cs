@@ -15,7 +15,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     public partial class DoubleFormat : FormatExtensionBase<DoubleBufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected DoubleFormat(INativeContext ctx)
+        public DoubleFormat(INativeContext ctx)
             : base(ctx)
         {
         }

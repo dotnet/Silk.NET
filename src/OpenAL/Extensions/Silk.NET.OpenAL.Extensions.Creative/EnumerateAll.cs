@@ -18,7 +18,7 @@ namespace Silk.NET.OpenAL.Extensions.Creative
     public partial class EnumerateAll : ContextExtensionBase
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected EnumerateAll(INativeContext ctx)
+        public EnumerateAll(INativeContext ctx)
             : base(ctx)
         {
         }
