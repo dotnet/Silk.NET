@@ -318,6 +318,14 @@ namespace Silk.NET.OpenXR
         TypeEventDataDisplayRefreshRateChangedFB = 1000101000,
         [NativeName("Name", "XR_TYPE_SYSTEM_COLOR_SPACE_PROPERTIES_FB")]
         TypeSystemColorSpacePropertiesFB = 1000108000,
+        [NativeName("Name", "XR_TYPE_HAND_TRACKING_MESH_FB")]
+        TypeHandTrackingMeshFB = 1000110001,
+        [NativeName("Name", "XR_TYPE_HAND_TRACKING_SCALE_FB")]
+        TypeHandTrackingScaleFB = 1000110003,
+        [NativeName("Name", "XR_TYPE_HAND_TRACKING_AIM_STATE_FB")]
+        TypeHandTrackingAimStateFB = 1000111001,
+        [NativeName("Name", "XR_TYPE_HAND_TRACKING_CAPSULES_STATE_FB")]
+        TypeHandTrackingCapsulesStateFB = 1000112000,
         [NativeName("Name", "XR_TYPE_FOVEATION_PROFILE_CREATE_INFO_FB")]
         TypeFoveationProfileCreateInfoFB = 1000114000,
         [NativeName("Name", "XR_TYPE_SWAPCHAIN_CREATE_INFO_FOVEATION_FB")]
@@ -348,5 +356,9 @@ namespace Silk.NET.OpenXR
         TypeSwapchainStateSamplerOpenglESFB = 1000162000,
         [NativeName("Name", "XR_TYPE_SWAPCHAIN_STATE_SAMPLER_VULKAN_FB")]
         TypeSwapchainStateSamplerVulkanFB = 1000163000,
+        [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_SPACE_WARP_INFO_FB")]
+        TypeCompositionLayerSpaceWarpInfoFB = 1000171000,
+        [NativeName("Name", "XR_TYPE_SYSTEM_SPACE_WARP_PROPERTIES_FB")]
+        TypeSystemSpaceWarpPropertiesFB = 1000171001,
     }
 }

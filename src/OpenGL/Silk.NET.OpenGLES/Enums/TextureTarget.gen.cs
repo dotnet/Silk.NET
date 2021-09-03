@@ -82,6 +82,8 @@ namespace Silk.NET.OpenGLES
         ProxyTexture2DArrayExt = 0x8C1B,
         [NativeName("Name", "GL_TEXTURE_BUFFER")]
         TextureBuffer = 0x8C2A,
+        [NativeName("Name", "GL_RENDERBUFFER")]
+        Renderbuffer = 0x8D41,
         [NativeName("Name", "GL_TEXTURE_CUBE_MAP_ARRAY")]
         TextureCubeMapArray = 0x9009,
         [NativeName("Name", "GL_TEXTURE_CUBE_MAP_ARRAY_ARB")]
