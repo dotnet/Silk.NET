@@ -29,7 +29,7 @@ namespace Silk.NET.Core.Native
 
         static SilkMarshal()
         {
-#if NET5_0
+#if NET5_0_OR_GREATER
             IsWinapiStdcall = OperatingSystem.IsWindows();
 #else
             IsWinapiStdcall = RuntimeInformation.IsOSPlatform(OSPlatform.Windows);
@@ -786,7 +786,7 @@ namespace Silk.NET.Core.Native
 
             private static Guid* CreateRiid()
             {
-#if NET5_0
+#if NET5_0_OR_GREATER
                 var p = (Guid*) RuntimeHelpers.AllocateTypeAssociatedMemory(typeof(T), sizeof(Guid));
 #else
                 var p = (Guid*) Allocate(sizeof(Guid));
@@ -862,10 +862,10 @@ namespace Silk.NET.Core.Native
         }
 
         [MethodImpl((MethodImplOptions) 768)]
-#if !NET5_0
-        public static unsafe ref T NullRef<T>() => ref Unsafe.AsRef<T>((void*) 0);
-#else
+#if NET5_0_OR_GREATER
         public static ref T NullRef<T>() => ref Unsafe.NullRef<T>();
+#else
+        public static unsafe ref T NullRef<T>() => ref Unsafe.AsRef<T>((void*) 0);
 #endif
     }
 }

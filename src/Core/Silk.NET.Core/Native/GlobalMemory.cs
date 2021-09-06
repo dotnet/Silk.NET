@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -32,7 +32,7 @@ namespace Silk.NET.Core.Native
         /// <param name="index">The index.</param>
         public ref byte this[int index] => ref Unsafe.Add(ref GetPinnableReference(), index);
 
-#if NETCOREAPP3_1 || NET5_0
+#if NETCOREAPP3_1 || NET5_0_OR_GREATER
         /// <summary>
         /// Gets a reference to a specific index of this block of global memory.
         /// </summary>
@@ -118,7 +118,7 @@ namespace Silk.NET.Core.Native
                 ? ref *(byte*) hGlobal.Handle
                 : ref ((byte[]) _memoryObject)[0];
 
-        private void Free()
+        private unsafe void Free()
         {
             switch (_memoryObject)
             {
@@ -137,6 +137,13 @@ namespace Silk.NET.Core.Native
                     byteArray.GCHandle.Free();
                     break;
                 }
+#if NET6_0_OR_GREATER
+                case NativeMemoryPtr nativeMemoryPtr:
+                {
+                    NativeMemory.Free((void*)nativeMemoryPtr.Handle);
+                    break;
+                }
+#endif
             }
         }
 
@@ -151,7 +158,7 @@ namespace Silk.NET.Core.Native
         {
             Free();
         }
-        
+
         // Allocation methods
         /// <summary>
         /// Allocates a block of global memory of the given length.
@@ -159,10 +166,12 @@ namespace Silk.NET.Core.Native
         /// <param name="length">The number of bytes to allocate.</param>
         /// <returns>A block of global memory.</returns>
         public static GlobalMemory Allocate(int length) =>
-#if !NET5_0
-            new GlobalMemory(new GCHandleByteArray(length), length > 0 ? length : 1);
-#else
+#if NET6_0_OR_GREATER
+            new GlobalMemory(new NativeMemoryPtr(length), length > 0 ? length : 1);
+#elif NET5_0
             new GlobalMemory(GC.AllocateUninitializedArray<byte>(length > 0 ? length : 1, true), length);
+#else
+            new GlobalMemory(new GCHandleByteArray(length), length > 0 ? length : 1);
 #endif
 
         // Encapsulations different kinds of memory
@@ -198,7 +207,16 @@ namespace Silk.NET.Core.Native
             public Other(nint val) => Handle = val;
             public nint Handle { get; }
         }
-        
+
+#if NET6_0_OR_GREATER
+        private unsafe readonly struct NativeMemoryPtr : IGlobalMemory
+        {
+            public NativeMemoryPtr(int length) => Handle = (nint) NativeMemory.Alloc((nuint) length);
+            public NativeMemoryPtr(nint val) => Handle = val;
+            public nint Handle { get; }
+        }
+#endif
+
         // "Unsafe" methods
         internal static GlobalMemory FromHGlobal(nint hGlobal, int len)
             => new GlobalMemory(new HGlobal(hGlobal), len);
