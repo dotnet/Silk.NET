@@ -1,4 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
+// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System;
@@ -198,7 +198,16 @@ namespace Silk.NET.Core.Native
             public Other(nint val) => Handle = val;
             public nint Handle { get; }
         }
-        
+
+#if NET6_0_OR_GREATER
+        private unsafe readonly struct NativeMemoryPtr : IGlobalMemory
+        {
+            public NativeMemoryPtr(int length) => Handle = (nint) NativeMemory.Alloc((nuint) length);
+            public NativeMemoryPtr(nint val) => Handle = val;
+            public nint Handle { get; }
+        }
+#endif
+
         // "Unsafe" methods
         internal static GlobalMemory FromHGlobal(nint hGlobal, int len)
             => new GlobalMemory(new HGlobal(hGlobal), len);
