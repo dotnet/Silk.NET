@@ -1,0 +1,7 @@
+<Project>
+  <ItemGroup Condition="$(ProjectName.Contains('Native'))">
+    <Content Include="$(MSBuildThisFileDirectory)_._" PackagePath="lib/net461" Visible="false" />
+    <Content Include="$(MSBuildThisFileDirectory)_._" PackagePath="lib/netstandard2.0" Visible="false" />
+  </ItemGroup>
+  <Import Project="$(MSBuildThisFileDirectory)../Directory.Build.targets" />
+</Project>
