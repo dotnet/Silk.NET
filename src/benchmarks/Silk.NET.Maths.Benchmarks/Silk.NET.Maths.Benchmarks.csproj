@@ -4,6 +4,7 @@
         <TargetFramework>$(SilkTargetFramework)</TargetFramework>
         <OutputType>Exe</OutputType>
         <LangVersion>9.0</LangVersion>
+        <SilkDocumentationExempt>true</SilkDocumentationExempt>
         <DefineConstants Condition="'$(TargetFramework)' == 'netcoreapp3.1' Or '$(TargetFramework)' == 'net5.0'">$(DefineConstants);MATHF</DefineConstants>
     </PropertyGroup>
 

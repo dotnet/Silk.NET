@@ -1,0 +1,7 @@
+﻿<Project>
+    <ItemGroup>
+        <None Remove="$(MSBuildProjectDirectory)/silktouch.json" />
+        <AdditionalFiles Include="$(MSBuildProjectDirectory)/silktouch.json" />
+    </ItemGroup>
+    <Import Project="$(MSBuildThisFileDirectory)../Directory.Build.targets" />
+</Project>

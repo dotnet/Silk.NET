@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>Exe</OutputType>
+        <TargetFramework>net6.0</TargetFramework>
+        <PackAsTool Condition="'$(Configuration)' != 'Debug'">true</PackAsTool>
+        <ToolCommandName>silktouch</ToolCommandName>
+        <!-- Workaround for issue https://github.com/microsoft/ClangSharp/issues/129 -->
+        <RuntimeIdentifier Condition="'$(RuntimeIdentifier)' == '' AND '$(PackAsTool)' != 'true'">$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Silk.NET.SilkTouch.Emitter\Silk.NET.SilkTouch.Emitter.csproj" />
+      <ProjectReference Include="..\Silk.NET.SilkTouch.Overloader\Silk.NET.SilkTouch.Overloader.csproj" />
+      <ProjectReference Include="..\Silk.NET.SilkTouch.Scraper\Silk.NET.SilkTouch.Scraper.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Build.Framework" Version="16.10.0" ExcludeAssets="runtime" />
+      <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.0.0-2.final" />
+      <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.0.0-2.final" />
+      <PackageReference Include="System.CommandLine" Version="2.0.0-beta1.21308.1" />
+    </ItemGroup>
+
+</Project>

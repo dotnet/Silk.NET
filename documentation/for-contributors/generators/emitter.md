@@ -1,0 +1,3 @@
+﻿# Emitter
+
+The Emitter.
