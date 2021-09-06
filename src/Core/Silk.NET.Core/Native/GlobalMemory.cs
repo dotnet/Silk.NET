@@ -118,7 +118,7 @@ namespace Silk.NET.Core.Native
                 ? ref *(byte*) hGlobal.Handle
                 : ref ((byte[]) _memoryObject)[0];
 
-        private void Free()
+        private unsafe void Free()
         {
             switch (_memoryObject)
             {
@@ -137,6 +137,13 @@ namespace Silk.NET.Core.Native
                     byteArray.GCHandle.Free();
                     break;
                 }
+#if NET6_0
+                case NativeMemoryPtr nativeMemoryPtr:
+                {
+                    NativeMemory.Free((void*)nativeMemoryPtr.Handle);
+                    break;
+                }
+#endif
             }
         }
 
@@ -151,7 +158,7 @@ namespace Silk.NET.Core.Native
         {
             Free();
         }
-        
+
         // Allocation methods
         /// <summary>
         /// Allocates a block of global memory of the given length.
@@ -159,7 +166,9 @@ namespace Silk.NET.Core.Native
         /// <param name="length">The number of bytes to allocate.</param>
         /// <returns>A block of global memory.</returns>
         public static GlobalMemory Allocate(int length) =>
-#if !NET5_0
+#if NET6_0
+            new GlobalMemory(new NativeMemoryPtr(length), length > 0 ? length : 1);
+#elif !NET5_0
             new GlobalMemory(new GCHandleByteArray(length), length > 0 ? length : 1);
 #else
             new GlobalMemory(GC.AllocateUninitializedArray<byte>(length > 0 ? length : 1, true), length);
