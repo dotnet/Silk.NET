@@ -12,7 +12,7 @@ namespace Silk.NET.OpenAL.Extensions
     public abstract class ContextExtensionBase : NativeExtension<ALContext>
     {
         /// <inheritdoc cref="NativeLibraryBase" />
-        protected ContextExtensionBase(INativeContext ctx)
+        public ContextExtensionBase(INativeContext ctx)
             : base(ctx)
         {
         }

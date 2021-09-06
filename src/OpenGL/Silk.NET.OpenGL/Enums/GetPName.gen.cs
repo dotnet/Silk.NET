@@ -688,6 +688,10 @@ namespace Silk.NET.OpenGL
         MaxTessControlUniformBlocks = 0x8E89,
         [NativeName("Name", "GL_MAX_TESS_EVALUATION_UNIFORM_BLOCKS")]
         MaxTessEvaluationUniformBlocks = 0x8E8A,
+        [NativeName("Name", "GL_FETCH_PER_SAMPLE_ARM")]
+        FetchPerSampleArm = 0x8F65,
+        [NativeName("Name", "GL_FRAGMENT_SHADER_FRAMEBUFFER_FETCH_MRT_ARM")]
+        FragmentShaderFramebufferFetchMrtArm = 0x8F66,
         [NativeName("Name", "GL_PRIMITIVE_RESTART_INDEX")]
         PrimitiveRestartIndex = 0x8F9E,
         [NativeName("Name", "GL_MIN_MAP_BUFFER_ALIGNMENT")]

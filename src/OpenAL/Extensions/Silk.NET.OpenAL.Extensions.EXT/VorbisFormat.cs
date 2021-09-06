@@ -15,7 +15,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     public partial class VorbisFormat : FormatExtensionBase<VorbisBufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected VorbisFormat(INativeContext ctx)
+        public VorbisFormat(INativeContext ctx)
             : base(ctx)
         {
         }
