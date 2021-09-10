@@ -1268,3 +1268,33 @@ static Silk.NET.Maths.Vector4D<T>.UnitX.get -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D<T>.UnitY.get -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D<T>.UnitZ.get -> Silk.NET.Maths.Vector4D<T>
 static Silk.NET.Maths.Vector4D<T>.Zero.get -> Silk.NET.Maths.Vector4D<T>
+Silk.NET.Maths.Box2D<T>.As<TOther>() -> Silk.NET.Maths.Box2D<TOther>
+Silk.NET.Maths.Box3D<T>.As<TOther>() -> Silk.NET.Maths.Box3D<TOther>
+Silk.NET.Maths.Circle<T>.As<TOther>() -> Silk.NET.Maths.Circle<TOther>
+Silk.NET.Maths.Cube<T>.As<TOther>() -> Silk.NET.Maths.Cube<TOther>
+Silk.NET.Maths.Matrix2X2<T>.As<TOther>() -> Silk.NET.Maths.Matrix2X2<TOther>
+Silk.NET.Maths.Matrix2X3<T>.As<TOther>() -> Silk.NET.Maths.Matrix2X3<TOther>
+Silk.NET.Maths.Matrix2X4<T>.As<TOther>() -> Silk.NET.Maths.Matrix2X4<TOther>
+Silk.NET.Maths.Matrix3X2<T>.As<TOther>() -> Silk.NET.Maths.Matrix3X2<TOther>
+Silk.NET.Maths.Matrix3X3<T>.As<TOther>() -> Silk.NET.Maths.Matrix3X3<TOther>
+Silk.NET.Maths.Matrix3X4<T>.As<TOther>() -> Silk.NET.Maths.Matrix3X4<TOther>
+Silk.NET.Maths.Matrix4X2<T>.As<TOther>() -> Silk.NET.Maths.Matrix4X2<TOther>
+Silk.NET.Maths.Matrix4X3<T>.As<TOther>() -> Silk.NET.Maths.Matrix4X3<TOther>
+Silk.NET.Maths.Matrix4X4<T>.As<TOther>() -> Silk.NET.Maths.Matrix4X4<TOther>
+Silk.NET.Maths.Plane<T>.As<TOther>() -> Silk.NET.Maths.Plane<TOther>
+Silk.NET.Maths.Quaternion<T>.As<TOther>() -> Silk.NET.Maths.Quaternion<TOther>
+Silk.NET.Maths.Ray2D<T>.As<TOther>() -> Silk.NET.Maths.Ray2D<TOther>
+Silk.NET.Maths.Ray3D<T>.As<TOther>() -> Silk.NET.Maths.Ray3D<TOther>
+Silk.NET.Maths.Rectangle<T>.As<TOther>() -> Silk.NET.Maths.Rectangle<TOther>
+Silk.NET.Maths.Sphere<T>.As<TOther>() -> Silk.NET.Maths.Sphere<TOther>
+Silk.NET.Maths.Vector2D<T>.As<TOther>() -> Silk.NET.Maths.Vector2D<TOther>
+Silk.NET.Maths.Vector3D<T>.As<TOther>() -> Silk.NET.Maths.Vector3D<TOther>
+Silk.NET.Maths.Vector4D<T>.As<TOther>() -> Silk.NET.Maths.Vector4D<TOther>
+Silk.NET.Maths.Box2D<T>.GetScaled<TScale>(Silk.NET.Maths.Vector2D<TScale> scale, Silk.NET.Maths.Vector2D<T> anchor) -> Silk.NET.Maths.Box2D<T>
+Silk.NET.Maths.Box3D<T>.GetScaled<TScale>(Silk.NET.Maths.Vector3D<TScale> scale, Silk.NET.Maths.Vector3D<T> anchor) -> Silk.NET.Maths.Box3D<T>
+Silk.NET.Maths.Rectangle<T>.GetScaled<TScale>(Silk.NET.Maths.Vector2D<TScale> scale, Silk.NET.Maths.Vector2D<T> anchor) -> Silk.NET.Maths.Rectangle<T>
+Silk.NET.Maths.Cube<T>.GetScaled<TScale>(Silk.NET.Maths.Vector3D<TScale> scale, Silk.NET.Maths.Vector3D<T> anchor) -> Silk.NET.Maths.Cube<T>
+static Silk.NET.Maths.Scalar.DegreesToRadians<T>(T degrees) -> T
+static Silk.NET.Maths.Scalar.RadiansToDegrees<T>(T radians) -> T
+static readonly Silk.NET.Maths.Scalar<T>.RadiansPerDegree -> T
+static readonly Silk.NET.Maths.Scalar<T>.DegreesPerRadian -> T

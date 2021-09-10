@@ -47,6 +47,7 @@ namespace Silk.NET.Assimp
         public static implicit operator PfnFileFlushProc(delegate* unmanaged[Cdecl]<File*, void> ptr) => new PfnFileFlushProc(ptr);
     }
 
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void FileFlushProc(File* arg0);
 }
 

@@ -895,6 +895,13 @@ namespace Silk.NET.OpenXR
         }
 
         /// <summary>To be documented.</summary>
+        public static unsafe Result ResultToString(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] Result value, [Count(Computed = "XR_MAX_RESULT_STRING_SIZE")] Span<byte> buffer)
+        {
+            // SpanOverloader
+            return thisApi.ResultToString(instance, value, ref buffer.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
         public static unsafe Result StopHapticFeedback(this XR thisApi, [Count(Count = 0)] Session session, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<HapticActionInfo> hapticActionInfo)
         {
             // SpanOverloader
@@ -927,6 +934,13 @@ namespace Silk.NET.OpenXR
         {
             // SpanOverloader
             return thisApi.StringToPath(instance, pathString, ref path.GetPinnableReference());
+        }
+
+        /// <summary>To be documented.</summary>
+        public static unsafe Result StructureTypeToString(this XR thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] StructureType value, [Count(Computed = "XR_MAX_STRUCTURE_NAME_SIZE")] Span<byte> buffer)
+        {
+            // SpanOverloader
+            return thisApi.StructureTypeToString(instance, value, ref buffer.GetPinnableReference());
         }
 
         /// <summary>To be documented.</summary>

@@ -52,52 +52,64 @@ namespace Silk.NET.OpenGLES.Extensions.QCOM
             thisApi.ExtGetProgram(out programs.GetPinnableReference(), maxPrograms, out numPrograms.GetPinnableReference());
         }
 
-        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Flow(FlowDirection.Out)] byte* source, [Flow(FlowDirection.Out)] Span<int> length)
+        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] byte* source, [Flow(FlowDirection.Out)] Span<int> length)
         {
             // SpanOverloader
             thisApi.ExtGetProgramBinarySource(program, shadertype, source, out length.GetPinnableReference());
         }
 
-        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Flow(FlowDirection.Out)] Span<byte> source, [Flow(FlowDirection.Out)] int* length)
+        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<byte> source, [Flow(FlowDirection.Out)] int* length)
         {
             // SpanOverloader
             thisApi.ExtGetProgramBinarySource(program, shadertype, out source.GetPinnableReference(), length);
         }
 
-        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Flow(FlowDirection.Out)] Span<byte> source, [Flow(FlowDirection.Out)] Span<int> length)
+        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<byte> source, [Flow(FlowDirection.Out)] Span<int> length)
         {
             // SpanOverloader
             thisApi.ExtGetProgramBinarySource(program, shadertype, out source.GetPinnableReference(), out length.GetPinnableReference());
         }
 
-        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Flow(FlowDirection.Out)] string source, [Flow(FlowDirection.Out)] Span<int> length)
-        {
-            // SpanOverloader
-            thisApi.ExtGetProgramBinarySource(program, shadertype, source, out length.GetPinnableReference());
-        }
-
-        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.Out)] byte* source, [Flow(FlowDirection.Out)] Span<int> length)
-        {
-            // SpanOverloader
-            thisApi.ExtGetProgramBinarySource(program, shadertype, source, out length.GetPinnableReference());
-        }
-
-        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.Out)] Span<byte> source, [Flow(FlowDirection.Out)] int* length)
+        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<string> source, [Flow(FlowDirection.Out)] int* length)
         {
             // SpanOverloader
             thisApi.ExtGetProgramBinarySource(program, shadertype, out source.GetPinnableReference(), length);
         }
 
-        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.Out)] Span<byte> source, [Flow(FlowDirection.Out)] Span<int> length)
+        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] QCOM shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<string> source, [Flow(FlowDirection.Out)] Span<int> length)
         {
             // SpanOverloader
             thisApi.ExtGetProgramBinarySource(program, shadertype, out source.GetPinnableReference(), out length.GetPinnableReference());
         }
 
-        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Flow(FlowDirection.Out)] string source, [Flow(FlowDirection.Out)] Span<int> length)
+        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] byte* source, [Flow(FlowDirection.Out)] Span<int> length)
         {
             // SpanOverloader
             thisApi.ExtGetProgramBinarySource(program, shadertype, source, out length.GetPinnableReference());
+        }
+
+        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<byte> source, [Flow(FlowDirection.Out)] int* length)
+        {
+            // SpanOverloader
+            thisApi.ExtGetProgramBinarySource(program, shadertype, out source.GetPinnableReference(), length);
+        }
+
+        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<byte> source, [Flow(FlowDirection.Out)] Span<int> length)
+        {
+            // SpanOverloader
+            thisApi.ExtGetProgramBinarySource(program, shadertype, out source.GetPinnableReference(), out length.GetPinnableReference());
+        }
+
+        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<string> source, [Flow(FlowDirection.Out)] int* length)
+        {
+            // SpanOverloader
+            thisApi.ExtGetProgramBinarySource(program, shadertype, out source.GetPinnableReference(), length);
+        }
+
+        public static unsafe void ExtGetProgramBinarySource(this QComExtendedGet2 thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ShaderType shadertype, [Count(Parameter = "length"), Flow(FlowDirection.Out)] Span<string> source, [Flow(FlowDirection.Out)] Span<int> length)
+        {
+            // SpanOverloader
+            thisApi.ExtGetProgramBinarySource(program, shadertype, out source.GetPinnableReference(), out length.GetPinnableReference());
         }
 
         public static unsafe void ExtGetShaders(this QComExtendedGet2 thisApi, [Count(Parameter = "maxShaders"), Flow(FlowDirection.Out)] uint* shaders, [Flow(FlowDirection.In)] int maxShaders, [Count(Count = 1), Flow(FlowDirection.Out)] Span<int> numShaders)

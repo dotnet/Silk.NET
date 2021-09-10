@@ -51,6 +51,9 @@ namespace Silk.NET.Windowing
                     if (!view.IsClosing)
                     {
                         view.DoUpdate();
+                    }
+                    if (!view.IsClosing)
+                    {
                         view.DoRender();
                     }
                 }

@@ -188,6 +188,10 @@ namespace Silk.NET.OpenXR
         TypeSpatialAnchorCreateInfoMsft = 1000039000,
         [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_SPACE_CREATE_INFO_MSFT")]
         TypeSpatialAnchorSpaceCreateInfoMsft = 1000039001,
+        [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_IMAGE_LAYOUT_FB")]
+        TypeCompositionLayerImageLayoutFB = 1000040000,
+        [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_ALPHA_BLEND_FB")]
+        TypeCompositionLayerAlphaBlendFB = 1000041001,
         [NativeName("Name", "XR_TYPE_VIEW_CONFIGURATION_DEPTH_RANGE_EXT")]
         TypeViewConfigurationDepthRangeExt = 1000046000,
         [NativeName("Name", "XR_TYPE_GRAPHICS_BINDING_EGL_MNDX")]
@@ -240,10 +244,18 @@ namespace Silk.NET.OpenXR
         TypeViewConfigurationViewFovEpic = 1000059000,
         [NativeName("Name", "XR_TYPE_HOLOGRAPHIC_WINDOW_ATTACHMENT_MSFT")]
         TypeHolographicWindowAttachmentMsft = 1000063000,
+        [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_REPROJECTION_INFO_MSFT")]
+        TypeCompositionLayerReprojectionInfoMsft = 1000066000,
+        [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_REPROJECTION_PLANE_OVERRIDE_MSFT")]
+        TypeCompositionLayerReprojectionPlaneOverrideMsft = 1000066001,
         [NativeName("Name", "XR_TYPE_ANDROID_SURFACE_SWAPCHAIN_CREATE_INFO_FB")]
         TypeAndroidSurfaceSwapchainCreateInfoFB = 1000070000,
+        [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_SECURE_CONTENT_FB")]
+        TypeCompositionLayerSecureContentFB = 1000072000,
         [NativeName("Name", "XR_TYPE_INTERACTION_PROFILE_ANALOG_THRESHOLD_VALVE")]
         TypeInteractionProfileAnalogThresholdValve = 1000079000,
+        [NativeName("Name", "XR_TYPE_HAND_JOINTS_MOTION_RANGE_INFO_EXT")]
+        TypeHandJointsMotionRangeInfoExt = 1000080000,
         [NativeName("Name", "XR_TYPE_LOADER_INIT_INFO_ANDROID_KHR")]
         TypeLoaderInitInfoAndroidKhr = 1000089000,
         [NativeName("Name", "XR_TYPE_VULKAN_INSTANCE_CREATE_INFO_KHR")]
@@ -260,10 +272,68 @@ namespace Silk.NET.OpenXR
         TypeGraphicsRequirementsVulkan2Khr = 1000090002,
         [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_EQUIRECT2_KHR")]
         TypeCompositionLayerEquirect2Khr = 1000091000,
+        [NativeName("Name", "XR_TYPE_SCENE_OBSERVER_CREATE_INFO_MSFT")]
+        TypeSceneObserverCreateInfoMsft = 1000097000,
+        [NativeName("Name", "XR_TYPE_SCENE_CREATE_INFO_MSFT")]
+        TypeSceneCreateInfoMsft = 1000097001,
+        [NativeName("Name", "XR_TYPE_NEW_SCENE_COMPUTE_INFO_MSFT")]
+        TypeNewSceneComputeInfoMsft = 1000097002,
+        [NativeName("Name", "XR_TYPE_VISUAL_MESH_COMPUTE_LOD_INFO_MSFT")]
+        TypeVisualMeshComputeLodInfoMsft = 1000097003,
+        [NativeName("Name", "XR_TYPE_SCENE_COMPONENTS_MSFT")]
+        TypeSceneComponentsMsft = 1000097004,
+        [NativeName("Name", "XR_TYPE_SCENE_COMPONENTS_GET_INFO_MSFT")]
+        TypeSceneComponentsGetInfoMsft = 1000097005,
+        [NativeName("Name", "XR_TYPE_SCENE_COMPONENT_LOCATIONS_MSFT")]
+        TypeSceneComponentLocationsMsft = 1000097006,
+        [NativeName("Name", "XR_TYPE_SCENE_COMPONENTS_LOCATE_INFO_MSFT")]
+        TypeSceneComponentsLocateInfoMsft = 1000097007,
+        [NativeName("Name", "XR_TYPE_SCENE_OBJECTS_MSFT")]
+        TypeSceneObjectsMsft = 1000097008,
+        [NativeName("Name", "XR_TYPE_SCENE_COMPONENT_PARENT_FILTER_INFO_MSFT")]
+        TypeSceneComponentParentFilterInfoMsft = 1000097009,
+        [NativeName("Name", "XR_TYPE_SCENE_OBJECT_TYPES_FILTER_INFO_MSFT")]
+        TypeSceneObjectTypesFilterInfoMsft = 1000097010,
+        [NativeName("Name", "XR_TYPE_SCENE_PLANES_MSFT")]
+        TypeScenePlanesMsft = 1000097011,
+        [NativeName("Name", "XR_TYPE_SCENE_PLANE_ALIGNMENT_FILTER_INFO_MSFT")]
+        TypeScenePlaneAlignmentFilterInfoMsft = 1000097012,
+        [NativeName("Name", "XR_TYPE_SCENE_MESHES_MSFT")]
+        TypeSceneMeshesMsft = 1000097013,
+        [NativeName("Name", "XR_TYPE_SCENE_MESH_BUFFERS_GET_INFO_MSFT")]
+        TypeSceneMeshBuffersGetInfoMsft = 1000097014,
+        [NativeName("Name", "XR_TYPE_SCENE_MESH_BUFFERS_MSFT")]
+        TypeSceneMeshBuffersMsft = 1000097015,
+        [NativeName("Name", "XR_TYPE_SCENE_MESH_VERTEX_BUFFER_MSFT")]
+        TypeSceneMeshVertexBufferMsft = 1000097016,
+        [NativeName("Name", "XR_TYPE_SCENE_MESH_INDICES_UINT32_MSFT")]
+        TypeSceneMeshIndicesUint32Msft = 1000097017,
+        [NativeName("Name", "XR_TYPE_SCENE_MESH_INDICES_UINT16_MSFT")]
+        TypeSceneMeshIndicesUint16Msft = 1000097018,
+        [NativeName("Name", "XR_TYPE_SERIALIZED_SCENE_FRAGMENT_DATA_GET_INFO_MSFT")]
+        TypeSerializedSceneFragmentDataGetInfoMsft = 1000098000,
+        [NativeName("Name", "XR_TYPE_SCENE_DESERIALIZE_INFO_MSFT")]
+        TypeSceneDeserializeInfoMsft = 1000098001,
         [NativeName("Name", "XR_TYPE_EVENT_DATA_DISPLAY_REFRESH_RATE_CHANGED_FB")]
         TypeEventDataDisplayRefreshRateChangedFB = 1000101000,
         [NativeName("Name", "XR_TYPE_SYSTEM_COLOR_SPACE_PROPERTIES_FB")]
         TypeSystemColorSpacePropertiesFB = 1000108000,
+        [NativeName("Name", "XR_TYPE_HAND_TRACKING_MESH_FB")]
+        TypeHandTrackingMeshFB = 1000110001,
+        [NativeName("Name", "XR_TYPE_HAND_TRACKING_SCALE_FB")]
+        TypeHandTrackingScaleFB = 1000110003,
+        [NativeName("Name", "XR_TYPE_HAND_TRACKING_AIM_STATE_FB")]
+        TypeHandTrackingAimStateFB = 1000111001,
+        [NativeName("Name", "XR_TYPE_HAND_TRACKING_CAPSULES_STATE_FB")]
+        TypeHandTrackingCapsulesStateFB = 1000112000,
+        [NativeName("Name", "XR_TYPE_FOVEATION_PROFILE_CREATE_INFO_FB")]
+        TypeFoveationProfileCreateInfoFB = 1000114000,
+        [NativeName("Name", "XR_TYPE_SWAPCHAIN_CREATE_INFO_FOVEATION_FB")]
+        TypeSwapchainCreateInfoFoveationFB = 1000114001,
+        [NativeName("Name", "XR_TYPE_SWAPCHAIN_STATE_FOVEATION_FB")]
+        TypeSwapchainStateFoveationFB = 1000114002,
+        [NativeName("Name", "XR_TYPE_FOVEATION_LEVEL_PROFILE_CREATE_INFO_FB")]
+        TypeFoveationLevelProfileCreateInfoFB = 1000115000,
         [NativeName("Name", "XR_TYPE_BINDING_MODIFICATIONS_KHR")]
         TypeBindingModificationsKhr = 1000120000,
         [NativeName("Name", "XR_TYPE_VIEW_LOCATE_FOVEATED_RENDERING_VARJO")]
@@ -274,5 +344,21 @@ namespace Silk.NET.OpenXR
         TypeSystemFoveatedRenderingPropertiesVarjo = 1000121002,
         [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_DEPTH_TEST_VARJO")]
         TypeCompositionLayerDepthTestVarjo = 1000122000,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_PERSISTENCE_INFO_MSFT")]
+        TypeSpatialAnchorPersistenceInfoMsft = 1000142000,
+        [NativeName("Name", "XR_TYPE_SPATIAL_ANCHOR_FROM_PERSISTED_ANCHOR_CREATE_INFO_MSFT")]
+        TypeSpatialAnchorFromPersistedAnchorCreateInfoMsft = 1000142001,
+        [NativeName("Name", "XR_TYPE_SWAPCHAIN_IMAGE_FOVEATION_VULKAN_FB")]
+        TypeSwapchainImageFoveationVulkanFB = 1000160000,
+        [NativeName("Name", "XR_TYPE_SWAPCHAIN_STATE_ANDROID_SURFACE_DIMENSIONS_FB")]
+        TypeSwapchainStateAndroidSurfaceDimensionsFB = 1000161000,
+        [NativeName("Name", "XR_TYPE_SWAPCHAIN_STATE_SAMPLER_OPENGL_ES_FB")]
+        TypeSwapchainStateSamplerOpenglESFB = 1000162000,
+        [NativeName("Name", "XR_TYPE_SWAPCHAIN_STATE_SAMPLER_VULKAN_FB")]
+        TypeSwapchainStateSamplerVulkanFB = 1000163000,
+        [NativeName("Name", "XR_TYPE_COMPOSITION_LAYER_SPACE_WARP_INFO_FB")]
+        TypeCompositionLayerSpaceWarpInfoFB = 1000171000,
+        [NativeName("Name", "XR_TYPE_SYSTEM_SPACE_WARP_PROPERTIES_FB")]
+        TypeSystemSpaceWarpPropertiesFB = 1000171001,
     }
 }

@@ -78,6 +78,10 @@ namespace Silk.NET.Vulkan
         VideoSessionKhr = 1000023000,
         [NativeName("Name", "VK_OBJECT_TYPE_VIDEO_SESSION_PARAMETERS_KHR")]
         VideoSessionParametersKhr = 1000023001,
+        [NativeName("Name", "VK_OBJECT_TYPE_CU_MODULE_NVX")]
+        CUModuleNvx = 1000029000,
+        [NativeName("Name", "VK_OBJECT_TYPE_CU_FUNCTION_NVX")]
+        CUFunctionNvx = 1000029001,
         [NativeName("Name", "VK_OBJECT_TYPE_DESCRIPTOR_UPDATE_TEMPLATE_KHR")]
         DescriptorUpdateTemplateKhr = 1000085000,
         [NativeName("Name", "VK_OBJECT_TYPE_DEBUG_UTILS_MESSENGER_EXT")]

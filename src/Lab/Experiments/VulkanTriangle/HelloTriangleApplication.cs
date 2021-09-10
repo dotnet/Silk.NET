@@ -71,7 +71,20 @@ namespace VulkanTriangle
         private KhrSurface _vkSurface;
         private KhrSwapchain _vkSwapchain;
         private ExtDebugUtils _debugUtils;
-        private string[] _validationLayers = { "VK_LAYER_KHRONOS_validation" };
+        private string[][] _validationLayerNamesPriorityList = 
+        { 
+            new [] { "VK_LAYER_KHRONOS_validation" },
+            new [] { "VK_LAYER_LUNARG_standard_validation" },
+            new [] 
+            {
+                "VK_LAYER_GOOGLE_threading",
+                "VK_LAYER_LUNARG_parameter_validation",
+                "VK_LAYER_LUNARG_object_tracker",
+                "VK_LAYER_LUNARG_core_validation",
+                "VK_LAYER_GOOGLE_unique_objects",
+            }
+        };
+        private string[] _validationLayers;
         private string[] _instanceExtensions = { ExtDebugUtils.ExtensionName };
         private string[] _deviceExtensions = { KhrSwapchain.ExtensionName };
 
@@ -79,13 +92,18 @@ namespace VulkanTriangle
         {
             var opts = WindowOptions.DefaultVulkan;
             opts.IsEventDriven = EventBasedRendering;
+
+            // Uncomment the line below to use SDL
+            // Window.PrioritizeSdl();
+
             _window = Window.Create(opts);
+            _window.Initialize(); // For safety the window should be initialized before querying the VkSurface
+
             if (_window?.VkSurface is null)
             {
                 throw new NotSupportedException("Windowing platform doesn't support Vulkan.");
             }
 
-            _window.Initialize();
             _window.FramebufferResize += OnFramebufferResize;
         }
 
@@ -252,13 +270,40 @@ namespace VulkanTriangle
             _vkSwapchain.DestroySwapchain(_device, _swapchain, null);
         }
 
+        private unsafe string[]? GetOptimalValidationLayers()
+        {
+            var layerCount = 0u;
+            _vk.EnumerateInstanceLayerProperties(&layerCount, (LayerProperties*)0);
+
+            var availableLayers = new LayerProperties[layerCount];
+            fixed (LayerProperties* availableLayersPtr = availableLayers)
+            {
+                _vk.EnumerateInstanceLayerProperties(&layerCount, availableLayersPtr);
+            }
+
+            var availableLayerNames = availableLayers.Select(availableLayer => Marshal.PtrToStringAnsi((nint)availableLayer.LayerName)).ToArray();
+            foreach (var validationLayerNameSet in _validationLayerNamesPriorityList)
+            {
+                if (validationLayerNameSet.All(validationLayerName => availableLayerNames.Contains(validationLayerName)))
+                {
+                    return validationLayerNameSet;
+                }
+            }
+
+            return null;
+        }
+
         private unsafe void CreateInstance()
         {
             _vk = Vk.GetApi();
 
-            if (EnableValidationLayers && !CheckValidationLayerSupport())
+            if (EnableValidationLayers)
             {
-                throw new NotSupportedException("Validation layers requested, but not available!");
+                _validationLayers = GetOptimalValidationLayers();
+                if (_validationLayers is null)
+                {
+                    throw new NotSupportedException("Validation layers requested, but not available!");
+                }
             }
 
             var appInfo = new ApplicationInfo
@@ -592,13 +637,18 @@ namespace VulkanTriangle
             Console.WriteLine($"{_vk.CurrentInstance?.Handle} {_vk.CurrentDevice?.Handle}");
         }
 
-        private unsafe void CreateSwapChain()
+        private unsafe bool CreateSwapChain()
         {
             var swapChainSupport = QuerySwapChainSupport(_physicalDevice);
 
             var surfaceFormat = ChooseSwapSurfaceFormat(swapChainSupport.Formats);
             var presentMode = ChooseSwapPresentMode(swapChainSupport.PresentModes);
             var extent = ChooseSwapExtent(swapChainSupport.Capabilities);
+
+            // TODO: On SDL minimizing the window does not affect the frameBufferSize.
+            // This check can be removed if it does
+            if (extent.Width == 0 || extent.Height == 0)
+                return false;
 
             var imageCount = swapChainSupport.Capabilities.MinImageCount + 1;
             if (swapChainSupport.Capabilities.MaxImageCount > 0 &&
@@ -665,6 +715,8 @@ namespace VulkanTriangle
 
             _swapchainImageFormat = surfaceFormat.Format;
             _swapchainExtent = extent;
+
+            return true;
         }
 
         private unsafe void RecreateSwapChain()
@@ -681,7 +733,13 @@ namespace VulkanTriangle
 
             CleanupSwapchain();
 
-            CreateSwapChain();
+            // TODO: On SDL it is possible to get an invalid swap chain when the window is minimized.
+            // This check can be removed when the above frameBufferSize check catches it.
+            while (!CreateSwapChain())
+            {
+                _window.DoEvents();
+            }
+
             CreateImageViews();
             CreateRenderPass();
             CreateGraphicsPipeline();
@@ -1138,37 +1196,6 @@ namespace VulkanTriangle
                 _renderFinishedSemaphores[i] = renderFinSema;
                 _inFlightFences[i] = inFlightFence;
             }
-        }
-
-        private unsafe bool CheckValidationLayerSupport()
-        {
-            uint layerCount = 0;
-            _vk.EnumerateInstanceLayerProperties(&layerCount, (LayerProperties*) 0);
-
-            var availableLayers = new LayerProperties[layerCount];
-            fixed (LayerProperties* availableLayersPtr = availableLayers)
-                _vk.EnumerateInstanceLayerProperties(&layerCount, availableLayersPtr);
-
-            foreach (var layerName in _validationLayers)
-            {
-                var layerFound = false;
-
-                foreach (var layerProperties in availableLayers)
-                {
-                    if (layerName == Marshal.PtrToStringAnsi((nint) layerProperties.LayerName))
-                    {
-                        layerFound = true;
-                        break;
-                    }
-                }
-
-                if (!layerFound)
-                {
-                    return false;
-                }
-            }
-
-            return true;
         }
     }
 }

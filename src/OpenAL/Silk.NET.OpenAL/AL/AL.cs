@@ -3,7 +3,6 @@
 
 using System;
 using System.Numerics;
-using Microsoft.Extensions.DependencyModel;
 using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Contexts;
 using Silk.NET.Core.Loader;
@@ -17,8 +16,11 @@ namespace Silk.NET.OpenAL
     [NativeApi(Prefix = "al")]
     public partial class AL : NativeAPI
     {
+        private bool _soft;
+        private SearchPathContainer? _searchPaths;
+
         /// <inheritdoc cref="NativeLibraryBase" />
-        protected AL(INativeContext ctx)
+        public AL(INativeContext ctx)
             : base(ctx)
         {
         }
@@ -27,7 +29,8 @@ namespace Silk.NET.OpenAL
         public override partial bool IsExtensionPresent(string name);
 
         /// <inheritdoc />
-        public SearchPathContainer SearchPaths { get; } = new OpenALLibraryNameContainer();
+        public SearchPathContainer SearchPaths => _searchPaths ??= (_soft
+             ? new OpenALSoftLibraryNameContainer() : new OpenALLibraryNameContainer());
 
         /// <inheritdoc />
         public partial nint GetProcAddress(string name);
@@ -330,15 +333,35 @@ namespace Silk.NET.OpenAL
         /// <summary>
         /// Gets an instance of the API.
         /// </summary>
+        /// <param name="soft">Use OpenAL Soft libraries.</param>
         /// <returns>The instance.</returns>
-        public static AL GetApi()
+        public static AL GetApi(bool soft = false)
         {
+            SearchPathContainer searchPaths = soft ? new OpenALSoftLibraryNameContainer() : new OpenALLibraryNameContainer();
             var ctx = new MultiNativeContext
-                (CreateDefaultContext(new OpenALLibraryNameContainer().GetLibraryName()), null);
+                (CreateDefaultContext(searchPaths.GetLibraryName()), null);
             var ret = new AL(ctx);
+            ret._soft = soft;
+            ret._searchPaths = searchPaths;
+
             ctx.Contexts[1] = new LamdaNativeContext
                 (x => x.EndsWith("GetProcAddress") ? default : ret.GetProcAddress(x));
             return ret;
+        }
+
+        /// <summary>
+        /// Attempts to load a native OpenAL extension of type <typeparamref name="T" />.
+        /// </summary>
+        /// <param name="ext">The loaded extension.</param>
+        /// <typeparam name="T">Type of <see cref="NativeExtension{T}" /> to load.</typeparam>
+        /// <returns><c>true</c> if the extension was loaded, otherwise <c>false</c>.</returns>
+        public bool TryGetExtension<T>(out T ext)
+            where T : NativeExtension<AL>
+        {
+            ext = IsExtensionPresent(ExtensionAttribute.GetExtensionAttribute(typeof(T)).Name)
+                ? (T) Activator.CreateInstance(typeof(T), Context)
+                : null;
+            return ext is not null;
         }
 
         /// <summary>
@@ -346,6 +369,11 @@ namespace Silk.NET.OpenAL
         /// </summary>
         /// <typeparam name="TExtension">The extension type.</typeparam>
         /// <returns>The extension.</returns>
+        [Obsolete
+        (
+            "This method has been deprecated and will be removed in Silk.NET 3.0. " +
+            "Please use TryGetExtension instead."
+        )]
         public TExtension GetExtension<TExtension>()
             where TExtension : NativeExtension<AL>
         {

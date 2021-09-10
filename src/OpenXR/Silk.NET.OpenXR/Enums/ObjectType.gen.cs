@@ -32,5 +32,13 @@ namespace Silk.NET.OpenXR
         SpatialAnchorMsft = 1000039000,
         [NativeName("Name", "XR_OBJECT_TYPE_HAND_TRACKER_EXT")]
         HandTrackerExt = 1000051000,
+        [NativeName("Name", "XR_OBJECT_TYPE_SCENE_OBSERVER_MSFT")]
+        SceneObserverMsft = 1000097000,
+        [NativeName("Name", "XR_OBJECT_TYPE_SCENE_MSFT")]
+        SceneMsft = 1000097001,
+        [NativeName("Name", "XR_OBJECT_TYPE_FOVEATION_PROFILE_FB")]
+        FoveationProfileFB = 1000114000,
+        [NativeName("Name", "XR_OBJECT_TYPE_SPATIAL_ANCHOR_STORE_CONNECTION_MSFT")]
+        SpatialAnchorStoreConnectionMsft = 1000142000,
     }
 }

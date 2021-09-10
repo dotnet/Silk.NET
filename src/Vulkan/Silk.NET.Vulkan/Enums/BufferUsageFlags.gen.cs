@@ -35,10 +35,6 @@ namespace Silk.NET.Vulkan
         BufferUsageVideoDecodeSrcBitKhr = 8192,
         [NativeName("Name", "VK_BUFFER_USAGE_VIDEO_DECODE_DST_BIT_KHR")]
         BufferUsageVideoDecodeDstBitKhr = 16384,
-        [NativeName("Name", "VK_BUFFER_USAGE_VIDEO_ENCODE_DST_BIT_KHR")]
-        BufferUsageVideoEncodeDstBitKhr = 32768,
-        [NativeName("Name", "VK_BUFFER_USAGE_VIDEO_ENCODE_SRC_BIT_KHR")]
-        BufferUsageVideoEncodeSrcBitKhr = 65536,
         [NativeName("Name", "VK_BUFFER_USAGE_TRANSFORM_FEEDBACK_BUFFER_BIT_EXT")]
         BufferUsageTransformFeedbackBufferBitExt = 2048,
         [NativeName("Name", "VK_BUFFER_USAGE_TRANSFORM_FEEDBACK_COUNTER_BUFFER_BIT_EXT")]
@@ -59,6 +55,10 @@ namespace Silk.NET.Vulkan
         BufferUsageShaderDeviceAddressBitExt = 131072,
         [NativeName("Name", "VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT_KHR")]
         BufferUsageShaderDeviceAddressBitKhr = 131072,
+        [NativeName("Name", "VK_BUFFER_USAGE_VIDEO_ENCODE_DST_BIT_KHR")]
+        BufferUsageVideoEncodeDstBitKhr = 32768,
+        [NativeName("Name", "VK_BUFFER_USAGE_VIDEO_ENCODE_SRC_BIT_KHR")]
+        BufferUsageVideoEncodeSrcBitKhr = 65536,
         [NativeName("Name", "VK_BUFFER_USAGE_SHADER_DEVICE_ADDRESS_BIT")]
         BufferUsageShaderDeviceAddressBit = 131072,
     }

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
+using JetBrains.Annotations;
 using Nuke.Common;
 using Nuke.Common.Execution;
 using Nuke.Common.IO;
@@ -14,6 +15,7 @@ using Nuke.Common.Tools.MSBuild;
 using static Nuke.Common.Tools.MSBuild.MSBuildTasks;
 using static Nuke.Common.Tools.DotNet.DotNetTasks;
 using static Nuke.Common.IO.FileSystemTasks;
+using static Nuke.Common.Tooling.ProcessTasks;
 
 [CheckBuildProjectConfigurations]
 [UnsetVisualStudioEnvironmentVariables]
@@ -24,8 +26,7 @@ class Build : NukeBuild
     ///   - JetBrains Rider            https://nuke.build/rider
     ///   - Microsoft VisualStudio     https://nuke.build/visualstudio
     ///   - Microsoft VSCode           https://nuke.build/vscode
-
-    public static int Main () => Execute<Build>(x => x.Compile);
+    public static int Main() => Execute<Build>(x => x.Compile);
 
     static int IndexOfOrThrow(string x, char y)
     {
@@ -46,7 +47,7 @@ class Build : NukeBuild
             {
                 return false;
             }
-            
+
             try
             {
                 MSBuildToolPathResolver.Resolve(); // throws if it can't find msbuild
@@ -58,15 +59,21 @@ class Build : NukeBuild
             }
         }
     }
-    
+
     bool HasProcessedSolutions { get; set; }
     bool HasProcessedProperties { get; set; }
 
-    [Parameter("The feature sets to build - Could include Core, iOS, or Android. Any projects that aren't " +
-               "categorized into a feature set will always be built.")]
-    string[] FeatureSets = {"core"};
+    [Parameter
+    (
+        "The feature sets to build - Could include Core, Legacy-iOS, or Legacy-Android. Any projects that aren't " +
+        "categorized into a feature set will always be built."
+    )]
+    string[] FeatureSets = { "core" };
 
-    [Parameter("Forces the build system to use \"dotnet build\" instead of \"msbuild\" if available.")]
+    [Parameter
+    (
+        "Forces the build system to use \"dotnet build\" instead of \"msbuild\" if available. Ignored for legacy Android and iOS feature sets."
+    )]
     readonly bool ForceDotnet;
 
     [Parameter("Configuration to build - Default is 'Debug' (local) or 'Release' (server)")]
@@ -77,26 +84,21 @@ class Build : NukeBuild
     [Parameter("NuGet feed")] readonly string NugetFeed = "https://api.nuget.org/v3/index.json";
     [Parameter("NuGet username")] readonly string NugetUsername;
     [Parameter("NuGet password")] readonly string NugetPassword;
+    [Parameter("Code-signing service username")] readonly string SignUsername;
+    [Parameter("Code-signing service password")] readonly string SignPassword;
+
     [Parameter("Extra properties passed to MSBuild commands")]
-    readonly string[] MsbuildProperties = Array.Empty<string>(); 
+    readonly string[] MsbuildProperties = Array.Empty<string>();
 
     [Solution] readonly Solution Solution;
 
-    Solution ProcessedSolution
-    {
-        get
-        {
-            if (!HasProcessedSolutions)
-            {
-                Projects.ProcessSolution(Solution, FeatureSets, HasDesktopMsBuild);
-                HasProcessedSolutions = true;
-            }
-            
-            return Solution;
-        }
-    }
+    [CanBeNull] Dictionary<string, (Solution Solution, bool UseDesktopMSBuild)> SolutionsValue;
+
+    Dictionary<string, (Solution Solution, bool UseDesktopMSBuild)> Solutions
+        => SolutionsValue ??= Projects.ProcessSolution(Solution, FeatureSets, HasDesktopMsBuild);
 
     Dictionary<string, object> ProcessedMsbuildPropertiesValue;
+
     Dictionary<string, object> ProcessedMsbuildProperties
     {
         get
@@ -121,122 +123,190 @@ class Build : NukeBuild
 
     AbsolutePath SourceDirectory => RootDirectory / "src";
 
-    Target Clean => _ => _
-        .Before(Restore)
-        .Executes(() =>
-        {
-            if (!HasProcessedSolutions)
+    // ReSharper disable once RedundantEmptyObjectOrCollectionInitializer
+    readonly HashSet<string> AllowedExclusions = new()
+    {
+    };
+
+    Target ValidateSolution => _ => _
+        .Executes
+        (
+            () =>
             {
-                var slnDir = Path.Combine(Solution.Directory!, "build", "sln");
-                if (Directory.Exists(slnDir))
+                var files = RootDirectory.GlobFiles("**/*.csproj").ToArray();
+                Logger.Info($"Found {files.Length} csproj files in \"{RootDirectory}\"");
+                var missedOut = new List<string>();
+                foreach (var file in files)
                 {
-                    Directory.Delete(slnDir, true);
+                    var found = false;
+                    foreach (var project in Solution.GetProjects("*"))
+                    {
+                        if (new FileInfo(file).FullName.Equals(new FileInfo(project.Path).FullName))
+                        {
+                            found = true;
+                            break;
+                        }
+                    }
+
+                    if (!found && !AllowedExclusions.Contains(Path.GetFileNameWithoutExtension(file)))
+                    {
+                        Logger.Error
+                        (
+                            "A project has not been included in the solution and will not be shipped! " +
+                            $"\"{file}\" if this is acceptable please add the project name (excluding the path and " +
+                            "extension) to the AllowedExclusions array in the NUKE Build.cs file."
+                        );
+
+                        missedOut.Add(file);
+                    }
+                }
+
+                if (missedOut.Any())
+                {
+                    Logger.Warn("Commands to add these for your convenience:");
+                    foreach (var file in missedOut)
+                    {
+                        Logger.Warn($"dotnet sln \"{Path.GetFileName(Solution.FileName)}\" add \"{file}\"");
+                    }
+
+                    ControlFlow.Fail("Action required.");
                 }
             }
-            else
-            {
-                Logger.Warn
-                (
-                    "Solution has already been preprocessed prior to the Clean target. " +
-                    "Unable to clean the preprocessed solution folder."
-                );
-            }
-            
-            
-            if (HasDesktopMsBuild)
-            {
-                MSBuild
-                (
-                    s => s.SetTargetPath(ProcessedSolution)
-                        .SetTargets("Clean")
-                        .SetMaxCpuCount(Environment.ProcessorCount)
-                        .SetProperties(ProcessedMsbuildProperties)
-                );
-            }
-            else
-            {
-                DotNetClean(s => s.SetProject(ProcessedSolution)
-                    .SetConfiguration(Configuration)
-                    .SetProperties(ProcessedMsbuildProperties));
-            }
+        );
 
-            if (Directory.Exists(RootDirectory / "build" / "output_packages"))
+    Target Clean => _ => _
+        .Before(Restore)
+        .Executes
+        (
+            () =>
             {
-                Directory.Delete(RootDirectory / "build" / "output_packages", true);
-            }
+                if (!HasProcessedSolutions)
+                {
+                    var slnDir = Path.Combine(Solution.Directory!, "build", "sln");
+                    if (Directory.Exists(slnDir))
+                    {
+                        Directory.Delete(slnDir, true);
+                    }
+                }
+                else
+                {
+                    Logger.Warn
+                    (
+                        "Solution has already been preprocessed prior to the Clean target. " +
+                        "Unable to clean the preprocessed solution folder."
+                    );
+                }
 
-            Directory.CreateDirectory(RootDirectory / "build" / "output_packages");
-            
-            if (FeatureSets.Any(x => x.Equals("android", StringComparison.InvariantCultureIgnoreCase)))
-            {
+                foreach (var (key, (sln, useDesktopMsBuild)) in Solutions)
+                {
+                    Logger.Info($"Cleaning feature set \"{key}\" ({sln})");
+                    if (useDesktopMsBuild)
+                    {
+                        MSBuild
+                        (
+                            s => s.SetTargets("Clean")
+                                .SetMaxCpuCount(Environment.ProcessorCount)
+                                .SetProperties(ProcessedMsbuildProperties)
+                                .SetTargetPath(sln)
+                        );
+                    }
+                    else
+                    {
+                        DotNetClean
+                        (
+                            s => s.SetProject(sln)
+                                .SetConfiguration(Configuration)
+                                .SetProperties(ProcessedMsbuildProperties)
+                        );
+                    }
+                }
+
+                if (Directory.Exists(RootDirectory / "build" / "output_packages"))
+                {
+                    Directory.Delete(RootDirectory / "build" / "output_packages", true);
+                }
+
+                Directory.CreateDirectory(RootDirectory / "build" / "output_packages");
+
                 var silkDroid = SourceDirectory / "Windowing" / "Android" / "SilkDroid";
                 using var process = RuntimeInformation.IsOSPlatform(OSPlatform.Linux)
-                    ? ProcessTasks.StartProcess("bash", "-c \"./gradlew clean\"", silkDroid)
-                    : ProcessTasks.StartProcess("cmd", "/c \".\\gradlew clean\"", silkDroid);
+                    ? StartProcess("bash", "-c \"./gradlew clean\"", silkDroid)
+                    : StartProcess("cmd", "/c \".\\gradlew clean\"", silkDroid);
                 process.AssertZeroExitCode();
                 return process.Output;
             }
-
-            Logger.Warn("Skipping gradlew clean because Android hasn't been specified as a feature set.");
-            return default;
-        });
+        );
 
     Target Restore => _ => _
         .After(Clean)
-        .Executes(() =>
-        {
-            if (HasDesktopMsBuild)
+        .Executes
+        (
+            () =>
             {
-                MSBuild
-                (
-                    s => s
-                        .SetTargetPath(ProcessedSolution)
-                        .SetConfiguration(Configuration)
-                        .SetTargets("Restore")
-                        .SetMaxCpuCount(Environment.ProcessorCount)
-                        .SetProperties(ProcessedMsbuildProperties)
-                );
+                foreach (var (key, (sln, useDesktopMsBuild)) in Solutions)
+                {
+                    Logger.Info($"Restoring {key}");
+                    if (useDesktopMsBuild)
+                    {
+                        MSBuild
+                        (
+                            s => s
+                                .SetTargetPath(sln)
+                                .SetConfiguration(Configuration)
+                                .SetTargets("Restore")
+                                .SetMaxCpuCount(Environment.ProcessorCount)
+                                .SetProperties(ProcessedMsbuildProperties)
+                        );
+                    }
+                    else
+                    {
+                        DotNetRestore
+                        (
+                            s => s
+                                .SetProjectFile(sln)
+                                .SetProperties(ProcessedMsbuildProperties)
+                        );
+                    }
+                }
             }
-            else
-            {
-                DotNetRestore
-                (
-                    s => s
-                        .SetProjectFile(ProcessedSolution)
-                        .SetProperties(ProcessedMsbuildProperties)
-                );
-            }
-        });
+        );
 
     Target Compile => _ => _
         .DependsOn(Clean, Restore)
-        .Executes(() =>
-        {
-            if (HasDesktopMsBuild)
+        .Executes
+        (
+            () =>
             {
-                MSBuild
-                (
-                    s => s
-                        .SetTargets("Build")
-                        .SetTargetPath(ProcessedSolution)
-                        .SetConfiguration(Configuration)
-                        .SetMaxCpuCount(Environment.ProcessorCount)
-                        .SetNodeReuse(IsLocalBuild)
-                        .SetProperties(ProcessedMsbuildProperties)
-                );
+                foreach (var (key, (sln, useDesktopMsBuild)) in Solutions)
+                {
+                    Logger.Info($"Compiling {key}");
+                    if (useDesktopMsBuild)
+                    {
+                        MSBuild
+                        (
+                            s => s
+                                .SetTargets("Build")
+                                .SetTargetPath(sln)
+                                .SetConfiguration(Configuration)
+                                .SetMaxCpuCount(Environment.ProcessorCount)
+                                .SetNodeReuse(IsLocalBuild)
+                                .SetProperties(ProcessedMsbuildProperties)
+                        );
+                    }
+                    else
+                    {
+                        DotNetBuild
+                        (
+                            s => s
+                                .SetProjectFile(sln)
+                                .SetConfiguration(Configuration)
+                                .SetNoRestore(true)
+                                .SetProperties(ProcessedMsbuildProperties)
+                        );
+                    }
+                }
             }
-            else
-            {
-                DotNetBuild
-                (
-                    s => s
-                        .SetProjectFile(ProcessedSolution)
-                        .SetConfiguration(Configuration)
-                        .SetNoRestore(true)
-                        .SetProperties(ProcessedMsbuildProperties)
-                );
-            }
-        });
+        );
 
     Target Test => _ => _
         .DependsOn(Compile)
@@ -249,7 +319,7 @@ class Build : NukeBuild
                     ControlFlow.Fail("The Test target can currently not run against additional feature sets.");
                 }
 
-                foreach (var project in ProcessedSolution.GetProjects("*"))
+                foreach (var project in Solutions["Core"].Solution.GetProjects("*"))
                 {
                     if (project.Name.Contains("tests", StringComparison.InvariantCultureIgnoreCase))
                     {
@@ -265,7 +335,7 @@ class Build : NukeBuild
         (
             () =>
             {
-                var project = ProcessedSolution.GetProject("Silk.NET.BuildTools");
+                var project = Solutions["Core"].Solution.GetProject("Silk.NET.BuildTools");
                 if (project == default)
                 {
                     Logger.Error("Couldn't find BuildTools in the solution file.");
@@ -287,12 +357,6 @@ class Build : NukeBuild
         (
             () =>
             {
-                if (!FeatureSets.Any(x => x.Equals("android", StringComparison.InvariantCultureIgnoreCase)))
-                {
-                    Logger.Warn("Skipping BuildLibSilkDroid because Android hasn't been specified as a feature set.");
-                    return default;
-                }
-                
                 var sdl = RootDirectory / "build" / "submodules" / "SDL";
                 var silkDroid = SourceDirectory / "Windowing" / "Android" / "SilkDroid";
                 var xcopy = new (string, string)[]
@@ -308,13 +372,13 @@ class Build : NukeBuild
                     {
                         ControlFlow.Fail($"\"{from}\" does not exist (did you forget to recursively clone the repo?)");
                     }
-                    
+
                     CopyDirectoryRecursively(from, to, DirectoryExistsPolicy.Merge, FileExistsPolicy.Overwrite);
                 }
 
                 using var process = RuntimeInformation.IsOSPlatform(OSPlatform.Linux)
-                    ? ProcessTasks.StartProcess("bash", "-c \"./gradlew build\"", silkDroid)
-                    : ProcessTasks.StartProcess("cmd", "/c \".\\gradlew build\"", silkDroid);
+                    ? StartProcess("bash", "-c \"./gradlew build\"", silkDroid)
+                    : StartProcess("cmd", "/c \".\\gradlew build\"", silkDroid);
                 process.AssertZeroExitCode();
                 var ret = process.Output;
                 CopyFile
@@ -334,33 +398,40 @@ class Build : NukeBuild
     Target Pack => _ => _
         .DependsOn(Clean, Restore)
         .After(RegenerateBindings, BuildLibSilkDroid)
-        .Executes(() =>
-        {
-            if (HasDesktopMsBuild)
+        .Executes
+        (
+            () =>
             {
-                MSBuild
-                (
-                    s => s
-                        .SetTargets("Pack")
-                        .SetTargetPath(ProcessedSolution)
-                        .SetConfiguration(Configuration)
-                        .SetMaxCpuCount(Environment.ProcessorCount)
-                        .SetNodeReuse(IsLocalBuild)
-                        .SetProperties(ProcessedMsbuildProperties)
-                );
+                foreach (var (key, (sln, useDesktopMsBuild)) in Solutions)
+                {
+                    Logger.Info($"Packing {key}");
+                    if (useDesktopMsBuild)
+                    {
+                        MSBuild
+                        (
+                            s => s
+                                .SetTargets("Pack")
+                                .SetTargetPath(sln)
+                                .SetConfiguration(Configuration)
+                                .SetMaxCpuCount(Environment.ProcessorCount)
+                                .SetNodeReuse(IsLocalBuild)
+                                .SetProperties(ProcessedMsbuildProperties)
+                        );
+                    }
+                    else
+                    {
+                        DotNetPack
+                        (
+                            s => s
+                                .SetProject(sln)
+                                .SetConfiguration(Configuration)
+                                .SetNoRestore(true)
+                                .SetProperties(ProcessedMsbuildProperties)
+                        );
+                    }
+                }
             }
-            else
-            {
-                DotNetPack
-                (
-                    s => s
-                        .SetProject(ProcessedSolution)
-                        .SetConfiguration(Configuration)
-                        .SetNoRestore(true)
-                        .SetProperties(ProcessedMsbuildProperties)
-                );
-            }
-        });
+        );
 
     Target FullPack => _ => _
         .DependsOn(BuildLibSilkDroid, RegenerateBindings, Pack);
@@ -372,12 +443,43 @@ class Build : NukeBuild
     Target FullPushToNuGet => _ => _
         .DependsOn(FullPack, PushToNuGet);
 
+    static string PackageDirectory => RootDirectory / "build" / "output_packages";
+
+    static IEnumerable<string> Packages => Directory.GetFiles(PackageDirectory, "*.nupkg")
+        .Where(x => Path.GetFileName(x).StartsWith("Silk.NET") || Path.GetFileName(x).StartsWith("Ultz.Native"));
+
     async Task PushPackages()
     {
         const int rateLimit = 300;
-        var allFiles = Directory.GetFiles(RootDirectory / "build" / "output_packages", "*.nupkg")
-            .Where(x => Path.GetFileName(x).StartsWith("Silk.NET") || Path.GetFileName(x).StartsWith("Ultz.Native"))
-            .Select((x, i) => new {Index = i, Value = x})
+        if (!string.IsNullOrWhiteSpace(SignUsername) && !string.IsNullOrWhiteSpace(SignPassword))
+        {
+            var basePath = RootDirectory / "build" / "codesigning";
+            var execPath = basePath / "tool" / (OperatingSystem.IsWindows() ? "SignClient.exe" : "SignClient");
+            if (!File.Exists(execPath))
+            {
+                DotNetToolInstall(s => s.SetToolInstallationPath(basePath / "tool").SetPackageName("SignClient"));
+            }
+
+            foreach (var pkg in Packages)
+            {
+                StartProcess
+                (
+                    execPath,
+                    "sign " +
+                    $"--baseDirectory {PackageDirectory} " +
+                    $"--input \"{pkg}\" " +
+                    $"--config \"{basePath / "config.json"}\" " +
+                    $"--filelist \"{basePath / "filelist.txt"}\" " +
+                    $"--user \"{SignUsername}\" " +
+                    $"--secret \"{SignPassword}\" " +
+                    "--name \"Silk.NET\" " +
+                    "--description \"Silk.NET\" " +
+                    "--descriptionUrl \"https://github.com/dotnet/Silk.NET\""
+                ).AssertZeroExitCode();
+            }
+        }
+
+        var allFiles = Packages.Select((x, i) => new { Index = i, Value = x })
             .GroupBy(x => x.Index / rateLimit)
             .Select(x => x.Select(v => v.Value).ToList())
             .ToList();

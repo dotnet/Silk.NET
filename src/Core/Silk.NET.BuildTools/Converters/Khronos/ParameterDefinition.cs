@@ -1,4 +1,5 @@
-﻿using System.Xml.Linq;
+﻿using System.Xml;
+using System.Xml.Linq;
 
 namespace Silk.NET.BuildTools.Converters.Khronos
 {
@@ -106,10 +107,25 @@ namespace Silk.NET.BuildTools.Converters.Khronos
             {
                 var val = xe.Value;
                 var idx = val.LastIndexOf('[') + 1;
-                if (idx != -1 && int.TryParse(val.Substring(idx, val.Length - idx - 1), out count))
+                if (idx != -1)
                 {
                     // array parameters are pointers in disguise
                     pointerLevel++;
+                }
+
+                var countVal = val.Substring(idx, val.Length - idx - 1);
+                if (!int.TryParse(countVal, out count))
+                {
+                    try
+                    {
+                        countVal = XElement.Parse(countVal).Value;
+                    }
+                    catch (XmlException)
+                    {
+                        // do nothing
+                    }
+
+                    symbolic = countVal;
                 }
             }
 

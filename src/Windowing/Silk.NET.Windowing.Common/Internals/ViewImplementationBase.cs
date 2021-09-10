@@ -192,7 +192,7 @@ namespace Silk.NET.Windowing.Internals
         }
 
         // Misc properties
-        protected bool IsInitialized { get; set; }
+        public bool IsInitialized { get; protected set; }
         public INativeWindow? Native { get; private set; }
         public Vector2D<int> Size => IsInitialized ? CoreSize : default;
         public nint Handle => IsInitialized ? CoreHandle : 0;

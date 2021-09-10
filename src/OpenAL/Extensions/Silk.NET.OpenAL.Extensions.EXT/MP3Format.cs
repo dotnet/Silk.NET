@@ -15,7 +15,7 @@ namespace Silk.NET.OpenAL.Extensions.EXT
     public partial class MP3Format : FormatExtensionBase<MP3BufferFormat>
     {
         /// <inheritdoc cref="ExtensionBase" />
-        protected MP3Format(INativeContext ctx)
+        public MP3Format(INativeContext ctx)
             : base(ctx)
         {
         }

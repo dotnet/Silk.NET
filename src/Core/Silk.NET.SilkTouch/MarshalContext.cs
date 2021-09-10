@@ -423,6 +423,7 @@ namespace Silk.NET.SilkTouch
 
         public BlockSyntax BuildFinalBlock()
         {
+            
             // add return
             if (!ReturnsVoid)
             {

@@ -12,6 +12,10 @@ namespace Silk.NET.OpenGLES.Extensions.MESA
     [NativeName("Name", "GLenum")]
     public enum MESA : int
     {
+        [NativeName("Name", "GL_BGR_EXT")]
+        BgrExt = 0x80E0,
+        [NativeName("Name", "GL_BGRA_EXT")]
+        BgraExt = 0x80E1,
         [NativeName("Name", "GL_FRAMEBUFFER_FLIP_X_MESA")]
         FramebufferFlipXMesa = 0x8BBC,
         [NativeName("Name", "GL_FRAMEBUFFER_FLIP_Y_MESA")]

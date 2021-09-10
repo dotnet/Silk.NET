@@ -61,12 +61,12 @@ namespace Silk.NET.Windowing
         public int? PreferredStencilBufferBits { get; set; }
 
         /// <inheritdoc />
-        public Vector4D<int>? PreferredBitDepth { get; }
+        public Vector4D<int>? PreferredBitDepth { get; set; }
 
         /// <inheritdoc />
         public Vector2D<int> Position { get; set; }
 
-        /// <inheritdoc cref="IWindowProperties" />
+        /// <inheritdoc />
         public Vector2D<int> Size { get; set; }
 
         /// <inheritdoc />
@@ -93,7 +93,7 @@ namespace Silk.NET.Windowing
         /// <inheritdoc />
         public bool TransparentFramebuffer { get; set; }
 
-        /// <inheritdoc cref="IWindowProperties" />
+        /// <inheritdoc />
         public IGLContext? SharedContext { get; }
 
         /// <summary>

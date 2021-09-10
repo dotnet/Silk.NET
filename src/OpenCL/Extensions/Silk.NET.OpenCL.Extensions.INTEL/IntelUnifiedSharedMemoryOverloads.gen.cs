@@ -400,6 +400,12 @@ namespace Silk.NET.OpenCL.Extensions.INTEL
             return thisApi.HostMemAlloc(context, in properties.GetPinnableReference(), size, alignment, out errcode_ret.GetPinnableReference());
         }
 
+        public static unsafe int MemBlockingFree<T0>(this IntelUnifiedSharedMemory thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.Out)] Span<T0> ptr) where T0 : unmanaged
+        {
+            // SpanOverloader
+            return thisApi.MemBlockingFree(context, out ptr.GetPinnableReference());
+        }
+
         public static unsafe int MemFree<T0>(this IntelUnifiedSharedMemory thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.Out)] Span<T0> ptr) where T0 : unmanaged
         {
             // SpanOverloader

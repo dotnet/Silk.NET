@@ -47,6 +47,7 @@ namespace Silk.NET.SDL
         public static implicit operator PfnReallocFunc(delegate* unmanaged[Cdecl]<void*, nuint, void*> ptr) => new PfnReallocFunc(ptr);
     }
 
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public unsafe delegate void* ReallocFunc(void* arg0, nuint arg1);
 }
 

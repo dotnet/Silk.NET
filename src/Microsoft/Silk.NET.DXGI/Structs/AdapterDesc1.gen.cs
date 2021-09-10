@@ -28,7 +28,7 @@ namespace Silk.NET.DXGI
             nuint? dedicatedVideoMemory = null,
             nuint? dedicatedSystemMemory = null,
             nuint? sharedSystemMemory = null,
-            ValueTuple<ulong,long>? adapterLuid = null,
+            Luid? adapterLuid = null,
             uint? flags = null
         ) : this()
         {
@@ -121,7 +121,7 @@ namespace Silk.NET.DXGI
         [NativeName("Type", "LUID")]
         [NativeName("Type.Name", "LUID")]
         [NativeName("Name", "AdapterLuid")]
-        public ValueTuple<ulong,long> AdapterLuid;
+        public Luid AdapterLuid;
 
         [NativeName("Type", "UINT")]
         [NativeName("Type.Name", "UINT")]

@@ -40,10 +40,10 @@ namespace Silk.NET.Windowing
         public int? PreferredDepthBufferBits { get; set; }
 
         /// <inheritdoc />
-        public int? PreferredStencilBufferBits { get; }
+        public int? PreferredStencilBufferBits { get; set; }
         
         /// <inheritdoc />
-        public Vector4D<int>? PreferredBitDepth { get; }
+        public Vector4D<int>? PreferredBitDepth { get; set; }
 
         /// <summary>
         /// Creates a new WindowOptions struct.

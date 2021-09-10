@@ -11,7 +11,7 @@ namespace Silk.NET.OpenXR
 {
     [Flags()]
     [NativeName("Name", "XrSwapchainCreateFlags")]
-    public enum SwapchainCreateFlags : int
+    public enum SwapchainCreateFlags : long
     {
         [NativeName("Name", "XR_SWAPCHAIN_CREATE_PROTECTED_CONTENT_BIT")]
         SwapchainCreateProtectedContentBit = 1,

@@ -16,6 +16,7 @@ using Silk.NET.Core.Attributes;
 using Silk.NET.Core.Native;
 using Silk.NET.SilkTouch.NativeContextOverrides;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
+using static Silk.NET.SilkTouch.NameGenerator;
 
 namespace Silk.NET.SilkTouch
 {
@@ -324,7 +325,14 @@ namespace Silk.NET.SilkTouch
                 );
             }
 
-            ProcessNativeContextOverrides(processedEntrypoints.ToArray(), ref newMembers, sharedClassSymbol, excludeFromOverrideAttribute);
+            ProcessNativeContextOverrides
+            (
+                processedEntrypoints.ToArray(),
+                ref newMembers,
+                sharedClassSymbol,
+                excludeFromOverrideAttribute,
+                compilation
+            );
             
             var newNamespace = namespaceDeclaration.WithMembers
                 (
@@ -392,6 +400,25 @@ namespace Silk.NET.SilkTouch
             SyntaxList<UsingDirectiveSyntax> generationusings
         )
         {
+            const string invocationShimName = "StCall";
+
+            static MemberAccessExpressionSyntax GetFuncPtrExpr
+            (
+                string generatedVTableName,
+                string entryPoint
+            ) => MemberAccessExpression
+            (
+                SyntaxKind.SimpleMemberAccessExpression,
+                ParenthesizedExpression
+                (
+                    BinaryExpression
+                    (
+                        SyntaxKind.AsExpression, IdentifierName("CurrentVTable"),
+                        IdentifierName(generatedVTableName)
+                    )
+                ), IdentifierSilk(entryPoint)
+            );
+
             void BuildLoadInvoke(ref IMarshalContext ctx, Action next)
             {
                 ctx.TransitionTo(SilkTouchStage.PreLoad);
@@ -400,32 +427,6 @@ namespace Silk.NET.SilkTouch
 
                 var parameters = ctx.ResolveAllLoadParameters();
 
-                var fPtrType = FunctionPointerType
-                (
-                    FunctionPointerCallingConvention
-                    (
-                        Token(SyntaxKind.UnmanagedKeyword),
-                        FunctionPointerUnmanagedCallingConventionList
-                        (
-                            SingletonSeparatedList
-                            (
-                                FunctionPointerUnmanagedCallingConvention
-                                    (Identifier(GetCallingConvention(callingConvention)))
-                            )
-                        )
-                    ),
-                    FunctionPointerParameterList
-                    (
-                        SeparatedList
-                        (
-                            ctx.LoadTypes.Select
-                            (
-                                x => FunctionPointerParameter
-                                    (IdentifierName(x.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)))
-                            )
-                        )
-                    )
-                );
                 
                 entryPoints.Add(entryPoint);
                 processedEntrypoints.Add
@@ -445,33 +446,37 @@ namespace Silk.NET.SilkTouch
 
                 Func<IMarshalContext, ExpressionSyntax> expression;
 
+                var hasFastWinapi = declaration.SyntaxTree.IsNet5OrGreater();
+                var needsInvocationShim = callingConvention == CallingConvention.Winapi && !hasFastWinapi;
+
                 if ((classIsSealed || generateSeal) && generateVTable)
                 {
                     // build load + invocation
-                    expression = ctx => InvocationExpression
-                    (
-                        ParenthesizedExpression
+                    expression = ctx =>
+                    {
+                        var fPtrType = ctx.LoadTypes.GetFuncPtrType(callingConvention);
+                        return InvocationExpression
                         (
-                            CastExpression
+                            needsInvocationShim ? IdentifierName(invocationShimName) : ParenthesizedExpression
                             (
-                                fPtrType, MemberAccessExpression
+                                CastExpression
                                 (
-                                    SyntaxKind.SimpleMemberAccessExpression,
-                                    ParenthesizedExpression
-                                    (
-                                        BinaryExpression
-                                        (
-                                            SyntaxKind.AsExpression, IdentifierName("CurrentVTable"), IdentifierName(generatedVTableName)
-                                        )
-                                    ), IdentifierName(FirstLetterToUpper(entryPoint))
+                                    fPtrType,
+                                    GetFuncPtrExpr(generatedVTableName, entryPoint)
                                 )
-                            )
-                        ), ArgumentList(SeparatedList(parameters.Select(x => Argument(x.Value))))
-                    );
+                            ), ArgumentList(SeparatedList(parameters.Select(x => Argument(x.Value))))
+                        );
+                    };
                 }
                 else
                 {
                     throw new Exception("FORCE-USE-VTABLE");
+                }
+                
+
+                if (needsInvocationShim)
+                {
+                    ctx.AddSideEffect(ManualWinapiInvokeShim);
                 }
 
                 if (ctx.ReturnsVoid)
@@ -512,8 +517,7 @@ namespace Silk.NET.SilkTouch
                     block = Block(UnsafeStatement(Token(SyntaxKind.UnsafeKeyword), block));
                 }
 
-                var method = declaration.WithBody
-                        (block)
+                var method = declaration.WithBody(block)
                     .WithAttributeLists(default)
                     .WithSemicolonToken(default)
                     .WithParameterList
@@ -572,18 +576,110 @@ namespace Silk.NET.SilkTouch
                 sourceContext.ReportDiagnostic
                     (Diagnostic.Create(Diagnostics.MethodClassFailure, declaration.GetLocation(), ex.ToString()));
             }
-        }
 
-        private static string GetCallingConvention(CallingConvention convention)
-            => convention switch
+            InvocationExpressionSyntax ManualWinapiInvokeInnerExpr
+            (
+                IMarshalContext ctx,
+                CallingConvention callingConvention
+            ) => InvocationExpression
+            (
+                ParenthesizedExpression
+                (
+                    CastExpression
+                    (
+                        ctx.LoadTypes.GetFuncPtrType(callingConvention),
+                        GetFuncPtrExpr(generatedVTableName, entryPoint)
+                    )
+                ),
+                ArgumentList
+                (
+                    SeparatedList
+                    (
+                        Enumerable.Range
+                                (0, ctx.LoadTypes.Length - 1)
+                            .Select(x => Argument(IdentifierName($"arg{x}")))
+                    )
+                )
+            );
+            
+            StatementSyntax ManualWinapiInvokeShim(IMarshalContext ctx)
             {
-                // CallingConvention.Winapi => "", netstandard2.0 doesn't allow this
-                CallingConvention.Cdecl => "Cdecl",
-                CallingConvention.ThisCall => "Thiscall",
-                CallingConvention.StdCall => "Stdcall",
-                CallingConvention.FastCall => "Fastcall",
-                _ => throw new ArgumentException("convention is invalid", nameof(convention))
-            };
+                var stdCallStmt = ManualWinapiInvokeInnerExpr(ctx, CallingConvention.StdCall);
+                var cdeclStmt = ManualWinapiInvokeInnerExpr(ctx, CallingConvention.Cdecl);
+                return LocalFunctionStatement
+                    (
+                        IdentifierName(ctx.ReturnLoadType.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat)),
+                        invocationShimName
+                    )
+                    .WithParameterList
+                    (
+                        ParameterList
+                        (
+                            SeparatedList
+                            (
+                                new ArraySegment<ITypeSymbol>(ctx.LoadTypes, 0, ctx.LoadTypes.Length - 1).Select
+                                (
+                                    (x, i) => Parameter(Identifier($"arg{i}"))
+                                        .WithType
+                                        (
+                                            IdentifierName(x.ToDisplayString(SymbolDisplayFormat.FullyQualifiedFormat))
+                                        )
+                                )
+                            )
+                        )
+                    )
+                    .WithBody
+                    (
+                        Block
+                        (
+                            IfStatement
+                            (
+                                MemberAccessExpression
+                                (
+                                    SyntaxKind.SimpleMemberAccessExpression,
+                                    MemberAccessExpression
+                                    (
+                                        SyntaxKind.SimpleMemberAccessExpression,
+                                        MemberAccessExpression
+                                        (
+                                            SyntaxKind.SimpleMemberAccessExpression,
+                                            MemberAccessExpression
+                                            (
+                                                SyntaxKind.SimpleMemberAccessExpression,
+                                                MemberAccessExpression
+                                                (
+                                                    SyntaxKind.SimpleMemberAccessExpression, IdentifierName("Silk"),
+                                                    IdentifierName("NET")
+                                                ), IdentifierName("Core")
+                                            ), IdentifierName("Native")
+                                        ), IdentifierName("SilkMarshal")
+                                    ), IdentifierName("IsWinapiStdcall")
+                                ),
+                                Block
+                                (
+                                    ctx.ReturnsVoid
+                                        ? ExpressionStatement(stdCallStmt)
+                                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                                        : ReturnStatement(stdCallStmt)
+                                            .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                                ),
+                                ElseClause
+                                (
+                                    Block
+                                    (
+                                        ctx.ReturnsVoid
+                                            ? ExpressionStatement(cdeclStmt)
+                                                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                                            : ReturnStatement(cdeclStmt)
+                                                .WithSemicolonToken(Token(SyntaxKind.SemicolonToken))
+                                    )
+                                )
+                            )
+                        )
+                    )
+                    .WithSemicolonToken(Token(SyntaxKind.SemicolonToken));
+            }
+        }
 
         private static NativeApiAttribute? ToNativeApiAttribute(AttributeData? attributeData)
         {

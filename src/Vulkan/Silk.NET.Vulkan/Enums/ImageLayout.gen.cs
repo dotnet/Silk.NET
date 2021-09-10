@@ -38,12 +38,6 @@ namespace Silk.NET.Vulkan
         VideoDecodeSrcKhr = 1000024001,
         [NativeName("Name", "VK_IMAGE_LAYOUT_VIDEO_DECODE_DPB_KHR")]
         VideoDecodeDpbKhr = 1000024002,
-        [NativeName("Name", "VK_IMAGE_LAYOUT_VIDEO_ENCODE_DST_KHR")]
-        VideoEncodeDstKhr = 1000299000,
-        [NativeName("Name", "VK_IMAGE_LAYOUT_VIDEO_ENCODE_SRC_KHR")]
-        VideoEncodeSrcKhr = 1000299001,
-        [NativeName("Name", "VK_IMAGE_LAYOUT_VIDEO_ENCODE_DPB_KHR")]
-        VideoEncodeDpbKhr = 1000299002,
         [NativeName("Name", "VK_IMAGE_LAYOUT_SHARED_PRESENT_KHR")]
         SharedPresentKhr = 1000111000,
         [NativeName("Name", "VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_STENCIL_ATTACHMENT_OPTIMAL_KHR")]
@@ -55,7 +49,7 @@ namespace Silk.NET.Vulkan
         [NativeName("Name", "VK_IMAGE_LAYOUT_FRAGMENT_DENSITY_MAP_OPTIMAL_EXT")]
         FragmentDensityMapOptimalExt = 1000218000,
         [NativeName("Name", "VK_IMAGE_LAYOUT_FRAGMENT_SHADING_RATE_ATTACHMENT_OPTIMAL_KHR")]
-        FragmentShadingRateAttachmentOptimalKhr = 1000226003,
+        FragmentShadingRateAttachmentOptimalKhr = 1000164003,
         [NativeName("Name", "VK_IMAGE_LAYOUT_DEPTH_ATTACHMENT_OPTIMAL_KHR")]
         DepthAttachmentOptimalKhr = 1000241000,
         [NativeName("Name", "VK_IMAGE_LAYOUT_DEPTH_READ_ONLY_OPTIMAL_KHR")]
@@ -64,6 +58,12 @@ namespace Silk.NET.Vulkan
         StencilAttachmentOptimalKhr = 1000241002,
         [NativeName("Name", "VK_IMAGE_LAYOUT_STENCIL_READ_ONLY_OPTIMAL_KHR")]
         StencilReadOnlyOptimalKhr = 1000241003,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_VIDEO_ENCODE_DST_KHR")]
+        VideoEncodeDstKhr = 1000299000,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_VIDEO_ENCODE_SRC_KHR")]
+        VideoEncodeSrcKhr = 1000299001,
+        [NativeName("Name", "VK_IMAGE_LAYOUT_VIDEO_ENCODE_DPB_KHR")]
+        VideoEncodeDpbKhr = 1000299002,
         [NativeName("Name", "VK_IMAGE_LAYOUT_READ_ONLY_OPTIMAL_KHR")]
         ReadOnlyOptimalKhr = 1000314000,
         [NativeName("Name", "VK_IMAGE_LAYOUT_ATTACHMENT_OPTIMAL_KHR")]

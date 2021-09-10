@@ -6,6 +6,7 @@ using System.Linq;
 using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using static Microsoft.CodeAnalysis.CSharp.SyntaxFactory;
+using static Silk.NET.SilkTouch.NameGenerator;
 
 namespace Silk.NET.SilkTouch
 {
@@ -58,7 +59,7 @@ namespace Silk.NET.SilkTouch
                                 AssignmentExpression
                                 (
                                     SyntaxKind.SimpleAssignmentExpression,
-                                    IdentifierName($"_{entryPoint}"),
+                                    IdentifierSilk($"_{entryPoint}"),
                                     InvocationExpression
                                     (
                                         MemberAccessExpression
@@ -90,7 +91,7 @@ namespace Silk.NET.SilkTouch
 
             vTableMembers.Add
             (
-                ConstructorDeclaration("GeneratedVTable")
+                ConstructorDeclaration(Name("GeneratedVTable"))
                     .WithModifiers(TokenList(Token(SyntaxKind.InternalKeyword)))
                     .WithParameterList
                     (
@@ -114,8 +115,7 @@ namespace Silk.NET.SilkTouch
             List<VariableDeclaratorSyntax> slotVars = new List<VariableDeclaratorSyntax>();
             foreach (var entrypoint in entryPoints.Distinct())
             {
-                var name = $"_{entrypoint}";
-                slotVars.Add(VariableDeclarator(name));
+                slotVars.Add(VariableDeclarator(Name($"_{entrypoint}")));
             }
 
             vTableMembers.Add
@@ -207,7 +207,7 @@ namespace Silk.NET.SilkTouch
                                             (
                                                 ConstantPattern
                                                     (LiteralExpression(SyntaxKind.StringLiteralExpression, Literal(s))),
-                                                IdentifierName(FirstLetterToUpper(s))
+                                                IdentifierSilk(s)
                                             )
                                         )
                                         .Append
@@ -248,8 +248,7 @@ namespace Silk.NET.SilkTouch
             (
                 entryPoints.Distinct().Select
                 (
-                    s => PropertyDeclaration
-                            (IdentifierName("nint"), FirstLetterToUpper(s))
+                    s => PropertyDeclaration(IdentifierName("nint"), Name(s))
                         .WithExpressionBody
                         (
                             ArrowExpressionClause
@@ -258,14 +257,14 @@ namespace Silk.NET.SilkTouch
                                 (
                                     BinaryExpression
                                     (
-                                        SyntaxKind.NotEqualsExpression, IdentifierName("_" + s),
+                                        SyntaxKind.NotEqualsExpression, IdentifierSilk("_" + s),
                                         DefaultExpression(IdentifierName("nint"))
-                                    ), IdentifierName("_" + s),
+                                    ), IdentifierSilk("_" + s),
                                     ParenthesizedExpression
                                     (
                                         AssignmentExpression
                                         (
-                                            SyntaxKind.SimpleAssignmentExpression, IdentifierName("_" + s),
+                                            SyntaxKind.SimpleAssignmentExpression, IdentifierSilk("_" + s),
                                             InvocationExpression
                                             (
                                                 IdentifierName("_ctx.GetProcAddress"),
@@ -308,7 +307,7 @@ namespace Silk.NET.SilkTouch
                                         AssignmentExpression
                                         (
                                             SyntaxKind.SimpleAssignmentExpression,
-                                            IdentifierName($"_{x}"),
+                                            IdentifierSilk($"_{x}"),
                                             DefaultExpression
                                                 (IdentifierName("nint"))
                                         )
@@ -343,11 +342,6 @@ namespace Silk.NET.SilkTouch
                     )
                 ), List<TypeParameterConstraintClauseSyntax>(), List(vTableMembers)
             );
-        }
-
-        private static string FirstLetterToUpper(string s)
-        {
-            return s.First().ToString().ToUpper() + s.Substring(1);
         }
     }
 }
