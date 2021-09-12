@@ -6,7 +6,6 @@ using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.Extensions.FileSystemGlobbing;
-using Microsoft.Extensions.Logging;
 using Silk.NET.Statiq.TableOfContents.Internals;
 using Statiq.Common;
 using static Silk.NET.Statiq.TableOfContents.Internals.Utilities;

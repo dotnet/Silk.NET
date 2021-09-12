@@ -2,7 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using Microsoft.AspNetCore.Html;
-using Microsoft.AspNetCore.Mvc.Routing;
 using Statiq.Common;
 using Statiq.Razor;
 
