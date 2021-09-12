@@ -33,37 +33,6 @@ namespace Silk.NET.Statiq.TableOfContents.ProcessModules
 
             return context.Inputs.Where(x => x is not ObjectDocument<LoadedRawToc>)
                 .Concat(await new ObjectDocument<BakedToc>(new(Bake(rawTocModels.ToArray()))).YieldAsync());
-
-            // return engine.WithRazorModelOverride
-            // (
-            //     (srcRel, @base) =>
-            //     {
-            //         var (dstRel, baseModel) = @base;
-            //         // if we have a ToC model for the relative source or destination path, get it.
-            //         if (!tocModels.TryGetValue(engine.MaybeUpper(srcRel), out var val) &&
-            //             !tocModels.TryGetValue(engine.MaybeUpper(dstRel), out val))
-            //         {
-            //             return Task.FromResult(baseModel);
-            //         }
-// 
-            //         // deep clone the model we've found just in case the razor page decides to mess with it.
-            //         val = Clone(val);
-// 
-            //         // set it to active
-            //         val.Value.IsActive = true;
-// 
-            //         // create the overriding model
-            //         return Task.FromResult<BaseModel>
-            //         (
-            //             new TableOfContentsModel
-            //             {
-            //                 BaseModel = baseModel,
-            //                 Node = val.Value,
-            //                 Root = val.Root
-            //             }
-            //         );
-            //     }
-            // );
         }
 
         private static ConcurrentDictionary<NormalizedPath, (TableOfContentsElement Root, TableOfContentsElement Value)>

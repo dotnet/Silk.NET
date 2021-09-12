@@ -3,8 +3,10 @@
 using System;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Silk.NET.Statiq;
 using Silk.NET.Statiq.TableOfContents.ProcessModules;
 using Statiq.App;
 using Statiq.Common;
@@ -12,7 +14,6 @@ using Statiq.Core;
 using Statiq.Markdown;
 using Statiq.Razor;
 using Statiq.Yaml;
-using Ultz.Extensions.Logging;
 
 namespace Silk.NET.Statiq;
 
@@ -33,7 +34,7 @@ public static class Program
             )
             .BuildPipeline
             (
-                "DirectCopying",
+                "Static",
                 builder => builder.WithInputReadFiles()
                     .WithProcessModules
                     (
@@ -50,27 +51,19 @@ public static class Program
             )
             .BuildPipeline
             (
-                "FrontMatter",
-                x => x.WithInputReadFiles("**/*.cshtml", "!_theme/**/*.cshtml", "**/*.md", "!_*.cshtml")
-                    .WithProcessModules((IModule) new ExtractFrontMatter(new ParseYaml()))
-            )
-            .BuildPipeline
-            (
-                "Markdown",
-                x => x.WithDependencies("FrontMatter")
-                    .WithProcessModules(new FilterSources("**/*.md"), new RenderMarkdown())
-            )
-            .BuildPipeline
-            (
-                "Razor",
-                x => x.WithDependencies("Markdown", "FrontMatter")
-                    .WithInputReadFiles("_*.cshtml", "**/toc.json")
+                "Content",
+                x => x.WithInputReadFiles("{**,!_theme/**}/*.cshtml", "**/*.md", "**/toc.json")
                     .WithProcessModules
                     (
-                        //new AddTableOfContents("**/toc.json"),
-                        new LoadRawToc("**/toc.json"),
-                        new BakeTocModels(),
-                        new BakeTocIntoDocuments(),
+                        new ExtractFrontMatter(new ParseYaml()),
+                        new ForAllMatching()
+                            .WithFilterPatterns("**/*.md")
+                            .WithExecuteModules(new RenderMarkdown()),
+                        new AddTableOfContents
+                        (
+                            (tocPath, docPath) => tocPath == docPath.ChangeExtension(".html"),
+                            "**/toc.json"
+                        ),
                         new RenderRazor()
                     )
                     .WithOutputWriteFiles(".html")

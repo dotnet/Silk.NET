@@ -15,7 +15,13 @@ namespace Silk.NET.Statiq.TableOfContents.ProcessModules
     {
         private readonly bool _anyIfNotFound;
         private ObjectDocument<BakedToc>[]? _tocs;
-        public BakeTocIntoDocuments(bool anyIfNotFound = true) => _anyIfNotFound = anyIfNotFound;
+        private PathMatcher _pathMatcher;
+
+        public BakeTocIntoDocuments(bool anyIfNotFound = true)
+            => (_pathMatcher, _anyIfNotFound) = ((x, y) => x == y, anyIfNotFound);
+
+        public BakeTocIntoDocuments(PathMatcher matcher, bool anyIfNotFound = true)
+            => (_pathMatcher, _anyIfNotFound) = (matcher, anyIfNotFound);
 
         protected override void BeforeExecution(IExecutionContext context)
             => _tocs = context.Inputs.OfType<ObjectDocument<BakedToc>>().ToArray();
@@ -39,13 +45,15 @@ namespace Silk.NET.Statiq.TableOfContents.ProcessModules
             }
 
             // find a toc in which the document has a matching entry in its map.
-            var matchingToc = _tocs?.SelectMany(x => x.Object.TocMap).FirstOrDefault(x => x.Key == input.Source.GetRelativeInputPath());
+            var matchingToc = _tocs?.SelectMany(x => x.Object.TocMap)
+                .FirstOrDefault(x => _pathMatcher(x.Key, input.Source.GetRelativeInputPath()));
             if (matchingToc?.Value.Value is null) // would be matchingToc is null but FirstOrDefault is strange...
             {
                 if (_anyIfNotFound)
                 {
                     // if there is no matching ToC and _anyIfNotFound mode is on (e.g. get any ToC so we can still
                     // render a navbar), 
+                    context.LogWarning(input, "Document is not part of any ToC, using \"any-if-not-found\" mode...");
                     var fallbackMetadata = input.Concat
                     (
                         Yield
@@ -53,9 +61,16 @@ namespace Silk.NET.Statiq.TableOfContents.ProcessModules
                             new KeyValuePair<string, object>
                             (
                                 nameof(TableOfContentsModel),
-                                _tocs!.Select(x => x.Object.TocMap.Select(y => y.Value.Root).FirstOrDefault())
-                                    .FirstOrDefault(x => x is not null)
-                                ?? throw new InvalidOperationException("Any-if-not-found mode failed: ToCs are empty.")
+                                new TableOfContentsModel
+                                (
+                                    _tocs!.Select(x => x.Object.TocMap.Select(y => y.Value.Root).FirstOrDefault())
+                                        .FirstOrDefault(x => x is not null)
+                                    ?? throw new InvalidOperationException
+                                    (
+                                        "Any-if-not-found mode failed: ToCs are empty."
+                                    ),
+                                    null
+                                )
                             )
                         )
                     );
@@ -65,8 +80,11 @@ namespace Silk.NET.Statiq.TableOfContents.ProcessModules
                 }
 
                 // _anyIfNotFound mode is off, just return the original document.
+                context.LogWarning(input, "Document is not part of any ToC!");
                 return await input.YieldAsync();
             }
+            
+            context.LogDebug(input, $"Using ToC \"{matchingToc.Value.Value.Root.TocFile}\"");
 
             // clone the model to ensure it's self-contained, unique for this document, & can't be modified/messed with
             var theToc = Clone(matchingToc.Value.Value);

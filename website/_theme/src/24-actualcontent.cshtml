@@ -8,11 +8,6 @@
 }
 
 @{
-    if (tocModelRoot is null && TableOfContentsExtensions.TryFindAnyTableOfContents(Model, out tocModelRoot))
-    {
-        // do nothing, the if has done all the talking for us
-    }
-
     var isWip = "false";
     var copyrightHolder = string.Empty;
     var copyrightHolderUrl = string.Empty;
@@ -20,14 +15,14 @@
 }
 
 @if ((tocModel?.Root.Metadata?.TryGetValue("theme.silk.wip", out isWip) ?? false) && bool.Parse(isWip) &&
-     !((tocModel?.Node.Metadata?.TryGetValue("theme.silk.raw_content", out isWip) ?? false) && bool.Parse(isWip)))
+    !Model.GetBool("RawContent"))
 {
     <div class="alert alert-danger" role="alert">
         This site is a work in progress!
     </div>
 }
 
-@RenderBody()
+@((IHtmlContent) ViewData["body"])
 
 @if (tocModel?.Root.Metadata?.TryGetValue("theme.silk.footer.copyright", out copyrightHolder) ?? false)
 {
@@ -38,7 +33,7 @@
             &copy; @DateTime.Now.Year
             @if (tocModel?.Root.Metadata?.TryGetValue("theme.silk.footer.copyright.url", out copyrightHolderUrl) ?? false)
             {
-                <a href="@Raw(copyrightHolderUrl)" target="_blank">@copyrightHolder</a>
+                <a href="@copyrightHolderUrl" target="_blank">@copyrightHolder</a>
             }
             else
             {
@@ -54,6 +49,9 @@
     <div class="container-fluid">
         <p class="silk-disclaimer">
             <small>@footNote</small>
+            <br />
+            <br />
+            <small>Powered by <a href="https://statiq.dev">Statiq Framework</a></small>
         </p>
     </div>
 }

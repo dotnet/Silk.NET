@@ -1,16 +1,16 @@
 @{var isRawContent = "false"; var tocModel = Model.GetToc(); }
-@if (tocModel?.Node is null)
+@if (!(tocModel?.Node is null))
 {
-    @if (tocModel.Node.Metadata?.TryGetValue("theme.silk.raw_content", out isRawContent) ?? false)
+    @if (Model.GetBool("RawContent"))
     {
-        @Html.RenderPartial("_theme/src/24-actualcontent.cshtml");
+        @Html.Partial("24-actualcontent.cshtml");
     }
     else
     {
-        @Html.RenderPartial("_theme/src/21-sidenavcontent.cshtml");
+        @Html.Partial("21-sidenavcontent.cshtml");
     }
 }
 else
 {
-    @Html.RenderPartial("_theme/src/23-nosidenavcontent.cshtml");
+    @Html.Partial("23-nosidenavcontent.cshtml");
 }

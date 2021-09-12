@@ -1,15 +1,16 @@
-@using Raisin.Plugins.TableOfContents;
 <div class="container-fluid">
     <div class="row flex-xl-nowrap">
         <!-- Sidenav -->
-        @Html.RenderPartial("_theme/src/22-sidenav.cshtml")
+        @Html.Partial("22-sidenav.cshtml")
         @{
             var tocModel = Model.GetToc();
-            var content = Html.Partial("_theme/src/24-actualcontent.cshtml");
-            static string GetPageToC(string html)
+            var content = Html.Partial("24-actualcontent.cshtml");
+            static IHtmlContent GetPageToC(IHtmlContent html)
             {
                 var htmlDocument = new HtmlDocument();
-                htmlDocument.LoadHtml(html);
+                using var sw = new StringWriter();
+                html.WriteTo(sw, HtmlEncoder.Default);
+                htmlDocument.LoadHtml(sw.ToString());
                 var currentHeaderLevel = 1;
                 var started = false;
                 var ret = string.Empty;
@@ -26,7 +27,7 @@
                     OutdentIfNeeded(ref currentHeaderLevel, thisHeaderLevel, ref ret);
                     ret += $"<li class=\"toc-entry toc-{node.Name}\">";
                     var id = node.GetAttributeValue("id", null);
-                    if (id is not null)
+                    if (!(id is null))
                     {
                         ret += $"<a href=\"#{id}\">{node.InnerText}</a>";
                     }
@@ -44,7 +45,7 @@
                     ret += "</ul>";
                 }
         
-                return ret;
+                return new HtmlString(ret);
             }
         
             static void IndentIfNeeded(ref int currentHeaderLevel, int thisHeaderLevel, ref string ret)
@@ -66,17 +67,17 @@
         
         <!-- Content Navigation-->
         <div class="d-none d-xl-block col-xl-2 ct-toc">
-            @Raw(GetPageToC(content))
+            @GetPageToC(content)
         </div>
 
         <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 ct-content" role="main">
-            @if (tocModel?.Node is not null)
+            @if (!(tocModel?.Node is null))
             {
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         @foreach (var ancestor in tocModel.Node.Ancestors)
                         {
-                            <li class="breadcrumb-item"><a href="@Url.Content(ancestor.Href)">@ancestor.Name</a></li>
+                            <li class="breadcrumb-item"><a href="@InputUrl(ancestor.Href)">@ancestor.Name</a></li>
                         }
 
                         <li class="breadcrumb-item active" aria-current="page">@tocModel.Node.Name</li>
@@ -85,7 +86,7 @@
             }
 
             <!-- Content -->
-            @Raw(content)
+            @content
         </main>
     </div>
 </div>

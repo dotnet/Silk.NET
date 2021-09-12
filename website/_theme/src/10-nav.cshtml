@@ -3,13 +3,13 @@
     @if (Model.GetBool("HeadroomNav"))
     {
         <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-transparent navbar-silk headroom">
-        @Html.RenderPartial("_theme/src/11-navcontent.cshtml")
+        @Html.Partial("11-navcontent.cshtml")
         </nav>
     }
     else
     {
         <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg navbar-horizontal navbar-dark">
-        @Html.RenderPartial("_theme/src/11-navcontent.cshtml") 
+        @Html.Partial("11-navcontent.cshtml") 
         </nav>
     }
   </header>
