@@ -1,18 +1,8 @@
-@using Raisin.Plugins.TableOfContents;
-@using Raisin.Core;
-
 @{
-    TableOfContentsElement? tocModelRoot = null;
-    TableOfContentsElement? tocModelNode = null;
+    TableOfContentsModel? tocModel = Model.GetToc();
 }
 
-@if (Model is TableOfContentsModel tocModel)
-{
-    tocModelRoot = tocModel.Root;
-    tocModelNode = tocModel.Node;
-    Model = tocModel.BaseModel;
-}
-else
+@if (tocModel?.Node is null)
 {
     <br />
 }
@@ -29,27 +19,24 @@ else
     var footNote = string.Empty;
 }
 
-@if ((tocModelRoot?.Metadata?.TryGetValue("theme.silk.wip", out isWip) ?? false) && bool.Parse(isWip) &&
-     !((tocModelNode?.Metadata?.TryGetValue("theme.silk.raw_content", out isWip) ?? false) && bool.Parse(isWip)))
+@if ((tocModel?.Root.Metadata?.TryGetValue("theme.silk.wip", out isWip) ?? false) && bool.Parse(isWip) &&
+     !((tocModel?.Node.Metadata?.TryGetValue("theme.silk.raw_content", out isWip) ?? false) && bool.Parse(isWip)))
 {
     <div class="alert alert-danger" role="alert">
         This site is a work in progress!
     </div>
 }
 
-@if (Model is HtmlModel htmlModel)
-{
-    @Raw(htmlModel.Html)
-}
+@RenderBody()
 
-@if (tocModelRoot?.Metadata?.TryGetValue("theme.silk.footer.copyright", out copyrightHolder) ?? false)
+@if (tocModel?.Root.Metadata?.TryGetValue("theme.silk.footer.copyright", out copyrightHolder) ?? false)
 {
     <hr class="silk-last-hr">
     <div>
       <div class="col-md-6">
         <div class="copyright">
             &copy; @DateTime.Now.Year
-            @if (tocModelRoot?.Metadata?.TryGetValue("theme.silk.footer.copyright.url", out copyrightHolderUrl) ?? false)
+            @if (tocModel?.Root.Metadata?.TryGetValue("theme.silk.footer.copyright.url", out copyrightHolderUrl) ?? false)
             {
                 <a href="@Raw(copyrightHolderUrl)" target="_blank">@copyrightHolder</a>
             }
@@ -62,7 +49,7 @@ else
     </div>
 }
 
-@if (tocModelRoot?.Metadata?.TryGetValue("theme.silk.footer.note", out footNote) ?? false)
+@if (tocModel?.Root.Metadata?.TryGetValue("theme.silk.footer.note", out footNote) ?? false)
 {
     <div class="container-fluid">
         <p class="silk-disclaimer">

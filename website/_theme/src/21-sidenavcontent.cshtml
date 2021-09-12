@@ -1,23 +1,91 @@
 @using Raisin.Plugins.TableOfContents;
 <div class="container-fluid">
     <div class="row flex-xl-nowrap">
-        @await Model.IncludeAsync(this, "_theme/src/22-sidenav.cshtml")
-        @await Model.IncludeAsync(this, "_theme/src/23-contentnavigation.cshtml")
+        <!-- Sidenav -->
+        @Html.RenderPartial("_theme/src/22-sidenav.cshtml")
+        @{
+            var tocModel = Model.GetToc();
+            var content = Html.Partial("_theme/src/24-actualcontent.cshtml");
+            static string GetPageToC(string html)
+            {
+                var htmlDocument = new HtmlDocument();
+                htmlDocument.LoadHtml(html);
+                var currentHeaderLevel = 1;
+                var started = false;
+                var ret = string.Empty;
+                foreach (HtmlNode node in htmlDocument.DocumentNode?.SelectNodes("//*[self::h1 or self::h2 or self::h3 or self::h4 or self::h5 or self::h6]") ?? Enumerable.Empty<HtmlNode>())
+                {
+                    if (!started)
+                    {
+                        ret += "<ul class=\"section-nav\">";
+                        started = true;
+                    }
+        
+                    var thisHeaderLevel = ((int)node.Name[1]) - ((int)'0');
+                    IndentIfNeeded(ref currentHeaderLevel, thisHeaderLevel, ref ret);
+                    OutdentIfNeeded(ref currentHeaderLevel, thisHeaderLevel, ref ret);
+                    ret += $"<li class=\"toc-entry toc-{node.Name}\">";
+                    var id = node.GetAttributeValue("id", null);
+                    if (id is not null)
+                    {
+                        ret += $"<a href=\"#{id}\">{node.InnerText}</a>";
+                    }
+                    else
+                    {
+                        ret += $"<a>{node.InnerText}</a>";
+                    }
+        
+                    ret += "</li>";
+                }
+        
+                OutdentIfNeeded(ref currentHeaderLevel, 1, ref ret);
+                if (started)
+                {
+                    ret += "</ul>";
+                }
+        
+                return ret;
+            }
+        
+            static void IndentIfNeeded(ref int currentHeaderLevel, int thisHeaderLevel, ref string ret)
+            {
+                for (; currentHeaderLevel < thisHeaderLevel; currentHeaderLevel++)
+                {
+                    ret += "<ul>";
+                }
+            }
+        
+            static void OutdentIfNeeded(ref int currentHeaderLevel, int thisHeaderLevel, ref string ret)
+            {
+                for (; currentHeaderLevel > thisHeaderLevel; currentHeaderLevel--)
+                {
+                    ret += "</ul>";
+                }
+            }
+        }
+        
+        <!-- Content Navigation-->
+        <div class="d-none d-xl-block col-xl-2 ct-toc">
+            @Raw(GetPageToC(content))
+        </div>
+
         <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 ct-content" role="main">
-            @if (Model is TableOfContentsModel tocModel)
+            @if (tocModel?.Node is not null)
             {
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
                         @foreach (var ancestor in tocModel.Node.Ancestors)
                         {
-                            <li class="breadcrumb-item"><a href="@Raw(Model.MakeRelativeToCurrentOutput(ancestor.FullUrl))">@ancestor.Name</a></li>
+                            <li class="breadcrumb-item"><a href="@Url.Content(ancestor.Href)">@ancestor.Name</a></li>
                         }
 
                         <li class="breadcrumb-item active" aria-current="page">@tocModel.Node.Name</li>
                     </ol>
                 </nav>
             }
-            @await Model.IncludeAsync(this, "_theme/src/25-actualcontent.cshtml")
+
+            <!-- Content -->
+            @Raw(content)
         </main>
     </div>
 </div>
