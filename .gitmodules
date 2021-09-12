@@ -4,6 +4,3 @@
 [submodule "build/submodules/Vulkan-Headers"]
 	path = build/submodules/Vulkan-Headers
 	url = https://github.com/KhronosGroup/Vulkan-Headers
-[submodule "build/submodules/Raisin"]
-	path = build/submodules/Raisin
-	url = https://github.com/Perksey/Raisin

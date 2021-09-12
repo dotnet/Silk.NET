@@ -21,11 +21,11 @@ jobs:
       with:
         dotnet-version: 3.1.404
     - name: Run Raisin
-      run: dotnet run -c Release -f net5.0 -p build/submodules/Raisin/src/Raisin/Raisin.csproj -- website/raisin.csx
+      run: dotnet run -c Release -p src/Website/Silk.NET.Statiq/Silk.NET.Statiq.csproj
     - name: Push to Website Branch
       run: |
         git config --local user.email "9011267+dotnet-bot@users.noreply.github.com"
         git config --local user.name "The Silk.NET Automaton"
-        git add docs/
+        git add -f docs/
         git commit -am "Push latest built in-development GitHub Pages site"
         git push -f origin HEAD:ci/github-pages
