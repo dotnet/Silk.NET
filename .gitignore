@@ -472,3 +472,8 @@ src/**/build/
 
 # Silk.NET Build System
 build/sln
+
+# Silk.NET Website Generation Output
+docs/
+src/Website/Silk.NET.Statiq/temp
+src/Website/Silk.NET.Statiq/cache
