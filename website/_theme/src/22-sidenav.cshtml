@@ -36,6 +36,7 @@
                     <ul class="nav ct-sidenav">
                         @foreach (var child in chosenParent?.Children ?? Enumerable.Empty<TableOfContentsElement>())
                         {
+                            // ct-docs-nav
                             @if (child == tocModel.Node)
                             {
                                 <li class="active ct-sidenav-active">

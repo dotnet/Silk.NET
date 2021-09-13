@@ -30,12 +30,19 @@ namespace Silk.NET.Statiq.TableOfContents.ProcessModules
         protected override async Task<IEnumerable<IDocument>> ExecuteInputAsync
             (IDocument input, IExecutionContext context)
         {
+            // no source? keep it in the pipeline.
+            if (input.Source.IsNull)
+            {
+                return await input.YieldAsync();
+            }
+            
             // check whether this file matches against any 
             var match = _matcher?.Execute
             (
                 new InMemoryDirectoryInfo
                 (
-                    context.FileSystem.GetContainingInputPath(input.Source).ToString(), Yield(input.Source.ToString())
+                    context.FileSystem.GetContainingInputPath(input.Source).ToString(),
+                    Yield(input.Source.ToString())
                 )
             );
 

@@ -7,6 +7,7 @@ using Silk.NET.Statiq.TableOfContents.ProcessModules;
 using Statiq.App;
 using Statiq.Common;
 using Statiq.Core;
+using Statiq.Feeds;
 using Statiq.Markdown;
 using Statiq.Razor;
 using Statiq.Yaml;
@@ -52,17 +53,17 @@ public static class Program
                     .WithProcessModules
                     (
                         new ExtractFrontMatter(new ParseYaml()),
-                        new ForAllMatching()
-                            .WithFilterPatterns("**/*.md")
-                            .WithExecuteModules(new RenderMarkdown()),
+                        new ForAllMatching().WithFilterPatterns("**/*.md").WithExecuteModules(new RenderMarkdown()),
                         new AddTableOfContents
                         (
                             (tocPath, docPath) => tocPath == docPath.ChangeExtension(".html"),
                             "**/toc.json"
                         ),
-                        new RenderRazor()
+                        new RenderRazor(),
+                        new SetDestination(".html"),
+                        new ForAllMatching().WithFilterPatterns("blog/**/*").WithExecuteModules(new GenerateFeeds())
                     )
-                    .WithOutputWriteFiles(".html")
+                    .WithOutputWriteFiles()
             )
             .RunAsync();
     }

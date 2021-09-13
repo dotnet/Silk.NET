@@ -31,9 +31,23 @@
     background: white;
 }
 
-.ct-sidebar {
-    top: 0rem;
-    height: calc(100vh);
+
+@media (min-width:751px) {
+    .ct-sidebar {
+        top: 0rem;
+        height: calc(100vh);
+    }
+
+    .silk-sidebar-activator {
+        display: none;
+    }
+}
+
+
+@media (max-width:750px) {
+    .breadcrumb {
+        margin-top: 1rem;
+    }
 }
 
 .ct-links {
