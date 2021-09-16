@@ -4,7 +4,7 @@ using Silk.NET.Core.Native;
 
 namespace Silk.NET.Vulkan
 {
-    public readonly unsafe struct PfnDebugUtilsMessengerCallbackEXT
+    public readonly unsafe struct PfnDebugUtilsMessengerCallbackEXT : IDisposable
     {
         private readonly void* _handle;
 
@@ -19,6 +19,7 @@ namespace Silk.NET.Vulkan
                 DebugUtilsMessengerCallbackDataEXT*, void*, Bool32> ptr
         ) => _handle = ptr;
 
+        public void Dispose() => SilkMarshal.Free((nint) _handle);
         public static implicit operator nint(PfnDebugUtilsMessengerCallbackEXT pfn) => (nint) pfn.Handle;
 
         public PfnDebugUtilsMessengerCallbackEXT(DebugUtilsMessengerCallbackFunctionEXT func) => _handle =
