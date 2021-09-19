@@ -52,7 +52,7 @@ public static class Program
                 x => x.WithInputReadFiles("{**,!_theme/**}/*.cshtml", "**/*.md", "**/toc.json")
                     .WithProcessModules
                     (
-                        new ExtractFrontMatter(new ParseYaml()),
+                        new ExtractFrontMatter(new ParseJson()),
                         new ForAllMatching().WithFilterPatterns("**/*.md").WithExecuteModules(new RenderMarkdown()),
                         new AddTableOfContents
                         (

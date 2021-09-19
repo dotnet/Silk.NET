@@ -95,6 +95,16 @@ namespace Silk.NET.Statiq.TableOfContents.ProcessModules
             // add the model to the metadata
             var md = input.Concat(Yield(new KeyValuePair<string, object>(nameof(TableOfContentsModel), theToc)));
 
+            // ensure everything has a title property
+            if (theToc.Node!.Name is not null && input.GetString("Title") is null)
+            {
+                md = md.Concat(Yield(new KeyValuePair<string, object>("Title", theToc.Node!.Name)));
+            }
+            else if (theToc.Node!.Name is null)
+            {
+                theToc.Node!.Name = input.GetString("Title");
+            }
+
             // clone the document with the model added as metadata to it
             return await input.Clone(md).YieldAsync();
         }

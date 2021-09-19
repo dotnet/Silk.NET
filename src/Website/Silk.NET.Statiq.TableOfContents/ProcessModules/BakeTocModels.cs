@@ -47,40 +47,36 @@ namespace Silk.NET.Statiq.TableOfContents.ProcessModules
                     TableOfContentsElement Value)>();
 
             // First pass removing duplicates
-            void FirstPass(IEnumerable<LoadedRawToc> thisRawTocModels)
+            foreach (var (tocFile, val) in rawTocModels)
             {
-                foreach (var (tocFile, val) in thisRawTocModels)
+                var (srcRel, root, value) = val;
+                // note - there used to be a ! here but it didn't make sense so i removed it.
+                // if everything breaks, add it back.
+                if (wip.TryAdd(srcRel, (tocFile, srcRel, root, value)))
                 {
-                    var (srcRel, root, value) = val;
-                    // note - there used to be a ! here but it didn't make sense so i removed it.
-                    // if everything breaks, add it back.
-                    if (wip.TryAdd(srcRel, (tocFile, srcRel, root, value)))
-                    {
-                        continue;
-                    }
+                    continue;
+                }
 
-                    if (wip.TryGetValue(srcRel, out var existing))
+                if (wip.TryGetValue(srcRel, out var existing))
+                {
+                    if (existing.OriginalToCFile == tocFile)
                     {
-                        if (existing.OriginalToCFile == tocFile)
-                        {
-                            // do nothing
-                        }
-                        else
-                        {
-                            // uh-oh, duplicate key TODO logging
-                        }
+                        // do nothing
                     }
                     else
                     {
-                        // uh-oh, unknown error TODO logging
+                        // uh-oh, duplicate key TODO logging
                     }
+                }
+                else
+                {
+                    // uh-oh, unknown error TODO logging
                 }
             }
 
-            FirstPass(rawTocModels);
-
             // Second pass resolve fragmented models (that are linked together using ::path/to/inner/toc.json)
-            var includedToCs = new Dictionary<NormalizedPath, NormalizedPath>(); // key: tocFile, value: file that includes the tocFile
+            // key: tocFile, value: file that includes the tocFile
+            var includedToCs = new Dictionary<NormalizedPath, NormalizedPath>(); 
             foreach (var tocFile in wip.Select(x => x.Value.OriginalToCFile).Distinct())
             {
                 foreach (var (key, value) in wip)

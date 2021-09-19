@@ -4,6 +4,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.Json.Serialization;
+using Silk.NET.Statiq.TableOfContents.Internals;
 using Statiq.Common;
 
 namespace Silk.NET.Statiq.TableOfContents
@@ -40,6 +41,7 @@ namespace Silk.NET.Statiq.TableOfContents
         /// </summary>
         [JsonInclude]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
+        [JsonConverter(typeof(GlobArrayOrTocsJsonConverter))]
         public List<TableOfContentsElement>? Children { get; internal set; }
 
         /// <summary>

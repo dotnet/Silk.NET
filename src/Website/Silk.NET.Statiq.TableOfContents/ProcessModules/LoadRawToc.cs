@@ -15,13 +15,14 @@ namespace Silk.NET.Statiq.TableOfContents.ProcessModules
     public class LoadRawToc : ParallelModule
     {
         private readonly Matcher? _matcher;
+
         public LoadRawToc(params string[] patterns)
         {
             if (patterns.Length == 0)
             {
                 _matcher = null; // micro-optimization
             }
-            
+
             _matcher = new();
             _matcher.AddIncludePatterns(patterns.Where(x => x.FirstOrDefault() != '!'));
             _matcher.AddExcludePatterns(patterns.Where(x => x.FirstOrDefault() == '!').Select(x => x[1..]));
@@ -35,7 +36,7 @@ namespace Silk.NET.Statiq.TableOfContents.ProcessModules
             {
                 return await input.YieldAsync();
             }
-            
+
             // check whether this file matches against any 
             var match = _matcher?.Execute
             (
@@ -47,19 +48,29 @@ namespace Silk.NET.Statiq.TableOfContents.ProcessModules
             );
 
             // assume that no pattern = everything is a toc (i.e it's a dedicated pipeline)
-            var isAToC = match?.HasMatches ?? true; 
+            var isAToC = match?.HasMatches ?? true;
 
             // if it's not a ToC, keep it in the pipeline as is
             if (!isAToC)
             {
+                if (input.TryGetValue("TableOfContents", out var toc) && toc is MetadataDictionary md)
+                {
+                    context.Logger.LogDebug(input, "Found ToC in metadata");
+                    await using var metadataContent = new StringStream(md.ToJson());
+                    return Load(metadataContent).Concat(Yield(input));
+                }
+
                 context.Logger.LogDebug(input, "Not a ToC");
                 return await input.YieldAsync();
             }
 
             context.Logger.LogDebug(input, "Found ToC");
             await using var content = input.GetContentStream();
-            return GetRawToCModels(input, JsonSerializer.Deserialize<TableOfContentsElement>(content))
-                .Select(x => new ObjectDocument<LoadedRawToc>(x));
+            return Load(content);
+
+            IEnumerable<IDocument> Load(Stream theContent)
+                => GetRawToCModels(input, context, JsonSerializer.Deserialize<TableOfContentsElement>(theContent))
+                    .Select(x => new ObjectDocument<LoadedRawToc>(x));
         }
 
         private static IEnumerable<LoadedRawToc> GetRawToCModels
@@ -81,7 +92,7 @@ namespace Silk.NET.Statiq.TableOfContents.ProcessModules
                 .ToArray();
 
             // make all the Parent properties work
-            CreateParentReferences(thisRet.Select(y => y.Value.RootModel));
+            CreateParentReferences(thisRet.Select(y => y.Value.RootModel).Distinct());
 
             // we're done!
             return thisRet;
