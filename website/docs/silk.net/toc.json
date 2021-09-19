@@ -1,0 +1,17 @@
+{
+    "Name": "Miscellaneous",
+    "Url": "index.html",
+    "Children": [
+        {
+            "Name": "Frequently Asked Questions",
+            "Url": "faq.html"
+        }
+    ],
+    "Metadata": {
+        "theme.silk.nav.big_dropdown.icon.class": "icon icon-shape bg-gradient-danger rounded-circle text-white",
+        "theme.silk.nav.big_dropdown.icon": "ni ni-delivery-fast",
+        "theme.silk.nav.big_dropdown.title.class": "heading text-danger mb-md-1",
+        "theme.silk.nav.big_dropdown.title": "Tips & Tricks",
+        "theme.silk.nav.big_dropdown.description": "Miscellaneous further documentation for getting the most out of your Silk.NET applications."
+    }
+}
