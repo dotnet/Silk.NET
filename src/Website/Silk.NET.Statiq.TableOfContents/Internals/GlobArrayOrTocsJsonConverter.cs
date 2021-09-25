@@ -13,6 +13,7 @@ namespace Silk.NET.Statiq.TableOfContents.Internals
     {
         // TODO ==================================================== TODO
         // TODO ACTUALLY ADD SUPPORT FOR GLOB INCLUDES IN THE BAKERY TODO
+        // TODO  AND MAKE THIS BE USED IN TableOfContentsElement.cs  TODO
         // TODO ==================================================== TODO
         public override List<TableOfContentsElement>? Read
             (ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)

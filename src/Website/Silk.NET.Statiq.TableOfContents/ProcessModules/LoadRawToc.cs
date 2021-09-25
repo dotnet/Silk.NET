@@ -2,6 +2,7 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -56,8 +57,13 @@ namespace Silk.NET.Statiq.TableOfContents.ProcessModules
                 if (input.TryGetValue("TableOfContents", out var toc) && toc is MetadataDictionary md)
                 {
                     context.Logger.LogDebug(input, "Found ToC in metadata");
-                    await using var metadataContent = new StringStream(md.ToJson());
-                    return Load(metadataContent).Concat(Yield(input));
+                    var model = JsonSerializer.Deserialize<TableOfContentsElement>(md.ToJson());
+                    if (model is not null && model.Url is null)
+                    {
+                        model.Url = input.Source.FileName.ToString();
+                    }
+
+                    return Load(model).Concat(Yield(input));
                 }
 
                 context.Logger.LogDebug(input, "Not a ToC");
@@ -65,11 +71,10 @@ namespace Silk.NET.Statiq.TableOfContents.ProcessModules
             }
 
             context.Logger.LogDebug(input, "Found ToC");
-            await using var content = input.GetContentStream();
-            return Load(content);
+            return Load(JsonSerializer.Deserialize<TableOfContentsElement>(input.GetContentStream()));
 
-            IEnumerable<IDocument> Load(Stream theContent)
-                => GetRawToCModels(input, context, JsonSerializer.Deserialize<TableOfContentsElement>(theContent))
+            IEnumerable<IDocument> Load(TableOfContentsElement? e)
+                => GetRawToCModels(input, e)
                     .Select(x => new ObjectDocument<LoadedRawToc>(x));
         }
 

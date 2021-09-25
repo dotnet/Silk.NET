@@ -67,3 +67,24 @@
 .silk-last-hr {
     margin-bottom: 1rem;
 }
+
+.silk-content .lead, .silk-content p {
+    font-weight: inherit !important;
+}
+
+.silk-content img {
+    width: 600px;
+    max-width: 100%;
+}
+
+.dropdown-menu .dropdown-item {
+    padding: .25rem 1.5rem !important;
+}
+
+.silk-blog h1, .silk-blog h2, .silk-blog h3 {
+    text-align: center;
+}
+
+.hljs {
+    background: #0e2244 !important;
+}

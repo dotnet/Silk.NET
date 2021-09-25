@@ -60,11 +60,15 @@ public static class Program
                             "**/toc.json"
                         ),
                         new RenderRazor(),
+                        new ProcessShortcodes(),
                         new SetDestination(".html"),
-                        new ForAllMatching().WithFilterPatterns("blog/**/*").WithExecuteModules(new GenerateFeeds())
+                        new ForAllMatching(true)
+                            .WithFilterPatterns("blog/{**/*,!index.cshtml}")
+                            .WithExecuteModules(new GenerateFeeds())
                     )
                     .WithOutputWriteFiles()
             )
+            .AddShortcode<FancyImageShortCode>("FancyImage")
             .RunAsync();
     }
 }

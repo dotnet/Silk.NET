@@ -15,10 +15,19 @@ namespace Silk.NET.Statiq
     /// </summary>
     public class ForAllMatching : Module
     {
+        private readonly bool _preserve;
         private readonly List<IModule> _filterModules;
         private readonly List<IModule> _executeModules;
-        public ForAllMatching()
+        
+        /// <summary>
+        /// Instantiates the <see cref="ForAllMatching"/> process module.
+        /// </summary>
+        /// <param name="preserve">
+        /// Whether to keep the original documents in the pipeline alongside the output of the executed modules.
+        /// </param>
+        public ForAllMatching(bool preserve = false)
         {
+            _preserve = preserve;
             _filterModules = new();
             _executeModules = new();
         }
@@ -42,6 +51,11 @@ namespace Silk.NET.Statiq
         {
             var applicable = await context.ExecuteModulesAsync(_filterModules, context.Inputs);
             var notApplicable = context.Inputs.Where(x => !applicable.Contains(x));
+            if (_preserve)
+            {
+                notApplicable = notApplicable.Concat(applicable); // just go with it
+            }
+
             return notApplicable.Concat(await context.ExecuteModulesAsync(_executeModules, applicable));
         }
     }

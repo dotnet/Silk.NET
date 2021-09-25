@@ -41,7 +41,7 @@ namespace Silk.NET.Statiq.TableOfContents
         /// </summary>
         [JsonInclude]
         [JsonIgnore(Condition = JsonIgnoreCondition.WhenWritingNull)]
-        [JsonConverter(typeof(GlobArrayOrTocsJsonConverter))]
+        // TODO [JsonConverter(typeof(GlobArrayOrTocsJsonConverter))]
         public List<TableOfContentsElement>? Children { get; internal set; }
 
         /// <summary>
