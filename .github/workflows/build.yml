@@ -36,6 +36,14 @@ jobs:
       run: nuke Test --skip Clean Restore Compile
     - name: Validation Checks
       run: nuke ValidateSolution
+    - name: Upload a Build Artifact
+      uses: actions/upload-artifact@v2.2.4
+      with:
+        # Artifact name
+        name: "src"
+        # A file, directory or wildcard pattern that describes what to upload
+        path: "src/**"
+        retention-days: 1
     - name: Pack
       # TODO build native mixins such as BuildLibSilkDroid
       run: nuke Pack --configuration Release --msbuild-properties VersionSuffix=build${{ github.run_number }}.0 ContinuousIntegrationBuild=true --feature-sets Legacy-Android Legacy-iOS
