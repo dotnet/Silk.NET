@@ -14,7 +14,7 @@ namespace Silk.NET.Statiq
         public Task<IEnumerable<ShortcodeResult>> ExecuteAsync(KeyValuePair<string, string>[] args, string content, IDocument document, IExecutionContext context)
         {
             string? imageUrl = null;
-            var width = 600; // keep this in sync with silk.css .silk-content > img
+            var width = "600px"; // keep this in sync with silk.css .silk-content > img
             string? altText = null;
             string? caption = null;
             var center = true;
@@ -51,7 +51,7 @@ namespace Silk.NET.Statiq
 
                     case "width":
                     {
-                        width = int.Parse(kvp.Value);
+                        width = kvp.Value;
                         break;
                     }
 
