@@ -1,11 +1,12 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
 
+using System;
 using Silk.NET.Core.Native;
 
 namespace Silk.NET.Vulkan
 {
-    public readonly unsafe struct PfnDeviceMemoryReportCallbackEXT
+    public readonly unsafe struct PfnDeviceMemoryReportCallbackEXT : IDisposable
     {
         private readonly void* _handle;
 
@@ -15,6 +16,7 @@ namespace Silk.NET.Vulkan
         public PfnDeviceMemoryReportCallbackEXT
             (delegate* unmanaged[Cdecl]<DeviceMemoryReportCallbackDataEXT*, void*, void> ptr) => _handle = ptr;
 
+        public void Dispose() => SilkMarshal.Free((nint) _handle);
         public static implicit operator nint(PfnDeviceMemoryReportCallbackEXT pfn) => (nint) pfn.Handle;
 
         public PfnDeviceMemoryReportCallbackEXT
