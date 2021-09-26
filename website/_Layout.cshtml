@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 
+@{
+    var body = RenderBody();
+    var bodyDoc = new HtmlDocument();
+    using var sw = new StringWriter();
+    body.WriteTo(sw, HtmlEncoder.Default);
+    bodyDoc.LoadHtml(sw.ToString());
+}
+
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Your one-stop-shop for high performance .NET graphics &amp; compute. A .NET Foundation project.">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   @{
       var title = Model.GetString("Title");
+      var desc = Model.GetString("Description");
+      var previewImage = Model.GetString("PreviewImage");
       var toc = Model.GetToc();
   }
+  
   @if (title is null || (!(toc is null) && toc.Root == toc.Node))
   {
       <title>
@@ -20,7 +30,47 @@
       <title>
         @title - Silk.NET
       </title>
+      <meta property="og:title" content="@title" />
+      <meta property="og:site_name" content="Silk.NET - High-Speed &amp; Advanced .NET Graphics &amp; Compute" />
   }
+
+  @if (desc is null)
+  {
+      string? firstParagraph = null;
+      if (IsBlogPost && !string.IsNullOrWhiteSpace(firstParagraph = bodyDoc.DocumentNode.SelectNodes("//p[not(@id) and not(@class)]").FirstOrDefault()?.InnerText))
+      {
+          <meta name="description" content="@firstParagraph" />
+      }
+      else
+      {
+          <meta name="description" content="Your one-stop-shop for high performance .NET graphics &amp; compute. A .NET Foundation project." />
+      }
+  }
+  else
+  {
+      <meta name="description" content="@desc" />
+  }
+
+  if (IsBlogPost)
+  {
+      <meta property="og:type" content="article" />
+  }
+  else
+  {
+      <meta property="og:type" content="website" />
+  }
+
+  @if (previewImage is null)
+  {
+      <meta name="og:image" content="https://dotnet.github.io/Silk.NET/logo.png" />
+      <meta name="og:image:alt" content="Silk.NET Logo" />
+      <meta name="twitter:card" content="summary_large_image" />
+  }
+  else
+  {
+      <meta name="twitter:card" content="summary" />
+  }
+
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
   <link href="@InputUrl("theme/nucleo.css")" rel="stylesheet" />
   <link href="@InputUrl("theme/fontawesome.css")" rel="stylesheet" />
@@ -33,7 +83,7 @@
 
 <body>
   @Html.Partial("_theme/src/10-nav.cshtml")
-  @Html.Partial("_theme/src/20-contentroot.cshtml", new ViewDataDictionary(ViewData) { { "body", RenderBody() }})
+  @Html.Partial("_theme/src/20-contentroot.cshtml", new ViewDataDictionary(ViewData) { { "body", body }})
   <script src="@InputUrl("theme/jquery.min.js")" type="text/javascript"></script>
   <script src="@InputUrl("theme/popper.min.js")" type="text/javascript"></script>
   <script src="@InputUrl("theme/bootstrap.min.js")" type="text/javascript"></script>
