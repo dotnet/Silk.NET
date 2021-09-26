@@ -11,9 +11,7 @@ namespace Silk.NET.Statiq
     public class CaptionShortCode : IShortcode
     {
         public Task<IEnumerable<ShortcodeResult>> ExecuteAsync
-            (KeyValuePair<string, string>[] args, string content, IDocument document, IExecutionContext context)
-        {
-            return Task.FromResult(args.Select(x => new ShortcodeResult($"<p class=\"text-center\">\n{x.Value}\n</p>")));
-        }
+            (KeyValuePair<string, string>[] args, string content, IDocument document, IExecutionContext context) =>
+            Task.FromResult(args.Select(x => new ShortcodeResult($"<p class=\"text-center\">\n{x.Value}\n</p>")));
     }
 }
