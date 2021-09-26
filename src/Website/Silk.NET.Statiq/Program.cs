@@ -81,6 +81,7 @@ public static class Program
                     .WithOutputWriteFiles()
             )
             .AddShortcode<FancyImageShortCode>("FancyImage")
+            .AddShortcode<CaptionShortCode>("Caption")
             .RunAsync();
     }
 }

@@ -5,7 +5,7 @@
         @{
             var tocModel = Model.GetToc();
             var content = Html.Partial("24-actualcontent.cshtml");
-            static IHtmlContent GetPageToC(IHtmlContent html)
+            static IHtmlContent GetPageToC(ref IHtmlContent html)
             {
                 var htmlDocument = new HtmlDocument();
                 using var sw = new StringWriter();
@@ -27,15 +27,12 @@
                     OutdentIfNeeded(ref currentHeaderLevel, thisHeaderLevel, ref ret);
                     ret += $"<li class=\"toc-entry toc-{node.Name}\">";
                     var id = node.GetAttributeValue("id", null);
-                    if (!(id is null))
+                    if (id is null)
                     {
-                        ret += $"<a href=\"#{id}\">{node.InnerText}</a>";
+                        node.SetAttributeValue("id", id = new string(node.InnerText.ToLower().Select(x => "abcdefghijklmnopqrstuvwxyz0123456789".Contains(x) ? x : '-').ToArray()).Trim('-'));
                     }
-                    else
-                    {
-                        ret += $"<a>{node.InnerText}</a>";
-                    }
-        
+
+                    ret += $"<a href=\"#{id}\">{node.InnerText}</a>";
                     ret += "</li>";
                 }
         
@@ -45,6 +42,7 @@
                     ret += "</ul>";
                 }
         
+                html = new HtmlString(htmlDocument.DocumentNode.OuterHtml);
                 return new HtmlString(ret);
             }
         
@@ -67,7 +65,7 @@
         
         <!-- Content Navigation-->
         <div class="d-none d-xl-block col-xl-2 ct-toc">
-            @GetPageToC(content)
+            @GetPageToC(ref content)
         </div>
 
         <main class="col-12 col-md-9 col-xl-8 py-md-3 pl-md-5 @ContentClasses" role="main">
