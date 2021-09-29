@@ -2,18 +2,14 @@
 
     <PropertyGroup>
         <OutputType>Exe</OutputType>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net5.0</TargetFramework>
         <Nullable>enable</Nullable>
-    </PropertyGroup>
-
-    <PropertyGroup Condition="'$(RuntimeIdentifier)' == ''">
-        <RuntimeIdentifier>$(NETCoreSdkRuntimeIdentifier)</RuntimeIdentifier>
-        <SilkTfmVersion>$([System.String]::Copy('$(TargetFrameworkVersion)').TrimStart('v'))</SilkTfmVersion>
+        <LangVersion>10</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
       <PackageReference Include="HtmlAgilityPack" Version="1.11.36" />
-      <!--<PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="$(SilkTfmVersion)*" />-->
+      <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="3.11.0" />
       <PackageReference Include="Statiq.App" Version="1.0.0-beta.48" />
       <PackageReference Include="Statiq.Feeds" Version="1.0.0-beta.48" />
       <PackageReference Include="Statiq.Markdown" Version="1.0.0-beta.48" />

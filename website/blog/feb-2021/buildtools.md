@@ -19,7 +19,7 @@ So, what gives? Back when we were starting development of Silk.NET, we knew for 
 Here's a rough overview of the workflow that BuildTools undertakes:
 
 <p class="text-center">
-    <img src="../../images/blog/feb-2021/Blank-diagram-1--1.png" height="500" />
+    <img src="../../images/blog/feb-2021/Blank-diagram-1--1.png" style="height: 500px; width: initial;" />
 </p>
 
 BuildTools operates in many different ways depending on whether you're binding to a Khronos API or a C++ API. Today we'll only talk about the former. In that scenario, BuildTools is split up into 5 different stages. These are:

@@ -16,12 +16,13 @@
                             <a class="dropdown-toggle ct-toc-link" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 @chosenParent.Name
                             </a>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <div class="dropdown-menu silk-dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="@InputUrl(chosenParent.Parent.Href)"><i class="ni ni-bold-up"></i> @chosenParent.Parent.Name</a>
                                 @foreach (var sibling in chosenParent.Parent.Children)
                                 {
-                                    if (sibling != chosenParent)
+                                    @if (sibling != chosenParent)
                                     {
-                                        <a class="dropdown-item" href="@InputUrl(sibling.Href)">@sibling.Name</a>
+                                        <a class="dropdown-item" href="@InputUrl(sibling.Href)"><i class="ni ni-bold-right"></i> @sibling.Name</a>
                                     }
                                 }
                             </div>

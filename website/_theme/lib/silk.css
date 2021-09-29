@@ -23,8 +23,45 @@
     height: 96px;
 }
 
+.navbar-silk-fixed {
+    padding: 0px;
+}
+
+.navbar-brand img {
+    height: 48px;
+}
+
+.navbar-silk .navbar-brand img {
+    height: 64px;
+}
+
+.navbar-silk-fixed .navbar-brand {
+    margin: 0px;
+}
+
+.navbar-silk-fixed .silk-nav-btn {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-expand-lg>.container, .navbar-expand-lg>.container-fluid {
+        padding-right: 15px !important;
+        padding-left: 15px !important;
+    }
+}
+
 .navbar.navbar-main {
     z-index: 1069;
+    min-height: 56px;
+}
+
+.silk-dropdown-menu {
+    z-index: 2048;
+}
+
+.dropdown-item > i {
+    margin-right: 0px !important;
 }
 
 .docs {
@@ -87,4 +124,8 @@
 
 .hljs {
     background: #0e2244 !important;
+}
+
+code, pre {
+    color: #abb2bf;
 }

@@ -71,7 +71,8 @@ namespace Silk.NET.Statiq.TableOfContents.ProcessModules
             }
 
             context.Logger.LogDebug(input, "Found ToC");
-            return Load(JsonSerializer.Deserialize<TableOfContentsElement>(input.GetContentStream()));
+            using var sr = new StreamReader(input.GetContentStream());
+            return Load(JsonSerializer.Deserialize<TableOfContentsElement>(await sr.ReadToEndAsync()));
 
             IEnumerable<IDocument> Load(TableOfContentsElement? e)
                 => GetRawToCModels(input, e)
