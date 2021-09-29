@@ -12,6 +12,10 @@ jobs:
     - uses: actions/checkout@v2
       with:
         submodules: 'true'
+    - name: Setup .NET 5.0
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.401
     - name: Setup .NET 6.0
       uses: actions/setup-dotnet@v1
       with:
