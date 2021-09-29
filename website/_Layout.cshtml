@@ -18,9 +18,9 @@
       string? desc = null; 
       toc?.Node?.Metadata?.TryGetValue("Description", out desc);
       string? previewImage = null; 
-      if (toc?.Node?.Metadata?.TryGetValue("PreviewImage", out var theImg) ?? false)
+      if (toc?.Node?.Metadata?.TryGetValue("PreviewImage", out previewImage) ?? false)
       {
-          previewImage = InputUrl(theImg);
+          previewImage = InputUrl(previewImage);
       }
   }
   
