@@ -20,7 +20,7 @@
       string? previewImage = null; 
       if (toc?.Node?.Metadata?.TryGetValue("PreviewImage", out previewImage) ?? false)
       {
-          previewImage = "https://dotnet.github.io/Silk.NET/images/" + previewImage;
+          previewImage = "https://dotnet.github.io/Silk.NET/" + previewImage;
       }
   }
   
