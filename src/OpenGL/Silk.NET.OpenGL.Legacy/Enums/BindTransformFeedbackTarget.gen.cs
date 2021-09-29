@@ -7,12 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy
+namespace Silk.NET.OpenGL.Legacy;
+
+[NativeName("Name", "BindTransformFeedbackTarget")]
+public enum BindTransformFeedbackTarget : int
 {
-    [NativeName("Name", "BindTransformFeedbackTarget")]
-    public enum BindTransformFeedbackTarget : int
-    {
-        [NativeName("Name", "GL_TRANSFORM_FEEDBACK")]
-        TransformFeedback = 0x8E22,
-    }
+    [NativeName("Name", "GL_TRANSFORM_FEEDBACK")]
+    TransformFeedback = 0x8E22,
 }

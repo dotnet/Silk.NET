@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_TEX2DMS_ARRAY_SRV")]
+public unsafe partial struct Tex2DmsArraySrv
 {
-    [NativeName("Name", "D3D11_TEX2DMS_ARRAY_SRV")]
-    public unsafe partial struct Tex2DmsArraySrv
-    {
-        public Tex2DmsArraySrv
-        (
+    public Tex2DmsArraySrv
+    (
             uint? firstArraySlice = null,
             uint? arraySize = null
-        ) : this()
+    ) : this()
+    {
+        if (firstArraySlice is not null)
         {
-            if (firstArraySlice is not null)
-            {
-                FirstArraySlice = firstArraySlice.Value;
-            }
-
-            if (arraySize is not null)
-            {
-                ArraySize = arraySize.Value;
-            }
+            FirstArraySlice = firstArraySlice.Value;
         }
 
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "FirstArraySlice")]
-        public uint FirstArraySlice;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "ArraySize")]
-        public uint ArraySize;
+        if (arraySize is not null)
+        {
+            ArraySize = arraySize.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "FirstArraySlice")]
+    public uint FirstArraySlice;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "ArraySize")]
+    public uint ArraySize;
 }

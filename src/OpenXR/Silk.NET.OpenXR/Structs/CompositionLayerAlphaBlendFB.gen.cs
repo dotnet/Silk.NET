@@ -14,81 +14,80 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrCompositionLayerAlphaBlendFB")]
+public unsafe partial struct CompositionLayerAlphaBlendFB
 {
-    [NativeName("Name", "XrCompositionLayerAlphaBlendFB")]
-    public unsafe partial struct CompositionLayerAlphaBlendFB
-    {
-        public CompositionLayerAlphaBlendFB
-        (
+    public CompositionLayerAlphaBlendFB
+    (
             StructureType? type = StructureType.TypeCompositionLayerAlphaBlendFB,
             void* next = null,
             BlendFactorFB? srcFactorColor = null,
             BlendFactorFB? dstFactorColor = null,
             BlendFactorFB? srcFactorAlpha = null,
             BlendFactorFB? dstFactorAlpha = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (srcFactorColor is not null)
-            {
-                SrcFactorColor = srcFactorColor.Value;
-            }
-
-            if (dstFactorColor is not null)
-            {
-                DstFactorColor = dstFactorColor.Value;
-            }
-
-            if (srcFactorAlpha is not null)
-            {
-                SrcFactorAlpha = srcFactorAlpha.Value;
-            }
-
-            if (dstFactorAlpha is not null)
-            {
-                DstFactorAlpha = dstFactorAlpha.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "XrBlendFactorFB")]
-        [NativeName("Type.Name", "XrBlendFactorFB")]
-        [NativeName("Name", "srcFactorColor")]
-        public BlendFactorFB SrcFactorColor;
-/// <summary></summary>
-        [NativeName("Type", "XrBlendFactorFB")]
-        [NativeName("Type.Name", "XrBlendFactorFB")]
-        [NativeName("Name", "dstFactorColor")]
-        public BlendFactorFB DstFactorColor;
-/// <summary></summary>
-        [NativeName("Type", "XrBlendFactorFB")]
-        [NativeName("Type.Name", "XrBlendFactorFB")]
-        [NativeName("Name", "srcFactorAlpha")]
-        public BlendFactorFB SrcFactorAlpha;
-/// <summary></summary>
-        [NativeName("Type", "XrBlendFactorFB")]
-        [NativeName("Type.Name", "XrBlendFactorFB")]
-        [NativeName("Name", "dstFactorAlpha")]
-        public BlendFactorFB DstFactorAlpha;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (srcFactorColor is not null)
+        {
+            SrcFactorColor = srcFactorColor.Value;
+        }
+
+        if (dstFactorColor is not null)
+        {
+            DstFactorColor = dstFactorColor.Value;
+        }
+
+        if (srcFactorAlpha is not null)
+        {
+            SrcFactorAlpha = srcFactorAlpha.Value;
+        }
+
+        if (dstFactorAlpha is not null)
+        {
+            DstFactorAlpha = dstFactorAlpha.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "XrBlendFactorFB")]
+    [NativeName("Type.Name", "XrBlendFactorFB")]
+    [NativeName("Name", "srcFactorColor")]
+    public BlendFactorFB SrcFactorColor;
+/// <summary></summary>
+    [NativeName("Type", "XrBlendFactorFB")]
+    [NativeName("Type.Name", "XrBlendFactorFB")]
+    [NativeName("Name", "dstFactorColor")]
+    public BlendFactorFB DstFactorColor;
+/// <summary></summary>
+    [NativeName("Type", "XrBlendFactorFB")]
+    [NativeName("Type.Name", "XrBlendFactorFB")]
+    [NativeName("Name", "srcFactorAlpha")]
+    public BlendFactorFB SrcFactorAlpha;
+/// <summary></summary>
+    [NativeName("Type", "XrBlendFactorFB")]
+    [NativeName("Type.Name", "XrBlendFactorFB")]
+    [NativeName("Name", "dstFactorAlpha")]
+    public BlendFactorFB DstFactorAlpha;
 }

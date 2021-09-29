@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_ENCRYPTION_GUID_COUNT_OUTPUT")]
+public unsafe partial struct AuthenticatedQueryAccessibilityEncryptionGuidCountOutput
 {
-    [NativeName("Name", "D3D11_AUTHENTICATED_QUERY_ACCESSIBILITY_ENCRYPTION_GUID_COUNT_OUTPUT")]
-    public unsafe partial struct AuthenticatedQueryAccessibilityEncryptionGuidCountOutput
-    {
-        public AuthenticatedQueryAccessibilityEncryptionGuidCountOutput
-        (
+    public AuthenticatedQueryAccessibilityEncryptionGuidCountOutput
+    (
             AuthenticatedQueryOutput? output = null,
             uint? encryptionGuidCount = null
-        ) : this()
+    ) : this()
+    {
+        if (output is not null)
         {
-            if (output is not null)
-            {
-                Output = output.Value;
-            }
-
-            if (encryptionGuidCount is not null)
-            {
-                EncryptionGuidCount = encryptionGuidCount.Value;
-            }
+            Output = output.Value;
         }
 
-
-        [NativeName("Type", "D3D11_AUTHENTICATED_QUERY_OUTPUT")]
-        [NativeName("Type.Name", "D3D11_AUTHENTICATED_QUERY_OUTPUT")]
-        [NativeName("Name", "Output")]
-        public AuthenticatedQueryOutput Output;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "EncryptionGuidCount")]
-        public uint EncryptionGuidCount;
+        if (encryptionGuidCount is not null)
+        {
+            EncryptionGuidCount = encryptionGuidCount.Value;
+        }
     }
+
+
+    [NativeName("Type", "D3D11_AUTHENTICATED_QUERY_OUTPUT")]
+    [NativeName("Type.Name", "D3D11_AUTHENTICATED_QUERY_OUTPUT")]
+    [NativeName("Name", "Output")]
+    public AuthenticatedQueryOutput Output;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "EncryptionGuidCount")]
+    public uint EncryptionGuidCount;
 }

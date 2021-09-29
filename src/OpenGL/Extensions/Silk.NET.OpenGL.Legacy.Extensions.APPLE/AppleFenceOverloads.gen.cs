@@ -12,22 +12,21 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE
+namespace Silk.NET.OpenGL.Legacy.Extensions.APPLE;
+
+public static class AppleFenceOverloads
 {
-    public static class AppleFenceOverloads
+    public static unsafe void DeleteFences(this AppleFence thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fences)
     {
-        public static unsafe void DeleteFences(this AppleFence thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<uint> fences)
-        {
-            // SpanOverloader
-            thisApi.DeleteFences(n, in fences.GetPinnableReference());
-        }
-
-        public static unsafe void GenFences(this AppleFence thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> fences)
-        {
-            // SpanOverloader
-            thisApi.GenFences(n, out fences.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        thisApi.DeleteFences(n, in fences.GetPinnableReference());
     }
+
+    public static unsafe void GenFences(this AppleFence thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<uint> fences)
+    {
+        // SpanOverloader
+        thisApi.GenFences(n, out fences.GetPinnableReference());
+    }
+
 }
 

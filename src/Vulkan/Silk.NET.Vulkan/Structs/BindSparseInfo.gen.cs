@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkBindSparseInfo")]
+public unsafe partial struct BindSparseInfo
 {
-    [NativeName("Name", "VkBindSparseInfo")]
-    public unsafe partial struct BindSparseInfo
-    {
-        public BindSparseInfo
-        (
+    public BindSparseInfo
+    (
             StructureType? sType = StructureType.BindSparseInfo,
             void* pNext = null,
             uint? waitSemaphoreCount = null,
@@ -33,128 +33,127 @@ namespace Silk.NET.Vulkan
             SparseImageMemoryBindInfo* pImageBinds = null,
             uint? signalSemaphoreCount = null,
             Semaphore* pSignalSemaphores = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (waitSemaphoreCount is not null)
-            {
-                WaitSemaphoreCount = waitSemaphoreCount.Value;
-            }
-
-            if (pWaitSemaphores is not null)
-            {
-                PWaitSemaphores = pWaitSemaphores;
-            }
-
-            if (bufferBindCount is not null)
-            {
-                BufferBindCount = bufferBindCount.Value;
-            }
-
-            if (pBufferBinds is not null)
-            {
-                PBufferBinds = pBufferBinds;
-            }
-
-            if (imageOpaqueBindCount is not null)
-            {
-                ImageOpaqueBindCount = imageOpaqueBindCount.Value;
-            }
-
-            if (pImageOpaqueBinds is not null)
-            {
-                PImageOpaqueBinds = pImageOpaqueBinds;
-            }
-
-            if (imageBindCount is not null)
-            {
-                ImageBindCount = imageBindCount.Value;
-            }
-
-            if (pImageBinds is not null)
-            {
-                PImageBinds = pImageBinds;
-            }
-
-            if (signalSemaphoreCount is not null)
-            {
-                SignalSemaphoreCount = signalSemaphoreCount.Value;
-            }
-
-            if (pSignalSemaphores is not null)
-            {
-                PSignalSemaphores = pSignalSemaphores;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "waitSemaphoreCount")]
-        public uint WaitSemaphoreCount;
-/// <summary></summary>
-        [NativeName("Type", "VkSemaphore*")]
-        [NativeName("Type.Name", "VkSemaphore")]
-        [NativeName("Name", "pWaitSemaphores")]
-        public Semaphore* PWaitSemaphores;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "bufferBindCount")]
-        public uint BufferBindCount;
-/// <summary></summary>
-        [NativeName("Type", "VkSparseBufferMemoryBindInfo*")]
-        [NativeName("Type.Name", "VkSparseBufferMemoryBindInfo")]
-        [NativeName("Name", "pBufferBinds")]
-        public SparseBufferMemoryBindInfo* PBufferBinds;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "imageOpaqueBindCount")]
-        public uint ImageOpaqueBindCount;
-/// <summary></summary>
-        [NativeName("Type", "VkSparseImageOpaqueMemoryBindInfo*")]
-        [NativeName("Type.Name", "VkSparseImageOpaqueMemoryBindInfo")]
-        [NativeName("Name", "pImageOpaqueBinds")]
-        public SparseImageOpaqueMemoryBindInfo* PImageOpaqueBinds;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "imageBindCount")]
-        public uint ImageBindCount;
-/// <summary></summary>
-        [NativeName("Type", "VkSparseImageMemoryBindInfo*")]
-        [NativeName("Type.Name", "VkSparseImageMemoryBindInfo")]
-        [NativeName("Name", "pImageBinds")]
-        public SparseImageMemoryBindInfo* PImageBinds;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "signalSemaphoreCount")]
-        public uint SignalSemaphoreCount;
-/// <summary></summary>
-        [NativeName("Type", "VkSemaphore*")]
-        [NativeName("Type.Name", "VkSemaphore")]
-        [NativeName("Name", "pSignalSemaphores")]
-        public Semaphore* PSignalSemaphores;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (waitSemaphoreCount is not null)
+        {
+            WaitSemaphoreCount = waitSemaphoreCount.Value;
+        }
+
+        if (pWaitSemaphores is not null)
+        {
+            PWaitSemaphores = pWaitSemaphores;
+        }
+
+        if (bufferBindCount is not null)
+        {
+            BufferBindCount = bufferBindCount.Value;
+        }
+
+        if (pBufferBinds is not null)
+        {
+            PBufferBinds = pBufferBinds;
+        }
+
+        if (imageOpaqueBindCount is not null)
+        {
+            ImageOpaqueBindCount = imageOpaqueBindCount.Value;
+        }
+
+        if (pImageOpaqueBinds is not null)
+        {
+            PImageOpaqueBinds = pImageOpaqueBinds;
+        }
+
+        if (imageBindCount is not null)
+        {
+            ImageBindCount = imageBindCount.Value;
+        }
+
+        if (pImageBinds is not null)
+        {
+            PImageBinds = pImageBinds;
+        }
+
+        if (signalSemaphoreCount is not null)
+        {
+            SignalSemaphoreCount = signalSemaphoreCount.Value;
+        }
+
+        if (pSignalSemaphores is not null)
+        {
+            PSignalSemaphores = pSignalSemaphores;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "waitSemaphoreCount")]
+    public uint WaitSemaphoreCount;
+/// <summary></summary>
+    [NativeName("Type", "VkSemaphore*")]
+    [NativeName("Type.Name", "VkSemaphore")]
+    [NativeName("Name", "pWaitSemaphores")]
+    public Semaphore* PWaitSemaphores;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "bufferBindCount")]
+    public uint BufferBindCount;
+/// <summary></summary>
+    [NativeName("Type", "VkSparseBufferMemoryBindInfo*")]
+    [NativeName("Type.Name", "VkSparseBufferMemoryBindInfo")]
+    [NativeName("Name", "pBufferBinds")]
+    public SparseBufferMemoryBindInfo* PBufferBinds;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "imageOpaqueBindCount")]
+    public uint ImageOpaqueBindCount;
+/// <summary></summary>
+    [NativeName("Type", "VkSparseImageOpaqueMemoryBindInfo*")]
+    [NativeName("Type.Name", "VkSparseImageOpaqueMemoryBindInfo")]
+    [NativeName("Name", "pImageOpaqueBinds")]
+    public SparseImageOpaqueMemoryBindInfo* PImageOpaqueBinds;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "imageBindCount")]
+    public uint ImageBindCount;
+/// <summary></summary>
+    [NativeName("Type", "VkSparseImageMemoryBindInfo*")]
+    [NativeName("Type.Name", "VkSparseImageMemoryBindInfo")]
+    [NativeName("Name", "pImageBinds")]
+    public SparseImageMemoryBindInfo* PImageBinds;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "signalSemaphoreCount")]
+    public uint SignalSemaphoreCount;
+/// <summary></summary>
+    [NativeName("Type", "VkSemaphore*")]
+    [NativeName("Type.Name", "VkSemaphore")]
+    [NativeName("Name", "pSignalSemaphores")]
+    public Semaphore* PSignalSemaphores;
 }

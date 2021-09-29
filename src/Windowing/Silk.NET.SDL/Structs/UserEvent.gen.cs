@@ -14,81 +14,80 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL
+namespace Silk.NET.SDL;
+
+[NativeName("Name", "SDL_UserEvent")]
+public unsafe partial struct UserEvent
 {
-    [NativeName("Name", "SDL_UserEvent")]
-    public unsafe partial struct UserEvent
-    {
-        public UserEvent
-        (
+    public UserEvent
+    (
             uint? type = null,
             uint? timestamp = null,
             uint? windowID = null,
             int? code = null,
             void* data1 = null,
             void* data2 = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (timestamp is not null)
-            {
-                Timestamp = timestamp.Value;
-            }
-
-            if (windowID is not null)
-            {
-                WindowID = windowID.Value;
-            }
-
-            if (code is not null)
-            {
-                Code = code.Value;
-            }
-
-            if (data1 is not null)
-            {
-                Data1 = data1;
-            }
-
-            if (data2 is not null)
-            {
-                Data2 = data2;
-            }
+            Type = type.Value;
         }
 
+        if (timestamp is not null)
+        {
+            Timestamp = timestamp.Value;
+        }
 
-        [NativeName("Type", "Uint32")]
-        [NativeName("Type.Name", "Uint32")]
-        [NativeName("Name", "type")]
-        public uint Type;
+        if (windowID is not null)
+        {
+            WindowID = windowID.Value;
+        }
 
-        [NativeName("Type", "Uint32")]
-        [NativeName("Type.Name", "Uint32")]
-        [NativeName("Name", "timestamp")]
-        public uint Timestamp;
+        if (code is not null)
+        {
+            Code = code.Value;
+        }
 
-        [NativeName("Type", "Uint32")]
-        [NativeName("Type.Name", "Uint32")]
-        [NativeName("Name", "windowID")]
-        public uint WindowID;
+        if (data1 is not null)
+        {
+            Data1 = data1;
+        }
 
-        [NativeName("Type", "Sint32")]
-        [NativeName("Type.Name", "Sint32")]
-        [NativeName("Name", "code")]
-        public int Code;
-
-        [NativeName("Type", "void *")]
-        [NativeName("Type.Name", "void *")]
-        [NativeName("Name", "data1")]
-        public void* Data1;
-
-        [NativeName("Type", "void *")]
-        [NativeName("Type.Name", "void *")]
-        [NativeName("Name", "data2")]
-        public void* Data2;
+        if (data2 is not null)
+        {
+            Data2 = data2;
+        }
     }
+
+
+    [NativeName("Type", "Uint32")]
+    [NativeName("Type.Name", "Uint32")]
+    [NativeName("Name", "type")]
+    public uint Type;
+
+    [NativeName("Type", "Uint32")]
+    [NativeName("Type.Name", "Uint32")]
+    [NativeName("Name", "timestamp")]
+    public uint Timestamp;
+
+    [NativeName("Type", "Uint32")]
+    [NativeName("Type.Name", "Uint32")]
+    [NativeName("Name", "windowID")]
+    public uint WindowID;
+
+    [NativeName("Type", "Sint32")]
+    [NativeName("Type.Name", "Sint32")]
+    [NativeName("Name", "code")]
+    public int Code;
+
+    [NativeName("Type", "void *")]
+    [NativeName("Type.Name", "void *")]
+    [NativeName("Name", "data1")]
+    public void* Data1;
+
+    [NativeName("Type", "void *")]
+    [NativeName("Type.Name", "void *")]
+    [NativeName("Name", "data2")]
+    public void* Data2;
 }

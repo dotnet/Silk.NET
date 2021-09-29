@@ -14,25 +14,24 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NV
+namespace Silk.NET.OpenGL.Legacy.Extensions.NV;
+
+[Extension("NV_vertex_array_range")]
+public unsafe partial class NVVertexArrayRange : NativeExtension<GL>
 {
-    [Extension("NV_vertex_array_range")]
-    public unsafe partial class NVVertexArrayRange : NativeExtension<GL>
+    public const string ExtensionName = "NV_vertex_array_range";
+    [NativeApi(EntryPoint = "glFlushVertexArrayRangeNV")]
+    public partial void FlushVertexArrayRange();
+
+    [NativeApi(EntryPoint = "glVertexArrayRangeNV")]
+    public unsafe partial void VertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] void* pointer);
+
+    [NativeApi(EntryPoint = "glVertexArrayRangeNV")]
+    public partial void VertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
+
+    public NVVertexArrayRange(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "NV_vertex_array_range";
-        [NativeApi(EntryPoint = "glFlushVertexArrayRangeNV")]
-        public partial void FlushVertexArrayRange();
-
-        [NativeApi(EntryPoint = "glVertexArrayRangeNV")]
-        public unsafe partial void VertexArrayRange([Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] void* pointer);
-
-        [NativeApi(EntryPoint = "glVertexArrayRangeNV")]
-        public partial void VertexArrayRange<T0>([Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] in T0 pointer) where T0 : unmanaged;
-
-        public NVVertexArrayRange(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_RAYTRACING_GEOMETRY_AABBS_DESC")]
+public unsafe partial struct RaytracingGeometryAabbsDesc
 {
-    [NativeName("Name", "D3D12_RAYTRACING_GEOMETRY_AABBS_DESC")]
-    public unsafe partial struct RaytracingGeometryAabbsDesc
-    {
-        public RaytracingGeometryAabbsDesc
-        (
+    public RaytracingGeometryAabbsDesc
+    (
             ulong? aABBCount = null,
             GpuVirtualAddressAndStride? aABBs = null
-        ) : this()
+    ) : this()
+    {
+        if (aABBCount is not null)
         {
-            if (aABBCount is not null)
-            {
-                AABBCount = aABBCount.Value;
-            }
-
-            if (aABBs is not null)
-            {
-                AABBs = aABBs.Value;
-            }
+            AABBCount = aABBCount.Value;
         }
 
-
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "AABBCount")]
-        public ulong AABBCount;
-
-        [NativeName("Type", "D3D12_GPU_VIRTUAL_ADDRESS_AND_STRIDE")]
-        [NativeName("Type.Name", "D3D12_GPU_VIRTUAL_ADDRESS_AND_STRIDE")]
-        [NativeName("Name", "AABBs")]
-        public GpuVirtualAddressAndStride AABBs;
+        if (aABBs is not null)
+        {
+            AABBs = aABBs.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "AABBCount")]
+    public ulong AABBCount;
+
+    [NativeName("Type", "D3D12_GPU_VIRTUAL_ADDRESS_AND_STRIDE")]
+    [NativeName("Type.Name", "D3D12_GPU_VIRTUAL_ADDRESS_AND_STRIDE")]
+    [NativeName("Name", "AABBs")]
+    public GpuVirtualAddressAndStride AABBs;
 }

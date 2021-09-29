@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_VIDEO_FORMAT")]
+public unsafe partial struct VideoFormat
 {
-    [NativeName("Name", "D3D12_VIDEO_FORMAT")]
-    public unsafe partial struct VideoFormat
-    {
-        public VideoFormat
-        (
+    public VideoFormat
+    (
             Silk.NET.DXGI.Format? format = null,
             Silk.NET.DXGI.ColorSpaceType? colorSpace = null
-        ) : this()
+    ) : this()
+    {
+        if (format is not null)
         {
-            if (format is not null)
-            {
-                Format = format.Value;
-            }
-
-            if (colorSpace is not null)
-            {
-                ColorSpace = colorSpace.Value;
-            }
+            Format = format.Value;
         }
 
-
-        [NativeName("Type", "DXGI_FORMAT")]
-        [NativeName("Type.Name", "DXGI_FORMAT")]
-        [NativeName("Name", "Format")]
-        public Silk.NET.DXGI.Format Format;
-
-        [NativeName("Type", "DXGI_COLOR_SPACE_TYPE")]
-        [NativeName("Type.Name", "DXGI_COLOR_SPACE_TYPE")]
-        [NativeName("Name", "ColorSpace")]
-        public Silk.NET.DXGI.ColorSpaceType ColorSpace;
+        if (colorSpace is not null)
+        {
+            ColorSpace = colorSpace.Value;
+        }
     }
+
+
+    [NativeName("Type", "DXGI_FORMAT")]
+    [NativeName("Type.Name", "DXGI_FORMAT")]
+    [NativeName("Name", "Format")]
+    public Silk.NET.DXGI.Format Format;
+
+    [NativeName("Type", "DXGI_COLOR_SPACE_TYPE")]
+    [NativeName("Type.Name", "DXGI_COLOR_SPACE_TYPE")]
+    [NativeName("Name", "ColorSpace")]
+    public Silk.NET.DXGI.ColorSpaceType ColorSpace;
 }

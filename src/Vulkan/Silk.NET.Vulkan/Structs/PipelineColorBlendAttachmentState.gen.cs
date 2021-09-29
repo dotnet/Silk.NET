@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPipelineColorBlendAttachmentState")]
+public unsafe partial struct PipelineColorBlendAttachmentState
 {
-    [NativeName("Name", "VkPipelineColorBlendAttachmentState")]
-    public unsafe partial struct PipelineColorBlendAttachmentState
-    {
-        public PipelineColorBlendAttachmentState
-        (
+    public PipelineColorBlendAttachmentState
+    (
             Bool32? blendEnable = null,
             BlendFactor? srcColorBlendFactor = null,
             BlendFactor? dstColorBlendFactor = null,
@@ -29,88 +29,87 @@ namespace Silk.NET.Vulkan
             BlendFactor? dstAlphaBlendFactor = null,
             BlendOp? alphaBlendOp = null,
             ColorComponentFlags? colorWriteMask = null
-        ) : this()
+    ) : this()
+    {
+        if (blendEnable is not null)
         {
-            if (blendEnable is not null)
-            {
-                BlendEnable = blendEnable.Value;
-            }
-
-            if (srcColorBlendFactor is not null)
-            {
-                SrcColorBlendFactor = srcColorBlendFactor.Value;
-            }
-
-            if (dstColorBlendFactor is not null)
-            {
-                DstColorBlendFactor = dstColorBlendFactor.Value;
-            }
-
-            if (colorBlendOp is not null)
-            {
-                ColorBlendOp = colorBlendOp.Value;
-            }
-
-            if (srcAlphaBlendFactor is not null)
-            {
-                SrcAlphaBlendFactor = srcAlphaBlendFactor.Value;
-            }
-
-            if (dstAlphaBlendFactor is not null)
-            {
-                DstAlphaBlendFactor = dstAlphaBlendFactor.Value;
-            }
-
-            if (alphaBlendOp is not null)
-            {
-                AlphaBlendOp = alphaBlendOp.Value;
-            }
-
-            if (colorWriteMask is not null)
-            {
-                ColorWriteMask = colorWriteMask.Value;
-            }
+            BlendEnable = blendEnable.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "blendEnable")]
-        public Bool32 BlendEnable;
-/// <summary></summary>
-        [NativeName("Type", "VkBlendFactor")]
-        [NativeName("Type.Name", "VkBlendFactor")]
-        [NativeName("Name", "srcColorBlendFactor")]
-        public BlendFactor SrcColorBlendFactor;
-/// <summary></summary>
-        [NativeName("Type", "VkBlendFactor")]
-        [NativeName("Type.Name", "VkBlendFactor")]
-        [NativeName("Name", "dstColorBlendFactor")]
-        public BlendFactor DstColorBlendFactor;
-/// <summary></summary>
-        [NativeName("Type", "VkBlendOp")]
-        [NativeName("Type.Name", "VkBlendOp")]
-        [NativeName("Name", "colorBlendOp")]
-        public BlendOp ColorBlendOp;
-/// <summary></summary>
-        [NativeName("Type", "VkBlendFactor")]
-        [NativeName("Type.Name", "VkBlendFactor")]
-        [NativeName("Name", "srcAlphaBlendFactor")]
-        public BlendFactor SrcAlphaBlendFactor;
-/// <summary></summary>
-        [NativeName("Type", "VkBlendFactor")]
-        [NativeName("Type.Name", "VkBlendFactor")]
-        [NativeName("Name", "dstAlphaBlendFactor")]
-        public BlendFactor DstAlphaBlendFactor;
-/// <summary></summary>
-        [NativeName("Type", "VkBlendOp")]
-        [NativeName("Type.Name", "VkBlendOp")]
-        [NativeName("Name", "alphaBlendOp")]
-        public BlendOp AlphaBlendOp;
-/// <summary></summary>
-        [NativeName("Type", "VkColorComponentFlags")]
-        [NativeName("Type.Name", "VkColorComponentFlags")]
-        [NativeName("Name", "colorWriteMask")]
-        public ColorComponentFlags ColorWriteMask;
+        if (srcColorBlendFactor is not null)
+        {
+            SrcColorBlendFactor = srcColorBlendFactor.Value;
+        }
+
+        if (dstColorBlendFactor is not null)
+        {
+            DstColorBlendFactor = dstColorBlendFactor.Value;
+        }
+
+        if (colorBlendOp is not null)
+        {
+            ColorBlendOp = colorBlendOp.Value;
+        }
+
+        if (srcAlphaBlendFactor is not null)
+        {
+            SrcAlphaBlendFactor = srcAlphaBlendFactor.Value;
+        }
+
+        if (dstAlphaBlendFactor is not null)
+        {
+            DstAlphaBlendFactor = dstAlphaBlendFactor.Value;
+        }
+
+        if (alphaBlendOp is not null)
+        {
+            AlphaBlendOp = alphaBlendOp.Value;
+        }
+
+        if (colorWriteMask is not null)
+        {
+            ColorWriteMask = colorWriteMask.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "blendEnable")]
+    public Bool32 BlendEnable;
+/// <summary></summary>
+    [NativeName("Type", "VkBlendFactor")]
+    [NativeName("Type.Name", "VkBlendFactor")]
+    [NativeName("Name", "srcColorBlendFactor")]
+    public BlendFactor SrcColorBlendFactor;
+/// <summary></summary>
+    [NativeName("Type", "VkBlendFactor")]
+    [NativeName("Type.Name", "VkBlendFactor")]
+    [NativeName("Name", "dstColorBlendFactor")]
+    public BlendFactor DstColorBlendFactor;
+/// <summary></summary>
+    [NativeName("Type", "VkBlendOp")]
+    [NativeName("Type.Name", "VkBlendOp")]
+    [NativeName("Name", "colorBlendOp")]
+    public BlendOp ColorBlendOp;
+/// <summary></summary>
+    [NativeName("Type", "VkBlendFactor")]
+    [NativeName("Type.Name", "VkBlendFactor")]
+    [NativeName("Name", "srcAlphaBlendFactor")]
+    public BlendFactor SrcAlphaBlendFactor;
+/// <summary></summary>
+    [NativeName("Type", "VkBlendFactor")]
+    [NativeName("Type.Name", "VkBlendFactor")]
+    [NativeName("Name", "dstAlphaBlendFactor")]
+    public BlendFactor DstAlphaBlendFactor;
+/// <summary></summary>
+    [NativeName("Type", "VkBlendOp")]
+    [NativeName("Type.Name", "VkBlendOp")]
+    [NativeName("Name", "alphaBlendOp")]
+    public BlendOp AlphaBlendOp;
+/// <summary></summary>
+    [NativeName("Type", "VkColorComponentFlags")]
+    [NativeName("Type.Name", "VkColorComponentFlags")]
+    [NativeName("Name", "colorWriteMask")]
+    public ColorComponentFlags ColorWriteMask;
 }

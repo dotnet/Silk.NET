@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_VIDEO_DECODER_DESC")]
+public unsafe partial struct VideoDecoderDesc
 {
-    [NativeName("Name", "D3D11_VIDEO_DECODER_DESC")]
-    public unsafe partial struct VideoDecoderDesc
-    {
-        public VideoDecoderDesc
-        (
+    public VideoDecoderDesc
+    (
             Guid? guid = null,
             uint? sampleWidth = null,
             uint? sampleHeight = null,
             Silk.NET.DXGI.Format? outputFormat = null
-        ) : this()
+    ) : this()
+    {
+        if (guid is not null)
         {
-            if (guid is not null)
-            {
-                Guid = guid.Value;
-            }
-
-            if (sampleWidth is not null)
-            {
-                SampleWidth = sampleWidth.Value;
-            }
-
-            if (sampleHeight is not null)
-            {
-                SampleHeight = sampleHeight.Value;
-            }
-
-            if (outputFormat is not null)
-            {
-                OutputFormat = outputFormat.Value;
-            }
+            Guid = guid.Value;
         }
 
+        if (sampleWidth is not null)
+        {
+            SampleWidth = sampleWidth.Value;
+        }
 
-        [NativeName("Type", "GUID")]
-        [NativeName("Type.Name", "GUID")]
-        [NativeName("Name", "Guid")]
-        public Guid Guid;
+        if (sampleHeight is not null)
+        {
+            SampleHeight = sampleHeight.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "SampleWidth")]
-        public uint SampleWidth;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "SampleHeight")]
-        public uint SampleHeight;
-
-        [NativeName("Type", "DXGI_FORMAT")]
-        [NativeName("Type.Name", "DXGI_FORMAT")]
-        [NativeName("Name", "OutputFormat")]
-        public Silk.NET.DXGI.Format OutputFormat;
+        if (outputFormat is not null)
+        {
+            OutputFormat = outputFormat.Value;
+        }
     }
+
+
+    [NativeName("Type", "GUID")]
+    [NativeName("Type.Name", "GUID")]
+    [NativeName("Name", "Guid")]
+    public Guid Guid;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "SampleWidth")]
+    public uint SampleWidth;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "SampleHeight")]
+    public uint SampleHeight;
+
+    [NativeName("Type", "DXGI_FORMAT")]
+    [NativeName("Type.Name", "DXGI_FORMAT")]
+    [NativeName("Name", "OutputFormat")]
+    public Silk.NET.DXGI.Format OutputFormat;
 }

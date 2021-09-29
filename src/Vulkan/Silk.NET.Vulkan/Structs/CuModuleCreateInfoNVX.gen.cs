@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkCuModuleCreateInfoNVX")]
+public unsafe partial struct CuModuleCreateInfoNVX
 {
-    [NativeName("Name", "VkCuModuleCreateInfoNVX")]
-    public unsafe partial struct CuModuleCreateInfoNVX
-    {
-        public CuModuleCreateInfoNVX
-        (
+    public CuModuleCreateInfoNVX
+    (
             StructureType? sType = StructureType.CUModuleCreateInfoNvx,
             void* pNext = null,
             nuint? dataSize = null,
             void* pData = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (dataSize is not null)
-            {
-                DataSize = dataSize.Value;
-            }
-
-            if (pData is not null)
-            {
-                PData = pData;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "size_t")]
-        [NativeName("Type.Name", "size_t")]
-        [NativeName("Name", "dataSize")]
-        public nuint DataSize;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pData")]
-        public void* PData;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (dataSize is not null)
+        {
+            DataSize = dataSize.Value;
+        }
+
+        if (pData is not null)
+        {
+            PData = pData;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "size_t")]
+    [NativeName("Type.Name", "size_t")]
+    [NativeName("Name", "dataSize")]
+    public nuint DataSize;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pData")]
+    public void* PData;
 }

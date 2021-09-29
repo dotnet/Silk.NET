@@ -7,10 +7,9 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL.Extensions.POCL
+namespace Silk.NET.OpenCL.Extensions.POCL;
+
+[NativeName("Name", "GLenum")]
+public enum POCL : int
 {
-    [NativeName("Name", "GLenum")]
-    public enum POCL : int
-    {
-    }
 }

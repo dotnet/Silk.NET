@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkSubpassSampleLocationsEXT")]
+public unsafe partial struct SubpassSampleLocationsEXT
 {
-    [NativeName("Name", "VkSubpassSampleLocationsEXT")]
-    public unsafe partial struct SubpassSampleLocationsEXT
-    {
-        public SubpassSampleLocationsEXT
-        (
+    public SubpassSampleLocationsEXT
+    (
             uint? subpassIndex = null,
             SampleLocationsInfoEXT? sampleLocationsInfo = null
-        ) : this()
+    ) : this()
+    {
+        if (subpassIndex is not null)
         {
-            if (subpassIndex is not null)
-            {
-                SubpassIndex = subpassIndex.Value;
-            }
-
-            if (sampleLocationsInfo is not null)
-            {
-                SampleLocationsInfo = sampleLocationsInfo.Value;
-            }
+            SubpassIndex = subpassIndex.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "subpassIndex")]
-        public uint SubpassIndex;
-/// <summary></summary>
-        [NativeName("Type", "VkSampleLocationsInfoEXT")]
-        [NativeName("Type.Name", "VkSampleLocationsInfoEXT")]
-        [NativeName("Name", "sampleLocationsInfo")]
-        public SampleLocationsInfoEXT SampleLocationsInfo;
+        if (sampleLocationsInfo is not null)
+        {
+            SampleLocationsInfo = sampleLocationsInfo.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "subpassIndex")]
+    public uint SubpassIndex;
+/// <summary></summary>
+    [NativeName("Type", "VkSampleLocationsInfoEXT")]
+    [NativeName("Type.Name", "VkSampleLocationsInfoEXT")]
+    [NativeName("Name", "sampleLocationsInfo")]
+    public SampleLocationsInfoEXT SampleLocationsInfo;
 }

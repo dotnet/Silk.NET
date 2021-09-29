@@ -7,15 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
-{
+namespace Silk.NET.Vulkan;
+
     [Flags()]
-    [NativeName("Name", "VkVideoEncodeH264CreateFlagsEXT")]
-    public enum VideoEncodeH264CreateFlagsEXT : int
-    {
-        [NativeName("Name", "VK_VIDEO_ENCODE_H264_CREATE_DEFAULT_EXT")]
-        VideoEncodeH264CreateDefaultExt = 0,
-        [NativeName("Name", "VK_VIDEO_ENCODE_H264_CREATE_RESERVED_0_BIT_EXT")]
-        VideoEncodeH264CreateReserved0BitExt = 1,
-    }
+[NativeName("Name", "VkVideoEncodeH264CreateFlagsEXT")]
+public enum VideoEncodeH264CreateFlagsEXT : int
+{
+    [NativeName("Name", "VK_VIDEO_ENCODE_H264_CREATE_DEFAULT_EXT")]
+    VideoEncodeH264CreateDefaultExt = 0,
+    [NativeName("Name", "VK_VIDEO_ENCODE_H264_CREATE_RESERVED_0_BIT_EXT")]
+    VideoEncodeH264CreateReserved0BitExt = 1,
 }

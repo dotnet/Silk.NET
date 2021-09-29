@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy
+namespace Silk.NET.OpenGL.Legacy;
+
+[NativeName("Name", "CombinerPortionNV")]
+public enum CombinerPortionNV : int
 {
-    [NativeName("Name", "CombinerPortionNV")]
-    public enum CombinerPortionNV : int
-    {
-        [NativeName("Name", "GL_ALPHA")]
-        Alpha = 0x1906,
-        [NativeName("Name", "GL_RGB")]
-        Rgb = 0x1907,
-    }
+    [NativeName("Name", "GL_ALPHA")]
+    Alpha = 0x1906,
+    [NativeName("Name", "GL_RGB")]
+    Rgb = 0x1907,
 }

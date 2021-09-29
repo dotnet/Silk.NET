@@ -7,12 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkQueryPoolSamplingModeINTEL")]
+public enum QueryPoolSamplingModeINTEL : int
 {
-    [NativeName("Name", "VkQueryPoolSamplingModeINTEL")]
-    public enum QueryPoolSamplingModeINTEL : int
-    {
-        [NativeName("Name", "VK_QUERY_POOL_SAMPLING_MODE_MANUAL_INTEL")]
-        QueryPoolSamplingModeManualIntel = 0,
-    }
+    [NativeName("Name", "VK_QUERY_POOL_SAMPLING_MODE_MANUAL_INTEL")]
+    QueryPoolSamplingModeManualIntel = 0,
 }

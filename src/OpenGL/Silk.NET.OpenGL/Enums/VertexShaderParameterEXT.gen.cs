@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL
+namespace Silk.NET.OpenGL;
+
+[NativeName("Name", "VertexShaderParameterEXT")]
+public enum VertexShaderParameterEXT : int
 {
-    [NativeName("Name", "VertexShaderParameterEXT")]
-    public enum VertexShaderParameterEXT : int
-    {
-        [NativeName("Name", "GL_CURRENT_VERTEX_EXT")]
-        CurrentVertexExt = 0x87E2,
-        [NativeName("Name", "GL_MVP_MATRIX_EXT")]
-        MvpMatrixExt = 0x87E3,
-    }
+    [NativeName("Name", "GL_CURRENT_VERTEX_EXT")]
+    CurrentVertexExt = 0x87E2,
+    [NativeName("Name", "GL_MVP_MATRIX_EXT")]
+    MvpMatrixExt = 0x87E3,
 }

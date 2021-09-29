@@ -14,47 +14,46 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.XAudio
+namespace Silk.NET.XAudio;
+
+[NativeName("Name", "IXAudio2EngineCallback")]
+public unsafe partial struct IXAudio2EngineCallback
 {
-    [NativeName("Name", "IXAudio2EngineCallback")]
-    public unsafe partial struct IXAudio2EngineCallback
-    {
-        public IXAudio2EngineCallback
-        (
+    public IXAudio2EngineCallback
+    (
             void** lpVtbl = null
-        ) : this()
+    ) : this()
+    {
+        if (lpVtbl is not null)
         {
-            if (lpVtbl is not null)
-            {
-                LpVtbl = lpVtbl;
-            }
+            LpVtbl = lpVtbl;
         }
-
-
-        [NativeName("Type", "")]
-        [NativeName("Type.Name", "")]
-        [NativeName("Name", "lpVtbl")]
-        public void** LpVtbl;
-        /// <summary>To be documented.</summary>
-        public readonly void OnProcessingPassStart()
-        {
-            var @this = (IXAudio2EngineCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<IXAudio2EngineCallback*, void>)LpVtbl[0])(@this);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void OnProcessingPassEnd()
-        {
-            var @this = (IXAudio2EngineCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Stdcall]<IXAudio2EngineCallback*, void>)LpVtbl[1])(@this);
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void OnCriticalError(int Error)
-        {
-            var @this = (IXAudio2EngineCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<IXAudio2EngineCallback*, int, void>)LpVtbl[2])(@this, Error);
-        }
-
     }
+
+
+    [NativeName("Type", "")]
+    [NativeName("Type.Name", "")]
+    [NativeName("Name", "lpVtbl")]
+    public void** LpVtbl;
+    /// <summary>To be documented.</summary>
+    public readonly void OnProcessingPassStart()
+    {
+        var @this = (IXAudio2EngineCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        ((delegate* unmanaged[Stdcall]<IXAudio2EngineCallback*, void>)LpVtbl[0])(@this);
+    }
+
+    /// <summary>To be documented.</summary>
+    public readonly void OnProcessingPassEnd()
+    {
+        var @this = (IXAudio2EngineCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        ((delegate* unmanaged[Stdcall]<IXAudio2EngineCallback*, void>)LpVtbl[1])(@this);
+    }
+
+    /// <summary>To be documented.</summary>
+    public readonly void OnCriticalError(int Error)
+    {
+        var @this = (IXAudio2EngineCallback*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        ((delegate* unmanaged[Cdecl]<IXAudio2EngineCallback*, int, void>)LpVtbl[2])(@this, Error);
+    }
+
 }

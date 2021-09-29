@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9
+namespace Silk.NET.Direct3D9;
+
+[NativeName("Name", "_D3DCOLORVALUE")]
+public unsafe partial struct Colorvalue
 {
-    [NativeName("Name", "_D3DCOLORVALUE")]
-    public unsafe partial struct Colorvalue
-    {
-        public Colorvalue
-        (
+    public Colorvalue
+    (
             float? r = null,
             float? g = null,
             float? b = null,
             float? a = null
-        ) : this()
+    ) : this()
+    {
+        if (r is not null)
         {
-            if (r is not null)
-            {
-                R = r.Value;
-            }
-
-            if (g is not null)
-            {
-                G = g.Value;
-            }
-
-            if (b is not null)
-            {
-                B = b.Value;
-            }
-
-            if (a is not null)
-            {
-                A = a.Value;
-            }
+            R = r.Value;
         }
 
+        if (g is not null)
+        {
+            G = g.Value;
+        }
 
-        [NativeName("Type", "float")]
-        [NativeName("Type.Name", "float")]
-        [NativeName("Name", "r")]
-        public float R;
+        if (b is not null)
+        {
+            B = b.Value;
+        }
 
-        [NativeName("Type", "float")]
-        [NativeName("Type.Name", "float")]
-        [NativeName("Name", "g")]
-        public float G;
-
-        [NativeName("Type", "float")]
-        [NativeName("Type.Name", "float")]
-        [NativeName("Name", "b")]
-        public float B;
-
-        [NativeName("Type", "float")]
-        [NativeName("Type.Name", "float")]
-        [NativeName("Name", "a")]
-        public float A;
+        if (a is not null)
+        {
+            A = a.Value;
+        }
     }
+
+
+    [NativeName("Type", "float")]
+    [NativeName("Type.Name", "float")]
+    [NativeName("Name", "r")]
+    public float R;
+
+    [NativeName("Type", "float")]
+    [NativeName("Type.Name", "float")]
+    [NativeName("Name", "g")]
+    public float G;
+
+    [NativeName("Type", "float")]
+    [NativeName("Type.Name", "float")]
+    [NativeName("Name", "b")]
+    public float B;
+
+    [NativeName("Type", "float")]
+    [NativeName("Type.Name", "float")]
+    [NativeName("Name", "a")]
+    public float A;
 }

@@ -14,19 +14,18 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.OES
-{
-    [Extension("OES_sample_shading")]
-    public unsafe partial class OesSampleShading : NativeExtension<GL>
-    {
-        public const string ExtensionName = "OES_sample_shading";
-        [NativeApi(EntryPoint = "glMinSampleShadingOES")]
-        public partial void MinSampleShading([Flow(FlowDirection.In)] float value);
+namespace Silk.NET.OpenGLES.Extensions.OES;
 
-        public OesSampleShading(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+[Extension("OES_sample_shading")]
+public unsafe partial class OesSampleShading : NativeExtension<GL>
+{
+    public const string ExtensionName = "OES_sample_shading";
+    [NativeApi(EntryPoint = "glMinSampleShadingOES")]
+    public partial void MinSampleShading([Flow(FlowDirection.In)] float value);
+
+    public OesSampleShading(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

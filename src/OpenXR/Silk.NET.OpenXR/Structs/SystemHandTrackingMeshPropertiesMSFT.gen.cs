@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrSystemHandTrackingMeshPropertiesMSFT")]
+public unsafe partial struct SystemHandTrackingMeshPropertiesMSFT
 {
-    [NativeName("Name", "XrSystemHandTrackingMeshPropertiesMSFT")]
-    public unsafe partial struct SystemHandTrackingMeshPropertiesMSFT
-    {
-        public SystemHandTrackingMeshPropertiesMSFT
-        (
+    public SystemHandTrackingMeshPropertiesMSFT
+    (
             StructureType? type = StructureType.TypeSystemHandTrackingMeshPropertiesMsft,
             void* next = null,
             uint? supportsHandTrackingMesh = null,
             uint? maxHandMeshIndexCount = null,
             uint? maxHandMeshVertexCount = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (supportsHandTrackingMesh is not null)
-            {
-                SupportsHandTrackingMesh = supportsHandTrackingMesh.Value;
-            }
-
-            if (maxHandMeshIndexCount is not null)
-            {
-                MaxHandMeshIndexCount = maxHandMeshIndexCount.Value;
-            }
-
-            if (maxHandMeshVertexCount is not null)
-            {
-                MaxHandMeshVertexCount = maxHandMeshVertexCount.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "XrBool32")]
-        [NativeName("Type.Name", "XrBool32")]
-        [NativeName("Name", "supportsHandTrackingMesh")]
-        public uint SupportsHandTrackingMesh;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxHandMeshIndexCount")]
-        public uint MaxHandMeshIndexCount;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxHandMeshVertexCount")]
-        public uint MaxHandMeshVertexCount;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (supportsHandTrackingMesh is not null)
+        {
+            SupportsHandTrackingMesh = supportsHandTrackingMesh.Value;
+        }
+
+        if (maxHandMeshIndexCount is not null)
+        {
+            MaxHandMeshIndexCount = maxHandMeshIndexCount.Value;
+        }
+
+        if (maxHandMeshVertexCount is not null)
+        {
+            MaxHandMeshVertexCount = maxHandMeshVertexCount.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "XrBool32")]
+    [NativeName("Type.Name", "XrBool32")]
+    [NativeName("Name", "supportsHandTrackingMesh")]
+    public uint SupportsHandTrackingMesh;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "maxHandMeshIndexCount")]
+    public uint MaxHandMeshIndexCount;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "maxHandMeshVertexCount")]
+    public uint MaxHandMeshVertexCount;
 }

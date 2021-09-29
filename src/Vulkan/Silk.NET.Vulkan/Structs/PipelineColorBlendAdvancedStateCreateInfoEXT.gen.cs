@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPipelineColorBlendAdvancedStateCreateInfoEXT")]
+public unsafe partial struct PipelineColorBlendAdvancedStateCreateInfoEXT
 {
-    [NativeName("Name", "VkPipelineColorBlendAdvancedStateCreateInfoEXT")]
-    public unsafe partial struct PipelineColorBlendAdvancedStateCreateInfoEXT
-    {
-        public PipelineColorBlendAdvancedStateCreateInfoEXT
-        (
+    public PipelineColorBlendAdvancedStateCreateInfoEXT
+    (
             StructureType? sType = StructureType.PipelineColorBlendAdvancedStateCreateInfoExt,
             void* pNext = null,
             Bool32? srcPremultiplied = null,
             Bool32? dstPremultiplied = null,
             BlendOverlapEXT? blendOverlap = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (srcPremultiplied is not null)
-            {
-                SrcPremultiplied = srcPremultiplied.Value;
-            }
-
-            if (dstPremultiplied is not null)
-            {
-                DstPremultiplied = dstPremultiplied.Value;
-            }
-
-            if (blendOverlap is not null)
-            {
-                BlendOverlap = blendOverlap.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "srcPremultiplied")]
-        public Bool32 SrcPremultiplied;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "dstPremultiplied")]
-        public Bool32 DstPremultiplied;
-/// <summary></summary>
-        [NativeName("Type", "VkBlendOverlapEXT")]
-        [NativeName("Type.Name", "VkBlendOverlapEXT")]
-        [NativeName("Name", "blendOverlap")]
-        public BlendOverlapEXT BlendOverlap;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (srcPremultiplied is not null)
+        {
+            SrcPremultiplied = srcPremultiplied.Value;
+        }
+
+        if (dstPremultiplied is not null)
+        {
+            DstPremultiplied = dstPremultiplied.Value;
+        }
+
+        if (blendOverlap is not null)
+        {
+            BlendOverlap = blendOverlap.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "srcPremultiplied")]
+    public Bool32 SrcPremultiplied;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "dstPremultiplied")]
+    public Bool32 DstPremultiplied;
+/// <summary></summary>
+    [NativeName("Type", "VkBlendOverlapEXT")]
+    [NativeName("Type.Name", "VkBlendOverlapEXT")]
+    [NativeName("Name", "blendOverlap")]
+    public BlendOverlapEXT BlendOverlap;
 }

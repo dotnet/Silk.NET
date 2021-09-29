@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDevice")]
+public unsafe partial struct PhysicalDevice
 {
-    [NativeName("Name", "VkPhysicalDevice")]
-    public unsafe partial struct PhysicalDevice
-    {
-        public PhysicalDevice
-        (
+    public PhysicalDevice
+    (
             nint? handle = null
-        ) : this()
+    ) : this()
+    {
+        if (handle is not null)
         {
-            if (handle is not null)
-            {
-                Handle = handle.Value;
-            }
+            Handle = handle.Value;
         }
-
-
-        [NativeName("Type", "")]
-        [NativeName("Type.Name", "")]
-        [NativeName("Name", "")]
-        public nint Handle;
     }
+
+
+    [NativeName("Type", "")]
+    [NativeName("Type.Name", "")]
+    [NativeName("Name", "")]
+    public nint Handle;
 }

@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkDisplayModePropertiesKHR")]
+public unsafe partial struct DisplayModePropertiesKHR
 {
-    [NativeName("Name", "VkDisplayModePropertiesKHR")]
-    public unsafe partial struct DisplayModePropertiesKHR
-    {
-        public DisplayModePropertiesKHR
-        (
+    public DisplayModePropertiesKHR
+    (
             DisplayModeKHR? displayMode = null,
             DisplayModeParametersKHR? parameters = null
-        ) : this()
+    ) : this()
+    {
+        if (displayMode is not null)
         {
-            if (displayMode is not null)
-            {
-                DisplayMode = displayMode.Value;
-            }
-
-            if (parameters is not null)
-            {
-                Parameters = parameters.Value;
-            }
+            DisplayMode = displayMode.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkDisplayModeKHR")]
-        [NativeName("Type.Name", "VkDisplayModeKHR")]
-        [NativeName("Name", "displayMode")]
-        public DisplayModeKHR DisplayMode;
-/// <summary></summary>
-        [NativeName("Type", "VkDisplayModeParametersKHR")]
-        [NativeName("Type.Name", "VkDisplayModeParametersKHR")]
-        [NativeName("Name", "parameters")]
-        public DisplayModeParametersKHR Parameters;
+        if (parameters is not null)
+        {
+            Parameters = parameters.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkDisplayModeKHR")]
+    [NativeName("Type.Name", "VkDisplayModeKHR")]
+    [NativeName("Name", "displayMode")]
+    public DisplayModeKHR DisplayMode;
+/// <summary></summary>
+    [NativeName("Type", "VkDisplayModeParametersKHR")]
+    [NativeName("Type.Name", "VkDisplayModeParametersKHR")]
+    [NativeName("Name", "parameters")]
+    public DisplayModeParametersKHR Parameters;
 }

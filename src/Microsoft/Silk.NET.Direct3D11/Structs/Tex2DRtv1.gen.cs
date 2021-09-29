@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_TEX2D_RTV1")]
+public unsafe partial struct Tex2DRtv1
 {
-    [NativeName("Name", "D3D11_TEX2D_RTV1")]
-    public unsafe partial struct Tex2DRtv1
-    {
-        public Tex2DRtv1
-        (
+    public Tex2DRtv1
+    (
             uint? mipSlice = null,
             uint? planeSlice = null
-        ) : this()
+    ) : this()
+    {
+        if (mipSlice is not null)
         {
-            if (mipSlice is not null)
-            {
-                MipSlice = mipSlice.Value;
-            }
-
-            if (planeSlice is not null)
-            {
-                PlaneSlice = planeSlice.Value;
-            }
+            MipSlice = mipSlice.Value;
         }
 
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "MipSlice")]
-        public uint MipSlice;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "PlaneSlice")]
-        public uint PlaneSlice;
+        if (planeSlice is not null)
+        {
+            PlaneSlice = planeSlice.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "MipSlice")]
+    public uint MipSlice;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "PlaneSlice")]
+    public uint PlaneSlice;
 }

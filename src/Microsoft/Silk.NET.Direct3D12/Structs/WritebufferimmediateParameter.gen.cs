@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_WRITEBUFFERIMMEDIATE_PARAMETER")]
+public unsafe partial struct WritebufferimmediateParameter
 {
-    [NativeName("Name", "D3D12_WRITEBUFFERIMMEDIATE_PARAMETER")]
-    public unsafe partial struct WritebufferimmediateParameter
-    {
-        public WritebufferimmediateParameter
-        (
+    public WritebufferimmediateParameter
+    (
             ulong? dest = null,
             uint? value = null
-        ) : this()
+    ) : this()
+    {
+        if (dest is not null)
         {
-            if (dest is not null)
-            {
-                Dest = dest.Value;
-            }
-
-            if (value is not null)
-            {
-                Value = value.Value;
-            }
+            Dest = dest.Value;
         }
 
-
-        [NativeName("Type", "D3D12_GPU_VIRTUAL_ADDRESS")]
-        [NativeName("Type.Name", "D3D12_GPU_VIRTUAL_ADDRESS")]
-        [NativeName("Name", "Dest")]
-        public ulong Dest;
-
-        [NativeName("Type", "UINT32")]
-        [NativeName("Type.Name", "UINT32")]
-        [NativeName("Name", "Value")]
-        public uint Value;
+        if (value is not null)
+        {
+            Value = value.Value;
+        }
     }
+
+
+    [NativeName("Type", "D3D12_GPU_VIRTUAL_ADDRESS")]
+    [NativeName("Type.Name", "D3D12_GPU_VIRTUAL_ADDRESS")]
+    [NativeName("Name", "Dest")]
+    public ulong Dest;
+
+    [NativeName("Type", "UINT32")]
+    [NativeName("Type.Name", "UINT32")]
+    [NativeName("Name", "Value")]
+    public uint Value;
 }

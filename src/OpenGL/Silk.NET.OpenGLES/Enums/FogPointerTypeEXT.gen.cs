@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES
+namespace Silk.NET.OpenGLES;
+
+[NativeName("Name", "FogPointerTypeEXT")]
+public enum FogPointerTypeEXT : int
 {
-    [NativeName("Name", "FogPointerTypeEXT")]
-    public enum FogPointerTypeEXT : int
-    {
-        [NativeName("Name", "GL_FLOAT")]
-        Float = 0x1406,
-        [NativeName("Name", "GL_DOUBLE")]
-        Double = 0x140A,
-    }
+    [NativeName("Name", "GL_FLOAT")]
+    Float = 0x1406,
+    [NativeName("Name", "GL_DOUBLE")]
+    Double = 0x140A,
 }

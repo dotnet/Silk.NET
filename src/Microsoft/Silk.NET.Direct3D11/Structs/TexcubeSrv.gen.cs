@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_TEXCUBE_SRV")]
+public unsafe partial struct TexcubeSrv
 {
-    [NativeName("Name", "D3D11_TEXCUBE_SRV")]
-    public unsafe partial struct TexcubeSrv
-    {
-        public TexcubeSrv
-        (
+    public TexcubeSrv
+    (
             uint? mostDetailedMip = null,
             uint? mipLevels = null
-        ) : this()
+    ) : this()
+    {
+        if (mostDetailedMip is not null)
         {
-            if (mostDetailedMip is not null)
-            {
-                MostDetailedMip = mostDetailedMip.Value;
-            }
-
-            if (mipLevels is not null)
-            {
-                MipLevels = mipLevels.Value;
-            }
+            MostDetailedMip = mostDetailedMip.Value;
         }
 
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "MostDetailedMip")]
-        public uint MostDetailedMip;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "MipLevels")]
-        public uint MipLevels;
+        if (mipLevels is not null)
+        {
+            MipLevels = mipLevels.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "MostDetailedMip")]
+    public uint MostDetailedMip;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "MipLevels")]
+    public uint MipLevels;
 }

@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_TOOLS_VISUALIZATION_HEADER")]
+public unsafe partial struct BuildRaytracingAccelerationStructureToolsVisualizationHeader
 {
-    [NativeName("Name", "D3D12_BUILD_RAYTRACING_ACCELERATION_STRUCTURE_TOOLS_VISUALIZATION_HEADER")]
-    public unsafe partial struct BuildRaytracingAccelerationStructureToolsVisualizationHeader
-    {
-        public BuildRaytracingAccelerationStructureToolsVisualizationHeader
-        (
+    public BuildRaytracingAccelerationStructureToolsVisualizationHeader
+    (
             RaytracingAccelerationStructureType? type = null,
             uint? numDescs = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (numDescs is not null)
-            {
-                NumDescs = numDescs.Value;
-            }
+            Type = type.Value;
         }
 
-
-        [NativeName("Type", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE")]
-        [NativeName("Type.Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE")]
-        [NativeName("Name", "Type")]
-        public RaytracingAccelerationStructureType Type;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "NumDescs")]
-        public uint NumDescs;
+        if (numDescs is not null)
+        {
+            NumDescs = numDescs.Value;
+        }
     }
+
+
+    [NativeName("Type", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE")]
+    [NativeName("Type.Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_TYPE")]
+    [NativeName("Name", "Type")]
+    public RaytracingAccelerationStructureType Type;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "NumDescs")]
+    public uint NumDescs;
 }

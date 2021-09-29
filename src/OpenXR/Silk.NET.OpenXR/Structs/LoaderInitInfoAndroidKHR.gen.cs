@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrLoaderInitInfoAndroidKHR")]
+public unsafe partial struct LoaderInitInfoAndroidKHR
 {
-    [NativeName("Name", "XrLoaderInitInfoAndroidKHR")]
-    public unsafe partial struct LoaderInitInfoAndroidKHR
-    {
-        public LoaderInitInfoAndroidKHR
-        (
+    public LoaderInitInfoAndroidKHR
+    (
             StructureType? type = StructureType.TypeLoaderInitInfoAndroidKhr,
             void* next = null,
             void* applicationVM = null,
             void* applicationContext = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (applicationVM is not null)
-            {
-                ApplicationVM = applicationVM;
-            }
-
-            if (applicationContext is not null)
-            {
-                ApplicationContext = applicationContext;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "applicationVM")]
-        public void* ApplicationVM;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "applicationContext")]
-        public void* ApplicationContext;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (applicationVM is not null)
+        {
+            ApplicationVM = applicationVM;
+        }
+
+        if (applicationContext is not null)
+        {
+            ApplicationContext = applicationContext;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "applicationVM")]
+    public void* ApplicationVM;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "applicationContext")]
+    public void* ApplicationContext;
 }

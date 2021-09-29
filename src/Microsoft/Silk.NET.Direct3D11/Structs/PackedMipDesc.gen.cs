@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_PACKED_MIP_DESC")]
+public unsafe partial struct PackedMipDesc
 {
-    [NativeName("Name", "D3D11_PACKED_MIP_DESC")]
-    public unsafe partial struct PackedMipDesc
-    {
-        public PackedMipDesc
-        (
+    public PackedMipDesc
+    (
             byte? numStandardMips = null,
             byte? numPackedMips = null,
             uint? numTilesForPackedMips = null,
             uint? startTileIndexInOverallResource = null
-        ) : this()
+    ) : this()
+    {
+        if (numStandardMips is not null)
         {
-            if (numStandardMips is not null)
-            {
-                NumStandardMips = numStandardMips.Value;
-            }
-
-            if (numPackedMips is not null)
-            {
-                NumPackedMips = numPackedMips.Value;
-            }
-
-            if (numTilesForPackedMips is not null)
-            {
-                NumTilesForPackedMips = numTilesForPackedMips.Value;
-            }
-
-            if (startTileIndexInOverallResource is not null)
-            {
-                StartTileIndexInOverallResource = startTileIndexInOverallResource.Value;
-            }
+            NumStandardMips = numStandardMips.Value;
         }
 
+        if (numPackedMips is not null)
+        {
+            NumPackedMips = numPackedMips.Value;
+        }
 
-        [NativeName("Type", "UINT8")]
-        [NativeName("Type.Name", "UINT8")]
-        [NativeName("Name", "NumStandardMips")]
-        public byte NumStandardMips;
+        if (numTilesForPackedMips is not null)
+        {
+            NumTilesForPackedMips = numTilesForPackedMips.Value;
+        }
 
-        [NativeName("Type", "UINT8")]
-        [NativeName("Type.Name", "UINT8")]
-        [NativeName("Name", "NumPackedMips")]
-        public byte NumPackedMips;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "NumTilesForPackedMips")]
-        public uint NumTilesForPackedMips;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "StartTileIndexInOverallResource")]
-        public uint StartTileIndexInOverallResource;
+        if (startTileIndexInOverallResource is not null)
+        {
+            StartTileIndexInOverallResource = startTileIndexInOverallResource.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT8")]
+    [NativeName("Type.Name", "UINT8")]
+    [NativeName("Name", "NumStandardMips")]
+    public byte NumStandardMips;
+
+    [NativeName("Type", "UINT8")]
+    [NativeName("Type.Name", "UINT8")]
+    [NativeName("Name", "NumPackedMips")]
+    public byte NumPackedMips;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "NumTilesForPackedMips")]
+    public uint NumTilesForPackedMips;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "StartTileIndexInOverallResource")]
+    public uint StartTileIndexInOverallResource;
 }

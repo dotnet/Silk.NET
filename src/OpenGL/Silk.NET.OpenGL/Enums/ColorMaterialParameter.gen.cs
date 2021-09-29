@@ -7,10 +7,9 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL
+namespace Silk.NET.OpenGL;
+
+[NativeName("Name", "ColorMaterialParameter")]
+public enum ColorMaterialParameter : int
 {
-    [NativeName("Name", "ColorMaterialParameter")]
-    public enum ColorMaterialParameter : int
-    {
-    }
 }

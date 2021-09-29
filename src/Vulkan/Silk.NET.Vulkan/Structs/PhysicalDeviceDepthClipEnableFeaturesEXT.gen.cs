@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDeviceDepthClipEnableFeaturesEXT")]
+public unsafe partial struct PhysicalDeviceDepthClipEnableFeaturesEXT
 {
-    [NativeName("Name", "VkPhysicalDeviceDepthClipEnableFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceDepthClipEnableFeaturesEXT
-    {
-        public PhysicalDeviceDepthClipEnableFeaturesEXT
-        (
+    public PhysicalDeviceDepthClipEnableFeaturesEXT
+    (
             StructureType? sType = StructureType.PhysicalDeviceDepthClipEnableFeaturesExt,
             void* pNext = null,
             Bool32? depthClipEnable = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (depthClipEnable is not null)
-            {
-                DepthClipEnable = depthClipEnable.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "depthClipEnable")]
-        public Bool32 DepthClipEnable;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (depthClipEnable is not null)
+        {
+            DepthClipEnable = depthClipEnable.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "depthClipEnable")]
+    public Bool32 DepthClipEnable;
 }

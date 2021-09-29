@@ -14,73 +14,72 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Video
+namespace Silk.NET.Vulkan.Video;
+
+[NativeName("Name", "StdVideoDecodeH264ReferenceInfoFlags")]
+public unsafe partial struct StdVideoDecodeH264ReferenceInfoFlags
 {
-    [NativeName("Name", "StdVideoDecodeH264ReferenceInfoFlags")]
-    public unsafe partial struct StdVideoDecodeH264ReferenceInfoFlags
-    {
-        public StdVideoDecodeH264ReferenceInfoFlags
-        (
+    public StdVideoDecodeH264ReferenceInfoFlags
+    (
             uint? topFieldFlag = null,
             uint? bottomFieldFlag = null,
             uint? isLongTerm = null,
             uint? isNonExisting = null
-        ) : this()
+    ) : this()
+    {
+        if (topFieldFlag is not null)
         {
-            if (topFieldFlag is not null)
-            {
-                TopFieldFlag = topFieldFlag.Value;
-            }
-
-            if (bottomFieldFlag is not null)
-            {
-                BottomFieldFlag = bottomFieldFlag.Value;
-            }
-
-            if (isLongTerm is not null)
-            {
-                IsLongTerm = isLongTerm.Value;
-            }
-
-            if (isNonExisting is not null)
-            {
-                IsNonExisting = isNonExisting.Value;
-            }
+            TopFieldFlag = topFieldFlag.Value;
         }
 
-
-        private uint _bitfield1;
-
-        public uint TopFieldFlag
+        if (bottomFieldFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)(_bitfield1 & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
+            BottomFieldFlag = bottomFieldFlag.Value;
         }
 
-        public uint BottomFieldFlag
+        if (isLongTerm is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 1) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+            IsLongTerm = isLongTerm.Value;
         }
 
-        public uint IsLongTerm
+        if (isNonExisting is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 2) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+            IsNonExisting = isNonExisting.Value;
         }
+    }
 
-        public uint IsNonExisting
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 3) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
-        }
+
+    private uint _bitfield1;
+
+    public uint TopFieldFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)(_bitfield1 & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
+    }
+
+    public uint BottomFieldFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 1) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+    }
+
+    public uint IsLongTerm
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 2) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+    }
+
+    public uint IsNonExisting
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 3) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
     }
 }

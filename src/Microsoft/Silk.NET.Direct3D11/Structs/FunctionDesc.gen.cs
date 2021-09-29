@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "_D3D11_FUNCTION_DESC")]
+public unsafe partial struct FunctionDesc
 {
-    [NativeName("Name", "_D3D11_FUNCTION_DESC")]
-    public unsafe partial struct FunctionDesc
-    {
-        public FunctionDesc
-        (
+    public FunctionDesc
+    (
             uint? version = null,
             byte* creator = null,
             uint? flags = null,
@@ -54,338 +54,337 @@ namespace Silk.NET.Direct3D11
             int? hasReturn = null,
             int? has10Level9VertexShader = null,
             int? has10Level9PixelShader = null
-        ) : this()
+    ) : this()
+    {
+        if (version is not null)
         {
-            if (version is not null)
-            {
-                Version = version.Value;
-            }
-
-            if (creator is not null)
-            {
-                Creator = creator;
-            }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
-
-            if (constantBuffers is not null)
-            {
-                ConstantBuffers = constantBuffers.Value;
-            }
-
-            if (boundResources is not null)
-            {
-                BoundResources = boundResources.Value;
-            }
-
-            if (instructionCount is not null)
-            {
-                InstructionCount = instructionCount.Value;
-            }
-
-            if (tempRegisterCount is not null)
-            {
-                TempRegisterCount = tempRegisterCount.Value;
-            }
-
-            if (tempArrayCount is not null)
-            {
-                TempArrayCount = tempArrayCount.Value;
-            }
-
-            if (defCount is not null)
-            {
-                DefCount = defCount.Value;
-            }
-
-            if (dclCount is not null)
-            {
-                DclCount = dclCount.Value;
-            }
-
-            if (textureNormalInstructions is not null)
-            {
-                TextureNormalInstructions = textureNormalInstructions.Value;
-            }
-
-            if (textureLoadInstructions is not null)
-            {
-                TextureLoadInstructions = textureLoadInstructions.Value;
-            }
-
-            if (textureCompInstructions is not null)
-            {
-                TextureCompInstructions = textureCompInstructions.Value;
-            }
-
-            if (textureBiasInstructions is not null)
-            {
-                TextureBiasInstructions = textureBiasInstructions.Value;
-            }
-
-            if (textureGradientInstructions is not null)
-            {
-                TextureGradientInstructions = textureGradientInstructions.Value;
-            }
-
-            if (floatInstructionCount is not null)
-            {
-                FloatInstructionCount = floatInstructionCount.Value;
-            }
-
-            if (intInstructionCount is not null)
-            {
-                IntInstructionCount = intInstructionCount.Value;
-            }
-
-            if (uintInstructionCount is not null)
-            {
-                UintInstructionCount = uintInstructionCount.Value;
-            }
-
-            if (staticFlowControlCount is not null)
-            {
-                StaticFlowControlCount = staticFlowControlCount.Value;
-            }
-
-            if (dynamicFlowControlCount is not null)
-            {
-                DynamicFlowControlCount = dynamicFlowControlCount.Value;
-            }
-
-            if (macroInstructionCount is not null)
-            {
-                MacroInstructionCount = macroInstructionCount.Value;
-            }
-
-            if (arrayInstructionCount is not null)
-            {
-                ArrayInstructionCount = arrayInstructionCount.Value;
-            }
-
-            if (movInstructionCount is not null)
-            {
-                MovInstructionCount = movInstructionCount.Value;
-            }
-
-            if (movcInstructionCount is not null)
-            {
-                MovcInstructionCount = movcInstructionCount.Value;
-            }
-
-            if (conversionInstructionCount is not null)
-            {
-                ConversionInstructionCount = conversionInstructionCount.Value;
-            }
-
-            if (bitwiseInstructionCount is not null)
-            {
-                BitwiseInstructionCount = bitwiseInstructionCount.Value;
-            }
-
-            if (minFeatureLevel is not null)
-            {
-                MinFeatureLevel = minFeatureLevel.Value;
-            }
-
-            if (requiredFeatureFlags is not null)
-            {
-                RequiredFeatureFlags = requiredFeatureFlags.Value;
-            }
-
-            if (name is not null)
-            {
-                Name = name;
-            }
-
-            if (functionParameterCount is not null)
-            {
-                FunctionParameterCount = functionParameterCount.Value;
-            }
-
-            if (hasReturn is not null)
-            {
-                HasReturn = hasReturn.Value;
-            }
-
-            if (has10Level9VertexShader is not null)
-            {
-                Has10Level9VertexShader = has10Level9VertexShader.Value;
-            }
-
-            if (has10Level9PixelShader is not null)
-            {
-                Has10Level9PixelShader = has10Level9PixelShader.Value;
-            }
+            Version = version.Value;
         }
 
+        if (creator is not null)
+        {
+            Creator = creator;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Version")]
-        public uint Version;
+        if (flags is not null)
+        {
+            Flags = flags.Value;
+        }
 
-        [NativeName("Type", "LPCSTR")]
-        [NativeName("Type.Name", "LPCSTR")]
-        [NativeName("Name", "Creator")]
-        public byte* Creator;
+        if (constantBuffers is not null)
+        {
+            ConstantBuffers = constantBuffers.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Flags")]
-        public uint Flags;
+        if (boundResources is not null)
+        {
+            BoundResources = boundResources.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "ConstantBuffers")]
-        public uint ConstantBuffers;
+        if (instructionCount is not null)
+        {
+            InstructionCount = instructionCount.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "BoundResources")]
-        public uint BoundResources;
+        if (tempRegisterCount is not null)
+        {
+            TempRegisterCount = tempRegisterCount.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "InstructionCount")]
-        public uint InstructionCount;
+        if (tempArrayCount is not null)
+        {
+            TempArrayCount = tempArrayCount.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "TempRegisterCount")]
-        public uint TempRegisterCount;
+        if (defCount is not null)
+        {
+            DefCount = defCount.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "TempArrayCount")]
-        public uint TempArrayCount;
+        if (dclCount is not null)
+        {
+            DclCount = dclCount.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "DefCount")]
-        public uint DefCount;
+        if (textureNormalInstructions is not null)
+        {
+            TextureNormalInstructions = textureNormalInstructions.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "DclCount")]
-        public uint DclCount;
+        if (textureLoadInstructions is not null)
+        {
+            TextureLoadInstructions = textureLoadInstructions.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "TextureNormalInstructions")]
-        public uint TextureNormalInstructions;
+        if (textureCompInstructions is not null)
+        {
+            TextureCompInstructions = textureCompInstructions.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "TextureLoadInstructions")]
-        public uint TextureLoadInstructions;
+        if (textureBiasInstructions is not null)
+        {
+            TextureBiasInstructions = textureBiasInstructions.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "TextureCompInstructions")]
-        public uint TextureCompInstructions;
+        if (textureGradientInstructions is not null)
+        {
+            TextureGradientInstructions = textureGradientInstructions.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "TextureBiasInstructions")]
-        public uint TextureBiasInstructions;
+        if (floatInstructionCount is not null)
+        {
+            FloatInstructionCount = floatInstructionCount.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "TextureGradientInstructions")]
-        public uint TextureGradientInstructions;
+        if (intInstructionCount is not null)
+        {
+            IntInstructionCount = intInstructionCount.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "FloatInstructionCount")]
-        public uint FloatInstructionCount;
+        if (uintInstructionCount is not null)
+        {
+            UintInstructionCount = uintInstructionCount.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "IntInstructionCount")]
-        public uint IntInstructionCount;
+        if (staticFlowControlCount is not null)
+        {
+            StaticFlowControlCount = staticFlowControlCount.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "UintInstructionCount")]
-        public uint UintInstructionCount;
+        if (dynamicFlowControlCount is not null)
+        {
+            DynamicFlowControlCount = dynamicFlowControlCount.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "StaticFlowControlCount")]
-        public uint StaticFlowControlCount;
+        if (macroInstructionCount is not null)
+        {
+            MacroInstructionCount = macroInstructionCount.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "DynamicFlowControlCount")]
-        public uint DynamicFlowControlCount;
+        if (arrayInstructionCount is not null)
+        {
+            ArrayInstructionCount = arrayInstructionCount.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "MacroInstructionCount")]
-        public uint MacroInstructionCount;
+        if (movInstructionCount is not null)
+        {
+            MovInstructionCount = movInstructionCount.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "ArrayInstructionCount")]
-        public uint ArrayInstructionCount;
+        if (movcInstructionCount is not null)
+        {
+            MovcInstructionCount = movcInstructionCount.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "MovInstructionCount")]
-        public uint MovInstructionCount;
+        if (conversionInstructionCount is not null)
+        {
+            ConversionInstructionCount = conversionInstructionCount.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "MovcInstructionCount")]
-        public uint MovcInstructionCount;
+        if (bitwiseInstructionCount is not null)
+        {
+            BitwiseInstructionCount = bitwiseInstructionCount.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "ConversionInstructionCount")]
-        public uint ConversionInstructionCount;
+        if (minFeatureLevel is not null)
+        {
+            MinFeatureLevel = minFeatureLevel.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "BitwiseInstructionCount")]
-        public uint BitwiseInstructionCount;
+        if (requiredFeatureFlags is not null)
+        {
+            RequiredFeatureFlags = requiredFeatureFlags.Value;
+        }
 
-        [NativeName("Type", "D3D_FEATURE_LEVEL")]
-        [NativeName("Type.Name", "D3D_FEATURE_LEVEL")]
-        [NativeName("Name", "MinFeatureLevel")]
-        public Silk.NET.Core.Native.D3DFeatureLevel MinFeatureLevel;
+        if (name is not null)
+        {
+            Name = name;
+        }
 
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "RequiredFeatureFlags")]
-        public ulong RequiredFeatureFlags;
+        if (functionParameterCount is not null)
+        {
+            FunctionParameterCount = functionParameterCount.Value;
+        }
 
-        [NativeName("Type", "LPCSTR")]
-        [NativeName("Type.Name", "LPCSTR")]
-        [NativeName("Name", "Name")]
-        public byte* Name;
+        if (hasReturn is not null)
+        {
+            HasReturn = hasReturn.Value;
+        }
 
-        [NativeName("Type", "INT")]
-        [NativeName("Type.Name", "INT")]
-        [NativeName("Name", "FunctionParameterCount")]
-        public int FunctionParameterCount;
+        if (has10Level9VertexShader is not null)
+        {
+            Has10Level9VertexShader = has10Level9VertexShader.Value;
+        }
 
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "HasReturn")]
-        public int HasReturn;
-
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "Has10Level9VertexShader")]
-        public int Has10Level9VertexShader;
-
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "Has10Level9PixelShader")]
-        public int Has10Level9PixelShader;
+        if (has10Level9PixelShader is not null)
+        {
+            Has10Level9PixelShader = has10Level9PixelShader.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Version")]
+    public uint Version;
+
+    [NativeName("Type", "LPCSTR")]
+    [NativeName("Type.Name", "LPCSTR")]
+    [NativeName("Name", "Creator")]
+    public byte* Creator;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Flags")]
+    public uint Flags;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "ConstantBuffers")]
+    public uint ConstantBuffers;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "BoundResources")]
+    public uint BoundResources;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "InstructionCount")]
+    public uint InstructionCount;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "TempRegisterCount")]
+    public uint TempRegisterCount;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "TempArrayCount")]
+    public uint TempArrayCount;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "DefCount")]
+    public uint DefCount;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "DclCount")]
+    public uint DclCount;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "TextureNormalInstructions")]
+    public uint TextureNormalInstructions;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "TextureLoadInstructions")]
+    public uint TextureLoadInstructions;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "TextureCompInstructions")]
+    public uint TextureCompInstructions;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "TextureBiasInstructions")]
+    public uint TextureBiasInstructions;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "TextureGradientInstructions")]
+    public uint TextureGradientInstructions;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "FloatInstructionCount")]
+    public uint FloatInstructionCount;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "IntInstructionCount")]
+    public uint IntInstructionCount;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "UintInstructionCount")]
+    public uint UintInstructionCount;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "StaticFlowControlCount")]
+    public uint StaticFlowControlCount;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "DynamicFlowControlCount")]
+    public uint DynamicFlowControlCount;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "MacroInstructionCount")]
+    public uint MacroInstructionCount;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "ArrayInstructionCount")]
+    public uint ArrayInstructionCount;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "MovInstructionCount")]
+    public uint MovInstructionCount;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "MovcInstructionCount")]
+    public uint MovcInstructionCount;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "ConversionInstructionCount")]
+    public uint ConversionInstructionCount;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "BitwiseInstructionCount")]
+    public uint BitwiseInstructionCount;
+
+    [NativeName("Type", "D3D_FEATURE_LEVEL")]
+    [NativeName("Type.Name", "D3D_FEATURE_LEVEL")]
+    [NativeName("Name", "MinFeatureLevel")]
+    public Silk.NET.Core.Native.D3DFeatureLevel MinFeatureLevel;
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "RequiredFeatureFlags")]
+    public ulong RequiredFeatureFlags;
+
+    [NativeName("Type", "LPCSTR")]
+    [NativeName("Type.Name", "LPCSTR")]
+    [NativeName("Name", "Name")]
+    public byte* Name;
+
+    [NativeName("Type", "INT")]
+    [NativeName("Type.Name", "INT")]
+    [NativeName("Name", "FunctionParameterCount")]
+    public int FunctionParameterCount;
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "HasReturn")]
+    public int HasReturn;
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "Has10Level9VertexShader")]
+    public int Has10Level9VertexShader;
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "Has10Level9PixelShader")]
+    public int Has10Level9PixelShader;
 }

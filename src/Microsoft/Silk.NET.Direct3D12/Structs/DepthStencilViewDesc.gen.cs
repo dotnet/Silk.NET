@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_DEPTH_STENCIL_VIEW_DESC")]
+public unsafe partial struct DepthStencilViewDesc
 {
-    [NativeName("Name", "D3D12_DEPTH_STENCIL_VIEW_DESC")]
-    public unsafe partial struct DepthStencilViewDesc
-    {
-        public DepthStencilViewDesc
-        (
+    public DepthStencilViewDesc
+    (
             Silk.NET.DXGI.Format? format = null,
             DsvDimension? viewDimension = null,
             DsvFlags? flags = null,
@@ -31,162 +31,161 @@ namespace Silk.NET.Direct3D12
             Tex2DArrayDsv? texture2DArray = null,
             Tex2DmsDsv? texture2DMS = null,
             Tex2DmsArrayDsv? texture2DMSArray = null
-        ) : this()
+    ) : this()
+    {
+        if (format is not null)
         {
-            if (format is not null)
-            {
-                Format = format.Value;
-            }
-
-            if (viewDimension is not null)
-            {
-                ViewDimension = viewDimension.Value;
-            }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
-
-            if (anonymous is not null)
-            {
-                Anonymous = anonymous.Value;
-            }
-
-            if (texture1D is not null)
-            {
-                Texture1D = texture1D.Value;
-            }
-
-            if (texture1DArray is not null)
-            {
-                Texture1DArray = texture1DArray.Value;
-            }
-
-            if (texture2D is not null)
-            {
-                Texture2D = texture2D.Value;
-            }
-
-            if (texture2DArray is not null)
-            {
-                Texture2DArray = texture2DArray.Value;
-            }
-
-            if (texture2DMS is not null)
-            {
-                Texture2DMS = texture2DMS.Value;
-            }
-
-            if (texture2DMSArray is not null)
-            {
-                Texture2DMSArray = texture2DMSArray.Value;
-            }
+            Format = format.Value;
         }
 
+        if (viewDimension is not null)
+        {
+            ViewDimension = viewDimension.Value;
+        }
 
-        [NativeName("Type", "DXGI_FORMAT")]
-        [NativeName("Type.Name", "DXGI_FORMAT")]
-        [NativeName("Name", "Format")]
-        public Silk.NET.DXGI.Format Format;
+        if (flags is not null)
+        {
+            Flags = flags.Value;
+        }
 
-        [NativeName("Type", "D3D12_DSV_DIMENSION")]
-        [NativeName("Type.Name", "D3D12_DSV_DIMENSION")]
-        [NativeName("Name", "ViewDimension")]
-        public DsvDimension ViewDimension;
+        if (anonymous is not null)
+        {
+            Anonymous = anonymous.Value;
+        }
 
-        [NativeName("Type", "D3D12_DSV_FLAGS")]
-        [NativeName("Type.Name", "D3D12_DSV_FLAGS")]
-        [NativeName("Name", "Flags")]
-        public DsvFlags Flags;
+        if (texture1D is not null)
+        {
+            Texture1D = texture1D.Value;
+        }
 
-        [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L3333_C5")]
-        [NativeName("Name", "anonymous1")]
-        public DepthStencilViewDescUnion Anonymous;
-#if NETSTANDARD2_1
-        public ref Tex1DDsv Texture1D
+        if (texture1DArray is not null)
         {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Texture1D;
+            Texture1DArray = texture1DArray.Value;
         }
-#else
-        public Tex1DDsv Texture1D
-        {
-            get => Anonymous.Texture1D;
-            set => Anonymous.Texture1D = value;
-        }
-#endif
 
-#if NETSTANDARD2_1
-        public ref Tex1DArrayDsv Texture1DArray
+        if (texture2D is not null)
         {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Texture1DArray;
+            Texture2D = texture2D.Value;
         }
-#else
-        public Tex1DArrayDsv Texture1DArray
-        {
-            get => Anonymous.Texture1DArray;
-            set => Anonymous.Texture1DArray = value;
-        }
-#endif
 
-#if NETSTANDARD2_1
-        public ref Tex2DDsv Texture2D
+        if (texture2DArray is not null)
         {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Texture2D;
+            Texture2DArray = texture2DArray.Value;
         }
-#else
-        public Tex2DDsv Texture2D
-        {
-            get => Anonymous.Texture2D;
-            set => Anonymous.Texture2D = value;
-        }
-#endif
 
-#if NETSTANDARD2_1
-        public ref Tex2DArrayDsv Texture2DArray
+        if (texture2DMS is not null)
         {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Texture2DArray;
+            Texture2DMS = texture2DMS.Value;
         }
-#else
-        public Tex2DArrayDsv Texture2DArray
-        {
-            get => Anonymous.Texture2DArray;
-            set => Anonymous.Texture2DArray = value;
-        }
-#endif
 
-#if NETSTANDARD2_1
-        public ref Tex2DmsDsv Texture2DMS
+        if (texture2DMSArray is not null)
         {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Texture2DMS;
+            Texture2DMSArray = texture2DMSArray.Value;
         }
-#else
-        public Tex2DmsDsv Texture2DMS
-        {
-            get => Anonymous.Texture2DMS;
-            set => Anonymous.Texture2DMS = value;
-        }
-#endif
-
-#if NETSTANDARD2_1
-        public ref Tex2DmsArrayDsv Texture2DMSArray
-        {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Texture2DMSArray;
-        }
-#else
-        public Tex2DmsArrayDsv Texture2DMSArray
-        {
-            get => Anonymous.Texture2DMSArray;
-            set => Anonymous.Texture2DMSArray = value;
-        }
-#endif
-
     }
+
+
+    [NativeName("Type", "DXGI_FORMAT")]
+    [NativeName("Type.Name", "DXGI_FORMAT")]
+    [NativeName("Name", "Format")]
+    public Silk.NET.DXGI.Format Format;
+
+    [NativeName("Type", "D3D12_DSV_DIMENSION")]
+    [NativeName("Type.Name", "D3D12_DSV_DIMENSION")]
+    [NativeName("Name", "ViewDimension")]
+    public DsvDimension ViewDimension;
+
+    [NativeName("Type", "D3D12_DSV_FLAGS")]
+    [NativeName("Type.Name", "D3D12_DSV_FLAGS")]
+    [NativeName("Name", "Flags")]
+    public DsvFlags Flags;
+
+    [NativeName("Type", "")]
+    [NativeName("Type.Name", "__AnonymousRecord_d3d12_L3333_C5")]
+    [NativeName("Name", "anonymous1")]
+    public DepthStencilViewDescUnion Anonymous;
+#if NETSTANDARD2_1
+    public ref Tex1DDsv Texture1D
+    {
+        [MethodImpl((MethodImplOptions) 768)]
+        get => ref Anonymous.Texture1D;
+    }
+#else
+    public Tex1DDsv Texture1D
+    {
+        get => Anonymous.Texture1D;
+        set => Anonymous.Texture1D = value;
+    }
+#endif
+
+#if NETSTANDARD2_1
+    public ref Tex1DArrayDsv Texture1DArray
+    {
+        [MethodImpl((MethodImplOptions) 768)]
+        get => ref Anonymous.Texture1DArray;
+    }
+#else
+    public Tex1DArrayDsv Texture1DArray
+    {
+        get => Anonymous.Texture1DArray;
+        set => Anonymous.Texture1DArray = value;
+    }
+#endif
+
+#if NETSTANDARD2_1
+    public ref Tex2DDsv Texture2D
+    {
+        [MethodImpl((MethodImplOptions) 768)]
+        get => ref Anonymous.Texture2D;
+    }
+#else
+    public Tex2DDsv Texture2D
+    {
+        get => Anonymous.Texture2D;
+        set => Anonymous.Texture2D = value;
+    }
+#endif
+
+#if NETSTANDARD2_1
+    public ref Tex2DArrayDsv Texture2DArray
+    {
+        [MethodImpl((MethodImplOptions) 768)]
+        get => ref Anonymous.Texture2DArray;
+    }
+#else
+    public Tex2DArrayDsv Texture2DArray
+    {
+        get => Anonymous.Texture2DArray;
+        set => Anonymous.Texture2DArray = value;
+    }
+#endif
+
+#if NETSTANDARD2_1
+    public ref Tex2DmsDsv Texture2DMS
+    {
+        [MethodImpl((MethodImplOptions) 768)]
+        get => ref Anonymous.Texture2DMS;
+    }
+#else
+    public Tex2DmsDsv Texture2DMS
+    {
+        get => Anonymous.Texture2DMS;
+        set => Anonymous.Texture2DMS = value;
+    }
+#endif
+
+#if NETSTANDARD2_1
+    public ref Tex2DmsArrayDsv Texture2DMSArray
+    {
+        [MethodImpl((MethodImplOptions) 768)]
+        get => ref Anonymous.Texture2DMSArray;
+    }
+#else
+    public Tex2DmsArrayDsv Texture2DMSArray
+    {
+        get => Anonymous.Texture2DMSArray;
+        set => Anonymous.Texture2DMSArray = value;
+    }
+#endif
+
 }

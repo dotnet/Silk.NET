@@ -14,19 +14,18 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.KHR
-{
-    [Extension("KHR_parallel_shader_compile")]
-    public unsafe partial class KhrParallelShaderCompile : NativeExtension<GL>
-    {
-        public const string ExtensionName = "KHR_parallel_shader_compile";
-        [NativeApi(EntryPoint = "glMaxShaderCompilerThreadsKHR")]
-        public partial void MaxShaderCompilerThreads([Flow(FlowDirection.In)] uint count);
+namespace Silk.NET.OpenGL.Legacy.Extensions.KHR;
 
-        public KhrParallelShaderCompile(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+[Extension("KHR_parallel_shader_compile")]
+public unsafe partial class KhrParallelShaderCompile : NativeExtension<GL>
+{
+    public const string ExtensionName = "KHR_parallel_shader_compile";
+    [NativeApi(EntryPoint = "glMaxShaderCompilerThreadsKHR")]
+    public partial void MaxShaderCompilerThreads([Flow(FlowDirection.In)] uint count);
+
+    public KhrParallelShaderCompile(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

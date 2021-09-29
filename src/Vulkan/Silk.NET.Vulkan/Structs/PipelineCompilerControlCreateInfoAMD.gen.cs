@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPipelineCompilerControlCreateInfoAMD")]
+public unsafe partial struct PipelineCompilerControlCreateInfoAMD
 {
-    [NativeName("Name", "VkPipelineCompilerControlCreateInfoAMD")]
-    public unsafe partial struct PipelineCompilerControlCreateInfoAMD
-    {
-        public PipelineCompilerControlCreateInfoAMD
-        (
+    public PipelineCompilerControlCreateInfoAMD
+    (
             StructureType? sType = StructureType.PipelineCompilerControlCreateInfoAmd,
             void* pNext = null,
             PipelineCompilerControlFlagsAMD? compilerControlFlags = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (compilerControlFlags is not null)
-            {
-                CompilerControlFlags = compilerControlFlags.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkPipelineCompilerControlFlagsAMD")]
-        [NativeName("Type.Name", "VkPipelineCompilerControlFlagsAMD")]
-        [NativeName("Name", "compilerControlFlags")]
-        public PipelineCompilerControlFlagsAMD CompilerControlFlags;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (compilerControlFlags is not null)
+        {
+            CompilerControlFlags = compilerControlFlags.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkPipelineCompilerControlFlagsAMD")]
+    [NativeName("Type.Name", "VkPipelineCompilerControlFlagsAMD")]
+    [NativeName("Name", "compilerControlFlags")]
+    public PipelineCompilerControlFlagsAMD CompilerControlFlags;
 }

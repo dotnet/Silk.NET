@@ -12,17 +12,16 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.NV
-{
-    public static class NVFragmentShadingRateEnumsOverloads
-    {
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdSetFragmentShadingRateEnum(this NVFragmentShadingRateEnums thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] FragmentShadingRateNV shadingRate, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<FragmentShadingRateCombinerOpKHR> combinerOps)
-        {
-            // SpanOverloader
-            thisApi.CmdSetFragmentShadingRateEnum(commandBuffer, shadingRate, in combinerOps.GetPinnableReference());
-        }
+namespace Silk.NET.Vulkan.Extensions.NV;
 
+public static class NVFragmentShadingRateEnumsOverloads
+{
+    /// <summary>To be documented.</summary>
+    public static unsafe void CmdSetFragmentShadingRateEnum(this NVFragmentShadingRateEnums thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] FragmentShadingRateNV shadingRate, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<FragmentShadingRateCombinerOpKHR> combinerOps)
+    {
+        // SpanOverloader
+        thisApi.CmdSetFragmentShadingRateEnum(commandBuffer, shadingRate, in combinerOps.GetPinnableReference());
     }
+
 }
 

@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES
+namespace Silk.NET.OpenGLES;
+
+[NativeName("Name", "ArrayObjectUsageATI")]
+public enum ArrayObjectUsageATI : int
 {
-    [NativeName("Name", "ArrayObjectUsageATI")]
-    public enum ArrayObjectUsageATI : int
-    {
-        [NativeName("Name", "GL_STATIC_ATI")]
-        StaticAti = 0x8760,
-        [NativeName("Name", "GL_DYNAMIC_ATI")]
-        DynamicAti = 0x8761,
-    }
+    [NativeName("Name", "GL_STATIC_ATI")]
+    StaticAti = 0x8760,
+    [NativeName("Name", "GL_DYNAMIC_ATI")]
+    DynamicAti = 0x8761,
 }

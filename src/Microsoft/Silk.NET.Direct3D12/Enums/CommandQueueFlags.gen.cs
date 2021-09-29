@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_COMMAND_QUEUE_FLAGS")]
+public enum CommandQueueFlags : int
 {
-    [NativeName("Name", "D3D12_COMMAND_QUEUE_FLAGS")]
-    public enum CommandQueueFlags : int
-    {
-        [NativeName("Name", "D3D12_COMMAND_QUEUE_FLAG_NONE")]
-        CommandQueueFlagNone = 0x0,
-        [NativeName("Name", "D3D12_COMMAND_QUEUE_FLAG_DISABLE_GPU_TIMEOUT")]
-        CommandQueueFlagDisableGpuTimeout = 0x1,
-    }
+    [NativeName("Name", "D3D12_COMMAND_QUEUE_FLAG_NONE")]
+    CommandQueueFlagNone = 0x0,
+    [NativeName("Name", "D3D12_COMMAND_QUEUE_FLAG_DISABLE_GPU_TIMEOUT")]
+    CommandQueueFlagDisableGpuTimeout = 0x1,
 }

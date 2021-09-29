@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_COMMAND_SIGNATURE_DESC")]
+public unsafe partial struct CommandSignatureDesc
 {
-    [NativeName("Name", "D3D12_COMMAND_SIGNATURE_DESC")]
-    public unsafe partial struct CommandSignatureDesc
-    {
-        public CommandSignatureDesc
-        (
+    public CommandSignatureDesc
+    (
             uint? byteStride = null,
             uint? numArgumentDescs = null,
             IndirectArgumentDesc* pArgumentDescs = null,
             uint? nodeMask = null
-        ) : this()
+    ) : this()
+    {
+        if (byteStride is not null)
         {
-            if (byteStride is not null)
-            {
-                ByteStride = byteStride.Value;
-            }
-
-            if (numArgumentDescs is not null)
-            {
-                NumArgumentDescs = numArgumentDescs.Value;
-            }
-
-            if (pArgumentDescs is not null)
-            {
-                PArgumentDescs = pArgumentDescs;
-            }
-
-            if (nodeMask is not null)
-            {
-                NodeMask = nodeMask.Value;
-            }
+            ByteStride = byteStride.Value;
         }
 
+        if (numArgumentDescs is not null)
+        {
+            NumArgumentDescs = numArgumentDescs.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "ByteStride")]
-        public uint ByteStride;
+        if (pArgumentDescs is not null)
+        {
+            PArgumentDescs = pArgumentDescs;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "NumArgumentDescs")]
-        public uint NumArgumentDescs;
-
-        [NativeName("Type", "const D3D12_INDIRECT_ARGUMENT_DESC *")]
-        [NativeName("Type.Name", "const D3D12_INDIRECT_ARGUMENT_DESC *")]
-        [NativeName("Name", "pArgumentDescs")]
-        public IndirectArgumentDesc* PArgumentDescs;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "NodeMask")]
-        public uint NodeMask;
+        if (nodeMask is not null)
+        {
+            NodeMask = nodeMask.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "ByteStride")]
+    public uint ByteStride;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "NumArgumentDescs")]
+    public uint NumArgumentDescs;
+
+    [NativeName("Type", "const D3D12_INDIRECT_ARGUMENT_DESC *")]
+    [NativeName("Type.Name", "const D3D12_INDIRECT_ARGUMENT_DESC *")]
+    [NativeName("Name", "pArgumentDescs")]
+    public IndirectArgumentDesc* PArgumentDescs;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "NodeMask")]
+    public uint NodeMask;
 }

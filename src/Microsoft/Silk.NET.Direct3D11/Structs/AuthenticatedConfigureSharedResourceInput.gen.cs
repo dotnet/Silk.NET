@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_AUTHENTICATED_CONFIGURE_SHARED_RESOURCE_INPUT")]
+public unsafe partial struct AuthenticatedConfigureSharedResourceInput
 {
-    [NativeName("Name", "D3D11_AUTHENTICATED_CONFIGURE_SHARED_RESOURCE_INPUT")]
-    public unsafe partial struct AuthenticatedConfigureSharedResourceInput
-    {
-        public AuthenticatedConfigureSharedResourceInput
-        (
+    public AuthenticatedConfigureSharedResourceInput
+    (
             AuthenticatedConfigureInput? parameters = null,
             AuthenticatedProcessIdentifierType? processType = null,
             void* processHandle = null,
             int? allowAccess = null
-        ) : this()
+    ) : this()
+    {
+        if (parameters is not null)
         {
-            if (parameters is not null)
-            {
-                Parameters = parameters.Value;
-            }
-
-            if (processType is not null)
-            {
-                ProcessType = processType.Value;
-            }
-
-            if (processHandle is not null)
-            {
-                ProcessHandle = processHandle;
-            }
-
-            if (allowAccess is not null)
-            {
-                AllowAccess = allowAccess.Value;
-            }
+            Parameters = parameters.Value;
         }
 
+        if (processType is not null)
+        {
+            ProcessType = processType.Value;
+        }
 
-        [NativeName("Type", "D3D11_AUTHENTICATED_CONFIGURE_INPUT")]
-        [NativeName("Type.Name", "D3D11_AUTHENTICATED_CONFIGURE_INPUT")]
-        [NativeName("Name", "Parameters")]
-        public AuthenticatedConfigureInput Parameters;
+        if (processHandle is not null)
+        {
+            ProcessHandle = processHandle;
+        }
 
-        [NativeName("Type", "D3D11_AUTHENTICATED_PROCESS_IDENTIFIER_TYPE")]
-        [NativeName("Type.Name", "D3D11_AUTHENTICATED_PROCESS_IDENTIFIER_TYPE")]
-        [NativeName("Name", "ProcessType")]
-        public AuthenticatedProcessIdentifierType ProcessType;
-
-        [NativeName("Type", "HANDLE")]
-        [NativeName("Type.Name", "HANDLE")]
-        [NativeName("Name", "ProcessHandle")]
-        public void* ProcessHandle;
-
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "AllowAccess")]
-        public int AllowAccess;
+        if (allowAccess is not null)
+        {
+            AllowAccess = allowAccess.Value;
+        }
     }
+
+
+    [NativeName("Type", "D3D11_AUTHENTICATED_CONFIGURE_INPUT")]
+    [NativeName("Type.Name", "D3D11_AUTHENTICATED_CONFIGURE_INPUT")]
+    [NativeName("Name", "Parameters")]
+    public AuthenticatedConfigureInput Parameters;
+
+    [NativeName("Type", "D3D11_AUTHENTICATED_PROCESS_IDENTIFIER_TYPE")]
+    [NativeName("Type.Name", "D3D11_AUTHENTICATED_PROCESS_IDENTIFIER_TYPE")]
+    [NativeName("Name", "ProcessType")]
+    public AuthenticatedProcessIdentifierType ProcessType;
+
+    [NativeName("Type", "HANDLE")]
+    [NativeName("Type.Name", "HANDLE")]
+    [NativeName("Name", "ProcessHandle")]
+    public void* ProcessHandle;
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "AllowAccess")]
+    public int AllowAccess;
 }

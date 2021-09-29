@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrVisualMeshComputeLodInfoMSFT")]
+public unsafe partial struct VisualMeshComputeLodInfoMSFT
 {
-    [NativeName("Name", "XrVisualMeshComputeLodInfoMSFT")]
-    public unsafe partial struct VisualMeshComputeLodInfoMSFT
-    {
-        public VisualMeshComputeLodInfoMSFT
-        (
+    public VisualMeshComputeLodInfoMSFT
+    (
             StructureType? type = StructureType.TypeVisualMeshComputeLodInfoMsft,
             void* next = null,
             MeshComputeLodMSFT? lod = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (lod is not null)
-            {
-                Lod = lod.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "XrMeshComputeLodMSFT")]
-        [NativeName("Type.Name", "XrMeshComputeLodMSFT")]
-        [NativeName("Name", "lod")]
-        public MeshComputeLodMSFT Lod;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (lod is not null)
+        {
+            Lod = lod.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "XrMeshComputeLodMSFT")]
+    [NativeName("Type.Name", "XrMeshComputeLodMSFT")]
+    [NativeName("Name", "lod")]
+    public MeshComputeLodMSFT Lod;
 }

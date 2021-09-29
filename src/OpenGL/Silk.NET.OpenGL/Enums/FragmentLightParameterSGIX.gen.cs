@@ -7,10 +7,9 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL
+namespace Silk.NET.OpenGL;
+
+[NativeName("Name", "FragmentLightParameterSGIX")]
+public enum FragmentLightParameterSGIX : int
 {
-    [NativeName("Name", "FragmentLightParameterSGIX")]
-    public enum FragmentLightParameterSGIX : int
-    {
-    }
 }

@@ -7,12 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy
+namespace Silk.NET.OpenGL.Legacy;
+
+[NativeName("Name", "MapParameterNV")]
+public enum MapParameterNV : int
 {
-    [NativeName("Name", "MapParameterNV")]
-    public enum MapParameterNV : int
-    {
-        [NativeName("Name", "GL_MAP_TESSELLATION_NV")]
-        MapTessellationNV = 0x86C2,
-    }
+    [NativeName("Name", "GL_MAP_TESSELLATION_NV")]
+    MapTessellationNV = 0x86C2,
 }

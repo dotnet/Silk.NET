@@ -7,12 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES
+namespace Silk.NET.OpenGLES;
+
+[NativeName("Name", "SyncBehaviorFlags")]
+public enum SyncBehaviorFlags : int
 {
-    [NativeName("Name", "SyncBehaviorFlags")]
-    public enum SyncBehaviorFlags : int
-    {
-        [NativeName("Name", "GL_NONE")]
-        None = 0x0,
-    }
+    [NativeName("Name", "GL_NONE")]
+    None = 0x0,
 }

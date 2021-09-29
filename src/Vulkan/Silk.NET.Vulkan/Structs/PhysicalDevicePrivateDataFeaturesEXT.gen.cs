@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDevicePrivateDataFeaturesEXT")]
+public unsafe partial struct PhysicalDevicePrivateDataFeaturesEXT
 {
-    [NativeName("Name", "VkPhysicalDevicePrivateDataFeaturesEXT")]
-    public unsafe partial struct PhysicalDevicePrivateDataFeaturesEXT
-    {
-        public PhysicalDevicePrivateDataFeaturesEXT
-        (
+    public PhysicalDevicePrivateDataFeaturesEXT
+    (
             StructureType? sType = StructureType.PhysicalDevicePrivateDataFeaturesExt,
             void* pNext = null,
             Bool32? privateData = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (privateData is not null)
-            {
-                PrivateData = privateData.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "privateData")]
-        public Bool32 PrivateData;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (privateData is not null)
+        {
+            PrivateData = privateData.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "privateData")]
+    public Bool32 PrivateData;
 }

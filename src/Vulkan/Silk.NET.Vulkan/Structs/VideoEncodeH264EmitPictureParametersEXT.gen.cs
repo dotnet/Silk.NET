@@ -14,81 +14,80 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkVideoEncodeH264EmitPictureParametersEXT")]
+public unsafe partial struct VideoEncodeH264EmitPictureParametersEXT
 {
-    [NativeName("Name", "VkVideoEncodeH264EmitPictureParametersEXT")]
-    public unsafe partial struct VideoEncodeH264EmitPictureParametersEXT
-    {
-        public VideoEncodeH264EmitPictureParametersEXT
-        (
+    public VideoEncodeH264EmitPictureParametersEXT
+    (
             StructureType? sType = StructureType.VideoEncodeH264EmitPictureParametersExt,
             void* pNext = null,
             byte? spsId = null,
             Bool32? emitSpsEnable = null,
             uint? ppsIdEntryCount = null,
             byte* ppsIdEntries = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (spsId is not null)
-            {
-                SpsId = spsId.Value;
-            }
-
-            if (emitSpsEnable is not null)
-            {
-                EmitSpsEnable = emitSpsEnable.Value;
-            }
-
-            if (ppsIdEntryCount is not null)
-            {
-                PpsIdEntryCount = ppsIdEntryCount.Value;
-            }
-
-            if (ppsIdEntries is not null)
-            {
-                PpsIdEntries = ppsIdEntries;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "spsId")]
-        public byte SpsId;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "emitSpsEnable")]
-        public Bool32 EmitSpsEnable;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "ppsIdEntryCount")]
-        public uint PpsIdEntryCount;
-/// <summary></summary>
-        [NativeName("Type", "uint8_t*")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "ppsIdEntries")]
-        public byte* PpsIdEntries;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (spsId is not null)
+        {
+            SpsId = spsId.Value;
+        }
+
+        if (emitSpsEnable is not null)
+        {
+            EmitSpsEnable = emitSpsEnable.Value;
+        }
+
+        if (ppsIdEntryCount is not null)
+        {
+            PpsIdEntryCount = ppsIdEntryCount.Value;
+        }
+
+        if (ppsIdEntries is not null)
+        {
+            PpsIdEntries = ppsIdEntries;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "uint8_t")]
+    [NativeName("Type.Name", "uint8_t")]
+    [NativeName("Name", "spsId")]
+    public byte SpsId;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "emitSpsEnable")]
+    public Bool32 EmitSpsEnable;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "ppsIdEntryCount")]
+    public uint PpsIdEntryCount;
+/// <summary></summary>
+    [NativeName("Type", "uint8_t*")]
+    [NativeName("Type.Name", "uint8_t")]
+    [NativeName("Name", "ppsIdEntries")]
+    public byte* PpsIdEntries;
 }

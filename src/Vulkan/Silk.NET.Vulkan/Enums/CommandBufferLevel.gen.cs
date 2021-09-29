@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkCommandBufferLevel")]
+public enum CommandBufferLevel : int
 {
-    [NativeName("Name", "VkCommandBufferLevel")]
-    public enum CommandBufferLevel : int
-    {
-        [NativeName("Name", "VK_COMMAND_BUFFER_LEVEL_PRIMARY")]
-        Primary = 0,
-        [NativeName("Name", "VK_COMMAND_BUFFER_LEVEL_SECONDARY")]
-        Secondary = 1,
-    }
+    [NativeName("Name", "VK_COMMAND_BUFFER_LEVEL_PRIMARY")]
+    Primary = 0,
+    [NativeName("Name", "VK_COMMAND_BUFFER_LEVEL_SECONDARY")]
+    Secondary = 1,
 }

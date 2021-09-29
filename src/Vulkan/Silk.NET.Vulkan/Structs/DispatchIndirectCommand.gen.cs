@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkDispatchIndirectCommand")]
+public unsafe partial struct DispatchIndirectCommand
 {
-    [NativeName("Name", "VkDispatchIndirectCommand")]
-    public unsafe partial struct DispatchIndirectCommand
-    {
-        public DispatchIndirectCommand
-        (
+    public DispatchIndirectCommand
+    (
             uint? x = null,
             uint? y = null,
             uint? z = null
-        ) : this()
+    ) : this()
+    {
+        if (x is not null)
         {
-            if (x is not null)
-            {
-                X = x.Value;
-            }
-
-            if (y is not null)
-            {
-                Y = y.Value;
-            }
-
-            if (z is not null)
-            {
-                Z = z.Value;
-            }
+            X = x.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "x")]
-        public uint X;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "y")]
-        public uint Y;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "z")]
-        public uint Z;
+        if (y is not null)
+        {
+            Y = y.Value;
+        }
+
+        if (z is not null)
+        {
+            Z = z.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "x")]
+    public uint X;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "y")]
+    public uint Y;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "z")]
+    public uint Z;
 }

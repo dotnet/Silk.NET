@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkMemoryRequirements")]
+public unsafe partial struct MemoryRequirements
 {
-    [NativeName("Name", "VkMemoryRequirements")]
-    public unsafe partial struct MemoryRequirements
-    {
-        public MemoryRequirements
-        (
+    public MemoryRequirements
+    (
             ulong? size = null,
             ulong? alignment = null,
             uint? memoryTypeBits = null
-        ) : this()
+    ) : this()
+    {
+        if (size is not null)
         {
-            if (size is not null)
-            {
-                Size = size.Value;
-            }
-
-            if (alignment is not null)
-            {
-                Alignment = alignment.Value;
-            }
-
-            if (memoryTypeBits is not null)
-            {
-                MemoryTypeBits = memoryTypeBits.Value;
-            }
+            Size = size.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkDeviceSize")]
-        [NativeName("Type.Name", "VkDeviceSize")]
-        [NativeName("Name", "size")]
-        public ulong Size;
-/// <summary></summary>
-        [NativeName("Type", "VkDeviceSize")]
-        [NativeName("Type.Name", "VkDeviceSize")]
-        [NativeName("Name", "alignment")]
-        public ulong Alignment;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "memoryTypeBits")]
-        public uint MemoryTypeBits;
+        if (alignment is not null)
+        {
+            Alignment = alignment.Value;
+        }
+
+        if (memoryTypeBits is not null)
+        {
+            MemoryTypeBits = memoryTypeBits.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkDeviceSize")]
+    [NativeName("Type.Name", "VkDeviceSize")]
+    [NativeName("Name", "size")]
+    public ulong Size;
+/// <summary></summary>
+    [NativeName("Type", "VkDeviceSize")]
+    [NativeName("Type.Name", "VkDeviceSize")]
+    [NativeName("Name", "alignment")]
+    public ulong Alignment;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "memoryTypeBits")]
+    public uint MemoryTypeBits;
 }

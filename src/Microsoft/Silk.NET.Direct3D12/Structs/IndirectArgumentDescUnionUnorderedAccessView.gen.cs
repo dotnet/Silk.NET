@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "__AnonymousRecord_d3d12_L3971_C9")]
+public unsafe partial struct IndirectArgumentDescUnionUnorderedAccessView
 {
-    [NativeName("Name", "__AnonymousRecord_d3d12_L3971_C9")]
-    public unsafe partial struct IndirectArgumentDescUnionUnorderedAccessView
-    {
-        public IndirectArgumentDescUnionUnorderedAccessView
-        (
+    public IndirectArgumentDescUnionUnorderedAccessView
+    (
             uint? rootParameterIndex = null
-        ) : this()
+    ) : this()
+    {
+        if (rootParameterIndex is not null)
         {
-            if (rootParameterIndex is not null)
-            {
-                RootParameterIndex = rootParameterIndex.Value;
-            }
+            RootParameterIndex = rootParameterIndex.Value;
         }
-
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "RootParameterIndex")]
-        public uint RootParameterIndex;
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "RootParameterIndex")]
+    public uint RootParameterIndex;
 }

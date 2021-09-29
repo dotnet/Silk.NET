@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.XInput
+namespace Silk.NET.XInput;
+
+[NativeName("Name", "_XINPUT_BATTERY_INFORMATION")]
+public unsafe partial struct BatteryInformation
 {
-    [NativeName("Name", "_XINPUT_BATTERY_INFORMATION")]
-    public unsafe partial struct BatteryInformation
-    {
-        public BatteryInformation
-        (
+    public BatteryInformation
+    (
             byte? batteryType = null,
             byte? batteryLevel = null
-        ) : this()
+    ) : this()
+    {
+        if (batteryType is not null)
         {
-            if (batteryType is not null)
-            {
-                BatteryType = batteryType.Value;
-            }
-
-            if (batteryLevel is not null)
-            {
-                BatteryLevel = batteryLevel.Value;
-            }
+            BatteryType = batteryType.Value;
         }
 
-
-        [NativeName("Type", "BYTE")]
-        [NativeName("Type.Name", "BYTE")]
-        [NativeName("Name", "BatteryType")]
-        public byte BatteryType;
-
-        [NativeName("Type", "BYTE")]
-        [NativeName("Type.Name", "BYTE")]
-        [NativeName("Name", "BatteryLevel")]
-        public byte BatteryLevel;
+        if (batteryLevel is not null)
+        {
+            BatteryLevel = batteryLevel.Value;
+        }
     }
+
+
+    [NativeName("Type", "BYTE")]
+    [NativeName("Type.Name", "BYTE")]
+    [NativeName("Name", "BatteryType")]
+    public byte BatteryType;
+
+    [NativeName("Type", "BYTE")]
+    [NativeName("Type.Name", "BYTE")]
+    [NativeName("Name", "BatteryLevel")]
+    public byte BatteryLevel;
 }

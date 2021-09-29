@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrActionStatePose")]
+public unsafe partial struct ActionStatePose
 {
-    [NativeName("Name", "XrActionStatePose")]
-    public unsafe partial struct ActionStatePose
-    {
-        public ActionStatePose
-        (
+    public ActionStatePose
+    (
             StructureType? type = StructureType.TypeActionStatePose,
             void* next = null,
             uint? isActive = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (isActive is not null)
-            {
-                IsActive = isActive.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "XrBool32")]
-        [NativeName("Type.Name", "XrBool32")]
-        [NativeName("Name", "isActive")]
-        public uint IsActive;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (isActive is not null)
+        {
+            IsActive = isActive.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "XrBool32")]
+    [NativeName("Type.Name", "XrBool32")]
+    [NativeName("Name", "isActive")]
+    public uint IsActive;
 }

@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkClearAttachment")]
+public unsafe partial struct ClearAttachment
 {
-    [NativeName("Name", "VkClearAttachment")]
-    public unsafe partial struct ClearAttachment
-    {
-        public ClearAttachment
-        (
+    public ClearAttachment
+    (
             ImageAspectFlags? aspectMask = null,
             uint? colorAttachment = null,
             ClearValue? clearValue = null
-        ) : this()
+    ) : this()
+    {
+        if (aspectMask is not null)
         {
-            if (aspectMask is not null)
-            {
-                AspectMask = aspectMask.Value;
-            }
-
-            if (colorAttachment is not null)
-            {
-                ColorAttachment = colorAttachment.Value;
-            }
-
-            if (clearValue is not null)
-            {
-                ClearValue = clearValue.Value;
-            }
+            AspectMask = aspectMask.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkImageAspectFlags")]
-        [NativeName("Type.Name", "VkImageAspectFlags")]
-        [NativeName("Name", "aspectMask")]
-        public ImageAspectFlags AspectMask;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "colorAttachment")]
-        public uint ColorAttachment;
-/// <summary></summary>
-        [NativeName("Type", "VkClearValue")]
-        [NativeName("Type.Name", "VkClearValue")]
-        [NativeName("Name", "clearValue")]
-        public ClearValue ClearValue;
+        if (colorAttachment is not null)
+        {
+            ColorAttachment = colorAttachment.Value;
+        }
+
+        if (clearValue is not null)
+        {
+            ClearValue = clearValue.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkImageAspectFlags")]
+    [NativeName("Type.Name", "VkImageAspectFlags")]
+    [NativeName("Name", "aspectMask")]
+    public ImageAspectFlags AspectMask;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "colorAttachment")]
+    public uint ColorAttachment;
+/// <summary></summary>
+    [NativeName("Type", "VkClearValue")]
+    [NativeName("Type.Name", "VkClearValue")]
+    [NativeName("Name", "clearValue")]
+    public ClearValue ClearValue;
 }

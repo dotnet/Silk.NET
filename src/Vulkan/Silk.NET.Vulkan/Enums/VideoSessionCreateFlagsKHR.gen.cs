@@ -7,15 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
-{
+namespace Silk.NET.Vulkan;
+
     [Flags()]
-    [NativeName("Name", "VkVideoSessionCreateFlagsKHR")]
-    public enum VideoSessionCreateFlagsKHR : int
-    {
-        [NativeName("Name", "VK_VIDEO_SESSION_CREATE_DEFAULT_KHR")]
-        VideoSessionCreateDefaultKhr = 0,
-        [NativeName("Name", "VK_VIDEO_SESSION_CREATE_PROTECTED_CONTENT_BIT_KHR")]
-        VideoSessionCreateProtectedContentBitKhr = 1,
-    }
+[NativeName("Name", "VkVideoSessionCreateFlagsKHR")]
+public enum VideoSessionCreateFlagsKHR : int
+{
+    [NativeName("Name", "VK_VIDEO_SESSION_CREATE_DEFAULT_KHR")]
+    VideoSessionCreateDefaultKhr = 0,
+    [NativeName("Name", "VK_VIDEO_SESSION_CREATE_PROTECTED_CONTENT_BIT_KHR")]
+    VideoSessionCreateProtectedContentBitKhr = 1,
 }

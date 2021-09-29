@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_SAMPLE_POSITION")]
+public unsafe partial struct SamplePosition
 {
-    [NativeName("Name", "D3D12_SAMPLE_POSITION")]
-    public unsafe partial struct SamplePosition
-    {
-        public SamplePosition
-        (
+    public SamplePosition
+    (
             byte? x = null,
             byte? y = null
-        ) : this()
+    ) : this()
+    {
+        if (x is not null)
         {
-            if (x is not null)
-            {
-                X = x.Value;
-            }
-
-            if (y is not null)
-            {
-                Y = y.Value;
-            }
+            X = x.Value;
         }
 
-
-        [NativeName("Type", "INT8")]
-        [NativeName("Type.Name", "INT8")]
-        [NativeName("Name", "X")]
-        public byte X;
-
-        [NativeName("Type", "INT8")]
-        [NativeName("Type.Name", "INT8")]
-        [NativeName("Name", "Y")]
-        public byte Y;
+        if (y is not null)
+        {
+            Y = y.Value;
+        }
     }
+
+
+    [NativeName("Type", "INT8")]
+    [NativeName("Type.Name", "INT8")]
+    [NativeName("Name", "X")]
+    public byte X;
+
+    [NativeName("Type", "INT8")]
+    [NativeName("Type.Name", "INT8")]
+    [NativeName("Name", "Y")]
+    public byte Y;
 }

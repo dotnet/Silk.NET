@@ -7,16 +7,15 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_CULL_MODE")]
+public enum CullMode : int
 {
-    [NativeName("Name", "D3D12_CULL_MODE")]
-    public enum CullMode : int
-    {
-        [NativeName("Name", "D3D12_CULL_MODE_NONE")]
-        CullModeNone = 0x1,
-        [NativeName("Name", "D3D12_CULL_MODE_FRONT")]
-        CullModeFront = 0x2,
-        [NativeName("Name", "D3D12_CULL_MODE_BACK")]
-        CullModeBack = 0x3,
-    }
+    [NativeName("Name", "D3D12_CULL_MODE_NONE")]
+    CullModeNone = 0x1,
+    [NativeName("Name", "D3D12_CULL_MODE_FRONT")]
+    CullModeFront = 0x2,
+    [NativeName("Name", "D3D12_CULL_MODE_BACK")]
+    CullModeBack = 0x3,
 }

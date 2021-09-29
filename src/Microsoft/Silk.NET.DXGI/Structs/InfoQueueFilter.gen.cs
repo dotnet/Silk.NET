@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI
+namespace Silk.NET.DXGI;
+
+[NativeName("Name", "DXGI_INFO_QUEUE_FILTER")]
+public unsafe partial struct InfoQueueFilter
 {
-    [NativeName("Name", "DXGI_INFO_QUEUE_FILTER")]
-    public unsafe partial struct InfoQueueFilter
-    {
-        public InfoQueueFilter
-        (
+    public InfoQueueFilter
+    (
             InfoQueueFilterDesc? allowList = null,
             InfoQueueFilterDesc? denyList = null
-        ) : this()
+    ) : this()
+    {
+        if (allowList is not null)
         {
-            if (allowList is not null)
-            {
-                AllowList = allowList.Value;
-            }
-
-            if (denyList is not null)
-            {
-                DenyList = denyList.Value;
-            }
+            AllowList = allowList.Value;
         }
 
-
-        [NativeName("Type", "DXGI_INFO_QUEUE_FILTER_DESC")]
-        [NativeName("Type.Name", "DXGI_INFO_QUEUE_FILTER_DESC")]
-        [NativeName("Name", "AllowList")]
-        public InfoQueueFilterDesc AllowList;
-
-        [NativeName("Type", "DXGI_INFO_QUEUE_FILTER_DESC")]
-        [NativeName("Type.Name", "DXGI_INFO_QUEUE_FILTER_DESC")]
-        [NativeName("Name", "DenyList")]
-        public InfoQueueFilterDesc DenyList;
+        if (denyList is not null)
+        {
+            DenyList = denyList.Value;
+        }
     }
+
+
+    [NativeName("Type", "DXGI_INFO_QUEUE_FILTER_DESC")]
+    [NativeName("Type.Name", "DXGI_INFO_QUEUE_FILTER_DESC")]
+    [NativeName("Name", "AllowList")]
+    public InfoQueueFilterDesc AllowList;
+
+    [NativeName("Type", "DXGI_INFO_QUEUE_FILTER_DESC")]
+    [NativeName("Type.Name", "DXGI_INFO_QUEUE_FILTER_DESC")]
+    [NativeName("Name", "DenyList")]
+    public InfoQueueFilterDesc DenyList;
 }

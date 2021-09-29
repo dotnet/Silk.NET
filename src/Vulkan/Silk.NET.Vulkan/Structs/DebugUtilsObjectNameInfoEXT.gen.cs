@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkDebugUtilsObjectNameInfoEXT")]
+public unsafe partial struct DebugUtilsObjectNameInfoEXT
 {
-    [NativeName("Name", "VkDebugUtilsObjectNameInfoEXT")]
-    public unsafe partial struct DebugUtilsObjectNameInfoEXT
-    {
-        public DebugUtilsObjectNameInfoEXT
-        (
+    public DebugUtilsObjectNameInfoEXT
+    (
             StructureType? sType = StructureType.DebugUtilsObjectNameInfoExt,
             void* pNext = null,
             ObjectType? objectType = null,
             ulong? objectHandle = null,
             byte* pObjectName = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (objectType is not null)
-            {
-                ObjectType = objectType.Value;
-            }
-
-            if (objectHandle is not null)
-            {
-                ObjectHandle = objectHandle.Value;
-            }
-
-            if (pObjectName is not null)
-            {
-                PObjectName = pObjectName;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkObjectType")]
-        [NativeName("Type.Name", "VkObjectType")]
-        [NativeName("Name", "objectType")]
-        public ObjectType ObjectType;
-/// <summary></summary>
-        [NativeName("Type", "uint64_t")]
-        [NativeName("Type.Name", "uint64_t")]
-        [NativeName("Name", "objectHandle")]
-        public ulong ObjectHandle;
-/// <summary></summary>
-        [NativeName("Type", "char*")]
-        [NativeName("Type.Name", "char")]
-        [NativeName("Name", "pObjectName")]
-        public byte* PObjectName;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (objectType is not null)
+        {
+            ObjectType = objectType.Value;
+        }
+
+        if (objectHandle is not null)
+        {
+            ObjectHandle = objectHandle.Value;
+        }
+
+        if (pObjectName is not null)
+        {
+            PObjectName = pObjectName;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkObjectType")]
+    [NativeName("Type.Name", "VkObjectType")]
+    [NativeName("Name", "objectType")]
+    public ObjectType ObjectType;
+/// <summary></summary>
+    [NativeName("Type", "uint64_t")]
+    [NativeName("Type.Name", "uint64_t")]
+    [NativeName("Name", "objectHandle")]
+    public ulong ObjectHandle;
+/// <summary></summary>
+    [NativeName("Type", "char*")]
+    [NativeName("Type.Name", "char")]
+    [NativeName("Name", "pObjectName")]
+    public byte* PObjectName;
 }

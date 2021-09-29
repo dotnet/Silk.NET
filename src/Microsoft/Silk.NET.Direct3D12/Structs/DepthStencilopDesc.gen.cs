@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_DEPTH_STENCILOP_DESC")]
+public unsafe partial struct DepthStencilopDesc
 {
-    [NativeName("Name", "D3D12_DEPTH_STENCILOP_DESC")]
-    public unsafe partial struct DepthStencilopDesc
-    {
-        public DepthStencilopDesc
-        (
+    public DepthStencilopDesc
+    (
             StencilOp? stencilFailOp = null,
             StencilOp? stencilDepthFailOp = null,
             StencilOp? stencilPassOp = null,
             ComparisonFunc? stencilFunc = null
-        ) : this()
+    ) : this()
+    {
+        if (stencilFailOp is not null)
         {
-            if (stencilFailOp is not null)
-            {
-                StencilFailOp = stencilFailOp.Value;
-            }
-
-            if (stencilDepthFailOp is not null)
-            {
-                StencilDepthFailOp = stencilDepthFailOp.Value;
-            }
-
-            if (stencilPassOp is not null)
-            {
-                StencilPassOp = stencilPassOp.Value;
-            }
-
-            if (stencilFunc is not null)
-            {
-                StencilFunc = stencilFunc.Value;
-            }
+            StencilFailOp = stencilFailOp.Value;
         }
 
+        if (stencilDepthFailOp is not null)
+        {
+            StencilDepthFailOp = stencilDepthFailOp.Value;
+        }
 
-        [NativeName("Type", "D3D12_STENCIL_OP")]
-        [NativeName("Type.Name", "D3D12_STENCIL_OP")]
-        [NativeName("Name", "StencilFailOp")]
-        public StencilOp StencilFailOp;
+        if (stencilPassOp is not null)
+        {
+            StencilPassOp = stencilPassOp.Value;
+        }
 
-        [NativeName("Type", "D3D12_STENCIL_OP")]
-        [NativeName("Type.Name", "D3D12_STENCIL_OP")]
-        [NativeName("Name", "StencilDepthFailOp")]
-        public StencilOp StencilDepthFailOp;
-
-        [NativeName("Type", "D3D12_STENCIL_OP")]
-        [NativeName("Type.Name", "D3D12_STENCIL_OP")]
-        [NativeName("Name", "StencilPassOp")]
-        public StencilOp StencilPassOp;
-
-        [NativeName("Type", "D3D12_COMPARISON_FUNC")]
-        [NativeName("Type.Name", "D3D12_COMPARISON_FUNC")]
-        [NativeName("Name", "StencilFunc")]
-        public ComparisonFunc StencilFunc;
+        if (stencilFunc is not null)
+        {
+            StencilFunc = stencilFunc.Value;
+        }
     }
+
+
+    [NativeName("Type", "D3D12_STENCIL_OP")]
+    [NativeName("Type.Name", "D3D12_STENCIL_OP")]
+    [NativeName("Name", "StencilFailOp")]
+    public StencilOp StencilFailOp;
+
+    [NativeName("Type", "D3D12_STENCIL_OP")]
+    [NativeName("Type.Name", "D3D12_STENCIL_OP")]
+    [NativeName("Name", "StencilDepthFailOp")]
+    public StencilOp StencilDepthFailOp;
+
+    [NativeName("Type", "D3D12_STENCIL_OP")]
+    [NativeName("Type.Name", "D3D12_STENCIL_OP")]
+    [NativeName("Name", "StencilPassOp")]
+    public StencilOp StencilPassOp;
+
+    [NativeName("Type", "D3D12_COMPARISON_FUNC")]
+    [NativeName("Type.Name", "D3D12_COMPARISON_FUNC")]
+    [NativeName("Name", "StencilFunc")]
+    public ComparisonFunc StencilFunc;
 }

@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrSceneObserverMSFT")]
+public unsafe partial struct SceneObserverMSFT
 {
-    [NativeName("Name", "XrSceneObserverMSFT")]
-    public unsafe partial struct SceneObserverMSFT
-    {
-        public SceneObserverMSFT
-        (
+    public SceneObserverMSFT
+    (
             ulong? handle = null
-        ) : this()
+    ) : this()
+    {
+        if (handle is not null)
         {
-            if (handle is not null)
-            {
-                Handle = handle.Value;
-            }
+            Handle = handle.Value;
         }
-
-
-        [NativeName("Type", "")]
-        [NativeName("Type.Name", "")]
-        [NativeName("Name", "")]
-        public ulong Handle;
     }
+
+
+    [NativeName("Type", "")]
+    [NativeName("Type.Name", "")]
+    [NativeName("Name", "")]
+    public ulong Handle;
 }

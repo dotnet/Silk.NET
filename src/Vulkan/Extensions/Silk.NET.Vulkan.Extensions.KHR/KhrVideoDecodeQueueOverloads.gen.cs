@@ -12,17 +12,16 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.KHR
-{
-    public static class KhrVideoDecodeQueueOverloads
-    {
-        /// <summary>To be documented.</summary>
-        public static unsafe void CmdDecodeVideo(this KhrVideoDecodeQueue thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoDecodeInfoKHR> pFrameInfo)
-        {
-            // SpanOverloader
-            thisApi.CmdDecodeVideo(commandBuffer, in pFrameInfo.GetPinnableReference());
-        }
+namespace Silk.NET.Vulkan.Extensions.KHR;
 
+public static class KhrVideoDecodeQueueOverloads
+{
+    /// <summary>To be documented.</summary>
+    public static unsafe void CmdDecodeVideo(this KhrVideoDecodeQueue thisApi, [Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<VideoDecodeInfoKHR> pFrameInfo)
+    {
+        // SpanOverloader
+        thisApi.CmdDecodeVideo(commandBuffer, in pFrameInfo.GetPinnableReference());
     }
+
 }
 

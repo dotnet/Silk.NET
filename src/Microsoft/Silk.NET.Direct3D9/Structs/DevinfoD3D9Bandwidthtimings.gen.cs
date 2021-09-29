@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9
+namespace Silk.NET.Direct3D9;
+
+[NativeName("Name", "_D3DDEVINFO_D3D9BANDWIDTHTIMINGS")]
+public unsafe partial struct DevinfoD3D9Bandwidthtimings
 {
-    [NativeName("Name", "_D3DDEVINFO_D3D9BANDWIDTHTIMINGS")]
-    public unsafe partial struct DevinfoD3D9Bandwidthtimings
-    {
-        public DevinfoD3D9Bandwidthtimings
-        (
+    public DevinfoD3D9Bandwidthtimings
+    (
             float? maxBandwidthUtilized = null,
             float? frontEndUploadMemoryUtilizedPercent = null,
             float? vertexRateUtilizedPercent = null,
             float? triangleSetupRateUtilizedPercent = null,
             float? fillRateUtilizedPercent = null
-        ) : this()
+    ) : this()
+    {
+        if (maxBandwidthUtilized is not null)
         {
-            if (maxBandwidthUtilized is not null)
-            {
-                MaxBandwidthUtilized = maxBandwidthUtilized.Value;
-            }
-
-            if (frontEndUploadMemoryUtilizedPercent is not null)
-            {
-                FrontEndUploadMemoryUtilizedPercent = frontEndUploadMemoryUtilizedPercent.Value;
-            }
-
-            if (vertexRateUtilizedPercent is not null)
-            {
-                VertexRateUtilizedPercent = vertexRateUtilizedPercent.Value;
-            }
-
-            if (triangleSetupRateUtilizedPercent is not null)
-            {
-                TriangleSetupRateUtilizedPercent = triangleSetupRateUtilizedPercent.Value;
-            }
-
-            if (fillRateUtilizedPercent is not null)
-            {
-                FillRateUtilizedPercent = fillRateUtilizedPercent.Value;
-            }
+            MaxBandwidthUtilized = maxBandwidthUtilized.Value;
         }
 
+        if (frontEndUploadMemoryUtilizedPercent is not null)
+        {
+            FrontEndUploadMemoryUtilizedPercent = frontEndUploadMemoryUtilizedPercent.Value;
+        }
 
-        [NativeName("Type", "FLOAT")]
-        [NativeName("Type.Name", "FLOAT")]
-        [NativeName("Name", "MaxBandwidthUtilized")]
-        public float MaxBandwidthUtilized;
+        if (vertexRateUtilizedPercent is not null)
+        {
+            VertexRateUtilizedPercent = vertexRateUtilizedPercent.Value;
+        }
 
-        [NativeName("Type", "FLOAT")]
-        [NativeName("Type.Name", "FLOAT")]
-        [NativeName("Name", "FrontEndUploadMemoryUtilizedPercent")]
-        public float FrontEndUploadMemoryUtilizedPercent;
+        if (triangleSetupRateUtilizedPercent is not null)
+        {
+            TriangleSetupRateUtilizedPercent = triangleSetupRateUtilizedPercent.Value;
+        }
 
-        [NativeName("Type", "FLOAT")]
-        [NativeName("Type.Name", "FLOAT")]
-        [NativeName("Name", "VertexRateUtilizedPercent")]
-        public float VertexRateUtilizedPercent;
-
-        [NativeName("Type", "FLOAT")]
-        [NativeName("Type.Name", "FLOAT")]
-        [NativeName("Name", "TriangleSetupRateUtilizedPercent")]
-        public float TriangleSetupRateUtilizedPercent;
-
-        [NativeName("Type", "FLOAT")]
-        [NativeName("Type.Name", "FLOAT")]
-        [NativeName("Name", "FillRateUtilizedPercent")]
-        public float FillRateUtilizedPercent;
+        if (fillRateUtilizedPercent is not null)
+        {
+            FillRateUtilizedPercent = fillRateUtilizedPercent.Value;
+        }
     }
+
+
+    [NativeName("Type", "FLOAT")]
+    [NativeName("Type.Name", "FLOAT")]
+    [NativeName("Name", "MaxBandwidthUtilized")]
+    public float MaxBandwidthUtilized;
+
+    [NativeName("Type", "FLOAT")]
+    [NativeName("Type.Name", "FLOAT")]
+    [NativeName("Name", "FrontEndUploadMemoryUtilizedPercent")]
+    public float FrontEndUploadMemoryUtilizedPercent;
+
+    [NativeName("Type", "FLOAT")]
+    [NativeName("Type.Name", "FLOAT")]
+    [NativeName("Name", "VertexRateUtilizedPercent")]
+    public float VertexRateUtilizedPercent;
+
+    [NativeName("Type", "FLOAT")]
+    [NativeName("Type.Name", "FLOAT")]
+    [NativeName("Name", "TriangleSetupRateUtilizedPercent")]
+    public float TriangleSetupRateUtilizedPercent;
+
+    [NativeName("Type", "FLOAT")]
+    [NativeName("Type.Name", "FLOAT")]
+    [NativeName("Name", "FillRateUtilizedPercent")]
+    public float FillRateUtilizedPercent;
 }

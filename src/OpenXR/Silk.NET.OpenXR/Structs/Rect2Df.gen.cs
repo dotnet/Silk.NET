@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrRect2Df")]
+public unsafe partial struct Rect2Df
 {
-    [NativeName("Name", "XrRect2Df")]
-    public unsafe partial struct Rect2Df
-    {
-        public Rect2Df
-        (
+    public Rect2Df
+    (
             Offset2Df? offset = null,
             Extent2Df? extent = null
-        ) : this()
+    ) : this()
+    {
+        if (offset is not null)
         {
-            if (offset is not null)
-            {
-                Offset = offset.Value;
-            }
-
-            if (extent is not null)
-            {
-                Extent = extent.Value;
-            }
+            Offset = offset.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrOffset2Df")]
-        [NativeName("Type.Name", "XrOffset2Df")]
-        [NativeName("Name", "offset")]
-        public Offset2Df Offset;
-/// <summary></summary>
-        [NativeName("Type", "XrExtent2Df")]
-        [NativeName("Type.Name", "XrExtent2Df")]
-        [NativeName("Name", "extent")]
-        public Extent2Df Extent;
+        if (extent is not null)
+        {
+            Extent = extent.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrOffset2Df")]
+    [NativeName("Type.Name", "XrOffset2Df")]
+    [NativeName("Name", "offset")]
+    public Offset2Df Offset;
+/// <summary></summary>
+    [NativeName("Type", "XrExtent2Df")]
+    [NativeName("Type.Name", "XrExtent2Df")]
+    [NativeName("Name", "extent")]
+    public Extent2Df Extent;
 }

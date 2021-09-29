@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES
+namespace Silk.NET.OpenGLES;
+
+[NativeName("Name", "VertexAttribPointerPropertyARB")]
+public enum VertexAttribPointerPropertyARB : int
 {
-    [NativeName("Name", "VertexAttribPointerPropertyARB")]
-    public enum VertexAttribPointerPropertyARB : int
-    {
-        [NativeName("Name", "GL_VERTEX_ATTRIB_ARRAY_POINTER")]
-        VertexAttribArrayPointer = 0x8645,
-        [NativeName("Name", "GL_VERTEX_ATTRIB_ARRAY_POINTER_ARB")]
-        VertexAttribArrayPointerArb = 0x8645,
-    }
+    [NativeName("Name", "GL_VERTEX_ATTRIB_ARRAY_POINTER")]
+    VertexAttribArrayPointer = 0x8645,
+    [NativeName("Name", "GL_VERTEX_ATTRIB_ARRAY_POINTER_ARB")]
+    VertexAttribArrayPointerArb = 0x8645,
 }

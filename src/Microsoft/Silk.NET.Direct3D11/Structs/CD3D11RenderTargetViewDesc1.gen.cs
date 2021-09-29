@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "CD3D11_RENDER_TARGET_VIEW_DESC1")]
+public unsafe partial struct CD3D11RenderTargetViewDesc1
 {
-    [NativeName("Name", "CD3D11_RENDER_TARGET_VIEW_DESC1")]
-    public unsafe partial struct CD3D11RenderTargetViewDesc1
-    {
-        public CD3D11RenderTargetViewDesc1
-        (
+    public CD3D11RenderTargetViewDesc1
+    (
             Silk.NET.DXGI.Format? format = null,
             RtvDimension? viewDimension = null,
             RenderTargetViewDesc1Union? anonymous = null,
@@ -32,190 +32,189 @@ namespace Silk.NET.Direct3D11
             Tex2DmsRtv? texture2DMS = null,
             Tex2DmsArrayRtv? texture2DMSArray = null,
             Tex3DRtv? texture3D = null
-        ) : this()
+    ) : this()
+    {
+        if (format is not null)
         {
-            if (format is not null)
-            {
-                Format = format.Value;
-            }
-
-            if (viewDimension is not null)
-            {
-                ViewDimension = viewDimension.Value;
-            }
-
-            if (anonymous is not null)
-            {
-                Anonymous = anonymous.Value;
-            }
-
-            if (buffer is not null)
-            {
-                Buffer = buffer.Value;
-            }
-
-            if (texture1D is not null)
-            {
-                Texture1D = texture1D.Value;
-            }
-
-            if (texture1DArray is not null)
-            {
-                Texture1DArray = texture1DArray.Value;
-            }
-
-            if (texture2D is not null)
-            {
-                Texture2D = texture2D.Value;
-            }
-
-            if (texture2DArray is not null)
-            {
-                Texture2DArray = texture2DArray.Value;
-            }
-
-            if (texture2DMS is not null)
-            {
-                Texture2DMS = texture2DMS.Value;
-            }
-
-            if (texture2DMSArray is not null)
-            {
-                Texture2DMSArray = texture2DMSArray.Value;
-            }
-
-            if (texture3D is not null)
-            {
-                Texture3D = texture3D.Value;
-            }
+            Format = format.Value;
         }
 
+        if (viewDimension is not null)
+        {
+            ViewDimension = viewDimension.Value;
+        }
 
-        [NativeName("Type", "DXGI_FORMAT")]
-        [NativeName("Type.Name", "DXGI_FORMAT")]
-        [NativeName("Name", "Format")]
-        public Silk.NET.DXGI.Format Format;
+        if (anonymous is not null)
+        {
+            Anonymous = anonymous.Value;
+        }
 
-        [NativeName("Type", "D3D11_RTV_DIMENSION")]
-        [NativeName("Type.Name", "D3D11_RTV_DIMENSION")]
-        [NativeName("Name", "ViewDimension")]
-        public RtvDimension ViewDimension;
+        if (buffer is not null)
+        {
+            Buffer = buffer.Value;
+        }
 
-        [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d11_3_L1281_C5")]
-        [NativeName("Name", "anonymous1")]
-        public RenderTargetViewDesc1Union Anonymous;
-#if NETSTANDARD2_1
-        public ref BufferRtv Buffer
+        if (texture1D is not null)
         {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Buffer;
+            Texture1D = texture1D.Value;
         }
-#else
-        public BufferRtv Buffer
-        {
-            get => Anonymous.Buffer;
-            set => Anonymous.Buffer = value;
-        }
-#endif
 
-#if NETSTANDARD2_1
-        public ref Tex1DRtv Texture1D
+        if (texture1DArray is not null)
         {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Texture1D;
+            Texture1DArray = texture1DArray.Value;
         }
-#else
-        public Tex1DRtv Texture1D
-        {
-            get => Anonymous.Texture1D;
-            set => Anonymous.Texture1D = value;
-        }
-#endif
 
-#if NETSTANDARD2_1
-        public ref Tex1DArrayRtv Texture1DArray
+        if (texture2D is not null)
         {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Texture1DArray;
+            Texture2D = texture2D.Value;
         }
-#else
-        public Tex1DArrayRtv Texture1DArray
-        {
-            get => Anonymous.Texture1DArray;
-            set => Anonymous.Texture1DArray = value;
-        }
-#endif
 
-#if NETSTANDARD2_1
-        public ref Tex2DRtv1 Texture2D
+        if (texture2DArray is not null)
         {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Texture2D;
+            Texture2DArray = texture2DArray.Value;
         }
-#else
-        public Tex2DRtv1 Texture2D
-        {
-            get => Anonymous.Texture2D;
-            set => Anonymous.Texture2D = value;
-        }
-#endif
 
-#if NETSTANDARD2_1
-        public ref Tex2DArrayRtv1 Texture2DArray
+        if (texture2DMS is not null)
         {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Texture2DArray;
+            Texture2DMS = texture2DMS.Value;
         }
-#else
-        public Tex2DArrayRtv1 Texture2DArray
-        {
-            get => Anonymous.Texture2DArray;
-            set => Anonymous.Texture2DArray = value;
-        }
-#endif
 
-#if NETSTANDARD2_1
-        public ref Tex2DmsRtv Texture2DMS
+        if (texture2DMSArray is not null)
         {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Texture2DMS;
+            Texture2DMSArray = texture2DMSArray.Value;
         }
-#else
-        public Tex2DmsRtv Texture2DMS
-        {
-            get => Anonymous.Texture2DMS;
-            set => Anonymous.Texture2DMS = value;
-        }
-#endif
 
-#if NETSTANDARD2_1
-        public ref Tex2DmsArrayRtv Texture2DMSArray
+        if (texture3D is not null)
         {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Texture2DMSArray;
+            Texture3D = texture3D.Value;
         }
-#else
-        public Tex2DmsArrayRtv Texture2DMSArray
-        {
-            get => Anonymous.Texture2DMSArray;
-            set => Anonymous.Texture2DMSArray = value;
-        }
-#endif
-
-#if NETSTANDARD2_1
-        public ref Tex3DRtv Texture3D
-        {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Texture3D;
-        }
-#else
-        public Tex3DRtv Texture3D
-        {
-            get => Anonymous.Texture3D;
-            set => Anonymous.Texture3D = value;
-        }
-#endif
-
     }
+
+
+    [NativeName("Type", "DXGI_FORMAT")]
+    [NativeName("Type.Name", "DXGI_FORMAT")]
+    [NativeName("Name", "Format")]
+    public Silk.NET.DXGI.Format Format;
+
+    [NativeName("Type", "D3D11_RTV_DIMENSION")]
+    [NativeName("Type.Name", "D3D11_RTV_DIMENSION")]
+    [NativeName("Name", "ViewDimension")]
+    public RtvDimension ViewDimension;
+
+    [NativeName("Type", "")]
+    [NativeName("Type.Name", "__AnonymousRecord_d3d11_3_L1281_C5")]
+    [NativeName("Name", "anonymous1")]
+    public RenderTargetViewDesc1Union Anonymous;
+#if NETSTANDARD2_1
+    public ref BufferRtv Buffer
+    {
+        [MethodImpl((MethodImplOptions) 768)]
+        get => ref Anonymous.Buffer;
+    }
+#else
+    public BufferRtv Buffer
+    {
+        get => Anonymous.Buffer;
+        set => Anonymous.Buffer = value;
+    }
+#endif
+
+#if NETSTANDARD2_1
+    public ref Tex1DRtv Texture1D
+    {
+        [MethodImpl((MethodImplOptions) 768)]
+        get => ref Anonymous.Texture1D;
+    }
+#else
+    public Tex1DRtv Texture1D
+    {
+        get => Anonymous.Texture1D;
+        set => Anonymous.Texture1D = value;
+    }
+#endif
+
+#if NETSTANDARD2_1
+    public ref Tex1DArrayRtv Texture1DArray
+    {
+        [MethodImpl((MethodImplOptions) 768)]
+        get => ref Anonymous.Texture1DArray;
+    }
+#else
+    public Tex1DArrayRtv Texture1DArray
+    {
+        get => Anonymous.Texture1DArray;
+        set => Anonymous.Texture1DArray = value;
+    }
+#endif
+
+#if NETSTANDARD2_1
+    public ref Tex2DRtv1 Texture2D
+    {
+        [MethodImpl((MethodImplOptions) 768)]
+        get => ref Anonymous.Texture2D;
+    }
+#else
+    public Tex2DRtv1 Texture2D
+    {
+        get => Anonymous.Texture2D;
+        set => Anonymous.Texture2D = value;
+    }
+#endif
+
+#if NETSTANDARD2_1
+    public ref Tex2DArrayRtv1 Texture2DArray
+    {
+        [MethodImpl((MethodImplOptions) 768)]
+        get => ref Anonymous.Texture2DArray;
+    }
+#else
+    public Tex2DArrayRtv1 Texture2DArray
+    {
+        get => Anonymous.Texture2DArray;
+        set => Anonymous.Texture2DArray = value;
+    }
+#endif
+
+#if NETSTANDARD2_1
+    public ref Tex2DmsRtv Texture2DMS
+    {
+        [MethodImpl((MethodImplOptions) 768)]
+        get => ref Anonymous.Texture2DMS;
+    }
+#else
+    public Tex2DmsRtv Texture2DMS
+    {
+        get => Anonymous.Texture2DMS;
+        set => Anonymous.Texture2DMS = value;
+    }
+#endif
+
+#if NETSTANDARD2_1
+    public ref Tex2DmsArrayRtv Texture2DMSArray
+    {
+        [MethodImpl((MethodImplOptions) 768)]
+        get => ref Anonymous.Texture2DMSArray;
+    }
+#else
+    public Tex2DmsArrayRtv Texture2DMSArray
+    {
+        get => Anonymous.Texture2DMSArray;
+        set => Anonymous.Texture2DMSArray = value;
+    }
+#endif
+
+#if NETSTANDARD2_1
+    public ref Tex3DRtv Texture3D
+    {
+        [MethodImpl((MethodImplOptions) 768)]
+        get => ref Anonymous.Texture3D;
+    }
+#else
+    public Tex3DRtv Texture3D
+    {
+        get => Anonymous.Texture3D;
+        set => Anonymous.Texture3D = value;
+    }
+#endif
+
 }

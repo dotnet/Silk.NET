@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "_D3D11_SHADER_VARIABLE_DESC")]
+public unsafe partial struct ShaderVariableDesc
 {
-    [NativeName("Name", "_D3D11_SHADER_VARIABLE_DESC")]
-    public unsafe partial struct ShaderVariableDesc
-    {
-        public ShaderVariableDesc
-        (
+    public ShaderVariableDesc
+    (
             byte* name = null,
             uint? startOffset = null,
             uint? size = null,
@@ -30,98 +30,97 @@ namespace Silk.NET.Direct3D11
             uint? textureSize = null,
             uint? startSampler = null,
             uint? samplerSize = null
-        ) : this()
+    ) : this()
+    {
+        if (name is not null)
         {
-            if (name is not null)
-            {
-                Name = name;
-            }
-
-            if (startOffset is not null)
-            {
-                StartOffset = startOffset.Value;
-            }
-
-            if (size is not null)
-            {
-                Size = size.Value;
-            }
-
-            if (uFlags is not null)
-            {
-                UFlags = uFlags.Value;
-            }
-
-            if (defaultValue is not null)
-            {
-                DefaultValue = defaultValue;
-            }
-
-            if (startTexture is not null)
-            {
-                StartTexture = startTexture.Value;
-            }
-
-            if (textureSize is not null)
-            {
-                TextureSize = textureSize.Value;
-            }
-
-            if (startSampler is not null)
-            {
-                StartSampler = startSampler.Value;
-            }
-
-            if (samplerSize is not null)
-            {
-                SamplerSize = samplerSize.Value;
-            }
+            Name = name;
         }
 
+        if (startOffset is not null)
+        {
+            StartOffset = startOffset.Value;
+        }
 
-        [NativeName("Type", "LPCSTR")]
-        [NativeName("Type.Name", "LPCSTR")]
-        [NativeName("Name", "Name")]
-        public byte* Name;
+        if (size is not null)
+        {
+            Size = size.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "StartOffset")]
-        public uint StartOffset;
+        if (uFlags is not null)
+        {
+            UFlags = uFlags.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Size")]
-        public uint Size;
+        if (defaultValue is not null)
+        {
+            DefaultValue = defaultValue;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "uFlags")]
-        public uint UFlags;
+        if (startTexture is not null)
+        {
+            StartTexture = startTexture.Value;
+        }
 
-        [NativeName("Type", "LPVOID")]
-        [NativeName("Type.Name", "LPVOID")]
-        [NativeName("Name", "DefaultValue")]
-        public void* DefaultValue;
+        if (textureSize is not null)
+        {
+            TextureSize = textureSize.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "StartTexture")]
-        public uint StartTexture;
+        if (startSampler is not null)
+        {
+            StartSampler = startSampler.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "TextureSize")]
-        public uint TextureSize;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "StartSampler")]
-        public uint StartSampler;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "SamplerSize")]
-        public uint SamplerSize;
+        if (samplerSize is not null)
+        {
+            SamplerSize = samplerSize.Value;
+        }
     }
+
+
+    [NativeName("Type", "LPCSTR")]
+    [NativeName("Type.Name", "LPCSTR")]
+    [NativeName("Name", "Name")]
+    public byte* Name;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "StartOffset")]
+    public uint StartOffset;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Size")]
+    public uint Size;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "uFlags")]
+    public uint UFlags;
+
+    [NativeName("Type", "LPVOID")]
+    [NativeName("Type.Name", "LPVOID")]
+    [NativeName("Name", "DefaultValue")]
+    public void* DefaultValue;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "StartTexture")]
+    public uint StartTexture;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "TextureSize")]
+    public uint TextureSize;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "StartSampler")]
+    public uint StartSampler;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "SamplerSize")]
+    public uint SamplerSize;
 }

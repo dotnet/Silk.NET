@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "__AnonymousRecord_d3d12_L3953_C9")]
+public unsafe partial struct IndirectArgumentDescUnionVertexBuffer
 {
-    [NativeName("Name", "__AnonymousRecord_d3d12_L3953_C9")]
-    public unsafe partial struct IndirectArgumentDescUnionVertexBuffer
-    {
-        public IndirectArgumentDescUnionVertexBuffer
-        (
+    public IndirectArgumentDescUnionVertexBuffer
+    (
             uint? slot = null
-        ) : this()
+    ) : this()
+    {
+        if (slot is not null)
         {
-            if (slot is not null)
-            {
-                Slot = slot.Value;
-            }
+            Slot = slot.Value;
         }
-
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Slot")]
-        public uint Slot;
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Slot")]
+    public uint Slot;
 }

@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrActiveActionSet")]
+public unsafe partial struct ActiveActionSet
 {
-    [NativeName("Name", "XrActiveActionSet")]
-    public unsafe partial struct ActiveActionSet
-    {
-        public ActiveActionSet
-        (
+    public ActiveActionSet
+    (
             ActionSet? actionSet = null,
             ulong? subactionPath = null
-        ) : this()
+    ) : this()
+    {
+        if (actionSet is not null)
         {
-            if (actionSet is not null)
-            {
-                ActionSet = actionSet.Value;
-            }
-
-            if (subactionPath is not null)
-            {
-                SubactionPath = subactionPath.Value;
-            }
+            ActionSet = actionSet.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrActionSet")]
-        [NativeName("Type.Name", "XrActionSet")]
-        [NativeName("Name", "actionSet")]
-        public ActionSet ActionSet;
-/// <summary></summary>
-        [NativeName("Type", "XrPath")]
-        [NativeName("Type.Name", "XrPath")]
-        [NativeName("Name", "subactionPath")]
-        public ulong SubactionPath;
+        if (subactionPath is not null)
+        {
+            SubactionPath = subactionPath.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrActionSet")]
+    [NativeName("Type.Name", "XrActionSet")]
+    [NativeName("Name", "actionSet")]
+    public ActionSet ActionSet;
+/// <summary></summary>
+    [NativeName("Type", "XrPath")]
+    [NativeName("Type.Name", "XrPath")]
+    [NativeName("Name", "subactionPath")]
+    public ulong SubactionPath;
 }

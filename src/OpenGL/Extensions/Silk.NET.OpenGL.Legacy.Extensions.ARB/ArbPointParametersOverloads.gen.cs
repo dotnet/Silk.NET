@@ -12,22 +12,21 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
+namespace Silk.NET.OpenGL.Legacy.Extensions.ARB;
+
+public static class ArbPointParametersOverloads
 {
-    public static class ArbPointParametersOverloads
+    public static unsafe void PointParameter(this ArbPointParameters thisApi, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
     {
-        public static unsafe void PointParameter(this ArbPointParameters thisApi, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
-        {
-            // SpanOverloader
-            thisApi.PointParameter(pname, in @params.GetPinnableReference());
-        }
-
-        public static unsafe void PointParameter(this ArbPointParameters thisApi, [Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
-        {
-            // SpanOverloader
-            thisApi.PointParameter(pname, in @params.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        thisApi.PointParameter(pname, in @params.GetPinnableReference());
     }
+
+    public static unsafe void PointParameter(this ArbPointParameters thisApi, [Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+    {
+        // SpanOverloader
+        thisApi.PointParameter(pname, in @params.GetPinnableReference());
+    }
+
 }
 

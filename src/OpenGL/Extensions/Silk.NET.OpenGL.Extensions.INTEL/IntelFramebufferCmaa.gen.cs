@@ -14,19 +14,18 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.INTEL
-{
-    [Extension("INTEL_framebuffer_CMAA")]
-    public unsafe partial class IntelFramebufferCmaa : NativeExtension<GL>
-    {
-        public const string ExtensionName = "INTEL_framebuffer_CMAA";
-        [NativeApi(EntryPoint = "glApplyFramebufferAttachmentCMAAINTEL")]
-        public partial void ApplyFramebufferAttachmentCmaa();
+namespace Silk.NET.OpenGL.Extensions.INTEL;
 
-        public IntelFramebufferCmaa(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+[Extension("INTEL_framebuffer_CMAA")]
+public unsafe partial class IntelFramebufferCmaa : NativeExtension<GL>
+{
+    public const string ExtensionName = "INTEL_framebuffer_CMAA";
+    [NativeApi(EntryPoint = "glApplyFramebufferAttachmentCMAAINTEL")]
+    public partial void ApplyFramebufferAttachmentCmaa();
+
+    public IntelFramebufferCmaa(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

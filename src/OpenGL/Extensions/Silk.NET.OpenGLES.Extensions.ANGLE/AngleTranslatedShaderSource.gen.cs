@@ -14,58 +14,57 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.ANGLE
+namespace Silk.NET.OpenGLES.Extensions.ANGLE;
+
+[Extension("ANGLE_translated_shader_source")]
+public unsafe partial class AngleTranslatedShaderSource : NativeExtension<GL>
 {
-    [Extension("ANGLE_translated_shader_source")]
-    public unsafe partial class AngleTranslatedShaderSource : NativeExtension<GL>
+    public const string ExtensionName = "ANGLE_translated_shader_source";
+    [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
+    public unsafe partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* source);
+
+    [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
+    public unsafe partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte source);
+
+    [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
+    public unsafe partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string source);
+
+    [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
+    public unsafe partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* source);
+
+    [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
+    public partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte source);
+
+    [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
+    public partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string source);
+
+    public unsafe void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> source)
     {
-        public const string ExtensionName = "ANGLE_translated_shader_source";
-        [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
-        public unsafe partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* source);
+        // ImplicitCountSpanOverloader
+        GetTranslatedShaderSource(shader, (uint) source.Length, length, out source.GetPinnableReference());
+    }
 
-        [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
-        public unsafe partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte source);
+    public unsafe void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> source)
+    {
+        // ImplicitCountSpanOverloader
+        GetTranslatedShaderSource(shader, (uint) source.Length, length, out source.GetPinnableReference());
+    }
 
-        [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
-        public unsafe partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string source);
+    public unsafe void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> source)
+    {
+        // ImplicitCountSpanOverloader
+        GetTranslatedShaderSource(shader, (uint) source.Length, out length, out source.GetPinnableReference());
+    }
 
-        [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
-        public unsafe partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* source);
+    public unsafe void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> source)
+    {
+        // ImplicitCountSpanOverloader
+        GetTranslatedShaderSource(shader, (uint) source.Length, out length, out source.GetPinnableReference());
+    }
 
-        [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
-        public partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte source);
-
-        [NativeApi(EntryPoint = "glGetTranslatedShaderSourceANGLE")]
-        public partial void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string source);
-
-        public unsafe void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> source)
-        {
-            // ImplicitCountSpanOverloader
-            GetTranslatedShaderSource(shader, (uint) source.Length, length, out source.GetPinnableReference());
-        }
-
-        public unsafe void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> source)
-        {
-            // ImplicitCountSpanOverloader
-            GetTranslatedShaderSource(shader, (uint) source.Length, length, out source.GetPinnableReference());
-        }
-
-        public unsafe void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> source)
-        {
-            // ImplicitCountSpanOverloader
-            GetTranslatedShaderSource(shader, (uint) source.Length, out length, out source.GetPinnableReference());
-        }
-
-        public unsafe void GetTranslatedShaderSource([Flow(FlowDirection.In)] uint shader, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> source)
-        {
-            // ImplicitCountSpanOverloader
-            GetTranslatedShaderSource(shader, (uint) source.Length, out length, out source.GetPinnableReference());
-        }
-
-        public AngleTranslatedShaderSource(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+    public AngleTranslatedShaderSource(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

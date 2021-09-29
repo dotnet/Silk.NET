@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkSampleLocationEXT")]
+public unsafe partial struct SampleLocationEXT
 {
-    [NativeName("Name", "VkSampleLocationEXT")]
-    public unsafe partial struct SampleLocationEXT
-    {
-        public SampleLocationEXT
-        (
+    public SampleLocationEXT
+    (
             float? x = null,
             float? y = null
-        ) : this()
+    ) : this()
+    {
+        if (x is not null)
         {
-            if (x is not null)
-            {
-                X = x.Value;
-            }
-
-            if (y is not null)
-            {
-                Y = y.Value;
-            }
+            X = x.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "float")]
-        [NativeName("Type.Name", "float")]
-        [NativeName("Name", "x")]
-        public float X;
-/// <summary></summary>
-        [NativeName("Type", "float")]
-        [NativeName("Type.Name", "float")]
-        [NativeName("Name", "y")]
-        public float Y;
+        if (y is not null)
+        {
+            Y = y.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "float")]
+    [NativeName("Type.Name", "float")]
+    [NativeName("Name", "x")]
+    public float X;
+/// <summary></summary>
+    [NativeName("Type", "float")]
+    [NativeName("Type.Name", "float")]
+    [NativeName("Name", "y")]
+    public float Y;
 }

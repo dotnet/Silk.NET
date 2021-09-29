@@ -14,19 +14,18 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NV
-{
-    [Extension("NV_texture_barrier")]
-    public unsafe partial class NVTextureBarrier : NativeExtension<GL>
-    {
-        public const string ExtensionName = "NV_texture_barrier";
-        [NativeApi(EntryPoint = "glTextureBarrierNV")]
-        public partial void TextureBarrier();
+namespace Silk.NET.OpenGL.Legacy.Extensions.NV;
 
-        public NVTextureBarrier(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+[Extension("NV_texture_barrier")]
+public unsafe partial class NVTextureBarrier : NativeExtension<GL>
+{
+    public const string ExtensionName = "NV_texture_barrier";
+    [NativeApi(EntryPoint = "glTextureBarrierNV")]
+    public partial void TextureBarrier();
+
+    public NVTextureBarrier(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

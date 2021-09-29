@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI
+namespace Silk.NET.DXGI;
+
+[NativeName("Name", "DXGI_RATIONAL")]
+public unsafe partial struct Rational
 {
-    [NativeName("Name", "DXGI_RATIONAL")]
-    public unsafe partial struct Rational
-    {
-        public Rational
-        (
+    public Rational
+    (
             uint? numerator = null,
             uint? denominator = null
-        ) : this()
+    ) : this()
+    {
+        if (numerator is not null)
         {
-            if (numerator is not null)
-            {
-                Numerator = numerator.Value;
-            }
-
-            if (denominator is not null)
-            {
-                Denominator = denominator.Value;
-            }
+            Numerator = numerator.Value;
         }
 
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Numerator")]
-        public uint Numerator;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Denominator")]
-        public uint Denominator;
+        if (denominator is not null)
+        {
+            Denominator = denominator.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Numerator")]
+    public uint Numerator;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Denominator")]
+    public uint Denominator;
 }

@@ -14,60 +14,59 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.XAudio
+namespace Silk.NET.XAudio;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+[NativeName("Name", "XAUDIO2_VOICE_DETAILS")]
+public unsafe partial struct VoiceDetails
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    [NativeName("Name", "XAUDIO2_VOICE_DETAILS")]
-    public unsafe partial struct VoiceDetails
-    {
-        public VoiceDetails
-        (
+    public VoiceDetails
+    (
             uint? creationFlags = null,
             uint? activeFlags = null,
             uint? inputChannels = null,
             uint? inputSampleRate = null
-        ) : this()
+    ) : this()
+    {
+        if (creationFlags is not null)
         {
-            if (creationFlags is not null)
-            {
-                CreationFlags = creationFlags.Value;
-            }
-
-            if (activeFlags is not null)
-            {
-                ActiveFlags = activeFlags.Value;
-            }
-
-            if (inputChannels is not null)
-            {
-                InputChannels = inputChannels.Value;
-            }
-
-            if (inputSampleRate is not null)
-            {
-                InputSampleRate = inputSampleRate.Value;
-            }
+            CreationFlags = creationFlags.Value;
         }
 
+        if (activeFlags is not null)
+        {
+            ActiveFlags = activeFlags.Value;
+        }
 
-        [NativeName("Type", "UINT32")]
-        [NativeName("Type.Name", "UINT32")]
-        [NativeName("Name", "CreationFlags")]
-        public uint CreationFlags;
+        if (inputChannels is not null)
+        {
+            InputChannels = inputChannels.Value;
+        }
 
-        [NativeName("Type", "UINT32")]
-        [NativeName("Type.Name", "UINT32")]
-        [NativeName("Name", "ActiveFlags")]
-        public uint ActiveFlags;
-
-        [NativeName("Type", "UINT32")]
-        [NativeName("Type.Name", "UINT32")]
-        [NativeName("Name", "InputChannels")]
-        public uint InputChannels;
-
-        [NativeName("Type", "UINT32")]
-        [NativeName("Type.Name", "UINT32")]
-        [NativeName("Name", "InputSampleRate")]
-        public uint InputSampleRate;
+        if (inputSampleRate is not null)
+        {
+            InputSampleRate = inputSampleRate.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT32")]
+    [NativeName("Type.Name", "UINT32")]
+    [NativeName("Name", "CreationFlags")]
+    public uint CreationFlags;
+
+    [NativeName("Type", "UINT32")]
+    [NativeName("Type.Name", "UINT32")]
+    [NativeName("Name", "ActiveFlags")]
+    public uint ActiveFlags;
+
+    [NativeName("Type", "UINT32")]
+    [NativeName("Type.Name", "UINT32")]
+    [NativeName("Name", "InputChannels")]
+    public uint InputChannels;
+
+    [NativeName("Type", "UINT32")]
+    [NativeName("Type.Name", "UINT32")]
+    [NativeName("Name", "InputSampleRate")]
+    public uint InputSampleRate;
 }

@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_FEATURE_DATA_MARKER_SUPPORT")]
+public unsafe partial struct FeatureDataMarkerSupport
 {
-    [NativeName("Name", "D3D11_FEATURE_DATA_MARKER_SUPPORT")]
-    public unsafe partial struct FeatureDataMarkerSupport
-    {
-        public FeatureDataMarkerSupport
-        (
+    public FeatureDataMarkerSupport
+    (
             int? profile = null
-        ) : this()
+    ) : this()
+    {
+        if (profile is not null)
         {
-            if (profile is not null)
-            {
-                Profile = profile.Value;
-            }
+            Profile = profile.Value;
         }
-
-
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "Profile")]
-        public int Profile;
     }
+
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "Profile")]
+    public int Profile;
 }

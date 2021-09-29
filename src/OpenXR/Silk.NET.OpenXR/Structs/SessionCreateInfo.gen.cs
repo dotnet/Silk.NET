@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrSessionCreateInfo")]
+public unsafe partial struct SessionCreateInfo
 {
-    [NativeName("Name", "XrSessionCreateInfo")]
-    public unsafe partial struct SessionCreateInfo
-    {
-        public SessionCreateInfo
-        (
+    public SessionCreateInfo
+    (
             StructureType? type = StructureType.TypeSessionCreateInfo,
             void* next = null,
             SessionCreateFlags? createFlags = null,
             ulong? systemId = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (createFlags is not null)
-            {
-                CreateFlags = createFlags.Value;
-            }
-
-            if (systemId is not null)
-            {
-                SystemId = systemId.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "XrSessionCreateFlags")]
-        [NativeName("Type.Name", "XrSessionCreateFlags")]
-        [NativeName("Name", "createFlags")]
-        public SessionCreateFlags CreateFlags;
-/// <summary></summary>
-        [NativeName("Type", "XrSystemId")]
-        [NativeName("Type.Name", "XrSystemId")]
-        [NativeName("Name", "systemId")]
-        public ulong SystemId;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (createFlags is not null)
+        {
+            CreateFlags = createFlags.Value;
+        }
+
+        if (systemId is not null)
+        {
+            SystemId = systemId.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "XrSessionCreateFlags")]
+    [NativeName("Type.Name", "XrSessionCreateFlags")]
+    [NativeName("Name", "createFlags")]
+    public SessionCreateFlags CreateFlags;
+/// <summary></summary>
+    [NativeName("Type", "XrSystemId")]
+    [NativeName("Type.Name", "XrSystemId")]
+    [NativeName("Name", "systemId")]
+    public ulong SystemId;
 }

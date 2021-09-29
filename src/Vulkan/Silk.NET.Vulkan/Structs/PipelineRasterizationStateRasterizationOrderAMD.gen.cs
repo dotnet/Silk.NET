@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPipelineRasterizationStateRasterizationOrderAMD")]
+public unsafe partial struct PipelineRasterizationStateRasterizationOrderAMD
 {
-    [NativeName("Name", "VkPipelineRasterizationStateRasterizationOrderAMD")]
-    public unsafe partial struct PipelineRasterizationStateRasterizationOrderAMD
-    {
-        public PipelineRasterizationStateRasterizationOrderAMD
-        (
+    public PipelineRasterizationStateRasterizationOrderAMD
+    (
             StructureType? sType = StructureType.PipelineRasterizationStateRasterizationOrderAmd,
             void* pNext = null,
             RasterizationOrderAMD? rasterizationOrder = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (rasterizationOrder is not null)
-            {
-                RasterizationOrder = rasterizationOrder.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkRasterizationOrderAMD")]
-        [NativeName("Type.Name", "VkRasterizationOrderAMD")]
-        [NativeName("Name", "rasterizationOrder")]
-        public RasterizationOrderAMD RasterizationOrder;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (rasterizationOrder is not null)
+        {
+            RasterizationOrder = rasterizationOrder.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkRasterizationOrderAMD")]
+    [NativeName("Type.Name", "VkRasterizationOrderAMD")]
+    [NativeName("Name", "rasterizationOrder")]
+    public RasterizationOrderAMD RasterizationOrder;
 }

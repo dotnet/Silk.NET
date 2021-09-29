@@ -14,10 +14,9 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL
+namespace Silk.NET.SDL;
+
+[NativeName("Name", "SDL_semaphore")]
+public unsafe partial struct Semaphore
 {
-    [NativeName("Name", "SDL_semaphore")]
-    public unsafe partial struct Semaphore
-    {
-    }
 }

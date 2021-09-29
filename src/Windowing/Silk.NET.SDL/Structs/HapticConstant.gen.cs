@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL
+namespace Silk.NET.SDL;
+
+[NativeName("Name", "SDL_HapticConstant")]
+public unsafe partial struct HapticConstant
 {
-    [NativeName("Name", "SDL_HapticConstant")]
-    public unsafe partial struct HapticConstant
-    {
-        public HapticConstant
-        (
+    public HapticConstant
+    (
             ushort? type = null,
             HapticDirection? direction = null,
             uint? length = null,
@@ -32,118 +32,117 @@ namespace Silk.NET.SDL
             ushort? attackLevel = null,
             ushort? fadeLength = null,
             ushort? fadeLevel = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (direction is not null)
-            {
-                Direction = direction.Value;
-            }
-
-            if (length is not null)
-            {
-                Length = length.Value;
-            }
-
-            if (delay is not null)
-            {
-                Delay = delay.Value;
-            }
-
-            if (button is not null)
-            {
-                Button = button.Value;
-            }
-
-            if (interval is not null)
-            {
-                Interval = interval.Value;
-            }
-
-            if (level is not null)
-            {
-                Level = level.Value;
-            }
-
-            if (attackLength is not null)
-            {
-                AttackLength = attackLength.Value;
-            }
-
-            if (attackLevel is not null)
-            {
-                AttackLevel = attackLevel.Value;
-            }
-
-            if (fadeLength is not null)
-            {
-                FadeLength = fadeLength.Value;
-            }
-
-            if (fadeLevel is not null)
-            {
-                FadeLevel = fadeLevel.Value;
-            }
+            Type = type.Value;
         }
 
+        if (direction is not null)
+        {
+            Direction = direction.Value;
+        }
 
-        [NativeName("Type", "Uint16")]
-        [NativeName("Type.Name", "Uint16")]
-        [NativeName("Name", "type")]
-        public ushort Type;
+        if (length is not null)
+        {
+            Length = length.Value;
+        }
 
-        [NativeName("Type", "SDL_HapticDirection")]
-        [NativeName("Type.Name", "SDL_HapticDirection")]
-        [NativeName("Name", "direction")]
-        public HapticDirection Direction;
+        if (delay is not null)
+        {
+            Delay = delay.Value;
+        }
 
-        [NativeName("Type", "Uint32")]
-        [NativeName("Type.Name", "Uint32")]
-        [NativeName("Name", "length")]
-        public uint Length;
+        if (button is not null)
+        {
+            Button = button.Value;
+        }
 
-        [NativeName("Type", "Uint16")]
-        [NativeName("Type.Name", "Uint16")]
-        [NativeName("Name", "delay")]
-        public ushort Delay;
+        if (interval is not null)
+        {
+            Interval = interval.Value;
+        }
 
-        [NativeName("Type", "Uint16")]
-        [NativeName("Type.Name", "Uint16")]
-        [NativeName("Name", "button")]
-        public ushort Button;
+        if (level is not null)
+        {
+            Level = level.Value;
+        }
 
-        [NativeName("Type", "Uint16")]
-        [NativeName("Type.Name", "Uint16")]
-        [NativeName("Name", "interval")]
-        public ushort Interval;
+        if (attackLength is not null)
+        {
+            AttackLength = attackLength.Value;
+        }
 
-        [NativeName("Type", "Sint16")]
-        [NativeName("Type.Name", "Sint16")]
-        [NativeName("Name", "level")]
-        public short Level;
+        if (attackLevel is not null)
+        {
+            AttackLevel = attackLevel.Value;
+        }
 
-        [NativeName("Type", "Uint16")]
-        [NativeName("Type.Name", "Uint16")]
-        [NativeName("Name", "attack_length")]
-        public ushort AttackLength;
+        if (fadeLength is not null)
+        {
+            FadeLength = fadeLength.Value;
+        }
 
-        [NativeName("Type", "Uint16")]
-        [NativeName("Type.Name", "Uint16")]
-        [NativeName("Name", "attack_level")]
-        public ushort AttackLevel;
-
-        [NativeName("Type", "Uint16")]
-        [NativeName("Type.Name", "Uint16")]
-        [NativeName("Name", "fade_length")]
-        public ushort FadeLength;
-
-        [NativeName("Type", "Uint16")]
-        [NativeName("Type.Name", "Uint16")]
-        [NativeName("Name", "fade_level")]
-        public ushort FadeLevel;
+        if (fadeLevel is not null)
+        {
+            FadeLevel = fadeLevel.Value;
+        }
     }
+
+
+    [NativeName("Type", "Uint16")]
+    [NativeName("Type.Name", "Uint16")]
+    [NativeName("Name", "type")]
+    public ushort Type;
+
+    [NativeName("Type", "SDL_HapticDirection")]
+    [NativeName("Type.Name", "SDL_HapticDirection")]
+    [NativeName("Name", "direction")]
+    public HapticDirection Direction;
+
+    [NativeName("Type", "Uint32")]
+    [NativeName("Type.Name", "Uint32")]
+    [NativeName("Name", "length")]
+    public uint Length;
+
+    [NativeName("Type", "Uint16")]
+    [NativeName("Type.Name", "Uint16")]
+    [NativeName("Name", "delay")]
+    public ushort Delay;
+
+    [NativeName("Type", "Uint16")]
+    [NativeName("Type.Name", "Uint16")]
+    [NativeName("Name", "button")]
+    public ushort Button;
+
+    [NativeName("Type", "Uint16")]
+    [NativeName("Type.Name", "Uint16")]
+    [NativeName("Name", "interval")]
+    public ushort Interval;
+
+    [NativeName("Type", "Sint16")]
+    [NativeName("Type.Name", "Sint16")]
+    [NativeName("Name", "level")]
+    public short Level;
+
+    [NativeName("Type", "Uint16")]
+    [NativeName("Type.Name", "Uint16")]
+    [NativeName("Name", "attack_length")]
+    public ushort AttackLength;
+
+    [NativeName("Type", "Uint16")]
+    [NativeName("Type.Name", "Uint16")]
+    [NativeName("Name", "attack_level")]
+    public ushort AttackLevel;
+
+    [NativeName("Type", "Uint16")]
+    [NativeName("Type.Name", "Uint16")]
+    [NativeName("Name", "fade_length")]
+    public ushort FadeLength;
+
+    [NativeName("Type", "Uint16")]
+    [NativeName("Type.Name", "Uint16")]
+    [NativeName("Name", "fade_level")]
+    public ushort FadeLevel;
 }

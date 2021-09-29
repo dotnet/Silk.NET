@@ -7,12 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy
+namespace Silk.NET.OpenGL.Legacy;
+
+[NativeName("Name", "MinmaxTarget")]
+public enum MinmaxTarget : int
 {
-    [NativeName("Name", "MinmaxTarget")]
-    public enum MinmaxTarget : int
-    {
-        [NativeName("Name", "GL_MINMAX")]
-        Minmax = 0x802E,
-    }
+    [NativeName("Name", "GL_MINMAX")]
+    Minmax = 0x802E,
 }

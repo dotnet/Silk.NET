@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES
+namespace Silk.NET.OpenGLES;
+
+[NativeName("Name", "PathHandleMissingGlyphs")]
+public enum PathHandleMissingGlyphs : int
 {
-    [NativeName("Name", "PathHandleMissingGlyphs")]
-    public enum PathHandleMissingGlyphs : int
-    {
-        [NativeName("Name", "GL_SKIP_MISSING_GLYPH_NV")]
-        SkipMissingGlyphNV = 0x90A9,
-        [NativeName("Name", "GL_USE_MISSING_GLYPH_NV")]
-        UseMissingGlyphNV = 0x90AA,
-    }
+    [NativeName("Name", "GL_SKIP_MISSING_GLYPH_NV")]
+    SkipMissingGlyphNV = 0x90A9,
+    [NativeName("Name", "GL_USE_MISSING_GLYPH_NV")]
+    UseMissingGlyphNV = 0x90AA,
 }

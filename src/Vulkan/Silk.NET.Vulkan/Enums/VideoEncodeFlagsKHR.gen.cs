@@ -7,15 +7,14 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
-{
+namespace Silk.NET.Vulkan;
+
     [Flags()]
-    [NativeName("Name", "VkVideoEncodeFlagsKHR")]
-    public enum VideoEncodeFlagsKHR : int
-    {
-        [NativeName("Name", "VK_VIDEO_ENCODE_DEFAULT_KHR")]
-        VideoEncodeDefaultKhr = 0,
-        [NativeName("Name", "VK_VIDEO_ENCODE_RESERVED_0_BIT_KHR")]
-        VideoEncodeReserved0BitKhr = 1,
-    }
+[NativeName("Name", "VkVideoEncodeFlagsKHR")]
+public enum VideoEncodeFlagsKHR : int
+{
+    [NativeName("Name", "VK_VIDEO_ENCODE_DEFAULT_KHR")]
+    VideoEncodeDefaultKhr = 0,
+    [NativeName("Name", "VK_VIDEO_ENCODE_RESERVED_0_BIT_KHR")]
+    VideoEncodeReserved0BitKhr = 1,
 }

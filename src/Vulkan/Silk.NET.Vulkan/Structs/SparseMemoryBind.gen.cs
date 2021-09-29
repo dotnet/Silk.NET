@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkSparseMemoryBind")]
+public unsafe partial struct SparseMemoryBind
 {
-    [NativeName("Name", "VkSparseMemoryBind")]
-    public unsafe partial struct SparseMemoryBind
-    {
-        public SparseMemoryBind
-        (
+    public SparseMemoryBind
+    (
             ulong? resourceOffset = null,
             ulong? size = null,
             DeviceMemory? memory = null,
             ulong? memoryOffset = null,
             SparseMemoryBindFlags? flags = null
-        ) : this()
+    ) : this()
+    {
+        if (resourceOffset is not null)
         {
-            if (resourceOffset is not null)
-            {
-                ResourceOffset = resourceOffset.Value;
-            }
-
-            if (size is not null)
-            {
-                Size = size.Value;
-            }
-
-            if (memory is not null)
-            {
-                Memory = memory.Value;
-            }
-
-            if (memoryOffset is not null)
-            {
-                MemoryOffset = memoryOffset.Value;
-            }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
+            ResourceOffset = resourceOffset.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkDeviceSize")]
-        [NativeName("Type.Name", "VkDeviceSize")]
-        [NativeName("Name", "resourceOffset")]
-        public ulong ResourceOffset;
-/// <summary></summary>
-        [NativeName("Type", "VkDeviceSize")]
-        [NativeName("Type.Name", "VkDeviceSize")]
-        [NativeName("Name", "size")]
-        public ulong Size;
-/// <summary></summary>
-        [NativeName("Type", "VkDeviceMemory")]
-        [NativeName("Type.Name", "VkDeviceMemory")]
-        [NativeName("Name", "memory")]
-        public DeviceMemory Memory;
-/// <summary></summary>
-        [NativeName("Type", "VkDeviceSize")]
-        [NativeName("Type.Name", "VkDeviceSize")]
-        [NativeName("Name", "memoryOffset")]
-        public ulong MemoryOffset;
-/// <summary></summary>
-        [NativeName("Type", "VkSparseMemoryBindFlags")]
-        [NativeName("Type.Name", "VkSparseMemoryBindFlags")]
-        [NativeName("Name", "flags")]
-        public SparseMemoryBindFlags Flags;
+        if (size is not null)
+        {
+            Size = size.Value;
+        }
+
+        if (memory is not null)
+        {
+            Memory = memory.Value;
+        }
+
+        if (memoryOffset is not null)
+        {
+            MemoryOffset = memoryOffset.Value;
+        }
+
+        if (flags is not null)
+        {
+            Flags = flags.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkDeviceSize")]
+    [NativeName("Type.Name", "VkDeviceSize")]
+    [NativeName("Name", "resourceOffset")]
+    public ulong ResourceOffset;
+/// <summary></summary>
+    [NativeName("Type", "VkDeviceSize")]
+    [NativeName("Type.Name", "VkDeviceSize")]
+    [NativeName("Name", "size")]
+    public ulong Size;
+/// <summary></summary>
+    [NativeName("Type", "VkDeviceMemory")]
+    [NativeName("Type.Name", "VkDeviceMemory")]
+    [NativeName("Name", "memory")]
+    public DeviceMemory Memory;
+/// <summary></summary>
+    [NativeName("Type", "VkDeviceSize")]
+    [NativeName("Type.Name", "VkDeviceSize")]
+    [NativeName("Name", "memoryOffset")]
+    public ulong MemoryOffset;
+/// <summary></summary>
+    [NativeName("Type", "VkSparseMemoryBindFlags")]
+    [NativeName("Type.Name", "VkSparseMemoryBindFlags")]
+    [NativeName("Name", "flags")]
+    public SparseMemoryBindFlags Flags;
 }

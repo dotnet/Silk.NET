@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9
+namespace Silk.NET.Direct3D9;
+
+[NativeName("Name", "_D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESSCOUNT_OUTPUT")]
+public unsafe partial struct AuthenticatedchannelQueryrestrictedsharedresourceprocesscountOutput
 {
-    [NativeName("Name", "_D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESSCOUNT_OUTPUT")]
-    public unsafe partial struct AuthenticatedchannelQueryrestrictedsharedresourceprocesscountOutput
-    {
-        public AuthenticatedchannelQueryrestrictedsharedresourceprocesscountOutput
-        (
+    public AuthenticatedchannelQueryrestrictedsharedresourceprocesscountOutput
+    (
             AuthenticatedchannelQueryOutput? output = null,
             uint? numRestrictedSharedResourceProcesses = null
-        ) : this()
+    ) : this()
+    {
+        if (output is not null)
         {
-            if (output is not null)
-            {
-                Output = output.Value;
-            }
-
-            if (numRestrictedSharedResourceProcesses is not null)
-            {
-                NumRestrictedSharedResourceProcesses = numRestrictedSharedResourceProcesses.Value;
-            }
+            Output = output.Value;
         }
 
-
-        [NativeName("Type", "D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT")]
-        [NativeName("Type.Name", "D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT")]
-        [NativeName("Name", "Output")]
-        public AuthenticatedchannelQueryOutput Output;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "NumRestrictedSharedResourceProcesses")]
-        public uint NumRestrictedSharedResourceProcesses;
+        if (numRestrictedSharedResourceProcesses is not null)
+        {
+            NumRestrictedSharedResourceProcesses = numRestrictedSharedResourceProcesses.Value;
+        }
     }
+
+
+    [NativeName("Type", "D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT")]
+    [NativeName("Type.Name", "D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT")]
+    [NativeName("Name", "Output")]
+    public AuthenticatedchannelQueryOutput Output;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "NumRestrictedSharedResourceProcesses")]
+    public uint NumRestrictedSharedResourceProcesses;
 }

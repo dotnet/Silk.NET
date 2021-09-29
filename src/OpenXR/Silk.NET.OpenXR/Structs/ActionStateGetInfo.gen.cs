@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrActionStateGetInfo")]
+public unsafe partial struct ActionStateGetInfo
 {
-    [NativeName("Name", "XrActionStateGetInfo")]
-    public unsafe partial struct ActionStateGetInfo
-    {
-        public ActionStateGetInfo
-        (
+    public ActionStateGetInfo
+    (
             StructureType? type = StructureType.TypeActionStateGetInfo,
             void* next = null,
             Action? action = null,
             ulong? subactionPath = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (action is not null)
-            {
-                Action = action.Value;
-            }
-
-            if (subactionPath is not null)
-            {
-                SubactionPath = subactionPath.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "XrAction")]
-        [NativeName("Type.Name", "XrAction")]
-        [NativeName("Name", "action")]
-        public Action Action;
-/// <summary></summary>
-        [NativeName("Type", "XrPath")]
-        [NativeName("Type.Name", "XrPath")]
-        [NativeName("Name", "subactionPath")]
-        public ulong SubactionPath;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (action is not null)
+        {
+            Action = action.Value;
+        }
+
+        if (subactionPath is not null)
+        {
+            SubactionPath = subactionPath.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "XrAction")]
+    [NativeName("Type.Name", "XrAction")]
+    [NativeName("Name", "action")]
+    public Action Action;
+/// <summary></summary>
+    [NativeName("Type", "XrPath")]
+    [NativeName("Type.Name", "XrPath")]
+    [NativeName("Name", "subactionPath")]
+    public ulong SubactionPath;
 }

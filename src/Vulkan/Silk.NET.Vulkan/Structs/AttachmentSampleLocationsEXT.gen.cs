@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkAttachmentSampleLocationsEXT")]
+public unsafe partial struct AttachmentSampleLocationsEXT
 {
-    [NativeName("Name", "VkAttachmentSampleLocationsEXT")]
-    public unsafe partial struct AttachmentSampleLocationsEXT
-    {
-        public AttachmentSampleLocationsEXT
-        (
+    public AttachmentSampleLocationsEXT
+    (
             uint? attachmentIndex = null,
             SampleLocationsInfoEXT? sampleLocationsInfo = null
-        ) : this()
+    ) : this()
+    {
+        if (attachmentIndex is not null)
         {
-            if (attachmentIndex is not null)
-            {
-                AttachmentIndex = attachmentIndex.Value;
-            }
-
-            if (sampleLocationsInfo is not null)
-            {
-                SampleLocationsInfo = sampleLocationsInfo.Value;
-            }
+            AttachmentIndex = attachmentIndex.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "attachmentIndex")]
-        public uint AttachmentIndex;
-/// <summary></summary>
-        [NativeName("Type", "VkSampleLocationsInfoEXT")]
-        [NativeName("Type.Name", "VkSampleLocationsInfoEXT")]
-        [NativeName("Name", "sampleLocationsInfo")]
-        public SampleLocationsInfoEXT SampleLocationsInfo;
+        if (sampleLocationsInfo is not null)
+        {
+            SampleLocationsInfo = sampleLocationsInfo.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "attachmentIndex")]
+    public uint AttachmentIndex;
+/// <summary></summary>
+    [NativeName("Type", "VkSampleLocationsInfoEXT")]
+    [NativeName("Type.Name", "VkSampleLocationsInfoEXT")]
+    [NativeName("Name", "sampleLocationsInfo")]
+    public SampleLocationsInfoEXT SampleLocationsInfo;
 }

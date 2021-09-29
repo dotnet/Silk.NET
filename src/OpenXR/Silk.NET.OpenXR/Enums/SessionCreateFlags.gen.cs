@@ -7,11 +7,10 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
-{
+namespace Silk.NET.OpenXR;
+
     [Flags()]
-    [NativeName("Name", "XrSessionCreateFlags")]
-    public enum SessionCreateFlags : long
-    {
-    }
+[NativeName("Name", "XrSessionCreateFlags")]
+public enum SessionCreateFlags : long
+{
 }

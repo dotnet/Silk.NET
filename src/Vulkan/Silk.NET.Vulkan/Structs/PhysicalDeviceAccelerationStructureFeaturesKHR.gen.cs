@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDeviceAccelerationStructureFeaturesKHR")]
+public unsafe partial struct PhysicalDeviceAccelerationStructureFeaturesKHR
 {
-    [NativeName("Name", "VkPhysicalDeviceAccelerationStructureFeaturesKHR")]
-    public unsafe partial struct PhysicalDeviceAccelerationStructureFeaturesKHR
-    {
-        public PhysicalDeviceAccelerationStructureFeaturesKHR
-        (
+    public PhysicalDeviceAccelerationStructureFeaturesKHR
+    (
             StructureType? sType = StructureType.PhysicalDeviceAccelerationStructureFeaturesKhr,
             void* pNext = null,
             Bool32? accelerationStructure = null,
@@ -28,78 +28,77 @@ namespace Silk.NET.Vulkan
             Bool32? accelerationStructureIndirectBuild = null,
             Bool32? accelerationStructureHostCommands = null,
             Bool32? descriptorBindingAccelerationStructureUpdateAfterBind = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (accelerationStructure is not null)
-            {
-                AccelerationStructure = accelerationStructure.Value;
-            }
-
-            if (accelerationStructureCaptureReplay is not null)
-            {
-                AccelerationStructureCaptureReplay = accelerationStructureCaptureReplay.Value;
-            }
-
-            if (accelerationStructureIndirectBuild is not null)
-            {
-                AccelerationStructureIndirectBuild = accelerationStructureIndirectBuild.Value;
-            }
-
-            if (accelerationStructureHostCommands is not null)
-            {
-                AccelerationStructureHostCommands = accelerationStructureHostCommands.Value;
-            }
-
-            if (descriptorBindingAccelerationStructureUpdateAfterBind is not null)
-            {
-                DescriptorBindingAccelerationStructureUpdateAfterBind = descriptorBindingAccelerationStructureUpdateAfterBind.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "accelerationStructure")]
-        public Bool32 AccelerationStructure;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "accelerationStructureCaptureReplay")]
-        public Bool32 AccelerationStructureCaptureReplay;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "accelerationStructureIndirectBuild")]
-        public Bool32 AccelerationStructureIndirectBuild;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "accelerationStructureHostCommands")]
-        public Bool32 AccelerationStructureHostCommands;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "descriptorBindingAccelerationStructureUpdateAfterBind")]
-        public Bool32 DescriptorBindingAccelerationStructureUpdateAfterBind;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (accelerationStructure is not null)
+        {
+            AccelerationStructure = accelerationStructure.Value;
+        }
+
+        if (accelerationStructureCaptureReplay is not null)
+        {
+            AccelerationStructureCaptureReplay = accelerationStructureCaptureReplay.Value;
+        }
+
+        if (accelerationStructureIndirectBuild is not null)
+        {
+            AccelerationStructureIndirectBuild = accelerationStructureIndirectBuild.Value;
+        }
+
+        if (accelerationStructureHostCommands is not null)
+        {
+            AccelerationStructureHostCommands = accelerationStructureHostCommands.Value;
+        }
+
+        if (descriptorBindingAccelerationStructureUpdateAfterBind is not null)
+        {
+            DescriptorBindingAccelerationStructureUpdateAfterBind = descriptorBindingAccelerationStructureUpdateAfterBind.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "accelerationStructure")]
+    public Bool32 AccelerationStructure;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "accelerationStructureCaptureReplay")]
+    public Bool32 AccelerationStructureCaptureReplay;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "accelerationStructureIndirectBuild")]
+    public Bool32 AccelerationStructureIndirectBuild;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "accelerationStructureHostCommands")]
+    public Bool32 AccelerationStructureHostCommands;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "descriptorBindingAccelerationStructureUpdateAfterBind")]
+    public Bool32 DescriptorBindingAccelerationStructureUpdateAfterBind;
 }

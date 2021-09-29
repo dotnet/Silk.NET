@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkCuFunctionCreateInfoNVX")]
+public unsafe partial struct CuFunctionCreateInfoNVX
 {
-    [NativeName("Name", "VkCuFunctionCreateInfoNVX")]
-    public unsafe partial struct CuFunctionCreateInfoNVX
-    {
-        public CuFunctionCreateInfoNVX
-        (
+    public CuFunctionCreateInfoNVX
+    (
             StructureType? sType = StructureType.CUFunctionCreateInfoNvx,
             void* pNext = null,
             CuModuleNVX? module = null,
             byte* pName = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (module is not null)
-            {
-                Module = module.Value;
-            }
-
-            if (pName is not null)
-            {
-                PName = pName;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkCuModuleNVX")]
-        [NativeName("Type.Name", "VkCuModuleNVX")]
-        [NativeName("Name", "module")]
-        public CuModuleNVX Module;
-/// <summary></summary>
-        [NativeName("Type", "char*")]
-        [NativeName("Type.Name", "char")]
-        [NativeName("Name", "pName")]
-        public byte* PName;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (module is not null)
+        {
+            Module = module.Value;
+        }
+
+        if (pName is not null)
+        {
+            PName = pName;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkCuModuleNVX")]
+    [NativeName("Type.Name", "VkCuModuleNVX")]
+    [NativeName("Name", "module")]
+    public CuModuleNVX Module;
+/// <summary></summary>
+    [NativeName("Type", "char*")]
+    [NativeName("Type.Name", "char")]
+    [NativeName("Name", "pName")]
+    public byte* PName;
 }

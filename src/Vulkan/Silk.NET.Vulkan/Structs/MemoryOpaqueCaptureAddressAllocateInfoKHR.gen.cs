@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkMemoryOpaqueCaptureAddressAllocateInfoKHR")]
+public unsafe partial struct MemoryOpaqueCaptureAddressAllocateInfoKHR
 {
-    [NativeName("Name", "VkMemoryOpaqueCaptureAddressAllocateInfoKHR")]
-    public unsafe partial struct MemoryOpaqueCaptureAddressAllocateInfoKHR
-    {
-        public MemoryOpaqueCaptureAddressAllocateInfoKHR
-        (
+    public MemoryOpaqueCaptureAddressAllocateInfoKHR
+    (
             StructureType? sType = StructureType.MemoryOpaqueCaptureAddressAllocateInfo,
             void* pNext = null,
             ulong? opaqueCaptureAddress = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (opaqueCaptureAddress is not null)
-            {
-                OpaqueCaptureAddress = opaqueCaptureAddress.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "uint64_t")]
-        [NativeName("Type.Name", "uint64_t")]
-        [NativeName("Name", "opaqueCaptureAddress")]
-        public ulong OpaqueCaptureAddress;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (opaqueCaptureAddress is not null)
+        {
+            OpaqueCaptureAddress = opaqueCaptureAddress.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "uint64_t")]
+    [NativeName("Type.Name", "uint64_t")]
+    [NativeName("Name", "opaqueCaptureAddress")]
+    public ulong OpaqueCaptureAddress;
 }

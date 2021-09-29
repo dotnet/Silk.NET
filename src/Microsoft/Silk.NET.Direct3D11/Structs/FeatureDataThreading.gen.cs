@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_FEATURE_DATA_THREADING")]
+public unsafe partial struct FeatureDataThreading
 {
-    [NativeName("Name", "D3D11_FEATURE_DATA_THREADING")]
-    public unsafe partial struct FeatureDataThreading
-    {
-        public FeatureDataThreading
-        (
+    public FeatureDataThreading
+    (
             int? driverConcurrentCreates = null,
             int? driverCommandLists = null
-        ) : this()
+    ) : this()
+    {
+        if (driverConcurrentCreates is not null)
         {
-            if (driverConcurrentCreates is not null)
-            {
-                DriverConcurrentCreates = driverConcurrentCreates.Value;
-            }
-
-            if (driverCommandLists is not null)
-            {
-                DriverCommandLists = driverCommandLists.Value;
-            }
+            DriverConcurrentCreates = driverConcurrentCreates.Value;
         }
 
-
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "DriverConcurrentCreates")]
-        public int DriverConcurrentCreates;
-
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "DriverCommandLists")]
-        public int DriverCommandLists;
+        if (driverCommandLists is not null)
+        {
+            DriverCommandLists = driverCommandLists.Value;
+        }
     }
+
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "DriverConcurrentCreates")]
+    public int DriverConcurrentCreates;
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "DriverCommandLists")]
+    public int DriverCommandLists;
 }

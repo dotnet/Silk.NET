@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL
+namespace Silk.NET.SDL;
+
+[NativeName("Name", "__AnonymousEnum_SDL_stdinc_L167_C9")]
+public enum SdlBool : int
 {
-    [NativeName("Name", "__AnonymousEnum_SDL_stdinc_L167_C9")]
-    public enum SdlBool : int
-    {
-        [NativeName("Name", "SDL_FALSE")]
-        False = 0x0,
-        [NativeName("Name", "SDL_TRUE")]
-        True = 0x1,
-    }
+    [NativeName("Name", "SDL_FALSE")]
+    False = 0x0,
+    [NativeName("Name", "SDL_TRUE")]
+    True = 0x1,
 }

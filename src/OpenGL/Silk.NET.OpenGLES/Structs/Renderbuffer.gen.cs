@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES
+namespace Silk.NET.OpenGLES;
+
+[NativeName("Name", "renderbuffer")]
+public unsafe partial struct Renderbuffer
 {
-    [NativeName("Name", "renderbuffer")]
-    public unsafe partial struct Renderbuffer
-    {
-        public Renderbuffer
-        (
+    public Renderbuffer
+    (
             uint? handle = null
-        ) : this()
+    ) : this()
+    {
+        if (handle is not null)
         {
-            if (handle is not null)
-            {
-                Handle = handle.Value;
-            }
+            Handle = handle.Value;
         }
-
-
-        [NativeName("Type", "")]
-        [NativeName("Type.Name", "")]
-        [NativeName("Name", "")]
-        public uint Handle;
     }
+
+
+    [NativeName("Type", "")]
+    [NativeName("Type.Name", "")]
+    [NativeName("Name", "")]
+    public uint Handle;
 }

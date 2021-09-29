@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.XInput
+namespace Silk.NET.XInput;
+
+[NativeName("Name", "_XINPUT_VIBRATION")]
+public unsafe partial struct Vibration
 {
-    [NativeName("Name", "_XINPUT_VIBRATION")]
-    public unsafe partial struct Vibration
-    {
-        public Vibration
-        (
+    public Vibration
+    (
             ushort? wLeftMotorSpeed = null,
             ushort? wRightMotorSpeed = null
-        ) : this()
+    ) : this()
+    {
+        if (wLeftMotorSpeed is not null)
         {
-            if (wLeftMotorSpeed is not null)
-            {
-                WLeftMotorSpeed = wLeftMotorSpeed.Value;
-            }
-
-            if (wRightMotorSpeed is not null)
-            {
-                WRightMotorSpeed = wRightMotorSpeed.Value;
-            }
+            WLeftMotorSpeed = wLeftMotorSpeed.Value;
         }
 
-
-        [NativeName("Type", "WORD")]
-        [NativeName("Type.Name", "WORD")]
-        [NativeName("Name", "wLeftMotorSpeed")]
-        public ushort WLeftMotorSpeed;
-
-        [NativeName("Type", "WORD")]
-        [NativeName("Type.Name", "WORD")]
-        [NativeName("Name", "wRightMotorSpeed")]
-        public ushort WRightMotorSpeed;
+        if (wRightMotorSpeed is not null)
+        {
+            WRightMotorSpeed = wRightMotorSpeed.Value;
+        }
     }
+
+
+    [NativeName("Type", "WORD")]
+    [NativeName("Type.Name", "WORD")]
+    [NativeName("Name", "wLeftMotorSpeed")]
+    public ushort WLeftMotorSpeed;
+
+    [NativeName("Type", "WORD")]
+    [NativeName("Type.Name", "WORD")]
+    [NativeName("Name", "wRightMotorSpeed")]
+    public ushort WRightMotorSpeed;
 }

@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_DISPATCH_MESH_ARGUMENTS")]
+public unsafe partial struct DispatchMeshArguments
 {
-    [NativeName("Name", "D3D12_DISPATCH_MESH_ARGUMENTS")]
-    public unsafe partial struct DispatchMeshArguments
-    {
-        public DispatchMeshArguments
-        (
+    public DispatchMeshArguments
+    (
             uint? threadGroupCountX = null,
             uint? threadGroupCountY = null,
             uint? threadGroupCountZ = null
-        ) : this()
+    ) : this()
+    {
+        if (threadGroupCountX is not null)
         {
-            if (threadGroupCountX is not null)
-            {
-                ThreadGroupCountX = threadGroupCountX.Value;
-            }
-
-            if (threadGroupCountY is not null)
-            {
-                ThreadGroupCountY = threadGroupCountY.Value;
-            }
-
-            if (threadGroupCountZ is not null)
-            {
-                ThreadGroupCountZ = threadGroupCountZ.Value;
-            }
+            ThreadGroupCountX = threadGroupCountX.Value;
         }
 
+        if (threadGroupCountY is not null)
+        {
+            ThreadGroupCountY = threadGroupCountY.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "ThreadGroupCountX")]
-        public uint ThreadGroupCountX;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "ThreadGroupCountY")]
-        public uint ThreadGroupCountY;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "ThreadGroupCountZ")]
-        public uint ThreadGroupCountZ;
+        if (threadGroupCountZ is not null)
+        {
+            ThreadGroupCountZ = threadGroupCountZ.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "ThreadGroupCountX")]
+    public uint ThreadGroupCountX;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "ThreadGroupCountY")]
+    public uint ThreadGroupCountY;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "ThreadGroupCountZ")]
+    public uint ThreadGroupCountZ;
 }

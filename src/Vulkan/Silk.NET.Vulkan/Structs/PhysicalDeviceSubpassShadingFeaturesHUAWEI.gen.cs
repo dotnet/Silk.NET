@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDeviceSubpassShadingFeaturesHUAWEI")]
+public unsafe partial struct PhysicalDeviceSubpassShadingFeaturesHUAWEI
 {
-    [NativeName("Name", "VkPhysicalDeviceSubpassShadingFeaturesHUAWEI")]
-    public unsafe partial struct PhysicalDeviceSubpassShadingFeaturesHUAWEI
-    {
-        public PhysicalDeviceSubpassShadingFeaturesHUAWEI
-        (
+    public PhysicalDeviceSubpassShadingFeaturesHUAWEI
+    (
             StructureType? sType = StructureType.PhysicalDeviceSubpassShadingFeaturesHuawei,
             void* pNext = null,
             Bool32? subpassShading = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (subpassShading is not null)
-            {
-                SubpassShading = subpassShading.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "subpassShading")]
-        public Bool32 SubpassShading;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (subpassShading is not null)
+        {
+            SubpassShading = subpassShading.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "subpassShading")]
+    public Bool32 SubpassShading;
 }

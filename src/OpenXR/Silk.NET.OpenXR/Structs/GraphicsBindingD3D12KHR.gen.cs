@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrGraphicsBindingD3D12KHR")]
+public unsafe partial struct GraphicsBindingD3D12KHR
 {
-    [NativeName("Name", "XrGraphicsBindingD3D12KHR")]
-    public unsafe partial struct GraphicsBindingD3D12KHR
-    {
-        public GraphicsBindingD3D12KHR
-        (
+    public GraphicsBindingD3D12KHR
+    (
             StructureType? type = StructureType.TypeGraphicsBindingD3D12Khr,
             void* next = null,
             void* device = null,
             void* queue = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (device is not null)
-            {
-                Device = device;
-            }
-
-            if (queue is not null)
-            {
-                Queue = queue;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "ID3D12Device*")]
-        [NativeName("Type.Name", "ID3D12Device")]
-        [NativeName("Name", "device")]
-        public void* Device;
-/// <summary></summary>
-        [NativeName("Type", "ID3D12CommandQueue*")]
-        [NativeName("Type.Name", "ID3D12CommandQueue")]
-        [NativeName("Name", "queue")]
-        public void* Queue;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (device is not null)
+        {
+            Device = device;
+        }
+
+        if (queue is not null)
+        {
+            Queue = queue;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "ID3D12Device*")]
+    [NativeName("Type.Name", "ID3D12Device")]
+    [NativeName("Name", "device")]
+    public void* Device;
+/// <summary></summary>
+    [NativeName("Type", "ID3D12CommandQueue*")]
+    [NativeName("Type.Name", "ID3D12CommandQueue")]
+    [NativeName("Name", "queue")]
+    public void* Queue;
 }

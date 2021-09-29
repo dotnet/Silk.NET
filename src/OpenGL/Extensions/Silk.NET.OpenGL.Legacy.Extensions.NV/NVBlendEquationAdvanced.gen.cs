@@ -14,22 +14,21 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NV
+namespace Silk.NET.OpenGL.Legacy.Extensions.NV;
+
+[Extension("NV_blend_equation_advanced")]
+public unsafe partial class NVBlendEquationAdvanced : NativeExtension<GL>
 {
-    [Extension("NV_blend_equation_advanced")]
-    public unsafe partial class NVBlendEquationAdvanced : NativeExtension<GL>
+    public const string ExtensionName = "NV_blend_equation_advanced";
+    [NativeApi(EntryPoint = "glBlendBarrierNV")]
+    public partial void BlendBarrier();
+
+    [NativeApi(EntryPoint = "glBlendParameteriNV")]
+    public partial void BlendParameter([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int value);
+
+    public NVBlendEquationAdvanced(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "NV_blend_equation_advanced";
-        [NativeApi(EntryPoint = "glBlendBarrierNV")]
-        public partial void BlendBarrier();
-
-        [NativeApi(EntryPoint = "glBlendParameteriNV")]
-        public partial void BlendParameter([Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int value);
-
-        public NVBlendEquationAdvanced(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

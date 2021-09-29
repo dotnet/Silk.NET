@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI
+namespace Silk.NET.DXGI;
+
+[NativeName("Name", "DXGI_DECODE_SWAP_CHAIN_DESC")]
+public unsafe partial struct DecodeSwapChainDesc
 {
-    [NativeName("Name", "DXGI_DECODE_SWAP_CHAIN_DESC")]
-    public unsafe partial struct DecodeSwapChainDesc
-    {
-        public DecodeSwapChainDesc
-        (
+    public DecodeSwapChainDesc
+    (
             uint? flags = null
-        ) : this()
+    ) : this()
+    {
+        if (flags is not null)
         {
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
+            Flags = flags.Value;
         }
-
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Flags")]
-        public uint Flags;
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Flags")]
+    public uint Flags;
 }

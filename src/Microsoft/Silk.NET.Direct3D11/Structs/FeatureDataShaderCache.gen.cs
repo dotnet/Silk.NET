@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_FEATURE_DATA_SHADER_CACHE")]
+public unsafe partial struct FeatureDataShaderCache
 {
-    [NativeName("Name", "D3D11_FEATURE_DATA_SHADER_CACHE")]
-    public unsafe partial struct FeatureDataShaderCache
-    {
-        public FeatureDataShaderCache
-        (
+    public FeatureDataShaderCache
+    (
             uint? supportFlags = null
-        ) : this()
+    ) : this()
+    {
+        if (supportFlags is not null)
         {
-            if (supportFlags is not null)
-            {
-                SupportFlags = supportFlags.Value;
-            }
+            SupportFlags = supportFlags.Value;
         }
-
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "SupportFlags")]
-        public uint SupportFlags;
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "SupportFlags")]
+    public uint SupportFlags;
 }

@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkVertexInputAttributeDescription")]
+public unsafe partial struct VertexInputAttributeDescription
 {
-    [NativeName("Name", "VkVertexInputAttributeDescription")]
-    public unsafe partial struct VertexInputAttributeDescription
-    {
-        public VertexInputAttributeDescription
-        (
+    public VertexInputAttributeDescription
+    (
             uint? location = null,
             uint? binding = null,
             Format? format = null,
             uint? offset = null
-        ) : this()
+    ) : this()
+    {
+        if (location is not null)
         {
-            if (location is not null)
-            {
-                Location = location.Value;
-            }
-
-            if (binding is not null)
-            {
-                Binding = binding.Value;
-            }
-
-            if (format is not null)
-            {
-                Format = format.Value;
-            }
-
-            if (offset is not null)
-            {
-                Offset = offset.Value;
-            }
+            Location = location.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "location")]
-        public uint Location;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "binding")]
-        public uint Binding;
-/// <summary></summary>
-        [NativeName("Type", "VkFormat")]
-        [NativeName("Type.Name", "VkFormat")]
-        [NativeName("Name", "format")]
-        public Format Format;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "offset")]
-        public uint Offset;
+        if (binding is not null)
+        {
+            Binding = binding.Value;
+        }
+
+        if (format is not null)
+        {
+            Format = format.Value;
+        }
+
+        if (offset is not null)
+        {
+            Offset = offset.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "location")]
+    public uint Location;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "binding")]
+    public uint Binding;
+/// <summary></summary>
+    [NativeName("Type", "VkFormat")]
+    [NativeName("Type.Name", "VkFormat")]
+    [NativeName("Name", "format")]
+    public Format Format;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "offset")]
+    public uint Offset;
 }

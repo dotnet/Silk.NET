@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkVideoDecodeH264ProfileEXT")]
+public unsafe partial struct VideoDecodeH264ProfileEXT
 {
-    [NativeName("Name", "VkVideoDecodeH264ProfileEXT")]
-    public unsafe partial struct VideoDecodeH264ProfileEXT
-    {
-        public VideoDecodeH264ProfileEXT
-        (
+    public VideoDecodeH264ProfileEXT
+    (
             StructureType? sType = StructureType.VideoDecodeH264ProfileExt,
             void* pNext = null,
             Video.StdVideoH264ProfileIdc? stdProfileIdc = null,
             VideoDecodeH264PictureLayoutFlagsEXT? pictureLayout = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (stdProfileIdc is not null)
-            {
-                StdProfileIdc = stdProfileIdc.Value;
-            }
-
-            if (pictureLayout is not null)
-            {
-                PictureLayout = pictureLayout.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "StdVideoH264ProfileIdc")]
-        [NativeName("Type.Name", "StdVideoH264ProfileIdc")]
-        [NativeName("Name", "stdProfileIdc")]
-        public Video.StdVideoH264ProfileIdc StdProfileIdc;
-/// <summary></summary>
-        [NativeName("Type", "VkVideoDecodeH264PictureLayoutFlagsEXT")]
-        [NativeName("Type.Name", "VkVideoDecodeH264PictureLayoutFlagsEXT")]
-        [NativeName("Name", "pictureLayout")]
-        public VideoDecodeH264PictureLayoutFlagsEXT PictureLayout;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (stdProfileIdc is not null)
+        {
+            StdProfileIdc = stdProfileIdc.Value;
+        }
+
+        if (pictureLayout is not null)
+        {
+            PictureLayout = pictureLayout.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "StdVideoH264ProfileIdc")]
+    [NativeName("Type.Name", "StdVideoH264ProfileIdc")]
+    [NativeName("Name", "stdProfileIdc")]
+    public Video.StdVideoH264ProfileIdc StdProfileIdc;
+/// <summary></summary>
+    [NativeName("Type", "VkVideoDecodeH264PictureLayoutFlagsEXT")]
+    [NativeName("Type.Name", "VkVideoDecodeH264PictureLayoutFlagsEXT")]
+    [NativeName("Name", "pictureLayout")]
+    public VideoDecodeH264PictureLayoutFlagsEXT PictureLayout;
 }

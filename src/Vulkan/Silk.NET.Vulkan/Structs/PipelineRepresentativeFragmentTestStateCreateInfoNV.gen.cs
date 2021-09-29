@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPipelineRepresentativeFragmentTestStateCreateInfoNV")]
+public unsafe partial struct PipelineRepresentativeFragmentTestStateCreateInfoNV
 {
-    [NativeName("Name", "VkPipelineRepresentativeFragmentTestStateCreateInfoNV")]
-    public unsafe partial struct PipelineRepresentativeFragmentTestStateCreateInfoNV
-    {
-        public PipelineRepresentativeFragmentTestStateCreateInfoNV
-        (
+    public PipelineRepresentativeFragmentTestStateCreateInfoNV
+    (
             StructureType? sType = StructureType.PipelineRepresentativeFragmentTestStateCreateInfoNV,
             void* pNext = null,
             Bool32? representativeFragmentTestEnable = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (representativeFragmentTestEnable is not null)
-            {
-                RepresentativeFragmentTestEnable = representativeFragmentTestEnable.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "representativeFragmentTestEnable")]
-        public Bool32 RepresentativeFragmentTestEnable;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (representativeFragmentTestEnable is not null)
+        {
+            RepresentativeFragmentTestEnable = representativeFragmentTestEnable.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "representativeFragmentTestEnable")]
+    public Bool32 RepresentativeFragmentTestEnable;
 }

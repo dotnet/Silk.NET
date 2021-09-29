@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy
+namespace Silk.NET.OpenGL.Legacy;
+
+[NativeName("Name", "ParameterRangeEXT")]
+public enum ParameterRangeEXT : int
 {
-    [NativeName("Name", "ParameterRangeEXT")]
-    public enum ParameterRangeEXT : int
-    {
-        [NativeName("Name", "GL_NORMALIZED_RANGE_EXT")]
-        NormalizedRangeExt = 0x87E0,
-        [NativeName("Name", "GL_FULL_RANGE_EXT")]
-        FullRangeExt = 0x87E1,
-    }
+    [NativeName("Name", "GL_NORMALIZED_RANGE_EXT")]
+    NormalizedRangeExt = 0x87E0,
+    [NativeName("Name", "GL_FULL_RANGE_EXT")]
+    FullRangeExt = 0x87E1,
 }

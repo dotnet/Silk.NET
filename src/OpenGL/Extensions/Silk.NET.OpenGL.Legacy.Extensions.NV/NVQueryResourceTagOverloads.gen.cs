@@ -12,28 +12,27 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NV
+namespace Silk.NET.OpenGL.Legacy.Extensions.NV;
+
+public static class NVQueryResourceTagOverloads
 {
-    public static class NVQueryResourceTagOverloads
+    public static unsafe void DeleteQueryResourceTag(this NVQueryResourceTag thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<int> tagIds)
     {
-        public static unsafe void DeleteQueryResourceTag(this NVQueryResourceTag thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<int> tagIds)
-        {
-            // SpanOverloader
-            thisApi.DeleteQueryResourceTag(n, in tagIds.GetPinnableReference());
-        }
-
-        public static unsafe void GenQueryResourceTag(this NVQueryResourceTag thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<int> tagIds)
-        {
-            // SpanOverloader
-            thisApi.GenQueryResourceTag(n, out tagIds.GetPinnableReference());
-        }
-
-        public static unsafe void QueryResourceTag(this NVQueryResourceTag thisApi, [Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] ReadOnlySpan<byte> tagString)
-        {
-            // SpanOverloader
-            thisApi.QueryResourceTag(tagId, in tagString.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        thisApi.DeleteQueryResourceTag(n, in tagIds.GetPinnableReference());
     }
+
+    public static unsafe void GenQueryResourceTag(this NVQueryResourceTag thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.Out)] Span<int> tagIds)
+    {
+        // SpanOverloader
+        thisApi.GenQueryResourceTag(n, out tagIds.GetPinnableReference());
+    }
+
+    public static unsafe void QueryResourceTag(this NVQueryResourceTag thisApi, [Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] ReadOnlySpan<byte> tagString)
+    {
+        // SpanOverloader
+        thisApi.QueryResourceTag(tagId, in tagString.GetPinnableReference());
+    }
+
 }
 

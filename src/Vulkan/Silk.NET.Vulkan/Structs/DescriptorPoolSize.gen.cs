@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkDescriptorPoolSize")]
+public unsafe partial struct DescriptorPoolSize
 {
-    [NativeName("Name", "VkDescriptorPoolSize")]
-    public unsafe partial struct DescriptorPoolSize
-    {
-        public DescriptorPoolSize
-        (
+    public DescriptorPoolSize
+    (
             DescriptorType? type = null,
             uint? descriptorCount = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (descriptorCount is not null)
-            {
-                DescriptorCount = descriptorCount.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkDescriptorType")]
-        [NativeName("Type.Name", "VkDescriptorType")]
-        [NativeName("Name", "type")]
-        public DescriptorType Type;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "descriptorCount")]
-        public uint DescriptorCount;
+        if (descriptorCount is not null)
+        {
+            DescriptorCount = descriptorCount.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkDescriptorType")]
+    [NativeName("Type.Name", "VkDescriptorType")]
+    [NativeName("Name", "type")]
+    public DescriptorType Type;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "descriptorCount")]
+    public uint DescriptorCount;
 }

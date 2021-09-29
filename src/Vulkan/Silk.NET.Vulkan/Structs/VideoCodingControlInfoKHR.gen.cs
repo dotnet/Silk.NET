@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkVideoCodingControlInfoKHR")]
+public unsafe partial struct VideoCodingControlInfoKHR
 {
-    [NativeName("Name", "VkVideoCodingControlInfoKHR")]
-    public unsafe partial struct VideoCodingControlInfoKHR
-    {
-        public VideoCodingControlInfoKHR
-        (
+    public VideoCodingControlInfoKHR
+    (
             StructureType? sType = StructureType.VideoCodingControlInfoKhr,
             void* pNext = null,
             VideoCodingControlFlagsKHR? flags = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkVideoCodingControlFlagsKHR")]
-        [NativeName("Type.Name", "VkVideoCodingControlFlagsKHR")]
-        [NativeName("Name", "flags")]
-        public VideoCodingControlFlagsKHR Flags;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (flags is not null)
+        {
+            Flags = flags.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkVideoCodingControlFlagsKHR")]
+    [NativeName("Type.Name", "VkVideoCodingControlFlagsKHR")]
+    [NativeName("Name", "flags")]
+    public VideoCodingControlFlagsKHR Flags;
 }

@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL
+namespace Silk.NET.SDL;
+
+[NativeName("Name", "SDL_GameControllerButtonBind")]
+public unsafe partial struct GameControllerButtonBind
 {
-    [NativeName("Name", "SDL_GameControllerButtonBind")]
-    public unsafe partial struct GameControllerButtonBind
-    {
-        public GameControllerButtonBind
-        (
+    public GameControllerButtonBind
+    (
             GameControllerBindType? bindType = null,
             GameControllerBindValue? value = null
-        ) : this()
+    ) : this()
+    {
+        if (bindType is not null)
         {
-            if (bindType is not null)
-            {
-                BindType = bindType.Value;
-            }
-
-            if (value is not null)
-            {
-                Value = value.Value;
-            }
+            BindType = bindType.Value;
         }
 
-
-        [NativeName("Type", "SDL_GameControllerBindType")]
-        [NativeName("Type.Name", "SDL_GameControllerBindType")]
-        [NativeName("Name", "bindType")]
-        public GameControllerBindType BindType;
-
-        [NativeName("Type", "union (anonymous union at build/submodules/SDL/include\\SDL_gamecontroller.h:87:5)")]
-        [NativeName("Type.Name", "union (anonymous union at build/submodules/SDL/include\\SDL_gamecontroller.h:87:5)")]
-        [NativeName("Name", "value")]
-        public GameControllerBindValue Value;
+        if (value is not null)
+        {
+            Value = value.Value;
+        }
     }
+
+
+    [NativeName("Type", "SDL_GameControllerBindType")]
+    [NativeName("Type.Name", "SDL_GameControllerBindType")]
+    [NativeName("Name", "bindType")]
+    public GameControllerBindType BindType;
+
+    [NativeName("Type", "union (anonymous union at build/submodules/SDL/include\\SDL_gamecontroller.h:87:5)")]
+    [NativeName("Type.Name", "union (anonymous union at build/submodules/SDL/include\\SDL_gamecontroller.h:87:5)")]
+    [NativeName("Name", "value")]
+    public GameControllerBindValue Value;
 }

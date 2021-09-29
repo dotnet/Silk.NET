@@ -12,87 +12,86 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR.Extensions.MSFT
+namespace Silk.NET.OpenXR.Extensions.MSFT;
+
+public static class MsftSceneUnderstandingSerializationOverloads
 {
-    public static class MsftSceneUnderstandingSerializationOverloads
+    /// <summary>To be documented.</summary>
+    public static unsafe Result DeserializeSceneMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneObserverMSFT sceneObserver, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SceneDeserializeInfoMSFT> deserializeInfo)
     {
-        /// <summary>To be documented.</summary>
-        public static unsafe Result DeserializeSceneMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneObserverMSFT sceneObserver, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SceneDeserializeInfoMSFT> deserializeInfo)
-        {
-            // SpanOverloader
-            return thisApi.DeserializeSceneMsft(sceneObserver, in deserializeInfo.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] Span<byte> buffer)
-        {
-            // SpanOverloader
-            return thisApi.GetSerializedSceneFragmentDataMsft(scene, getInfo, countInput, readOutput, ref buffer.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] Span<uint> readOutput, [Count(Parameter = "countInput")] byte* buffer)
-        {
-            // SpanOverloader
-            return thisApi.GetSerializedSceneFragmentDataMsft(scene, getInfo, countInput, ref readOutput.GetPinnableReference(), buffer);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] Span<uint> readOutput, [Count(Parameter = "countInput")] Span<byte> buffer)
-        {
-            // SpanOverloader
-            return thisApi.GetSerializedSceneFragmentDataMsft(scene, getInfo, countInput, ref readOutput.GetPinnableReference(), ref buffer.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] Span<uint> readOutput, string buffer)
-        {
-            // SpanOverloader
-            return thisApi.GetSerializedSceneFragmentDataMsft(scene, getInfo, countInput, ref readOutput.GetPinnableReference(), buffer);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SerializedSceneFragmentDataGetInfoMSFT> getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] byte* buffer)
-        {
-            // SpanOverloader
-            return thisApi.GetSerializedSceneFragmentDataMsft(scene, in getInfo.GetPinnableReference(), countInput, readOutput, buffer);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SerializedSceneFragmentDataGetInfoMSFT> getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] Span<byte> buffer)
-        {
-            // SpanOverloader
-            return thisApi.GetSerializedSceneFragmentDataMsft(scene, in getInfo.GetPinnableReference(), countInput, readOutput, ref buffer.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SerializedSceneFragmentDataGetInfoMSFT> getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, string buffer)
-        {
-            // SpanOverloader
-            return thisApi.GetSerializedSceneFragmentDataMsft(scene, in getInfo.GetPinnableReference(), countInput, readOutput, buffer);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SerializedSceneFragmentDataGetInfoMSFT> getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] Span<uint> readOutput, [Count(Parameter = "countInput")] byte* buffer)
-        {
-            // SpanOverloader
-            return thisApi.GetSerializedSceneFragmentDataMsft(scene, in getInfo.GetPinnableReference(), countInput, ref readOutput.GetPinnableReference(), buffer);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SerializedSceneFragmentDataGetInfoMSFT> getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] Span<uint> readOutput, [Count(Parameter = "countInput")] Span<byte> buffer)
-        {
-            // SpanOverloader
-            return thisApi.GetSerializedSceneFragmentDataMsft(scene, in getInfo.GetPinnableReference(), countInput, ref readOutput.GetPinnableReference(), ref buffer.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SerializedSceneFragmentDataGetInfoMSFT> getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] Span<uint> readOutput, string buffer)
-        {
-            // SpanOverloader
-            return thisApi.GetSerializedSceneFragmentDataMsft(scene, in getInfo.GetPinnableReference(), countInput, ref readOutput.GetPinnableReference(), buffer);
-        }
-
+        // SpanOverloader
+        return thisApi.DeserializeSceneMsft(sceneObserver, in deserializeInfo.GetPinnableReference());
     }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] Span<byte> buffer)
+    {
+        // SpanOverloader
+        return thisApi.GetSerializedSceneFragmentDataMsft(scene, getInfo, countInput, readOutput, ref buffer.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] Span<uint> readOutput, [Count(Parameter = "countInput")] byte* buffer)
+    {
+        // SpanOverloader
+        return thisApi.GetSerializedSceneFragmentDataMsft(scene, getInfo, countInput, ref readOutput.GetPinnableReference(), buffer);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] Span<uint> readOutput, [Count(Parameter = "countInput")] Span<byte> buffer)
+    {
+        // SpanOverloader
+        return thisApi.GetSerializedSceneFragmentDataMsft(scene, getInfo, countInput, ref readOutput.GetPinnableReference(), ref buffer.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] SerializedSceneFragmentDataGetInfoMSFT* getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] Span<uint> readOutput, string buffer)
+    {
+        // SpanOverloader
+        return thisApi.GetSerializedSceneFragmentDataMsft(scene, getInfo, countInput, ref readOutput.GetPinnableReference(), buffer);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SerializedSceneFragmentDataGetInfoMSFT> getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] byte* buffer)
+    {
+        // SpanOverloader
+        return thisApi.GetSerializedSceneFragmentDataMsft(scene, in getInfo.GetPinnableReference(), countInput, readOutput, buffer);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SerializedSceneFragmentDataGetInfoMSFT> getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, [Count(Parameter = "countInput")] Span<byte> buffer)
+    {
+        // SpanOverloader
+        return thisApi.GetSerializedSceneFragmentDataMsft(scene, in getInfo.GetPinnableReference(), countInput, readOutput, ref buffer.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SerializedSceneFragmentDataGetInfoMSFT> getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] uint* readOutput, string buffer)
+    {
+        // SpanOverloader
+        return thisApi.GetSerializedSceneFragmentDataMsft(scene, in getInfo.GetPinnableReference(), countInput, readOutput, buffer);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SerializedSceneFragmentDataGetInfoMSFT> getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] Span<uint> readOutput, [Count(Parameter = "countInput")] byte* buffer)
+    {
+        // SpanOverloader
+        return thisApi.GetSerializedSceneFragmentDataMsft(scene, in getInfo.GetPinnableReference(), countInput, ref readOutput.GetPinnableReference(), buffer);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SerializedSceneFragmentDataGetInfoMSFT> getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] Span<uint> readOutput, [Count(Parameter = "countInput")] Span<byte> buffer)
+    {
+        // SpanOverloader
+        return thisApi.GetSerializedSceneFragmentDataMsft(scene, in getInfo.GetPinnableReference(), countInput, ref readOutput.GetPinnableReference(), ref buffer.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result GetSerializedSceneFragmentDataMsft(this MsftSceneUnderstandingSerialization thisApi, [Count(Count = 0)] SceneMSFT scene, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SerializedSceneFragmentDataGetInfoMSFT> getInfo, [Count(Count = 0)] uint countInput, [Count(Count = 0)] Span<uint> readOutput, string buffer)
+    {
+        // SpanOverloader
+        return thisApi.GetSerializedSceneFragmentDataMsft(scene, in getInfo.GetPinnableReference(), countInput, ref readOutput.GetPinnableReference(), buffer);
+    }
+
 }
 

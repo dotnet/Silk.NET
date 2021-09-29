@@ -14,25 +14,24 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
+namespace Silk.NET.OpenGL.Legacy.Extensions.EXT;
+
+[Extension("EXT_bindable_uniform")]
+public unsafe partial class ExtBindableUniform : NativeExtension<GL>
 {
-    [Extension("EXT_bindable_uniform")]
-    public unsafe partial class ExtBindableUniform : NativeExtension<GL>
+    public const string ExtensionName = "EXT_bindable_uniform";
+    [NativeApi(EntryPoint = "glGetUniformBufferSizeEXT")]
+    public partial int GetUniformBufferSize([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location);
+
+    [NativeApi(EntryPoint = "glGetUniformOffsetEXT")]
+    public partial nint GetUniformOffset([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location);
+
+    [NativeApi(EntryPoint = "glUniformBufferEXT")]
+    public partial void UniformBuffer([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint buffer);
+
+    public ExtBindableUniform(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "EXT_bindable_uniform";
-        [NativeApi(EntryPoint = "glGetUniformBufferSizeEXT")]
-        public partial int GetUniformBufferSize([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location);
-
-        [NativeApi(EntryPoint = "glGetUniformOffsetEXT")]
-        public partial nint GetUniformOffset([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location);
-
-        [NativeApi(EntryPoint = "glUniformBufferEXT")]
-        public partial void UniformBuffer([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint buffer);
-
-        public ExtBindableUniform(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

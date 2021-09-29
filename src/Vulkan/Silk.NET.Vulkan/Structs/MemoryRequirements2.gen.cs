@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkMemoryRequirements2")]
+public unsafe partial struct MemoryRequirements2
 {
-    [NativeName("Name", "VkMemoryRequirements2")]
-    public unsafe partial struct MemoryRequirements2
-    {
-        public MemoryRequirements2
-        (
+    public MemoryRequirements2
+    (
             StructureType? sType = StructureType.MemoryRequirements2,
             void* pNext = null,
             MemoryRequirements? memoryRequirements = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (memoryRequirements is not null)
-            {
-                MemoryRequirements = memoryRequirements.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkMemoryRequirements")]
-        [NativeName("Type.Name", "VkMemoryRequirements")]
-        [NativeName("Name", "memoryRequirements")]
-        public MemoryRequirements MemoryRequirements;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (memoryRequirements is not null)
+        {
+            MemoryRequirements = memoryRequirements.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkMemoryRequirements")]
+    [NativeName("Type.Name", "VkMemoryRequirements")]
+    [NativeName("Name", "memoryRequirements")]
+    public MemoryRequirements MemoryRequirements;
 }

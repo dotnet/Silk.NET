@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkSwapchainCounterCreateInfoEXT")]
+public unsafe partial struct SwapchainCounterCreateInfoEXT
 {
-    [NativeName("Name", "VkSwapchainCounterCreateInfoEXT")]
-    public unsafe partial struct SwapchainCounterCreateInfoEXT
-    {
-        public SwapchainCounterCreateInfoEXT
-        (
+    public SwapchainCounterCreateInfoEXT
+    (
             StructureType? sType = StructureType.SwapchainCounterCreateInfoExt,
             void* pNext = null,
             SurfaceCounterFlagsEXT? surfaceCounters = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (surfaceCounters is not null)
-            {
-                SurfaceCounters = surfaceCounters.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkSurfaceCounterFlagsEXT")]
-        [NativeName("Type.Name", "VkSurfaceCounterFlagsEXT")]
-        [NativeName("Name", "surfaceCounters")]
-        public SurfaceCounterFlagsEXT SurfaceCounters;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (surfaceCounters is not null)
+        {
+            SurfaceCounters = surfaceCounters.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkSurfaceCounterFlagsEXT")]
+    [NativeName("Type.Name", "VkSurfaceCounterFlagsEXT")]
+    [NativeName("Name", "surfaceCounters")]
+    public SurfaceCounterFlagsEXT SurfaceCounters;
 }

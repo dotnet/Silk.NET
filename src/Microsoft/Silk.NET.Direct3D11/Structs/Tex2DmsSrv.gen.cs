@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_TEX2DMS_SRV")]
+public unsafe partial struct Tex2DmsSrv
 {
-    [NativeName("Name", "D3D11_TEX2DMS_SRV")]
-    public unsafe partial struct Tex2DmsSrv
-    {
-        public Tex2DmsSrv
-        (
+    public Tex2DmsSrv
+    (
             uint? unusedFieldNothingToDefine = null
-        ) : this()
+    ) : this()
+    {
+        if (unusedFieldNothingToDefine is not null)
         {
-            if (unusedFieldNothingToDefine is not null)
-            {
-                UnusedFieldNothingToDefine = unusedFieldNothingToDefine.Value;
-            }
+            UnusedFieldNothingToDefine = unusedFieldNothingToDefine.Value;
         }
-
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "UnusedField_NothingToDefine")]
-        public uint UnusedFieldNothingToDefine;
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "UnusedField_NothingToDefine")]
+    public uint UnusedFieldNothingToDefine;
 }

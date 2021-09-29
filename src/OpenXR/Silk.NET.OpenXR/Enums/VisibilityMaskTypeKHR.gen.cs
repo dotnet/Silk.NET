@@ -7,16 +7,15 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrVisibilityMaskTypeKHR")]
+public enum VisibilityMaskTypeKHR : int
 {
-    [NativeName("Name", "XrVisibilityMaskTypeKHR")]
-    public enum VisibilityMaskTypeKHR : int
-    {
-        [NativeName("Name", "XR_VISIBILITY_MASK_TYPE_HIDDEN_TRIANGLE_MESH_KHR")]
-        VisibilityMaskTypeHiddenTriangleMeshKhr = 1,
-        [NativeName("Name", "XR_VISIBILITY_MASK_TYPE_VISIBLE_TRIANGLE_MESH_KHR")]
-        VisibilityMaskTypeVisibleTriangleMeshKhr = 2,
-        [NativeName("Name", "XR_VISIBILITY_MASK_TYPE_LINE_LOOP_KHR")]
-        VisibilityMaskTypeLineLoopKhr = 3,
-    }
+    [NativeName("Name", "XR_VISIBILITY_MASK_TYPE_HIDDEN_TRIANGLE_MESH_KHR")]
+    VisibilityMaskTypeHiddenTriangleMeshKhr = 1,
+    [NativeName("Name", "XR_VISIBILITY_MASK_TYPE_VISIBLE_TRIANGLE_MESH_KHR")]
+    VisibilityMaskTypeVisibleTriangleMeshKhr = 2,
+    [NativeName("Name", "XR_VISIBILITY_MASK_TYPE_LINE_LOOP_KHR")]
+    VisibilityMaskTypeLineLoopKhr = 3,
 }

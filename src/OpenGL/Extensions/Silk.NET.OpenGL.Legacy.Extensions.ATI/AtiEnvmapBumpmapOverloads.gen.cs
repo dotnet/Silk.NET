@@ -12,58 +12,57 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
+namespace Silk.NET.OpenGL.Legacy.Extensions.ATI;
+
+public static class AtiEnvmapBumpmapOverloads
 {
-    public static class AtiEnvmapBumpmapOverloads
+    public static unsafe void GetTexBumpParameter(this AtiEnvmapBumpmap thisApi, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> param)
     {
-        public static unsafe void GetTexBumpParameter(this AtiEnvmapBumpmap thisApi, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> param)
-        {
-            // SpanOverloader
-            thisApi.GetTexBumpParameter(pname, out param.GetPinnableReference());
-        }
-
-        public static unsafe void GetTexBumpParameter(this AtiEnvmapBumpmap thisApi, [Flow(FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> param)
-        {
-            // SpanOverloader
-            thisApi.GetTexBumpParameter(pname, out param.GetPinnableReference());
-        }
-
-        public static unsafe void GetTexBumpParameter(this AtiEnvmapBumpmap thisApi, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> param)
-        {
-            // SpanOverloader
-            thisApi.GetTexBumpParameter(pname, out param.GetPinnableReference());
-        }
-
-        public static unsafe void GetTexBumpParameter(this AtiEnvmapBumpmap thisApi, [Flow(FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> param)
-        {
-            // SpanOverloader
-            thisApi.GetTexBumpParameter(pname, out param.GetPinnableReference());
-        }
-
-        public static unsafe void TexBumpParameter(this AtiEnvmapBumpmap thisApi, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> param)
-        {
-            // SpanOverloader
-            thisApi.TexBumpParameter(pname, in param.GetPinnableReference());
-        }
-
-        public static unsafe void TexBumpParameter(this AtiEnvmapBumpmap thisApi, [Flow(FlowDirection.In)] TexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> param)
-        {
-            // SpanOverloader
-            thisApi.TexBumpParameter(pname, in param.GetPinnableReference());
-        }
-
-        public static unsafe void TexBumpParameter(this AtiEnvmapBumpmap thisApi, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> param)
-        {
-            // SpanOverloader
-            thisApi.TexBumpParameter(pname, in param.GetPinnableReference());
-        }
-
-        public static unsafe void TexBumpParameter(this AtiEnvmapBumpmap thisApi, [Flow(FlowDirection.In)] TexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> param)
-        {
-            // SpanOverloader
-            thisApi.TexBumpParameter(pname, in param.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        thisApi.GetTexBumpParameter(pname, out param.GetPinnableReference());
     }
+
+    public static unsafe void GetTexBumpParameter(this AtiEnvmapBumpmap thisApi, [Flow(FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> param)
+    {
+        // SpanOverloader
+        thisApi.GetTexBumpParameter(pname, out param.GetPinnableReference());
+    }
+
+    public static unsafe void GetTexBumpParameter(this AtiEnvmapBumpmap thisApi, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> param)
+    {
+        // SpanOverloader
+        thisApi.GetTexBumpParameter(pname, out param.GetPinnableReference());
+    }
+
+    public static unsafe void GetTexBumpParameter(this AtiEnvmapBumpmap thisApi, [Flow(FlowDirection.In)] GetTexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<float> param)
+    {
+        // SpanOverloader
+        thisApi.GetTexBumpParameter(pname, out param.GetPinnableReference());
+    }
+
+    public static unsafe void TexBumpParameter(this AtiEnvmapBumpmap thisApi, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> param)
+    {
+        // SpanOverloader
+        thisApi.TexBumpParameter(pname, in param.GetPinnableReference());
+    }
+
+    public static unsafe void TexBumpParameter(this AtiEnvmapBumpmap thisApi, [Flow(FlowDirection.In)] TexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> param)
+    {
+        // SpanOverloader
+        thisApi.TexBumpParameter(pname, in param.GetPinnableReference());
+    }
+
+    public static unsafe void TexBumpParameter(this AtiEnvmapBumpmap thisApi, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> param)
+    {
+        // SpanOverloader
+        thisApi.TexBumpParameter(pname, in param.GetPinnableReference());
+    }
+
+    public static unsafe void TexBumpParameter(this AtiEnvmapBumpmap thisApi, [Flow(FlowDirection.In)] TexBumpParameterATI pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> param)
+    {
+        // SpanOverloader
+        thisApi.TexBumpParameter(pname, in param.GetPinnableReference());
+    }
+
 }
 

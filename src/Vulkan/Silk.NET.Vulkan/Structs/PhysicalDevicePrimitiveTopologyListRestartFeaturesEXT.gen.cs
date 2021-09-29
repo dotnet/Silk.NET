@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT")]
+public unsafe partial struct PhysicalDevicePrimitiveTopologyListRestartFeaturesEXT
 {
-    [NativeName("Name", "VkPhysicalDevicePrimitiveTopologyListRestartFeaturesEXT")]
-    public unsafe partial struct PhysicalDevicePrimitiveTopologyListRestartFeaturesEXT
-    {
-        public PhysicalDevicePrimitiveTopologyListRestartFeaturesEXT
-        (
+    public PhysicalDevicePrimitiveTopologyListRestartFeaturesEXT
+    (
             StructureType? sType = StructureType.PhysicalDevicePrimitiveTopologyListRestartFeaturesExt,
             void* pNext = null,
             Bool32? primitiveTopologyListRestart = null,
             Bool32? primitiveTopologyPatchListRestart = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (primitiveTopologyListRestart is not null)
-            {
-                PrimitiveTopologyListRestart = primitiveTopologyListRestart.Value;
-            }
-
-            if (primitiveTopologyPatchListRestart is not null)
-            {
-                PrimitiveTopologyPatchListRestart = primitiveTopologyPatchListRestart.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "primitiveTopologyListRestart")]
-        public Bool32 PrimitiveTopologyListRestart;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "primitiveTopologyPatchListRestart")]
-        public Bool32 PrimitiveTopologyPatchListRestart;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (primitiveTopologyListRestart is not null)
+        {
+            PrimitiveTopologyListRestart = primitiveTopologyListRestart.Value;
+        }
+
+        if (primitiveTopologyPatchListRestart is not null)
+        {
+            PrimitiveTopologyPatchListRestart = primitiveTopologyPatchListRestart.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "primitiveTopologyListRestart")]
+    public Bool32 PrimitiveTopologyListRestart;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "primitiveTopologyPatchListRestart")]
+    public Bool32 PrimitiveTopologyPatchListRestart;
 }

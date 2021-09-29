@@ -14,22 +14,21 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
+namespace Silk.NET.OpenGL.Legacy.Extensions.AMD;
+
+[Extension("AMD_stencil_operation_extended")]
+public unsafe partial class AmdStencilOperationExtended : NativeExtension<GL>
 {
-    [Extension("AMD_stencil_operation_extended")]
-    public unsafe partial class AmdStencilOperationExtended : NativeExtension<GL>
+    public const string ExtensionName = "AMD_stencil_operation_extended";
+    [NativeApi(EntryPoint = "glStencilOpValueAMD")]
+    public partial void StencilOpValue([Flow(FlowDirection.In)] AMD face, [Flow(FlowDirection.In)] uint value);
+
+    [NativeApi(EntryPoint = "glStencilOpValueAMD")]
+    public partial void StencilOpValue([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] uint value);
+
+    public AmdStencilOperationExtended(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "AMD_stencil_operation_extended";
-        [NativeApi(EntryPoint = "glStencilOpValueAMD")]
-        public partial void StencilOpValue([Flow(FlowDirection.In)] AMD face, [Flow(FlowDirection.In)] uint value);
-
-        [NativeApi(EntryPoint = "glStencilOpValueAMD")]
-        public partial void StencilOpValue([Flow(FlowDirection.In)] StencilFaceDirection face, [Flow(FlowDirection.In)] uint value);
-
-        public AmdStencilOperationExtended(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

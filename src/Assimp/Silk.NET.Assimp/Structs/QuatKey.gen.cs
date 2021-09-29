@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp
+namespace Silk.NET.Assimp;
+
+[NativeName("Name", "aiQuatKey")]
+public unsafe partial struct QuatKey
 {
-    [NativeName("Name", "aiQuatKey")]
-    public unsafe partial struct QuatKey
-    {
-        public QuatKey
-        (
+    public QuatKey
+    (
             double? mTime = null,
             System.Numerics.Quaternion? mValue = null
-        ) : this()
+    ) : this()
+    {
+        if (mTime is not null)
         {
-            if (mTime is not null)
-            {
-                MTime = mTime.Value;
-            }
-
-            if (mValue is not null)
-            {
-                MValue = mValue.Value;
-            }
+            MTime = mTime.Value;
         }
 
-
-        [NativeName("Type", "double")]
-        [NativeName("Type.Name", "double")]
-        [NativeName("Name", "mTime")]
-        public double MTime;
-
-        [NativeName("Type", "aiQuaternion")]
-        [NativeName("Type.Name", "aiQuaternion")]
-        [NativeName("Name", "mValue")]
-        public System.Numerics.Quaternion MValue;
+        if (mValue is not null)
+        {
+            MValue = mValue.Value;
+        }
     }
+
+
+    [NativeName("Type", "double")]
+    [NativeName("Type.Name", "double")]
+    [NativeName("Name", "mTime")]
+    public double MTime;
+
+    [NativeName("Type", "aiQuaternion")]
+    [NativeName("Type.Name", "aiQuaternion")]
+    [NativeName("Name", "mValue")]
+    public System.Numerics.Quaternion MValue;
 }

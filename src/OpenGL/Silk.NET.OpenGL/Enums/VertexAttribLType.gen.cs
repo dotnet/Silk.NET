@@ -7,12 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL
+namespace Silk.NET.OpenGL;
+
+[NativeName("Name", "VertexAttribLType")]
+public enum VertexAttribLType : int
 {
-    [NativeName("Name", "VertexAttribLType")]
-    public enum VertexAttribLType : int
-    {
-        [NativeName("Name", "GL_DOUBLE")]
-        Double = 0x140A,
-    }
+    [NativeName("Name", "GL_DOUBLE")]
+    Double = 0x140A,
 }

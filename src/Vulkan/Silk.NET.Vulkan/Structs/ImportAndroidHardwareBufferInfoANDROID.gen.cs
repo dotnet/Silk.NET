@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkImportAndroidHardwareBufferInfoANDROID")]
+public unsafe partial struct ImportAndroidHardwareBufferInfoANDROID
 {
-    [NativeName("Name", "VkImportAndroidHardwareBufferInfoANDROID")]
-    public unsafe partial struct ImportAndroidHardwareBufferInfoANDROID
-    {
-        public ImportAndroidHardwareBufferInfoANDROID
-        (
+    public ImportAndroidHardwareBufferInfoANDROID
+    (
             StructureType? sType = StructureType.ImportAndroidHardwareBufferInfoAndroid,
             void* pNext = null,
             nint* buffer = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (buffer is not null)
-            {
-                Buffer = buffer;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "AHardwareBuffer*")]
-        [NativeName("Type.Name", "AHardwareBuffer")]
-        [NativeName("Name", "buffer")]
-        public nint* Buffer;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (buffer is not null)
+        {
+            Buffer = buffer;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "AHardwareBuffer*")]
+    [NativeName("Type.Name", "AHardwareBuffer")]
+    [NativeName("Name", "buffer")]
+    public nint* Buffer;
 }

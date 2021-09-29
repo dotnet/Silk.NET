@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITY")]
+public unsafe partial struct FeatureDataCommandQueuePriority
 {
-    [NativeName("Name", "D3D12_FEATURE_DATA_COMMAND_QUEUE_PRIORITY")]
-    public unsafe partial struct FeatureDataCommandQueuePriority
-    {
-        public FeatureDataCommandQueuePriority
-        (
+    public FeatureDataCommandQueuePriority
+    (
             CommandListType? commandListType = null,
             uint? priority = null,
             int? priorityForTypeIsSupported = null
-        ) : this()
+    ) : this()
+    {
+        if (commandListType is not null)
         {
-            if (commandListType is not null)
-            {
-                CommandListType = commandListType.Value;
-            }
-
-            if (priority is not null)
-            {
-                Priority = priority.Value;
-            }
-
-            if (priorityForTypeIsSupported is not null)
-            {
-                PriorityForTypeIsSupported = priorityForTypeIsSupported.Value;
-            }
+            CommandListType = commandListType.Value;
         }
 
+        if (priority is not null)
+        {
+            Priority = priority.Value;
+        }
 
-        [NativeName("Type", "D3D12_COMMAND_LIST_TYPE")]
-        [NativeName("Type.Name", "D3D12_COMMAND_LIST_TYPE")]
-        [NativeName("Name", "CommandListType")]
-        public CommandListType CommandListType;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Priority")]
-        public uint Priority;
-
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "PriorityForTypeIsSupported")]
-        public int PriorityForTypeIsSupported;
+        if (priorityForTypeIsSupported is not null)
+        {
+            PriorityForTypeIsSupported = priorityForTypeIsSupported.Value;
+        }
     }
+
+
+    [NativeName("Type", "D3D12_COMMAND_LIST_TYPE")]
+    [NativeName("Type.Name", "D3D12_COMMAND_LIST_TYPE")]
+    [NativeName("Name", "CommandListType")]
+    public CommandListType CommandListType;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Priority")]
+    public uint Priority;
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "PriorityForTypeIsSupported")]
+    public int PriorityForTypeIsSupported;
 }

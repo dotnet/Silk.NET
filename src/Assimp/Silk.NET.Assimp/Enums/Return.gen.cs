@@ -7,16 +7,15 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp
+namespace Silk.NET.Assimp;
+
+[NativeName("Name", "aiReturn")]
+public enum Return : int
 {
-    [NativeName("Name", "aiReturn")]
-    public enum Return : int
-    {
-        [NativeName("Name", "aiReturn_SUCCESS")]
-        ReturnSuccess = 0x0,
-        [NativeName("Name", "aiReturn_FAILURE")]
-        ReturnFailure = unchecked((int) 0xFFFFFFFFFFFFFFFF),
-        [NativeName("Name", "aiReturn_OUTOFMEMORY")]
-        ReturnOutofmemory = unchecked((int) 0xFFFFFFFFFFFFFFFD),
-    }
+    [NativeName("Name", "aiReturn_SUCCESS")]
+    ReturnSuccess = 0x0,
+    [NativeName("Name", "aiReturn_FAILURE")]
+    ReturnFailure = unchecked((int) 0xFFFFFFFFFFFFFFFF),
+    [NativeName("Name", "aiReturn_OUTOFMEMORY")]
+    ReturnOutofmemory = unchecked((int) 0xFFFFFFFFFFFFFFFD),
 }

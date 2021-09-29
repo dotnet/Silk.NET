@@ -14,15 +14,14 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkTransformMatrixNV")]
+public unsafe partial struct TransformMatrixNV
 {
-    [NativeName("Name", "VkTransformMatrixNV")]
-    public unsafe partial struct TransformMatrixNV
-    {
-        /// <summary></summary>
-        [NativeName("Type", "float")]
-        [NativeName("Type.Name", "float")]
-        [NativeName("Name", "matrix")]
-        public fixed float Matrix[12];
-    }
+    /// <summary></summary>
+    [NativeName("Type", "float")]
+    [NativeName("Type.Name", "float")]
+    [NativeName("Name", "matrix")]
+    public fixed float Matrix[12];
 }

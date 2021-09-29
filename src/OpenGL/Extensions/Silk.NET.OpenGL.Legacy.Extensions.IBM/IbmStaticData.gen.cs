@@ -14,19 +14,18 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.IBM
-{
-    [Extension("IBM_static_data")]
-    public unsafe partial class IbmStaticData : NativeExtension<GL>
-    {
-        public const string ExtensionName = "IBM_static_data";
-        [NativeApi(EntryPoint = "glFlushStaticDataIBM")]
-        public partial void FlushStaticData([Flow(FlowDirection.In)] IBM target);
+namespace Silk.NET.OpenGL.Legacy.Extensions.IBM;
 
-        public IbmStaticData(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+[Extension("IBM_static_data")]
+public unsafe partial class IbmStaticData : NativeExtension<GL>
+{
+    public const string ExtensionName = "IBM_static_data";
+    [NativeApi(EntryPoint = "glFlushStaticDataIBM")]
+    public partial void FlushStaticData([Flow(FlowDirection.In)] IBM target);
+
+    public IbmStaticData(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

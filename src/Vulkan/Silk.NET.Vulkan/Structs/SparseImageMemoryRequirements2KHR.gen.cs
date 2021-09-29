@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkSparseImageMemoryRequirements2KHR")]
+public unsafe partial struct SparseImageMemoryRequirements2KHR
 {
-    [NativeName("Name", "VkSparseImageMemoryRequirements2KHR")]
-    public unsafe partial struct SparseImageMemoryRequirements2KHR
-    {
-        public SparseImageMemoryRequirements2KHR
-        (
+    public SparseImageMemoryRequirements2KHR
+    (
             StructureType? sType = StructureType.SparseImageMemoryRequirements2,
             void* pNext = null,
             SparseImageMemoryRequirements? memoryRequirements = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (memoryRequirements is not null)
-            {
-                MemoryRequirements = memoryRequirements.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkSparseImageMemoryRequirements")]
-        [NativeName("Type.Name", "VkSparseImageMemoryRequirements")]
-        [NativeName("Name", "memoryRequirements")]
-        public SparseImageMemoryRequirements MemoryRequirements;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (memoryRequirements is not null)
+        {
+            MemoryRequirements = memoryRequirements.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkSparseImageMemoryRequirements")]
+    [NativeName("Type.Name", "VkSparseImageMemoryRequirements")]
+    [NativeName("Name", "memoryRequirements")]
+    public SparseImageMemoryRequirements MemoryRequirements;
 }

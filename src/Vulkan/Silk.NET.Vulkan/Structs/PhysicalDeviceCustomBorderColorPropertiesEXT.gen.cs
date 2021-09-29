@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDeviceCustomBorderColorPropertiesEXT")]
+public unsafe partial struct PhysicalDeviceCustomBorderColorPropertiesEXT
 {
-    [NativeName("Name", "VkPhysicalDeviceCustomBorderColorPropertiesEXT")]
-    public unsafe partial struct PhysicalDeviceCustomBorderColorPropertiesEXT
-    {
-        public PhysicalDeviceCustomBorderColorPropertiesEXT
-        (
+    public PhysicalDeviceCustomBorderColorPropertiesEXT
+    (
             StructureType? sType = StructureType.PhysicalDeviceCustomBorderColorPropertiesExt,
             void* pNext = null,
             uint? maxCustomBorderColorSamplers = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (maxCustomBorderColorSamplers is not null)
-            {
-                MaxCustomBorderColorSamplers = maxCustomBorderColorSamplers.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxCustomBorderColorSamplers")]
-        public uint MaxCustomBorderColorSamplers;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (maxCustomBorderColorSamplers is not null)
+        {
+            MaxCustomBorderColorSamplers = maxCustomBorderColorSamplers.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "maxCustomBorderColorSamplers")]
+    public uint MaxCustomBorderColorSamplers;
 }

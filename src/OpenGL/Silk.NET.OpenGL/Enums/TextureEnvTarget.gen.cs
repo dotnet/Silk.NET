@@ -7,10 +7,9 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL
+namespace Silk.NET.OpenGL;
+
+[NativeName("Name", "TextureEnvTarget")]
+public enum TextureEnvTarget : int
 {
-    [NativeName("Name", "TextureEnvTarget")]
-    public enum TextureEnvTarget : int
-    {
-    }
 }

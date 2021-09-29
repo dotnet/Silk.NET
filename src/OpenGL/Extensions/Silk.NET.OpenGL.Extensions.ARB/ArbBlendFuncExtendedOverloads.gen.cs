@@ -12,22 +12,21 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.ARB
+namespace Silk.NET.OpenGL.Extensions.ARB;
+
+public static class ArbBlendFuncExtendedOverloads
 {
-    public static class ArbBlendFuncExtendedOverloads
+    public static unsafe void BindFragDataLocationIndexed(this ArbBlendFuncExtended thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint colorNumber, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name)
     {
-        public static unsafe void BindFragDataLocationIndexed(this ArbBlendFuncExtended thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint colorNumber, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name)
-        {
-            // SpanOverloader
-            thisApi.BindFragDataLocationIndexed(program, colorNumber, index, in name.GetPinnableReference());
-        }
-
-        public static unsafe int GetFragDataIndex(this ArbBlendFuncExtended thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name)
-        {
-            // SpanOverloader
-            return thisApi.GetFragDataIndex(program, in name.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        thisApi.BindFragDataLocationIndexed(program, colorNumber, index, in name.GetPinnableReference());
     }
+
+    public static unsafe int GetFragDataIndex(this ArbBlendFuncExtended thisApi, [Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] ReadOnlySpan<byte> name)
+    {
+        // SpanOverloader
+        return thisApi.GetFragDataIndex(program, in name.GetPinnableReference());
+    }
+
 }
 

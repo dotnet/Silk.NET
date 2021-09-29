@@ -14,25 +14,24 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.NV
+namespace Silk.NET.OpenGL.Extensions.NV;
+
+[Extension("NV_conditional_render")]
+public unsafe partial class NVConditionalRender : NativeExtension<GL>
 {
-    [Extension("NV_conditional_render")]
-    public unsafe partial class NVConditionalRender : NativeExtension<GL>
+    public const string ExtensionName = "NV_conditional_render";
+    [NativeApi(EntryPoint = "glBeginConditionalRenderNV")]
+    public partial void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV mode);
+
+    [NativeApi(EntryPoint = "glBeginConditionalRenderNV")]
+    public partial void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ConditionalRenderMode mode);
+
+    [NativeApi(EntryPoint = "glEndConditionalRenderNV")]
+    public partial void EndConditionalRender();
+
+    public NVConditionalRender(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "NV_conditional_render";
-        [NativeApi(EntryPoint = "glBeginConditionalRenderNV")]
-        public partial void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] NV mode);
-
-        [NativeApi(EntryPoint = "glBeginConditionalRenderNV")]
-        public partial void BeginConditionalRender([Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ConditionalRenderMode mode);
-
-        [NativeApi(EntryPoint = "glEndConditionalRenderNV")]
-        public partial void EndConditionalRender();
-
-        public NVConditionalRender(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp
+namespace Silk.NET.Assimp;
+
+[NativeName("Name", "aiScene")]
+public unsafe partial struct Scene
 {
-    [NativeName("Name", "aiScene")]
-    public unsafe partial struct Scene
-    {
-        public Scene
-        (
+    public Scene
+    (
             uint? mFlags = null,
             Node* mRootNode = null,
             uint? mNumMeshes = null,
@@ -37,168 +37,167 @@ namespace Silk.NET.Assimp
             Camera** mCameras = null,
             Metadata* mMetaData = null,
             void* mPrivate = null
-        ) : this()
+    ) : this()
+    {
+        if (mFlags is not null)
         {
-            if (mFlags is not null)
-            {
-                MFlags = mFlags.Value;
-            }
-
-            if (mRootNode is not null)
-            {
-                MRootNode = mRootNode;
-            }
-
-            if (mNumMeshes is not null)
-            {
-                MNumMeshes = mNumMeshes.Value;
-            }
-
-            if (mMeshes is not null)
-            {
-                MMeshes = mMeshes;
-            }
-
-            if (mNumMaterials is not null)
-            {
-                MNumMaterials = mNumMaterials.Value;
-            }
-
-            if (mMaterials is not null)
-            {
-                MMaterials = mMaterials;
-            }
-
-            if (mNumAnimations is not null)
-            {
-                MNumAnimations = mNumAnimations.Value;
-            }
-
-            if (mAnimations is not null)
-            {
-                MAnimations = mAnimations;
-            }
-
-            if (mNumTextures is not null)
-            {
-                MNumTextures = mNumTextures.Value;
-            }
-
-            if (mTextures is not null)
-            {
-                MTextures = mTextures;
-            }
-
-            if (mNumLights is not null)
-            {
-                MNumLights = mNumLights.Value;
-            }
-
-            if (mLights is not null)
-            {
-                MLights = mLights;
-            }
-
-            if (mNumCameras is not null)
-            {
-                MNumCameras = mNumCameras.Value;
-            }
-
-            if (mCameras is not null)
-            {
-                MCameras = mCameras;
-            }
-
-            if (mMetaData is not null)
-            {
-                MMetaData = mMetaData;
-            }
-
-            if (mPrivate is not null)
-            {
-                MPrivate = mPrivate;
-            }
+            MFlags = mFlags.Value;
         }
 
+        if (mRootNode is not null)
+        {
+            MRootNode = mRootNode;
+        }
 
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "mFlags")]
-        public uint MFlags;
+        if (mNumMeshes is not null)
+        {
+            MNumMeshes = mNumMeshes.Value;
+        }
 
-        [NativeName("Type", "aiNode *")]
-        [NativeName("Type.Name", "aiNode *")]
-        [NativeName("Name", "mRootNode")]
-        public Node* MRootNode;
+        if (mMeshes is not null)
+        {
+            MMeshes = mMeshes;
+        }
 
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "mNumMeshes")]
-        public uint MNumMeshes;
+        if (mNumMaterials is not null)
+        {
+            MNumMaterials = mNumMaterials.Value;
+        }
 
-        [NativeName("Type", "aiMesh **")]
-        [NativeName("Type.Name", "aiMesh **")]
-        [NativeName("Name", "mMeshes")]
-        public Mesh** MMeshes;
+        if (mMaterials is not null)
+        {
+            MMaterials = mMaterials;
+        }
 
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "mNumMaterials")]
-        public uint MNumMaterials;
+        if (mNumAnimations is not null)
+        {
+            MNumAnimations = mNumAnimations.Value;
+        }
 
-        [NativeName("Type", "aiMaterial **")]
-        [NativeName("Type.Name", "aiMaterial **")]
-        [NativeName("Name", "mMaterials")]
-        public Material** MMaterials;
+        if (mAnimations is not null)
+        {
+            MAnimations = mAnimations;
+        }
 
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "mNumAnimations")]
-        public uint MNumAnimations;
+        if (mNumTextures is not null)
+        {
+            MNumTextures = mNumTextures.Value;
+        }
 
-        [NativeName("Type", "aiAnimation **")]
-        [NativeName("Type.Name", "aiAnimation **")]
-        [NativeName("Name", "mAnimations")]
-        public Animation** MAnimations;
+        if (mTextures is not null)
+        {
+            MTextures = mTextures;
+        }
 
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "mNumTextures")]
-        public uint MNumTextures;
+        if (mNumLights is not null)
+        {
+            MNumLights = mNumLights.Value;
+        }
 
-        [NativeName("Type", "aiTexture **")]
-        [NativeName("Type.Name", "aiTexture **")]
-        [NativeName("Name", "mTextures")]
-        public Texture** MTextures;
+        if (mLights is not null)
+        {
+            MLights = mLights;
+        }
 
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "mNumLights")]
-        public uint MNumLights;
+        if (mNumCameras is not null)
+        {
+            MNumCameras = mNumCameras.Value;
+        }
 
-        [NativeName("Type", "aiLight **")]
-        [NativeName("Type.Name", "aiLight **")]
-        [NativeName("Name", "mLights")]
-        public Light** MLights;
+        if (mCameras is not null)
+        {
+            MCameras = mCameras;
+        }
 
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "mNumCameras")]
-        public uint MNumCameras;
+        if (mMetaData is not null)
+        {
+            MMetaData = mMetaData;
+        }
 
-        [NativeName("Type", "aiCamera **")]
-        [NativeName("Type.Name", "aiCamera **")]
-        [NativeName("Name", "mCameras")]
-        public Camera** MCameras;
-
-        [NativeName("Type", "aiMetadata *")]
-        [NativeName("Type.Name", "aiMetadata *")]
-        [NativeName("Name", "mMetaData")]
-        public Metadata* MMetaData;
-
-        [NativeName("Type", "void *")]
-        [NativeName("Type.Name", "void *")]
-        [NativeName("Name", "mPrivate")]
-        public void* MPrivate;
+        if (mPrivate is not null)
+        {
+            MPrivate = mPrivate;
+        }
     }
+
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "mFlags")]
+    public uint MFlags;
+
+    [NativeName("Type", "aiNode *")]
+    [NativeName("Type.Name", "aiNode *")]
+    [NativeName("Name", "mRootNode")]
+    public Node* MRootNode;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "mNumMeshes")]
+    public uint MNumMeshes;
+
+    [NativeName("Type", "aiMesh **")]
+    [NativeName("Type.Name", "aiMesh **")]
+    [NativeName("Name", "mMeshes")]
+    public Mesh** MMeshes;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "mNumMaterials")]
+    public uint MNumMaterials;
+
+    [NativeName("Type", "aiMaterial **")]
+    [NativeName("Type.Name", "aiMaterial **")]
+    [NativeName("Name", "mMaterials")]
+    public Material** MMaterials;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "mNumAnimations")]
+    public uint MNumAnimations;
+
+    [NativeName("Type", "aiAnimation **")]
+    [NativeName("Type.Name", "aiAnimation **")]
+    [NativeName("Name", "mAnimations")]
+    public Animation** MAnimations;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "mNumTextures")]
+    public uint MNumTextures;
+
+    [NativeName("Type", "aiTexture **")]
+    [NativeName("Type.Name", "aiTexture **")]
+    [NativeName("Name", "mTextures")]
+    public Texture** MTextures;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "mNumLights")]
+    public uint MNumLights;
+
+    [NativeName("Type", "aiLight **")]
+    [NativeName("Type.Name", "aiLight **")]
+    [NativeName("Name", "mLights")]
+    public Light** MLights;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "mNumCameras")]
+    public uint MNumCameras;
+
+    [NativeName("Type", "aiCamera **")]
+    [NativeName("Type.Name", "aiCamera **")]
+    [NativeName("Name", "mCameras")]
+    public Camera** MCameras;
+
+    [NativeName("Type", "aiMetadata *")]
+    [NativeName("Type.Name", "aiMetadata *")]
+    [NativeName("Name", "mMetaData")]
+    public Metadata* MMetaData;
+
+    [NativeName("Type", "void *")]
+    [NativeName("Type.Name", "void *")]
+    [NativeName("Name", "mPrivate")]
+    public void* MPrivate;
 }

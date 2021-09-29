@@ -14,25 +14,24 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.ARB
+namespace Silk.NET.OpenGL.Extensions.ARB;
+
+[Extension("ARB_imaging")]
+public unsafe partial class ArbImaging : NativeExtension<GL>
 {
-    [Extension("ARB_imaging")]
-    public unsafe partial class ArbImaging : NativeExtension<GL>
+    public const string ExtensionName = "ARB_imaging";
+    [NativeApi(EntryPoint = "glBlendColor")]
+    public partial void BlendColor([Flow(FlowDirection.In)] float red, [Flow(FlowDirection.In)] float green, [Flow(FlowDirection.In)] float blue, [Flow(FlowDirection.In)] float alpha);
+
+    [NativeApi(EntryPoint = "glBlendEquation")]
+    public partial void BlendEquation([Flow(FlowDirection.In)] ARB mode);
+
+    [NativeApi(EntryPoint = "glBlendEquation")]
+    public partial void BlendEquation([Flow(FlowDirection.In)] BlendEquationModeEXT mode);
+
+    public ArbImaging(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "ARB_imaging";
-        [NativeApi(EntryPoint = "glBlendColor")]
-        public partial void BlendColor([Flow(FlowDirection.In)] float red, [Flow(FlowDirection.In)] float green, [Flow(FlowDirection.In)] float blue, [Flow(FlowDirection.In)] float alpha);
-
-        [NativeApi(EntryPoint = "glBlendEquation")]
-        public partial void BlendEquation([Flow(FlowDirection.In)] ARB mode);
-
-        [NativeApi(EntryPoint = "glBlendEquation")]
-        public partial void BlendEquation([Flow(FlowDirection.In)] BlendEquationModeEXT mode);
-
-        public ArbImaging(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

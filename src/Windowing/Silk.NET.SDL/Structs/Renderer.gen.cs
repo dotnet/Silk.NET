@@ -14,10 +14,9 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL
+namespace Silk.NET.SDL;
+
+[NativeName("Name", "SDL_Renderer")]
+public unsafe partial struct Renderer
 {
-    [NativeName("Name", "SDL_Renderer")]
-    public unsafe partial struct Renderer
-    {
-    }
 }

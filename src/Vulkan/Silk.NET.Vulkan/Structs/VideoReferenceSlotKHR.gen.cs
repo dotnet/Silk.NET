@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkVideoReferenceSlotKHR")]
+public unsafe partial struct VideoReferenceSlotKHR
 {
-    [NativeName("Name", "VkVideoReferenceSlotKHR")]
-    public unsafe partial struct VideoReferenceSlotKHR
-    {
-        public VideoReferenceSlotKHR
-        (
+    public VideoReferenceSlotKHR
+    (
             StructureType? sType = StructureType.VideoReferenceSlotKhr,
             void* pNext = null,
             sbyte? slotIndex = null,
             VideoPictureResourceKHR* pPictureResource = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (slotIndex is not null)
-            {
-                SlotIndex = slotIndex.Value;
-            }
-
-            if (pPictureResource is not null)
-            {
-                PPictureResource = pPictureResource;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "int8_t")]
-        [NativeName("Type.Name", "int8_t")]
-        [NativeName("Name", "slotIndex")]
-        public sbyte SlotIndex;
-/// <summary></summary>
-        [NativeName("Type", "VkVideoPictureResourceKHR*")]
-        [NativeName("Type.Name", "VkVideoPictureResourceKHR")]
-        [NativeName("Name", "pPictureResource")]
-        public VideoPictureResourceKHR* PPictureResource;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (slotIndex is not null)
+        {
+            SlotIndex = slotIndex.Value;
+        }
+
+        if (pPictureResource is not null)
+        {
+            PPictureResource = pPictureResource;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "int8_t")]
+    [NativeName("Type.Name", "int8_t")]
+    [NativeName("Name", "slotIndex")]
+    public sbyte SlotIndex;
+/// <summary></summary>
+    [NativeName("Type", "VkVideoPictureResourceKHR*")]
+    [NativeName("Type.Name", "VkVideoPictureResourceKHR")]
+    [NativeName("Name", "pPictureResource")]
+    public VideoPictureResourceKHR* PPictureResource;
 }

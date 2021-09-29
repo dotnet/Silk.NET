@@ -7,12 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL
+namespace Silk.NET.OpenGL;
+
+[NativeName("Name", "SeparableTarget")]
+public enum SeparableTarget : int
 {
-    [NativeName("Name", "SeparableTarget")]
-    public enum SeparableTarget : int
-    {
-        [NativeName("Name", "GL_SEPARABLE_2D")]
-        Separable2D = 0x8012,
-    }
+    [NativeName("Name", "GL_SEPARABLE_2D")]
+    Separable2D = 0x8012,
 }

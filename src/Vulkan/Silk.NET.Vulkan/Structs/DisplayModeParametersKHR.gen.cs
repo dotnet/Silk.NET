@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkDisplayModeParametersKHR")]
+public unsafe partial struct DisplayModeParametersKHR
 {
-    [NativeName("Name", "VkDisplayModeParametersKHR")]
-    public unsafe partial struct DisplayModeParametersKHR
-    {
-        public DisplayModeParametersKHR
-        (
+    public DisplayModeParametersKHR
+    (
             Extent2D? visibleRegion = null,
             uint? refreshRate = null
-        ) : this()
+    ) : this()
+    {
+        if (visibleRegion is not null)
         {
-            if (visibleRegion is not null)
-            {
-                VisibleRegion = visibleRegion.Value;
-            }
-
-            if (refreshRate is not null)
-            {
-                RefreshRate = refreshRate.Value;
-            }
+            VisibleRegion = visibleRegion.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkExtent2D")]
-        [NativeName("Type.Name", "VkExtent2D")]
-        [NativeName("Name", "visibleRegion")]
-        public Extent2D VisibleRegion;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "refreshRate")]
-        public uint RefreshRate;
+        if (refreshRate is not null)
+        {
+            RefreshRate = refreshRate.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkExtent2D")]
+    [NativeName("Type.Name", "VkExtent2D")]
+    [NativeName("Name", "visibleRegion")]
+    public Extent2D VisibleRegion;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "refreshRate")]
+    public uint RefreshRate;
 }

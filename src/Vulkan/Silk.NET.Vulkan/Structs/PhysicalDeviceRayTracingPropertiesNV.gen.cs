@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDeviceRayTracingPropertiesNV")]
+public unsafe partial struct PhysicalDeviceRayTracingPropertiesNV
 {
-    [NativeName("Name", "VkPhysicalDeviceRayTracingPropertiesNV")]
-    public unsafe partial struct PhysicalDeviceRayTracingPropertiesNV
-    {
-        public PhysicalDeviceRayTracingPropertiesNV
-        (
+    public PhysicalDeviceRayTracingPropertiesNV
+    (
             StructureType? sType = StructureType.PhysicalDeviceRayTracingPropertiesNV,
             void* pNext = null,
             uint? shaderGroupHandleSize = null,
@@ -31,108 +31,107 @@ namespace Silk.NET.Vulkan
             ulong? maxInstanceCount = null,
             ulong? maxTriangleCount = null,
             uint? maxDescriptorSetAccelerationStructures = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (shaderGroupHandleSize is not null)
-            {
-                ShaderGroupHandleSize = shaderGroupHandleSize.Value;
-            }
-
-            if (maxRecursionDepth is not null)
-            {
-                MaxRecursionDepth = maxRecursionDepth.Value;
-            }
-
-            if (maxShaderGroupStride is not null)
-            {
-                MaxShaderGroupStride = maxShaderGroupStride.Value;
-            }
-
-            if (shaderGroupBaseAlignment is not null)
-            {
-                ShaderGroupBaseAlignment = shaderGroupBaseAlignment.Value;
-            }
-
-            if (maxGeometryCount is not null)
-            {
-                MaxGeometryCount = maxGeometryCount.Value;
-            }
-
-            if (maxInstanceCount is not null)
-            {
-                MaxInstanceCount = maxInstanceCount.Value;
-            }
-
-            if (maxTriangleCount is not null)
-            {
-                MaxTriangleCount = maxTriangleCount.Value;
-            }
-
-            if (maxDescriptorSetAccelerationStructures is not null)
-            {
-                MaxDescriptorSetAccelerationStructures = maxDescriptorSetAccelerationStructures.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "shaderGroupHandleSize")]
-        public uint ShaderGroupHandleSize;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxRecursionDepth")]
-        public uint MaxRecursionDepth;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxShaderGroupStride")]
-        public uint MaxShaderGroupStride;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "shaderGroupBaseAlignment")]
-        public uint ShaderGroupBaseAlignment;
-/// <summary></summary>
-        [NativeName("Type", "uint64_t")]
-        [NativeName("Type.Name", "uint64_t")]
-        [NativeName("Name", "maxGeometryCount")]
-        public ulong MaxGeometryCount;
-/// <summary></summary>
-        [NativeName("Type", "uint64_t")]
-        [NativeName("Type.Name", "uint64_t")]
-        [NativeName("Name", "maxInstanceCount")]
-        public ulong MaxInstanceCount;
-/// <summary></summary>
-        [NativeName("Type", "uint64_t")]
-        [NativeName("Type.Name", "uint64_t")]
-        [NativeName("Name", "maxTriangleCount")]
-        public ulong MaxTriangleCount;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxDescriptorSetAccelerationStructures")]
-        public uint MaxDescriptorSetAccelerationStructures;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (shaderGroupHandleSize is not null)
+        {
+            ShaderGroupHandleSize = shaderGroupHandleSize.Value;
+        }
+
+        if (maxRecursionDepth is not null)
+        {
+            MaxRecursionDepth = maxRecursionDepth.Value;
+        }
+
+        if (maxShaderGroupStride is not null)
+        {
+            MaxShaderGroupStride = maxShaderGroupStride.Value;
+        }
+
+        if (shaderGroupBaseAlignment is not null)
+        {
+            ShaderGroupBaseAlignment = shaderGroupBaseAlignment.Value;
+        }
+
+        if (maxGeometryCount is not null)
+        {
+            MaxGeometryCount = maxGeometryCount.Value;
+        }
+
+        if (maxInstanceCount is not null)
+        {
+            MaxInstanceCount = maxInstanceCount.Value;
+        }
+
+        if (maxTriangleCount is not null)
+        {
+            MaxTriangleCount = maxTriangleCount.Value;
+        }
+
+        if (maxDescriptorSetAccelerationStructures is not null)
+        {
+            MaxDescriptorSetAccelerationStructures = maxDescriptorSetAccelerationStructures.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "shaderGroupHandleSize")]
+    public uint ShaderGroupHandleSize;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "maxRecursionDepth")]
+    public uint MaxRecursionDepth;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "maxShaderGroupStride")]
+    public uint MaxShaderGroupStride;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "shaderGroupBaseAlignment")]
+    public uint ShaderGroupBaseAlignment;
+/// <summary></summary>
+    [NativeName("Type", "uint64_t")]
+    [NativeName("Type.Name", "uint64_t")]
+    [NativeName("Name", "maxGeometryCount")]
+    public ulong MaxGeometryCount;
+/// <summary></summary>
+    [NativeName("Type", "uint64_t")]
+    [NativeName("Type.Name", "uint64_t")]
+    [NativeName("Name", "maxInstanceCount")]
+    public ulong MaxInstanceCount;
+/// <summary></summary>
+    [NativeName("Type", "uint64_t")]
+    [NativeName("Type.Name", "uint64_t")]
+    [NativeName("Name", "maxTriangleCount")]
+    public ulong MaxTriangleCount;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "maxDescriptorSetAccelerationStructures")]
+    public uint MaxDescriptorSetAccelerationStructures;
 }

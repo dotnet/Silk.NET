@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkOffset3D")]
+public unsafe partial struct Offset3D
 {
-    [NativeName("Name", "VkOffset3D")]
-    public unsafe partial struct Offset3D
-    {
-        public Offset3D
-        (
+    public Offset3D
+    (
             int? x = null,
             int? y = null,
             int? z = null
-        ) : this()
+    ) : this()
+    {
+        if (x is not null)
         {
-            if (x is not null)
-            {
-                X = x.Value;
-            }
-
-            if (y is not null)
-            {
-                Y = y.Value;
-            }
-
-            if (z is not null)
-            {
-                Z = z.Value;
-            }
+            X = x.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "int32_t")]
-        [NativeName("Type.Name", "int32_t")]
-        [NativeName("Name", "x")]
-        public int X;
-/// <summary></summary>
-        [NativeName("Type", "int32_t")]
-        [NativeName("Type.Name", "int32_t")]
-        [NativeName("Name", "y")]
-        public int Y;
-/// <summary></summary>
-        [NativeName("Type", "int32_t")]
-        [NativeName("Type.Name", "int32_t")]
-        [NativeName("Name", "z")]
-        public int Z;
+        if (y is not null)
+        {
+            Y = y.Value;
+        }
+
+        if (z is not null)
+        {
+            Z = z.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "int32_t")]
+    [NativeName("Type.Name", "int32_t")]
+    [NativeName("Name", "x")]
+    public int X;
+/// <summary></summary>
+    [NativeName("Type", "int32_t")]
+    [NativeName("Type.Name", "int32_t")]
+    [NativeName("Name", "y")]
+    public int Y;
+/// <summary></summary>
+    [NativeName("Type", "int32_t")]
+    [NativeName("Type.Name", "int32_t")]
+    [NativeName("Name", "z")]
+    public int Z;
 }

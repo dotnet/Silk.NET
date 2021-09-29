@@ -12,22 +12,21 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
+namespace Silk.NET.OpenGL.Legacy.Extensions.EXT;
+
+public static class ExtEglImageStorageOverloads
 {
-    public static class ExtEglImageStorageOverloads
+    public static unsafe void EglimageTargetTexStorage(this ExtEglImageStorage thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<int> attrib_list)
     {
-        public static unsafe void EglimageTargetTexStorage(this ExtEglImageStorage thisApi, [Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<int> attrib_list)
-        {
-            // SpanOverloader
-            thisApi.EglimageTargetTexStorage(target, image, in attrib_list.GetPinnableReference());
-        }
-
-        public static unsafe void EglimageTargetTextureStorage(this ExtEglImageStorage thisApi, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<int> attrib_list)
-        {
-            // SpanOverloader
-            thisApi.EglimageTargetTextureStorage(texture, image, in attrib_list.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        thisApi.EglimageTargetTexStorage(target, image, in attrib_list.GetPinnableReference());
     }
+
+    public static unsafe void EglimageTargetTextureStorage(this ExtEglImageStorage thisApi, [Flow(FlowDirection.In)] uint texture, [Flow(FlowDirection.In)] nint image, [Flow(FlowDirection.In)] ReadOnlySpan<int> attrib_list)
+    {
+        // SpanOverloader
+        thisApi.EglimageTargetTextureStorage(texture, image, in attrib_list.GetPinnableReference());
+    }
+
 }
 

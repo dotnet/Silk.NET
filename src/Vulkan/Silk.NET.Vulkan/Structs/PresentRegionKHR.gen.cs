@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPresentRegionKHR")]
+public unsafe partial struct PresentRegionKHR
 {
-    [NativeName("Name", "VkPresentRegionKHR")]
-    public unsafe partial struct PresentRegionKHR
-    {
-        public PresentRegionKHR
-        (
+    public PresentRegionKHR
+    (
             uint? rectangleCount = null,
             RectLayerKHR* pRectangles = null
-        ) : this()
+    ) : this()
+    {
+        if (rectangleCount is not null)
         {
-            if (rectangleCount is not null)
-            {
-                RectangleCount = rectangleCount.Value;
-            }
-
-            if (pRectangles is not null)
-            {
-                PRectangles = pRectangles;
-            }
+            RectangleCount = rectangleCount.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "rectangleCount")]
-        public uint RectangleCount;
-/// <summary></summary>
-        [NativeName("Type", "VkRectLayerKHR*")]
-        [NativeName("Type.Name", "VkRectLayerKHR")]
-        [NativeName("Name", "pRectangles")]
-        public RectLayerKHR* PRectangles;
+        if (pRectangles is not null)
+        {
+            PRectangles = pRectangles;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "rectangleCount")]
+    public uint RectangleCount;
+/// <summary></summary>
+    [NativeName("Type", "VkRectLayerKHR*")]
+    [NativeName("Type.Name", "VkRectLayerKHR")]
+    [NativeName("Name", "pRectangles")]
+    public RectLayerKHR* PRectangles;
 }

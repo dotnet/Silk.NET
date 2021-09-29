@@ -7,16 +7,15 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL
+namespace Silk.NET.OpenGL;
+
+[NativeName("Name", "MapTextureFormatINTEL")]
+public enum MapTextureFormatINTEL : int
 {
-    [NativeName("Name", "MapTextureFormatINTEL")]
-    public enum MapTextureFormatINTEL : int
-    {
-        [NativeName("Name", "GL_LAYOUT_DEFAULT_INTEL")]
-        LayoutDefaultIntel = 0x0,
-        [NativeName("Name", "GL_LAYOUT_LINEAR_INTEL")]
-        LayoutLinearIntel = 0x1,
-        [NativeName("Name", "GL_LAYOUT_LINEAR_CPU_CACHED_INTEL")]
-        LayoutLinearCpuCachedIntel = 0x2,
-    }
+    [NativeName("Name", "GL_LAYOUT_DEFAULT_INTEL")]
+    LayoutDefaultIntel = 0x0,
+    [NativeName("Name", "GL_LAYOUT_LINEAR_INTEL")]
+    LayoutLinearIntel = 0x1,
+    [NativeName("Name", "GL_LAYOUT_LINEAR_CPU_CACHED_INTEL")]
+    LayoutLinearCpuCachedIntel = 0x2,
 }

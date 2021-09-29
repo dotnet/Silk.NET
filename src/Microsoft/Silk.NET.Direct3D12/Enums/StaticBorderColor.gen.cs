@@ -7,16 +7,15 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_STATIC_BORDER_COLOR")]
+public enum StaticBorderColor : int
 {
-    [NativeName("Name", "D3D12_STATIC_BORDER_COLOR")]
-    public enum StaticBorderColor : int
-    {
-        [NativeName("Name", "D3D12_STATIC_BORDER_COLOR_TRANSPARENT_BLACK")]
-        StaticBorderColorTransparentBlack = 0x0,
-        [NativeName("Name", "D3D12_STATIC_BORDER_COLOR_OPAQUE_BLACK")]
-        StaticBorderColorOpaqueBlack = 0x1,
-        [NativeName("Name", "D3D12_STATIC_BORDER_COLOR_OPAQUE_WHITE")]
-        StaticBorderColorOpaqueWhite = 0x2,
-    }
+    [NativeName("Name", "D3D12_STATIC_BORDER_COLOR_TRANSPARENT_BLACK")]
+    StaticBorderColorTransparentBlack = 0x0,
+    [NativeName("Name", "D3D12_STATIC_BORDER_COLOR_OPAQUE_BLACK")]
+    StaticBorderColorOpaqueBlack = 0x1,
+    [NativeName("Name", "D3D12_STATIC_BORDER_COLOR_OPAQUE_WHITE")]
+    StaticBorderColorOpaqueWhite = 0x2,
 }

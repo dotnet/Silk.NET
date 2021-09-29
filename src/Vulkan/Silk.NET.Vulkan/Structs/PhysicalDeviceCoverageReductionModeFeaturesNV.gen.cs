@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDeviceCoverageReductionModeFeaturesNV")]
+public unsafe partial struct PhysicalDeviceCoverageReductionModeFeaturesNV
 {
-    [NativeName("Name", "VkPhysicalDeviceCoverageReductionModeFeaturesNV")]
-    public unsafe partial struct PhysicalDeviceCoverageReductionModeFeaturesNV
-    {
-        public PhysicalDeviceCoverageReductionModeFeaturesNV
-        (
+    public PhysicalDeviceCoverageReductionModeFeaturesNV
+    (
             StructureType? sType = StructureType.PhysicalDeviceCoverageReductionModeFeaturesNV,
             void* pNext = null,
             Bool32? coverageReductionMode = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (coverageReductionMode is not null)
-            {
-                CoverageReductionMode = coverageReductionMode.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "coverageReductionMode")]
-        public Bool32 CoverageReductionMode;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (coverageReductionMode is not null)
+        {
+            CoverageReductionMode = coverageReductionMode.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "coverageReductionMode")]
+    public Bool32 CoverageReductionMode;
 }

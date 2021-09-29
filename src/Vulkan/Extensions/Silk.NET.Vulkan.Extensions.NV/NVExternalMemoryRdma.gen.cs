@@ -14,32 +14,31 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.NV
+namespace Silk.NET.Vulkan.Extensions.NV;
+
+[Extension("VK_NV_external_memory_rdma")]
+public unsafe partial class NVExternalMemoryRdma : NativeExtension<Vk>
 {
-    [Extension("VK_NV_external_memory_rdma")]
-    public unsafe partial class NVExternalMemoryRdma : NativeExtension<Vk>
+    public const string ExtensionName = "VK_NV_external_memory_rdma";
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "vkGetMemoryRemoteAddressNV")]
+    public unsafe partial Result GetMemoryRemoteAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetRemoteAddressInfoNV* pMemoryGetRemoteAddressInfo, [Count(Count = 0), Flow(FlowDirection.Out)] void* pAddress);
+
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "vkGetMemoryRemoteAddressNV")]
+    public unsafe partial Result GetMemoryRemoteAddress<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetRemoteAddressInfoNV* pMemoryGetRemoteAddressInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out T0 pAddress) where T0 : unmanaged;
+
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "vkGetMemoryRemoteAddressNV")]
+    public unsafe partial Result GetMemoryRemoteAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in MemoryGetRemoteAddressInfoNV pMemoryGetRemoteAddressInfo, [Count(Count = 0), Flow(FlowDirection.Out)] void* pAddress);
+
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "vkGetMemoryRemoteAddressNV")]
+    public partial Result GetMemoryRemoteAddress<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in MemoryGetRemoteAddressInfoNV pMemoryGetRemoteAddressInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out T0 pAddress) where T0 : unmanaged;
+
+    public NVExternalMemoryRdma(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "VK_NV_external_memory_rdma";
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetMemoryRemoteAddressNV")]
-        public unsafe partial Result GetMemoryRemoteAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetRemoteAddressInfoNV* pMemoryGetRemoteAddressInfo, [Count(Count = 0), Flow(FlowDirection.Out)] void* pAddress);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetMemoryRemoteAddressNV")]
-        public unsafe partial Result GetMemoryRemoteAddress<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] MemoryGetRemoteAddressInfoNV* pMemoryGetRemoteAddressInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out T0 pAddress) where T0 : unmanaged;
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetMemoryRemoteAddressNV")]
-        public unsafe partial Result GetMemoryRemoteAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in MemoryGetRemoteAddressInfoNV pMemoryGetRemoteAddressInfo, [Count(Count = 0), Flow(FlowDirection.Out)] void* pAddress);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetMemoryRemoteAddressNV")]
-        public partial Result GetMemoryRemoteAddress<T0>([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in MemoryGetRemoteAddressInfoNV pMemoryGetRemoteAddressInfo, [Count(Count = 0), Flow(FlowDirection.Out)] out T0 pAddress) where T0 : unmanaged;
-
-        public NVExternalMemoryRdma(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

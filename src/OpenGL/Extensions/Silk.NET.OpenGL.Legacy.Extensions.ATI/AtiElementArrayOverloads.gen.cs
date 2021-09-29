@@ -12,22 +12,21 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
+namespace Silk.NET.OpenGL.Legacy.Extensions.ATI;
+
+public static class AtiElementArrayOverloads
 {
-    public static class AtiElementArrayOverloads
+    public static unsafe void ElementPointer<T0>(this AtiElementArray thisApi, [Flow(FlowDirection.In)] ATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
     {
-        public static unsafe void ElementPointer<T0>(this AtiElementArray thisApi, [Flow(FlowDirection.In)] ATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.ElementPointer(type, in pointer.GetPinnableReference());
-        }
-
-        public static unsafe void ElementPointer<T0>(this AtiElementArray thisApi, [Flow(FlowDirection.In)] ElementPointerTypeATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.ElementPointer(type, in pointer.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        thisApi.ElementPointer(type, in pointer.GetPinnableReference());
     }
+
+    public static unsafe void ElementPointer<T0>(this AtiElementArray thisApi, [Flow(FlowDirection.In)] ElementPointerTypeATI type, [Count(Computed = "type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
+    {
+        // SpanOverloader
+        thisApi.ElementPointer(type, in pointer.GetPinnableReference());
+    }
+
 }
 

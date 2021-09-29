@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkGeometryDataNV")]
+public unsafe partial struct GeometryDataNV
 {
-    [NativeName("Name", "VkGeometryDataNV")]
-    public unsafe partial struct GeometryDataNV
-    {
-        public GeometryDataNV
-        (
+    public GeometryDataNV
+    (
             GeometryTrianglesNV? triangles = null,
             GeometryAABBNV? aabbs = null
-        ) : this()
+    ) : this()
+    {
+        if (triangles is not null)
         {
-            if (triangles is not null)
-            {
-                Triangles = triangles.Value;
-            }
-
-            if (aabbs is not null)
-            {
-                Aabbs = aabbs.Value;
-            }
+            Triangles = triangles.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkGeometryTrianglesNV")]
-        [NativeName("Type.Name", "VkGeometryTrianglesNV")]
-        [NativeName("Name", "triangles")]
-        public GeometryTrianglesNV Triangles;
-/// <summary></summary>
-        [NativeName("Type", "VkGeometryAABBNV")]
-        [NativeName("Type.Name", "VkGeometryAABBNV")]
-        [NativeName("Name", "aabbs")]
-        public GeometryAABBNV Aabbs;
+        if (aabbs is not null)
+        {
+            Aabbs = aabbs.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkGeometryTrianglesNV")]
+    [NativeName("Type.Name", "VkGeometryTrianglesNV")]
+    [NativeName("Name", "triangles")]
+    public GeometryTrianglesNV Triangles;
+/// <summary></summary>
+    [NativeName("Type", "VkGeometryAABBNV")]
+    [NativeName("Type.Name", "VkGeometryAABBNV")]
+    [NativeName("Name", "aabbs")]
+    public GeometryAABBNV Aabbs;
 }

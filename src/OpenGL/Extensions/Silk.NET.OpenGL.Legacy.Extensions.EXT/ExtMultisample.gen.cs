@@ -14,28 +14,27 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
+namespace Silk.NET.OpenGL.Legacy.Extensions.EXT;
+
+[Extension("EXT_multisample")]
+public unsafe partial class ExtMultisample : NativeExtension<GL>
 {
-    [Extension("EXT_multisample")]
-    public unsafe partial class ExtMultisample : NativeExtension<GL>
+    public const string ExtensionName = "EXT_multisample";
+    [NativeApi(EntryPoint = "glSampleMaskEXT")]
+    public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
+
+    [NativeApi(EntryPoint = "glSampleMaskEXT")]
+    public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] Boolean invert);
+
+    [NativeApi(EntryPoint = "glSamplePatternEXT")]
+    public partial void SamplePattern([Flow(FlowDirection.In)] EXT pattern);
+
+    [NativeApi(EntryPoint = "glSamplePatternEXT")]
+    public partial void SamplePattern([Flow(FlowDirection.In)] SamplePatternEXT pattern);
+
+    public ExtMultisample(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "EXT_multisample";
-        [NativeApi(EntryPoint = "glSampleMaskEXT")]
-        public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] bool invert);
-
-        [NativeApi(EntryPoint = "glSampleMaskEXT")]
-        public partial void SampleMask([Flow(FlowDirection.In)] float value, [Flow(FlowDirection.In)] Boolean invert);
-
-        [NativeApi(EntryPoint = "glSamplePatternEXT")]
-        public partial void SamplePattern([Flow(FlowDirection.In)] EXT pattern);
-
-        [NativeApi(EntryPoint = "glSamplePatternEXT")]
-        public partial void SamplePattern([Flow(FlowDirection.In)] SamplePatternEXT pattern);
-
-        public ExtMultisample(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

@@ -14,28 +14,27 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NV
+namespace Silk.NET.OpenGL.Legacy.Extensions.NV;
+
+[Extension("NV_query_resource")]
+public unsafe partial class NVQueryResource : NativeExtension<GL>
 {
-    [Extension("NV_query_resource")]
-    public unsafe partial class NVQueryResource : NativeExtension<GL>
+    public const string ExtensionName = "NV_query_resource";
+    [NativeApi(EntryPoint = "glQueryResourceNV")]
+    public unsafe partial int QueryResource([Flow(FlowDirection.In)] NV queryType, [Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* buffer);
+
+    [NativeApi(EntryPoint = "glQueryResourceNV")]
+    public partial int QueryResource([Flow(FlowDirection.In)] NV queryType, [Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int buffer);
+
+    public unsafe int QueryResource([Flow(FlowDirection.In)] NV queryType, [Flow(FlowDirection.In)] int tagId, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> buffer)
     {
-        public const string ExtensionName = "NV_query_resource";
-        [NativeApi(EntryPoint = "glQueryResourceNV")]
-        public unsafe partial int QueryResource([Flow(FlowDirection.In)] NV queryType, [Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] int* buffer);
+        // ImplicitCountSpanOverloader
+        return QueryResource(queryType, tagId, (uint) buffer.Length, out buffer.GetPinnableReference());
+    }
 
-        [NativeApi(EntryPoint = "glQueryResourceNV")]
-        public partial int QueryResource([Flow(FlowDirection.In)] NV queryType, [Flow(FlowDirection.In)] int tagId, [Flow(FlowDirection.In)] uint count, [Count(Parameter = "count"), Flow(FlowDirection.Out)] out int buffer);
-
-        public unsafe int QueryResource([Flow(FlowDirection.In)] NV queryType, [Flow(FlowDirection.In)] int tagId, [Count(Parameter = "count"), Flow(FlowDirection.Out)] Span<int> buffer)
-        {
-            // ImplicitCountSpanOverloader
-            return QueryResource(queryType, tagId, (uint) buffer.Length, out buffer.GetPinnableReference());
-        }
-
-        public NVQueryResource(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+    public NVQueryResource(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

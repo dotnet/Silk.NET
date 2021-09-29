@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_TEX1D_DSV")]
+public unsafe partial struct Tex1DDsv
 {
-    [NativeName("Name", "D3D12_TEX1D_DSV")]
-    public unsafe partial struct Tex1DDsv
-    {
-        public Tex1DDsv
-        (
+    public Tex1DDsv
+    (
             uint? mipSlice = null
-        ) : this()
+    ) : this()
+    {
+        if (mipSlice is not null)
         {
-            if (mipSlice is not null)
-            {
-                MipSlice = mipSlice.Value;
-            }
+            MipSlice = mipSlice.Value;
         }
-
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "MipSlice")]
-        public uint MipSlice;
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "MipSlice")]
+    public uint MipSlice;
 }

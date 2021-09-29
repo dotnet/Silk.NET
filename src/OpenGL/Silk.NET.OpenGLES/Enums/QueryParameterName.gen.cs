@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES
+namespace Silk.NET.OpenGLES;
+
+[NativeName("Name", "QueryParameterName")]
+public enum QueryParameterName : int
 {
-    [NativeName("Name", "QueryParameterName")]
-    public enum QueryParameterName : int
-    {
-        [NativeName("Name", "GL_QUERY_COUNTER_BITS")]
-        QueryCounterBits = 0x8864,
-        [NativeName("Name", "GL_CURRENT_QUERY")]
-        CurrentQuery = 0x8865,
-    }
+    [NativeName("Name", "GL_QUERY_COUNTER_BITS")]
+    QueryCounterBits = 0x8864,
+    [NativeName("Name", "GL_CURRENT_QUERY")]
+    CurrentQuery = 0x8865,
 }

@@ -12,17 +12,16 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR.Extensions.KHR
-{
-    public static class KhrOpenglEsEnableOverloads
-    {
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetOpenGlesgraphicsRequirements(this KhrOpenglEsEnable thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] Span<GraphicsRequirementsOpenGLESKHR> graphicsRequirements)
-        {
-            // SpanOverloader
-            return thisApi.GetOpenGlesgraphicsRequirements(instance, systemId, ref graphicsRequirements.GetPinnableReference());
-        }
+namespace Silk.NET.OpenXR.Extensions.KHR;
 
+public static class KhrOpenglEsEnableOverloads
+{
+    /// <summary>To be documented.</summary>
+    public static unsafe Result GetOpenGlesgraphicsRequirements(this KhrOpenglEsEnable thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0)] ulong systemId, [Count(Count = 0)] Span<GraphicsRequirementsOpenGLESKHR> graphicsRequirements)
+    {
+        // SpanOverloader
+        return thisApi.GetOpenGlesgraphicsRequirements(instance, systemId, ref graphicsRequirements.GetPinnableReference());
     }
+
 }
 

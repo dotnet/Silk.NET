@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDeviceMaintenance3Properties")]
+public unsafe partial struct PhysicalDeviceMaintenance3Properties
 {
-    [NativeName("Name", "VkPhysicalDeviceMaintenance3Properties")]
-    public unsafe partial struct PhysicalDeviceMaintenance3Properties
-    {
-        public PhysicalDeviceMaintenance3Properties
-        (
+    public PhysicalDeviceMaintenance3Properties
+    (
             StructureType? sType = StructureType.PhysicalDeviceMaintenance3Properties,
             void* pNext = null,
             uint? maxPerSetDescriptors = null,
             ulong? maxMemoryAllocationSize = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (maxPerSetDescriptors is not null)
-            {
-                MaxPerSetDescriptors = maxPerSetDescriptors.Value;
-            }
-
-            if (maxMemoryAllocationSize is not null)
-            {
-                MaxMemoryAllocationSize = maxMemoryAllocationSize.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxPerSetDescriptors")]
-        public uint MaxPerSetDescriptors;
-/// <summary></summary>
-        [NativeName("Type", "VkDeviceSize")]
-        [NativeName("Type.Name", "VkDeviceSize")]
-        [NativeName("Name", "maxMemoryAllocationSize")]
-        public ulong MaxMemoryAllocationSize;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (maxPerSetDescriptors is not null)
+        {
+            MaxPerSetDescriptors = maxPerSetDescriptors.Value;
+        }
+
+        if (maxMemoryAllocationSize is not null)
+        {
+            MaxMemoryAllocationSize = maxMemoryAllocationSize.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "maxPerSetDescriptors")]
+    public uint MaxPerSetDescriptors;
+/// <summary></summary>
+    [NativeName("Type", "VkDeviceSize")]
+    [NativeName("Type.Name", "VkDeviceSize")]
+    [NativeName("Name", "maxMemoryAllocationSize")]
+    public ulong MaxMemoryAllocationSize;
 }

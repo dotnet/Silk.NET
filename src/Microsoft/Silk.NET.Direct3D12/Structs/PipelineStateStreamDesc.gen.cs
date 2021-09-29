@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_PIPELINE_STATE_STREAM_DESC")]
+public unsafe partial struct PipelineStateStreamDesc
 {
-    [NativeName("Name", "D3D12_PIPELINE_STATE_STREAM_DESC")]
-    public unsafe partial struct PipelineStateStreamDesc
-    {
-        public PipelineStateStreamDesc
-        (
+    public PipelineStateStreamDesc
+    (
             nuint? sizeInBytes = null,
             void* pPipelineStateSubobjectStream = null
-        ) : this()
+    ) : this()
+    {
+        if (sizeInBytes is not null)
         {
-            if (sizeInBytes is not null)
-            {
-                SizeInBytes = sizeInBytes.Value;
-            }
-
-            if (pPipelineStateSubobjectStream is not null)
-            {
-                PPipelineStateSubobjectStream = pPipelineStateSubobjectStream;
-            }
+            SizeInBytes = sizeInBytes.Value;
         }
 
-
-        [NativeName("Type", "SIZE_T")]
-        [NativeName("Type.Name", "SIZE_T")]
-        [NativeName("Name", "SizeInBytes")]
-        public nuint SizeInBytes;
-
-        [NativeName("Type", "void *")]
-        [NativeName("Type.Name", "void *")]
-        [NativeName("Name", "pPipelineStateSubobjectStream")]
-        public void* PPipelineStateSubobjectStream;
+        if (pPipelineStateSubobjectStream is not null)
+        {
+            PPipelineStateSubobjectStream = pPipelineStateSubobjectStream;
+        }
     }
+
+
+    [NativeName("Type", "SIZE_T")]
+    [NativeName("Type.Name", "SIZE_T")]
+    [NativeName("Name", "SizeInBytes")]
+    public nuint SizeInBytes;
+
+    [NativeName("Type", "void *")]
+    [NativeName("Type.Name", "void *")]
+    [NativeName("Name", "pPipelineStateSubobjectStream")]
+    public void* PPipelineStateSubobjectStream;
 }

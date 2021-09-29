@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkExtent2D")]
+public unsafe partial struct Extent2D
 {
-    [NativeName("Name", "VkExtent2D")]
-    public unsafe partial struct Extent2D
-    {
-        public Extent2D
-        (
+    public Extent2D
+    (
             uint? width = null,
             uint? height = null
-        ) : this()
+    ) : this()
+    {
+        if (width is not null)
         {
-            if (width is not null)
-            {
-                Width = width.Value;
-            }
-
-            if (height is not null)
-            {
-                Height = height.Value;
-            }
+            Width = width.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "width")]
-        public uint Width;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "height")]
-        public uint Height;
+        if (height is not null)
+        {
+            Height = height.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "width")]
+    public uint Width;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "height")]
+    public uint Height;
 }

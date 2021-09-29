@@ -14,19 +14,18 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
-{
-    [Extension("AMD_interleaved_elements")]
-    public unsafe partial class AmdInterleavedElements : NativeExtension<GL>
-    {
-        public const string ExtensionName = "AMD_interleaved_elements";
-        [NativeApi(EntryPoint = "glVertexAttribParameteriAMD")]
-        public partial void VertexAttribParameter([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] int param);
+namespace Silk.NET.OpenGL.Legacy.Extensions.AMD;
 
-        public AmdInterleavedElements(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+[Extension("AMD_interleaved_elements")]
+public unsafe partial class AmdInterleavedElements : NativeExtension<GL>
+{
+    public const string ExtensionName = "AMD_interleaved_elements";
+    [NativeApi(EntryPoint = "glVertexAttribParameteriAMD")]
+    public partial void VertexAttribParameter([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] int param);
+
+    public AmdInterleavedElements(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

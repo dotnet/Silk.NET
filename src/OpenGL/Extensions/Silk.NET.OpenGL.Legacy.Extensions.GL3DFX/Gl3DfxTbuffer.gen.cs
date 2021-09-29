@@ -14,19 +14,18 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.GL3DFX
-{
-    [Extension("3DFX_tbuffer")]
-    public unsafe partial class Gl3DfxTbuffer : NativeExtension<GL>
-    {
-        public const string ExtensionName = "3DFX_tbuffer";
-        [NativeApi(EntryPoint = "glTbufferMask3DFX")]
-        public partial void TbufferMask3Dfx([Flow(FlowDirection.In)] uint mask);
+namespace Silk.NET.OpenGL.Legacy.Extensions.GL3DFX;
 
-        public Gl3DfxTbuffer(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+[Extension("3DFX_tbuffer")]
+public unsafe partial class Gl3DfxTbuffer : NativeExtension<GL>
+{
+    public const string ExtensionName = "3DFX_tbuffer";
+    [NativeApi(EntryPoint = "glTbufferMask3DFX")]
+    public partial void TbufferMask3Dfx([Flow(FlowDirection.In)] uint mask);
+
+    public Gl3DfxTbuffer(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

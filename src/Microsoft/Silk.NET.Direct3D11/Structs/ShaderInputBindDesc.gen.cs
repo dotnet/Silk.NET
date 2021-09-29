@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "_D3D11_SHADER_INPUT_BIND_DESC")]
+public unsafe partial struct ShaderInputBindDesc
 {
-    [NativeName("Name", "_D3D11_SHADER_INPUT_BIND_DESC")]
-    public unsafe partial struct ShaderInputBindDesc
-    {
-        public ShaderInputBindDesc
-        (
+    public ShaderInputBindDesc
+    (
             byte* name = null,
             Silk.NET.Core.Native.D3DShaderInputType? type = null,
             uint? bindPoint = null,
@@ -29,88 +29,87 @@ namespace Silk.NET.Direct3D11
             Silk.NET.Core.Native.D3DResourceReturnType? returnType = null,
             Silk.NET.Core.Native.D3DSrvDimension? dimension = null,
             uint? numSamples = null
-        ) : this()
+    ) : this()
+    {
+        if (name is not null)
         {
-            if (name is not null)
-            {
-                Name = name;
-            }
-
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (bindPoint is not null)
-            {
-                BindPoint = bindPoint.Value;
-            }
-
-            if (bindCount is not null)
-            {
-                BindCount = bindCount.Value;
-            }
-
-            if (uFlags is not null)
-            {
-                UFlags = uFlags.Value;
-            }
-
-            if (returnType is not null)
-            {
-                ReturnType = returnType.Value;
-            }
-
-            if (dimension is not null)
-            {
-                Dimension = dimension.Value;
-            }
-
-            if (numSamples is not null)
-            {
-                NumSamples = numSamples.Value;
-            }
+            Name = name;
         }
 
+        if (type is not null)
+        {
+            Type = type.Value;
+        }
 
-        [NativeName("Type", "LPCSTR")]
-        [NativeName("Type.Name", "LPCSTR")]
-        [NativeName("Name", "Name")]
-        public byte* Name;
+        if (bindPoint is not null)
+        {
+            BindPoint = bindPoint.Value;
+        }
 
-        [NativeName("Type", "D3D_SHADER_INPUT_TYPE")]
-        [NativeName("Type.Name", "D3D_SHADER_INPUT_TYPE")]
-        [NativeName("Name", "Type")]
-        public Silk.NET.Core.Native.D3DShaderInputType Type;
+        if (bindCount is not null)
+        {
+            BindCount = bindCount.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "BindPoint")]
-        public uint BindPoint;
+        if (uFlags is not null)
+        {
+            UFlags = uFlags.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "BindCount")]
-        public uint BindCount;
+        if (returnType is not null)
+        {
+            ReturnType = returnType.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "uFlags")]
-        public uint UFlags;
+        if (dimension is not null)
+        {
+            Dimension = dimension.Value;
+        }
 
-        [NativeName("Type", "D3D_RESOURCE_RETURN_TYPE")]
-        [NativeName("Type.Name", "D3D_RESOURCE_RETURN_TYPE")]
-        [NativeName("Name", "ReturnType")]
-        public Silk.NET.Core.Native.D3DResourceReturnType ReturnType;
-
-        [NativeName("Type", "D3D_SRV_DIMENSION")]
-        [NativeName("Type.Name", "D3D_SRV_DIMENSION")]
-        [NativeName("Name", "Dimension")]
-        public Silk.NET.Core.Native.D3DSrvDimension Dimension;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "NumSamples")]
-        public uint NumSamples;
+        if (numSamples is not null)
+        {
+            NumSamples = numSamples.Value;
+        }
     }
+
+
+    [NativeName("Type", "LPCSTR")]
+    [NativeName("Type.Name", "LPCSTR")]
+    [NativeName("Name", "Name")]
+    public byte* Name;
+
+    [NativeName("Type", "D3D_SHADER_INPUT_TYPE")]
+    [NativeName("Type.Name", "D3D_SHADER_INPUT_TYPE")]
+    [NativeName("Name", "Type")]
+    public Silk.NET.Core.Native.D3DShaderInputType Type;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "BindPoint")]
+    public uint BindPoint;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "BindCount")]
+    public uint BindCount;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "uFlags")]
+    public uint UFlags;
+
+    [NativeName("Type", "D3D_RESOURCE_RETURN_TYPE")]
+    [NativeName("Type.Name", "D3D_RESOURCE_RETURN_TYPE")]
+    [NativeName("Name", "ReturnType")]
+    public Silk.NET.Core.Native.D3DResourceReturnType ReturnType;
+
+    [NativeName("Type", "D3D_SRV_DIMENSION")]
+    [NativeName("Type.Name", "D3D_SRV_DIMENSION")]
+    [NativeName("Name", "Dimension")]
+    public Silk.NET.Core.Native.D3DSrvDimension Dimension;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "NumSamples")]
+    public uint NumSamples;
 }

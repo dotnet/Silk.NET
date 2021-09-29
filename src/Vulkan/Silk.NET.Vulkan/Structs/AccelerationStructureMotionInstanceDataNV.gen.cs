@@ -14,52 +14,51 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[StructLayout(LayoutKind.Explicit)]
+[NativeName("Name", "VkAccelerationStructureMotionInstanceDataNV")]
+public unsafe partial struct AccelerationStructureMotionInstanceDataNV
 {
-    [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "VkAccelerationStructureMotionInstanceDataNV")]
-    public unsafe partial struct AccelerationStructureMotionInstanceDataNV
-    {
-        public AccelerationStructureMotionInstanceDataNV
-        (
+    public AccelerationStructureMotionInstanceDataNV
+    (
             AccelerationStructureInstanceKHR? staticInstance = null,
             AccelerationStructureMatrixMotionInstanceNV? matrixMotionInstance = null,
             AccelerationStructureSRTMotionInstanceNV? srtMotionInstance = null
-        ) : this()
+    ) : this()
+    {
+        if (staticInstance is not null)
         {
-            if (staticInstance is not null)
-            {
-                StaticInstance = staticInstance.Value;
-            }
-
-            if (matrixMotionInstance is not null)
-            {
-                MatrixMotionInstance = matrixMotionInstance.Value;
-            }
-
-            if (srtMotionInstance is not null)
-            {
-                SrtMotionInstance = srtMotionInstance.Value;
-            }
+            StaticInstance = staticInstance.Value;
         }
 
-/// <summary></summary>
-        [FieldOffset(0)]
-        [NativeName("Type", "VkAccelerationStructureInstanceKHR")]
-        [NativeName("Type.Name", "VkAccelerationStructureInstanceKHR")]
-        [NativeName("Name", "staticInstance")]
-        public AccelerationStructureInstanceKHR StaticInstance;
-/// <summary></summary>
-        [FieldOffset(0)]
-        [NativeName("Type", "VkAccelerationStructureMatrixMotionInstanceNV")]
-        [NativeName("Type.Name", "VkAccelerationStructureMatrixMotionInstanceNV")]
-        [NativeName("Name", "matrixMotionInstance")]
-        public AccelerationStructureMatrixMotionInstanceNV MatrixMotionInstance;
-/// <summary></summary>
-        [FieldOffset(0)]
-        [NativeName("Type", "VkAccelerationStructureSRTMotionInstanceNV")]
-        [NativeName("Type.Name", "VkAccelerationStructureSRTMotionInstanceNV")]
-        [NativeName("Name", "srtMotionInstance")]
-        public AccelerationStructureSRTMotionInstanceNV SrtMotionInstance;
+        if (matrixMotionInstance is not null)
+        {
+            MatrixMotionInstance = matrixMotionInstance.Value;
+        }
+
+        if (srtMotionInstance is not null)
+        {
+            SrtMotionInstance = srtMotionInstance.Value;
+        }
     }
+
+/// <summary></summary>
+        [FieldOffset(0)]
+    [NativeName("Type", "VkAccelerationStructureInstanceKHR")]
+    [NativeName("Type.Name", "VkAccelerationStructureInstanceKHR")]
+    [NativeName("Name", "staticInstance")]
+    public AccelerationStructureInstanceKHR StaticInstance;
+/// <summary></summary>
+        [FieldOffset(0)]
+    [NativeName("Type", "VkAccelerationStructureMatrixMotionInstanceNV")]
+    [NativeName("Type.Name", "VkAccelerationStructureMatrixMotionInstanceNV")]
+    [NativeName("Name", "matrixMotionInstance")]
+    public AccelerationStructureMatrixMotionInstanceNV MatrixMotionInstance;
+/// <summary></summary>
+        [FieldOffset(0)]
+    [NativeName("Type", "VkAccelerationStructureSRTMotionInstanceNV")]
+    [NativeName("Type.Name", "VkAccelerationStructureSRTMotionInstanceNV")]
+    [NativeName("Name", "srtMotionInstance")]
+    public AccelerationStructureSRTMotionInstanceNV SrtMotionInstance;
 }

@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_FEATURE_DATA_D3D11_OPTIONS4")]
+public unsafe partial struct FeatureDataD3D11Options4
 {
-    [NativeName("Name", "D3D11_FEATURE_DATA_D3D11_OPTIONS4")]
-    public unsafe partial struct FeatureDataD3D11Options4
-    {
-        public FeatureDataD3D11Options4
-        (
+    public FeatureDataD3D11Options4
+    (
             int? extendedNV12SharedTextureSupported = null
-        ) : this()
+    ) : this()
+    {
+        if (extendedNV12SharedTextureSupported is not null)
         {
-            if (extendedNV12SharedTextureSupported is not null)
-            {
-                ExtendedNV12SharedTextureSupported = extendedNV12SharedTextureSupported.Value;
-            }
+            ExtendedNV12SharedTextureSupported = extendedNV12SharedTextureSupported.Value;
         }
-
-
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "ExtendedNV12SharedTextureSupported")]
-        public int ExtendedNV12SharedTextureSupported;
     }
+
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "ExtendedNV12SharedTextureSupported")]
+    public int ExtendedNV12SharedTextureSupported;
 }

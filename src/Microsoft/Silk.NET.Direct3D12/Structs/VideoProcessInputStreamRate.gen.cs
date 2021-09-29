@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_VIDEO_PROCESS_INPUT_STREAM_RATE")]
+public unsafe partial struct VideoProcessInputStreamRate
 {
-    [NativeName("Name", "D3D12_VIDEO_PROCESS_INPUT_STREAM_RATE")]
-    public unsafe partial struct VideoProcessInputStreamRate
-    {
-        public VideoProcessInputStreamRate
-        (
+    public VideoProcessInputStreamRate
+    (
             uint? outputIndex = null,
             uint? inputFrameOrField = null
-        ) : this()
+    ) : this()
+    {
+        if (outputIndex is not null)
         {
-            if (outputIndex is not null)
-            {
-                OutputIndex = outputIndex.Value;
-            }
-
-            if (inputFrameOrField is not null)
-            {
-                InputFrameOrField = inputFrameOrField.Value;
-            }
+            OutputIndex = outputIndex.Value;
         }
 
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "OutputIndex")]
-        public uint OutputIndex;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "InputFrameOrField")]
-        public uint InputFrameOrField;
+        if (inputFrameOrField is not null)
+        {
+            InputFrameOrField = inputFrameOrField.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "OutputIndex")]
+    public uint OutputIndex;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "InputFrameOrField")]
+    public uint InputFrameOrField;
 }

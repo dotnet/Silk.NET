@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrViewConfigurationViewFovEPIC")]
+public unsafe partial struct ViewConfigurationViewFovEPIC
 {
-    [NativeName("Name", "XrViewConfigurationViewFovEPIC")]
-    public unsafe partial struct ViewConfigurationViewFovEPIC
-    {
-        public ViewConfigurationViewFovEPIC
-        (
+    public ViewConfigurationViewFovEPIC
+    (
             StructureType? type = StructureType.TypeViewConfigurationViewFovEpic,
             void* next = null,
             Fovf? recommendedFov = null,
             Fovf? maxMutableFov = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (recommendedFov is not null)
-            {
-                RecommendedFov = recommendedFov.Value;
-            }
-
-            if (maxMutableFov is not null)
-            {
-                MaxMutableFov = maxMutableFov.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "XrFovf")]
-        [NativeName("Type.Name", "XrFovf")]
-        [NativeName("Name", "recommendedFov")]
-        public Fovf RecommendedFov;
-/// <summary></summary>
-        [NativeName("Type", "XrFovf")]
-        [NativeName("Type.Name", "XrFovf")]
-        [NativeName("Name", "maxMutableFov")]
-        public Fovf MaxMutableFov;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (recommendedFov is not null)
+        {
+            RecommendedFov = recommendedFov.Value;
+        }
+
+        if (maxMutableFov is not null)
+        {
+            MaxMutableFov = maxMutableFov.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "XrFovf")]
+    [NativeName("Type.Name", "XrFovf")]
+    [NativeName("Name", "recommendedFov")]
+    public Fovf RecommendedFov;
+/// <summary></summary>
+    [NativeName("Type", "XrFovf")]
+    [NativeName("Type.Name", "XrFovf")]
+    [NativeName("Name", "maxMutableFov")]
+    public Fovf MaxMutableFov;
 }

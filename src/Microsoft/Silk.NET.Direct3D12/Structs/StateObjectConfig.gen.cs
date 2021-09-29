@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_STATE_OBJECT_CONFIG")]
+public unsafe partial struct StateObjectConfig
 {
-    [NativeName("Name", "D3D12_STATE_OBJECT_CONFIG")]
-    public unsafe partial struct StateObjectConfig
-    {
-        public StateObjectConfig
-        (
+    public StateObjectConfig
+    (
             StateObjectFlags? flags = null
-        ) : this()
+    ) : this()
+    {
+        if (flags is not null)
         {
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
+            Flags = flags.Value;
         }
-
-
-        [NativeName("Type", "D3D12_STATE_OBJECT_FLAGS")]
-        [NativeName("Type.Name", "D3D12_STATE_OBJECT_FLAGS")]
-        [NativeName("Name", "Flags")]
-        public StateObjectFlags Flags;
     }
+
+
+    [NativeName("Type", "D3D12_STATE_OBJECT_FLAGS")]
+    [NativeName("Type.Name", "D3D12_STATE_OBJECT_FLAGS")]
+    [NativeName("Name", "Flags")]
+    public StateObjectFlags Flags;
 }

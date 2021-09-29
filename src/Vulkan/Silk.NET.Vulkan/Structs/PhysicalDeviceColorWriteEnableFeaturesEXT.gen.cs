@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDeviceColorWriteEnableFeaturesEXT")]
+public unsafe partial struct PhysicalDeviceColorWriteEnableFeaturesEXT
 {
-    [NativeName("Name", "VkPhysicalDeviceColorWriteEnableFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceColorWriteEnableFeaturesEXT
-    {
-        public PhysicalDeviceColorWriteEnableFeaturesEXT
-        (
+    public PhysicalDeviceColorWriteEnableFeaturesEXT
+    (
             StructureType? sType = StructureType.PhysicalDeviceColorWriteEnableFeaturesExt,
             void* pNext = null,
             Bool32? colorWriteEnable = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (colorWriteEnable is not null)
-            {
-                ColorWriteEnable = colorWriteEnable.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "colorWriteEnable")]
-        public Bool32 ColorWriteEnable;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (colorWriteEnable is not null)
+        {
+            ColorWriteEnable = colorWriteEnable.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "colorWriteEnable")]
+    public Bool32 ColorWriteEnable;
 }

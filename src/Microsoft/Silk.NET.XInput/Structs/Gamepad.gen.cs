@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.XInput
+namespace Silk.NET.XInput;
+
+[NativeName("Name", "_XINPUT_GAMEPAD")]
+public unsafe partial struct Gamepad
 {
-    [NativeName("Name", "_XINPUT_GAMEPAD")]
-    public unsafe partial struct Gamepad
-    {
-        public Gamepad
-        (
+    public Gamepad
+    (
             ushort? wButtons = null,
             byte? bLeftTrigger = null,
             byte? bRightTrigger = null,
@@ -28,78 +28,77 @@ namespace Silk.NET.XInput
             short? sThumbLY = null,
             short? sThumbRX = null,
             short? sThumbRY = null
-        ) : this()
+    ) : this()
+    {
+        if (wButtons is not null)
         {
-            if (wButtons is not null)
-            {
-                WButtons = wButtons.Value;
-            }
-
-            if (bLeftTrigger is not null)
-            {
-                BLeftTrigger = bLeftTrigger.Value;
-            }
-
-            if (bRightTrigger is not null)
-            {
-                BRightTrigger = bRightTrigger.Value;
-            }
-
-            if (sThumbLX is not null)
-            {
-                SThumbLX = sThumbLX.Value;
-            }
-
-            if (sThumbLY is not null)
-            {
-                SThumbLY = sThumbLY.Value;
-            }
-
-            if (sThumbRX is not null)
-            {
-                SThumbRX = sThumbRX.Value;
-            }
-
-            if (sThumbRY is not null)
-            {
-                SThumbRY = sThumbRY.Value;
-            }
+            WButtons = wButtons.Value;
         }
 
+        if (bLeftTrigger is not null)
+        {
+            BLeftTrigger = bLeftTrigger.Value;
+        }
 
-        [NativeName("Type", "WORD")]
-        [NativeName("Type.Name", "WORD")]
-        [NativeName("Name", "wButtons")]
-        public ushort WButtons;
+        if (bRightTrigger is not null)
+        {
+            BRightTrigger = bRightTrigger.Value;
+        }
 
-        [NativeName("Type", "BYTE")]
-        [NativeName("Type.Name", "BYTE")]
-        [NativeName("Name", "bLeftTrigger")]
-        public byte BLeftTrigger;
+        if (sThumbLX is not null)
+        {
+            SThumbLX = sThumbLX.Value;
+        }
 
-        [NativeName("Type", "BYTE")]
-        [NativeName("Type.Name", "BYTE")]
-        [NativeName("Name", "bRightTrigger")]
-        public byte BRightTrigger;
+        if (sThumbLY is not null)
+        {
+            SThumbLY = sThumbLY.Value;
+        }
 
-        [NativeName("Type", "SHORT")]
-        [NativeName("Type.Name", "SHORT")]
-        [NativeName("Name", "sThumbLX")]
-        public short SThumbLX;
+        if (sThumbRX is not null)
+        {
+            SThumbRX = sThumbRX.Value;
+        }
 
-        [NativeName("Type", "SHORT")]
-        [NativeName("Type.Name", "SHORT")]
-        [NativeName("Name", "sThumbLY")]
-        public short SThumbLY;
-
-        [NativeName("Type", "SHORT")]
-        [NativeName("Type.Name", "SHORT")]
-        [NativeName("Name", "sThumbRX")]
-        public short SThumbRX;
-
-        [NativeName("Type", "SHORT")]
-        [NativeName("Type.Name", "SHORT")]
-        [NativeName("Name", "sThumbRY")]
-        public short SThumbRY;
+        if (sThumbRY is not null)
+        {
+            SThumbRY = sThumbRY.Value;
+        }
     }
+
+
+    [NativeName("Type", "WORD")]
+    [NativeName("Type.Name", "WORD")]
+    [NativeName("Name", "wButtons")]
+    public ushort WButtons;
+
+    [NativeName("Type", "BYTE")]
+    [NativeName("Type.Name", "BYTE")]
+    [NativeName("Name", "bLeftTrigger")]
+    public byte BLeftTrigger;
+
+    [NativeName("Type", "BYTE")]
+    [NativeName("Type.Name", "BYTE")]
+    [NativeName("Name", "bRightTrigger")]
+    public byte BRightTrigger;
+
+    [NativeName("Type", "SHORT")]
+    [NativeName("Type.Name", "SHORT")]
+    [NativeName("Name", "sThumbLX")]
+    public short SThumbLX;
+
+    [NativeName("Type", "SHORT")]
+    [NativeName("Type.Name", "SHORT")]
+    [NativeName("Name", "sThumbLY")]
+    public short SThumbLY;
+
+    [NativeName("Type", "SHORT")]
+    [NativeName("Type.Name", "SHORT")]
+    [NativeName("Name", "sThumbRX")]
+    public short SThumbRX;
+
+    [NativeName("Type", "SHORT")]
+    [NativeName("Type.Name", "SHORT")]
+    [NativeName("Name", "sThumbRY")]
+    public short SThumbRY;
 }

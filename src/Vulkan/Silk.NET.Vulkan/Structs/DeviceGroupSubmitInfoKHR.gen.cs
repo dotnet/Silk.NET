@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkDeviceGroupSubmitInfoKHR")]
+public unsafe partial struct DeviceGroupSubmitInfoKHR
 {
-    [NativeName("Name", "VkDeviceGroupSubmitInfoKHR")]
-    public unsafe partial struct DeviceGroupSubmitInfoKHR
-    {
-        public DeviceGroupSubmitInfoKHR
-        (
+    public DeviceGroupSubmitInfoKHR
+    (
             StructureType? sType = StructureType.DeviceGroupSubmitInfo,
             void* pNext = null,
             uint? waitSemaphoreCount = null,
@@ -29,88 +29,87 @@ namespace Silk.NET.Vulkan
             uint* pCommandBufferDeviceMasks = null,
             uint? signalSemaphoreCount = null,
             uint* pSignalSemaphoreDeviceIndices = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (waitSemaphoreCount is not null)
-            {
-                WaitSemaphoreCount = waitSemaphoreCount.Value;
-            }
-
-            if (pWaitSemaphoreDeviceIndices is not null)
-            {
-                PWaitSemaphoreDeviceIndices = pWaitSemaphoreDeviceIndices;
-            }
-
-            if (commandBufferCount is not null)
-            {
-                CommandBufferCount = commandBufferCount.Value;
-            }
-
-            if (pCommandBufferDeviceMasks is not null)
-            {
-                PCommandBufferDeviceMasks = pCommandBufferDeviceMasks;
-            }
-
-            if (signalSemaphoreCount is not null)
-            {
-                SignalSemaphoreCount = signalSemaphoreCount.Value;
-            }
-
-            if (pSignalSemaphoreDeviceIndices is not null)
-            {
-                PSignalSemaphoreDeviceIndices = pSignalSemaphoreDeviceIndices;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "waitSemaphoreCount")]
-        public uint WaitSemaphoreCount;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t*")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "pWaitSemaphoreDeviceIndices")]
-        public uint* PWaitSemaphoreDeviceIndices;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "commandBufferCount")]
-        public uint CommandBufferCount;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t*")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "pCommandBufferDeviceMasks")]
-        public uint* PCommandBufferDeviceMasks;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "signalSemaphoreCount")]
-        public uint SignalSemaphoreCount;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t*")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "pSignalSemaphoreDeviceIndices")]
-        public uint* PSignalSemaphoreDeviceIndices;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (waitSemaphoreCount is not null)
+        {
+            WaitSemaphoreCount = waitSemaphoreCount.Value;
+        }
+
+        if (pWaitSemaphoreDeviceIndices is not null)
+        {
+            PWaitSemaphoreDeviceIndices = pWaitSemaphoreDeviceIndices;
+        }
+
+        if (commandBufferCount is not null)
+        {
+            CommandBufferCount = commandBufferCount.Value;
+        }
+
+        if (pCommandBufferDeviceMasks is not null)
+        {
+            PCommandBufferDeviceMasks = pCommandBufferDeviceMasks;
+        }
+
+        if (signalSemaphoreCount is not null)
+        {
+            SignalSemaphoreCount = signalSemaphoreCount.Value;
+        }
+
+        if (pSignalSemaphoreDeviceIndices is not null)
+        {
+            PSignalSemaphoreDeviceIndices = pSignalSemaphoreDeviceIndices;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "waitSemaphoreCount")]
+    public uint WaitSemaphoreCount;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t*")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "pWaitSemaphoreDeviceIndices")]
+    public uint* PWaitSemaphoreDeviceIndices;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "commandBufferCount")]
+    public uint CommandBufferCount;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t*")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "pCommandBufferDeviceMasks")]
+    public uint* PCommandBufferDeviceMasks;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "signalSemaphoreCount")]
+    public uint SignalSemaphoreCount;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t*")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "pSignalSemaphoreDeviceIndices")]
+    public uint* PSignalSemaphoreDeviceIndices;
 }

@@ -14,20 +14,19 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.EXT
-{
-    [Extension("VK_EXT_direct_mode_display")]
-    public unsafe partial class ExtDirectModeDisplay : NativeExtension<Vk>
-    {
-        public const string ExtensionName = "VK_EXT_direct_mode_display";
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkReleaseDisplayEXT")]
-        public partial Result ReleaseDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display);
+namespace Silk.NET.Vulkan.Extensions.EXT;
 
-        public ExtDirectModeDisplay(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+[Extension("VK_EXT_direct_mode_display")]
+public unsafe partial class ExtDirectModeDisplay : NativeExtension<Vk>
+{
+    public const string ExtensionName = "VK_EXT_direct_mode_display";
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "vkReleaseDisplayEXT")]
+    public partial Result ReleaseDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display);
+
+    public ExtDirectModeDisplay(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

@@ -14,73 +14,72 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Video
+namespace Silk.NET.Vulkan.Video;
+
+[NativeName("Name", "StdVideoDecodeH265PictureInfoFlags")]
+public unsafe partial struct StdVideoDecodeH265PictureInfoFlags
 {
-    [NativeName("Name", "StdVideoDecodeH265PictureInfoFlags")]
-    public unsafe partial struct StdVideoDecodeH265PictureInfoFlags
-    {
-        public StdVideoDecodeH265PictureInfoFlags
-        (
+    public StdVideoDecodeH265PictureInfoFlags
+    (
             uint? irapPicFlag = null,
             uint? idrPicFlag = null,
             uint? isReference = null,
             uint? shortTermRefPicSetSpsFlag = null
-        ) : this()
+    ) : this()
+    {
+        if (irapPicFlag is not null)
         {
-            if (irapPicFlag is not null)
-            {
-                IrapPicFlag = irapPicFlag.Value;
-            }
-
-            if (idrPicFlag is not null)
-            {
-                IdrPicFlag = idrPicFlag.Value;
-            }
-
-            if (isReference is not null)
-            {
-                IsReference = isReference.Value;
-            }
-
-            if (shortTermRefPicSetSpsFlag is not null)
-            {
-                ShortTermRefPicSetSpsFlag = shortTermRefPicSetSpsFlag.Value;
-            }
+            IrapPicFlag = irapPicFlag.Value;
         }
 
-
-        private uint _bitfield1;
-
-        public uint IrapPicFlag
+        if (idrPicFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)(_bitfield1 & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
+            IdrPicFlag = idrPicFlag.Value;
         }
 
-        public uint IdrPicFlag
+        if (isReference is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 1) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+            IsReference = isReference.Value;
         }
 
-        public uint IsReference
+        if (shortTermRefPicSetSpsFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 2) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+            ShortTermRefPicSetSpsFlag = shortTermRefPicSetSpsFlag.Value;
         }
+    }
 
-        public uint ShortTermRefPicSetSpsFlag
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 3) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
-        }
+
+    private uint _bitfield1;
+
+    public uint IrapPicFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)(_bitfield1 & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
+    }
+
+    public uint IdrPicFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 1) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+    }
+
+    public uint IsReference
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 2) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+    }
+
+    public uint ShortTermRefPicSetSpsFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 3) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
     }
 }

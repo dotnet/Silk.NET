@@ -14,40 +14,39 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[StructLayout(LayoutKind.Explicit)]
+[NativeName("Name", "__AnonymousRecord_d3d11_L10354_C5")]
+public unsafe partial struct VideoColorUnion
 {
-    [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d11_L10354_C5")]
-    public unsafe partial struct VideoColorUnion
-    {
-        public VideoColorUnion
-        (
+    public VideoColorUnion
+    (
             VIDEOCOLORYCbCrA? yCbCr = null,
             VideoColorRgba? rGBA = null
-        ) : this()
+    ) : this()
+    {
+        if (yCbCr is not null)
         {
-            if (yCbCr is not null)
-            {
-                YCbCr = yCbCr.Value;
-            }
-
-            if (rGBA is not null)
-            {
-                RGBA = rGBA.Value;
-            }
+            YCbCr = yCbCr.Value;
         }
 
-
-        [FieldOffset(0)]
-        [NativeName("Type", "D3D11_VIDEO_COLOR_YCbCrA")]
-        [NativeName("Type.Name", "D3D11_VIDEO_COLOR_YCbCrA")]
-        [NativeName("Name", "YCbCr")]
-        public VIDEOCOLORYCbCrA YCbCr;
-
-        [FieldOffset(0)]
-        [NativeName("Type", "D3D11_VIDEO_COLOR_RGBA")]
-        [NativeName("Type.Name", "D3D11_VIDEO_COLOR_RGBA")]
-        [NativeName("Name", "RGBA")]
-        public VideoColorRgba RGBA;
+        if (rGBA is not null)
+        {
+            RGBA = rGBA.Value;
+        }
     }
+
+
+        [FieldOffset(0)]
+    [NativeName("Type", "D3D11_VIDEO_COLOR_YCbCrA")]
+    [NativeName("Type.Name", "D3D11_VIDEO_COLOR_YCbCrA")]
+    [NativeName("Name", "YCbCr")]
+    public VIDEOCOLORYCbCrA YCbCr;
+
+        [FieldOffset(0)]
+    [NativeName("Type", "D3D11_VIDEO_COLOR_RGBA")]
+    [NativeName("Type.Name", "D3D11_VIDEO_COLOR_RGBA")]
+    [NativeName("Name", "RGBA")]
+    public VideoColorRgba RGBA;
 }

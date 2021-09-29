@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_DESCRIPTOR_RANGE")]
+public unsafe partial struct DescriptorRange
 {
-    [NativeName("Name", "D3D12_DESCRIPTOR_RANGE")]
-    public unsafe partial struct DescriptorRange
-    {
-        public DescriptorRange
-        (
+    public DescriptorRange
+    (
             DescriptorRangeType? rangeType = null,
             uint? numDescriptors = null,
             uint? baseShaderRegister = null,
             uint? registerSpace = null,
             uint? offsetInDescriptorsFromTableStart = null
-        ) : this()
+    ) : this()
+    {
+        if (rangeType is not null)
         {
-            if (rangeType is not null)
-            {
-                RangeType = rangeType.Value;
-            }
-
-            if (numDescriptors is not null)
-            {
-                NumDescriptors = numDescriptors.Value;
-            }
-
-            if (baseShaderRegister is not null)
-            {
-                BaseShaderRegister = baseShaderRegister.Value;
-            }
-
-            if (registerSpace is not null)
-            {
-                RegisterSpace = registerSpace.Value;
-            }
-
-            if (offsetInDescriptorsFromTableStart is not null)
-            {
-                OffsetInDescriptorsFromTableStart = offsetInDescriptorsFromTableStart.Value;
-            }
+            RangeType = rangeType.Value;
         }
 
+        if (numDescriptors is not null)
+        {
+            NumDescriptors = numDescriptors.Value;
+        }
 
-        [NativeName("Type", "D3D12_DESCRIPTOR_RANGE_TYPE")]
-        [NativeName("Type.Name", "D3D12_DESCRIPTOR_RANGE_TYPE")]
-        [NativeName("Name", "RangeType")]
-        public DescriptorRangeType RangeType;
+        if (baseShaderRegister is not null)
+        {
+            BaseShaderRegister = baseShaderRegister.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "NumDescriptors")]
-        public uint NumDescriptors;
+        if (registerSpace is not null)
+        {
+            RegisterSpace = registerSpace.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "BaseShaderRegister")]
-        public uint BaseShaderRegister;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "RegisterSpace")]
-        public uint RegisterSpace;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "OffsetInDescriptorsFromTableStart")]
-        public uint OffsetInDescriptorsFromTableStart;
+        if (offsetInDescriptorsFromTableStart is not null)
+        {
+            OffsetInDescriptorsFromTableStart = offsetInDescriptorsFromTableStart.Value;
+        }
     }
+
+
+    [NativeName("Type", "D3D12_DESCRIPTOR_RANGE_TYPE")]
+    [NativeName("Type.Name", "D3D12_DESCRIPTOR_RANGE_TYPE")]
+    [NativeName("Name", "RangeType")]
+    public DescriptorRangeType RangeType;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "NumDescriptors")]
+    public uint NumDescriptors;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "BaseShaderRegister")]
+    public uint BaseShaderRegister;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "RegisterSpace")]
+    public uint RegisterSpace;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "OffsetInDescriptorsFromTableStart")]
+    public uint OffsetInDescriptorsFromTableStart;
 }

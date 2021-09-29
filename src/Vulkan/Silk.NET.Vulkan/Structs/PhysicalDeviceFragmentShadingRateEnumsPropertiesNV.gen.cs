@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDeviceFragmentShadingRateEnumsPropertiesNV")]
+public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsPropertiesNV
 {
-    [NativeName("Name", "VkPhysicalDeviceFragmentShadingRateEnumsPropertiesNV")]
-    public unsafe partial struct PhysicalDeviceFragmentShadingRateEnumsPropertiesNV
-    {
-        public PhysicalDeviceFragmentShadingRateEnumsPropertiesNV
-        (
+    public PhysicalDeviceFragmentShadingRateEnumsPropertiesNV
+    (
             StructureType? sType = StructureType.PhysicalDeviceFragmentShadingRateEnumsPropertiesNV,
             void* pNext = null,
             SampleCountFlags? maxFragmentShadingRateInvocationCount = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (maxFragmentShadingRateInvocationCount is not null)
-            {
-                MaxFragmentShadingRateInvocationCount = maxFragmentShadingRateInvocationCount.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkSampleCountFlagBits")]
-        [NativeName("Type.Name", "VkSampleCountFlagBits")]
-        [NativeName("Name", "maxFragmentShadingRateInvocationCount")]
-        public SampleCountFlags MaxFragmentShadingRateInvocationCount;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (maxFragmentShadingRateInvocationCount is not null)
+        {
+            MaxFragmentShadingRateInvocationCount = maxFragmentShadingRateInvocationCount.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkSampleCountFlagBits")]
+    [NativeName("Type.Name", "VkSampleCountFlagBits")]
+    [NativeName("Name", "maxFragmentShadingRateInvocationCount")]
+    public SampleCountFlags MaxFragmentShadingRateInvocationCount;
 }

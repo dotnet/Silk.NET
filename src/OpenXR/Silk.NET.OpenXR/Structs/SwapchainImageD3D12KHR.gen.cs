@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrSwapchainImageD3D12KHR")]
+public unsafe partial struct SwapchainImageD3D12KHR
 {
-    [NativeName("Name", "XrSwapchainImageD3D12KHR")]
-    public unsafe partial struct SwapchainImageD3D12KHR
-    {
-        public SwapchainImageD3D12KHR
-        (
+    public SwapchainImageD3D12KHR
+    (
             StructureType? type = StructureType.TypeSwapchainImageD3D12Khr,
             void* next = null,
             void* texture = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (texture is not null)
-            {
-                Texture = texture;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "ID3D12Resource*")]
-        [NativeName("Type.Name", "ID3D12Resource")]
-        [NativeName("Name", "texture")]
-        public void* Texture;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (texture is not null)
+        {
+            Texture = texture;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "ID3D12Resource*")]
+    [NativeName("Type.Name", "ID3D12Resource")]
+    [NativeName("Name", "texture")]
+    public void* Texture;
 }

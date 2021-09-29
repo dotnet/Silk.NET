@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL
+namespace Silk.NET.OpenGL;
+
+[NativeName("Name", "MeshMode1")]
+public enum MeshMode1 : int
 {
-    [NativeName("Name", "MeshMode1")]
-    public enum MeshMode1 : int
-    {
-        [NativeName("Name", "GL_POINT")]
-        Point = 0x1B00,
-        [NativeName("Name", "GL_LINE")]
-        Line = 0x1B01,
-    }
+    [NativeName("Name", "GL_POINT")]
+    Point = 0x1B00,
+    [NativeName("Name", "GL_LINE")]
+    Line = 0x1B01,
 }

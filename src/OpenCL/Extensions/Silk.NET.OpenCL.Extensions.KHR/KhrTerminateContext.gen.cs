@@ -14,19 +14,18 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL.Extensions.KHR
-{
-    [Extension("KHR_terminate_context")]
-    public unsafe partial class KhrTerminateContext : NativeExtension<CL>
-    {
-        public const string ExtensionName = "KHR_terminate_context";
-        [NativeApi(EntryPoint = "clTerminateContextKHR")]
-        public partial int TerminateContext([Flow(FlowDirection.In)] nint context);
+namespace Silk.NET.OpenCL.Extensions.KHR;
 
-        public KhrTerminateContext(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+[Extension("KHR_terminate_context")]
+public unsafe partial class KhrTerminateContext : NativeExtension<CL>
+{
+    public const string ExtensionName = "KHR_terminate_context";
+    [NativeApi(EntryPoint = "clTerminateContextKHR")]
+    public partial int TerminateContext([Flow(FlowDirection.In)] nint context);
+
+    public KhrTerminateContext(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

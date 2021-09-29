@@ -28,25 +28,24 @@ namespace Silk.NET.BuildTools.Bind
             sw.WriteLine();
             sw.WriteLine("#pragma warning disable 1591");
             sw.WriteLine();
-            sw.WriteLine($"namespace {ns}{project.Namespace}");
-            sw.WriteLine("{");
+            sw.WriteLine($"namespace {ns}{project.Namespace};");
+            sw.WriteLine();
             foreach (var attr in @enum.Attributes)
             {
                 sw.WriteLine($"    {attr}");
             }
 
-            sw.WriteLine($"    [NativeName(\"Name\", \"{@enum.NativeName}\")]");
-            sw.WriteLine($"    public enum {@enum.Name} : {@enum.EnumBaseType}");
-            sw.WriteLine("    {");
+            sw.WriteLine($"[NativeName(\"Name\", \"{@enum.NativeName}\")]");
+            sw.WriteLine($"public enum {@enum.Name} : {@enum.EnumBaseType}");
+            sw.WriteLine("{");
             for (var index = 0; index < @enum.Tokens.Count; index++)
             {
                 var token = @enum.Tokens[index];
-                sw.WriteLine($"        [NativeName(\"Name\", \"{token.NativeName}\")]");
-                sw.Write($"        {token.Name} = {MakeUnchecked(token.Value, @enum.EnumBaseType)}");
+                sw.WriteLine($"    [NativeName(\"Name\", \"{token.NativeName}\")]");
+                sw.Write($"    {token.Name} = {MakeUnchecked(token.Value, @enum.EnumBaseType)}");
                 sw.WriteLine($"{(index != @enum.Tokens.Count ? "," : string.Empty)}");
             }
 
-            sw.WriteLine("    }");
             sw.WriteLine("}");
             sw.Flush();
             sw.Dispose();

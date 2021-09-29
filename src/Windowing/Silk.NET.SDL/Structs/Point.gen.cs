@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL
+namespace Silk.NET.SDL;
+
+[NativeName("Name", "SDL_Point")]
+public unsafe partial struct Point
 {
-    [NativeName("Name", "SDL_Point")]
-    public unsafe partial struct Point
-    {
-        public Point
-        (
+    public Point
+    (
             int? x = null,
             int? y = null
-        ) : this()
+    ) : this()
+    {
+        if (x is not null)
         {
-            if (x is not null)
-            {
-                X = x.Value;
-            }
-
-            if (y is not null)
-            {
-                Y = y.Value;
-            }
+            X = x.Value;
         }
 
-
-        [NativeName("Type", "int")]
-        [NativeName("Type.Name", "int")]
-        [NativeName("Name", "x")]
-        public int X;
-
-        [NativeName("Type", "int")]
-        [NativeName("Type.Name", "int")]
-        [NativeName("Name", "y")]
-        public int Y;
+        if (y is not null)
+        {
+            Y = y.Value;
+        }
     }
+
+
+    [NativeName("Type", "int")]
+    [NativeName("Type.Name", "int")]
+    [NativeName("Name", "x")]
+    public int X;
+
+    [NativeName("Type", "int")]
+    [NativeName("Type.Name", "int")]
+    [NativeName("Name", "y")]
+    public int Y;
 }

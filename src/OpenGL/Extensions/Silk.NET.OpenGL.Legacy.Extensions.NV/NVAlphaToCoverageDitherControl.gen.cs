@@ -14,19 +14,18 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NV
-{
-    [Extension("NV_alpha_to_coverage_dither_control")]
-    public unsafe partial class NVAlphaToCoverageDitherControl : NativeExtension<GL>
-    {
-        public const string ExtensionName = "NV_alpha_to_coverage_dither_control";
-        [NativeApi(EntryPoint = "glAlphaToCoverageDitherControlNV")]
-        public partial void AlphaToCoverageDitherControl([Flow(FlowDirection.In)] NV mode);
+namespace Silk.NET.OpenGL.Legacy.Extensions.NV;
 
-        public NVAlphaToCoverageDitherControl(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+[Extension("NV_alpha_to_coverage_dither_control")]
+public unsafe partial class NVAlphaToCoverageDitherControl : NativeExtension<GL>
+{
+    public const string ExtensionName = "NV_alpha_to_coverage_dither_control";
+    [NativeApi(EntryPoint = "glAlphaToCoverageDitherControlNV")]
+    public partial void AlphaToCoverageDitherControl([Flow(FlowDirection.In)] NV mode);
+
+    public NVAlphaToCoverageDitherControl(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

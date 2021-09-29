@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPE_COUNT")]
+public unsafe partial struct FeatureDataProtectedResourceSessionTypeCount
 {
-    [NativeName("Name", "D3D12_FEATURE_DATA_PROTECTED_RESOURCE_SESSION_TYPE_COUNT")]
-    public unsafe partial struct FeatureDataProtectedResourceSessionTypeCount
-    {
-        public FeatureDataProtectedResourceSessionTypeCount
-        (
+    public FeatureDataProtectedResourceSessionTypeCount
+    (
             uint? nodeIndex = null,
             uint? count = null
-        ) : this()
+    ) : this()
+    {
+        if (nodeIndex is not null)
         {
-            if (nodeIndex is not null)
-            {
-                NodeIndex = nodeIndex.Value;
-            }
-
-            if (count is not null)
-            {
-                Count = count.Value;
-            }
+            NodeIndex = nodeIndex.Value;
         }
 
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "NodeIndex")]
-        public uint NodeIndex;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Count")]
-        public uint Count;
+        if (count is not null)
+        {
+            Count = count.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "NodeIndex")]
+    public uint NodeIndex;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Count")]
+    public uint Count;
 }

@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDeviceShaderSMBuiltinsFeaturesNV")]
+public unsafe partial struct PhysicalDeviceShaderSMBuiltinsFeaturesNV
 {
-    [NativeName("Name", "VkPhysicalDeviceShaderSMBuiltinsFeaturesNV")]
-    public unsafe partial struct PhysicalDeviceShaderSMBuiltinsFeaturesNV
-    {
-        public PhysicalDeviceShaderSMBuiltinsFeaturesNV
-        (
+    public PhysicalDeviceShaderSMBuiltinsFeaturesNV
+    (
             StructureType? sType = StructureType.PhysicalDeviceShaderSMBuiltinsFeaturesNV,
             void* pNext = null,
             Bool32? shaderSmbuiltins = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (shaderSmbuiltins is not null)
-            {
-                ShaderSmbuiltins = shaderSmbuiltins.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "shaderSMBuiltins")]
-        public Bool32 ShaderSmbuiltins;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (shaderSmbuiltins is not null)
+        {
+            ShaderSmbuiltins = shaderSmbuiltins.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "shaderSMBuiltins")]
+    public Bool32 ShaderSmbuiltins;
 }

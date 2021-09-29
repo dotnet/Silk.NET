@@ -7,12 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL
+namespace Silk.NET.OpenGL;
+
+[NativeName("Name", "FogParameter")]
+public enum FogParameter : int
 {
-    [NativeName("Name", "FogParameter")]
-    public enum FogParameter : int
-    {
-        [NativeName("Name", "GL_FOG_OFFSET_VALUE_SGIX")]
-        FogOffsetValueSgix = 0x8199,
-    }
+    [NativeName("Name", "GL_FOG_OFFSET_VALUE_SGIX")]
+    FogOffsetValueSgix = 0x8199,
 }

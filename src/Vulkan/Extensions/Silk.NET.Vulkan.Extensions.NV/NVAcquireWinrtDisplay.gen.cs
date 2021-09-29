@@ -14,28 +14,27 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.NV
+namespace Silk.NET.Vulkan.Extensions.NV;
+
+[Extension("VK_NV_acquire_winrt_display")]
+public unsafe partial class NVAcquireWinrtDisplay : NativeExtension<Vk>
 {
-    [Extension("VK_NV_acquire_winrt_display")]
-    public unsafe partial class NVAcquireWinrtDisplay : NativeExtension<Vk>
+    public const string ExtensionName = "VK_NV_acquire_winrt_display";
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "vkAcquireWinrtDisplayNV")]
+    public partial Result AcquireWinrtDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display);
+
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "vkGetWinrtDisplayNV")]
+    public unsafe partial Result GetWinrtDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint deviceRelativeId, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayKHR* pDisplay);
+
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "vkGetWinrtDisplayNV")]
+    public partial Result GetWinrtDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint deviceRelativeId, [Count(Count = 0), Flow(FlowDirection.Out)] out DisplayKHR pDisplay);
+
+    public NVAcquireWinrtDisplay(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "VK_NV_acquire_winrt_display";
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkAcquireWinrtDisplayNV")]
-        public partial Result AcquireWinrtDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] DisplayKHR display);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetWinrtDisplayNV")]
-        public unsafe partial Result GetWinrtDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint deviceRelativeId, [Count(Count = 0), Flow(FlowDirection.Out)] DisplayKHR* pDisplay);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetWinrtDisplayNV")]
-        public partial Result GetWinrtDisplay([Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint deviceRelativeId, [Count(Count = 0), Flow(FlowDirection.Out)] out DisplayKHR pDisplay);
-
-        public NVAcquireWinrtDisplay(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

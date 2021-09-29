@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrOffset2Di")]
+public unsafe partial struct Offset2Di
 {
-    [NativeName("Name", "XrOffset2Di")]
-    public unsafe partial struct Offset2Di
-    {
-        public Offset2Di
-        (
+    public Offset2Di
+    (
             int? x = null,
             int? y = null
-        ) : this()
+    ) : this()
+    {
+        if (x is not null)
         {
-            if (x is not null)
-            {
-                X = x.Value;
-            }
-
-            if (y is not null)
-            {
-                Y = y.Value;
-            }
+            X = x.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "int32_t")]
-        [NativeName("Type.Name", "int32_t")]
-        [NativeName("Name", "x")]
-        public int X;
-/// <summary></summary>
-        [NativeName("Type", "int32_t")]
-        [NativeName("Type.Name", "int32_t")]
-        [NativeName("Name", "y")]
-        public int Y;
+        if (y is not null)
+        {
+            Y = y.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "int32_t")]
+    [NativeName("Type.Name", "int32_t")]
+    [NativeName("Name", "x")]
+    public int X;
+/// <summary></summary>
+    [NativeName("Type", "int32_t")]
+    [NativeName("Type.Name", "int32_t")]
+    [NativeName("Name", "y")]
+    public int Y;
 }

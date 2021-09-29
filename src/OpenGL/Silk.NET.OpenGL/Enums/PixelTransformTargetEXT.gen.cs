@@ -7,12 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL
+namespace Silk.NET.OpenGL;
+
+[NativeName("Name", "PixelTransformTargetEXT")]
+public enum PixelTransformTargetEXT : int
 {
-    [NativeName("Name", "PixelTransformTargetEXT")]
-    public enum PixelTransformTargetEXT : int
-    {
-        [NativeName("Name", "GL_PIXEL_TRANSFORM_2D_EXT")]
-        PixelTransform2DExt = 0x8330,
-    }
+    [NativeName("Name", "GL_PIXEL_TRANSFORM_2D_EXT")]
+    PixelTransform2DExt = 0x8330,
 }

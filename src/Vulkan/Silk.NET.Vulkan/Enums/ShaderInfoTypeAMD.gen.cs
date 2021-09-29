@@ -7,16 +7,15 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkShaderInfoTypeAMD")]
+public enum ShaderInfoTypeAMD : int
 {
-    [NativeName("Name", "VkShaderInfoTypeAMD")]
-    public enum ShaderInfoTypeAMD : int
-    {
-        [NativeName("Name", "VK_SHADER_INFO_TYPE_STATISTICS_AMD")]
-        ShaderInfoTypeStatisticsAmd = 0,
-        [NativeName("Name", "VK_SHADER_INFO_TYPE_BINARY_AMD")]
-        ShaderInfoTypeBinaryAmd = 1,
-        [NativeName("Name", "VK_SHADER_INFO_TYPE_DISASSEMBLY_AMD")]
-        ShaderInfoTypeDisassemblyAmd = 2,
-    }
+    [NativeName("Name", "VK_SHADER_INFO_TYPE_STATISTICS_AMD")]
+    ShaderInfoTypeStatisticsAmd = 0,
+    [NativeName("Name", "VK_SHADER_INFO_TYPE_BINARY_AMD")]
+    ShaderInfoTypeBinaryAmd = 1,
+    [NativeName("Name", "VK_SHADER_INFO_TYPE_DISASSEMBLY_AMD")]
+    ShaderInfoTypeDisassemblyAmd = 2,
 }

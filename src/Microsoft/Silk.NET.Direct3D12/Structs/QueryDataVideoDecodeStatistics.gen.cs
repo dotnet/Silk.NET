@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_QUERY_DATA_VIDEO_DECODE_STATISTICS")]
+public unsafe partial struct QueryDataVideoDecodeStatistics
 {
-    [NativeName("Name", "D3D12_QUERY_DATA_VIDEO_DECODE_STATISTICS")]
-    public unsafe partial struct QueryDataVideoDecodeStatistics
-    {
-        public QueryDataVideoDecodeStatistics
-        (
+    public QueryDataVideoDecodeStatistics
+    (
             ulong? status = null,
             ulong? numMacroblocksAffected = null,
             Silk.NET.DXGI.Rational? frameRate = null,
             uint? bitRate = null
-        ) : this()
+    ) : this()
+    {
+        if (status is not null)
         {
-            if (status is not null)
-            {
-                Status = status.Value;
-            }
-
-            if (numMacroblocksAffected is not null)
-            {
-                NumMacroblocksAffected = numMacroblocksAffected.Value;
-            }
-
-            if (frameRate is not null)
-            {
-                FrameRate = frameRate.Value;
-            }
-
-            if (bitRate is not null)
-            {
-                BitRate = bitRate.Value;
-            }
+            Status = status.Value;
         }
 
+        if (numMacroblocksAffected is not null)
+        {
+            NumMacroblocksAffected = numMacroblocksAffected.Value;
+        }
 
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "Status")]
-        public ulong Status;
+        if (frameRate is not null)
+        {
+            FrameRate = frameRate.Value;
+        }
 
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "NumMacroblocksAffected")]
-        public ulong NumMacroblocksAffected;
-
-        [NativeName("Type", "DXGI_RATIONAL")]
-        [NativeName("Type.Name", "DXGI_RATIONAL")]
-        [NativeName("Name", "FrameRate")]
-        public Silk.NET.DXGI.Rational FrameRate;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "BitRate")]
-        public uint BitRate;
+        if (bitRate is not null)
+        {
+            BitRate = bitRate.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "Status")]
+    public ulong Status;
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "NumMacroblocksAffected")]
+    public ulong NumMacroblocksAffected;
+
+    [NativeName("Type", "DXGI_RATIONAL")]
+    [NativeName("Type.Name", "DXGI_RATIONAL")]
+    [NativeName("Name", "FrameRate")]
+    public Silk.NET.DXGI.Rational FrameRate;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "BitRate")]
+    public uint BitRate;
 }

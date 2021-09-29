@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT")]
+public unsafe partial struct PhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT
 {
-    [NativeName("Name", "VkPhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT
-    {
-        public PhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT
-        (
+    public PhysicalDeviceShaderDemoteToHelperInvocationFeaturesEXT
+    (
             StructureType? sType = StructureType.PhysicalDeviceShaderDemoteToHelperInvocationFeaturesExt,
             void* pNext = null,
             Bool32? shaderDemoteToHelperInvocation = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (shaderDemoteToHelperInvocation is not null)
-            {
-                ShaderDemoteToHelperInvocation = shaderDemoteToHelperInvocation.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "shaderDemoteToHelperInvocation")]
-        public Bool32 ShaderDemoteToHelperInvocation;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (shaderDemoteToHelperInvocation is not null)
+        {
+            ShaderDemoteToHelperInvocation = shaderDemoteToHelperInvocation.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "shaderDemoteToHelperInvocation")]
+    public Bool32 ShaderDemoteToHelperInvocation;
 }

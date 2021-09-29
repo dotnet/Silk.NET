@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_FEATURE_DATA_D3D12_OPTIONS4")]
+public unsafe partial struct FeatureDataD3D12Options4
 {
-    [NativeName("Name", "D3D12_FEATURE_DATA_D3D12_OPTIONS4")]
-    public unsafe partial struct FeatureDataD3D12Options4
-    {
-        public FeatureDataD3D12Options4
-        (
+    public FeatureDataD3D12Options4
+    (
             int? mSAA64KBAlignedTextureSupported = null,
             SharedResourceCompatibilityTier? sharedResourceCompatibilityTier = null,
             int? native16BitShaderOpsSupported = null
-        ) : this()
+    ) : this()
+    {
+        if (mSAA64KBAlignedTextureSupported is not null)
         {
-            if (mSAA64KBAlignedTextureSupported is not null)
-            {
-                MSAA64KBAlignedTextureSupported = mSAA64KBAlignedTextureSupported.Value;
-            }
-
-            if (sharedResourceCompatibilityTier is not null)
-            {
-                SharedResourceCompatibilityTier = sharedResourceCompatibilityTier.Value;
-            }
-
-            if (native16BitShaderOpsSupported is not null)
-            {
-                Native16BitShaderOpsSupported = native16BitShaderOpsSupported.Value;
-            }
+            MSAA64KBAlignedTextureSupported = mSAA64KBAlignedTextureSupported.Value;
         }
 
+        if (sharedResourceCompatibilityTier is not null)
+        {
+            SharedResourceCompatibilityTier = sharedResourceCompatibilityTier.Value;
+        }
 
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "MSAA64KBAlignedTextureSupported")]
-        public int MSAA64KBAlignedTextureSupported;
-
-        [NativeName("Type", "D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER")]
-        [NativeName("Type.Name", "D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER")]
-        [NativeName("Name", "SharedResourceCompatibilityTier")]
-        public SharedResourceCompatibilityTier SharedResourceCompatibilityTier;
-
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "Native16BitShaderOpsSupported")]
-        public int Native16BitShaderOpsSupported;
+        if (native16BitShaderOpsSupported is not null)
+        {
+            Native16BitShaderOpsSupported = native16BitShaderOpsSupported.Value;
+        }
     }
+
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "MSAA64KBAlignedTextureSupported")]
+    public int MSAA64KBAlignedTextureSupported;
+
+    [NativeName("Type", "D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER")]
+    [NativeName("Type.Name", "D3D12_SHARED_RESOURCE_COMPATIBILITY_TIER")]
+    [NativeName("Name", "SharedResourceCompatibilityTier")]
+    public SharedResourceCompatibilityTier SharedResourceCompatibilityTier;
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "Native16BitShaderOpsSupported")]
+    public int Native16BitShaderOpsSupported;
 }

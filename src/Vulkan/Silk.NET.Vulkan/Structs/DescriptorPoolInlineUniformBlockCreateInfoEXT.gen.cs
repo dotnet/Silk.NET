@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkDescriptorPoolInlineUniformBlockCreateInfoEXT")]
+public unsafe partial struct DescriptorPoolInlineUniformBlockCreateInfoEXT
 {
-    [NativeName("Name", "VkDescriptorPoolInlineUniformBlockCreateInfoEXT")]
-    public unsafe partial struct DescriptorPoolInlineUniformBlockCreateInfoEXT
-    {
-        public DescriptorPoolInlineUniformBlockCreateInfoEXT
-        (
+    public DescriptorPoolInlineUniformBlockCreateInfoEXT
+    (
             StructureType? sType = StructureType.DescriptorPoolInlineUniformBlockCreateInfoExt,
             void* pNext = null,
             uint? maxInlineUniformBlockBindings = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (maxInlineUniformBlockBindings is not null)
-            {
-                MaxInlineUniformBlockBindings = maxInlineUniformBlockBindings.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxInlineUniformBlockBindings")]
-        public uint MaxInlineUniformBlockBindings;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (maxInlineUniformBlockBindings is not null)
+        {
+            MaxInlineUniformBlockBindings = maxInlineUniformBlockBindings.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "maxInlineUniformBlockBindings")]
+    public uint MaxInlineUniformBlockBindings;
 }

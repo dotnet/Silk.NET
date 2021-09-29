@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_QUERY_HEAP_DESC")]
+public unsafe partial struct QueryHeapDesc
 {
-    [NativeName("Name", "D3D12_QUERY_HEAP_DESC")]
-    public unsafe partial struct QueryHeapDesc
-    {
-        public QueryHeapDesc
-        (
+    public QueryHeapDesc
+    (
             QueryHeapType? type = null,
             uint? count = null,
             uint? nodeMask = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (count is not null)
-            {
-                Count = count.Value;
-            }
-
-            if (nodeMask is not null)
-            {
-                NodeMask = nodeMask.Value;
-            }
+            Type = type.Value;
         }
 
+        if (count is not null)
+        {
+            Count = count.Value;
+        }
 
-        [NativeName("Type", "D3D12_QUERY_HEAP_TYPE")]
-        [NativeName("Type.Name", "D3D12_QUERY_HEAP_TYPE")]
-        [NativeName("Name", "Type")]
-        public QueryHeapType Type;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Count")]
-        public uint Count;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "NodeMask")]
-        public uint NodeMask;
+        if (nodeMask is not null)
+        {
+            NodeMask = nodeMask.Value;
+        }
     }
+
+
+    [NativeName("Type", "D3D12_QUERY_HEAP_TYPE")]
+    [NativeName("Type.Name", "D3D12_QUERY_HEAP_TYPE")]
+    [NativeName("Name", "Type")]
+    public QueryHeapType Type;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Count")]
+    public uint Count;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "NodeMask")]
+    public uint NodeMask;
 }

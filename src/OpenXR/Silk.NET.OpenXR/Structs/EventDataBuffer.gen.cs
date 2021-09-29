@@ -14,42 +14,41 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrEventDataBuffer")]
+public unsafe partial struct EventDataBuffer
 {
-    [NativeName("Name", "XrEventDataBuffer")]
-    public unsafe partial struct EventDataBuffer
-    {
-        public EventDataBuffer
-        (
+    public EventDataBuffer
+    (
             StructureType? type = StructureType.TypeEventDataBuffer,
             void* next = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-        /// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "varying")]
-        public fixed byte Varying[4000];
+        if (next is not null)
+        {
+            Next = next;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+    /// <summary></summary>
+    [NativeName("Type", "uint8_t")]
+    [NativeName("Type.Name", "uint8_t")]
+    [NativeName("Name", "varying")]
+    public fixed byte Varying[4000];
 }

@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp
+namespace Silk.NET.Assimp;
+
+[NativeName("Name", "aiMeshKey")]
+public unsafe partial struct MeshKey
 {
-    [NativeName("Name", "aiMeshKey")]
-    public unsafe partial struct MeshKey
-    {
-        public MeshKey
-        (
+    public MeshKey
+    (
             double? mTime = null,
             uint? mValue = null
-        ) : this()
+    ) : this()
+    {
+        if (mTime is not null)
         {
-            if (mTime is not null)
-            {
-                MTime = mTime.Value;
-            }
-
-            if (mValue is not null)
-            {
-                MValue = mValue.Value;
-            }
+            MTime = mTime.Value;
         }
 
-
-        [NativeName("Type", "double")]
-        [NativeName("Type.Name", "double")]
-        [NativeName("Name", "mTime")]
-        public double MTime;
-
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "mValue")]
-        public uint MValue;
+        if (mValue is not null)
+        {
+            MValue = mValue.Value;
+        }
     }
+
+
+    [NativeName("Type", "double")]
+    [NativeName("Type.Name", "double")]
+    [NativeName("Name", "mTime")]
+    public double MTime;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "mValue")]
+    public uint MValue;
 }

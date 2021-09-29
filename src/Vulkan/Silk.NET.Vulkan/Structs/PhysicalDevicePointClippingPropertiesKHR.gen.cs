@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDevicePointClippingPropertiesKHR")]
+public unsafe partial struct PhysicalDevicePointClippingPropertiesKHR
 {
-    [NativeName("Name", "VkPhysicalDevicePointClippingPropertiesKHR")]
-    public unsafe partial struct PhysicalDevicePointClippingPropertiesKHR
-    {
-        public PhysicalDevicePointClippingPropertiesKHR
-        (
+    public PhysicalDevicePointClippingPropertiesKHR
+    (
             StructureType? sType = StructureType.PhysicalDevicePointClippingProperties,
             void* pNext = null,
             PointClippingBehavior? pointClippingBehavior = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (pointClippingBehavior is not null)
-            {
-                PointClippingBehavior = pointClippingBehavior.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkPointClippingBehavior")]
-        [NativeName("Type.Name", "VkPointClippingBehavior")]
-        [NativeName("Name", "pointClippingBehavior")]
-        public PointClippingBehavior PointClippingBehavior;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (pointClippingBehavior is not null)
+        {
+            PointClippingBehavior = pointClippingBehavior.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkPointClippingBehavior")]
+    [NativeName("Type.Name", "VkPointClippingBehavior")]
+    [NativeName("Name", "pointClippingBehavior")]
+    public PointClippingBehavior PointClippingBehavior;
 }

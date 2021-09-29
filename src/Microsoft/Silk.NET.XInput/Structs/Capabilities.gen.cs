@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.XInput
+namespace Silk.NET.XInput;
+
+[NativeName("Name", "_XINPUT_CAPABILITIES")]
+public unsafe partial struct Capabilities
 {
-    [NativeName("Name", "_XINPUT_CAPABILITIES")]
-    public unsafe partial struct Capabilities
-    {
-        public Capabilities
-        (
+    public Capabilities
+    (
             byte? type = null,
             byte? subType = null,
             ushort? flags = null,
             Gamepad? gamepad = null,
             Vibration? vibration = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (subType is not null)
-            {
-                SubType = subType.Value;
-            }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
-
-            if (gamepad is not null)
-            {
-                Gamepad = gamepad.Value;
-            }
-
-            if (vibration is not null)
-            {
-                Vibration = vibration.Value;
-            }
+            Type = type.Value;
         }
 
+        if (subType is not null)
+        {
+            SubType = subType.Value;
+        }
 
-        [NativeName("Type", "BYTE")]
-        [NativeName("Type.Name", "BYTE")]
-        [NativeName("Name", "Type")]
-        public byte Type;
+        if (flags is not null)
+        {
+            Flags = flags.Value;
+        }
 
-        [NativeName("Type", "BYTE")]
-        [NativeName("Type.Name", "BYTE")]
-        [NativeName("Name", "SubType")]
-        public byte SubType;
+        if (gamepad is not null)
+        {
+            Gamepad = gamepad.Value;
+        }
 
-        [NativeName("Type", "WORD")]
-        [NativeName("Type.Name", "WORD")]
-        [NativeName("Name", "Flags")]
-        public ushort Flags;
-
-        [NativeName("Type", "XINPUT_GAMEPAD")]
-        [NativeName("Type.Name", "XINPUT_GAMEPAD")]
-        [NativeName("Name", "Gamepad")]
-        public Gamepad Gamepad;
-
-        [NativeName("Type", "XINPUT_VIBRATION")]
-        [NativeName("Type.Name", "XINPUT_VIBRATION")]
-        [NativeName("Name", "Vibration")]
-        public Vibration Vibration;
+        if (vibration is not null)
+        {
+            Vibration = vibration.Value;
+        }
     }
+
+
+    [NativeName("Type", "BYTE")]
+    [NativeName("Type.Name", "BYTE")]
+    [NativeName("Name", "Type")]
+    public byte Type;
+
+    [NativeName("Type", "BYTE")]
+    [NativeName("Type.Name", "BYTE")]
+    [NativeName("Name", "SubType")]
+    public byte SubType;
+
+    [NativeName("Type", "WORD")]
+    [NativeName("Type.Name", "WORD")]
+    [NativeName("Name", "Flags")]
+    public ushort Flags;
+
+    [NativeName("Type", "XINPUT_GAMEPAD")]
+    [NativeName("Type.Name", "XINPUT_GAMEPAD")]
+    [NativeName("Name", "Gamepad")]
+    public Gamepad Gamepad;
+
+    [NativeName("Type", "XINPUT_VIBRATION")]
+    [NativeName("Type.Name", "XINPUT_VIBRATION")]
+    [NativeName("Name", "Vibration")]
+    public Vibration Vibration;
 }

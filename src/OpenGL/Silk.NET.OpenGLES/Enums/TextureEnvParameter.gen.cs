@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES
+namespace Silk.NET.OpenGLES;
+
+[NativeName("Name", "TextureEnvParameter")]
+public enum TextureEnvParameter : int
 {
-    [NativeName("Name", "TextureEnvParameter")]
-    public enum TextureEnvParameter : int
-    {
-        [NativeName("Name", "GL_TEXTURE_ENV_MODE")]
-        TextureEnvMode = 0x2200,
-        [NativeName("Name", "GL_TEXTURE_ENV_COLOR")]
-        TextureEnvColor = 0x2201,
-    }
+    [NativeName("Name", "GL_TEXTURE_ENV_MODE")]
+    TextureEnvMode = 0x2200,
+    [NativeName("Name", "GL_TEXTURE_ENV_COLOR")]
+    TextureEnvColor = 0x2201,
 }

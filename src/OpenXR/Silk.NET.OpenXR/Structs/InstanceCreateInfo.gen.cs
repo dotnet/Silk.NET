@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrInstanceCreateInfo")]
+public unsafe partial struct InstanceCreateInfo
 {
-    [NativeName("Name", "XrInstanceCreateInfo")]
-    public unsafe partial struct InstanceCreateInfo
-    {
-        public InstanceCreateInfo
-        (
+    public InstanceCreateInfo
+    (
             StructureType? type = StructureType.TypeInstanceCreateInfo,
             void* next = null,
             InstanceCreateFlags? createFlags = null,
@@ -29,88 +29,87 @@ namespace Silk.NET.OpenXR
             byte** enabledApiLayerNames = null,
             uint? enabledExtensionCount = null,
             byte** enabledExtensionNames = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (createFlags is not null)
-            {
-                CreateFlags = createFlags.Value;
-            }
-
-            if (applicationInfo is not null)
-            {
-                ApplicationInfo = applicationInfo.Value;
-            }
-
-            if (enabledApiLayerCount is not null)
-            {
-                EnabledApiLayerCount = enabledApiLayerCount.Value;
-            }
-
-            if (enabledApiLayerNames is not null)
-            {
-                EnabledApiLayerNames = enabledApiLayerNames;
-            }
-
-            if (enabledExtensionCount is not null)
-            {
-                EnabledExtensionCount = enabledExtensionCount.Value;
-            }
-
-            if (enabledExtensionNames is not null)
-            {
-                EnabledExtensionNames = enabledExtensionNames;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "XrInstanceCreateFlags")]
-        [NativeName("Type.Name", "XrInstanceCreateFlags")]
-        [NativeName("Name", "createFlags")]
-        public InstanceCreateFlags CreateFlags;
-/// <summary></summary>
-        [NativeName("Type", "XrApplicationInfo")]
-        [NativeName("Type.Name", "XrApplicationInfo")]
-        [NativeName("Name", "applicationInfo")]
-        public ApplicationInfo ApplicationInfo;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "enabledApiLayerCount")]
-        public uint EnabledApiLayerCount;
-/// <summary></summary>
-        [NativeName("Type", "char**")]
-        [NativeName("Type.Name", "char")]
-        [NativeName("Name", "enabledApiLayerNames")]
-        public byte** EnabledApiLayerNames;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "enabledExtensionCount")]
-        public uint EnabledExtensionCount;
-/// <summary></summary>
-        [NativeName("Type", "char**")]
-        [NativeName("Type.Name", "char")]
-        [NativeName("Name", "enabledExtensionNames")]
-        public byte** EnabledExtensionNames;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (createFlags is not null)
+        {
+            CreateFlags = createFlags.Value;
+        }
+
+        if (applicationInfo is not null)
+        {
+            ApplicationInfo = applicationInfo.Value;
+        }
+
+        if (enabledApiLayerCount is not null)
+        {
+            EnabledApiLayerCount = enabledApiLayerCount.Value;
+        }
+
+        if (enabledApiLayerNames is not null)
+        {
+            EnabledApiLayerNames = enabledApiLayerNames;
+        }
+
+        if (enabledExtensionCount is not null)
+        {
+            EnabledExtensionCount = enabledExtensionCount.Value;
+        }
+
+        if (enabledExtensionNames is not null)
+        {
+            EnabledExtensionNames = enabledExtensionNames;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "XrInstanceCreateFlags")]
+    [NativeName("Type.Name", "XrInstanceCreateFlags")]
+    [NativeName("Name", "createFlags")]
+    public InstanceCreateFlags CreateFlags;
+/// <summary></summary>
+    [NativeName("Type", "XrApplicationInfo")]
+    [NativeName("Type.Name", "XrApplicationInfo")]
+    [NativeName("Name", "applicationInfo")]
+    public ApplicationInfo ApplicationInfo;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "enabledApiLayerCount")]
+    public uint EnabledApiLayerCount;
+/// <summary></summary>
+    [NativeName("Type", "char**")]
+    [NativeName("Type.Name", "char")]
+    [NativeName("Name", "enabledApiLayerNames")]
+    public byte** EnabledApiLayerNames;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "enabledExtensionCount")]
+    public uint EnabledExtensionCount;
+/// <summary></summary>
+    [NativeName("Type", "char**")]
+    [NativeName("Type.Name", "char")]
+    [NativeName("Name", "enabledExtensionNames")]
+    public byte** EnabledExtensionNames;
 }

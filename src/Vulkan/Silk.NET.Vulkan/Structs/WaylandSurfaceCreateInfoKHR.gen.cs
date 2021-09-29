@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkWaylandSurfaceCreateInfoKHR")]
+public unsafe partial struct WaylandSurfaceCreateInfoKHR
 {
-    [NativeName("Name", "VkWaylandSurfaceCreateInfoKHR")]
-    public unsafe partial struct WaylandSurfaceCreateInfoKHR
-    {
-        public WaylandSurfaceCreateInfoKHR
-        (
+    public WaylandSurfaceCreateInfoKHR
+    (
             StructureType? sType = StructureType.WaylandSurfaceCreateInfoKhr,
             void* pNext = null,
             uint? flags = null,
             nint* display = null,
             nint* surface = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
-
-            if (display is not null)
-            {
-                Display = display;
-            }
-
-            if (surface is not null)
-            {
-                Surface = surface;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkWaylandSurfaceCreateFlagsKHR")]
-        [NativeName("Type.Name", "VkWaylandSurfaceCreateFlagsKHR")]
-        [NativeName("Name", "flags")]
-        public uint Flags;
-/// <summary></summary>
-        [NativeName("Type", "wl_display*")]
-        [NativeName("Type.Name", "wl_display")]
-        [NativeName("Name", "display")]
-        public nint* Display;
-/// <summary></summary>
-        [NativeName("Type", "wl_surface*")]
-        [NativeName("Type.Name", "wl_surface")]
-        [NativeName("Name", "surface")]
-        public nint* Surface;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (flags is not null)
+        {
+            Flags = flags.Value;
+        }
+
+        if (display is not null)
+        {
+            Display = display;
+        }
+
+        if (surface is not null)
+        {
+            Surface = surface;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkWaylandSurfaceCreateFlagsKHR")]
+    [NativeName("Type.Name", "VkWaylandSurfaceCreateFlagsKHR")]
+    [NativeName("Name", "flags")]
+    public uint Flags;
+/// <summary></summary>
+    [NativeName("Type", "wl_display*")]
+    [NativeName("Type.Name", "wl_display")]
+    [NativeName("Name", "display")]
+    public nint* Display;
+/// <summary></summary>
+    [NativeName("Type", "wl_surface*")]
+    [NativeName("Type.Name", "wl_surface")]
+    [NativeName("Name", "surface")]
+    public nint* Surface;
 }

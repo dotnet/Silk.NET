@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_VIDEO_PROCESS_LUMA_KEY")]
+public unsafe partial struct VideoProcessLumaKey
 {
-    [NativeName("Name", "D3D12_VIDEO_PROCESS_LUMA_KEY")]
-    public unsafe partial struct VideoProcessLumaKey
-    {
-        public VideoProcessLumaKey
-        (
+    public VideoProcessLumaKey
+    (
             int? enable = null,
             float? lower = null,
             float? upper = null
-        ) : this()
+    ) : this()
+    {
+        if (enable is not null)
         {
-            if (enable is not null)
-            {
-                Enable = enable.Value;
-            }
-
-            if (lower is not null)
-            {
-                Lower = lower.Value;
-            }
-
-            if (upper is not null)
-            {
-                Upper = upper.Value;
-            }
+            Enable = enable.Value;
         }
 
+        if (lower is not null)
+        {
+            Lower = lower.Value;
+        }
 
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "Enable")]
-        public int Enable;
-
-        [NativeName("Type", "FLOAT")]
-        [NativeName("Type.Name", "FLOAT")]
-        [NativeName("Name", "Lower")]
-        public float Lower;
-
-        [NativeName("Type", "FLOAT")]
-        [NativeName("Type.Name", "FLOAT")]
-        [NativeName("Name", "Upper")]
-        public float Upper;
+        if (upper is not null)
+        {
+            Upper = upper.Value;
+        }
     }
+
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "Enable")]
+    public int Enable;
+
+    [NativeName("Type", "FLOAT")]
+    [NativeName("Type.Name", "FLOAT")]
+    [NativeName("Name", "Lower")]
+    public float Lower;
+
+    [NativeName("Type", "FLOAT")]
+    [NativeName("Type.Name", "FLOAT")]
+    [NativeName("Name", "Upper")]
+    public float Upper;
 }

@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM")]
+public unsafe partial struct VideoDecodeOutputHistogram
 {
-    [NativeName("Name", "D3D12_VIDEO_DECODE_OUTPUT_HISTOGRAM")]
-    public unsafe partial struct VideoDecodeOutputHistogram
-    {
-        public VideoDecodeOutputHistogram
-        (
+    public VideoDecodeOutputHistogram
+    (
             ulong? offset = null,
             ID3D12Resource* pBuffer = null
-        ) : this()
+    ) : this()
+    {
+        if (offset is not null)
         {
-            if (offset is not null)
-            {
-                Offset = offset.Value;
-            }
-
-            if (pBuffer is not null)
-            {
-                PBuffer = pBuffer;
-            }
+            Offset = offset.Value;
         }
 
-
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "Offset")]
-        public ulong Offset;
-
-        [NativeName("Type", "ID3D12Resource *")]
-        [NativeName("Type.Name", "ID3D12Resource *")]
-        [NativeName("Name", "pBuffer")]
-        public ID3D12Resource* PBuffer;
+        if (pBuffer is not null)
+        {
+            PBuffer = pBuffer;
+        }
     }
+
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "Offset")]
+    public ulong Offset;
+
+    [NativeName("Type", "ID3D12Resource *")]
+    [NativeName("Type.Name", "ID3D12Resource *")]
+    [NativeName("Name", "pBuffer")]
+    public ID3D12Resource* PBuffer;
 }

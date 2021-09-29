@@ -12,22 +12,21 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
+namespace Silk.NET.OpenGL.Legacy.Extensions.EXT;
+
+public static class ExtSeparateShaderObjectsOverloads
 {
-    public static class ExtSeparateShaderObjectsOverloads
+    public static unsafe uint CreateShaderProgram(this ExtSeparateShaderObjects thisApi, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] ReadOnlySpan<byte> @string)
     {
-        public static unsafe uint CreateShaderProgram(this ExtSeparateShaderObjects thisApi, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] ReadOnlySpan<byte> @string)
-        {
-            // SpanOverloader
-            return thisApi.CreateShaderProgram(type, in @string.GetPinnableReference());
-        }
-
-        public static unsafe uint CreateShaderProgram(this ExtSeparateShaderObjects thisApi, [Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] ReadOnlySpan<byte> @string)
-        {
-            // SpanOverloader
-            return thisApi.CreateShaderProgram(type, in @string.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        return thisApi.CreateShaderProgram(type, in @string.GetPinnableReference());
     }
+
+    public static unsafe uint CreateShaderProgram(this ExtSeparateShaderObjects thisApi, [Flow(FlowDirection.In)] ShaderType type, [Flow(FlowDirection.In)] ReadOnlySpan<byte> @string)
+    {
+        // SpanOverloader
+        return thisApi.CreateShaderProgram(type, in @string.GetPinnableReference());
+    }
+
 }
 

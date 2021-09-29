@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_PLACED_SUBRESOURCE_FOOTPRINT")]
+public unsafe partial struct PlacedSubresourceFootprint
 {
-    [NativeName("Name", "D3D12_PLACED_SUBRESOURCE_FOOTPRINT")]
-    public unsafe partial struct PlacedSubresourceFootprint
-    {
-        public PlacedSubresourceFootprint
-        (
+    public PlacedSubresourceFootprint
+    (
             ulong? offset = null,
             SubresourceFootprint? footprint = null
-        ) : this()
+    ) : this()
+    {
+        if (offset is not null)
         {
-            if (offset is not null)
-            {
-                Offset = offset.Value;
-            }
-
-            if (footprint is not null)
-            {
-                Footprint = footprint.Value;
-            }
+            Offset = offset.Value;
         }
 
-
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "Offset")]
-        public ulong Offset;
-
-        [NativeName("Type", "D3D12_SUBRESOURCE_FOOTPRINT")]
-        [NativeName("Type.Name", "D3D12_SUBRESOURCE_FOOTPRINT")]
-        [NativeName("Name", "Footprint")]
-        public SubresourceFootprint Footprint;
+        if (footprint is not null)
+        {
+            Footprint = footprint.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "Offset")]
+    public ulong Offset;
+
+    [NativeName("Type", "D3D12_SUBRESOURCE_FOOTPRINT")]
+    [NativeName("Type.Name", "D3D12_SUBRESOURCE_FOOTPRINT")]
+    [NativeName("Name", "Footprint")]
+    public SubresourceFootprint Footprint;
 }

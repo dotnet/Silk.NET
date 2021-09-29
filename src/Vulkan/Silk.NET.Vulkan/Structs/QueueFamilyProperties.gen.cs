@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkQueueFamilyProperties")]
+public unsafe partial struct QueueFamilyProperties
 {
-    [NativeName("Name", "VkQueueFamilyProperties")]
-    public unsafe partial struct QueueFamilyProperties
-    {
-        public QueueFamilyProperties
-        (
+    public QueueFamilyProperties
+    (
             QueueFlags? queueFlags = null,
             uint? queueCount = null,
             uint? timestampValidBits = null,
             Extent3D? minImageTransferGranularity = null
-        ) : this()
+    ) : this()
+    {
+        if (queueFlags is not null)
         {
-            if (queueFlags is not null)
-            {
-                QueueFlags = queueFlags.Value;
-            }
-
-            if (queueCount is not null)
-            {
-                QueueCount = queueCount.Value;
-            }
-
-            if (timestampValidBits is not null)
-            {
-                TimestampValidBits = timestampValidBits.Value;
-            }
-
-            if (minImageTransferGranularity is not null)
-            {
-                MinImageTransferGranularity = minImageTransferGranularity.Value;
-            }
+            QueueFlags = queueFlags.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkQueueFlags")]
-        [NativeName("Type.Name", "VkQueueFlags")]
-        [NativeName("Name", "queueFlags")]
-        public QueueFlags QueueFlags;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "queueCount")]
-        public uint QueueCount;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "timestampValidBits")]
-        public uint TimestampValidBits;
-/// <summary></summary>
-        [NativeName("Type", "VkExtent3D")]
-        [NativeName("Type.Name", "VkExtent3D")]
-        [NativeName("Name", "minImageTransferGranularity")]
-        public Extent3D MinImageTransferGranularity;
+        if (queueCount is not null)
+        {
+            QueueCount = queueCount.Value;
+        }
+
+        if (timestampValidBits is not null)
+        {
+            TimestampValidBits = timestampValidBits.Value;
+        }
+
+        if (minImageTransferGranularity is not null)
+        {
+            MinImageTransferGranularity = minImageTransferGranularity.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkQueueFlags")]
+    [NativeName("Type.Name", "VkQueueFlags")]
+    [NativeName("Name", "queueFlags")]
+    public QueueFlags QueueFlags;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "queueCount")]
+    public uint QueueCount;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "timestampValidBits")]
+    public uint TimestampValidBits;
+/// <summary></summary>
+    [NativeName("Type", "VkExtent3D")]
+    [NativeName("Type.Name", "VkExtent3D")]
+    [NativeName("Name", "minImageTransferGranularity")]
+    public Extent3D MinImageTransferGranularity;
 }

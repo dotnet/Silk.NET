@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrHandJointLocationsEXT")]
+public unsafe partial struct HandJointLocationsEXT
 {
-    [NativeName("Name", "XrHandJointLocationsEXT")]
-    public unsafe partial struct HandJointLocationsEXT
-    {
-        public HandJointLocationsEXT
-        (
+    public HandJointLocationsEXT
+    (
             StructureType? type = StructureType.TypeHandJointLocationsExt,
             void* next = null,
             uint? isActive = null,
             uint? jointCount = null,
             HandJointLocationEXT* jointLocations = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (isActive is not null)
-            {
-                IsActive = isActive.Value;
-            }
-
-            if (jointCount is not null)
-            {
-                JointCount = jointCount.Value;
-            }
-
-            if (jointLocations is not null)
-            {
-                JointLocations = jointLocations;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "XrBool32")]
-        [NativeName("Type.Name", "XrBool32")]
-        [NativeName("Name", "isActive")]
-        public uint IsActive;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "jointCount")]
-        public uint JointCount;
-/// <summary></summary>
-        [NativeName("Type", "XrHandJointLocationEXT*")]
-        [NativeName("Type.Name", "XrHandJointLocationEXT")]
-        [NativeName("Name", "jointLocations")]
-        public HandJointLocationEXT* JointLocations;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (isActive is not null)
+        {
+            IsActive = isActive.Value;
+        }
+
+        if (jointCount is not null)
+        {
+            JointCount = jointCount.Value;
+        }
+
+        if (jointLocations is not null)
+        {
+            JointLocations = jointLocations;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "XrBool32")]
+    [NativeName("Type.Name", "XrBool32")]
+    [NativeName("Name", "isActive")]
+    public uint IsActive;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "jointCount")]
+    public uint JointCount;
+/// <summary></summary>
+    [NativeName("Type", "XrHandJointLocationEXT*")]
+    [NativeName("Type.Name", "XrHandJointLocationEXT")]
+    [NativeName("Name", "jointLocations")]
+    public HandJointLocationEXT* JointLocations;
 }

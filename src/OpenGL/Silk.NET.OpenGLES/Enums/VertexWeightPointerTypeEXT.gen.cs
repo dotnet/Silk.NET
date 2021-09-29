@@ -7,12 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES
+namespace Silk.NET.OpenGLES;
+
+[NativeName("Name", "VertexWeightPointerTypeEXT")]
+public enum VertexWeightPointerTypeEXT : int
 {
-    [NativeName("Name", "VertexWeightPointerTypeEXT")]
-    public enum VertexWeightPointerTypeEXT : int
-    {
-        [NativeName("Name", "GL_FLOAT")]
-        Float = 0x1406,
-    }
+    [NativeName("Name", "GL_FLOAT")]
+    Float = 0x1406,
 }

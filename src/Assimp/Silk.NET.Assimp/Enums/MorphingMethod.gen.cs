@@ -7,16 +7,15 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp
+namespace Silk.NET.Assimp;
+
+[NativeName("Name", "aiMorphingMethod")]
+public enum MorphingMethod : int
 {
-    [NativeName("Name", "aiMorphingMethod")]
-    public enum MorphingMethod : int
-    {
-        [NativeName("Name", "aiMorphingMethod_VERTEX_BLEND")]
-        MorphingMethodVertexBlend = 0x1,
-        [NativeName("Name", "aiMorphingMethod_MORPH_NORMALIZED")]
-        MorphingMethodMorphNormalized = 0x2,
-        [NativeName("Name", "aiMorphingMethod_MORPH_RELATIVE")]
-        MorphingMethodMorphRelative = 0x3,
-    }
+    [NativeName("Name", "aiMorphingMethod_VERTEX_BLEND")]
+    MorphingMethodVertexBlend = 0x1,
+    [NativeName("Name", "aiMorphingMethod_MORPH_NORMALIZED")]
+    MorphingMethodMorphNormalized = 0x2,
+    [NativeName("Name", "aiMorphingMethod_MORPH_RELATIVE")]
+    MorphingMethodMorphRelative = 0x3,
 }

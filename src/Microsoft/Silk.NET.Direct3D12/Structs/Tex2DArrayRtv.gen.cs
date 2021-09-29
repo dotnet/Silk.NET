@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_TEX2D_ARRAY_RTV")]
+public unsafe partial struct Tex2DArrayRtv
 {
-    [NativeName("Name", "D3D12_TEX2D_ARRAY_RTV")]
-    public unsafe partial struct Tex2DArrayRtv
-    {
-        public Tex2DArrayRtv
-        (
+    public Tex2DArrayRtv
+    (
             uint? mipSlice = null,
             uint? firstArraySlice = null,
             uint? arraySize = null,
             uint? planeSlice = null
-        ) : this()
+    ) : this()
+    {
+        if (mipSlice is not null)
         {
-            if (mipSlice is not null)
-            {
-                MipSlice = mipSlice.Value;
-            }
-
-            if (firstArraySlice is not null)
-            {
-                FirstArraySlice = firstArraySlice.Value;
-            }
-
-            if (arraySize is not null)
-            {
-                ArraySize = arraySize.Value;
-            }
-
-            if (planeSlice is not null)
-            {
-                PlaneSlice = planeSlice.Value;
-            }
+            MipSlice = mipSlice.Value;
         }
 
+        if (firstArraySlice is not null)
+        {
+            FirstArraySlice = firstArraySlice.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "MipSlice")]
-        public uint MipSlice;
+        if (arraySize is not null)
+        {
+            ArraySize = arraySize.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "FirstArraySlice")]
-        public uint FirstArraySlice;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "ArraySize")]
-        public uint ArraySize;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "PlaneSlice")]
-        public uint PlaneSlice;
+        if (planeSlice is not null)
+        {
+            PlaneSlice = planeSlice.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "MipSlice")]
+    public uint MipSlice;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "FirstArraySlice")]
+    public uint FirstArraySlice;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "ArraySize")]
+    public uint ArraySize;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "PlaneSlice")]
+    public uint PlaneSlice;
 }

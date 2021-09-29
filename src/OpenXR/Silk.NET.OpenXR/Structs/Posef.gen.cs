@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrPosef")]
+public unsafe partial struct Posef
 {
-    [NativeName("Name", "XrPosef")]
-    public unsafe partial struct Posef
-    {
-        public Posef
-        (
+    public Posef
+    (
             Quaternionf? orientation = null,
             Vector3f? position = null
-        ) : this()
+    ) : this()
+    {
+        if (orientation is not null)
         {
-            if (orientation is not null)
-            {
-                Orientation = orientation.Value;
-            }
-
-            if (position is not null)
-            {
-                Position = position.Value;
-            }
+            Orientation = orientation.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrQuaternionf")]
-        [NativeName("Type.Name", "XrQuaternionf")]
-        [NativeName("Name", "orientation")]
-        public Quaternionf Orientation;
-/// <summary></summary>
-        [NativeName("Type", "XrVector3f")]
-        [NativeName("Type.Name", "XrVector3f")]
-        [NativeName("Name", "position")]
-        public Vector3f Position;
+        if (position is not null)
+        {
+            Position = position.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrQuaternionf")]
+    [NativeName("Type.Name", "XrQuaternionf")]
+    [NativeName("Name", "orientation")]
+    public Quaternionf Orientation;
+/// <summary></summary>
+    [NativeName("Type", "XrVector3f")]
+    [NativeName("Type.Name", "XrVector3f")]
+    [NativeName("Name", "position")]
+    public Vector3f Position;
 }

@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_VIDEO_PROCESSOR_CAPS")]
+public unsafe partial struct VideoProcessorCaps
 {
-    [NativeName("Name", "D3D11_VIDEO_PROCESSOR_CAPS")]
-    public unsafe partial struct VideoProcessorCaps
-    {
-        public VideoProcessorCaps
-        (
+    public VideoProcessorCaps
+    (
             uint? deviceCaps = null,
             uint? featureCaps = null,
             uint? filterCaps = null,
@@ -30,98 +30,97 @@ namespace Silk.NET.Direct3D11
             uint? rateConversionCapsCount = null,
             uint? maxInputStreams = null,
             uint? maxStreamStates = null
-        ) : this()
+    ) : this()
+    {
+        if (deviceCaps is not null)
         {
-            if (deviceCaps is not null)
-            {
-                DeviceCaps = deviceCaps.Value;
-            }
-
-            if (featureCaps is not null)
-            {
-                FeatureCaps = featureCaps.Value;
-            }
-
-            if (filterCaps is not null)
-            {
-                FilterCaps = filterCaps.Value;
-            }
-
-            if (inputFormatCaps is not null)
-            {
-                InputFormatCaps = inputFormatCaps.Value;
-            }
-
-            if (autoStreamCaps is not null)
-            {
-                AutoStreamCaps = autoStreamCaps.Value;
-            }
-
-            if (stereoCaps is not null)
-            {
-                StereoCaps = stereoCaps.Value;
-            }
-
-            if (rateConversionCapsCount is not null)
-            {
-                RateConversionCapsCount = rateConversionCapsCount.Value;
-            }
-
-            if (maxInputStreams is not null)
-            {
-                MaxInputStreams = maxInputStreams.Value;
-            }
-
-            if (maxStreamStates is not null)
-            {
-                MaxStreamStates = maxStreamStates.Value;
-            }
+            DeviceCaps = deviceCaps.Value;
         }
 
+        if (featureCaps is not null)
+        {
+            FeatureCaps = featureCaps.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "DeviceCaps")]
-        public uint DeviceCaps;
+        if (filterCaps is not null)
+        {
+            FilterCaps = filterCaps.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "FeatureCaps")]
-        public uint FeatureCaps;
+        if (inputFormatCaps is not null)
+        {
+            InputFormatCaps = inputFormatCaps.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "FilterCaps")]
-        public uint FilterCaps;
+        if (autoStreamCaps is not null)
+        {
+            AutoStreamCaps = autoStreamCaps.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "InputFormatCaps")]
-        public uint InputFormatCaps;
+        if (stereoCaps is not null)
+        {
+            StereoCaps = stereoCaps.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "AutoStreamCaps")]
-        public uint AutoStreamCaps;
+        if (rateConversionCapsCount is not null)
+        {
+            RateConversionCapsCount = rateConversionCapsCount.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "StereoCaps")]
-        public uint StereoCaps;
+        if (maxInputStreams is not null)
+        {
+            MaxInputStreams = maxInputStreams.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "RateConversionCapsCount")]
-        public uint RateConversionCapsCount;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "MaxInputStreams")]
-        public uint MaxInputStreams;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "MaxStreamStates")]
-        public uint MaxStreamStates;
+        if (maxStreamStates is not null)
+        {
+            MaxStreamStates = maxStreamStates.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "DeviceCaps")]
+    public uint DeviceCaps;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "FeatureCaps")]
+    public uint FeatureCaps;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "FilterCaps")]
+    public uint FilterCaps;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "InputFormatCaps")]
+    public uint InputFormatCaps;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "AutoStreamCaps")]
+    public uint AutoStreamCaps;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "StereoCaps")]
+    public uint StereoCaps;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "RateConversionCapsCount")]
+    public uint RateConversionCapsCount;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "MaxInputStreams")]
+    public uint MaxInputStreams;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "MaxStreamStates")]
+    public uint MaxStreamStates;
 }

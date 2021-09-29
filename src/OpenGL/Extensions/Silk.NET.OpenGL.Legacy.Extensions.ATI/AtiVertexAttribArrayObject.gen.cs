@@ -14,52 +14,51 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.ATI
+namespace Silk.NET.OpenGL.Legacy.Extensions.ATI;
+
+[Extension("ATI_vertex_attrib_array_object")]
+public unsafe partial class AtiVertexAttribArrayObject : NativeExtension<GL>
 {
-    [Extension("ATI_vertex_attrib_array_object")]
-    public unsafe partial class AtiVertexAttribArrayObject : NativeExtension<GL>
+    public const string ExtensionName = "ATI_vertex_attrib_array_object";
+    [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectfvATI")]
+    public unsafe partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+
+    [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectfvATI")]
+    public partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+
+    [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectfvATI")]
+    public unsafe partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
+
+    [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectfvATI")]
+    public partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
+
+    [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectivATI")]
+    public unsafe partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+
+    [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectivATI")]
+    public partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+
+    [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectivATI")]
+    public unsafe partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
+
+    [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectivATI")]
+    public partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
+
+    [NativeApi(EntryPoint = "glVertexAttribArrayObjectATI")]
+    public partial void VertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ATI type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
+
+    [NativeApi(EntryPoint = "glVertexAttribArrayObjectATI")]
+    public partial void VertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ATI type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
+
+    [NativeApi(EntryPoint = "glVertexAttribArrayObjectATI")]
+    public partial void VertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
+
+    [NativeApi(EntryPoint = "glVertexAttribArrayObjectATI")]
+    public partial void VertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
+
+    public AtiVertexAttribArrayObject(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "ATI_vertex_attrib_array_object";
-        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectfvATI")]
-        public unsafe partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
-
-        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectfvATI")]
-        public partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
-
-        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectfvATI")]
-        public unsafe partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] float* @params);
-
-        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectfvATI")]
-        public partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out float @params);
-
-        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectivATI")]
-        public unsafe partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
-
-        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectivATI")]
-        public partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
-
-        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectivATI")]
-        public unsafe partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] int* @params);
-
-        [NativeApi(EntryPoint = "glGetVertexAttribArrayObjectivATI")]
-        public partial void GetVertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ArrayObjectPNameATI pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] out int @params);
-
-        [NativeApi(EntryPoint = "glVertexAttribArrayObjectATI")]
-        public partial void VertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ATI type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
-
-        [NativeApi(EntryPoint = "glVertexAttribArrayObjectATI")]
-        public partial void VertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] ATI type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
-
-        [NativeApi(EntryPoint = "glVertexAttribArrayObjectATI")]
-        public partial void VertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] bool normalized, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
-
-        [NativeApi(EntryPoint = "glVertexAttribArrayObjectATI")]
-        public partial void VertexAttribArrayObject([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] int size, [Flow(FlowDirection.In)] VertexAttribPointerType type, [Flow(FlowDirection.In)] Boolean normalized, [Flow(FlowDirection.In)] uint stride, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] uint offset);
-
-        public AtiVertexAttribArrayObject(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

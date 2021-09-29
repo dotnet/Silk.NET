@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp
+namespace Silk.NET.Assimp;
+
+[NativeName("Name", "aiTexel")]
+public unsafe partial struct Texel
 {
-    [NativeName("Name", "aiTexel")]
-    public unsafe partial struct Texel
-    {
-        public Texel
-        (
+    public Texel
+    (
             byte? b = null,
             byte? g = null,
             byte? r = null,
             byte? a = null
-        ) : this()
+    ) : this()
+    {
+        if (b is not null)
         {
-            if (b is not null)
-            {
-                B = b.Value;
-            }
-
-            if (g is not null)
-            {
-                G = g.Value;
-            }
-
-            if (r is not null)
-            {
-                R = r.Value;
-            }
-
-            if (a is not null)
-            {
-                A = a.Value;
-            }
+            B = b.Value;
         }
 
+        if (g is not null)
+        {
+            G = g.Value;
+        }
 
-        [NativeName("Type", "unsigned char")]
-        [NativeName("Type.Name", "unsigned char")]
-        [NativeName("Name", "b")]
-        public byte B;
+        if (r is not null)
+        {
+            R = r.Value;
+        }
 
-        [NativeName("Type", "unsigned char")]
-        [NativeName("Type.Name", "unsigned char")]
-        [NativeName("Name", "g")]
-        public byte G;
-
-        [NativeName("Type", "unsigned char")]
-        [NativeName("Type.Name", "unsigned char")]
-        [NativeName("Name", "r")]
-        public byte R;
-
-        [NativeName("Type", "unsigned char")]
-        [NativeName("Type.Name", "unsigned char")]
-        [NativeName("Name", "a")]
-        public byte A;
+        if (a is not null)
+        {
+            A = a.Value;
+        }
     }
+
+
+    [NativeName("Type", "unsigned char")]
+    [NativeName("Type.Name", "unsigned char")]
+    [NativeName("Name", "b")]
+    public byte B;
+
+    [NativeName("Type", "unsigned char")]
+    [NativeName("Type.Name", "unsigned char")]
+    [NativeName("Name", "g")]
+    public byte G;
+
+    [NativeName("Type", "unsigned char")]
+    [NativeName("Type.Name", "unsigned char")]
+    [NativeName("Name", "r")]
+    public byte R;
+
+    [NativeName("Type", "unsigned char")]
+    [NativeName("Type.Name", "unsigned char")]
+    [NativeName("Name", "a")]
+    public byte A;
 }

@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy
+namespace Silk.NET.OpenGL.Legacy;
+
+[NativeName("Name", "VertexProvokingMode")]
+public enum VertexProvokingMode : int
 {
-    [NativeName("Name", "VertexProvokingMode")]
-    public enum VertexProvokingMode : int
-    {
-        [NativeName("Name", "GL_FIRST_VERTEX_CONVENTION")]
-        FirstVertexConvention = 0x8E4D,
-        [NativeName("Name", "GL_LAST_VERTEX_CONVENTION")]
-        LastVertexConvention = 0x8E4E,
-    }
+    [NativeName("Name", "GL_FIRST_VERTEX_CONVENTION")]
+    FirstVertexConvention = 0x8E4D,
+    [NativeName("Name", "GL_LAST_VERTEX_CONVENTION")]
+    LastVertexConvention = 0x8E4E,
 }

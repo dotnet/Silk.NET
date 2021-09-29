@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkCommandBufferAllocateInfo")]
+public unsafe partial struct CommandBufferAllocateInfo
 {
-    [NativeName("Name", "VkCommandBufferAllocateInfo")]
-    public unsafe partial struct CommandBufferAllocateInfo
-    {
-        public CommandBufferAllocateInfo
-        (
+    public CommandBufferAllocateInfo
+    (
             StructureType? sType = StructureType.CommandBufferAllocateInfo,
             void* pNext = null,
             CommandPool? commandPool = null,
             CommandBufferLevel? level = null,
             uint? commandBufferCount = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (commandPool is not null)
-            {
-                CommandPool = commandPool.Value;
-            }
-
-            if (level is not null)
-            {
-                Level = level.Value;
-            }
-
-            if (commandBufferCount is not null)
-            {
-                CommandBufferCount = commandBufferCount.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkCommandPool")]
-        [NativeName("Type.Name", "VkCommandPool")]
-        [NativeName("Name", "commandPool")]
-        public CommandPool CommandPool;
-/// <summary></summary>
-        [NativeName("Type", "VkCommandBufferLevel")]
-        [NativeName("Type.Name", "VkCommandBufferLevel")]
-        [NativeName("Name", "level")]
-        public CommandBufferLevel Level;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "commandBufferCount")]
-        public uint CommandBufferCount;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (commandPool is not null)
+        {
+            CommandPool = commandPool.Value;
+        }
+
+        if (level is not null)
+        {
+            Level = level.Value;
+        }
+
+        if (commandBufferCount is not null)
+        {
+            CommandBufferCount = commandBufferCount.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkCommandPool")]
+    [NativeName("Type.Name", "VkCommandPool")]
+    [NativeName("Name", "commandPool")]
+    public CommandPool CommandPool;
+/// <summary></summary>
+    [NativeName("Type", "VkCommandBufferLevel")]
+    [NativeName("Type.Name", "VkCommandBufferLevel")]
+    [NativeName("Name", "level")]
+    public CommandBufferLevel Level;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "commandBufferCount")]
+    public uint CommandBufferCount;
 }

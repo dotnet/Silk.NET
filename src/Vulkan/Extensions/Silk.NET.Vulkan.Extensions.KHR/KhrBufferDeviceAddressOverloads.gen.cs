@@ -12,31 +12,30 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.KHR
+namespace Silk.NET.Vulkan.Extensions.KHR;
+
+public static class KhrBufferDeviceAddressOverloads
 {
-    public static class KhrBufferDeviceAddressOverloads
+    /// <summary>To be documented.</summary>
+    public static unsafe ulong GetBufferDeviceAddress(this KhrBufferDeviceAddress thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BufferDeviceAddressInfo> pInfo)
     {
-        /// <summary>To be documented.</summary>
-        public static unsafe ulong GetBufferDeviceAddress(this KhrBufferDeviceAddress thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BufferDeviceAddressInfo> pInfo)
-        {
-            // SpanOverloader
-            return thisApi.GetBufferDeviceAddress(device, in pInfo.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe ulong GetBufferOpaqueCaptureAddress(this KhrBufferDeviceAddress thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BufferDeviceAddressInfo> pInfo)
-        {
-            // SpanOverloader
-            return thisApi.GetBufferOpaqueCaptureAddress(device, in pInfo.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe ulong GetDeviceMemoryOpaqueCaptureAddress(this KhrBufferDeviceAddress thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceMemoryOpaqueCaptureAddressInfo> pInfo)
-        {
-            // SpanOverloader
-            return thisApi.GetDeviceMemoryOpaqueCaptureAddress(device, in pInfo.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        return thisApi.GetBufferDeviceAddress(device, in pInfo.GetPinnableReference());
     }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ulong GetBufferOpaqueCaptureAddress(this KhrBufferDeviceAddress thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<BufferDeviceAddressInfo> pInfo)
+    {
+        // SpanOverloader
+        return thisApi.GetBufferOpaqueCaptureAddress(device, in pInfo.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe ulong GetDeviceMemoryOpaqueCaptureAddress(this KhrBufferDeviceAddress thisApi, [Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<DeviceMemoryOpaqueCaptureAddressInfo> pInfo)
+    {
+        // SpanOverloader
+        return thisApi.GetDeviceMemoryOpaqueCaptureAddress(device, in pInfo.GetPinnableReference());
+    }
+
 }
 

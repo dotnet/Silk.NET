@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkRefreshCycleDurationGOOGLE")]
+public unsafe partial struct RefreshCycleDurationGOOGLE
 {
-    [NativeName("Name", "VkRefreshCycleDurationGOOGLE")]
-    public unsafe partial struct RefreshCycleDurationGOOGLE
-    {
-        public RefreshCycleDurationGOOGLE
-        (
+    public RefreshCycleDurationGOOGLE
+    (
             ulong? refreshDuration = null
-        ) : this()
+    ) : this()
+    {
+        if (refreshDuration is not null)
         {
-            if (refreshDuration is not null)
-            {
-                RefreshDuration = refreshDuration.Value;
-            }
+            RefreshDuration = refreshDuration.Value;
         }
+    }
 
 /// <summary></summary>
-        [NativeName("Type", "uint64_t")]
-        [NativeName("Type.Name", "uint64_t")]
-        [NativeName("Name", "refreshDuration")]
-        public ulong RefreshDuration;
-    }
+    [NativeName("Type", "uint64_t")]
+    [NativeName("Type.Name", "uint64_t")]
+    [NativeName("Name", "refreshDuration")]
+    public ulong RefreshDuration;
 }

@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL
+namespace Silk.NET.SDL;
+
+[NativeName("Name", "SDL_MessageBoxButtonData")]
+public unsafe partial struct MessageBoxButtonData
 {
-    [NativeName("Name", "SDL_MessageBoxButtonData")]
-    public unsafe partial struct MessageBoxButtonData
-    {
-        public MessageBoxButtonData
-        (
+    public MessageBoxButtonData
+    (
             uint? flags = null,
             int? buttonid = null,
             byte* text = null
-        ) : this()
+    ) : this()
+    {
+        if (flags is not null)
         {
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
-
-            if (buttonid is not null)
-            {
-                Buttonid = buttonid.Value;
-            }
-
-            if (text is not null)
-            {
-                Text = text;
-            }
+            Flags = flags.Value;
         }
 
+        if (buttonid is not null)
+        {
+            Buttonid = buttonid.Value;
+        }
 
-        [NativeName("Type", "Uint32")]
-        [NativeName("Type.Name", "Uint32")]
-        [NativeName("Name", "flags")]
-        public uint Flags;
-
-        [NativeName("Type", "int")]
-        [NativeName("Type.Name", "int")]
-        [NativeName("Name", "buttonid")]
-        public int Buttonid;
-
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
-        [NativeName("Name", "text")]
-        public byte* Text;
+        if (text is not null)
+        {
+            Text = text;
+        }
     }
+
+
+    [NativeName("Type", "Uint32")]
+    [NativeName("Type.Name", "Uint32")]
+    [NativeName("Name", "flags")]
+    public uint Flags;
+
+    [NativeName("Type", "int")]
+    [NativeName("Type.Name", "int")]
+    [NativeName("Name", "buttonid")]
+    public int Buttonid;
+
+    [NativeName("Type", "const char *")]
+    [NativeName("Type.Name", "const char *")]
+    [NativeName("Name", "text")]
+    public byte* Text;
 }

@@ -14,40 +14,39 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.EXT
+namespace Silk.NET.OpenGLES.Extensions.EXT;
+
+[Extension("EXT_texture_buffer")]
+public unsafe partial class ExtTextureBuffer : NativeExtension<GL>
 {
-    [Extension("EXT_texture_buffer")]
-    public unsafe partial class ExtTextureBuffer : NativeExtension<GL>
+    public const string ExtensionName = "EXT_texture_buffer";
+    [NativeApi(EntryPoint = "glTexBufferEXT")]
+    public partial void TexBuffer([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint buffer);
+
+    [NativeApi(EntryPoint = "glTexBufferEXT")]
+    public partial void TexBuffer([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer);
+
+    [NativeApi(EntryPoint = "glTexBufferEXT")]
+    public partial void TexBuffer([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint buffer);
+
+    [NativeApi(EntryPoint = "glTexBufferEXT")]
+    public partial void TexBuffer([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer);
+
+    [NativeApi(EntryPoint = "glTexBufferRangeEXT")]
+    public partial void TexBufferRange([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
+
+    [NativeApi(EntryPoint = "glTexBufferRangeEXT")]
+    public partial void TexBufferRange([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
+
+    [NativeApi(EntryPoint = "glTexBufferRangeEXT")]
+    public partial void TexBufferRange([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
+
+    [NativeApi(EntryPoint = "glTexBufferRangeEXT")]
+    public partial void TexBufferRange([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
+
+    public ExtTextureBuffer(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "EXT_texture_buffer";
-        [NativeApi(EntryPoint = "glTexBufferEXT")]
-        public partial void TexBuffer([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint buffer);
-
-        [NativeApi(EntryPoint = "glTexBufferEXT")]
-        public partial void TexBuffer([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer);
-
-        [NativeApi(EntryPoint = "glTexBufferEXT")]
-        public partial void TexBuffer([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint buffer);
-
-        [NativeApi(EntryPoint = "glTexBufferEXT")]
-        public partial void TexBuffer([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer);
-
-        [NativeApi(EntryPoint = "glTexBufferRangeEXT")]
-        public partial void TexBufferRange([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
-
-        [NativeApi(EntryPoint = "glTexBufferRangeEXT")]
-        public partial void TexBufferRange([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
-
-        [NativeApi(EntryPoint = "glTexBufferRangeEXT")]
-        public partial void TexBufferRange([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] EXT internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
-
-        [NativeApi(EntryPoint = "glTexBufferRangeEXT")]
-        public partial void TexBufferRange([Flow(FlowDirection.In)] TextureTarget target, [Flow(FlowDirection.In)] SizedInternalFormat internalformat, [Flow(FlowDirection.In)] uint buffer, [Flow(FlowDirection.In)] nint offset, [Flow(FlowDirection.In)] nuint size);
-
-        public ExtTextureBuffer(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

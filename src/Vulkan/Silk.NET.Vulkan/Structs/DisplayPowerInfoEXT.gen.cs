@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkDisplayPowerInfoEXT")]
+public unsafe partial struct DisplayPowerInfoEXT
 {
-    [NativeName("Name", "VkDisplayPowerInfoEXT")]
-    public unsafe partial struct DisplayPowerInfoEXT
-    {
-        public DisplayPowerInfoEXT
-        (
+    public DisplayPowerInfoEXT
+    (
             StructureType? sType = StructureType.DisplayPowerInfoExt,
             void* pNext = null,
             DisplayPowerStateEXT? powerState = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (powerState is not null)
-            {
-                PowerState = powerState.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkDisplayPowerStateEXT")]
-        [NativeName("Type.Name", "VkDisplayPowerStateEXT")]
-        [NativeName("Name", "powerState")]
-        public DisplayPowerStateEXT PowerState;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (powerState is not null)
+        {
+            PowerState = powerState.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkDisplayPowerStateEXT")]
+    [NativeName("Type.Name", "VkDisplayPowerStateEXT")]
+    [NativeName("Name", "powerState")]
+    public DisplayPowerStateEXT PowerState;
 }

@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES
+namespace Silk.NET.OpenGLES;
+
+[NativeName("Name", "ProgramParameterPName")]
+public enum ProgramParameterPName : int
 {
-    [NativeName("Name", "ProgramParameterPName")]
-    public enum ProgramParameterPName : int
-    {
-        [NativeName("Name", "GL_PROGRAM_BINARY_RETRIEVABLE_HINT")]
-        ProgramBinaryRetrievableHint = 0x8257,
-        [NativeName("Name", "GL_PROGRAM_SEPARABLE")]
-        ProgramSeparable = 0x8258,
-    }
+    [NativeName("Name", "GL_PROGRAM_BINARY_RETRIEVABLE_HINT")]
+    ProgramBinaryRetrievableHint = 0x8257,
+    [NativeName("Name", "GL_PROGRAM_SEPARABLE")]
+    ProgramSeparable = 0x8258,
 }

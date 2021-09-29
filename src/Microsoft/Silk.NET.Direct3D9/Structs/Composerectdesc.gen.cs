@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9
+namespace Silk.NET.Direct3D9;
+
+[NativeName("Name", "_D3DCOMPOSERECTDESC")]
+public unsafe partial struct Composerectdesc
 {
-    [NativeName("Name", "_D3DCOMPOSERECTDESC")]
-    public unsafe partial struct Composerectdesc
-    {
-        public Composerectdesc
-        (
+    public Composerectdesc
+    (
             ushort? x = null,
             ushort? y = null,
             ushort? width = null,
             ushort? height = null
-        ) : this()
+    ) : this()
+    {
+        if (x is not null)
         {
-            if (x is not null)
-            {
-                X = x.Value;
-            }
-
-            if (y is not null)
-            {
-                Y = y.Value;
-            }
-
-            if (width is not null)
-            {
-                Width = width.Value;
-            }
-
-            if (height is not null)
-            {
-                Height = height.Value;
-            }
+            X = x.Value;
         }
 
+        if (y is not null)
+        {
+            Y = y.Value;
+        }
 
-        [NativeName("Type", "USHORT")]
-        [NativeName("Type.Name", "USHORT")]
-        [NativeName("Name", "X")]
-        public ushort X;
+        if (width is not null)
+        {
+            Width = width.Value;
+        }
 
-        [NativeName("Type", "USHORT")]
-        [NativeName("Type.Name", "USHORT")]
-        [NativeName("Name", "Y")]
-        public ushort Y;
-
-        [NativeName("Type", "USHORT")]
-        [NativeName("Type.Name", "USHORT")]
-        [NativeName("Name", "Width")]
-        public ushort Width;
-
-        [NativeName("Type", "USHORT")]
-        [NativeName("Type.Name", "USHORT")]
-        [NativeName("Name", "Height")]
-        public ushort Height;
+        if (height is not null)
+        {
+            Height = height.Value;
+        }
     }
+
+
+    [NativeName("Type", "USHORT")]
+    [NativeName("Type.Name", "USHORT")]
+    [NativeName("Name", "X")]
+    public ushort X;
+
+    [NativeName("Type", "USHORT")]
+    [NativeName("Type.Name", "USHORT")]
+    [NativeName("Name", "Y")]
+    public ushort Y;
+
+    [NativeName("Type", "USHORT")]
+    [NativeName("Type.Name", "USHORT")]
+    [NativeName("Name", "Width")]
+    public ushort Width;
+
+    [NativeName("Type", "USHORT")]
+    [NativeName("Type.Name", "USHORT")]
+    [NativeName("Name", "Height")]
+    public ushort Height;
 }

@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrSceneComponentLocationsMSFT")]
+public unsafe partial struct SceneComponentLocationsMSFT
 {
-    [NativeName("Name", "XrSceneComponentLocationsMSFT")]
-    public unsafe partial struct SceneComponentLocationsMSFT
-    {
-        public SceneComponentLocationsMSFT
-        (
+    public SceneComponentLocationsMSFT
+    (
             StructureType? type = StructureType.TypeSceneComponentLocationsMsft,
             void* next = null,
             uint? locationCount = null,
             SceneComponentLocationMSFT* locations = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (locationCount is not null)
-            {
-                LocationCount = locationCount.Value;
-            }
-
-            if (locations is not null)
-            {
-                Locations = locations;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "locationCount")]
-        public uint LocationCount;
-/// <summary></summary>
-        [NativeName("Type", "XrSceneComponentLocationMSFT*")]
-        [NativeName("Type.Name", "XrSceneComponentLocationMSFT")]
-        [NativeName("Name", "locations")]
-        public SceneComponentLocationMSFT* Locations;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (locationCount is not null)
+        {
+            LocationCount = locationCount.Value;
+        }
+
+        if (locations is not null)
+        {
+            Locations = locations;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "locationCount")]
+    public uint LocationCount;
+/// <summary></summary>
+    [NativeName("Type", "XrSceneComponentLocationMSFT*")]
+    [NativeName("Type.Name", "XrSceneComponentLocationMSFT")]
+    [NativeName("Name", "locations")]
+    public SceneComponentLocationMSFT* Locations;
 }

@@ -14,45 +14,44 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Video
+namespace Silk.NET.Vulkan.Video;
+
+[NativeName("Name", "StdVideoDecodeH265ReferenceInfoFlags")]
+public unsafe partial struct StdVideoDecodeH265ReferenceInfoFlags
 {
-    [NativeName("Name", "StdVideoDecodeH265ReferenceInfoFlags")]
-    public unsafe partial struct StdVideoDecodeH265ReferenceInfoFlags
-    {
-        public StdVideoDecodeH265ReferenceInfoFlags
-        (
+    public StdVideoDecodeH265ReferenceInfoFlags
+    (
             uint? isLongTerm = null,
             uint? isNonExisting = null
-        ) : this()
+    ) : this()
+    {
+        if (isLongTerm is not null)
         {
-            if (isLongTerm is not null)
-            {
-                IsLongTerm = isLongTerm.Value;
-            }
-
-            if (isNonExisting is not null)
-            {
-                IsNonExisting = isNonExisting.Value;
-            }
+            IsLongTerm = isLongTerm.Value;
         }
 
-
-        private uint _bitfield1;
-
-        public uint IsLongTerm
+        if (isNonExisting is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)(_bitfield1 & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
+            IsNonExisting = isNonExisting.Value;
         }
+    }
 
-        public uint IsNonExisting
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 1) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
-        }
+
+    private uint _bitfield1;
+
+    public uint IsLongTerm
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)(_bitfield1 & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
+    }
+
+    public uint IsNonExisting
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 1) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
     }
 }

@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9
+namespace Silk.NET.Direct3D9;
+
+[NativeName("Name", "_D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_INPUT")]
+public unsafe partial struct AuthenticatedchannelQueryrestrictedsharedresourceprocessInput
 {
-    [NativeName("Name", "_D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_INPUT")]
-    public unsafe partial struct AuthenticatedchannelQueryrestrictedsharedresourceprocessInput
-    {
-        public AuthenticatedchannelQueryrestrictedsharedresourceprocessInput
-        (
+    public AuthenticatedchannelQueryrestrictedsharedresourceprocessInput
+    (
             AuthenticatedchannelQueryInput? input = null,
             uint? processIndex = null
-        ) : this()
+    ) : this()
+    {
+        if (input is not null)
         {
-            if (input is not null)
-            {
-                Input = input.Value;
-            }
-
-            if (processIndex is not null)
-            {
-                ProcessIndex = processIndex.Value;
-            }
+            Input = input.Value;
         }
 
-
-        [NativeName("Type", "D3DAUTHENTICATEDCHANNEL_QUERY_INPUT")]
-        [NativeName("Type.Name", "D3DAUTHENTICATEDCHANNEL_QUERY_INPUT")]
-        [NativeName("Name", "Input")]
-        public AuthenticatedchannelQueryInput Input;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "ProcessIndex")]
-        public uint ProcessIndex;
+        if (processIndex is not null)
+        {
+            ProcessIndex = processIndex.Value;
+        }
     }
+
+
+    [NativeName("Type", "D3DAUTHENTICATEDCHANNEL_QUERY_INPUT")]
+    [NativeName("Type.Name", "D3DAUTHENTICATEDCHANNEL_QUERY_INPUT")]
+    [NativeName("Name", "Input")]
+    public AuthenticatedchannelQueryInput Input;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "ProcessIndex")]
+    public uint ProcessIndex;
 }

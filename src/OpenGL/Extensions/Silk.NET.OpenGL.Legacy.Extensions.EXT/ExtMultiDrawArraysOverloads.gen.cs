@@ -12,94 +12,93 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
+namespace Silk.NET.OpenGL.Legacy.Extensions.EXT;
+
+public static class ExtMultiDrawArraysOverloads
 {
-    public static class ExtMultiDrawArraysOverloads
+    public static unsafe void MultiDrawArrays(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] uint primcount)
     {
-        public static unsafe void MultiDrawArrays(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] uint primcount)
-        {
-            // SpanOverloader
-            thisApi.MultiDrawArrays(mode, first, in count.GetPinnableReference(), primcount);
-        }
-
-        public static unsafe void MultiDrawArrays(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount)
-        {
-            // SpanOverloader
-            thisApi.MultiDrawArrays(mode, in first.GetPinnableReference(), count, primcount);
-        }
-
-        public static unsafe void MultiDrawArrays(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] uint primcount)
-        {
-            // SpanOverloader
-            thisApi.MultiDrawArrays(mode, in first.GetPinnableReference(), in count.GetPinnableReference(), primcount);
-        }
-
-        public static unsafe void MultiDrawArrays(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] uint primcount)
-        {
-            // SpanOverloader
-            thisApi.MultiDrawArrays(mode, first, in count.GetPinnableReference(), primcount);
-        }
-
-        public static unsafe void MultiDrawArrays(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount)
-        {
-            // SpanOverloader
-            thisApi.MultiDrawArrays(mode, in first.GetPinnableReference(), count, primcount);
-        }
-
-        public static unsafe void MultiDrawArrays(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] uint primcount)
-        {
-            // SpanOverloader
-            thisApi.MultiDrawArrays(mode, in first.GetPinnableReference(), in count.GetPinnableReference(), primcount);
-        }
-
-        public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount)
-        {
-            // SpanOverloader
-            thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, indices, primcount);
-        }
-
-        public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount)
-        {
-            // SpanOverloader
-            thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, in indices, primcount);
-        }
-
-        public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount)
-        {
-            // SpanOverloader
-            thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, indices, primcount);
-        }
-
-        public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount)
-        {
-            // SpanOverloader
-            thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, in indices, primcount);
-        }
-
-        public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount)
-        {
-            // SpanOverloader
-            thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, indices, primcount);
-        }
-
-        public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount)
-        {
-            // SpanOverloader
-            thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, in indices, primcount);
-        }
-
-        public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount)
-        {
-            // SpanOverloader
-            thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, indices, primcount);
-        }
-
-        public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount)
-        {
-            // SpanOverloader
-            thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, in indices, primcount);
-        }
-
+        // SpanOverloader
+        thisApi.MultiDrawArrays(mode, first, in count.GetPinnableReference(), primcount);
     }
+
+    public static unsafe void MultiDrawArrays(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount)
+    {
+        // SpanOverloader
+        thisApi.MultiDrawArrays(mode, in first.GetPinnableReference(), count, primcount);
+    }
+
+    public static unsafe void MultiDrawArrays(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] uint primcount)
+    {
+        // SpanOverloader
+        thisApi.MultiDrawArrays(mode, in first.GetPinnableReference(), in count.GetPinnableReference(), primcount);
+    }
+
+    public static unsafe void MultiDrawArrays(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] int* first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] uint primcount)
+    {
+        // SpanOverloader
+        thisApi.MultiDrawArrays(mode, first, in count.GetPinnableReference(), primcount);
+    }
+
+    public static unsafe void MultiDrawArrays(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] uint* count, [Flow(FlowDirection.In)] uint primcount)
+    {
+        // SpanOverloader
+        thisApi.MultiDrawArrays(mode, in first.GetPinnableReference(), count, primcount);
+    }
+
+    public static unsafe void MultiDrawArrays(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<int> first, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] uint primcount)
+    {
+        // SpanOverloader
+        thisApi.MultiDrawArrays(mode, in first.GetPinnableReference(), in count.GetPinnableReference(), primcount);
+    }
+
+    public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount)
+    {
+        // SpanOverloader
+        thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, indices, primcount);
+    }
+
+    public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount)
+    {
+        // SpanOverloader
+        thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, in indices, primcount);
+    }
+
+    public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount)
+    {
+        // SpanOverloader
+        thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, indices, primcount);
+    }
+
+    public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] EXT mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount)
+    {
+        // SpanOverloader
+        thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, in indices, primcount);
+    }
+
+    public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount)
+    {
+        // SpanOverloader
+        thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, indices, primcount);
+    }
+
+    public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] EXT type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount)
+    {
+        // SpanOverloader
+        thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, in indices, primcount);
+    }
+
+    public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] void** indices, [Flow(FlowDirection.In)] uint primcount)
+    {
+        // SpanOverloader
+        thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, indices, primcount);
+    }
+
+    public static unsafe void MultiDrawElements(this ExtMultiDrawArrays thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] ReadOnlySpan<uint> count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Parameter = "primcount"), Flow(FlowDirection.In)] in void* indices, [Flow(FlowDirection.In)] uint primcount)
+    {
+        // SpanOverloader
+        thisApi.MultiDrawElements(mode, in count.GetPinnableReference(), type, in indices, primcount);
+    }
+
 }
 

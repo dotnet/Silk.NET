@@ -12,16 +12,15 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NV
-{
-    public static class NVVertexArrayRangeOverloads
-    {
-        public static unsafe void VertexArrayRange<T0>(this NVVertexArrayRange thisApi, [Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.VertexArrayRange(length, in pointer.GetPinnableReference());
-        }
+namespace Silk.NET.OpenGL.Legacy.Extensions.NV;
 
+public static class NVVertexArrayRangeOverloads
+{
+    public static unsafe void VertexArrayRange<T0>(this NVVertexArrayRange thisApi, [Flow(FlowDirection.In)] uint length, [Count(Computed = "length"), Flow(FlowDirection.In)] ReadOnlySpan<T0> pointer) where T0 : unmanaged
+    {
+        // SpanOverloader
+        thisApi.VertexArrayRange(length, in pointer.GetPinnableReference());
     }
+
 }
 

@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrSpaceLocation")]
+public unsafe partial struct SpaceLocation
 {
-    [NativeName("Name", "XrSpaceLocation")]
-    public unsafe partial struct SpaceLocation
-    {
-        public SpaceLocation
-        (
+    public SpaceLocation
+    (
             StructureType? type = StructureType.TypeSpaceLocation,
             void* next = null,
             SpaceLocationFlags? locationFlags = null,
             Posef? pose = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (locationFlags is not null)
-            {
-                LocationFlags = locationFlags.Value;
-            }
-
-            if (pose is not null)
-            {
-                Pose = pose.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "XrSpaceLocationFlags")]
-        [NativeName("Type.Name", "XrSpaceLocationFlags")]
-        [NativeName("Name", "locationFlags")]
-        public SpaceLocationFlags LocationFlags;
-/// <summary></summary>
-        [NativeName("Type", "XrPosef")]
-        [NativeName("Type.Name", "XrPosef")]
-        [NativeName("Name", "pose")]
-        public Posef Pose;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (locationFlags is not null)
+        {
+            LocationFlags = locationFlags.Value;
+        }
+
+        if (pose is not null)
+        {
+            Pose = pose.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "XrSpaceLocationFlags")]
+    [NativeName("Type.Name", "XrSpaceLocationFlags")]
+    [NativeName("Name", "locationFlags")]
+    public SpaceLocationFlags LocationFlags;
+/// <summary></summary>
+    [NativeName("Type", "XrPosef")]
+    [NativeName("Type.Name", "XrPosef")]
+    [NativeName("Name", "pose")]
+    public Posef Pose;
 }

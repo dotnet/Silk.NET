@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrScenePlaneAlignmentFilterInfoMSFT")]
+public unsafe partial struct ScenePlaneAlignmentFilterInfoMSFT
 {
-    [NativeName("Name", "XrScenePlaneAlignmentFilterInfoMSFT")]
-    public unsafe partial struct ScenePlaneAlignmentFilterInfoMSFT
-    {
-        public ScenePlaneAlignmentFilterInfoMSFT
-        (
+    public ScenePlaneAlignmentFilterInfoMSFT
+    (
             StructureType? type = StructureType.TypeScenePlaneAlignmentFilterInfoMsft,
             void* next = null,
             uint? alignmentCount = null,
             ScenePlaneAlignmentTypeMSFT* alignments = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (alignmentCount is not null)
-            {
-                AlignmentCount = alignmentCount.Value;
-            }
-
-            if (alignments is not null)
-            {
-                Alignments = alignments;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "alignmentCount")]
-        public uint AlignmentCount;
-/// <summary></summary>
-        [NativeName("Type", "XrScenePlaneAlignmentTypeMSFT*")]
-        [NativeName("Type.Name", "XrScenePlaneAlignmentTypeMSFT")]
-        [NativeName("Name", "alignments")]
-        public ScenePlaneAlignmentTypeMSFT* Alignments;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (alignmentCount is not null)
+        {
+            AlignmentCount = alignmentCount.Value;
+        }
+
+        if (alignments is not null)
+        {
+            Alignments = alignments;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "alignmentCount")]
+    public uint AlignmentCount;
+/// <summary></summary>
+    [NativeName("Type", "XrScenePlaneAlignmentTypeMSFT*")]
+    [NativeName("Type.Name", "XrScenePlaneAlignmentTypeMSFT")]
+    [NativeName("Name", "alignments")]
+    public ScenePlaneAlignmentTypeMSFT* Alignments;
 }

@@ -14,105 +14,104 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[Guid("93a665c4-a3b2-4e5d-b692-a26ae14e3374")]
+[NativeName("Name", "ID3D12Debug2")]
+public unsafe partial struct ID3D12Debug2
 {
-    [Guid("93a665c4-a3b2-4e5d-b692-a26ae14e3374")]
-    [NativeName("Name", "ID3D12Debug2")]
-    public unsafe partial struct ID3D12Debug2
-    {
-        public static readonly Guid Guid = new("93a665c4-a3b2-4e5d-b692-a26ae14e3374");
+    public static readonly Guid Guid = new("93a665c4-a3b2-4e5d-b692-a26ae14e3374");
 
-        public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12Debug2 val)
-            => Unsafe.As<ID3D12Debug2, Silk.NET.Core.Native.IUnknown>(ref val);
+    public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12Debug2 val)
+        => Unsafe.As<ID3D12Debug2, Silk.NET.Core.Native.IUnknown>(ref val);
 
-        public ID3D12Debug2
-        (
+    public ID3D12Debug2
+    (
             void** lpVtbl = null
-        ) : this()
+    ) : this()
+    {
+        if (lpVtbl is not null)
         {
-            if (lpVtbl is not null)
-            {
-                LpVtbl = lpVtbl;
-            }
+            LpVtbl = lpVtbl;
         }
+    }
 
 
-        [NativeName("Type", "")]
-        [NativeName("Type.Name", "")]
-        [NativeName("Name", "lpVtbl")]
-        public void** LpVtbl;
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
+    [NativeName("Type", "")]
+    [NativeName("Type.Name", "")]
+    [NativeName("Name", "lpVtbl")]
+    public void** LpVtbl;
+    /// <summary>To be documented.</summary>
+    public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
+    {
+        var @this = (ID3D12Debug2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        int ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<ID3D12Debug2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
+    {
+        var @this = (ID3D12Debug2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        int ret = default;
+        fixed (void** ppvObjectPtr = &ppvObject)
         {
-            var @this = (ID3D12Debug2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12Debug2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            return ret;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Debug2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
         }
+        return ret;
+    }
 
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
+    /// <summary>To be documented.</summary>
+    public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+    {
+        var @this = (ID3D12Debug2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
         {
-            var @this = (ID3D12Debug2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12Debug2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
+    {
+        var @this = (ID3D12Debug2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12Debug2*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12Debug2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
             }
-            return ret;
         }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-        {
-            var @this = (ID3D12Debug2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12Debug2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            var @this = (ID3D12Debug2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectPtr = &ppvObject)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12Debug2*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly uint AddRef()
-        {
-            var @this = (ID3D12Debug2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Debug2*, uint>)LpVtbl[1])(@this);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly uint Release()
-        {
-            var @this = (ID3D12Debug2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12Debug2*, uint>)LpVtbl[2])(@this);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void SetGPUBasedValidationFlags(GpuBasedValidationFlags Flags)
-        {
-            var @this = (ID3D12Debug2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D12Debug2*, GpuBasedValidationFlags, void>)LpVtbl[3])(@this, Flags);
-        }
-
+        return ret;
     }
+
+    /// <summary>To be documented.</summary>
+    public readonly uint AddRef()
+    {
+        var @this = (ID3D12Debug2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        uint ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Debug2*, uint>)LpVtbl[1])(@this);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public readonly uint Release()
+    {
+        var @this = (ID3D12Debug2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        uint ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12Debug2*, uint>)LpVtbl[2])(@this);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public readonly void SetGPUBasedValidationFlags(GpuBasedValidationFlags Flags)
+    {
+        var @this = (ID3D12Debug2*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        ((delegate* unmanaged[Cdecl]<ID3D12Debug2*, GpuBasedValidationFlags, void>)LpVtbl[3])(@this, Flags);
+    }
+
 }

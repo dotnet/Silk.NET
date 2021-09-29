@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9
+namespace Silk.NET.Direct3D9;
+
+[NativeName("Name", "_D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_OUTPUT")]
+public unsafe partial struct AuthenticatedchannelQueryrestrictedsharedresourceprocessOutput
 {
-    [NativeName("Name", "_D3DAUTHENTICATEDCHANNEL_QUERYRESTRICTEDSHAREDRESOURCEPROCESS_OUTPUT")]
-    public unsafe partial struct AuthenticatedchannelQueryrestrictedsharedresourceprocessOutput
-    {
-        public AuthenticatedchannelQueryrestrictedsharedresourceprocessOutput
-        (
+    public AuthenticatedchannelQueryrestrictedsharedresourceprocessOutput
+    (
             AuthenticatedchannelQueryOutput? output = null,
             uint? processIndex = null,
             AuthenticatedchannelProcessidentifiertype? processIdentifer = null,
             void* processHandle = null
-        ) : this()
+    ) : this()
+    {
+        if (output is not null)
         {
-            if (output is not null)
-            {
-                Output = output.Value;
-            }
-
-            if (processIndex is not null)
-            {
-                ProcessIndex = processIndex.Value;
-            }
-
-            if (processIdentifer is not null)
-            {
-                ProcessIdentifer = processIdentifer.Value;
-            }
-
-            if (processHandle is not null)
-            {
-                ProcessHandle = processHandle;
-            }
+            Output = output.Value;
         }
 
+        if (processIndex is not null)
+        {
+            ProcessIndex = processIndex.Value;
+        }
 
-        [NativeName("Type", "D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT")]
-        [NativeName("Type.Name", "D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT")]
-        [NativeName("Name", "Output")]
-        public AuthenticatedchannelQueryOutput Output;
+        if (processIdentifer is not null)
+        {
+            ProcessIdentifer = processIdentifer.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "ProcessIndex")]
-        public uint ProcessIndex;
-
-        [NativeName("Type", "D3DAUTHENTICATEDCHANNEL_PROCESSIDENTIFIERTYPE")]
-        [NativeName("Type.Name", "D3DAUTHENTICATEDCHANNEL_PROCESSIDENTIFIERTYPE")]
-        [NativeName("Name", "ProcessIdentifer")]
-        public AuthenticatedchannelProcessidentifiertype ProcessIdentifer;
-
-        [NativeName("Type", "HANDLE")]
-        [NativeName("Type.Name", "HANDLE")]
-        [NativeName("Name", "ProcessHandle")]
-        public void* ProcessHandle;
+        if (processHandle is not null)
+        {
+            ProcessHandle = processHandle;
+        }
     }
+
+
+    [NativeName("Type", "D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT")]
+    [NativeName("Type.Name", "D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT")]
+    [NativeName("Name", "Output")]
+    public AuthenticatedchannelQueryOutput Output;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "ProcessIndex")]
+    public uint ProcessIndex;
+
+    [NativeName("Type", "D3DAUTHENTICATEDCHANNEL_PROCESSIDENTIFIERTYPE")]
+    [NativeName("Type.Name", "D3DAUTHENTICATEDCHANNEL_PROCESSIDENTIFIERTYPE")]
+    [NativeName("Name", "ProcessIdentifer")]
+    public AuthenticatedchannelProcessidentifiertype ProcessIdentifer;
+
+    [NativeName("Type", "HANDLE")]
+    [NativeName("Type.Name", "HANDLE")]
+    [NativeName("Name", "ProcessHandle")]
+    public void* ProcessHandle;
 }

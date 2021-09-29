@@ -12,28 +12,27 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.NV
+namespace Silk.NET.OpenGL.Extensions.NV;
+
+public static class NVSampleLocationsOverloads
 {
-    public static class NVSampleLocationsOverloads
+    public static unsafe void FramebufferSampleLocations(this NVSampleLocations thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<float> v)
     {
-        public static unsafe void FramebufferSampleLocations(this NVSampleLocations thisApi, [Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<float> v)
-        {
-            // SpanOverloader
-            thisApi.FramebufferSampleLocations(target, start, count, in v.GetPinnableReference());
-        }
-
-        public static unsafe void FramebufferSampleLocations(this NVSampleLocations thisApi, [Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<float> v)
-        {
-            // SpanOverloader
-            thisApi.FramebufferSampleLocations(target, start, count, in v.GetPinnableReference());
-        }
-
-        public static unsafe void NamedFramebufferSampleLocations(this NVSampleLocations thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<float> v)
-        {
-            // SpanOverloader
-            thisApi.NamedFramebufferSampleLocations(framebuffer, start, count, in v.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        thisApi.FramebufferSampleLocations(target, start, count, in v.GetPinnableReference());
     }
+
+    public static unsafe void FramebufferSampleLocations(this NVSampleLocations thisApi, [Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+    {
+        // SpanOverloader
+        thisApi.FramebufferSampleLocations(target, start, count, in v.GetPinnableReference());
+    }
+
+    public static unsafe void NamedFramebufferSampleLocations(this NVSampleLocations thisApi, [Flow(FlowDirection.In)] uint framebuffer, [Flow(FlowDirection.In)] uint start, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] ReadOnlySpan<float> v)
+    {
+        // SpanOverloader
+        thisApi.NamedFramebufferSampleLocations(framebuffer, start, count, in v.GetPinnableReference());
+    }
+
 }
 

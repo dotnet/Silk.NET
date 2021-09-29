@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPresentFrameTokenGGP")]
+public unsafe partial struct PresentFrameTokenGGP
 {
-    [NativeName("Name", "VkPresentFrameTokenGGP")]
-    public unsafe partial struct PresentFrameTokenGGP
-    {
-        public PresentFrameTokenGGP
-        (
+    public PresentFrameTokenGGP
+    (
             StructureType? sType = StructureType.PresentFrameTokenGgp,
             void* pNext = null,
             nint? frameToken = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (frameToken is not null)
-            {
-                FrameToken = frameToken.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "GgpFrameToken")]
-        [NativeName("Type.Name", "GgpFrameToken")]
-        [NativeName("Name", "frameToken")]
-        public nint FrameToken;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (frameToken is not null)
+        {
+            FrameToken = frameToken.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "GgpFrameToken")]
+    [NativeName("Type.Name", "GgpFrameToken")]
+    [NativeName("Name", "frameToken")]
+    public nint FrameToken;
 }

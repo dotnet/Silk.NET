@@ -14,22 +14,21 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.EXT
+namespace Silk.NET.OpenGL.Legacy.Extensions.EXT;
+
+[Extension("EXT_stencil_two_side")]
+public unsafe partial class ExtStencilTwoSide : NativeExtension<GL>
 {
-    [Extension("EXT_stencil_two_side")]
-    public unsafe partial class ExtStencilTwoSide : NativeExtension<GL>
+    public const string ExtensionName = "EXT_stencil_two_side";
+    [NativeApi(EntryPoint = "glActiveStencilFaceEXT")]
+    public partial void ActiveStencilFace([Flow(FlowDirection.In)] EXT face);
+
+    [NativeApi(EntryPoint = "glActiveStencilFaceEXT")]
+    public partial void ActiveStencilFace([Flow(FlowDirection.In)] StencilFaceDirection face);
+
+    public ExtStencilTwoSide(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "EXT_stencil_two_side";
-        [NativeApi(EntryPoint = "glActiveStencilFaceEXT")]
-        public partial void ActiveStencilFace([Flow(FlowDirection.In)] EXT face);
-
-        [NativeApi(EntryPoint = "glActiveStencilFaceEXT")]
-        public partial void ActiveStencilFace([Flow(FlowDirection.In)] StencilFaceDirection face);
-
-        public ExtStencilTwoSide(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

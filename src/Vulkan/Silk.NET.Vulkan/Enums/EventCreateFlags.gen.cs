@@ -7,13 +7,12 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
-{
+namespace Silk.NET.Vulkan;
+
     [Flags()]
-    [NativeName("Name", "VkEventCreateFlags")]
-    public enum EventCreateFlags : int
-    {
-        [NativeName("Name", "VK_EVENT_CREATE_DEVICE_ONLY_BIT_KHR")]
-        EventCreateDeviceOnlyBitKhr = 1,
-    }
+[NativeName("Name", "VkEventCreateFlags")]
+public enum EventCreateFlags : int
+{
+    [NativeName("Name", "VK_EVENT_CREATE_DEVICE_ONLY_BIT_KHR")]
+    EventCreateDeviceOnlyBitKhr = 1,
 }

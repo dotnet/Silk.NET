@@ -7,16 +7,15 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL
+namespace Silk.NET.OpenGL;
+
+[NativeName("Name", "PathListMode")]
+public enum PathListMode : int
 {
-    [NativeName("Name", "PathListMode")]
-    public enum PathListMode : int
-    {
-        [NativeName("Name", "GL_ACCUM_ADJACENT_PAIRS_NV")]
-        AccumAdjacentPairsNV = 0x90AD,
-        [NativeName("Name", "GL_ADJACENT_PAIRS_NV")]
-        AdjacentPairsNV = 0x90AE,
-        [NativeName("Name", "GL_FIRST_TO_REST_NV")]
-        FirstToRestNV = 0x90AF,
-    }
+    [NativeName("Name", "GL_ACCUM_ADJACENT_PAIRS_NV")]
+    AccumAdjacentPairsNV = 0x90AD,
+    [NativeName("Name", "GL_ADJACENT_PAIRS_NV")]
+    AdjacentPairsNV = 0x90AE,
+    [NativeName("Name", "GL_FIRST_TO_REST_NV")]
+    FirstToRestNV = 0x90AF,
 }

@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkExternalBufferPropertiesKHR")]
+public unsafe partial struct ExternalBufferPropertiesKHR
 {
-    [NativeName("Name", "VkExternalBufferPropertiesKHR")]
-    public unsafe partial struct ExternalBufferPropertiesKHR
-    {
-        public ExternalBufferPropertiesKHR
-        (
+    public ExternalBufferPropertiesKHR
+    (
             StructureType? sType = StructureType.ExternalBufferProperties,
             void* pNext = null,
             ExternalMemoryProperties? externalMemoryProperties = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (externalMemoryProperties is not null)
-            {
-                ExternalMemoryProperties = externalMemoryProperties.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkExternalMemoryProperties")]
-        [NativeName("Type.Name", "VkExternalMemoryProperties")]
-        [NativeName("Name", "externalMemoryProperties")]
-        public ExternalMemoryProperties ExternalMemoryProperties;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (externalMemoryProperties is not null)
+        {
+            ExternalMemoryProperties = externalMemoryProperties.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkExternalMemoryProperties")]
+    [NativeName("Type.Name", "VkExternalMemoryProperties")]
+    [NativeName("Name", "externalMemoryProperties")]
+    public ExternalMemoryProperties ExternalMemoryProperties;
 }

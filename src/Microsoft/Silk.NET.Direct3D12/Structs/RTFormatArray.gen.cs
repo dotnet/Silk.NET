@@ -14,64 +14,63 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_RT_FORMAT_ARRAY")]
+public unsafe partial struct RTFormatArray
 {
-    [NativeName("Name", "D3D12_RT_FORMAT_ARRAY")]
-    public unsafe partial struct RTFormatArray
-    {
-        public RTFormatArray
-        (
+    public RTFormatArray
+    (
             uint? numRenderTargets = null
-        ) : this()
+    ) : this()
+    {
+        if (numRenderTargets is not null)
         {
-            if (numRenderTargets is not null)
-            {
-                NumRenderTargets = numRenderTargets.Value;
-            }
+            NumRenderTargets = numRenderTargets.Value;
         }
+    }
 
         
-        [NativeName("Type", "DXGI_FORMAT [8]")]
-        [NativeName("Type.Name", "DXGI_FORMAT [8]")]
-        [NativeName("Name", "RTFormats")]
-        public RTFormatsBuffer RTFormats;
+    [NativeName("Type", "DXGI_FORMAT [8]")]
+    [NativeName("Type.Name", "DXGI_FORMAT [8]")]
+    [NativeName("Name", "RTFormats")]
+    public RTFormatsBuffer RTFormats;
 
-        public struct RTFormatsBuffer
+    public struct RTFormatsBuffer
+    {
+        public Silk.NET.DXGI.Format Element0;
+        public Silk.NET.DXGI.Format Element1;
+        public Silk.NET.DXGI.Format Element2;
+        public Silk.NET.DXGI.Format Element3;
+        public Silk.NET.DXGI.Format Element4;
+        public Silk.NET.DXGI.Format Element5;
+        public Silk.NET.DXGI.Format Element6;
+        public Silk.NET.DXGI.Format Element7;
+        public ref Silk.NET.DXGI.Format this[int index]
         {
-            public Silk.NET.DXGI.Format Element0;
-            public Silk.NET.DXGI.Format Element1;
-            public Silk.NET.DXGI.Format Element2;
-            public Silk.NET.DXGI.Format Element3;
-            public Silk.NET.DXGI.Format Element4;
-            public Silk.NET.DXGI.Format Element5;
-            public Silk.NET.DXGI.Format Element6;
-            public Silk.NET.DXGI.Format Element7;
-            public ref Silk.NET.DXGI.Format this[int index]
+            get
             {
-                get
+                if (index > 7 || index < 0)
                 {
-                    if (index > 7 || index < 0)
-                    {
-                        throw new ArgumentOutOfRangeException(nameof(index));
-                    }
+                    throw new ArgumentOutOfRangeException(nameof(index));
+                }
 
-                    fixed (Silk.NET.DXGI.Format* ptr = &Element0)
-                    {
-                        return ref ptr[index];
-                    }
+                fixed (Silk.NET.DXGI.Format* ptr = &Element0)
+                {
+                    return ref ptr[index];
                 }
             }
-
-#if NETSTANDARD2_1
-            public Span<Silk.NET.DXGI.Format> AsSpan()
-                => MemoryMarshal.CreateSpan(ref Element0, 8);
-#endif
         }
 
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "NumRenderTargets")]
-        public uint NumRenderTargets;
+#if NETSTANDARD2_1
+        public Span<Silk.NET.DXGI.Format> AsSpan()
+            => MemoryMarshal.CreateSpan(ref Element0, 8);
+#endif
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "NumRenderTargets")]
+    public uint NumRenderTargets;
 }

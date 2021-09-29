@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkExtent3D")]
+public unsafe partial struct Extent3D
 {
-    [NativeName("Name", "VkExtent3D")]
-    public unsafe partial struct Extent3D
-    {
-        public Extent3D
-        (
+    public Extent3D
+    (
             uint? width = null,
             uint? height = null,
             uint? depth = null
-        ) : this()
+    ) : this()
+    {
+        if (width is not null)
         {
-            if (width is not null)
-            {
-                Width = width.Value;
-            }
-
-            if (height is not null)
-            {
-                Height = height.Value;
-            }
-
-            if (depth is not null)
-            {
-                Depth = depth.Value;
-            }
+            Width = width.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "width")]
-        public uint Width;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "height")]
-        public uint Height;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "depth")]
-        public uint Depth;
+        if (height is not null)
+        {
+            Height = height.Value;
+        }
+
+        if (depth is not null)
+        {
+            Depth = depth.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "width")]
+    public uint Width;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "height")]
+    public uint Height;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "depth")]
+    public uint Depth;
 }

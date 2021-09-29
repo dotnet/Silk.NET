@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Video
+namespace Silk.NET.Vulkan.Video;
+
+[NativeName("Name", "StdVideoH265HrdFlags")]
+public unsafe partial struct StdVideoH265HrdFlags
 {
-    [NativeName("Name", "StdVideoH265HrdFlags")]
-    public unsafe partial struct StdVideoH265HrdFlags
-    {
-        public StdVideoH265HrdFlags
-        (
+    public StdVideoH265HrdFlags
+    (
             uint? nalHrdParametersPresentFlag = null,
             uint? vclHrdParametersPresentFlag = null,
             uint? subPicHrdParamsPresentFlag = null,
@@ -28,92 +28,91 @@ namespace Silk.NET.Vulkan.Video
             byte? fixedPicRateGeneralFlag = null,
             byte? fixedPicRateWithinCvsFlag = null,
             byte? lowDelayHrdFlag = null
-        ) : this()
+    ) : this()
+    {
+        if (nalHrdParametersPresentFlag is not null)
         {
-            if (nalHrdParametersPresentFlag is not null)
-            {
-                NalHrdParametersPresentFlag = nalHrdParametersPresentFlag.Value;
-            }
-
-            if (vclHrdParametersPresentFlag is not null)
-            {
-                VclHrdParametersPresentFlag = vclHrdParametersPresentFlag.Value;
-            }
-
-            if (subPicHrdParamsPresentFlag is not null)
-            {
-                SubPicHrdParamsPresentFlag = subPicHrdParamsPresentFlag.Value;
-            }
-
-            if (subPicCpbParamsInPicTimingSeiFlag is not null)
-            {
-                SubPicCpbParamsInPicTimingSeiFlag = subPicCpbParamsInPicTimingSeiFlag.Value;
-            }
-
-            if (fixedPicRateGeneralFlag is not null)
-            {
-                FixedPicRateGeneralFlag = fixedPicRateGeneralFlag.Value;
-            }
-
-            if (fixedPicRateWithinCvsFlag is not null)
-            {
-                FixedPicRateWithinCvsFlag = fixedPicRateWithinCvsFlag.Value;
-            }
-
-            if (lowDelayHrdFlag is not null)
-            {
-                LowDelayHrdFlag = lowDelayHrdFlag.Value;
-            }
+            NalHrdParametersPresentFlag = nalHrdParametersPresentFlag.Value;
         }
 
-
-        private uint _bitfield1;
-
-        public uint NalHrdParametersPresentFlag
+        if (vclHrdParametersPresentFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)(_bitfield1 & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
+            VclHrdParametersPresentFlag = vclHrdParametersPresentFlag.Value;
         }
 
-        public uint VclHrdParametersPresentFlag
+        if (subPicHrdParamsPresentFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 1) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+            SubPicHrdParamsPresentFlag = subPicHrdParamsPresentFlag.Value;
         }
 
-        public uint SubPicHrdParamsPresentFlag
+        if (subPicCpbParamsInPicTimingSeiFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 2) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+            SubPicCpbParamsInPicTimingSeiFlag = subPicCpbParamsInPicTimingSeiFlag.Value;
         }
 
-        public uint SubPicCpbParamsInPicTimingSeiFlag
+        if (fixedPicRateGeneralFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 3) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
+            FixedPicRateGeneralFlag = fixedPicRateGeneralFlag.Value;
         }
 
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "fixed_pic_rate_general_flag")]
-        public byte FixedPicRateGeneralFlag;
+        if (fixedPicRateWithinCvsFlag is not null)
+        {
+            FixedPicRateWithinCvsFlag = fixedPicRateWithinCvsFlag.Value;
+        }
 
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "fixed_pic_rate_within_cvs_flag")]
-        public byte FixedPicRateWithinCvsFlag;
-
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "low_delay_hrd_flag")]
-        public byte LowDelayHrdFlag;
+        if (lowDelayHrdFlag is not null)
+        {
+            LowDelayHrdFlag = lowDelayHrdFlag.Value;
+        }
     }
+
+
+    private uint _bitfield1;
+
+    public uint NalHrdParametersPresentFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)(_bitfield1 & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
+    }
+
+    public uint VclHrdParametersPresentFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 1) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+    }
+
+    public uint SubPicHrdParamsPresentFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 2) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+    }
+
+    public uint SubPicCpbParamsInPicTimingSeiFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 3) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
+    }
+
+    [NativeName("Type", "uint8_t")]
+    [NativeName("Type.Name", "uint8_t")]
+    [NativeName("Name", "fixed_pic_rate_general_flag")]
+    public byte FixedPicRateGeneralFlag;
+
+    [NativeName("Type", "uint8_t")]
+    [NativeName("Type.Name", "uint8_t")]
+    [NativeName("Name", "fixed_pic_rate_within_cvs_flag")]
+    public byte FixedPicRateWithinCvsFlag;
+
+    [NativeName("Type", "uint8_t")]
+    [NativeName("Type.Name", "uint8_t")]
+    [NativeName("Name", "low_delay_hrd_flag")]
+    public byte LowDelayHrdFlag;
 }

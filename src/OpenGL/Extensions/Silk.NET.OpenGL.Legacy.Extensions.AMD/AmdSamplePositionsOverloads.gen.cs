@@ -12,16 +12,15 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
-{
-    public static class AmdSamplePositionsOverloads
-    {
-        public static unsafe void SetMultisample(this AmdSamplePositions thisApi, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> val)
-        {
-            // SpanOverloader
-            thisApi.SetMultisample(pname, index, in val.GetPinnableReference());
-        }
+namespace Silk.NET.OpenGL.Legacy.Extensions.AMD;
 
+public static class AmdSamplePositionsOverloads
+{
+    public static unsafe void SetMultisample(this AmdSamplePositions thisApi, [Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] ReadOnlySpan<float> val)
+    {
+        // SpanOverloader
+        thisApi.SetMultisample(pname, index, in val.GetPinnableReference());
     }
+
 }
 

@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_FEATURE_DATA_D3D12_OPTIONS6")]
+public unsafe partial struct FeatureDataD3D12Options6
 {
-    [NativeName("Name", "D3D12_FEATURE_DATA_D3D12_OPTIONS6")]
-    public unsafe partial struct FeatureDataD3D12Options6
-    {
-        public FeatureDataD3D12Options6
-        (
+    public FeatureDataD3D12Options6
+    (
             int? additionalShadingRatesSupported = null,
             int? perPrimitiveShadingRateSupportedWithViewportIndexing = null,
             VariableShadingRateTier? variableShadingRateTier = null,
             uint? shadingRateImageTileSize = null,
             int? backgroundProcessingSupported = null
-        ) : this()
+    ) : this()
+    {
+        if (additionalShadingRatesSupported is not null)
         {
-            if (additionalShadingRatesSupported is not null)
-            {
-                AdditionalShadingRatesSupported = additionalShadingRatesSupported.Value;
-            }
-
-            if (perPrimitiveShadingRateSupportedWithViewportIndexing is not null)
-            {
-                PerPrimitiveShadingRateSupportedWithViewportIndexing = perPrimitiveShadingRateSupportedWithViewportIndexing.Value;
-            }
-
-            if (variableShadingRateTier is not null)
-            {
-                VariableShadingRateTier = variableShadingRateTier.Value;
-            }
-
-            if (shadingRateImageTileSize is not null)
-            {
-                ShadingRateImageTileSize = shadingRateImageTileSize.Value;
-            }
-
-            if (backgroundProcessingSupported is not null)
-            {
-                BackgroundProcessingSupported = backgroundProcessingSupported.Value;
-            }
+            AdditionalShadingRatesSupported = additionalShadingRatesSupported.Value;
         }
 
+        if (perPrimitiveShadingRateSupportedWithViewportIndexing is not null)
+        {
+            PerPrimitiveShadingRateSupportedWithViewportIndexing = perPrimitiveShadingRateSupportedWithViewportIndexing.Value;
+        }
 
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "AdditionalShadingRatesSupported")]
-        public int AdditionalShadingRatesSupported;
+        if (variableShadingRateTier is not null)
+        {
+            VariableShadingRateTier = variableShadingRateTier.Value;
+        }
 
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "PerPrimitiveShadingRateSupportedWithViewportIndexing")]
-        public int PerPrimitiveShadingRateSupportedWithViewportIndexing;
+        if (shadingRateImageTileSize is not null)
+        {
+            ShadingRateImageTileSize = shadingRateImageTileSize.Value;
+        }
 
-        [NativeName("Type", "D3D12_VARIABLE_SHADING_RATE_TIER")]
-        [NativeName("Type.Name", "D3D12_VARIABLE_SHADING_RATE_TIER")]
-        [NativeName("Name", "VariableShadingRateTier")]
-        public VariableShadingRateTier VariableShadingRateTier;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "ShadingRateImageTileSize")]
-        public uint ShadingRateImageTileSize;
-
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "BackgroundProcessingSupported")]
-        public int BackgroundProcessingSupported;
+        if (backgroundProcessingSupported is not null)
+        {
+            BackgroundProcessingSupported = backgroundProcessingSupported.Value;
+        }
     }
+
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "AdditionalShadingRatesSupported")]
+    public int AdditionalShadingRatesSupported;
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "PerPrimitiveShadingRateSupportedWithViewportIndexing")]
+    public int PerPrimitiveShadingRateSupportedWithViewportIndexing;
+
+    [NativeName("Type", "D3D12_VARIABLE_SHADING_RATE_TIER")]
+    [NativeName("Type.Name", "D3D12_VARIABLE_SHADING_RATE_TIER")]
+    [NativeName("Name", "VariableShadingRateTier")]
+    public VariableShadingRateTier VariableShadingRateTier;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "ShadingRateImageTileSize")]
+    public uint ShadingRateImageTileSize;
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "BackgroundProcessingSupported")]
+    public int BackgroundProcessingSupported;
 }

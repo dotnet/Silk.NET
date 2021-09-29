@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy
+namespace Silk.NET.OpenGL.Legacy;
+
+[NativeName("Name", "CullParameterEXT")]
+public enum CullParameterEXT : int
 {
-    [NativeName("Name", "CullParameterEXT")]
-    public enum CullParameterEXT : int
-    {
-        [NativeName("Name", "GL_CULL_VERTEX_EYE_POSITION_EXT")]
-        CullVertexEyePositionExt = 0x81AB,
-        [NativeName("Name", "GL_CULL_VERTEX_OBJECT_POSITION_EXT")]
-        CullVertexObjectPositionExt = 0x81AC,
-    }
+    [NativeName("Name", "GL_CULL_VERTEX_EYE_POSITION_EXT")]
+    CullVertexEyePositionExt = 0x81AB,
+    [NativeName("Name", "GL_CULL_VERTEX_OBJECT_POSITION_EXT")]
+    CullVertexObjectPositionExt = 0x81AC,
 }

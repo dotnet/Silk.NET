@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkVertexInputBindingDescription")]
+public unsafe partial struct VertexInputBindingDescription
 {
-    [NativeName("Name", "VkVertexInputBindingDescription")]
-    public unsafe partial struct VertexInputBindingDescription
-    {
-        public VertexInputBindingDescription
-        (
+    public VertexInputBindingDescription
+    (
             uint? binding = null,
             uint? stride = null,
             VertexInputRate? inputRate = null
-        ) : this()
+    ) : this()
+    {
+        if (binding is not null)
         {
-            if (binding is not null)
-            {
-                Binding = binding.Value;
-            }
-
-            if (stride is not null)
-            {
-                Stride = stride.Value;
-            }
-
-            if (inputRate is not null)
-            {
-                InputRate = inputRate.Value;
-            }
+            Binding = binding.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "binding")]
-        public uint Binding;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "stride")]
-        public uint Stride;
-/// <summary></summary>
-        [NativeName("Type", "VkVertexInputRate")]
-        [NativeName("Type.Name", "VkVertexInputRate")]
-        [NativeName("Name", "inputRate")]
-        public VertexInputRate InputRate;
+        if (stride is not null)
+        {
+            Stride = stride.Value;
+        }
+
+        if (inputRate is not null)
+        {
+            InputRate = inputRate.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "binding")]
+    public uint Binding;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "stride")]
+    public uint Stride;
+/// <summary></summary>
+    [NativeName("Type", "VkVertexInputRate")]
+    [NativeName("Type.Name", "VkVertexInputRate")]
+    [NativeName("Name", "inputRate")]
+    public VertexInputRate InputRate;
 }

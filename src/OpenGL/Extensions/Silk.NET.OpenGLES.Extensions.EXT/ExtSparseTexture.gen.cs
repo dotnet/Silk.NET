@@ -14,22 +14,21 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.EXT
+namespace Silk.NET.OpenGLES.Extensions.EXT;
+
+[Extension("EXT_sparse_texture")]
+public unsafe partial class ExtSparseTexture : NativeExtension<GL>
 {
-    [Extension("EXT_sparse_texture")]
-    public unsafe partial class ExtSparseTexture : NativeExtension<GL>
+    public const string ExtensionName = "EXT_sparse_texture";
+    [NativeApi(EntryPoint = "glTexPageCommitmentEXT")]
+    public partial void TexPageCommitment([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool commit);
+
+    [NativeApi(EntryPoint = "glTexPageCommitmentEXT")]
+    public partial void TexPageCommitment([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean commit);
+
+    public ExtSparseTexture(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "EXT_sparse_texture";
-        [NativeApi(EntryPoint = "glTexPageCommitmentEXT")]
-        public partial void TexPageCommitment([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] bool commit);
-
-        [NativeApi(EntryPoint = "glTexPageCommitmentEXT")]
-        public partial void TexPageCommitment([Flow(FlowDirection.In)] EXT target, [Flow(FlowDirection.In)] int level, [Flow(FlowDirection.In)] int xoffset, [Flow(FlowDirection.In)] int yoffset, [Flow(FlowDirection.In)] int zoffset, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height, [Flow(FlowDirection.In)] uint depth, [Flow(FlowDirection.In)] Boolean commit);
-
-        public ExtSparseTexture(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

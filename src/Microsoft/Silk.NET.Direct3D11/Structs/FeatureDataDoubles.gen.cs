@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_FEATURE_DATA_DOUBLES")]
+public unsafe partial struct FeatureDataDoubles
 {
-    [NativeName("Name", "D3D11_FEATURE_DATA_DOUBLES")]
-    public unsafe partial struct FeatureDataDoubles
-    {
-        public FeatureDataDoubles
-        (
+    public FeatureDataDoubles
+    (
             int? doublePrecisionFloatShaderOps = null
-        ) : this()
+    ) : this()
+    {
+        if (doublePrecisionFloatShaderOps is not null)
         {
-            if (doublePrecisionFloatShaderOps is not null)
-            {
-                DoublePrecisionFloatShaderOps = doublePrecisionFloatShaderOps.Value;
-            }
+            DoublePrecisionFloatShaderOps = doublePrecisionFloatShaderOps.Value;
         }
-
-
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "DoublePrecisionFloatShaderOps")]
-        public int DoublePrecisionFloatShaderOps;
     }
+
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "DoublePrecisionFloatShaderOps")]
+    public int DoublePrecisionFloatShaderOps;
 }

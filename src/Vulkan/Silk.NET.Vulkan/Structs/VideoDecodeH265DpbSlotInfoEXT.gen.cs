@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkVideoDecodeH265DpbSlotInfoEXT")]
+public unsafe partial struct VideoDecodeH265DpbSlotInfoEXT
 {
-    [NativeName("Name", "VkVideoDecodeH265DpbSlotInfoEXT")]
-    public unsafe partial struct VideoDecodeH265DpbSlotInfoEXT
-    {
-        public VideoDecodeH265DpbSlotInfoEXT
-        (
+    public VideoDecodeH265DpbSlotInfoEXT
+    (
             StructureType? sType = StructureType.VideoDecodeH265DpbSlotInfoExt,
             void* pNext = null,
             Video.StdVideoDecodeH265ReferenceInfo* pStdReferenceInfo = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (pStdReferenceInfo is not null)
-            {
-                PStdReferenceInfo = pStdReferenceInfo;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "StdVideoDecodeH265ReferenceInfo*")]
-        [NativeName("Type.Name", "StdVideoDecodeH265ReferenceInfo")]
-        [NativeName("Name", "pStdReferenceInfo")]
-        public Video.StdVideoDecodeH265ReferenceInfo* PStdReferenceInfo;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (pStdReferenceInfo is not null)
+        {
+            PStdReferenceInfo = pStdReferenceInfo;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "StdVideoDecodeH265ReferenceInfo*")]
+    [NativeName("Type.Name", "StdVideoDecodeH265ReferenceInfo")]
+    [NativeName("Name", "pStdReferenceInfo")]
+    public Video.StdVideoDecodeH265ReferenceInfo* PStdReferenceInfo;
 }

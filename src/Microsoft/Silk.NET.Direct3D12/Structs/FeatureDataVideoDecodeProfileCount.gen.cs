@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT")]
+public unsafe partial struct FeatureDataVideoDecodeProfileCount
 {
-    [NativeName("Name", "D3D12_FEATURE_DATA_VIDEO_DECODE_PROFILE_COUNT")]
-    public unsafe partial struct FeatureDataVideoDecodeProfileCount
-    {
-        public FeatureDataVideoDecodeProfileCount
-        (
+    public FeatureDataVideoDecodeProfileCount
+    (
             uint? nodeIndex = null,
             uint? profileCount = null
-        ) : this()
+    ) : this()
+    {
+        if (nodeIndex is not null)
         {
-            if (nodeIndex is not null)
-            {
-                NodeIndex = nodeIndex.Value;
-            }
-
-            if (profileCount is not null)
-            {
-                ProfileCount = profileCount.Value;
-            }
+            NodeIndex = nodeIndex.Value;
         }
 
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "NodeIndex")]
-        public uint NodeIndex;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "ProfileCount")]
-        public uint ProfileCount;
+        if (profileCount is not null)
+        {
+            ProfileCount = profileCount.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "NodeIndex")]
+    public uint NodeIndex;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "ProfileCount")]
+    public uint ProfileCount;
 }

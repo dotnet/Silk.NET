@@ -12,16 +12,15 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.NV
-{
-    public static class NVDrawBuffersOverloads
-    {
-        public static unsafe void DrawBuffers(this NVDrawBuffers thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<NV> bufs)
-        {
-            // SpanOverloader
-            thisApi.DrawBuffers(n, in bufs.GetPinnableReference());
-        }
+namespace Silk.NET.OpenGLES.Extensions.NV;
 
+public static class NVDrawBuffersOverloads
+{
+    public static unsafe void DrawBuffers(this NVDrawBuffers thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<NV> bufs)
+    {
+        // SpanOverloader
+        thisApi.DrawBuffers(n, in bufs.GetPinnableReference());
     }
+
 }
 

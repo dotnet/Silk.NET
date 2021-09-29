@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK")]
+public unsafe partial struct VideoDecoderSubSampleMappingBlock
 {
-    [NativeName("Name", "D3D11_VIDEO_DECODER_SUB_SAMPLE_MAPPING_BLOCK")]
-    public unsafe partial struct VideoDecoderSubSampleMappingBlock
-    {
-        public VideoDecoderSubSampleMappingBlock
-        (
+    public VideoDecoderSubSampleMappingBlock
+    (
             uint? clearSize = null,
             uint? encryptedSize = null
-        ) : this()
+    ) : this()
+    {
+        if (clearSize is not null)
         {
-            if (clearSize is not null)
-            {
-                ClearSize = clearSize.Value;
-            }
-
-            if (encryptedSize is not null)
-            {
-                EncryptedSize = encryptedSize.Value;
-            }
+            ClearSize = clearSize.Value;
         }
 
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "ClearSize")]
-        public uint ClearSize;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "EncryptedSize")]
-        public uint EncryptedSize;
+        if (encryptedSize is not null)
+        {
+            EncryptedSize = encryptedSize.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "ClearSize")]
+    public uint ClearSize;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "EncryptedSize")]
+    public uint EncryptedSize;
 }

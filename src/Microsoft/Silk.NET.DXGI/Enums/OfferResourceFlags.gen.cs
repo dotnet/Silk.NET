@@ -7,12 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI
+namespace Silk.NET.DXGI;
+
+[NativeName("Name", "_DXGI_OFFER_RESOURCE_FLAGS")]
+public enum OfferResourceFlags : int
 {
-    [NativeName("Name", "_DXGI_OFFER_RESOURCE_FLAGS")]
-    public enum OfferResourceFlags : int
-    {
-        [NativeName("Name", "DXGI_OFFER_RESOURCE_FLAG_ALLOW_DECOMMIT")]
-        OfferResourceFlagAllowDecommit = 0x1,
-    }
+    [NativeName("Name", "DXGI_OFFER_RESOURCE_FLAG_ALLOW_DECOMMIT")]
+    OfferResourceFlagAllowDecommit = 0x1,
 }

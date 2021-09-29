@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "CD3D11_RECT")]
+public unsafe partial struct CD3D11Rect
 {
-    [NativeName("Name", "CD3D11_RECT")]
-    public unsafe partial struct CD3D11Rect
-    {
-        public CD3D11Rect
-        (
+    public CD3D11Rect
+    (
             int? left = null,
             int? top = null,
             int? right = null,
             int? bottom = null
-        ) : this()
+    ) : this()
+    {
+        if (left is not null)
         {
-            if (left is not null)
-            {
-                Left = left.Value;
-            }
-
-            if (top is not null)
-            {
-                Top = top.Value;
-            }
-
-            if (right is not null)
-            {
-                Right = right.Value;
-            }
-
-            if (bottom is not null)
-            {
-                Bottom = bottom.Value;
-            }
+            Left = left.Value;
         }
 
+        if (top is not null)
+        {
+            Top = top.Value;
+        }
 
-        [NativeName("Type", "LONG")]
-        [NativeName("Type.Name", "LONG")]
-        [NativeName("Name", "left")]
-        public int Left;
+        if (right is not null)
+        {
+            Right = right.Value;
+        }
 
-        [NativeName("Type", "LONG")]
-        [NativeName("Type.Name", "LONG")]
-        [NativeName("Name", "top")]
-        public int Top;
-
-        [NativeName("Type", "LONG")]
-        [NativeName("Type.Name", "LONG")]
-        [NativeName("Name", "right")]
-        public int Right;
-
-        [NativeName("Type", "LONG")]
-        [NativeName("Type.Name", "LONG")]
-        [NativeName("Name", "bottom")]
-        public int Bottom;
+        if (bottom is not null)
+        {
+            Bottom = bottom.Value;
+        }
     }
+
+
+    [NativeName("Type", "LONG")]
+    [NativeName("Type.Name", "LONG")]
+    [NativeName("Name", "left")]
+    public int Left;
+
+    [NativeName("Type", "LONG")]
+    [NativeName("Type.Name", "LONG")]
+    [NativeName("Name", "top")]
+    public int Top;
+
+    [NativeName("Type", "LONG")]
+    [NativeName("Type.Name", "LONG")]
+    [NativeName("Name", "right")]
+    public int Right;
+
+    [NativeName("Type", "LONG")]
+    [NativeName("Type.Name", "LONG")]
+    [NativeName("Name", "bottom")]
+    public int Bottom;
 }

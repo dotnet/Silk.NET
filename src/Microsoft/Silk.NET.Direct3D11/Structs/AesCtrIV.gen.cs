@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "_D3D11_AES_CTR_IV")]
+public unsafe partial struct AesCtrIV
 {
-    [NativeName("Name", "_D3D11_AES_CTR_IV")]
-    public unsafe partial struct AesCtrIV
-    {
-        public AesCtrIV
-        (
+    public AesCtrIV
+    (
             ulong? iV = null,
             ulong? count = null
-        ) : this()
+    ) : this()
+    {
+        if (iV is not null)
         {
-            if (iV is not null)
-            {
-                IV = iV.Value;
-            }
-
-            if (count is not null)
-            {
-                Count = count.Value;
-            }
+            IV = iV.Value;
         }
 
-
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "IV")]
-        public ulong IV;
-
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "Count")]
-        public ulong Count;
+        if (count is not null)
+        {
+            Count = count.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "IV")]
+    public ulong IV;
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "Count")]
+    public ulong Count;
 }

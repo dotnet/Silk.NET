@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES
+namespace Silk.NET.OpenGLES;
+
+[NativeName("Name", "PathElementType")]
+public enum PathElementType : int
 {
-    [NativeName("Name", "PathElementType")]
-    public enum PathElementType : int
-    {
-        [NativeName("Name", "GL_UTF8_NV")]
-        Utf8NV = 0x909A,
-        [NativeName("Name", "GL_UTF16_NV")]
-        Utf16NV = 0x909B,
-    }
+    [NativeName("Name", "GL_UTF8_NV")]
+    Utf8NV = 0x909A,
+    [NativeName("Name", "GL_UTF16_NV")]
+    Utf16NV = 0x909B,
 }

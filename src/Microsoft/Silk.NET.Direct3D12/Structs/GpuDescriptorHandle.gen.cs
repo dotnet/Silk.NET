@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_GPU_DESCRIPTOR_HANDLE")]
+public unsafe partial struct GpuDescriptorHandle
 {
-    [NativeName("Name", "D3D12_GPU_DESCRIPTOR_HANDLE")]
-    public unsafe partial struct GpuDescriptorHandle
-    {
-        public GpuDescriptorHandle
-        (
+    public GpuDescriptorHandle
+    (
             ulong? ptr = null
-        ) : this()
+    ) : this()
+    {
+        if (ptr is not null)
         {
-            if (ptr is not null)
-            {
-                Ptr = ptr.Value;
-            }
+            Ptr = ptr.Value;
         }
-
-
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "ptr")]
-        public ulong Ptr;
     }
+
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "ptr")]
+    public ulong Ptr;
 }

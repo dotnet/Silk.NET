@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL
+namespace Silk.NET.SDL;
+
+[NativeName("Name", "SDL_DisplayMode")]
+public unsafe partial struct DisplayMode
 {
-    [NativeName("Name", "SDL_DisplayMode")]
-    public unsafe partial struct DisplayMode
-    {
-        public DisplayMode
-        (
+    public DisplayMode
+    (
             uint? format = null,
             int? w = null,
             int? h = null,
             int? refreshRate = null,
             void* driverdata = null
-        ) : this()
+    ) : this()
+    {
+        if (format is not null)
         {
-            if (format is not null)
-            {
-                Format = format.Value;
-            }
-
-            if (w is not null)
-            {
-                W = w.Value;
-            }
-
-            if (h is not null)
-            {
-                H = h.Value;
-            }
-
-            if (refreshRate is not null)
-            {
-                RefreshRate = refreshRate.Value;
-            }
-
-            if (driverdata is not null)
-            {
-                Driverdata = driverdata;
-            }
+            Format = format.Value;
         }
 
+        if (w is not null)
+        {
+            W = w.Value;
+        }
 
-        [NativeName("Type", "Uint32")]
-        [NativeName("Type.Name", "Uint32")]
-        [NativeName("Name", "format")]
-        public uint Format;
+        if (h is not null)
+        {
+            H = h.Value;
+        }
 
-        [NativeName("Type", "int")]
-        [NativeName("Type.Name", "int")]
-        [NativeName("Name", "w")]
-        public int W;
+        if (refreshRate is not null)
+        {
+            RefreshRate = refreshRate.Value;
+        }
 
-        [NativeName("Type", "int")]
-        [NativeName("Type.Name", "int")]
-        [NativeName("Name", "h")]
-        public int H;
-
-        [NativeName("Type", "int")]
-        [NativeName("Type.Name", "int")]
-        [NativeName("Name", "refresh_rate")]
-        public int RefreshRate;
-
-        [NativeName("Type", "void *")]
-        [NativeName("Type.Name", "void *")]
-        [NativeName("Name", "driverdata")]
-        public void* Driverdata;
+        if (driverdata is not null)
+        {
+            Driverdata = driverdata;
+        }
     }
+
+
+    [NativeName("Type", "Uint32")]
+    [NativeName("Type.Name", "Uint32")]
+    [NativeName("Name", "format")]
+    public uint Format;
+
+    [NativeName("Type", "int")]
+    [NativeName("Type.Name", "int")]
+    [NativeName("Name", "w")]
+    public int W;
+
+    [NativeName("Type", "int")]
+    [NativeName("Type.Name", "int")]
+    [NativeName("Name", "h")]
+    public int H;
+
+    [NativeName("Type", "int")]
+    [NativeName("Type.Name", "int")]
+    [NativeName("Name", "refresh_rate")]
+    public int RefreshRate;
+
+    [NativeName("Type", "void *")]
+    [NativeName("Type.Name", "void *")]
+    [NativeName("Name", "driverdata")]
+    public void* Driverdata;
 }

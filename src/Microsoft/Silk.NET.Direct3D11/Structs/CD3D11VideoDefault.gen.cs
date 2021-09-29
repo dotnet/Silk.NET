@@ -14,10 +14,9 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "CD3D11_VIDEO_DEFAULT")]
+public unsafe partial struct CD3D11VideoDefault
 {
-    [NativeName("Name", "CD3D11_VIDEO_DEFAULT")]
-    public unsafe partial struct CD3D11VideoDefault
-    {
-    }
 }

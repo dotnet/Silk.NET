@@ -12,17 +12,16 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.HUAWEI
-{
-    public static class HuaweiSubpassShadingOverloads
-    {
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetDeviceSubpassShadingMaxWorkgroupSizeHuawei(this HuaweiSubpassShading thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderpass, [Count(Count = 0), Flow(FlowDirection.Out)] Span<Extent2D> pMaxWorkgroupSize)
-        {
-            // SpanOverloader
-            return thisApi.GetDeviceSubpassShadingMaxWorkgroupSizeHuawei(device, renderpass, out pMaxWorkgroupSize.GetPinnableReference());
-        }
+namespace Silk.NET.Vulkan.Extensions.HUAWEI;
 
+public static class HuaweiSubpassShadingOverloads
+{
+    /// <summary>To be documented.</summary>
+    public static unsafe Result GetDeviceSubpassShadingMaxWorkgroupSizeHuawei(this HuaweiSubpassShading thisApi, [Count(Count = 0)] Device device, [Count(Count = 0)] RenderPass renderpass, [Count(Count = 0), Flow(FlowDirection.Out)] Span<Extent2D> pMaxWorkgroupSize)
+    {
+        // SpanOverloader
+        return thisApi.GetDeviceSubpassShadingMaxWorkgroupSizeHuawei(device, renderpass, out pMaxWorkgroupSize.GetPinnableReference());
     }
+
 }
 

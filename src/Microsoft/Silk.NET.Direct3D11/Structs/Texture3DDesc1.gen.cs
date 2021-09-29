@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_TEXTURE3D_DESC1")]
+public unsafe partial struct Texture3DDesc1
 {
-    [NativeName("Name", "D3D11_TEXTURE3D_DESC1")]
-    public unsafe partial struct Texture3DDesc1
-    {
-        public Texture3DDesc1
-        (
+    public Texture3DDesc1
+    (
             uint? width = null,
             uint? height = null,
             uint? depth = null,
@@ -31,108 +31,107 @@ namespace Silk.NET.Direct3D11
             uint? cPUAccessFlags = null,
             uint? miscFlags = null,
             TextureLayout? textureLayout = null
-        ) : this()
+    ) : this()
+    {
+        if (width is not null)
         {
-            if (width is not null)
-            {
-                Width = width.Value;
-            }
-
-            if (height is not null)
-            {
-                Height = height.Value;
-            }
-
-            if (depth is not null)
-            {
-                Depth = depth.Value;
-            }
-
-            if (mipLevels is not null)
-            {
-                MipLevels = mipLevels.Value;
-            }
-
-            if (format is not null)
-            {
-                Format = format.Value;
-            }
-
-            if (usage is not null)
-            {
-                Usage = usage.Value;
-            }
-
-            if (bindFlags is not null)
-            {
-                BindFlags = bindFlags.Value;
-            }
-
-            if (cPUAccessFlags is not null)
-            {
-                CPUAccessFlags = cPUAccessFlags.Value;
-            }
-
-            if (miscFlags is not null)
-            {
-                MiscFlags = miscFlags.Value;
-            }
-
-            if (textureLayout is not null)
-            {
-                TextureLayout = textureLayout.Value;
-            }
+            Width = width.Value;
         }
 
+        if (height is not null)
+        {
+            Height = height.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Width")]
-        public uint Width;
+        if (depth is not null)
+        {
+            Depth = depth.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Height")]
-        public uint Height;
+        if (mipLevels is not null)
+        {
+            MipLevels = mipLevels.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Depth")]
-        public uint Depth;
+        if (format is not null)
+        {
+            Format = format.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "MipLevels")]
-        public uint MipLevels;
+        if (usage is not null)
+        {
+            Usage = usage.Value;
+        }
 
-        [NativeName("Type", "DXGI_FORMAT")]
-        [NativeName("Type.Name", "DXGI_FORMAT")]
-        [NativeName("Name", "Format")]
-        public Silk.NET.DXGI.Format Format;
+        if (bindFlags is not null)
+        {
+            BindFlags = bindFlags.Value;
+        }
 
-        [NativeName("Type", "D3D11_USAGE")]
-        [NativeName("Type.Name", "D3D11_USAGE")]
-        [NativeName("Name", "Usage")]
-        public Usage Usage;
+        if (cPUAccessFlags is not null)
+        {
+            CPUAccessFlags = cPUAccessFlags.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "BindFlags")]
-        public uint BindFlags;
+        if (miscFlags is not null)
+        {
+            MiscFlags = miscFlags.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "CPUAccessFlags")]
-        public uint CPUAccessFlags;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "MiscFlags")]
-        public uint MiscFlags;
-
-        [NativeName("Type", "D3D11_TEXTURE_LAYOUT")]
-        [NativeName("Type.Name", "D3D11_TEXTURE_LAYOUT")]
-        [NativeName("Name", "TextureLayout")]
-        public TextureLayout TextureLayout;
+        if (textureLayout is not null)
+        {
+            TextureLayout = textureLayout.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Width")]
+    public uint Width;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Height")]
+    public uint Height;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Depth")]
+    public uint Depth;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "MipLevels")]
+    public uint MipLevels;
+
+    [NativeName("Type", "DXGI_FORMAT")]
+    [NativeName("Type.Name", "DXGI_FORMAT")]
+    [NativeName("Name", "Format")]
+    public Silk.NET.DXGI.Format Format;
+
+    [NativeName("Type", "D3D11_USAGE")]
+    [NativeName("Type.Name", "D3D11_USAGE")]
+    [NativeName("Name", "Usage")]
+    public Usage Usage;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "BindFlags")]
+    public uint BindFlags;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "CPUAccessFlags")]
+    public uint CPUAccessFlags;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "MiscFlags")]
+    public uint MiscFlags;
+
+    [NativeName("Type", "D3D11_TEXTURE_LAYOUT")]
+    [NativeName("Type.Name", "D3D11_TEXTURE_LAYOUT")]
+    [NativeName("Name", "TextureLayout")]
+    public TextureLayout TextureLayout;
 }

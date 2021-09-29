@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL
+namespace Silk.NET.OpenGL;
+
+[NativeName("Name", "PathStringFormat")]
+public enum PathStringFormat : int
 {
-    [NativeName("Name", "PathStringFormat")]
-    public enum PathStringFormat : int
-    {
-        [NativeName("Name", "GL_PATH_FORMAT_SVG_NV")]
-        PathFormatSvgNV = 0x9070,
-        [NativeName("Name", "GL_PATH_FORMAT_PS_NV")]
-        PathFormatPSNV = 0x9071,
-    }
+    [NativeName("Name", "GL_PATH_FORMAT_SVG_NV")]
+    PathFormatSvgNV = 0x9070,
+    [NativeName("Name", "GL_PATH_FORMAT_PS_NV")]
+    PathFormatPSNV = 0x9071,
 }

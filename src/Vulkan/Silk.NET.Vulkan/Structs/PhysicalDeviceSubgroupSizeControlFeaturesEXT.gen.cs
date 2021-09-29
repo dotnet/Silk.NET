@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDeviceSubgroupSizeControlFeaturesEXT")]
+public unsafe partial struct PhysicalDeviceSubgroupSizeControlFeaturesEXT
 {
-    [NativeName("Name", "VkPhysicalDeviceSubgroupSizeControlFeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceSubgroupSizeControlFeaturesEXT
-    {
-        public PhysicalDeviceSubgroupSizeControlFeaturesEXT
-        (
+    public PhysicalDeviceSubgroupSizeControlFeaturesEXT
+    (
             StructureType? sType = StructureType.PhysicalDeviceSubgroupSizeControlFeaturesExt,
             void* pNext = null,
             Bool32? subgroupSizeControl = null,
             Bool32? computeFullSubgroups = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (subgroupSizeControl is not null)
-            {
-                SubgroupSizeControl = subgroupSizeControl.Value;
-            }
-
-            if (computeFullSubgroups is not null)
-            {
-                ComputeFullSubgroups = computeFullSubgroups.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "subgroupSizeControl")]
-        public Bool32 SubgroupSizeControl;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "computeFullSubgroups")]
-        public Bool32 ComputeFullSubgroups;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (subgroupSizeControl is not null)
+        {
+            SubgroupSizeControl = subgroupSizeControl.Value;
+        }
+
+        if (computeFullSubgroups is not null)
+        {
+            ComputeFullSubgroups = computeFullSubgroups.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "subgroupSizeControl")]
+    public Bool32 SubgroupSizeControl;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "computeFullSubgroups")]
+    public Bool32 ComputeFullSubgroups;
 }

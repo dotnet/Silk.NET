@@ -14,14 +14,14 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[StructLayout(LayoutKind.Explicit)]
+[NativeName("Name", "__AnonymousRecord_d3d12_L3259_C5")]
+public unsafe partial struct RenderTargetViewDescUnion
 {
-    [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d12_L3259_C5")]
-    public unsafe partial struct RenderTargetViewDescUnion
-    {
-        public RenderTargetViewDescUnion
-        (
+    public RenderTargetViewDescUnion
+    (
             BufferRtv? buffer = null,
             Tex1DRtv? texture1D = null,
             Tex1DArrayRtv? texture1DArray = null,
@@ -30,96 +30,95 @@ namespace Silk.NET.Direct3D12
             Tex2DmsRtv? texture2DMS = null,
             Tex2DmsArrayRtv? texture2DMSArray = null,
             Tex3DRtv? texture3D = null
-        ) : this()
+    ) : this()
+    {
+        if (buffer is not null)
         {
-            if (buffer is not null)
-            {
-                Buffer = buffer.Value;
-            }
-
-            if (texture1D is not null)
-            {
-                Texture1D = texture1D.Value;
-            }
-
-            if (texture1DArray is not null)
-            {
-                Texture1DArray = texture1DArray.Value;
-            }
-
-            if (texture2D is not null)
-            {
-                Texture2D = texture2D.Value;
-            }
-
-            if (texture2DArray is not null)
-            {
-                Texture2DArray = texture2DArray.Value;
-            }
-
-            if (texture2DMS is not null)
-            {
-                Texture2DMS = texture2DMS.Value;
-            }
-
-            if (texture2DMSArray is not null)
-            {
-                Texture2DMSArray = texture2DMSArray.Value;
-            }
-
-            if (texture3D is not null)
-            {
-                Texture3D = texture3D.Value;
-            }
+            Buffer = buffer.Value;
         }
 
+        if (texture1D is not null)
+        {
+            Texture1D = texture1D.Value;
+        }
 
-        [FieldOffset(0)]
-        [NativeName("Type", "D3D12_BUFFER_RTV")]
-        [NativeName("Type.Name", "D3D12_BUFFER_RTV")]
-        [NativeName("Name", "Buffer")]
-        public BufferRtv Buffer;
+        if (texture1DArray is not null)
+        {
+            Texture1DArray = texture1DArray.Value;
+        }
 
-        [FieldOffset(0)]
-        [NativeName("Type", "D3D12_TEX1D_RTV")]
-        [NativeName("Type.Name", "D3D12_TEX1D_RTV")]
-        [NativeName("Name", "Texture1D")]
-        public Tex1DRtv Texture1D;
+        if (texture2D is not null)
+        {
+            Texture2D = texture2D.Value;
+        }
 
-        [FieldOffset(0)]
-        [NativeName("Type", "D3D12_TEX1D_ARRAY_RTV")]
-        [NativeName("Type.Name", "D3D12_TEX1D_ARRAY_RTV")]
-        [NativeName("Name", "Texture1DArray")]
-        public Tex1DArrayRtv Texture1DArray;
+        if (texture2DArray is not null)
+        {
+            Texture2DArray = texture2DArray.Value;
+        }
 
-        [FieldOffset(0)]
-        [NativeName("Type", "D3D12_TEX2D_RTV")]
-        [NativeName("Type.Name", "D3D12_TEX2D_RTV")]
-        [NativeName("Name", "Texture2D")]
-        public Tex2DRtv Texture2D;
+        if (texture2DMS is not null)
+        {
+            Texture2DMS = texture2DMS.Value;
+        }
 
-        [FieldOffset(0)]
-        [NativeName("Type", "D3D12_TEX2D_ARRAY_RTV")]
-        [NativeName("Type.Name", "D3D12_TEX2D_ARRAY_RTV")]
-        [NativeName("Name", "Texture2DArray")]
-        public Tex2DArrayRtv Texture2DArray;
+        if (texture2DMSArray is not null)
+        {
+            Texture2DMSArray = texture2DMSArray.Value;
+        }
 
-        [FieldOffset(0)]
-        [NativeName("Type", "D3D12_TEX2DMS_RTV")]
-        [NativeName("Type.Name", "D3D12_TEX2DMS_RTV")]
-        [NativeName("Name", "Texture2DMS")]
-        public Tex2DmsRtv Texture2DMS;
-
-        [FieldOffset(0)]
-        [NativeName("Type", "D3D12_TEX2DMS_ARRAY_RTV")]
-        [NativeName("Type.Name", "D3D12_TEX2DMS_ARRAY_RTV")]
-        [NativeName("Name", "Texture2DMSArray")]
-        public Tex2DmsArrayRtv Texture2DMSArray;
-
-        [FieldOffset(0)]
-        [NativeName("Type", "D3D12_TEX3D_RTV")]
-        [NativeName("Type.Name", "D3D12_TEX3D_RTV")]
-        [NativeName("Name", "Texture3D")]
-        public Tex3DRtv Texture3D;
+        if (texture3D is not null)
+        {
+            Texture3D = texture3D.Value;
+        }
     }
+
+
+        [FieldOffset(0)]
+    [NativeName("Type", "D3D12_BUFFER_RTV")]
+    [NativeName("Type.Name", "D3D12_BUFFER_RTV")]
+    [NativeName("Name", "Buffer")]
+    public BufferRtv Buffer;
+
+        [FieldOffset(0)]
+    [NativeName("Type", "D3D12_TEX1D_RTV")]
+    [NativeName("Type.Name", "D3D12_TEX1D_RTV")]
+    [NativeName("Name", "Texture1D")]
+    public Tex1DRtv Texture1D;
+
+        [FieldOffset(0)]
+    [NativeName("Type", "D3D12_TEX1D_ARRAY_RTV")]
+    [NativeName("Type.Name", "D3D12_TEX1D_ARRAY_RTV")]
+    [NativeName("Name", "Texture1DArray")]
+    public Tex1DArrayRtv Texture1DArray;
+
+        [FieldOffset(0)]
+    [NativeName("Type", "D3D12_TEX2D_RTV")]
+    [NativeName("Type.Name", "D3D12_TEX2D_RTV")]
+    [NativeName("Name", "Texture2D")]
+    public Tex2DRtv Texture2D;
+
+        [FieldOffset(0)]
+    [NativeName("Type", "D3D12_TEX2D_ARRAY_RTV")]
+    [NativeName("Type.Name", "D3D12_TEX2D_ARRAY_RTV")]
+    [NativeName("Name", "Texture2DArray")]
+    public Tex2DArrayRtv Texture2DArray;
+
+        [FieldOffset(0)]
+    [NativeName("Type", "D3D12_TEX2DMS_RTV")]
+    [NativeName("Type.Name", "D3D12_TEX2DMS_RTV")]
+    [NativeName("Name", "Texture2DMS")]
+    public Tex2DmsRtv Texture2DMS;
+
+        [FieldOffset(0)]
+    [NativeName("Type", "D3D12_TEX2DMS_ARRAY_RTV")]
+    [NativeName("Type.Name", "D3D12_TEX2DMS_ARRAY_RTV")]
+    [NativeName("Name", "Texture2DMSArray")]
+    public Tex2DmsArrayRtv Texture2DMSArray;
+
+        [FieldOffset(0)]
+    [NativeName("Type", "D3D12_TEX3D_RTV")]
+    [NativeName("Type.Name", "D3D12_TEX3D_RTV")]
+    [NativeName("Name", "Texture3D")]
+    public Tex3DRtv Texture3D;
 }

@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy
+namespace Silk.NET.OpenGL.Legacy;
+
+[NativeName("Name", "ShadingModel")]
+public enum ShadingModel : int
 {
-    [NativeName("Name", "ShadingModel")]
-    public enum ShadingModel : int
-    {
-        [NativeName("Name", "GL_FLAT")]
-        Flat = 0x1D00,
-        [NativeName("Name", "GL_SMOOTH")]
-        Smooth = 0x1D01,
-    }
+    [NativeName("Name", "GL_FLAT")]
+    Flat = 0x1D00,
+    [NativeName("Name", "GL_SMOOTH")]
+    Smooth = 0x1D01,
 }

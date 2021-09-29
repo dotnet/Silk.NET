@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_NODE_MASK")]
+public unsafe partial struct D3D12NodeMask
 {
-    [NativeName("Name", "D3D12_NODE_MASK")]
-    public unsafe partial struct D3D12NodeMask
-    {
-        public D3D12NodeMask
-        (
+    public D3D12NodeMask
+    (
             uint? nodeMask = null
-        ) : this()
+    ) : this()
+    {
+        if (nodeMask is not null)
         {
-            if (nodeMask is not null)
-            {
-                NodeMask = nodeMask.Value;
-            }
+            NodeMask = nodeMask.Value;
         }
-
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "NodeMask")]
-        public uint NodeMask;
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "NodeMask")]
+    public uint NodeMask;
 }

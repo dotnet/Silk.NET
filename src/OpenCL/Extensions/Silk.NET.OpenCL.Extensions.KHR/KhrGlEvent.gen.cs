@@ -14,22 +14,21 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL.Extensions.KHR
+namespace Silk.NET.OpenCL.Extensions.KHR;
+
+[Extension("KHR_gl_event")]
+public unsafe partial class KhrGlEvent : NativeExtension<CL>
 {
-    [Extension("KHR_gl_event")]
-    public unsafe partial class KhrGlEvent : NativeExtension<CL>
+    public const string ExtensionName = "KHR_gl_event";
+    [NativeApi(EntryPoint = "clCreateEventFromGLsyncKHR")]
+    public unsafe partial nint CreateEventFromGLsync([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.Out)] int* errcode_ret);
+
+    [NativeApi(EntryPoint = "clCreateEventFromGLsyncKHR")]
+    public partial nint CreateEventFromGLsync([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.Out)] out int errcode_ret);
+
+    public KhrGlEvent(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "KHR_gl_event";
-        [NativeApi(EntryPoint = "clCreateEventFromGLsyncKHR")]
-        public unsafe partial nint CreateEventFromGLsync([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.Out)] int* errcode_ret);
-
-        [NativeApi(EntryPoint = "clCreateEventFromGLsyncKHR")]
-        public partial nint CreateEventFromGLsync([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.Out)] out int errcode_ret);
-
-        public KhrGlEvent(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_RESOURCE_COORDINATE")]
+public unsafe partial struct ResourceCoordinate
 {
-    [NativeName("Name", "D3D12_RESOURCE_COORDINATE")]
-    public unsafe partial struct ResourceCoordinate
-    {
-        public ResourceCoordinate
-        (
+    public ResourceCoordinate
+    (
             ulong? x = null,
             uint? y = null,
             uint? z = null,
             uint? subresourceIndex = null
-        ) : this()
+    ) : this()
+    {
+        if (x is not null)
         {
-            if (x is not null)
-            {
-                X = x.Value;
-            }
-
-            if (y is not null)
-            {
-                Y = y.Value;
-            }
-
-            if (z is not null)
-            {
-                Z = z.Value;
-            }
-
-            if (subresourceIndex is not null)
-            {
-                SubresourceIndex = subresourceIndex.Value;
-            }
+            X = x.Value;
         }
 
+        if (y is not null)
+        {
+            Y = y.Value;
+        }
 
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "X")]
-        public ulong X;
+        if (z is not null)
+        {
+            Z = z.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Y")]
-        public uint Y;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Z")]
-        public uint Z;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "SubresourceIndex")]
-        public uint SubresourceIndex;
+        if (subresourceIndex is not null)
+        {
+            SubresourceIndex = subresourceIndex.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "X")]
+    public ulong X;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Y")]
+    public uint Y;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Z")]
+    public uint Z;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "SubresourceIndex")]
+    public uint SubresourceIndex;
 }

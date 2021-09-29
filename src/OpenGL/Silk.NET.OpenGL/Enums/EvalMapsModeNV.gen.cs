@@ -7,12 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL
+namespace Silk.NET.OpenGL;
+
+[NativeName("Name", "EvalMapsModeNV")]
+public enum EvalMapsModeNV : int
 {
-    [NativeName("Name", "EvalMapsModeNV")]
-    public enum EvalMapsModeNV : int
-    {
-        [NativeName("Name", "GL_FILL_NV")]
-        FillNV = 0x1B02,
-    }
+    [NativeName("Name", "GL_FILL_NV")]
+    FillNV = 0x1B02,
 }

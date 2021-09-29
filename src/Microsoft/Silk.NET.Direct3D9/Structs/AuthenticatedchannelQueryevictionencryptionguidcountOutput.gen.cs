@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9
+namespace Silk.NET.Direct3D9;
+
+[NativeName("Name", "_D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUIDCOUNT_OUTPUT")]
+public unsafe partial struct AuthenticatedchannelQueryevictionencryptionguidcountOutput
 {
-    [NativeName("Name", "_D3DAUTHENTICATEDCHANNEL_QUERYEVICTIONENCRYPTIONGUIDCOUNT_OUTPUT")]
-    public unsafe partial struct AuthenticatedchannelQueryevictionencryptionguidcountOutput
-    {
-        public AuthenticatedchannelQueryevictionencryptionguidcountOutput
-        (
+    public AuthenticatedchannelQueryevictionencryptionguidcountOutput
+    (
             AuthenticatedchannelQueryOutput? output = null,
             uint? numEncryptionGuids = null
-        ) : this()
+    ) : this()
+    {
+        if (output is not null)
         {
-            if (output is not null)
-            {
-                Output = output.Value;
-            }
-
-            if (numEncryptionGuids is not null)
-            {
-                NumEncryptionGuids = numEncryptionGuids.Value;
-            }
+            Output = output.Value;
         }
 
-
-        [NativeName("Type", "D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT")]
-        [NativeName("Type.Name", "D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT")]
-        [NativeName("Name", "Output")]
-        public AuthenticatedchannelQueryOutput Output;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "NumEncryptionGuids")]
-        public uint NumEncryptionGuids;
+        if (numEncryptionGuids is not null)
+        {
+            NumEncryptionGuids = numEncryptionGuids.Value;
+        }
     }
+
+
+    [NativeName("Type", "D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT")]
+    [NativeName("Type.Name", "D3DAUTHENTICATEDCHANNEL_QUERY_OUTPUT")]
+    [NativeName("Name", "Output")]
+    public AuthenticatedchannelQueryOutput Output;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "NumEncryptionGuids")]
+    public uint NumEncryptionGuids;
 }

@@ -14,24 +14,23 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.NV
+namespace Silk.NET.Vulkan.Extensions.NV;
+
+[Extension("VK_NV_external_memory_win32")]
+public unsafe partial class NVExternalMemoryWin32 : NativeExtension<Vk>
 {
-    [Extension("VK_NV_external_memory_win32")]
-    public unsafe partial class NVExternalMemoryWin32 : NativeExtension<Vk>
+    public const string ExtensionName = "VK_NV_external_memory_win32";
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "vkGetMemoryWin32HandleNV")]
+    public unsafe partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ExternalMemoryHandleTypeFlagsNV handleType, [Count(Count = 0), Flow(FlowDirection.Out)] nint* pHandle);
+
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "vkGetMemoryWin32HandleNV")]
+    public partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ExternalMemoryHandleTypeFlagsNV handleType, [Count(Count = 0), Flow(FlowDirection.Out)] out nint pHandle);
+
+    public NVExternalMemoryWin32(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "VK_NV_external_memory_win32";
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetMemoryWin32HandleNV")]
-        public unsafe partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ExternalMemoryHandleTypeFlagsNV handleType, [Count(Count = 0), Flow(FlowDirection.Out)] nint* pHandle);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetMemoryWin32HandleNV")]
-        public partial Result GetMemoryWin32Handle([Count(Count = 0)] Device device, [Count(Count = 0)] DeviceMemory memory, [Count(Count = 0)] ExternalMemoryHandleTypeFlagsNV handleType, [Count(Count = 0), Flow(FlowDirection.Out)] out nint pHandle);
-
-        public NVExternalMemoryWin32(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

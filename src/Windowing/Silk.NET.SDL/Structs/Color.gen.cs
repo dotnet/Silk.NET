@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL
+namespace Silk.NET.SDL;
+
+[NativeName("Name", "SDL_Color")]
+public unsafe partial struct Color
 {
-    [NativeName("Name", "SDL_Color")]
-    public unsafe partial struct Color
-    {
-        public Color
-        (
+    public Color
+    (
             byte? r = null,
             byte? g = null,
             byte? b = null,
             byte? a = null
-        ) : this()
+    ) : this()
+    {
+        if (r is not null)
         {
-            if (r is not null)
-            {
-                R = r.Value;
-            }
-
-            if (g is not null)
-            {
-                G = g.Value;
-            }
-
-            if (b is not null)
-            {
-                B = b.Value;
-            }
-
-            if (a is not null)
-            {
-                A = a.Value;
-            }
+            R = r.Value;
         }
 
+        if (g is not null)
+        {
+            G = g.Value;
+        }
 
-        [NativeName("Type", "Uint8")]
-        [NativeName("Type.Name", "Uint8")]
-        [NativeName("Name", "r")]
-        public byte R;
+        if (b is not null)
+        {
+            B = b.Value;
+        }
 
-        [NativeName("Type", "Uint8")]
-        [NativeName("Type.Name", "Uint8")]
-        [NativeName("Name", "g")]
-        public byte G;
-
-        [NativeName("Type", "Uint8")]
-        [NativeName("Type.Name", "Uint8")]
-        [NativeName("Name", "b")]
-        public byte B;
-
-        [NativeName("Type", "Uint8")]
-        [NativeName("Type.Name", "Uint8")]
-        [NativeName("Name", "a")]
-        public byte A;
+        if (a is not null)
+        {
+            A = a.Value;
+        }
     }
+
+
+    [NativeName("Type", "Uint8")]
+    [NativeName("Type.Name", "Uint8")]
+    [NativeName("Name", "r")]
+    public byte R;
+
+    [NativeName("Type", "Uint8")]
+    [NativeName("Type.Name", "Uint8")]
+    [NativeName("Name", "g")]
+    public byte G;
+
+    [NativeName("Type", "Uint8")]
+    [NativeName("Type.Name", "Uint8")]
+    [NativeName("Name", "b")]
+    public byte B;
+
+    [NativeName("Type", "Uint8")]
+    [NativeName("Type.Name", "Uint8")]
+    [NativeName("Name", "a")]
+    public byte A;
 }

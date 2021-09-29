@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkBuildAccelerationStructureModeKHR")]
+public enum BuildAccelerationStructureModeKHR : int
 {
-    [NativeName("Name", "VkBuildAccelerationStructureModeKHR")]
-    public enum BuildAccelerationStructureModeKHR : int
-    {
-        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_MODE_BUILD_KHR")]
-        BuildAccelerationStructureModeBuildKhr = 0,
-        [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_MODE_UPDATE_KHR")]
-        BuildAccelerationStructureModeUpdateKhr = 1,
-    }
+    [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_MODE_BUILD_KHR")]
+    BuildAccelerationStructureModeBuildKhr = 0,
+    [NativeName("Name", "VK_BUILD_ACCELERATION_STRUCTURE_MODE_UPDATE_KHR")]
+    BuildAccelerationStructureModeUpdateKhr = 1,
 }

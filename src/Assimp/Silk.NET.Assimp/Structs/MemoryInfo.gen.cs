@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp
+namespace Silk.NET.Assimp;
+
+[NativeName("Name", "aiMemoryInfo")]
+public unsafe partial struct MemoryInfo
 {
-    [NativeName("Name", "aiMemoryInfo")]
-    public unsafe partial struct MemoryInfo
-    {
-        public MemoryInfo
-        (
+    public MemoryInfo
+    (
             uint? textures = null,
             uint? materials = null,
             uint? meshes = null,
@@ -29,88 +29,87 @@ namespace Silk.NET.Assimp
             uint? cameras = null,
             uint? lights = null,
             uint? total = null
-        ) : this()
+    ) : this()
+    {
+        if (textures is not null)
         {
-            if (textures is not null)
-            {
-                Textures = textures.Value;
-            }
-
-            if (materials is not null)
-            {
-                Materials = materials.Value;
-            }
-
-            if (meshes is not null)
-            {
-                Meshes = meshes.Value;
-            }
-
-            if (nodes is not null)
-            {
-                Nodes = nodes.Value;
-            }
-
-            if (animations is not null)
-            {
-                Animations = animations.Value;
-            }
-
-            if (cameras is not null)
-            {
-                Cameras = cameras.Value;
-            }
-
-            if (lights is not null)
-            {
-                Lights = lights.Value;
-            }
-
-            if (total is not null)
-            {
-                Total = total.Value;
-            }
+            Textures = textures.Value;
         }
 
+        if (materials is not null)
+        {
+            Materials = materials.Value;
+        }
 
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "textures")]
-        public uint Textures;
+        if (meshes is not null)
+        {
+            Meshes = meshes.Value;
+        }
 
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "materials")]
-        public uint Materials;
+        if (nodes is not null)
+        {
+            Nodes = nodes.Value;
+        }
 
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "meshes")]
-        public uint Meshes;
+        if (animations is not null)
+        {
+            Animations = animations.Value;
+        }
 
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "nodes")]
-        public uint Nodes;
+        if (cameras is not null)
+        {
+            Cameras = cameras.Value;
+        }
 
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "animations")]
-        public uint Animations;
+        if (lights is not null)
+        {
+            Lights = lights.Value;
+        }
 
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "cameras")]
-        public uint Cameras;
-
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "lights")]
-        public uint Lights;
-
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "total")]
-        public uint Total;
+        if (total is not null)
+        {
+            Total = total.Value;
+        }
     }
+
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "textures")]
+    public uint Textures;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "materials")]
+    public uint Materials;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "meshes")]
+    public uint Meshes;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "nodes")]
+    public uint Nodes;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "animations")]
+    public uint Animations;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "cameras")]
+    public uint Cameras;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "lights")]
+    public uint Lights;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "total")]
+    public uint Total;
 }

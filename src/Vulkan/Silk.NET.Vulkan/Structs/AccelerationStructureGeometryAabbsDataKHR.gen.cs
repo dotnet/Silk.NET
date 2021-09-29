@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkAccelerationStructureGeometryAabbsDataKHR")]
+public unsafe partial struct AccelerationStructureGeometryAabbsDataKHR
 {
-    [NativeName("Name", "VkAccelerationStructureGeometryAabbsDataKHR")]
-    public unsafe partial struct AccelerationStructureGeometryAabbsDataKHR
-    {
-        public AccelerationStructureGeometryAabbsDataKHR
-        (
+    public AccelerationStructureGeometryAabbsDataKHR
+    (
             StructureType? sType = StructureType.AccelerationStructureGeometryAabbsDataKhr,
             void* pNext = null,
             DeviceOrHostAddressConstKHR? data = null,
             ulong? stride = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (data is not null)
-            {
-                Data = data.Value;
-            }
-
-            if (stride is not null)
-            {
-                Stride = stride.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkDeviceOrHostAddressConstKHR")]
-        [NativeName("Type.Name", "VkDeviceOrHostAddressConstKHR")]
-        [NativeName("Name", "data")]
-        public DeviceOrHostAddressConstKHR Data;
-/// <summary></summary>
-        [NativeName("Type", "VkDeviceSize")]
-        [NativeName("Type.Name", "VkDeviceSize")]
-        [NativeName("Name", "stride")]
-        public ulong Stride;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (data is not null)
+        {
+            Data = data.Value;
+        }
+
+        if (stride is not null)
+        {
+            Stride = stride.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkDeviceOrHostAddressConstKHR")]
+    [NativeName("Type.Name", "VkDeviceOrHostAddressConstKHR")]
+    [NativeName("Name", "data")]
+    public DeviceOrHostAddressConstKHR Data;
+/// <summary></summary>
+    [NativeName("Type", "VkDeviceSize")]
+    [NativeName("Type.Name", "VkDeviceSize")]
+    [NativeName("Name", "stride")]
+    public ulong Stride;
 }

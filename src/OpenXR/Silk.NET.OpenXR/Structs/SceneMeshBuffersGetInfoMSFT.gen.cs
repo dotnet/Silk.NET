@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrSceneMeshBuffersGetInfoMSFT")]
+public unsafe partial struct SceneMeshBuffersGetInfoMSFT
 {
-    [NativeName("Name", "XrSceneMeshBuffersGetInfoMSFT")]
-    public unsafe partial struct SceneMeshBuffersGetInfoMSFT
-    {
-        public SceneMeshBuffersGetInfoMSFT
-        (
+    public SceneMeshBuffersGetInfoMSFT
+    (
             StructureType? type = StructureType.TypeSceneMeshBuffersGetInfoMsft,
             void* next = null,
             ulong? meshBufferId = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (meshBufferId is not null)
-            {
-                MeshBufferId = meshBufferId.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "uint64_t")]
-        [NativeName("Type.Name", "uint64_t")]
-        [NativeName("Name", "meshBufferId")]
-        public ulong MeshBufferId;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (meshBufferId is not null)
+        {
+            MeshBufferId = meshBufferId.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "uint64_t")]
+    [NativeName("Type.Name", "uint64_t")]
+    [NativeName("Name", "meshBufferId")]
+    public ulong MeshBufferId;
 }

@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkDrmFormatModifierPropertiesEXT")]
+public unsafe partial struct DrmFormatModifierPropertiesEXT
 {
-    [NativeName("Name", "VkDrmFormatModifierPropertiesEXT")]
-    public unsafe partial struct DrmFormatModifierPropertiesEXT
-    {
-        public DrmFormatModifierPropertiesEXT
-        (
+    public DrmFormatModifierPropertiesEXT
+    (
             ulong? drmFormatModifier = null,
             uint? drmFormatModifierPlaneCount = null,
             FormatFeatureFlags? drmFormatModifierTilingFeatures = null
-        ) : this()
+    ) : this()
+    {
+        if (drmFormatModifier is not null)
         {
-            if (drmFormatModifier is not null)
-            {
-                DrmFormatModifier = drmFormatModifier.Value;
-            }
-
-            if (drmFormatModifierPlaneCount is not null)
-            {
-                DrmFormatModifierPlaneCount = drmFormatModifierPlaneCount.Value;
-            }
-
-            if (drmFormatModifierTilingFeatures is not null)
-            {
-                DrmFormatModifierTilingFeatures = drmFormatModifierTilingFeatures.Value;
-            }
+            DrmFormatModifier = drmFormatModifier.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "uint64_t")]
-        [NativeName("Type.Name", "uint64_t")]
-        [NativeName("Name", "drmFormatModifier")]
-        public ulong DrmFormatModifier;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "drmFormatModifierPlaneCount")]
-        public uint DrmFormatModifierPlaneCount;
-/// <summary></summary>
-        [NativeName("Type", "VkFormatFeatureFlags")]
-        [NativeName("Type.Name", "VkFormatFeatureFlags")]
-        [NativeName("Name", "drmFormatModifierTilingFeatures")]
-        public FormatFeatureFlags DrmFormatModifierTilingFeatures;
+        if (drmFormatModifierPlaneCount is not null)
+        {
+            DrmFormatModifierPlaneCount = drmFormatModifierPlaneCount.Value;
+        }
+
+        if (drmFormatModifierTilingFeatures is not null)
+        {
+            DrmFormatModifierTilingFeatures = drmFormatModifierTilingFeatures.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "uint64_t")]
+    [NativeName("Type.Name", "uint64_t")]
+    [NativeName("Name", "drmFormatModifier")]
+    public ulong DrmFormatModifier;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "drmFormatModifierPlaneCount")]
+    public uint DrmFormatModifierPlaneCount;
+/// <summary></summary>
+    [NativeName("Type", "VkFormatFeatureFlags")]
+    [NativeName("Type.Name", "VkFormatFeatureFlags")]
+    [NativeName("Name", "drmFormatModifierTilingFeatures")]
+    public FormatFeatureFlags DrmFormatModifierTilingFeatures;
 }

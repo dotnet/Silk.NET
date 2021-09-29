@@ -14,40 +14,39 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[StructLayout(LayoutKind.Explicit)]
+[NativeName("Name", "VkClearValue")]
+public unsafe partial struct ClearValue
 {
-    [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "VkClearValue")]
-    public unsafe partial struct ClearValue
-    {
-        public ClearValue
-        (
+    public ClearValue
+    (
             ClearColorValue? color = null,
             ClearDepthStencilValue? depthStencil = null
-        ) : this()
+    ) : this()
+    {
+        if (color is not null)
         {
-            if (color is not null)
-            {
-                Color = color.Value;
-            }
-
-            if (depthStencil is not null)
-            {
-                DepthStencil = depthStencil.Value;
-            }
+            Color = color.Value;
         }
 
-/// <summary></summary>
-        [FieldOffset(0)]
-        [NativeName("Type", "VkClearColorValue")]
-        [NativeName("Type.Name", "VkClearColorValue")]
-        [NativeName("Name", "color")]
-        public ClearColorValue Color;
-/// <summary></summary>
-        [FieldOffset(0)]
-        [NativeName("Type", "VkClearDepthStencilValue")]
-        [NativeName("Type.Name", "VkClearDepthStencilValue")]
-        [NativeName("Name", "depthStencil")]
-        public ClearDepthStencilValue DepthStencil;
+        if (depthStencil is not null)
+        {
+            DepthStencil = depthStencil.Value;
+        }
     }
+
+/// <summary></summary>
+        [FieldOffset(0)]
+    [NativeName("Type", "VkClearColorValue")]
+    [NativeName("Type.Name", "VkClearColorValue")]
+    [NativeName("Name", "color")]
+    public ClearColorValue Color;
+/// <summary></summary>
+        [FieldOffset(0)]
+    [NativeName("Type", "VkClearDepthStencilValue")]
+    [NativeName("Type.Name", "VkClearDepthStencilValue")]
+    [NativeName("Name", "depthStencil")]
+    public ClearDepthStencilValue DepthStencil;
 }

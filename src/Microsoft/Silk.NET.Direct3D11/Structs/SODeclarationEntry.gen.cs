@@ -14,81 +14,80 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_SO_DECLARATION_ENTRY")]
+public unsafe partial struct SODeclarationEntry
 {
-    [NativeName("Name", "D3D11_SO_DECLARATION_ENTRY")]
-    public unsafe partial struct SODeclarationEntry
-    {
-        public SODeclarationEntry
-        (
+    public SODeclarationEntry
+    (
             uint? stream = null,
             byte* semanticName = null,
             uint? semanticIndex = null,
             byte? startComponent = null,
             byte? componentCount = null,
             byte? outputSlot = null
-        ) : this()
+    ) : this()
+    {
+        if (stream is not null)
         {
-            if (stream is not null)
-            {
-                Stream = stream.Value;
-            }
-
-            if (semanticName is not null)
-            {
-                SemanticName = semanticName;
-            }
-
-            if (semanticIndex is not null)
-            {
-                SemanticIndex = semanticIndex.Value;
-            }
-
-            if (startComponent is not null)
-            {
-                StartComponent = startComponent.Value;
-            }
-
-            if (componentCount is not null)
-            {
-                ComponentCount = componentCount.Value;
-            }
-
-            if (outputSlot is not null)
-            {
-                OutputSlot = outputSlot.Value;
-            }
+            Stream = stream.Value;
         }
 
+        if (semanticName is not null)
+        {
+            SemanticName = semanticName;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Stream")]
-        public uint Stream;
+        if (semanticIndex is not null)
+        {
+            SemanticIndex = semanticIndex.Value;
+        }
 
-        [NativeName("Type", "LPCSTR")]
-        [NativeName("Type.Name", "LPCSTR")]
-        [NativeName("Name", "SemanticName")]
-        public byte* SemanticName;
+        if (startComponent is not null)
+        {
+            StartComponent = startComponent.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "SemanticIndex")]
-        public uint SemanticIndex;
+        if (componentCount is not null)
+        {
+            ComponentCount = componentCount.Value;
+        }
 
-        [NativeName("Type", "BYTE")]
-        [NativeName("Type.Name", "BYTE")]
-        [NativeName("Name", "StartComponent")]
-        public byte StartComponent;
-
-        [NativeName("Type", "BYTE")]
-        [NativeName("Type.Name", "BYTE")]
-        [NativeName("Name", "ComponentCount")]
-        public byte ComponentCount;
-
-        [NativeName("Type", "BYTE")]
-        [NativeName("Type.Name", "BYTE")]
-        [NativeName("Name", "OutputSlot")]
-        public byte OutputSlot;
+        if (outputSlot is not null)
+        {
+            OutputSlot = outputSlot.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Stream")]
+    public uint Stream;
+
+    [NativeName("Type", "LPCSTR")]
+    [NativeName("Type.Name", "LPCSTR")]
+    [NativeName("Name", "SemanticName")]
+    public byte* SemanticName;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "SemanticIndex")]
+    public uint SemanticIndex;
+
+    [NativeName("Type", "BYTE")]
+    [NativeName("Type.Name", "BYTE")]
+    [NativeName("Name", "StartComponent")]
+    public byte StartComponent;
+
+    [NativeName("Type", "BYTE")]
+    [NativeName("Type.Name", "BYTE")]
+    [NativeName("Name", "ComponentCount")]
+    public byte ComponentCount;
+
+    [NativeName("Type", "BYTE")]
+    [NativeName("Type.Name", "BYTE")]
+    [NativeName("Name", "OutputSlot")]
+    public byte OutputSlot;
 }

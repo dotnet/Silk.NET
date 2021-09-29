@@ -14,81 +14,80 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPipelineRasterizationLineStateCreateInfoEXT")]
+public unsafe partial struct PipelineRasterizationLineStateCreateInfoEXT
 {
-    [NativeName("Name", "VkPipelineRasterizationLineStateCreateInfoEXT")]
-    public unsafe partial struct PipelineRasterizationLineStateCreateInfoEXT
-    {
-        public PipelineRasterizationLineStateCreateInfoEXT
-        (
+    public PipelineRasterizationLineStateCreateInfoEXT
+    (
             StructureType? sType = StructureType.PipelineRasterizationLineStateCreateInfoExt,
             void* pNext = null,
             LineRasterizationModeEXT? lineRasterizationMode = null,
             Bool32? stippledLineEnable = null,
             uint? lineStippleFactor = null,
             ushort? lineStipplePattern = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (lineRasterizationMode is not null)
-            {
-                LineRasterizationMode = lineRasterizationMode.Value;
-            }
-
-            if (stippledLineEnable is not null)
-            {
-                StippledLineEnable = stippledLineEnable.Value;
-            }
-
-            if (lineStippleFactor is not null)
-            {
-                LineStippleFactor = lineStippleFactor.Value;
-            }
-
-            if (lineStipplePattern is not null)
-            {
-                LineStipplePattern = lineStipplePattern.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkLineRasterizationModeEXT")]
-        [NativeName("Type.Name", "VkLineRasterizationModeEXT")]
-        [NativeName("Name", "lineRasterizationMode")]
-        public LineRasterizationModeEXT LineRasterizationMode;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "stippledLineEnable")]
-        public Bool32 StippledLineEnable;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "lineStippleFactor")]
-        public uint LineStippleFactor;
-/// <summary></summary>
-        [NativeName("Type", "uint16_t")]
-        [NativeName("Type.Name", "uint16_t")]
-        [NativeName("Name", "lineStipplePattern")]
-        public ushort LineStipplePattern;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (lineRasterizationMode is not null)
+        {
+            LineRasterizationMode = lineRasterizationMode.Value;
+        }
+
+        if (stippledLineEnable is not null)
+        {
+            StippledLineEnable = stippledLineEnable.Value;
+        }
+
+        if (lineStippleFactor is not null)
+        {
+            LineStippleFactor = lineStippleFactor.Value;
+        }
+
+        if (lineStipplePattern is not null)
+        {
+            LineStipplePattern = lineStipplePattern.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkLineRasterizationModeEXT")]
+    [NativeName("Type.Name", "VkLineRasterizationModeEXT")]
+    [NativeName("Name", "lineRasterizationMode")]
+    public LineRasterizationModeEXT LineRasterizationMode;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "stippledLineEnable")]
+    public Bool32 StippledLineEnable;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "lineStippleFactor")]
+    public uint LineStippleFactor;
+/// <summary></summary>
+    [NativeName("Type", "uint16_t")]
+    [NativeName("Type.Name", "uint16_t")]
+    [NativeName("Name", "lineStipplePattern")]
+    public ushort LineStipplePattern;
 }

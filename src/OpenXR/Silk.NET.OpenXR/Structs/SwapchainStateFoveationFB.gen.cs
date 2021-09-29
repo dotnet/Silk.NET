@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrSwapchainStateFoveationFB")]
+public unsafe partial struct SwapchainStateFoveationFB
 {
-    [NativeName("Name", "XrSwapchainStateFoveationFB")]
-    public unsafe partial struct SwapchainStateFoveationFB
-    {
-        public SwapchainStateFoveationFB
-        (
+    public SwapchainStateFoveationFB
+    (
             StructureType? type = StructureType.TypeSwapchainStateFoveationFB,
             void* next = null,
             SwapchainStateFoveationFlagsFB? flags = null,
             FoveationProfileFB? profile = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
-
-            if (profile is not null)
-            {
-                Profile = profile.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "XrSwapchainStateFoveationFlagsFB")]
-        [NativeName("Type.Name", "XrSwapchainStateFoveationFlagsFB")]
-        [NativeName("Name", "flags")]
-        public SwapchainStateFoveationFlagsFB Flags;
-/// <summary></summary>
-        [NativeName("Type", "XrFoveationProfileFB")]
-        [NativeName("Type.Name", "XrFoveationProfileFB")]
-        [NativeName("Name", "profile")]
-        public FoveationProfileFB Profile;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (flags is not null)
+        {
+            Flags = flags.Value;
+        }
+
+        if (profile is not null)
+        {
+            Profile = profile.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "XrSwapchainStateFoveationFlagsFB")]
+    [NativeName("Type.Name", "XrSwapchainStateFoveationFlagsFB")]
+    [NativeName("Name", "flags")]
+    public SwapchainStateFoveationFlagsFB Flags;
+/// <summary></summary>
+    [NativeName("Type", "XrFoveationProfileFB")]
+    [NativeName("Type.Name", "XrFoveationProfileFB")]
+    [NativeName("Name", "profile")]
+    public FoveationProfileFB Profile;
 }

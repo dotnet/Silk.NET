@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrCompositionLayerBaseHeader")]
+public unsafe partial struct CompositionLayerBaseHeader
 {
-    [NativeName("Name", "XrCompositionLayerBaseHeader")]
-    public unsafe partial struct CompositionLayerBaseHeader
-    {
-        public CompositionLayerBaseHeader
-        (
+    public CompositionLayerBaseHeader
+    (
             StructureType? type = null,
             void* next = null,
             CompositionLayerFlags? layerFlags = null,
             Space? space = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (layerFlags is not null)
-            {
-                LayerFlags = layerFlags.Value;
-            }
-
-            if (space is not null)
-            {
-                Space = space.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "XrCompositionLayerFlags")]
-        [NativeName("Type.Name", "XrCompositionLayerFlags")]
-        [NativeName("Name", "layerFlags")]
-        public CompositionLayerFlags LayerFlags;
-/// <summary></summary>
-        [NativeName("Type", "XrSpace")]
-        [NativeName("Type.Name", "XrSpace")]
-        [NativeName("Name", "space")]
-        public Space Space;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (layerFlags is not null)
+        {
+            LayerFlags = layerFlags.Value;
+        }
+
+        if (space is not null)
+        {
+            Space = space.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "XrCompositionLayerFlags")]
+    [NativeName("Type.Name", "XrCompositionLayerFlags")]
+    [NativeName("Name", "layerFlags")]
+    public CompositionLayerFlags LayerFlags;
+/// <summary></summary>
+    [NativeName("Type", "XrSpace")]
+    [NativeName("Type.Name", "XrSpace")]
+    [NativeName("Name", "space")]
+    public Space Space;
 }

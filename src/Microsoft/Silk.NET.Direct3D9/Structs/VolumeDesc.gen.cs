@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9
+namespace Silk.NET.Direct3D9;
+
+[NativeName("Name", "_D3DVOLUME_DESC")]
+public unsafe partial struct VolumeDesc
 {
-    [NativeName("Name", "_D3DVOLUME_DESC")]
-    public unsafe partial struct VolumeDesc
-    {
-        public VolumeDesc
-        (
+    public VolumeDesc
+    (
             Format? format = null,
             Resourcetype? type = null,
             uint? usage = null,
@@ -28,78 +28,77 @@ namespace Silk.NET.Direct3D9
             uint? width = null,
             uint? height = null,
             uint? depth = null
-        ) : this()
+    ) : this()
+    {
+        if (format is not null)
         {
-            if (format is not null)
-            {
-                Format = format.Value;
-            }
-
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (usage is not null)
-            {
-                Usage = usage.Value;
-            }
-
-            if (pool is not null)
-            {
-                Pool = pool.Value;
-            }
-
-            if (width is not null)
-            {
-                Width = width.Value;
-            }
-
-            if (height is not null)
-            {
-                Height = height.Value;
-            }
-
-            if (depth is not null)
-            {
-                Depth = depth.Value;
-            }
+            Format = format.Value;
         }
 
+        if (type is not null)
+        {
+            Type = type.Value;
+        }
 
-        [NativeName("Type", "D3DFORMAT")]
-        [NativeName("Type.Name", "D3DFORMAT")]
-        [NativeName("Name", "Format")]
-        public Format Format;
+        if (usage is not null)
+        {
+            Usage = usage.Value;
+        }
 
-        [NativeName("Type", "D3DRESOURCETYPE")]
-        [NativeName("Type.Name", "D3DRESOURCETYPE")]
-        [NativeName("Name", "Type")]
-        public Resourcetype Type;
+        if (pool is not null)
+        {
+            Pool = pool.Value;
+        }
 
-        [NativeName("Type", "DWORD")]
-        [NativeName("Type.Name", "DWORD")]
-        [NativeName("Name", "Usage")]
-        public uint Usage;
+        if (width is not null)
+        {
+            Width = width.Value;
+        }
 
-        [NativeName("Type", "D3DPOOL")]
-        [NativeName("Type.Name", "D3DPOOL")]
-        [NativeName("Name", "Pool")]
-        public Pool Pool;
+        if (height is not null)
+        {
+            Height = height.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Width")]
-        public uint Width;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Height")]
-        public uint Height;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Depth")]
-        public uint Depth;
+        if (depth is not null)
+        {
+            Depth = depth.Value;
+        }
     }
+
+
+    [NativeName("Type", "D3DFORMAT")]
+    [NativeName("Type.Name", "D3DFORMAT")]
+    [NativeName("Name", "Format")]
+    public Format Format;
+
+    [NativeName("Type", "D3DRESOURCETYPE")]
+    [NativeName("Type.Name", "D3DRESOURCETYPE")]
+    [NativeName("Name", "Type")]
+    public Resourcetype Type;
+
+    [NativeName("Type", "DWORD")]
+    [NativeName("Type.Name", "DWORD")]
+    [NativeName("Name", "Usage")]
+    public uint Usage;
+
+    [NativeName("Type", "D3DPOOL")]
+    [NativeName("Type.Name", "D3DPOOL")]
+    [NativeName("Name", "Pool")]
+    public Pool Pool;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Width")]
+    public uint Width;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Height")]
+    public uint Height;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Depth")]
+    public uint Depth;
 }

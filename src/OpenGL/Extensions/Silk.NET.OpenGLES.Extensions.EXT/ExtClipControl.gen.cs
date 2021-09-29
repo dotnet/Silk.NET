@@ -14,19 +14,18 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.EXT
-{
-    [Extension("EXT_clip_control")]
-    public unsafe partial class ExtClipControl : NativeExtension<GL>
-    {
-        public const string ExtensionName = "EXT_clip_control";
-        [NativeApi(EntryPoint = "glClipControlEXT")]
-        public partial void ClipControl([Flow(FlowDirection.In)] EXT origin, [Flow(FlowDirection.In)] EXT depth);
+namespace Silk.NET.OpenGLES.Extensions.EXT;
 
-        public ExtClipControl(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+[Extension("EXT_clip_control")]
+public unsafe partial class ExtClipControl : NativeExtension<GL>
+{
+    public const string ExtensionName = "EXT_clip_control";
+    [NativeApi(EntryPoint = "glClipControlEXT")]
+    public partial void ClipControl([Flow(FlowDirection.In)] EXT origin, [Flow(FlowDirection.In)] EXT depth);
+
+    public ExtClipControl(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

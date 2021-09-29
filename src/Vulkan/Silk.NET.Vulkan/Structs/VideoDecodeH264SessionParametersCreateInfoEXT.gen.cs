@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkVideoDecodeH264SessionParametersCreateInfoEXT")]
+public unsafe partial struct VideoDecodeH264SessionParametersCreateInfoEXT
 {
-    [NativeName("Name", "VkVideoDecodeH264SessionParametersCreateInfoEXT")]
-    public unsafe partial struct VideoDecodeH264SessionParametersCreateInfoEXT
-    {
-        public VideoDecodeH264SessionParametersCreateInfoEXT
-        (
+    public VideoDecodeH264SessionParametersCreateInfoEXT
+    (
             StructureType? sType = StructureType.VideoDecodeH264SessionParametersCreateInfoExt,
             void* pNext = null,
             uint? maxSpsStdCount = null,
             uint? maxPpsStdCount = null,
             VideoDecodeH264SessionParametersAddInfoEXT* pParametersAddInfo = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (maxSpsStdCount is not null)
-            {
-                MaxSpsStdCount = maxSpsStdCount.Value;
-            }
-
-            if (maxPpsStdCount is not null)
-            {
-                MaxPpsStdCount = maxPpsStdCount.Value;
-            }
-
-            if (pParametersAddInfo is not null)
-            {
-                PParametersAddInfo = pParametersAddInfo;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxSpsStdCount")]
-        public uint MaxSpsStdCount;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxPpsStdCount")]
-        public uint MaxPpsStdCount;
-/// <summary></summary>
-        [NativeName("Type", "VkVideoDecodeH264SessionParametersAddInfoEXT*")]
-        [NativeName("Type.Name", "VkVideoDecodeH264SessionParametersAddInfoEXT")]
-        [NativeName("Name", "pParametersAddInfo")]
-        public VideoDecodeH264SessionParametersAddInfoEXT* PParametersAddInfo;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (maxSpsStdCount is not null)
+        {
+            MaxSpsStdCount = maxSpsStdCount.Value;
+        }
+
+        if (maxPpsStdCount is not null)
+        {
+            MaxPpsStdCount = maxPpsStdCount.Value;
+        }
+
+        if (pParametersAddInfo is not null)
+        {
+            PParametersAddInfo = pParametersAddInfo;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "maxSpsStdCount")]
+    public uint MaxSpsStdCount;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "maxPpsStdCount")]
+    public uint MaxPpsStdCount;
+/// <summary></summary>
+    [NativeName("Type", "VkVideoDecodeH264SessionParametersAddInfoEXT*")]
+    [NativeName("Type.Name", "VkVideoDecodeH264SessionParametersAddInfoEXT")]
+    [NativeName("Name", "pParametersAddInfo")]
+    public VideoDecodeH264SessionParametersAddInfoEXT* PParametersAddInfo;
 }

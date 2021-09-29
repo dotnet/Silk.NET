@@ -14,18 +14,17 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI
+namespace Silk.NET.DXGI;
+
+[NativeName("Name", "DXGI_JPEG_AC_HUFFMAN_TABLE")]
+public unsafe partial struct JpegACHuffmanTable
 {
-    [NativeName("Name", "DXGI_JPEG_AC_HUFFMAN_TABLE")]
-    public unsafe partial struct JpegACHuffmanTable
-    {
-        [NativeName("Type", "BYTE [16]")]
-        [NativeName("Type.Name", "BYTE [16]")]
-        [NativeName("Name", "CodeCounts")]
-        public fixed byte CodeCounts[16];
-        [NativeName("Type", "BYTE [162]")]
-        [NativeName("Type.Name", "BYTE [162]")]
-        [NativeName("Name", "CodeValues")]
-        public fixed byte CodeValues[162];
-    }
+    [NativeName("Type", "BYTE [16]")]
+    [NativeName("Type.Name", "BYTE [16]")]
+    [NativeName("Name", "CodeCounts")]
+    public fixed byte CodeCounts[16];
+    [NativeName("Type", "BYTE [162]")]
+    [NativeName("Type.Name", "BYTE [162]")]
+    [NativeName("Name", "CodeValues")]
+    public fixed byte CodeValues[162];
 }

@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPipelineVertexInputStateCreateInfo")]
+public unsafe partial struct PipelineVertexInputStateCreateInfo
 {
-    [NativeName("Name", "VkPipelineVertexInputStateCreateInfo")]
-    public unsafe partial struct PipelineVertexInputStateCreateInfo
-    {
-        public PipelineVertexInputStateCreateInfo
-        (
+    public PipelineVertexInputStateCreateInfo
+    (
             StructureType? sType = StructureType.PipelineVertexInputStateCreateInfo,
             void* pNext = null,
             uint? flags = null,
@@ -28,78 +28,77 @@ namespace Silk.NET.Vulkan
             VertexInputBindingDescription* pVertexBindingDescriptions = null,
             uint? vertexAttributeDescriptionCount = null,
             VertexInputAttributeDescription* pVertexAttributeDescriptions = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
-
-            if (vertexBindingDescriptionCount is not null)
-            {
-                VertexBindingDescriptionCount = vertexBindingDescriptionCount.Value;
-            }
-
-            if (pVertexBindingDescriptions is not null)
-            {
-                PVertexBindingDescriptions = pVertexBindingDescriptions;
-            }
-
-            if (vertexAttributeDescriptionCount is not null)
-            {
-                VertexAttributeDescriptionCount = vertexAttributeDescriptionCount.Value;
-            }
-
-            if (pVertexAttributeDescriptions is not null)
-            {
-                PVertexAttributeDescriptions = pVertexAttributeDescriptions;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkPipelineVertexInputStateCreateFlags")]
-        [NativeName("Type.Name", "VkPipelineVertexInputStateCreateFlags")]
-        [NativeName("Name", "flags")]
-        public uint Flags;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "vertexBindingDescriptionCount")]
-        public uint VertexBindingDescriptionCount;
-/// <summary></summary>
-        [NativeName("Type", "VkVertexInputBindingDescription*")]
-        [NativeName("Type.Name", "VkVertexInputBindingDescription")]
-        [NativeName("Name", "pVertexBindingDescriptions")]
-        public VertexInputBindingDescription* PVertexBindingDescriptions;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "vertexAttributeDescriptionCount")]
-        public uint VertexAttributeDescriptionCount;
-/// <summary></summary>
-        [NativeName("Type", "VkVertexInputAttributeDescription*")]
-        [NativeName("Type.Name", "VkVertexInputAttributeDescription")]
-        [NativeName("Name", "pVertexAttributeDescriptions")]
-        public VertexInputAttributeDescription* PVertexAttributeDescriptions;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (flags is not null)
+        {
+            Flags = flags.Value;
+        }
+
+        if (vertexBindingDescriptionCount is not null)
+        {
+            VertexBindingDescriptionCount = vertexBindingDescriptionCount.Value;
+        }
+
+        if (pVertexBindingDescriptions is not null)
+        {
+            PVertexBindingDescriptions = pVertexBindingDescriptions;
+        }
+
+        if (vertexAttributeDescriptionCount is not null)
+        {
+            VertexAttributeDescriptionCount = vertexAttributeDescriptionCount.Value;
+        }
+
+        if (pVertexAttributeDescriptions is not null)
+        {
+            PVertexAttributeDescriptions = pVertexAttributeDescriptions;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkPipelineVertexInputStateCreateFlags")]
+    [NativeName("Type.Name", "VkPipelineVertexInputStateCreateFlags")]
+    [NativeName("Name", "flags")]
+    public uint Flags;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "vertexBindingDescriptionCount")]
+    public uint VertexBindingDescriptionCount;
+/// <summary></summary>
+    [NativeName("Type", "VkVertexInputBindingDescription*")]
+    [NativeName("Type.Name", "VkVertexInputBindingDescription")]
+    [NativeName("Name", "pVertexBindingDescriptions")]
+    public VertexInputBindingDescription* PVertexBindingDescriptions;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "vertexAttributeDescriptionCount")]
+    public uint VertexAttributeDescriptionCount;
+/// <summary></summary>
+    [NativeName("Type", "VkVertexInputAttributeDescription*")]
+    [NativeName("Type.Name", "VkVertexInputAttributeDescription")]
+    [NativeName("Name", "pVertexAttributeDescriptions")]
+    public VertexInputAttributeDescription* PVertexAttributeDescriptions;
 }

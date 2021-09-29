@@ -7,12 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL
+namespace Silk.NET.OpenGL;
+
+[NativeName("Name", "LightEnvParameterSGIX")]
+public enum LightEnvParameterSGIX : int
 {
-    [NativeName("Name", "LightEnvParameterSGIX")]
-    public enum LightEnvParameterSGIX : int
-    {
-        [NativeName("Name", "GL_LIGHT_ENV_MODE_SGIX")]
-        LightEnvModeSgix = 0x8407,
-    }
+    [NativeName("Name", "GL_LIGHT_ENV_MODE_SGIX")]
+    LightEnvModeSgix = 0x8407,
 }

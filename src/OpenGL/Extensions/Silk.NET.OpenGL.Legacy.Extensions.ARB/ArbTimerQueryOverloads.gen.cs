@@ -12,34 +12,33 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
+namespace Silk.NET.OpenGL.Legacy.Extensions.ARB;
+
+public static class ArbTimerQueryOverloads
 {
-    public static class ArbTimerQueryOverloads
+    public static unsafe void GetQueryObject(this ArbTimerQuery thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<long> @params)
     {
-        public static unsafe void GetQueryObject(this ArbTimerQuery thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<long> @params)
-        {
-            // SpanOverloader
-            thisApi.GetQueryObject(id, pname, out @params.GetPinnableReference());
-        }
-
-        public static unsafe void GetQueryObject(this ArbTimerQuery thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<long> @params)
-        {
-            // SpanOverloader
-            thisApi.GetQueryObject(id, pname, out @params.GetPinnableReference());
-        }
-
-        public static unsafe void GetQueryObject(this ArbTimerQuery thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<ulong> @params)
-        {
-            // SpanOverloader
-            thisApi.GetQueryObject(id, pname, out @params.GetPinnableReference());
-        }
-
-        public static unsafe void GetQueryObject(this ArbTimerQuery thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<ulong> @params)
-        {
-            // SpanOverloader
-            thisApi.GetQueryObject(id, pname, out @params.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        thisApi.GetQueryObject(id, pname, out @params.GetPinnableReference());
     }
+
+    public static unsafe void GetQueryObject(this ArbTimerQuery thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<long> @params)
+    {
+        // SpanOverloader
+        thisApi.GetQueryObject(id, pname, out @params.GetPinnableReference());
+    }
+
+    public static unsafe void GetQueryObject(this ArbTimerQuery thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<ulong> @params)
+    {
+        // SpanOverloader
+        thisApi.GetQueryObject(id, pname, out @params.GetPinnableReference());
+    }
+
+    public static unsafe void GetQueryObject(this ArbTimerQuery thisApi, [Flow(FlowDirection.In)] uint id, [Flow(FlowDirection.In)] QueryObjectParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<ulong> @params)
+    {
+        // SpanOverloader
+        thisApi.GetQueryObject(id, pname, out @params.GetPinnableReference());
+    }
+
 }
 

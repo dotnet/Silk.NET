@@ -14,28 +14,27 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL.Extensions.INTEL
+namespace Silk.NET.OpenCL.Extensions.INTEL;
+
+[Extension("INTEL_sharing_format_query_gl")]
+public unsafe partial class IntelSharingFormatQueryGl : NativeExtension<CL>
 {
-    [Extension("INTEL_sharing_format_query_gl")]
-    public unsafe partial class IntelSharingFormatQueryGl : NativeExtension<CL>
+    public const string ExtensionName = "INTEL_sharing_format_query_gl";
+    [NativeApi(EntryPoint = "clGetSupportedGLTextureFormatsINTEL")]
+    public unsafe partial int GetSupportedGltextureFormats([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] uint* gl_formats, [Flow(FlowDirection.Out)] uint* num_texture_formats);
+
+    [NativeApi(EntryPoint = "clGetSupportedGLTextureFormatsINTEL")]
+    public unsafe partial int GetSupportedGltextureFormats([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] uint* gl_formats, [Flow(FlowDirection.Out)] out uint num_texture_formats);
+
+    [NativeApi(EntryPoint = "clGetSupportedGLTextureFormatsINTEL")]
+    public unsafe partial int GetSupportedGltextureFormats([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out uint gl_formats, [Flow(FlowDirection.Out)] uint* num_texture_formats);
+
+    [NativeApi(EntryPoint = "clGetSupportedGLTextureFormatsINTEL")]
+    public partial int GetSupportedGltextureFormats([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out uint gl_formats, [Flow(FlowDirection.Out)] out uint num_texture_formats);
+
+    public IntelSharingFormatQueryGl(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "INTEL_sharing_format_query_gl";
-        [NativeApi(EntryPoint = "clGetSupportedGLTextureFormatsINTEL")]
-        public unsafe partial int GetSupportedGltextureFormats([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] uint* gl_formats, [Flow(FlowDirection.Out)] uint* num_texture_formats);
-
-        [NativeApi(EntryPoint = "clGetSupportedGLTextureFormatsINTEL")]
-        public unsafe partial int GetSupportedGltextureFormats([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] uint* gl_formats, [Flow(FlowDirection.Out)] out uint num_texture_formats);
-
-        [NativeApi(EntryPoint = "clGetSupportedGLTextureFormatsINTEL")]
-        public unsafe partial int GetSupportedGltextureFormats([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out uint gl_formats, [Flow(FlowDirection.Out)] uint* num_texture_formats);
-
-        [NativeApi(EntryPoint = "clGetSupportedGLTextureFormatsINTEL")]
-        public partial int GetSupportedGltextureFormats([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] INTEL flags, [Flow(FlowDirection.In)] uint image_type, [Flow(FlowDirection.In)] uint num_entries, [Flow(FlowDirection.Out)] out uint gl_formats, [Flow(FlowDirection.Out)] out uint num_texture_formats);
-
-        public IntelSharingFormatQueryGl(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

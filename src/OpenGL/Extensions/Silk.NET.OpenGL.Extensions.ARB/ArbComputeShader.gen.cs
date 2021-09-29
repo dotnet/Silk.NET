@@ -14,22 +14,21 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.ARB
+namespace Silk.NET.OpenGL.Extensions.ARB;
+
+[Extension("ARB_compute_shader")]
+public unsafe partial class ArbComputeShader : NativeExtension<GL>
 {
-    [Extension("ARB_compute_shader")]
-    public unsafe partial class ArbComputeShader : NativeExtension<GL>
+    public const string ExtensionName = "ARB_compute_shader";
+    [NativeApi(EntryPoint = "glDispatchCompute")]
+    public partial void DispatchCompute([Flow(FlowDirection.In)] uint num_groups_x, [Flow(FlowDirection.In)] uint num_groups_y, [Flow(FlowDirection.In)] uint num_groups_z);
+
+    [NativeApi(EntryPoint = "glDispatchComputeIndirect")]
+    public partial void DispatchComputeIndirect([Flow(FlowDirection.In)] nint indirect);
+
+    public ArbComputeShader(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "ARB_compute_shader";
-        [NativeApi(EntryPoint = "glDispatchCompute")]
-        public partial void DispatchCompute([Flow(FlowDirection.In)] uint num_groups_x, [Flow(FlowDirection.In)] uint num_groups_y, [Flow(FlowDirection.In)] uint num_groups_z);
-
-        [NativeApi(EntryPoint = "glDispatchComputeIndirect")]
-        public partial void DispatchComputeIndirect([Flow(FlowDirection.In)] nint indirect);
-
-        public ArbComputeShader(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

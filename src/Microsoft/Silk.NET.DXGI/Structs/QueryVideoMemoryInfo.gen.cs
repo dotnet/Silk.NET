@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI
+namespace Silk.NET.DXGI;
+
+[NativeName("Name", "DXGI_QUERY_VIDEO_MEMORY_INFO")]
+public unsafe partial struct QueryVideoMemoryInfo
 {
-    [NativeName("Name", "DXGI_QUERY_VIDEO_MEMORY_INFO")]
-    public unsafe partial struct QueryVideoMemoryInfo
-    {
-        public QueryVideoMemoryInfo
-        (
+    public QueryVideoMemoryInfo
+    (
             ulong? budget = null,
             ulong? currentUsage = null,
             ulong? availableForReservation = null,
             ulong? currentReservation = null
-        ) : this()
+    ) : this()
+    {
+        if (budget is not null)
         {
-            if (budget is not null)
-            {
-                Budget = budget.Value;
-            }
-
-            if (currentUsage is not null)
-            {
-                CurrentUsage = currentUsage.Value;
-            }
-
-            if (availableForReservation is not null)
-            {
-                AvailableForReservation = availableForReservation.Value;
-            }
-
-            if (currentReservation is not null)
-            {
-                CurrentReservation = currentReservation.Value;
-            }
+            Budget = budget.Value;
         }
 
+        if (currentUsage is not null)
+        {
+            CurrentUsage = currentUsage.Value;
+        }
 
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "Budget")]
-        public ulong Budget;
+        if (availableForReservation is not null)
+        {
+            AvailableForReservation = availableForReservation.Value;
+        }
 
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "CurrentUsage")]
-        public ulong CurrentUsage;
-
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "AvailableForReservation")]
-        public ulong AvailableForReservation;
-
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "CurrentReservation")]
-        public ulong CurrentReservation;
+        if (currentReservation is not null)
+        {
+            CurrentReservation = currentReservation.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "Budget")]
+    public ulong Budget;
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "CurrentUsage")]
+    public ulong CurrentUsage;
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "AvailableForReservation")]
+    public ulong AvailableForReservation;
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "CurrentReservation")]
+    public ulong CurrentReservation;
 }

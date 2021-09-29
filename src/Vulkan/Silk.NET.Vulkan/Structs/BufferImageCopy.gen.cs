@@ -14,81 +14,80 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkBufferImageCopy")]
+public unsafe partial struct BufferImageCopy
 {
-    [NativeName("Name", "VkBufferImageCopy")]
-    public unsafe partial struct BufferImageCopy
-    {
-        public BufferImageCopy
-        (
+    public BufferImageCopy
+    (
             ulong? bufferOffset = null,
             uint? bufferRowLength = null,
             uint? bufferImageHeight = null,
             ImageSubresourceLayers? imageSubresource = null,
             Offset3D? imageOffset = null,
             Extent3D? imageExtent = null
-        ) : this()
+    ) : this()
+    {
+        if (bufferOffset is not null)
         {
-            if (bufferOffset is not null)
-            {
-                BufferOffset = bufferOffset.Value;
-            }
-
-            if (bufferRowLength is not null)
-            {
-                BufferRowLength = bufferRowLength.Value;
-            }
-
-            if (bufferImageHeight is not null)
-            {
-                BufferImageHeight = bufferImageHeight.Value;
-            }
-
-            if (imageSubresource is not null)
-            {
-                ImageSubresource = imageSubresource.Value;
-            }
-
-            if (imageOffset is not null)
-            {
-                ImageOffset = imageOffset.Value;
-            }
-
-            if (imageExtent is not null)
-            {
-                ImageExtent = imageExtent.Value;
-            }
+            BufferOffset = bufferOffset.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkDeviceSize")]
-        [NativeName("Type.Name", "VkDeviceSize")]
-        [NativeName("Name", "bufferOffset")]
-        public ulong BufferOffset;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "bufferRowLength")]
-        public uint BufferRowLength;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "bufferImageHeight")]
-        public uint BufferImageHeight;
-/// <summary></summary>
-        [NativeName("Type", "VkImageSubresourceLayers")]
-        [NativeName("Type.Name", "VkImageSubresourceLayers")]
-        [NativeName("Name", "imageSubresource")]
-        public ImageSubresourceLayers ImageSubresource;
-/// <summary></summary>
-        [NativeName("Type", "VkOffset3D")]
-        [NativeName("Type.Name", "VkOffset3D")]
-        [NativeName("Name", "imageOffset")]
-        public Offset3D ImageOffset;
-/// <summary></summary>
-        [NativeName("Type", "VkExtent3D")]
-        [NativeName("Type.Name", "VkExtent3D")]
-        [NativeName("Name", "imageExtent")]
-        public Extent3D ImageExtent;
+        if (bufferRowLength is not null)
+        {
+            BufferRowLength = bufferRowLength.Value;
+        }
+
+        if (bufferImageHeight is not null)
+        {
+            BufferImageHeight = bufferImageHeight.Value;
+        }
+
+        if (imageSubresource is not null)
+        {
+            ImageSubresource = imageSubresource.Value;
+        }
+
+        if (imageOffset is not null)
+        {
+            ImageOffset = imageOffset.Value;
+        }
+
+        if (imageExtent is not null)
+        {
+            ImageExtent = imageExtent.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkDeviceSize")]
+    [NativeName("Type.Name", "VkDeviceSize")]
+    [NativeName("Name", "bufferOffset")]
+    public ulong BufferOffset;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "bufferRowLength")]
+    public uint BufferRowLength;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "bufferImageHeight")]
+    public uint BufferImageHeight;
+/// <summary></summary>
+    [NativeName("Type", "VkImageSubresourceLayers")]
+    [NativeName("Type.Name", "VkImageSubresourceLayers")]
+    [NativeName("Name", "imageSubresource")]
+    public ImageSubresourceLayers ImageSubresource;
+/// <summary></summary>
+    [NativeName("Type", "VkOffset3D")]
+    [NativeName("Type.Name", "VkOffset3D")]
+    [NativeName("Name", "imageOffset")]
+    public Offset3D ImageOffset;
+/// <summary></summary>
+    [NativeName("Type", "VkExtent3D")]
+    [NativeName("Type.Name", "VkExtent3D")]
+    [NativeName("Name", "imageExtent")]
+    public Extent3D ImageExtent;
 }

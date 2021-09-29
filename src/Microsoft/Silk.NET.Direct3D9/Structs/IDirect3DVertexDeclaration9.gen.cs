@@ -14,167 +14,166 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9
+namespace Silk.NET.Direct3D9;
+
+[Guid("dd13c59c-36fa-4098-a8fb-c7ed39dc8546")]
+[NativeName("Name", "IDirect3DVertexDeclaration9")]
+public unsafe partial struct IDirect3DVertexDeclaration9
 {
-    [Guid("dd13c59c-36fa-4098-a8fb-c7ed39dc8546")]
-    [NativeName("Name", "IDirect3DVertexDeclaration9")]
-    public unsafe partial struct IDirect3DVertexDeclaration9
-    {
-        public static readonly Guid Guid = new("dd13c59c-36fa-4098-a8fb-c7ed39dc8546");
+    public static readonly Guid Guid = new("dd13c59c-36fa-4098-a8fb-c7ed39dc8546");
 
-        public static implicit operator Silk.NET.Core.Native.IUnknown(IDirect3DVertexDeclaration9 val)
-            => Unsafe.As<IDirect3DVertexDeclaration9, Silk.NET.Core.Native.IUnknown>(ref val);
+    public static implicit operator Silk.NET.Core.Native.IUnknown(IDirect3DVertexDeclaration9 val)
+        => Unsafe.As<IDirect3DVertexDeclaration9, Silk.NET.Core.Native.IUnknown>(ref val);
 
-        public IDirect3DVertexDeclaration9
-        (
+    public IDirect3DVertexDeclaration9
+    (
             void** lpVtbl = null
-        ) : this()
+    ) : this()
+    {
+        if (lpVtbl is not null)
         {
-            if (lpVtbl is not null)
-            {
-                LpVtbl = lpVtbl;
-            }
+            LpVtbl = lpVtbl;
         }
+    }
 
 
-        [NativeName("Type", "")]
-        [NativeName("Type.Name", "")]
-        [NativeName("Name", "lpVtbl")]
-        public void** LpVtbl;
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
+    [NativeName("Type", "")]
+    [NativeName("Type.Name", "")]
+    [NativeName("Name", "lpVtbl")]
+    public void** LpVtbl;
+    /// <summary>To be documented.</summary>
+    public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
+    {
+        var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        int ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
+    {
+        var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        int ret = default;
+        fixed (void** ppvObjectPtr = &ppvObject)
         {
-            var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            return ret;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
         }
+        return ret;
+    }
 
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
+    /// <summary>To be documented.</summary>
+    public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+    {
+        var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
         {
-            var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
+    {
+        var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
             }
-            return ret;
         }
+        return ret;
+    }
 
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+    /// <summary>To be documented.</summary>
+    public readonly uint AddRef()
+    {
+        var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        uint ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, uint>)LpVtbl[1])(@this);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public readonly uint Release()
+    {
+        var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        uint ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, uint>)LpVtbl[2])(@this);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public readonly unsafe int GetDevice(IDirect3DDevice9** ppDevice)
+    {
+        var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        int ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevice);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public readonly unsafe int GetDevice(ref IDirect3DDevice9* ppDevice)
+    {
+        var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        int ret = default;
+        fixed (IDirect3DDevice9** ppDevicePtr = &ppDevice)
         {
-            var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            }
-            return ret;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevicePtr);
         }
+        return ret;
+    }
 
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
+    /// <summary>To be documented.</summary>
+    public readonly unsafe int GetDeclaration(Vertexelement9* arg0, uint* pNumElements)
+    {
+        var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        int ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Vertexelement9*, uint*, int>)LpVtbl[4])(@this, arg0, pNumElements);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public readonly unsafe int GetDeclaration(Vertexelement9* arg0, ref uint pNumElements)
+    {
+        var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        int ret = default;
+        fixed (uint* pNumElementsPtr = &pNumElements)
         {
-            var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectPtr = &ppvObject)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                }
-            }
-            return ret;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Vertexelement9*, uint*, int>)LpVtbl[4])(@this, arg0, pNumElementsPtr);
         }
+        return ret;
+    }
 
-        /// <summary>To be documented.</summary>
-        public readonly uint AddRef()
+    /// <summary>To be documented.</summary>
+    public readonly unsafe int GetDeclaration(ref Vertexelement9 arg0, uint* pNumElements)
+    {
+        var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        int ret = default;
+        fixed (Vertexelement9* arg0Ptr = &arg0)
         {
-            var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, uint>)LpVtbl[1])(@this);
-            return ret;
+            ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Vertexelement9*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pNumElements);
         }
+        return ret;
+    }
 
-        /// <summary>To be documented.</summary>
-        public readonly uint Release()
+    /// <summary>To be documented.</summary>
+    public readonly int GetDeclaration(ref Vertexelement9 arg0, ref uint pNumElements)
+    {
+        var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        int ret = default;
+        fixed (Vertexelement9* arg0Ptr = &arg0)
         {
-            var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            uint ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, uint>)LpVtbl[2])(@this);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDevice(IDirect3DDevice9** ppDevice)
-        {
-            var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevice);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDevice(ref IDirect3DDevice9* ppDevice)
-        {
-            var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (IDirect3DDevice9** ppDevicePtr = &ppDevice)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, IDirect3DDevice9**, int>)LpVtbl[3])(@this, ppDevicePtr);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDeclaration(Vertexelement9* arg0, uint* pNumElements)
-        {
-            var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Vertexelement9*, uint*, int>)LpVtbl[4])(@this, arg0, pNumElements);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDeclaration(Vertexelement9* arg0, ref uint pNumElements)
-        {
-            var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
             fixed (uint* pNumElementsPtr = &pNumElements)
             {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Vertexelement9*, uint*, int>)LpVtbl[4])(@this, arg0, pNumElementsPtr);
+                ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Vertexelement9*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pNumElementsPtr);
             }
-            return ret;
         }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int GetDeclaration(ref Vertexelement9 arg0, uint* pNumElements)
-        {
-            var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Vertexelement9* arg0Ptr = &arg0)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Vertexelement9*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pNumElements);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly int GetDeclaration(ref Vertexelement9 arg0, ref uint pNumElements)
-        {
-            var @this = (IDirect3DVertexDeclaration9*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Vertexelement9* arg0Ptr = &arg0)
-            {
-                fixed (uint* pNumElementsPtr = &pNumElements)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<IDirect3DVertexDeclaration9*, Vertexelement9*, uint*, int>)LpVtbl[4])(@this, arg0Ptr, pNumElementsPtr);
-                }
-            }
-            return ret;
-        }
-
+        return ret;
     }
+
 }

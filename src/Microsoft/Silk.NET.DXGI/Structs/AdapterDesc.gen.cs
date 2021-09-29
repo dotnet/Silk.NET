@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI
+namespace Silk.NET.DXGI;
+
+[NativeName("Name", "DXGI_ADAPTER_DESC")]
+public unsafe partial struct AdapterDesc
 {
-    [NativeName("Name", "DXGI_ADAPTER_DESC")]
-    public unsafe partial struct AdapterDesc
-    {
-        public AdapterDesc
-        (
+    public AdapterDesc
+    (
             uint? vendorId = null,
             uint? deviceId = null,
             uint? subSysId = null,
@@ -29,92 +29,91 @@ namespace Silk.NET.DXGI
             nuint? dedicatedSystemMemory = null,
             nuint? sharedSystemMemory = null,
             Luid? adapterLuid = null
-        ) : this()
+    ) : this()
+    {
+        if (vendorId is not null)
         {
-            if (vendorId is not null)
-            {
-                VendorId = vendorId.Value;
-            }
-
-            if (deviceId is not null)
-            {
-                DeviceId = deviceId.Value;
-            }
-
-            if (subSysId is not null)
-            {
-                SubSysId = subSysId.Value;
-            }
-
-            if (revision is not null)
-            {
-                Revision = revision.Value;
-            }
-
-            if (dedicatedVideoMemory is not null)
-            {
-                DedicatedVideoMemory = dedicatedVideoMemory.Value;
-            }
-
-            if (dedicatedSystemMemory is not null)
-            {
-                DedicatedSystemMemory = dedicatedSystemMemory.Value;
-            }
-
-            if (sharedSystemMemory is not null)
-            {
-                SharedSystemMemory = sharedSystemMemory.Value;
-            }
-
-            if (adapterLuid is not null)
-            {
-                AdapterLuid = adapterLuid.Value;
-            }
+            VendorId = vendorId.Value;
         }
 
-        [NativeName("Type", "WCHAR [128]")]
-        [NativeName("Type.Name", "WCHAR [128]")]
-        [NativeName("Name", "Description")]
-        public fixed char Description[128];
+        if (deviceId is not null)
+        {
+            DeviceId = deviceId.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "VendorId")]
-        public uint VendorId;
+        if (subSysId is not null)
+        {
+            SubSysId = subSysId.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "DeviceId")]
-        public uint DeviceId;
+        if (revision is not null)
+        {
+            Revision = revision.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "SubSysId")]
-        public uint SubSysId;
+        if (dedicatedVideoMemory is not null)
+        {
+            DedicatedVideoMemory = dedicatedVideoMemory.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Revision")]
-        public uint Revision;
+        if (dedicatedSystemMemory is not null)
+        {
+            DedicatedSystemMemory = dedicatedSystemMemory.Value;
+        }
 
-        [NativeName("Type", "SIZE_T")]
-        [NativeName("Type.Name", "SIZE_T")]
-        [NativeName("Name", "DedicatedVideoMemory")]
-        public nuint DedicatedVideoMemory;
+        if (sharedSystemMemory is not null)
+        {
+            SharedSystemMemory = sharedSystemMemory.Value;
+        }
 
-        [NativeName("Type", "SIZE_T")]
-        [NativeName("Type.Name", "SIZE_T")]
-        [NativeName("Name", "DedicatedSystemMemory")]
-        public nuint DedicatedSystemMemory;
-
-        [NativeName("Type", "SIZE_T")]
-        [NativeName("Type.Name", "SIZE_T")]
-        [NativeName("Name", "SharedSystemMemory")]
-        public nuint SharedSystemMemory;
-
-        [NativeName("Type", "LUID")]
-        [NativeName("Type.Name", "LUID")]
-        [NativeName("Name", "AdapterLuid")]
-        public Luid AdapterLuid;
+        if (adapterLuid is not null)
+        {
+            AdapterLuid = adapterLuid.Value;
+        }
     }
+
+    [NativeName("Type", "WCHAR [128]")]
+    [NativeName("Type.Name", "WCHAR [128]")]
+    [NativeName("Name", "Description")]
+    public fixed char Description[128];
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "VendorId")]
+    public uint VendorId;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "DeviceId")]
+    public uint DeviceId;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "SubSysId")]
+    public uint SubSysId;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Revision")]
+    public uint Revision;
+
+    [NativeName("Type", "SIZE_T")]
+    [NativeName("Type.Name", "SIZE_T")]
+    [NativeName("Name", "DedicatedVideoMemory")]
+    public nuint DedicatedVideoMemory;
+
+    [NativeName("Type", "SIZE_T")]
+    [NativeName("Type.Name", "SIZE_T")]
+    [NativeName("Name", "DedicatedSystemMemory")]
+    public nuint DedicatedSystemMemory;
+
+    [NativeName("Type", "SIZE_T")]
+    [NativeName("Type.Name", "SIZE_T")]
+    [NativeName("Name", "SharedSystemMemory")]
+    public nuint SharedSystemMemory;
+
+    [NativeName("Type", "LUID")]
+    [NativeName("Type.Name", "LUID")]
+    [NativeName("Name", "AdapterLuid")]
+    public Luid AdapterLuid;
 }

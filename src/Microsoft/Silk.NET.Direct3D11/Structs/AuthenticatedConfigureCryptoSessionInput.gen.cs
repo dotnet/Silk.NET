@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_AUTHENTICATED_CONFIGURE_CRYPTO_SESSION_INPUT")]
+public unsafe partial struct AuthenticatedConfigureCryptoSessionInput
 {
-    [NativeName("Name", "D3D11_AUTHENTICATED_CONFIGURE_CRYPTO_SESSION_INPUT")]
-    public unsafe partial struct AuthenticatedConfigureCryptoSessionInput
-    {
-        public AuthenticatedConfigureCryptoSessionInput
-        (
+    public AuthenticatedConfigureCryptoSessionInput
+    (
             AuthenticatedConfigureInput? parameters = null,
             void* decoderHandle = null,
             void* cryptoSessionHandle = null,
             void* deviceHandle = null
-        ) : this()
+    ) : this()
+    {
+        if (parameters is not null)
         {
-            if (parameters is not null)
-            {
-                Parameters = parameters.Value;
-            }
-
-            if (decoderHandle is not null)
-            {
-                DecoderHandle = decoderHandle;
-            }
-
-            if (cryptoSessionHandle is not null)
-            {
-                CryptoSessionHandle = cryptoSessionHandle;
-            }
-
-            if (deviceHandle is not null)
-            {
-                DeviceHandle = deviceHandle;
-            }
+            Parameters = parameters.Value;
         }
 
+        if (decoderHandle is not null)
+        {
+            DecoderHandle = decoderHandle;
+        }
 
-        [NativeName("Type", "D3D11_AUTHENTICATED_CONFIGURE_INPUT")]
-        [NativeName("Type.Name", "D3D11_AUTHENTICATED_CONFIGURE_INPUT")]
-        [NativeName("Name", "Parameters")]
-        public AuthenticatedConfigureInput Parameters;
+        if (cryptoSessionHandle is not null)
+        {
+            CryptoSessionHandle = cryptoSessionHandle;
+        }
 
-        [NativeName("Type", "HANDLE")]
-        [NativeName("Type.Name", "HANDLE")]
-        [NativeName("Name", "DecoderHandle")]
-        public void* DecoderHandle;
-
-        [NativeName("Type", "HANDLE")]
-        [NativeName("Type.Name", "HANDLE")]
-        [NativeName("Name", "CryptoSessionHandle")]
-        public void* CryptoSessionHandle;
-
-        [NativeName("Type", "HANDLE")]
-        [NativeName("Type.Name", "HANDLE")]
-        [NativeName("Name", "DeviceHandle")]
-        public void* DeviceHandle;
+        if (deviceHandle is not null)
+        {
+            DeviceHandle = deviceHandle;
+        }
     }
+
+
+    [NativeName("Type", "D3D11_AUTHENTICATED_CONFIGURE_INPUT")]
+    [NativeName("Type.Name", "D3D11_AUTHENTICATED_CONFIGURE_INPUT")]
+    [NativeName("Name", "Parameters")]
+    public AuthenticatedConfigureInput Parameters;
+
+    [NativeName("Type", "HANDLE")]
+    [NativeName("Type.Name", "HANDLE")]
+    [NativeName("Name", "DecoderHandle")]
+    public void* DecoderHandle;
+
+    [NativeName("Type", "HANDLE")]
+    [NativeName("Type.Name", "HANDLE")]
+    [NativeName("Name", "CryptoSessionHandle")]
+    public void* CryptoSessionHandle;
+
+    [NativeName("Type", "HANDLE")]
+    [NativeName("Type.Name", "HANDLE")]
+    [NativeName("Name", "DeviceHandle")]
+    public void* DeviceHandle;
 }

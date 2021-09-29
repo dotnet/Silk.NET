@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrScenePlanesMSFT")]
+public unsafe partial struct ScenePlanesMSFT
 {
-    [NativeName("Name", "XrScenePlanesMSFT")]
-    public unsafe partial struct ScenePlanesMSFT
-    {
-        public ScenePlanesMSFT
-        (
+    public ScenePlanesMSFT
+    (
             StructureType? type = StructureType.TypeScenePlanesMsft,
             void* next = null,
             uint? scenePlaneCount = null,
             ScenePlaneMSFT* scenePlanes = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (scenePlaneCount is not null)
-            {
-                ScenePlaneCount = scenePlaneCount.Value;
-            }
-
-            if (scenePlanes is not null)
-            {
-                ScenePlanes = scenePlanes;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "scenePlaneCount")]
-        public uint ScenePlaneCount;
-/// <summary></summary>
-        [NativeName("Type", "XrScenePlaneMSFT*")]
-        [NativeName("Type.Name", "XrScenePlaneMSFT")]
-        [NativeName("Name", "scenePlanes")]
-        public ScenePlaneMSFT* ScenePlanes;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (scenePlaneCount is not null)
+        {
+            ScenePlaneCount = scenePlaneCount.Value;
+        }
+
+        if (scenePlanes is not null)
+        {
+            ScenePlanes = scenePlanes;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "scenePlaneCount")]
+    public uint ScenePlaneCount;
+/// <summary></summary>
+    [NativeName("Type", "XrScenePlaneMSFT*")]
+    [NativeName("Type.Name", "XrScenePlaneMSFT")]
+    [NativeName("Name", "scenePlanes")]
+    public ScenePlaneMSFT* ScenePlanes;
 }

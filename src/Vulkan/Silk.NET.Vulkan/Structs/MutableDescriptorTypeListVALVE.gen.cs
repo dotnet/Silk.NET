@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkMutableDescriptorTypeListVALVE")]
+public unsafe partial struct MutableDescriptorTypeListVALVE
 {
-    [NativeName("Name", "VkMutableDescriptorTypeListVALVE")]
-    public unsafe partial struct MutableDescriptorTypeListVALVE
-    {
-        public MutableDescriptorTypeListVALVE
-        (
+    public MutableDescriptorTypeListVALVE
+    (
             uint? descriptorTypeCount = null,
             DescriptorType* pDescriptorTypes = null
-        ) : this()
+    ) : this()
+    {
+        if (descriptorTypeCount is not null)
         {
-            if (descriptorTypeCount is not null)
-            {
-                DescriptorTypeCount = descriptorTypeCount.Value;
-            }
-
-            if (pDescriptorTypes is not null)
-            {
-                PDescriptorTypes = pDescriptorTypes;
-            }
+            DescriptorTypeCount = descriptorTypeCount.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "descriptorTypeCount")]
-        public uint DescriptorTypeCount;
-/// <summary></summary>
-        [NativeName("Type", "VkDescriptorType*")]
-        [NativeName("Type.Name", "VkDescriptorType")]
-        [NativeName("Name", "pDescriptorTypes")]
-        public DescriptorType* PDescriptorTypes;
+        if (pDescriptorTypes is not null)
+        {
+            PDescriptorTypes = pDescriptorTypes;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "descriptorTypeCount")]
+    public uint DescriptorTypeCount;
+/// <summary></summary>
+    [NativeName("Type", "VkDescriptorType*")]
+    [NativeName("Type.Name", "VkDescriptorType")]
+    [NativeName("Name", "pDescriptorTypes")]
+    public DescriptorType* PDescriptorTypes;
 }

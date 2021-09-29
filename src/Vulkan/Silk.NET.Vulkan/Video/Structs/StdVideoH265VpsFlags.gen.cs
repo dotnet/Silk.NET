@@ -14,73 +14,72 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Video
+namespace Silk.NET.Vulkan.Video;
+
+[NativeName("Name", "StdVideoH265VpsFlags")]
+public unsafe partial struct StdVideoH265VpsFlags
 {
-    [NativeName("Name", "StdVideoH265VpsFlags")]
-    public unsafe partial struct StdVideoH265VpsFlags
-    {
-        public StdVideoH265VpsFlags
-        (
+    public StdVideoH265VpsFlags
+    (
             uint? vpsTemporalIdNestingFlag = null,
             uint? vpsSubLayerOrderingInfoPresentFlag = null,
             uint? vpsTimingInfoPresentFlag = null,
             uint? vpsPocProportionalToTimingFlag = null
-        ) : this()
+    ) : this()
+    {
+        if (vpsTemporalIdNestingFlag is not null)
         {
-            if (vpsTemporalIdNestingFlag is not null)
-            {
-                VpsTemporalIdNestingFlag = vpsTemporalIdNestingFlag.Value;
-            }
-
-            if (vpsSubLayerOrderingInfoPresentFlag is not null)
-            {
-                VpsSubLayerOrderingInfoPresentFlag = vpsSubLayerOrderingInfoPresentFlag.Value;
-            }
-
-            if (vpsTimingInfoPresentFlag is not null)
-            {
-                VpsTimingInfoPresentFlag = vpsTimingInfoPresentFlag.Value;
-            }
-
-            if (vpsPocProportionalToTimingFlag is not null)
-            {
-                VpsPocProportionalToTimingFlag = vpsPocProportionalToTimingFlag.Value;
-            }
+            VpsTemporalIdNestingFlag = vpsTemporalIdNestingFlag.Value;
         }
 
-
-        private uint _bitfield1;
-
-        public uint VpsTemporalIdNestingFlag
+        if (vpsSubLayerOrderingInfoPresentFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)(_bitfield1 & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
+            VpsSubLayerOrderingInfoPresentFlag = vpsSubLayerOrderingInfoPresentFlag.Value;
         }
 
-        public uint VpsSubLayerOrderingInfoPresentFlag
+        if (vpsTimingInfoPresentFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 1) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+            VpsTimingInfoPresentFlag = vpsTimingInfoPresentFlag.Value;
         }
 
-        public uint VpsTimingInfoPresentFlag
+        if (vpsPocProportionalToTimingFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 2) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+            VpsPocProportionalToTimingFlag = vpsPocProportionalToTimingFlag.Value;
         }
+    }
 
-        public uint VpsPocProportionalToTimingFlag
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 3) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
-        }
+
+    private uint _bitfield1;
+
+    public uint VpsTemporalIdNestingFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)(_bitfield1 & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
+    }
+
+    public uint VpsSubLayerOrderingInfoPresentFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 1) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+    }
+
+    public uint VpsTimingInfoPresentFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 2) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+    }
+
+    public uint VpsPocProportionalToTimingFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 3) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
     }
 }

@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_INPUT_ELEMENT_DESC")]
+public unsafe partial struct InputElementDesc
 {
-    [NativeName("Name", "D3D12_INPUT_ELEMENT_DESC")]
-    public unsafe partial struct InputElementDesc
-    {
-        public InputElementDesc
-        (
+    public InputElementDesc
+    (
             byte* semanticName = null,
             uint? semanticIndex = null,
             Silk.NET.DXGI.Format? format = null,
@@ -28,78 +28,77 @@ namespace Silk.NET.Direct3D12
             uint? alignedByteOffset = null,
             InputClassification? inputSlotClass = null,
             uint? instanceDataStepRate = null
-        ) : this()
+    ) : this()
+    {
+        if (semanticName is not null)
         {
-            if (semanticName is not null)
-            {
-                SemanticName = semanticName;
-            }
-
-            if (semanticIndex is not null)
-            {
-                SemanticIndex = semanticIndex.Value;
-            }
-
-            if (format is not null)
-            {
-                Format = format.Value;
-            }
-
-            if (inputSlot is not null)
-            {
-                InputSlot = inputSlot.Value;
-            }
-
-            if (alignedByteOffset is not null)
-            {
-                AlignedByteOffset = alignedByteOffset.Value;
-            }
-
-            if (inputSlotClass is not null)
-            {
-                InputSlotClass = inputSlotClass.Value;
-            }
-
-            if (instanceDataStepRate is not null)
-            {
-                InstanceDataStepRate = instanceDataStepRate.Value;
-            }
+            SemanticName = semanticName;
         }
 
+        if (semanticIndex is not null)
+        {
+            SemanticIndex = semanticIndex.Value;
+        }
 
-        [NativeName("Type", "LPCSTR")]
-        [NativeName("Type.Name", "LPCSTR")]
-        [NativeName("Name", "SemanticName")]
-        public byte* SemanticName;
+        if (format is not null)
+        {
+            Format = format.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "SemanticIndex")]
-        public uint SemanticIndex;
+        if (inputSlot is not null)
+        {
+            InputSlot = inputSlot.Value;
+        }
 
-        [NativeName("Type", "DXGI_FORMAT")]
-        [NativeName("Type.Name", "DXGI_FORMAT")]
-        [NativeName("Name", "Format")]
-        public Silk.NET.DXGI.Format Format;
+        if (alignedByteOffset is not null)
+        {
+            AlignedByteOffset = alignedByteOffset.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "InputSlot")]
-        public uint InputSlot;
+        if (inputSlotClass is not null)
+        {
+            InputSlotClass = inputSlotClass.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "AlignedByteOffset")]
-        public uint AlignedByteOffset;
-
-        [NativeName("Type", "D3D12_INPUT_CLASSIFICATION")]
-        [NativeName("Type.Name", "D3D12_INPUT_CLASSIFICATION")]
-        [NativeName("Name", "InputSlotClass")]
-        public InputClassification InputSlotClass;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "InstanceDataStepRate")]
-        public uint InstanceDataStepRate;
+        if (instanceDataStepRate is not null)
+        {
+            InstanceDataStepRate = instanceDataStepRate.Value;
+        }
     }
+
+
+    [NativeName("Type", "LPCSTR")]
+    [NativeName("Type.Name", "LPCSTR")]
+    [NativeName("Name", "SemanticName")]
+    public byte* SemanticName;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "SemanticIndex")]
+    public uint SemanticIndex;
+
+    [NativeName("Type", "DXGI_FORMAT")]
+    [NativeName("Type.Name", "DXGI_FORMAT")]
+    [NativeName("Name", "Format")]
+    public Silk.NET.DXGI.Format Format;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "InputSlot")]
+    public uint InputSlot;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "AlignedByteOffset")]
+    public uint AlignedByteOffset;
+
+    [NativeName("Type", "D3D12_INPUT_CLASSIFICATION")]
+    [NativeName("Type.Name", "D3D12_INPUT_CLASSIFICATION")]
+    [NativeName("Name", "InputSlotClass")]
+    public InputClassification InputSlotClass;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "InstanceDataStepRate")]
+    public uint InstanceDataStepRate;
 }

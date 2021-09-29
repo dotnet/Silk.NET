@@ -14,105 +14,104 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[Guid("e667af9f-cd56-4f46-83ce-032e595d70a8")]
+[NativeName("Name", "ID3D12LifetimeOwner")]
+public unsafe partial struct ID3D12LifetimeOwner
 {
-    [Guid("e667af9f-cd56-4f46-83ce-032e595d70a8")]
-    [NativeName("Name", "ID3D12LifetimeOwner")]
-    public unsafe partial struct ID3D12LifetimeOwner
-    {
-        public static readonly Guid Guid = new("e667af9f-cd56-4f46-83ce-032e595d70a8");
+    public static readonly Guid Guid = new("e667af9f-cd56-4f46-83ce-032e595d70a8");
 
-        public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12LifetimeOwner val)
-            => Unsafe.As<ID3D12LifetimeOwner, Silk.NET.Core.Native.IUnknown>(ref val);
+    public static implicit operator Silk.NET.Core.Native.IUnknown(ID3D12LifetimeOwner val)
+        => Unsafe.As<ID3D12LifetimeOwner, Silk.NET.Core.Native.IUnknown>(ref val);
 
-        public ID3D12LifetimeOwner
-        (
+    public ID3D12LifetimeOwner
+    (
             void** lpVtbl = null
-        ) : this()
+    ) : this()
+    {
+        if (lpVtbl is not null)
         {
-            if (lpVtbl is not null)
-            {
-                LpVtbl = lpVtbl;
-            }
+            LpVtbl = lpVtbl;
         }
+    }
 
 
-        [NativeName("Type", "")]
-        [NativeName("Type.Name", "")]
-        [NativeName("Name", "lpVtbl")]
-        public void** LpVtbl;
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
+    [NativeName("Type", "")]
+    [NativeName("Type.Name", "")]
+    [NativeName("Name", "lpVtbl")]
+    public void** LpVtbl;
+    /// <summary>To be documented.</summary>
+    public readonly unsafe int QueryInterface(Guid* riid, void** ppvObject)
+    {
+        var @this = (ID3D12LifetimeOwner*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        int ret = default;
+        ret = ((delegate* unmanaged[Cdecl]<ID3D12LifetimeOwner*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
+    {
+        var @this = (ID3D12LifetimeOwner*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        int ret = default;
+        fixed (void** ppvObjectPtr = &ppvObject)
         {
-            var @this = (ID3D12LifetimeOwner*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            ret = ((delegate* unmanaged[Cdecl]<ID3D12LifetimeOwner*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObject);
-            return ret;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12LifetimeOwner*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
         }
+        return ret;
+    }
 
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(Guid* riid, ref void* ppvObject)
+    /// <summary>To be documented.</summary>
+    public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
+    {
+        var @this = (ID3D12LifetimeOwner*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
         {
-            var @this = (ID3D12LifetimeOwner*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
+            ret = ((delegate* unmanaged[Cdecl]<ID3D12LifetimeOwner*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
+        }
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
+    {
+        var @this = (ID3D12LifetimeOwner*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        int ret = default;
+        fixed (Guid* riidPtr = &riid)
+        {
             fixed (void** ppvObjectPtr = &ppvObject)
             {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12LifetimeOwner*, Guid*, void**, int>)LpVtbl[0])(@this, riid, ppvObjectPtr);
+                ret = ((delegate* unmanaged[Cdecl]<ID3D12LifetimeOwner*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
             }
-            return ret;
         }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, void** ppvObject)
-        {
-            var @this = (ID3D12LifetimeOwner*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                ret = ((delegate* unmanaged[Cdecl]<ID3D12LifetimeOwner*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObject);
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly unsafe int QueryInterface(ref Guid riid, ref void* ppvObject)
-        {
-            var @this = (ID3D12LifetimeOwner*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            int ret = default;
-            fixed (Guid* riidPtr = &riid)
-            {
-                fixed (void** ppvObjectPtr = &ppvObject)
-                {
-                    ret = ((delegate* unmanaged[Cdecl]<ID3D12LifetimeOwner*, Guid*, void**, int>)LpVtbl[0])(@this, riidPtr, ppvObjectPtr);
-                }
-            }
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly uint AddRef()
-        {
-            var @this = (ID3D12LifetimeOwner*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12LifetimeOwner*, uint>)LpVtbl[1])(@this);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly uint Release()
-        {
-            var @this = (ID3D12LifetimeOwner*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            uint ret = default;
-            ret = ((delegate* unmanaged[Stdcall]<ID3D12LifetimeOwner*, uint>)LpVtbl[2])(@this);
-            return ret;
-        }
-
-        /// <summary>To be documented.</summary>
-        public readonly void LifetimeStateUpdated(LifetimeState NewState)
-        {
-            var @this = (ID3D12LifetimeOwner*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
-            ((delegate* unmanaged[Cdecl]<ID3D12LifetimeOwner*, LifetimeState, void>)LpVtbl[3])(@this, NewState);
-        }
-
+        return ret;
     }
+
+    /// <summary>To be documented.</summary>
+    public readonly uint AddRef()
+    {
+        var @this = (ID3D12LifetimeOwner*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        uint ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12LifetimeOwner*, uint>)LpVtbl[1])(@this);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public readonly uint Release()
+    {
+        var @this = (ID3D12LifetimeOwner*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        uint ret = default;
+        ret = ((delegate* unmanaged[Stdcall]<ID3D12LifetimeOwner*, uint>)LpVtbl[2])(@this);
+        return ret;
+    }
+
+    /// <summary>To be documented.</summary>
+    public readonly void LifetimeStateUpdated(LifetimeState NewState)
+    {
+        var @this = (ID3D12LifetimeOwner*) Unsafe.AsPointer(ref Unsafe.AsRef(in this));
+        ((delegate* unmanaged[Cdecl]<ID3D12LifetimeOwner*, LifetimeState, void>)LpVtbl[3])(@this, NewState);
+    }
+
 }

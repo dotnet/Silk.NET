@@ -7,12 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrHandJointSetEXT")]
+public enum HandJointSetEXT : int
 {
-    [NativeName("Name", "XrHandJointSetEXT")]
-    public enum HandJointSetEXT : int
-    {
-        [NativeName("Name", "XR_HAND_JOINT_SET_DEFAULT_EXT")]
-        HandJointSetDefaultExt = 0,
-    }
+    [NativeName("Name", "XR_HAND_JOINT_SET_DEFAULT_EXT")]
+    HandJointSetDefaultExt = 0,
 }

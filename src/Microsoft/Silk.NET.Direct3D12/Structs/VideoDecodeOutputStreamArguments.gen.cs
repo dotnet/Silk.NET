@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS")]
+public unsafe partial struct VideoDecodeOutputStreamArguments
 {
-    [NativeName("Name", "D3D12_VIDEO_DECODE_OUTPUT_STREAM_ARGUMENTS")]
-    public unsafe partial struct VideoDecodeOutputStreamArguments
-    {
-        public VideoDecodeOutputStreamArguments
-        (
+    public VideoDecodeOutputStreamArguments
+    (
             ID3D12Resource* pOutputTexture2D = null,
             uint? outputSubresource = null,
             VideoDecodeConversionArguments? conversionArguments = null
-        ) : this()
+    ) : this()
+    {
+        if (pOutputTexture2D is not null)
         {
-            if (pOutputTexture2D is not null)
-            {
-                POutputTexture2D = pOutputTexture2D;
-            }
-
-            if (outputSubresource is not null)
-            {
-                OutputSubresource = outputSubresource.Value;
-            }
-
-            if (conversionArguments is not null)
-            {
-                ConversionArguments = conversionArguments.Value;
-            }
+            POutputTexture2D = pOutputTexture2D;
         }
 
+        if (outputSubresource is not null)
+        {
+            OutputSubresource = outputSubresource.Value;
+        }
 
-        [NativeName("Type", "ID3D12Resource *")]
-        [NativeName("Type.Name", "ID3D12Resource *")]
-        [NativeName("Name", "pOutputTexture2D")]
-        public ID3D12Resource* POutputTexture2D;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "OutputSubresource")]
-        public uint OutputSubresource;
-
-        [NativeName("Type", "D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS")]
-        [NativeName("Type.Name", "D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS")]
-        [NativeName("Name", "ConversionArguments")]
-        public VideoDecodeConversionArguments ConversionArguments;
+        if (conversionArguments is not null)
+        {
+            ConversionArguments = conversionArguments.Value;
+        }
     }
+
+
+    [NativeName("Type", "ID3D12Resource *")]
+    [NativeName("Type.Name", "ID3D12Resource *")]
+    [NativeName("Name", "pOutputTexture2D")]
+    public ID3D12Resource* POutputTexture2D;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "OutputSubresource")]
+    public uint OutputSubresource;
+
+    [NativeName("Type", "D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS")]
+    [NativeName("Type.Name", "D3D12_VIDEO_DECODE_CONVERSION_ARGUMENTS")]
+    [NativeName("Name", "ConversionArguments")]
+    public VideoDecodeConversionArguments ConversionArguments;
 }

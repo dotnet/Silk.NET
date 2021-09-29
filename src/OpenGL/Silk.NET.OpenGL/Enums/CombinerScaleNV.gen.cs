@@ -7,18 +7,17 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL
+namespace Silk.NET.OpenGL;
+
+[NativeName("Name", "CombinerScaleNV")]
+public enum CombinerScaleNV : int
 {
-    [NativeName("Name", "CombinerScaleNV")]
-    public enum CombinerScaleNV : int
-    {
-        [NativeName("Name", "GL_NONE")]
-        None = 0x0,
-        [NativeName("Name", "GL_SCALE_BY_TWO_NV")]
-        ScaleByTwoNV = 0x853E,
-        [NativeName("Name", "GL_SCALE_BY_FOUR_NV")]
-        ScaleByFourNV = 0x853F,
-        [NativeName("Name", "GL_SCALE_BY_ONE_HALF_NV")]
-        ScaleByOneHalfNV = 0x8540,
-    }
+    [NativeName("Name", "GL_NONE")]
+    None = 0x0,
+    [NativeName("Name", "GL_SCALE_BY_TWO_NV")]
+    ScaleByTwoNV = 0x853E,
+    [NativeName("Name", "GL_SCALE_BY_FOUR_NV")]
+    ScaleByFourNV = 0x853F,
+    [NativeName("Name", "GL_SCALE_BY_ONE_HALF_NV")]
+    ScaleByOneHalfNV = 0x8540,
 }

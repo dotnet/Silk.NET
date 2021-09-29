@@ -14,77 +14,76 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_VERSIONED_ROOT_SIGNATURE_DESC")]
+public unsafe partial struct VersionedRootSignatureDesc
 {
-    [NativeName("Name", "D3D12_VERSIONED_ROOT_SIGNATURE_DESC")]
-    public unsafe partial struct VersionedRootSignatureDesc
-    {
-        public VersionedRootSignatureDesc
-        (
+    public VersionedRootSignatureDesc
+    (
             D3DRootSignatureVersion? version = null,
             VersionedRootSignatureDescUnion? anonymous = null,
             RootSignatureDesc? desc10 = null,
             RootSignatureDesc1? desc11 = null
-        ) : this()
+    ) : this()
+    {
+        if (version is not null)
         {
-            if (version is not null)
-            {
-                Version = version.Value;
-            }
-
-            if (anonymous is not null)
-            {
-                Anonymous = anonymous.Value;
-            }
-
-            if (desc10 is not null)
-            {
-                Desc10 = desc10.Value;
-            }
-
-            if (desc11 is not null)
-            {
-                Desc11 = desc11.Value;
-            }
+            Version = version.Value;
         }
 
-
-        [NativeName("Type", "D3D_ROOT_SIGNATURE_VERSION")]
-        [NativeName("Type.Name", "D3D_ROOT_SIGNATURE_VERSION")]
-        [NativeName("Name", "Version")]
-        public D3DRootSignatureVersion Version;
-
-        [NativeName("Type", "")]
-        [NativeName("Type.Name", "__AnonymousRecord_d3d12_L3580_C5")]
-        [NativeName("Name", "anonymous1")]
-        public VersionedRootSignatureDescUnion Anonymous;
-#if NETSTANDARD2_1
-        public ref RootSignatureDesc Desc10
+        if (anonymous is not null)
         {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Desc10;
+            Anonymous = anonymous.Value;
         }
-#else
-        public RootSignatureDesc Desc10
-        {
-            get => Anonymous.Desc10;
-            set => Anonymous.Desc10 = value;
-        }
-#endif
 
-#if NETSTANDARD2_1
-        public ref RootSignatureDesc1 Desc11
+        if (desc10 is not null)
         {
-            [MethodImpl((MethodImplOptions) 768)]
-            get => ref Anonymous.Desc11;
+            Desc10 = desc10.Value;
         }
-#else
-        public RootSignatureDesc1 Desc11
-        {
-            get => Anonymous.Desc11;
-            set => Anonymous.Desc11 = value;
-        }
-#endif
 
+        if (desc11 is not null)
+        {
+            Desc11 = desc11.Value;
+        }
     }
+
+
+    [NativeName("Type", "D3D_ROOT_SIGNATURE_VERSION")]
+    [NativeName("Type.Name", "D3D_ROOT_SIGNATURE_VERSION")]
+    [NativeName("Name", "Version")]
+    public D3DRootSignatureVersion Version;
+
+    [NativeName("Type", "")]
+    [NativeName("Type.Name", "__AnonymousRecord_d3d12_L3580_C5")]
+    [NativeName("Name", "anonymous1")]
+    public VersionedRootSignatureDescUnion Anonymous;
+#if NETSTANDARD2_1
+    public ref RootSignatureDesc Desc10
+    {
+        [MethodImpl((MethodImplOptions) 768)]
+        get => ref Anonymous.Desc10;
+    }
+#else
+    public RootSignatureDesc Desc10
+    {
+        get => Anonymous.Desc10;
+        set => Anonymous.Desc10 = value;
+    }
+#endif
+
+#if NETSTANDARD2_1
+    public ref RootSignatureDesc1 Desc11
+    {
+        [MethodImpl((MethodImplOptions) 768)]
+        get => ref Anonymous.Desc11;
+    }
+#else
+    public RootSignatureDesc1 Desc11
+    {
+        get => Anonymous.Desc11;
+        set => Anonymous.Desc11 = value;
+    }
+#endif
+
 }

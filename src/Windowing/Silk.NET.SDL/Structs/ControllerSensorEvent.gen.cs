@@ -14,63 +14,62 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL
+namespace Silk.NET.SDL;
+
+[NativeName("Name", "SDL_ControllerSensorEvent")]
+public unsafe partial struct ControllerSensorEvent
 {
-    [NativeName("Name", "SDL_ControllerSensorEvent")]
-    public unsafe partial struct ControllerSensorEvent
-    {
-        public ControllerSensorEvent
-        (
+    public ControllerSensorEvent
+    (
             uint? type = null,
             uint? timestamp = null,
             int? which = null,
             int? sensor = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (timestamp is not null)
-            {
-                Timestamp = timestamp.Value;
-            }
-
-            if (which is not null)
-            {
-                Which = which.Value;
-            }
-
-            if (sensor is not null)
-            {
-                Sensor = sensor.Value;
-            }
+            Type = type.Value;
         }
 
+        if (timestamp is not null)
+        {
+            Timestamp = timestamp.Value;
+        }
 
-        [NativeName("Type", "Uint32")]
-        [NativeName("Type.Name", "Uint32")]
-        [NativeName("Name", "type")]
-        public uint Type;
+        if (which is not null)
+        {
+            Which = which.Value;
+        }
 
-        [NativeName("Type", "Uint32")]
-        [NativeName("Type.Name", "Uint32")]
-        [NativeName("Name", "timestamp")]
-        public uint Timestamp;
-
-        [NativeName("Type", "SDL_JoystickID")]
-        [NativeName("Type.Name", "SDL_JoystickID")]
-        [NativeName("Name", "which")]
-        public int Which;
-
-        [NativeName("Type", "Sint32")]
-        [NativeName("Type.Name", "Sint32")]
-        [NativeName("Name", "sensor")]
-        public int Sensor;
-        [NativeName("Type", "float [3]")]
-        [NativeName("Type.Name", "float [3]")]
-        [NativeName("Name", "data")]
-        public fixed float Data[3];
+        if (sensor is not null)
+        {
+            Sensor = sensor.Value;
+        }
     }
+
+
+    [NativeName("Type", "Uint32")]
+    [NativeName("Type.Name", "Uint32")]
+    [NativeName("Name", "type")]
+    public uint Type;
+
+    [NativeName("Type", "Uint32")]
+    [NativeName("Type.Name", "Uint32")]
+    [NativeName("Name", "timestamp")]
+    public uint Timestamp;
+
+    [NativeName("Type", "SDL_JoystickID")]
+    [NativeName("Type.Name", "SDL_JoystickID")]
+    [NativeName("Name", "which")]
+    public int Which;
+
+    [NativeName("Type", "Sint32")]
+    [NativeName("Type.Name", "Sint32")]
+    [NativeName("Name", "sensor")]
+    public int Sensor;
+    [NativeName("Type", "float [3]")]
+    [NativeName("Type.Name", "float [3]")]
+    [NativeName("Name", "data")]
+    public fixed float Data[3];
 }

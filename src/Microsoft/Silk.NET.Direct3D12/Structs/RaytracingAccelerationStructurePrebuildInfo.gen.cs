@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_PREBUILD_INFO")]
+public unsafe partial struct RaytracingAccelerationStructurePrebuildInfo
 {
-    [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_PREBUILD_INFO")]
-    public unsafe partial struct RaytracingAccelerationStructurePrebuildInfo
-    {
-        public RaytracingAccelerationStructurePrebuildInfo
-        (
+    public RaytracingAccelerationStructurePrebuildInfo
+    (
             ulong? resultDataMaxSizeInBytes = null,
             ulong? scratchDataSizeInBytes = null,
             ulong? updateScratchDataSizeInBytes = null
-        ) : this()
+    ) : this()
+    {
+        if (resultDataMaxSizeInBytes is not null)
         {
-            if (resultDataMaxSizeInBytes is not null)
-            {
-                ResultDataMaxSizeInBytes = resultDataMaxSizeInBytes.Value;
-            }
-
-            if (scratchDataSizeInBytes is not null)
-            {
-                ScratchDataSizeInBytes = scratchDataSizeInBytes.Value;
-            }
-
-            if (updateScratchDataSizeInBytes is not null)
-            {
-                UpdateScratchDataSizeInBytes = updateScratchDataSizeInBytes.Value;
-            }
+            ResultDataMaxSizeInBytes = resultDataMaxSizeInBytes.Value;
         }
 
+        if (scratchDataSizeInBytes is not null)
+        {
+            ScratchDataSizeInBytes = scratchDataSizeInBytes.Value;
+        }
 
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "ResultDataMaxSizeInBytes")]
-        public ulong ResultDataMaxSizeInBytes;
-
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "ScratchDataSizeInBytes")]
-        public ulong ScratchDataSizeInBytes;
-
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "UpdateScratchDataSizeInBytes")]
-        public ulong UpdateScratchDataSizeInBytes;
+        if (updateScratchDataSizeInBytes is not null)
+        {
+            UpdateScratchDataSizeInBytes = updateScratchDataSizeInBytes.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "ResultDataMaxSizeInBytes")]
+    public ulong ResultDataMaxSizeInBytes;
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "ScratchDataSizeInBytes")]
+    public ulong ScratchDataSizeInBytes;
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "UpdateScratchDataSizeInBytes")]
+    public ulong UpdateScratchDataSizeInBytes;
 }

@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC")]
+public unsafe partial struct RaytracingAccelerationStructurePostbuildInfoDesc
 {
-    [NativeName("Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_DESC")]
-    public unsafe partial struct RaytracingAccelerationStructurePostbuildInfoDesc
-    {
-        public RaytracingAccelerationStructurePostbuildInfoDesc
-        (
+    public RaytracingAccelerationStructurePostbuildInfoDesc
+    (
             ulong? destBuffer = null,
             RaytracingAccelerationStructurePostbuildInfoType? infoType = null
-        ) : this()
+    ) : this()
+    {
+        if (destBuffer is not null)
         {
-            if (destBuffer is not null)
-            {
-                DestBuffer = destBuffer.Value;
-            }
-
-            if (infoType is not null)
-            {
-                InfoType = infoType.Value;
-            }
+            DestBuffer = destBuffer.Value;
         }
 
-
-        [NativeName("Type", "D3D12_GPU_VIRTUAL_ADDRESS")]
-        [NativeName("Type.Name", "D3D12_GPU_VIRTUAL_ADDRESS")]
-        [NativeName("Name", "DestBuffer")]
-        public ulong DestBuffer;
-
-        [NativeName("Type", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_TYPE")]
-        [NativeName("Type.Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_TYPE")]
-        [NativeName("Name", "InfoType")]
-        public RaytracingAccelerationStructurePostbuildInfoType InfoType;
+        if (infoType is not null)
+        {
+            InfoType = infoType.Value;
+        }
     }
+
+
+    [NativeName("Type", "D3D12_GPU_VIRTUAL_ADDRESS")]
+    [NativeName("Type.Name", "D3D12_GPU_VIRTUAL_ADDRESS")]
+    [NativeName("Name", "DestBuffer")]
+    public ulong DestBuffer;
+
+    [NativeName("Type", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_TYPE")]
+    [NativeName("Type.Name", "D3D12_RAYTRACING_ACCELERATION_STRUCTURE_POSTBUILD_INFO_TYPE")]
+    [NativeName("Name", "InfoType")]
+    public RaytracingAccelerationStructurePostbuildInfoType InfoType;
 }

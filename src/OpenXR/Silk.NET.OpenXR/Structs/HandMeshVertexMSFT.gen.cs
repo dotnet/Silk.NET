@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrHandMeshVertexMSFT")]
+public unsafe partial struct HandMeshVertexMSFT
 {
-    [NativeName("Name", "XrHandMeshVertexMSFT")]
-    public unsafe partial struct HandMeshVertexMSFT
-    {
-        public HandMeshVertexMSFT
-        (
+    public HandMeshVertexMSFT
+    (
             Vector3f? position = null,
             Vector3f? normal = null
-        ) : this()
+    ) : this()
+    {
+        if (position is not null)
         {
-            if (position is not null)
-            {
-                Position = position.Value;
-            }
-
-            if (normal is not null)
-            {
-                Normal = normal.Value;
-            }
+            Position = position.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrVector3f")]
-        [NativeName("Type.Name", "XrVector3f")]
-        [NativeName("Name", "position")]
-        public Vector3f Position;
-/// <summary></summary>
-        [NativeName("Type", "XrVector3f")]
-        [NativeName("Type.Name", "XrVector3f")]
-        [NativeName("Name", "normal")]
-        public Vector3f Normal;
+        if (normal is not null)
+        {
+            Normal = normal.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrVector3f")]
+    [NativeName("Type.Name", "XrVector3f")]
+    [NativeName("Name", "position")]
+    public Vector3f Position;
+/// <summary></summary>
+    [NativeName("Type", "XrVector3f")]
+    [NativeName("Type.Name", "XrVector3f")]
+    [NativeName("Name", "normal")]
+    public Vector3f Normal;
 }

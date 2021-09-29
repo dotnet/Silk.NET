@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_TILE_SHAPE")]
+public unsafe partial struct TileShape
 {
-    [NativeName("Name", "D3D12_TILE_SHAPE")]
-    public unsafe partial struct TileShape
-    {
-        public TileShape
-        (
+    public TileShape
+    (
             uint? widthInTexels = null,
             uint? heightInTexels = null,
             uint? depthInTexels = null
-        ) : this()
+    ) : this()
+    {
+        if (widthInTexels is not null)
         {
-            if (widthInTexels is not null)
-            {
-                WidthInTexels = widthInTexels.Value;
-            }
-
-            if (heightInTexels is not null)
-            {
-                HeightInTexels = heightInTexels.Value;
-            }
-
-            if (depthInTexels is not null)
-            {
-                DepthInTexels = depthInTexels.Value;
-            }
+            WidthInTexels = widthInTexels.Value;
         }
 
+        if (heightInTexels is not null)
+        {
+            HeightInTexels = heightInTexels.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "WidthInTexels")]
-        public uint WidthInTexels;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "HeightInTexels")]
-        public uint HeightInTexels;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "DepthInTexels")]
-        public uint DepthInTexels;
+        if (depthInTexels is not null)
+        {
+            DepthInTexels = depthInTexels.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "WidthInTexels")]
+    public uint WidthInTexels;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "HeightInTexels")]
+    public uint HeightInTexels;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "DepthInTexels")]
+    public uint DepthInTexels;
 }

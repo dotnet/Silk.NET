@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrDeserializeSceneFragmentMSFT")]
+public unsafe partial struct DeserializeSceneFragmentMSFT
 {
-    [NativeName("Name", "XrDeserializeSceneFragmentMSFT")]
-    public unsafe partial struct DeserializeSceneFragmentMSFT
-    {
-        public DeserializeSceneFragmentMSFT
-        (
+    public DeserializeSceneFragmentMSFT
+    (
             uint? bufferSize = null,
             byte* buffer = null
-        ) : this()
+    ) : this()
+    {
+        if (bufferSize is not null)
         {
-            if (bufferSize is not null)
-            {
-                BufferSize = bufferSize.Value;
-            }
-
-            if (buffer is not null)
-            {
-                Buffer = buffer;
-            }
+            BufferSize = bufferSize.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "bufferSize")]
-        public uint BufferSize;
-/// <summary></summary>
-        [NativeName("Type", "uint8_t*")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "buffer")]
-        public byte* Buffer;
+        if (buffer is not null)
+        {
+            Buffer = buffer;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "bufferSize")]
+    public uint BufferSize;
+/// <summary></summary>
+    [NativeName("Type", "uint8_t*")]
+    [NativeName("Type.Name", "uint8_t")]
+    [NativeName("Name", "buffer")]
+    public byte* Buffer;
 }

@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrFoveationProfileFB")]
+public unsafe partial struct FoveationProfileFB
 {
-    [NativeName("Name", "XrFoveationProfileFB")]
-    public unsafe partial struct FoveationProfileFB
-    {
-        public FoveationProfileFB
-        (
+    public FoveationProfileFB
+    (
             ulong? handle = null
-        ) : this()
+    ) : this()
+    {
+        if (handle is not null)
         {
-            if (handle is not null)
-            {
-                Handle = handle.Value;
-            }
+            Handle = handle.Value;
         }
-
-
-        [NativeName("Type", "")]
-        [NativeName("Type.Name", "")]
-        [NativeName("Name", "")]
-        public ulong Handle;
     }
+
+
+    [NativeName("Type", "")]
+    [NativeName("Type.Name", "")]
+    [NativeName("Name", "")]
+    public ulong Handle;
 }

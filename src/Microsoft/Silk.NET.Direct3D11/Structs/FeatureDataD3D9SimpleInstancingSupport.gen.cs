@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_FEATURE_DATA_D3D9_SIMPLE_INSTANCING_SUPPORT")]
+public unsafe partial struct FeatureDataD3D9SimpleInstancingSupport
 {
-    [NativeName("Name", "D3D11_FEATURE_DATA_D3D9_SIMPLE_INSTANCING_SUPPORT")]
-    public unsafe partial struct FeatureDataD3D9SimpleInstancingSupport
-    {
-        public FeatureDataD3D9SimpleInstancingSupport
-        (
+    public FeatureDataD3D9SimpleInstancingSupport
+    (
             int? simpleInstancingSupported = null
-        ) : this()
+    ) : this()
+    {
+        if (simpleInstancingSupported is not null)
         {
-            if (simpleInstancingSupported is not null)
-            {
-                SimpleInstancingSupported = simpleInstancingSupported.Value;
-            }
+            SimpleInstancingSupported = simpleInstancingSupported.Value;
         }
-
-
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "SimpleInstancingSupported")]
-        public int SimpleInstancingSupported;
     }
+
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "SimpleInstancingSupported")]
+    public int SimpleInstancingSupported;
 }

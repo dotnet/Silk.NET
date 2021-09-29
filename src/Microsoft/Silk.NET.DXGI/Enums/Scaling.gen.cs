@@ -7,16 +7,15 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI
+namespace Silk.NET.DXGI;
+
+[NativeName("Name", "DXGI_SCALING")]
+public enum Scaling : int
 {
-    [NativeName("Name", "DXGI_SCALING")]
-    public enum Scaling : int
-    {
-        [NativeName("Name", "DXGI_SCALING_STRETCH")]
-        ScalingStretch = 0x0,
-        [NativeName("Name", "DXGI_SCALING_NONE")]
-        ScalingNone = 0x1,
-        [NativeName("Name", "DXGI_SCALING_ASPECT_RATIO_STRETCH")]
-        ScalingAspectRatioStretch = 0x2,
-    }
+    [NativeName("Name", "DXGI_SCALING_STRETCH")]
+    ScalingStretch = 0x0,
+    [NativeName("Name", "DXGI_SCALING_NONE")]
+    ScalingNone = 0x1,
+    [NativeName("Name", "DXGI_SCALING_ASPECT_RATIO_STRETCH")]
+    ScalingAspectRatioStretch = 0x2,
 }

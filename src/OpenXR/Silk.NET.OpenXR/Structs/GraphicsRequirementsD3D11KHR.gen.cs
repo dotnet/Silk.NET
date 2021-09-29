@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrGraphicsRequirementsD3D11KHR")]
+public unsafe partial struct GraphicsRequirementsD3D11KHR
 {
-    [NativeName("Name", "XrGraphicsRequirementsD3D11KHR")]
-    public unsafe partial struct GraphicsRequirementsD3D11KHR
-    {
-        public GraphicsRequirementsD3D11KHR
-        (
+    public GraphicsRequirementsD3D11KHR
+    (
             StructureType? type = StructureType.TypeGraphicsRequirementsD3D11Khr,
             void* next = null,
             ulong? adapterLuid = null,
             uint? minFeatureLevel = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (adapterLuid is not null)
-            {
-                AdapterLuid = adapterLuid.Value;
-            }
-
-            if (minFeatureLevel is not null)
-            {
-                MinFeatureLevel = minFeatureLevel.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "LUID")]
-        [NativeName("Type.Name", "LUID")]
-        [NativeName("Name", "adapterLuid")]
-        public ulong AdapterLuid;
-/// <summary></summary>
-        [NativeName("Type", "D3D_FEATURE_LEVEL")]
-        [NativeName("Type.Name", "D3D_FEATURE_LEVEL")]
-        [NativeName("Name", "minFeatureLevel")]
-        public uint MinFeatureLevel;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (adapterLuid is not null)
+        {
+            AdapterLuid = adapterLuid.Value;
+        }
+
+        if (minFeatureLevel is not null)
+        {
+            MinFeatureLevel = minFeatureLevel.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "LUID")]
+    [NativeName("Type.Name", "LUID")]
+    [NativeName("Name", "adapterLuid")]
+    public ulong AdapterLuid;
+/// <summary></summary>
+    [NativeName("Type", "D3D_FEATURE_LEVEL")]
+    [NativeName("Type.Name", "D3D_FEATURE_LEVEL")]
+    [NativeName("Name", "minFeatureLevel")]
+    public uint MinFeatureLevel;
 }

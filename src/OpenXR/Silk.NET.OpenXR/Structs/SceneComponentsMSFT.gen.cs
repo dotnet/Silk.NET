@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrSceneComponentsMSFT")]
+public unsafe partial struct SceneComponentsMSFT
 {
-    [NativeName("Name", "XrSceneComponentsMSFT")]
-    public unsafe partial struct SceneComponentsMSFT
-    {
-        public SceneComponentsMSFT
-        (
+    public SceneComponentsMSFT
+    (
             StructureType? type = StructureType.TypeSceneComponentsMsft,
             void* next = null,
             uint? componentCapacityInput = null,
             uint? componentCountOutput = null,
             SceneComponentMSFT* components = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (componentCapacityInput is not null)
-            {
-                ComponentCapacityInput = componentCapacityInput.Value;
-            }
-
-            if (componentCountOutput is not null)
-            {
-                ComponentCountOutput = componentCountOutput.Value;
-            }
-
-            if (components is not null)
-            {
-                Components = components;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "componentCapacityInput")]
-        public uint ComponentCapacityInput;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "componentCountOutput")]
-        public uint ComponentCountOutput;
-/// <summary></summary>
-        [NativeName("Type", "XrSceneComponentMSFT*")]
-        [NativeName("Type.Name", "XrSceneComponentMSFT")]
-        [NativeName("Name", "components")]
-        public SceneComponentMSFT* Components;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (componentCapacityInput is not null)
+        {
+            ComponentCapacityInput = componentCapacityInput.Value;
+        }
+
+        if (componentCountOutput is not null)
+        {
+            ComponentCountOutput = componentCountOutput.Value;
+        }
+
+        if (components is not null)
+        {
+            Components = components;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "componentCapacityInput")]
+    public uint ComponentCapacityInput;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "componentCountOutput")]
+    public uint ComponentCountOutput;
+/// <summary></summary>
+    [NativeName("Type", "XrSceneComponentMSFT*")]
+    [NativeName("Type.Name", "XrSceneComponentMSFT")]
+    [NativeName("Name", "components")]
+    public SceneComponentMSFT* Components;
 }

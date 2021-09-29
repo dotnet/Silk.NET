@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_STATE_SUBOBJECT")]
+public unsafe partial struct StateSubobject
 {
-    [NativeName("Name", "D3D12_STATE_SUBOBJECT")]
-    public unsafe partial struct StateSubobject
-    {
-        public StateSubobject
-        (
+    public StateSubobject
+    (
             StateSubobjectType? type = null,
             void* pDesc = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (pDesc is not null)
-            {
-                PDesc = pDesc;
-            }
+            Type = type.Value;
         }
 
-
-        [NativeName("Type", "D3D12_STATE_SUBOBJECT_TYPE")]
-        [NativeName("Type.Name", "D3D12_STATE_SUBOBJECT_TYPE")]
-        [NativeName("Name", "Type")]
-        public StateSubobjectType Type;
-
-        [NativeName("Type", "const void *")]
-        [NativeName("Type.Name", "const void *")]
-        [NativeName("Name", "pDesc")]
-        public void* PDesc;
+        if (pDesc is not null)
+        {
+            PDesc = pDesc;
+        }
     }
+
+
+    [NativeName("Type", "D3D12_STATE_SUBOBJECT_TYPE")]
+    [NativeName("Type.Name", "D3D12_STATE_SUBOBJECT_TYPE")]
+    [NativeName("Name", "Type")]
+    public StateSubobjectType Type;
+
+    [NativeName("Type", "const void *")]
+    [NativeName("Type.Name", "const void *")]
+    [NativeName("Name", "pDesc")]
+    public void* PDesc;
 }

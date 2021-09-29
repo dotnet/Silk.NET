@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPipelineRasterizationStateCreateInfo")]
+public unsafe partial struct PipelineRasterizationStateCreateInfo
 {
-    [NativeName("Name", "VkPipelineRasterizationStateCreateInfo")]
-    public unsafe partial struct PipelineRasterizationStateCreateInfo
-    {
-        public PipelineRasterizationStateCreateInfo
-        (
+    public PipelineRasterizationStateCreateInfo
+    (
             StructureType? sType = StructureType.PipelineRasterizationStateCreateInfo,
             void* pNext = null,
             uint? flags = null,
@@ -34,138 +34,137 @@ namespace Silk.NET.Vulkan
             float? depthBiasClamp = null,
             float? depthBiasSlopeFactor = null,
             float? lineWidth = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
-
-            if (depthClampEnable is not null)
-            {
-                DepthClampEnable = depthClampEnable.Value;
-            }
-
-            if (rasterizerDiscardEnable is not null)
-            {
-                RasterizerDiscardEnable = rasterizerDiscardEnable.Value;
-            }
-
-            if (polygonMode is not null)
-            {
-                PolygonMode = polygonMode.Value;
-            }
-
-            if (cullMode is not null)
-            {
-                CullMode = cullMode.Value;
-            }
-
-            if (frontFace is not null)
-            {
-                FrontFace = frontFace.Value;
-            }
-
-            if (depthBiasEnable is not null)
-            {
-                DepthBiasEnable = depthBiasEnable.Value;
-            }
-
-            if (depthBiasConstantFactor is not null)
-            {
-                DepthBiasConstantFactor = depthBiasConstantFactor.Value;
-            }
-
-            if (depthBiasClamp is not null)
-            {
-                DepthBiasClamp = depthBiasClamp.Value;
-            }
-
-            if (depthBiasSlopeFactor is not null)
-            {
-                DepthBiasSlopeFactor = depthBiasSlopeFactor.Value;
-            }
-
-            if (lineWidth is not null)
-            {
-                LineWidth = lineWidth.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkPipelineRasterizationStateCreateFlags")]
-        [NativeName("Type.Name", "VkPipelineRasterizationStateCreateFlags")]
-        [NativeName("Name", "flags")]
-        public uint Flags;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "depthClampEnable")]
-        public Bool32 DepthClampEnable;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "rasterizerDiscardEnable")]
-        public Bool32 RasterizerDiscardEnable;
-/// <summary></summary>
-        [NativeName("Type", "VkPolygonMode")]
-        [NativeName("Type.Name", "VkPolygonMode")]
-        [NativeName("Name", "polygonMode")]
-        public PolygonMode PolygonMode;
-/// <summary></summary>
-        [NativeName("Type", "VkCullModeFlags")]
-        [NativeName("Type.Name", "VkCullModeFlags")]
-        [NativeName("Name", "cullMode")]
-        public CullModeFlags CullMode;
-/// <summary></summary>
-        [NativeName("Type", "VkFrontFace")]
-        [NativeName("Type.Name", "VkFrontFace")]
-        [NativeName("Name", "frontFace")]
-        public FrontFace FrontFace;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "depthBiasEnable")]
-        public Bool32 DepthBiasEnable;
-/// <summary></summary>
-        [NativeName("Type", "float")]
-        [NativeName("Type.Name", "float")]
-        [NativeName("Name", "depthBiasConstantFactor")]
-        public float DepthBiasConstantFactor;
-/// <summary></summary>
-        [NativeName("Type", "float")]
-        [NativeName("Type.Name", "float")]
-        [NativeName("Name", "depthBiasClamp")]
-        public float DepthBiasClamp;
-/// <summary></summary>
-        [NativeName("Type", "float")]
-        [NativeName("Type.Name", "float")]
-        [NativeName("Name", "depthBiasSlopeFactor")]
-        public float DepthBiasSlopeFactor;
-/// <summary></summary>
-        [NativeName("Type", "float")]
-        [NativeName("Type.Name", "float")]
-        [NativeName("Name", "lineWidth")]
-        public float LineWidth;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (flags is not null)
+        {
+            Flags = flags.Value;
+        }
+
+        if (depthClampEnable is not null)
+        {
+            DepthClampEnable = depthClampEnable.Value;
+        }
+
+        if (rasterizerDiscardEnable is not null)
+        {
+            RasterizerDiscardEnable = rasterizerDiscardEnable.Value;
+        }
+
+        if (polygonMode is not null)
+        {
+            PolygonMode = polygonMode.Value;
+        }
+
+        if (cullMode is not null)
+        {
+            CullMode = cullMode.Value;
+        }
+
+        if (frontFace is not null)
+        {
+            FrontFace = frontFace.Value;
+        }
+
+        if (depthBiasEnable is not null)
+        {
+            DepthBiasEnable = depthBiasEnable.Value;
+        }
+
+        if (depthBiasConstantFactor is not null)
+        {
+            DepthBiasConstantFactor = depthBiasConstantFactor.Value;
+        }
+
+        if (depthBiasClamp is not null)
+        {
+            DepthBiasClamp = depthBiasClamp.Value;
+        }
+
+        if (depthBiasSlopeFactor is not null)
+        {
+            DepthBiasSlopeFactor = depthBiasSlopeFactor.Value;
+        }
+
+        if (lineWidth is not null)
+        {
+            LineWidth = lineWidth.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkPipelineRasterizationStateCreateFlags")]
+    [NativeName("Type.Name", "VkPipelineRasterizationStateCreateFlags")]
+    [NativeName("Name", "flags")]
+    public uint Flags;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "depthClampEnable")]
+    public Bool32 DepthClampEnable;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "rasterizerDiscardEnable")]
+    public Bool32 RasterizerDiscardEnable;
+/// <summary></summary>
+    [NativeName("Type", "VkPolygonMode")]
+    [NativeName("Type.Name", "VkPolygonMode")]
+    [NativeName("Name", "polygonMode")]
+    public PolygonMode PolygonMode;
+/// <summary></summary>
+    [NativeName("Type", "VkCullModeFlags")]
+    [NativeName("Type.Name", "VkCullModeFlags")]
+    [NativeName("Name", "cullMode")]
+    public CullModeFlags CullMode;
+/// <summary></summary>
+    [NativeName("Type", "VkFrontFace")]
+    [NativeName("Type.Name", "VkFrontFace")]
+    [NativeName("Name", "frontFace")]
+    public FrontFace FrontFace;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "depthBiasEnable")]
+    public Bool32 DepthBiasEnable;
+/// <summary></summary>
+    [NativeName("Type", "float")]
+    [NativeName("Type.Name", "float")]
+    [NativeName("Name", "depthBiasConstantFactor")]
+    public float DepthBiasConstantFactor;
+/// <summary></summary>
+    [NativeName("Type", "float")]
+    [NativeName("Type.Name", "float")]
+    [NativeName("Name", "depthBiasClamp")]
+    public float DepthBiasClamp;
+/// <summary></summary>
+    [NativeName("Type", "float")]
+    [NativeName("Type.Name", "float")]
+    [NativeName("Name", "depthBiasSlopeFactor")]
+    public float DepthBiasSlopeFactor;
+/// <summary></summary>
+    [NativeName("Type", "float")]
+    [NativeName("Type.Name", "float")]
+    [NativeName("Name", "lineWidth")]
+    public float LineWidth;
 }

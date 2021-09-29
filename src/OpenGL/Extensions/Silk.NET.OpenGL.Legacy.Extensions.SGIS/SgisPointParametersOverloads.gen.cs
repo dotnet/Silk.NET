@@ -12,22 +12,21 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS
+namespace Silk.NET.OpenGL.Legacy.Extensions.SGIS;
+
+public static class SgisPointParametersOverloads
 {
-    public static class SgisPointParametersOverloads
+    public static unsafe void PointParameter(this SgisPointParameters thisApi, [Flow(FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
     {
-        public static unsafe void PointParameter(this SgisPointParameters thisApi, [Flow(FlowDirection.In)] SGIS pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
-        {
-            // SpanOverloader
-            thisApi.PointParameter(pname, in @params.GetPinnableReference());
-        }
-
-        public static unsafe void PointParameter(this SgisPointParameters thisApi, [Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
-        {
-            // SpanOverloader
-            thisApi.PointParameter(pname, in @params.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        thisApi.PointParameter(pname, in @params.GetPinnableReference());
     }
+
+    public static unsafe void PointParameter(this SgisPointParameters thisApi, [Flow(FlowDirection.In)] PointParameterNameARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+    {
+        // SpanOverloader
+        thisApi.PointParameter(pname, in @params.GetPinnableReference());
+    }
+
 }
 

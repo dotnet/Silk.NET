@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9
+namespace Silk.NET.Direct3D9;
+
+[NativeName("Name", "D3DDISPLAYMODEFILTER")]
+public unsafe partial struct Displaymodefilter
 {
-    [NativeName("Name", "D3DDISPLAYMODEFILTER")]
-    public unsafe partial struct Displaymodefilter
-    {
-        public Displaymodefilter
-        (
+    public Displaymodefilter
+    (
             uint? size = null,
             Format? format = null,
             Scanlineordering? scanLineOrdering = null
-        ) : this()
+    ) : this()
+    {
+        if (size is not null)
         {
-            if (size is not null)
-            {
-                Size = size.Value;
-            }
-
-            if (format is not null)
-            {
-                Format = format.Value;
-            }
-
-            if (scanLineOrdering is not null)
-            {
-                ScanLineOrdering = scanLineOrdering.Value;
-            }
+            Size = size.Value;
         }
 
+        if (format is not null)
+        {
+            Format = format.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Size")]
-        public uint Size;
-
-        [NativeName("Type", "D3DFORMAT")]
-        [NativeName("Type.Name", "D3DFORMAT")]
-        [NativeName("Name", "Format")]
-        public Format Format;
-
-        [NativeName("Type", "D3DSCANLINEORDERING")]
-        [NativeName("Type.Name", "D3DSCANLINEORDERING")]
-        [NativeName("Name", "ScanLineOrdering")]
-        public Scanlineordering ScanLineOrdering;
+        if (scanLineOrdering is not null)
+        {
+            ScanLineOrdering = scanLineOrdering.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Size")]
+    public uint Size;
+
+    [NativeName("Type", "D3DFORMAT")]
+    [NativeName("Type.Name", "D3DFORMAT")]
+    [NativeName("Name", "Format")]
+    public Format Format;
+
+    [NativeName("Type", "D3DSCANLINEORDERING")]
+    [NativeName("Type.Name", "D3DSCANLINEORDERING")]
+    [NativeName("Name", "ScanLineOrdering")]
+    public Scanlineordering ScanLineOrdering;
 }

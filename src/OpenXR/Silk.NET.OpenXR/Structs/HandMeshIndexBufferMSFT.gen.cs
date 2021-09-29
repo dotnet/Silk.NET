@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrHandMeshIndexBufferMSFT")]
+public unsafe partial struct HandMeshIndexBufferMSFT
 {
-    [NativeName("Name", "XrHandMeshIndexBufferMSFT")]
-    public unsafe partial struct HandMeshIndexBufferMSFT
-    {
-        public HandMeshIndexBufferMSFT
-        (
+    public HandMeshIndexBufferMSFT
+    (
             uint? indexBufferKey = null,
             uint? indexCapacityInput = null,
             uint? indexCountOutput = null,
             uint* indices = null
-        ) : this()
+    ) : this()
+    {
+        if (indexBufferKey is not null)
         {
-            if (indexBufferKey is not null)
-            {
-                IndexBufferKey = indexBufferKey.Value;
-            }
-
-            if (indexCapacityInput is not null)
-            {
-                IndexCapacityInput = indexCapacityInput.Value;
-            }
-
-            if (indexCountOutput is not null)
-            {
-                IndexCountOutput = indexCountOutput.Value;
-            }
-
-            if (indices is not null)
-            {
-                Indices = indices;
-            }
+            IndexBufferKey = indexBufferKey.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "indexBufferKey")]
-        public uint IndexBufferKey;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "indexCapacityInput")]
-        public uint IndexCapacityInput;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "indexCountOutput")]
-        public uint IndexCountOutput;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t*")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "indices")]
-        public uint* Indices;
+        if (indexCapacityInput is not null)
+        {
+            IndexCapacityInput = indexCapacityInput.Value;
+        }
+
+        if (indexCountOutput is not null)
+        {
+            IndexCountOutput = indexCountOutput.Value;
+        }
+
+        if (indices is not null)
+        {
+            Indices = indices;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "indexBufferKey")]
+    public uint IndexBufferKey;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "indexCapacityInput")]
+    public uint IndexCapacityInput;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "indexCountOutput")]
+    public uint IndexCountOutput;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t*")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "indices")]
+    public uint* Indices;
 }

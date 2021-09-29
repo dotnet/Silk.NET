@@ -14,14 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_OMAC")]
+public unsafe partial struct OMAC
 {
-    [NativeName("Name", "D3D11_OMAC")]
-    public unsafe partial struct OMAC
-    {
-        [NativeName("Type", "BYTE [16]")]
-        [NativeName("Type.Name", "BYTE [16]")]
-        [NativeName("Name", "Omac")]
-        public fixed byte Omac[16];
-    }
+    [NativeName("Type", "BYTE [16]")]
+    [NativeName("Type.Name", "BYTE [16]")]
+    [NativeName("Name", "Omac")]
+    public fixed byte Omac[16];
 }

@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL
+namespace Silk.NET.SDL;
+
+[NativeName("Name", "SDL_WindowShapeMode")]
+public unsafe partial struct WindowShapeMode
 {
-    [NativeName("Name", "SDL_WindowShapeMode")]
-    public unsafe partial struct WindowShapeMode
-    {
-        public WindowShapeMode
-        (
+    public WindowShapeMode
+    (
             WindowShapeModeVal? mode = null,
             WindowShapeParams? parameters = null
-        ) : this()
+    ) : this()
+    {
+        if (mode is not null)
         {
-            if (mode is not null)
-            {
-                Mode = mode.Value;
-            }
-
-            if (parameters is not null)
-            {
-                Parameters = parameters.Value;
-            }
+            Mode = mode.Value;
         }
 
-
-        [NativeName("Type", "WindowShapeMode")]
-        [NativeName("Type.Name", "WindowShapeMode")]
-        [NativeName("Name", "mode")]
-        public WindowShapeModeVal Mode;
-
-        [NativeName("Type", "SDL_WindowShapeParams")]
-        [NativeName("Type.Name", "SDL_WindowShapeParams")]
-        [NativeName("Name", "parameters")]
-        public WindowShapeParams Parameters;
+        if (parameters is not null)
+        {
+            Parameters = parameters.Value;
+        }
     }
+
+
+    [NativeName("Type", "WindowShapeMode")]
+    [NativeName("Type.Name", "WindowShapeMode")]
+    [NativeName("Name", "mode")]
+    public WindowShapeModeVal Mode;
+
+    [NativeName("Type", "SDL_WindowShapeParams")]
+    [NativeName("Type.Name", "SDL_WindowShapeParams")]
+    [NativeName("Name", "parameters")]
+    public WindowShapeParams Parameters;
 }

@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL
+namespace Silk.NET.SDL;
+
+[NativeName("Name", "SDL_JoyAxisEvent")]
+public unsafe partial struct JoyAxisEvent
 {
-    [NativeName("Name", "SDL_JoyAxisEvent")]
-    public unsafe partial struct JoyAxisEvent
-    {
-        public JoyAxisEvent
-        (
+    public JoyAxisEvent
+    (
             uint? type = null,
             uint? timestamp = null,
             int? which = null,
@@ -30,98 +30,97 @@ namespace Silk.NET.SDL
             byte? padding3 = null,
             short? value = null,
             ushort? padding4 = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (timestamp is not null)
-            {
-                Timestamp = timestamp.Value;
-            }
-
-            if (which is not null)
-            {
-                Which = which.Value;
-            }
-
-            if (axis is not null)
-            {
-                Axis = axis.Value;
-            }
-
-            if (padding1 is not null)
-            {
-                Padding1 = padding1.Value;
-            }
-
-            if (padding2 is not null)
-            {
-                Padding2 = padding2.Value;
-            }
-
-            if (padding3 is not null)
-            {
-                Padding3 = padding3.Value;
-            }
-
-            if (value is not null)
-            {
-                Value = value.Value;
-            }
-
-            if (padding4 is not null)
-            {
-                Padding4 = padding4.Value;
-            }
+            Type = type.Value;
         }
 
+        if (timestamp is not null)
+        {
+            Timestamp = timestamp.Value;
+        }
 
-        [NativeName("Type", "Uint32")]
-        [NativeName("Type.Name", "Uint32")]
-        [NativeName("Name", "type")]
-        public uint Type;
+        if (which is not null)
+        {
+            Which = which.Value;
+        }
 
-        [NativeName("Type", "Uint32")]
-        [NativeName("Type.Name", "Uint32")]
-        [NativeName("Name", "timestamp")]
-        public uint Timestamp;
+        if (axis is not null)
+        {
+            Axis = axis.Value;
+        }
 
-        [NativeName("Type", "SDL_JoystickID")]
-        [NativeName("Type.Name", "SDL_JoystickID")]
-        [NativeName("Name", "which")]
-        public int Which;
+        if (padding1 is not null)
+        {
+            Padding1 = padding1.Value;
+        }
 
-        [NativeName("Type", "Uint8")]
-        [NativeName("Type.Name", "Uint8")]
-        [NativeName("Name", "axis")]
-        public byte Axis;
+        if (padding2 is not null)
+        {
+            Padding2 = padding2.Value;
+        }
 
-        [NativeName("Type", "Uint8")]
-        [NativeName("Type.Name", "Uint8")]
-        [NativeName("Name", "padding1")]
-        public byte Padding1;
+        if (padding3 is not null)
+        {
+            Padding3 = padding3.Value;
+        }
 
-        [NativeName("Type", "Uint8")]
-        [NativeName("Type.Name", "Uint8")]
-        [NativeName("Name", "padding2")]
-        public byte Padding2;
+        if (value is not null)
+        {
+            Value = value.Value;
+        }
 
-        [NativeName("Type", "Uint8")]
-        [NativeName("Type.Name", "Uint8")]
-        [NativeName("Name", "padding3")]
-        public byte Padding3;
-
-        [NativeName("Type", "Sint16")]
-        [NativeName("Type.Name", "Sint16")]
-        [NativeName("Name", "value")]
-        public short Value;
-
-        [NativeName("Type", "Uint16")]
-        [NativeName("Type.Name", "Uint16")]
-        [NativeName("Name", "padding4")]
-        public ushort Padding4;
+        if (padding4 is not null)
+        {
+            Padding4 = padding4.Value;
+        }
     }
+
+
+    [NativeName("Type", "Uint32")]
+    [NativeName("Type.Name", "Uint32")]
+    [NativeName("Name", "type")]
+    public uint Type;
+
+    [NativeName("Type", "Uint32")]
+    [NativeName("Type.Name", "Uint32")]
+    [NativeName("Name", "timestamp")]
+    public uint Timestamp;
+
+    [NativeName("Type", "SDL_JoystickID")]
+    [NativeName("Type.Name", "SDL_JoystickID")]
+    [NativeName("Name", "which")]
+    public int Which;
+
+    [NativeName("Type", "Uint8")]
+    [NativeName("Type.Name", "Uint8")]
+    [NativeName("Name", "axis")]
+    public byte Axis;
+
+    [NativeName("Type", "Uint8")]
+    [NativeName("Type.Name", "Uint8")]
+    [NativeName("Name", "padding1")]
+    public byte Padding1;
+
+    [NativeName("Type", "Uint8")]
+    [NativeName("Type.Name", "Uint8")]
+    [NativeName("Name", "padding2")]
+    public byte Padding2;
+
+    [NativeName("Type", "Uint8")]
+    [NativeName("Type.Name", "Uint8")]
+    [NativeName("Name", "padding3")]
+    public byte Padding3;
+
+    [NativeName("Type", "Sint16")]
+    [NativeName("Type.Name", "Sint16")]
+    [NativeName("Name", "value")]
+    public short Value;
+
+    [NativeName("Type", "Uint16")]
+    [NativeName("Type.Name", "Uint16")]
+    [NativeName("Name", "padding4")]
+    public ushort Padding4;
 }

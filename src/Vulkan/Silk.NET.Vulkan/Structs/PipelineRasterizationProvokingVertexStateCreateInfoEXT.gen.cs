@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPipelineRasterizationProvokingVertexStateCreateInfoEXT")]
+public unsafe partial struct PipelineRasterizationProvokingVertexStateCreateInfoEXT
 {
-    [NativeName("Name", "VkPipelineRasterizationProvokingVertexStateCreateInfoEXT")]
-    public unsafe partial struct PipelineRasterizationProvokingVertexStateCreateInfoEXT
-    {
-        public PipelineRasterizationProvokingVertexStateCreateInfoEXT
-        (
+    public PipelineRasterizationProvokingVertexStateCreateInfoEXT
+    (
             StructureType? sType = StructureType.PipelineRasterizationProvokingVertexStateCreateInfoExt,
             void* pNext = null,
             ProvokingVertexModeEXT? provokingVertexMode = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (provokingVertexMode is not null)
-            {
-                ProvokingVertexMode = provokingVertexMode.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkProvokingVertexModeEXT")]
-        [NativeName("Type.Name", "VkProvokingVertexModeEXT")]
-        [NativeName("Name", "provokingVertexMode")]
-        public ProvokingVertexModeEXT ProvokingVertexMode;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (provokingVertexMode is not null)
+        {
+            ProvokingVertexMode = provokingVertexMode.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkProvokingVertexModeEXT")]
+    [NativeName("Type.Name", "VkProvokingVertexModeEXT")]
+    [NativeName("Name", "provokingVertexMode")]
+    public ProvokingVertexModeEXT ProvokingVertexMode;
 }

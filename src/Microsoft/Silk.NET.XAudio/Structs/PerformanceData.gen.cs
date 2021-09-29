@@ -14,14 +14,14 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.XAudio
+namespace Silk.NET.XAudio;
+
+[StructLayout(LayoutKind.Sequential, Pack = 1)]
+[NativeName("Name", "XAUDIO2_PERFORMANCE_DATA")]
+public unsafe partial struct PerformanceData
 {
-    [StructLayout(LayoutKind.Sequential, Pack = 1)]
-    [NativeName("Name", "XAUDIO2_PERFORMANCE_DATA")]
-    public unsafe partial struct PerformanceData
-    {
-        public PerformanceData
-        (
+    public PerformanceData
+    (
             ulong? audioCyclesSinceLastQuery = null,
             ulong? totalCyclesSinceLastQuery = null,
             uint? minimumCyclesPerQuantum = null,
@@ -36,148 +36,147 @@ namespace Silk.NET.XAudio
             uint? activeMatrixMixCount = null,
             uint? activeXmaSourceVoices = null,
             uint? activeXmaStreams = null
-        ) : this()
+    ) : this()
+    {
+        if (audioCyclesSinceLastQuery is not null)
         {
-            if (audioCyclesSinceLastQuery is not null)
-            {
-                AudioCyclesSinceLastQuery = audioCyclesSinceLastQuery.Value;
-            }
-
-            if (totalCyclesSinceLastQuery is not null)
-            {
-                TotalCyclesSinceLastQuery = totalCyclesSinceLastQuery.Value;
-            }
-
-            if (minimumCyclesPerQuantum is not null)
-            {
-                MinimumCyclesPerQuantum = minimumCyclesPerQuantum.Value;
-            }
-
-            if (maximumCyclesPerQuantum is not null)
-            {
-                MaximumCyclesPerQuantum = maximumCyclesPerQuantum.Value;
-            }
-
-            if (memoryUsageInBytes is not null)
-            {
-                MemoryUsageInBytes = memoryUsageInBytes.Value;
-            }
-
-            if (currentLatencyInSamples is not null)
-            {
-                CurrentLatencyInSamples = currentLatencyInSamples.Value;
-            }
-
-            if (glitchesSinceEngineStarted is not null)
-            {
-                GlitchesSinceEngineStarted = glitchesSinceEngineStarted.Value;
-            }
-
-            if (activeSourceVoiceCount is not null)
-            {
-                ActiveSourceVoiceCount = activeSourceVoiceCount.Value;
-            }
-
-            if (totalSourceVoiceCount is not null)
-            {
-                TotalSourceVoiceCount = totalSourceVoiceCount.Value;
-            }
-
-            if (activeSubmixVoiceCount is not null)
-            {
-                ActiveSubmixVoiceCount = activeSubmixVoiceCount.Value;
-            }
-
-            if (activeResamplerCount is not null)
-            {
-                ActiveResamplerCount = activeResamplerCount.Value;
-            }
-
-            if (activeMatrixMixCount is not null)
-            {
-                ActiveMatrixMixCount = activeMatrixMixCount.Value;
-            }
-
-            if (activeXmaSourceVoices is not null)
-            {
-                ActiveXmaSourceVoices = activeXmaSourceVoices.Value;
-            }
-
-            if (activeXmaStreams is not null)
-            {
-                ActiveXmaStreams = activeXmaStreams.Value;
-            }
+            AudioCyclesSinceLastQuery = audioCyclesSinceLastQuery.Value;
         }
 
+        if (totalCyclesSinceLastQuery is not null)
+        {
+            TotalCyclesSinceLastQuery = totalCyclesSinceLastQuery.Value;
+        }
 
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "AudioCyclesSinceLastQuery")]
-        public ulong AudioCyclesSinceLastQuery;
+        if (minimumCyclesPerQuantum is not null)
+        {
+            MinimumCyclesPerQuantum = minimumCyclesPerQuantum.Value;
+        }
 
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "TotalCyclesSinceLastQuery")]
-        public ulong TotalCyclesSinceLastQuery;
+        if (maximumCyclesPerQuantum is not null)
+        {
+            MaximumCyclesPerQuantum = maximumCyclesPerQuantum.Value;
+        }
 
-        [NativeName("Type", "UINT32")]
-        [NativeName("Type.Name", "UINT32")]
-        [NativeName("Name", "MinimumCyclesPerQuantum")]
-        public uint MinimumCyclesPerQuantum;
+        if (memoryUsageInBytes is not null)
+        {
+            MemoryUsageInBytes = memoryUsageInBytes.Value;
+        }
 
-        [NativeName("Type", "UINT32")]
-        [NativeName("Type.Name", "UINT32")]
-        [NativeName("Name", "MaximumCyclesPerQuantum")]
-        public uint MaximumCyclesPerQuantum;
+        if (currentLatencyInSamples is not null)
+        {
+            CurrentLatencyInSamples = currentLatencyInSamples.Value;
+        }
 
-        [NativeName("Type", "UINT32")]
-        [NativeName("Type.Name", "UINT32")]
-        [NativeName("Name", "MemoryUsageInBytes")]
-        public uint MemoryUsageInBytes;
+        if (glitchesSinceEngineStarted is not null)
+        {
+            GlitchesSinceEngineStarted = glitchesSinceEngineStarted.Value;
+        }
 
-        [NativeName("Type", "UINT32")]
-        [NativeName("Type.Name", "UINT32")]
-        [NativeName("Name", "CurrentLatencyInSamples")]
-        public uint CurrentLatencyInSamples;
+        if (activeSourceVoiceCount is not null)
+        {
+            ActiveSourceVoiceCount = activeSourceVoiceCount.Value;
+        }
 
-        [NativeName("Type", "UINT32")]
-        [NativeName("Type.Name", "UINT32")]
-        [NativeName("Name", "GlitchesSinceEngineStarted")]
-        public uint GlitchesSinceEngineStarted;
+        if (totalSourceVoiceCount is not null)
+        {
+            TotalSourceVoiceCount = totalSourceVoiceCount.Value;
+        }
 
-        [NativeName("Type", "UINT32")]
-        [NativeName("Type.Name", "UINT32")]
-        [NativeName("Name", "ActiveSourceVoiceCount")]
-        public uint ActiveSourceVoiceCount;
+        if (activeSubmixVoiceCount is not null)
+        {
+            ActiveSubmixVoiceCount = activeSubmixVoiceCount.Value;
+        }
 
-        [NativeName("Type", "UINT32")]
-        [NativeName("Type.Name", "UINT32")]
-        [NativeName("Name", "TotalSourceVoiceCount")]
-        public uint TotalSourceVoiceCount;
+        if (activeResamplerCount is not null)
+        {
+            ActiveResamplerCount = activeResamplerCount.Value;
+        }
 
-        [NativeName("Type", "UINT32")]
-        [NativeName("Type.Name", "UINT32")]
-        [NativeName("Name", "ActiveSubmixVoiceCount")]
-        public uint ActiveSubmixVoiceCount;
+        if (activeMatrixMixCount is not null)
+        {
+            ActiveMatrixMixCount = activeMatrixMixCount.Value;
+        }
 
-        [NativeName("Type", "UINT32")]
-        [NativeName("Type.Name", "UINT32")]
-        [NativeName("Name", "ActiveResamplerCount")]
-        public uint ActiveResamplerCount;
+        if (activeXmaSourceVoices is not null)
+        {
+            ActiveXmaSourceVoices = activeXmaSourceVoices.Value;
+        }
 
-        [NativeName("Type", "UINT32")]
-        [NativeName("Type.Name", "UINT32")]
-        [NativeName("Name", "ActiveMatrixMixCount")]
-        public uint ActiveMatrixMixCount;
-
-        [NativeName("Type", "UINT32")]
-        [NativeName("Type.Name", "UINT32")]
-        [NativeName("Name", "ActiveXmaSourceVoices")]
-        public uint ActiveXmaSourceVoices;
-
-        [NativeName("Type", "UINT32")]
-        [NativeName("Type.Name", "UINT32")]
-        [NativeName("Name", "ActiveXmaStreams")]
-        public uint ActiveXmaStreams;
+        if (activeXmaStreams is not null)
+        {
+            ActiveXmaStreams = activeXmaStreams.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "AudioCyclesSinceLastQuery")]
+    public ulong AudioCyclesSinceLastQuery;
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "TotalCyclesSinceLastQuery")]
+    public ulong TotalCyclesSinceLastQuery;
+
+    [NativeName("Type", "UINT32")]
+    [NativeName("Type.Name", "UINT32")]
+    [NativeName("Name", "MinimumCyclesPerQuantum")]
+    public uint MinimumCyclesPerQuantum;
+
+    [NativeName("Type", "UINT32")]
+    [NativeName("Type.Name", "UINT32")]
+    [NativeName("Name", "MaximumCyclesPerQuantum")]
+    public uint MaximumCyclesPerQuantum;
+
+    [NativeName("Type", "UINT32")]
+    [NativeName("Type.Name", "UINT32")]
+    [NativeName("Name", "MemoryUsageInBytes")]
+    public uint MemoryUsageInBytes;
+
+    [NativeName("Type", "UINT32")]
+    [NativeName("Type.Name", "UINT32")]
+    [NativeName("Name", "CurrentLatencyInSamples")]
+    public uint CurrentLatencyInSamples;
+
+    [NativeName("Type", "UINT32")]
+    [NativeName("Type.Name", "UINT32")]
+    [NativeName("Name", "GlitchesSinceEngineStarted")]
+    public uint GlitchesSinceEngineStarted;
+
+    [NativeName("Type", "UINT32")]
+    [NativeName("Type.Name", "UINT32")]
+    [NativeName("Name", "ActiveSourceVoiceCount")]
+    public uint ActiveSourceVoiceCount;
+
+    [NativeName("Type", "UINT32")]
+    [NativeName("Type.Name", "UINT32")]
+    [NativeName("Name", "TotalSourceVoiceCount")]
+    public uint TotalSourceVoiceCount;
+
+    [NativeName("Type", "UINT32")]
+    [NativeName("Type.Name", "UINT32")]
+    [NativeName("Name", "ActiveSubmixVoiceCount")]
+    public uint ActiveSubmixVoiceCount;
+
+    [NativeName("Type", "UINT32")]
+    [NativeName("Type.Name", "UINT32")]
+    [NativeName("Name", "ActiveResamplerCount")]
+    public uint ActiveResamplerCount;
+
+    [NativeName("Type", "UINT32")]
+    [NativeName("Type.Name", "UINT32")]
+    [NativeName("Name", "ActiveMatrixMixCount")]
+    public uint ActiveMatrixMixCount;
+
+    [NativeName("Type", "UINT32")]
+    [NativeName("Type.Name", "UINT32")]
+    [NativeName("Name", "ActiveXmaSourceVoices")]
+    public uint ActiveXmaSourceVoices;
+
+    [NativeName("Type", "UINT32")]
+    [NativeName("Type.Name", "UINT32")]
+    [NativeName("Name", "ActiveXmaStreams")]
+    public uint ActiveXmaStreams;
 }

@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkInputAttachmentAspectReference")]
+public unsafe partial struct InputAttachmentAspectReference
 {
-    [NativeName("Name", "VkInputAttachmentAspectReference")]
-    public unsafe partial struct InputAttachmentAspectReference
-    {
-        public InputAttachmentAspectReference
-        (
+    public InputAttachmentAspectReference
+    (
             uint? subpass = null,
             uint? inputAttachmentIndex = null,
             ImageAspectFlags? aspectMask = null
-        ) : this()
+    ) : this()
+    {
+        if (subpass is not null)
         {
-            if (subpass is not null)
-            {
-                Subpass = subpass.Value;
-            }
-
-            if (inputAttachmentIndex is not null)
-            {
-                InputAttachmentIndex = inputAttachmentIndex.Value;
-            }
-
-            if (aspectMask is not null)
-            {
-                AspectMask = aspectMask.Value;
-            }
+            Subpass = subpass.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "subpass")]
-        public uint Subpass;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "inputAttachmentIndex")]
-        public uint InputAttachmentIndex;
-/// <summary></summary>
-        [NativeName("Type", "VkImageAspectFlags")]
-        [NativeName("Type.Name", "VkImageAspectFlags")]
-        [NativeName("Name", "aspectMask")]
-        public ImageAspectFlags AspectMask;
+        if (inputAttachmentIndex is not null)
+        {
+            InputAttachmentIndex = inputAttachmentIndex.Value;
+        }
+
+        if (aspectMask is not null)
+        {
+            AspectMask = aspectMask.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "subpass")]
+    public uint Subpass;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "inputAttachmentIndex")]
+    public uint InputAttachmentIndex;
+/// <summary></summary>
+    [NativeName("Type", "VkImageAspectFlags")]
+    [NativeName("Type.Name", "VkImageAspectFlags")]
+    [NativeName("Name", "aspectMask")]
+    public ImageAspectFlags AspectMask;
 }

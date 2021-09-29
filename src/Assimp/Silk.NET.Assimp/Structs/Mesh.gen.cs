@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp
+namespace Silk.NET.Assimp;
+
+[NativeName("Name", "aiMesh")]
+public unsafe partial struct Mesh
 {
-    [NativeName("Name", "aiMesh")]
-    public unsafe partial struct Mesh
-    {
-        public Mesh
-        (
+    public Mesh
+    (
             uint? mPrimitiveTypes = null,
             uint? mNumVertices = null,
             uint? mNumFaces = null,
@@ -37,238 +37,237 @@ namespace Silk.NET.Assimp
             AnimMesh** mAnimMeshes = null,
             uint? mMethod = null,
             Silk.NET.Maths.Box3D<float>? mAABB = null
-        ) : this()
+    ) : this()
+    {
+        if (mPrimitiveTypes is not null)
         {
-            if (mPrimitiveTypes is not null)
-            {
-                MPrimitiveTypes = mPrimitiveTypes.Value;
-            }
-
-            if (mNumVertices is not null)
-            {
-                MNumVertices = mNumVertices.Value;
-            }
-
-            if (mNumFaces is not null)
-            {
-                MNumFaces = mNumFaces.Value;
-            }
-
-            if (mVertices is not null)
-            {
-                MVertices = mVertices;
-            }
-
-            if (mNormals is not null)
-            {
-                MNormals = mNormals;
-            }
-
-            if (mTangents is not null)
-            {
-                MTangents = mTangents;
-            }
-
-            if (mBitangents is not null)
-            {
-                MBitangents = mBitangents;
-            }
-
-            if (mFaces is not null)
-            {
-                MFaces = mFaces;
-            }
-
-            if (mNumBones is not null)
-            {
-                MNumBones = mNumBones.Value;
-            }
-
-            if (mBones is not null)
-            {
-                MBones = mBones;
-            }
-
-            if (mMaterialIndex is not null)
-            {
-                MMaterialIndex = mMaterialIndex.Value;
-            }
-
-            if (mName is not null)
-            {
-                MName = mName.Value;
-            }
-
-            if (mNumAnimMeshes is not null)
-            {
-                MNumAnimMeshes = mNumAnimMeshes.Value;
-            }
-
-            if (mAnimMeshes is not null)
-            {
-                MAnimMeshes = mAnimMeshes;
-            }
-
-            if (mMethod is not null)
-            {
-                MMethod = mMethod.Value;
-            }
-
-            if (mAABB is not null)
-            {
-                MAABB = mAABB.Value;
-            }
+            MPrimitiveTypes = mPrimitiveTypes.Value;
         }
 
-
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "mPrimitiveTypes")]
-        public uint MPrimitiveTypes;
-
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "mNumVertices")]
-        public uint MNumVertices;
-
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "mNumFaces")]
-        public uint MNumFaces;
-
-        [NativeName("Type", "aiVector3D *")]
-        [NativeName("Type.Name", "aiVector3D *")]
-        [NativeName("Name", "mVertices")]
-        public System.Numerics.Vector3* MVertices;
-
-        [NativeName("Type", "aiVector3D *")]
-        [NativeName("Type.Name", "aiVector3D *")]
-        [NativeName("Name", "mNormals")]
-        public System.Numerics.Vector3* MNormals;
-
-        [NativeName("Type", "aiVector3D *")]
-        [NativeName("Type.Name", "aiVector3D *")]
-        [NativeName("Name", "mTangents")]
-        public System.Numerics.Vector3* MTangents;
-
-        [NativeName("Type", "aiVector3D *")]
-        [NativeName("Type.Name", "aiVector3D *")]
-        [NativeName("Name", "mBitangents")]
-        public System.Numerics.Vector3* MBitangents;
-        
-        [NativeName("Type", "aiColor4D *[8]")]
-        [NativeName("Type.Name", "aiColor4D *[8]")]
-        [NativeName("Name", "mColors")]
-        public MColorsBuffer MColors;
-
-        public struct MColorsBuffer
+        if (mNumVertices is not null)
         {
-            public System.Numerics.Vector4* Element0;
-            public System.Numerics.Vector4* Element1;
-            public System.Numerics.Vector4* Element2;
-            public System.Numerics.Vector4* Element3;
-            public System.Numerics.Vector4* Element4;
-            public System.Numerics.Vector4* Element5;
-            public System.Numerics.Vector4* Element6;
-            public System.Numerics.Vector4* Element7;
-            public ref System.Numerics.Vector4* this[int index]
-            {
-                get
-                {
-                    if (index > 7 || index < 0)
-                    {
-                        throw new ArgumentOutOfRangeException(nameof(index));
-                    }
-
-                    fixed (System.Numerics.Vector4** ptr = &Element0)
-                    {
-                        return ref ptr[index];
-                    }
-                }
-            }
+            MNumVertices = mNumVertices.Value;
         }
 
-        
-        [NativeName("Type", "aiVector3D *[8]")]
-        [NativeName("Type.Name", "aiVector3D *[8]")]
-        [NativeName("Name", "mTextureCoords")]
-        public MTextureCoordsBuffer MTextureCoords;
-
-        public struct MTextureCoordsBuffer
+        if (mNumFaces is not null)
         {
-            public System.Numerics.Vector3* Element0;
-            public System.Numerics.Vector3* Element1;
-            public System.Numerics.Vector3* Element2;
-            public System.Numerics.Vector3* Element3;
-            public System.Numerics.Vector3* Element4;
-            public System.Numerics.Vector3* Element5;
-            public System.Numerics.Vector3* Element6;
-            public System.Numerics.Vector3* Element7;
-            public ref System.Numerics.Vector3* this[int index]
-            {
-                get
-                {
-                    if (index > 7 || index < 0)
-                    {
-                        throw new ArgumentOutOfRangeException(nameof(index));
-                    }
-
-                    fixed (System.Numerics.Vector3** ptr = &Element0)
-                    {
-                        return ref ptr[index];
-                    }
-                }
-            }
+            MNumFaces = mNumFaces.Value;
         }
 
-        [NativeName("Type", "unsigned int [8]")]
-        [NativeName("Type.Name", "unsigned int [8]")]
-        [NativeName("Name", "mNumUVComponents")]
-        public fixed uint MNumUVComponents[8];
+        if (mVertices is not null)
+        {
+            MVertices = mVertices;
+        }
 
-        [NativeName("Type", "aiFace *")]
-        [NativeName("Type.Name", "aiFace *")]
-        [NativeName("Name", "mFaces")]
-        public Face* MFaces;
+        if (mNormals is not null)
+        {
+            MNormals = mNormals;
+        }
 
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "mNumBones")]
-        public uint MNumBones;
+        if (mTangents is not null)
+        {
+            MTangents = mTangents;
+        }
 
-        [NativeName("Type", "aiBone **")]
-        [NativeName("Type.Name", "aiBone **")]
-        [NativeName("Name", "mBones")]
-        public Bone** MBones;
+        if (mBitangents is not null)
+        {
+            MBitangents = mBitangents;
+        }
 
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "mMaterialIndex")]
-        public uint MMaterialIndex;
+        if (mFaces is not null)
+        {
+            MFaces = mFaces;
+        }
 
-        [NativeName("Type", "aiString")]
-        [NativeName("Type.Name", "aiString")]
-        [NativeName("Name", "mName")]
-        public AssimpString MName;
+        if (mNumBones is not null)
+        {
+            MNumBones = mNumBones.Value;
+        }
 
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "mNumAnimMeshes")]
-        public uint MNumAnimMeshes;
+        if (mBones is not null)
+        {
+            MBones = mBones;
+        }
 
-        [NativeName("Type", "aiAnimMesh **")]
-        [NativeName("Type.Name", "aiAnimMesh **")]
-        [NativeName("Name", "mAnimMeshes")]
-        public AnimMesh** MAnimMeshes;
+        if (mMaterialIndex is not null)
+        {
+            MMaterialIndex = mMaterialIndex.Value;
+        }
 
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "mMethod")]
-        public uint MMethod;
+        if (mName is not null)
+        {
+            MName = mName.Value;
+        }
 
-        [NativeName("Type", "aiAABB")]
-        [NativeName("Type.Name", "aiAABB")]
-        [NativeName("Name", "mAABB")]
-        public Silk.NET.Maths.Box3D<float> MAABB;
+        if (mNumAnimMeshes is not null)
+        {
+            MNumAnimMeshes = mNumAnimMeshes.Value;
+        }
+
+        if (mAnimMeshes is not null)
+        {
+            MAnimMeshes = mAnimMeshes;
+        }
+
+        if (mMethod is not null)
+        {
+            MMethod = mMethod.Value;
+        }
+
+        if (mAABB is not null)
+        {
+            MAABB = mAABB.Value;
+        }
     }
+
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "mPrimitiveTypes")]
+    public uint MPrimitiveTypes;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "mNumVertices")]
+    public uint MNumVertices;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "mNumFaces")]
+    public uint MNumFaces;
+
+    [NativeName("Type", "aiVector3D *")]
+    [NativeName("Type.Name", "aiVector3D *")]
+    [NativeName("Name", "mVertices")]
+    public System.Numerics.Vector3* MVertices;
+
+    [NativeName("Type", "aiVector3D *")]
+    [NativeName("Type.Name", "aiVector3D *")]
+    [NativeName("Name", "mNormals")]
+    public System.Numerics.Vector3* MNormals;
+
+    [NativeName("Type", "aiVector3D *")]
+    [NativeName("Type.Name", "aiVector3D *")]
+    [NativeName("Name", "mTangents")]
+    public System.Numerics.Vector3* MTangents;
+
+    [NativeName("Type", "aiVector3D *")]
+    [NativeName("Type.Name", "aiVector3D *")]
+    [NativeName("Name", "mBitangents")]
+    public System.Numerics.Vector3* MBitangents;
+        
+    [NativeName("Type", "aiColor4D *[8]")]
+    [NativeName("Type.Name", "aiColor4D *[8]")]
+    [NativeName("Name", "mColors")]
+    public MColorsBuffer MColors;
+
+    public struct MColorsBuffer
+    {
+        public System.Numerics.Vector4* Element0;
+        public System.Numerics.Vector4* Element1;
+        public System.Numerics.Vector4* Element2;
+        public System.Numerics.Vector4* Element3;
+        public System.Numerics.Vector4* Element4;
+        public System.Numerics.Vector4* Element5;
+        public System.Numerics.Vector4* Element6;
+        public System.Numerics.Vector4* Element7;
+        public ref System.Numerics.Vector4* this[int index]
+        {
+            get
+            {
+                if (index > 7 || index < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(index));
+                }
+
+                fixed (System.Numerics.Vector4** ptr = &Element0)
+                {
+                    return ref ptr[index];
+                }
+            }
+        }
+    }
+
+        
+    [NativeName("Type", "aiVector3D *[8]")]
+    [NativeName("Type.Name", "aiVector3D *[8]")]
+    [NativeName("Name", "mTextureCoords")]
+    public MTextureCoordsBuffer MTextureCoords;
+
+    public struct MTextureCoordsBuffer
+    {
+        public System.Numerics.Vector3* Element0;
+        public System.Numerics.Vector3* Element1;
+        public System.Numerics.Vector3* Element2;
+        public System.Numerics.Vector3* Element3;
+        public System.Numerics.Vector3* Element4;
+        public System.Numerics.Vector3* Element5;
+        public System.Numerics.Vector3* Element6;
+        public System.Numerics.Vector3* Element7;
+        public ref System.Numerics.Vector3* this[int index]
+        {
+            get
+            {
+                if (index > 7 || index < 0)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(index));
+                }
+
+                fixed (System.Numerics.Vector3** ptr = &Element0)
+                {
+                    return ref ptr[index];
+                }
+            }
+        }
+    }
+
+    [NativeName("Type", "unsigned int [8]")]
+    [NativeName("Type.Name", "unsigned int [8]")]
+    [NativeName("Name", "mNumUVComponents")]
+    public fixed uint MNumUVComponents[8];
+
+    [NativeName("Type", "aiFace *")]
+    [NativeName("Type.Name", "aiFace *")]
+    [NativeName("Name", "mFaces")]
+    public Face* MFaces;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "mNumBones")]
+    public uint MNumBones;
+
+    [NativeName("Type", "aiBone **")]
+    [NativeName("Type.Name", "aiBone **")]
+    [NativeName("Name", "mBones")]
+    public Bone** MBones;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "mMaterialIndex")]
+    public uint MMaterialIndex;
+
+    [NativeName("Type", "aiString")]
+    [NativeName("Type.Name", "aiString")]
+    [NativeName("Name", "mName")]
+    public AssimpString MName;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "mNumAnimMeshes")]
+    public uint MNumAnimMeshes;
+
+    [NativeName("Type", "aiAnimMesh **")]
+    [NativeName("Type.Name", "aiAnimMesh **")]
+    [NativeName("Name", "mAnimMeshes")]
+    public AnimMesh** MAnimMeshes;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "mMethod")]
+    public uint MMethod;
+
+    [NativeName("Type", "aiAABB")]
+    [NativeName("Type.Name", "aiAABB")]
+    [NativeName("Name", "mAABB")]
+    public Silk.NET.Maths.Box3D<float> MAABB;
 }

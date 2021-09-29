@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_QUERY_DESC")]
+public unsafe partial struct QueryDesc
 {
-    [NativeName("Name", "D3D11_QUERY_DESC")]
-    public unsafe partial struct QueryDesc
-    {
-        public QueryDesc
-        (
+    public QueryDesc
+    (
             Query? query = null,
             uint? miscFlags = null
-        ) : this()
+    ) : this()
+    {
+        if (query is not null)
         {
-            if (query is not null)
-            {
-                Query = query.Value;
-            }
-
-            if (miscFlags is not null)
-            {
-                MiscFlags = miscFlags.Value;
-            }
+            Query = query.Value;
         }
 
-
-        [NativeName("Type", "D3D11_QUERY")]
-        [NativeName("Type.Name", "D3D11_QUERY")]
-        [NativeName("Name", "Query")]
-        public Query Query;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "MiscFlags")]
-        public uint MiscFlags;
+        if (miscFlags is not null)
+        {
+            MiscFlags = miscFlags.Value;
+        }
     }
+
+
+    [NativeName("Type", "D3D11_QUERY")]
+    [NativeName("Type.Name", "D3D11_QUERY")]
+    [NativeName("Name", "Query")]
+    public Query Query;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "MiscFlags")]
+    public uint MiscFlags;
 }

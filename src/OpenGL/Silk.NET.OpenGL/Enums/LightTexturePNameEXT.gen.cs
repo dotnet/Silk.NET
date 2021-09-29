@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL
+namespace Silk.NET.OpenGL;
+
+[NativeName("Name", "LightTexturePNameEXT")]
+public enum LightTexturePNameEXT : int
 {
-    [NativeName("Name", "LightTexturePNameEXT")]
-    public enum LightTexturePNameEXT : int
-    {
-        [NativeName("Name", "GL_ATTENUATION_EXT")]
-        AttenuationExt = 0x834D,
-        [NativeName("Name", "GL_SHADOW_ATTENUATION_EXT")]
-        ShadowAttenuationExt = 0x834E,
-    }
+    [NativeName("Name", "GL_ATTENUATION_EXT")]
+    AttenuationExt = 0x834D,
+    [NativeName("Name", "GL_SHADOW_ATTENUATION_EXT")]
+    ShadowAttenuationExt = 0x834E,
 }

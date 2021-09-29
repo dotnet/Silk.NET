@@ -12,34 +12,33 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.MESA
+namespace Silk.NET.OpenGLES.Extensions.MESA;
+
+public static class MesaFramebufferFlipYOverloads
 {
-    public static class MesaFramebufferFlipYOverloads
+    public static unsafe void GetFramebufferParameter(this MesaFramebufferFlipY thisApi, [Flow(FlowDirection.In)] MESA target, [Flow(FlowDirection.In)] MESA pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
     {
-        public static unsafe void GetFramebufferParameter(this MesaFramebufferFlipY thisApi, [Flow(FlowDirection.In)] MESA target, [Flow(FlowDirection.In)] MESA pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
-        {
-            // SpanOverloader
-            thisApi.GetFramebufferParameter(target, pname, out @params.GetPinnableReference());
-        }
-
-        public static unsafe void GetFramebufferParameter(this MesaFramebufferFlipY thisApi, [Flow(FlowDirection.In)] MESA target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
-        {
-            // SpanOverloader
-            thisApi.GetFramebufferParameter(target, pname, out @params.GetPinnableReference());
-        }
-
-        public static unsafe void GetFramebufferParameter(this MesaFramebufferFlipY thisApi, [Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] MESA pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
-        {
-            // SpanOverloader
-            thisApi.GetFramebufferParameter(target, pname, out @params.GetPinnableReference());
-        }
-
-        public static unsafe void GetFramebufferParameter(this MesaFramebufferFlipY thisApi, [Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
-        {
-            // SpanOverloader
-            thisApi.GetFramebufferParameter(target, pname, out @params.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        thisApi.GetFramebufferParameter(target, pname, out @params.GetPinnableReference());
     }
+
+    public static unsafe void GetFramebufferParameter(this MesaFramebufferFlipY thisApi, [Flow(FlowDirection.In)] MESA target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+    {
+        // SpanOverloader
+        thisApi.GetFramebufferParameter(target, pname, out @params.GetPinnableReference());
+    }
+
+    public static unsafe void GetFramebufferParameter(this MesaFramebufferFlipY thisApi, [Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] MESA pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+    {
+        // SpanOverloader
+        thisApi.GetFramebufferParameter(target, pname, out @params.GetPinnableReference());
+    }
+
+    public static unsafe void GetFramebufferParameter(this MesaFramebufferFlipY thisApi, [Flow(FlowDirection.In)] FramebufferTarget target, [Flow(FlowDirection.In)] FramebufferAttachmentParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+    {
+        // SpanOverloader
+        thisApi.GetFramebufferParameter(target, pname, out @params.GetPinnableReference());
+    }
+
 }
 

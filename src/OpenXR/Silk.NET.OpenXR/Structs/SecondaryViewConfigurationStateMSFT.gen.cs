@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrSecondaryViewConfigurationStateMSFT")]
+public unsafe partial struct SecondaryViewConfigurationStateMSFT
 {
-    [NativeName("Name", "XrSecondaryViewConfigurationStateMSFT")]
-    public unsafe partial struct SecondaryViewConfigurationStateMSFT
-    {
-        public SecondaryViewConfigurationStateMSFT
-        (
+    public SecondaryViewConfigurationStateMSFT
+    (
             StructureType? type = StructureType.TypeSecondaryViewConfigurationStateMsft,
             void* next = null,
             ViewConfigurationType? viewConfigurationType = null,
             uint? active = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (viewConfigurationType is not null)
-            {
-                ViewConfigurationType = viewConfigurationType.Value;
-            }
-
-            if (active is not null)
-            {
-                Active = active.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "XrViewConfigurationType")]
-        [NativeName("Type.Name", "XrViewConfigurationType")]
-        [NativeName("Name", "viewConfigurationType")]
-        public ViewConfigurationType ViewConfigurationType;
-/// <summary></summary>
-        [NativeName("Type", "XrBool32")]
-        [NativeName("Type.Name", "XrBool32")]
-        [NativeName("Name", "active")]
-        public uint Active;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (viewConfigurationType is not null)
+        {
+            ViewConfigurationType = viewConfigurationType.Value;
+        }
+
+        if (active is not null)
+        {
+            Active = active.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "XrViewConfigurationType")]
+    [NativeName("Type.Name", "XrViewConfigurationType")]
+    [NativeName("Name", "viewConfigurationType")]
+    public ViewConfigurationType ViewConfigurationType;
+/// <summary></summary>
+    [NativeName("Type", "XrBool32")]
+    [NativeName("Type.Name", "XrBool32")]
+    [NativeName("Name", "active")]
+    public uint Active;
 }

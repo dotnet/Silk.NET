@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkDescriptorImageInfo")]
+public unsafe partial struct DescriptorImageInfo
 {
-    [NativeName("Name", "VkDescriptorImageInfo")]
-    public unsafe partial struct DescriptorImageInfo
-    {
-        public DescriptorImageInfo
-        (
+    public DescriptorImageInfo
+    (
             Sampler? sampler = null,
             ImageView? imageView = null,
             ImageLayout? imageLayout = null
-        ) : this()
+    ) : this()
+    {
+        if (sampler is not null)
         {
-            if (sampler is not null)
-            {
-                Sampler = sampler.Value;
-            }
-
-            if (imageView is not null)
-            {
-                ImageView = imageView.Value;
-            }
-
-            if (imageLayout is not null)
-            {
-                ImageLayout = imageLayout.Value;
-            }
+            Sampler = sampler.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkSampler")]
-        [NativeName("Type.Name", "VkSampler")]
-        [NativeName("Name", "sampler")]
-        public Sampler Sampler;
-/// <summary></summary>
-        [NativeName("Type", "VkImageView")]
-        [NativeName("Type.Name", "VkImageView")]
-        [NativeName("Name", "imageView")]
-        public ImageView ImageView;
-/// <summary></summary>
-        [NativeName("Type", "VkImageLayout")]
-        [NativeName("Type.Name", "VkImageLayout")]
-        [NativeName("Name", "imageLayout")]
-        public ImageLayout ImageLayout;
+        if (imageView is not null)
+        {
+            ImageView = imageView.Value;
+        }
+
+        if (imageLayout is not null)
+        {
+            ImageLayout = imageLayout.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkSampler")]
+    [NativeName("Type.Name", "VkSampler")]
+    [NativeName("Name", "sampler")]
+    public Sampler Sampler;
+/// <summary></summary>
+    [NativeName("Type", "VkImageView")]
+    [NativeName("Type.Name", "VkImageView")]
+    [NativeName("Name", "imageView")]
+    public ImageView ImageView;
+/// <summary></summary>
+    [NativeName("Type", "VkImageLayout")]
+    [NativeName("Type.Name", "VkImageLayout")]
+    [NativeName("Name", "imageLayout")]
+    public ImageLayout ImageLayout;
 }

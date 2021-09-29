@@ -14,20 +14,19 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR.Extensions.VARJO
-{
-    [Extension("XR_VARJO_environment_depth_estimation")]
-    public unsafe partial class VarjoEnvironmentDepthEstimation : NativeExtension<XR>
-    {
-        public const string ExtensionName = "XR_VARJO_environment_depth_estimation";
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrSetEnvironmentDepthEstimationVARJO")]
-        public partial Result SetEnvironmentDepthEstimationVarjo([Count(Count = 0)] Session session, [Count(Count = 0)] uint enabled);
+namespace Silk.NET.OpenXR.Extensions.VARJO;
 
-        public VarjoEnvironmentDepthEstimation(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+[Extension("XR_VARJO_environment_depth_estimation")]
+public unsafe partial class VarjoEnvironmentDepthEstimation : NativeExtension<XR>
+{
+    public const string ExtensionName = "XR_VARJO_environment_depth_estimation";
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "xrSetEnvironmentDepthEstimationVARJO")]
+    public partial Result SetEnvironmentDepthEstimationVarjo([Count(Count = 0)] Session session, [Count(Count = 0)] uint enabled);
+
+    public VarjoEnvironmentDepthEstimation(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

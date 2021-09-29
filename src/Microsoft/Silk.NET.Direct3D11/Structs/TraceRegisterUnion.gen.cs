@@ -14,33 +14,32 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[StructLayout(LayoutKind.Explicit)]
+[NativeName("Name", "__AnonymousRecord_d3d11shadertracing_L226_C5")]
+public unsafe partial struct TraceRegisterUnion
 {
-    [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d11shadertracing_L226_C5")]
-    public unsafe partial struct TraceRegisterUnion
-    {
-        public TraceRegisterUnion
-        (
+    public TraceRegisterUnion
+    (
             ushort? index1D = null
-        ) : this()
+    ) : this()
+    {
+        if (index1D is not null)
         {
-            if (index1D is not null)
-            {
-                Index1D = index1D.Value;
-            }
+            Index1D = index1D.Value;
         }
-
-
-        [FieldOffset(0)]
-        [NativeName("Type", "UINT16")]
-        [NativeName("Type.Name", "UINT16")]
-        [NativeName("Name", "Index1D")]
-        public ushort Index1D;
-        [FieldOffset(0)]
-        [NativeName("Type", "UINT16 [2]")]
-        [NativeName("Type.Name", "UINT16 [2]")]
-        [NativeName("Name", "Index2D")]
-        public fixed ushort Index2D[2];
     }
+
+
+        [FieldOffset(0)]
+    [NativeName("Type", "UINT16")]
+    [NativeName("Type.Name", "UINT16")]
+    [NativeName("Name", "Index1D")]
+    public ushort Index1D;
+        [FieldOffset(0)]
+    [NativeName("Type", "UINT16 [2]")]
+    [NativeName("Type.Name", "UINT16 [2]")]
+    [NativeName("Name", "Index2D")]
+    public fixed ushort Index2D[2];
 }

@@ -12,16 +12,15 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NV
-{
-    public static class NVScissorExclusiveOverloads
-    {
-        public static unsafe void ScissorExclusiveArray(this NVScissorExclusive thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> v)
-        {
-            // SpanOverloader
-            thisApi.ScissorExclusiveArray(first, count, in v.GetPinnableReference());
-        }
+namespace Silk.NET.OpenGL.Legacy.Extensions.NV;
 
+public static class NVScissorExclusiveOverloads
+{
+    public static unsafe void ScissorExclusiveArray(this NVScissorExclusive thisApi, [Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] ReadOnlySpan<int> v)
+    {
+        // SpanOverloader
+        thisApi.ScissorExclusiveArray(first, count, in v.GetPinnableReference());
     }
+
 }
 

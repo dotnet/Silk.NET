@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9
+namespace Silk.NET.Direct3D9;
+
+[NativeName("Name", "_D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_INPUT")]
+public unsafe partial struct AuthenticatedchannelQuerycryptosessionInput
 {
-    [NativeName("Name", "_D3DAUTHENTICATEDCHANNEL_QUERYCRYPTOSESSION_INPUT")]
-    public unsafe partial struct AuthenticatedchannelQuerycryptosessionInput
-    {
-        public AuthenticatedchannelQuerycryptosessionInput
-        (
+    public AuthenticatedchannelQuerycryptosessionInput
+    (
             AuthenticatedchannelQueryInput? input = null,
             void* dXVA2DecodeHandle = null
-        ) : this()
+    ) : this()
+    {
+        if (input is not null)
         {
-            if (input is not null)
-            {
-                Input = input.Value;
-            }
-
-            if (dXVA2DecodeHandle is not null)
-            {
-                DXVA2DecodeHandle = dXVA2DecodeHandle;
-            }
+            Input = input.Value;
         }
 
-
-        [NativeName("Type", "D3DAUTHENTICATEDCHANNEL_QUERY_INPUT")]
-        [NativeName("Type.Name", "D3DAUTHENTICATEDCHANNEL_QUERY_INPUT")]
-        [NativeName("Name", "Input")]
-        public AuthenticatedchannelQueryInput Input;
-
-        [NativeName("Type", "HANDLE")]
-        [NativeName("Type.Name", "HANDLE")]
-        [NativeName("Name", "DXVA2DecodeHandle")]
-        public void* DXVA2DecodeHandle;
+        if (dXVA2DecodeHandle is not null)
+        {
+            DXVA2DecodeHandle = dXVA2DecodeHandle;
+        }
     }
+
+
+    [NativeName("Type", "D3DAUTHENTICATEDCHANNEL_QUERY_INPUT")]
+    [NativeName("Type.Name", "D3DAUTHENTICATEDCHANNEL_QUERY_INPUT")]
+    [NativeName("Name", "Input")]
+    public AuthenticatedchannelQueryInput Input;
+
+    [NativeName("Type", "HANDLE")]
+    [NativeName("Type.Name", "HANDLE")]
+    [NativeName("Name", "DXVA2DecodeHandle")]
+    public void* DXVA2DecodeHandle;
 }

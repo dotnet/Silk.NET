@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkImportMemoryZirconHandleInfoFUCHSIA")]
+public unsafe partial struct ImportMemoryZirconHandleInfoFUCHSIA
 {
-    [NativeName("Name", "VkImportMemoryZirconHandleInfoFUCHSIA")]
-    public unsafe partial struct ImportMemoryZirconHandleInfoFUCHSIA
-    {
-        public ImportMemoryZirconHandleInfoFUCHSIA
-        (
+    public ImportMemoryZirconHandleInfoFUCHSIA
+    (
             StructureType? sType = StructureType.ImportMemoryZirconHandleInfoFuchsia,
             void* pNext = null,
             ExternalMemoryHandleTypeFlags? handleType = null,
             nint? handle = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (handleType is not null)
-            {
-                HandleType = handleType.Value;
-            }
-
-            if (handle is not null)
-            {
-                Handle = handle.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkExternalMemoryHandleTypeFlagBits")]
-        [NativeName("Type.Name", "VkExternalMemoryHandleTypeFlagBits")]
-        [NativeName("Name", "handleType")]
-        public ExternalMemoryHandleTypeFlags HandleType;
-/// <summary></summary>
-        [NativeName("Type", "zx_handle_t")]
-        [NativeName("Type.Name", "zx_handle_t")]
-        [NativeName("Name", "handle")]
-        public nint Handle;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (handleType is not null)
+        {
+            HandleType = handleType.Value;
+        }
+
+        if (handle is not null)
+        {
+            Handle = handle.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkExternalMemoryHandleTypeFlagBits")]
+    [NativeName("Type.Name", "VkExternalMemoryHandleTypeFlagBits")]
+    [NativeName("Name", "handleType")]
+    public ExternalMemoryHandleTypeFlags HandleType;
+/// <summary></summary>
+    [NativeName("Type", "zx_handle_t")]
+    [NativeName("Type.Name", "zx_handle_t")]
+    [NativeName("Name", "handle")]
+    public nint Handle;
 }

@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "CD3D11_QUERY_DESC1")]
+public unsafe partial struct CD3D11QueryDesc1
 {
-    [NativeName("Name", "CD3D11_QUERY_DESC1")]
-    public unsafe partial struct CD3D11QueryDesc1
-    {
-        public CD3D11QueryDesc1
-        (
+    public CD3D11QueryDesc1
+    (
             Query? query = null,
             uint? miscFlags = null,
             ContextType? contextType = null
-        ) : this()
+    ) : this()
+    {
+        if (query is not null)
         {
-            if (query is not null)
-            {
-                Query = query.Value;
-            }
-
-            if (miscFlags is not null)
-            {
-                MiscFlags = miscFlags.Value;
-            }
-
-            if (contextType is not null)
-            {
-                ContextType = contextType.Value;
-            }
+            Query = query.Value;
         }
 
+        if (miscFlags is not null)
+        {
+            MiscFlags = miscFlags.Value;
+        }
 
-        [NativeName("Type", "D3D11_QUERY")]
-        [NativeName("Type.Name", "D3D11_QUERY")]
-        [NativeName("Name", "Query")]
-        public Query Query;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "MiscFlags")]
-        public uint MiscFlags;
-
-        [NativeName("Type", "D3D11_CONTEXT_TYPE")]
-        [NativeName("Type.Name", "D3D11_CONTEXT_TYPE")]
-        [NativeName("Name", "ContextType")]
-        public ContextType ContextType;
+        if (contextType is not null)
+        {
+            ContextType = contextType.Value;
+        }
     }
+
+
+    [NativeName("Type", "D3D11_QUERY")]
+    [NativeName("Type.Name", "D3D11_QUERY")]
+    [NativeName("Name", "Query")]
+    public Query Query;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "MiscFlags")]
+    public uint MiscFlags;
+
+    [NativeName("Type", "D3D11_CONTEXT_TYPE")]
+    [NativeName("Type.Name", "D3D11_CONTEXT_TYPE")]
+    [NativeName("Name", "ContextType")]
+    public ContextType ContextType;
 }

@@ -14,24 +14,23 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR.Extensions.FB
+namespace Silk.NET.OpenXR.Extensions.FB;
+
+[Extension("XR_FB_hand_tracking_mesh")]
+public unsafe partial class FBHandTrackingMesh : NativeExtension<XR>
 {
-    [Extension("XR_FB_hand_tracking_mesh")]
-    public unsafe partial class FBHandTrackingMesh : NativeExtension<XR>
+    public const string ExtensionName = "XR_FB_hand_tracking_mesh";
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "xrGetHandMeshFB")]
+    public unsafe partial Result GetHandMeshFB([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0)] HandTrackingMeshFB* mesh);
+
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "xrGetHandMeshFB")]
+    public partial Result GetHandMeshFB([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0)] ref HandTrackingMeshFB mesh);
+
+    public FBHandTrackingMesh(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "XR_FB_hand_tracking_mesh";
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetHandMeshFB")]
-        public unsafe partial Result GetHandMeshFB([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0)] HandTrackingMeshFB* mesh);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetHandMeshFB")]
-        public partial Result GetHandMeshFB([Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0)] ref HandTrackingMeshFB mesh);
-
-        public FBHandTrackingMesh(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

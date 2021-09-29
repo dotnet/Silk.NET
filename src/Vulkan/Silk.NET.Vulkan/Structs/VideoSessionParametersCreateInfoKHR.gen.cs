@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkVideoSessionParametersCreateInfoKHR")]
+public unsafe partial struct VideoSessionParametersCreateInfoKHR
 {
-    [NativeName("Name", "VkVideoSessionParametersCreateInfoKHR")]
-    public unsafe partial struct VideoSessionParametersCreateInfoKHR
-    {
-        public VideoSessionParametersCreateInfoKHR
-        (
+    public VideoSessionParametersCreateInfoKHR
+    (
             StructureType? sType = StructureType.VideoSessionParametersCreateInfoKhr,
             void* pNext = null,
             VideoSessionParametersKHR? videoSessionParametersTemplate = null,
             VideoSessionKHR? videoSession = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (videoSessionParametersTemplate is not null)
-            {
-                VideoSessionParametersTemplate = videoSessionParametersTemplate.Value;
-            }
-
-            if (videoSession is not null)
-            {
-                VideoSession = videoSession.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkVideoSessionParametersKHR")]
-        [NativeName("Type.Name", "VkVideoSessionParametersKHR")]
-        [NativeName("Name", "videoSessionParametersTemplate")]
-        public VideoSessionParametersKHR VideoSessionParametersTemplate;
-/// <summary></summary>
-        [NativeName("Type", "VkVideoSessionKHR")]
-        [NativeName("Type.Name", "VkVideoSessionKHR")]
-        [NativeName("Name", "videoSession")]
-        public VideoSessionKHR VideoSession;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (videoSessionParametersTemplate is not null)
+        {
+            VideoSessionParametersTemplate = videoSessionParametersTemplate.Value;
+        }
+
+        if (videoSession is not null)
+        {
+            VideoSession = videoSession.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkVideoSessionParametersKHR")]
+    [NativeName("Type.Name", "VkVideoSessionParametersKHR")]
+    [NativeName("Name", "videoSessionParametersTemplate")]
+    public VideoSessionParametersKHR VideoSessionParametersTemplate;
+/// <summary></summary>
+    [NativeName("Type", "VkVideoSessionKHR")]
+    [NativeName("Type.Name", "VkVideoSessionKHR")]
+    [NativeName("Name", "videoSession")]
+    public VideoSessionKHR VideoSession;
 }

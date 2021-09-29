@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_TEX2D_VDOV")]
+public unsafe partial struct Tex2DVdov
 {
-    [NativeName("Name", "D3D11_TEX2D_VDOV")]
-    public unsafe partial struct Tex2DVdov
-    {
-        public Tex2DVdov
-        (
+    public Tex2DVdov
+    (
             uint? arraySlice = null
-        ) : this()
+    ) : this()
+    {
+        if (arraySlice is not null)
         {
-            if (arraySlice is not null)
-            {
-                ArraySlice = arraySlice.Value;
-            }
+            ArraySlice = arraySlice.Value;
         }
-
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "ArraySlice")]
-        public uint ArraySlice;
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "ArraySlice")]
+    public uint ArraySlice;
 }

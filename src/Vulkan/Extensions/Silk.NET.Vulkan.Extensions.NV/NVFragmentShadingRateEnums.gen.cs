@@ -14,24 +14,23 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.NV
+namespace Silk.NET.Vulkan.Extensions.NV;
+
+[Extension("VK_NV_fragment_shading_rate_enums")]
+public unsafe partial class NVFragmentShadingRateEnums : NativeExtension<Vk>
 {
-    [Extension("VK_NV_fragment_shading_rate_enums")]
-    public unsafe partial class NVFragmentShadingRateEnums : NativeExtension<Vk>
+    public const string ExtensionName = "VK_NV_fragment_shading_rate_enums";
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "vkCmdSetFragmentShadingRateEnumNV")]
+    public unsafe partial void CmdSetFragmentShadingRateEnum([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] FragmentShadingRateNV shadingRate, [Count(Count = 2), Flow(FlowDirection.In)] FragmentShadingRateCombinerOpKHR* combinerOps);
+
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "vkCmdSetFragmentShadingRateEnumNV")]
+    public partial void CmdSetFragmentShadingRateEnum([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] FragmentShadingRateNV shadingRate, [Count(Count = 2), Flow(FlowDirection.In)] in FragmentShadingRateCombinerOpKHR combinerOps);
+
+    public NVFragmentShadingRateEnums(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "VK_NV_fragment_shading_rate_enums";
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetFragmentShadingRateEnumNV")]
-        public unsafe partial void CmdSetFragmentShadingRateEnum([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] FragmentShadingRateNV shadingRate, [Count(Count = 2), Flow(FlowDirection.In)] FragmentShadingRateCombinerOpKHR* combinerOps);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdSetFragmentShadingRateEnumNV")]
-        public partial void CmdSetFragmentShadingRateEnum([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] FragmentShadingRateNV shadingRate, [Count(Count = 2), Flow(FlowDirection.In)] in FragmentShadingRateCombinerOpKHR combinerOps);
-
-        public NVFragmentShadingRateEnums(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

@@ -12,34 +12,33 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.ARB
+namespace Silk.NET.OpenGL.Extensions.ARB;
+
+public static class ArbTransformFeedback3Overloads
 {
-    public static class ArbTransformFeedback3Overloads
+    public static unsafe void GetQueryIndexed(this ArbTransformFeedback3 thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
     {
-        public static unsafe void GetQueryIndexed(this ArbTransformFeedback3 thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
-        {
-            // SpanOverloader
-            thisApi.GetQueryIndexed(target, index, pname, out @params.GetPinnableReference());
-        }
-
-        public static unsafe void GetQueryIndexed(this ArbTransformFeedback3 thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
-        {
-            // SpanOverloader
-            thisApi.GetQueryIndexed(target, index, pname, out @params.GetPinnableReference());
-        }
-
-        public static unsafe void GetQueryIndexed(this ArbTransformFeedback3 thisApi, [Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
-        {
-            // SpanOverloader
-            thisApi.GetQueryIndexed(target, index, pname, out @params.GetPinnableReference());
-        }
-
-        public static unsafe void GetQueryIndexed(this ArbTransformFeedback3 thisApi, [Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
-        {
-            // SpanOverloader
-            thisApi.GetQueryIndexed(target, index, pname, out @params.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        thisApi.GetQueryIndexed(target, index, pname, out @params.GetPinnableReference());
     }
+
+    public static unsafe void GetQueryIndexed(this ArbTransformFeedback3 thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+    {
+        // SpanOverloader
+        thisApi.GetQueryIndexed(target, index, pname, out @params.GetPinnableReference());
+    }
+
+    public static unsafe void GetQueryIndexed(this ArbTransformFeedback3 thisApi, [Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+    {
+        // SpanOverloader
+        thisApi.GetQueryIndexed(target, index, pname, out @params.GetPinnableReference());
+    }
+
+    public static unsafe void GetQueryIndexed(this ArbTransformFeedback3 thisApi, [Flow(FlowDirection.In)] QueryTarget target, [Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] QueryParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.Out)] Span<int> @params)
+    {
+        // SpanOverloader
+        thisApi.GetQueryIndexed(target, index, pname, out @params.GetPinnableReference());
+    }
+
 }
 

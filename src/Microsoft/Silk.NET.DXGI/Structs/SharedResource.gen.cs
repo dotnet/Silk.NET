@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI
+namespace Silk.NET.DXGI;
+
+[NativeName("Name", "DXGI_SHARED_RESOURCE")]
+public unsafe partial struct SharedResource
 {
-    [NativeName("Name", "DXGI_SHARED_RESOURCE")]
-    public unsafe partial struct SharedResource
-    {
-        public SharedResource
-        (
+    public SharedResource
+    (
             void* handle = null
-        ) : this()
+    ) : this()
+    {
+        if (handle is not null)
         {
-            if (handle is not null)
-            {
-                Handle = handle;
-            }
+            Handle = handle;
         }
-
-
-        [NativeName("Type", "HANDLE")]
-        [NativeName("Type.Name", "HANDLE")]
-        [NativeName("Name", "Handle")]
-        public void* Handle;
     }
+
+
+    [NativeName("Type", "HANDLE")]
+    [NativeName("Type.Name", "HANDLE")]
+    [NativeName("Name", "Handle")]
+    public void* Handle;
 }

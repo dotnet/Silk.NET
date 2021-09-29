@@ -12,31 +12,30 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.KHR
+namespace Silk.NET.Vulkan.Extensions.KHR;
+
+public static class KhrExternalSemaphoreCapabilitiesOverloads
 {
-    public static class KhrExternalSemaphoreCapabilitiesOverloads
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetPhysicalDeviceExternalSemaphoreProperties(this KhrExternalSemaphoreCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalSemaphoreInfo* pExternalSemaphoreInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalSemaphoreProperties> pExternalSemaphoreProperties)
     {
-        /// <summary>To be documented.</summary>
-        public static unsafe void GetPhysicalDeviceExternalSemaphoreProperties(this KhrExternalSemaphoreCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] PhysicalDeviceExternalSemaphoreInfo* pExternalSemaphoreInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalSemaphoreProperties> pExternalSemaphoreProperties)
-        {
-            // SpanOverloader
-            thisApi.GetPhysicalDeviceExternalSemaphoreProperties(physicalDevice, pExternalSemaphoreInfo, out pExternalSemaphoreProperties.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void GetPhysicalDeviceExternalSemaphoreProperties(this KhrExternalSemaphoreCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalSemaphoreInfo> pExternalSemaphoreInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalSemaphoreProperties* pExternalSemaphoreProperties)
-        {
-            // SpanOverloader
-            thisApi.GetPhysicalDeviceExternalSemaphoreProperties(physicalDevice, in pExternalSemaphoreInfo.GetPinnableReference(), pExternalSemaphoreProperties);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe void GetPhysicalDeviceExternalSemaphoreProperties(this KhrExternalSemaphoreCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalSemaphoreInfo> pExternalSemaphoreInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalSemaphoreProperties> pExternalSemaphoreProperties)
-        {
-            // SpanOverloader
-            thisApi.GetPhysicalDeviceExternalSemaphoreProperties(physicalDevice, in pExternalSemaphoreInfo.GetPinnableReference(), out pExternalSemaphoreProperties.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        thisApi.GetPhysicalDeviceExternalSemaphoreProperties(physicalDevice, pExternalSemaphoreInfo, out pExternalSemaphoreProperties.GetPinnableReference());
     }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetPhysicalDeviceExternalSemaphoreProperties(this KhrExternalSemaphoreCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalSemaphoreInfo> pExternalSemaphoreInfo, [Count(Count = 0), Flow(FlowDirection.Out)] ExternalSemaphoreProperties* pExternalSemaphoreProperties)
+    {
+        // SpanOverloader
+        thisApi.GetPhysicalDeviceExternalSemaphoreProperties(physicalDevice, in pExternalSemaphoreInfo.GetPinnableReference(), pExternalSemaphoreProperties);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe void GetPhysicalDeviceExternalSemaphoreProperties(this KhrExternalSemaphoreCapabilities thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<PhysicalDeviceExternalSemaphoreInfo> pExternalSemaphoreInfo, [Count(Count = 0), Flow(FlowDirection.Out)] Span<ExternalSemaphoreProperties> pExternalSemaphoreProperties)
+    {
+        // SpanOverloader
+        thisApi.GetPhysicalDeviceExternalSemaphoreProperties(physicalDevice, in pExternalSemaphoreInfo.GetPinnableReference(), out pExternalSemaphoreProperties.GetPinnableReference());
+    }
+
 }
 

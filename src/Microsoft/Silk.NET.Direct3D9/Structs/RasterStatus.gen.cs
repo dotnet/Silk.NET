@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9
+namespace Silk.NET.Direct3D9;
+
+[NativeName("Name", "_D3DRASTER_STATUS")]
+public unsafe partial struct RasterStatus
 {
-    [NativeName("Name", "_D3DRASTER_STATUS")]
-    public unsafe partial struct RasterStatus
-    {
-        public RasterStatus
-        (
+    public RasterStatus
+    (
             int? inVBlank = null,
             uint? scanLine = null
-        ) : this()
+    ) : this()
+    {
+        if (inVBlank is not null)
         {
-            if (inVBlank is not null)
-            {
-                InVBlank = inVBlank.Value;
-            }
-
-            if (scanLine is not null)
-            {
-                ScanLine = scanLine.Value;
-            }
+            InVBlank = inVBlank.Value;
         }
 
-
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "InVBlank")]
-        public int InVBlank;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "ScanLine")]
-        public uint ScanLine;
+        if (scanLine is not null)
+        {
+            ScanLine = scanLine.Value;
+        }
     }
+
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "InVBlank")]
+    public int InVBlank;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "ScanLine")]
+    public uint ScanLine;
 }

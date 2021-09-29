@@ -12,16 +12,15 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.NV
-{
-    public static class NVMemoryAttachmentOverloads
-    {
-        public static unsafe void GetMemoryObjectDetachedResources(this NVMemoryAttachment thisApi, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] Span<uint> @params)
-        {
-            // SpanOverloader
-            thisApi.GetMemoryObjectDetachedResources(memory, pname, first, count, out @params.GetPinnableReference());
-        }
+namespace Silk.NET.OpenGLES.Extensions.NV;
 
+public static class NVMemoryAttachmentOverloads
+{
+    public static unsafe void GetMemoryObjectDetachedResources(this NVMemoryAttachment thisApi, [Flow(FlowDirection.In)] uint memory, [Flow(FlowDirection.In)] NV pname, [Flow(FlowDirection.In)] int first, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.Out)] Span<uint> @params)
+    {
+        // SpanOverloader
+        thisApi.GetMemoryObjectDetachedResources(memory, pname, first, count, out @params.GetPinnableReference());
     }
+
 }
 

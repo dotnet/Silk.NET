@@ -7,13 +7,12 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
-{
+namespace Silk.NET.Vulkan;
+
     [Flags()]
-    [NativeName("Name", "VkPipelineLayoutCreateFlags")]
-    public enum PipelineLayoutCreateFlags : int
-    {
-        [NativeName("Name", "VK_PIPELINE_LAYOUT_CREATE_RESERVED_0_BIT_AMD")]
-        PipelineLayoutCreateReserved0BitAmd = 1,
-    }
+[NativeName("Name", "VkPipelineLayoutCreateFlags")]
+public enum PipelineLayoutCreateFlags : int
+{
+    [NativeName("Name", "VK_PIPELINE_LAYOUT_CREATE_RESERVED_0_BIT_AMD")]
+    PipelineLayoutCreateReserved0BitAmd = 1,
 }

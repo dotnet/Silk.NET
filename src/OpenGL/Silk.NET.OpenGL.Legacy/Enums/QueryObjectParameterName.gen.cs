@@ -7,18 +7,17 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy
+namespace Silk.NET.OpenGL.Legacy;
+
+[NativeName("Name", "QueryObjectParameterName")]
+public enum QueryObjectParameterName : int
 {
-    [NativeName("Name", "QueryObjectParameterName")]
-    public enum QueryObjectParameterName : int
-    {
-        [NativeName("Name", "GL_QUERY_TARGET")]
-        QueryTarget = 0x82EA,
-        [NativeName("Name", "GL_QUERY_RESULT")]
-        QueryResult = 0x8866,
-        [NativeName("Name", "GL_QUERY_RESULT_AVAILABLE")]
-        QueryResultAvailable = 0x8867,
-        [NativeName("Name", "GL_QUERY_RESULT_NO_WAIT")]
-        QueryResultNoWait = 0x9194,
-    }
+    [NativeName("Name", "GL_QUERY_TARGET")]
+    QueryTarget = 0x82EA,
+    [NativeName("Name", "GL_QUERY_RESULT")]
+    QueryResult = 0x8866,
+    [NativeName("Name", "GL_QUERY_RESULT_AVAILABLE")]
+    QueryResultAvailable = 0x8867,
+    [NativeName("Name", "GL_QUERY_RESULT_NO_WAIT")]
+    QueryResultNoWait = 0x9194,
 }

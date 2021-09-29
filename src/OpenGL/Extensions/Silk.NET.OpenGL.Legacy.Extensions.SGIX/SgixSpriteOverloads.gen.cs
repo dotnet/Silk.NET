@@ -12,34 +12,33 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
+namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX;
+
+public static class SgixSpriteOverloads
 {
-    public static class SgixSpriteOverloads
+    public static unsafe void SpriteParameter(this SgixSprite thisApi, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
     {
-        public static unsafe void SpriteParameter(this SgixSprite thisApi, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
-        {
-            // SpanOverloader
-            thisApi.SpriteParameter(pname, in @params.GetPinnableReference());
-        }
-
-        public static unsafe void SpriteParameter(this SgixSprite thisApi, [Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
-        {
-            // SpanOverloader
-            thisApi.SpriteParameter(pname, in @params.GetPinnableReference());
-        }
-
-        public static unsafe void SpriteParameter(this SgixSprite thisApi, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
-        {
-            // SpanOverloader
-            thisApi.SpriteParameter(pname, in @params.GetPinnableReference());
-        }
-
-        public static unsafe void SpriteParameter(this SgixSprite thisApi, [Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
-        {
-            // SpanOverloader
-            thisApi.SpriteParameter(pname, in @params.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        thisApi.SpriteParameter(pname, in @params.GetPinnableReference());
     }
+
+    public static unsafe void SpriteParameter(this SgixSprite thisApi, [Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> @params)
+    {
+        // SpanOverloader
+        thisApi.SpriteParameter(pname, in @params.GetPinnableReference());
+    }
+
+    public static unsafe void SpriteParameter(this SgixSprite thisApi, [Flow(FlowDirection.In)] SGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+    {
+        // SpanOverloader
+        thisApi.SpriteParameter(pname, in @params.GetPinnableReference());
+    }
+
+    public static unsafe void SpriteParameter(this SgixSprite thisApi, [Flow(FlowDirection.In)] SpriteParameterNameSGIX pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<int> @params)
+    {
+        // SpanOverloader
+        thisApi.SpriteParameter(pname, in @params.GetPinnableReference());
+    }
+
 }
 

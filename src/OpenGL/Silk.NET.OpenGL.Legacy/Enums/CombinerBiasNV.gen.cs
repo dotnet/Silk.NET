@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy
+namespace Silk.NET.OpenGL.Legacy;
+
+[NativeName("Name", "CombinerBiasNV")]
+public enum CombinerBiasNV : int
 {
-    [NativeName("Name", "CombinerBiasNV")]
-    public enum CombinerBiasNV : int
-    {
-        [NativeName("Name", "GL_NONE")]
-        None = 0x0,
-        [NativeName("Name", "GL_BIAS_BY_NEGATIVE_ONE_HALF_NV")]
-        BiasByNegativeOneHalfNV = 0x8541,
-    }
+    [NativeName("Name", "GL_NONE")]
+    None = 0x0,
+    [NativeName("Name", "GL_BIAS_BY_NEGATIVE_ONE_HALF_NV")]
+    BiasByNegativeOneHalfNV = 0x8541,
 }

@@ -14,22 +14,21 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
+namespace Silk.NET.OpenGL.Legacy.Extensions.AMD;
+
+[Extension("AMD_sample_positions")]
+public unsafe partial class AmdSamplePositions : NativeExtension<GL>
 {
-    [Extension("AMD_sample_positions")]
-    public unsafe partial class AmdSamplePositions : NativeExtension<GL>
+    public const string ExtensionName = "AMD_sample_positions";
+    [NativeApi(EntryPoint = "glSetMultisamplefvAMD")]
+    public unsafe partial void SetMultisample([Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] float* val);
+
+    [NativeApi(EntryPoint = "glSetMultisamplefvAMD")]
+    public partial void SetMultisample([Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] in float val);
+
+    public AmdSamplePositions(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "AMD_sample_positions";
-        [NativeApi(EntryPoint = "glSetMultisamplefvAMD")]
-        public unsafe partial void SetMultisample([Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] float* val);
-
-        [NativeApi(EntryPoint = "glSetMultisamplefvAMD")]
-        public partial void SetMultisample([Flow(FlowDirection.In)] AMD pname, [Flow(FlowDirection.In)] uint index, [Count(Count = 2), Flow(FlowDirection.In)] in float val);
-
-        public AmdSamplePositions(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

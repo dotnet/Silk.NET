@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9
+namespace Silk.NET.Direct3D9;
+
+[NativeName("Name", "_D3DMATERIAL9")]
+public unsafe partial struct Material9
 {
-    [NativeName("Name", "_D3DMATERIAL9")]
-    public unsafe partial struct Material9
-    {
-        public Material9
-        (
+    public Material9
+    (
             Colorvalue? diffuse = null,
             Colorvalue? ambient = null,
             Colorvalue? specular = null,
             Colorvalue? emissive = null,
             float? power = null
-        ) : this()
+    ) : this()
+    {
+        if (diffuse is not null)
         {
-            if (diffuse is not null)
-            {
-                Diffuse = diffuse.Value;
-            }
-
-            if (ambient is not null)
-            {
-                Ambient = ambient.Value;
-            }
-
-            if (specular is not null)
-            {
-                Specular = specular.Value;
-            }
-
-            if (emissive is not null)
-            {
-                Emissive = emissive.Value;
-            }
-
-            if (power is not null)
-            {
-                Power = power.Value;
-            }
+            Diffuse = diffuse.Value;
         }
 
+        if (ambient is not null)
+        {
+            Ambient = ambient.Value;
+        }
 
-        [NativeName("Type", "D3DCOLORVALUE")]
-        [NativeName("Type.Name", "D3DCOLORVALUE")]
-        [NativeName("Name", "Diffuse")]
-        public Colorvalue Diffuse;
+        if (specular is not null)
+        {
+            Specular = specular.Value;
+        }
 
-        [NativeName("Type", "D3DCOLORVALUE")]
-        [NativeName("Type.Name", "D3DCOLORVALUE")]
-        [NativeName("Name", "Ambient")]
-        public Colorvalue Ambient;
+        if (emissive is not null)
+        {
+            Emissive = emissive.Value;
+        }
 
-        [NativeName("Type", "D3DCOLORVALUE")]
-        [NativeName("Type.Name", "D3DCOLORVALUE")]
-        [NativeName("Name", "Specular")]
-        public Colorvalue Specular;
-
-        [NativeName("Type", "D3DCOLORVALUE")]
-        [NativeName("Type.Name", "D3DCOLORVALUE")]
-        [NativeName("Name", "Emissive")]
-        public Colorvalue Emissive;
-
-        [NativeName("Type", "float")]
-        [NativeName("Type.Name", "float")]
-        [NativeName("Name", "Power")]
-        public float Power;
+        if (power is not null)
+        {
+            Power = power.Value;
+        }
     }
+
+
+    [NativeName("Type", "D3DCOLORVALUE")]
+    [NativeName("Type.Name", "D3DCOLORVALUE")]
+    [NativeName("Name", "Diffuse")]
+    public Colorvalue Diffuse;
+
+    [NativeName("Type", "D3DCOLORVALUE")]
+    [NativeName("Type.Name", "D3DCOLORVALUE")]
+    [NativeName("Name", "Ambient")]
+    public Colorvalue Ambient;
+
+    [NativeName("Type", "D3DCOLORVALUE")]
+    [NativeName("Type.Name", "D3DCOLORVALUE")]
+    [NativeName("Name", "Specular")]
+    public Colorvalue Specular;
+
+    [NativeName("Type", "D3DCOLORVALUE")]
+    [NativeName("Type.Name", "D3DCOLORVALUE")]
+    [NativeName("Name", "Emissive")]
+    public Colorvalue Emissive;
+
+    [NativeName("Type", "float")]
+    [NativeName("Type.Name", "float")]
+    [NativeName("Name", "Power")]
+    public float Power;
 }

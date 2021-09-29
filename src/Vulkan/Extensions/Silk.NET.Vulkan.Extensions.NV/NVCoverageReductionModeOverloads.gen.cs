@@ -12,31 +12,30 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.NV
+namespace Silk.NET.Vulkan.Extensions.NV;
+
+public static class NVCoverageReductionModeOverloads
 {
-    public static class NVCoverageReductionModeOverloads
+    /// <summary>To be documented.</summary>
+    public static unsafe Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination(this NVCoverageReductionMode thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pCombinationCount, [Count(Parameter = "pCombinationCount"), Flow(FlowDirection.Out)] Span<FramebufferMixedSamplesCombinationNV> pCombinations)
     {
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination(this NVCoverageReductionMode thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] uint* pCombinationCount, [Count(Parameter = "pCombinationCount"), Flow(FlowDirection.Out)] Span<FramebufferMixedSamplesCombinationNV> pCombinations)
-        {
-            // SpanOverloader
-            return thisApi.GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination(physicalDevice, pCombinationCount, out pCombinations.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination(this NVCoverageReductionMode thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pCombinationCount, [Count(Parameter = "pCombinationCount"), Flow(FlowDirection.Out)] FramebufferMixedSamplesCombinationNV* pCombinations)
-        {
-            // SpanOverloader
-            return thisApi.GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination(physicalDevice, ref pCombinationCount.GetPinnableReference(), pCombinations);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination(this NVCoverageReductionMode thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pCombinationCount, [Count(Parameter = "pCombinationCount"), Flow(FlowDirection.Out)] Span<FramebufferMixedSamplesCombinationNV> pCombinations)
-        {
-            // SpanOverloader
-            return thisApi.GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination(physicalDevice, ref pCombinationCount.GetPinnableReference(), out pCombinations.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        return thisApi.GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination(physicalDevice, pCombinationCount, out pCombinations.GetPinnableReference());
     }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination(this NVCoverageReductionMode thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pCombinationCount, [Count(Parameter = "pCombinationCount"), Flow(FlowDirection.Out)] FramebufferMixedSamplesCombinationNV* pCombinations)
+    {
+        // SpanOverloader
+        return thisApi.GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination(physicalDevice, ref pCombinationCount.GetPinnableReference(), pCombinations);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination(this NVCoverageReductionMode thisApi, [Count(Count = 0)] PhysicalDevice physicalDevice, [Count(Count = 0)] Span<uint> pCombinationCount, [Count(Parameter = "pCombinationCount"), Flow(FlowDirection.Out)] Span<FramebufferMixedSamplesCombinationNV> pCombinations)
+    {
+        // SpanOverloader
+        return thisApi.GetPhysicalDeviceSupportedFramebufferMixedSamplesCombination(physicalDevice, ref pCombinationCount.GetPinnableReference(), out pCombinations.GetPinnableReference());
+    }
+
 }
 

@@ -12,52 +12,51 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR.Extensions.MSFT
+namespace Silk.NET.OpenXR.Extensions.MSFT;
+
+public static class MsftHandTrackingMeshOverloads
 {
-    public static class MsftHandTrackingMeshOverloads
+    /// <summary>To be documented.</summary>
+    public static unsafe Result CreateHandMeshSpaceMsft(this MsftHandTrackingMesh thisApi, [Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] HandMeshSpaceCreateInfoMSFT* createInfo, [Count(Count = 0)] Span<Space> space)
     {
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateHandMeshSpaceMsft(this MsftHandTrackingMesh thisApi, [Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] HandMeshSpaceCreateInfoMSFT* createInfo, [Count(Count = 0)] Span<Space> space)
-        {
-            // SpanOverloader
-            return thisApi.CreateHandMeshSpaceMsft(handTracker, createInfo, ref space.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateHandMeshSpaceMsft(this MsftHandTrackingMesh thisApi, [Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<HandMeshSpaceCreateInfoMSFT> createInfo, [Count(Count = 0)] Space* space)
-        {
-            // SpanOverloader
-            return thisApi.CreateHandMeshSpaceMsft(handTracker, in createInfo.GetPinnableReference(), space);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateHandMeshSpaceMsft(this MsftHandTrackingMesh thisApi, [Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<HandMeshSpaceCreateInfoMSFT> createInfo, [Count(Count = 0)] Span<Space> space)
-        {
-            // SpanOverloader
-            return thisApi.CreateHandMeshSpaceMsft(handTracker, in createInfo.GetPinnableReference(), ref space.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result UpdateHandMeshMsft(this MsftHandTrackingMesh thisApi, [Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] HandMeshUpdateInfoMSFT* updateInfo, [Count(Count = 0)] Span<HandMeshMSFT> handMesh)
-        {
-            // SpanOverloader
-            return thisApi.UpdateHandMeshMsft(handTracker, updateInfo, ref handMesh.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result UpdateHandMeshMsft(this MsftHandTrackingMesh thisApi, [Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<HandMeshUpdateInfoMSFT> updateInfo, [Count(Count = 0)] HandMeshMSFT* handMesh)
-        {
-            // SpanOverloader
-            return thisApi.UpdateHandMeshMsft(handTracker, in updateInfo.GetPinnableReference(), handMesh);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result UpdateHandMeshMsft(this MsftHandTrackingMesh thisApi, [Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<HandMeshUpdateInfoMSFT> updateInfo, [Count(Count = 0)] Span<HandMeshMSFT> handMesh)
-        {
-            // SpanOverloader
-            return thisApi.UpdateHandMeshMsft(handTracker, in updateInfo.GetPinnableReference(), ref handMesh.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        return thisApi.CreateHandMeshSpaceMsft(handTracker, createInfo, ref space.GetPinnableReference());
     }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result CreateHandMeshSpaceMsft(this MsftHandTrackingMesh thisApi, [Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<HandMeshSpaceCreateInfoMSFT> createInfo, [Count(Count = 0)] Space* space)
+    {
+        // SpanOverloader
+        return thisApi.CreateHandMeshSpaceMsft(handTracker, in createInfo.GetPinnableReference(), space);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result CreateHandMeshSpaceMsft(this MsftHandTrackingMesh thisApi, [Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<HandMeshSpaceCreateInfoMSFT> createInfo, [Count(Count = 0)] Span<Space> space)
+    {
+        // SpanOverloader
+        return thisApi.CreateHandMeshSpaceMsft(handTracker, in createInfo.GetPinnableReference(), ref space.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result UpdateHandMeshMsft(this MsftHandTrackingMesh thisApi, [Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] HandMeshUpdateInfoMSFT* updateInfo, [Count(Count = 0)] Span<HandMeshMSFT> handMesh)
+    {
+        // SpanOverloader
+        return thisApi.UpdateHandMeshMsft(handTracker, updateInfo, ref handMesh.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result UpdateHandMeshMsft(this MsftHandTrackingMesh thisApi, [Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<HandMeshUpdateInfoMSFT> updateInfo, [Count(Count = 0)] HandMeshMSFT* handMesh)
+    {
+        // SpanOverloader
+        return thisApi.UpdateHandMeshMsft(handTracker, in updateInfo.GetPinnableReference(), handMesh);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result UpdateHandMeshMsft(this MsftHandTrackingMesh thisApi, [Count(Count = 0)] HandTrackerEXT handTracker, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<HandMeshUpdateInfoMSFT> updateInfo, [Count(Count = 0)] Span<HandMeshMSFT> handMesh)
+    {
+        // SpanOverloader
+        return thisApi.UpdateHandMeshMsft(handTracker, in updateInfo.GetPinnableReference(), ref handMesh.GetPinnableReference());
+    }
+
 }
 

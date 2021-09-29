@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT")]
+public unsafe partial struct FeatureDataD3D9ShadowSupport
 {
-    [NativeName("Name", "D3D11_FEATURE_DATA_D3D9_SHADOW_SUPPORT")]
-    public unsafe partial struct FeatureDataD3D9ShadowSupport
-    {
-        public FeatureDataD3D9ShadowSupport
-        (
+    public FeatureDataD3D9ShadowSupport
+    (
             int? supportsDepthAsTextureWithLessEqualComparisonFilter = null
-        ) : this()
+    ) : this()
+    {
+        if (supportsDepthAsTextureWithLessEqualComparisonFilter is not null)
         {
-            if (supportsDepthAsTextureWithLessEqualComparisonFilter is not null)
-            {
-                SupportsDepthAsTextureWithLessEqualComparisonFilter = supportsDepthAsTextureWithLessEqualComparisonFilter.Value;
-            }
+            SupportsDepthAsTextureWithLessEqualComparisonFilter = supportsDepthAsTextureWithLessEqualComparisonFilter.Value;
         }
-
-
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "SupportsDepthAsTextureWithLessEqualComparisonFilter")]
-        public int SupportsDepthAsTextureWithLessEqualComparisonFilter;
     }
+
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "SupportsDepthAsTextureWithLessEqualComparisonFilter")]
+    public int SupportsDepthAsTextureWithLessEqualComparisonFilter;
 }

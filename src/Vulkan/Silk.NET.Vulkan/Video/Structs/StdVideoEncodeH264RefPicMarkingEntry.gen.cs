@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Video
+namespace Silk.NET.Vulkan.Video;
+
+[NativeName("Name", "StdVideoEncodeH264RefPicMarkingEntry")]
+public unsafe partial struct StdVideoEncodeH264RefPicMarkingEntry
 {
-    [NativeName("Name", "StdVideoEncodeH264RefPicMarkingEntry")]
-    public unsafe partial struct StdVideoEncodeH264RefPicMarkingEntry
-    {
-        public StdVideoEncodeH264RefPicMarkingEntry
-        (
+    public StdVideoEncodeH264RefPicMarkingEntry
+    (
             StdVideoH264MemMgmtControlOp? operation = null,
             ushort? differenceOfPicNumsMinus1 = null,
             ushort? longTermPicNum = null,
             ushort? longTermFrameIdx = null,
             ushort? maxLongTermFrameIdxPlus1 = null
-        ) : this()
+    ) : this()
+    {
+        if (operation is not null)
         {
-            if (operation is not null)
-            {
-                Operation = operation.Value;
-            }
-
-            if (differenceOfPicNumsMinus1 is not null)
-            {
-                DifferenceOfPicNumsMinus1 = differenceOfPicNumsMinus1.Value;
-            }
-
-            if (longTermPicNum is not null)
-            {
-                LongTermPicNum = longTermPicNum.Value;
-            }
-
-            if (longTermFrameIdx is not null)
-            {
-                LongTermFrameIdx = longTermFrameIdx.Value;
-            }
-
-            if (maxLongTermFrameIdxPlus1 is not null)
-            {
-                MaxLongTermFrameIdxPlus1 = maxLongTermFrameIdxPlus1.Value;
-            }
+            Operation = operation.Value;
         }
 
+        if (differenceOfPicNumsMinus1 is not null)
+        {
+            DifferenceOfPicNumsMinus1 = differenceOfPicNumsMinus1.Value;
+        }
 
-        [NativeName("Type", "StdVideoH264MemMgmtControlOp")]
-        [NativeName("Type.Name", "StdVideoH264MemMgmtControlOp")]
-        [NativeName("Name", "operation")]
-        public StdVideoH264MemMgmtControlOp Operation;
+        if (longTermPicNum is not null)
+        {
+            LongTermPicNum = longTermPicNum.Value;
+        }
 
-        [NativeName("Type", "uint16_t")]
-        [NativeName("Type.Name", "uint16_t")]
-        [NativeName("Name", "difference_of_pic_nums_minus1")]
-        public ushort DifferenceOfPicNumsMinus1;
+        if (longTermFrameIdx is not null)
+        {
+            LongTermFrameIdx = longTermFrameIdx.Value;
+        }
 
-        [NativeName("Type", "uint16_t")]
-        [NativeName("Type.Name", "uint16_t")]
-        [NativeName("Name", "long_term_pic_num")]
-        public ushort LongTermPicNum;
-
-        [NativeName("Type", "uint16_t")]
-        [NativeName("Type.Name", "uint16_t")]
-        [NativeName("Name", "long_term_frame_idx")]
-        public ushort LongTermFrameIdx;
-
-        [NativeName("Type", "uint16_t")]
-        [NativeName("Type.Name", "uint16_t")]
-        [NativeName("Name", "max_long_term_frame_idx_plus1")]
-        public ushort MaxLongTermFrameIdxPlus1;
+        if (maxLongTermFrameIdxPlus1 is not null)
+        {
+            MaxLongTermFrameIdxPlus1 = maxLongTermFrameIdxPlus1.Value;
+        }
     }
+
+
+    [NativeName("Type", "StdVideoH264MemMgmtControlOp")]
+    [NativeName("Type.Name", "StdVideoH264MemMgmtControlOp")]
+    [NativeName("Name", "operation")]
+    public StdVideoH264MemMgmtControlOp Operation;
+
+    [NativeName("Type", "uint16_t")]
+    [NativeName("Type.Name", "uint16_t")]
+    [NativeName("Name", "difference_of_pic_nums_minus1")]
+    public ushort DifferenceOfPicNumsMinus1;
+
+    [NativeName("Type", "uint16_t")]
+    [NativeName("Type.Name", "uint16_t")]
+    [NativeName("Name", "long_term_pic_num")]
+    public ushort LongTermPicNum;
+
+    [NativeName("Type", "uint16_t")]
+    [NativeName("Type.Name", "uint16_t")]
+    [NativeName("Name", "long_term_frame_idx")]
+    public ushort LongTermFrameIdx;
+
+    [NativeName("Type", "uint16_t")]
+    [NativeName("Type.Name", "uint16_t")]
+    [NativeName("Name", "max_long_term_frame_idx_plus1")]
+    public ushort MaxLongTermFrameIdxPlus1;
 }

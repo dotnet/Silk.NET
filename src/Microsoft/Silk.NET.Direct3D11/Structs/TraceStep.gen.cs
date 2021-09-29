@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_TRACE_STEP")]
+public unsafe partial struct TraceStep
 {
-    [NativeName("Name", "D3D11_TRACE_STEP")]
-    public unsafe partial struct TraceStep
-    {
-        public TraceStep
-        (
+    public TraceStep
+    (
             uint? iD = null,
             int? instructionActive = null,
             byte? numRegistersWritten = null,
@@ -28,78 +28,77 @@ namespace Silk.NET.Direct3D11
             ushort? miscOperations = null,
             uint? opcodeType = null,
             ulong? currentGlobalCycle = null
-        ) : this()
+    ) : this()
+    {
+        if (iD is not null)
         {
-            if (iD is not null)
-            {
-                ID = iD.Value;
-            }
-
-            if (instructionActive is not null)
-            {
-                InstructionActive = instructionActive.Value;
-            }
-
-            if (numRegistersWritten is not null)
-            {
-                NumRegistersWritten = numRegistersWritten.Value;
-            }
-
-            if (numRegistersRead is not null)
-            {
-                NumRegistersRead = numRegistersRead.Value;
-            }
-
-            if (miscOperations is not null)
-            {
-                MiscOperations = miscOperations.Value;
-            }
-
-            if (opcodeType is not null)
-            {
-                OpcodeType = opcodeType.Value;
-            }
-
-            if (currentGlobalCycle is not null)
-            {
-                CurrentGlobalCycle = currentGlobalCycle.Value;
-            }
+            ID = iD.Value;
         }
 
+        if (instructionActive is not null)
+        {
+            InstructionActive = instructionActive.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "ID")]
-        public uint ID;
+        if (numRegistersWritten is not null)
+        {
+            NumRegistersWritten = numRegistersWritten.Value;
+        }
 
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "InstructionActive")]
-        public int InstructionActive;
+        if (numRegistersRead is not null)
+        {
+            NumRegistersRead = numRegistersRead.Value;
+        }
 
-        [NativeName("Type", "UINT8")]
-        [NativeName("Type.Name", "UINT8")]
-        [NativeName("Name", "NumRegistersWritten")]
-        public byte NumRegistersWritten;
+        if (miscOperations is not null)
+        {
+            MiscOperations = miscOperations.Value;
+        }
 
-        [NativeName("Type", "UINT8")]
-        [NativeName("Type.Name", "UINT8")]
-        [NativeName("Name", "NumRegistersRead")]
-        public byte NumRegistersRead;
+        if (opcodeType is not null)
+        {
+            OpcodeType = opcodeType.Value;
+        }
 
-        [NativeName("Type", "D3D11_TRACE_MISC_OPERATIONS_MASK")]
-        [NativeName("Type.Name", "D3D11_TRACE_MISC_OPERATIONS_MASK")]
-        [NativeName("Name", "MiscOperations")]
-        public ushort MiscOperations;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "OpcodeType")]
-        public uint OpcodeType;
-
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "CurrentGlobalCycle")]
-        public ulong CurrentGlobalCycle;
+        if (currentGlobalCycle is not null)
+        {
+            CurrentGlobalCycle = currentGlobalCycle.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "ID")]
+    public uint ID;
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "InstructionActive")]
+    public int InstructionActive;
+
+    [NativeName("Type", "UINT8")]
+    [NativeName("Type.Name", "UINT8")]
+    [NativeName("Name", "NumRegistersWritten")]
+    public byte NumRegistersWritten;
+
+    [NativeName("Type", "UINT8")]
+    [NativeName("Type.Name", "UINT8")]
+    [NativeName("Name", "NumRegistersRead")]
+    public byte NumRegistersRead;
+
+    [NativeName("Type", "D3D11_TRACE_MISC_OPERATIONS_MASK")]
+    [NativeName("Type.Name", "D3D11_TRACE_MISC_OPERATIONS_MASK")]
+    [NativeName("Name", "MiscOperations")]
+    public ushort MiscOperations;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "OpcodeType")]
+    public uint OpcodeType;
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "CurrentGlobalCycle")]
+    public ulong CurrentGlobalCycle;
 }

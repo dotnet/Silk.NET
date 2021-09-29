@@ -14,31 +14,30 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
-{
-    [NativeName("Name", "VkExtensionProperties")]
-    public unsafe partial struct ExtensionProperties
-    {
-        public ExtensionProperties
-        (
-            uint? specVersion = null
-        ) : this()
-        {
-            if (specVersion is not null)
-            {
-                SpecVersion = specVersion.Value;
-            }
-        }
+namespace Silk.NET.Vulkan;
 
-        /// <summary></summary>
-        [NativeName("Type", "char")]
-        [NativeName("Type.Name", "char")]
-        [NativeName("Name", "extensionName")]
-        public fixed byte ExtensionName[256];
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "specVersion")]
-        public uint SpecVersion;
+[NativeName("Name", "VkExtensionProperties")]
+public unsafe partial struct ExtensionProperties
+{
+    public ExtensionProperties
+    (
+            uint? specVersion = null
+    ) : this()
+    {
+        if (specVersion is not null)
+        {
+            SpecVersion = specVersion.Value;
+        }
     }
+
+    /// <summary></summary>
+    [NativeName("Type", "char")]
+    [NativeName("Type.Name", "char")]
+    [NativeName("Name", "extensionName")]
+    public fixed byte ExtensionName[256];
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "specVersion")]
+    public uint SpecVersion;
 }

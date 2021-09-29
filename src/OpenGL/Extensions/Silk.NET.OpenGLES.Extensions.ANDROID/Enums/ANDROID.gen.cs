@@ -7,10 +7,9 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.ANDROID
+namespace Silk.NET.OpenGLES.Extensions.ANDROID;
+
+[NativeName("Name", "GLenum")]
+public enum ANDROID : int
 {
-    [NativeName("Name", "GLenum")]
-    public enum ANDROID : int
-    {
-    }
 }

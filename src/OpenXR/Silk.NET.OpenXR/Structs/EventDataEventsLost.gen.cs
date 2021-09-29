@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrEventDataEventsLost")]
+public unsafe partial struct EventDataEventsLost
 {
-    [NativeName("Name", "XrEventDataEventsLost")]
-    public unsafe partial struct EventDataEventsLost
-    {
-        public EventDataEventsLost
-        (
+    public EventDataEventsLost
+    (
             StructureType? type = StructureType.TypeEventDataEventsLost,
             void* next = null,
             uint? lostEventCount = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (lostEventCount is not null)
-            {
-                LostEventCount = lostEventCount.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "lostEventCount")]
-        public uint LostEventCount;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (lostEventCount is not null)
+        {
+            LostEventCount = lostEventCount.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "lostEventCount")]
+    public uint LostEventCount;
 }

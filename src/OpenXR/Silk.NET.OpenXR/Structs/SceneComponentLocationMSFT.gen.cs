@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrSceneComponentLocationMSFT")]
+public unsafe partial struct SceneComponentLocationMSFT
 {
-    [NativeName("Name", "XrSceneComponentLocationMSFT")]
-    public unsafe partial struct SceneComponentLocationMSFT
-    {
-        public SceneComponentLocationMSFT
-        (
+    public SceneComponentLocationMSFT
+    (
             SpaceLocationFlags? flags = null,
             Posef? pose = null
-        ) : this()
+    ) : this()
+    {
+        if (flags is not null)
         {
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
-
-            if (pose is not null)
-            {
-                Pose = pose.Value;
-            }
+            Flags = flags.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrSpaceLocationFlags")]
-        [NativeName("Type.Name", "XrSpaceLocationFlags")]
-        [NativeName("Name", "flags")]
-        public SpaceLocationFlags Flags;
-/// <summary></summary>
-        [NativeName("Type", "XrPosef")]
-        [NativeName("Type.Name", "XrPosef")]
-        [NativeName("Name", "pose")]
-        public Posef Pose;
+        if (pose is not null)
+        {
+            Pose = pose.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrSpaceLocationFlags")]
+    [NativeName("Type.Name", "XrSpaceLocationFlags")]
+    [NativeName("Name", "flags")]
+    public SpaceLocationFlags Flags;
+/// <summary></summary>
+    [NativeName("Type", "XrPosef")]
+    [NativeName("Type.Name", "XrPosef")]
+    [NativeName("Name", "pose")]
+    public Posef Pose;
 }

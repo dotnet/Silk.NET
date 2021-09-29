@@ -14,81 +14,80 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_SUPPORT")]
+public unsafe partial struct FeatureDataVideoExtensionCommandSupport
 {
-    [NativeName("Name", "D3D12_FEATURE_DATA_VIDEO_EXTENSION_COMMAND_SUPPORT")]
-    public unsafe partial struct FeatureDataVideoExtensionCommandSupport
-    {
-        public FeatureDataVideoExtensionCommandSupport
-        (
+    public FeatureDataVideoExtensionCommandSupport
+    (
             uint? nodeIndex = null,
             Guid? commandId = null,
             void* pInputData = null,
             nuint? inputDataSizeInBytes = null,
             void* pOutputData = null,
             nuint? outputDataSizeInBytes = null
-        ) : this()
+    ) : this()
+    {
+        if (nodeIndex is not null)
         {
-            if (nodeIndex is not null)
-            {
-                NodeIndex = nodeIndex.Value;
-            }
-
-            if (commandId is not null)
-            {
-                CommandId = commandId.Value;
-            }
-
-            if (pInputData is not null)
-            {
-                PInputData = pInputData;
-            }
-
-            if (inputDataSizeInBytes is not null)
-            {
-                InputDataSizeInBytes = inputDataSizeInBytes.Value;
-            }
-
-            if (pOutputData is not null)
-            {
-                POutputData = pOutputData;
-            }
-
-            if (outputDataSizeInBytes is not null)
-            {
-                OutputDataSizeInBytes = outputDataSizeInBytes.Value;
-            }
+            NodeIndex = nodeIndex.Value;
         }
 
+        if (commandId is not null)
+        {
+            CommandId = commandId.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "NodeIndex")]
-        public uint NodeIndex;
+        if (pInputData is not null)
+        {
+            PInputData = pInputData;
+        }
 
-        [NativeName("Type", "GUID")]
-        [NativeName("Type.Name", "GUID")]
-        [NativeName("Name", "CommandId")]
-        public Guid CommandId;
+        if (inputDataSizeInBytes is not null)
+        {
+            InputDataSizeInBytes = inputDataSizeInBytes.Value;
+        }
 
-        [NativeName("Type", "const void *")]
-        [NativeName("Type.Name", "const void *")]
-        [NativeName("Name", "pInputData")]
-        public void* PInputData;
+        if (pOutputData is not null)
+        {
+            POutputData = pOutputData;
+        }
 
-        [NativeName("Type", "SIZE_T")]
-        [NativeName("Type.Name", "SIZE_T")]
-        [NativeName("Name", "InputDataSizeInBytes")]
-        public nuint InputDataSizeInBytes;
-
-        [NativeName("Type", "void *")]
-        [NativeName("Type.Name", "void *")]
-        [NativeName("Name", "pOutputData")]
-        public void* POutputData;
-
-        [NativeName("Type", "SIZE_T")]
-        [NativeName("Type.Name", "SIZE_T")]
-        [NativeName("Name", "OutputDataSizeInBytes")]
-        public nuint OutputDataSizeInBytes;
+        if (outputDataSizeInBytes is not null)
+        {
+            OutputDataSizeInBytes = outputDataSizeInBytes.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "NodeIndex")]
+    public uint NodeIndex;
+
+    [NativeName("Type", "GUID")]
+    [NativeName("Type.Name", "GUID")]
+    [NativeName("Name", "CommandId")]
+    public Guid CommandId;
+
+    [NativeName("Type", "const void *")]
+    [NativeName("Type.Name", "const void *")]
+    [NativeName("Name", "pInputData")]
+    public void* PInputData;
+
+    [NativeName("Type", "SIZE_T")]
+    [NativeName("Type.Name", "SIZE_T")]
+    [NativeName("Name", "InputDataSizeInBytes")]
+    public nuint InputDataSizeInBytes;
+
+    [NativeName("Type", "void *")]
+    [NativeName("Type.Name", "void *")]
+    [NativeName("Name", "pOutputData")]
+    public void* POutputData;
+
+    [NativeName("Type", "SIZE_T")]
+    [NativeName("Type.Name", "SIZE_T")]
+    [NativeName("Name", "OutputDataSizeInBytes")]
+    public nuint OutputDataSizeInBytes;
 }

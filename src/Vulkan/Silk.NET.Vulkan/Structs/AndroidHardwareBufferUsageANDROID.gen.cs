@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkAndroidHardwareBufferUsageANDROID")]
+public unsafe partial struct AndroidHardwareBufferUsageANDROID
 {
-    [NativeName("Name", "VkAndroidHardwareBufferUsageANDROID")]
-    public unsafe partial struct AndroidHardwareBufferUsageANDROID
-    {
-        public AndroidHardwareBufferUsageANDROID
-        (
+    public AndroidHardwareBufferUsageANDROID
+    (
             StructureType? sType = StructureType.AndroidHardwareBufferUsageAndroid,
             void* pNext = null,
             ulong? androidHardwareBufferUsage = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (androidHardwareBufferUsage is not null)
-            {
-                AndroidHardwareBufferUsage = androidHardwareBufferUsage.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "uint64_t")]
-        [NativeName("Type.Name", "uint64_t")]
-        [NativeName("Name", "androidHardwareBufferUsage")]
-        public ulong AndroidHardwareBufferUsage;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (androidHardwareBufferUsage is not null)
+        {
+            AndroidHardwareBufferUsage = androidHardwareBufferUsage.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "uint64_t")]
+    [NativeName("Type.Name", "uint64_t")]
+    [NativeName("Name", "androidHardwareBufferUsage")]
+    public ulong AndroidHardwareBufferUsage;
 }

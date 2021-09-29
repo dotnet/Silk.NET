@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkBaseInStructure")]
+public unsafe partial struct BaseInStructure
 {
-    [NativeName("Name", "VkBaseInStructure")]
-    public unsafe partial struct BaseInStructure
-    {
-        public BaseInStructure
-        (
+    public BaseInStructure
+    (
             StructureType? sType = null,
             BaseInStructure* pNext = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "VkBaseInStructure*")]
-        [NativeName("Type.Name", "VkBaseInStructure")]
-        [NativeName("Name", "pNext")]
-        public BaseInStructure* PNext;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "VkBaseInStructure*")]
+    [NativeName("Type.Name", "VkBaseInStructure")]
+    [NativeName("Name", "pNext")]
+    public BaseInStructure* PNext;
 }

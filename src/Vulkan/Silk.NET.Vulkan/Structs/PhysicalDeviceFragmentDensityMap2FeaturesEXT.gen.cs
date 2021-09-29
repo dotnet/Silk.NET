@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDeviceFragmentDensityMap2FeaturesEXT")]
+public unsafe partial struct PhysicalDeviceFragmentDensityMap2FeaturesEXT
 {
-    [NativeName("Name", "VkPhysicalDeviceFragmentDensityMap2FeaturesEXT")]
-    public unsafe partial struct PhysicalDeviceFragmentDensityMap2FeaturesEXT
-    {
-        public PhysicalDeviceFragmentDensityMap2FeaturesEXT
-        (
+    public PhysicalDeviceFragmentDensityMap2FeaturesEXT
+    (
             StructureType? sType = StructureType.PhysicalDeviceFragmentDensityMap2FeaturesExt,
             void* pNext = null,
             Bool32? fragmentDensityMapDeferred = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (fragmentDensityMapDeferred is not null)
-            {
-                FragmentDensityMapDeferred = fragmentDensityMapDeferred.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "fragmentDensityMapDeferred")]
-        public Bool32 FragmentDensityMapDeferred;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (fragmentDensityMapDeferred is not null)
+        {
+            FragmentDensityMapDeferred = fragmentDensityMapDeferred.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "fragmentDensityMapDeferred")]
+    public Bool32 FragmentDensityMapDeferred;
 }

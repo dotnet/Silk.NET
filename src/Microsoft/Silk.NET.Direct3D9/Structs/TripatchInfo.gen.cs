@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9
+namespace Silk.NET.Direct3D9;
+
+[NativeName("Name", "_D3DTRIPATCH_INFO")]
+public unsafe partial struct TripatchInfo
 {
-    [NativeName("Name", "_D3DTRIPATCH_INFO")]
-    public unsafe partial struct TripatchInfo
-    {
-        public TripatchInfo
-        (
+    public TripatchInfo
+    (
             uint? startVertexOffset = null,
             uint? numVertices = null,
             Basistype? basis = null,
             Degreetype? degree = null
-        ) : this()
+    ) : this()
+    {
+        if (startVertexOffset is not null)
         {
-            if (startVertexOffset is not null)
-            {
-                StartVertexOffset = startVertexOffset.Value;
-            }
-
-            if (numVertices is not null)
-            {
-                NumVertices = numVertices.Value;
-            }
-
-            if (basis is not null)
-            {
-                Basis = basis.Value;
-            }
-
-            if (degree is not null)
-            {
-                Degree = degree.Value;
-            }
+            StartVertexOffset = startVertexOffset.Value;
         }
 
+        if (numVertices is not null)
+        {
+            NumVertices = numVertices.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "StartVertexOffset")]
-        public uint StartVertexOffset;
+        if (basis is not null)
+        {
+            Basis = basis.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "NumVertices")]
-        public uint NumVertices;
-
-        [NativeName("Type", "D3DBASISTYPE")]
-        [NativeName("Type.Name", "D3DBASISTYPE")]
-        [NativeName("Name", "Basis")]
-        public Basistype Basis;
-
-        [NativeName("Type", "D3DDEGREETYPE")]
-        [NativeName("Type.Name", "D3DDEGREETYPE")]
-        [NativeName("Name", "Degree")]
-        public Degreetype Degree;
+        if (degree is not null)
+        {
+            Degree = degree.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "StartVertexOffset")]
+    public uint StartVertexOffset;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "NumVertices")]
+    public uint NumVertices;
+
+    [NativeName("Type", "D3DBASISTYPE")]
+    [NativeName("Type.Name", "D3DBASISTYPE")]
+    [NativeName("Name", "Basis")]
+    public Basistype Basis;
+
+    [NativeName("Type", "D3DDEGREETYPE")]
+    [NativeName("Type.Name", "D3DDEGREETYPE")]
+    [NativeName("Name", "Degree")]
+    public Degreetype Degree;
 }

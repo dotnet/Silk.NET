@@ -14,40 +14,39 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[StructLayout(LayoutKind.Explicit)]
+[NativeName("Name", "__AnonymousRecord_d3d11_L3750_C5")]
+public unsafe partial struct BufferRtvUnion2
 {
-    [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d11_L3750_C5")]
-    public unsafe partial struct BufferRtvUnion2
-    {
-        public BufferRtvUnion2
-        (
+    public BufferRtvUnion2
+    (
             uint? numElements = null,
             uint? elementWidth = null
-        ) : this()
+    ) : this()
+    {
+        if (numElements is not null)
         {
-            if (numElements is not null)
-            {
-                NumElements = numElements.Value;
-            }
-
-            if (elementWidth is not null)
-            {
-                ElementWidth = elementWidth.Value;
-            }
+            NumElements = numElements.Value;
         }
 
-
-        [FieldOffset(0)]
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "NumElements")]
-        public uint NumElements;
-
-        [FieldOffset(0)]
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "ElementWidth")]
-        public uint ElementWidth;
+        if (elementWidth is not null)
+        {
+            ElementWidth = elementWidth.Value;
+        }
     }
+
+
+        [FieldOffset(0)]
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "NumElements")]
+    public uint NumElements;
+
+        [FieldOffset(0)]
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "ElementWidth")]
+    public uint ElementWidth;
 }

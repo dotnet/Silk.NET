@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkDisplayModeCreateInfoKHR")]
+public unsafe partial struct DisplayModeCreateInfoKHR
 {
-    [NativeName("Name", "VkDisplayModeCreateInfoKHR")]
-    public unsafe partial struct DisplayModeCreateInfoKHR
-    {
-        public DisplayModeCreateInfoKHR
-        (
+    public DisplayModeCreateInfoKHR
+    (
             StructureType? sType = StructureType.DisplayModeCreateInfoKhr,
             void* pNext = null,
             uint? flags = null,
             DisplayModeParametersKHR? parameters = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
-
-            if (parameters is not null)
-            {
-                Parameters = parameters.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkDisplayModeCreateFlagsKHR")]
-        [NativeName("Type.Name", "VkDisplayModeCreateFlagsKHR")]
-        [NativeName("Name", "flags")]
-        public uint Flags;
-/// <summary></summary>
-        [NativeName("Type", "VkDisplayModeParametersKHR")]
-        [NativeName("Type.Name", "VkDisplayModeParametersKHR")]
-        [NativeName("Name", "parameters")]
-        public DisplayModeParametersKHR Parameters;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (flags is not null)
+        {
+            Flags = flags.Value;
+        }
+
+        if (parameters is not null)
+        {
+            Parameters = parameters.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkDisplayModeCreateFlagsKHR")]
+    [NativeName("Type.Name", "VkDisplayModeCreateFlagsKHR")]
+    [NativeName("Name", "flags")]
+    public uint Flags;
+/// <summary></summary>
+    [NativeName("Type", "VkDisplayModeParametersKHR")]
+    [NativeName("Type.Name", "VkDisplayModeParametersKHR")]
+    [NativeName("Name", "parameters")]
+    public DisplayModeParametersKHR Parameters;
 }

@@ -271,6 +271,9 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.NUKE", "build\nuke\Silk.NET.NUKE.csproj", "{B9A8D738-FE7D-4860-A446-4A03E3DDEB74}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Microsoft", "Microsoft", "{F2CF5D32-4B41-425E-B229-8FFC48F88063}"
+ProjectSection(SolutionItems) = preProject
+	src\Microsoft\dxva.h = src\Microsoft\dxva.h
+EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Silk.NET.Direct3D11", "src\Microsoft\Silk.NET.Direct3D11\Silk.NET.Direct3D11.csproj", "{F3B7A9D6-5B15-45E8-925B-20B5BBD33428}"
 EndProject

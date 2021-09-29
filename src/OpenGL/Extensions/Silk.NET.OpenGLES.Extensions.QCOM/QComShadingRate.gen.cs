@@ -14,22 +14,21 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.QCOM
+namespace Silk.NET.OpenGLES.Extensions.QCOM;
+
+[Extension("QCOM_shading_rate")]
+public unsafe partial class QComShadingRate : NativeExtension<GL>
 {
-    [Extension("QCOM_shading_rate")]
-    public unsafe partial class QComShadingRate : NativeExtension<GL>
+    public const string ExtensionName = "QCOM_shading_rate";
+    [NativeApi(EntryPoint = "glShadingRateQCOM")]
+    public partial void ShadingRate([Flow(FlowDirection.In)] QCOM rate);
+
+    [NativeApi(EntryPoint = "glShadingRateQCOM")]
+    public partial void ShadingRate([Flow(FlowDirection.In)] ShadingRateQCOM rate);
+
+    public QComShadingRate(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "QCOM_shading_rate";
-        [NativeApi(EntryPoint = "glShadingRateQCOM")]
-        public partial void ShadingRate([Flow(FlowDirection.In)] QCOM rate);
-
-        [NativeApi(EntryPoint = "glShadingRateQCOM")]
-        public partial void ShadingRate([Flow(FlowDirection.In)] ShadingRateQCOM rate);
-
-        public QComShadingRate(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

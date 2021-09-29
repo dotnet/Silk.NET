@@ -14,19 +14,18 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
-{
-    [Extension("ARB_instanced_arrays")]
-    public unsafe partial class ArbInstancedArrays : NativeExtension<GL>
-    {
-        public const string ExtensionName = "ARB_instanced_arrays";
-        [NativeApi(EntryPoint = "glVertexAttribDivisorARB")]
-        public partial void VertexAttribDivisor([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint divisor);
+namespace Silk.NET.OpenGL.Legacy.Extensions.ARB;
 
-        public ArbInstancedArrays(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+[Extension("ARB_instanced_arrays")]
+public unsafe partial class ArbInstancedArrays : NativeExtension<GL>
+{
+    public const string ExtensionName = "ARB_instanced_arrays";
+    [NativeApi(EntryPoint = "glVertexAttribDivisorARB")]
+    public partial void VertexAttribDivisor([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] uint divisor);
+
+    public ArbInstancedArrays(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

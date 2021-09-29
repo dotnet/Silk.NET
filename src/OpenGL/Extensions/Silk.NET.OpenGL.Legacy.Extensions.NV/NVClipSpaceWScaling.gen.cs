@@ -14,19 +14,18 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NV
-{
-    [Extension("NV_clip_space_w_scaling")]
-    public unsafe partial class NVClipSpaceWScaling : NativeExtension<GL>
-    {
-        public const string ExtensionName = "NV_clip_space_w_scaling";
-        [NativeApi(EntryPoint = "glViewportPositionWScaleNV")]
-        public partial void ViewportPositionWScale([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float xcoeff, [Flow(FlowDirection.In)] float ycoeff);
+namespace Silk.NET.OpenGL.Legacy.Extensions.NV;
 
-        public NVClipSpaceWScaling(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+[Extension("NV_clip_space_w_scaling")]
+public unsafe partial class NVClipSpaceWScaling : NativeExtension<GL>
+{
+    public const string ExtensionName = "NV_clip_space_w_scaling";
+    [NativeApi(EntryPoint = "glViewportPositionWScaleNV")]
+    public partial void ViewportPositionWScale([Flow(FlowDirection.In)] uint index, [Flow(FlowDirection.In)] float xcoeff, [Flow(FlowDirection.In)] float ycoeff);
+
+    public NVClipSpaceWScaling(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

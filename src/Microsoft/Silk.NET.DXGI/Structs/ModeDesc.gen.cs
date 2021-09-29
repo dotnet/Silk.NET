@@ -14,81 +14,80 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI
+namespace Silk.NET.DXGI;
+
+[NativeName("Name", "DXGI_MODE_DESC")]
+public unsafe partial struct ModeDesc
 {
-    [NativeName("Name", "DXGI_MODE_DESC")]
-    public unsafe partial struct ModeDesc
-    {
-        public ModeDesc
-        (
+    public ModeDesc
+    (
             uint? width = null,
             uint? height = null,
             Rational? refreshRate = null,
             Silk.NET.DXGI.Format? format = null,
             ModeScanlineOrder? scanlineOrdering = null,
             ModeScaling? scaling = null
-        ) : this()
+    ) : this()
+    {
+        if (width is not null)
         {
-            if (width is not null)
-            {
-                Width = width.Value;
-            }
-
-            if (height is not null)
-            {
-                Height = height.Value;
-            }
-
-            if (refreshRate is not null)
-            {
-                RefreshRate = refreshRate.Value;
-            }
-
-            if (format is not null)
-            {
-                Format = format.Value;
-            }
-
-            if (scanlineOrdering is not null)
-            {
-                ScanlineOrdering = scanlineOrdering.Value;
-            }
-
-            if (scaling is not null)
-            {
-                Scaling = scaling.Value;
-            }
+            Width = width.Value;
         }
 
+        if (height is not null)
+        {
+            Height = height.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Width")]
-        public uint Width;
+        if (refreshRate is not null)
+        {
+            RefreshRate = refreshRate.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Height")]
-        public uint Height;
+        if (format is not null)
+        {
+            Format = format.Value;
+        }
 
-        [NativeName("Type", "DXGI_RATIONAL")]
-        [NativeName("Type.Name", "DXGI_RATIONAL")]
-        [NativeName("Name", "RefreshRate")]
-        public Rational RefreshRate;
+        if (scanlineOrdering is not null)
+        {
+            ScanlineOrdering = scanlineOrdering.Value;
+        }
 
-        [NativeName("Type", "DXGI_FORMAT")]
-        [NativeName("Type.Name", "DXGI_FORMAT")]
-        [NativeName("Name", "Format")]
-        public Silk.NET.DXGI.Format Format;
-
-        [NativeName("Type", "DXGI_MODE_SCANLINE_ORDER")]
-        [NativeName("Type.Name", "DXGI_MODE_SCANLINE_ORDER")]
-        [NativeName("Name", "ScanlineOrdering")]
-        public ModeScanlineOrder ScanlineOrdering;
-
-        [NativeName("Type", "DXGI_MODE_SCALING")]
-        [NativeName("Type.Name", "DXGI_MODE_SCALING")]
-        [NativeName("Name", "Scaling")]
-        public ModeScaling Scaling;
+        if (scaling is not null)
+        {
+            Scaling = scaling.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Width")]
+    public uint Width;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Height")]
+    public uint Height;
+
+    [NativeName("Type", "DXGI_RATIONAL")]
+    [NativeName("Type.Name", "DXGI_RATIONAL")]
+    [NativeName("Name", "RefreshRate")]
+    public Rational RefreshRate;
+
+    [NativeName("Type", "DXGI_FORMAT")]
+    [NativeName("Type.Name", "DXGI_FORMAT")]
+    [NativeName("Name", "Format")]
+    public Silk.NET.DXGI.Format Format;
+
+    [NativeName("Type", "DXGI_MODE_SCANLINE_ORDER")]
+    [NativeName("Type.Name", "DXGI_MODE_SCANLINE_ORDER")]
+    [NativeName("Name", "ScanlineOrdering")]
+    public ModeScanlineOrder ScanlineOrdering;
+
+    [NativeName("Type", "DXGI_MODE_SCALING")]
+    [NativeName("Type.Name", "DXGI_MODE_SCALING")]
+    [NativeName("Name", "Scaling")]
+    public ModeScaling Scaling;
 }

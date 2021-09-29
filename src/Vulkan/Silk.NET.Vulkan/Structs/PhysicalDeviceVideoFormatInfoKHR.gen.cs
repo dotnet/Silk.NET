@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDeviceVideoFormatInfoKHR")]
+public unsafe partial struct PhysicalDeviceVideoFormatInfoKHR
 {
-    [NativeName("Name", "VkPhysicalDeviceVideoFormatInfoKHR")]
-    public unsafe partial struct PhysicalDeviceVideoFormatInfoKHR
-    {
-        public PhysicalDeviceVideoFormatInfoKHR
-        (
+    public PhysicalDeviceVideoFormatInfoKHR
+    (
             StructureType? sType = StructureType.PhysicalDeviceVideoFormatInfoKhr,
             void* pNext = null,
             ImageUsageFlags? imageUsage = null,
             VideoProfilesKHR* pVideoProfiles = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (imageUsage is not null)
-            {
-                ImageUsage = imageUsage.Value;
-            }
-
-            if (pVideoProfiles is not null)
-            {
-                PVideoProfiles = pVideoProfiles;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkImageUsageFlags")]
-        [NativeName("Type.Name", "VkImageUsageFlags")]
-        [NativeName("Name", "imageUsage")]
-        public ImageUsageFlags ImageUsage;
-/// <summary></summary>
-        [NativeName("Type", "VkVideoProfilesKHR*")]
-        [NativeName("Type.Name", "VkVideoProfilesKHR")]
-        [NativeName("Name", "pVideoProfiles")]
-        public VideoProfilesKHR* PVideoProfiles;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (imageUsage is not null)
+        {
+            ImageUsage = imageUsage.Value;
+        }
+
+        if (pVideoProfiles is not null)
+        {
+            PVideoProfiles = pVideoProfiles;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkImageUsageFlags")]
+    [NativeName("Type.Name", "VkImageUsageFlags")]
+    [NativeName("Name", "imageUsage")]
+    public ImageUsageFlags ImageUsage;
+/// <summary></summary>
+    [NativeName("Type", "VkVideoProfilesKHR*")]
+    [NativeName("Type.Name", "VkVideoProfilesKHR")]
+    [NativeName("Name", "pVideoProfiles")]
+    public VideoProfilesKHR* PVideoProfiles;
 }

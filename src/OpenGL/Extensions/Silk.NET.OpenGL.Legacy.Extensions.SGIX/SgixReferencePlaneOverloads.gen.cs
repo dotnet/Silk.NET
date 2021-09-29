@@ -12,16 +12,15 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
-{
-    public static class SgixReferencePlaneOverloads
-    {
-        public static unsafe void ReferencePlane(this SgixReferencePlane thisApi, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<double> equation)
-        {
-            // SpanOverloader
-            thisApi.ReferencePlane(in equation.GetPinnableReference());
-        }
+namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX;
 
+public static class SgixReferencePlaneOverloads
+{
+    public static unsafe void ReferencePlane(this SgixReferencePlane thisApi, [Count(Count = 4), Flow(FlowDirection.In)] ReadOnlySpan<double> equation)
+    {
+        // SpanOverloader
+        thisApi.ReferencePlane(in equation.GetPinnableReference());
     }
+
 }
 

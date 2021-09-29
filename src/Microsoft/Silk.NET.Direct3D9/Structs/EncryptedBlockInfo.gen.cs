@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9
+namespace Silk.NET.Direct3D9;
+
+[NativeName("Name", "_D3DENCRYPTED_BLOCK_INFO")]
+public unsafe partial struct EncryptedBlockInfo
 {
-    [NativeName("Name", "_D3DENCRYPTED_BLOCK_INFO")]
-    public unsafe partial struct EncryptedBlockInfo
-    {
-        public EncryptedBlockInfo
-        (
+    public EncryptedBlockInfo
+    (
             uint? numEncryptedBytesAtBeginning = null,
             uint? numBytesInSkipPattern = null,
             uint? numBytesInEncryptPattern = null
-        ) : this()
+    ) : this()
+    {
+        if (numEncryptedBytesAtBeginning is not null)
         {
-            if (numEncryptedBytesAtBeginning is not null)
-            {
-                NumEncryptedBytesAtBeginning = numEncryptedBytesAtBeginning.Value;
-            }
-
-            if (numBytesInSkipPattern is not null)
-            {
-                NumBytesInSkipPattern = numBytesInSkipPattern.Value;
-            }
-
-            if (numBytesInEncryptPattern is not null)
-            {
-                NumBytesInEncryptPattern = numBytesInEncryptPattern.Value;
-            }
+            NumEncryptedBytesAtBeginning = numEncryptedBytesAtBeginning.Value;
         }
 
+        if (numBytesInSkipPattern is not null)
+        {
+            NumBytesInSkipPattern = numBytesInSkipPattern.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "NumEncryptedBytesAtBeginning")]
-        public uint NumEncryptedBytesAtBeginning;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "NumBytesInSkipPattern")]
-        public uint NumBytesInSkipPattern;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "NumBytesInEncryptPattern")]
-        public uint NumBytesInEncryptPattern;
+        if (numBytesInEncryptPattern is not null)
+        {
+            NumBytesInEncryptPattern = numBytesInEncryptPattern.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "NumEncryptedBytesAtBeginning")]
+    public uint NumEncryptedBytesAtBeginning;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "NumBytesInSkipPattern")]
+    public uint NumBytesInSkipPattern;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "NumBytesInEncryptPattern")]
+    public uint NumBytesInEncryptPattern;
 }

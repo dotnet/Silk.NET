@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkVideoEncodeH264CapabilitiesEXT")]
+public unsafe partial struct VideoEncodeH264CapabilitiesEXT
 {
-    [NativeName("Name", "VkVideoEncodeH264CapabilitiesEXT")]
-    public unsafe partial struct VideoEncodeH264CapabilitiesEXT
-    {
-        public VideoEncodeH264CapabilitiesEXT
-        (
+    public VideoEncodeH264CapabilitiesEXT
+    (
             StructureType? sType = StructureType.VideoEncodeH264CapabilitiesExt,
             void* pNext = null,
             VideoEncodeH264CapabilityFlagsEXT? flags = null,
@@ -34,138 +34,137 @@ namespace Silk.NET.Vulkan
             byte? maxNumL1Reference = null,
             byte? qualityLevelCount = null,
             ExtensionProperties? stdExtensionVersion = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
-
-            if (inputModeFlags is not null)
-            {
-                InputModeFlags = inputModeFlags.Value;
-            }
-
-            if (outputModeFlags is not null)
-            {
-                OutputModeFlags = outputModeFlags.Value;
-            }
-
-            if (minPictureSizeInMbs is not null)
-            {
-                MinPictureSizeInMbs = minPictureSizeInMbs.Value;
-            }
-
-            if (maxPictureSizeInMbs is not null)
-            {
-                MaxPictureSizeInMbs = maxPictureSizeInMbs.Value;
-            }
-
-            if (inputImageDataAlignment is not null)
-            {
-                InputImageDataAlignment = inputImageDataAlignment.Value;
-            }
-
-            if (maxNumL0ReferenceForP is not null)
-            {
-                MaxNumL0ReferenceForP = maxNumL0ReferenceForP.Value;
-            }
-
-            if (maxNumL0ReferenceForB is not null)
-            {
-                MaxNumL0ReferenceForB = maxNumL0ReferenceForB.Value;
-            }
-
-            if (maxNumL1Reference is not null)
-            {
-                MaxNumL1Reference = maxNumL1Reference.Value;
-            }
-
-            if (qualityLevelCount is not null)
-            {
-                QualityLevelCount = qualityLevelCount.Value;
-            }
-
-            if (stdExtensionVersion is not null)
-            {
-                StdExtensionVersion = stdExtensionVersion.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH264CapabilityFlagsEXT")]
-        [NativeName("Type.Name", "VkVideoEncodeH264CapabilityFlagsEXT")]
-        [NativeName("Name", "flags")]
-        public VideoEncodeH264CapabilityFlagsEXT Flags;
-/// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH264InputModeFlagsEXT")]
-        [NativeName("Type.Name", "VkVideoEncodeH264InputModeFlagsEXT")]
-        [NativeName("Name", "inputModeFlags")]
-        public VideoEncodeH264InputModeFlagsEXT InputModeFlags;
-/// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH264OutputModeFlagsEXT")]
-        [NativeName("Type.Name", "VkVideoEncodeH264OutputModeFlagsEXT")]
-        [NativeName("Name", "outputModeFlags")]
-        public VideoEncodeH264OutputModeFlagsEXT OutputModeFlags;
-/// <summary></summary>
-        [NativeName("Type", "VkExtent2D")]
-        [NativeName("Type.Name", "VkExtent2D")]
-        [NativeName("Name", "minPictureSizeInMbs")]
-        public Extent2D MinPictureSizeInMbs;
-/// <summary></summary>
-        [NativeName("Type", "VkExtent2D")]
-        [NativeName("Type.Name", "VkExtent2D")]
-        [NativeName("Name", "maxPictureSizeInMbs")]
-        public Extent2D MaxPictureSizeInMbs;
-/// <summary></summary>
-        [NativeName("Type", "VkExtent2D")]
-        [NativeName("Type.Name", "VkExtent2D")]
-        [NativeName("Name", "inputImageDataAlignment")]
-        public Extent2D InputImageDataAlignment;
-/// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "maxNumL0ReferenceForP")]
-        public byte MaxNumL0ReferenceForP;
-/// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "maxNumL0ReferenceForB")]
-        public byte MaxNumL0ReferenceForB;
-/// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "maxNumL1Reference")]
-        public byte MaxNumL1Reference;
-/// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "qualityLevelCount")]
-        public byte QualityLevelCount;
-/// <summary></summary>
-        [NativeName("Type", "VkExtensionProperties")]
-        [NativeName("Type.Name", "VkExtensionProperties")]
-        [NativeName("Name", "stdExtensionVersion")]
-        public ExtensionProperties StdExtensionVersion;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (flags is not null)
+        {
+            Flags = flags.Value;
+        }
+
+        if (inputModeFlags is not null)
+        {
+            InputModeFlags = inputModeFlags.Value;
+        }
+
+        if (outputModeFlags is not null)
+        {
+            OutputModeFlags = outputModeFlags.Value;
+        }
+
+        if (minPictureSizeInMbs is not null)
+        {
+            MinPictureSizeInMbs = minPictureSizeInMbs.Value;
+        }
+
+        if (maxPictureSizeInMbs is not null)
+        {
+            MaxPictureSizeInMbs = maxPictureSizeInMbs.Value;
+        }
+
+        if (inputImageDataAlignment is not null)
+        {
+            InputImageDataAlignment = inputImageDataAlignment.Value;
+        }
+
+        if (maxNumL0ReferenceForP is not null)
+        {
+            MaxNumL0ReferenceForP = maxNumL0ReferenceForP.Value;
+        }
+
+        if (maxNumL0ReferenceForB is not null)
+        {
+            MaxNumL0ReferenceForB = maxNumL0ReferenceForB.Value;
+        }
+
+        if (maxNumL1Reference is not null)
+        {
+            MaxNumL1Reference = maxNumL1Reference.Value;
+        }
+
+        if (qualityLevelCount is not null)
+        {
+            QualityLevelCount = qualityLevelCount.Value;
+        }
+
+        if (stdExtensionVersion is not null)
+        {
+            StdExtensionVersion = stdExtensionVersion.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkVideoEncodeH264CapabilityFlagsEXT")]
+    [NativeName("Type.Name", "VkVideoEncodeH264CapabilityFlagsEXT")]
+    [NativeName("Name", "flags")]
+    public VideoEncodeH264CapabilityFlagsEXT Flags;
+/// <summary></summary>
+    [NativeName("Type", "VkVideoEncodeH264InputModeFlagsEXT")]
+    [NativeName("Type.Name", "VkVideoEncodeH264InputModeFlagsEXT")]
+    [NativeName("Name", "inputModeFlags")]
+    public VideoEncodeH264InputModeFlagsEXT InputModeFlags;
+/// <summary></summary>
+    [NativeName("Type", "VkVideoEncodeH264OutputModeFlagsEXT")]
+    [NativeName("Type.Name", "VkVideoEncodeH264OutputModeFlagsEXT")]
+    [NativeName("Name", "outputModeFlags")]
+    public VideoEncodeH264OutputModeFlagsEXT OutputModeFlags;
+/// <summary></summary>
+    [NativeName("Type", "VkExtent2D")]
+    [NativeName("Type.Name", "VkExtent2D")]
+    [NativeName("Name", "minPictureSizeInMbs")]
+    public Extent2D MinPictureSizeInMbs;
+/// <summary></summary>
+    [NativeName("Type", "VkExtent2D")]
+    [NativeName("Type.Name", "VkExtent2D")]
+    [NativeName("Name", "maxPictureSizeInMbs")]
+    public Extent2D MaxPictureSizeInMbs;
+/// <summary></summary>
+    [NativeName("Type", "VkExtent2D")]
+    [NativeName("Type.Name", "VkExtent2D")]
+    [NativeName("Name", "inputImageDataAlignment")]
+    public Extent2D InputImageDataAlignment;
+/// <summary></summary>
+    [NativeName("Type", "uint8_t")]
+    [NativeName("Type.Name", "uint8_t")]
+    [NativeName("Name", "maxNumL0ReferenceForP")]
+    public byte MaxNumL0ReferenceForP;
+/// <summary></summary>
+    [NativeName("Type", "uint8_t")]
+    [NativeName("Type.Name", "uint8_t")]
+    [NativeName("Name", "maxNumL0ReferenceForB")]
+    public byte MaxNumL0ReferenceForB;
+/// <summary></summary>
+    [NativeName("Type", "uint8_t")]
+    [NativeName("Type.Name", "uint8_t")]
+    [NativeName("Name", "maxNumL1Reference")]
+    public byte MaxNumL1Reference;
+/// <summary></summary>
+    [NativeName("Type", "uint8_t")]
+    [NativeName("Type.Name", "uint8_t")]
+    [NativeName("Name", "qualityLevelCount")]
+    public byte QualityLevelCount;
+/// <summary></summary>
+    [NativeName("Type", "VkExtensionProperties")]
+    [NativeName("Type.Name", "VkExtensionProperties")]
+    [NativeName("Name", "stdExtensionVersion")]
+    public ExtensionProperties StdExtensionVersion;
 }

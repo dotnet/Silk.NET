@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_VIDEO_EXTENSION_COMMAND_INFO")]
+public unsafe partial struct VideoExtensionCommandInfo
 {
-    [NativeName("Name", "D3D12_VIDEO_EXTENSION_COMMAND_INFO")]
-    public unsafe partial struct VideoExtensionCommandInfo
-    {
-        public VideoExtensionCommandInfo
-        (
+    public VideoExtensionCommandInfo
+    (
             Guid? commandId = null,
             char* name = null,
             CommandListSupportFlags? commandListSupportFlags = null
-        ) : this()
+    ) : this()
+    {
+        if (commandId is not null)
         {
-            if (commandId is not null)
-            {
-                CommandId = commandId.Value;
-            }
-
-            if (name is not null)
-            {
-                Name = name;
-            }
-
-            if (commandListSupportFlags is not null)
-            {
-                CommandListSupportFlags = commandListSupportFlags.Value;
-            }
+            CommandId = commandId.Value;
         }
 
+        if (name is not null)
+        {
+            Name = name;
+        }
 
-        [NativeName("Type", "GUID")]
-        [NativeName("Type.Name", "GUID")]
-        [NativeName("Name", "CommandId")]
-        public Guid CommandId;
-
-        [NativeName("Type", "LPCWSTR")]
-        [NativeName("Type.Name", "LPCWSTR")]
-        [NativeName("Name", "Name")]
-        public char* Name;
-
-        [NativeName("Type", "D3D12_COMMAND_LIST_SUPPORT_FLAGS")]
-        [NativeName("Type.Name", "D3D12_COMMAND_LIST_SUPPORT_FLAGS")]
-        [NativeName("Name", "CommandListSupportFlags")]
-        public CommandListSupportFlags CommandListSupportFlags;
+        if (commandListSupportFlags is not null)
+        {
+            CommandListSupportFlags = commandListSupportFlags.Value;
+        }
     }
+
+
+    [NativeName("Type", "GUID")]
+    [NativeName("Type.Name", "GUID")]
+    [NativeName("Name", "CommandId")]
+    public Guid CommandId;
+
+    [NativeName("Type", "LPCWSTR")]
+    [NativeName("Type.Name", "LPCWSTR")]
+    [NativeName("Name", "Name")]
+    public char* Name;
+
+    [NativeName("Type", "D3D12_COMMAND_LIST_SUPPORT_FLAGS")]
+    [NativeName("Type.Name", "D3D12_COMMAND_LIST_SUPPORT_FLAGS")]
+    [NativeName("Name", "CommandListSupportFlags")]
+    public CommandListSupportFlags CommandListSupportFlags;
 }

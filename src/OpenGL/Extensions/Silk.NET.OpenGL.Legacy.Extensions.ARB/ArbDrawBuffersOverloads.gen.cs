@@ -12,22 +12,21 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
+namespace Silk.NET.OpenGL.Legacy.Extensions.ARB;
+
+public static class ArbDrawBuffersOverloads
 {
-    public static class ArbDrawBuffersOverloads
+    public static unsafe void DrawBuffers(this ArbDrawBuffers thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<ARB> bufs)
     {
-        public static unsafe void DrawBuffers(this ArbDrawBuffers thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<ARB> bufs)
-        {
-            // SpanOverloader
-            thisApi.DrawBuffers(n, in bufs.GetPinnableReference());
-        }
-
-        public static unsafe void DrawBuffers(this ArbDrawBuffers thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<DrawBufferMode> bufs)
-        {
-            // SpanOverloader
-            thisApi.DrawBuffers(n, in bufs.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        thisApi.DrawBuffers(n, in bufs.GetPinnableReference());
     }
+
+    public static unsafe void DrawBuffers(this ArbDrawBuffers thisApi, [Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<DrawBufferMode> bufs)
+    {
+        // SpanOverloader
+        thisApi.DrawBuffers(n, in bufs.GetPinnableReference());
+    }
+
 }
 

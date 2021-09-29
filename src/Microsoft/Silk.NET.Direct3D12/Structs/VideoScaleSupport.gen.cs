@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_VIDEO_SCALE_SUPPORT")]
+public unsafe partial struct VideoScaleSupport
 {
-    [NativeName("Name", "D3D12_VIDEO_SCALE_SUPPORT")]
-    public unsafe partial struct VideoScaleSupport
-    {
-        public VideoScaleSupport
-        (
+    public VideoScaleSupport
+    (
             VideoSizeRange? outputSizeRange = null,
             VideoScaleSupportFlags? flags = null
-        ) : this()
+    ) : this()
+    {
+        if (outputSizeRange is not null)
         {
-            if (outputSizeRange is not null)
-            {
-                OutputSizeRange = outputSizeRange.Value;
-            }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
+            OutputSizeRange = outputSizeRange.Value;
         }
 
-
-        [NativeName("Type", "D3D12_VIDEO_SIZE_RANGE")]
-        [NativeName("Type.Name", "D3D12_VIDEO_SIZE_RANGE")]
-        [NativeName("Name", "OutputSizeRange")]
-        public VideoSizeRange OutputSizeRange;
-
-        [NativeName("Type", "D3D12_VIDEO_SCALE_SUPPORT_FLAGS")]
-        [NativeName("Type.Name", "D3D12_VIDEO_SCALE_SUPPORT_FLAGS")]
-        [NativeName("Name", "Flags")]
-        public VideoScaleSupportFlags Flags;
+        if (flags is not null)
+        {
+            Flags = flags.Value;
+        }
     }
+
+
+    [NativeName("Type", "D3D12_VIDEO_SIZE_RANGE")]
+    [NativeName("Type.Name", "D3D12_VIDEO_SIZE_RANGE")]
+    [NativeName("Name", "OutputSizeRange")]
+    public VideoSizeRange OutputSizeRange;
+
+    [NativeName("Type", "D3D12_VIDEO_SCALE_SUPPORT_FLAGS")]
+    [NativeName("Type.Name", "D3D12_VIDEO_SCALE_SUPPORT_FLAGS")]
+    [NativeName("Name", "Flags")]
+    public VideoScaleSupportFlags Flags;
 }

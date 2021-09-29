@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrEventDataSessionStateChanged")]
+public unsafe partial struct EventDataSessionStateChanged
 {
-    [NativeName("Name", "XrEventDataSessionStateChanged")]
-    public unsafe partial struct EventDataSessionStateChanged
-    {
-        public EventDataSessionStateChanged
-        (
+    public EventDataSessionStateChanged
+    (
             StructureType? type = StructureType.TypeEventDataSessionStateChanged,
             void* next = null,
             Session? session = null,
             SessionState? state = null,
             long? time = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (session is not null)
-            {
-                Session = session.Value;
-            }
-
-            if (state is not null)
-            {
-                State = state.Value;
-            }
-
-            if (time is not null)
-            {
-                Time = time.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "XrSession")]
-        [NativeName("Type.Name", "XrSession")]
-        [NativeName("Name", "session")]
-        public Session Session;
-/// <summary></summary>
-        [NativeName("Type", "XrSessionState")]
-        [NativeName("Type.Name", "XrSessionState")]
-        [NativeName("Name", "state")]
-        public SessionState State;
-/// <summary></summary>
-        [NativeName("Type", "XrTime")]
-        [NativeName("Type.Name", "XrTime")]
-        [NativeName("Name", "time")]
-        public long Time;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (session is not null)
+        {
+            Session = session.Value;
+        }
+
+        if (state is not null)
+        {
+            State = state.Value;
+        }
+
+        if (time is not null)
+        {
+            Time = time.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "XrSession")]
+    [NativeName("Type.Name", "XrSession")]
+    [NativeName("Name", "session")]
+    public Session Session;
+/// <summary></summary>
+    [NativeName("Type", "XrSessionState")]
+    [NativeName("Type.Name", "XrSessionState")]
+    [NativeName("Name", "state")]
+    public SessionState State;
+/// <summary></summary>
+    [NativeName("Type", "XrTime")]
+    [NativeName("Type.Name", "XrTime")]
+    [NativeName("Name", "time")]
+    public long Time;
 }

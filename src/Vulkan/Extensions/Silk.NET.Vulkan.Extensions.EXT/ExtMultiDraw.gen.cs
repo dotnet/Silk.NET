@@ -14,61 +14,60 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.EXT
+namespace Silk.NET.Vulkan.Extensions.EXT;
+
+[Extension("VK_EXT_multi_draw")]
+public unsafe partial class ExtMultiDraw : NativeExtension<Vk>
 {
-    [Extension("VK_EXT_multi_draw")]
-    public unsafe partial class ExtMultiDraw : NativeExtension<Vk>
+    public const string ExtensionName = "VK_EXT_multi_draw";
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "vkCmdDrawMultiEXT")]
+    public unsafe partial void CmdDrawMult([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] MultiDrawInfoEXT* pVertexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride);
+
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "vkCmdDrawMultiEXT")]
+    public partial void CmdDrawMult([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] in MultiDrawInfoEXT pVertexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride);
+
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "vkCmdDrawMultiIndexedEXT")]
+    public unsafe partial void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] MultiDrawIndexedInfoEXT* pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(FlowDirection.In)] int* pVertexOffset);
+
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "vkCmdDrawMultiIndexedEXT")]
+    public unsafe partial void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] MultiDrawIndexedInfoEXT* pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(FlowDirection.In)] in int pVertexOffset);
+
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "vkCmdDrawMultiIndexedEXT")]
+    public unsafe partial void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] in MultiDrawIndexedInfoEXT pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(FlowDirection.In)] int* pVertexOffset);
+
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "vkCmdDrawMultiIndexedEXT")]
+    public partial void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] in MultiDrawIndexedInfoEXT pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(FlowDirection.In)] in int pVertexOffset);
+
+    /// <summary>To be documented.</summary>
+    public unsafe void CmdDrawMult([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] ReadOnlySpan<MultiDrawInfoEXT> pVertexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride)
     {
-        public const string ExtensionName = "VK_EXT_multi_draw";
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDrawMultiEXT")]
-        public unsafe partial void CmdDrawMult([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] MultiDrawInfoEXT* pVertexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride);
+        // ImplicitCountSpanOverloader
+        CmdDrawMult(commandBuffer, (uint) pVertexInfo.Length, in pVertexInfo.GetPinnableReference(), instanceCount, firstInstance, stride);
+    }
 
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDrawMultiEXT")]
-        public partial void CmdDrawMult([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] in MultiDrawInfoEXT pVertexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride);
+    /// <summary>To be documented.</summary>
+    public unsafe void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] ReadOnlySpan<MultiDrawIndexedInfoEXT> pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(FlowDirection.In)] int* pVertexOffset)
+    {
+        // ImplicitCountSpanOverloader
+        CmdDrawMultiIndexed(commandBuffer, (uint) pIndexInfo.Length, in pIndexInfo.GetPinnableReference(), instanceCount, firstInstance, stride, pVertexOffset);
+    }
 
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDrawMultiIndexedEXT")]
-        public unsafe partial void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] MultiDrawIndexedInfoEXT* pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(FlowDirection.In)] int* pVertexOffset);
+    /// <summary>To be documented.</summary>
+    public unsafe void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] ReadOnlySpan<MultiDrawIndexedInfoEXT> pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(FlowDirection.In)] in int pVertexOffset)
+    {
+        // ImplicitCountSpanOverloader
+        CmdDrawMultiIndexed(commandBuffer, (uint) pIndexInfo.Length, in pIndexInfo.GetPinnableReference(), instanceCount, firstInstance, stride, in pVertexOffset);
+    }
 
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDrawMultiIndexedEXT")]
-        public unsafe partial void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] MultiDrawIndexedInfoEXT* pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(FlowDirection.In)] in int pVertexOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDrawMultiIndexedEXT")]
-        public unsafe partial void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] in MultiDrawIndexedInfoEXT pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(FlowDirection.In)] int* pVertexOffset);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkCmdDrawMultiIndexedEXT")]
-        public partial void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Count = 0)] uint drawCount, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] in MultiDrawIndexedInfoEXT pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(FlowDirection.In)] in int pVertexOffset);
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdDrawMult([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] ReadOnlySpan<MultiDrawInfoEXT> pVertexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride)
-        {
-            // ImplicitCountSpanOverloader
-            CmdDrawMult(commandBuffer, (uint) pVertexInfo.Length, in pVertexInfo.GetPinnableReference(), instanceCount, firstInstance, stride);
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] ReadOnlySpan<MultiDrawIndexedInfoEXT> pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(FlowDirection.In)] int* pVertexOffset)
-        {
-            // ImplicitCountSpanOverloader
-            CmdDrawMultiIndexed(commandBuffer, (uint) pIndexInfo.Length, in pIndexInfo.GetPinnableReference(), instanceCount, firstInstance, stride, pVertexOffset);
-        }
-
-        /// <summary>To be documented.</summary>
-        public unsafe void CmdDrawMultiIndexed([Count(Count = 0)] CommandBuffer commandBuffer, [Count(Parameter = "drawCount"), Flow(FlowDirection.In)] ReadOnlySpan<MultiDrawIndexedInfoEXT> pIndexInfo, [Count(Count = 0)] uint instanceCount, [Count(Count = 0)] uint firstInstance, [Count(Count = 0)] uint stride, [Count(Count = 0), Flow(FlowDirection.In)] in int pVertexOffset)
-        {
-            // ImplicitCountSpanOverloader
-            CmdDrawMultiIndexed(commandBuffer, (uint) pIndexInfo.Length, in pIndexInfo.GetPinnableReference(), instanceCount, firstInstance, stride, in pVertexOffset);
-        }
-
-        public ExtMultiDraw(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+    public ExtMultiDraw(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkSamplerCustomBorderColorCreateInfoEXT")]
+public unsafe partial struct SamplerCustomBorderColorCreateInfoEXT
 {
-    [NativeName("Name", "VkSamplerCustomBorderColorCreateInfoEXT")]
-    public unsafe partial struct SamplerCustomBorderColorCreateInfoEXT
-    {
-        public SamplerCustomBorderColorCreateInfoEXT
-        (
+    public SamplerCustomBorderColorCreateInfoEXT
+    (
             StructureType? sType = StructureType.SamplerCustomBorderColorCreateInfoExt,
             void* pNext = null,
             ClearColorValue? customBorderColor = null,
             Format? format = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (customBorderColor is not null)
-            {
-                CustomBorderColor = customBorderColor.Value;
-            }
-
-            if (format is not null)
-            {
-                Format = format.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkClearColorValue")]
-        [NativeName("Type.Name", "VkClearColorValue")]
-        [NativeName("Name", "customBorderColor")]
-        public ClearColorValue CustomBorderColor;
-/// <summary></summary>
-        [NativeName("Type", "VkFormat")]
-        [NativeName("Type.Name", "VkFormat")]
-        [NativeName("Name", "format")]
-        public Format Format;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (customBorderColor is not null)
+        {
+            CustomBorderColor = customBorderColor.Value;
+        }
+
+        if (format is not null)
+        {
+            Format = format.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkClearColorValue")]
+    [NativeName("Type.Name", "VkClearColorValue")]
+    [NativeName("Name", "customBorderColor")]
+    public ClearColorValue CustomBorderColor;
+/// <summary></summary>
+    [NativeName("Type", "VkFormat")]
+    [NativeName("Type.Name", "VkFormat")]
+    [NativeName("Name", "format")]
+    public Format Format;
 }

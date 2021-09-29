@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrSceneDeserializeInfoMSFT")]
+public unsafe partial struct SceneDeserializeInfoMSFT
 {
-    [NativeName("Name", "XrSceneDeserializeInfoMSFT")]
-    public unsafe partial struct SceneDeserializeInfoMSFT
-    {
-        public SceneDeserializeInfoMSFT
-        (
+    public SceneDeserializeInfoMSFT
+    (
             StructureType? type = StructureType.TypeSceneDeserializeInfoMsft,
             void* next = null,
             uint? fragmentCount = null,
             DeserializeSceneFragmentMSFT* fragments = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (fragmentCount is not null)
-            {
-                FragmentCount = fragmentCount.Value;
-            }
-
-            if (fragments is not null)
-            {
-                Fragments = fragments;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "fragmentCount")]
-        public uint FragmentCount;
-/// <summary></summary>
-        [NativeName("Type", "XrDeserializeSceneFragmentMSFT*")]
-        [NativeName("Type.Name", "XrDeserializeSceneFragmentMSFT")]
-        [NativeName("Name", "fragments")]
-        public DeserializeSceneFragmentMSFT* Fragments;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (fragmentCount is not null)
+        {
+            FragmentCount = fragmentCount.Value;
+        }
+
+        if (fragments is not null)
+        {
+            Fragments = fragments;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "fragmentCount")]
+    public uint FragmentCount;
+/// <summary></summary>
+    [NativeName("Type", "XrDeserializeSceneFragmentMSFT*")]
+    [NativeName("Type.Name", "XrDeserializeSceneFragmentMSFT")]
+    [NativeName("Name", "fragments")]
+    public DeserializeSceneFragmentMSFT* Fragments;
 }

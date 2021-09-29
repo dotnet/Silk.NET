@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrGraphicsBindingD3D11KHR")]
+public unsafe partial struct GraphicsBindingD3D11KHR
 {
-    [NativeName("Name", "XrGraphicsBindingD3D11KHR")]
-    public unsafe partial struct GraphicsBindingD3D11KHR
-    {
-        public GraphicsBindingD3D11KHR
-        (
+    public GraphicsBindingD3D11KHR
+    (
             StructureType? type = StructureType.TypeGraphicsBindingD3D11Khr,
             void* next = null,
             void* device = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (device is not null)
-            {
-                Device = device;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "ID3D11Device*")]
-        [NativeName("Type.Name", "ID3D11Device")]
-        [NativeName("Name", "device")]
-        public void* Device;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (device is not null)
+        {
+            Device = device;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "ID3D11Device*")]
+    [NativeName("Type.Name", "ID3D11Device")]
+    [NativeName("Name", "device")]
+    public void* Device;
 }

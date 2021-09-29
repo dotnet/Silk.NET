@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPipelineLibraryCreateInfoKHR")]
+public unsafe partial struct PipelineLibraryCreateInfoKHR
 {
-    [NativeName("Name", "VkPipelineLibraryCreateInfoKHR")]
-    public unsafe partial struct PipelineLibraryCreateInfoKHR
-    {
-        public PipelineLibraryCreateInfoKHR
-        (
+    public PipelineLibraryCreateInfoKHR
+    (
             StructureType? sType = StructureType.PipelineLibraryCreateInfoKhr,
             void* pNext = null,
             uint? libraryCount = null,
             Pipeline* pLibraries = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (libraryCount is not null)
-            {
-                LibraryCount = libraryCount.Value;
-            }
-
-            if (pLibraries is not null)
-            {
-                PLibraries = pLibraries;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "libraryCount")]
-        public uint LibraryCount;
-/// <summary></summary>
-        [NativeName("Type", "VkPipeline*")]
-        [NativeName("Type.Name", "VkPipeline")]
-        [NativeName("Name", "pLibraries")]
-        public Pipeline* PLibraries;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (libraryCount is not null)
+        {
+            LibraryCount = libraryCount.Value;
+        }
+
+        if (pLibraries is not null)
+        {
+            PLibraries = pLibraries;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "libraryCount")]
+    public uint LibraryCount;
+/// <summary></summary>
+    [NativeName("Type", "VkPipeline*")]
+    [NativeName("Type.Name", "VkPipeline")]
+    [NativeName("Name", "pLibraries")]
+    public Pipeline* PLibraries;
 }

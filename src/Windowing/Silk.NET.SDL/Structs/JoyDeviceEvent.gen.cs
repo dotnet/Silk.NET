@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL
+namespace Silk.NET.SDL;
+
+[NativeName("Name", "SDL_JoyDeviceEvent")]
+public unsafe partial struct JoyDeviceEvent
 {
-    [NativeName("Name", "SDL_JoyDeviceEvent")]
-    public unsafe partial struct JoyDeviceEvent
-    {
-        public JoyDeviceEvent
-        (
+    public JoyDeviceEvent
+    (
             uint? type = null,
             uint? timestamp = null,
             int? which = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (timestamp is not null)
-            {
-                Timestamp = timestamp.Value;
-            }
-
-            if (which is not null)
-            {
-                Which = which.Value;
-            }
+            Type = type.Value;
         }
 
+        if (timestamp is not null)
+        {
+            Timestamp = timestamp.Value;
+        }
 
-        [NativeName("Type", "Uint32")]
-        [NativeName("Type.Name", "Uint32")]
-        [NativeName("Name", "type")]
-        public uint Type;
-
-        [NativeName("Type", "Uint32")]
-        [NativeName("Type.Name", "Uint32")]
-        [NativeName("Name", "timestamp")]
-        public uint Timestamp;
-
-        [NativeName("Type", "Sint32")]
-        [NativeName("Type.Name", "Sint32")]
-        [NativeName("Name", "which")]
-        public int Which;
+        if (which is not null)
+        {
+            Which = which.Value;
+        }
     }
+
+
+    [NativeName("Type", "Uint32")]
+    [NativeName("Type.Name", "Uint32")]
+    [NativeName("Name", "type")]
+    public uint Type;
+
+    [NativeName("Type", "Uint32")]
+    [NativeName("Type.Name", "Uint32")]
+    [NativeName("Name", "timestamp")]
+    public uint Timestamp;
+
+    [NativeName("Type", "Sint32")]
+    [NativeName("Type.Name", "Sint32")]
+    [NativeName("Name", "which")]
+    public int Which;
 }

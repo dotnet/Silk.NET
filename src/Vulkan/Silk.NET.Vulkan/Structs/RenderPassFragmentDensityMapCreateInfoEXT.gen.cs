@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkRenderPassFragmentDensityMapCreateInfoEXT")]
+public unsafe partial struct RenderPassFragmentDensityMapCreateInfoEXT
 {
-    [NativeName("Name", "VkRenderPassFragmentDensityMapCreateInfoEXT")]
-    public unsafe partial struct RenderPassFragmentDensityMapCreateInfoEXT
-    {
-        public RenderPassFragmentDensityMapCreateInfoEXT
-        (
+    public RenderPassFragmentDensityMapCreateInfoEXT
+    (
             StructureType? sType = StructureType.RenderPassFragmentDensityMapCreateInfoExt,
             void* pNext = null,
             AttachmentReference? fragmentDensityMapAttachment = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (fragmentDensityMapAttachment is not null)
-            {
-                FragmentDensityMapAttachment = fragmentDensityMapAttachment.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkAttachmentReference")]
-        [NativeName("Type.Name", "VkAttachmentReference")]
-        [NativeName("Name", "fragmentDensityMapAttachment")]
-        public AttachmentReference FragmentDensityMapAttachment;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (fragmentDensityMapAttachment is not null)
+        {
+            FragmentDensityMapAttachment = fragmentDensityMapAttachment.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkAttachmentReference")]
+    [NativeName("Type.Name", "VkAttachmentReference")]
+    [NativeName("Name", "fragmentDensityMapAttachment")]
+    public AttachmentReference FragmentDensityMapAttachment;
 }

@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_CPU_DESCRIPTOR_HANDLE")]
+public unsafe partial struct CpuDescriptorHandle
 {
-    [NativeName("Name", "D3D12_CPU_DESCRIPTOR_HANDLE")]
-    public unsafe partial struct CpuDescriptorHandle
-    {
-        public CpuDescriptorHandle
-        (
+    public CpuDescriptorHandle
+    (
             nuint? ptr = null
-        ) : this()
+    ) : this()
+    {
+        if (ptr is not null)
         {
-            if (ptr is not null)
-            {
-                Ptr = ptr.Value;
-            }
+            Ptr = ptr.Value;
         }
-
-
-        [NativeName("Type", "SIZE_T")]
-        [NativeName("Type.Name", "SIZE_T")]
-        [NativeName("Name", "ptr")]
-        public nuint Ptr;
     }
+
+
+    [NativeName("Type", "SIZE_T")]
+    [NativeName("Type.Name", "SIZE_T")]
+    [NativeName("Name", "ptr")]
+    public nuint Ptr;
 }

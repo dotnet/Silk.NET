@@ -14,69 +14,68 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDeviceDriverProperties")]
+public unsafe partial struct PhysicalDeviceDriverProperties
 {
-    [NativeName("Name", "VkPhysicalDeviceDriverProperties")]
-    public unsafe partial struct PhysicalDeviceDriverProperties
-    {
-        public PhysicalDeviceDriverProperties
-        (
+    public PhysicalDeviceDriverProperties
+    (
             StructureType? sType = StructureType.PhysicalDeviceDriverProperties,
             void* pNext = null,
             DriverId? driverID = null,
             ConformanceVersion? conformanceVersion = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (driverID is not null)
-            {
-                DriverID = driverID.Value;
-            }
-
-            if (conformanceVersion is not null)
-            {
-                ConformanceVersion = conformanceVersion.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkDriverId")]
-        [NativeName("Type.Name", "VkDriverId")]
-        [NativeName("Name", "driverID")]
-        public DriverId DriverID;
-        /// <summary></summary>
-        [NativeName("Type", "char")]
-        [NativeName("Type.Name", "char")]
-        [NativeName("Name", "driverName")]
-        public fixed byte DriverName[256];
-        /// <summary></summary>
-        [NativeName("Type", "char")]
-        [NativeName("Type.Name", "char")]
-        [NativeName("Name", "driverInfo")]
-        public fixed byte DriverInfo[256];
-/// <summary></summary>
-        [NativeName("Type", "VkConformanceVersion")]
-        [NativeName("Type.Name", "VkConformanceVersion")]
-        [NativeName("Name", "conformanceVersion")]
-        public ConformanceVersion ConformanceVersion;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (driverID is not null)
+        {
+            DriverID = driverID.Value;
+        }
+
+        if (conformanceVersion is not null)
+        {
+            ConformanceVersion = conformanceVersion.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkDriverId")]
+    [NativeName("Type.Name", "VkDriverId")]
+    [NativeName("Name", "driverID")]
+    public DriverId DriverID;
+    /// <summary></summary>
+    [NativeName("Type", "char")]
+    [NativeName("Type.Name", "char")]
+    [NativeName("Name", "driverName")]
+    public fixed byte DriverName[256];
+    /// <summary></summary>
+    [NativeName("Type", "char")]
+    [NativeName("Type.Name", "char")]
+    [NativeName("Name", "driverInfo")]
+    public fixed byte DriverInfo[256];
+/// <summary></summary>
+    [NativeName("Type", "VkConformanceVersion")]
+    [NativeName("Type.Name", "VkConformanceVersion")]
+    [NativeName("Name", "conformanceVersion")]
+    public ConformanceVersion ConformanceVersion;
 }

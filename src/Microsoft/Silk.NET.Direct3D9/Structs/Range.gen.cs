@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9
+namespace Silk.NET.Direct3D9;
+
+[NativeName("Name", "_D3DRANGE")]
+public unsafe partial struct Range
 {
-    [NativeName("Name", "_D3DRANGE")]
-    public unsafe partial struct Range
-    {
-        public Range
-        (
+    public Range
+    (
             uint? offset = null,
             uint? size = null
-        ) : this()
+    ) : this()
+    {
+        if (offset is not null)
         {
-            if (offset is not null)
-            {
-                Offset = offset.Value;
-            }
-
-            if (size is not null)
-            {
-                Size = size.Value;
-            }
+            Offset = offset.Value;
         }
 
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Offset")]
-        public uint Offset;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Size")]
-        public uint Size;
+        if (size is not null)
+        {
+            Size = size.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Offset")]
+    public uint Offset;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Size")]
+    public uint Size;
 }

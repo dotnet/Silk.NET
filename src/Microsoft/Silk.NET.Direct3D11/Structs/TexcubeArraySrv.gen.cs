@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_TEXCUBE_ARRAY_SRV")]
+public unsafe partial struct TexcubeArraySrv
 {
-    [NativeName("Name", "D3D11_TEXCUBE_ARRAY_SRV")]
-    public unsafe partial struct TexcubeArraySrv
-    {
-        public TexcubeArraySrv
-        (
+    public TexcubeArraySrv
+    (
             uint? mostDetailedMip = null,
             uint? mipLevels = null,
             uint? first2DArrayFace = null,
             uint? numCubes = null
-        ) : this()
+    ) : this()
+    {
+        if (mostDetailedMip is not null)
         {
-            if (mostDetailedMip is not null)
-            {
-                MostDetailedMip = mostDetailedMip.Value;
-            }
-
-            if (mipLevels is not null)
-            {
-                MipLevels = mipLevels.Value;
-            }
-
-            if (first2DArrayFace is not null)
-            {
-                First2DArrayFace = first2DArrayFace.Value;
-            }
-
-            if (numCubes is not null)
-            {
-                NumCubes = numCubes.Value;
-            }
+            MostDetailedMip = mostDetailedMip.Value;
         }
 
+        if (mipLevels is not null)
+        {
+            MipLevels = mipLevels.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "MostDetailedMip")]
-        public uint MostDetailedMip;
+        if (first2DArrayFace is not null)
+        {
+            First2DArrayFace = first2DArrayFace.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "MipLevels")]
-        public uint MipLevels;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "First2DArrayFace")]
-        public uint First2DArrayFace;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "NumCubes")]
-        public uint NumCubes;
+        if (numCubes is not null)
+        {
+            NumCubes = numCubes.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "MostDetailedMip")]
+    public uint MostDetailedMip;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "MipLevels")]
+    public uint MipLevels;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "First2DArrayFace")]
+    public uint First2DArrayFace;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "NumCubes")]
+    public uint NumCubes;
 }

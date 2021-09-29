@@ -7,11 +7,10 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
-{
+namespace Silk.NET.OpenXR;
+
     [Flags()]
-    [NativeName("Name", "XrVulkanInstanceCreateFlagsKHR")]
-    public enum VulkanInstanceCreateFlagsKHR : long
-    {
-    }
+[NativeName("Name", "XrVulkanInstanceCreateFlagsKHR")]
+public enum VulkanInstanceCreateFlagsKHR : long
+{
 }

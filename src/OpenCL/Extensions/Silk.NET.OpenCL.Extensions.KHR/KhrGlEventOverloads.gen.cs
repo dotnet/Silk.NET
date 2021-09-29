@@ -12,16 +12,15 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL.Extensions.KHR
-{
-    public static class KhrGlEventOverloads
-    {
-        public static unsafe nint CreateEventFromGLsync(this KhrGlEvent thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
-        {
-            // SpanOverloader
-            return thisApi.CreateEventFromGLsync(context, sync, out errcode_ret.GetPinnableReference());
-        }
+namespace Silk.NET.OpenCL.Extensions.KHR;
 
+public static class KhrGlEventOverloads
+{
+    public static unsafe nint CreateEventFromGLsync(this KhrGlEvent thisApi, [Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] nint sync, [Flow(FlowDirection.Out)] Span<int> errcode_ret)
+    {
+        // SpanOverloader
+        return thisApi.CreateEventFromGLsync(context, sync, out errcode_ret.GetPinnableReference());
     }
+
 }
 

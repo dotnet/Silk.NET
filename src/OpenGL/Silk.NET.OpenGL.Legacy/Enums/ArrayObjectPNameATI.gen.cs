@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy
+namespace Silk.NET.OpenGL.Legacy;
+
+[NativeName("Name", "ArrayObjectPNameATI")]
+public enum ArrayObjectPNameATI : int
 {
-    [NativeName("Name", "ArrayObjectPNameATI")]
-    public enum ArrayObjectPNameATI : int
-    {
-        [NativeName("Name", "GL_OBJECT_BUFFER_SIZE_ATI")]
-        ObjectBufferSizeAti = 0x8764,
-        [NativeName("Name", "GL_OBJECT_BUFFER_USAGE_ATI")]
-        ObjectBufferUsageAti = 0x8765,
-    }
+    [NativeName("Name", "GL_OBJECT_BUFFER_SIZE_ATI")]
+    ObjectBufferSizeAti = 0x8764,
+    [NativeName("Name", "GL_OBJECT_BUFFER_USAGE_ATI")]
+    ObjectBufferUsageAti = 0x8765,
 }

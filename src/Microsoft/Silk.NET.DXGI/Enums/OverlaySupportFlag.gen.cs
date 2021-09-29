@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI
+namespace Silk.NET.DXGI;
+
+[NativeName("Name", "DXGI_OVERLAY_SUPPORT_FLAG")]
+public enum OverlaySupportFlag : int
 {
-    [NativeName("Name", "DXGI_OVERLAY_SUPPORT_FLAG")]
-    public enum OverlaySupportFlag : int
-    {
-        [NativeName("Name", "DXGI_OVERLAY_SUPPORT_FLAG_DIRECT")]
-        OverlaySupportFlagDirect = 0x1,
-        [NativeName("Name", "DXGI_OVERLAY_SUPPORT_FLAG_SCALING")]
-        OverlaySupportFlagScaling = 0x2,
-    }
+    [NativeName("Name", "DXGI_OVERLAY_SUPPORT_FLAG_DIRECT")]
+    OverlaySupportFlagDirect = 0x1,
+    [NativeName("Name", "DXGI_OVERLAY_SUPPORT_FLAG_SCALING")]
+    OverlaySupportFlagScaling = 0x2,
 }

@@ -14,22 +14,21 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
+namespace Silk.NET.OpenGL.Legacy.Extensions.ARB;
+
+[Extension("ARB_ES3_1_compatibility")]
+public unsafe partial class ArbES31Compatibility : NativeExtension<GL>
 {
-    [Extension("ARB_ES3_1_compatibility")]
-    public unsafe partial class ArbES31Compatibility : NativeExtension<GL>
+    public const string ExtensionName = "ARB_ES3_1_compatibility";
+    [NativeApi(EntryPoint = "glMemoryBarrierByRegion")]
+    public partial void MemoryBarrierByRegion([Flow(FlowDirection.In)] uint barriers);
+
+    [NativeApi(EntryPoint = "glMemoryBarrierByRegion")]
+    public partial void MemoryBarrierByRegion([Flow(FlowDirection.In)] MemoryBarrierMask barriers);
+
+    public ArbES31Compatibility(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "ARB_ES3_1_compatibility";
-        [NativeApi(EntryPoint = "glMemoryBarrierByRegion")]
-        public partial void MemoryBarrierByRegion([Flow(FlowDirection.In)] uint barriers);
-
-        [NativeApi(EntryPoint = "glMemoryBarrierByRegion")]
-        public partial void MemoryBarrierByRegion([Flow(FlowDirection.In)] MemoryBarrierMask barriers);
-
-        public ArbES31Compatibility(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDeviceSubpassShadingPropertiesHUAWEI")]
+public unsafe partial struct PhysicalDeviceSubpassShadingPropertiesHUAWEI
 {
-    [NativeName("Name", "VkPhysicalDeviceSubpassShadingPropertiesHUAWEI")]
-    public unsafe partial struct PhysicalDeviceSubpassShadingPropertiesHUAWEI
-    {
-        public PhysicalDeviceSubpassShadingPropertiesHUAWEI
-        (
+    public PhysicalDeviceSubpassShadingPropertiesHUAWEI
+    (
             StructureType? sType = StructureType.PhysicalDeviceSubpassShadingPropertiesHuawei,
             void* pNext = null,
             uint? maxSubpassShadingWorkgroupSizeAspectRatio = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (maxSubpassShadingWorkgroupSizeAspectRatio is not null)
-            {
-                MaxSubpassShadingWorkgroupSizeAspectRatio = maxSubpassShadingWorkgroupSizeAspectRatio.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxSubpassShadingWorkgroupSizeAspectRatio")]
-        public uint MaxSubpassShadingWorkgroupSizeAspectRatio;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (maxSubpassShadingWorkgroupSizeAspectRatio is not null)
+        {
+            MaxSubpassShadingWorkgroupSizeAspectRatio = maxSubpassShadingWorkgroupSizeAspectRatio.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "maxSubpassShadingWorkgroupSizeAspectRatio")]
+    public uint MaxSubpassShadingWorkgroupSizeAspectRatio;
 }

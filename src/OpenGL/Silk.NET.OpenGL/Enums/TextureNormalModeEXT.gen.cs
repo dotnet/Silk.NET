@@ -7,12 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL
+namespace Silk.NET.OpenGL;
+
+[NativeName("Name", "TextureNormalModeEXT")]
+public enum TextureNormalModeEXT : int
 {
-    [NativeName("Name", "TextureNormalModeEXT")]
-    public enum TextureNormalModeEXT : int
-    {
-        [NativeName("Name", "GL_PERTURB_EXT")]
-        PerturbExt = 0x85AE,
-    }
+    [NativeName("Name", "GL_PERTURB_EXT")]
+    PerturbExt = 0x85AE,
 }

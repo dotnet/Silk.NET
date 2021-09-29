@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp
+namespace Silk.NET.Assimp;
+
+[NativeName("Name", "aiAnimation")]
+public unsafe partial struct Animation
 {
-    [NativeName("Name", "aiAnimation")]
-    public unsafe partial struct Animation
-    {
-        public Animation
-        (
+    public Animation
+    (
             AssimpString? mName = null,
             double? mDuration = null,
             double? mTicksPerSecond = null,
@@ -30,98 +30,97 @@ namespace Silk.NET.Assimp
             MeshAnim** mMeshChannels = null,
             uint? mNumMorphMeshChannels = null,
             MeshMorphAnim** mMorphMeshChannels = null
-        ) : this()
+    ) : this()
+    {
+        if (mName is not null)
         {
-            if (mName is not null)
-            {
-                MName = mName.Value;
-            }
-
-            if (mDuration is not null)
-            {
-                MDuration = mDuration.Value;
-            }
-
-            if (mTicksPerSecond is not null)
-            {
-                MTicksPerSecond = mTicksPerSecond.Value;
-            }
-
-            if (mNumChannels is not null)
-            {
-                MNumChannels = mNumChannels.Value;
-            }
-
-            if (mChannels is not null)
-            {
-                MChannels = mChannels;
-            }
-
-            if (mNumMeshChannels is not null)
-            {
-                MNumMeshChannels = mNumMeshChannels.Value;
-            }
-
-            if (mMeshChannels is not null)
-            {
-                MMeshChannels = mMeshChannels;
-            }
-
-            if (mNumMorphMeshChannels is not null)
-            {
-                MNumMorphMeshChannels = mNumMorphMeshChannels.Value;
-            }
-
-            if (mMorphMeshChannels is not null)
-            {
-                MMorphMeshChannels = mMorphMeshChannels;
-            }
+            MName = mName.Value;
         }
 
+        if (mDuration is not null)
+        {
+            MDuration = mDuration.Value;
+        }
 
-        [NativeName("Type", "aiString")]
-        [NativeName("Type.Name", "aiString")]
-        [NativeName("Name", "mName")]
-        public AssimpString MName;
+        if (mTicksPerSecond is not null)
+        {
+            MTicksPerSecond = mTicksPerSecond.Value;
+        }
 
-        [NativeName("Type", "double")]
-        [NativeName("Type.Name", "double")]
-        [NativeName("Name", "mDuration")]
-        public double MDuration;
+        if (mNumChannels is not null)
+        {
+            MNumChannels = mNumChannels.Value;
+        }
 
-        [NativeName("Type", "double")]
-        [NativeName("Type.Name", "double")]
-        [NativeName("Name", "mTicksPerSecond")]
-        public double MTicksPerSecond;
+        if (mChannels is not null)
+        {
+            MChannels = mChannels;
+        }
 
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "mNumChannels")]
-        public uint MNumChannels;
+        if (mNumMeshChannels is not null)
+        {
+            MNumMeshChannels = mNumMeshChannels.Value;
+        }
 
-        [NativeName("Type", "aiNodeAnim **")]
-        [NativeName("Type.Name", "aiNodeAnim **")]
-        [NativeName("Name", "mChannels")]
-        public NodeAnim** MChannels;
+        if (mMeshChannels is not null)
+        {
+            MMeshChannels = mMeshChannels;
+        }
 
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "mNumMeshChannels")]
-        public uint MNumMeshChannels;
+        if (mNumMorphMeshChannels is not null)
+        {
+            MNumMorphMeshChannels = mNumMorphMeshChannels.Value;
+        }
 
-        [NativeName("Type", "aiMeshAnim **")]
-        [NativeName("Type.Name", "aiMeshAnim **")]
-        [NativeName("Name", "mMeshChannels")]
-        public MeshAnim** MMeshChannels;
-
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "mNumMorphMeshChannels")]
-        public uint MNumMorphMeshChannels;
-
-        [NativeName("Type", "aiMeshMorphAnim **")]
-        [NativeName("Type.Name", "aiMeshMorphAnim **")]
-        [NativeName("Name", "mMorphMeshChannels")]
-        public MeshMorphAnim** MMorphMeshChannels;
+        if (mMorphMeshChannels is not null)
+        {
+            MMorphMeshChannels = mMorphMeshChannels;
+        }
     }
+
+
+    [NativeName("Type", "aiString")]
+    [NativeName("Type.Name", "aiString")]
+    [NativeName("Name", "mName")]
+    public AssimpString MName;
+
+    [NativeName("Type", "double")]
+    [NativeName("Type.Name", "double")]
+    [NativeName("Name", "mDuration")]
+    public double MDuration;
+
+    [NativeName("Type", "double")]
+    [NativeName("Type.Name", "double")]
+    [NativeName("Name", "mTicksPerSecond")]
+    public double MTicksPerSecond;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "mNumChannels")]
+    public uint MNumChannels;
+
+    [NativeName("Type", "aiNodeAnim **")]
+    [NativeName("Type.Name", "aiNodeAnim **")]
+    [NativeName("Name", "mChannels")]
+    public NodeAnim** MChannels;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "mNumMeshChannels")]
+    public uint MNumMeshChannels;
+
+    [NativeName("Type", "aiMeshAnim **")]
+    [NativeName("Type.Name", "aiMeshAnim **")]
+    [NativeName("Name", "mMeshChannels")]
+    public MeshAnim** MMeshChannels;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "mNumMorphMeshChannels")]
+    public uint MNumMorphMeshChannels;
+
+    [NativeName("Type", "aiMeshMorphAnim **")]
+    [NativeName("Type.Name", "aiMeshMorphAnim **")]
+    [NativeName("Name", "mMorphMeshChannels")]
+    public MeshMorphAnim** MMorphMeshChannels;
 }

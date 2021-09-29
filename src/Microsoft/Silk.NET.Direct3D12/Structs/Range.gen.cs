@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_RANGE")]
+public unsafe partial struct Range
 {
-    [NativeName("Name", "D3D12_RANGE")]
-    public unsafe partial struct Range
-    {
-        public Range
-        (
+    public Range
+    (
             nuint? begin = null,
             nuint? end = null
-        ) : this()
+    ) : this()
+    {
+        if (begin is not null)
         {
-            if (begin is not null)
-            {
-                Begin = begin.Value;
-            }
-
-            if (end is not null)
-            {
-                End = end.Value;
-            }
+            Begin = begin.Value;
         }
 
-
-        [NativeName("Type", "SIZE_T")]
-        [NativeName("Type.Name", "SIZE_T")]
-        [NativeName("Name", "Begin")]
-        public nuint Begin;
-
-        [NativeName("Type", "SIZE_T")]
-        [NativeName("Type.Name", "SIZE_T")]
-        [NativeName("Name", "End")]
-        public nuint End;
+        if (end is not null)
+        {
+            End = end.Value;
+        }
     }
+
+
+    [NativeName("Type", "SIZE_T")]
+    [NativeName("Type.Name", "SIZE_T")]
+    [NativeName("Name", "Begin")]
+    public nuint Begin;
+
+    [NativeName("Type", "SIZE_T")]
+    [NativeName("Type.Name", "SIZE_T")]
+    [NativeName("Name", "End")]
+    public nuint End;
 }

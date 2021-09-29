@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrSpatialAnchorMSFT")]
+public unsafe partial struct SpatialAnchorMSFT
 {
-    [NativeName("Name", "XrSpatialAnchorMSFT")]
-    public unsafe partial struct SpatialAnchorMSFT
-    {
-        public SpatialAnchorMSFT
-        (
+    public SpatialAnchorMSFT
+    (
             ulong? handle = null
-        ) : this()
+    ) : this()
+    {
+        if (handle is not null)
         {
-            if (handle is not null)
-            {
-                Handle = handle.Value;
-            }
+            Handle = handle.Value;
         }
-
-
-        [NativeName("Type", "")]
-        [NativeName("Type.Name", "")]
-        [NativeName("Name", "")]
-        public ulong Handle;
     }
+
+
+    [NativeName("Type", "")]
+    [NativeName("Type.Name", "")]
+    [NativeName("Name", "")]
+    public ulong Handle;
 }

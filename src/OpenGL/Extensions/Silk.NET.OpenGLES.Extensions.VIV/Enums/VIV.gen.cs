@@ -7,12 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.VIV
+namespace Silk.NET.OpenGLES.Extensions.VIV;
+
+[NativeName("Name", "GLenum")]
+public enum VIV : int
 {
-    [NativeName("Name", "GLenum")]
-    public enum VIV : int
-    {
-        [NativeName("Name", "GL_SHADER_BINARY_VIV")]
-        ShaderBinaryViv = 0x8FC4,
-    }
+    [NativeName("Name", "GL_SHADER_BINARY_VIV")]
+    ShaderBinaryViv = 0x8FC4,
 }

@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkExportMemoryAllocateInfoKHR")]
+public unsafe partial struct ExportMemoryAllocateInfoKHR
 {
-    [NativeName("Name", "VkExportMemoryAllocateInfoKHR")]
-    public unsafe partial struct ExportMemoryAllocateInfoKHR
-    {
-        public ExportMemoryAllocateInfoKHR
-        (
+    public ExportMemoryAllocateInfoKHR
+    (
             StructureType? sType = StructureType.ExportMemoryAllocateInfo,
             void* pNext = null,
             ExternalMemoryHandleTypeFlags? handleTypes = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (handleTypes is not null)
-            {
-                HandleTypes = handleTypes.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkExternalMemoryHandleTypeFlags")]
-        [NativeName("Type.Name", "VkExternalMemoryHandleTypeFlags")]
-        [NativeName("Name", "handleTypes")]
-        public ExternalMemoryHandleTypeFlags HandleTypes;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (handleTypes is not null)
+        {
+            HandleTypes = handleTypes.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkExternalMemoryHandleTypeFlags")]
+    [NativeName("Type.Name", "VkExternalMemoryHandleTypeFlags")]
+    [NativeName("Name", "handleTypes")]
+    public ExternalMemoryHandleTypeFlags HandleTypes;
 }

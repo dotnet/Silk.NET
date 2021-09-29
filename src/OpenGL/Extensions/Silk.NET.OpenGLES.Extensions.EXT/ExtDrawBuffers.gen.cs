@@ -14,28 +14,27 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.EXT
+namespace Silk.NET.OpenGLES.Extensions.EXT;
+
+[Extension("EXT_draw_buffers")]
+public unsafe partial class ExtDrawBuffers : NativeExtension<GL>
 {
-    [Extension("EXT_draw_buffers")]
-    public unsafe partial class ExtDrawBuffers : NativeExtension<GL>
+    public const string ExtensionName = "EXT_draw_buffers";
+    [NativeApi(EntryPoint = "glDrawBuffersEXT")]
+    public unsafe partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] EXT* bufs);
+
+    [NativeApi(EntryPoint = "glDrawBuffersEXT")]
+    public partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in EXT bufs);
+
+    public unsafe void DrawBuffers([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> bufs)
     {
-        public const string ExtensionName = "EXT_draw_buffers";
-        [NativeApi(EntryPoint = "glDrawBuffersEXT")]
-        public unsafe partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] EXT* bufs);
+        // ImplicitCountSpanOverloader
+        DrawBuffers((uint) bufs.Length, in bufs.GetPinnableReference());
+    }
 
-        [NativeApi(EntryPoint = "glDrawBuffersEXT")]
-        public partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in EXT bufs);
-
-        public unsafe void DrawBuffers([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<EXT> bufs)
-        {
-            // ImplicitCountSpanOverloader
-            DrawBuffers((uint) bufs.Length, in bufs.GetPinnableReference());
-        }
-
-        public ExtDrawBuffers(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+    public ExtDrawBuffers(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

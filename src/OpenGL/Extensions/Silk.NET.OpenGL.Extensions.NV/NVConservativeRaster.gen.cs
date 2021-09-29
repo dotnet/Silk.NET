@@ -14,19 +14,18 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.NV
-{
-    [Extension("NV_conservative_raster")]
-    public unsafe partial class NVConservativeRaster : NativeExtension<GL>
-    {
-        public const string ExtensionName = "NV_conservative_raster";
-        [NativeApi(EntryPoint = "glSubpixelPrecisionBiasNV")]
-        public partial void SubpixelPrecisionBias([Flow(FlowDirection.In)] uint xbits, [Flow(FlowDirection.In)] uint ybits);
+namespace Silk.NET.OpenGL.Extensions.NV;
 
-        public NVConservativeRaster(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+[Extension("NV_conservative_raster")]
+public unsafe partial class NVConservativeRaster : NativeExtension<GL>
+{
+    public const string ExtensionName = "NV_conservative_raster";
+    [NativeApi(EntryPoint = "glSubpixelPrecisionBiasNV")]
+    public partial void SubpixelPrecisionBias([Flow(FlowDirection.In)] uint xbits, [Flow(FlowDirection.In)] uint ybits);
+
+    public NVConservativeRaster(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

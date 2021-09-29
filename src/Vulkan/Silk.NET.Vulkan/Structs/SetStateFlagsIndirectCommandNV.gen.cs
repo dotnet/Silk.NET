@@ -14,26 +14,25 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkSetStateFlagsIndirectCommandNV")]
+public unsafe partial struct SetStateFlagsIndirectCommandNV
 {
-    [NativeName("Name", "VkSetStateFlagsIndirectCommandNV")]
-    public unsafe partial struct SetStateFlagsIndirectCommandNV
-    {
-        public SetStateFlagsIndirectCommandNV
-        (
+    public SetStateFlagsIndirectCommandNV
+    (
             uint? data = null
-        ) : this()
+    ) : this()
+    {
+        if (data is not null)
         {
-            if (data is not null)
-            {
-                Data = data.Value;
-            }
+            Data = data.Value;
         }
+    }
 
 /// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "data")]
-        public uint Data;
-    }
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "data")]
+    public uint Data;
 }

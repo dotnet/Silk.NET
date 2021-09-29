@@ -12,34 +12,33 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.ARB
+namespace Silk.NET.OpenGL.Extensions.ARB;
+
+public static class ArbBufferStorageOverloads
 {
-    public static class ArbBufferStorageOverloads
+    public static unsafe void BufferStorage<T0>(this ArbBufferStorage thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
     {
-        public static unsafe void BufferStorage<T0>(this ArbBufferStorage thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
-        }
-
-        public static unsafe void BufferStorage<T0>(this ArbBufferStorage thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
-        }
-
-        public static unsafe void BufferStorage<T0>(this ArbBufferStorage thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
-        }
-
-        public static unsafe void BufferStorage<T0>(this ArbBufferStorage thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
-        }
-
+        // SpanOverloader
+        thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
     }
+
+    public static unsafe void BufferStorage<T0>(this ArbBufferStorage thisApi, [Flow(FlowDirection.In)] ARB target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged
+    {
+        // SpanOverloader
+        thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
+    }
+
+    public static unsafe void BufferStorage<T0>(this ArbBufferStorage thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] uint flags) where T0 : unmanaged
+    {
+        // SpanOverloader
+        thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
+    }
+
+    public static unsafe void BufferStorage<T0>(this ArbBufferStorage thisApi, [Flow(FlowDirection.In)] BufferStorageTarget target, [Flow(FlowDirection.In)] nuint size, [Count(Parameter = "size"), Flow(FlowDirection.In)] ReadOnlySpan<T0> data, [Flow(FlowDirection.In)] BufferStorageMask flags) where T0 : unmanaged
+    {
+        // SpanOverloader
+        thisApi.BufferStorage(target, size, in data.GetPinnableReference(), flags);
+    }
+
 }
 

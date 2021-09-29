@@ -7,12 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI
+namespace Silk.NET.DXGI;
+
+[NativeName("Name", "DXGI_FEATURE")]
+public enum Feature : int
 {
-    [NativeName("Name", "DXGI_FEATURE")]
-    public enum Feature : int
-    {
-        [NativeName("Name", "DXGI_FEATURE_PRESENT_ALLOW_TEARING")]
-        FeaturePresentAllowTearing = 0x0,
-    }
+    [NativeName("Name", "DXGI_FEATURE_PRESENT_ALLOW_TEARING")]
+    FeaturePresentAllowTearing = 0x0,
 }

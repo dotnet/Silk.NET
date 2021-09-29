@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy
+namespace Silk.NET.OpenGL.Legacy;
+
+[NativeName("Name", "BlitFramebufferFilter")]
+public enum BlitFramebufferFilter : int
 {
-    [NativeName("Name", "BlitFramebufferFilter")]
-    public enum BlitFramebufferFilter : int
-    {
-        [NativeName("Name", "GL_NEAREST")]
-        Nearest = 0x2600,
-        [NativeName("Name", "GL_LINEAR")]
-        Linear = 0x2601,
-    }
+    [NativeName("Name", "GL_NEAREST")]
+    Nearest = 0x2600,
+    [NativeName("Name", "GL_LINEAR")]
+    Linear = 0x2601,
 }

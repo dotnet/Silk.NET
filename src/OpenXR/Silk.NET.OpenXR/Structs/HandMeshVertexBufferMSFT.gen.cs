@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrHandMeshVertexBufferMSFT")]
+public unsafe partial struct HandMeshVertexBufferMSFT
 {
-    [NativeName("Name", "XrHandMeshVertexBufferMSFT")]
-    public unsafe partial struct HandMeshVertexBufferMSFT
-    {
-        public HandMeshVertexBufferMSFT
-        (
+    public HandMeshVertexBufferMSFT
+    (
             long? vertexUpdateTime = null,
             uint? vertexCapacityInput = null,
             uint? vertexCountOutput = null,
             HandMeshVertexMSFT* vertices = null
-        ) : this()
+    ) : this()
+    {
+        if (vertexUpdateTime is not null)
         {
-            if (vertexUpdateTime is not null)
-            {
-                VertexUpdateTime = vertexUpdateTime.Value;
-            }
-
-            if (vertexCapacityInput is not null)
-            {
-                VertexCapacityInput = vertexCapacityInput.Value;
-            }
-
-            if (vertexCountOutput is not null)
-            {
-                VertexCountOutput = vertexCountOutput.Value;
-            }
-
-            if (vertices is not null)
-            {
-                Vertices = vertices;
-            }
+            VertexUpdateTime = vertexUpdateTime.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrTime")]
-        [NativeName("Type.Name", "XrTime")]
-        [NativeName("Name", "vertexUpdateTime")]
-        public long VertexUpdateTime;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "vertexCapacityInput")]
-        public uint VertexCapacityInput;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "vertexCountOutput")]
-        public uint VertexCountOutput;
-/// <summary></summary>
-        [NativeName("Type", "XrHandMeshVertexMSFT*")]
-        [NativeName("Type.Name", "XrHandMeshVertexMSFT")]
-        [NativeName("Name", "vertices")]
-        public HandMeshVertexMSFT* Vertices;
+        if (vertexCapacityInput is not null)
+        {
+            VertexCapacityInput = vertexCapacityInput.Value;
+        }
+
+        if (vertexCountOutput is not null)
+        {
+            VertexCountOutput = vertexCountOutput.Value;
+        }
+
+        if (vertices is not null)
+        {
+            Vertices = vertices;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrTime")]
+    [NativeName("Type.Name", "XrTime")]
+    [NativeName("Name", "vertexUpdateTime")]
+    public long VertexUpdateTime;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "vertexCapacityInput")]
+    public uint VertexCapacityInput;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "vertexCountOutput")]
+    public uint VertexCountOutput;
+/// <summary></summary>
+    [NativeName("Type", "XrHandMeshVertexMSFT*")]
+    [NativeName("Type.Name", "XrHandMeshVertexMSFT")]
+    [NativeName("Name", "vertices")]
+    public HandMeshVertexMSFT* Vertices;
 }

@@ -14,24 +14,23 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.EXT
+namespace Silk.NET.Vulkan.Extensions.EXT;
+
+[Extension("VK_EXT_buffer_device_address")]
+public unsafe partial class ExtBufferDeviceAddress : NativeExtension<Vk>
 {
-    [Extension("VK_EXT_buffer_device_address")]
-    public unsafe partial class ExtBufferDeviceAddress : NativeExtension<Vk>
+    public const string ExtensionName = "VK_EXT_buffer_device_address";
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "vkGetBufferDeviceAddressEXT")]
+    public unsafe partial ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferDeviceAddressInfo* pInfo);
+
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "vkGetBufferDeviceAddressEXT")]
+    public partial ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferDeviceAddressInfo pInfo);
+
+    public ExtBufferDeviceAddress(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "VK_EXT_buffer_device_address";
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferDeviceAddressEXT")]
-        public unsafe partial ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] BufferDeviceAddressInfo* pInfo);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkGetBufferDeviceAddressEXT")]
-        public partial ulong GetBufferDeviceAddress([Count(Count = 0)] Device device, [Count(Count = 0), Flow(FlowDirection.In)] in BufferDeviceAddressInfo pInfo);
-
-        public ExtBufferDeviceAddress(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

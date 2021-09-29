@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Core.Native
+namespace Silk.NET.Core.Native;
+
+[NativeName("Name", "_D3D_SHADER_MACRO")]
+public unsafe partial struct D3DShaderMacro
 {
-    [NativeName("Name", "_D3D_SHADER_MACRO")]
-    public unsafe partial struct D3DShaderMacro
-    {
-        public D3DShaderMacro
-        (
+    public D3DShaderMacro
+    (
             byte* name = null,
             byte* definition = null
-        ) : this()
+    ) : this()
+    {
+        if (name is not null)
         {
-            if (name is not null)
-            {
-                Name = name;
-            }
-
-            if (definition is not null)
-            {
-                Definition = definition;
-            }
+            Name = name;
         }
 
-
-        [NativeName("Type", "LPCSTR")]
-        [NativeName("Type.Name", "LPCSTR")]
-        [NativeName("Name", "Name")]
-        public byte* Name;
-
-        [NativeName("Type", "LPCSTR")]
-        [NativeName("Type.Name", "LPCSTR")]
-        [NativeName("Name", "Definition")]
-        public byte* Definition;
+        if (definition is not null)
+        {
+            Definition = definition;
+        }
     }
+
+
+    [NativeName("Type", "LPCSTR")]
+    [NativeName("Type.Name", "LPCSTR")]
+    [NativeName("Name", "Name")]
+    public byte* Name;
+
+    [NativeName("Type", "LPCSTR")]
+    [NativeName("Type.Name", "LPCSTR")]
+    [NativeName("Name", "Definition")]
+    public byte* Definition;
 }

@@ -14,81 +14,80 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL
+namespace Silk.NET.OpenCL;
+
+[NativeName("Name", "cl_device_integer_dot_product_acceleration_properties_khr")]
+public unsafe partial struct DeviceIntegerDotProductAccelerationPropertiesKhr
 {
-    [NativeName("Name", "cl_device_integer_dot_product_acceleration_properties_khr")]
-    public unsafe partial struct DeviceIntegerDotProductAccelerationPropertiesKhr
-    {
-        public DeviceIntegerDotProductAccelerationPropertiesKhr
-        (
+    public DeviceIntegerDotProductAccelerationPropertiesKhr
+    (
             bool? signedAccelerated = null,
             bool? unsignedAccelerated = null,
             bool? mixedSignednessAccelerated = null,
             bool? accumulatingSaturatingSignedAccelerated = null,
             bool? accumulatingSaturatingUnsignedAccelerated = null,
             bool? accumulatingSaturatingMixedSignednessAccelerated = null
-        ) : this()
+    ) : this()
+    {
+        if (signedAccelerated is not null)
         {
-            if (signedAccelerated is not null)
-            {
-                SignedAccelerated = signedAccelerated.Value;
-            }
-
-            if (unsignedAccelerated is not null)
-            {
-                UnsignedAccelerated = unsignedAccelerated.Value;
-            }
-
-            if (mixedSignednessAccelerated is not null)
-            {
-                MixedSignednessAccelerated = mixedSignednessAccelerated.Value;
-            }
-
-            if (accumulatingSaturatingSignedAccelerated is not null)
-            {
-                AccumulatingSaturatingSignedAccelerated = accumulatingSaturatingSignedAccelerated.Value;
-            }
-
-            if (accumulatingSaturatingUnsignedAccelerated is not null)
-            {
-                AccumulatingSaturatingUnsignedAccelerated = accumulatingSaturatingUnsignedAccelerated.Value;
-            }
-
-            if (accumulatingSaturatingMixedSignednessAccelerated is not null)
-            {
-                AccumulatingSaturatingMixedSignednessAccelerated = accumulatingSaturatingMixedSignednessAccelerated.Value;
-            }
+            SignedAccelerated = signedAccelerated.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "cl_bool")]
-        [NativeName("Type.Name", "cl_bool")]
-        [NativeName("Name", "signed_accelerated")]
-        public bool SignedAccelerated;
-/// <summary></summary>
-        [NativeName("Type", "cl_bool")]
-        [NativeName("Type.Name", "cl_bool")]
-        [NativeName("Name", "unsigned_accelerated")]
-        public bool UnsignedAccelerated;
-/// <summary></summary>
-        [NativeName("Type", "cl_bool")]
-        [NativeName("Type.Name", "cl_bool")]
-        [NativeName("Name", "mixed_signedness_accelerated")]
-        public bool MixedSignednessAccelerated;
-/// <summary></summary>
-        [NativeName("Type", "cl_bool")]
-        [NativeName("Type.Name", "cl_bool")]
-        [NativeName("Name", "accumulating_saturating_signed_accelerated")]
-        public bool AccumulatingSaturatingSignedAccelerated;
-/// <summary></summary>
-        [NativeName("Type", "cl_bool")]
-        [NativeName("Type.Name", "cl_bool")]
-        [NativeName("Name", "accumulating_saturating_unsigned_accelerated")]
-        public bool AccumulatingSaturatingUnsignedAccelerated;
-/// <summary></summary>
-        [NativeName("Type", "cl_bool")]
-        [NativeName("Type.Name", "cl_bool")]
-        [NativeName("Name", "accumulating_saturating_mixed_signedness_accelerated")]
-        public bool AccumulatingSaturatingMixedSignednessAccelerated;
+        if (unsignedAccelerated is not null)
+        {
+            UnsignedAccelerated = unsignedAccelerated.Value;
+        }
+
+        if (mixedSignednessAccelerated is not null)
+        {
+            MixedSignednessAccelerated = mixedSignednessAccelerated.Value;
+        }
+
+        if (accumulatingSaturatingSignedAccelerated is not null)
+        {
+            AccumulatingSaturatingSignedAccelerated = accumulatingSaturatingSignedAccelerated.Value;
+        }
+
+        if (accumulatingSaturatingUnsignedAccelerated is not null)
+        {
+            AccumulatingSaturatingUnsignedAccelerated = accumulatingSaturatingUnsignedAccelerated.Value;
+        }
+
+        if (accumulatingSaturatingMixedSignednessAccelerated is not null)
+        {
+            AccumulatingSaturatingMixedSignednessAccelerated = accumulatingSaturatingMixedSignednessAccelerated.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "cl_bool")]
+    [NativeName("Type.Name", "cl_bool")]
+    [NativeName("Name", "signed_accelerated")]
+    public bool SignedAccelerated;
+/// <summary></summary>
+    [NativeName("Type", "cl_bool")]
+    [NativeName("Type.Name", "cl_bool")]
+    [NativeName("Name", "unsigned_accelerated")]
+    public bool UnsignedAccelerated;
+/// <summary></summary>
+    [NativeName("Type", "cl_bool")]
+    [NativeName("Type.Name", "cl_bool")]
+    [NativeName("Name", "mixed_signedness_accelerated")]
+    public bool MixedSignednessAccelerated;
+/// <summary></summary>
+    [NativeName("Type", "cl_bool")]
+    [NativeName("Type.Name", "cl_bool")]
+    [NativeName("Name", "accumulating_saturating_signed_accelerated")]
+    public bool AccumulatingSaturatingSignedAccelerated;
+/// <summary></summary>
+    [NativeName("Type", "cl_bool")]
+    [NativeName("Type.Name", "cl_bool")]
+    [NativeName("Name", "accumulating_saturating_unsigned_accelerated")]
+    public bool AccumulatingSaturatingUnsignedAccelerated;
+/// <summary></summary>
+    [NativeName("Type", "cl_bool")]
+    [NativeName("Type.Name", "cl_bool")]
+    [NativeName("Name", "accumulating_saturating_mixed_signedness_accelerated")]
+    public bool AccumulatingSaturatingMixedSignednessAccelerated;
 }

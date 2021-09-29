@@ -14,10 +14,9 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL
+namespace Silk.NET.SDL;
+
+[NativeName("Name", "SDL_Thread")]
+public unsafe partial struct Thread
 {
-    [NativeName("Name", "SDL_Thread")]
-    public unsafe partial struct Thread
-    {
-    }
 }

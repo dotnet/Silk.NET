@@ -7,12 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL
+namespace Silk.NET.OpenGL;
+
+[NativeName("Name", "VariantCapEXT")]
+public enum VariantCapEXT : int
 {
-    [NativeName("Name", "VariantCapEXT")]
-    public enum VariantCapEXT : int
-    {
-        [NativeName("Name", "GL_VARIANT_ARRAY_EXT")]
-        VariantArrayExt = 0x87E8,
-    }
+    [NativeName("Name", "GL_VARIANT_ARRAY_EXT")]
+    VariantArrayExt = 0x87E8,
 }

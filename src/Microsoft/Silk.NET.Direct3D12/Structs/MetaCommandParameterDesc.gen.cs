@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_META_COMMAND_PARAMETER_DESC")]
+public unsafe partial struct MetaCommandParameterDesc
 {
-    [NativeName("Name", "D3D12_META_COMMAND_PARAMETER_DESC")]
-    public unsafe partial struct MetaCommandParameterDesc
-    {
-        public MetaCommandParameterDesc
-        (
+    public MetaCommandParameterDesc
+    (
             char* name = null,
             MetaCommandParameterType? type = null,
             MetaCommandParameterFlags? flags = null,
             ResourceStates? requiredResourceState = null,
             uint? structureOffset = null
-        ) : this()
+    ) : this()
+    {
+        if (name is not null)
         {
-            if (name is not null)
-            {
-                Name = name;
-            }
-
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
-
-            if (requiredResourceState is not null)
-            {
-                RequiredResourceState = requiredResourceState.Value;
-            }
-
-            if (structureOffset is not null)
-            {
-                StructureOffset = structureOffset.Value;
-            }
+            Name = name;
         }
 
+        if (type is not null)
+        {
+            Type = type.Value;
+        }
 
-        [NativeName("Type", "LPCWSTR")]
-        [NativeName("Type.Name", "LPCWSTR")]
-        [NativeName("Name", "Name")]
-        public char* Name;
+        if (flags is not null)
+        {
+            Flags = flags.Value;
+        }
 
-        [NativeName("Type", "D3D12_META_COMMAND_PARAMETER_TYPE")]
-        [NativeName("Type.Name", "D3D12_META_COMMAND_PARAMETER_TYPE")]
-        [NativeName("Name", "Type")]
-        public MetaCommandParameterType Type;
+        if (requiredResourceState is not null)
+        {
+            RequiredResourceState = requiredResourceState.Value;
+        }
 
-        [NativeName("Type", "D3D12_META_COMMAND_PARAMETER_FLAGS")]
-        [NativeName("Type.Name", "D3D12_META_COMMAND_PARAMETER_FLAGS")]
-        [NativeName("Name", "Flags")]
-        public MetaCommandParameterFlags Flags;
-
-        [NativeName("Type", "D3D12_RESOURCE_STATES")]
-        [NativeName("Type.Name", "D3D12_RESOURCE_STATES")]
-        [NativeName("Name", "RequiredResourceState")]
-        public ResourceStates RequiredResourceState;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "StructureOffset")]
-        public uint StructureOffset;
+        if (structureOffset is not null)
+        {
+            StructureOffset = structureOffset.Value;
+        }
     }
+
+
+    [NativeName("Type", "LPCWSTR")]
+    [NativeName("Type.Name", "LPCWSTR")]
+    [NativeName("Name", "Name")]
+    public char* Name;
+
+    [NativeName("Type", "D3D12_META_COMMAND_PARAMETER_TYPE")]
+    [NativeName("Type.Name", "D3D12_META_COMMAND_PARAMETER_TYPE")]
+    [NativeName("Name", "Type")]
+    public MetaCommandParameterType Type;
+
+    [NativeName("Type", "D3D12_META_COMMAND_PARAMETER_FLAGS")]
+    [NativeName("Type.Name", "D3D12_META_COMMAND_PARAMETER_FLAGS")]
+    [NativeName("Name", "Flags")]
+    public MetaCommandParameterFlags Flags;
+
+    [NativeName("Type", "D3D12_RESOURCE_STATES")]
+    [NativeName("Type.Name", "D3D12_RESOURCE_STATES")]
+    [NativeName("Name", "RequiredResourceState")]
+    public ResourceStates RequiredResourceState;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "StructureOffset")]
+    public uint StructureOffset;
 }

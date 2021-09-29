@@ -14,81 +14,80 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkGeometryAABBNV")]
+public unsafe partial struct GeometryAABBNV
 {
-    [NativeName("Name", "VkGeometryAABBNV")]
-    public unsafe partial struct GeometryAABBNV
-    {
-        public GeometryAABBNV
-        (
+    public GeometryAABBNV
+    (
             StructureType? sType = StructureType.GeometryAabbNV,
             void* pNext = null,
             Buffer? aabbData = null,
             uint? numAabbs = null,
             uint? stride = null,
             ulong? offset = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (aabbData is not null)
-            {
-                AabbData = aabbData.Value;
-            }
-
-            if (numAabbs is not null)
-            {
-                NumAabbs = numAabbs.Value;
-            }
-
-            if (stride is not null)
-            {
-                Stride = stride.Value;
-            }
-
-            if (offset is not null)
-            {
-                Offset = offset.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkBuffer")]
-        [NativeName("Type.Name", "VkBuffer")]
-        [NativeName("Name", "aabbData")]
-        public Buffer AabbData;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "numAABBs")]
-        public uint NumAabbs;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "stride")]
-        public uint Stride;
-/// <summary></summary>
-        [NativeName("Type", "VkDeviceSize")]
-        [NativeName("Type.Name", "VkDeviceSize")]
-        [NativeName("Name", "offset")]
-        public ulong Offset;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (aabbData is not null)
+        {
+            AabbData = aabbData.Value;
+        }
+
+        if (numAabbs is not null)
+        {
+            NumAabbs = numAabbs.Value;
+        }
+
+        if (stride is not null)
+        {
+            Stride = stride.Value;
+        }
+
+        if (offset is not null)
+        {
+            Offset = offset.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkBuffer")]
+    [NativeName("Type.Name", "VkBuffer")]
+    [NativeName("Name", "aabbData")]
+    public Buffer AabbData;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "numAABBs")]
+    public uint NumAabbs;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "stride")]
+    public uint Stride;
+/// <summary></summary>
+    [NativeName("Type", "VkDeviceSize")]
+    [NativeName("Type.Name", "VkDeviceSize")]
+    [NativeName("Name", "offset")]
+    public ulong Offset;
 }

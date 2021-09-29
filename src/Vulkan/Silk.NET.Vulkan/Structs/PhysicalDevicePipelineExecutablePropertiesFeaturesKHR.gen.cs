@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDevicePipelineExecutablePropertiesFeaturesKHR")]
+public unsafe partial struct PhysicalDevicePipelineExecutablePropertiesFeaturesKHR
 {
-    [NativeName("Name", "VkPhysicalDevicePipelineExecutablePropertiesFeaturesKHR")]
-    public unsafe partial struct PhysicalDevicePipelineExecutablePropertiesFeaturesKHR
-    {
-        public PhysicalDevicePipelineExecutablePropertiesFeaturesKHR
-        (
+    public PhysicalDevicePipelineExecutablePropertiesFeaturesKHR
+    (
             StructureType? sType = StructureType.PhysicalDevicePipelineExecutablePropertiesFeaturesKhr,
             void* pNext = null,
             Bool32? pipelineExecutableInfo = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (pipelineExecutableInfo is not null)
-            {
-                PipelineExecutableInfo = pipelineExecutableInfo.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "pipelineExecutableInfo")]
-        public Bool32 PipelineExecutableInfo;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (pipelineExecutableInfo is not null)
+        {
+            PipelineExecutableInfo = pipelineExecutableInfo.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "pipelineExecutableInfo")]
+    public Bool32 PipelineExecutableInfo;
 }

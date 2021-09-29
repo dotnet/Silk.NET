@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9
+namespace Silk.NET.Direct3D9;
+
+[NativeName("Name", "_D3DVECTOR")]
+public unsafe partial struct Vector
 {
-    [NativeName("Name", "_D3DVECTOR")]
-    public unsafe partial struct Vector
-    {
-        public Vector
-        (
+    public Vector
+    (
             float? x = null,
             float? y = null,
             float? z = null
-        ) : this()
+    ) : this()
+    {
+        if (x is not null)
         {
-            if (x is not null)
-            {
-                X = x.Value;
-            }
-
-            if (y is not null)
-            {
-                Y = y.Value;
-            }
-
-            if (z is not null)
-            {
-                Z = z.Value;
-            }
+            X = x.Value;
         }
 
+        if (y is not null)
+        {
+            Y = y.Value;
+        }
 
-        [NativeName("Type", "float")]
-        [NativeName("Type.Name", "float")]
-        [NativeName("Name", "x")]
-        public float X;
-
-        [NativeName("Type", "float")]
-        [NativeName("Type.Name", "float")]
-        [NativeName("Name", "y")]
-        public float Y;
-
-        [NativeName("Type", "float")]
-        [NativeName("Type.Name", "float")]
-        [NativeName("Name", "z")]
-        public float Z;
+        if (z is not null)
+        {
+            Z = z.Value;
+        }
     }
+
+
+    [NativeName("Type", "float")]
+    [NativeName("Type.Name", "float")]
+    [NativeName("Name", "x")]
+    public float X;
+
+    [NativeName("Type", "float")]
+    [NativeName("Type.Name", "float")]
+    [NativeName("Name", "y")]
+    public float Y;
+
+    [NativeName("Type", "float")]
+    [NativeName("Type.Name", "float")]
+    [NativeName("Name", "z")]
+    public float Z;
 }

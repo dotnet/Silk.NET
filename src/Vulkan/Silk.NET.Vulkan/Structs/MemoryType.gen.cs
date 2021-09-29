@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkMemoryType")]
+public unsafe partial struct MemoryType
 {
-    [NativeName("Name", "VkMemoryType")]
-    public unsafe partial struct MemoryType
-    {
-        public MemoryType
-        (
+    public MemoryType
+    (
             MemoryPropertyFlags? propertyFlags = null,
             uint? heapIndex = null
-        ) : this()
+    ) : this()
+    {
+        if (propertyFlags is not null)
         {
-            if (propertyFlags is not null)
-            {
-                PropertyFlags = propertyFlags.Value;
-            }
-
-            if (heapIndex is not null)
-            {
-                HeapIndex = heapIndex.Value;
-            }
+            PropertyFlags = propertyFlags.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkMemoryPropertyFlags")]
-        [NativeName("Type.Name", "VkMemoryPropertyFlags")]
-        [NativeName("Name", "propertyFlags")]
-        public MemoryPropertyFlags PropertyFlags;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "heapIndex")]
-        public uint HeapIndex;
+        if (heapIndex is not null)
+        {
+            HeapIndex = heapIndex.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkMemoryPropertyFlags")]
+    [NativeName("Type.Name", "VkMemoryPropertyFlags")]
+    [NativeName("Name", "propertyFlags")]
+    public MemoryPropertyFlags PropertyFlags;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "heapIndex")]
+    public uint HeapIndex;
 }

@@ -7,18 +7,17 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy
+namespace Silk.NET.OpenGL.Legacy;
+
+[NativeName("Name", "IndexPointerType")]
+public enum IndexPointerType : int
 {
-    [NativeName("Name", "IndexPointerType")]
-    public enum IndexPointerType : int
-    {
-        [NativeName("Name", "GL_SHORT")]
-        Short = 0x1402,
-        [NativeName("Name", "GL_INT")]
-        Int = 0x1404,
-        [NativeName("Name", "GL_FLOAT")]
-        Float = 0x1406,
-        [NativeName("Name", "GL_DOUBLE")]
-        Double = 0x140A,
-    }
+    [NativeName("Name", "GL_SHORT")]
+    Short = 0x1402,
+    [NativeName("Name", "GL_INT")]
+    Int = 0x1404,
+    [NativeName("Name", "GL_FLOAT")]
+    Float = 0x1406,
+    [NativeName("Name", "GL_DOUBLE")]
+    Double = 0x140A,
 }

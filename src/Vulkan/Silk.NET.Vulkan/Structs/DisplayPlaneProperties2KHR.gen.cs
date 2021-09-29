@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkDisplayPlaneProperties2KHR")]
+public unsafe partial struct DisplayPlaneProperties2KHR
 {
-    [NativeName("Name", "VkDisplayPlaneProperties2KHR")]
-    public unsafe partial struct DisplayPlaneProperties2KHR
-    {
-        public DisplayPlaneProperties2KHR
-        (
+    public DisplayPlaneProperties2KHR
+    (
             StructureType? sType = StructureType.DisplayPlaneProperties2Khr,
             void* pNext = null,
             DisplayPlanePropertiesKHR? displayPlaneProperties = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (displayPlaneProperties is not null)
-            {
-                DisplayPlaneProperties = displayPlaneProperties.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkDisplayPlanePropertiesKHR")]
-        [NativeName("Type.Name", "VkDisplayPlanePropertiesKHR")]
-        [NativeName("Name", "displayPlaneProperties")]
-        public DisplayPlanePropertiesKHR DisplayPlaneProperties;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (displayPlaneProperties is not null)
+        {
+            DisplayPlaneProperties = displayPlaneProperties.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkDisplayPlanePropertiesKHR")]
+    [NativeName("Type.Name", "VkDisplayPlanePropertiesKHR")]
+    [NativeName("Name", "displayPlaneProperties")]
+    public DisplayPlanePropertiesKHR DisplayPlaneProperties;
 }

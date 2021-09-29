@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI
+namespace Silk.NET.DXGI;
+
+[NativeName("Name", "DXGI_MAPPED_RECT")]
+public unsafe partial struct MappedRect
 {
-    [NativeName("Name", "DXGI_MAPPED_RECT")]
-    public unsafe partial struct MappedRect
-    {
-        public MappedRect
-        (
+    public MappedRect
+    (
             int? pitch = null,
             byte* pBits = null
-        ) : this()
+    ) : this()
+    {
+        if (pitch is not null)
         {
-            if (pitch is not null)
-            {
-                Pitch = pitch.Value;
-            }
-
-            if (pBits is not null)
-            {
-                PBits = pBits;
-            }
+            Pitch = pitch.Value;
         }
 
-
-        [NativeName("Type", "INT")]
-        [NativeName("Type.Name", "INT")]
-        [NativeName("Name", "Pitch")]
-        public int Pitch;
-
-        [NativeName("Type", "BYTE *")]
-        [NativeName("Type.Name", "BYTE *")]
-        [NativeName("Name", "pBits")]
-        public byte* PBits;
+        if (pBits is not null)
+        {
+            PBits = pBits;
+        }
     }
+
+
+    [NativeName("Type", "INT")]
+    [NativeName("Type.Name", "INT")]
+    [NativeName("Name", "Pitch")]
+    public int Pitch;
+
+    [NativeName("Type", "BYTE *")]
+    [NativeName("Type.Name", "BYTE *")]
+    [NativeName("Name", "pBits")]
+    public byte* PBits;
 }

@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_DEPTH_STENCIL_VALUE")]
+public unsafe partial struct DepthStencilValue
 {
-    [NativeName("Name", "D3D12_DEPTH_STENCIL_VALUE")]
-    public unsafe partial struct DepthStencilValue
-    {
-        public DepthStencilValue
-        (
+    public DepthStencilValue
+    (
             float? depth = null,
             byte? stencil = null
-        ) : this()
+    ) : this()
+    {
+        if (depth is not null)
         {
-            if (depth is not null)
-            {
-                Depth = depth.Value;
-            }
-
-            if (stencil is not null)
-            {
-                Stencil = stencil.Value;
-            }
+            Depth = depth.Value;
         }
 
-
-        [NativeName("Type", "FLOAT")]
-        [NativeName("Type.Name", "FLOAT")]
-        [NativeName("Name", "Depth")]
-        public float Depth;
-
-        [NativeName("Type", "UINT8")]
-        [NativeName("Type.Name", "UINT8")]
-        [NativeName("Name", "Stencil")]
-        public byte Stencil;
+        if (stencil is not null)
+        {
+            Stencil = stencil.Value;
+        }
     }
+
+
+    [NativeName("Type", "FLOAT")]
+    [NativeName("Type.Name", "FLOAT")]
+    [NativeName("Name", "Depth")]
+    public float Depth;
+
+    [NativeName("Type", "UINT8")]
+    [NativeName("Type.Name", "UINT8")]
+    [NativeName("Name", "Stencil")]
+    public byte Stencil;
 }

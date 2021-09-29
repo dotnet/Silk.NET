@@ -14,28 +14,27 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.NV
+namespace Silk.NET.OpenGL.Extensions.NV;
+
+[Extension("NV_mesh_shader")]
+public unsafe partial class NVMeshShader : NativeExtension<GL>
 {
-    [Extension("NV_mesh_shader")]
-    public unsafe partial class NVMeshShader : NativeExtension<GL>
+    public const string ExtensionName = "NV_mesh_shader";
+    [NativeApi(EntryPoint = "glDrawMeshTasksNV")]
+    public partial void DrawMeshTask([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count);
+
+    [NativeApi(EntryPoint = "glDrawMeshTasksIndirectNV")]
+    public partial void DrawMeshTasksIndirect([Flow(FlowDirection.In)] nint indirect);
+
+    [NativeApi(EntryPoint = "glMultiDrawMeshTasksIndirectNV")]
+    public partial void MultiDrawMeshTasksIndirect([Flow(FlowDirection.In)] nint indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride);
+
+    [NativeApi(EntryPoint = "glMultiDrawMeshTasksIndirectCountNV")]
+    public partial void MultiDrawMeshTasksIndirectCount([Flow(FlowDirection.In)] nint indirect, [Flow(FlowDirection.In)] nint drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride);
+
+    public NVMeshShader(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "NV_mesh_shader";
-        [NativeApi(EntryPoint = "glDrawMeshTasksNV")]
-        public partial void DrawMeshTask([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count);
-
-        [NativeApi(EntryPoint = "glDrawMeshTasksIndirectNV")]
-        public partial void DrawMeshTasksIndirect([Flow(FlowDirection.In)] nint indirect);
-
-        [NativeApi(EntryPoint = "glMultiDrawMeshTasksIndirectNV")]
-        public partial void MultiDrawMeshTasksIndirect([Flow(FlowDirection.In)] nint indirect, [Flow(FlowDirection.In)] uint drawcount, [Flow(FlowDirection.In)] uint stride);
-
-        [NativeApi(EntryPoint = "glMultiDrawMeshTasksIndirectCountNV")]
-        public partial void MultiDrawMeshTasksIndirectCount([Flow(FlowDirection.In)] nint indirect, [Flow(FlowDirection.In)] nint drawcount, [Flow(FlowDirection.In)] uint maxdrawcount, [Flow(FlowDirection.In)] uint stride);
-
-        public NVMeshShader(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

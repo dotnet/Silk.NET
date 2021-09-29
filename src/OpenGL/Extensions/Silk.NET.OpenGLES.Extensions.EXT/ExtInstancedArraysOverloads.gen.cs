@@ -12,34 +12,33 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.EXT
+namespace Silk.NET.OpenGLES.Extensions.EXT;
+
+public static class ExtInstancedArraysOverloads
 {
-    public static class ExtInstancedArraysOverloads
+    public static unsafe void DrawElementsInstanced<T0>(this ExtInstancedArrays thisApi, [Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged
     {
-        public static unsafe void DrawElementsInstanced<T0>(this ExtInstancedArrays thisApi, [Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), primcount);
-        }
-
-        public static unsafe void DrawElementsInstanced<T0>(this ExtInstancedArrays thisApi, [Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), primcount);
-        }
-
-        public static unsafe void DrawElementsInstanced<T0>(this ExtInstancedArrays thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), primcount);
-        }
-
-        public static unsafe void DrawElementsInstanced<T0>(this ExtInstancedArrays thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged
-        {
-            // SpanOverloader
-            thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), primcount);
-        }
-
+        // SpanOverloader
+        thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), primcount);
     }
+
+    public static unsafe void DrawElementsInstanced<T0>(this ExtInstancedArrays thisApi, [Flow(FlowDirection.In)] EXT mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged
+    {
+        // SpanOverloader
+        thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), primcount);
+    }
+
+    public static unsafe void DrawElementsInstanced<T0>(this ExtInstancedArrays thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] EXT type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged
+    {
+        // SpanOverloader
+        thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), primcount);
+    }
+
+    public static unsafe void DrawElementsInstanced<T0>(this ExtInstancedArrays thisApi, [Flow(FlowDirection.In)] PrimitiveType mode, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] DrawElementsType type, [Count(Computed = "count, type"), Flow(FlowDirection.In)] ReadOnlySpan<T0> indices, [Flow(FlowDirection.In)] uint primcount) where T0 : unmanaged
+    {
+        // SpanOverloader
+        thisApi.DrawElementsInstanced(mode, count, type, in indices.GetPinnableReference(), primcount);
+    }
+
 }
 

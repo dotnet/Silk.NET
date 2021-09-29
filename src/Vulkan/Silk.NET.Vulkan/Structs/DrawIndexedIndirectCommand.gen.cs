@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkDrawIndexedIndirectCommand")]
+public unsafe partial struct DrawIndexedIndirectCommand
 {
-    [NativeName("Name", "VkDrawIndexedIndirectCommand")]
-    public unsafe partial struct DrawIndexedIndirectCommand
-    {
-        public DrawIndexedIndirectCommand
-        (
+    public DrawIndexedIndirectCommand
+    (
             uint? indexCount = null,
             uint? instanceCount = null,
             uint? firstIndex = null,
             int? vertexOffset = null,
             uint? firstInstance = null
-        ) : this()
+    ) : this()
+    {
+        if (indexCount is not null)
         {
-            if (indexCount is not null)
-            {
-                IndexCount = indexCount.Value;
-            }
-
-            if (instanceCount is not null)
-            {
-                InstanceCount = instanceCount.Value;
-            }
-
-            if (firstIndex is not null)
-            {
-                FirstIndex = firstIndex.Value;
-            }
-
-            if (vertexOffset is not null)
-            {
-                VertexOffset = vertexOffset.Value;
-            }
-
-            if (firstInstance is not null)
-            {
-                FirstInstance = firstInstance.Value;
-            }
+            IndexCount = indexCount.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "indexCount")]
-        public uint IndexCount;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "instanceCount")]
-        public uint InstanceCount;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "firstIndex")]
-        public uint FirstIndex;
-/// <summary></summary>
-        [NativeName("Type", "int32_t")]
-        [NativeName("Type.Name", "int32_t")]
-        [NativeName("Name", "vertexOffset")]
-        public int VertexOffset;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "firstInstance")]
-        public uint FirstInstance;
+        if (instanceCount is not null)
+        {
+            InstanceCount = instanceCount.Value;
+        }
+
+        if (firstIndex is not null)
+        {
+            FirstIndex = firstIndex.Value;
+        }
+
+        if (vertexOffset is not null)
+        {
+            VertexOffset = vertexOffset.Value;
+        }
+
+        if (firstInstance is not null)
+        {
+            FirstInstance = firstInstance.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "indexCount")]
+    public uint IndexCount;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "instanceCount")]
+    public uint InstanceCount;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "firstIndex")]
+    public uint FirstIndex;
+/// <summary></summary>
+    [NativeName("Type", "int32_t")]
+    [NativeName("Type.Name", "int32_t")]
+    [NativeName("Name", "vertexOffset")]
+    public int VertexOffset;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "firstInstance")]
+    public uint FirstInstance;
 }

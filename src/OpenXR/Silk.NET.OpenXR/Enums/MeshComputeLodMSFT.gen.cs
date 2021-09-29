@@ -7,18 +7,17 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrMeshComputeLodMSFT")]
+public enum MeshComputeLodMSFT : int
 {
-    [NativeName("Name", "XrMeshComputeLodMSFT")]
-    public enum MeshComputeLodMSFT : int
-    {
-        [NativeName("Name", "XR_MESH_COMPUTE_LOD_COARSE_MSFT")]
-        MeshComputeLodCoarseMsft = 1,
-        [NativeName("Name", "XR_MESH_COMPUTE_LOD_MEDIUM_MSFT")]
-        MeshComputeLodMediumMsft = 2,
-        [NativeName("Name", "XR_MESH_COMPUTE_LOD_FINE_MSFT")]
-        MeshComputeLodFineMsft = 3,
-        [NativeName("Name", "XR_MESH_COMPUTE_LOD_UNLIMITED_MSFT")]
-        MeshComputeLodUnlimitedMsft = 4,
-    }
+    [NativeName("Name", "XR_MESH_COMPUTE_LOD_COARSE_MSFT")]
+    MeshComputeLodCoarseMsft = 1,
+    [NativeName("Name", "XR_MESH_COMPUTE_LOD_MEDIUM_MSFT")]
+    MeshComputeLodMediumMsft = 2,
+    [NativeName("Name", "XR_MESH_COMPUTE_LOD_FINE_MSFT")]
+    MeshComputeLodFineMsft = 3,
+    [NativeName("Name", "XR_MESH_COMPUTE_LOD_UNLIMITED_MSFT")]
+    MeshComputeLodUnlimitedMsft = 4,
 }

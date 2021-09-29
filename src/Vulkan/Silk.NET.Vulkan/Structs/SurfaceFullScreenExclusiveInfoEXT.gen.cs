@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkSurfaceFullScreenExclusiveInfoEXT")]
+public unsafe partial struct SurfaceFullScreenExclusiveInfoEXT
 {
-    [NativeName("Name", "VkSurfaceFullScreenExclusiveInfoEXT")]
-    public unsafe partial struct SurfaceFullScreenExclusiveInfoEXT
-    {
-        public SurfaceFullScreenExclusiveInfoEXT
-        (
+    public SurfaceFullScreenExclusiveInfoEXT
+    (
             StructureType? sType = StructureType.SurfaceFullScreenExclusiveInfoExt,
             void* pNext = null,
             FullScreenExclusiveEXT? fullScreenExclusive = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (fullScreenExclusive is not null)
-            {
-                FullScreenExclusive = fullScreenExclusive.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkFullScreenExclusiveEXT")]
-        [NativeName("Type.Name", "VkFullScreenExclusiveEXT")]
-        [NativeName("Name", "fullScreenExclusive")]
-        public FullScreenExclusiveEXT FullScreenExclusive;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (fullScreenExclusive is not null)
+        {
+            FullScreenExclusive = fullScreenExclusive.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkFullScreenExclusiveEXT")]
+    [NativeName("Type.Name", "VkFullScreenExclusiveEXT")]
+    [NativeName("Name", "fullScreenExclusive")]
+    public FullScreenExclusiveEXT FullScreenExclusive;
 }

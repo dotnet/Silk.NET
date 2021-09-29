@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Video
+namespace Silk.NET.Vulkan.Video;
+
+[NativeName("Name", "StdVideoH265SpsFlags")]
+public unsafe partial struct StdVideoH265SpsFlags
 {
-    [NativeName("Name", "StdVideoH265SpsFlags")]
-    public unsafe partial struct StdVideoH265SpsFlags
-    {
-        public StdVideoH265SpsFlags
-        (
+    public StdVideoH265SpsFlags
+    (
             uint? spsTemporalIdNestingFlag = null,
             uint? separateColourPlaneFlag = null,
             uint? scalingListEnabledFlag = null,
@@ -48,361 +48,360 @@ namespace Silk.NET.Vulkan.Video
             uint? paletteModeEnabledFlag = null,
             uint? spsPalettePredictorInitializerPresentFlag = null,
             uint? intraBoundaryFilteringDisabledFlag = null
-        ) : this()
+    ) : this()
+    {
+        if (spsTemporalIdNestingFlag is not null)
         {
-            if (spsTemporalIdNestingFlag is not null)
-            {
-                SpsTemporalIdNestingFlag = spsTemporalIdNestingFlag.Value;
-            }
-
-            if (separateColourPlaneFlag is not null)
-            {
-                SeparateColourPlaneFlag = separateColourPlaneFlag.Value;
-            }
-
-            if (scalingListEnabledFlag is not null)
-            {
-                ScalingListEnabledFlag = scalingListEnabledFlag.Value;
-            }
-
-            if (spsScalingListDataPresentFlag is not null)
-            {
-                SpsScalingListDataPresentFlag = spsScalingListDataPresentFlag.Value;
-            }
-
-            if (ampEnabledFlag is not null)
-            {
-                AmpEnabledFlag = ampEnabledFlag.Value;
-            }
-
-            if (sampleAdaptiveOffsetEnabledFlag is not null)
-            {
-                SampleAdaptiveOffsetEnabledFlag = sampleAdaptiveOffsetEnabledFlag.Value;
-            }
-
-            if (pcmEnabledFlag is not null)
-            {
-                PcmEnabledFlag = pcmEnabledFlag.Value;
-            }
-
-            if (pcmLoopFilterDisabledFlag is not null)
-            {
-                PcmLoopFilterDisabledFlag = pcmLoopFilterDisabledFlag.Value;
-            }
-
-            if (longTermRefPicsPresentFlag is not null)
-            {
-                LongTermRefPicsPresentFlag = longTermRefPicsPresentFlag.Value;
-            }
-
-            if (spsTemporalMvpEnabledFlag is not null)
-            {
-                SpsTemporalMvpEnabledFlag = spsTemporalMvpEnabledFlag.Value;
-            }
-
-            if (strongIntraSmoothingEnabledFlag is not null)
-            {
-                StrongIntraSmoothingEnabledFlag = strongIntraSmoothingEnabledFlag.Value;
-            }
-
-            if (vuiParametersPresentFlag is not null)
-            {
-                VuiParametersPresentFlag = vuiParametersPresentFlag.Value;
-            }
-
-            if (spsExtensionPresentFlag is not null)
-            {
-                SpsExtensionPresentFlag = spsExtensionPresentFlag.Value;
-            }
-
-            if (spsRangeExtensionFlag is not null)
-            {
-                SpsRangeExtensionFlag = spsRangeExtensionFlag.Value;
-            }
-
-            if (transformSkipRotationEnabledFlag is not null)
-            {
-                TransformSkipRotationEnabledFlag = transformSkipRotationEnabledFlag.Value;
-            }
-
-            if (transformSkipContextEnabledFlag is not null)
-            {
-                TransformSkipContextEnabledFlag = transformSkipContextEnabledFlag.Value;
-            }
-
-            if (implicitRdpcmEnabledFlag is not null)
-            {
-                ImplicitRdpcmEnabledFlag = implicitRdpcmEnabledFlag.Value;
-            }
-
-            if (explicitRdpcmEnabledFlag is not null)
-            {
-                ExplicitRdpcmEnabledFlag = explicitRdpcmEnabledFlag.Value;
-            }
-
-            if (extendedPrecisionProcessingFlag is not null)
-            {
-                ExtendedPrecisionProcessingFlag = extendedPrecisionProcessingFlag.Value;
-            }
-
-            if (intraSmoothingDisabledFlag is not null)
-            {
-                IntraSmoothingDisabledFlag = intraSmoothingDisabledFlag.Value;
-            }
-
-            if (highPrecisionOffsetsEnabledFlag is not null)
-            {
-                HighPrecisionOffsetsEnabledFlag = highPrecisionOffsetsEnabledFlag.Value;
-            }
-
-            if (persistentRiceAdaptationEnabledFlag is not null)
-            {
-                PersistentRiceAdaptationEnabledFlag = persistentRiceAdaptationEnabledFlag.Value;
-            }
-
-            if (cabacBypassAlignmentEnabledFlag is not null)
-            {
-                CabacBypassAlignmentEnabledFlag = cabacBypassAlignmentEnabledFlag.Value;
-            }
-
-            if (spsCurrPicRefEnabledFlag is not null)
-            {
-                SpsCurrPicRefEnabledFlag = spsCurrPicRefEnabledFlag.Value;
-            }
-
-            if (paletteModeEnabledFlag is not null)
-            {
-                PaletteModeEnabledFlag = paletteModeEnabledFlag.Value;
-            }
-
-            if (spsPalettePredictorInitializerPresentFlag is not null)
-            {
-                SpsPalettePredictorInitializerPresentFlag = spsPalettePredictorInitializerPresentFlag.Value;
-            }
-
-            if (intraBoundaryFilteringDisabledFlag is not null)
-            {
-                IntraBoundaryFilteringDisabledFlag = intraBoundaryFilteringDisabledFlag.Value;
-            }
+            SpsTemporalIdNestingFlag = spsTemporalIdNestingFlag.Value;
         }
 
-
-        private uint _bitfield1;
-
-        public uint SpsTemporalIdNestingFlag
+        if (separateColourPlaneFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)(_bitfield1 & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
+            SeparateColourPlaneFlag = separateColourPlaneFlag.Value;
         }
 
-        public uint SeparateColourPlaneFlag
+        if (scalingListEnabledFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 1) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+            ScalingListEnabledFlag = scalingListEnabledFlag.Value;
         }
 
-        public uint ScalingListEnabledFlag
+        if (spsScalingListDataPresentFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 2) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+            SpsScalingListDataPresentFlag = spsScalingListDataPresentFlag.Value;
         }
 
-        public uint SpsScalingListDataPresentFlag
+        if (ampEnabledFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 3) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
+            AmpEnabledFlag = ampEnabledFlag.Value;
         }
 
-        public uint AmpEnabledFlag
+        if (sampleAdaptiveOffsetEnabledFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 4) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
+            SampleAdaptiveOffsetEnabledFlag = sampleAdaptiveOffsetEnabledFlag.Value;
         }
 
-        public uint SampleAdaptiveOffsetEnabledFlag
+        if (pcmEnabledFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 5) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 5)) | (uint)(((uint)(value) & 0x1u) << 5));
+            PcmEnabledFlag = pcmEnabledFlag.Value;
         }
 
-        public uint PcmEnabledFlag
+        if (pcmLoopFilterDisabledFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 6) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 6)) | (uint)(((uint)(value) & 0x1u) << 6));
+            PcmLoopFilterDisabledFlag = pcmLoopFilterDisabledFlag.Value;
         }
 
-        public uint PcmLoopFilterDisabledFlag
+        if (longTermRefPicsPresentFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 7) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 7)) | (uint)(((uint)(value) & 0x1u) << 7));
+            LongTermRefPicsPresentFlag = longTermRefPicsPresentFlag.Value;
         }
 
-        public uint LongTermRefPicsPresentFlag
+        if (spsTemporalMvpEnabledFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 8) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 8)) | (uint)(((uint)(value) & 0x1u) << 8));
+            SpsTemporalMvpEnabledFlag = spsTemporalMvpEnabledFlag.Value;
         }
 
-        public uint SpsTemporalMvpEnabledFlag
+        if (strongIntraSmoothingEnabledFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 9) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 9)) | (uint)(((uint)(value) & 0x1u) << 9));
+            StrongIntraSmoothingEnabledFlag = strongIntraSmoothingEnabledFlag.Value;
         }
 
-        public uint StrongIntraSmoothingEnabledFlag
+        if (vuiParametersPresentFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 10) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 10)) | (uint)(((uint)(value) & 0x1u) << 10));
+            VuiParametersPresentFlag = vuiParametersPresentFlag.Value;
         }
 
-        public uint VuiParametersPresentFlag
+        if (spsExtensionPresentFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 11) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 11)) | (uint)(((uint)(value) & 0x1u) << 11));
+            SpsExtensionPresentFlag = spsExtensionPresentFlag.Value;
         }
 
-        public uint SpsExtensionPresentFlag
+        if (spsRangeExtensionFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 12) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 12)) | (uint)(((uint)(value) & 0x1u) << 12));
+            SpsRangeExtensionFlag = spsRangeExtensionFlag.Value;
         }
 
-        public uint SpsRangeExtensionFlag
+        if (transformSkipRotationEnabledFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 13) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 13)) | (uint)(((uint)(value) & 0x1u) << 13));
+            TransformSkipRotationEnabledFlag = transformSkipRotationEnabledFlag.Value;
         }
 
-        public uint TransformSkipRotationEnabledFlag
+        if (transformSkipContextEnabledFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 14) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 14)) | (uint)(((uint)(value) & 0x1u) << 14));
+            TransformSkipContextEnabledFlag = transformSkipContextEnabledFlag.Value;
         }
 
-        public uint TransformSkipContextEnabledFlag
+        if (implicitRdpcmEnabledFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 15) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 15)) | (uint)(((uint)(value) & 0x1u) << 15));
+            ImplicitRdpcmEnabledFlag = implicitRdpcmEnabledFlag.Value;
         }
 
-        public uint ImplicitRdpcmEnabledFlag
+        if (explicitRdpcmEnabledFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 16) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 16)) | (uint)(((uint)(value) & 0x1u) << 16));
+            ExplicitRdpcmEnabledFlag = explicitRdpcmEnabledFlag.Value;
         }
 
-        public uint ExplicitRdpcmEnabledFlag
+        if (extendedPrecisionProcessingFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 17) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 17)) | (uint)(((uint)(value) & 0x1u) << 17));
+            ExtendedPrecisionProcessingFlag = extendedPrecisionProcessingFlag.Value;
         }
 
-        public uint ExtendedPrecisionProcessingFlag
+        if (intraSmoothingDisabledFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 18) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 18)) | (uint)(((uint)(value) & 0x1u) << 18));
+            IntraSmoothingDisabledFlag = intraSmoothingDisabledFlag.Value;
         }
 
-        public uint IntraSmoothingDisabledFlag
+        if (highPrecisionOffsetsEnabledFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 19) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 19)) | (uint)(((uint)(value) & 0x1u) << 19));
+            HighPrecisionOffsetsEnabledFlag = highPrecisionOffsetsEnabledFlag.Value;
         }
 
-        public uint HighPrecisionOffsetsEnabledFlag
+        if (persistentRiceAdaptationEnabledFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 20) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 20)) | (uint)(((uint)(value) & 0x1u) << 20));
+            PersistentRiceAdaptationEnabledFlag = persistentRiceAdaptationEnabledFlag.Value;
         }
 
-        public uint PersistentRiceAdaptationEnabledFlag
+        if (cabacBypassAlignmentEnabledFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 21) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 21)) | (uint)(((uint)(value) & 0x1u) << 21));
+            CabacBypassAlignmentEnabledFlag = cabacBypassAlignmentEnabledFlag.Value;
         }
 
-        public uint CabacBypassAlignmentEnabledFlag
+        if (spsCurrPicRefEnabledFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 22) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 22)) | (uint)(((uint)(value) & 0x1u) << 22));
+            SpsCurrPicRefEnabledFlag = spsCurrPicRefEnabledFlag.Value;
         }
 
-        public uint SpsCurrPicRefEnabledFlag
+        if (paletteModeEnabledFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 23) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 23)) | (uint)(((uint)(value) & 0x1u) << 23));
+            PaletteModeEnabledFlag = paletteModeEnabledFlag.Value;
         }
 
-        public uint PaletteModeEnabledFlag
+        if (spsPalettePredictorInitializerPresentFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 24) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 24)) | (uint)(((uint)(value) & 0x1u) << 24));
+            SpsPalettePredictorInitializerPresentFlag = spsPalettePredictorInitializerPresentFlag.Value;
         }
 
-        public uint SpsPalettePredictorInitializerPresentFlag
+        if (intraBoundaryFilteringDisabledFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 25) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 25)) | (uint)(((uint)(value) & 0x1u) << 25));
+            IntraBoundaryFilteringDisabledFlag = intraBoundaryFilteringDisabledFlag.Value;
         }
+    }
 
-        public uint IntraBoundaryFilteringDisabledFlag
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 26) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 26)) | (uint)(((uint)(value) & 0x1u) << 26));
-        }
+
+    private uint _bitfield1;
+
+    public uint SpsTemporalIdNestingFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)(_bitfield1 & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
+    }
+
+    public uint SeparateColourPlaneFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 1) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+    }
+
+    public uint ScalingListEnabledFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 2) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+    }
+
+    public uint SpsScalingListDataPresentFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 3) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
+    }
+
+    public uint AmpEnabledFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 4) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
+    }
+
+    public uint SampleAdaptiveOffsetEnabledFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 5) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 5)) | (uint)(((uint)(value) & 0x1u) << 5));
+    }
+
+    public uint PcmEnabledFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 6) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 6)) | (uint)(((uint)(value) & 0x1u) << 6));
+    }
+
+    public uint PcmLoopFilterDisabledFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 7) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 7)) | (uint)(((uint)(value) & 0x1u) << 7));
+    }
+
+    public uint LongTermRefPicsPresentFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 8) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 8)) | (uint)(((uint)(value) & 0x1u) << 8));
+    }
+
+    public uint SpsTemporalMvpEnabledFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 9) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 9)) | (uint)(((uint)(value) & 0x1u) << 9));
+    }
+
+    public uint StrongIntraSmoothingEnabledFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 10) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 10)) | (uint)(((uint)(value) & 0x1u) << 10));
+    }
+
+    public uint VuiParametersPresentFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 11) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 11)) | (uint)(((uint)(value) & 0x1u) << 11));
+    }
+
+    public uint SpsExtensionPresentFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 12) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 12)) | (uint)(((uint)(value) & 0x1u) << 12));
+    }
+
+    public uint SpsRangeExtensionFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 13) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 13)) | (uint)(((uint)(value) & 0x1u) << 13));
+    }
+
+    public uint TransformSkipRotationEnabledFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 14) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 14)) | (uint)(((uint)(value) & 0x1u) << 14));
+    }
+
+    public uint TransformSkipContextEnabledFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 15) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 15)) | (uint)(((uint)(value) & 0x1u) << 15));
+    }
+
+    public uint ImplicitRdpcmEnabledFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 16) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 16)) | (uint)(((uint)(value) & 0x1u) << 16));
+    }
+
+    public uint ExplicitRdpcmEnabledFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 17) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 17)) | (uint)(((uint)(value) & 0x1u) << 17));
+    }
+
+    public uint ExtendedPrecisionProcessingFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 18) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 18)) | (uint)(((uint)(value) & 0x1u) << 18));
+    }
+
+    public uint IntraSmoothingDisabledFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 19) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 19)) | (uint)(((uint)(value) & 0x1u) << 19));
+    }
+
+    public uint HighPrecisionOffsetsEnabledFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 20) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 20)) | (uint)(((uint)(value) & 0x1u) << 20));
+    }
+
+    public uint PersistentRiceAdaptationEnabledFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 21) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 21)) | (uint)(((uint)(value) & 0x1u) << 21));
+    }
+
+    public uint CabacBypassAlignmentEnabledFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 22) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 22)) | (uint)(((uint)(value) & 0x1u) << 22));
+    }
+
+    public uint SpsCurrPicRefEnabledFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 23) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 23)) | (uint)(((uint)(value) & 0x1u) << 23));
+    }
+
+    public uint PaletteModeEnabledFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 24) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 24)) | (uint)(((uint)(value) & 0x1u) << 24));
+    }
+
+    public uint SpsPalettePredictorInitializerPresentFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 25) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 25)) | (uint)(((uint)(value) & 0x1u) << 25));
+    }
+
+    public uint IntraBoundaryFilteringDisabledFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 26) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 26)) | (uint)(((uint)(value) & 0x1u) << 26));
     }
 }

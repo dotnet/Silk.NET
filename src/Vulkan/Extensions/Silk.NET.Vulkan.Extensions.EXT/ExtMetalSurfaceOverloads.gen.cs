@@ -12,59 +12,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.EXT
+namespace Silk.NET.Vulkan.Extensions.EXT;
+
+public static class ExtMetalSurfaceOverloads
 {
-    public static class ExtMetalSurfaceOverloads
+    /// <summary>To be documented.</summary>
+    public static unsafe Result CreateMetalSurface(this ExtMetalSurface thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] MetalSurfaceCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<SurfaceKHR> pSurface)
     {
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateMetalSurface(this ExtMetalSurface thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] MetalSurfaceCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<SurfaceKHR> pSurface)
-        {
-            // SpanOverloader
-            return thisApi.CreateMetalSurface(instance, pCreateInfo, pAllocator, out pSurface.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateMetalSurface(this ExtMetalSurface thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] MetalSurfaceCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface)
-        {
-            // SpanOverloader
-            return thisApi.CreateMetalSurface(instance, pCreateInfo, in pAllocator.GetPinnableReference(), pSurface);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateMetalSurface(this ExtMetalSurface thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] MetalSurfaceCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<SurfaceKHR> pSurface)
-        {
-            // SpanOverloader
-            return thisApi.CreateMetalSurface(instance, pCreateInfo, in pAllocator.GetPinnableReference(), out pSurface.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateMetalSurface(this ExtMetalSurface thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<MetalSurfaceCreateInfoEXT> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface)
-        {
-            // SpanOverloader
-            return thisApi.CreateMetalSurface(instance, in pCreateInfo.GetPinnableReference(), pAllocator, pSurface);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateMetalSurface(this ExtMetalSurface thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<MetalSurfaceCreateInfoEXT> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<SurfaceKHR> pSurface)
-        {
-            // SpanOverloader
-            return thisApi.CreateMetalSurface(instance, in pCreateInfo.GetPinnableReference(), pAllocator, out pSurface.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateMetalSurface(this ExtMetalSurface thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<MetalSurfaceCreateInfoEXT> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface)
-        {
-            // SpanOverloader
-            return thisApi.CreateMetalSurface(instance, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pSurface);
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result CreateMetalSurface(this ExtMetalSurface thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<MetalSurfaceCreateInfoEXT> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<SurfaceKHR> pSurface)
-        {
-            // SpanOverloader
-            return thisApi.CreateMetalSurface(instance, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pSurface.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        return thisApi.CreateMetalSurface(instance, pCreateInfo, pAllocator, out pSurface.GetPinnableReference());
     }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result CreateMetalSurface(this ExtMetalSurface thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] MetalSurfaceCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface)
+    {
+        // SpanOverloader
+        return thisApi.CreateMetalSurface(instance, pCreateInfo, in pAllocator.GetPinnableReference(), pSurface);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result CreateMetalSurface(this ExtMetalSurface thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] MetalSurfaceCreateInfoEXT* pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<SurfaceKHR> pSurface)
+    {
+        // SpanOverloader
+        return thisApi.CreateMetalSurface(instance, pCreateInfo, in pAllocator.GetPinnableReference(), out pSurface.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result CreateMetalSurface(this ExtMetalSurface thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<MetalSurfaceCreateInfoEXT> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface)
+    {
+        // SpanOverloader
+        return thisApi.CreateMetalSurface(instance, in pCreateInfo.GetPinnableReference(), pAllocator, pSurface);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result CreateMetalSurface(this ExtMetalSurface thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<MetalSurfaceCreateInfoEXT> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] AllocationCallbacks* pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<SurfaceKHR> pSurface)
+    {
+        // SpanOverloader
+        return thisApi.CreateMetalSurface(instance, in pCreateInfo.GetPinnableReference(), pAllocator, out pSurface.GetPinnableReference());
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result CreateMetalSurface(this ExtMetalSurface thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<MetalSurfaceCreateInfoEXT> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] SurfaceKHR* pSurface)
+    {
+        // SpanOverloader
+        return thisApi.CreateMetalSurface(instance, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), pSurface);
+    }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result CreateMetalSurface(this ExtMetalSurface thisApi, [Count(Count = 0)] Instance instance, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<MetalSurfaceCreateInfoEXT> pCreateInfo, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<AllocationCallbacks> pAllocator, [Count(Count = 0), Flow(FlowDirection.Out)] Span<SurfaceKHR> pSurface)
+    {
+        // SpanOverloader
+        return thisApi.CreateMetalSurface(instance, in pCreateInfo.GetPinnableReference(), in pAllocator.GetPinnableReference(), out pSurface.GetPinnableReference());
+    }
+
 }
 

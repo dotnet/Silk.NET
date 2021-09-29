@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkDisplayPresentInfoKHR")]
+public unsafe partial struct DisplayPresentInfoKHR
 {
-    [NativeName("Name", "VkDisplayPresentInfoKHR")]
-    public unsafe partial struct DisplayPresentInfoKHR
-    {
-        public DisplayPresentInfoKHR
-        (
+    public DisplayPresentInfoKHR
+    (
             StructureType? sType = StructureType.DisplayPresentInfoKhr,
             void* pNext = null,
             Rect2D? srcRect = null,
             Rect2D? dstRect = null,
             Bool32? persistent = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (srcRect is not null)
-            {
-                SrcRect = srcRect.Value;
-            }
-
-            if (dstRect is not null)
-            {
-                DstRect = dstRect.Value;
-            }
-
-            if (persistent is not null)
-            {
-                Persistent = persistent.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkRect2D")]
-        [NativeName("Type.Name", "VkRect2D")]
-        [NativeName("Name", "srcRect")]
-        public Rect2D SrcRect;
-/// <summary></summary>
-        [NativeName("Type", "VkRect2D")]
-        [NativeName("Type.Name", "VkRect2D")]
-        [NativeName("Name", "dstRect")]
-        public Rect2D DstRect;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "persistent")]
-        public Bool32 Persistent;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (srcRect is not null)
+        {
+            SrcRect = srcRect.Value;
+        }
+
+        if (dstRect is not null)
+        {
+            DstRect = dstRect.Value;
+        }
+
+        if (persistent is not null)
+        {
+            Persistent = persistent.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkRect2D")]
+    [NativeName("Type.Name", "VkRect2D")]
+    [NativeName("Name", "srcRect")]
+    public Rect2D SrcRect;
+/// <summary></summary>
+    [NativeName("Type", "VkRect2D")]
+    [NativeName("Type.Name", "VkRect2D")]
+    [NativeName("Name", "dstRect")]
+    public Rect2D DstRect;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "persistent")]
+    public Bool32 Persistent;
 }

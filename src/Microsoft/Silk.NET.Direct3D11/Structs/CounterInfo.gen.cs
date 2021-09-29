@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_COUNTER_INFO")]
+public unsafe partial struct CounterInfo
 {
-    [NativeName("Name", "D3D11_COUNTER_INFO")]
-    public unsafe partial struct CounterInfo
-    {
-        public CounterInfo
-        (
+    public CounterInfo
+    (
             Counter? lastDeviceDependentCounter = null,
             uint? numSimultaneousCounters = null,
             byte? numDetectableParallelUnits = null
-        ) : this()
+    ) : this()
+    {
+        if (lastDeviceDependentCounter is not null)
         {
-            if (lastDeviceDependentCounter is not null)
-            {
-                LastDeviceDependentCounter = lastDeviceDependentCounter.Value;
-            }
-
-            if (numSimultaneousCounters is not null)
-            {
-                NumSimultaneousCounters = numSimultaneousCounters.Value;
-            }
-
-            if (numDetectableParallelUnits is not null)
-            {
-                NumDetectableParallelUnits = numDetectableParallelUnits.Value;
-            }
+            LastDeviceDependentCounter = lastDeviceDependentCounter.Value;
         }
 
+        if (numSimultaneousCounters is not null)
+        {
+            NumSimultaneousCounters = numSimultaneousCounters.Value;
+        }
 
-        [NativeName("Type", "D3D11_COUNTER")]
-        [NativeName("Type.Name", "D3D11_COUNTER")]
-        [NativeName("Name", "LastDeviceDependentCounter")]
-        public Counter LastDeviceDependentCounter;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "NumSimultaneousCounters")]
-        public uint NumSimultaneousCounters;
-
-        [NativeName("Type", "UINT8")]
-        [NativeName("Type.Name", "UINT8")]
-        [NativeName("Name", "NumDetectableParallelUnits")]
-        public byte NumDetectableParallelUnits;
+        if (numDetectableParallelUnits is not null)
+        {
+            NumDetectableParallelUnits = numDetectableParallelUnits.Value;
+        }
     }
+
+
+    [NativeName("Type", "D3D11_COUNTER")]
+    [NativeName("Type.Name", "D3D11_COUNTER")]
+    [NativeName("Name", "LastDeviceDependentCounter")]
+    public Counter LastDeviceDependentCounter;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "NumSimultaneousCounters")]
+    public uint NumSimultaneousCounters;
+
+    [NativeName("Type", "UINT8")]
+    [NativeName("Type.Name", "UINT8")]
+    [NativeName("Name", "NumDetectableParallelUnits")]
+    public byte NumDetectableParallelUnits;
 }

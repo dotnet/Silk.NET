@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_CACHED_PIPELINE_STATE")]
+public unsafe partial struct CachedPipelineState
 {
-    [NativeName("Name", "D3D12_CACHED_PIPELINE_STATE")]
-    public unsafe partial struct CachedPipelineState
-    {
-        public CachedPipelineState
-        (
+    public CachedPipelineState
+    (
             void* pCachedBlob = null,
             nuint? cachedBlobSizeInBytes = null
-        ) : this()
+    ) : this()
+    {
+        if (pCachedBlob is not null)
         {
-            if (pCachedBlob is not null)
-            {
-                PCachedBlob = pCachedBlob;
-            }
-
-            if (cachedBlobSizeInBytes is not null)
-            {
-                CachedBlobSizeInBytes = cachedBlobSizeInBytes.Value;
-            }
+            PCachedBlob = pCachedBlob;
         }
 
-
-        [NativeName("Type", "const void *")]
-        [NativeName("Type.Name", "const void *")]
-        [NativeName("Name", "pCachedBlob")]
-        public void* PCachedBlob;
-
-        [NativeName("Type", "SIZE_T")]
-        [NativeName("Type.Name", "SIZE_T")]
-        [NativeName("Name", "CachedBlobSizeInBytes")]
-        public nuint CachedBlobSizeInBytes;
+        if (cachedBlobSizeInBytes is not null)
+        {
+            CachedBlobSizeInBytes = cachedBlobSizeInBytes.Value;
+        }
     }
+
+
+    [NativeName("Type", "const void *")]
+    [NativeName("Type.Name", "const void *")]
+    [NativeName("Name", "pCachedBlob")]
+    public void* PCachedBlob;
+
+    [NativeName("Type", "SIZE_T")]
+    [NativeName("Type.Name", "SIZE_T")]
+    [NativeName("Name", "CachedBlobSizeInBytes")]
+    public nuint CachedBlobSizeInBytes;
 }

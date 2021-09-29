@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrGraphicsBindingOpenGLWaylandKHR")]
+public unsafe partial struct GraphicsBindingOpenGLWaylandKHR
 {
-    [NativeName("Name", "XrGraphicsBindingOpenGLWaylandKHR")]
-    public unsafe partial struct GraphicsBindingOpenGLWaylandKHR
-    {
-        public GraphicsBindingOpenGLWaylandKHR
-        (
+    public GraphicsBindingOpenGLWaylandKHR
+    (
             StructureType? type = StructureType.TypeGraphicsBindingOpenglWaylandKhr,
             void* next = null,
             nint* display = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (display is not null)
-            {
-                Display = display;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "wl_display*")]
-        [NativeName("Type.Name", "wl_display")]
-        [NativeName("Name", "display")]
-        public nint* Display;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (display is not null)
+        {
+            Display = display;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "wl_display*")]
+    [NativeName("Type.Name", "wl_display")]
+    [NativeName("Name", "display")]
+    public nint* Display;
 }

@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Video
+namespace Silk.NET.Vulkan.Video;
+
+[NativeName("Name", "StdVideoH264PpsFlags")]
+public unsafe partial struct StdVideoH264PpsFlags
 {
-    [NativeName("Name", "StdVideoH264PpsFlags")]
-    public unsafe partial struct StdVideoH264PpsFlags
-    {
-        public StdVideoH264PpsFlags
-        (
+    public StdVideoH264PpsFlags
+    (
             uint? transform8x8ModeFlag = null,
             uint? redundantPicCntPresentFlag = null,
             uint? constrainedIntraPredFlag = null,
@@ -30,127 +30,126 @@ namespace Silk.NET.Vulkan.Video
             uint? picOrderPresentFlag = null,
             uint? entropyCodingModeFlag = null,
             uint? scalingMatrixPresentFlag = null
-        ) : this()
+    ) : this()
+    {
+        if (transform8x8ModeFlag is not null)
         {
-            if (transform8x8ModeFlag is not null)
-            {
-                Transform8x8ModeFlag = transform8x8ModeFlag.Value;
-            }
-
-            if (redundantPicCntPresentFlag is not null)
-            {
-                RedundantPicCntPresentFlag = redundantPicCntPresentFlag.Value;
-            }
-
-            if (constrainedIntraPredFlag is not null)
-            {
-                ConstrainedIntraPredFlag = constrainedIntraPredFlag.Value;
-            }
-
-            if (deblockingFilterControlPresentFlag is not null)
-            {
-                DeblockingFilterControlPresentFlag = deblockingFilterControlPresentFlag.Value;
-            }
-
-            if (weightedBipredIdcFlag is not null)
-            {
-                WeightedBipredIdcFlag = weightedBipredIdcFlag.Value;
-            }
-
-            if (weightedPredFlag is not null)
-            {
-                WeightedPredFlag = weightedPredFlag.Value;
-            }
-
-            if (picOrderPresentFlag is not null)
-            {
-                PicOrderPresentFlag = picOrderPresentFlag.Value;
-            }
-
-            if (entropyCodingModeFlag is not null)
-            {
-                EntropyCodingModeFlag = entropyCodingModeFlag.Value;
-            }
-
-            if (scalingMatrixPresentFlag is not null)
-            {
-                ScalingMatrixPresentFlag = scalingMatrixPresentFlag.Value;
-            }
+            Transform8x8ModeFlag = transform8x8ModeFlag.Value;
         }
 
-
-        private uint _bitfield1;
-
-        public uint Transform8x8ModeFlag
+        if (redundantPicCntPresentFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)(_bitfield1 & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
+            RedundantPicCntPresentFlag = redundantPicCntPresentFlag.Value;
         }
 
-        public uint RedundantPicCntPresentFlag
+        if (constrainedIntraPredFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 1) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+            ConstrainedIntraPredFlag = constrainedIntraPredFlag.Value;
         }
 
-        public uint ConstrainedIntraPredFlag
+        if (deblockingFilterControlPresentFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 2) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+            DeblockingFilterControlPresentFlag = deblockingFilterControlPresentFlag.Value;
         }
 
-        public uint DeblockingFilterControlPresentFlag
+        if (weightedBipredIdcFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 3) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
+            WeightedBipredIdcFlag = weightedBipredIdcFlag.Value;
         }
 
-        public uint WeightedBipredIdcFlag
+        if (weightedPredFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 4) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
+            WeightedPredFlag = weightedPredFlag.Value;
         }
 
-        public uint WeightedPredFlag
+        if (picOrderPresentFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 5) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 5)) | (uint)(((uint)(value) & 0x1u) << 5));
+            PicOrderPresentFlag = picOrderPresentFlag.Value;
         }
 
-        public uint PicOrderPresentFlag
+        if (entropyCodingModeFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 6) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 6)) | (uint)(((uint)(value) & 0x1u) << 6));
+            EntropyCodingModeFlag = entropyCodingModeFlag.Value;
         }
 
-        public uint EntropyCodingModeFlag
+        if (scalingMatrixPresentFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 7) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 7)) | (uint)(((uint)(value) & 0x1u) << 7));
+            ScalingMatrixPresentFlag = scalingMatrixPresentFlag.Value;
         }
+    }
 
-        public uint ScalingMatrixPresentFlag
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 8) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 8)) | (uint)(((uint)(value) & 0x1u) << 8));
-        }
+
+    private uint _bitfield1;
+
+    public uint Transform8x8ModeFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)(_bitfield1 & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
+    }
+
+    public uint RedundantPicCntPresentFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 1) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+    }
+
+    public uint ConstrainedIntraPredFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 2) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+    }
+
+    public uint DeblockingFilterControlPresentFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 3) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
+    }
+
+    public uint WeightedBipredIdcFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 4) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
+    }
+
+    public uint WeightedPredFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 5) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 5)) | (uint)(((uint)(value) & 0x1u) << 5));
+    }
+
+    public uint PicOrderPresentFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 6) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 6)) | (uint)(((uint)(value) & 0x1u) << 6));
+    }
+
+    public uint EntropyCodingModeFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 7) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 7)) | (uint)(((uint)(value) & 0x1u) << 7));
+    }
+
+    public uint ScalingMatrixPresentFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 8) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 8)) | (uint)(((uint)(value) & 0x1u) << 8));
     }
 }

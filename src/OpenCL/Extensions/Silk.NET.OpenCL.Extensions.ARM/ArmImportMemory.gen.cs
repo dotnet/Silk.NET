@@ -14,40 +14,39 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenCL.Extensions.ARM
+namespace Silk.NET.OpenCL.Extensions.ARM;
+
+[Extension("ARM_import_memory")]
+public unsafe partial class ArmImportMemory : NativeExtension<CL>
 {
-    [Extension("ARM_import_memory")]
-    public unsafe partial class ArmImportMemory : NativeExtension<CL>
+    public const string ExtensionName = "ARM_import_memory";
+    [NativeApi(EntryPoint = "clImportMemoryARM")]
+    public unsafe partial nint ImportMemory([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] int* errcode_ret);
+
+    [NativeApi(EntryPoint = "clImportMemoryARM")]
+    public unsafe partial nint ImportMemory([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out int errcode_ret);
+
+    [NativeApi(EntryPoint = "clImportMemoryARM")]
+    public unsafe partial nint ImportMemory<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+    [NativeApi(EntryPoint = "clImportMemoryARM")]
+    public unsafe partial nint ImportMemory<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
+    [NativeApi(EntryPoint = "clImportMemoryARM")]
+    public unsafe partial nint ImportMemory([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] int* errcode_ret);
+
+    [NativeApi(EntryPoint = "clImportMemoryARM")]
+    public unsafe partial nint ImportMemory([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out int errcode_ret);
+
+    [NativeApi(EntryPoint = "clImportMemoryARM")]
+    public unsafe partial nint ImportMemory<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
+
+    [NativeApi(EntryPoint = "clImportMemoryARM")]
+    public partial nint ImportMemory<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
+
+    public ArmImportMemory(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "ARM_import_memory";
-        [NativeApi(EntryPoint = "clImportMemoryARM")]
-        public unsafe partial nint ImportMemory([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] int* errcode_ret);
-
-        [NativeApi(EntryPoint = "clImportMemoryARM")]
-        public unsafe partial nint ImportMemory([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out int errcode_ret);
-
-        [NativeApi(EntryPoint = "clImportMemoryARM")]
-        public unsafe partial nint ImportMemory<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "clImportMemoryARM")]
-        public unsafe partial nint ImportMemory<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] nint* properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "clImportMemoryARM")]
-        public unsafe partial nint ImportMemory([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] int* errcode_ret);
-
-        [NativeApi(EntryPoint = "clImportMemoryARM")]
-        public unsafe partial nint ImportMemory([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] void* memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out int errcode_ret);
-
-        [NativeApi(EntryPoint = "clImportMemoryARM")]
-        public unsafe partial nint ImportMemory<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] int* errcode_ret) where T0 : unmanaged;
-
-        [NativeApi(EntryPoint = "clImportMemoryARM")]
-        public partial nint ImportMemory<T0>([Flow(FlowDirection.In)] nint context, [Flow(FlowDirection.In)] ARM flags, [Flow(FlowDirection.In)] in nint properties, [Flow(FlowDirection.Out)] out T0 memory, [Flow(FlowDirection.In)] nuint size, [Flow(FlowDirection.Out)] out int errcode_ret) where T0 : unmanaged;
-
-        public ArmImportMemory(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

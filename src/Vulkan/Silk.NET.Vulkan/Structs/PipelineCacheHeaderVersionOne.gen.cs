@@ -14,64 +14,63 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPipelineCacheHeaderVersionOne")]
+public unsafe partial struct PipelineCacheHeaderVersionOne
 {
-    [NativeName("Name", "VkPipelineCacheHeaderVersionOne")]
-    public unsafe partial struct PipelineCacheHeaderVersionOne
-    {
-        public PipelineCacheHeaderVersionOne
-        (
+    public PipelineCacheHeaderVersionOne
+    (
             uint? headerSize = null,
             PipelineCacheHeaderVersion? headerVersion = null,
             uint? vendorID = null,
             uint? deviceID = null
-        ) : this()
+    ) : this()
+    {
+        if (headerSize is not null)
         {
-            if (headerSize is not null)
-            {
-                HeaderSize = headerSize.Value;
-            }
-
-            if (headerVersion is not null)
-            {
-                HeaderVersion = headerVersion.Value;
-            }
-
-            if (vendorID is not null)
-            {
-                VendorID = vendorID.Value;
-            }
-
-            if (deviceID is not null)
-            {
-                DeviceID = deviceID.Value;
-            }
+            HeaderSize = headerSize.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "headerSize")]
-        public uint HeaderSize;
-/// <summary></summary>
-        [NativeName("Type", "VkPipelineCacheHeaderVersion")]
-        [NativeName("Type.Name", "VkPipelineCacheHeaderVersion")]
-        [NativeName("Name", "headerVersion")]
-        public PipelineCacheHeaderVersion HeaderVersion;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "vendorID")]
-        public uint VendorID;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "deviceID")]
-        public uint DeviceID;
-        /// <summary></summary>
-        [NativeName("Type", "uint8_t")]
-        [NativeName("Type.Name", "uint8_t")]
-        [NativeName("Name", "pipelineCacheUUID")]
-        public fixed byte PipelineCacheUuid[16];
+        if (headerVersion is not null)
+        {
+            HeaderVersion = headerVersion.Value;
+        }
+
+        if (vendorID is not null)
+        {
+            VendorID = vendorID.Value;
+        }
+
+        if (deviceID is not null)
+        {
+            DeviceID = deviceID.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "headerSize")]
+    public uint HeaderSize;
+/// <summary></summary>
+    [NativeName("Type", "VkPipelineCacheHeaderVersion")]
+    [NativeName("Type.Name", "VkPipelineCacheHeaderVersion")]
+    [NativeName("Name", "headerVersion")]
+    public PipelineCacheHeaderVersion HeaderVersion;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "vendorID")]
+    public uint VendorID;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "deviceID")]
+    public uint DeviceID;
+    /// <summary></summary>
+    [NativeName("Type", "uint8_t")]
+    [NativeName("Type.Name", "uint8_t")]
+    [NativeName("Name", "pipelineCacheUUID")]
+    public fixed byte PipelineCacheUuid[16];
 }

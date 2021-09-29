@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkImageMemoryRequirementsInfo2KHR")]
+public unsafe partial struct ImageMemoryRequirementsInfo2KHR
 {
-    [NativeName("Name", "VkImageMemoryRequirementsInfo2KHR")]
-    public unsafe partial struct ImageMemoryRequirementsInfo2KHR
-    {
-        public ImageMemoryRequirementsInfo2KHR
-        (
+    public ImageMemoryRequirementsInfo2KHR
+    (
             StructureType? sType = StructureType.ImageMemoryRequirementsInfo2,
             void* pNext = null,
             Image? image = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (image is not null)
-            {
-                Image = image.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkImage")]
-        [NativeName("Type.Name", "VkImage")]
-        [NativeName("Name", "image")]
-        public Image Image;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (image is not null)
+        {
+            Image = image.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkImage")]
+    [NativeName("Type.Name", "VkImage")]
+    [NativeName("Name", "image")]
+    public Image Image;
 }

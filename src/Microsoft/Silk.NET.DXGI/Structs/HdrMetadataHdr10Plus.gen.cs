@@ -14,14 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI
+namespace Silk.NET.DXGI;
+
+[NativeName("Name", "DXGI_HDR_METADATA_HDR10PLUS")]
+public unsafe partial struct HdrMetadataHdr10Plus
 {
-    [NativeName("Name", "DXGI_HDR_METADATA_HDR10PLUS")]
-    public unsafe partial struct HdrMetadataHdr10Plus
-    {
-        [NativeName("Type", "BYTE [72]")]
-        [NativeName("Type.Name", "BYTE [72]")]
-        [NativeName("Name", "Data")]
-        public fixed byte Data[72];
-    }
+    [NativeName("Type", "BYTE [72]")]
+    [NativeName("Type.Name", "BYTE [72]")]
+    [NativeName("Name", "Data")]
+    public fixed byte Data[72];
 }

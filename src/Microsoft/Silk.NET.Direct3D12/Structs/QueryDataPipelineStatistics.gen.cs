@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_QUERY_DATA_PIPELINE_STATISTICS")]
+public unsafe partial struct QueryDataPipelineStatistics
 {
-    [NativeName("Name", "D3D12_QUERY_DATA_PIPELINE_STATISTICS")]
-    public unsafe partial struct QueryDataPipelineStatistics
-    {
-        public QueryDataPipelineStatistics
-        (
+    public QueryDataPipelineStatistics
+    (
             ulong? iAVertices = null,
             ulong? iAPrimitives = null,
             ulong? vSInvocations = null,
@@ -32,118 +32,117 @@ namespace Silk.NET.Direct3D12
             ulong? hSInvocations = null,
             ulong? dSInvocations = null,
             ulong? cSInvocations = null
-        ) : this()
+    ) : this()
+    {
+        if (iAVertices is not null)
         {
-            if (iAVertices is not null)
-            {
-                IAVertices = iAVertices.Value;
-            }
-
-            if (iAPrimitives is not null)
-            {
-                IAPrimitives = iAPrimitives.Value;
-            }
-
-            if (vSInvocations is not null)
-            {
-                VSInvocations = vSInvocations.Value;
-            }
-
-            if (gSInvocations is not null)
-            {
-                GSInvocations = gSInvocations.Value;
-            }
-
-            if (gSPrimitives is not null)
-            {
-                GSPrimitives = gSPrimitives.Value;
-            }
-
-            if (cInvocations is not null)
-            {
-                CInvocations = cInvocations.Value;
-            }
-
-            if (cPrimitives is not null)
-            {
-                CPrimitives = cPrimitives.Value;
-            }
-
-            if (pSInvocations is not null)
-            {
-                PSInvocations = pSInvocations.Value;
-            }
-
-            if (hSInvocations is not null)
-            {
-                HSInvocations = hSInvocations.Value;
-            }
-
-            if (dSInvocations is not null)
-            {
-                DSInvocations = dSInvocations.Value;
-            }
-
-            if (cSInvocations is not null)
-            {
-                CSInvocations = cSInvocations.Value;
-            }
+            IAVertices = iAVertices.Value;
         }
 
+        if (iAPrimitives is not null)
+        {
+            IAPrimitives = iAPrimitives.Value;
+        }
 
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "IAVertices")]
-        public ulong IAVertices;
+        if (vSInvocations is not null)
+        {
+            VSInvocations = vSInvocations.Value;
+        }
 
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "IAPrimitives")]
-        public ulong IAPrimitives;
+        if (gSInvocations is not null)
+        {
+            GSInvocations = gSInvocations.Value;
+        }
 
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "VSInvocations")]
-        public ulong VSInvocations;
+        if (gSPrimitives is not null)
+        {
+            GSPrimitives = gSPrimitives.Value;
+        }
 
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "GSInvocations")]
-        public ulong GSInvocations;
+        if (cInvocations is not null)
+        {
+            CInvocations = cInvocations.Value;
+        }
 
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "GSPrimitives")]
-        public ulong GSPrimitives;
+        if (cPrimitives is not null)
+        {
+            CPrimitives = cPrimitives.Value;
+        }
 
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "CInvocations")]
-        public ulong CInvocations;
+        if (pSInvocations is not null)
+        {
+            PSInvocations = pSInvocations.Value;
+        }
 
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "CPrimitives")]
-        public ulong CPrimitives;
+        if (hSInvocations is not null)
+        {
+            HSInvocations = hSInvocations.Value;
+        }
 
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "PSInvocations")]
-        public ulong PSInvocations;
+        if (dSInvocations is not null)
+        {
+            DSInvocations = dSInvocations.Value;
+        }
 
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "HSInvocations")]
-        public ulong HSInvocations;
-
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "DSInvocations")]
-        public ulong DSInvocations;
-
-        [NativeName("Type", "UINT64")]
-        [NativeName("Type.Name", "UINT64")]
-        [NativeName("Name", "CSInvocations")]
-        public ulong CSInvocations;
+        if (cSInvocations is not null)
+        {
+            CSInvocations = cSInvocations.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "IAVertices")]
+    public ulong IAVertices;
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "IAPrimitives")]
+    public ulong IAPrimitives;
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "VSInvocations")]
+    public ulong VSInvocations;
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "GSInvocations")]
+    public ulong GSInvocations;
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "GSPrimitives")]
+    public ulong GSPrimitives;
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "CInvocations")]
+    public ulong CInvocations;
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "CPrimitives")]
+    public ulong CPrimitives;
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "PSInvocations")]
+    public ulong PSInvocations;
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "HSInvocations")]
+    public ulong HSInvocations;
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "DSInvocations")]
+    public ulong DSInvocations;
+
+    [NativeName("Type", "UINT64")]
+    [NativeName("Type.Name", "UINT64")]
+    [NativeName("Name", "CSInvocations")]
+    public ulong CSInvocations;
 }

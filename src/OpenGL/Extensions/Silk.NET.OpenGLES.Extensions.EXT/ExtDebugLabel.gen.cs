@@ -14,67 +14,66 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.EXT
+namespace Silk.NET.OpenGLES.Extensions.EXT;
+
+[Extension("EXT_debug_label")]
+public unsafe partial class ExtDebugLabel : NativeExtension<GL>
 {
-    [Extension("EXT_debug_label")]
-    public unsafe partial class ExtDebugLabel : NativeExtension<GL>
+    public const string ExtensionName = "EXT_debug_label";
+    [NativeApi(EntryPoint = "glGetObjectLabelEXT")]
+    public unsafe partial void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* label);
+
+    [NativeApi(EntryPoint = "glGetObjectLabelEXT")]
+    public unsafe partial void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte label);
+
+    [NativeApi(EntryPoint = "glGetObjectLabelEXT")]
+    public unsafe partial void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string label);
+
+    [NativeApi(EntryPoint = "glGetObjectLabelEXT")]
+    public unsafe partial void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* label);
+
+    [NativeApi(EntryPoint = "glGetObjectLabelEXT")]
+    public partial void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte label);
+
+    [NativeApi(EntryPoint = "glGetObjectLabelEXT")]
+    public partial void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string label);
+
+    [NativeApi(EntryPoint = "glLabelObjectEXT")]
+    public unsafe partial void LabelObject([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] byte* label);
+
+    [NativeApi(EntryPoint = "glLabelObjectEXT")]
+    public partial void LabelObject([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] in byte label);
+
+    [NativeApi(EntryPoint = "glLabelObjectEXT")]
+    public partial void LabelObject([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label);
+
+    public unsafe void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label)
     {
-        public const string ExtensionName = "EXT_debug_label";
-        [NativeApi(EntryPoint = "glGetObjectLabelEXT")]
-        public unsafe partial void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* label);
+        // ImplicitCountSpanOverloader
+        GetObjectLabel(type, @object, (uint) label.Length, length, out label.GetPinnableReference());
+    }
 
-        [NativeApi(EntryPoint = "glGetObjectLabelEXT")]
-        public unsafe partial void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte label);
+    public unsafe void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label)
+    {
+        // ImplicitCountSpanOverloader
+        GetObjectLabel(type, @object, (uint) label.Length, length, out label.GetPinnableReference());
+    }
 
-        [NativeApi(EntryPoint = "glGetObjectLabelEXT")]
-        public unsafe partial void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string label);
+    public unsafe void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label)
+    {
+        // ImplicitCountSpanOverloader
+        GetObjectLabel(type, @object, (uint) label.Length, out length, out label.GetPinnableReference());
+    }
 
-        [NativeApi(EntryPoint = "glGetObjectLabelEXT")]
-        public unsafe partial void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* label);
+    public unsafe void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label)
+    {
+        // ImplicitCountSpanOverloader
+        GetObjectLabel(type, @object, (uint) label.Length, out length, out label.GetPinnableReference());
+    }
 
-        [NativeApi(EntryPoint = "glGetObjectLabelEXT")]
-        public partial void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out byte label);
-
-        [NativeApi(EntryPoint = "glGetObjectLabelEXT")]
-        public partial void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] out string label);
-
-        [NativeApi(EntryPoint = "glLabelObjectEXT")]
-        public unsafe partial void LabelObject([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] byte* label);
-
-        [NativeApi(EntryPoint = "glLabelObjectEXT")]
-        public partial void LabelObject([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] in byte label);
-
-        [NativeApi(EntryPoint = "glLabelObjectEXT")]
-        public partial void LabelObject([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] string label);
-
-        public unsafe void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label)
-        {
-            // ImplicitCountSpanOverloader
-            GetObjectLabel(type, @object, (uint) label.Length, length, out label.GetPinnableReference());
-        }
-
-        public unsafe void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label)
-        {
-            // ImplicitCountSpanOverloader
-            GetObjectLabel(type, @object, (uint) label.Length, length, out label.GetPinnableReference());
-        }
-
-        public unsafe void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label)
-        {
-            // ImplicitCountSpanOverloader
-            GetObjectLabel(type, @object, (uint) label.Length, out length, out label.GetPinnableReference());
-        }
-
-        public unsafe void GetObjectLabel([Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Count(Count = 1), Flow(FlowDirection.Out)] out uint length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label)
-        {
-            // ImplicitCountSpanOverloader
-            GetObjectLabel(type, @object, (uint) label.Length, out length, out label.GetPinnableReference());
-        }
-
-        public ExtDebugLabel(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+    public ExtDebugLabel(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

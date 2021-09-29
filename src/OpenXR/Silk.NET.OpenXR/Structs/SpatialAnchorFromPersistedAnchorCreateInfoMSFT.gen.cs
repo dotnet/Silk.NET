@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrSpatialAnchorFromPersistedAnchorCreateInfoMSFT")]
+public unsafe partial struct SpatialAnchorFromPersistedAnchorCreateInfoMSFT
 {
-    [NativeName("Name", "XrSpatialAnchorFromPersistedAnchorCreateInfoMSFT")]
-    public unsafe partial struct SpatialAnchorFromPersistedAnchorCreateInfoMSFT
-    {
-        public SpatialAnchorFromPersistedAnchorCreateInfoMSFT
-        (
+    public SpatialAnchorFromPersistedAnchorCreateInfoMSFT
+    (
             StructureType? type = StructureType.TypeSpatialAnchorFromPersistedAnchorCreateInfoMsft,
             void* next = null,
             SpatialAnchorStoreConnectionMSFT? spatialAnchorStore = null,
             SpatialAnchorPersistenceNameMSFT? spatialAnchorPersistenceName = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (spatialAnchorStore is not null)
-            {
-                SpatialAnchorStore = spatialAnchorStore.Value;
-            }
-
-            if (spatialAnchorPersistenceName is not null)
-            {
-                SpatialAnchorPersistenceName = spatialAnchorPersistenceName.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "XrSpatialAnchorStoreConnectionMSFT")]
-        [NativeName("Type.Name", "XrSpatialAnchorStoreConnectionMSFT")]
-        [NativeName("Name", "spatialAnchorStore")]
-        public SpatialAnchorStoreConnectionMSFT SpatialAnchorStore;
-/// <summary></summary>
-        [NativeName("Type", "XrSpatialAnchorPersistenceNameMSFT")]
-        [NativeName("Type.Name", "XrSpatialAnchorPersistenceNameMSFT")]
-        [NativeName("Name", "spatialAnchorPersistenceName")]
-        public SpatialAnchorPersistenceNameMSFT SpatialAnchorPersistenceName;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (spatialAnchorStore is not null)
+        {
+            SpatialAnchorStore = spatialAnchorStore.Value;
+        }
+
+        if (spatialAnchorPersistenceName is not null)
+        {
+            SpatialAnchorPersistenceName = spatialAnchorPersistenceName.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "XrSpatialAnchorStoreConnectionMSFT")]
+    [NativeName("Type.Name", "XrSpatialAnchorStoreConnectionMSFT")]
+    [NativeName("Name", "spatialAnchorStore")]
+    public SpatialAnchorStoreConnectionMSFT SpatialAnchorStore;
+/// <summary></summary>
+    [NativeName("Type", "XrSpatialAnchorPersistenceNameMSFT")]
+    [NativeName("Type.Name", "XrSpatialAnchorPersistenceNameMSFT")]
+    [NativeName("Name", "spatialAnchorPersistenceName")]
+    public SpatialAnchorPersistenceNameMSFT SpatialAnchorPersistenceName;
 }

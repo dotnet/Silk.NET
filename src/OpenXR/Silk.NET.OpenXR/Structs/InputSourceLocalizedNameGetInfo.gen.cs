@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrInputSourceLocalizedNameGetInfo")]
+public unsafe partial struct InputSourceLocalizedNameGetInfo
 {
-    [NativeName("Name", "XrInputSourceLocalizedNameGetInfo")]
-    public unsafe partial struct InputSourceLocalizedNameGetInfo
-    {
-        public InputSourceLocalizedNameGetInfo
-        (
+    public InputSourceLocalizedNameGetInfo
+    (
             StructureType? type = StructureType.TypeInputSourceLocalizedNameGetInfo,
             void* next = null,
             ulong? sourcePath = null,
             InputSourceLocalizedNameFlags? whichComponents = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (sourcePath is not null)
-            {
-                SourcePath = sourcePath.Value;
-            }
-
-            if (whichComponents is not null)
-            {
-                WhichComponents = whichComponents.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "XrPath")]
-        [NativeName("Type.Name", "XrPath")]
-        [NativeName("Name", "sourcePath")]
-        public ulong SourcePath;
-/// <summary></summary>
-        [NativeName("Type", "XrInputSourceLocalizedNameFlags")]
-        [NativeName("Type.Name", "XrInputSourceLocalizedNameFlags")]
-        [NativeName("Name", "whichComponents")]
-        public InputSourceLocalizedNameFlags WhichComponents;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (sourcePath is not null)
+        {
+            SourcePath = sourcePath.Value;
+        }
+
+        if (whichComponents is not null)
+        {
+            WhichComponents = whichComponents.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "XrPath")]
+    [NativeName("Type.Name", "XrPath")]
+    [NativeName("Name", "sourcePath")]
+    public ulong SourcePath;
+/// <summary></summary>
+    [NativeName("Type", "XrInputSourceLocalizedNameFlags")]
+    [NativeName("Type.Name", "XrInputSourceLocalizedNameFlags")]
+    [NativeName("Name", "whichComponents")]
+    public InputSourceLocalizedNameFlags WhichComponents;
 }

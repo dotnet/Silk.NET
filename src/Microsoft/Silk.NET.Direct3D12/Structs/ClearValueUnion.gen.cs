@@ -14,33 +14,32 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[StructLayout(LayoutKind.Explicit)]
+[NativeName("Name", "__AnonymousRecord_d3d12_L2582_C5")]
+public unsafe partial struct ClearValueUnion
 {
-    [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d12_L2582_C5")]
-    public unsafe partial struct ClearValueUnion
-    {
-        public ClearValueUnion
-        (
+    public ClearValueUnion
+    (
             DepthStencilValue? depthStencil = null
-        ) : this()
+    ) : this()
+    {
+        if (depthStencil is not null)
         {
-            if (depthStencil is not null)
-            {
-                DepthStencil = depthStencil.Value;
-            }
+            DepthStencil = depthStencil.Value;
         }
-
-        [FieldOffset(0)]
-        [NativeName("Type", "FLOAT [4]")]
-        [NativeName("Type.Name", "FLOAT [4]")]
-        [NativeName("Name", "Color")]
-        public fixed float Color[4];
-
-        [FieldOffset(0)]
-        [NativeName("Type", "D3D12_DEPTH_STENCIL_VALUE")]
-        [NativeName("Type.Name", "D3D12_DEPTH_STENCIL_VALUE")]
-        [NativeName("Name", "DepthStencil")]
-        public DepthStencilValue DepthStencil;
     }
+
+        [FieldOffset(0)]
+    [NativeName("Type", "FLOAT [4]")]
+    [NativeName("Type.Name", "FLOAT [4]")]
+    [NativeName("Name", "Color")]
+    public fixed float Color[4];
+
+        [FieldOffset(0)]
+    [NativeName("Type", "D3D12_DEPTH_STENCIL_VALUE")]
+    [NativeName("Type.Name", "D3D12_DEPTH_STENCIL_VALUE")]
+    [NativeName("Name", "DepthStencil")]
+    public DepthStencilValue DepthStencil;
 }

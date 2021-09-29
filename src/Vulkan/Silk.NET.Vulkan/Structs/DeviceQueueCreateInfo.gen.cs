@@ -14,81 +14,80 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkDeviceQueueCreateInfo")]
+public unsafe partial struct DeviceQueueCreateInfo
 {
-    [NativeName("Name", "VkDeviceQueueCreateInfo")]
-    public unsafe partial struct DeviceQueueCreateInfo
-    {
-        public DeviceQueueCreateInfo
-        (
+    public DeviceQueueCreateInfo
+    (
             StructureType? sType = StructureType.DeviceQueueCreateInfo,
             void* pNext = null,
             DeviceQueueCreateFlags? flags = null,
             uint? queueFamilyIndex = null,
             uint? queueCount = null,
             float* pQueuePriorities = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
-
-            if (queueFamilyIndex is not null)
-            {
-                QueueFamilyIndex = queueFamilyIndex.Value;
-            }
-
-            if (queueCount is not null)
-            {
-                QueueCount = queueCount.Value;
-            }
-
-            if (pQueuePriorities is not null)
-            {
-                PQueuePriorities = pQueuePriorities;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkDeviceQueueCreateFlags")]
-        [NativeName("Type.Name", "VkDeviceQueueCreateFlags")]
-        [NativeName("Name", "flags")]
-        public DeviceQueueCreateFlags Flags;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "queueFamilyIndex")]
-        public uint QueueFamilyIndex;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "queueCount")]
-        public uint QueueCount;
-/// <summary></summary>
-        [NativeName("Type", "float*")]
-        [NativeName("Type.Name", "float")]
-        [NativeName("Name", "pQueuePriorities")]
-        public float* PQueuePriorities;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (flags is not null)
+        {
+            Flags = flags.Value;
+        }
+
+        if (queueFamilyIndex is not null)
+        {
+            QueueFamilyIndex = queueFamilyIndex.Value;
+        }
+
+        if (queueCount is not null)
+        {
+            QueueCount = queueCount.Value;
+        }
+
+        if (pQueuePriorities is not null)
+        {
+            PQueuePriorities = pQueuePriorities;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkDeviceQueueCreateFlags")]
+    [NativeName("Type.Name", "VkDeviceQueueCreateFlags")]
+    [NativeName("Name", "flags")]
+    public DeviceQueueCreateFlags Flags;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "queueFamilyIndex")]
+    public uint QueueFamilyIndex;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "queueCount")]
+    public uint QueueCount;
+/// <summary></summary>
+    [NativeName("Type", "float*")]
+    [NativeName("Type.Name", "float")]
+    [NativeName("Name", "pQueuePriorities")]
+    public float* PQueuePriorities;
 }

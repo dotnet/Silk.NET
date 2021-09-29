@@ -14,19 +14,18 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NV
-{
-    [Extension("NV_fragment_coverage_to_color")]
-    public unsafe partial class NVFragmentCoverageToColor : NativeExtension<GL>
-    {
-        public const string ExtensionName = "NV_fragment_coverage_to_color";
-        [NativeApi(EntryPoint = "glFragmentCoverageColorNV")]
-        public partial void FragmentCoverageColor([Flow(FlowDirection.In)] uint color);
+namespace Silk.NET.OpenGL.Legacy.Extensions.NV;
 
-        public NVFragmentCoverageToColor(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+[Extension("NV_fragment_coverage_to_color")]
+public unsafe partial class NVFragmentCoverageToColor : NativeExtension<GL>
+{
+    public const string ExtensionName = "NV_fragment_coverage_to_color";
+    [NativeApi(EntryPoint = "glFragmentCoverageColorNV")]
+    public partial void FragmentCoverageColor([Flow(FlowDirection.In)] uint color);
+
+    public NVFragmentCoverageToColor(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

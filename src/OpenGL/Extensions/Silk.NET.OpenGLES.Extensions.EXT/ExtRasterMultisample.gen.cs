@@ -14,22 +14,21 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.EXT
+namespace Silk.NET.OpenGLES.Extensions.EXT;
+
+[Extension("EXT_raster_multisample")]
+public unsafe partial class ExtRasterMultisample : NativeExtension<GL>
 {
-    [Extension("EXT_raster_multisample")]
-    public unsafe partial class ExtRasterMultisample : NativeExtension<GL>
+    public const string ExtensionName = "EXT_raster_multisample";
+    [NativeApi(EntryPoint = "glRasterSamplesEXT")]
+    public partial void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] bool fixedsamplelocations);
+
+    [NativeApi(EntryPoint = "glRasterSamplesEXT")]
+    public partial void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
+
+    public ExtRasterMultisample(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "EXT_raster_multisample";
-        [NativeApi(EntryPoint = "glRasterSamplesEXT")]
-        public partial void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] bool fixedsamplelocations);
-
-        [NativeApi(EntryPoint = "glRasterSamplesEXT")]
-        public partial void RasterSamples([Flow(FlowDirection.In)] uint samples, [Flow(FlowDirection.In)] Boolean fixedsamplelocations);
-
-        public ExtRasterMultisample(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

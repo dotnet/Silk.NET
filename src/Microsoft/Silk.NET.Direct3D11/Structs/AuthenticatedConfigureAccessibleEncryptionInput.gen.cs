@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D11
+namespace Silk.NET.Direct3D11;
+
+[NativeName("Name", "D3D11_AUTHENTICATED_CONFIGURE_ACCESSIBLE_ENCRYPTION_INPUT")]
+public unsafe partial struct AuthenticatedConfigureAccessibleEncryptionInput
 {
-    [NativeName("Name", "D3D11_AUTHENTICATED_CONFIGURE_ACCESSIBLE_ENCRYPTION_INPUT")]
-    public unsafe partial struct AuthenticatedConfigureAccessibleEncryptionInput
-    {
-        public AuthenticatedConfigureAccessibleEncryptionInput
-        (
+    public AuthenticatedConfigureAccessibleEncryptionInput
+    (
             AuthenticatedConfigureInput? parameters = null,
             Guid? encryptionGuid = null
-        ) : this()
+    ) : this()
+    {
+        if (parameters is not null)
         {
-            if (parameters is not null)
-            {
-                Parameters = parameters.Value;
-            }
-
-            if (encryptionGuid is not null)
-            {
-                EncryptionGuid = encryptionGuid.Value;
-            }
+            Parameters = parameters.Value;
         }
 
-
-        [NativeName("Type", "D3D11_AUTHENTICATED_CONFIGURE_INPUT")]
-        [NativeName("Type.Name", "D3D11_AUTHENTICATED_CONFIGURE_INPUT")]
-        [NativeName("Name", "Parameters")]
-        public AuthenticatedConfigureInput Parameters;
-
-        [NativeName("Type", "GUID")]
-        [NativeName("Type.Name", "GUID")]
-        [NativeName("Name", "EncryptionGuid")]
-        public Guid EncryptionGuid;
+        if (encryptionGuid is not null)
+        {
+            EncryptionGuid = encryptionGuid.Value;
+        }
     }
+
+
+    [NativeName("Type", "D3D11_AUTHENTICATED_CONFIGURE_INPUT")]
+    [NativeName("Type.Name", "D3D11_AUTHENTICATED_CONFIGURE_INPUT")]
+    [NativeName("Name", "Parameters")]
+    public AuthenticatedConfigureInput Parameters;
+
+    [NativeName("Type", "GUID")]
+    [NativeName("Type.Name", "GUID")]
+    [NativeName("Name", "EncryptionGuid")]
+    public Guid EncryptionGuid;
 }

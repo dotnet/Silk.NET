@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkSemaphoreGetWin32HandleInfoKHR")]
+public unsafe partial struct SemaphoreGetWin32HandleInfoKHR
 {
-    [NativeName("Name", "VkSemaphoreGetWin32HandleInfoKHR")]
-    public unsafe partial struct SemaphoreGetWin32HandleInfoKHR
-    {
-        public SemaphoreGetWin32HandleInfoKHR
-        (
+    public SemaphoreGetWin32HandleInfoKHR
+    (
             StructureType? sType = StructureType.SemaphoreGetWin32HandleInfoKhr,
             void* pNext = null,
             Semaphore? semaphore = null,
             ExternalSemaphoreHandleTypeFlags? handleType = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (semaphore is not null)
-            {
-                Semaphore = semaphore.Value;
-            }
-
-            if (handleType is not null)
-            {
-                HandleType = handleType.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkSemaphore")]
-        [NativeName("Type.Name", "VkSemaphore")]
-        [NativeName("Name", "semaphore")]
-        public Semaphore Semaphore;
-/// <summary></summary>
-        [NativeName("Type", "VkExternalSemaphoreHandleTypeFlagBits")]
-        [NativeName("Type.Name", "VkExternalSemaphoreHandleTypeFlagBits")]
-        [NativeName("Name", "handleType")]
-        public ExternalSemaphoreHandleTypeFlags HandleType;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (semaphore is not null)
+        {
+            Semaphore = semaphore.Value;
+        }
+
+        if (handleType is not null)
+        {
+            HandleType = handleType.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkSemaphore")]
+    [NativeName("Type.Name", "VkSemaphore")]
+    [NativeName("Name", "semaphore")]
+    public Semaphore Semaphore;
+/// <summary></summary>
+    [NativeName("Type", "VkExternalSemaphoreHandleTypeFlagBits")]
+    [NativeName("Type.Name", "VkExternalSemaphoreHandleTypeFlagBits")]
+    [NativeName("Name", "handleType")]
+    public ExternalSemaphoreHandleTypeFlags HandleType;
 }

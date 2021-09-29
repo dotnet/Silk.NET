@@ -14,40 +14,39 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
+namespace Silk.NET.OpenGL.Legacy.Extensions.ARB;
+
+[Extension("ARB_draw_buffers")]
+public unsafe partial class ArbDrawBuffers : NativeExtension<GL>
 {
-    [Extension("ARB_draw_buffers")]
-    public unsafe partial class ArbDrawBuffers : NativeExtension<GL>
+    public const string ExtensionName = "ARB_draw_buffers";
+    [NativeApi(EntryPoint = "glDrawBuffersARB")]
+    public unsafe partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ARB* bufs);
+
+    [NativeApi(EntryPoint = "glDrawBuffersARB")]
+    public partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in ARB bufs);
+
+    [NativeApi(EntryPoint = "glDrawBuffersARB")]
+    public unsafe partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] DrawBufferMode* bufs);
+
+    [NativeApi(EntryPoint = "glDrawBuffersARB")]
+    public partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in DrawBufferMode bufs);
+
+    public unsafe void DrawBuffers([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<ARB> bufs)
     {
-        public const string ExtensionName = "ARB_draw_buffers";
-        [NativeApi(EntryPoint = "glDrawBuffersARB")]
-        public unsafe partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] ARB* bufs);
+        // ImplicitCountSpanOverloader
+        DrawBuffers((uint) bufs.Length, in bufs.GetPinnableReference());
+    }
 
-        [NativeApi(EntryPoint = "glDrawBuffersARB")]
-        public partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in ARB bufs);
+    public unsafe void DrawBuffers([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<DrawBufferMode> bufs)
+    {
+        // ImplicitCountSpanOverloader
+        DrawBuffers((uint) bufs.Length, in bufs.GetPinnableReference());
+    }
 
-        [NativeApi(EntryPoint = "glDrawBuffersARB")]
-        public unsafe partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] DrawBufferMode* bufs);
-
-        [NativeApi(EntryPoint = "glDrawBuffersARB")]
-        public partial void DrawBuffers([Flow(FlowDirection.In)] uint n, [Count(Parameter = "n"), Flow(FlowDirection.In)] in DrawBufferMode bufs);
-
-        public unsafe void DrawBuffers([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<ARB> bufs)
-        {
-            // ImplicitCountSpanOverloader
-            DrawBuffers((uint) bufs.Length, in bufs.GetPinnableReference());
-        }
-
-        public unsafe void DrawBuffers([Count(Parameter = "n"), Flow(FlowDirection.In)] ReadOnlySpan<DrawBufferMode> bufs)
-        {
-            // ImplicitCountSpanOverloader
-            DrawBuffers((uint) bufs.Length, in bufs.GetPinnableReference());
-        }
-
-        public ArbDrawBuffers(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+    public ArbDrawBuffers(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

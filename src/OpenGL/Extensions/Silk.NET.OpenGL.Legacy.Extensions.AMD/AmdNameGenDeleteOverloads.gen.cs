@@ -12,22 +12,21 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.AMD
+namespace Silk.NET.OpenGL.Legacy.Extensions.AMD;
+
+public static class AmdNameGenDeleteOverloads
 {
-    public static class AmdNameGenDeleteOverloads
+    public static unsafe void DeleteNames(this AmdNameGenDelete thisApi, [Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(FlowDirection.In)] ReadOnlySpan<uint> names)
     {
-        public static unsafe void DeleteNames(this AmdNameGenDelete thisApi, [Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(FlowDirection.In)] ReadOnlySpan<uint> names)
-        {
-            // SpanOverloader
-            thisApi.DeleteNames(identifier, num, in names.GetPinnableReference());
-        }
-
-        public static unsafe void GenNames(this AmdNameGenDelete thisApi, [Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(FlowDirection.Out)] Span<uint> names)
-        {
-            // SpanOverloader
-            thisApi.GenNames(identifier, num, out names.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        thisApi.DeleteNames(identifier, num, in names.GetPinnableReference());
     }
+
+    public static unsafe void GenNames(this AmdNameGenDelete thisApi, [Flow(FlowDirection.In)] AMD identifier, [Flow(FlowDirection.In)] uint num, [Count(Parameter = "num"), Flow(FlowDirection.Out)] Span<uint> names)
+    {
+        // SpanOverloader
+        thisApi.GenNames(identifier, num, out names.GetPinnableReference());
+    }
+
 }
 

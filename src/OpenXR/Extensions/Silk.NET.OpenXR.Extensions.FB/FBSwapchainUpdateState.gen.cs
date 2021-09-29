@@ -14,32 +14,31 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR.Extensions.FB
+namespace Silk.NET.OpenXR.Extensions.FB;
+
+[Extension("XR_FB_swapchain_update_state")]
+public unsafe partial class FBSwapchainUpdateState : NativeExtension<XR>
 {
-    [Extension("XR_FB_swapchain_update_state")]
-    public unsafe partial class FBSwapchainUpdateState : NativeExtension<XR>
+    public const string ExtensionName = "XR_FB_swapchain_update_state";
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "xrGetSwapchainStateFB")]
+    public unsafe partial Result GetSwapchainStateFB([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] SwapchainStateBaseHeaderFB* state);
+
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "xrGetSwapchainStateFB")]
+    public partial Result GetSwapchainStateFB([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] ref SwapchainStateBaseHeaderFB state);
+
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "xrUpdateSwapchainFB")]
+    public unsafe partial Result UpdateSwapchainFB([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainStateBaseHeaderFB* state);
+
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "xrUpdateSwapchainFB")]
+    public partial Result UpdateSwapchainFB([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainStateBaseHeaderFB state);
+
+    public FBSwapchainUpdateState(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "XR_FB_swapchain_update_state";
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSwapchainStateFB")]
-        public unsafe partial Result GetSwapchainStateFB([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] SwapchainStateBaseHeaderFB* state);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrGetSwapchainStateFB")]
-        public partial Result GetSwapchainStateFB([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] ref SwapchainStateBaseHeaderFB state);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrUpdateSwapchainFB")]
-        public unsafe partial Result UpdateSwapchainFB([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] SwapchainStateBaseHeaderFB* state);
-
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "xrUpdateSwapchainFB")]
-        public partial Result UpdateSwapchainFB([Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] in SwapchainStateBaseHeaderFB state);
-
-        public FBSwapchainUpdateState(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

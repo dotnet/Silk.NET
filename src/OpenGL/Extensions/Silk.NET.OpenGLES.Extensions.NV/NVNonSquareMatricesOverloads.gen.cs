@@ -12,82 +12,81 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES.Extensions.NV
+namespace Silk.NET.OpenGLES.Extensions.NV;
+
+public static class NVNonSquareMatricesOverloads
 {
-    public static class NVNonSquareMatricesOverloads
+    public static unsafe void UniformMatrix2x3(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
     {
-        public static unsafe void UniformMatrix2x3(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix2x3(location, count, transpose, in value.GetPinnableReference());
-        }
-
-        public static unsafe void UniformMatrix2x3(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix2x3(location, count, transpose, in value.GetPinnableReference());
-        }
-
-        public static unsafe void UniformMatrix2x4(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix2x4(location, count, transpose, in value.GetPinnableReference());
-        }
-
-        public static unsafe void UniformMatrix2x4(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix2x4(location, count, transpose, in value.GetPinnableReference());
-        }
-
-        public static unsafe void UniformMatrix3x2(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix3x2(location, count, transpose, in value.GetPinnableReference());
-        }
-
-        public static unsafe void UniformMatrix3x2(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix3x2(location, count, transpose, in value.GetPinnableReference());
-        }
-
-        public static unsafe void UniformMatrix3x4(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix3x4(location, count, transpose, in value.GetPinnableReference());
-        }
-
-        public static unsafe void UniformMatrix3x4(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix3x4(location, count, transpose, in value.GetPinnableReference());
-        }
-
-        public static unsafe void UniformMatrix4x2(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix4x2(location, count, transpose, in value.GetPinnableReference());
-        }
-
-        public static unsafe void UniformMatrix4x2(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix4x2(location, count, transpose, in value.GetPinnableReference());
-        }
-
-        public static unsafe void UniformMatrix4x3(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix4x3(location, count, transpose, in value.GetPinnableReference());
-        }
-
-        public static unsafe void UniformMatrix4x3(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
-        {
-            // SpanOverloader
-            thisApi.UniformMatrix4x3(location, count, transpose, in value.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        thisApi.UniformMatrix2x3(location, count, transpose, in value.GetPinnableReference());
     }
+
+    public static unsafe void UniformMatrix2x3(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+    {
+        // SpanOverloader
+        thisApi.UniformMatrix2x3(location, count, transpose, in value.GetPinnableReference());
+    }
+
+    public static unsafe void UniformMatrix2x4(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+    {
+        // SpanOverloader
+        thisApi.UniformMatrix2x4(location, count, transpose, in value.GetPinnableReference());
+    }
+
+    public static unsafe void UniformMatrix2x4(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+    {
+        // SpanOverloader
+        thisApi.UniformMatrix2x4(location, count, transpose, in value.GetPinnableReference());
+    }
+
+    public static unsafe void UniformMatrix3x2(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+    {
+        // SpanOverloader
+        thisApi.UniformMatrix3x2(location, count, transpose, in value.GetPinnableReference());
+    }
+
+    public static unsafe void UniformMatrix3x2(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+    {
+        // SpanOverloader
+        thisApi.UniformMatrix3x2(location, count, transpose, in value.GetPinnableReference());
+    }
+
+    public static unsafe void UniformMatrix3x4(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+    {
+        // SpanOverloader
+        thisApi.UniformMatrix3x4(location, count, transpose, in value.GetPinnableReference());
+    }
+
+    public static unsafe void UniformMatrix3x4(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+    {
+        // SpanOverloader
+        thisApi.UniformMatrix3x4(location, count, transpose, in value.GetPinnableReference());
+    }
+
+    public static unsafe void UniformMatrix4x2(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+    {
+        // SpanOverloader
+        thisApi.UniformMatrix4x2(location, count, transpose, in value.GetPinnableReference());
+    }
+
+    public static unsafe void UniformMatrix4x2(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+    {
+        // SpanOverloader
+        thisApi.UniformMatrix4x2(location, count, transpose, in value.GetPinnableReference());
+    }
+
+    public static unsafe void UniformMatrix4x3(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] bool transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+    {
+        // SpanOverloader
+        thisApi.UniformMatrix4x3(location, count, transpose, in value.GetPinnableReference());
+    }
+
+    public static unsafe void UniformMatrix4x3(this NVNonSquareMatrices thisApi, [Flow(FlowDirection.In)] int location, [Flow(FlowDirection.In)] uint count, [Flow(FlowDirection.In)] Boolean transpose, [Count(Parameter = "count"), Flow(FlowDirection.In)] ReadOnlySpan<float> value)
+    {
+        // SpanOverloader
+        thisApi.UniformMatrix4x3(location, count, transpose, in value.GetPinnableReference());
+    }
+
 }
 

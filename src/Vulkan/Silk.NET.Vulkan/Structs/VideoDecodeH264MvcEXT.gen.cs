@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkVideoDecodeH264MvcEXT")]
+public unsafe partial struct VideoDecodeH264MvcEXT
 {
-    [NativeName("Name", "VkVideoDecodeH264MvcEXT")]
-    public unsafe partial struct VideoDecodeH264MvcEXT
-    {
-        public VideoDecodeH264MvcEXT
-        (
+    public VideoDecodeH264MvcEXT
+    (
             StructureType? sType = StructureType.VideoDecodeH264MvcExt,
             void* pNext = null,
             Video.StdVideoDecodeH264Mvc* pStdMvc = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (pStdMvc is not null)
-            {
-                PStdMvc = pStdMvc;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "StdVideoDecodeH264Mvc*")]
-        [NativeName("Type.Name", "StdVideoDecodeH264Mvc")]
-        [NativeName("Name", "pStdMvc")]
-        public Video.StdVideoDecodeH264Mvc* PStdMvc;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (pStdMvc is not null)
+        {
+            PStdMvc = pStdMvc;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "StdVideoDecodeH264Mvc*")]
+    [NativeName("Type.Name", "StdVideoDecodeH264Mvc")]
+    [NativeName("Name", "pStdMvc")]
+    public Video.StdVideoDecodeH264Mvc* PStdMvc;
 }

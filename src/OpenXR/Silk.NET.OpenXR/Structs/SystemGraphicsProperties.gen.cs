@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrSystemGraphicsProperties")]
+public unsafe partial struct SystemGraphicsProperties
 {
-    [NativeName("Name", "XrSystemGraphicsProperties")]
-    public unsafe partial struct SystemGraphicsProperties
-    {
-        public SystemGraphicsProperties
-        (
+    public SystemGraphicsProperties
+    (
             uint? maxSwapchainImageHeight = null,
             uint? maxSwapchainImageWidth = null,
             uint? maxLayerCount = null
-        ) : this()
+    ) : this()
+    {
+        if (maxSwapchainImageHeight is not null)
         {
-            if (maxSwapchainImageHeight is not null)
-            {
-                MaxSwapchainImageHeight = maxSwapchainImageHeight.Value;
-            }
-
-            if (maxSwapchainImageWidth is not null)
-            {
-                MaxSwapchainImageWidth = maxSwapchainImageWidth.Value;
-            }
-
-            if (maxLayerCount is not null)
-            {
-                MaxLayerCount = maxLayerCount.Value;
-            }
+            MaxSwapchainImageHeight = maxSwapchainImageHeight.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxSwapchainImageHeight")]
-        public uint MaxSwapchainImageHeight;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxSwapchainImageWidth")]
-        public uint MaxSwapchainImageWidth;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "maxLayerCount")]
-        public uint MaxLayerCount;
+        if (maxSwapchainImageWidth is not null)
+        {
+            MaxSwapchainImageWidth = maxSwapchainImageWidth.Value;
+        }
+
+        if (maxLayerCount is not null)
+        {
+            MaxLayerCount = maxLayerCount.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "maxSwapchainImageHeight")]
+    public uint MaxSwapchainImageHeight;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "maxSwapchainImageWidth")]
+    public uint MaxSwapchainImageWidth;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "maxLayerCount")]
+    public uint MaxLayerCount;
 }

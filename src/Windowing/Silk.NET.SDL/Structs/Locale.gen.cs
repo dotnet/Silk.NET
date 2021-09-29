@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL
+namespace Silk.NET.SDL;
+
+[NativeName("Name", "SDL_Locale")]
+public unsafe partial struct Locale
 {
-    [NativeName("Name", "SDL_Locale")]
-    public unsafe partial struct Locale
-    {
-        public Locale
-        (
+    public Locale
+    (
             byte* language = null,
             byte* country = null
-        ) : this()
+    ) : this()
+    {
+        if (language is not null)
         {
-            if (language is not null)
-            {
-                Language = language;
-            }
-
-            if (country is not null)
-            {
-                Country = country;
-            }
+            Language = language;
         }
 
-
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
-        [NativeName("Name", "language")]
-        public byte* Language;
-
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
-        [NativeName("Name", "country")]
-        public byte* Country;
+        if (country is not null)
+        {
+            Country = country;
+        }
     }
+
+
+    [NativeName("Type", "const char *")]
+    [NativeName("Type.Name", "const char *")]
+    [NativeName("Name", "language")]
+    public byte* Language;
+
+    [NativeName("Type", "const char *")]
+    [NativeName("Type.Name", "const char *")]
+    [NativeName("Name", "country")]
+    public byte* Country;
 }

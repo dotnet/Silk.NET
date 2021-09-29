@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_FEATURE_DATA_D3D12_OPTIONS")]
+public unsafe partial struct FeatureDataD3D12Options
 {
-    [NativeName("Name", "D3D12_FEATURE_DATA_D3D12_OPTIONS")]
-    public unsafe partial struct FeatureDataD3D12Options
-    {
-        public FeatureDataD3D12Options
-        (
+    public FeatureDataD3D12Options
+    (
             int? doublePrecisionFloatShaderOps = null,
             int? outputMergerLogicOp = null,
             ShaderMinPrecisionSupport? minPrecisionSupport = null,
@@ -36,158 +36,157 @@ namespace Silk.NET.Direct3D12
             int? crossAdapterRowMajorTextureSupported = null,
             int? vPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation = null,
             ResourceHeapTier? resourceHeapTier = null
-        ) : this()
+    ) : this()
+    {
+        if (doublePrecisionFloatShaderOps is not null)
         {
-            if (doublePrecisionFloatShaderOps is not null)
-            {
-                DoublePrecisionFloatShaderOps = doublePrecisionFloatShaderOps.Value;
-            }
-
-            if (outputMergerLogicOp is not null)
-            {
-                OutputMergerLogicOp = outputMergerLogicOp.Value;
-            }
-
-            if (minPrecisionSupport is not null)
-            {
-                MinPrecisionSupport = minPrecisionSupport.Value;
-            }
-
-            if (tiledResourcesTier is not null)
-            {
-                TiledResourcesTier = tiledResourcesTier.Value;
-            }
-
-            if (resourceBindingTier is not null)
-            {
-                ResourceBindingTier = resourceBindingTier.Value;
-            }
-
-            if (pSSpecifiedStencilRefSupported is not null)
-            {
-                PSSpecifiedStencilRefSupported = pSSpecifiedStencilRefSupported.Value;
-            }
-
-            if (typedUAVLoadAdditionalFormats is not null)
-            {
-                TypedUAVLoadAdditionalFormats = typedUAVLoadAdditionalFormats.Value;
-            }
-
-            if (rOVsSupported is not null)
-            {
-                ROVsSupported = rOVsSupported.Value;
-            }
-
-            if (conservativeRasterizationTier is not null)
-            {
-                ConservativeRasterizationTier = conservativeRasterizationTier.Value;
-            }
-
-            if (maxGPUVirtualAddressBitsPerResource is not null)
-            {
-                MaxGPUVirtualAddressBitsPerResource = maxGPUVirtualAddressBitsPerResource.Value;
-            }
-
-            if (standardSwizzle64KBSupported is not null)
-            {
-                StandardSwizzle64KBSupported = standardSwizzle64KBSupported.Value;
-            }
-
-            if (crossNodeSharingTier is not null)
-            {
-                CrossNodeSharingTier = crossNodeSharingTier.Value;
-            }
-
-            if (crossAdapterRowMajorTextureSupported is not null)
-            {
-                CrossAdapterRowMajorTextureSupported = crossAdapterRowMajorTextureSupported.Value;
-            }
-
-            if (vPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation is not null)
-            {
-                VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation = vPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation.Value;
-            }
-
-            if (resourceHeapTier is not null)
-            {
-                ResourceHeapTier = resourceHeapTier.Value;
-            }
+            DoublePrecisionFloatShaderOps = doublePrecisionFloatShaderOps.Value;
         }
 
+        if (outputMergerLogicOp is not null)
+        {
+            OutputMergerLogicOp = outputMergerLogicOp.Value;
+        }
 
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "DoublePrecisionFloatShaderOps")]
-        public int DoublePrecisionFloatShaderOps;
+        if (minPrecisionSupport is not null)
+        {
+            MinPrecisionSupport = minPrecisionSupport.Value;
+        }
 
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "OutputMergerLogicOp")]
-        public int OutputMergerLogicOp;
+        if (tiledResourcesTier is not null)
+        {
+            TiledResourcesTier = tiledResourcesTier.Value;
+        }
 
-        [NativeName("Type", "D3D12_SHADER_MIN_PRECISION_SUPPORT")]
-        [NativeName("Type.Name", "D3D12_SHADER_MIN_PRECISION_SUPPORT")]
-        [NativeName("Name", "MinPrecisionSupport")]
-        public ShaderMinPrecisionSupport MinPrecisionSupport;
+        if (resourceBindingTier is not null)
+        {
+            ResourceBindingTier = resourceBindingTier.Value;
+        }
 
-        [NativeName("Type", "D3D12_TILED_RESOURCES_TIER")]
-        [NativeName("Type.Name", "D3D12_TILED_RESOURCES_TIER")]
-        [NativeName("Name", "TiledResourcesTier")]
-        public TiledResourcesTier TiledResourcesTier;
+        if (pSSpecifiedStencilRefSupported is not null)
+        {
+            PSSpecifiedStencilRefSupported = pSSpecifiedStencilRefSupported.Value;
+        }
 
-        [NativeName("Type", "D3D12_RESOURCE_BINDING_TIER")]
-        [NativeName("Type.Name", "D3D12_RESOURCE_BINDING_TIER")]
-        [NativeName("Name", "ResourceBindingTier")]
-        public ResourceBindingTier ResourceBindingTier;
+        if (typedUAVLoadAdditionalFormats is not null)
+        {
+            TypedUAVLoadAdditionalFormats = typedUAVLoadAdditionalFormats.Value;
+        }
 
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "PSSpecifiedStencilRefSupported")]
-        public int PSSpecifiedStencilRefSupported;
+        if (rOVsSupported is not null)
+        {
+            ROVsSupported = rOVsSupported.Value;
+        }
 
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "TypedUAVLoadAdditionalFormats")]
-        public int TypedUAVLoadAdditionalFormats;
+        if (conservativeRasterizationTier is not null)
+        {
+            ConservativeRasterizationTier = conservativeRasterizationTier.Value;
+        }
 
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "ROVsSupported")]
-        public int ROVsSupported;
+        if (maxGPUVirtualAddressBitsPerResource is not null)
+        {
+            MaxGPUVirtualAddressBitsPerResource = maxGPUVirtualAddressBitsPerResource.Value;
+        }
 
-        [NativeName("Type", "D3D12_CONSERVATIVE_RASTERIZATION_TIER")]
-        [NativeName("Type.Name", "D3D12_CONSERVATIVE_RASTERIZATION_TIER")]
-        [NativeName("Name", "ConservativeRasterizationTier")]
-        public ConservativeRasterizationTier ConservativeRasterizationTier;
+        if (standardSwizzle64KBSupported is not null)
+        {
+            StandardSwizzle64KBSupported = standardSwizzle64KBSupported.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "MaxGPUVirtualAddressBitsPerResource")]
-        public uint MaxGPUVirtualAddressBitsPerResource;
+        if (crossNodeSharingTier is not null)
+        {
+            CrossNodeSharingTier = crossNodeSharingTier.Value;
+        }
 
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "StandardSwizzle64KBSupported")]
-        public int StandardSwizzle64KBSupported;
+        if (crossAdapterRowMajorTextureSupported is not null)
+        {
+            CrossAdapterRowMajorTextureSupported = crossAdapterRowMajorTextureSupported.Value;
+        }
 
-        [NativeName("Type", "D3D12_CROSS_NODE_SHARING_TIER")]
-        [NativeName("Type.Name", "D3D12_CROSS_NODE_SHARING_TIER")]
-        [NativeName("Name", "CrossNodeSharingTier")]
-        public CrossNodeSharingTier CrossNodeSharingTier;
+        if (vPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation is not null)
+        {
+            VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation = vPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation.Value;
+        }
 
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "CrossAdapterRowMajorTextureSupported")]
-        public int CrossAdapterRowMajorTextureSupported;
-
-        [NativeName("Type", "BOOL")]
-        [NativeName("Type.Name", "BOOL")]
-        [NativeName("Name", "VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation")]
-        public int VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation;
-
-        [NativeName("Type", "D3D12_RESOURCE_HEAP_TIER")]
-        [NativeName("Type.Name", "D3D12_RESOURCE_HEAP_TIER")]
-        [NativeName("Name", "ResourceHeapTier")]
-        public ResourceHeapTier ResourceHeapTier;
+        if (resourceHeapTier is not null)
+        {
+            ResourceHeapTier = resourceHeapTier.Value;
+        }
     }
+
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "DoublePrecisionFloatShaderOps")]
+    public int DoublePrecisionFloatShaderOps;
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "OutputMergerLogicOp")]
+    public int OutputMergerLogicOp;
+
+    [NativeName("Type", "D3D12_SHADER_MIN_PRECISION_SUPPORT")]
+    [NativeName("Type.Name", "D3D12_SHADER_MIN_PRECISION_SUPPORT")]
+    [NativeName("Name", "MinPrecisionSupport")]
+    public ShaderMinPrecisionSupport MinPrecisionSupport;
+
+    [NativeName("Type", "D3D12_TILED_RESOURCES_TIER")]
+    [NativeName("Type.Name", "D3D12_TILED_RESOURCES_TIER")]
+    [NativeName("Name", "TiledResourcesTier")]
+    public TiledResourcesTier TiledResourcesTier;
+
+    [NativeName("Type", "D3D12_RESOURCE_BINDING_TIER")]
+    [NativeName("Type.Name", "D3D12_RESOURCE_BINDING_TIER")]
+    [NativeName("Name", "ResourceBindingTier")]
+    public ResourceBindingTier ResourceBindingTier;
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "PSSpecifiedStencilRefSupported")]
+    public int PSSpecifiedStencilRefSupported;
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "TypedUAVLoadAdditionalFormats")]
+    public int TypedUAVLoadAdditionalFormats;
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "ROVsSupported")]
+    public int ROVsSupported;
+
+    [NativeName("Type", "D3D12_CONSERVATIVE_RASTERIZATION_TIER")]
+    [NativeName("Type.Name", "D3D12_CONSERVATIVE_RASTERIZATION_TIER")]
+    [NativeName("Name", "ConservativeRasterizationTier")]
+    public ConservativeRasterizationTier ConservativeRasterizationTier;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "MaxGPUVirtualAddressBitsPerResource")]
+    public uint MaxGPUVirtualAddressBitsPerResource;
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "StandardSwizzle64KBSupported")]
+    public int StandardSwizzle64KBSupported;
+
+    [NativeName("Type", "D3D12_CROSS_NODE_SHARING_TIER")]
+    [NativeName("Type.Name", "D3D12_CROSS_NODE_SHARING_TIER")]
+    [NativeName("Name", "CrossNodeSharingTier")]
+    public CrossNodeSharingTier CrossNodeSharingTier;
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "CrossAdapterRowMajorTextureSupported")]
+    public int CrossAdapterRowMajorTextureSupported;
+
+    [NativeName("Type", "BOOL")]
+    [NativeName("Type.Name", "BOOL")]
+    [NativeName("Name", "VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation")]
+    public int VPAndRTArrayIndexFromAnyShaderFeedingRasterizerSupportedWithoutGSEmulation;
+
+    [NativeName("Type", "D3D12_RESOURCE_HEAP_TIER")]
+    [NativeName("Type.Name", "D3D12_RESOURCE_HEAP_TIER")]
+    [NativeName("Name", "ResourceHeapTier")]
+    public ResourceHeapTier ResourceHeapTier;
 }

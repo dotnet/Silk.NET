@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkVideoEncodeH264SessionCreateInfoEXT")]
+public unsafe partial struct VideoEncodeH264SessionCreateInfoEXT
 {
-    [NativeName("Name", "VkVideoEncodeH264SessionCreateInfoEXT")]
-    public unsafe partial struct VideoEncodeH264SessionCreateInfoEXT
-    {
-        public VideoEncodeH264SessionCreateInfoEXT
-        (
+    public VideoEncodeH264SessionCreateInfoEXT
+    (
             StructureType? sType = StructureType.VideoEncodeH264SessionCreateInfoExt,
             void* pNext = null,
             VideoEncodeH264CreateFlagsEXT? flags = null,
             Extent2D? maxPictureSizeInMbs = null,
             ExtensionProperties* pStdExtensionVersion = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
-
-            if (maxPictureSizeInMbs is not null)
-            {
-                MaxPictureSizeInMbs = maxPictureSizeInMbs.Value;
-            }
-
-            if (pStdExtensionVersion is not null)
-            {
-                PStdExtensionVersion = pStdExtensionVersion;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkVideoEncodeH264CreateFlagsEXT")]
-        [NativeName("Type.Name", "VkVideoEncodeH264CreateFlagsEXT")]
-        [NativeName("Name", "flags")]
-        public VideoEncodeH264CreateFlagsEXT Flags;
-/// <summary></summary>
-        [NativeName("Type", "VkExtent2D")]
-        [NativeName("Type.Name", "VkExtent2D")]
-        [NativeName("Name", "maxPictureSizeInMbs")]
-        public Extent2D MaxPictureSizeInMbs;
-/// <summary></summary>
-        [NativeName("Type", "VkExtensionProperties*")]
-        [NativeName("Type.Name", "VkExtensionProperties")]
-        [NativeName("Name", "pStdExtensionVersion")]
-        public ExtensionProperties* PStdExtensionVersion;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (flags is not null)
+        {
+            Flags = flags.Value;
+        }
+
+        if (maxPictureSizeInMbs is not null)
+        {
+            MaxPictureSizeInMbs = maxPictureSizeInMbs.Value;
+        }
+
+        if (pStdExtensionVersion is not null)
+        {
+            PStdExtensionVersion = pStdExtensionVersion;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkVideoEncodeH264CreateFlagsEXT")]
+    [NativeName("Type.Name", "VkVideoEncodeH264CreateFlagsEXT")]
+    [NativeName("Name", "flags")]
+    public VideoEncodeH264CreateFlagsEXT Flags;
+/// <summary></summary>
+    [NativeName("Type", "VkExtent2D")]
+    [NativeName("Type.Name", "VkExtent2D")]
+    [NativeName("Name", "maxPictureSizeInMbs")]
+    public Extent2D MaxPictureSizeInMbs;
+/// <summary></summary>
+    [NativeName("Type", "VkExtensionProperties*")]
+    [NativeName("Type.Name", "VkExtensionProperties")]
+    [NativeName("Name", "pStdExtensionVersion")]
+    public ExtensionProperties* PStdExtensionVersion;
 }

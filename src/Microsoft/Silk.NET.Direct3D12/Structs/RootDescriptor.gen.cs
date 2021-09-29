@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_ROOT_DESCRIPTOR")]
+public unsafe partial struct RootDescriptor
 {
-    [NativeName("Name", "D3D12_ROOT_DESCRIPTOR")]
-    public unsafe partial struct RootDescriptor
-    {
-        public RootDescriptor
-        (
+    public RootDescriptor
+    (
             uint? shaderRegister = null,
             uint? registerSpace = null
-        ) : this()
+    ) : this()
+    {
+        if (shaderRegister is not null)
         {
-            if (shaderRegister is not null)
-            {
-                ShaderRegister = shaderRegister.Value;
-            }
-
-            if (registerSpace is not null)
-            {
-                RegisterSpace = registerSpace.Value;
-            }
+            ShaderRegister = shaderRegister.Value;
         }
 
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "ShaderRegister")]
-        public uint ShaderRegister;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "RegisterSpace")]
-        public uint RegisterSpace;
+        if (registerSpace is not null)
+        {
+            RegisterSpace = registerSpace.Value;
+        }
     }
+
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "ShaderRegister")]
+    public uint ShaderRegister;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "RegisterSpace")]
+    public uint RegisterSpace;
 }

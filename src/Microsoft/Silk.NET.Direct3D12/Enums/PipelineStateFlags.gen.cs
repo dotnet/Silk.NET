@@ -7,14 +7,13 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_PIPELINE_STATE_FLAGS")]
+public enum PipelineStateFlags : int
 {
-    [NativeName("Name", "D3D12_PIPELINE_STATE_FLAGS")]
-    public enum PipelineStateFlags : int
-    {
-        [NativeName("Name", "D3D12_PIPELINE_STATE_FLAG_NONE")]
-        PipelineStateFlagNone = 0x0,
-        [NativeName("Name", "D3D12_PIPELINE_STATE_FLAG_TOOL_DEBUG")]
-        PipelineStateFlagToolDebug = 0x1,
-    }
+    [NativeName("Name", "D3D12_PIPELINE_STATE_FLAG_NONE")]
+    PipelineStateFlagNone = 0x0,
+    [NativeName("Name", "D3D12_PIPELINE_STATE_FLAG_TOOL_DEBUG")]
+    PipelineStateFlagToolDebug = 0x1,
 }

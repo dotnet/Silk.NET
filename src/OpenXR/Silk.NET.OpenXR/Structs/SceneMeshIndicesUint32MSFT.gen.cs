@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrSceneMeshIndicesUint32MSFT")]
+public unsafe partial struct SceneMeshIndicesUint32MSFT
 {
-    [NativeName("Name", "XrSceneMeshIndicesUint32MSFT")]
-    public unsafe partial struct SceneMeshIndicesUint32MSFT
-    {
-        public SceneMeshIndicesUint32MSFT
-        (
+    public SceneMeshIndicesUint32MSFT
+    (
             StructureType? type = StructureType.TypeSceneMeshIndicesUint32Msft,
             void* next = null,
             uint? indexCapacityInput = null,
             uint? indexCountOutput = null,
             uint* indices = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (indexCapacityInput is not null)
-            {
-                IndexCapacityInput = indexCapacityInput.Value;
-            }
-
-            if (indexCountOutput is not null)
-            {
-                IndexCountOutput = indexCountOutput.Value;
-            }
-
-            if (indices is not null)
-            {
-                Indices = indices;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "indexCapacityInput")]
-        public uint IndexCapacityInput;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "indexCountOutput")]
-        public uint IndexCountOutput;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t*")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "indices")]
-        public uint* Indices;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (indexCapacityInput is not null)
+        {
+            IndexCapacityInput = indexCapacityInput.Value;
+        }
+
+        if (indexCountOutput is not null)
+        {
+            IndexCountOutput = indexCountOutput.Value;
+        }
+
+        if (indices is not null)
+        {
+            Indices = indices;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "indexCapacityInput")]
+    public uint IndexCapacityInput;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "indexCountOutput")]
+    public uint IndexCountOutput;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t*")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "indices")]
+    public uint* Indices;
 }

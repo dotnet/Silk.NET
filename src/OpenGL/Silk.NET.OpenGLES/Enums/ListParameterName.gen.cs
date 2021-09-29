@@ -7,12 +7,11 @@ using Silk.NET.Core.Attributes;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGLES
+namespace Silk.NET.OpenGLES;
+
+[NativeName("Name", "ListParameterName")]
+public enum ListParameterName : int
 {
-    [NativeName("Name", "ListParameterName")]
-    public enum ListParameterName : int
-    {
-        [NativeName("Name", "GL_LIST_PRIORITY_SGIX")]
-        ListPrioritySgix = 0x8182,
-    }
+    [NativeName("Name", "GL_LIST_PRIORITY_SGIX")]
+    ListPrioritySgix = 0x8182,
 }

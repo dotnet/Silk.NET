@@ -14,59 +14,58 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrHandJointVelocitiesEXT")]
+public unsafe partial struct HandJointVelocitiesEXT
 {
-    [NativeName("Name", "XrHandJointVelocitiesEXT")]
-    public unsafe partial struct HandJointVelocitiesEXT
-    {
-        public HandJointVelocitiesEXT
-        (
+    public HandJointVelocitiesEXT
+    (
             StructureType? type = StructureType.TypeHandJointVelocitiesExt,
             void* next = null,
             uint? jointCount = null,
             HandJointVelocityEXT* jointVelocities = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (jointCount is not null)
-            {
-                JointCount = jointCount.Value;
-            }
-
-            if (jointVelocities is not null)
-            {
-                JointVelocities = jointVelocities;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "jointCount")]
-        public uint JointCount;
-/// <summary></summary>
-        [NativeName("Type", "XrHandJointVelocityEXT*")]
-        [NativeName("Type.Name", "XrHandJointVelocityEXT")]
-        [NativeName("Name", "jointVelocities")]
-        public HandJointVelocityEXT* JointVelocities;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (jointCount is not null)
+        {
+            JointCount = jointCount.Value;
+        }
+
+        if (jointVelocities is not null)
+        {
+            JointVelocities = jointVelocities;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "jointCount")]
+    public uint JointCount;
+/// <summary></summary>
+    [NativeName("Type", "XrHandJointVelocityEXT*")]
+    [NativeName("Type.Name", "XrHandJointVelocityEXT")]
+    [NativeName("Name", "jointVelocities")]
+    public HandJointVelocityEXT* JointVelocities;
 }

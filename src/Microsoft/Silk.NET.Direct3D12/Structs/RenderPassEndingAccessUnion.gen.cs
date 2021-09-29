@@ -14,28 +14,27 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[StructLayout(LayoutKind.Explicit)]
+[NativeName("Name", "__AnonymousRecord_d3d12_L17477_C5")]
+public unsafe partial struct RenderPassEndingAccessUnion
 {
-    [StructLayout(LayoutKind.Explicit)]
-    [NativeName("Name", "__AnonymousRecord_d3d12_L17477_C5")]
-    public unsafe partial struct RenderPassEndingAccessUnion
-    {
-        public RenderPassEndingAccessUnion
-        (
+    public RenderPassEndingAccessUnion
+    (
             RenderPassEndingAccessResolveParameters? resolve = null
-        ) : this()
+    ) : this()
+    {
+        if (resolve is not null)
         {
-            if (resolve is not null)
-            {
-                Resolve = resolve.Value;
-            }
+            Resolve = resolve.Value;
         }
+    }
 
 
         [FieldOffset(0)]
-        [NativeName("Type", "D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS")]
-        [NativeName("Type.Name", "D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS")]
-        [NativeName("Name", "Resolve")]
-        public RenderPassEndingAccessResolveParameters Resolve;
-    }
+    [NativeName("Type", "D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS")]
+    [NativeName("Type.Name", "D3D12_RENDER_PASS_ENDING_ACCESS_RESOLVE_PARAMETERS")]
+    [NativeName("Name", "Resolve")]
+    public RenderPassEndingAccessResolveParameters Resolve;
 }

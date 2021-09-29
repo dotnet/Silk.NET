@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "_D3D12_SHADER_TYPE_DESC")]
+public unsafe partial struct ShaderTypeDesc
 {
-    [NativeName("Name", "_D3D12_SHADER_TYPE_DESC")]
-    public unsafe partial struct ShaderTypeDesc
-    {
-        public ShaderTypeDesc
-        (
+    public ShaderTypeDesc
+    (
             Silk.NET.Core.Native.D3DShaderVariableClass? @class = null,
             Silk.NET.Core.Native.D3DShaderVariableType? type = null,
             uint? rows = null,
@@ -29,88 +29,87 @@ namespace Silk.NET.Direct3D12
             uint? members = null,
             uint? offset = null,
             byte* name = null
-        ) : this()
+    ) : this()
+    {
+        if (@class is not null)
         {
-            if (@class is not null)
-            {
-                Class = @class.Value;
-            }
-
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (rows is not null)
-            {
-                Rows = rows.Value;
-            }
-
-            if (columns is not null)
-            {
-                Columns = columns.Value;
-            }
-
-            if (elements is not null)
-            {
-                Elements = elements.Value;
-            }
-
-            if (members is not null)
-            {
-                Members = members.Value;
-            }
-
-            if (offset is not null)
-            {
-                Offset = offset.Value;
-            }
-
-            if (name is not null)
-            {
-                Name = name;
-            }
+            Class = @class.Value;
         }
 
+        if (type is not null)
+        {
+            Type = type.Value;
+        }
 
-        [NativeName("Type", "D3D_SHADER_VARIABLE_CLASS")]
-        [NativeName("Type.Name", "D3D_SHADER_VARIABLE_CLASS")]
-        [NativeName("Name", "Class")]
-        public Silk.NET.Core.Native.D3DShaderVariableClass Class;
+        if (rows is not null)
+        {
+            Rows = rows.Value;
+        }
 
-        [NativeName("Type", "D3D_SHADER_VARIABLE_TYPE")]
-        [NativeName("Type.Name", "D3D_SHADER_VARIABLE_TYPE")]
-        [NativeName("Name", "Type")]
-        public Silk.NET.Core.Native.D3DShaderVariableType Type;
+        if (columns is not null)
+        {
+            Columns = columns.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Rows")]
-        public uint Rows;
+        if (elements is not null)
+        {
+            Elements = elements.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Columns")]
-        public uint Columns;
+        if (members is not null)
+        {
+            Members = members.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Elements")]
-        public uint Elements;
+        if (offset is not null)
+        {
+            Offset = offset.Value;
+        }
 
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Members")]
-        public uint Members;
-
-        [NativeName("Type", "UINT")]
-        [NativeName("Type.Name", "UINT")]
-        [NativeName("Name", "Offset")]
-        public uint Offset;
-
-        [NativeName("Type", "LPCSTR")]
-        [NativeName("Type.Name", "LPCSTR")]
-        [NativeName("Name", "Name")]
-        public byte* Name;
+        if (name is not null)
+        {
+            Name = name;
+        }
     }
+
+
+    [NativeName("Type", "D3D_SHADER_VARIABLE_CLASS")]
+    [NativeName("Type.Name", "D3D_SHADER_VARIABLE_CLASS")]
+    [NativeName("Name", "Class")]
+    public Silk.NET.Core.Native.D3DShaderVariableClass Class;
+
+    [NativeName("Type", "D3D_SHADER_VARIABLE_TYPE")]
+    [NativeName("Type.Name", "D3D_SHADER_VARIABLE_TYPE")]
+    [NativeName("Name", "Type")]
+    public Silk.NET.Core.Native.D3DShaderVariableType Type;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Rows")]
+    public uint Rows;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Columns")]
+    public uint Columns;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Elements")]
+    public uint Elements;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Members")]
+    public uint Members;
+
+    [NativeName("Type", "UINT")]
+    [NativeName("Type.Name", "UINT")]
+    [NativeName("Name", "Offset")]
+    public uint Offset;
+
+    [NativeName("Type", "LPCSTR")]
+    [NativeName("Type.Name", "LPCSTR")]
+    [NativeName("Name", "Name")]
+    public byte* Name;
 }

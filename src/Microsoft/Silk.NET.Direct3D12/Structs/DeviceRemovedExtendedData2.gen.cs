@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D12
+namespace Silk.NET.Direct3D12;
+
+[NativeName("Name", "D3D12_DEVICE_REMOVED_EXTENDED_DATA2")]
+public unsafe partial struct DeviceRemovedExtendedData2
 {
-    [NativeName("Name", "D3D12_DEVICE_REMOVED_EXTENDED_DATA2")]
-    public unsafe partial struct DeviceRemovedExtendedData2
-    {
-        public DeviceRemovedExtendedData2
-        (
+    public DeviceRemovedExtendedData2
+    (
             int? deviceRemovedReason = null,
             DredAutoBreadcrumbsOutput1? autoBreadcrumbsOutput = null,
             DredPageFaultOutput1? pageFaultOutput = null
-        ) : this()
+    ) : this()
+    {
+        if (deviceRemovedReason is not null)
         {
-            if (deviceRemovedReason is not null)
-            {
-                DeviceRemovedReason = deviceRemovedReason.Value;
-            }
-
-            if (autoBreadcrumbsOutput is not null)
-            {
-                AutoBreadcrumbsOutput = autoBreadcrumbsOutput.Value;
-            }
-
-            if (pageFaultOutput is not null)
-            {
-                PageFaultOutput = pageFaultOutput.Value;
-            }
+            DeviceRemovedReason = deviceRemovedReason.Value;
         }
 
+        if (autoBreadcrumbsOutput is not null)
+        {
+            AutoBreadcrumbsOutput = autoBreadcrumbsOutput.Value;
+        }
 
-        [NativeName("Type", "HRESULT")]
-        [NativeName("Type.Name", "HRESULT")]
-        [NativeName("Name", "DeviceRemovedReason")]
-        public int DeviceRemovedReason;
-
-        [NativeName("Type", "D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1")]
-        [NativeName("Type.Name", "D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1")]
-        [NativeName("Name", "AutoBreadcrumbsOutput")]
-        public DredAutoBreadcrumbsOutput1 AutoBreadcrumbsOutput;
-
-        [NativeName("Type", "D3D12_DRED_PAGE_FAULT_OUTPUT1")]
-        [NativeName("Type.Name", "D3D12_DRED_PAGE_FAULT_OUTPUT1")]
-        [NativeName("Name", "PageFaultOutput")]
-        public DredPageFaultOutput1 PageFaultOutput;
+        if (pageFaultOutput is not null)
+        {
+            PageFaultOutput = pageFaultOutput.Value;
+        }
     }
+
+
+    [NativeName("Type", "HRESULT")]
+    [NativeName("Type.Name", "HRESULT")]
+    [NativeName("Name", "DeviceRemovedReason")]
+    public int DeviceRemovedReason;
+
+    [NativeName("Type", "D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1")]
+    [NativeName("Type.Name", "D3D12_DRED_AUTO_BREADCRUMBS_OUTPUT1")]
+    [NativeName("Name", "AutoBreadcrumbsOutput")]
+    public DredAutoBreadcrumbsOutput1 AutoBreadcrumbsOutput;
+
+    [NativeName("Type", "D3D12_DRED_PAGE_FAULT_OUTPUT1")]
+    [NativeName("Type.Name", "D3D12_DRED_PAGE_FAULT_OUTPUT1")]
+    [NativeName("Name", "PageFaultOutput")]
+    public DredPageFaultOutput1 PageFaultOutput;
 }

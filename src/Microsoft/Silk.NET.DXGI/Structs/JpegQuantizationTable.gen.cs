@@ -14,14 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI
+namespace Silk.NET.DXGI;
+
+[NativeName("Name", "DXGI_JPEG_QUANTIZATION_TABLE")]
+public unsafe partial struct JpegQuantizationTable
 {
-    [NativeName("Name", "DXGI_JPEG_QUANTIZATION_TABLE")]
-    public unsafe partial struct JpegQuantizationTable
-    {
-        [NativeName("Type", "BYTE [64]")]
-        [NativeName("Type.Name", "BYTE [64]")]
-        [NativeName("Name", "Elements")]
-        public fixed byte Elements[64];
-    }
+    [NativeName("Type", "BYTE [64]")]
+    [NativeName("Type.Name", "BYTE [64]")]
+    [NativeName("Name", "Elements")]
+    public fixed byte Elements[64];
 }

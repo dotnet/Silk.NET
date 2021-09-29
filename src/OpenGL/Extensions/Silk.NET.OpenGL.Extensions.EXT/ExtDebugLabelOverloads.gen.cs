@@ -12,46 +12,45 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.EXT
+namespace Silk.NET.OpenGL.Extensions.EXT;
+
+public static class ExtDebugLabelOverloads
 {
-    public static class ExtDebugLabelOverloads
+    public static unsafe void GetObjectLabel(this ExtDebugLabel thisApi, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label)
     {
-        public static unsafe void GetObjectLabel(this ExtDebugLabel thisApi, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label)
-        {
-            // SpanOverloader
-            thisApi.GetObjectLabel(type, @object, bufSize, length, out label.GetPinnableReference());
-        }
-
-        public static unsafe void GetObjectLabel(this ExtDebugLabel thisApi, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label)
-        {
-            // SpanOverloader
-            thisApi.GetObjectLabel(type, @object, bufSize, length, out label.GetPinnableReference());
-        }
-
-        public static unsafe void GetObjectLabel(this ExtDebugLabel thisApi, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* label)
-        {
-            // SpanOverloader
-            thisApi.GetObjectLabel(type, @object, bufSize, out length.GetPinnableReference(), label);
-        }
-
-        public static unsafe void GetObjectLabel(this ExtDebugLabel thisApi, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label)
-        {
-            // SpanOverloader
-            thisApi.GetObjectLabel(type, @object, bufSize, out length.GetPinnableReference(), out label.GetPinnableReference());
-        }
-
-        public static unsafe void GetObjectLabel(this ExtDebugLabel thisApi, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label)
-        {
-            // SpanOverloader
-            thisApi.GetObjectLabel(type, @object, bufSize, out length.GetPinnableReference(), out label.GetPinnableReference());
-        }
-
-        public static unsafe void LabelObject(this ExtDebugLabel thisApi, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
-        {
-            // SpanOverloader
-            thisApi.LabelObject(type, @object, length, in label.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        thisApi.GetObjectLabel(type, @object, bufSize, length, out label.GetPinnableReference());
     }
+
+    public static unsafe void GetObjectLabel(this ExtDebugLabel thisApi, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] uint* length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label)
+    {
+        // SpanOverloader
+        thisApi.GetObjectLabel(type, @object, bufSize, length, out label.GetPinnableReference());
+    }
+
+    public static unsafe void GetObjectLabel(this ExtDebugLabel thisApi, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] byte* label)
+    {
+        // SpanOverloader
+        thisApi.GetObjectLabel(type, @object, bufSize, out length.GetPinnableReference(), label);
+    }
+
+    public static unsafe void GetObjectLabel(this ExtDebugLabel thisApi, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<byte> label)
+    {
+        // SpanOverloader
+        thisApi.GetObjectLabel(type, @object, bufSize, out length.GetPinnableReference(), out label.GetPinnableReference());
+    }
+
+    public static unsafe void GetObjectLabel(this ExtDebugLabel thisApi, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint bufSize, [Count(Count = 1), Flow(FlowDirection.Out)] Span<uint> length, [Count(Parameter = "bufSize"), Flow(FlowDirection.Out)] Span<string> label)
+    {
+        // SpanOverloader
+        thisApi.GetObjectLabel(type, @object, bufSize, out length.GetPinnableReference(), out label.GetPinnableReference());
+    }
+
+    public static unsafe void LabelObject(this ExtDebugLabel thisApi, [Flow(FlowDirection.In)] EXT type, [Flow(FlowDirection.In)] uint @object, [Flow(FlowDirection.In)] uint length, [Flow(FlowDirection.In)] ReadOnlySpan<byte> label)
+    {
+        // SpanOverloader
+        thisApi.LabelObject(type, @object, length, in label.GetPinnableReference());
+    }
+
 }
 

@@ -14,25 +14,24 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NV
+namespace Silk.NET.OpenGL.Legacy.Extensions.NV;
+
+[Extension("NV_scissor_exclusive")]
+public unsafe partial class NVScissorExclusive : NativeExtension<GL>
 {
-    [Extension("NV_scissor_exclusive")]
-    public unsafe partial class NVScissorExclusive : NativeExtension<GL>
+    public const string ExtensionName = "NV_scissor_exclusive";
+    [NativeApi(EntryPoint = "glScissorExclusiveNV")]
+    public partial void ScissorExclusive([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+
+    [NativeApi(EntryPoint = "glScissorExclusiveArrayvNV")]
+    public unsafe partial void ScissorExclusiveArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] int* v);
+
+    [NativeApi(EntryPoint = "glScissorExclusiveArrayvNV")]
+    public partial void ScissorExclusiveArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] in int v);
+
+    public NVScissorExclusive(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "NV_scissor_exclusive";
-        [NativeApi(EntryPoint = "glScissorExclusiveNV")]
-        public partial void ScissorExclusive([Flow(FlowDirection.In)] int x, [Flow(FlowDirection.In)] int y, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
-
-        [NativeApi(EntryPoint = "glScissorExclusiveArrayvNV")]
-        public unsafe partial void ScissorExclusiveArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] int* v);
-
-        [NativeApi(EntryPoint = "glScissorExclusiveArrayvNV")]
-        public partial void ScissorExclusiveArray([Flow(FlowDirection.In)] uint first, [Flow(FlowDirection.In)] uint count, [Count(Computed = "count"), Flow(FlowDirection.In)] in int v);
-
-        public NVScissorExclusive(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

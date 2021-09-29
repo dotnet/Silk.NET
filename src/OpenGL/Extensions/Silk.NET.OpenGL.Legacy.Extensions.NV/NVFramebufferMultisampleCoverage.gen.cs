@@ -14,28 +14,27 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.NV
+namespace Silk.NET.OpenGL.Legacy.Extensions.NV;
+
+[Extension("NV_framebuffer_multisample_coverage")]
+public unsafe partial class NVFramebufferMultisampleCoverage : NativeExtension<GL>
 {
-    [Extension("NV_framebuffer_multisample_coverage")]
-    public unsafe partial class NVFramebufferMultisampleCoverage : NativeExtension<GL>
+    public const string ExtensionName = "NV_framebuffer_multisample_coverage";
+    [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleCoverageNV")]
+    public partial void RenderbufferStorageMultisampleCoverage([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint coverageSamples, [Flow(FlowDirection.In)] uint colorSamples, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+
+    [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleCoverageNV")]
+    public partial void RenderbufferStorageMultisampleCoverage([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint coverageSamples, [Flow(FlowDirection.In)] uint colorSamples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+
+    [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleCoverageNV")]
+    public partial void RenderbufferStorageMultisampleCoverage([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint coverageSamples, [Flow(FlowDirection.In)] uint colorSamples, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+
+    [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleCoverageNV")]
+    public partial void RenderbufferStorageMultisampleCoverage([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint coverageSamples, [Flow(FlowDirection.In)] uint colorSamples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
+
+    public NVFramebufferMultisampleCoverage(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "NV_framebuffer_multisample_coverage";
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleCoverageNV")]
-        public partial void RenderbufferStorageMultisampleCoverage([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint coverageSamples, [Flow(FlowDirection.In)] uint colorSamples, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
-
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleCoverageNV")]
-        public partial void RenderbufferStorageMultisampleCoverage([Flow(FlowDirection.In)] NV target, [Flow(FlowDirection.In)] uint coverageSamples, [Flow(FlowDirection.In)] uint colorSamples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
-
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleCoverageNV")]
-        public partial void RenderbufferStorageMultisampleCoverage([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint coverageSamples, [Flow(FlowDirection.In)] uint colorSamples, [Flow(FlowDirection.In)] NV internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
-
-        [NativeApi(EntryPoint = "glRenderbufferStorageMultisampleCoverageNV")]
-        public partial void RenderbufferStorageMultisampleCoverage([Flow(FlowDirection.In)] RenderbufferTarget target, [Flow(FlowDirection.In)] uint coverageSamples, [Flow(FlowDirection.In)] uint colorSamples, [Flow(FlowDirection.In)] InternalFormat internalformat, [Flow(FlowDirection.In)] uint width, [Flow(FlowDirection.In)] uint height);
-
-        public NVFramebufferMultisampleCoverage(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

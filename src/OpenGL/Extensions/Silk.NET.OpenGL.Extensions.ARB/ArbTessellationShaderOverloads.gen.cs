@@ -12,22 +12,21 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Extensions.ARB
+namespace Silk.NET.OpenGL.Extensions.ARB;
+
+public static class ArbTessellationShaderOverloads
 {
-    public static class ArbTessellationShaderOverloads
+    public static unsafe void PatchParameter(this ArbTessellationShader thisApi, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> values)
     {
-        public static unsafe void PatchParameter(this ArbTessellationShader thisApi, [Flow(FlowDirection.In)] ARB pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> values)
-        {
-            // SpanOverloader
-            thisApi.PatchParameter(pname, in values.GetPinnableReference());
-        }
-
-        public static unsafe void PatchParameter(this ArbTessellationShader thisApi, [Flow(FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> values)
-        {
-            // SpanOverloader
-            thisApi.PatchParameter(pname, in values.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        thisApi.PatchParameter(pname, in values.GetPinnableReference());
     }
+
+    public static unsafe void PatchParameter(this ArbTessellationShader thisApi, [Flow(FlowDirection.In)] PatchParameterName pname, [Count(Computed = "pname"), Flow(FlowDirection.In)] ReadOnlySpan<float> values)
+    {
+        // SpanOverloader
+        thisApi.PatchParameter(pname, in values.GetPinnableReference());
+    }
+
 }
 

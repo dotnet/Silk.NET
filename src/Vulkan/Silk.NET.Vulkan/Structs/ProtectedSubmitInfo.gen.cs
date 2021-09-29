@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkProtectedSubmitInfo")]
+public unsafe partial struct ProtectedSubmitInfo
 {
-    [NativeName("Name", "VkProtectedSubmitInfo")]
-    public unsafe partial struct ProtectedSubmitInfo
-    {
-        public ProtectedSubmitInfo
-        (
+    public ProtectedSubmitInfo
+    (
             StructureType? sType = StructureType.ProtectedSubmitInfo,
             void* pNext = null,
             Bool32? protectedSubmit = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (protectedSubmit is not null)
-            {
-                ProtectedSubmit = protectedSubmit.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkBool32")]
-        [NativeName("Type.Name", "VkBool32")]
-        [NativeName("Name", "protectedSubmit")]
-        public Bool32 ProtectedSubmit;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (protectedSubmit is not null)
+        {
+            ProtectedSubmit = protectedSubmit.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkBool32")]
+    [NativeName("Type.Name", "VkBool32")]
+    [NativeName("Name", "protectedSubmit")]
+    public Bool32 ProtectedSubmit;
 }

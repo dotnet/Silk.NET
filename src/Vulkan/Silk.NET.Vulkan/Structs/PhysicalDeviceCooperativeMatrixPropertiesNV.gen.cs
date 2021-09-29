@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPhysicalDeviceCooperativeMatrixPropertiesNV")]
+public unsafe partial struct PhysicalDeviceCooperativeMatrixPropertiesNV
 {
-    [NativeName("Name", "VkPhysicalDeviceCooperativeMatrixPropertiesNV")]
-    public unsafe partial struct PhysicalDeviceCooperativeMatrixPropertiesNV
-    {
-        public PhysicalDeviceCooperativeMatrixPropertiesNV
-        (
+    public PhysicalDeviceCooperativeMatrixPropertiesNV
+    (
             StructureType? sType = StructureType.PhysicalDeviceCooperativeMatrixPropertiesNV,
             void* pNext = null,
             ShaderStageFlags? cooperativeMatrixSupportedStages = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (cooperativeMatrixSupportedStages is not null)
-            {
-                CooperativeMatrixSupportedStages = cooperativeMatrixSupportedStages.Value;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkShaderStageFlags")]
-        [NativeName("Type.Name", "VkShaderStageFlags")]
-        [NativeName("Name", "cooperativeMatrixSupportedStages")]
-        public ShaderStageFlags CooperativeMatrixSupportedStages;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (cooperativeMatrixSupportedStages is not null)
+        {
+            CooperativeMatrixSupportedStages = cooperativeMatrixSupportedStages.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkShaderStageFlags")]
+    [NativeName("Type.Name", "VkShaderStageFlags")]
+    [NativeName("Name", "cooperativeMatrixSupportedStages")]
+    public ShaderStageFlags CooperativeMatrixSupportedStages;
 }

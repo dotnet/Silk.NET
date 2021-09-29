@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.DXGI
+namespace Silk.NET.DXGI;
+
+[NativeName("Name", "DXGI_OUTDUPL_MOVE_RECT")]
+public unsafe partial struct OutduplMoveRect
 {
-    [NativeName("Name", "DXGI_OUTDUPL_MOVE_RECT")]
-    public unsafe partial struct OutduplMoveRect
-    {
-        public OutduplMoveRect
-        (
+    public OutduplMoveRect
+    (
             Silk.NET.Maths.Vector2D<int>? sourcePoint = null,
             Silk.NET.Maths.Rectangle<int>? destinationRect = null
-        ) : this()
+    ) : this()
+    {
+        if (sourcePoint is not null)
         {
-            if (sourcePoint is not null)
-            {
-                SourcePoint = sourcePoint.Value;
-            }
-
-            if (destinationRect is not null)
-            {
-                DestinationRect = destinationRect.Value;
-            }
+            SourcePoint = sourcePoint.Value;
         }
 
-
-        [NativeName("Type", "POINT")]
-        [NativeName("Type.Name", "POINT")]
-        [NativeName("Name", "SourcePoint")]
-        public Silk.NET.Maths.Vector2D<int> SourcePoint;
-
-        [NativeName("Type", "RECT")]
-        [NativeName("Type.Name", "RECT")]
-        [NativeName("Name", "DestinationRect")]
-        public Silk.NET.Maths.Rectangle<int> DestinationRect;
+        if (destinationRect is not null)
+        {
+            DestinationRect = destinationRect.Value;
+        }
     }
+
+
+    [NativeName("Type", "POINT")]
+    [NativeName("Type.Name", "POINT")]
+    [NativeName("Name", "SourcePoint")]
+    public Silk.NET.Maths.Vector2D<int> SourcePoint;
+
+    [NativeName("Type", "RECT")]
+    [NativeName("Type.Name", "RECT")]
+    [NativeName("Name", "DestinationRect")]
+    public Silk.NET.Maths.Rectangle<int> DestinationRect;
 }

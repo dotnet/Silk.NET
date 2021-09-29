@@ -14,20 +14,19 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Extensions.AMD
-{
-    [Extension("VK_AMD_display_native_hdr")]
-    public unsafe partial class AmdDisplayNativeHdr : NativeExtension<Vk>
-    {
-        public const string ExtensionName = "VK_AMD_display_native_hdr";
-        /// <summary>To be documented.</summary>
-        [NativeApi(EntryPoint = "vkSetLocalDimmingAMD")]
-        public partial void SetLocalDimming([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapChain, [Count(Count = 0)] Bool32 localDimmingEnable);
+namespace Silk.NET.Vulkan.Extensions.AMD;
 
-        public AmdDisplayNativeHdr(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+[Extension("VK_AMD_display_native_hdr")]
+public unsafe partial class AmdDisplayNativeHdr : NativeExtension<Vk>
+{
+    public const string ExtensionName = "VK_AMD_display_native_hdr";
+    /// <summary>To be documented.</summary>
+    [NativeApi(EntryPoint = "vkSetLocalDimmingAMD")]
+    public partial void SetLocalDimming([Count(Count = 0)] Device device, [Count(Count = 0)] SwapchainKHR swapChain, [Count(Count = 0)] Bool32 localDimmingEnable);
+
+    public AmdDisplayNativeHdr(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

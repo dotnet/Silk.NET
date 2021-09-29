@@ -12,24 +12,23 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR.Extensions.FB
+namespace Silk.NET.OpenXR.Extensions.FB;
+
+public static class FBSwapchainUpdateStateOverloads
 {
-    public static class FBSwapchainUpdateStateOverloads
+    /// <summary>To be documented.</summary>
+    public static unsafe Result GetSwapchainStateFB(this FBSwapchainUpdateState thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] Span<SwapchainStateBaseHeaderFB> state)
     {
-        /// <summary>To be documented.</summary>
-        public static unsafe Result GetSwapchainStateFB(this FBSwapchainUpdateState thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0)] Span<SwapchainStateBaseHeaderFB> state)
-        {
-            // SpanOverloader
-            return thisApi.GetSwapchainStateFB(swapchain, ref state.GetPinnableReference());
-        }
-
-        /// <summary>To be documented.</summary>
-        public static unsafe Result UpdateSwapchainFB(this FBSwapchainUpdateState thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainStateBaseHeaderFB> state)
-        {
-            // SpanOverloader
-            return thisApi.UpdateSwapchainFB(swapchain, in state.GetPinnableReference());
-        }
-
+        // SpanOverloader
+        return thisApi.GetSwapchainStateFB(swapchain, ref state.GetPinnableReference());
     }
+
+    /// <summary>To be documented.</summary>
+    public static unsafe Result UpdateSwapchainFB(this FBSwapchainUpdateState thisApi, [Count(Count = 0)] Swapchain swapchain, [Count(Count = 0), Flow(FlowDirection.In)] ReadOnlySpan<SwapchainStateBaseHeaderFB> state)
+    {
+        // SpanOverloader
+        return thisApi.UpdateSwapchainFB(swapchain, in state.GetPinnableReference());
+    }
+
 }
 

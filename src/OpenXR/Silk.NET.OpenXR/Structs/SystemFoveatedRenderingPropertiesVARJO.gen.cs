@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrSystemFoveatedRenderingPropertiesVARJO")]
+public unsafe partial struct SystemFoveatedRenderingPropertiesVARJO
 {
-    [NativeName("Name", "XrSystemFoveatedRenderingPropertiesVARJO")]
-    public unsafe partial struct SystemFoveatedRenderingPropertiesVARJO
-    {
-        public SystemFoveatedRenderingPropertiesVARJO
-        (
+    public SystemFoveatedRenderingPropertiesVARJO
+    (
             StructureType? type = StructureType.TypeSystemFoveatedRenderingPropertiesVarjo,
             void* next = null,
             uint? supportsFoveatedRendering = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (supportsFoveatedRendering is not null)
-            {
-                SupportsFoveatedRendering = supportsFoveatedRendering.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "XrBool32")]
-        [NativeName("Type.Name", "XrBool32")]
-        [NativeName("Name", "supportsFoveatedRendering")]
-        public uint SupportsFoveatedRendering;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (supportsFoveatedRendering is not null)
+        {
+            SupportsFoveatedRendering = supportsFoveatedRendering.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "XrBool32")]
+    [NativeName("Type.Name", "XrBool32")]
+    [NativeName("Name", "supportsFoveatedRendering")]
+    public uint SupportsFoveatedRendering;
 }

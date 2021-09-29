@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Assimp
+namespace Silk.NET.Assimp;
+
+[NativeName("Name", "aiMeshMorphAnim")]
+public unsafe partial struct MeshMorphAnim
 {
-    [NativeName("Name", "aiMeshMorphAnim")]
-    public unsafe partial struct MeshMorphAnim
-    {
-        public MeshMorphAnim
-        (
+    public MeshMorphAnim
+    (
             AssimpString? mName = null,
             uint? mNumKeys = null,
             MeshMorphKey* mKeys = null
-        ) : this()
+    ) : this()
+    {
+        if (mName is not null)
         {
-            if (mName is not null)
-            {
-                MName = mName.Value;
-            }
-
-            if (mNumKeys is not null)
-            {
-                MNumKeys = mNumKeys.Value;
-            }
-
-            if (mKeys is not null)
-            {
-                MKeys = mKeys;
-            }
+            MName = mName.Value;
         }
 
+        if (mNumKeys is not null)
+        {
+            MNumKeys = mNumKeys.Value;
+        }
 
-        [NativeName("Type", "aiString")]
-        [NativeName("Type.Name", "aiString")]
-        [NativeName("Name", "mName")]
-        public AssimpString MName;
-
-        [NativeName("Type", "unsigned int")]
-        [NativeName("Type.Name", "unsigned int")]
-        [NativeName("Name", "mNumKeys")]
-        public uint MNumKeys;
-
-        [NativeName("Type", "aiMeshMorphKey *")]
-        [NativeName("Type.Name", "aiMeshMorphKey *")]
-        [NativeName("Name", "mKeys")]
-        public MeshMorphKey* MKeys;
+        if (mKeys is not null)
+        {
+            MKeys = mKeys;
+        }
     }
+
+
+    [NativeName("Type", "aiString")]
+    [NativeName("Type.Name", "aiString")]
+    [NativeName("Name", "mName")]
+    public AssimpString MName;
+
+    [NativeName("Type", "unsigned int")]
+    [NativeName("Type.Name", "unsigned int")]
+    [NativeName("Name", "mNumKeys")]
+    public uint MNumKeys;
+
+    [NativeName("Type", "aiMeshMorphKey *")]
+    [NativeName("Type.Name", "aiMeshMorphKey *")]
+    [NativeName("Name", "mKeys")]
+    public MeshMorphKey* MKeys;
 }

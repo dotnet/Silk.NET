@@ -14,70 +14,69 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkPipelineCreationFeedbackCreateInfoEXT")]
+public unsafe partial struct PipelineCreationFeedbackCreateInfoEXT
 {
-    [NativeName("Name", "VkPipelineCreationFeedbackCreateInfoEXT")]
-    public unsafe partial struct PipelineCreationFeedbackCreateInfoEXT
-    {
-        public PipelineCreationFeedbackCreateInfoEXT
-        (
+    public PipelineCreationFeedbackCreateInfoEXT
+    (
             StructureType? sType = StructureType.PipelineCreationFeedbackCreateInfoExt,
             void* pNext = null,
             PipelineCreationFeedbackEXT* pPipelineCreationFeedback = null,
             uint? pipelineStageCreationFeedbackCount = null,
             PipelineCreationFeedbackEXT* pPipelineStageCreationFeedbacks = null
-        ) : this()
+    ) : this()
+    {
+        if (sType is not null)
         {
-            if (sType is not null)
-            {
-                SType = sType.Value;
-            }
-
-            if (pNext is not null)
-            {
-                PNext = pNext;
-            }
-
-            if (pPipelineCreationFeedback is not null)
-            {
-                PPipelineCreationFeedback = pPipelineCreationFeedback;
-            }
-
-            if (pipelineStageCreationFeedbackCount is not null)
-            {
-                PipelineStageCreationFeedbackCount = pipelineStageCreationFeedbackCount.Value;
-            }
-
-            if (pPipelineStageCreationFeedbacks is not null)
-            {
-                PPipelineStageCreationFeedbacks = pPipelineStageCreationFeedbacks;
-            }
+            SType = sType.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkStructureType")]
-        [NativeName("Type.Name", "VkStructureType")]
-        [NativeName("Name", "sType")]
-        public StructureType SType;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "pNext")]
-        public void* PNext;
-/// <summary></summary>
-        [NativeName("Type", "VkPipelineCreationFeedbackEXT*")]
-        [NativeName("Type.Name", "VkPipelineCreationFeedbackEXT")]
-        [NativeName("Name", "pPipelineCreationFeedback")]
-        public PipelineCreationFeedbackEXT* PPipelineCreationFeedback;
-/// <summary></summary>
-        [NativeName("Type", "uint32_t")]
-        [NativeName("Type.Name", "uint32_t")]
-        [NativeName("Name", "pipelineStageCreationFeedbackCount")]
-        public uint PipelineStageCreationFeedbackCount;
-/// <summary></summary>
-        [NativeName("Type", "VkPipelineCreationFeedbackEXT*")]
-        [NativeName("Type.Name", "VkPipelineCreationFeedbackEXT")]
-        [NativeName("Name", "pPipelineStageCreationFeedbacks")]
-        public PipelineCreationFeedbackEXT* PPipelineStageCreationFeedbacks;
+        if (pNext is not null)
+        {
+            PNext = pNext;
+        }
+
+        if (pPipelineCreationFeedback is not null)
+        {
+            PPipelineCreationFeedback = pPipelineCreationFeedback;
+        }
+
+        if (pipelineStageCreationFeedbackCount is not null)
+        {
+            PipelineStageCreationFeedbackCount = pipelineStageCreationFeedbackCount.Value;
+        }
+
+        if (pPipelineStageCreationFeedbacks is not null)
+        {
+            PPipelineStageCreationFeedbacks = pPipelineStageCreationFeedbacks;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkStructureType")]
+    [NativeName("Type.Name", "VkStructureType")]
+    [NativeName("Name", "sType")]
+    public StructureType SType;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "pNext")]
+    public void* PNext;
+/// <summary></summary>
+    [NativeName("Type", "VkPipelineCreationFeedbackEXT*")]
+    [NativeName("Type.Name", "VkPipelineCreationFeedbackEXT")]
+    [NativeName("Name", "pPipelineCreationFeedback")]
+    public PipelineCreationFeedbackEXT* PPipelineCreationFeedback;
+/// <summary></summary>
+    [NativeName("Type", "uint32_t")]
+    [NativeName("Type.Name", "uint32_t")]
+    [NativeName("Name", "pipelineStageCreationFeedbackCount")]
+    public uint PipelineStageCreationFeedbackCount;
+/// <summary></summary>
+    [NativeName("Type", "VkPipelineCreationFeedbackEXT*")]
+    [NativeName("Type.Name", "VkPipelineCreationFeedbackEXT")]
+    [NativeName("Name", "pPipelineStageCreationFeedbacks")]
+    public PipelineCreationFeedbackEXT* PPipelineStageCreationFeedbacks;
 }

@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan.Video
+namespace Silk.NET.Vulkan.Video;
+
+[NativeName("Name", "StdVideoEncodeH264SliceHeaderFlags")]
+public unsafe partial struct StdVideoEncodeH264SliceHeaderFlags
 {
-    [NativeName("Name", "StdVideoEncodeH264SliceHeaderFlags")]
-    public unsafe partial struct StdVideoEncodeH264SliceHeaderFlags
-    {
-        public StdVideoEncodeH264SliceHeaderFlags
-        (
+    public StdVideoEncodeH264SliceHeaderFlags
+    (
             uint? idrFlag = null,
             uint? isReferenceFlag = null,
             uint? numRefIdxActiveOverrideFlag = null,
@@ -28,101 +28,100 @@ namespace Silk.NET.Vulkan.Video
             uint? longTermReferenceFlag = null,
             uint? adaptiveRefPicMarkingModeFlag = null,
             uint? noPriorReferencesAvailableFlag = null
-        ) : this()
+    ) : this()
+    {
+        if (idrFlag is not null)
         {
-            if (idrFlag is not null)
-            {
-                IdrFlag = idrFlag.Value;
-            }
-
-            if (isReferenceFlag is not null)
-            {
-                IsReferenceFlag = isReferenceFlag.Value;
-            }
-
-            if (numRefIdxActiveOverrideFlag is not null)
-            {
-                NumRefIdxActiveOverrideFlag = numRefIdxActiveOverrideFlag.Value;
-            }
-
-            if (noOutputOfPriorPicsFlag is not null)
-            {
-                NoOutputOfPriorPicsFlag = noOutputOfPriorPicsFlag.Value;
-            }
-
-            if (longTermReferenceFlag is not null)
-            {
-                LongTermReferenceFlag = longTermReferenceFlag.Value;
-            }
-
-            if (adaptiveRefPicMarkingModeFlag is not null)
-            {
-                AdaptiveRefPicMarkingModeFlag = adaptiveRefPicMarkingModeFlag.Value;
-            }
-
-            if (noPriorReferencesAvailableFlag is not null)
-            {
-                NoPriorReferencesAvailableFlag = noPriorReferencesAvailableFlag.Value;
-            }
+            IdrFlag = idrFlag.Value;
         }
 
-
-        private uint _bitfield1;
-
-        public uint IdrFlag
+        if (isReferenceFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)(_bitfield1 & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
+            IsReferenceFlag = isReferenceFlag.Value;
         }
 
-        public uint IsReferenceFlag
+        if (numRefIdxActiveOverrideFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 1) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+            NumRefIdxActiveOverrideFlag = numRefIdxActiveOverrideFlag.Value;
         }
 
-        public uint NumRefIdxActiveOverrideFlag
+        if (noOutputOfPriorPicsFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 2) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+            NoOutputOfPriorPicsFlag = noOutputOfPriorPicsFlag.Value;
         }
 
-        public uint NoOutputOfPriorPicsFlag
+        if (longTermReferenceFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 3) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
+            LongTermReferenceFlag = longTermReferenceFlag.Value;
         }
 
-        public uint LongTermReferenceFlag
+        if (adaptiveRefPicMarkingModeFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 4) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
+            AdaptiveRefPicMarkingModeFlag = adaptiveRefPicMarkingModeFlag.Value;
         }
 
-        public uint AdaptiveRefPicMarkingModeFlag
+        if (noPriorReferencesAvailableFlag is not null)
         {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 5) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 5)) | (uint)(((uint)(value) & 0x1u) << 5));
+            NoPriorReferencesAvailableFlag = noPriorReferencesAvailableFlag.Value;
         }
+    }
 
-        public uint NoPriorReferencesAvailableFlag
-        {
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            get => (uint)((_bitfield1 >> 6) & 0x1u);
-            [MethodImpl(MethodImplOptions.AggressiveInlining)]
-            set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 6)) | (uint)(((uint)(value) & 0x1u) << 6));
-        }
+
+    private uint _bitfield1;
+
+    public uint IdrFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)(_bitfield1 & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~0x1u) | (uint)((uint)(value) & 0x1u));
+    }
+
+    public uint IsReferenceFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 1) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 1)) | (uint)(((uint)(value) & 0x1u) << 1));
+    }
+
+    public uint NumRefIdxActiveOverrideFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 2) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 2)) | (uint)(((uint)(value) & 0x1u) << 2));
+    }
+
+    public uint NoOutputOfPriorPicsFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 3) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 3)) | (uint)(((uint)(value) & 0x1u) << 3));
+    }
+
+    public uint LongTermReferenceFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 4) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 4)) | (uint)(((uint)(value) & 0x1u) << 4));
+    }
+
+    public uint AdaptiveRefPicMarkingModeFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 5) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 5)) | (uint)(((uint)(value) & 0x1u) << 5));
+    }
+
+    public uint NoPriorReferencesAvailableFlag
+    {
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        get => (uint)((_bitfield1 >> 6) & 0x1u);
+        [MethodImpl(MethodImplOptions.AggressiveInlining)]
+        set => _bitfield1 = (uint)((uint)(_bitfield1 & ~(0x1u << 6)) | (uint)(((uint)(value) & 0x1u) << 6));
     }
 }

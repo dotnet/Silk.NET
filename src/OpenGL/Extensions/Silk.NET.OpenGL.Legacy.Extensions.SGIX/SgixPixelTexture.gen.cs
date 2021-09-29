@@ -14,22 +14,21 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX
+namespace Silk.NET.OpenGL.Legacy.Extensions.SGIX;
+
+[Extension("SGIX_pixel_texture")]
+public unsafe partial class SgixPixelTexture : NativeExtension<GL>
 {
-    [Extension("SGIX_pixel_texture")]
-    public unsafe partial class SgixPixelTexture : NativeExtension<GL>
+    public const string ExtensionName = "SGIX_pixel_texture";
+    [NativeApi(EntryPoint = "glPixelTexGenSGIX")]
+    public partial void PixelTexGen([Flow(FlowDirection.In)] SGIX mode);
+
+    [NativeApi(EntryPoint = "glPixelTexGenSGIX")]
+    public partial void PixelTexGen([Flow(FlowDirection.In)] PixelTexGenModeSGIX mode);
+
+    public SgixPixelTexture(INativeContext ctx)
+        : base(ctx)
     {
-        public const string ExtensionName = "SGIX_pixel_texture";
-        [NativeApi(EntryPoint = "glPixelTexGenSGIX")]
-        public partial void PixelTexGen([Flow(FlowDirection.In)] SGIX mode);
-
-        [NativeApi(EntryPoint = "glPixelTexGenSGIX")]
-        public partial void PixelTexGen([Flow(FlowDirection.In)] PixelTexGenModeSGIX mode);
-
-        public SgixPixelTexture(INativeContext ctx)
-            : base(ctx)
-        {
-        }
     }
 }
 

@@ -14,13 +14,13 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL
+namespace Silk.NET.SDL;
+
+[NativeName("Name", "SDL_AudioSpec")]
+public unsafe partial struct AudioSpec
 {
-    [NativeName("Name", "SDL_AudioSpec")]
-    public unsafe partial struct AudioSpec
-    {
-        public AudioSpec
-        (
+    public AudioSpec
+    (
             int? freq = null,
             ushort? format = null,
             byte? channels = null,
@@ -30,98 +30,97 @@ namespace Silk.NET.SDL
             uint? size = null,
             PfnAudioCallback? callback = null,
             void* userdata = null
-        ) : this()
+    ) : this()
+    {
+        if (freq is not null)
         {
-            if (freq is not null)
-            {
-                Freq = freq.Value;
-            }
-
-            if (format is not null)
-            {
-                Format = format.Value;
-            }
-
-            if (channels is not null)
-            {
-                Channels = channels.Value;
-            }
-
-            if (silence is not null)
-            {
-                Silence = silence.Value;
-            }
-
-            if (samples is not null)
-            {
-                Samples = samples.Value;
-            }
-
-            if (padding is not null)
-            {
-                Padding = padding.Value;
-            }
-
-            if (size is not null)
-            {
-                Size = size.Value;
-            }
-
-            if (callback is not null)
-            {
-                Callback = callback.Value;
-            }
-
-            if (userdata is not null)
-            {
-                Userdata = userdata;
-            }
+            Freq = freq.Value;
         }
 
+        if (format is not null)
+        {
+            Format = format.Value;
+        }
 
-        [NativeName("Type", "int")]
-        [NativeName("Type.Name", "int")]
-        [NativeName("Name", "freq")]
-        public int Freq;
+        if (channels is not null)
+        {
+            Channels = channels.Value;
+        }
 
-        [NativeName("Type", "SDL_AudioFormat")]
-        [NativeName("Type.Name", "SDL_AudioFormat")]
-        [NativeName("Name", "format")]
-        public ushort Format;
+        if (silence is not null)
+        {
+            Silence = silence.Value;
+        }
 
-        [NativeName("Type", "Uint8")]
-        [NativeName("Type.Name", "Uint8")]
-        [NativeName("Name", "channels")]
-        public byte Channels;
+        if (samples is not null)
+        {
+            Samples = samples.Value;
+        }
 
-        [NativeName("Type", "Uint8")]
-        [NativeName("Type.Name", "Uint8")]
-        [NativeName("Name", "silence")]
-        public byte Silence;
+        if (padding is not null)
+        {
+            Padding = padding.Value;
+        }
 
-        [NativeName("Type", "Uint16")]
-        [NativeName("Type.Name", "Uint16")]
-        [NativeName("Name", "samples")]
-        public ushort Samples;
+        if (size is not null)
+        {
+            Size = size.Value;
+        }
 
-        [NativeName("Type", "Uint16")]
-        [NativeName("Type.Name", "Uint16")]
-        [NativeName("Name", "padding")]
-        public ushort Padding;
+        if (callback is not null)
+        {
+            Callback = callback.Value;
+        }
 
-        [NativeName("Type", "Uint32")]
-        [NativeName("Type.Name", "Uint32")]
-        [NativeName("Name", "size")]
-        public uint Size;
-
-        [NativeName("Type", "SDL_AudioCallback")]
-        [NativeName("Type.Name", "SDL_AudioCallback")]
-        [NativeName("Name", "callback")]
-        public PfnAudioCallback Callback;
-
-        [NativeName("Type", "void *")]
-        [NativeName("Type.Name", "void *")]
-        [NativeName("Name", "userdata")]
-        public void* Userdata;
+        if (userdata is not null)
+        {
+            Userdata = userdata;
+        }
     }
+
+
+    [NativeName("Type", "int")]
+    [NativeName("Type.Name", "int")]
+    [NativeName("Name", "freq")]
+    public int Freq;
+
+    [NativeName("Type", "SDL_AudioFormat")]
+    [NativeName("Type.Name", "SDL_AudioFormat")]
+    [NativeName("Name", "format")]
+    public ushort Format;
+
+    [NativeName("Type", "Uint8")]
+    [NativeName("Type.Name", "Uint8")]
+    [NativeName("Name", "channels")]
+    public byte Channels;
+
+    [NativeName("Type", "Uint8")]
+    [NativeName("Type.Name", "Uint8")]
+    [NativeName("Name", "silence")]
+    public byte Silence;
+
+    [NativeName("Type", "Uint16")]
+    [NativeName("Type.Name", "Uint16")]
+    [NativeName("Name", "samples")]
+    public ushort Samples;
+
+    [NativeName("Type", "Uint16")]
+    [NativeName("Type.Name", "Uint16")]
+    [NativeName("Name", "padding")]
+    public ushort Padding;
+
+    [NativeName("Type", "Uint32")]
+    [NativeName("Type.Name", "Uint32")]
+    [NativeName("Name", "size")]
+    public uint Size;
+
+    [NativeName("Type", "SDL_AudioCallback")]
+    [NativeName("Type.Name", "SDL_AudioCallback")]
+    [NativeName("Name", "callback")]
+    public PfnAudioCallback Callback;
+
+    [NativeName("Type", "void *")]
+    [NativeName("Type.Name", "void *")]
+    [NativeName("Name", "userdata")]
+    public void* Userdata;
 }

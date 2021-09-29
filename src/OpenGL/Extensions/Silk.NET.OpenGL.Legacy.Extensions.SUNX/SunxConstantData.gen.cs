@@ -14,19 +14,18 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.SUNX
-{
-    [Extension("SUNX_constant_data")]
-    public unsafe partial class SunxConstantData : NativeExtension<GL>
-    {
-        public const string ExtensionName = "SUNX_constant_data";
-        [NativeApi(EntryPoint = "glFinishTextureSUNX")]
-        public partial void FinishTexture();
+namespace Silk.NET.OpenGL.Legacy.Extensions.SUNX;
 
-        public SunxConstantData(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+[Extension("SUNX_constant_data")]
+public unsafe partial class SunxConstantData : NativeExtension<GL>
+{
+    public const string ExtensionName = "SUNX_constant_data";
+    [NativeApi(EntryPoint = "glFinishTextureSUNX")]
+    public partial void FinishTexture();
+
+    public SunxConstantData(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

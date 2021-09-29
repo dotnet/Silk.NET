@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrDebugUtilsLabelEXT")]
+public unsafe partial struct DebugUtilsLabelEXT
 {
-    [NativeName("Name", "XrDebugUtilsLabelEXT")]
-    public unsafe partial struct DebugUtilsLabelEXT
-    {
-        public DebugUtilsLabelEXT
-        (
+    public DebugUtilsLabelEXT
+    (
             StructureType? type = StructureType.TypeDebugUtilsLabelExt,
             void* next = null,
             byte* labelName = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (labelName is not null)
-            {
-                LabelName = labelName;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "char*")]
-        [NativeName("Type.Name", "char")]
-        [NativeName("Name", "labelName")]
-        public byte* LabelName;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (labelName is not null)
+        {
+            LabelName = labelName;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "char*")]
+    [NativeName("Type.Name", "char")]
+    [NativeName("Name", "labelName")]
+    public byte* LabelName;
 }

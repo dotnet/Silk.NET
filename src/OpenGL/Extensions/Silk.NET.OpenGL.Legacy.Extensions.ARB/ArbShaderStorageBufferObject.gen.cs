@@ -14,19 +14,18 @@ using Extension = Silk.NET.Core.Attributes.ExtensionAttribute;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenGL.Legacy.Extensions.ARB
-{
-    [Extension("ARB_shader_storage_buffer_object")]
-    public unsafe partial class ArbShaderStorageBufferObject : NativeExtension<GL>
-    {
-        public const string ExtensionName = "ARB_shader_storage_buffer_object";
-        [NativeApi(EntryPoint = "glShaderStorageBlockBinding")]
-        public partial void ShaderStorageBlockBinding([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint storageBlockIndex, [Flow(FlowDirection.In)] uint storageBlockBinding);
+namespace Silk.NET.OpenGL.Legacy.Extensions.ARB;
 
-        public ArbShaderStorageBufferObject(INativeContext ctx)
-            : base(ctx)
-        {
-        }
+[Extension("ARB_shader_storage_buffer_object")]
+public unsafe partial class ArbShaderStorageBufferObject : NativeExtension<GL>
+{
+    public const string ExtensionName = "ARB_shader_storage_buffer_object";
+    [NativeApi(EntryPoint = "glShaderStorageBlockBinding")]
+    public partial void ShaderStorageBlockBinding([Flow(FlowDirection.In)] uint program, [Flow(FlowDirection.In)] uint storageBlockIndex, [Flow(FlowDirection.In)] uint storageBlockBinding);
+
+    public ArbShaderStorageBufferObject(INativeContext ctx)
+        : base(ctx)
+    {
     }
 }
 

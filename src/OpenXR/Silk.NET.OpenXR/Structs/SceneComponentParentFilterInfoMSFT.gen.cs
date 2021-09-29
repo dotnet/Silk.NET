@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrSceneComponentParentFilterInfoMSFT")]
+public unsafe partial struct SceneComponentParentFilterInfoMSFT
 {
-    [NativeName("Name", "XrSceneComponentParentFilterInfoMSFT")]
-    public unsafe partial struct SceneComponentParentFilterInfoMSFT
-    {
-        public SceneComponentParentFilterInfoMSFT
-        (
+    public SceneComponentParentFilterInfoMSFT
+    (
             StructureType? type = StructureType.TypeSceneComponentParentFilterInfoMsft,
             void* next = null,
             Guid? parentId = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (parentId is not null)
-            {
-                ParentId = parentId.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "XrUuidMSFT")]
-        [NativeName("Type.Name", "XrUuidMSFT")]
-        [NativeName("Name", "parentId")]
-        public Guid ParentId;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (parentId is not null)
+        {
+            ParentId = parentId.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "XrUuidMSFT")]
+    [NativeName("Type.Name", "XrUuidMSFT")]
+    [NativeName("Name", "parentId")]
+    public Guid ParentId;
 }

@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrSystemColorSpacePropertiesFB")]
+public unsafe partial struct SystemColorSpacePropertiesFB
 {
-    [NativeName("Name", "XrSystemColorSpacePropertiesFB")]
-    public unsafe partial struct SystemColorSpacePropertiesFB
-    {
-        public SystemColorSpacePropertiesFB
-        (
+    public SystemColorSpacePropertiesFB
+    (
             StructureType? type = StructureType.TypeSystemColorSpacePropertiesFB,
             void* next = null,
             ColorSpaceFB? colorSpace = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (colorSpace is not null)
-            {
-                ColorSpace = colorSpace.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "XrColorSpaceFB")]
-        [NativeName("Type.Name", "XrColorSpaceFB")]
-        [NativeName("Name", "colorSpace")]
-        public ColorSpaceFB ColorSpace;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (colorSpace is not null)
+        {
+            ColorSpace = colorSpace.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "XrColorSpaceFB")]
+    [NativeName("Type.Name", "XrColorSpaceFB")]
+    [NativeName("Name", "colorSpace")]
+    public ColorSpaceFB ColorSpace;
 }

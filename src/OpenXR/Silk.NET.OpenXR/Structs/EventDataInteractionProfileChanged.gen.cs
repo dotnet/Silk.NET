@@ -14,48 +14,47 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.OpenXR
+namespace Silk.NET.OpenXR;
+
+[NativeName("Name", "XrEventDataInteractionProfileChanged")]
+public unsafe partial struct EventDataInteractionProfileChanged
 {
-    [NativeName("Name", "XrEventDataInteractionProfileChanged")]
-    public unsafe partial struct EventDataInteractionProfileChanged
-    {
-        public EventDataInteractionProfileChanged
-        (
+    public EventDataInteractionProfileChanged
+    (
             StructureType? type = StructureType.TypeEventDataInteractionProfileChanged,
             void* next = null,
             Session? session = null
-        ) : this()
+    ) : this()
+    {
+        if (type is not null)
         {
-            if (type is not null)
-            {
-                Type = type.Value;
-            }
-
-            if (next is not null)
-            {
-                Next = next;
-            }
-
-            if (session is not null)
-            {
-                Session = session.Value;
-            }
+            Type = type.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "XrStructureType")]
-        [NativeName("Type.Name", "XrStructureType")]
-        [NativeName("Name", "type")]
-        public StructureType Type;
-/// <summary></summary>
-        [NativeName("Type", "void*")]
-        [NativeName("Type.Name", "void")]
-        [NativeName("Name", "next")]
-        public void* Next;
-/// <summary></summary>
-        [NativeName("Type", "XrSession")]
-        [NativeName("Type.Name", "XrSession")]
-        [NativeName("Name", "session")]
-        public Session Session;
+        if (next is not null)
+        {
+            Next = next;
+        }
+
+        if (session is not null)
+        {
+            Session = session.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "XrStructureType")]
+    [NativeName("Type.Name", "XrStructureType")]
+    [NativeName("Name", "type")]
+    public StructureType Type;
+/// <summary></summary>
+    [NativeName("Type", "void*")]
+    [NativeName("Type.Name", "void")]
+    [NativeName("Name", "next")]
+    public void* Next;
+/// <summary></summary>
+    [NativeName("Type", "XrSession")]
+    [NativeName("Type.Name", "XrSession")]
+    [NativeName("Name", "session")]
+    public Session Session;
 }

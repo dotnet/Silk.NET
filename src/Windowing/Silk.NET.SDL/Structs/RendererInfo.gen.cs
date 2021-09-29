@@ -14,74 +14,73 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.SDL
+namespace Silk.NET.SDL;
+
+[NativeName("Name", "SDL_RendererInfo")]
+public unsafe partial struct RendererInfo
 {
-    [NativeName("Name", "SDL_RendererInfo")]
-    public unsafe partial struct RendererInfo
-    {
-        public RendererInfo
-        (
+    public RendererInfo
+    (
             byte* name = null,
             uint? flags = null,
             uint? numTextureFormats = null,
             int? maxTextureWidth = null,
             int? maxTextureHeight = null
-        ) : this()
+    ) : this()
+    {
+        if (name is not null)
         {
-            if (name is not null)
-            {
-                Name = name;
-            }
-
-            if (flags is not null)
-            {
-                Flags = flags.Value;
-            }
-
-            if (numTextureFormats is not null)
-            {
-                NumTextureFormats = numTextureFormats.Value;
-            }
-
-            if (maxTextureWidth is not null)
-            {
-                MaxTextureWidth = maxTextureWidth.Value;
-            }
-
-            if (maxTextureHeight is not null)
-            {
-                MaxTextureHeight = maxTextureHeight.Value;
-            }
+            Name = name;
         }
 
+        if (flags is not null)
+        {
+            Flags = flags.Value;
+        }
 
-        [NativeName("Type", "const char *")]
-        [NativeName("Type.Name", "const char *")]
-        [NativeName("Name", "name")]
-        public byte* Name;
+        if (numTextureFormats is not null)
+        {
+            NumTextureFormats = numTextureFormats.Value;
+        }
 
-        [NativeName("Type", "Uint32")]
-        [NativeName("Type.Name", "Uint32")]
-        [NativeName("Name", "flags")]
-        public uint Flags;
+        if (maxTextureWidth is not null)
+        {
+            MaxTextureWidth = maxTextureWidth.Value;
+        }
 
-        [NativeName("Type", "Uint32")]
-        [NativeName("Type.Name", "Uint32")]
-        [NativeName("Name", "num_texture_formats")]
-        public uint NumTextureFormats;
-        [NativeName("Type", "Uint32 [16]")]
-        [NativeName("Type.Name", "Uint32 [16]")]
-        [NativeName("Name", "texture_formats")]
-        public fixed uint TextureFormats[16];
-
-        [NativeName("Type", "int")]
-        [NativeName("Type.Name", "int")]
-        [NativeName("Name", "max_texture_width")]
-        public int MaxTextureWidth;
-
-        [NativeName("Type", "int")]
-        [NativeName("Type.Name", "int")]
-        [NativeName("Name", "max_texture_height")]
-        public int MaxTextureHeight;
+        if (maxTextureHeight is not null)
+        {
+            MaxTextureHeight = maxTextureHeight.Value;
+        }
     }
+
+
+    [NativeName("Type", "const char *")]
+    [NativeName("Type.Name", "const char *")]
+    [NativeName("Name", "name")]
+    public byte* Name;
+
+    [NativeName("Type", "Uint32")]
+    [NativeName("Type.Name", "Uint32")]
+    [NativeName("Name", "flags")]
+    public uint Flags;
+
+    [NativeName("Type", "Uint32")]
+    [NativeName("Type.Name", "Uint32")]
+    [NativeName("Name", "num_texture_formats")]
+    public uint NumTextureFormats;
+    [NativeName("Type", "Uint32 [16]")]
+    [NativeName("Type.Name", "Uint32 [16]")]
+    [NativeName("Name", "texture_formats")]
+    public fixed uint TextureFormats[16];
+
+    [NativeName("Type", "int")]
+    [NativeName("Type.Name", "int")]
+    [NativeName("Name", "max_texture_width")]
+    public int MaxTextureWidth;
+
+    [NativeName("Type", "int")]
+    [NativeName("Type.Name", "int")]
+    [NativeName("Name", "max_texture_height")]
+    public int MaxTextureHeight;
 }

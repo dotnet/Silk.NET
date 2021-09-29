@@ -14,37 +14,36 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Vulkan
+namespace Silk.NET.Vulkan;
+
+[NativeName("Name", "VkSurfaceFormatKHR")]
+public unsafe partial struct SurfaceFormatKHR
 {
-    [NativeName("Name", "VkSurfaceFormatKHR")]
-    public unsafe partial struct SurfaceFormatKHR
-    {
-        public SurfaceFormatKHR
-        (
+    public SurfaceFormatKHR
+    (
             Format? format = null,
             ColorSpaceKHR? colorSpace = null
-        ) : this()
+    ) : this()
+    {
+        if (format is not null)
         {
-            if (format is not null)
-            {
-                Format = format.Value;
-            }
-
-            if (colorSpace is not null)
-            {
-                ColorSpace = colorSpace.Value;
-            }
+            Format = format.Value;
         }
 
-/// <summary></summary>
-        [NativeName("Type", "VkFormat")]
-        [NativeName("Type.Name", "VkFormat")]
-        [NativeName("Name", "format")]
-        public Format Format;
-/// <summary></summary>
-        [NativeName("Type", "VkColorSpaceKHR")]
-        [NativeName("Type.Name", "VkColorSpaceKHR")]
-        [NativeName("Name", "colorSpace")]
-        public ColorSpaceKHR ColorSpace;
+        if (colorSpace is not null)
+        {
+            ColorSpace = colorSpace.Value;
+        }
     }
+
+/// <summary></summary>
+    [NativeName("Type", "VkFormat")]
+    [NativeName("Type.Name", "VkFormat")]
+    [NativeName("Name", "format")]
+    public Format Format;
+/// <summary></summary>
+    [NativeName("Type", "VkColorSpaceKHR")]
+    [NativeName("Type.Name", "VkColorSpaceKHR")]
+    [NativeName("Name", "colorSpace")]
+    public ColorSpaceKHR ColorSpace;
 }
