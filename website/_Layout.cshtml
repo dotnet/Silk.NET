@@ -20,7 +20,7 @@
       string? previewImage = null; 
       if (toc?.Node?.Metadata?.TryGetValue("PreviewImage", out previewImage) ?? false)
       {
-          previewImage = InputUrl(previewImage);
+          previewImage = "https://dotnet.github.io/Silk.NET/images/" + previewImage;
       }
   }
   
@@ -69,11 +69,13 @@
   {
       <meta name="og:image" content="https://dotnet.github.io/Silk.NET/images/logo64.png" />
       <meta name="og:image:alt" content="Silk.NET Logo" />
-      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:card" content="summary" />
   }
   else
   {
-      <meta name="twitter:card" content="summary" />
+      <meta name="og:image" content="@previewImage" />
+      <meta name="og:image:alt" content="Blog Preview Image" />
+      <meta name="twitter:card" content="summary_large_image" />
   }
 
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
