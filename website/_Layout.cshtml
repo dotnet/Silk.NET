@@ -15,8 +15,8 @@
   @{
       var title = Model.GetString("Title");
       var toc = Model.GetToc();
-      var desc = toc?.Node?.Metadata?.TryGetValue("Description", out var theDesc) ? theDesc : null;
-      var previewImage = toc?.Node?.Metadata?.TryGetValue("PreviewImage", out var theImg) ? InputUrl(theImg) : null;
+      var desc = (toc?.Node?.Metadata?.TryGetValue("Description", out var theDesc) ?? false) ? theDesc : null;
+      var previewImage = (toc?.Node?.Metadata?.TryGetValue("PreviewImage", out var theImg) ?? false) ? InputUrl(theImg) : null;
   }
   
   @if (title is null || (!(toc is null) && toc.Root == toc.Node))
