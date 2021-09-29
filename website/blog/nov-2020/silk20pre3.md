@@ -5,6 +5,7 @@
         "Url": "silk20pre3.html",
         "Metadata": {
             "AuthorGitHub": "Perksey",
+            "PreviewImage": "images/blog/nov-2020/triangledroid.jpg",
             "DateTimeWritten": "17/11/2020 21:52"
         }
     }

@@ -5,7 +5,8 @@
         "Url": "silk20.html",
         "Metadata": {
             "AuthorGitHub": "Perksey",
-            "DateTimeWritten": "02/01/2021 18:17"
+            "DateTimeWritten": "02/01/2021 18:17",
+            "PreviewImage": "images/blog/jan-2021/sn20.png"
         }
     }
 }

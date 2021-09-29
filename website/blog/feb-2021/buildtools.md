@@ -5,7 +5,8 @@
         "Url": "buildtools.html",
         "Metadata": {
             "AuthorGitHub": "Perksey",
-            "DateTimeWritten": "12/02/2021 15:10"
+            "DateTimeWritten": "12/02/2021 15:10",
+            "PreviewImage": "images/blog/feb-2021/sbt.png"
         }
     }
 }

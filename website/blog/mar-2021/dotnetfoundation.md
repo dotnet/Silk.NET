@@ -5,7 +5,8 @@
         "Url": "dotnetfoundation.html",
         "Metadata": {
             "AuthorGitHub": "Perksey",
-            "DateTimeWritten": "17/03/2021 21:40"
+            "DateTimeWritten": "17/03/2021 21:40",
+            "PreviewImage": "images/blog/mar-2021/DotNetBotNextUp.png"
         }
     }
 }

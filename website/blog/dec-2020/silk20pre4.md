@@ -5,7 +5,8 @@
         "Url": "silk20pre4.html",
         "Metadata": {
             "AuthorGitHub": "Perksey",
-            "DateTimeWritten": "08/12/2020 21:00"
+            "DateTimeWritten": "08/12/2020 21:00",
+            "PreviewImage": "images/blog/dec-2020/Silk20TeaseSmaller-pre4.png"
         }
     }
 }

@@ -14,9 +14,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   @{
       var title = Model.GetString("Title");
-      var desc = Model.GetString("Description");
-      var previewImage = Model.GetString("PreviewImage");
       var toc = Model.GetToc();
+      var desc = toc?.Metadata?.TryGetValue("Description", out var theDesc) ? theDesc : null;
+      var previewImage = toc?.Metadata?.TryGetValue("PreviewImage", out var theImg) ? InputUrl(theImg) : null;
   }
   
   @if (title is null || (!(toc is null) && toc.Root == toc.Node))
@@ -62,7 +62,7 @@
 
   @if (previewImage is null)
   {
-      <meta name="og:image" content="https://dotnet.github.io/Silk.NET/images/logo.png" />
+      <meta name="og:image" content="https://dotnet.github.io/Silk.NET/images/logo64.png" />
       <meta name="og:image:alt" content="Silk.NET Logo" />
       <meta name="twitter:card" content="summary_large_image" />
   }
