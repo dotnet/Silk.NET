@@ -214,7 +214,10 @@ namespace Silk.NET.BuildTools.Cpp
                 (indexOfOpenSqBracket + 1, indexOfCloseSqBracket - indexOfOpenSqBracket - 1);
             var className = destInfo.Substring(indexOfCloseSqBracket + 1);
             var project = profile.Projects[projectName] = new Project
-                {IsRoot = projectName == "Core", Namespace = task.Namespace};
+            {
+                IsRoot = projectName == "Core",
+                Namespace = projectName == "Core" ? task.Namespace : $"{task.ExtensionsNamespace}.{projectName}"
+            };
             var @class = new Class
             {
                 ClassName = className,

@@ -988,7 +988,7 @@
                     "dxva2api.h": "[Core]DXVA",
                     "dxva2swdev.h": "[Core]DXVA",
                     "dxva2trace.h": "[Core]DXVA",
-                    "dxva2typ.h": "[Core]DXVA",
+                    "dxva9typ.h": "[Core]DXVA",
                     "dxvahd.h": "[Core]DXVA"
                 }
             },
@@ -1024,6 +1024,12 @@
                 "className": "DXVA2LibraryNameContainer"
             },
             "typeMaps": [
+                {
+                    "IDirect3DDevice9Ex": "Silk.NET.Direct3D9.IDirect3DDevice9Ex",
+                    "IDirect3DDevice9": "Silk.NET.Direct3D9.IDirect3DDevice9",
+                    "_D3DFORMAT": "Silk.NET.Direct3D9.Format",
+                    "_D3DPOOL": "Silk.NET.Direct3D9.Pool"
+                },
                 {
                     "$include.dxTypemap": "build/dx_typemap.json",
                     "$include.commonTypeMap": "build/csharp_typemap.json"

@@ -12,7 +12,7 @@ using Silk.NET.Core.Loader;
 
 #pragma warning disable 1591
 
-namespace Silk.NET.Direct3D9;
+namespace Silk.NET.Direct3D9{
 
 public unsafe partial class D3D9 : NativeAPI
     {
@@ -1322,3 +1322,4 @@ public unsafe partial class D3D9 : NativeAPI
     }
 }
 
+}
