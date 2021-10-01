@@ -792,7 +792,8 @@
         {
             "profileName": "Core",
             "sources": [
-                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/D3DCommon.h"
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/um/d3dcommon.h",
+                "C:/Program Files (x86)/Windows Kits/10/Include/10.0.19041.0/shared/evntrace.h"
             ],
             "mode": "Clang",
             "cacheDir": "build/cache",
@@ -824,7 +825,8 @@
                 "traverse": [
                 ],
                 "classes": {
-                    "D3DCommon.h": "[Core]D3DCommon"
+                    "d3dcommon.h": "[Core]D3DCommon",
+                    "evntrace.h": "[Core]EventTrace"
                 }
             },
             "exclude": [
@@ -835,7 +837,8 @@
             },
             "bakery": {
                 "profileNames": [
-                    "D3DCommon"
+                    "d3dcommon",
+                    "evntrace"
                 ]
             },
             "output": {
@@ -1027,6 +1030,7 @@
                 {
                     "IDirect3DDevice9Ex": "Silk.NET.Direct3D9.IDirect3DDevice9Ex",
                     "IDirect3DDevice9": "Silk.NET.Direct3D9.IDirect3DDevice9",
+                    "IDirect3DSurface9": "Silk.NET.Direct3D9.IDirect3DSurface9",
                     "_D3DFORMAT": "Silk.NET.Direct3D9.Format",
                     "_D3DPOOL": "Silk.NET.Direct3D9.Pool"
                 },
