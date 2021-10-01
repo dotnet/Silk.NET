@@ -242,6 +242,11 @@ namespace Silk.NET.BuildTools.Cpp
             Console.WriteLine("Applying postprocessing...");
             FusionReactor.ReactStructs(structs);
 
+            if (profile.Name == "evntrace")
+            {
+                Debugger.Break();
+            }
+
             return profile;
 
             Type GetOrAddPfnWrapper(Type type)
@@ -375,6 +380,11 @@ namespace Silk.NET.BuildTools.Cpp
                     else
                     {
                         decl.Location.GetFileLocation(out CXFile file, out _, out _, out _);
+                        if (string.IsNullOrWhiteSpace(file.Name.ToString()))
+                        {
+                            continue;
+                        }
+                        
                         if (!traversals.Contains(Path.GetFullPath(file.Name.ToString()).ToLower().Replace('\\', '/')))
                         {
                             // It is not uncommon for some declarations to be done using macros, which are themselves
@@ -890,7 +900,14 @@ namespace Silk.NET.BuildTools.Cpp
                             yield return new Field
                             {
                                 Name = Naming.TranslateLite
-                                    (Naming.TrimName(field.Name, task), task.FunctionPrefix),
+                                (
+                                    Naming.TrimName
+                                    (
+                                        // TODO the fusion reactor won't see this - add an intrinsic
+                                        string.IsNullOrWhiteSpace(field.Name) ? $"Anonymous{i}" : field.Name, task
+                                    ),
+                                    task.FunctionPrefix
+                                ),
                                 NativeName = field.Name,
                                 Type = GetType(field.Type, out var count, ref _f, out _),
                                 NativeType = field.Type.AsString.Replace("\\", "\\\\"), Count = count,
