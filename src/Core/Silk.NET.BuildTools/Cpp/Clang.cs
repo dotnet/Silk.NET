@@ -104,7 +104,7 @@ namespace Silk.NET.BuildTools.Cpp
 
         public static unsafe Profile GenerateProfile(string fileName, Stream input, BindTask task)
         {
-            Console.WriteLine($"clangsharp {typeof(Attr).Assembly.GetName().Version} - {clang.getClangVersion()}");
+            Console.WriteLine($"clangsharp {typeof(Attr).Assembly.GetName().Version} for {clang.getClangVersion()}");
             var profile = new Profile
             {
                 Name = Path.GetFileNameWithoutExtension(fileName)
