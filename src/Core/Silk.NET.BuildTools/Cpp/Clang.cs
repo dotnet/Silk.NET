@@ -242,11 +242,6 @@ namespace Silk.NET.BuildTools.Cpp
             Console.WriteLine("Applying postprocessing...");
             FusionReactor.ReactStructs(structs);
 
-            if (profile.Name == "evntrace")
-            {
-                Debugger.Break();
-            }
-
             return profile;
 
             Type GetOrAddPfnWrapper(Type type)
